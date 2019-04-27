@@ -2,70 +2,99 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5E3BB3DA
-	for <lists+kexec@lfdr.de>; Sat, 27 Apr 2019 18:11:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 084DEB41C
+	for <lists+kexec@lfdr.de>; Sat, 27 Apr 2019 19:43:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aXWFLe/UMp+cnGJ7HkOkOkF+xcbcKR6baCLgToW/REc=; b=XLHn6dI2y4iLwH
-	EfJjGaU99VzeB6VEJWt1FczwRr8+SLvn1fLMjCAOFHXwy9wV+/MXVpjwndcqtmj58hgnrQBwZJzd6
-	tHJOsqYaFZA7zxw1aS2SsMyZB6vU15eLjioS/trbU13jiAQY2LxgRwUhBgMIVYTXYxh+qKd78UKnX
-	f7K1oAMT49BMuM8Ld9aq28uYlg/muWulnpQHe9W+7DGYFrImZhyPo/biDinciYdxH7T8o1pJdFBdu
-	Dz8xh0qUKxxHM5gzlLzxIAKeoCmnvn33DKwPh7cRhOhe/G5J3EaOMRXGdCYZJGLB3UfzEyNThwrFs
-	j6OXDquvOfWGhVpR57Ag==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=TOVN3fqfEty0iOEZohhilkdPCm+LXhow1W44xEsxHmE=; b=cLy7JZOGLyUqP/EjAStmULirWu
+	mcWUZe0V5Jtund+uG7D0cz1VbQhvWNFWGEUj450H6pNei0i7AvwOX/CGtnH+nhbGI0XYbiwo5rFLu
+	47SQxNgWJ0+azvzTMqPUmKwh2N+yYGhquXhCbCNnU+uZ0L7FK1m/DvB1PwVPInGl++hB6tRVvkNd+
+	vVynwuut0D4svPvziE4lWi2dXDG/KolutYrqOiEHFWikPS/pP1bCd5bawWB9xISy7T6q67dFAKDZg
+	1fYaWjp0OLumTD0TMrY5i9oDC+nE8KTr4UVS7wMf3qJwm+x13J+ipH/mcnVFZVlZMKyrOYq4SJl/G
+	hbAOwuHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKPvW-0000wu-Eu; Sat, 27 Apr 2019 16:11:46 +0000
-Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKPvO-0000wL-4W
- for kexec@lists.infradead.org; Sat, 27 Apr 2019 16:11:40 +0000
-Received: from zn.tnic (p200300EC2F1D4200C9F1D41AFD83C4FB.dip0.t-ipconnect.de
- [IPv6:2003:ec:2f1d:4200:c9f1:d41a:fd83:c4fb])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 131F41EC0469;
- Sat, 27 Apr 2019 18:11:26 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1556381486;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=92Adu0xBHOyqjn2w5IOR2ZooSb46MP+b89bte9Cxr78=;
- b=hKG4NwvRBlwmA400X7xEqiTvin+5/dluvFmljDMM1Re2DWytUulHrirZ3jGId97ccLE7U0
- /eSkMDDqxhFB9qbm8lc/ZFH8R9oIaRCWanEEaAh14FxrqcY95KIcoNAQDCY8pidl2/Ou1y
- DRr1aitNioZiReR8A1q/L/ecpkheOE0=
-Date: Sat, 27 Apr 2019 18:11:21 +0200
-From: Borislav Petkov <bp@alien8.de>
-To: Baoquan He <bhe@redhat.com>
-Subject: Re: [PATCH v5 1/2] x86/kexec: Build identity mapping for EFI systab
- and ACPI tables
-Message-ID: <20190427161121.GC12360@zn.tnic>
-References: <20190424092944.30481-1-bhe@redhat.com>
- <20190424092944.30481-2-bhe@redhat.com>
+	id 1hKRLh-0004bR-6l; Sat, 27 Apr 2019 17:42:53 +0000
+Received: from smtp.ctxuk.citrix.com ([185.25.65.24] helo=SMTP.EU.CITRIX.COM)
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat
+ Linux)) id 1hKRLd-0004b2-MR
+ for kexec@lists.infradead.org; Sat, 27 Apr 2019 17:42:51 +0000
+X-IronPort-AV: E=Sophos;i="5.60,402,1549929600"; d="scan'208";a="89371712"
+Subject: Re: [Xen-devel] Xen kexec status
+To: David Woodhouse <dwmw2@infradead.org>, <xen-devel@lists.xenproject.org>,
+ kexec <kexec@lists.infradead.org>
+References: <26c21cfb71e7b2857aa4f379be8a8e3e8c1af246.camel@infradead.org>
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=andrew.cooper3@citrix.com; prefer-encrypt=mutual; keydata=
+ mQINBFLhNn8BEADVhE+Hb8i0GV6mihnnr/uiQQdPF8kUoFzCOPXkf7jQ5sLYeJa0cQi6Penp
+ VtiFYznTairnVsN5J+ujSTIb+OlMSJUWV4opS7WVNnxHbFTPYZVQ3erv7NKc2iVizCRZ2Kxn
+ srM1oPXWRic8BIAdYOKOloF2300SL/bIpeD+x7h3w9B/qez7nOin5NzkxgFoaUeIal12pXSR
+ Q354FKFoy6Vh96gc4VRqte3jw8mPuJQpfws+Pb+swvSf/i1q1+1I4jsRQQh2m6OTADHIqg2E
+ ofTYAEh7R5HfPx0EXoEDMdRjOeKn8+vvkAwhviWXTHlG3R1QkbE5M/oywnZ83udJmi+lxjJ5
+ YhQ5IzomvJ16H0Bq+TLyVLO/VRksp1VR9HxCzItLNCS8PdpYYz5TC204ViycobYU65WMpzWe
+ LFAGn8jSS25XIpqv0Y9k87dLbctKKA14Ifw2kq5OIVu2FuX+3i446JOa2vpCI9GcjCzi3oHV
+ e00bzYiHMIl0FICrNJU0Kjho8pdo0m2uxkn6SYEpogAy9pnatUlO+erL4LqFUO7GXSdBRbw5
+ gNt25XTLdSFuZtMxkY3tq8MFss5QnjhehCVPEpE6y9ZjI4XB8ad1G4oBHVGK5LMsvg22PfMJ
+ ISWFSHoF/B5+lHkCKWkFxZ0gZn33ju5n6/FOdEx4B8cMJt+cWwARAQABtClBbmRyZXcgQ29v
+ cGVyIDxhbmRyZXcuY29vcGVyM0BjaXRyaXguY29tPokCOgQTAQgAJAIbAwULCQgHAwUVCgkI
+ CwUWAgMBAAIeAQIXgAUCWKD95wIZAQAKCRBlw/kGpdefoHbdD/9AIoR3k6fKl+RFiFpyAhvO
+ 59ttDFI7nIAnlYngev2XUR3acFElJATHSDO0ju+hqWqAb8kVijXLops0gOfqt3VPZq9cuHlh
+ IMDquatGLzAadfFx2eQYIYT+FYuMoPZy/aTUazmJIDVxP7L383grjIkn+7tAv+qeDfE+txL4
+ SAm1UHNvmdfgL2/lcmL3xRh7sub3nJilM93RWX1Pe5LBSDXO45uzCGEdst6uSlzYR/MEr+5Z
+ JQQ32JV64zwvf/aKaagSQSQMYNX9JFgfZ3TKWC1KJQbX5ssoX/5hNLqxMcZV3TN7kU8I3kjK
+ mPec9+1nECOjjJSO/h4P0sBZyIUGfguwzhEeGf4sMCuSEM4xjCnwiBwftR17sr0spYcOpqET
+ ZGcAmyYcNjy6CYadNCnfR40vhhWuCfNCBzWnUW0lFoo12wb0YnzoOLjvfD6OL3JjIUJNOmJy
+ RCsJ5IA/Iz33RhSVRmROu+TztwuThClw63g7+hoyewv7BemKyuU6FTVhjjW+XUWmS/FzknSi
+ dAG+insr0746cTPpSkGl3KAXeWDGJzve7/SBBfyznWCMGaf8E2P1oOdIZRxHgWj0zNr1+ooF
+ /PzgLPiCI4OMUttTlEKChgbUTQ+5o0P080JojqfXwbPAyumbaYcQNiH1/xYbJdOFSiBv9rpt
+ TQTBLzDKXok86LkCDQRS4TZ/ARAAkgqudHsp+hd82UVkvgnlqZjzz2vyrYfz7bkPtXaGb9H4
+ Rfo7mQsEQavEBdWWjbga6eMnDqtu+FC+qeTGYebToxEyp2lKDSoAsvt8w82tIlP/EbmRbDVn
+ 7bhjBlfRcFjVYw8uVDPptT0TV47vpoCVkTwcyb6OltJrvg/QzV9f07DJswuda1JH3/qvYu0p
+ vjPnYvCq4NsqY2XSdAJ02HrdYPFtNyPEntu1n1KK+gJrstjtw7KsZ4ygXYrsm/oCBiVW/OgU
+ g/XIlGErkrxe4vQvJyVwg6YH653YTX5hLLUEL1NS4TCo47RP+wi6y+TnuAL36UtK/uFyEuPy
+ wwrDVcC4cIFhYSfsO0BumEI65yu7a8aHbGfq2lW251UcoU48Z27ZUUZd2Dr6O/n8poQHbaTd
+ 6bJJSjzGGHZVbRP9UQ3lkmkmc0+XCHmj5WhwNNYjgbbmML7y0fsJT5RgvefAIFfHBg7fTY/i
+ kBEimoUsTEQz+N4hbKwo1hULfVxDJStE4sbPhjbsPCrlXf6W9CxSyQ0qmZ2bXsLQYRj2xqd1
+ bpA+1o1j2N4/au1R/uSiUFjewJdT/LX1EklKDcQwpk06Af/N7VZtSfEJeRV04unbsKVXWZAk
+ uAJyDDKN99ziC0Wz5kcPyVD1HNf8bgaqGDzrv3TfYjwqayRFcMf7xJaL9xXedMcAEQEAAYkC
+ HwQYAQgACQUCUuE2fwIbDAAKCRBlw/kGpdefoG4XEACD1Qf/er8EA7g23HMxYWd3FXHThrVQ
+ HgiGdk5Yh632vjOm9L4sd/GCEACVQKjsu98e8o3ysitFlznEns5EAAXEbITrgKWXDDUWGYxd
+ pnjj2u+GkVdsOAGk0kxczX6s+VRBhpbBI2PWnOsRJgU2n10PZ3mZD4Xu9kU2IXYmuW+e5KCA
+ vTArRUdCrAtIa1k01sPipPPw6dfxx2e5asy21YOytzxuWFfJTGnVxZZSCyLUO83sh6OZhJkk
+ b9rxL9wPmpN/t2IPaEKoAc0FTQZS36wAMOXkBh24PQ9gaLJvfPKpNzGD8XWR5HHF0NLIJhgg
+ 4ZlEXQ2fVp3XrtocHqhu4UZR4koCijgB8sB7Tb0GCpwK+C4UePdFLfhKyRdSXuvY3AHJd4CP
+ 4JzW0Bzq/WXY3XMOzUTYApGQpnUpdOmuQSfpV9MQO+/jo7r6yPbxT7CwRS5dcQPzUiuHLK9i
+ nvjREdh84qycnx0/6dDroYhp0DFv4udxuAvt1h4wGwTPRQZerSm4xaYegEFusyhbZrI0U9tJ
+ B8WrhBLXDiYlyJT6zOV2yZFuW47VrLsjYnHwn27hmxTC/7tvG3euCklmkn9Sl9IAKFu29RSo
+ d5bD8kMSCYsTqtTfT6W4A3qHGvIDta3ptLYpIAOD2sY3GYq2nf3Bbzx81wZK14JdDDHUX2Rs
+ 6+ahAA==
+Message-ID: <731fa645-5ba0-ad9f-f5af-ff0747a7ae9d@citrix.com>
+Date: Sat, 27 Apr 2019 18:42:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190424092944.30481-2-bhe@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <26c21cfb71e7b2857aa4f379be8a8e3e8c1af246.camel@infradead.org>
+Content-Language: en-GB
+X-ClientProxiedBy: AMSPEX02CAS02.citrite.net (10.69.22.113) To
+ AMSPEX02CL02.citrite.net (10.69.22.126)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190427_091138_334790_F4484414 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190427_104250_039320_0BDEE3F4 
+X-CRM114-Status: GOOD (  20.75  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.25.65.24 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -77,219 +106,79 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, kasong@redhat.com, fanc.fnst@cn.fujitsu.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, hpa@zytor.com,
- j-nomura@ce.jp.nec.com, tglx@linutronix.de, dyoung@redhat.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Apr 24, 2019 at 05:29:43PM +0800, Baoquan He wrote:
-> From: Kairui Song <kasong@redhat.com>
-> 
-> The current code only builds identity mapping for physical memory during
-> kexec-type loading. The regions reserved by firmware are not covered.
-> In the next patch, the boot decompressing code of kexec-ed kernel tries
-
-There's no guarantee that when this patch gets applied, the next patch
-will be the one you mean. So explain what you mean here instead.
-
-> to access EFI systab and ACPI tables, lacking identity mapping for them
-> will cause error and reset system to firmware.
-> 
-> This error doesn't happen on all systems. Because kexec enables gbpages
-> to build identity mapping, the EFI systab and ACPI tables could have been
-> covered if they share the same 1 GB area with physical memory. To make
-> sure, we should map them always.
-> 
-> So here add mapping for them.
-> 
-> Signed-off-by: Kairui Song <kasong@redhat.com>
-
-When you send someone else's patch, you need to add your SOB. Lemme
-point you to
-
-  Documentation/process/submitting-patches.rst
-
-again. Please have a deeper look.
-
-> ---
->  arch/x86/kernel/machine_kexec_64.c | 86 ++++++++++++++++++++++++++++++
->  1 file changed, 86 insertions(+)
-> 
-> diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
-> index ceba408ea982..77b40c3e28d7 100644
-> --- a/arch/x86/kernel/machine_kexec_64.c
-> +++ b/arch/x86/kernel/machine_kexec_64.c
-> @@ -18,6 +18,7 @@
->  #include <linux/io.h>
->  #include <linux/suspend.h>
->  #include <linux/vmalloc.h>
-> +#include <linux/efi.h>
->  
->  #include <asm/init.h>
->  #include <asm/pgtable.h>
-> @@ -29,6 +30,48 @@
->  #include <asm/setup.h>
->  #include <asm/set_memory.h>
->  
-> +#ifdef CONFIG_ACPI
-> +/**
-
-Two stars '**' are kernel-doc style but this comment is implementation
-detail and is irrelevant for kernel-doc ouput.
-
-> + * Used while adding mapping for ACPI tables.
-> + * Can be reused when other iomem regions need be mapped
-> + */
-> +struct init_pgtable_data {
-> +	struct x86_mapping_info *info;
-> +	pgd_t *level4p;
-> +};
-> +
-> +static int mem_region_callback(struct resource *res, void *arg)
-> +{
-> +	struct init_pgtable_data *data = arg;
-> +	unsigned long mstart, mend;
-> +
-> +	mstart = res->start;
-> +	mend = mstart + resource_size(res) - 1;
-> +
-> +	return kernel_ident_mapping_init(data->info,
-> +			data->level4p, mstart, mend);
-
-Do not break that line.
-
-> +}
-> +
-> +static int init_acpi_pgtable(struct x86_mapping_info *info,
-> +				   pgd_t *level4p)
-
-static int
-map_acpi_tables(...)
-
-> +{
-> +	unsigned long flags = IORESOURCE_MEM | IORESOURCE_BUSY;
-> +	struct init_pgtable_data data;
-> +
-> +	data.info = info;
-> +	data.level4p = level4p;
-> +	flags = IORESOURCE_MEM | IORESOURCE_BUSY;
-> +	return walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
-> +				   &data, mem_region_callback);
-> +}
-> +#else
-> +static int init_acpi_pgtable(struct x86_mapping_info *info,
-> +				   pgd_t *level4p)
-> +{
-> +	return 0;
-> +}
-> +#endif
-> +
->  #ifdef CONFIG_KEXEC_FILE
->  const struct kexec_file_ops * const kexec_file_loaders[] = {
->  		&kexec_bzImage64_ops,
-> @@ -36,6 +79,37 @@ const struct kexec_file_ops * const kexec_file_loaders[] = {
->  };
->  #endif
->  
-> +#ifdef CONFIG_EFI
-> +static int init_efi_systab_pgtable(struct x86_mapping_info *info,
-> +				   pgd_t *level4p)
-
-This function's name is wrong. Make it like this:
-
-static int
-map_efi_systab(struct x86_mapping_info *info, pgd_t *level4p)
-{
-#ifdef CONFIG_EFI
-
-	...
-
-#endif
-
-	return 0;
-}
-
-and drop the #else ifdeffery.
-
-
-> +{
-> +	unsigned long mstart, mend;
-> +
-> +	if (!efi_enabled(EFI_BOOT))
-> +		return 0;
-> +
-> +	mstart = (boot_params.efi_info.efi_systab |
-> +			((u64)boot_params.efi_info.efi_systab_hi<<32));
-> +
-> +	if (efi_enabled(EFI_64BIT))
-> +		mend = mstart + sizeof(efi_system_table_64_t);
-> +	else
-> +		mend = mstart + sizeof(efi_system_table_32_t);
-> +
-> +	if (mstart)
-> +		return kernel_ident_mapping_init(info,
-> +				level4p, mstart, mend);
-
-Flip that logic:
-
-	if (!mstart)
-		return 0;
-
-	return kernel_ident_mapping_init(info, level4p, mstart, mend);
-
-and let the function stick out.
-
-> +
-> +	return 0;
-> +}
-> +#else
-> +static inline int init_efi_systab_pgtable(struct x86_mapping_info *info,
-> +					  pgd_t *level4p)
-> +{
-> +	return 0;
-> +}
-> +#endif
-> +
->  static void free_transition_pgtable(struct kimage *image)
->  {
->  	free_page((unsigned long)image->arch.p4d);
-> @@ -159,6 +233,18 @@ static int init_pgtable(struct kimage *image, unsigned long start_pgtable)
->  			return result;
->  	}
->  
-> +	/**
-
-Two stars '**' are kernel-doc style comments above function names but
-not here.
-
-> +	 * Prepare EFI systab and ACPI table mapping for kexec kernel,
-> +	 * since they are not covered by pfn_mapped.
-> +	 */
-> +	result = init_efi_systab_pgtable(&info, level4p);
-> +	if (result)
-> +		return result;
-> +
-> +	result = init_acpi_pgtable(&info, level4p);
-> +	if (result)
-> +		return result;
-> +
->  	return init_transition_pgtable(image, level4p);
->  }
->  
-> -- 
-> 2.17.2
-> 
-
--- 
-Regards/Gruss,
-    Boris.
-
-Good mailing practices for 400: avoid top-posting and trim the reply.
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+T24gMjcvMDQvMjAxOSAwNzoxNSwgRGF2aWQgV29vZGhvdXNlIHdyb3RlOgo+IEkndmUgYmVlbiBs
+b29raW5nIGF0IGtleGVjIGludG8gWGVuLCBhbmQgZnJvbSBYZW4uCj4KPiBLZXhlYy10b29scyBk
+b2Vzbid0IHN1cHBvcnQgTXVsdGlib290IHYyLCBhbmQgZG9lc24ndCB0cmVhdCB0aGUgWGVuCj4g
+aW1hZ2UgYXMgcmVsb2NhdGFibGUuIFNvIGl0IGxvYWRzIGl0IGF0IGFkZHJlc3MgemVybywgd2hp
+Y2ggY2F1c2VzIGxvdHMKPiBvZiBhbXVzZW1lbnQ6CgpXaGljaCBiaW5hcnkgYXJlIHlvdSB0cnlp
+bmcgdG8gbG9hZD8KCnhlbi1zeW1zIGdldHMgY29udmVydGVkIGludG8gYW4gZWxmMzIgd2hpY2gg
+c2hvdWxkIGJlIGxpbmtlZCB0byBydW4gYQoyTS7CoCBTZWUgbWtlbGYzMiBhbmQgWEVOX0lNR19P
+RkZTRVQKCj4gRmlyc3RseSwgaGVhZC5TIHRydXN0cyB0aGUgbG93IG1lbW9yeSBsaW1pdCBmb3Vu
+ZCBpbiB0aGUgQkRBLCB3aGljaCBoYXMKPiBiZWVuIHNjcmliYmxlZCBvbi4gSGFja2luZyBhcm91
+bmQgdGhhdCBhbmQgc2V0dGluZyBuby1yZWFsLW1vZGUgZG9lcwo+IG1ha2Uga2V4ZWMgaW50byBY
+ZW4gZnJvbSBMaW51eCB3b3JrLgoKRG8gd2Uga25vdyB3aGF0IHNjcmliYmxlcyBvbiBpdD8KCkZv
+ciBiZXR0ZXIgb3Igd29yc2UsIHRoZSBJVlQgbmVlZHMgdG8gcmVtYWluIHZhbGlkIHdoZXJldmVy
+IHBvc3NpYmxlIHRvCnJlZHVjZSB0aGUgbnVtYmVyIG9mIGNvcm5lciBjYXNlcyB3aGVyZSBhbiBl
+cnJhbnQgTk1JLyNNQyB3aWxsIHRha2Ugb3V0CnRoZSBlbnRpcmUgc3lzdGVtLgoKPiBTZWNvbmRs
+eSwga2V4ZWMgKGluIHhlbl9rZXhlY19sb2FkKCkpIGFkZHMgYSBtYXBwaW5nIG9mIHRoZSAwLTFN
+aUIKPiByZWdpb24sIHdoaWNoICJvdmVybGFwcyIgd2l0aCB3aGVyZSBYZW4gaXMgYWN0dWFsbHkg
+bG9hZGVkLCBzbyAqWGVuKgo+IHJlZnVzZXMgdGhlIGtleGVjX2xvYWQgaHlwZXJjYWxsLgoKSVNU
+UiB0aGlzIGJlaW5nIG5lY2Vzc2FyeSBmb3IgcHVyZ2F0b3J5IHRvIGZ1bmN0aW9uIGF0IHRoZSB0
+aW1lIERhdmlkCmRpZCB0aGUga2V4ZWMgd29yaywgYnV0IHJlYWxseSBpdCBzZWVtcyBsaWtlIGEg
+YnVnIHdpdGggdGhlCmNvbmZpZ3VyYXRpb24gb2YgcHVyZ2F0b3J5LgoKPiBGb3Iga2V4ZWMgZnJv
+bSBYZW4gSSBhbHNvIHJldmVydGVkIHRvIGtleGVjLXRvb2xzIDIuMC4xNiBhcyBjb21taXQKPiA4
+OTRiZWE5MzM1ZjU3YjYyYyAoImtleGVjLXRvb2xzOiBQZXJmb3JtIHJ1bi10aW1lIGxpbmtpbmcg
+b2YKPiBsaWJ4ZW5jdHJsLnNvIikgc2VlbXMgdG8gaGF2ZSBicm9rZW4gdGhpbmdzIGJ5IG5vdCBh
+bHdheXMgZGVmaW5pbmcKPiBIQVZFX0xJQlhFTkNUUkwgd2hlbiBpdCBzaG91bGQuIEknbGwgZml4
+IHRoYXQgc2hvcnRseS4KPgo+IE1vc3Qgb2YgdGhlIGFib3ZlIGlzIHJlbGF0aXZlbHkgc2ltcGx5
+IHdvcmtlZCBhcm91bmQgYnkgaGFja2luZyB0aGUgWGVuCj4gaW1hZ2UgdG8gYmUgRVRfRFlOIChz
+byB0aGF0IGtleGVjIHdpbGwgcmVsb2NhdGUgaXQpIGFuZCB0aGVuIHVzaW5nCj4ga2V4ZWMgLS1t
+ZW0tbWluPTB4MTAwMDAwLiBJJ2xsIHByb2JhYmx5IGltcGxlbWVudCBNdWx0aWJvb3QgdjIgc3Vw
+cG9ydAo+IGluIGtleGVjLXRvb2xzIHRvIGFsbG93IGZvciBzYW5lciByZWxvY2F0aW9uLgoKSSB0
+aGluayBoYXZpbmcgTUIyIHN1cHBvcnQgd291bGQgYmUgYSB2ZXJ5IGdvb2QgbW92ZS7CoCBJdCBh
+bHNvIHByb3ZpZGVzCmEgYmV0dGVyIHdheSB0byBwYXNzIHRoZSBVRUZJIGRldGFpbHMuCgo+IFdl
+IHNob3VsZCBmaXggaGVhZC5TLiBPbmUgb3B0aW9uIGlzIHRvIHJlY29nbmlzZSB3aGVuIHRoZSBs
+b2FkIGFkZHJlc3MKPiBpcyB6ZXJvLCBhbmQgYXV0b21hdGljYWxseSBlc2NoZXcgdGhlIEJEQSBh
+bmQgdHJpZ2dlciB0aGUgbm8tcmVhbC1tb2RlCj4gYmVoYXZpb3VyIHdoZW4gdGhhdCBpcyB0aGUg
+Y2FzZS4gQmV0dGVyIHN1Z2dlc3Rpb25zIHdlbGNvbWUuCj4KPiBTaG91bGQgd2UgYWxzbyBhdm9p
+ZCBoYXZpbmcgYSBsb2FkIHNlZ21lbnQgYXQgb2Zmc2V0IHplcm8gaW4gdGhlIGltYWdlLAo+IHNv
+IHRoYXQgaXQgZG9lc24ndCBzY3JpYmJsZSBvbiB0aGUgQkRBIGJ5IGRlZmF1bHQ/CgpJIGRvbid0
+IHRoaW5rIHdlIHNob3VsZCBldmVyIGJlIGxvYWRpbmcgYSBiaW5hcnkgYXQgMCwgYnV0IGl0IG1p
+Z2h0IGJlCndvcnRoIGhhdmluZyBhIGRlZGljYXRlZCBrZXhlYyBlbnRyeSBwb2ludCB3aGljaCBj
+YW4gYmUgbW9yZSBzZWxlY3RpdmUKYWJvdXQgd2hhdCBpdCBkb2VzLgoKVGhlIEVGSSBhbmQgUFZI
+IGVudHJ5cG9pbnRzIGFscmVhZHkgc2V0IHNraXBfcmVhbG1vZGUgYW1vbmdzdCBvdGhlciB0aGlu
+Z3MuCgpBbm90aGVyIG9wdGlvbiBtaWdodCBiZSB0byBvbmx5IHVzZSB0aGUgQkRBL0VCREEgaW4g
+dGhlIGFic2VuY2Ugb2YgYW55Cm1lbW9yeSBtYXAgaW5mb3JtYXRpb24uCgo+IFNob3VsZCB3ZSBh
+bHNvIGZpeCBYZW4ncyBrZXhlY19sb2FkIG5vdCB0byByZWZ1c2Ugb3ZlcmxhcHBpbmcgc2VnbWVu
+dHMKPiBpZiB0aGV5IGFyZSBub3QgbG9hZGVkIChidWZzej09MCk/IEknbSBub3QgcXVpdGUgc3Vy
+ZSB3aGF0J3MgZ29pbmcgb24KPiB0aGVyZTsgZG9lc24ndCB0aGlzIGhhcHBlbiB3aXRoIHBhZ2lu
+ZyBkaXNhYmxlZCBhbnl3YXksIHNvIHdoeSB3b3VsZCB3ZQo+IG5lZWQgYW4gZXhwbGljaXQgbWFw
+cGluZyBvZiBSQU0/CgpEbyB5b3UgaGF2ZSBhIGR1bXAgb2Ygd2hpY2ggc2VnbWVudHMgYXJlIGF0
+dGVtcHRpbmcgdG8gYmUgbG9hZGVkP8KgIFRCSCwKdGhpcyBzb3VuZHMgbGlrZSBmYWxsb3V0IGZy
+b20gdGhlIGVhcmxpZXIgaXNzdWVzLCBidXQgaXQgaXMgYWxzbwpwb3NzaWJsZSB0aGF0IHdlJ3Zl
+IGdvdCBhIGJ1ZyBpbiB0aGUgb3ZlcmxhcCBjaGVja3MuCgo+IEFmdGVyIHRoYXQsIEknbSBsb29r
+aW5nIGF0IHVzaW5nIFhlbiBhcyBhIGNyYXNoIGtlcm5lbCwgd2hpY2ggbWVhbnMgSQo+IHJlYWxs
+eSBkb24ndCB3YW50IGl0IHNjcmliYmxpbmcgb24gbG93IG1lbW9yeSB0aGF0IGl0IGhhc24ndCBi
+ZWVuCj4gZXhwbGljaXRseSB0b2xkIGl0IGNhbiB1c2UuIEZpcnN0IGF0dGVtcHQgYXQgdGhpcyBp
+cyBhdCAKPiBodHRwOi8vZGF2aWQud29vZGhvdS5zZS8wMDAxLXg4Ni1ib290LVVzZS10cmFtcG9s
+aW5lX3Byb3Rtb2RlX2VudHJ5LWluLXBsYWNlLnBhdGNoCj4gYnV0IGFzIG5vdGVkIHRoZXJlLCBp
+dCBvbmx5IHdvcmtzIGZvciBhIHNpbmdsZSBwcm9jZXNzb3IgZm9yIG5vdzsgSSdsbAo+IGZpeCBp
+dCBhcyBkZXNjcmliZWQgdGhlcmVpbi4KCkkgdGhpbmsgaXQgaXMgd2VsbCBwYXN0IHRpbWUgdG8g
+KHJlKWNvbnNpZGVyIGFuZCBzdHJpcCBkb3duIHRoZSBlYXJseQphc3NlbWJseSBjb2RlLsKgIFRo
+ZXJlIGFyZSBhIG51bWJlciBvZiBhdC1iZXN0LXF1ZXN0aW9uYWJsZSB0aGluZ3MsIGFuZAppdCBp
+cyBleHRyZW1lbHkgdGhpY2sgZ29pbmcuwqAgKFRCSCwgSSdkIGFsc28gbGlrZSB0byByZXBsYWNl
+IG1vc3Qgb2YgaXQKd2l0aCBDLCBidXQgZG9pbmcgdGhhdCB3aWxsIGZpcnN0IHJlcXVpcmUgdW5k
+ZXJzdGFuZGluZyBob3cgaXQgYWN0dWFsbHkKYWxsIHdvcmtzLikKCkN1cnJlbnRseSwgdGhlIG1h
+aW4gWGVuIGltYWdlIHN0cmljdGx5IG5lZWRzIHRvIGJlIGxvY2F0ZWQgYmVsb3cgdGhlIDRHCmJv
+dW5kYXJ5LCBzbyB5b3UgYXJlIHJpZ2h0IHRoYXQgbm9uZSBvZiB0aGUgMzJiaXQgY29kZSBhY3R1
+YWxseSBuZWVkcyB0bwpiZSBpbiB0aGUgdHJhbXBvbGluZS7CoCBJbiBwcmluY2lwbGUgaXQgd291
+bGQgYmUgbmljZSB0byBsaWZ0IHRoaXMKcmVzdHJpY3Rpb24sIGF0IHdoaWNoIHBvaW50IHdlIG5l
+ZWQgYWxsIHRoZSBjb2RlIHJlcXVpcmVkIHRvIGdldCBpbnRvCmxvbmcgbW9kZSBpbiB0aGUgdHJh
+bXBvbGluZS4KCn5BbmRyZXcKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
