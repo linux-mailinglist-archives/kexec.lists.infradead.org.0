@@ -2,53 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 148DFB2DF
-	for <lists+kexec@lfdr.de>; Sat, 27 Apr 2019 08:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB7F9B336
+	for <lists+kexec@lfdr.de>; Sat, 27 Apr 2019 13:08:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Mime-Version:Date:To:From:Subject:Message-ID:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PLEY0XU3ARbp4RxrgbokZL7YN7CqCAikuLehmGBBeM4=; b=dfo
-	tOlSS89BLJ8cLL+XUFGxpotG+GcQ4niTfWQ4Wwe5SfGM6URZVwtAWnHPnSWj4AqTS/6g0ZEhIUdov
-	TTtuyRjgowLV3+mlAKr9ZAPO8ErLJ2rA6o0BnEuV6TMQ2GLDsRFigTln3Lr3gB5u61YQ4ooGZpXaw
-	rfD0l1xfTt/7QKLguvOCkZKAYtWk0JYqT9t7rLqoaVtfHaPGnep3Sq4qYb+S0XAbKMFxmNJcJVdtw
-	wsIYkwWxLVjvKRFbQagUL/wpauDjvDTwaXPlDC9j3Acr/TSiGI976q8fnZKi/Qs8MTe6gCd7/33F4
-	Ab1aHRbs4086quvfOJIFiKH/2fFI67Q==;
+	Mime-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Cc:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qinLUYeXYZNWgBVtTq6gtgcuQ+LKIYE/CBnGL7JHJGM=; b=KFnaQZQWCvUDkHzWJe7oafUb4
+	Is2hoZ9UCSJwDEbNotBOmN7eCJzUSdiEoySQDQhOzrkCiZ/CSp2ZWhaofep89qhj3eYtDvgVozY5G
+	pc0Q+8rVASZgVkgim/wBYPSAO0sqewcWLKW9ycHHS/UY1BBNjc3XbwLZVQyPPUtvVLoj7V9zSOCQM
+	UYolXGYCfPKHqYNw79wR4NM7/xs8GlN9zBrXawbutJzpZ+FEyjMbDue1zBhWlq9HC1CM8GOWO3+sW
+	VitfFrDDYaWrd9Bryugumhukhq+TeQcFcqvV+qfQV4q/ejKQv4U6PIvyZxW5z8uIre6JDd/1YIqZg
+	laMTdgU/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKGn0-0005TJ-45; Sat, 27 Apr 2019 06:26:22 +0000
+	id 1hKLCD-0003F9-7l; Sat, 27 Apr 2019 11:08:41 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKGcw-0001Ak-BP
- for kexec@bombadil.infradead.org; Sat, 27 Apr 2019 06:15:58 +0000
+ id 1hKKyS-0007NF-64
+ for kexec@bombadil.infradead.org; Sat, 27 Apr 2019 10:54:28 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Mime-Version:Content-Type:Date:To:From:
- Subject:Message-ID:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=P2qOS4XB1SxsRULeNGSKC3/PuVhqbKHeihM8oq2dP58=; b=Hf5/1xQzfTruY5NbHZYTDKXRLX
- MHwOuUFK+F4npr9W8EqVvtld+84w8ZJrPEE4LKqsEEDJD2K6zSRQ8xXn2j/hmk41rB2sA2DHqpA4G
- QTV2hkRWK7fqlv6Jz8m6ZNc8W/vS9oM1JGe9jyhAkXlHxzoldp8au4RN/2asbxmxfqGCUaUn12gqV
- uKQYoHXAbMfT1UeQa1Xv2GVnB2Gi3UW34ICt+76My38T88h7j4fV32NZ7grdlxeAJQdAq3Dm6JI6x
- DS0kYbAUTCTCcAw30KStX20Y26R8SFE5BCcFG8Byl3S8DNqavoS7bxfga+BIZxquex2fKDcEdm+6i
- MY6ngz+g==;
-Received: from 54-240-197-236.amazon.com ([54.240.197.236]
- helo=iad7-dhcp-95-173-113.iad7.amazon.com)
+ d=infradead.org; s=merlin.20170209; h=Mime-Version:Content-Type:References:
+ In-Reply-To:Date:To:From:Subject:Message-ID:Sender:Reply-To:Cc:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=CgnauPQTUFCgZq1GBbFXQdbRIy7zJ5YcxHPRCMgG5bc=; b=ESW3dW/4c4x5cgpvDuTkFKyLq
+ dG9Rw0Ab+aHLpp2Dr+WAHmkTWELavp4nlq3lJ329lhvdHV9P4FwWULN95bdBz7akcPDl1H6ncadkH
+ ZnzFeA9CZuuE+JaRh/FxFjSM7zAekF6ZHurQiNUaGk8w/0lB6o3kHo5uoE0Fr3eIfLMdVmwYG49o3
+ 2oAdH9yWDrkWqiTLnRJCX1qgGrtfcmLLXPJ9A7sD731f8jwxEcY++DRQ83y9+mvYMCvPaPf4bgGof
+ pQwPijdRRNgeqOVibtgseZBArsACGd8cmVoLBsW9WBemFMzVW/g8NrjiBr1vVVDFAYPPDivRp32NY
+ bJCUHQfgA==;
+Received: from 54-240-197-235.amazon.com ([54.240.197.235]
+ helo=freeip.amazon.com)
  by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKGcs-0006YD-Jm; Sat, 27 Apr 2019 06:15:55 +0000
-Message-ID: <26c21cfb71e7b2857aa4f379be8a8e3e8c1af246.camel@infradead.org>
-Subject: Xen kexec status
+ id 1hKKyP-0007FN-Qj; Sat, 27 Apr 2019 10:54:26 +0000
+Message-ID: <042a506f6662e2862e05078248d49a20fc611413.camel@infradead.org>
+Subject: Re: [Xen-devel] Xen kexec status
 From: David Woodhouse <dwmw2@infradead.org>
 To: xen-devel@lists.xenproject.org, kexec <kexec@lists.infradead.org>
-Date: Sat, 27 Apr 2019 08:15:52 +0200
+Date: Sat, 27 Apr 2019 12:54:23 +0200
+In-Reply-To: <26c21cfb71e7b2857aa4f379be8a8e3e8c1af246.camel@infradead.org>
+References: <26c21cfb71e7b2857aa4f379be8a8e3e8c1af246.camel@infradead.org>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
 X-SRS-Rewrite: SMTP reverse-path rewritten from <dwmw2@infradead.org> by
  merlin.infradead.org. See http://www.infradead.org/rpr.html
-X-Mailman-Approved-At: Fri, 26 Apr 2019 23:26:20 -0700
+X-Mailman-Approved-At: Sat, 27 Apr 2019 04:08:39 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -60,69 +62,85 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============8748854341223116160=="
+Content-Type: multipart/mixed; boundary="===============3588958995828172001=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 
---===============8748854341223116160==
+--===============3588958995828172001==
 Content-Type: multipart/signed; micalg="sha-256";
 	protocol="application/x-pkcs7-signature";
-	boundary="=-iXziIZyNPGgyPwSQStzd"
+	boundary="=-5Ff7SfUA00fG4nkz6sfs"
 
 
---=-iXziIZyNPGgyPwSQStzd
+--=-5Ff7SfUA00fG4nkz6sfs
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-I've been looking at kexec into Xen, and from Xen.
+On Sat, 2019-04-27 at 08:15 +0200, David Woodhouse wrote:
+> I've been looking at kexec into Xen, and from Xen.
+>=20
+> Kexec-tools doesn't support Multiboot v2, and doesn't treat the Xen
+> image as relocatable. So it loads it at address zero, which causes lots
+> of amusement:
+>=20
+> Firstly, head.S trusts the low memory limit found in the BDA, which has
+> been scribbled on. Hacking around that and setting no-real-mode does
+> make kexec into Xen from Linux work.
+>=20
+> Secondly, kexec (in xen_kexec_load()) adds a mapping of the 0-1MiB
+> region, which "overlaps" with where Xen is actually loaded, so *Xen*
+> refuses the kexec_load hypercall.
+>=20
+> For kexec from Xen I also reverted to kexec-tools 2.0.16 as commit
+> 894bea9335f57b62c ("kexec-tools: Perform run-time linking of
+> libxenctrl.so") seems to have broken things by not always defining
+> HAVE_LIBXENCTRL when it should. I'll fix that shortly.
+>=20
+> Most of the above is relatively simply worked around by hacking the Xen
+> image to be ET_DYN (so that kexec will relocate it) and then using
+> kexec --mem-min=3D0x100000. I'll probably implement Multiboot v2 support
+> in kexec-tools to allow for saner relocation.
+>=20
+> We should fix head.S. One option is to recognise when the load address
+> is zero, and automatically eschew the BDA and trigger the no-real-mode
+> behaviour when that is the case. Better suggestions welcome.
+>=20
+> Should we also avoid having a load segment at offset zero in the image,
+> so that it doesn't scribble on the BDA by default?
+>=20
+> Should we also fix Xen's kexec_load not to refuse overlapping segments
+> if they are not loaded (bufsz=3D=3D0)? I'm not quite sure what's going on
+> there; doesn't this happen with paging disabled anyway, so why would we
+> need an explicit mapping of RAM?
 
-Kexec-tools doesn't support Multiboot v2, and doesn't treat the Xen
-image as relocatable. So it loads it at address zero, which causes lots
-of amusement:
+Oh, and then there's this...
 
-Firstly, head.S trusts the low memory limit found in the BDA, which has
-been scribbled on. Hacking around that and setting no-real-mode does
-make kexec into Xen from Linux work.
+[dwmw2@localhost kexec-tools]$ sudo mv /dev/xen/hypercall /dev/xen/nothyper=
+call
+[dwmw2@localhost kexec-tools]$ sudo ./build/sbin/kexec -l /root/xen  --mem-=
+min=3D0x200000
+[dwmw2@localhost kexec-tools]$ sudo mv /dev/xen/nothypercall /dev/xen/hyper=
+call
+[dwmw2@localhost kexec-tools]$ sudo ./build/sbin/kexec -l /root/xen  --mem-=
+min=3D0x200000
+xencall: error: alloc_pages: mmap failed: Invalid argument
 
-Secondly, kexec (in xen_kexec_load()) adds a mapping of the 0-1MiB
-region, which "overlaps" with where Xen is actually loaded, so *Xen*
-refuses the kexec_load hypercall.
+openat(AT_FDCWD, "/dev/xen/privcmd", O_RDWR|O_CLOEXEC) =3D 4
+openat(AT_FDCWD, "/dev/xen/hypercall", O_RDWR|O_CLOEXEC) =3D 5
+openat(AT_FDCWD, "/dev/xen/privcmd", O_RDWR|O_CLOEXEC) =3D 6
+openat(AT_FDCWD, "/dev/xen/privcmd", O_RDWR|O_CLOEXEC) =3D 7
+openat(AT_FDCWD, "/dev/xen/hypercall", O_RDWR|O_CLOEXEC) =3D 8
+openat(AT_FDCWD, "/dev/xen/privcmd", O_RDWR|O_CLOEXEC) =3D 9
+ioctl(9, _IOC(_IOC_NONE, 0x50, 0x5, 0x10), 0x7ffe34ea3650) =3D 0
+mmap(NULL, 2641920, PROT_READ|PROT_WRITE, MAP_SHARED, 5, 0) =3D -1 EINVAL (=
+Invalid argument)
+write(2, "xencall: ", 9xencall: )                =3D 9
+write(2, "error: ", 7error: )                  =3D 7
+write(2, "alloc_pages: mmap failed", 24alloc_pages: mmap failed) =3D 24
+write(2, ": Invalid argument", 18: Invalid argument)      =3D 18
 
-For kexec from Xen I also reverted to kexec-tools 2.0.16 as commit
-894bea9335f57b62c ("kexec-tools: Perform run-time linking of
-libxenctrl.so") seems to have broken things by not always defining
-HAVE_LIBXENCTRL when it should. I'll fix that shortly.
-
-Most of the above is relatively simply worked around by hacking the Xen
-image to be ET_DYN (so that kexec will relocate it) and then using
-kexec --mem-min=3D0x100000. I'll probably implement Multiboot v2 support
-in kexec-tools to allow for saner relocation.
-
-We should fix head.S. One option is to recognise when the load address
-is zero, and automatically eschew the BDA and trigger the no-real-mode
-behaviour when that is the case. Better suggestions welcome.
-
-Should we also avoid having a load segment at offset zero in the image,
-so that it doesn't scribble on the BDA by default?
-
-Should we also fix Xen's kexec_load not to refuse overlapping segments
-if they are not loaded (bufsz=3D=3D0)? I'm not quite sure what's going on
-there; doesn't this happen with paging disabled anyway, so why would we
-need an explicit mapping of RAM?
-
-After that, I'm looking at using Xen as a crash kernel, which means I
-really don't want it scribbling on low memory that it hasn't been
-explicitly told it can use. First attempt at this is at=20
-http://david.woodhou.se/0001-x86-boot-Use-trampoline_protmode_entry-in-plac=
-e.patch
-but as noted there, it only works for a single processor for now; I'll
-fix it as described therein.
-
-
-
-
---=-iXziIZyNPGgyPwSQStzd
+--=-5Ff7SfUA00fG4nkz6sfs
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Disposition: attachment; filename="smime.p7s"
 Content-Transfer-Encoding: base64
@@ -205,26 +223,26 @@ BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
 BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
 ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
 ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
-NDI3MDYxNTUyWjAvBgkqhkiG9w0BCQQxIgQgytoO2EHoDwIVrxTNwQmz4+y/G6yuEC8LkWhR9wmo
-tQkwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+NDI3MTA1NDIzWjAvBgkqhkiG9w0BCQQxIgQgPmBmwu2rg4rtjn8FkySuCs6pankiByS08qv+MB9f
+Z6Mwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
 TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
 PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
 aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
 BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
 A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
 bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
-DQEBAQUABIIBAG+f8QlYYLMB5ls3BNTgfO5tBT2GhovKH5lpQ4hDd+jQ/ade0SpNVolHqrHwIIV5
-s27VcSUGFs07yUB5/qoj0RrgeBp5/o2lmtwSwKrm6hOLO7vuaWWzxM+y/vOWQ08Oslz+j3qwFq+t
-l0Iyu+cIfUd4T7Pe7TiW3fIiiPO013jugw6F1UhwGviKqeONsxpnnqrL419A2YF146r1I+4MTkkS
-x1Y5D6X2XolUfSfiakJzdG9Vc1Dg9wv4n4sbjouKEbuuGg93BQqv2rj58Pwcfllm76Mld6/XN7zJ
-29lvzr8mBNxmpOs7KnrL3Yrek66GrvJ9P8fi2r7cdUGY8PvrHkQAAAAAAAA=
+DQEBAQUABIIBAAAlq8vMa3N7/v0RCrHbfuUXTMykR1UCA84BAVHYV/MqLoSMRBhZ7XyLPYFK+bN6
+3ae2XwMaFI/qyCroEmsT57fzpt78qmDGhFq5+v5seAx1NJewUZhW4ikG/2oAWZxzVLdkriSqJ9Xg
+YEEh1Kb7olZxUnwmUM3zGYSdr0iJ1x+v0sV67ZE0tGFFVLvM2u8mO6qrs99s1WZ6cC2OvAuCt6F8
+ObkaHH3fpgUsEK5fTUGh19e7eVA20tRlzRC+Z7fua1Lev97C8tIQ1+r3xRM++nmiizvzq32l6sSs
+vHcPcg/4xRo5E/TS3DfZcEAv1X8kf5dusk0XEC7lWppCl2fQPogAAAAAAAA=
 
 
---=-iXziIZyNPGgyPwSQStzd--
+--=-5Ff7SfUA00fG4nkz6sfs--
 
 
 
---===============8748854341223116160==
+--===============3588958995828172001==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -235,6 +253,6 @@ kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
 
---===============8748854341223116160==--
+--===============3588958995828172001==--
 
 
