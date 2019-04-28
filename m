@@ -2,36 +2,53 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F06C3B5DA
-	for <lists+kexec@lfdr.de>; Sun, 28 Apr 2019 12:53:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA509BB3B
+	for <lists+kexec@lfdr.de>; Sun, 28 Apr 2019 23:12:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	Mime-Version:Date:To:From:Subject:Message-ID:Reply-To:Cc:
+	Mime-Version:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=uzoHt6rTheGGiq95Tr+qAnqF85wG0z6ecSeG8YRLvYc=; b=WbF
-	hjVDYTXOHvKXjcaklKhkKcgtnp3G0rVcjApXh7BlkbzMvKoISgKqkUWGmGKPW+Zfmj2PnPRzekqVm
-	kiPue+bMCnvOfbbQ81Oj2gK78zzWfMkbmIfova6nGroAq7bhyrZNN8tS5sR6MiEs1DihIxEwqNKRw
-	t+kIlm+u5ijHuJROZ/6kaBDPjAaVL2xj5zWbeUDhqwOZAc8RA41Vf4CcA51dOaRqPQqqAWwMV9BOm
-	g32EhE1+Qn8XX8gtrFO2vRpAaxXv+JT86GAxanpN2Gzo+yWC+AsC+iVYx6ucFteWkW6QC/26xIM+o
-	acwlqOYQg6acaNRIp/+mrXw+iaJ+PmQ==;
+	References:List-Owner; bh=OjLqgubljFAKwT/3R6XK+UozGktS4rveqvsASn2sonE=; b=KTz
+	BxjfhW5eQ5p1KDPgrEvdl3zWfIf5nH9OA3byQcki9HMi6kqNyTh6qtzaedKYBVxTeeE3SzjM6I6yv
+	tRxSAieLqNjOl4KEWG7KNDp0dyGKvNwNh6C2WErSLAn493AlCWLs0hfoXs6teM7QT3OA7udacrD1U
+	Xe6ZoZHztscSzkFa5uh/1tBEbIQu/37O/IR2PhK40f4QimRT7pghV4VdYAQHiih+oU1XpK/XVFkIJ
+	ukAGiK3ex/6WqvPeoA4s720VH1uWT002WGKMvuqQjleE59EDF+U7GHtQzU3vygrfvjD9l1uIdgA3H
+	miTyWkKj/kEwxPaKTnex0Mly1KJsbkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKhQV-0007Wd-Nv; Sun, 28 Apr 2019 10:52:55 +0000
-Received: from 54-240-197-238.amazon.com ([54.240.197.238]
- helo=u3832b3a9db3152.hfa13.amazon.com)
- by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKhPw-0007VX-7I
- for kexec@lists.infradead.org; Sun, 28 Apr 2019 10:52:20 +0000
-Message-ID: <3d9c5c7c501b4d97feffae2bdb6fc84fb40e144a.camel@infradead.org>
-Subject: [PATCH] xen: Avoid overlapping segments in low memory
+	id 1hKr6D-0000iZ-I5; Sun, 28 Apr 2019 21:12:37 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hKqzT-0007hT-2U
+ for kexec@bombadil.infradead.org; Sun, 28 Apr 2019 21:05:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Mime-Version:Content-Type:Date:Cc:To:
+ From:Subject:Message-ID:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=aSc61iNKIsfkXQjOaE1a91ng80v9JTvuTGtjAuv/74M=; b=JoF2CFTzlZ/AxdRj57GGh0G5L3
+ TouucvsQsRYLgqOYQ/9ZU2bpbAFu0nZa2Okn4kVS8FbrW4SyxZeo1OKju+lL77DV/jPzx+UtbfFNk
+ DOwkhZQ0JgmMhj/yXLlxlbJqhtqBsLIWq9a5gypapuatbxheyJyimNUK52Xbw64yTiOhEG4gHlljs
+ VUaTqAjgxZOWTeug1dOHESG49+Wu7lKc4mak7HclzHKWvdzLTdGKyHWByDwRLBIop7ArDBW/3CMIK
+ aP4MOVEB8BCmp2KTgYl6v8i/MvHZfArDwV8UAc7RxZv6HH86MDju6fTf8Cdsb3WaO40W+gP0nH6zs
+ P2OXrFEg==;
+Received: from [54.239.6.177]
+ (helo=acc-sw-10-95-74-0-slot--0-port--22-10g---level.amazon.com)
+ by merlin.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hKqzP-0001d2-BQ; Sun, 28 Apr 2019 21:05:35 +0000
+Message-ID: <e5872703412f9a56c10df52d9793ca2a6401d7f0.camel@infradead.org>
+Subject: Real mode kexec failure with non-IDE disk
 From: David Woodhouse <dwmw2@infradead.org>
-To: kexec <kexec@lists.infradead.org>
-Date: Sun, 28 Apr 2019 13:52:12 +0300
+To: seabios@seabios.org
+Date: Mon, 29 Apr 2019 00:05:33 +0300
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
-X-Mailman-Approved-At: Sun, 28 Apr 2019 03:52:54 -0700
+X-SRS-Rewrite: SMTP reverse-path rewritten from <dwmw2@infradead.org> by
+ merlin.infradead.org. See http://www.infradead.org/rpr.html
+X-Mailman-Approved-At: Sun, 28 Apr 2019 14:12:33 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -43,174 +60,48 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: multipart/mixed; boundary="===============6491993105850171727=="
+Cc: kexec <kexec@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============5815395699117560061=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 
---===============6491993105850171727==
+--===============5815395699117560061==
 Content-Type: multipart/signed; micalg="sha-256";
 	protocol="application/x-pkcs7-signature";
-	boundary="=-zoREpeGRbNqEarK/1XXl"
+	boundary="=-2r/VbjXD4ehs18VIxDGi"
 
 
---=-zoREpeGRbNqEarK/1XXl
+--=-2r/VbjXD4ehs18VIxDGi
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-From: David Woodhouse <dwmw@amazon.co.uk>
+When I kexec either Xen or Linux in real mode, from either Xen or
+Linux, it fails.
 
-Unlike Linux which creates a full identity mapping, Xen only maps those
-segments which are explicitly requested. Therefore, xen_kexec_load()
-silently adds in a segment from zero to 1MiB to ensure that VGA memory
-and other things are accessible.
+The last thing I see looks like SeaBIOS trying to use SMM for call32:
 
-However, this doesn't work when there are already segments to be loaded
-under 1MiB, because the overlap causes Xen to reject the kexec_load.
+----------------
+IN:=20
+0x00000000000f70ec:  mov    %eax,%esi
+0x00000000000f70ef:  mov    $0xb5,%eax
+0x00000000000f70f5:  mov    $0x1234,%ecx
+0x00000000000f70fb:  mov    $0xef3dc,%ebx
+0x00000000000f7101:  out    %al,$0xb2
+0x00000000000f7103:  pause =20
 
-Be more careful and just infill the ranges which are required instead
-of na=C3=AFvely adding a full 0-1MiB segment at the end of the list.
+----------------
+IN:=20
+0x00000000000ef3db:  hlt   =20
 
-Signed-off-by: David Woodhouse <dwmw@amazon.co.uk>
----
-Of course, if kexec didn't choose to put a whole bunch of stuff
-gratuitously below 1MiB =E2=80=94 especially, if it didn't choose to scribb=
-le
-over the BIOS Data Area in the zero page =E2=80=94 that would be kind of ni=
-ce
-too. qv.
+This happens when the real mode boot code calls INT 13h to read from
+the disk. It seems to happen with virtio and SATA disks.
 
- kexec/kexec-xen.c | 73 +++++++++++++++++++++++++++++++++++------------
- 1 file changed, 54 insertions(+), 19 deletions(-)
+This is with the Ubuntu-packaged 1.10.2-1ubuntu1 SeaBIOS. Switching to
+an IDE disk, or booting with 'edd=3Dskipmbr', makes Xen work and Linux
+get a little further before it dies anyway.
 
-diff --git a/kexec/kexec-xen.c b/kexec/kexec-xen.c
-index 1887390..c326955 100644
---- a/kexec/kexec-xen.c
-+++ b/kexec/kexec-xen.c
-@@ -64,15 +64,18 @@ int __xc_interface_close(xc_interface *xch)
- }
- #endif /* CONFIG_LIBXENCTRL_DL */
-=20
-+#define IDENTMAP_1MiB (1024 * 1024)
-+
- int xen_kexec_load(struct kexec_info *info)
- {
--	uint32_t nr_segments =3D info->nr_segments;
-+	uint32_t nr_segments =3D info->nr_segments, nr_low_segments =3D 0;
- 	struct kexec_segment *segments =3D info->segment;
-+	uint64_t low_watermark =3D 0;
- 	xc_interface *xch;
- 	xc_hypercall_buffer_array_t *array =3D NULL;
- 	uint8_t type;
- 	uint8_t arch;
--	xen_kexec_segment_t *xen_segs;
-+	xen_kexec_segment_t *xen_segs, *seg;
- 	int s;
- 	int ret =3D -1;
-=20
-@@ -80,7 +83,28 @@ int xen_kexec_load(struct kexec_info *info)
- 	if (!xch)
- 		return -1;
-=20
--	xen_segs =3D calloc(nr_segments + 1, sizeof(*xen_segs));
-+	/*
-+	 * Ensure 0 - 1 MiB is mapped and accessible by the image.
-+	 * This allows access to the VGA memory and the region
-+	 * purgatory copies in the crash case.
-+	 *
-+	 * First, count the number of additional segments which will
-+	 * need to be added in between the ones in segments[].
-+	 *
-+	 * The segments are already sorted.
-+	 */
-+	for (s =3D 0; s < nr_segments && (uint64_t)segments[s].mem <=3D IDENTMAP_=
-1MiB; s++) {
-+		if ((uint64_t)segments[s].mem > low_watermark)
-+			nr_low_segments++;
-+
-+		low_watermark =3D (uint64_t)segments[s].mem + segments[s].memsz;
-+	}
-+	if (low_watermark < IDENTMAP_1MiB)
-+		nr_low_segments++;
-+
-+	low_watermark =3D 0;
-+
-+	xen_segs =3D calloc(nr_segments + nr_low_segments, sizeof(*xen_segs));
- 	if (!xen_segs)
- 		goto out;
-=20
-@@ -88,32 +112,43 @@ int xen_kexec_load(struct kexec_info *info)
- 	if (array =3D=3D NULL)
- 		goto out;
-=20
-+	seg =3D xen_segs;
- 	for (s =3D 0; s < nr_segments; s++) {
- 		DECLARE_HYPERCALL_BUFFER(void, seg_buf);
-=20
-+		if (low_watermark < IDENTMAP_1MiB && (uint64_t)segments[s].mem > low_wat=
-ermark) {
-+			set_xen_guest_handle(seg->buf.h, HYPERCALL_BUFFER_NULL);
-+			seg->buf_size =3D 0;
-+			seg->dest_maddr =3D low_watermark;
-+			low_watermark =3D (uint64_t)segments[s].mem;
-+			if (low_watermark > IDENTMAP_1MiB)
-+				low_watermark =3D IDENTMAP_1MiB;
-+			seg->dest_size =3D low_watermark - seg->dest_maddr;
-+			seg++;
-+		}
-+
- 		seg_buf =3D xc_hypercall_buffer_array_alloc(xch, array, s,
- 							  seg_buf, segments[s].bufsz);
- 		if (seg_buf =3D=3D NULL)
- 			goto out;
- 		memcpy(seg_buf, segments[s].buf, segments[s].bufsz);
-=20
--		set_xen_guest_handle(xen_segs[s].buf.h, seg_buf);
--		xen_segs[s].buf_size =3D segments[s].bufsz;
--		xen_segs[s].dest_maddr =3D (uint64_t)segments[s].mem;
--		xen_segs[s].dest_size =3D segments[s].memsz;
-+		set_xen_guest_handle(seg->buf.h, seg_buf);
-+		seg->buf_size =3D segments[s].bufsz;
-+		seg->dest_maddr =3D (uint64_t)segments[s].mem;
-+		seg->dest_size =3D segments[s].memsz;
-+		seg++;
-+
-+		low_watermark =3D (uint64_t)segments[s].mem + segments[s].memsz;
- 	}
-=20
--	/*
--	 * Ensure 0 - 1 MiB is mapped and accessible by the image.
--	 *
--	 * This allows access to the VGA memory and the region
--	 * purgatory copies in the crash case.
--	 */
--	set_xen_guest_handle(xen_segs[s].buf.h, HYPERCALL_BUFFER_NULL);
--	xen_segs[s].buf_size =3D 0;
--	xen_segs[s].dest_maddr =3D 0;
--	xen_segs[s].dest_size =3D 1 * 1024 * 1024;
--	nr_segments++;
-+	if ((uint64_t)low_watermark < IDENTMAP_1MiB) {
-+		set_xen_guest_handle(seg->buf.h, HYPERCALL_BUFFER_NULL);
-+		seg->buf_size =3D 0;
-+		seg->dest_maddr =3D low_watermark;
-+		seg->dest_size =3D IDENTMAP_1MiB - low_watermark;
-+		seg++;
-+	}
-=20
- 	type =3D (info->kexec_flags & KEXEC_ON_CRASH) ? KEXEC_TYPE_CRASH
- 		: KEXEC_TYPE_DEFAULT;
-@@ -125,7 +160,7 @@ int xen_kexec_load(struct kexec_info *info)
- #endif
-=20
- 	ret =3D xc_kexec_load(xch, type, arch, (uint64_t)info->entry,
--			    nr_segments, xen_segs);
-+			    nr_segments + nr_low_segments, xen_segs);
-=20
- out:
- 	xc_hypercall_buffer_array_destroy(xch, array);
-
-
---=-zoREpeGRbNqEarK/1XXl
+--=-2r/VbjXD4ehs18VIxDGi
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Disposition: attachment; filename="smime.p7s"
 Content-Transfer-Encoding: base64
@@ -293,26 +184,26 @@ BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
 BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
 ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
 ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
-NDI4MTA1MjEyWjAvBgkqhkiG9w0BCQQxIgQgjh3X9sSOPGvvJlsXVtHjvtZXrPDfgUbu9y/OYalw
-8Eowgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+NDI4MjEwNTMzWjAvBgkqhkiG9w0BCQQxIgQgkyPAgb7bgPrMJxviMAjJi7tnPHTpWL+Tz6DECbDE
+ZXQwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
 TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
 PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
 aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
 BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
 A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
 bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
-DQEBAQUABIIBACy0tumkFysyTZuzMB94285hy2VBeJTueCUk5/5TYHCzTxbCJvLP+PLHfvMKnBKO
-ANFhOAVE0qLXfaSFALeymYRmkGRp30YV0lnq2bo0If9WutursofrLxGT3CG3EXz2YkRk2O8Nhu1M
-JcQTbxsoJGuxGetbs0g2jJrvNnrT/4ul5DoYB+vRrmyeHDlN0KZnz7ojRbzTxmuLoADUgCK7a7kl
-njL6n3Wrs+CTv2d3xUPJo4O/HglExQNBeJ/arDhePFCLh+28FJT6r+SGaFjmC3NyCY46W1U9+SSI
-u4p874UEEmVk/gqPGHyX7ugVwLvBYxN6bsem8ZCrGiDh0+yEfO4AAAAAAAA=
+DQEBAQUABIIBAC8oR0OG0PKRbDZaI8UEMSWTePDbVYTioX4Yye4fVMweqP6DB57cYb8X/j6heoaG
+sJcniE0JxZghOjLiWs8z0/0lmGPg5RDIHZ4HDKgdu3VGEvd4JLDH20pnLI9Ooy02qe1xykaSvZ9Z
+KVXnUWX7ne1KIp7PhgOMNklnGL8ndPzltXyLguEvBnw8ldqNhkCVKOQBeNEGSBzzhY4Odl9M0Mc2
+f1cbS01w6iok95Dc2MVP7Z+SchjdKy8oglx5hUuPj3oYwLwybZ0RQRZ4SkJMe1spYQv8TFJtHo7S
+KVPw4+fmN55oWzrgqIiciVitx5VxlHpj+CbbBZkRvuhcjSIP9TMAAAAAAAA=
 
 
---=-zoREpeGRbNqEarK/1XXl--
+--=-2r/VbjXD4ehs18VIxDGi--
 
 
 
---===============6491993105850171727==
+--===============5815395699117560061==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -323,6 +214,6 @@ kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
 
---===============6491993105850171727==--
+--===============5815395699117560061==--
 
 
