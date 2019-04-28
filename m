@@ -2,64 +2,36 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FFCBB5B3
-	for <lists+kexec@lfdr.de>; Sun, 28 Apr 2019 10:37:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F06C3B5DA
+	for <lists+kexec@lfdr.de>; Sun, 28 Apr 2019 12:53:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QOLVNtas2orAsDb+aHH1bmcmhVnuD14NoKv6vgRGAdY=; b=hanuDl/hRPQBw3
-	v4S6loETUriUt/ZLR1zzfL3y/jE3e61j56mRYQfLYbDB6ZkVqzpn16canaP1+rpafMgV6V10jf/ei
-	yvvQjOMX3iT61buBJBdNKZopUUz45hFCOzt0MDMVLFm3hepnZkPFAG4Ihao2clXLQewkXPM62Iq7S
-	KKaIKjhpoSnbgFXF40hyNWNdCzKSnMTfmu7ao3MpXaBtxkLiUt5BSElCJ6AKj6gz+EmmoI9Gj2hzY
-	FbeKt1lYdubZWPj6T2JRdNSE1v9ii3K72AWI4KhNEylngDVWKQNh6eQHxts22wTZHxC8J/ZwZeARt
-	ZAGJUn9HdQd+uK9TCIUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Mime-Version:Date:To:From:Subject:Message-ID:Reply-To:Cc:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=uzoHt6rTheGGiq95Tr+qAnqF85wG0z6ecSeG8YRLvYc=; b=WbF
+	hjVDYTXOHvKXjcaklKhkKcgtnp3G0rVcjApXh7BlkbzMvKoISgKqkUWGmGKPW+Zfmj2PnPRzekqVm
+	kiPue+bMCnvOfbbQ81Oj2gK78zzWfMkbmIfova6nGroAq7bhyrZNN8tS5sR6MiEs1DihIxEwqNKRw
+	t+kIlm+u5ijHuJROZ/6kaBDPjAaVL2xj5zWbeUDhqwOZAc8RA41Vf4CcA51dOaRqPQqqAWwMV9BOm
+	g32EhE1+Qn8XX8gtrFO2vRpAaxXv+JT86GAxanpN2Gzo+yWC+AsC+iVYx6ucFteWkW6QC/26xIM+o
+	acwlqOYQg6acaNRIp/+mrXw+iaJ+PmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKfJd-0000V2-Ly; Sun, 28 Apr 2019 08:37:41 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKfJb-0000Ue-4z; Sun, 28 Apr 2019 08:37:40 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id BEE19308425B;
- Sun, 28 Apr 2019 08:37:36 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-104.pek2.redhat.com
- [10.72.12.104])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id EF1721001DCE;
- Sun, 28 Apr 2019 08:37:14 +0000 (UTC)
-Date: Sun, 28 Apr 2019 16:37:10 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
- more indicant
-Message-ID: <20190428083710.GA11981@dhcp-128-65.nay.redhat.com>
-References: <1556087581-14513-1-git-send-email-kernelfans@gmail.com>
- <10dc5468-6cd9-85c7-ba66-1dfa5aa922b7@suse.com>
- <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Sun, 28 Apr 2019 08:37:38 +0000 (UTC)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_013739_233060_AB94E949 
-X-CRM114-Status: GOOD (  19.70  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+	id 1hKhQV-0007Wd-Nv; Sun, 28 Apr 2019 10:52:55 +0000
+Received: from 54-240-197-238.amazon.com ([54.240.197.238]
+ helo=u3832b3a9db3152.hfa13.amazon.com)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hKhPw-0007VX-7I
+ for kexec@lists.infradead.org; Sun, 28 Apr 2019 10:52:20 +0000
+Message-ID: <3d9c5c7c501b4d97feffae2bdb6fc84fb40e144a.camel@infradead.org>
+Subject: [PATCH] xen: Avoid overlapping segments in low memory
+From: David Woodhouse <dwmw2@infradead.org>
+To: kexec <kexec@lists.infradead.org>
+Date: Sun, 28 Apr 2019 13:52:12 +0300
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
+X-Mailman-Approved-At: Sun, 28 Apr 2019 03:52:54 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -71,81 +43,286 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Julien Thierry <julien.thierry@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Palmer Dabbelt <palmer@sifive.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Stefan Agner <stefan@agner.ch>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>, Logan Gunthorpe <logang@deltatee.com>,
- linux-s390@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Hari Bathini <hbathini@linux.ibm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Fenghua Yu <fenghua.yu@intel.com>, Tony Luck <tony.luck@intel.com>,
- Will Deacon <will.deacon@arm.com>, Johannes Weiner <hannes@cmpxchg.org>,
- Ananth N Mavinakayanahalli <ananth@linux.vnet.ibm.com>,
- Borislav Petkov <bp@alien8.de>, David Hildenbrand <david@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
- Matthias Brugger <mbrugger@suse.com>, Baoquan He <bhe@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, kexec@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
- Thomas Bogendoerfer <tbogendoerfer@suse.de>,
- Paul Burton <paul.burton@mips.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Greg Hackmann <ghackmann@android.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============6491993105850171727=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 04/25/19 at 04:20pm, Pingfan Liu wrote:
-> On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
-> >
-> >
-> [...]
-> > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
-> > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
-> > >               return -EINVAL;
-> > >       }
-> > > +     if (*crash_size == 0)
-> > > +             return -EINVAL;
-> >
-> > This covers the case where I pass an argument like "crashkernel=0M" ?
-> > Can't we fix that by using kstrtoull() in memparse and check if the return value
-> > is < 0? In that case we could return without updating the retptr and we will be
-> > fine.
-> >
-> It seems that kstrtoull() treats 0M as invalid parameter, while
-> simple_strtoull() does not.
-> 
-> If changed like your suggestion, then all the callers of memparse()
-> will treats 0M as invalid parameter. This affects many components
-> besides kexec.  Not sure this can be done or not.
 
-simple_strtoull is obsolete, move to kstrtoull is the right way.
+--===============6491993105850171727==
+Content-Type: multipart/signed; micalg="sha-256";
+	protocol="application/x-pkcs7-signature";
+	boundary="=-zoREpeGRbNqEarK/1XXl"
 
-$ git grep memparse|wc
-    158     950   10479
 
-Except some documentation/tools etc there are still a log of callers
-which directly use the return value as the ull number without error
-checking.
+--=-zoREpeGRbNqEarK/1XXl
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-So it would be good to mark memparse as obsolete as well in
-lib/cmdline.c, and introduce a new function eg. kmemparse() to use
-kstrtoull,  and return a real error code, and save the size in an
-argument like &size.  Then update X86 crashkernel code to use it.
+From: David Woodhouse <dwmw@amazon.co.uk>
 
-Thanks
-Dave
+Unlike Linux which creates a full identity mapping, Xen only maps those
+segments which are explicitly requested. Therefore, xen_kexec_load()
+silently adds in a segment from zero to 1MiB to ensure that VGA memory
+and other things are accessible.
+
+However, this doesn't work when there are already segments to be loaded
+under 1MiB, because the overlap causes Xen to reject the kexec_load.
+
+Be more careful and just infill the ranges which are required instead
+of na=C3=AFvely adding a full 0-1MiB segment at the end of the list.
+
+Signed-off-by: David Woodhouse <dwmw@amazon.co.uk>
+---
+Of course, if kexec didn't choose to put a whole bunch of stuff
+gratuitously below 1MiB =E2=80=94 especially, if it didn't choose to scribb=
+le
+over the BIOS Data Area in the zero page =E2=80=94 that would be kind of ni=
+ce
+too. qv.
+
+ kexec/kexec-xen.c | 73 +++++++++++++++++++++++++++++++++++------------
+ 1 file changed, 54 insertions(+), 19 deletions(-)
+
+diff --git a/kexec/kexec-xen.c b/kexec/kexec-xen.c
+index 1887390..c326955 100644
+--- a/kexec/kexec-xen.c
++++ b/kexec/kexec-xen.c
+@@ -64,15 +64,18 @@ int __xc_interface_close(xc_interface *xch)
+ }
+ #endif /* CONFIG_LIBXENCTRL_DL */
+=20
++#define IDENTMAP_1MiB (1024 * 1024)
++
+ int xen_kexec_load(struct kexec_info *info)
+ {
+-	uint32_t nr_segments =3D info->nr_segments;
++	uint32_t nr_segments =3D info->nr_segments, nr_low_segments =3D 0;
+ 	struct kexec_segment *segments =3D info->segment;
++	uint64_t low_watermark =3D 0;
+ 	xc_interface *xch;
+ 	xc_hypercall_buffer_array_t *array =3D NULL;
+ 	uint8_t type;
+ 	uint8_t arch;
+-	xen_kexec_segment_t *xen_segs;
++	xen_kexec_segment_t *xen_segs, *seg;
+ 	int s;
+ 	int ret =3D -1;
+=20
+@@ -80,7 +83,28 @@ int xen_kexec_load(struct kexec_info *info)
+ 	if (!xch)
+ 		return -1;
+=20
+-	xen_segs =3D calloc(nr_segments + 1, sizeof(*xen_segs));
++	/*
++	 * Ensure 0 - 1 MiB is mapped and accessible by the image.
++	 * This allows access to the VGA memory and the region
++	 * purgatory copies in the crash case.
++	 *
++	 * First, count the number of additional segments which will
++	 * need to be added in between the ones in segments[].
++	 *
++	 * The segments are already sorted.
++	 */
++	for (s =3D 0; s < nr_segments && (uint64_t)segments[s].mem <=3D IDENTMAP_=
+1MiB; s++) {
++		if ((uint64_t)segments[s].mem > low_watermark)
++			nr_low_segments++;
++
++		low_watermark =3D (uint64_t)segments[s].mem + segments[s].memsz;
++	}
++	if (low_watermark < IDENTMAP_1MiB)
++		nr_low_segments++;
++
++	low_watermark =3D 0;
++
++	xen_segs =3D calloc(nr_segments + nr_low_segments, sizeof(*xen_segs));
+ 	if (!xen_segs)
+ 		goto out;
+=20
+@@ -88,32 +112,43 @@ int xen_kexec_load(struct kexec_info *info)
+ 	if (array =3D=3D NULL)
+ 		goto out;
+=20
++	seg =3D xen_segs;
+ 	for (s =3D 0; s < nr_segments; s++) {
+ 		DECLARE_HYPERCALL_BUFFER(void, seg_buf);
+=20
++		if (low_watermark < IDENTMAP_1MiB && (uint64_t)segments[s].mem > low_wat=
+ermark) {
++			set_xen_guest_handle(seg->buf.h, HYPERCALL_BUFFER_NULL);
++			seg->buf_size =3D 0;
++			seg->dest_maddr =3D low_watermark;
++			low_watermark =3D (uint64_t)segments[s].mem;
++			if (low_watermark > IDENTMAP_1MiB)
++				low_watermark =3D IDENTMAP_1MiB;
++			seg->dest_size =3D low_watermark - seg->dest_maddr;
++			seg++;
++		}
++
+ 		seg_buf =3D xc_hypercall_buffer_array_alloc(xch, array, s,
+ 							  seg_buf, segments[s].bufsz);
+ 		if (seg_buf =3D=3D NULL)
+ 			goto out;
+ 		memcpy(seg_buf, segments[s].buf, segments[s].bufsz);
+=20
+-		set_xen_guest_handle(xen_segs[s].buf.h, seg_buf);
+-		xen_segs[s].buf_size =3D segments[s].bufsz;
+-		xen_segs[s].dest_maddr =3D (uint64_t)segments[s].mem;
+-		xen_segs[s].dest_size =3D segments[s].memsz;
++		set_xen_guest_handle(seg->buf.h, seg_buf);
++		seg->buf_size =3D segments[s].bufsz;
++		seg->dest_maddr =3D (uint64_t)segments[s].mem;
++		seg->dest_size =3D segments[s].memsz;
++		seg++;
++
++		low_watermark =3D (uint64_t)segments[s].mem + segments[s].memsz;
+ 	}
+=20
+-	/*
+-	 * Ensure 0 - 1 MiB is mapped and accessible by the image.
+-	 *
+-	 * This allows access to the VGA memory and the region
+-	 * purgatory copies in the crash case.
+-	 */
+-	set_xen_guest_handle(xen_segs[s].buf.h, HYPERCALL_BUFFER_NULL);
+-	xen_segs[s].buf_size =3D 0;
+-	xen_segs[s].dest_maddr =3D 0;
+-	xen_segs[s].dest_size =3D 1 * 1024 * 1024;
+-	nr_segments++;
++	if ((uint64_t)low_watermark < IDENTMAP_1MiB) {
++		set_xen_guest_handle(seg->buf.h, HYPERCALL_BUFFER_NULL);
++		seg->buf_size =3D 0;
++		seg->dest_maddr =3D low_watermark;
++		seg->dest_size =3D IDENTMAP_1MiB - low_watermark;
++		seg++;
++	}
+=20
+ 	type =3D (info->kexec_flags & KEXEC_ON_CRASH) ? KEXEC_TYPE_CRASH
+ 		: KEXEC_TYPE_DEFAULT;
+@@ -125,7 +160,7 @@ int xen_kexec_load(struct kexec_info *info)
+ #endif
+=20
+ 	ret =3D xc_kexec_load(xch, type, arch, (uint64_t)info->entry,
+-			    nr_segments, xen_segs);
++			    nr_segments + nr_low_segments, xen_segs);
+=20
+ out:
+ 	xc_hypercall_buffer_array_destroy(xch, array);
+
+
+--=-zoREpeGRbNqEarK/1XXl
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCCECow
+ggUcMIIEBKADAgECAhEA4rtJSHkq7AnpxKUY8ZlYZjANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0EwHhcNMTkwMTAyMDAwMDAwWhcNMjIwMTAxMjM1
+OTU5WjAkMSIwIAYJKoZIhvcNAQkBFhNkd213MkBpbmZyYWRlYWQub3JnMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAsv3wObLTCbUA7GJqKj9vHGf+Fa+tpkO+ZRVve9EpNsMsfXhvFpb8
+RgL8vD+L133wK6csYoDU7zKiAo92FMUWaY1Hy6HqvVr9oevfTV3xhB5rQO1RHJoAfkvhy+wpjo7Q
+cXuzkOpibq2YurVStHAiGqAOMGMXhcVGqPuGhcVcVzVUjsvEzAV9Po9K2rpZ52FE4rDkpDK1pBK+
+uOAyOkgIg/cD8Kugav5tyapydeWMZRJQH1vMQ6OVT24CyAn2yXm2NgTQMS1mpzStP2ioPtTnszIQ
+Ih7ASVzhV6csHb8Yrkx8mgllOyrt9Y2kWRRJFm/FPRNEurOeNV6lnYAXOymVJwIDAQABo4IB0zCC
+Ac8wHwYDVR0jBBgwFoAUgq9sjPjF/pZhfOgfPStxSF7Ei8AwHQYDVR0OBBYEFLfuNf820LvaT4AK
+xrGK3EKx1DE7MA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUF
+BwMEBggrBgEFBQcDAjBGBgNVHSAEPzA9MDsGDCsGAQQBsjEBAgEDBTArMCkGCCsGAQUFBwIBFh1o
+dHRwczovL3NlY3VyZS5jb21vZG8ubmV0L0NQUzBaBgNVHR8EUzBRME+gTaBLhklodHRwOi8vY3Js
+LmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWls
+Q0EuY3JsMIGLBggrBgEFBQcBAQR/MH0wVQYIKwYBBQUHMAKGSWh0dHA6Ly9jcnQuY29tb2RvY2Eu
+Y29tL0NPTU9ET1JTQUNsaWVudEF1dGhlbnRpY2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTAeBgNVHREEFzAVgRNkd213MkBpbmZy
+YWRlYWQub3JnMA0GCSqGSIb3DQEBCwUAA4IBAQALbSykFusvvVkSIWttcEeifOGGKs7Wx2f5f45b
+nv2ghcxK5URjUvCnJhg+soxOMoQLG6+nbhzzb2rLTdRVGbvjZH0fOOzq0LShq0EXsqnJbbuwJhK+
+PnBtqX5O23PMHutP1l88AtVN+Rb72oSvnD+dK6708JqqUx2MAFLMevrhJRXLjKb2Mm+/8XBpEw+B
+7DisN4TMlLB/d55WnT9UPNHmQ+3KFL7QrTO8hYExkU849g58Dn3Nw3oCbMUgny81ocrLlB2Z5fFG
+Qu1AdNiBA+kg/UxzyJZpFbKfCITd5yX49bOriL692aMVDyqUvh8fP+T99PqorH4cIJP6OxSTdxKM
+MIIFHDCCBASgAwIBAgIRAOK7SUh5KuwJ6cSlGPGZWGYwDQYJKoZIhvcNAQELBQAwgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTE5MDEwMjAwMDAwMFoXDTIyMDEwMTIz
+NTk1OVowJDEiMCAGCSqGSIb3DQEJARYTZHdtdzJAaW5mcmFkZWFkLm9yZzCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBALL98Dmy0wm1AOxiaio/bxxn/hWvraZDvmUVb3vRKTbDLH14bxaW
+/EYC/Lw/i9d98CunLGKA1O8yogKPdhTFFmmNR8uh6r1a/aHr301d8YQea0DtURyaAH5L4cvsKY6O
+0HF7s5DqYm6tmLq1UrRwIhqgDjBjF4XFRqj7hoXFXFc1VI7LxMwFfT6PStq6WedhROKw5KQytaQS
+vrjgMjpICIP3A/CroGr+bcmqcnXljGUSUB9bzEOjlU9uAsgJ9sl5tjYE0DEtZqc0rT9oqD7U57My
+ECIewElc4VenLB2/GK5MfJoJZTsq7fWNpFkUSRZvxT0TRLqznjVepZ2AFzsplScCAwEAAaOCAdMw
+ggHPMB8GA1UdIwQYMBaAFIKvbIz4xf6WYXzoHz0rcUhexIvAMB0GA1UdDgQWBBS37jX/NtC72k+A
+CsaxitxCsdQxOzAOBgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEF
+BQcDBAYIKwYBBQUHAwIwRgYDVR0gBD8wPTA7BgwrBgEEAbIxAQIBAwUwKzApBggrBgEFBQcCARYd
+aHR0cHM6Ly9zZWN1cmUuY29tb2RvLm5ldC9DUFMwWgYDVR0fBFMwUTBPoE2gS4ZJaHR0cDovL2Ny
+bC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ2xpZW50QXV0aGVudGljYXRpb25hbmRTZWN1cmVFbWFp
+bENBLmNybDCBiwYIKwYBBQUHAQEEfzB9MFUGCCsGAQUFBzAChklodHRwOi8vY3J0LmNvbW9kb2Nh
+LmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWlsQ0EuY3J0MCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wHgYDVR0RBBcwFYETZHdtdzJAaW5m
+cmFkZWFkLm9yZzANBgkqhkiG9w0BAQsFAAOCAQEAC20spBbrL71ZEiFrbXBHonzhhirO1sdn+X+O
+W579oIXMSuVEY1LwpyYYPrKMTjKECxuvp24c829qy03UVRm742R9Hzjs6tC0oatBF7KpyW27sCYS
+vj5wbal+TttzzB7rT9ZfPALVTfkW+9qEr5w/nSuu9PCaqlMdjABSzHr64SUVy4ym9jJvv/FwaRMP
+gew4rDeEzJSwf3eeVp0/VDzR5kPtyhS+0K0zvIWBMZFPOPYOfA59zcN6AmzFIJ8vNaHKy5QdmeXx
+RkLtQHTYgQPpIP1Mc8iWaRWynwiE3ecl+PWzq4i+vdmjFQ8qlL4fHz/k/fT6qKx+HCCT+jsUk3cS
+jDCCBeYwggPOoAMCAQICEGqb4Tg7/ytrnwHV2binUlYwDQYJKoZIhvcNAQEMBQAwgYUxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSswKQYDVQQDEyJDT01PRE8gUlNBIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MB4XDTEzMDExMDAwMDAwMFoXDTI4MDEwOTIzNTk1OVowgZcxCzAJBgNVBAYT
+AkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAYBgNV
+BAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRoZW50
+aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAvrOeV6wodnVAFsc4A5jTxhh2IVDzJXkLTLWg0X06WD6cpzEup/Y0dtmEatrQPTRI5Or1u6zf
++bGBSyD9aH95dDSmeny1nxdlYCeXIoymMv6pQHJGNcIDpFDIMypVpVSRsivlJTRENf+RKwrB6vcf
+WlP8dSsE3Rfywq09N0ZfxcBa39V0wsGtkGWC+eQKiz4pBZYKjrc5NOpG9qrxpZxyb4o4yNNwTqza
+aPpGRqXB7IMjtf7tTmU2jqPMLxFNe1VXj9XB1rHvbRikw8lBoNoSWY66nJN/VCJv5ym6Q0mdCbDK
+CMPybTjoNCQuelc0IAaO4nLUXk0BOSxSxt8kCvsUtQIDAQABo4IBPDCCATgwHwYDVR0jBBgwFoAU
+u69+Aj36pvE8hI6t7jiY7NkyMtQwHQYDVR0OBBYEFIKvbIz4xf6WYXzoHz0rcUhexIvAMA4GA1Ud
+DwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMBEGA1UdIAQKMAgwBgYEVR0gADBMBgNVHR8E
+RTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9u
+QXV0aG9yaXR5LmNybDBxBggrBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29t
+b2RvY2EuY29tL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAHhcsoEoNE887l9Wzp+XVuyPomsX9vP2
+SQgG1NgvNc3fQP7TcePo7EIMERoh42awGGsma65u/ITse2hKZHzT0CBxhuhb6txM1n/y78e/4ZOs
+0j8CGpfb+SJA3GaBQ+394k+z3ZByWPQedXLL1OdK8aRINTsjk/H5Ns77zwbjOKkDamxlpZ4TKSDM
+KVmU/PUWNMKSTvtlenlxBhh7ETrN543j/Q6qqgCWgWuMAXijnRglp9fyadqGOncjZjaaSOGTTFB+
+E2pvOUtY+hPebuPtTbq7vODqzCM6ryEhNhzf+enm0zlpXK7q332nXttNtjv7VFNYG+I31gnMrwfH
+M5tdhYF/8v5UY5g2xANPECTQdu9vWPoqNSGDt87b3gXb1AiGGaI06vzgkejL580ul+9hz9D0S0U4
+jkhJiA7EuTecP/CFtR72uYRBcunwwH3fciPjviDDAI9SnC/2aPY8ydehzuZutLbZdRJ5PDEJM/1t
+yZR2niOYihZ+FCbtf3D9mB12D4ln9icgc7CwaxpNSCPt8i/GqK2HsOgkL3VYnwtx7cJUmpvVdZ4o
+gnzgXtgtdk3ShrtOS1iAN2ZBXFiRmjVzmehoMof06r1xub+85hFQzVxZx5/bRaTKTlL8YXLI8nAb
+R9HWdFqzcOoB/hxfEyIQpx9/s81rgzdEZOofSlZHynoSMYIDyjCCA8YCAQEwga0wgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
+ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
+NDI4MTA1MjEyWjAvBgkqhkiG9w0BCQQxIgQgjh3X9sSOPGvvJlsXVtHjvtZXrPDfgUbu9y/OYalw
+8Eowgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
+PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
+aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
+DQEBAQUABIIBACy0tumkFysyTZuzMB94285hy2VBeJTueCUk5/5TYHCzTxbCJvLP+PLHfvMKnBKO
+ANFhOAVE0qLXfaSFALeymYRmkGRp30YV0lnq2bo0If9WutursofrLxGT3CG3EXz2YkRk2O8Nhu1M
+JcQTbxsoJGuxGetbs0g2jJrvNnrT/4ul5DoYB+vRrmyeHDlN0KZnz7ojRbzTxmuLoADUgCK7a7kl
+njL6n3Wrs+CTv2d3xUPJo4O/HglExQNBeJ/arDhePFCLh+28FJT6r+SGaFjmC3NyCY46W1U9+SSI
+u4p874UEEmVk/gqPGHyX7ugVwLvBYxN6bsem8ZCrGiDh0+yEfO4AAAAAAAA=
+
+
+--=-zoREpeGRbNqEarK/1XXl--
+
+
+
+--===============6491993105850171727==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
+
+--===============6491993105850171727==--
+
+
