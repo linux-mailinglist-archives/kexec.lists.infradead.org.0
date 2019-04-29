@@ -2,65 +2,135 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDDB7DB61
-	for <lists+kexec@lfdr.de>; Mon, 29 Apr 2019 07:04:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00D8BDDA0
+	for <lists+kexec@lfdr.de>; Mon, 29 Apr 2019 10:21:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gIOquuh6NV02IZFMeFcNkykzSGuXOPczNLEi+ef7O+Q=; b=ILMICssaP+RB8F
-	xfamuagXwwjU9gQ3ZzUPrcBRudV3cTr8jg5vZd9JvQClMefMhae0/oEacE2/k56fal+nh6YMrKxTI
-	vnzEi2bQJNtibipL7tBsLYeXaMYqdWVJ4TgBoVkYTfXbKJyWhhcycWS70Jef2t2k5q2vV0mfmQtNM
-	RhzALFK9wGp8wOJrQSj7kLawW/yrtetE/ooPuIxYSlwcV32rjuTxogM/ZmQyZkI0QX8RQw6QqJAOr
-	B8Rqq1yNSArBrxwJkTpKzdN25xnQDqHfBEj0pav6Esr48XRAVUKqXZXDI+5G/ebXBDmfRoUTwbF4a
-	/ZPkgGyMgcRIHy8B0hGw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OyAj1DjXk4d14txwEsk6wi4rFs3K1T6aIH3aXX+weMQ=; b=Tbfgyf3iTuGE9g
+	f7pxf8C8hOFVH4/d66UGZDZ5YKxdnW4y0l8TkoJu1RPI08aFj6jmIQOwpPmQeBJU3/K7MpinXzGuZ
+	GNC7yisSO1m7TaiAn+R9LqHbVywPHNnd8DyjSxixHXnQfIvpLhokD0d3TYw+iO8T5QBTfkx7eQ1O9
+	YBM7bHgZnCECMu3Lid5PSQpvfSxe5JsUJ48kFPYroZvQH/IQfk09WorW/2mpv/WEQsxPT0BTVhw2S
+	Fu557hSSJAMZeGhDL9wCIWax1R5lHchVeB2TS6604oW/UyZwxEF0kxgi+4Be2JRGegJOE+6Xxo1uG
+	dvTnENm1NR4XPnJOTMFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hKyT2-00009M-IZ; Mon, 29 Apr 2019 05:04:40 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hL1Xl-0002kD-2U; Mon, 29 Apr 2019 08:21:45 +0000
+Received: from mail.grenz-bonn.de ([2001:41d0:1:c648::ffe1])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hKySy-00008w-Ot; Mon, 29 Apr 2019 05:04:38 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 77A4D81F0F;
- Mon, 29 Apr 2019 05:04:34 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-135.pek2.redhat.com
- [10.72.12.135])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3A98F1001DF6;
- Mon, 29 Apr 2019 05:04:14 +0000 (UTC)
-Date: Mon, 29 Apr 2019 13:04:10 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv2] kernel/crash: make parse_crashkernel()'s return value
- more indicant
-Message-ID: <20190429050410.GA7982@dhcp-128-65.nay.redhat.com>
-References: <1556087581-14513-1-git-send-email-kernelfans@gmail.com>
- <10dc5468-6cd9-85c7-ba66-1dfa5aa922b7@suse.com>
- <CAFgQCTstd667wP6g+maxYekz4u3iBR2R=FHUiS1V=XxTs6MKUw@mail.gmail.com>
- <20190428083710.GA11981@dhcp-128-65.nay.redhat.com>
- <CAFgQCTvQezGM7xgY2Q1RSUiQ7wLdxtUAeztrO3AqDfjx8f2kdg@mail.gmail.com>
- <CAFgQCTszGixzH5ZrwOzjbp7W91Wxo3XvA+EeEx0ErVVcYMr0FA@mail.gmail.com>
+ id 1hL1Xg-0002jE-NC
+ for kexec@lists.infradead.org; Mon, 29 Apr 2019 08:21:42 +0000
+Received: from [192.168.178.110] (p4FF5D39A.dip0.t-ipconnect.de
+ [79.245.211.154])
+ by ks357529.kimsufi.com (Postfix) with ESMTPSA id 07F9689F52;
+ Mon, 29 Apr 2019 10:21:33 +0200 (CEST)
+To: kexec@lists.infradead.org
+From: =?UTF-8?Q?Niklas_Hamb=c3=bcchen?= <mail@nh2.me>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mail@nh2.me; prefer-encrypt=mutual; keydata=
+ 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
+Subject: [PATCH 0/2] Improve reading mounts, fixing EFI/ACPI in common
+ scenarios
+Message-ID: <93048bda-26a4-8573-6614-8b98ccb44591@nh2.me>
+Date: Mon, 29 Apr 2019 10:21:33 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFgQCTszGixzH5ZrwOzjbp7W91Wxo3XvA+EeEx0ErVVcYMr0FA@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.27]); Mon, 29 Apr 2019 05:04:35 +0000 (UTC)
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190428_220436_852125_DE3F8EC3 
-X-CRM114-Status: GOOD (  29.78  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190429_012140_905116_A66FF7CC 
+X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -74,125 +144,22 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Julien Thierry <julien.thierry@arm.com>, Yangtao Li <tiny.windzz@gmail.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Palmer Dabbelt <palmer@sifive.com>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Stefan Agner <stefan@agner.ch>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>, Logan Gunthorpe <logang@deltatee.com>,
- linux-s390@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King <linux@armlinux.org.uk>, Ingo Molnar <mingo@redhat.com>,
- Hari Bathini <hbathini@linux.ibm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Fenghua Yu <fenghua.yu@intel.com>, Tony Luck <tony.luck@intel.com>,
- Will Deacon <will.deacon@arm.com>, Johannes Weiner <hannes@cmpxchg.org>,
- Ananth N Mavinakayanahalli <ananth@linux.vnet.ibm.com>,
- Borislav Petkov <bp@alien8.de>, David Hildenbrand <david@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Jens Axboe <axboe@kernel.dk>,
- Matthias Brugger <mbrugger@suse.com>, Baoquan He <bhe@redhat.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, kexec@lists.infradead.org,
- LKML <linux-kernel@vger.kernel.org>, Ralf Baechle <ralf@linux-mips.org>,
- Thomas Bogendoerfer <tbogendoerfer@suse.de>,
- Paul Burton <paul.burton@mips.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Greg Hackmann <ghackmann@android.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mail@nh2.me" <mail@nh2.me>, horms@verge.net.au
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 04/29/19 at 12:48pm, Pingfan Liu wrote:
-> On Mon, Apr 29, 2019 at 11:04 AM Pingfan Liu <kernelfans@gmail.com> wrote:
-> >
-> > On Sun, Apr 28, 2019 at 4:37 PM Dave Young <dyoung@redhat.com> wrote:
-> > >
-> > > On 04/25/19 at 04:20pm, Pingfan Liu wrote:
-> > > > On Wed, Apr 24, 2019 at 4:31 PM Matthias Brugger <mbrugger@suse.com> wrote:
-> > > > >
-> > > > >
-> > > > [...]
-> > > > > > @@ -139,6 +141,8 @@ static int __init parse_crashkernel_simple(char *cmdline,
-> > > > > >               pr_warn("crashkernel: unrecognized char: %c\n", *cur);
-> > > > > >               return -EINVAL;
-> > > > > >       }
-> > > > > > +     if (*crash_size == 0)
-> > > > > > +             return -EINVAL;
-> > > > >
-> > > > > This covers the case where I pass an argument like "crashkernel=0M" ?
-> > > > > Can't we fix that by using kstrtoull() in memparse and check if the return value
-> > > > > is < 0? In that case we could return without updating the retptr and we will be
-> > > > > fine.
-> > > > >
-> > > > It seems that kstrtoull() treats 0M as invalid parameter, while
-> > > > simple_strtoull() does not.
-> > > >
-> > > > If changed like your suggestion, then all the callers of memparse()
-> > > > will treats 0M as invalid parameter. This affects many components
-> > > > besides kexec.  Not sure this can be done or not.
-> > >
-> > > simple_strtoull is obsolete, move to kstrtoull is the right way.
-> > >
-> > > $ git grep memparse|wc
-> > >     158     950   10479
-> > >
-> > > Except some documentation/tools etc there are still a log of callers
-> > > which directly use the return value as the ull number without error
-> > > checking.
-> > >
-> > > So it would be good to mark memparse as obsolete as well in
-> > > lib/cmdline.c, and introduce a new function eg. kmemparse() to use
-> > > kstrtoull,  and return a real error code, and save the size in an
-> > > argument like &size.  Then update X86 crashkernel code to use it.
-> > >
-> > Thank for your good suggestion.
-> >
-> Go through the v5.0 kernel code, I think it will be a huge job.
-> 
-> The difference between unsigned long long simple_strtoull(const char
-> *cp, char **endp, unsigned int base) and int _kstrtoull(const char *s,
-> unsigned int base, unsigned long long *res) is bigger than expected,
-> especially the output parameter @res. Many references to
-> memparse(const char *ptr, char **retptr) rely on @retptr to work. A
-> typical example from arch/x86/kernel/e820.c
->         mem_size = memparse(p, &p);
->         if (p == oldp)
->                 return -EINVAL;
-> 
->         userdef = 1;
->         if (*p == '@') {  <----------- here
->                 start_at = memparse(p+1, &p);
->                 e820__range_add(start_at, mem_size, E820_TYPE_RAM);
->         } else if (*p == '#') {
->                 start_at = memparse(p+1, &p);
->                 e820__range_add(start_at, mem_size, E820_TYPE_ACPI);
->         } else if (*p == '$') {
->                 start_at = memparse(p+1, &p);
->                 e820__range_add(start_at, mem_size, E820_TYPE_RESERVED);
->         }
-> 
-> So we need to resolve the prototype of kstrtoull() firstly, and maybe
-> kstrtouint() etc too. All of them have lots of references in kernel.
-> 
-> Any idea about this?
-
-
-Not only this place, a lot of other places, I think no hurry to fix them
-all at one time.
-
-As we talked just do it according to previous reply,  mark memparse as
-obsolete, and create a new function to use kstrtoull, and make it used
-in crashkernel code first.
-
-Thanks
-Dave
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+SGksCgpwbGVhc2UgZmluZCBiZWxvdyB0d28gZml4ZXMgdG8ga2V4ZWMtdG9vbHMgdGhhdCBpbXBy
+b3ZlIGl0cyBvcGVyYXRpb24Kb24gcmVhZC1vbmx5IGZpbGUgc3lzdGVtcyBhbmQgaW5pdGlhbCBy
+YW1kaXNrcyB3aXRob3V0IC9ldGMvbXRhYiwKYXMgd2VsbCBhcyBtYWtpbmcgZGV0ZWN0aW9uIG9m
+IHN5c2ZzIGFuZCBkZWJ1Z2ZzIG1vcmUgcm9idXN0IGJ5IHJlbHlpbmcKb24gdGhlIGZpbGUgc3lz
+dGVtIHR5cGUgaW5zdGVhZCBvZiBjb252ZW50aW9uYWwgbmFtZXMgdGhhdCBhcmUgbm90IGd1YXJh
+bnRlZWQuCgpCZXN0IGdyZWV0aW5ncywKTmlrbGFzCgpOaWtsYXMgSGFtYsO8Y2hlbiAoMik6CiAg
+eDg2OiBDaGVjayAvcHJvYy9tb3VudHMgYmVmb3JlIG10YWIgZm9yIG1vdW50cwogIHg4NjogRmlu
+ZCBtb3VudHMgYnkgRlMgdHlwZSwgbm90IG5hbWUKCiBrZXhlYy9hcmNoL2kzODYveDg2LWxpbnV4
+LXNldHVwLmMgfCAyMCArKysrKysrKysrKysrKy0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDE0IGlu
+c2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhl
+Ywo=
