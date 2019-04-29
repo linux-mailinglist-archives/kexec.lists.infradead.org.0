@@ -2,137 +2,73 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2589DDA6
-	for <lists+kexec@lfdr.de>; Mon, 29 Apr 2019 10:23:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 847CFE30E
+	for <lists+kexec@lfdr.de>; Mon, 29 Apr 2019 14:51:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FgF75MsW3uSB3PGtPHbw63SjB+WOJCtmHYAVl6NJOyo=; b=CNNdHd8k+1HPlZ
-	GtrlQflOaxYai5ewsZzUZpPBiwUhGjFpZaEAg4JoTVrQU6Fob5429T/wheNvsbzVHRS/qNpi+5W7h
-	P8XKjAI8Y4cteDGrLVcv7Wlol2ubbgFQeuQp9LWzWFqoq2ybLYl4tRoKbp/qCU1A73foP6wKfB11W
-	xeF9brFHRxhkGYxZknjHWMO+2ZXvzqc+UUcKlt/XM4UjByTCA33NHSa54Ekr5XH+zjX0+IfUOA8JR
-	vLr7l65tvQTgADW2eiGL7fLdXuQMOMG3hEJnA87vnQo0zsdnnZBTDs4yZYmP7YbAsML+AOcD2HfUi
-	YFxHMIXyXe4/Cz4rXPTw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qsJGafQJEuOMh5JKEDuHGdSK2vIhqUl8bCtdyIJSt88=; b=nyxftW2UvsESsb
+	LeaVRZV4MDjVGJGRFlULbfFeSKXJ90S0sIMY51MboTbJrcIXcOFFdlHTd+o7NXhA8XN0C2jvj1pp9
+	RG5A8rjfc3JEzaTgPKWfARC19rDmXcmx8rZxd8iUFu2YpPR5sNiWqyFRjM3oukRZU9iWFcfykPB4C
+	NMxOtfvp11LQ6t4Ra1nYK4ZKJAkYgcuZTPjfuum7MSnu9JMOPDFjgPDWmKweW9q3rtqyy0Xy2AJjQ
+	psqpPEvAO/TraS0mGEg+3llVnStc4Fxl/zE6ioZAeqtrtFxQf4Qf9YLLul9C7iXp/nb1aFsEm1iz+
+	Ivv+j+HEANOTlyceHeSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hL1ZJ-00037M-Ut; Mon, 29 Apr 2019 08:23:21 +0000
-Received: from mail.grenz-bonn.de ([2001:41d0:1:c648::ffe1])
+	id 1hL5kb-0004xG-F5; Mon, 29 Apr 2019 12:51:17 +0000
+Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hL1ZE-00036y-RM
- for kexec@lists.infradead.org; Mon, 29 Apr 2019 08:23:20 +0000
-Received: from [192.168.178.110] (p4FF5D39A.dip0.t-ipconnect.de
- [79.245.211.154])
- by ks357529.kimsufi.com (Postfix) with ESMTPSA id 4DFAD8A0F6;
- Mon, 29 Apr 2019 10:23:15 +0200 (CEST)
-Subject: [PATCH 2/2] x86: Find mounts by FS type, not name
-To: kexec@lists.infradead.org
-References: <93048bda-26a4-8573-6614-8b98ccb44591@nh2.me>
-From: =?UTF-8?Q?Niklas_Hamb=c3=bcchen?= <mail@nh2.me>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mail@nh2.me; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <be8c8058-b1bf-75c3-0f9b-4d6c7349f097@nh2.me>
-Date: Mon, 29 Apr 2019 10:23:14 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1hL5kX-0004wR-Ah
+ for kexec@lists.infradead.org; Mon, 29 Apr 2019 12:51:15 +0000
+Received: from zn.tnic (p200300EC2F073600329C23FFFEA6A903.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f07:3600:329c:23ff:fea6:a903])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id E61C11EC027B;
+ Mon, 29 Apr 2019 14:51:04 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1556542265;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=bA2DoZBdBxjCQTavTzxSc5Np+MuR/nnLiokGPyDt0i8=;
+ b=HVlw3m+fIF2XMTA1R+vvf1ylQ6diXofFpsgL4of6CWSFQb6v4/OEzkOvM6zB1xxzh0iPlC
+ dctwnxi0SXRhG0k7iRlkIwjEHwVBT5Wxhfhl+iwKoNWLR6gP/15u0urGvUvWIpVeHVRQjC
+ qJUrgog+zUByu6mW7RxYBNYyMsVaJS8=
+Date: Mon, 29 Apr 2019 14:50:59 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: Baoquan He <bhe@redhat.com>
+Subject: Re: [PATCH v5 1/2] x86/kexec: Build identity mapping for EFI systab
+ and ACPI tables
+Message-ID: <20190429125059.GB2324@zn.tnic>
+References: <20190424092944.30481-1-bhe@redhat.com>
+ <20190424092944.30481-2-bhe@redhat.com>
+ <20190427161121.GC12360@zn.tnic>
+ <20190428054114.GS3584@localhost.localdomain>
 MIME-Version: 1.0
-In-Reply-To: <93048bda-26a4-8573-6614-8b98ccb44591@nh2.me>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190428054114.GS3584@localhost.localdomain>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190429_012317_223146_B6E84278 
-X-CRM114-Status: GOOD (  11.29  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190429_055113_524632_97D402F3 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -144,57 +80,35 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: x86@kernel.org, kasong@redhat.com, fanc.fnst@cn.fujitsu.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, hpa@zytor.com,
+ j-nomura@ce.jp.nec.com, tglx@linutronix.de, dyoung@redhat.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-VGhlIG5hbWUgaW4gbW91bnQgaW52b2NhdGlvbnMgbGlrZQoKCQltb3VudCAtdCBkZWJ1Z2ZzIGRl
-YnVnZnMgL3N5cy9rZXJuZWwvZGVidWcKCmlzIG5vdGhpbmcgYnV0IGNvbnZlbnRpb24gYW5kIGNh
-bm5vdCBiZSByZWxpZWQgdXBvbi4KCkZvciBleGFtcGxlLCBodHRwczovL3d3dy5rZXJuZWwub3Jn
-L2RvYy9Eb2N1bWVudGF0aW9uL2ZpbGVzeXN0ZW1zL2RlYnVnZnMudHh0CnJlY29tbWVuZHMgbWFr
-aW5nIHRoZSBuYW1lICJub25lIiBpbnN0ZWFkOgoKCQltb3VudCAtdCBkZWJ1Z2ZzIG5vbmUgL3N5
-cy9rZXJuZWwvZGVidWcKCmFuZCBtYW55IGV4aXN0aW5nIHN5c3RlbXMgdXNlIG1vdW50cyBuYW1l
-ZCAibm9uZSIgb3Igb3RoZXJ3aXNlLgoKVXNpbmcgYG1udF90eXBlYCBpbnN0ZWFkIG9mIGBtbnRf
-ZnNuYW1lYCBhbGxvd3Mga2V4ZWMgdG8gd29yawpvbiBzdWNoIHN5c3RlbXMuCgpUaGlzIGZpeGVz
-IGFub3RoZXIgaW5zdGFuY2Ugb2YgYHBvd2Vyb2ZmYCBub3Qgd29ya2luZyBvbiBrZXhlYydlZApr
-ZXJuZWxzIGJlY2F1c2UgdGhlIGxhY2sgb2YgY29ycmVjdGx5IG1hdGNoZWQgbW91bnQgcmVzdWx0
-cyBpbiBFRkkKdmFyaWFibGVzIG5vdCBiZWluZyByZWFkIGFuZCBwcm9wYWdhdGVkLgoKU2lnbmVk
-LW9mZi1ieTogTmlrbGFzIEhhbWLDvGNoZW4gPG1haWxAbmgyLm1lPgotLS0KIGtleGVjL2FyY2gv
-aTM4Ni94ODYtbGludXgtc2V0dXAuYyB8IDEyICsrKysrKysrLS0tLQogMSBmaWxlIGNoYW5nZWQs
-IDggaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9rZXhlYy9hcmNo
-L2kzODYveDg2LWxpbnV4LXNldHVwLmMgYi9rZXhlYy9hcmNoL2kzODYveDg2LWxpbnV4LXNldHVw
-LmMKaW5kZXggNzRmYjBjNC4uYjY0M2M4YiAxMDA2NDQKLS0tIGEva2V4ZWMvYXJjaC9pMzg2L3g4
-Ni1saW51eC1zZXR1cC5jCisrKyBiL2tleGVjL2FyY2gvaTM4Ni94ODYtbGludXgtc2V0dXAuYwpA
-QCAtNDMzLDggKzQzMywxMiBAQCBvdXQ6CiAgKiBUaGlzIHJlYWxseSBvbmx5IG1ha2VzIHNlbnNl
-IGZvciB2aXJ0dWFsIGZpbGVzeXN0ZW1zIHRoYXQgYXJlIG9ubHkgZXhwZWN0ZWQKICAqIHRvIGJl
-IG1vdW50ZWQgb25jZSAoc3lzZnMsIGRlYnVnc2ZzLCBwcm9jKSwgYXMgaXQgd2lsbCByZXR1cm4g
-dGhlIGZpcnN0CiAgKiBpbnN0YW5jZSBsaXN0ZWQgaW4gL3Byb2MvbW91bnRzLCBmYWxsaW5nIGJh
-Y2sgdG8gbXRhYiBpZiBhYnNlbnQuCisgKiBXZSBzZWFyY2ggYnkgdHlwZSBhbmQgbm90IGJ5IG5h
-bWUgYmVjYXVzZSB0aGUgbmFtZSBjYW4gYmUgYW55dGhpbmc7CisgKiB3aGlsZSBzZXR0aW5nIHRo
-ZSBuYW1lIGVxdWFsIHRvIHRoZSBtb3VudCBwb2ludCBpcyBjb21tb24sIGl0IGNhbm5vdCBiZQor
-ICogcmVsaWVkIHVwb24sIGFzIGV2ZW4ga2VybmVsIGRvY3VtZW50YXRpb24gZXhhbXBsZXMgcmVj
-b21tZW5kcyB1c2luZworICogIm5vbmUiIGFzIHRoZSBuYW1lIGUuZy4gZm9yIGRlYnVnZnMuCiAg
-Ki8KLWNoYXIgKmZpbmRfbW50X2J5X2ZzbmFtZShjaGFyICpmc25hbWUpCitjaGFyICpmaW5kX21u
-dF9ieV90eXBlKGNoYXIgKnR5cGUpCiB7CiAJRklMRSAqbXRhYjsKIAlzdHJ1Y3QgbW50ZW50ICpt
-bnQ7CkBAIC00NDgsNyArNDUyLDcgQEAgY2hhciAqZmluZF9tbnRfYnlfZnNuYW1lKGNoYXIgKmZz
-bmFtZSkKIAlpZiAoIW10YWIpCiAJCXJldHVybiBOVUxMOwogCWZvcihtbnQgPSBnZXRtbnRlbnQo
-bXRhYik7IG1udDsgbW50ID0gZ2V0bW50ZW50KG10YWIpKSB7Ci0JCWlmIChzdHJjbXAobW50LT5t
-bnRfZnNuYW1lLCBmc25hbWUpID09IDApCisJCWlmIChzdHJjbXAobW50LT5tbnRfdHlwZSwgdHlw
-ZSkgPT0gMCkKIAkJCWJyZWFrOwogCX0KIAltbnRkaXIgPSBtbnQgPyBzdHJkdXAobW50LT5tbnRf
-ZGlyKSA6IE5VTEw7CkBAIC00NjMsNyArNDY3LDcgQEAgc3RhdGljIGludCBnZXRfYm9vdHBhcmFt
-KHZvaWQgKmJ1Ziwgb2ZmX3Qgb2Zmc2V0LCBzaXplX3Qgc2l6ZSkKIAljaGFyIGZpbGVuYW1lW1BB
-VEhfTUFYXTsKIAlpbnQgZXJyLCBoYXNfc3lzZnNfcGFyYW1zID0gMDsKIAotCXN5c2ZzX21udCA9
-IGZpbmRfbW50X2J5X2ZzbmFtZSgic3lzZnMiKTsKKwlzeXNmc19tbnQgPSBmaW5kX21udF9ieV90
-eXBlKCJzeXNmcyIpOwogCWlmIChzeXNmc19tbnQpIHsKIAkJc25wcmludGYoZmlsZW5hbWUsIFBB
-VEhfTUFYLCAiJXMvJXMiLCBzeXNmc19tbnQsCiAJCQkia2VybmVsL2Jvb3RfcGFyYW1zL2RhdGEi
-KTsKQEAgLTQ3NCw3ICs0NzgsNyBAQCBzdGF0aWMgaW50IGdldF9ib290cGFyYW0odm9pZCAqYnVm
-LCBvZmZfdCBvZmZzZXQsIHNpemVfdCBzaXplKQogCX0KIAogCWlmICghaGFzX3N5c2ZzX3BhcmFt
-cykgewotCQlkZWJ1Z2ZzX21udCA9IGZpbmRfbW50X2J5X2ZzbmFtZSgiZGVidWdmcyIpOworCQlk
-ZWJ1Z2ZzX21udCA9IGZpbmRfbW50X2J5X3R5cGUoImRlYnVnZnMiKTsKIAkJaWYgKCFkZWJ1Z2Zz
-X21udCkKIAkJCXJldHVybiAxOwogCQlzbnByaW50ZihmaWxlbmFtZSwgUEFUSF9NQVgsICIlcy8l
-cyIsIGRlYnVnZnNfbW50LAotLSAKMi4xOS4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhl
-Ywo=
+On Sun, Apr 28, 2019 at 01:41:14PM +0800, Baoquan He wrote:
+> About this place, do you think below change is OK to you?
+> 
+> ~~~
+> The current code only builds identity mapping for physical memory during
+> kexec-type loading. The regions reserved by firmware are not covered.
+> In the later code change, the boot decompressing code of kexec-ed kernel
+> will try to access EFI systab and ACPI tables, lacking identity mapping for
+> them will cause error and reset system to firmware.
+
+Yap, better.
+
+Thx.
+
+-- 
+Regards/Gruss,
+    Boris.
+
+Good mailing practices for 400: avoid top-posting and trim the reply.
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
