@@ -2,48 +2,52 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DA37F196
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C316F195
 	for <lists+kexec@lfdr.de>; Tue, 30 Apr 2019 09:45:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fNyk8YE/wGQJxL9Z4liTo/KJLxIYZlCIVyh29UWiyWs=; b=Kkv
-	EJzuU5X57cYghTqV5VdlQRZEiARmWMJHYZFxUhpfKd/a8BML162iRFkEc2valA3IEAtgdqOF+LTGx
-	6RBi5aKXRdtgC+MF9o3NPIr+d5paLvZsmHz9+FPebS/yj3sv2m1So0vY7rgBX2piaw+Wi2m8vW16l
-	6vag7NjaVJ5ewPMwWfeNEXU73bfwYmWNAViBK8aWLQ6ZIqRgwxu08HuuC00/hXfkH9kfAtOoh7Xni
-	u5xRelNyAnCnd9ZoMeUlGqxDOEcYuHY46vTDuLJe1/T00VnS2vrXrAPWQDOrWJbysFdzwyP5J6ydp
-	+R+fe8mG1Iohd3+x9buYFKtEx4tVujw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aeXy6oVkg9Ihs9n3HO8JOO9c0yQSC1FF9wbOzpvClUs=; b=TYkNPttuiopdTXocSbC9ehDQSk
+	P+MzzvSo2rxyWuOEUA9NuLt9MWavjOTm84Ywt+yjXZ7s4XedLbziXJOeR3cs3iAbmdQyJFRe7TN2d
+	RFO3UsxCwjjgjyzKsQiGiM5Jd/ipokUsoO84/qX7eN1mCCrKrdYINUlSMggVBGP89an64JhQf5Vjk
+	rsWwTxbUEUpVeBgesm3nM5vKcNrRBHrf3FFqtd1Dgw/KBkRNgeiU+TWWUlblDgf0N1nNARviuCpNs
+	ael6WtMbe9IW0dZb7u5nrIg3/4cYc3TBnLjp8s5v8z160VdEbBpPOFCUFiNOWNWG/DHdGLAUJtkYq
+	aCMUZ7fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLNRY-0002aS-UQ; Tue, 30 Apr 2019 07:44:48 +0000
+	id 1hLNRd-0002dG-LC; Tue, 30 Apr 2019 07:44:53 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLNRR-0002a5-Be
- for kexec@lists.infradead.org; Tue, 30 Apr 2019 07:44:42 +0000
+ id 1hLNRa-0002cC-Of
+ for kexec@lists.infradead.org; Tue, 30 Apr 2019 07:44:52 +0000
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 9E9493084249;
- Tue, 30 Apr 2019 07:44:40 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 74112811A9;
+ Tue, 30 Apr 2019 07:44:50 +0000 (UTC)
 Received: from localhost.localdomain.com (ovpn-12-43.pek2.redhat.com
  [10.72.12.43])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8720016BEC;
- Tue, 30 Apr 2019 07:44:28 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id CD13188EB;
+ Tue, 30 Apr 2019 07:44:41 +0000 (UTC)
 From: Lianbo Jiang <lijiang@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/3 v3] Add kdump support for the SEV enabled guest
-Date: Tue, 30 Apr 2019 15:44:18 +0800
-Message-Id: <20190430074421.7852-1-lijiang@redhat.com>
+Subject: [PATCH 1/3 v3] x86/kexec: Do not map the kexec area as decrypted when
+ SEV is active
+Date: Tue, 30 Apr 2019 15:44:19 +0800
+Message-Id: <20190430074421.7852-2-lijiang@redhat.com>
+In-Reply-To: <20190430074421.7852-1-lijiang@redhat.com>
+References: <20190430074421.7852-1-lijiang@redhat.com>
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.40]); Tue, 30 Apr 2019 07:44:40 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.27]); Tue, 30 Apr 2019 07:44:50 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_004441_417036_3399771C 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20190430_004450_842605_3FD42CE4 
+X-CRM114-Status: GOOD (  19.28  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -74,68 +78,105 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Just like the physical machines support kdump, the virtual machines
-also need kdump. When a virtual machine panic, we also need to dump
-its memory for analysis.
+When a virtual machine panic, also need to dump its memory for analysis.
+But, for the SEV virtual machine, the memory is encrypted. To support
+the SEV kdump, these changes would be necessary, otherwise, it will not
+work.
 
-For the SEV virtual machine, the memory is also encrypted. When SEV
-is enabled, the second kernel images(kernel and initrd) are loaded
-into the encrypted areas. Unlike the SME, the second kernel images
-are loaded into the decrypted areas.
+Lets consider the following situations:
 
-Because of this difference between SME and SEV, we need to properly
-map the kexec memory area in order to correctly access it.
+[1] How to load the images(kernel and initrd) when SEV is enabled in the
+    first kernel?
 
-Test tools:
-makedumpfile[v1.6.5]:
-git://git.code.sf.net/p/makedumpfile/code
-commit <d222b01e516b> ("Add support for AMD Secure Memory Encryption")
-Note: This patch was merged into the devel branch.
+    Based on the amd-memory-encryption.txt and SEV's patch series, the
+    boot images must be encrypted before guest(VM) can be booted(Please
+    see Secure Encrypted Virutualization Key Management 'Launching a
+    guest(usage flow)'). Naturally use the similar way to load the images
+    (kernel and initrd) to the crash reserved areas, and these areas are
+    encrypted when SEV is active.
 
-crash-7.2.5: https://github.com/crash-utility/crash.git
-commit <942d813cda35> ("Fix for the "kmem -i" option on Linux 5.0")
+    That is to say, when SEV is active in the first kernel, need to load
+    the kernel and initrd to the encrypted areas, so i made the following
+    changes:
 
-kexec-tools-2.0.19:
-git://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git
-commit <942d813cda35> ("Fix for the kmem '-i' option on Linux 5.0")
-http://lists.infradead.org/pipermail/kexec/2019-March/022576.html
-Note: The second kernel cann't boot without this patch.
+    [a] Do not map the kexec area as decrypted when SEV is active.
+        Currently, the arch_kexec_post_{alloc,free}_pages() unconditionally
+        maps the kexec areas as decrypted. Obviously, for the SEV case, it
+        can not work well, need to improve them.
 
-kernel:
-git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
-commit <f261c4e529da> ("Merge branch 'akpm' (patches from Andrew)")
+    [b] Set the C-bit in the identity map page table when SEV is active.
+        Because the second kernel images(kernel and initrd) are loaded to
+        the encrypted areas, in order to correctly access these encrypted
+        memory(pages), need to set the C-bit in the identity mapping page
+        table when kexec builds the identity mapping page table.
 
-Test steps:
-[1] load the vmlinux and initrd for kdump
-# kexec -p /boot/vmlinuz-5.0.0+ --initrd=/boot/initramfs-5.0.0+kdump.img --command-line="BOOT_IMAGE=(hd0,gpt2)/vmlinuz-5.0.0+ ro resume=UUID=126c5e95-fc8b-48d6-a23b-28409198a52e console=ttyS0,115200 earlyprintk=serial irqpoll nr_cpus=1 reset_devices cgroup_disable=memory mce=off numa=off udev.children-max=2 panic=10 rootflags=nofail acpi_no_memhotplug transparent_hugepage=never disable_cpu_apicid=0"
+[2] How to dump the old memory in the second kernel?
 
-[2] trigger panic
-# echo 1 > /proc/sys/kernel/sysrq
-# echo c > /proc/sysrq-trigger
+    Here, it is similar to the SME kdump, if SEV was enabled in the first
+    kernel, the old memory is also encrypted, the old memory has to be
+    remapped with memory encryption mask in order to access it properly.
 
-[3] check and parse the vmcore
-# crash vmlinux /var/crash/127.0.0.1-2019-03-15-05\:03\:42/vmcore
+    [a] The ioremap_encrypted() is still necessary.
+        Used to remap the old memory with memory encryption mask.
 
-Changes since v1:
-1. Modify the patch subject prefixes.
-2. Improve patch log: add parentheses at the end of the function names.
-3. Fix the multiple confusing checks.
-4. Add comment in the arch_kexec_post_alloc_pages().
+    [b] Enable dumping encrypted memory when SEV was active.
+        Because the whole memory is encrypted in the first kernel when SEV
+        is enabled, that is to say, the notes and elfcorehdr are also
+        encrypted, and they are also saved to the encrypted memory.
+        Following commit 992b649a3f01 ("kdump, proc/vmcore: Enable kdumping
+        encrypted memory with SME enabled"), both SME and SEV cases need to
+        be considered and modified correctly.
 
-Changes since v2:
-1. Add the explanation to the commit message[Boris' suggestion].
-2. Improve the patch log.
+As above mentioned, currently, the arch_kexec_post_{alloc,free}_pages()
+unconditionally maps the kexec area as decrypted. Lets make sure that
+arch_kexec_post_{alloc,free}_pages() does not clear the memory encryption
+mask from the kexec area when SEV is active.
 
-Lianbo Jiang (3):
-  x86/kexec: Do not map the kexec area as decrypted when SEV is active
-  x86/kexec: Set the C-bit in the identity map page table when SEV is
-    active
-  kdump,proc/vmcore: Enable dumping encrypted memory when SEV was active
+Co-developed-by: Brijesh Singh <brijesh.singh@amd.com>
+Signed-off-by: Brijesh Singh <brijesh.singh@amd.com>
+Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+---
+ arch/x86/kernel/machine_kexec_64.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
- arch/x86/kernel/machine_kexec_64.c | 27 ++++++++++++++++++++++++++-
- fs/proc/vmcore.c                   |  6 +++---
- 2 files changed, 29 insertions(+), 4 deletions(-)
-
+diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
+index ceba408ea982..f60611531d17 100644
+--- a/arch/x86/kernel/machine_kexec_64.c
++++ b/arch/x86/kernel/machine_kexec_64.c
+@@ -559,18 +559,33 @@ void arch_kexec_unprotect_crashkres(void)
+ 	kexec_mark_crashkres(false);
+ }
+ 
++/*
++ * During a traditional boot under SME, SME will encrypt the kernel,
++ * so the SME kexec kernel also needs to be un-encrypted in order to
++ * replicate a normal SME boot.
++ * During a traditional boot under SEV, the kernel has already been
++ * loaded encrypted, so the SEV kexec kernel needs to be encrypted in
++ * order to replicate a normal SEV boot.
++ */
+ int arch_kexec_post_alloc_pages(void *vaddr, unsigned int pages, gfp_t gfp)
+ {
++	if (sev_active())
++		return 0;
++
+ 	/*
+ 	 * If SME is active we need to be sure that kexec pages are
+ 	 * not encrypted because when we boot to the new kernel the
+ 	 * pages won't be accessed encrypted (initially).
+ 	 */
+ 	return set_memory_decrypted((unsigned long)vaddr, pages);
++
+ }
+ 
+ void arch_kexec_pre_free_pages(void *vaddr, unsigned int pages)
+ {
++	if (sev_active())
++		return;
++
+ 	/*
+ 	 * If SME is active we need to reset the pages back to being
+ 	 * an encrypted mapping before freeing them.
 -- 
 2.17.1
 
