@@ -2,85 +2,37 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D0E11040B
-	for <lists+kexec@lfdr.de>; Wed,  1 May 2019 04:56:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EDA113856
+	for <lists+kexec@lfdr.de>; Sat,  4 May 2019 10:58:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M8C4z3XbKUxx8c5i0yGIDG9ycja/yKPyjTm3jXUCVHU=; b=UDL4lnq9E86aMI
-	Z1u20qIPy4zqcVf5AWyrNnDLionNeFN7P/OzeErYsVQhfew586pnXtfLOZhvwgNR0Z/IbB8URMiVM
-	zJ0adVDNAGgj+gBLhEGQDf6eYl73Q6ynwJESuB38s/Z+GNQ9kxAmUrvJODll0/JcdPStf7T6BeRPa
-	j+gxtJSn2CUgshbbWE0A/4cgRltmq/RnTyOFihA8H9k2XO6p7+efkW55PixvcRHYcpXcCkXGOB+LW
-	PIdEadgQKn0GS0dj7vCKp/r5lkeQhvoCSrQXO1rsQqxYcAtsHbL+SBpJwrzfkQSOG5ff7r81NWDw9
-	JbUPoi9p+AUpszq/8uLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Mime-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NbwtKgox6NORrh7cqzeA0Vzyjhet9kMmDeqdk4qASeg=; b=NHkNJU3xP+V0Kv+d0txV0k7kc
+	ep2iUJGIwCsGTslpp12NxvObzlPJ0hK0kBOFYH6noPWHtcKAQ+AR5ofbf9r8fPAAduUsG7N5dM4iB
+	JRKeeOLjZGtTyMphbjlqb+F1MCstlFEHsNK4hwDjrHHrn8+q+BSxUipf5WR9Ut8w1HSCz6TOZw+oJ
+	KxzwX+jRNyeaPVTR7/um6C0d4LEqxsKyLYSRV74BDTU0SbHeuDXILB97DAnUzIeiVvcg3oK76LvQS
+	t6sFtt2Mc0xIxKEJi0QYjLhhN9gTev+HWu7qop6iEgCVlWacElcrbDvICrIMY6Me51u45cKPu0UGQ
+	lOXW+DJZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hLfPl-0002Dc-5q; Wed, 01 May 2019 02:56:09 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
- by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hLfPh-0002D7-IK
- for kexec@lists.infradead.org; Wed, 01 May 2019 02:56:07 +0000
-Received: by mail-qk1-x741.google.com with SMTP id p19so9540625qkm.10
- for <kexec@lists.infradead.org>; Tue, 30 Apr 2019 19:56:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=koconnor.net; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=LGvoQUpNmw9qp3dd1OFBjFizWZ57BKqaS2ny30Zxcrk=;
- b=Ppi5aFZ8tanOeYPAXZtWiPt3dNNeAKFuZuuCC+VgnzOqmU8jeZDzl6qfWsz1vjvCBR
- puad2t9xrPBqMUOR3U56315ygI1ojdC1LyxmPaqbbwN1Z0B3X5b69XmO1Kn6ycdPTHJH
- 3A8IcjC22YrYsPiyAE4dQliBErp5UWZIN/dXI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LGvoQUpNmw9qp3dd1OFBjFizWZ57BKqaS2ny30Zxcrk=;
- b=OfGMQ9q17xuiZXfdG1UYxJ+kASdtUHLpJE8lRZtUdRXH9PQumiVAta77M15CWGFwHW
- KjZZgHqQ/gCxjCAdUY+OzY1nhAmq91Uj+ZAHR/qwY5Bx/WEpr3vVcE12OOMaGefVyXdh
- QE7hBRzDQVQ91uPzPh6aUyJ//ZhJfj9eiK3OBsDPNZmvDDcvOiK+1goxcXH1+39q36Qh
- mGK3lSIaUEvBAIK7ZVBS7ZKAR2ZhGeDZM2zd1r9h8J3z60VPQj/UwqRrSpf8DkGD20sF
- LegVuH/k7S7MixB8z5dTx6OVw7P0/uRx0/QTnrerMD18nFa7SBh5JK1viu9mJYhWmJHz
- ydxg==
-X-Gm-Message-State: APjAAAULSHQTkThWf717Q4Qmgx95lCR+5HM/Zz+kSk9e00ENULX0x/ud
- IHRYbeb0QpPyEGfq+pvu9I/xnQ==
-X-Google-Smtp-Source: APXvYqyxDG0nocW+Zdu3mYCQtB3xuTJWcrG/a7z1s9ivdyjFlhchDrhUvnYhBT8O5Mc87tgXJzxWRQ==
-X-Received: by 2002:ae9:e109:: with SMTP id g9mr51774679qkm.251.1556679363197; 
- Tue, 30 Apr 2019 19:56:03 -0700 (PDT)
-Received: from localhost ([64.9.249.163])
- by smtp.gmail.com with ESMTPSA id e4sm20442010qtb.61.2019.04.30.19.56.01
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 30 Apr 2019 19:56:01 -0700 (PDT)
-Date: Tue, 30 Apr 2019 22:56:01 -0400
-From: Kevin O'Connor <kevin@koconnor.net>
-To: David Woodhouse <dwmw2@infradead.org>
+	id 1hMqV3-0000xh-S2; Sat, 04 May 2019 08:58:29 +0000
+Received: from [54.239.6.185] (helo=u3832b3a9db3152.ant.amazon.com)
+ by bombadil.infradead.org with esmtpsa (Exim 4.90_1 #2 (Red Hat Linux))
+ id 1hLveA-0007wt-Bj; Wed, 01 May 2019 20:16:06 +0000
+Message-ID: <1689977da7b323b360c35fc021a67e766c3347bb.camel@infradead.org>
 Subject: Re: [SeaBIOS] Real mode kexec failure with non-IDE disk
-Message-ID: <20190501025601.GA5342@morn.lan>
+From: David Woodhouse <dwmw2@infradead.org>
+To: Kevin O'Connor <kevin@koconnor.net>
+Date: Wed, 01 May 2019 23:16:03 +0300
+In-Reply-To: <20190501025601.GA5342@morn.lan>
 References: <e5872703412f9a56c10df52d9793ca2a6401d7f0.camel@infradead.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e5872703412f9a56c10df52d9793ca2a6401d7f0.camel@infradead.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190430_195605_612357_236331FF 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ <20190501025601.GA5342@morn.lan>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
+X-Mailman-Approved-At: Sat, 04 May 2019 01:58:23 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,47 +45,315 @@ List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: seabios@seabios.org, kexec <kexec@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7052497537021981380=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Apr 29, 2019 at 12:05:33AM +0300, David Woodhouse wrote:
-> When I kexec either Xen or Linux in real mode, from either Xen or
-> Linux, it fails.
-> 
-> The last thing I see looks like SeaBIOS trying to use SMM for call32:
-> 
-> ----------------
-> IN: 
-> 0x00000000000f70ec:  mov    %eax,%esi
-> 0x00000000000f70ef:  mov    $0xb5,%eax
-> 0x00000000000f70f5:  mov    $0x1234,%ecx
-> 0x00000000000f70fb:  mov    $0xef3dc,%ebx
-> 0x00000000000f7101:  out    %al,$0xb2
-> 0x00000000000f7103:  pause  
-> 
-> ----------------
-> IN: 
-> 0x00000000000ef3db:  hlt    
-> 
-> This happens when the real mode boot code calls INT 13h to read from
-> the disk. It seems to happen with virtio and SATA disks.
-> 
-> This is with the Ubuntu-packaged 1.10.2-1ubuntu1 SeaBIOS. Switching to
-> an IDE disk, or booting with 'edd=skipmbr', makes Xen work and Linux
-> get a little further before it dies anyway.
 
-Hi David,
+--===============7052497537021981380==
+Content-Type: multipart/signed; micalg="sha-256";
+	protocol="application/x-pkcs7-signature";
+	boundary="=-AHPUHpYFwrFM7Ps8W61U"
 
-That call trace certainly looks odd.  The SeaBIOS debugging info would
-help - try compiling SeaBIOS with debug level 8 and grab the log (as
-described at: https://www.seabios.org/Debugging#Diagnostic_information
-).
 
--Kevin
+--=-AHPUHpYFwrFM7Ps8W61U
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, 2019-04-30 at 22:56 -0400, Kevin O'Connor wrote:
+> Hi David,
+>=20
+> That call trace certainly looks odd.  The SeaBIOS debugging info would
+> help - try compiling SeaBIOS with debug level 8 and grab the log (as
+> described at: https://www.seabios.org/Debugging#Diagnostic_information
+> ).
+
+Choosing Xen because it actually succeeds, while Linux real-mode boot
+then dies a bit later even if I use IDE disks...
+
+This SeaBIOS git master (f4c6e4c1) with an IDE disk, from the moment of
+kexec:
+
+unimplemented handle_15XX:330:
+   a=3D0000ec00  b=3D00000002  c=3D00000000  d=3D00000000 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000000 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D00=
+60  f=3D0246
+enter handle_12:
+   a=3D534d3c00  b=3D0000befe  c=3D00003c00  d=3D002ffb80 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000af1 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D01=
+43  f=3D0202
+invalid handle_legacy_disk:729:
+   a=3D534d4139  b=3D000055aa  c=3D0000fe03  d=3D002ffb81 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00001539 di=3D00000000 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D01=
+5b  f=3D0293
+invalid handle_legacy_disk:729:
+   a=3D534d0201  b=3D00000000  c=3D889f0001  d=3D002f0081 ds=3D8f00 es=3D8e=
+e0 ss=3Dd980
+  si=3D0000aa55 di=3D00000000 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D02=
+02  f=3D0247
+ Xen 4.11.2-pre
+(XEN) Xen version 4.11.2-pre (dwmw@ant.amazon.com) (gcc (Ubuntu 7.3.0-27ubu=
+ntu1~18.04) 7.3.0) debug=3Dn  Wed May  1 22:08:39 IDT 2019
+(XEN) Latest ChangeSet: Wed May 1 13:37:09 2019 +0300 git:7c281700a8
+(XEN) Bootloader: kexec 2.0.19.git
+(XEN) Command line: console=3Dvga,com1
+(XEN) Xen image load base address: 0
+(XEN) Video information:
+(XEN)  VGA is text mode 80x25, font 8x16
+(XEN) Disc information:
+(XEN)  Found 1 MBR signatures
+(XEN)  Found 1 EDD information structures
+
+And this is all I see when the disk is virtio:
+
+unimplemented handle_15XX:330:
+   a=3D0000ec00  b=3D00000002  c=3D00000000  d=3D00000000 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000000 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D00=
+60  f=3D0246
+enter handle_12:
+   a=3D534d3c00  b=3D0000befd  c=3D00003c00  d=3D002ffb40 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000af1 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D01=
+43  f=3D0202
+invalid handle_legacy_disk:729:
+   a=3D534d4139  b=3D000055aa  c=3D0000fe03  d=3D002ffb81 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00001539 di=3D00000000 bp=3D00000000 sp=3D0000fe8e cs=3D8f00 ip=3D01=
+5b  f=3D0293
+
+Increasing debug to 9, I see:
+
+enter handle_15:
+   a=3D0000ec00  b=3D00000002  c=3D00000000  d=3D00000000 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000000 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+60  f=3D0246
+unimplemented handle_15XX:330:
+   a=3D0000ec00  b=3D00000002  c=3D00000000  d=3D00000000 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000000 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+60  f=3D0246
+enter handle_15:
+   a=3D0000e820  b=3D00000000  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000a51 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0246
+enter handle_15:
+   a=3D0000e820  b=3D00000001  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000a65 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0202
+enter handle_15:
+   a=3D0000e820  b=3D00000002  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000a79 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0202
+enter handle_15:
+   a=3D0000e820  b=3D00000003  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000a8d bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0206
+enter handle_15:
+   a=3D0000e820  b=3D00000004  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000aa1 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0202
+enter handle_15:
+   a=3D0000e820  b=3D00000005  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000ab5 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0206
+enter handle_15:
+   a=3D0000e820  b=3D00000006  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000ac9 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0206
+enter handle_15:
+   a=3D0000e820  b=3D00000007  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000add bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D00=
+ec  f=3D0202
+enter handle_15:
+   a=3D534d88f1  b=3D00000000  c=3D00000014  d=3D534d4150 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000af1 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D01=
+12  f=3D0246
+enter handle_15:
+   a=3D534de801  b=3D00000000  c=3D00000000  d=3D534d0000 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000af1 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D01=
+1f  f=3D0246
+enter handle_12:
+   a=3D534d3c00  b=3D0000befd  c=3D00003c00  d=3D002ffb40 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00000000 di=3D00000af1 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D01=
+43  f=3D0202
+invalid handle_legacy_disk:729:
+   a=3D534d4139  b=3D000055aa  c=3D0000fe03  d=3D002ffb81 ds=3D8f00 es=3D8f=
+00 ss=3Dd980
+  si=3D00001539 di=3D00000000 bp=3D00000000 sp=3D0000f96e cs=3D8f00 ip=3D01=
+5b  f=3D0293
+call32_smm 0x000ed91a e9120
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+vp notify fe003000 (2) -- 0x0
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+handle_smi cmd=3Db5 smbase=3D0x000a0000
+call16_smm 0x00007a79 0 0
+...=20
+
+That just goes on for ever. The full log from boot (including the boot
+of the first kernel) is at http://david.woodhou.se/smi-wtf.txt
+
+
+
+--=-AHPUHpYFwrFM7Ps8W61U
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCCECow
+ggUcMIIEBKADAgECAhEA4rtJSHkq7AnpxKUY8ZlYZjANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0EwHhcNMTkwMTAyMDAwMDAwWhcNMjIwMTAxMjM1
+OTU5WjAkMSIwIAYJKoZIhvcNAQkBFhNkd213MkBpbmZyYWRlYWQub3JnMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAsv3wObLTCbUA7GJqKj9vHGf+Fa+tpkO+ZRVve9EpNsMsfXhvFpb8
+RgL8vD+L133wK6csYoDU7zKiAo92FMUWaY1Hy6HqvVr9oevfTV3xhB5rQO1RHJoAfkvhy+wpjo7Q
+cXuzkOpibq2YurVStHAiGqAOMGMXhcVGqPuGhcVcVzVUjsvEzAV9Po9K2rpZ52FE4rDkpDK1pBK+
+uOAyOkgIg/cD8Kugav5tyapydeWMZRJQH1vMQ6OVT24CyAn2yXm2NgTQMS1mpzStP2ioPtTnszIQ
+Ih7ASVzhV6csHb8Yrkx8mgllOyrt9Y2kWRRJFm/FPRNEurOeNV6lnYAXOymVJwIDAQABo4IB0zCC
+Ac8wHwYDVR0jBBgwFoAUgq9sjPjF/pZhfOgfPStxSF7Ei8AwHQYDVR0OBBYEFLfuNf820LvaT4AK
+xrGK3EKx1DE7MA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUF
+BwMEBggrBgEFBQcDAjBGBgNVHSAEPzA9MDsGDCsGAQQBsjEBAgEDBTArMCkGCCsGAQUFBwIBFh1o
+dHRwczovL3NlY3VyZS5jb21vZG8ubmV0L0NQUzBaBgNVHR8EUzBRME+gTaBLhklodHRwOi8vY3Js
+LmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWls
+Q0EuY3JsMIGLBggrBgEFBQcBAQR/MH0wVQYIKwYBBQUHMAKGSWh0dHA6Ly9jcnQuY29tb2RvY2Eu
+Y29tL0NPTU9ET1JTQUNsaWVudEF1dGhlbnRpY2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTAeBgNVHREEFzAVgRNkd213MkBpbmZy
+YWRlYWQub3JnMA0GCSqGSIb3DQEBCwUAA4IBAQALbSykFusvvVkSIWttcEeifOGGKs7Wx2f5f45b
+nv2ghcxK5URjUvCnJhg+soxOMoQLG6+nbhzzb2rLTdRVGbvjZH0fOOzq0LShq0EXsqnJbbuwJhK+
+PnBtqX5O23PMHutP1l88AtVN+Rb72oSvnD+dK6708JqqUx2MAFLMevrhJRXLjKb2Mm+/8XBpEw+B
+7DisN4TMlLB/d55WnT9UPNHmQ+3KFL7QrTO8hYExkU849g58Dn3Nw3oCbMUgny81ocrLlB2Z5fFG
+Qu1AdNiBA+kg/UxzyJZpFbKfCITd5yX49bOriL692aMVDyqUvh8fP+T99PqorH4cIJP6OxSTdxKM
+MIIFHDCCBASgAwIBAgIRAOK7SUh5KuwJ6cSlGPGZWGYwDQYJKoZIhvcNAQELBQAwgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTE5MDEwMjAwMDAwMFoXDTIyMDEwMTIz
+NTk1OVowJDEiMCAGCSqGSIb3DQEJARYTZHdtdzJAaW5mcmFkZWFkLm9yZzCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBALL98Dmy0wm1AOxiaio/bxxn/hWvraZDvmUVb3vRKTbDLH14bxaW
+/EYC/Lw/i9d98CunLGKA1O8yogKPdhTFFmmNR8uh6r1a/aHr301d8YQea0DtURyaAH5L4cvsKY6O
+0HF7s5DqYm6tmLq1UrRwIhqgDjBjF4XFRqj7hoXFXFc1VI7LxMwFfT6PStq6WedhROKw5KQytaQS
+vrjgMjpICIP3A/CroGr+bcmqcnXljGUSUB9bzEOjlU9uAsgJ9sl5tjYE0DEtZqc0rT9oqD7U57My
+ECIewElc4VenLB2/GK5MfJoJZTsq7fWNpFkUSRZvxT0TRLqznjVepZ2AFzsplScCAwEAAaOCAdMw
+ggHPMB8GA1UdIwQYMBaAFIKvbIz4xf6WYXzoHz0rcUhexIvAMB0GA1UdDgQWBBS37jX/NtC72k+A
+CsaxitxCsdQxOzAOBgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEF
+BQcDBAYIKwYBBQUHAwIwRgYDVR0gBD8wPTA7BgwrBgEEAbIxAQIBAwUwKzApBggrBgEFBQcCARYd
+aHR0cHM6Ly9zZWN1cmUuY29tb2RvLm5ldC9DUFMwWgYDVR0fBFMwUTBPoE2gS4ZJaHR0cDovL2Ny
+bC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ2xpZW50QXV0aGVudGljYXRpb25hbmRTZWN1cmVFbWFp
+bENBLmNybDCBiwYIKwYBBQUHAQEEfzB9MFUGCCsGAQUFBzAChklodHRwOi8vY3J0LmNvbW9kb2Nh
+LmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWlsQ0EuY3J0MCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wHgYDVR0RBBcwFYETZHdtdzJAaW5m
+cmFkZWFkLm9yZzANBgkqhkiG9w0BAQsFAAOCAQEAC20spBbrL71ZEiFrbXBHonzhhirO1sdn+X+O
+W579oIXMSuVEY1LwpyYYPrKMTjKECxuvp24c829qy03UVRm742R9Hzjs6tC0oatBF7KpyW27sCYS
+vj5wbal+TttzzB7rT9ZfPALVTfkW+9qEr5w/nSuu9PCaqlMdjABSzHr64SUVy4ym9jJvv/FwaRMP
+gew4rDeEzJSwf3eeVp0/VDzR5kPtyhS+0K0zvIWBMZFPOPYOfA59zcN6AmzFIJ8vNaHKy5QdmeXx
+RkLtQHTYgQPpIP1Mc8iWaRWynwiE3ecl+PWzq4i+vdmjFQ8qlL4fHz/k/fT6qKx+HCCT+jsUk3cS
+jDCCBeYwggPOoAMCAQICEGqb4Tg7/ytrnwHV2binUlYwDQYJKoZIhvcNAQEMBQAwgYUxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSswKQYDVQQDEyJDT01PRE8gUlNBIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MB4XDTEzMDExMDAwMDAwMFoXDTI4MDEwOTIzNTk1OVowgZcxCzAJBgNVBAYT
+AkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAYBgNV
+BAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRoZW50
+aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAvrOeV6wodnVAFsc4A5jTxhh2IVDzJXkLTLWg0X06WD6cpzEup/Y0dtmEatrQPTRI5Or1u6zf
++bGBSyD9aH95dDSmeny1nxdlYCeXIoymMv6pQHJGNcIDpFDIMypVpVSRsivlJTRENf+RKwrB6vcf
+WlP8dSsE3Rfywq09N0ZfxcBa39V0wsGtkGWC+eQKiz4pBZYKjrc5NOpG9qrxpZxyb4o4yNNwTqza
+aPpGRqXB7IMjtf7tTmU2jqPMLxFNe1VXj9XB1rHvbRikw8lBoNoSWY66nJN/VCJv5ym6Q0mdCbDK
+CMPybTjoNCQuelc0IAaO4nLUXk0BOSxSxt8kCvsUtQIDAQABo4IBPDCCATgwHwYDVR0jBBgwFoAU
+u69+Aj36pvE8hI6t7jiY7NkyMtQwHQYDVR0OBBYEFIKvbIz4xf6WYXzoHz0rcUhexIvAMA4GA1Ud
+DwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMBEGA1UdIAQKMAgwBgYEVR0gADBMBgNVHR8E
+RTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9u
+QXV0aG9yaXR5LmNybDBxBggrBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29t
+b2RvY2EuY29tL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAHhcsoEoNE887l9Wzp+XVuyPomsX9vP2
+SQgG1NgvNc3fQP7TcePo7EIMERoh42awGGsma65u/ITse2hKZHzT0CBxhuhb6txM1n/y78e/4ZOs
+0j8CGpfb+SJA3GaBQ+394k+z3ZByWPQedXLL1OdK8aRINTsjk/H5Ns77zwbjOKkDamxlpZ4TKSDM
+KVmU/PUWNMKSTvtlenlxBhh7ETrN543j/Q6qqgCWgWuMAXijnRglp9fyadqGOncjZjaaSOGTTFB+
+E2pvOUtY+hPebuPtTbq7vODqzCM6ryEhNhzf+enm0zlpXK7q332nXttNtjv7VFNYG+I31gnMrwfH
+M5tdhYF/8v5UY5g2xANPECTQdu9vWPoqNSGDt87b3gXb1AiGGaI06vzgkejL580ul+9hz9D0S0U4
+jkhJiA7EuTecP/CFtR72uYRBcunwwH3fciPjviDDAI9SnC/2aPY8ydehzuZutLbZdRJ5PDEJM/1t
+yZR2niOYihZ+FCbtf3D9mB12D4ln9icgc7CwaxpNSCPt8i/GqK2HsOgkL3VYnwtx7cJUmpvVdZ4o
+gnzgXtgtdk3ShrtOS1iAN2ZBXFiRmjVzmehoMof06r1xub+85hFQzVxZx5/bRaTKTlL8YXLI8nAb
+R9HWdFqzcOoB/hxfEyIQpx9/s81rgzdEZOofSlZHynoSMYIDyjCCA8YCAQEwga0wgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
+ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
+NTAxMjAxNjAzWjAvBgkqhkiG9w0BCQQxIgQgMMlhGwGrPMmTj+0GLXYhYZ0EanETXRLuuxE91LqV
+uvQwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
+PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
+aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
+DQEBAQUABIIBAD6wa6LSe11W92BheWXkay+smkQqjA1q+L1oBQdheEkIMAjfDUVjxEdjFFAmTV+3
+DCXqWedFRv18Iy/CxV121d5LArV1p+KhoGvws0RMT2W2IEkp9q+AfrHgY+oAjAukWlZTc555Gye/
+nnCxSGUUiFR7yh2+8AGCa0MNnOsREtBXJEVmNbdTrnYy52WhzNkBb32vVDLdR+WMDcmtxzsIAtD8
+LSmyGdVXfa+jcB1vFBIkWNX3ZA4uaIMnpuUcjqyR7Z08jxebqmrWHPDacqDOIAwKoQY8u+QBYfmW
+bIUwWBJKx1Za/6ZEoH6wysfqamnj+aFv0/m1R8wk2jeZKrNS34kAAAAAAAA=
+
+
+--=-AHPUHpYFwrFM7Ps8W61U--
+
+
+
+--===============7052497537021981380==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
+
+--===============7052497537021981380==--
+
+
