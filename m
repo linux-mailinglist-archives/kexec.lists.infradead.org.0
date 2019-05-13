@@ -2,86 +2,65 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 798E41A5BD
-	for <lists+kexec@lfdr.de>; Sat, 11 May 2019 02:16:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB12D1AEBC
+	for <lists+kexec@lfdr.de>; Mon, 13 May 2019 03:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EY2eCS010O0uerrp3PPkLM/IE2n/C4K0ErYcP9PyTdE=; b=NOFwBZiJz/tvwg
-	+bZlhKLhsTPk3ElALxnXzNqK9MNNlPSr8zF0kdSqV3eDdUAcgZCicL4w5JbyDVn+ILKnoCb2GxIb7
-	bQv8pXmoNWAXVTSGxPv0lVoJ74ll4AU5f75HUGG6gXW/gnZ7Tqj80+WzXxsJsFdEZSg6MtvM2M6qo
-	VK5UwHREu9OoCWXRtT9D1IbAGSYtIzYI38LAsMfr62XW0wFtEg81yqBHNan2p6kx5E7T2jD8QndqN
-	AKtsvQppKzW6abhiVP+RLdyoHn5DeuGnj8/j+8NKjYjuEsY0qpbd7g+wzEVYTqjLflQPf+hd7xho4
-	w5ffS/Us048l1p81hgDA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MAjYCWoIMJ6foZLLMybEfp5Vqqmy0qvbvIOBQ+DzvpA=; b=hk3NAky042+lVF
+	h7Go7gFoOcQtJBENAXM4xdh4v+Kvc57VAE+krSABSMOLEPPi/d/zo49EMR8WansePKwlnGdOg/D8Y
+	ld2MXhT4LGheljJ29Imhgs8v/0wuKdwuiO1dEKXNoXuaHywfeXGx6UPq+p9oJxU78Dr+pSOXbnk5w
+	r4bGUuRdg7dNqO2C9cScGdmklp6/T1AB6Z1DoZuBEJ7zKH1kwwjE9rlgsN/x02AO663PsBfny2aRO
+	pngIyqa0DAHHuGsVWSbckV1MtXlT+2rHm8n3L4k7n35WPMGUd30xt2M1tmwdCYKsp80Puf49YHR8O
+	gAusn+7qqYX+tscHxWow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hPFgn-0008LW-2i; Sat, 11 May 2019 00:16:33 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1hPzzt-0003IS-PS; Mon, 13 May 2019 01:43:21 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hPFgj-0008L7-9K
- for kexec@lists.infradead.org; Sat, 11 May 2019 00:16:31 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 13so4024996pfw.9
- for <kexec@lists.infradead.org>; Fri, 10 May 2019 17:16:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to:cc
- :content-transfer-encoding;
- bh=5x2tWauOasbmQygmVEvJr0U0PUarRPwShg51MdnJLjQ=;
- b=NYKrGaSy3oF5JiFyyguay0cqndzovy1Tn3SS3vaNjZwpXKRuQy0zWkWUd9u/d/HN6U
- 5CMUK0MO/TDYq2oNKHyk8qs+w2PeD9GHwj3oa7nQ/WP3u6dY+axSPxqLmsCM+oSqz4Gu
- FdZJNC8E4a/27AHMcIVtRU7hPnoexyVQGJwC0+ILnA4VFpmrNR9JMVguBX6jUFOZ60gt
- rIOhzvyZlierHLXSR/qV7I9o4Vn5JUWaQqjyKazH+1/g6JEiDBI+CHocGIpZRfjDUHUe
- jmpP+Ol2NQHqb9A4AjGpq1Rq3dvzMi3GYCvUP0v7MbB8EjkmetHpjN4kGhb4MqkZn3g8
- cmjw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc
- :content-transfer-encoding;
- bh=5x2tWauOasbmQygmVEvJr0U0PUarRPwShg51MdnJLjQ=;
- b=om9Hsvjc7RgexhUWNph8/NruE1hBKEHaAPlJu85Nc/iaB1NaT3IJUAEVaNHKF30pCN
- JQQd3DCbWUvaX2v0Nt/sMGra/d61opozS6toinMepP1W5m2OJU2rgWZrivtnOp5mCHub
- 1wukmHaYs0tHKN5AS7yNbBbG9IzYP6IajZu3vOFnJSYAAqTemfceVX8MIdT+g47iJ0N4
- 8pDVwlKCZfe72bHLhlDxcwK8pSQ/6Y5teKTojlFEzJ8VcWecd1tVeQdCKwaeQG3Tn/O1
- AsSnwxfdp2cBMMh5aiQ+SIovqjTMVct0BrnXBWqnlkkjyPx72ll5JPDTTKllWFBUGPvZ
- bctQ==
-X-Gm-Message-State: APjAAAUmo4Qa+ChLXYF9m4uoVfnZWfEuqkeYEdj3AYNHuwxmvjt6MqBs
- gS20Ld75YzUnhABqrLzlMN9Aw0A5bMOxrd9v01c=
-X-Google-Smtp-Source: APXvYqx1xKu0zJ3XE0Jwmh+BulASMoZnGAAwoGQNyC0SpKI616cDoMY6/HdpLNcr/L7AUE7av17Z1RAHQNfSMQmNW24=
-X-Received: by 2002:aa7:8acb:: with SMTP id b11mr17929164pfd.115.1557533787604; 
- Fri, 10 May 2019 17:16:27 -0700 (PDT)
+ id 1hPzzk-0003Hx-P5
+ for kexec@lists.infradead.org; Mon, 13 May 2019 01:43:14 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0262A3086272;
+ Mon, 13 May 2019 01:43:11 +0000 (UTC)
+Received: from localhost (ovpn-12-31.pek2.redhat.com [10.72.12.31])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 1BD1A10018FB;
+ Mon, 13 May 2019 01:43:07 +0000 (UTC)
+Date: Mon, 13 May 2019 09:43:05 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Borislav Petkov <bp@alien8.de>
+Subject: Re: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI systab
+ and ACPI tables
+Message-ID: <20190513014248.GA16774@MiWiFi-R3L-srv>
+References: <20190424092944.30481-1-bhe@redhat.com>
+ <20190424092944.30481-2-bhe@redhat.com>
+ <20190429002318.GA25400@MiWiFi-R3L-srv>
+ <20190429135536.GC2324@zn.tnic>
 MIME-Version: 1.0
-From: prakhar srivastava <prsriva02@gmail.com>
-Date: Fri, 10 May 2019 17:16:16 -0700
-Message-ID: <CAEFn8q+rT2_0TFb0fKA6ixOvC3H5R5KpR0zFiTOXa_4U-9HeUw@mail.gmail.com>
-Subject: Carrying over the ima log during kexec_file_load
-To: linux-kernel@vger.kernel.org, linux-integrity@vger.kernel.org, 
- linux-security-module@vger.kernel.org, kexec@lists.infradead.org
+Content-Disposition: inline
+In-Reply-To: <20190429135536.GC2324@zn.tnic>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.49]); Mon, 13 May 2019 01:43:11 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190510_171629_327146_FE4F2A38 
-X-CRM114-Status: UNSURE (   6.52  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190512_184312_852752_52D9352A 
+X-CRM114-Status: GOOD (  24.96  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prsriva02[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (prsriva02[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -93,33 +72,187 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: bhe@redhat.com, dyoung@redhat.com, jmorris@namei.org,
- Mimi Zohar <zohar@linux.ibm.com>, vgoyal@redhat.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: fanc.fnst@cn.fujitsu.com, kasong@redhat.com, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, hpa@zytor.com,
+ j-nomura@ce.jp.nec.com, tglx@linutronix.de, dyoung@redhat.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-SGksCgpJIGFtIGN1cnJlbnRseSBsb29raW5nIGF0IGNhcnJ5aW5nIG92ZXIgdGhlIGltYSBsb2cg
-ZnJvbSB0aGUgY3VycmVudAprZXJuZWwgdG8gdGhlIG5leHQga2VybmVsIGR1cmluZyBzb2Z0IHJl
-Ym9vdChrZXhlY19maWxlX2xvYWQpIGZvciBhcm02NAphbmQgeDg2XzY0LgpEdXJpbmcgc29mdCBy
-ZWJvb3Qoa2V4ZWNfZmlsZV9sb2FkKSBUUE0gYm9vdCBQQ1LigJlzKFBDUnMgMCB0aHJvdWdoIDcp
-CmFyZSBub3QgcmVzZXQgb3IgZXh0ZW5kZWQgYW5kIHRodXMgdGhlIGJvb3QgYWdncmVnYXRlIGRv
-ZXMgbm90IGNoYW5nZSwKbGVhdmluZyB0aGUgbmV3IGtlcm5lbCB3aXRoIGEgc2Vuc2Ugb2Ygc2Vj
-dXJlIGJvb3QuCkR1cmluZyBrZXhlY19maWxlX2xvYWQgdGhlIGtlcm5lbCBmaWxlIHNpZ25hdHVy
-ZSBpcyB2YWxpZGF0ZWQgdGhyb3VnaCBQRQpmaWxlIHNpZ25hdHVyZSB2YWxpZGF0aW9uLgpUaGUg
-Ym9vdCBjbWRsaW5lIGFyZ3Mgd2lsbCBhbHNvIGJlIG1lYXN1cmVkIHdpdGgK4oCca2V4ZWMgY21k
-bGluZSBidWZmZXIgbWVhc3VyZeKAnSBjaGFuZ2Ugd2hpY2ggaXMgaW4gcHJvZ3Jlc3MuCmh0dHBz
-Oi8vbGttbC5vcmcvbGttbC8yMDE5LzUvMTAvNzI4CgpMb29raW5nIGF0IHRoZSBwb3dlcnBjIGlt
-cGxlbWVudGF0aW9uIG9mIGtleGVjX2ZpbGVfbG9hZCwgIG1ha2luZwpjaGFuZ2UgdG8gdGhlIGtp
-bWFnZV9hcmNoIGFzIGJlbG93IHNlZW1zIG1vc3QgcmVhc29uYWJsZS4KClN0cnVjdCBraW1hZ2Vf
-YXJjaCB7CiAgICAgICAgICAgICAgICDigKYKICAgICAgICAgICAgICAgIGltYV9sb2dfYnVmZmVy
-CiAgICAgICAgICAgICAgICBpbWFfbG9nX2J1ZmZlcl9zaXplCn07CgpBZGQgcmVzcGVjdGl2ZSBl
-bnRyaWVzIGluIGR0Yi9mZHQgYW5kIHJlYWQgdGhlIHNhbWUgaW4gdGhlIG5leHQga2VybmVsLgpO
-byBjaGFuZ2VzIHRvIHRoZSBwdXJnYXRvcnkgc2hvdWxkIGJlIG5lZWRlZCBzaW5jZSBubyBrZXJu
-ZWwgc2VnbWVudHMKYXJlIGNoYW5nZWQuCgpJcyBhbnlvbmUgYWxyZWFkeSBsb29raW5nIGF0IHRo
-aXM/CklmIG5vdCwgSSB3YW50IHRvIHVuZGVyc3RhbmQgd2hhdOKAmXMgdGhlIGJlc3QgYXBwcm9h
-Y2ggZm9yIHRoaXMgaXM/CgpUaGFua3MsClByYWtoYXIgU3JpdmFzdGF2YQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0Cmtl
-eGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9rZXhlYwo=
+Hi Boris,
+
+On 04/29/19 at 03:55pm, Borislav Petkov wrote:
+> From: Kairui Song <kasong@redhat.com>
+> Date: Mon, 29 Apr 2019 08:23:18 +0800
+> Subject: [PATCH] x86/kexec: Add the EFI system tables and ACPI tables to the ident map
+
+> 
+> Currently, only the whole physical memory is identity-mapped for the
+> kexec kernel and the regions reserved by firmware are ignored.
+> 
+> However, the recent addition of RSDP parsing in the decompression stage
+> and especially:
+> 
+>   33f0df8d843d ("x86/boot: Search for RSDP in the EFI tables")
+> 
+> which tries to access EFI system tables and to dig out the RDSP address
+> from there, becomes a problem because in certain configurations, they
+> might not be mapped in the kexec'ed kernel's address space.
+> 
+> What is more, this problem doesn't appear on all systems because the
+> kexec kernel uses gigabyte pages to build the identity mapping. And
+> the EFI system tables and ACPI tables can, depending on the system
+> configuration, end up being mapped as part of all physical memory, if
+> they share the same 1 GB area with the physical memory.
+> 
+> Therefore, make sure they're always mapped.
+> 
+>  [ bp: productize half-baked patch:
+>    - rewrite commit message.
+>    - s/init_acpi_pgtable/map_acpi_tables/ in the !ACPI case. ]
+
+Can this patchset be merged, or picked into tip?
+
+Thanks
+Baoquan
+
+> Signed-off-by: Kairui Song <kasong@redhat.com>
+> Signed-off-by: Baoquan He <bhe@redhat.com>
+> Signed-off-by: Borislav Petkov <bp@suse.de>
+> Cc: dyoung@redhat.com
+> Cc: fanc.fnst@cn.fujitsu.com
+> Cc: "H. Peter Anvin" <hpa@zytor.com>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: j-nomura@ce.jp.nec.com
+> Cc: kexec@lists.infradead.org
+> Cc: "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+> Cc: Lianbo Jiang <lijiang@redhat.com>
+> Cc: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: x86-ml <x86@kernel.org>
+> Link: https://lkml.kernel.org/r/20190429002318.GA25400@MiWiFi-R3L-srv
+> ---
+>  arch/x86/kernel/machine_kexec_64.c | 75 ++++++++++++++++++++++++++++++
+>  1 file changed, 75 insertions(+)
+> 
+> diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
+> index ceba408ea982..3c77bdf7b32a 100644
+> --- a/arch/x86/kernel/machine_kexec_64.c
+> +++ b/arch/x86/kernel/machine_kexec_64.c
+> @@ -18,6 +18,7 @@
+>  #include <linux/io.h>
+>  #include <linux/suspend.h>
+>  #include <linux/vmalloc.h>
+> +#include <linux/efi.h>
+>  
+>  #include <asm/init.h>
+>  #include <asm/pgtable.h>
+> @@ -29,6 +30,43 @@
+>  #include <asm/setup.h>
+>  #include <asm/set_memory.h>
+>  
+> +#ifdef CONFIG_ACPI
+> +/*
+> + * Used while adding mapping for ACPI tables.
+> + * Can be reused when other iomem regions need be mapped
+> + */
+> +struct init_pgtable_data {
+> +	struct x86_mapping_info *info;
+> +	pgd_t *level4p;
+> +};
+> +
+> +static int mem_region_callback(struct resource *res, void *arg)
+> +{
+> +	struct init_pgtable_data *data = arg;
+> +	unsigned long mstart, mend;
+> +
+> +	mstart = res->start;
+> +	mend = mstart + resource_size(res) - 1;
+> +
+> +	return kernel_ident_mapping_init(data->info, data->level4p, mstart, mend);
+> +}
+> +
+> +static int
+> +map_acpi_tables(struct x86_mapping_info *info, pgd_t *level4p)
+> +{
+> +	unsigned long flags = IORESOURCE_MEM | IORESOURCE_BUSY;
+> +	struct init_pgtable_data data;
+> +
+> +	data.info = info;
+> +	data.level4p = level4p;
+> +	flags = IORESOURCE_MEM | IORESOURCE_BUSY;
+> +	return walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
+> +				   &data, mem_region_callback);
+> +}
+> +#else
+> +static int map_acpi_tables(struct x86_mapping_info *info, pgd_t *level4p) { return 0; }
+> +#endif
+> +
+>  #ifdef CONFIG_KEXEC_FILE
+>  const struct kexec_file_ops * const kexec_file_loaders[] = {
+>  		&kexec_bzImage64_ops,
+> @@ -36,6 +74,31 @@ const struct kexec_file_ops * const kexec_file_loaders[] = {
+>  };
+>  #endif
+>  
+> +static int
+> +map_efi_systab(struct x86_mapping_info *info, pgd_t *level4p)
+> +{
+> +#ifdef CONFIG_EFI
+> +	unsigned long mstart, mend;
+> +
+> +	if (!efi_enabled(EFI_BOOT))
+> +		return 0;
+> +
+> +	mstart = (boot_params.efi_info.efi_systab |
+> +			((u64)boot_params.efi_info.efi_systab_hi<<32));
+> +
+> +	if (efi_enabled(EFI_64BIT))
+> +		mend = mstart + sizeof(efi_system_table_64_t);
+> +	else
+> +		mend = mstart + sizeof(efi_system_table_32_t);
+> +
+> +	if (!mstart)
+> +		return 0;
+> +
+> +	return kernel_ident_mapping_init(info, level4p, mstart, mend);
+> +#endif
+> +	return 0;
+> +}
+> +
+>  static void free_transition_pgtable(struct kimage *image)
+>  {
+>  	free_page((unsigned long)image->arch.p4d);
+> @@ -159,6 +222,18 @@ static int init_pgtable(struct kimage *image, unsigned long start_pgtable)
+>  			return result;
+>  	}
+>  
+> +	/*
+> +	 * Prepare EFI systab and ACPI tables for kexec kernel since they are
+> +	 * not covered by pfn_mapped.
+> +	 */
+> +	result = map_efi_systab(&info, level4p);
+> +	if (result)
+> +		return result;
+> +
+> +	result = map_acpi_tables(&info, level4p);
+> +	if (result)
+> +		return result;
+> +
+>  	return init_transition_pgtable(image, level4p);
+>  }
+>  
+> -- 
+> 2.21.0
+> 
+> -- 
+> Regards/Gruss,
+>     Boris.
+> 
+> Good mailing practices for 400: avoid top-posting and trim the reply.
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
