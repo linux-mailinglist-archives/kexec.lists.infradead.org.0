@@ -2,51 +2,51 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F275B1C1B7
-	for <lists+kexec@lfdr.de>; Tue, 14 May 2019 07:10:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 653211C1B8
+	for <lists+kexec@lfdr.de>; Tue, 14 May 2019 07:10:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ids48x1njD8RFYOG8ccrk25L7G/+9dGhLaU647Av3E0=; b=Oe1mH3/pf+IhYc
-	b+gbLpnFoIjspAWVaFCHsHBg0Wnk+3vsc5lOMyFCjkuErpuemJXDjhOxieOTZzGmd51zN0UY4rCLK
-	DcJHkPEXORbrTauX932dt4n9dGqxYMiuk56eVei7obwxHP/4zWfFMBlPlFecO3uP1wA1dJ2XbeCXz
-	YUiEUrDRmrccQM+QTvaXsuDpClebf6uxmxsHV/a9CZdi4nYCi2pLH+nthJ0J9hUkk+JKUG+59Vlcl
-	58clUTgvmevZRUZWuXnPKtP/9D3e2CcKn4GE5y0G0DIT1jnSb8KYOGF6atDjyDAbZyWRdP8rPGk23
-	ZF6fHicODOt5aRhJimJg==;
+	List-Owner; bh=oJu0WHc4uQ4TpLkTcLEa9q7tNn9ybv8nJFxWiY2eIVE=; b=GruXQFKBG8oij9
+	SUFEjC8LAKKF8VwE415uDk+4vwyaRxvubJUrGXmom07FNWMp0wXmDAxgrEnysp0cnNcEvrPDBOeEN
+	WApTiuuDRVcMjm8RJDi2r5/yq+GDCwHDm3sQFOnzD7orKSOkVAa9gjiEnomiXeRR87kI8FFTBYEqe
+	8PH3Y1Okt2IbdJ65I+uhLNwyASsqbC/J5V+FXFc/fKs5EIXcwo8XXe2cOnMJ6EESFdRAMPH9IKlTS
+	WBsWLk1RdJHxG+EYAS3i68ns2FJYPAzRGaGs3CM9ZMl8/WED4uqaNMQvtOhm+1aHbVxbL9BKS/Pcl
+	4nopvXMztIiaYucVbx9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQPht-00021P-Fo; Tue, 14 May 2019 05:10:29 +0000
+	id 1hQPhw-00024O-3z; Tue, 14 May 2019 05:10:32 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQPhq-0001zG-8n
- for kexec@lists.infradead.org; Tue, 14 May 2019 05:10:27 +0000
+ id 1hQPhs-00021M-RM
+ for kexec@lists.infradead.org; Tue, 14 May 2019 05:10:30 +0000
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0F1D4308FC22;
- Tue, 14 May 2019 05:10:26 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 99F51308620E;
+ Tue, 14 May 2019 05:10:28 +0000 (UTC)
 Received: from kasong-rh-laptop.pek2.redhat.com (wlc-trust-112.pek2.redhat.com
  [10.72.3.112])
- by smtp.corp.redhat.com (Postfix) with ESMTP id ECA3D19C67;
- Tue, 14 May 2019 05:10:23 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 8422819C70;
+ Tue, 14 May 2019 05:10:26 +0000 (UTC)
 From: Kairui Song <kasong@redhat.com>
 To: kexec@lists.infradead.org
-Subject: [PATCH v2 2/4] x86: Introduce helpers for getting RSDP address
-Date: Tue, 14 May 2019 13:09:58 +0800
-Message-Id: <20190514050959.21093-3-kasong@redhat.com>
+Subject: [PATCH v2 3/4] x86: Always try to fill acpi_rsdp_addr in boot params
+Date: Tue, 14 May 2019 13:09:59 +0800
+Message-Id: <20190514050959.21093-4-kasong@redhat.com>
 In-Reply-To: <20190514050959.21093-1-kasong@redhat.com>
 References: <20190514050959.21093-1-kasong@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.43]); Tue, 14 May 2019 05:10:26 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.42]); Tue, 14 May 2019 05:10:28 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190513_221026_345433_3E304DFA 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20190513_221028_979439_A0494196 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,146 +75,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On x86 RSDP is fundamental for booting the machine. When second kernel
-is incapable of parsing the RSDP address (eg. kexec next kernel on an EFI
-system with EFI service disabled), kexec should prepare the RSDP address
-for second kernel.
+Since kernel commit e6e094e053af75 ("x86/acpi, x86/boot: Take RSDP address
+from boot params if available"), kernel accept an acpi_rsdp_addr param in
+boot_params. So fill in this parameter unconditionally, ensure second
+kernel always get the right RSDP address consistently, and boot well on
+EFI system even with EFI service disabled. User no longer need to change
+the kernel cmdline to workaround the missing RSDP issue.
 
-Introduce helpers for getting RSDP from multiple sources, including boot
-params, cmdline and EFI firmware.
-
-For legacy BIOS interface, there is no better way to find the RSDP address
-rather than scanning the memory region and search for it, and this will
-always be done by the kernel as a fallback, so this is no need to try to
-get the RSDP address for that case.
+For older version of kernels (Before 5.0), there won't be any change of
+behavior.
 
 Signed-off-by: Kairui Song <kasong@redhat.com>
 ---
- kexec/arch/i386/kexec-x86-common.c | 60 ++++++++++++++++++++++++++++++
- kexec/arch/i386/kexec-x86.h        |  1 +
- kexec/arch/i386/x86-linux-setup.c  |  3 +-
- kexec/arch/i386/x86-linux-setup.h  |  1 +
- 4 files changed, 63 insertions(+), 2 deletions(-)
+ kexec/arch/i386/x86-linux-setup.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/kexec/arch/i386/kexec-x86-common.c b/kexec/arch/i386/kexec-x86-common.c
-index de99758..4b8eb26 100644
---- a/kexec/arch/i386/kexec-x86-common.c
-+++ b/kexec/arch/i386/kexec-x86-common.c
-@@ -39,6 +39,7 @@
- #include "../../firmware_memmap.h"
- #include "../../crashdump.h"
- #include "kexec-x86.h"
-+#include "x86-linux-setup.h"
- #include "../../kexec-xen.h"
- 
- /* Used below but not present in (older?) xenctrl.h */
-@@ -392,4 +393,63 @@ int get_memory_ranges(struct memory_range **range, int *ranges,
- 	return ret;
- }
- 
-+static uint64_t cmdline_get_acpi_rsdp(void) {
-+	uint64_t acpi_rsdp = 0;
-+	char *tmp_cmdline, *rsdp_param;
- 
-+	tmp_cmdline = get_command_line();
-+	rsdp_param = strstr(tmp_cmdline, "acpi_rsdp=");
-+
-+	if (rsdp_param)
-+		sscanf(rsdp_param, "acpi_rsdp=%lx", &acpi_rsdp);
-+
-+	free(tmp_cmdline);
-+	return acpi_rsdp;
-+}
-+
-+static uint64_t bootparam_get_acpi_rsdp(void) {
-+	uint64_t acpi_rsdp = 0;
-+	off_t offset = offsetof(struct x86_linux_param_header, acpi_rsdp_addr);
-+
-+	if (get_bootparam(&acpi_rsdp, offset, sizeof(acpi_rsdp)))
-+		return 0;
-+
-+	return acpi_rsdp;
-+}
-+
-+static uint64_t efi_get_acpi_rsdp(void) {
-+	FILE *fp;
-+	char line[MAX_LINE], *s;
-+	uint64_t acpi_rsdp = 0;
-+
-+	fp = fopen("/sys/firmware/efi/systab", "r");
-+	if (!fp)
-+		return acpi_rsdp;
-+
-+	while(fgets(line, sizeof(line), fp) != 0) {
-+		/* ACPI20= always goes before ACPI= */
-+		if ((strstr(line, "ACPI20=")) || (strstr(line, "ACPI="))) {
-+			s = strchr(line, '=') + 1;
-+			sscanf(s, "0x%lx", &acpi_rsdp);
-+			break;
-+		}
-+	}
-+	fclose(fp);
-+
-+	return acpi_rsdp;
-+}
-+
-+uint64_t get_acpi_rsdp(void)
-+{
-+	uint64_t acpi_rsdp = 0;
-+
-+	acpi_rsdp = cmdline_get_acpi_rsdp();
-+
-+	if (!acpi_rsdp)
-+		acpi_rsdp = bootparam_get_acpi_rsdp();
-+
-+	if (!acpi_rsdp)
-+		acpi_rsdp = efi_get_acpi_rsdp();
-+
-+	return acpi_rsdp;
-+}
-diff --git a/kexec/arch/i386/kexec-x86.h b/kexec/arch/i386/kexec-x86.h
-index c2bcd37..1b58c3b 100644
---- a/kexec/arch/i386/kexec-x86.h
-+++ b/kexec/arch/i386/kexec-x86.h
-@@ -86,4 +86,5 @@ int nbi_load(int argc, char **argv, const char *buf, off_t len,
- void nbi_usage(void);
- 
- extern unsigned xen_e820_to_kexec_type(uint32_t type);
-+extern uint64_t get_acpi_rsdp(void);
- #endif /* KEXEC_X86_H */
 diff --git a/kexec/arch/i386/x86-linux-setup.c b/kexec/arch/i386/x86-linux-setup.c
-index 8fad115..5ca7c25 100644
+index 5ca7c25..5b00b42 100644
 --- a/kexec/arch/i386/x86-linux-setup.c
 +++ b/kexec/arch/i386/x86-linux-setup.c
-@@ -123,7 +123,6 @@ void setup_linux_bootloader_parameters_high(
- 	cmdline_ptr[cmdline_len - 1] = '\0';
+@@ -901,4 +901,7 @@ void setup_linux_system_parameters(struct kexec_info *info,
+ 
+ 	/* fill the EDD information */
+ 	setup_edd_info(real_mode);
++
++	/* Always try to fill acpi_rsdp_addr */
++	real_mode->acpi_rsdp_addr = get_acpi_rsdp();
  }
- 
--static int get_bootparam(void *buf, off_t offset, size_t size);
- static int setup_linux_vesafb(struct x86_linux_param_header *real_mode)
- {
- 	struct fb_fix_screeninfo fix;
-@@ -452,7 +451,7 @@ char *find_mnt_by_fsname(char *fsname)
- 	return mntdir;
- }
- 
--static int get_bootparam(void *buf, off_t offset, size_t size)
-+int get_bootparam(void *buf, off_t offset, size_t size)
- {
- 	int data_file;
- 	char *debugfs_mnt, *sysfs_mnt;
-diff --git a/kexec/arch/i386/x86-linux-setup.h b/kexec/arch/i386/x86-linux-setup.h
-index f5d23d3..0c651e5 100644
---- a/kexec/arch/i386/x86-linux-setup.h
-+++ b/kexec/arch/i386/x86-linux-setup.h
-@@ -21,6 +21,7 @@ static inline void setup_linux_bootloader_parameters(
- }
- void setup_linux_system_parameters(struct kexec_info *info,
- 	struct x86_linux_param_header *real_mode);
-+int get_bootparam(void *buf, off_t offset, size_t size);
- 
- 
- #define SETUP_BASE    0x90000
 -- 
 2.20.1
 
