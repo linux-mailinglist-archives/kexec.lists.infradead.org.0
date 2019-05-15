@@ -2,79 +2,79 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 357261E7D5
-	for <lists+kexec@lfdr.de>; Wed, 15 May 2019 07:16:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3453E1E7E1
+	for <lists+kexec@lfdr.de>; Wed, 15 May 2019 07:23:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kkM4SPwJ8CF+urprfv12PyNY3yAS4VDe2AOYguPMn9s=; b=mcTErx8QgSLheDS7OBtiiSctp
-	i6Wm6BKtQCRST60cmePFnZZVhs+YefkItQJulpTDA5nLJLRqkTpPZonu/hKCfN7T/zbGnGoxgbQuS
-	g4JTH04kEtfwfmeWqjdNekM2OlSSbA7i7QGh2ksabuqAJh7taOl5n4AglxAscm8a57IWtZLSXxJ8U
-	g1UAKJxksRApOnmr8CRfXq7WfLNlcPEqGINYR8WA1aidmrv4N7EqGqHCjWERgs4aHqqrHBa3ne//f
-	MTxpEgM+tJeYg8lzFyUdU/Q/kjV8fTKRF1nvWl4LrhDrUgkiH/GpaFb3HRb3v7WU5NeIucJ+dA/Lv
-	VhHIMzX3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/4wDF943BkRGe7rndIRyXrtQq2aVRdVR/wQBAbNMk0g=; b=HmrgZxn0FVW2Gx
+	byovgad03wJ3XLnHD7jDt654q+nU160/aBydZQZyuM94gC17pSJIzA4u5AIGC5bfToxMAxN5m2bsu
+	1lexPgXS82FmhjdpXJhevLOeAbaGF9D5G0c/jr1X+dEcE1p4nnLpLPfxwN++5ikLYWKIXf+nn3jmY
+	w0XFRqx3OI7DTKLucGv+yMPtAqSU8v97zip+5dy4wPeAAgZmUCu7LAYkASx8cKmwlDgxjJbpnyAmE
+	NfpucHD9eWYpVabRWcITIwvDLDvzNLe+pK1W5zN7ZIESFELA8ljFZGWBPsc/nDSvTU9rwZbgx+Co2
+	N8hcLcvhrcKStLulXRSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQmHD-0002bj-AX; Wed, 15 May 2019 05:16:27 +0000
-Received: from mail-pf1-f194.google.com ([209.85.210.194])
+	id 1hQmO9-00044Z-Pw; Wed, 15 May 2019 05:23:37 +0000
+Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQmH4-0002Tl-B4
- for kexec@lists.infradead.org; Wed, 15 May 2019 05:16:19 +0000
-Received: by mail-pf1-f194.google.com with SMTP id g9so708904pfo.11
- for <kexec@lists.infradead.org>; Tue, 14 May 2019 22:16:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=CaPoBfwvfHYoUlv6FfiwdTonkmXQ3Vz27zElYB+X6NY=;
- b=dbYErqde9uhsYSmWR0UDpj2h5ATFKi77zbAX0rwSPxp5RHA4v+ixjMewdE2ziXPZPF
- jgmAR59pmlk0QP2t/371k1fCmzpQIzE2OSOUJacKWYiFoeax1fDFz9lboV+olV8nbn9u
- jTHaLN09tjRshqlPxfpGXGmi+fEKqXIioZhlYPUi5/wbhfammoc6gR1O+p8QFFjheC1x
- IgD/WmR/7o1yO3s5bugCrobXqESSq/ggBuGRzQaVOz9+JTJMZhYM/Jr+Pe8ykKDzTLEr
- f9p3KU9Ln5chPw5Vgc36mSxy7XBurPXwWqxQ+NbY+9KO5L6fnUc127vZz85idDTJ37Bf
- 0oXA==
-X-Gm-Message-State: APjAAAXLXMU+l9quHeY8ZacxPyQjUapkG41ow643PoKfVRPUdQu7kULY
- x4+Sv97KMjl/MAOGT3GFIOG6Sg==
-X-Google-Smtp-Source: APXvYqy7c4aMXqBtV8RsQz37cPVhnwGAI6b96xSjxoKpUb2R5qSgsCxWAkkxEB8uTYJPawwWOM0xxw==
-X-Received: by 2002:a63:d4c:: with SMTP id 12mr28791554pgn.30.1557897374744;
- Tue, 14 May 2019 22:16:14 -0700 (PDT)
-Received: from localhost.localdomain ([106.215.121.117])
- by smtp.gmail.com with ESMTPSA id 135sm1321765pfb.97.2019.05.14.22.16.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 22:16:13 -0700 (PDT)
-Subject: Re: [PATCH 4/4] kdump: update Documentation about crashkernel on arm64
-To: Chen Zhou <chenzhou10@huawei.com>, catalin.marinas@arm.com,
- will.deacon@arm.com, akpm@linux-foundation.org, ard.biesheuvel@linaro.org,
- rppt@linux.ibm.com, tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
- ebiederm@xmission.com
-References: <20190507035058.63992-1-chenzhou10@huawei.com>
- <20190507035058.63992-5-chenzhou10@huawei.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Message-ID: <de5b827f-5db2-2280-b848-c5c887b9bb58@redhat.com>
-Date: Wed, 15 May 2019 10:46:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.2.1
+ id 1hQmO6-00044A-UX
+ for kexec@lists.infradead.org; Wed, 15 May 2019 05:23:36 +0000
+Received: from mailgate02.nec.co.jp ([114.179.233.122])
+ by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id x4F5MFXo002708
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Wed, 15 May 2019 14:22:15 +0900
+Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x4F5MERe023708;
+ Wed, 15 May 2019 14:22:15 +0900
+Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
+ by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id x4F5KPwI027934;
+ Wed, 15 May 2019 14:22:14 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.136] [10.38.151.136]) by
+ mail02.kamome.nec.co.jp with ESMTP id BT-MMP-5066124;
+ Wed, 15 May 2019 14:17:20 +0900
+Received: from BPXM12GP.gisp.nec.co.jp ([10.38.151.204]) by
+ BPXC08GP.gisp.nec.co.jp ([10.38.151.136]) with mapi id 14.03.0319.002; Wed,
+ 15 May 2019 14:17:19 +0900
+From: Junichi Nomura <j-nomura@ce.jp.nec.com>
+To: Baoquan He <bhe@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "kasong@redhat.com" <kasong@redhat.com>
+Subject: Re: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI systab
+ and ACPI tables
+Thread-Topic: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI
+ systab and ACPI tables
+Thread-Index: AQHVCt13YD4lckvUHUCIqj5Wl9aEBQ==
+Date: Wed, 15 May 2019 05:17:19 +0000
+Message-ID: <20190515051717.GA13703@jeru.linux.bs1.fc.nec.co.jp>
+References: <20190424092944.30481-1-bhe@redhat.com>
+ <20190424092944.30481-2-bhe@redhat.com>
+ <20190429002318.GA25400@MiWiFi-R3L-srv> <20190429135536.GC2324@zn.tnic>
+ <20190513014248.GA16774@MiWiFi-R3L-srv> <20190513070725.GA20105@zn.tnic>
+ <20190513073254.GB16774@MiWiFi-R3L-srv> <20190513075006.GB20105@zn.tnic>
+ <20190513080210.GC16774@MiWiFi-R3L-srv>
+In-Reply-To: <20190513080210.GC16774@MiWiFi-R3L-srv>
+Accept-Language: en-US, ja-JP
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.34.125.85]
+Content-ID: <CA26469105FD8045B8909AFA561E0308@gisp.nec.co.jp>
 MIME-Version: 1.0
-In-Reply-To: <20190507035058.63992-5-chenzhou10@huawei.com>
-Content-Language: en-US
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_221618_384322_FAA46A58 
-X-CRM114-Status: GOOD (  21.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190514_222335_214107_D7EF4F23 
+X-CRM114-Status: GOOD (  14.95  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.194 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [114.179.232.161 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.194 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -86,72 +86,81 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
+Cc: "x86@kernel.org" <x86@kernel.org>,
+ "fanc.fnst@cn.fujitsu.com" <fanc.fnst@cn.fujitsu.com>,
  "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org, horms@verge.net.au,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>, linux-arm-kernel@lists.infradead.org
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "hpa@zytor.com" <hpa@zytor.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "dyoung@redhat.com" <dyoung@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 05/07/2019 09:20 AM, Chen Zhou wrote:
-> Now we support crashkernel=X,[high,low] on arm64, update the
-> Documentation.
+Hi Kairui,
+
+On 5/13/19 5:02 PM, Baoquan He wrote:
+> On 05/13/19 at 09:50am, Borislav Petkov wrote:
+>> On Mon, May 13, 2019 at 03:32:54PM +0800, Baoquan He wrote:
+>> So we're going to try it again this cycle and if there's no fallout, it
+>> will go upstream. If not, it will have to be fixed. The usual thing.
+>>
+>> And I don't care if Kairui's patch fixes this one problem - judging by
+>> the fragility of this whole thing, it should be hammered on one more
+>> cycle on as many boxes as possible to make sure there's no other SNAFUs.
+>>
+>> So go test it on more machines instead. I've pushed it here:
+>>
+>> https://git.kernel.org/pub/scm/linux/kernel/git/bp/bp.git/log/?h=next-merge-window
 > 
-> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> ---
->   Documentation/admin-guide/kernel-parameters.txt | 6 +++---
->   1 file changed, 3 insertions(+), 3 deletions(-)
+> Pingfan has got a machine to reproduce the kexec breakage issue, and
+> applying these two patches fix it. He planned to paste the test result.
+> I will ask him to try this branch if he has time, or I can get his
+> machine to test.
 > 
-> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> index 268b10a..03a08aa 100644
-> --- a/Documentation/admin-guide/kernel-parameters.txt
-> +++ b/Documentation/admin-guide/kernel-parameters.txt
-> @@ -705,7 +705,7 @@
->   			memory region [offset, offset + size] for that kernel
->   			image. If '@offset' is omitted, then a suitable offset
->   			is selected automatically.
-> -			[KNL, x86_64] select a region under 4G first, and
-> +			[KNL, x86_64, arm64] select a region under 4G first, and
->   			fall back to reserve region above 4G when '@offset'
->   			hasn't been specified.
->   			See Documentation/kdump/kdump.txt for further details.
-> @@ -718,14 +718,14 @@
->   			Documentation/kdump/kdump.txt for an example.
->   
->   	crashkernel=size[KMG],high
-> -			[KNL, x86_64] range could be above 4G. Allow kernel
-> +			[KNL, x86_64, arm64] range could be above 4G. Allow kernel
->   			to allocate physical memory region from top, so could
->   			be above 4G if system have more than 4G ram installed.
->   			Otherwise memory region will be allocated below 4G, if
->   			available.
->   			It will be ignored if crashkernel=X is specified.
->   	crashkernel=size[KMG],low
-> -			[KNL, x86_64] range under 4G. When crashkernel=X,high
-> +			[KNL, x86_64, arm64] range under 4G. When crashkernel=X,high
->   			is passed, kernel could allocate physical memory region
->   			above 4G, that cause second kernel crash on system
->   			that require some amount of low memory, e.g. swiotlb
-> 
+> Junichi, also have a try on Boris's branch in NEC's test environment?
 
-IMO, it is a good time to update 'Documentation/kdump/kdump.txt' with 
-this patchset itself for both x86_64 and arm64, where we still specify 
-only the old format for 'crashkernel' boot-argument:
+while the patch set works on most of the machines I'm testing around,
+I found kexec(1) fails to load kernel on a few machines if this patch
+is applied.  Those machines don't have IORES_DESC_ACPI_TABLES region
+and have ACPI tables in IORES_DESC_ACPI_NV_STORAGE region instead.
 
-Section: Boot into System Kernel
-          =======================
+So I think map_acpi_tables() should try to map both regions.  I tried
+following change in addition and it worked.
 
-On arm64, use "crashkernel=Y[@X]".  Note that the start address of
-the kernel, X if explicitly specified, must be aligned to 2MiB (0x200000).
-...
+-- 
+Jun'ichi Nomura, NEC Corporation / NEC Solution Innovators, Ltd.
 
-We can update this to add the new crashkernel=size[KMG],low or 
-crashkernel=size[KMG],high format as well.
 
-Thanks,
-Bhupesh
+diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
+index 3c77bdf..3837c4a 100644
+--- a/arch/x86/kernel/machine_kexec_64.c
++++ b/arch/x86/kernel/machine_kexec_64.c
+@@ -56,12 +56,22 @@ static int mem_region_callback(struct resource *res, void *arg)
+ {
+ 	unsigned long flags = IORESOURCE_MEM | IORESOURCE_BUSY;
+ 	struct init_pgtable_data data;
++	int ret;
+ 
+ 	data.info = info;
+ 	data.level4p = level4p;
+ 	flags = IORESOURCE_MEM | IORESOURCE_BUSY;
+-	return walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
+-				   &data, mem_region_callback);
++	ret = walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
++				  &data, mem_region_callback);
++	if (ret && ret != -EINVAL)
++		return ret;
++
++	ret = walk_iomem_res_desc(IORES_DESC_ACPI_NV_STORAGE, flags, 0, -1,
++				  &data, mem_region_callback);
++	if (ret && ret != -EINVAL)
++		return ret;
++
++	return 0;
+ }
+ #else
+ static int map_acpi_tables(struct x86_mapping_info *info, pgd_t *level4p) { return 0; }
 
 _______________________________________________
 kexec mailing list
