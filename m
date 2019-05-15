@@ -2,72 +2,79 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EC561E681
-	for <lists+kexec@lfdr.de>; Wed, 15 May 2019 03:09:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ED7F1E7CF
+	for <lists+kexec@lfdr.de>; Wed, 15 May 2019 07:07:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xacjt5UETInS0LsaFYZmQh5ck+QTEuD65xewSOWUwL8=; b=VgeF7CIVcbeROi
-	UKOQ9cBtY1Iy+4ykpcwUWR7nW3bx+rDxhKka3l1R2ZAWRF+JYu5DYG8IELse66s7eKvBO86aFzzHY
-	DXfvEaGRf0T1/sMSrd0nrtnx3oa6uA3oyqwWMzt0Koy9G3EiBhBU/OHfUaqE26klxOsr62Nawjzac
-	i5LiAJaru6vHM+LfAOF74M+AtFJ+A7xJJSE+ZNyHwHgVesnhHoFAKHQ7sdCV+KJ+qSWYuAWY/6ofd
-	KKeRAe8WWG/q21UUfUWqRMQxHFnV4yCCtg59mB5zqnOf3aeuC5HOsj6FAYvbWBNwY0KZhB9a/hRIW
-	72drqKxOLOzqkfybuHIw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=HBoSSyN8iWtxaEQwCICSfn7tG3Qspts7/FlqDmKqqxw=; b=X09lg3KEdZO34IDL8eDKBOe+B
+	mUJNzZlFk/UhW2xzprqGxlDVnhKBojZBrMF8lWNbuelh366iR4gdaczs2vbAXaIpZHkBeKcfk56+H
+	MEsFg3BxbyBBtydv/PlrQqpP9SeU6NdVVsMw9qtMGbDIoD22vLlyiEr+bD07jSGisWgrs+WzEng4V
+	IhZhB2sop+e2O/6jsxWQ9Whh5fHFSxx0YT+ohbtw+zk9ifuljd+QEOdbF9fksnHQPHM1YBWJynds+
+	xSCyvcFb2kI2Iddnh6haDEjQuKGxLNDjX8Pgg3A0mO3WU3YvlrzzknrXcQBtvUM1p1qEW9yi1LNJB
+	npafHVWHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQiPs-0006VU-3I; Wed, 15 May 2019 01:09:08 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hQm7v-0007mN-HC; Wed, 15 May 2019 05:06:51 +0000
+Received: from mail-pl1-f195.google.com ([209.85.214.195])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQiPo-0006Uo-R5
- for kexec@lists.infradead.org; Wed, 15 May 2019 01:09:06 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 59797308FC5E;
- Wed, 15 May 2019 01:09:03 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-27.pek2.redhat.com
- [10.72.12.27])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 5442260166;
- Wed, 15 May 2019 01:08:57 +0000 (UTC)
-Date: Wed, 15 May 2019 09:08:50 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Ingo Molnar <mingo@kernel.org>
-Subject: Re: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI systab
- and ACPI tables
-Message-ID: <20190515010850.GA9159@dhcp-128-65.nay.redhat.com>
-References: <20190513014248.GA16774@MiWiFi-R3L-srv>
- <20190513070725.GA20105@zn.tnic>
- <20190513073254.GB16774@MiWiFi-R3L-srv>
- <20190513075006.GB20105@zn.tnic>
- <20190513080653.GD16774@MiWiFi-R3L-srv>
- <20190514032208.GA25875@dhcp-128-65.nay.redhat.com>
- <20190514084841.GA27876@dhcp-128-65.nay.redhat.com>
- <20190514113826.GM2589@hirez.programming.kicks-ass.net>
- <20190514125835.GA29045@dhcp-128-65.nay.redhat.com>
- <20190514140916.GA90245@gmail.com>
+ id 1hQm7f-0007f5-Br
+ for kexec@lists.infradead.org; Wed, 15 May 2019 05:06:38 +0000
+Received: by mail-pl1-f195.google.com with SMTP id f12so709252plt.8
+ for <kexec@lists.infradead.org>; Tue, 14 May 2019 22:06:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+qom0Qn6LwXg8UJkqiMrz8BQabBvoo+xpSl9SHnkWOY=;
+ b=BtN6AEGRawo9BqOYINgb2pft4u5Us+4yDjFN44ROrNnkQGnczYJw8hRt+PfIUa/iIU
+ Sxhbg2dnZwyZ+SbEIB5O0Fw3S7Uk4DyHSVU8JipXMyvgpVkV+8sF6lbftFLhlqfyBaeE
+ 5NhnRmjzGaELlJGqnRlFUMhv9I2Ox8/JvphvPDD1+OEB/dZ6PIWkJIO1m49OmgkJxN1r
+ KwLopae6ECiuEcbolMiv2i/pbDIhEpzMue7l+tmo2GecFngYDvQKDH/ZBewcVG7a6hG3
+ Sju0/33+SFuVb3hKFhBkJoIRXqKiqifG073C9rLqkpeZkcVax2e6O7JGd3E+4CdL72tW
+ CjyA==
+X-Gm-Message-State: APjAAAXuhYGdKR8pUG2MxaHaIA9sggBPn7wtjGhiysr7hckK8aekTU2F
+ +lGV2M8pI8I9f20LKjnlAFVURA==
+X-Google-Smtp-Source: APXvYqydcRf68wup3tmXCJXop6KI1ZxTGUxdyH6wtMYn4HOqUMhx5MO0r5tKJnQQFTgrfoAnruhVow==
+X-Received: by 2002:a17:902:2e83:: with SMTP id
+ r3mr26825633plb.139.1557896794167; 
+ Tue, 14 May 2019 22:06:34 -0700 (PDT)
+Received: from localhost.localdomain ([106.215.121.117])
+ by smtp.gmail.com with ESMTPSA id v81sm1354825pfa.16.2019.05.14.22.06.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 14 May 2019 22:06:32 -0700 (PDT)
+Subject: Re: [PATCH 0/4] support reserving crashkernel above 4G on arm64 kdump
+To: Chen Zhou <chenzhou10@huawei.com>, catalin.marinas@arm.com,
+ will.deacon@arm.com, akpm@linux-foundation.org, ard.biesheuvel@linaro.org,
+ rppt@linux.ibm.com, tglx@linutronix.de, mingo@redhat.com, bp@alien8.de,
+ ebiederm@xmission.com
+References: <20190507035058.63992-1-chenzhou10@huawei.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Message-ID: <a9d017d0-82d3-3e5f-4af2-4c611393106d@redhat.com>
+Date: Wed, 15 May 2019 10:36:24 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190514140916.GA90245@gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.43]); Wed, 15 May 2019 01:09:03 +0000 (UTC)
+In-Reply-To: <20190507035058.63992-1-chenzhou10@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_180904_898388_749E7608 
-X-CRM114-Status: GOOD (  19.12  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190514_220635_408802_7C0EA3E3 
+X-CRM114-Status: GOOD (  23.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.214.195 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.214.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -79,63 +86,126 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, kasong@redhat.com, Baoquan He <bhe@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, fanc.fnst@cn.fujitsu.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Borislav Petkov <bp@alien8.de>, hpa@zytor.com, j-nomura@ce.jp.nec.com,
- tglx@linutronix.de
-Content-Type: text/plain; charset="us-ascii"
+Cc: wangkefeng.wang@huawei.com, takahiro.akashi@linaro.org,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org, horms@verge.net.au,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 05/14/19 at 04:09pm, Ingo Molnar wrote:
-> 
-> * Dave Young <dyoung@redhat.com> wrote:
-> 
-> > On 05/14/19 at 01:38pm, Peter Zijlstra wrote:
-> > > On Tue, May 14, 2019 at 04:48:41PM +0800, Dave Young wrote:
-> > > 
-> > > > > I did some tests on the laptop,  thing is:
-> > > > > 1. apply the 3 patches (two you posted + Boris's revert commit 52b922c3d49c)
-> > > > >    on latest Linus master branch, everything works fine.
-> > > > > 
-> > > > > 2. build and test the tip/next-merge-window branch, kernel hangs early
-> > > > > without output, (both 1st boot and kexec boot)
-> > > > 
-> > > > Update about 2.  It should be not early rsdp related, I got the boot log
-> > > > Since can not reproduce with Linus master branch it may have been fixed.
-> > > 
-> > > Nothing was changed here since PTI.
-> > > 
-> > > > [    0.685374][    T1] rcu: Hierarchical SRCU implementation.
-> > > > [    0.686414][    T1] general protection fault: 0000 [#1] SMP PTI
-> > > > [    0.687328][    T1] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.1.0-rc6+ #877
-> > > > [    0.687328][    T1] Hardware name: LENOVO 4236NUC/4236NUC, BIOS 83ET82WW (1.52 ) 06/04/2018
-> > > > [    0.687328][    T1] RIP: 0010:reserve_ds_buffers+0x34e/0x450
-> > > 
-> > > > [    0.687328][    T1] Call Trace:
-> > > > [    0.687328][    T1]  ? hardlockup_detector_event_create+0x50/0x50
-> > > > [    0.687328][    T1]  x86_reserve_hardware+0x173/0x180
-> > > > [    0.687328][    T1]  x86_pmu_event_init+0x39/0x220
-> > > 
-> > > The DS buffers are special in that they're part of cpu_entrt_area. If
-> > > this comes apart it might mean your pagetables are dodgy.
-> > 
-> > Hmm, it seems caused by some WIP branch patches, I suspect below:
-> > commit 124d6af5a5f559e516ed2c6ea857e889ed293b43
-> > x86/paravirt: Standardize 'insn_buff' variable names
-> 
-> This commit had a bug which I fixed - could you try the latest -tip?
++Cc kexec-list.
 
-Will do, but I do not use tip tree often, not sure which branch includes
-the fix.
+Hi Chen,
 
-https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/
-Is it tip/master or tip/tip?
+I think we are still in the quiet period of the merge cycle, but this is 
+a change which will be useful for systems like HPE Apollo where we are 
+looking at reserving crashkernel across a larger range.
 
-Thanks
-Dave
+Some comments inline and in respective patch threads..
+
+On 05/07/2019 09:20 AM, Chen Zhou wrote:
+> This patch series enable reserving crashkernel on high memory in arm64.
+
+Please fix the patch subject, it should be v5.
+Also please Cc the kexec-list (kexec@lists.infradead.org) for future 
+versions to allow wider review of the patchset.
+
+> We use crashkernel=X to reserve crashkernel below 4G, which will fail
+> when there is no enough memory. Currently, crashkernel=Y@X can be used
+> to reserve crashkernel above 4G, in this case, if swiotlb or DMA buffers
+> are requierd, capture kernel will boot failure because of no low memory.
+
+... ^^ required
+
+s/capture kernel will boot failure because of no low memory./capture 
+kernel boot will fail because there is no low memory available for 
+allocation.
+
+> When crashkernel is reserved above 4G in memory, kernel should reserve
+> some amount of low memory for swiotlb and some DMA buffers. So there may
+> be two crash kernel regions, one is below 4G, the other is above 4G. Then
+> Crash dump kernel reads more than one crash kernel regions via a dtb
+> property under node /chosen,
+> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
+
+Please use consistent naming for the second kernel, better to use crash 
+dump kernel.
+
+I have tested this on my HPE Apollo machine and with 
+crashkernel=886M,high syntax, I can get the board to reserve a larger 
+memory range for the crashkernel (i.e. 886M):
+
+# dmesg | grep -i crash
+[    0.000000] kexec_core: Reserving 256MB of low memory at 3560MB for 
+crashkernel (System low RAM: 2029MB)
+[    0.000000] crashkernel reserved: 0x0000000bc5a00000 - 
+0x0000000bfd000000 (886 MB)
+
+kexec/kdump can also work also work fine on the board.
+
+So, with the changes suggested in this cover letter and individual 
+patches, please feel free to add:
+
+Reviewed-and-Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
+
+Thanks,
+Bhupesh
+
+> Besides, we need to modify kexec-tools:
+>    arm64: support more than one crash kernel regions(see [1])
+> 
+> I post this patch series about one month ago. The previous changes and
+> discussions can be retrived from:
+> 
+> Changes since [v4]
+> - reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+> 
+> Changes since [v3]
+> - Add memblock_cap_memory_ranges back for multiple ranges.
+> - Fix some compiling warnings.
+> 
+> Changes since [v2]
+> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+>    two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+>    patch.
+> 
+> Changes since [v1]:
+> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
+>    in fdt_enforce_memory_region().
+>    There are at most two crash kernel regions, for two crash kernel regions
+>    case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+>    and then remove the memory range in the middle.
+> 
+> [1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
+> [v1]: https://lkml.org/lkml/2019/4/2/1174
+> [v2]: https://lkml.org/lkml/2019/4/9/86
+> [v3]: https://lkml.org/lkml/2019/4/9/306
+> [v4]: https://lkml.org/lkml/2019/4/15/273
+> 
+> Chen Zhou (3):
+>    x86: kdump: move reserve_crashkernel_low() into kexec_core.c
+>    arm64: kdump: support reserving crashkernel above 4G
+>    kdump: update Documentation about crashkernel on arm64
+> 
+> Mike Rapoport (1):
+>    memblock: extend memblock_cap_memory_range to multiple ranges
+> 
+>   Documentation/admin-guide/kernel-parameters.txt |  6 +--
+>   arch/arm64/include/asm/kexec.h                  |  3 ++
+>   arch/arm64/kernel/setup.c                       |  3 ++
+>   arch/arm64/mm/init.c                            | 72 +++++++++++++++++++------
+>   arch/x86/include/asm/kexec.h                    |  3 ++
+>   arch/x86/kernel/setup.c                         | 66 +++--------------------
+>   include/linux/kexec.h                           |  5 ++
+>   include/linux/memblock.h                        |  2 +-
+>   kernel/kexec_core.c                             | 56 +++++++++++++++++++
+>   mm/memblock.c                                   | 44 +++++++--------
+>   10 files changed, 157 insertions(+), 103 deletions(-)
+> 
+
 
 _______________________________________________
 kexec mailing list
