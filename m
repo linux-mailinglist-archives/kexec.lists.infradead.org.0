@@ -2,87 +2,72 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6B7E1CCC6
-	for <lists+kexec@lfdr.de>; Tue, 14 May 2019 18:18:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EC561E681
+	for <lists+kexec@lfdr.de>; Wed, 15 May 2019 03:09:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7ialKa28ibuB+Y+HXsO7UO7MHCa8ssZe2vgHMf+wH5U=; b=WLGcsttnr1l+kJ
-	DKYfoVoxD/07ybeWozppUMbocT7FTeuDSaGYKj3bHYPrX8PYlzW2NKXTwoT5yEZp2tlr5pEdqmysW
-	FvisnmGolqS2iHHPheNDrMZzvnJrb+TkNvifxKkbdYCXqESl/kvJ+SlP8+st9o7nskeHW9LlZSLuV
-	pY1N+foaeDavaxzzORYsk9d3y0S2AVcDjultCpN6wM5MsvxcvophZlCRTPm7wpaC64lPIkGFVoZ2z
-	uR6YQqYVj2cpmEwb0343bXXR3Pgxkc7iybmsKkhm//+/UZfqxsvkt8cftIAAmSFRcXCPzazfb1TSr
-	nsoOHSialU3ssOfXEBPg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xacjt5UETInS0LsaFYZmQh5ck+QTEuD65xewSOWUwL8=; b=VgeF7CIVcbeROi
+	UKOQ9cBtY1Iy+4ykpcwUWR7nW3bx+rDxhKka3l1R2ZAWRF+JYu5DYG8IELse66s7eKvBO86aFzzHY
+	DXfvEaGRf0T1/sMSrd0nrtnx3oa6uA3oyqwWMzt0Koy9G3EiBhBU/OHfUaqE26klxOsr62Nawjzac
+	i5LiAJaru6vHM+LfAOF74M+AtFJ+A7xJJSE+ZNyHwHgVesnhHoFAKHQ7sdCV+KJ+qSWYuAWY/6ofd
+	KKeRAe8WWG/q21UUfUWqRMQxHFnV4yCCtg59mB5zqnOf3aeuC5HOsj6FAYvbWBNwY0KZhB9a/hRIW
+	72drqKxOLOzqkfybuHIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hQa8G-0007iN-KE; Tue, 14 May 2019 16:18:24 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1hQiPs-0006VU-3I; Wed, 15 May 2019 01:09:08 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hQa8D-0007hz-HQ
- for kexec@lists.infradead.org; Tue, 14 May 2019 16:18:22 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e15so7502490wrs.4
- for <kexec@lists.infradead.org>; Tue, 14 May 2019 09:18:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2QCo8Dha4jyH5qWVup39lkl3qNYvyEmFp/lbafcwv0g=;
- b=M2KCHHXa9w7/0ORsFwfWWtv8dG1WOl97mnj3NEraBVfUPCaS3RJyCUsg0aDol2crMV
- raEb9PUzHG/xhP6y6ugm6qvILLGa8UEU//4WsgOZwBDbII7z1cevZXlD4xywNq1wcR3Q
- w0Vl+YrMkTKbMLgJp0H3HliVuCckDZBdoFKx7fzPBO/OP8Bc3AwQp6gVMUSaF7QEvZGu
- fItLVS3WYog+yqtkIDBHgRL18EcAfR1z0ve0HPcxOTPQ28xswqyWZui5KWr/1olovf0n
- +NHrQUziMAS0fVm1Eb/wlwZy0NNHp+wKWJ+bUCFve3NAgimjqazbg1jOtDQ4Tar7EQyR
- Gfsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2QCo8Dha4jyH5qWVup39lkl3qNYvyEmFp/lbafcwv0g=;
- b=jfx1Z9IIMLSqDSzWo10lulaKoYchMNqt4TboroOqnzwShKofh5H5QkmPZosSuTV0f8
- 6dj0j3IQlPpvFMPURYCllcrKcGew+xCpQjn5Wz9hgNHKJ76JhjtJH5Z3c0Wt5DZCrJLi
- ACD1tqNxUdGJIXEt/JgoaGRc0JRoBh6WTNU5zdArLmwObuq6Vt0uTyFVxM3ZNPt5DZX6
- nkl8kGL44O4fy5m9+jWg9mT9qyFCvaq2qR8lEtkq4noP3DjVBamItmYgIiXzHTNwOoxk
- 0ixoC1EvGW8hi9DLbHGnpEwl4/BGQOu8n/lFks4KGTXIiuEghR0R1Y9OVuTmlKxH/4Nb
- BsEA==
-X-Gm-Message-State: APjAAAWCVnhYXABo0oqC09817PDwERQtlhiprG32p9UxzEjYtX3ySRG2
- +7ubv+UAJj0wuaU2+/IHqv4=
-X-Google-Smtp-Source: APXvYqxYdKqSrZRWSHsMpQlKO7iixoLljsIATMn2P6fIRC02plxoPJYE12VcGiTDYRt10LFDD8Y+Wg==
-X-Received: by 2002:a5d:66c1:: with SMTP id k1mr14777198wrw.225.1557850699692; 
- Tue, 14 May 2019 09:18:19 -0700 (PDT)
-Received: from nexussix.ar.arcelik ([84.44.14.233])
- by smtp.gmail.com with ESMTPSA id d16sm15422987wrs.68.2019.05.14.09.18.18
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 14 May 2019 09:18:19 -0700 (PDT)
-From: Cengiz Can <cengizc@gmail.com>
-To: 
-Subject: [PATCH] Documentation: kdump: fix minor typo
-Date: Tue, 14 May 2019 19:17:25 +0300
-Message-Id: <20190514161724.16604-1-cengizc@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ id 1hQiPo-0006Uo-R5
+ for kexec@lists.infradead.org; Wed, 15 May 2019 01:09:06 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 59797308FC5E;
+ Wed, 15 May 2019 01:09:03 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-27.pek2.redhat.com
+ [10.72.12.27])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 5442260166;
+ Wed, 15 May 2019 01:08:57 +0000 (UTC)
+Date: Wed, 15 May 2019 09:08:50 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Ingo Molnar <mingo@kernel.org>
+Subject: Re: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI systab
+ and ACPI tables
+Message-ID: <20190515010850.GA9159@dhcp-128-65.nay.redhat.com>
+References: <20190513014248.GA16774@MiWiFi-R3L-srv>
+ <20190513070725.GA20105@zn.tnic>
+ <20190513073254.GB16774@MiWiFi-R3L-srv>
+ <20190513075006.GB20105@zn.tnic>
+ <20190513080653.GD16774@MiWiFi-R3L-srv>
+ <20190514032208.GA25875@dhcp-128-65.nay.redhat.com>
+ <20190514084841.GA27876@dhcp-128-65.nay.redhat.com>
+ <20190514113826.GM2589@hirez.programming.kicks-ass.net>
+ <20190514125835.GA29045@dhcp-128-65.nay.redhat.com>
+ <20190514140916.GA90245@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190514140916.GA90245@gmail.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.43]); Wed, 15 May 2019 01:09:03 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190514_091821_573373_8F9B3E63 
-X-CRM114-Status: GOOD (  10.87  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190514_180904_898388_749E7608 
+X-CRM114-Status: GOOD (  19.12  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (cengizc[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -94,36 +79,63 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: cengizc@gmail.com, linux-doc@vger.kernel.org, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>
+Cc: x86@kernel.org, kasong@redhat.com, Baoquan He <bhe@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>, fanc.fnst@cn.fujitsu.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Borislav Petkov <bp@alien8.de>, hpa@zytor.com, j-nomura@ce.jp.nec.com,
+ tglx@linutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-kdump.txt had a minor typo.
+On 05/14/19 at 04:09pm, Ingo Molnar wrote:
+> 
+> * Dave Young <dyoung@redhat.com> wrote:
+> 
+> > On 05/14/19 at 01:38pm, Peter Zijlstra wrote:
+> > > On Tue, May 14, 2019 at 04:48:41PM +0800, Dave Young wrote:
+> > > 
+> > > > > I did some tests on the laptop,  thing is:
+> > > > > 1. apply the 3 patches (two you posted + Boris's revert commit 52b922c3d49c)
+> > > > >    on latest Linus master branch, everything works fine.
+> > > > > 
+> > > > > 2. build and test the tip/next-merge-window branch, kernel hangs early
+> > > > > without output, (both 1st boot and kexec boot)
+> > > > 
+> > > > Update about 2.  It should be not early rsdp related, I got the boot log
+> > > > Since can not reproduce with Linus master branch it may have been fixed.
+> > > 
+> > > Nothing was changed here since PTI.
+> > > 
+> > > > [    0.685374][    T1] rcu: Hierarchical SRCU implementation.
+> > > > [    0.686414][    T1] general protection fault: 0000 [#1] SMP PTI
+> > > > [    0.687328][    T1] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.1.0-rc6+ #877
+> > > > [    0.687328][    T1] Hardware name: LENOVO 4236NUC/4236NUC, BIOS 83ET82WW (1.52 ) 06/04/2018
+> > > > [    0.687328][    T1] RIP: 0010:reserve_ds_buffers+0x34e/0x450
+> > > 
+> > > > [    0.687328][    T1] Call Trace:
+> > > > [    0.687328][    T1]  ? hardlockup_detector_event_create+0x50/0x50
+> > > > [    0.687328][    T1]  x86_reserve_hardware+0x173/0x180
+> > > > [    0.687328][    T1]  x86_pmu_event_init+0x39/0x220
+> > > 
+> > > The DS buffers are special in that they're part of cpu_entrt_area. If
+> > > this comes apart it might mean your pagetables are dodgy.
+> > 
+> > Hmm, it seems caused by some WIP branch patches, I suspect below:
+> > commit 124d6af5a5f559e516ed2c6ea857e889ed293b43
+> > x86/paravirt: Standardize 'insn_buff' variable names
+> 
+> This commit had a bug which I fixed - could you try the latest -tip?
 
-Signed-off-by: Cengiz Can <cengizc@gmail.com>
----
- Documentation/kdump/kdump.txt | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Will do, but I do not use tip tree often, not sure which branch includes
+the fix.
 
-diff --git a/Documentation/kdump/kdump.txt b/Documentation/kdump/kdump.txt
-index 51814450a7f8..3162eeb8c262 100644
---- a/Documentation/kdump/kdump.txt
-+++ b/Documentation/kdump/kdump.txt
-@@ -410,7 +410,7 @@ Notes on loading the dump-capture kernel:
- * Boot parameter "1" boots the dump-capture kernel into single-user
-   mode without networking. If you want networking, use "3".
- 
--* We generally don' have to bring up a SMP kernel just to capture the
-+* We generally don't have to bring up a SMP kernel just to capture the
-   dump. Hence generally it is useful either to build a UP dump-capture
-   kernel or specify maxcpus=1 option while loading dump-capture kernel.
-   Note, though maxcpus always works, you had better replace it with
--- 
-2.21.0
+https://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git/
+Is it tip/master or tip/tip?
 
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
