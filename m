@@ -2,73 +2,75 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A04E424901
+	by mail.lfdr.de (Postfix) with ESMTPS id A51A124902
 	for <lists+kexec@lfdr.de>; Tue, 21 May 2019 09:33:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RYIyeQ9w0Mcw6GN1HFTv2nlSttPm/h2+sCtxihWMlbs=; b=qkdPI1q74uRm6f
-	IDxnHg7UmmPMIQCy5CVOs9BCggLvvmuS5vJk2dsbICZ3g9BR6gb8mW/tvS3y4D+pJ42KbdUsPTQjE
-	PRN41mrtUoMxVFC0GGkqsHbc2+kl0uwm5/twyg5zPZ+fixKa1djxxGWgAJFkTsawwczQAYhdVPzZo
-	spL1WR++7fMwH7ugPo8lRn2Nn/reNxEGD2LhD9SzrYHxn1uR8ie7RUe3hwQRPu7mjctbCjl9Zmngk
-	m0CtKDgaa/OaGmy0mR0rMZuzr3DV/QnEDQvWxzXw+WC/pxHf3OVWMB2MMO7O2bMcTnlxrRBfjb2lz
-	V/U7I3mkb6VXQkNw8+7g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GIhi+BYJv7viuKEgXoJ6kx5GU7oPQpCQTdpR0QFXphM=; b=Ld817ywbukE62f
+	1HWSC8RiLMNakOWQWwVYX4Bu++VFATFMlSpdj/GwtgJ1JP08rcI71SPdbQaWPkO3NO0J2+8SlMnrn
+	Xd7QK511P/k4rMa5Dbbz418KQHTXnMGcUR0lotQQcXU78UUtq0SsRYZ8Jbqkn/XeD8tyRpJo3SLBd
+	lrkzu14MZKOv8/L65jH19SWmxoePjsh7K2bNLinhkh6P5ITLEYdqFo9PK5Gnn44sh/k0tchsTts4V
+	ksNuSk8DFEQpCoDHVzIRm8HyxjfurrcUtBLw45k+LfxFMaU7yNGEdfvvsHrvQTWbMeO3NKHSO8ZNL
+	E6dcKonqKEF+fhhUBF9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hSzGh-0007BF-5u; Tue, 21 May 2019 07:33:03 +0000
-Received: from smtp-fw-33001.amazon.com ([207.171.190.10])
+	id 1hSzGh-0007C2-P2; Tue, 21 May 2019 07:33:03 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hSzGa-0007AV-A1
- for kexec@lists.infradead.org; Tue, 21 May 2019 07:32:57 +0000
+ id 1hSzGc-0007Az-Ra
+ for kexec@lists.infradead.org; Tue, 21 May 2019 07:33:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=amazon.de; i=@amazon.de; q=dns/txt; s=amazon201209;
- t=1558423976; x=1589959976;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=oay3RHWpcD7F+EsEsQwW3EURX6DC1ViPJLa9rfFLS1o=;
- b=v67NLI5vWTKLAuew7x/BS+vmlm3lBZU+ZEDq58T2oyT48hqV0Bs2v2Mj
- flTWx0mMvTxDJe5Rb/PeRWFGTw/ee0iSrXOzH6aq1295xRD2GnRbrZA/M
- X0TaMhpEQLlaIkDY2+ofNXKQSVnyxE9SrXLrYhoFgEGYXpAvAapO+FUss o=;
-X-IronPort-AV: E=Sophos;i="5.60,494,1549929600"; d="scan'208";a="800839751"
-Received: from sea3-co-svc-lb6-vlan2.sea.amazon.com (HELO
- email-inbound-relay-1e-57e1d233.us-east-1.amazon.com) ([10.47.22.34])
- by smtp-border-fw-out-33001.sea14.amazon.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
- 21 May 2019 07:32:53 +0000
-Received: from EX13MTAUEA001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
- by email-inbound-relay-1e-57e1d233.us-east-1.amazon.com (8.14.7/8.14.7) with
- ESMTP id x4L7Wmjf082565
+ t=1558423978; x=1589959978;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=1HaFT6sWUtjFyAaLcb74Jt1vwQ48xgzA8IcPI7WHgjE=;
+ b=KzHuF0uvWgrBUUN6mcK3/tMOAXLNBlAT/Yl4wWahsxXqju8lGa+GJQ61
+ 2K8g+YGu1s3yLimy134skoskpHoadDsHFya/NgSeiQotlwJkGptwZrWRs
+ PB9lnIVUHKE8rmdX1u/iH96Jd9YQ1gdn8BC1Kmhii+GrZ092h/blI4Fpm Q=;
+X-IronPort-AV: E=Sophos;i="5.60,494,1549929600"; d="scan'208";a="675490955"
+Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
+ email-inbound-relay-2a-1c1b5cdd.us-west-2.amazon.com) ([10.47.22.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP/TLS/DHE-RSA-AES256-SHA;
+ 21 May 2019 07:32:57 +0000
+Received: from EX13MTAUEB001.ant.amazon.com
+ (pdx1-ws-svc-p6-lb9-vlan3.pdx.amazon.com [10.236.137.198])
+ by email-inbound-relay-2a-1c1b5cdd.us-west-2.amazon.com (8.14.7/8.14.7) with
+ ESMTP id x4L7WqYp068603
  (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=FAIL)
- for <kexec@lists.infradead.org>; Tue, 21 May 2019 07:32:52 GMT
-Received: from EX13D08UEE001.ant.amazon.com (10.43.62.126) by
- EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Tue, 21 May 2019 07:32:48 +0000
+ for <kexec@lists.infradead.org>; Tue, 21 May 2019 07:32:56 GMT
+Received: from EX13D08UEB001.ant.amazon.com (10.43.60.245) by
+ EX13MTAUEB001.ant.amazon.com (10.43.60.96) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 21 May 2019 07:32:56 +0000
 Received: from EX13MTAUWC001.ant.amazon.com (10.43.162.135) by
- EX13D08UEE001.ant.amazon.com (10.43.62.126) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Tue, 21 May 2019 07:32:48 +0000
+ EX13D08UEB001.ant.amazon.com (10.43.60.245) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 21 May 2019 07:32:55 +0000
 Received: from u908889d5e8f057.ant.amazon.com (10.28.86.17) by
  mail-relay.amazon.com (10.43.162.232) with Microsoft SMTP Server id
- 15.0.1367.3 via Frontend Transport; Tue, 21 May 2019 07:32:45 +0000
+ 15.0.1367.3 via Frontend Transport; Tue, 21 May 2019 07:32:53 +0000
 From: Varad Gautam <vrd@amazon.de>
 To: <kexec@lists.infradead.org>
-Subject: [PATCH 1/3] xen: Avoid overlapping segments in low memory
-Date: Tue, 21 May 2019 09:32:26 +0200
-Message-ID: <1558423948-24583-1-git-send-email-vrd@amazon.de>
+Subject: [PATCH 2/3] elf: Support ELF loading with relocation
+Date: Tue, 21 May 2019 09:32:27 +0200
+Message-ID: <1558423948-24583-2-git-send-email-vrd@amazon.de>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1558423948-24583-1-git-send-email-vrd@amazon.de>
+References: <1558423948-24583-1-git-send-email-vrd@amazon.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190521_003256_438867_8AC6CEE6 
-X-CRM114-Status: GOOD (  15.60  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190521_003258_957493_84287B68 
+X-CRM114-Status: GOOD (  18.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.171.190.10 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.29 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,96 +92,294 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: David Woodhouse <dwmw@amazon.co.uk>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Varad Gautam <vrd@amazon.de>, David Woodhouse <dwmw@amazon.co.uk>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-RnJvbTogRGF2aWQgV29vZGhvdXNlIDxkd213QGFtYXpvbi5jby51az4KClVubGlrZSBMaW51eCB3
-aGljaCBjcmVhdGVzIGEgZnVsbCBpZGVudGl0eSBtYXBwaW5nLCBYZW4gb25seSBtYXBzIHRob3Nl
-CnNlZ21lbnRzIHdoaWNoIGFyZSBleHBsaWNpdGx5IHJlcXVlc3RlZC4gVGhlcmVmb3JlLCB4ZW5f
-a2V4ZWNfbG9hZCgpCnNpbGVudGx5IGFkZHMgaW4gYSBzZWdtZW50IGZyb20gemVybyB0byAxTWlC
-IHRvIGVuc3VyZSB0aGF0IFZHQSBtZW1vcnkKYW5kIG90aGVyIHRoaW5ncyBhcmUgYWNjZXNzaWJs
-ZS4KCkhvd2V2ZXIsIHRoaXMgZG9lc24ndCB3b3JrIHdoZW4gdGhlcmUgYXJlIGFscmVhZHkgc2Vn
-bWVudHMgdG8gYmUgbG9hZGVkCnVuZGVyIDFNaUIsIGJlY2F1c2UgdGhlIG92ZXJsYXAgY2F1c2Vz
-IFhlbiB0byByZWplY3QgdGhlIGtleGVjX2xvYWQuCgpCZSBtb3JlIGNhcmVmdWwgYW5kIGp1c3Qg
-aW5maWxsIHRoZSByYW5nZXMgd2hpY2ggYXJlIHJlcXVpcmVkIGluc3RlYWQKb2YgbmHDr3ZlbHkg
-YWRkaW5nIGEgZnVsbCAwLTFNaUIgc2VnbWVudCBhdCB0aGUgZW5kLgoKU2lnbmVkLW9mZi1ieTog
-RGF2aWQgV29vZGhvdXNlIDxkd213QGFtYXpvbi5jby51az4KLS0tCiBrZXhlYy9rZXhlYy14ZW4u
-YyB8IDczICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKystLS0tLS0tLS0t
-LS0tLS0KIDEgZmlsZSBjaGFuZ2VkLCA1NCBpbnNlcnRpb25zKCspLCAxOSBkZWxldGlvbnMoLSkK
-CmRpZmYgLS1naXQgYS9rZXhlYy9rZXhlYy14ZW4uYyBiL2tleGVjL2tleGVjLXhlbi5jCmluZGV4
-IDE4ODczOTAuLmMzMjY5NTUgMTAwNjQ0Ci0tLSBhL2tleGVjL2tleGVjLXhlbi5jCisrKyBiL2tl
-eGVjL2tleGVjLXhlbi5jCkBAIC02NCwxNSArNjQsMTggQEAgaW50IF9feGNfaW50ZXJmYWNlX2Ns
-b3NlKHhjX2ludGVyZmFjZSAqeGNoKQogfQogI2VuZGlmIC8qIENPTkZJR19MSUJYRU5DVFJMX0RM
-ICovCiAKKyNkZWZpbmUgSURFTlRNQVBfMU1pQiAoMTAyNCAqIDEwMjQpCisKIGludCB4ZW5fa2V4
-ZWNfbG9hZChzdHJ1Y3Qga2V4ZWNfaW5mbyAqaW5mbykKIHsKLQl1aW50MzJfdCBucl9zZWdtZW50
-cyA9IGluZm8tPm5yX3NlZ21lbnRzOworCXVpbnQzMl90IG5yX3NlZ21lbnRzID0gaW5mby0+bnJf
-c2VnbWVudHMsIG5yX2xvd19zZWdtZW50cyA9IDA7CiAJc3RydWN0IGtleGVjX3NlZ21lbnQgKnNl
-Z21lbnRzID0gaW5mby0+c2VnbWVudDsKKwl1aW50NjRfdCBsb3dfd2F0ZXJtYXJrID0gMDsKIAl4
-Y19pbnRlcmZhY2UgKnhjaDsKIAl4Y19oeXBlcmNhbGxfYnVmZmVyX2FycmF5X3QgKmFycmF5ID0g
-TlVMTDsKIAl1aW50OF90IHR5cGU7CiAJdWludDhfdCBhcmNoOwotCXhlbl9rZXhlY19zZWdtZW50
-X3QgKnhlbl9zZWdzOworCXhlbl9rZXhlY19zZWdtZW50X3QgKnhlbl9zZWdzLCAqc2VnOwogCWlu
-dCBzOwogCWludCByZXQgPSAtMTsKIApAQCAtODAsNyArODMsMjggQEAgaW50IHhlbl9rZXhlY19s
-b2FkKHN0cnVjdCBrZXhlY19pbmZvICppbmZvKQogCWlmICgheGNoKQogCQlyZXR1cm4gLTE7CiAK
-LQl4ZW5fc2VncyA9IGNhbGxvYyhucl9zZWdtZW50cyArIDEsIHNpemVvZigqeGVuX3NlZ3MpKTsK
-KwkvKgorCSAqIEVuc3VyZSAwIC0gMSBNaUIgaXMgbWFwcGVkIGFuZCBhY2Nlc3NpYmxlIGJ5IHRo
-ZSBpbWFnZS4KKwkgKiBUaGlzIGFsbG93cyBhY2Nlc3MgdG8gdGhlIFZHQSBtZW1vcnkgYW5kIHRo
-ZSByZWdpb24KKwkgKiBwdXJnYXRvcnkgY29waWVzIGluIHRoZSBjcmFzaCBjYXNlLgorCSAqCisJ
-ICogRmlyc3QsIGNvdW50IHRoZSBudW1iZXIgb2YgYWRkaXRpb25hbCBzZWdtZW50cyB3aGljaCB3
-aWxsCisJICogbmVlZCB0byBiZSBhZGRlZCBpbiBiZXR3ZWVuIHRoZSBvbmVzIGluIHNlZ21lbnRz
-W10uCisJICoKKwkgKiBUaGUgc2VnbWVudHMgYXJlIGFscmVhZHkgc29ydGVkLgorCSAqLworCWZv
-ciAocyA9IDA7IHMgPCBucl9zZWdtZW50cyAmJiAodWludDY0X3Qpc2VnbWVudHNbc10ubWVtIDw9
-IElERU5UTUFQXzFNaUI7IHMrKykgeworCQlpZiAoKHVpbnQ2NF90KXNlZ21lbnRzW3NdLm1lbSA+
-IGxvd193YXRlcm1hcmspCisJCQlucl9sb3dfc2VnbWVudHMrKzsKKworCQlsb3dfd2F0ZXJtYXJr
-ID0gKHVpbnQ2NF90KXNlZ21lbnRzW3NdLm1lbSArIHNlZ21lbnRzW3NdLm1lbXN6OworCX0KKwlp
-ZiAobG93X3dhdGVybWFyayA8IElERU5UTUFQXzFNaUIpCisJCW5yX2xvd19zZWdtZW50cysrOwor
-CisJbG93X3dhdGVybWFyayA9IDA7CisKKwl4ZW5fc2VncyA9IGNhbGxvYyhucl9zZWdtZW50cyAr
-IG5yX2xvd19zZWdtZW50cywgc2l6ZW9mKCp4ZW5fc2VncykpOwogCWlmICgheGVuX3NlZ3MpCiAJ
-CWdvdG8gb3V0OwogCkBAIC04OCwzMiArMTEyLDQzIEBAIGludCB4ZW5fa2V4ZWNfbG9hZChzdHJ1
-Y3Qga2V4ZWNfaW5mbyAqaW5mbykKIAlpZiAoYXJyYXkgPT0gTlVMTCkKIAkJZ290byBvdXQ7CiAK
-KwlzZWcgPSB4ZW5fc2VnczsKIAlmb3IgKHMgPSAwOyBzIDwgbnJfc2VnbWVudHM7IHMrKykgewog
-CQlERUNMQVJFX0hZUEVSQ0FMTF9CVUZGRVIodm9pZCwgc2VnX2J1Zik7CiAKKwkJaWYgKGxvd193
-YXRlcm1hcmsgPCBJREVOVE1BUF8xTWlCICYmICh1aW50NjRfdClzZWdtZW50c1tzXS5tZW0gPiBs
-b3dfd2F0ZXJtYXJrKSB7CisJCQlzZXRfeGVuX2d1ZXN0X2hhbmRsZShzZWctPmJ1Zi5oLCBIWVBF
-UkNBTExfQlVGRkVSX05VTEwpOworCQkJc2VnLT5idWZfc2l6ZSA9IDA7CisJCQlzZWctPmRlc3Rf
-bWFkZHIgPSBsb3dfd2F0ZXJtYXJrOworCQkJbG93X3dhdGVybWFyayA9ICh1aW50NjRfdClzZWdt
-ZW50c1tzXS5tZW07CisJCQlpZiAobG93X3dhdGVybWFyayA+IElERU5UTUFQXzFNaUIpCisJCQkJ
-bG93X3dhdGVybWFyayA9IElERU5UTUFQXzFNaUI7CisJCQlzZWctPmRlc3Rfc2l6ZSA9IGxvd193
-YXRlcm1hcmsgLSBzZWctPmRlc3RfbWFkZHI7CisJCQlzZWcrKzsKKwkJfQorCiAJCXNlZ19idWYg
-PSB4Y19oeXBlcmNhbGxfYnVmZmVyX2FycmF5X2FsbG9jKHhjaCwgYXJyYXksIHMsCiAJCQkJCQkJ
-ICBzZWdfYnVmLCBzZWdtZW50c1tzXS5idWZzeik7CiAJCWlmIChzZWdfYnVmID09IE5VTEwpCiAJ
-CQlnb3RvIG91dDsKIAkJbWVtY3B5KHNlZ19idWYsIHNlZ21lbnRzW3NdLmJ1Ziwgc2VnbWVudHNb
-c10uYnVmc3opOwogCi0JCXNldF94ZW5fZ3Vlc3RfaGFuZGxlKHhlbl9zZWdzW3NdLmJ1Zi5oLCBz
-ZWdfYnVmKTsKLQkJeGVuX3NlZ3Nbc10uYnVmX3NpemUgPSBzZWdtZW50c1tzXS5idWZzejsKLQkJ
-eGVuX3NlZ3Nbc10uZGVzdF9tYWRkciA9ICh1aW50NjRfdClzZWdtZW50c1tzXS5tZW07Ci0JCXhl
-bl9zZWdzW3NdLmRlc3Rfc2l6ZSA9IHNlZ21lbnRzW3NdLm1lbXN6OworCQlzZXRfeGVuX2d1ZXN0
-X2hhbmRsZShzZWctPmJ1Zi5oLCBzZWdfYnVmKTsKKwkJc2VnLT5idWZfc2l6ZSA9IHNlZ21lbnRz
-W3NdLmJ1ZnN6OworCQlzZWctPmRlc3RfbWFkZHIgPSAodWludDY0X3Qpc2VnbWVudHNbc10ubWVt
-OworCQlzZWctPmRlc3Rfc2l6ZSA9IHNlZ21lbnRzW3NdLm1lbXN6OworCQlzZWcrKzsKKworCQls
-b3dfd2F0ZXJtYXJrID0gKHVpbnQ2NF90KXNlZ21lbnRzW3NdLm1lbSArIHNlZ21lbnRzW3NdLm1l
-bXN6OwogCX0KIAotCS8qCi0JICogRW5zdXJlIDAgLSAxIE1pQiBpcyBtYXBwZWQgYW5kIGFjY2Vz
-c2libGUgYnkgdGhlIGltYWdlLgotCSAqCi0JICogVGhpcyBhbGxvd3MgYWNjZXNzIHRvIHRoZSBW
-R0EgbWVtb3J5IGFuZCB0aGUgcmVnaW9uCi0JICogcHVyZ2F0b3J5IGNvcGllcyBpbiB0aGUgY3Jh
-c2ggY2FzZS4KLQkgKi8KLQlzZXRfeGVuX2d1ZXN0X2hhbmRsZSh4ZW5fc2Vnc1tzXS5idWYuaCwg
-SFlQRVJDQUxMX0JVRkZFUl9OVUxMKTsKLQl4ZW5fc2Vnc1tzXS5idWZfc2l6ZSA9IDA7Ci0JeGVu
-X3NlZ3Nbc10uZGVzdF9tYWRkciA9IDA7Ci0JeGVuX3NlZ3Nbc10uZGVzdF9zaXplID0gMSAqIDEw
-MjQgKiAxMDI0OwotCW5yX3NlZ21lbnRzKys7CisJaWYgKCh1aW50NjRfdClsb3dfd2F0ZXJtYXJr
-IDwgSURFTlRNQVBfMU1pQikgeworCQlzZXRfeGVuX2d1ZXN0X2hhbmRsZShzZWctPmJ1Zi5oLCBI
-WVBFUkNBTExfQlVGRkVSX05VTEwpOworCQlzZWctPmJ1Zl9zaXplID0gMDsKKwkJc2VnLT5kZXN0
-X21hZGRyID0gbG93X3dhdGVybWFyazsKKwkJc2VnLT5kZXN0X3NpemUgPSBJREVOVE1BUF8xTWlC
-IC0gbG93X3dhdGVybWFyazsKKwkJc2VnKys7CisJfQogCiAJdHlwZSA9IChpbmZvLT5rZXhlY19m
-bGFncyAmIEtFWEVDX09OX0NSQVNIKSA/IEtFWEVDX1RZUEVfQ1JBU0gKIAkJOiBLRVhFQ19UWVBF
-X0RFRkFVTFQ7CkBAIC0xMjUsNyArMTYwLDcgQEAgaW50IHhlbl9rZXhlY19sb2FkKHN0cnVjdCBr
-ZXhlY19pbmZvICppbmZvKQogI2VuZGlmCiAKIAlyZXQgPSB4Y19rZXhlY19sb2FkKHhjaCwgdHlw
-ZSwgYXJjaCwgKHVpbnQ2NF90KWluZm8tPmVudHJ5LAotCQkJICAgIG5yX3NlZ21lbnRzLCB4ZW5f
-c2Vncyk7CisJCQkgICAgbnJfc2VnbWVudHMgKyBucl9sb3dfc2VnbWVudHMsIHhlbl9zZWdzKTsK
-IAogb3V0OgogCXhjX2h5cGVyY2FsbF9idWZmZXJfYXJyYXlfZGVzdHJveSh4Y2gsIGFycmF5KTsK
-LS0gCjIuNy40CgoKCgpBbWF6b24gRGV2ZWxvcG1lbnQgQ2VudGVyIEdlcm1hbnkgR21iSApLcmF1
-c2Vuc3RyLiAzOAoxMDExNyBCZXJsaW4KR2VzY2hhZWZ0c2Z1ZWhyZXI6IENocmlzdGlhbiBTY2hs
-YWVnZXIsIFJhbGYgSGVyYnJpY2gKVXN0LUlEOiBERSAyODkgMjM3IDg3OQpFaW5nZXRyYWdlbiBh
-bSBBbXRzZ2VyaWNodCBDaGFybG90dGVuYnVyZyBIUkIgMTQ5MTczIEIKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhl
-Y0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8va2V4ZWMK
+Add a helper to allow loading an image within specified address range.
+This will be used to load multiboot2 images later.
+
+Signed-off-by: Varad Gautam <vrd@amazon.de>
+---
+ kexec/kexec-elf-exec.c | 199 +++++++++++++++++++++++++++++++++----------------
+ kexec/kexec-elf.h      |   7 ++
+ 2 files changed, 141 insertions(+), 65 deletions(-)
+
+diff --git a/kexec/kexec-elf-exec.c b/kexec/kexec-elf-exec.c
+index a9329ac..bea7b3e 100644
+--- a/kexec/kexec-elf-exec.c
++++ b/kexec/kexec-elf-exec.c
+@@ -11,6 +11,84 @@
+ 
+ static const int probe_debug = 0;
+ 
++static void load_elf_segments(struct mem_ehdr *ehdr, struct kexec_info *info, unsigned long base)
++{
++	size_t i;
++
++	/* Read in the PT_LOAD segments */
++	for(i = 0; i < ehdr->e_phnum; i++) {
++		struct mem_phdr *phdr;
++		size_t size;
++		phdr = &ehdr->e_phdr[i];
++		if (phdr->p_type != PT_LOAD) {
++			continue;
++		}
++		size = phdr->p_filesz;
++		if (size > phdr->p_memsz) {
++			size = phdr->p_memsz;
++		}
++		add_segment(info, phdr->p_data, size,
++					phdr->p_paddr + base, phdr->p_memsz);
++	}
++}
++
++static int get_elf_exec_load_base(struct mem_ehdr *ehdr, struct kexec_info *info,
++				  unsigned long min, unsigned long max,
++				  unsigned long align, unsigned long *base)
++{
++	unsigned long first, last;
++	size_t i;
++
++	/* Note on arm64:
++	 * arm64's vmlinux has virtual address in physical address
++	 * field of PT_LOAD segments. So the following validity check
++	 * and relocation makes no sense on arm64.
++	 */
++	if (ehdr->e_machine == EM_AARCH64)
++		return 0;
++
++	first = ULONG_MAX;
++	last  = 0;
++	for(i = 0; i < ehdr->e_phnum; i++) {
++		unsigned long start, stop;
++		struct mem_phdr *phdr;
++		phdr = &ehdr->e_phdr[i];
++		if ((phdr->p_type != PT_LOAD) ||
++			(phdr->p_memsz == 0))
++		{
++			continue;
++		}
++		start = phdr->p_paddr;
++		stop  = start + phdr->p_memsz;
++		if (first > start) {
++			first = start;
++		}
++		if (last < stop) {
++			last = stop;
++		}
++		if (align < phdr->p_align) {
++			align = phdr->p_align;
++		}
++	}
++
++	if ((max - min) < (last - first))
++		return -1;
++
++	if (!valid_memory_range(info, min > first ? min : first, max < last ? max : last)) {
++		unsigned long hole;
++		hole = locate_hole(info, last - first + 1, align, min, max, 1);
++		if (hole == ULONG_MAX)
++			return -1;
++
++		/* Base is the value that when added
++		 * to any virtual address in the file
++		 * yields it's load virtual address.
++		 */
++		*base = hole - first;
++	}
++	return 0;
++}
++
+ int build_elf_exec_info(const char *buf, off_t len, struct mem_ehdr *ehdr,
+ 				uint32_t flags)
+ {
+@@ -53,7 +131,6 @@ int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info)
+ {
+ 	unsigned long base;
+ 	int result;
+-	size_t i;
+ 
+ 	if (!ehdr->e_phdr) {
+ 		fprintf(stderr, "No program header?\n");
+@@ -63,75 +140,48 @@ int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info)
+ 
+ 	/* If I have a dynamic executable find it's size
+ 	 * and then find a location for it in memory.
+-	 * Note on arm64:
+-	 * arm64's vmlinux has virtual address in physical address
+-	 * field of PT_LOAD segments. So the following validity check
+-	 * and relocation makes no sense on arm64.
+ 	 */
+ 	base = 0;
+-	if ((ehdr->e_machine != EM_AARCH64) && (ehdr->e_type == ET_DYN)) {
+-		unsigned long first, last, align;
+-		first = ULONG_MAX;
+-		last  = 0;
+-		align = 0;
+-		for(i = 0; i < ehdr->e_phnum; i++) {
+-			unsigned long start, stop;
+-			struct mem_phdr *phdr;
+-			phdr = &ehdr->e_phdr[i];
+-			if ((phdr->p_type != PT_LOAD) ||
+-				(phdr->p_memsz == 0))
+-			{
+-				continue;
+-			}
+-			start = phdr->p_paddr;
+-			stop  = start + phdr->p_memsz;
+-			if (first > start) {
+-				first = start;
+-			}
+-			if (last < stop) {
+-				last = stop;
+-			}
+-			if (align < phdr->p_align) {
+-				align = phdr->p_align;
+-			}
+-		}
+-		/* If I can't use the default paddr find a new
+-		 * hole for the dynamic executable.
+-		 */
+-		if (!valid_memory_range(info, first, last)) {
+-			unsigned long hole;
+-			hole = locate_hole(info,
+-				last - first + 1, align, 
+-				0, elf_max_addr(ehdr), 1);
+-			if (hole == ULONG_MAX) {
+-				result = -1;
+-				goto out;
+-			}
+-			/* Base is the value that when added
+-			 * to any virtual address in the file
+-			 * yields it's load virtual address.
+-			 */
+-			base = hole - first;
+-		}
+-
++	if (ehdr->e_type == ET_DYN) {
++		result = get_elf_exec_load_base(ehdr, info, 0, elf_max_addr(ehdr), 0 /* align */, &base);
++		if (result < 0)
++			goto out;
+ 	}
+ 
+-	/* Read in the PT_LOAD segments */
+-	for(i = 0; i < ehdr->e_phnum; i++) {
+-		struct mem_phdr *phdr;
+-		size_t size;
+-		phdr = &ehdr->e_phdr[i];
+-		if (phdr->p_type != PT_LOAD) {
+-			continue;
+-		}
+-		size = phdr->p_filesz;
+-		if (size > phdr->p_memsz) {
+-			size = phdr->p_memsz;
+-		}
+-		add_segment(info,
+-			phdr->p_data, size,
+-			phdr->p_paddr + base, phdr->p_memsz);
++	load_elf_segments(ehdr, info, base);
++
++	/* Update entry point to reflect new load address*/
++	ehdr->e_entry += base;
++
++	result = 0;
++ out:
++	return result;
++}
++
++int elf_exec_load_relocatable(struct mem_ehdr *ehdr, struct kexec_info *info,
++			      unsigned long reloc_min, unsigned long reloc_max,
++			      unsigned long align)
++{
++	unsigned long base;
++	int result;
++
++	if (reloc_min > reloc_max) {
++		fprintf(stderr, "Bad relocation range, start=%lux > end=%lux.\n", reloc_min, reloc_max);
++		result = -1;
++		goto out;
+ 	}
++	if (!ehdr->e_phdr) {
++		fprintf(stderr, "No program header?\n");
++		result = -1;
++		goto out;
++	}
++
++	base = 0;
++	result = get_elf_exec_load_base(ehdr, info, reloc_min, reloc_max, align, &base);
++	if (result < 0)
++		goto out;
++
++	load_elf_segments(ehdr, info, base);
+ 
+ 	/* Update entry point to reflect new load address*/
+ 	ehdr->e_entry += base;
+@@ -157,3 +207,22 @@ void elf_exec_build_load(struct kexec_info *info, struct mem_ehdr *ehdr,
+ 		die("ELF exec load failed\n");
+ 	}
+ }
++
++void elf_exec_build_load_relocatable(struct kexec_info *info, struct mem_ehdr *ehdr,
++				     const char *buf, off_t len, uint32_t flags,
++				     unsigned long reloc_min, unsigned long reloc_max,
++				     unsigned long align)
++{
++	int result;
++	/* Parse the Elf file */
++	result = build_elf_exec_info(buf, len, ehdr, flags);
++	if (result < 0) {
++		die("%s: ELF exec parse failed\n", __func__);
++	}
++
++	/* Load the Elf data */
++	result = elf_exec_load_relocatable(ehdr, info, reloc_min, reloc_max, align);
++	if (result < 0) {
++		die("%s: ELF exec load failed\n", __func__);
++	}
++}
+\ No newline at end of file
+diff --git a/kexec/kexec-elf.h b/kexec/kexec-elf.h
+index 1164db4..1e512c8 100644
+--- a/kexec/kexec-elf.h
++++ b/kexec/kexec-elf.h
+@@ -100,11 +100,18 @@ extern int build_elf_rel_info(const char *buf, off_t len, struct mem_ehdr *ehdr,
+ extern int build_elf_core_info(const char *buf, off_t len,
+ 					struct mem_ehdr *ehdr, uint32_t flags);
+ extern int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info);
++extern int elf_exec_load_relocatable(struct mem_ehdr *ehdr, struct kexec_info *info,
++				     unsigned long reloc_min, unsigned long reloc_max,
++				     unsigned long align);
+ extern int elf_rel_load(struct mem_ehdr *ehdr, struct kexec_info *info,
+ 	unsigned long min, unsigned long max, int end);
+ 
+ extern void elf_exec_build_load(struct kexec_info *info, struct mem_ehdr *ehdr, 
+ 				const char *buf, off_t len, uint32_t flags);
++extern void elf_exec_build_load_relocatable(struct kexec_info *info, struct mem_ehdr *ehdr,
++					    const char *buf, off_t len, uint32_t flags,
++					    unsigned long reloc_min, unsigned long reloc_max,
++					    unsigned long align);
+ extern void elf_rel_build_load(struct kexec_info *info, struct mem_ehdr *ehdr, 
+ 	const char *buf, off_t len, unsigned long min, unsigned long max, 
+ 	int end, uint32_t flags);
+-- 
+2.7.4
+
+
+
+
+Amazon Development Center Germany GmbH
+Krausenstr. 38
+10117 Berlin
+Geschaeftsfuehrer: Christian Schlaeger, Ralf Herbrich
+Ust-ID: DE 289 237 879
+Eingetragen am Amtsgericht Charlottenburg HRB 149173 B
+
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
