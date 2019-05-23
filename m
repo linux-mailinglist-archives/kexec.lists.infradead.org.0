@@ -2,100 +2,68 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E38DD2753F
-	for <lists+kexec@lfdr.de>; Thu, 23 May 2019 06:43:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3446C27B52
+	for <lists+kexec@lfdr.de>; Thu, 23 May 2019 13:05:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=qVWjXSqJ8h9YurWVnbdvglrN3Ait8cl9w0En6gpYJZI=; b=e7Tgk5DXvrXrq5xpb8+9CGhNZ/
-	ypPIGV6uLP3TpmYzGQ2uY1dgLHHBMLHdKx3x4+2H1Sw4bNUcP5c7Z+wY70ilGZVy+pjdvcRG9nq7u
-	+73xr2NU+XOHP9y0qrBA17easUyq7pxMHWgCBDhRRUs/CNDec52G1kaOyMZRKxnOKGUf51fJQCnTk
-	ZYp5T8nsr1pWkEUljZF7qZpO0APzy0f2H1pJA9oNl2a0QBgbn7NnRA2Irk2fNa4Fv0Pg/zVC3iEzY
-	nE/6EuLULp4FJKAbGvo6PCE8HxC//Qf4k1IXLY3SVm/iG3Ii3/8HgFHquRa5zsSdupvuE3eL/9md3
-	ScQCqf5w==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bxMiyFPtfEb+Iw4tzJEgTjcdXhmN9U4HSqgzCNRaxJI=; b=WERGbW6qlcwtMo
+	6Ynq1g2G9pFem4OvyCC09J6zzjUTj5XRIPymC1K+eKwZc6y+opmE8DBUVdbGZu9U2uIo39JCEMh8n
+	WOiQIkJsO8ym87FtxgOX+X2ApEnfyBJQ18IrC+tnpO5O3GAWu2o3dzy0x6p54Q35Rob+n3pCSz9Wp
+	gt2azaM2cnCDQAEBEBKs8WwEuYUG6ibX0K65E6+z+TIhnspfO5s+KdjnOtNU9XqQasa5CzlXb4X3i
+	e+kjNxFSlSnHBmz5BWsAxTivnordUN6e4bkPp8H+2yXXahTcjLb0FG0LHNVg/GgXVOeS8nL/9KLmC
+	tQjqfMbsGRsKUXW8hu9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTfZx-0002I2-L1; Thu, 23 May 2019 04:43:45 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1hTlX0-0005sv-52; Thu, 23 May 2019 11:05:06 +0000
+Received: from mail-it1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTfZu-0002Hg-Kv
- for kexec@lists.infradead.org; Thu, 23 May 2019 04:43:44 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4N4bQ2s024753
- for <kexec@lists.infradead.org>; Thu, 23 May 2019 00:43:41 -0400
-Received: from e34.co.us.ibm.com (e34.co.us.ibm.com [32.97.110.152])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2snkcqtp0c-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <kexec@lists.infradead.org>; Thu, 23 May 2019 00:43:41 -0400
-Received: from localhost
- by e34.co.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <kexec@lists.infradead.org> from <bauerman@linux.ibm.com>;
- Thu, 23 May 2019 05:43:40 +0100
-Received: from b03cxnp07029.gho.boulder.ibm.com (9.17.130.16)
- by e34.co.us.ibm.com (192.168.1.134) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Thu, 23 May 2019 05:43:38 +0100
-Received: from b03ledav006.gho.boulder.ibm.com
- (b03ledav006.gho.boulder.ibm.com [9.17.130.237])
- by b03cxnp07029.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x4N4hbPk3473914
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 23 May 2019 04:43:37 GMT
-Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id E7414C605F;
- Thu, 23 May 2019 04:43:36 +0000 (GMT)
-Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id DA869C6055;
- Thu, 23 May 2019 04:43:34 +0000 (GMT)
-Received: from morokweng.localdomain (unknown [9.80.216.227])
- by b03ledav006.gho.boulder.ibm.com (Postfix) with ESMTPS;
- Thu, 23 May 2019 04:43:34 +0000 (GMT)
-References: <20190522220158.18479-1-bauerman@linux.ibm.com>
- <20190523032302.GD8174@dhcp-128-65.nay.redhat.com>
-User-agent: mu4e 1.0; emacs 26.2
-From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-To: Dave Young <dyoung@redhat.com>
-Subject: Re: [PATCH] powerpc: Fix loading of kernel + initramfs with
- kexec_file_load()
-In-reply-to: <20190523032302.GD8174@dhcp-128-65.nay.redhat.com>
-Date: Thu, 23 May 2019 01:43:29 -0300
+ id 1hTlWs-0005rS-6F
+ for kexec@lists.infradead.org; Thu, 23 May 2019 11:05:00 +0000
+Received: by mail-it1-f196.google.com with SMTP id j17so7992382itk.0
+ for <kexec@lists.infradead.org>; Thu, 23 May 2019 04:04:57 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bszh6zWvpIHD18LEdDJozbrleTCn7t9j7iqoQX16fGM=;
+ b=HHTpRol59pe+v4ulwO6gvslDIW0ctgntnTc0HIVINR1aURFsGPR2c5mBXCxscnNjLF
+ qkrb+4dFLfa2iUzCRxoUmdUbn+81KiFeFEp/D9O4sEuqUpqlnC0DM+grwgRAQDA4v3gK
+ /QD6C4yn9FEywZyaNBWRUAQrIx+buBHg6lg3v4RqWBihwejigwq1T3+1DOfZz+S6MOW4
+ 4RsFFLATu/IJWFYgFxrdSK9IGtrLUPODOJ+orGZ8C4aWS/EyKstu7BruiZOFGudGareN
+ tenSFnHIsJR+LQus+GZSQ5nIMbBmtNzab7hQEaNPWWBFSsq+nNjtnWCAEjDoZcJUNC7f
+ 5VgA==
+X-Gm-Message-State: APjAAAUpeyupCPt/Z1TZ54NNvssDyTKLIO3xTOCqqVWNSfpGG2noLRJM
+ laa2XxIEGPCib5plLzVaS2Fje1Krf2/6mUqepbNAlA==
+X-Google-Smtp-Source: APXvYqxpHp3aEjhr0YWO4vPclq+586+5ta6PM+gNM5Wk9qiqR0agN/Sh7u8nwGrt0VxhHiM/lpyPe4e06GbuTy54uEo=
+X-Received: by 2002:a24:6cd5:: with SMTP id w204mr12287305itb.12.1558609497196; 
+ Thu, 23 May 2019 04:04:57 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 19052304-0016-0000-0000-000009B8A5A7
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011146; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000286; SDB=6.01207281; UDB=6.00634023; IPR=6.00988261; 
- MB=3.00027013; MTD=3.00000008; XFM=3.00000015; UTC=2019-05-23 04:43:39
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19052304-0017-0000-0000-000043546588
-Message-Id: <87zhndzspa.fsf@morokweng.localdomain>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-23_04:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905230032
+References: <20190520061834.32231-1-kasong@redhat.com>
+ <0c0fb7af-f386-bde1-46f6-1afa29782243@redhat.com>
+In-Reply-To: <0c0fb7af-f386-bde1-46f6-1afa29782243@redhat.com>
+From: Kairui Song <kasong@redhat.com>
+Date: Thu, 23 May 2019 19:04:36 +0800
+Message-ID: <CACPcB9fWsOHGhyF-b4emTuoTUO4twbG6of=bruBYop4Jf4rzig@mail.gmail.com>
+Subject: Re: [PATCH v2] vmcore: Add a kernel cmdline vmcore_device_dump
+To: Bhupesh Sharma <bhsharma@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_214342_795769_E7913B20 
-X-CRM114-Status: GOOD (  17.34  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190523_040458_229187_1766F621 
+X-CRM114-Status: GOOD (  24.71  )
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
+ -0.3 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -107,47 +75,93 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Ellerman <mpe@ellerman.id.au>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Mimi Zohar <zohar@linux.ibm.com>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, linuxppc-dev@lists.ozlabs.org
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ Rahul Lakkireddy <rahul.lakkireddy@chelsio.com>,
+ Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dave Young <dyoung@redhat.com>,
+ Alexey Dobriyan <adobriyan@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-Dave Young <dyoung@redhat.com> writes:
-
-> On 05/22/19 at 07:01pm, Thiago Jung Bauermann wrote:
->> Commit b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()")
->> changed kexec_add_buffer() to skip searching for a memory location if
->> kexec_buf.mem is already set, and use the address that is there.
->> 
->> In powerpc code we reuse a kexec_buf variable for loading both the kernel
->> and the initramfs by resetting some of the fields between those uses, but
->> not mem. This causes kexec_add_buffer() to try to load the kernel at the
->> same address where initramfs will be loaded, which is naturally rejected:
->> 
->>   # kexec -s -l --initrd initramfs vmlinuz
->>   kexec_file_load failed: Invalid argument
->> 
->> Setting the mem field before every call to kexec_add_buffer() fixes this
->> regression.
->> 
->> Fixes: b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()")
->> Signed-off-by: Thiago Jung Bauermann <bauerman@linux.ibm.com>
->> ---
->>  arch/powerpc/kernel/kexec_elf_64.c | 6 +++++-
->>  1 file changed, 5 insertions(+), 1 deletion(-)
+On Thu, May 23, 2019 at 2:44 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
 >
-> Reviewed-by: Dave Young <dyoung@redhat.com>
+> On 05/20/2019 11:48 AM, Kairui Song wrote:
+> > Since commit 2724273e8fd0 ('vmcore: add API to collect hardware dump in
+> > second kernel'), drivers is allowed to add device related dump data to
+> > vmcore as they want by using the device dump API. This have a potential
+> > issue, the data is stored in memory, drivers may append too much data
+> > and use too much memory. The vmcore is typically used in a kdump kernel
+> > which runs in a pre-reserved small chunk of memory. So as a result it
+> > will make kdump unusable at all due to OOM issues.
+> >
+> > So introduce new vmcore_device_dump= kernel parameter, and disable
+> > device dump by default. User can enable it only if device dump data is
+> > required for debugging, and have the chance to increase the kdump
+> > reserved memory accordingly before device dump fails kdump.
+> >
+> > Signed-off-by: Kairui Song <kasong@redhat.com>
+> > ---
+> >   Update from V1:
+> >    - Use bool parameter to turn it on/off instead of letting user give
+> >      the size limit. Size of device dump is hard to determine.
+> >
+> >   Documentation/admin-guide/kernel-parameters.txt | 15 +++++++++++++++
+> >   fs/proc/vmcore.c                                | 13 +++++++++++++
+> >   2 files changed, 28 insertions(+)
+> >
+> > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > index 43176340c73d..2d48e39fd080 100644
+> > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > @@ -5062,6 +5062,21 @@
+> >                       decrease the size and leave more room for directly
+> >                       mapped kernel RAM.
+> >
+> > +     vmcore_device_dump=
+> > +                     [VMCORE]
+> > +                     Format: {"off" | "on"}
+> > +                     If CONFIG_PROC_VMCORE_DEVICE_DUMP is set,
+> > +                     this parameter allows enable or disable device dump
+> > +                     for vmcore.
+>
+> We can add a simpler description here, something like:
+>                         Depends on CONFIG_PROC_VMCORE_DEVICE_DUMP
+>
+> > +                     Device dump allows drivers to append dump data to
+> > +                     vmcore so you can collect driver specified debug info.
+> > +                     Note that the drivers could append the data without
+> > +                     any limit, and the data is stored in memory, this may
+> > +                     bring a significant memory stress. If you want to turn
+> > +                     on this option, make sure you have reserved enough memory
+> > +                     with crashkernel= parameter.
+> > +                     default: off
+>
+> ... and massage the rest of text accordingly.
+>
+> Better to also modify the help text for 'PROC_VMCORE_DEVICE_DUMP' config
+> option defined in 'fs/proc/Kconfig'. Something like:
+>
+> config PROC_VMCORE_DEVICE_DUMP
+>         bool "Device Hardware/Firmware Log Collection"
+> <..snip..>
+>           If you say Y here, the collected device dumps will be added
+>           as ELF notes to /proc/vmcore.
+>
+>           If this option is selected, device dump collection can still be
+> disabled by passing vmcore_device_dump=off to the kernel.
+>
+> See config INTEL_IOMMU_DEFAULT_ON in 'drivers/iommu/Kconfig' as an example.
+>
 
-Thanks!
+Good suggestion! I'll update in V3.
 
 -- 
-Thiago Jung Bauermann
-IBM Linux Technology Center
-
+Best Regards,
+Kairui Song
 
 _______________________________________________
 kexec mailing list
