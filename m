@@ -2,96 +2,63 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C37027204
-	for <lists+kexec@lfdr.de>; Thu, 23 May 2019 00:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E28CD274AC
+	for <lists+kexec@lfdr.de>; Thu, 23 May 2019 05:02:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k/HaKBsFAkcm1L1dQ5+hLIwk2rBh7oWPfH05G2lEasg=; b=pV8PyqBNBdnj7e
-	LbAAzs+BGw08zozKgEE1aReeXYJ/hI6RmofFtbdRbjPoa9j3QDPagQwfYBD6n6WHfEGZIDB3UE1qB
-	or784Da7AaJakqo90oB5Fx2ncOm+zbLTn0s419L8yki+clHyvbZOrlBLQbvlKI5n3gJRcQSSLw8x6
-	lB/MZAAtREtEWk8J4I1bGp+yKcLi1OCynWn5Ky4kHG4tsKNT6zDw9/5wewlsTSOl3RbAz4JEIG8gU
-	bZKsSIV8pnl+3r4GChx5EElyq2hEns4jXoRyu+RHA2jLmOcWwMfw1kISHfoDBPjvikEdr24NxuGQp
-	N8U8f+Kqzb/U1WTFrBPA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ScLk4kc3TV1UTntWipGEBmlttzeQMt2uEqYxMwaX7nM=; b=BmJ5IM9SqP1Do9
+	KKEEb2rV11A8BrjRqCm88YjHR+oySA9aSIH/6vwMBNOlnvnm7jApB3QaGXi/FfxAOiH3jia+N6hUj
+	YL5ghlqh+ITYwTFYx3mSeg6bJ+QLxTBveJcMygfLgOz11hvwjkHezcCZHV+nLB+G6tboQcEsaQQ6o
+	ByORxgTXUcMBNBDg2OPucOsfh7K3Sk1JeuMmziVUji3vyRsql4fhFmbqGKcC5PeM4gu4qlXjzDYqw
+	fdybSWHWUVXhVRAensSCp1BG3AO8fw8HN2E/KcS4vQ2DYzPHVbKZIgpjl+3L9tDQqWdNg5e5For+I
+	i/qVbKWOCV6hroGi4ZiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hTZL1-00034f-Cr; Wed, 22 May 2019 22:03:55 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1hTdzV-0005KF-Nc; Thu, 23 May 2019 03:02:01 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hTZKx-00033v-HP
- for kexec@lists.infradead.org; Wed, 22 May 2019 22:03:53 +0000
-Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x4MLxLnQ144726
- for <kexec@lists.infradead.org>; Wed, 22 May 2019 18:03:49 -0400
-Received: from e31.co.us.ibm.com (e31.co.us.ibm.com [32.97.110.149])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2snetvg5t5-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <kexec@lists.infradead.org>; Wed, 22 May 2019 18:03:48 -0400
-Received: from localhost
- by e31.co.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <kexec@lists.infradead.org> from <bauerman@linux.ibm.com>;
- Wed, 22 May 2019 23:03:48 +0100
-Received: from b03cxnp08028.gho.boulder.ibm.com (9.17.130.20)
- by e31.co.us.ibm.com (192.168.1.131) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 22 May 2019 23:03:46 +0100
-Received: from b03ledav005.gho.boulder.ibm.com
- (b03ledav005.gho.boulder.ibm.com [9.17.130.236])
- by b03cxnp08028.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x4MM3inC33423744
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 22 May 2019 22:03:45 GMT
-Received: from b03ledav005.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id DA690BE079;
- Wed, 22 May 2019 22:03:44 +0000 (GMT)
-Received: from b03ledav005.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id E3D59BE07A;
- Wed, 22 May 2019 22:03:42 +0000 (GMT)
-Received: from morokweng.localdomain.com (unknown [9.80.216.227])
- by b03ledav005.gho.boulder.ibm.com (Postfix) with ESMTP;
- Wed, 22 May 2019 22:03:42 +0000 (GMT)
-From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-To: linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH] powerpc: Fix loading of kernel + initramfs with
- kexec_file_load()
-Date: Wed, 22 May 2019 19:01:58 -0300
-X-Mailer: git-send-email 2.21.0
+ id 1hTdzR-0005JV-Tk
+ for kexec@lists.infradead.org; Thu, 23 May 2019 03:01:59 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3A1B13082E21;
+ Thu, 23 May 2019 03:01:55 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-185.pek2.redhat.com
+ [10.72.12.185])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id DB3816606A;
+ Thu, 23 May 2019 03:01:50 +0000 (UTC)
+Date: Thu, 23 May 2019 11:01:44 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Kairui Song <kasong@redhat.com>
+Subject: Re: [PATCH v2 1/4] x86: Update boot parameters defination
+Message-ID: <20190523030144.GA8174@dhcp-128-65.nay.redhat.com>
+References: <20190514050959.21093-1-kasong@redhat.com>
+ <20190514050959.21093-2-kasong@redhat.com>
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 19052222-8235-0000-0000-00000E9CE3BB
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011145; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000286; SDB=6.01207156; UDB=6.00633942; IPR=6.00988131; 
- MB=3.00027009; MTD=3.00000008; XFM=3.00000015; UTC=2019-05-22 22:03:48
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19052222-8236-0000-0000-000045ADF716
-Message-Id: <20190522220158.18479-1-bauerman@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-05-22_13:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=1 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1011 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1810050000 definitions=main-1905220152
+Content-Disposition: inline
+In-Reply-To: <20190514050959.21093-2-kasong@redhat.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.46]); Thu, 23 May 2019 03:01:55 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190522_150351_688066_7407C953 
-X-CRM114-Status: GOOD (  24.39  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190522_200157_981028_A5E867AF 
+X-CRM114-Status: GOOD (  18.60  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -103,75 +70,73 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Ellerman <mpe@ellerman.id.au>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Mimi Zohar <zohar@linux.ibm.com>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Cc: Simon Horman <horms@verge.net.au>, kexec@lists.infradead.org,
+ Lianbo Jiang <lijiang@redhat.com>, Baoquan He <bhe@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Commit b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()")
-changed kexec_add_buffer() to skip searching for a memory location if
-kexec_buf.mem is already set, and use the address that is there.
+Hi Kairui
+On 05/14/19 at 01:09pm, Kairui Song wrote:
+> Since kernel commit e6e094e053af75 ("x86/acpi, x86/boot: Take RSDP address
+> from boot params if available"), kernel accept a acpi_rsdp_addr param in
+> boot_params. Sync the x86_linux_param_header to support this param.
+> 
+> Signed-off-by: Kairui Song <kasong@redhat.com>
+> ---
+>  include/x86/x86-linux.h | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/include/x86/x86-linux.h b/include/x86/x86-linux.h
+> index 352ea02..a5d8df8 100644
+> --- a/include/x86/x86-linux.h
+> +++ b/include/x86/x86-linux.h
+> @@ -45,8 +45,7 @@ struct apm_bios_info {
+>  	uint16_t cseg_len;	/* 0x4e */
+>  	uint16_t cseg_16_len;	/* 0x50 */
+>  	uint16_t dseg_len;	/* 0x52 */
+> -	uint8_t  reserved[44];	/* 0x54 */
+> -};
+> +} __attribute__((packed));
 
-In powerpc code we reuse a kexec_buf variable for loading both the kernel
-and the initramfs by resetting some of the fields between those uses, but
-not mem. This causes kexec_add_buffer() to try to load the kernel at the
-same address where initramfs will be loaded, which is naturally rejected:
+It should be good to keep same as the kernel header without packed
+attribute.
 
-  # kexec -s -l --initrd initramfs vmlinuz
-  kexec_file_load failed: Invalid argument
+is it possible to sync the latest mainline uapi bootparam header file,
+maybe after this series get solved?
 
-Setting the mem field before every call to kexec_add_buffer() fixes this
-regression.
+>  
+>  /*
+>   * EDD stuff
+> @@ -113,12 +112,15 @@ struct x86_linux_param_header {
+>  	uint8_t  reserved4[2];			/* 0x3e -- 0x3f reserved for future expansion */
+>  
+>  	struct apm_bios_info apm_bios_info;	/* 0x40 */
+> +	uint8_t  reserved4_1[28];		/* 0x54 */
+> +	uint64_t acpi_rsdp_addr;		/* 0x70 */
+> +	uint8_t  reserved4_2[8];		/* 0x78 */
+>  	struct drive_info_struct drive_info;	/* 0x80 */
+>  	struct sys_desc_table sys_desc_table;	/* 0xa0 */
+>  	uint32_t ext_ramdisk_image;		/* 0xc0 */
+>  	uint32_t ext_ramdisk_size;		/* 0xc4 */
+>  	uint32_t ext_cmd_line_ptr;		/* 0xc8 */
+> -	uint8_t reserved4_1[0x1c0 - 0xcc];	/* 0xe4 */
+> +	uint8_t reserved4_3[0x1c0 - 0xcc];	/* 0xe4 */
+>  	uint8_t efi_info[32];			/* 0x1c0 */
+>  	uint32_t alt_mem_k;			/* 0x1e0 */
+>  	uint8_t  reserved5[4];			/* 0x1e4 */
+> -- 
+> 2.20.1
+> 
+> 
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/kexec
 
-Fixes: b6664ba42f14 ("s390, kexec_file: drop arch_kexec_mem_walk()")
-Signed-off-by: Thiago Jung Bauermann <bauerman@linux.ibm.com>
----
- arch/powerpc/kernel/kexec_elf_64.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
-
-diff --git a/arch/powerpc/kernel/kexec_elf_64.c b/arch/powerpc/kernel/kexec_elf_64.c
-index ba4f18a43ee8..52a29fc73730 100644
---- a/arch/powerpc/kernel/kexec_elf_64.c
-+++ b/arch/powerpc/kernel/kexec_elf_64.c
-@@ -547,6 +547,7 @@ static int elf_exec_load(struct kimage *image, struct elfhdr *ehdr,
- 		kbuf.memsz = phdr->p_memsz;
- 		kbuf.buf_align = phdr->p_align;
- 		kbuf.buf_min = phdr->p_paddr + base;
-+		kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
- 		ret = kexec_add_buffer(&kbuf);
- 		if (ret)
- 			goto out;
-@@ -581,7 +582,8 @@ static void *elf64_load(struct kimage *image, char *kernel_buf,
- 	struct kexec_buf kbuf = { .image = image, .buf_min = 0,
- 				  .buf_max = ppc64_rma_size };
- 	struct kexec_buf pbuf = { .image = image, .buf_min = 0,
--				  .buf_max = ppc64_rma_size, .top_down = true };
-+				  .buf_max = ppc64_rma_size, .top_down = true,
-+				  .mem = KEXEC_BUF_MEM_UNKNOWN };
- 
- 	ret = build_elf_exec_info(kernel_buf, kernel_len, &ehdr, &elf_info);
- 	if (ret)
-@@ -606,6 +608,7 @@ static void *elf64_load(struct kimage *image, char *kernel_buf,
- 		kbuf.bufsz = kbuf.memsz = initrd_len;
- 		kbuf.buf_align = PAGE_SIZE;
- 		kbuf.top_down = false;
-+		kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
- 		ret = kexec_add_buffer(&kbuf);
- 		if (ret)
- 			goto out;
-@@ -638,6 +641,7 @@ static void *elf64_load(struct kimage *image, char *kernel_buf,
- 	kbuf.bufsz = kbuf.memsz = fdt_size;
- 	kbuf.buf_align = PAGE_SIZE;
- 	kbuf.top_down = true;
-+	kbuf.mem = KEXEC_BUF_MEM_UNKNOWN;
- 	ret = kexec_add_buffer(&kbuf);
- 	if (ret)
- 		goto out;
-
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
