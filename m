@@ -2,69 +2,100 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61FBF2ADE0
-	for <lists+kexec@lfdr.de>; Mon, 27 May 2019 07:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 244292AFD0
+	for <lists+kexec@lfdr.de>; Mon, 27 May 2019 10:15:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SjgWdHyPm1O8MtWlxYfP0ovNlpL7dZQsXI4APKfiRRw=; b=At3BkbHJD6e39x
-	B7cN6QXHgU4zsey094hviWpDK6owjhKS+8Yfh/tlSZggQL0a+3ovjPH+V/kBsi9vWaofL0yDPjOKn
-	dwq6aoBkLiWr0GUC0bfudwPTvjFIWSl6KROaI2h9FkLlL7yfmd+XXAM2lrDcdWIxAD9h05L0Pv7AV
-	LgqMUgK+cVBJEq1kWnSHFfGgBQhpan0KOpYWfMqVh4LTpGicBXFTg2CLo8wVWntt5r1T9YWnOOTCF
-	dd+B47NtnKQSaFyE9s+tj3T5Y+lRcAV3rQO7emtxOzAhXlT++zaLyli7jMxiooma6ImeC2U6Jndd5
-	fYnHT6/8Tj/vehuSWOMA==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
+	From:MIME-Version:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zKXZ9eW5iPFAUtSAsHzYDXA4ycqHLPMLqAALak7lA6E=; b=JRkuYoRKiCL6N5
+	BAU97GSfCaxhr3W/g63JrkiJAwb4PoonKsJpKWvJQ8II1Kg32o0swtYnAwMa233MLV+3wWmi541YE
+	1YeZTNX2Ta5wEcTh0NggUgDwvlvT1VdAmDR62hYFWTx0oV2bsxCHt86oByfQFEY1GeyRq0yr6QtgT
+	0UjxZRIdWpjz0o48gnryZH8XW87DglEoX5D9/UT+jW4r5TOKWMnASMQr2KZR013itxz7VdFBLpG2+
+	ZLiX0/xKSpE7Yi7bdI6ghO1LJ1sOoqjxpX8p+FU/DbYo9/qFgzzi0ik+WUhaBrgEY/xHiKRyKOATi
+	B9QnzZbPk3wZIFYjUK3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hV7pH-0004id-Mi; Mon, 27 May 2019 05:05:35 +0000
-Received: from mail-it1-f193.google.com ([209.85.166.193])
+	id 1hVAmi-0005wR-Hl; Mon, 27 May 2019 08:15:08 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hV7pE-0004i4-9L
- for kexec@lists.infradead.org; Mon, 27 May 2019 05:05:33 +0000
-Received: by mail-it1-f193.google.com with SMTP id i63so22362873ita.3
- for <kexec@lists.infradead.org>; Sun, 26 May 2019 22:05:31 -0700 (PDT)
+ id 1hVAme-0005EQ-BV
+ for kexec@lists.infradead.org; Mon, 27 May 2019 08:15:05 +0000
+Received: by mail-io1-xd41.google.com with SMTP id h6so4037045ioh.3
+ for <kexec@lists.infradead.org>; Mon, 27 May 2019 01:15:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:reply-to:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=gM7KQfbz3ZyixRK5sAsCDT1jNQL5UcR9ighEfwJITVE=;
+ b=UO20cbktpi/0bBp7KYDdH/B7uovDzVeiG7JHTZnXdrdeWw02wXNknj5Ee8xct6Bc+Z
+ ahw6NOfIc8Vtr4m3GY4iQtLap6OuM4xbaWglXUbMFYq//Z1+xl6BGxjp1ZpDLxeU26Xf
+ xch/eRoGWpmtEajw2UmNDtx8bjixaOZkV1lXfA/6N0VtPsD5Ggov4v1s1ETqrQxSpNzU
+ sEeekqBUHFPAOa4N2ScVuyjd6NOFF96nCVHYUBvqcLo88fkoHgSK3RbDjiuXd7nlUq/1
+ 27cTZOuOmJiDpdv7gH/JY16iQkSgHf/ov9wHnedFtfZmN27oeXeojaY5Tcb+to9XhJMe
+ fwug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fecGg/jgfxlMFonO7luUGh/bB0iD//wEkaV+M3q4RX0=;
- b=XvwlnoS80wVl90U3gZS6XKR2YfaIZnHeOKuemKyq2n5ZQykTExCYe5R08dpMtUu4ff
- zrIWTEukUQs9L7zPz+SA5QWsD1GQ8rN9v5mzdE6MYX1Wlj6HM9WFnb/HakuvPFGQ8hcw
- le1aRDrGL/QLYYIsJQiaDwweVaIH7LNLuIK7T6lOgECh9egaKu7iiH/O6Hajo3eFssHx
- d9TJp8ovCMHjN+Bzyi380PW0hy16DIpV84B1ZS5i5oXgOmVhoBBlufeV5Sfw82gLWQZs
- EoWgtNKZqMHn52nwSPyhcQHNgzMZknNK2vAdQBJC5PAnMVTHhY+hZ1Szn7KkR0HM2zkw
- dK5w==
-X-Gm-Message-State: APjAAAUnkqlFdQ+ernE7h8nGRRl8okOm8Px5uIFKArLfFxHrntuA3viR
- UT6HbcXYRQ57Stxgqe1fKBuIdaJgtvbn8I6Z07neqA==
-X-Google-Smtp-Source: APXvYqwcvPdCPk8AIJTPTsjfAvZ8f+sZfCQfXTM00cFHC0kZBGd/ZsBpfBgRTX83yFH2Q1m7gbhpZEMO6ZUuaBDBTJ0=
-X-Received: by 2002:a24:7a90:: with SMTP id a138mr27452432itc.95.1558933531100; 
- Sun, 26 May 2019 22:05:31 -0700 (PDT)
+ h=x-gm-message-state:mime-version:reply-to:from:date:message-id
+ :subject:to:content-transfer-encoding;
+ bh=gM7KQfbz3ZyixRK5sAsCDT1jNQL5UcR9ighEfwJITVE=;
+ b=OQB5ikpu05gPH12foFnbiE0Ghqome64dlA7p8jVOLG/CLhPO8UHSDHVESGmRqtSQQl
+ 8n9hLA0JDEvrbD6zzAmkfqbBPAWRmWkTDZLIRnswX3npYvzeAnE79o3j6OV3k2oH6DA2
+ ofnQNWJ1+6nz50lLVd6ut2/WZzkUptYI250Oqfqmss2zyhSe7/s43vi73UBYrRwVSVdH
+ 4p9niNxHHS6C1PvcOpD+YMY2Lex4JdNMjnpSTePpriTIDhKixzZbY6rOY4nRbgFg+gKf
+ gghn739Tzy3jZeYhitAeK0ZwYOJCiklzEUgDb+/0WYL9yuj02IrdnCdiG+MiCAs3Cn6k
+ CO/w==
+X-Gm-Message-State: APjAAAWotWLlZg1A7Fi82Y6tesfcFiWBsdME+3oQhTx/UxP6372FMr6O
+ lDCsfW3smjRnl2rarasGFJn+OqHptaGDNy9iEZM=
+X-Google-Smtp-Source: APXvYqxdFrVhsikTGojz5Gd7M+Nxf8voV3c6zcC9EPVD/KfSddhYWoTa1qme/hhO09v8ZVhQjFL9K4KCoIVafbARG7g=
+X-Received: by 2002:a5d:8a0c:: with SMTP id w12mr842471iod.68.1558944901174;
+ Mon, 27 May 2019 01:15:01 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190524062922.26399-1-kasong@redhat.com>
- <20190524125456.GA3342@dhcp-128-65.nay.redhat.com>
- <CACi5LpNue+9GVafB-aYxhTNRWf6jbRk9O6Vq8BCQO3EHWrNnrw@mail.gmail.com>
-In-Reply-To: <CACi5LpNue+9GVafB-aYxhTNRWf6jbRk9O6Vq8BCQO3EHWrNnrw@mail.gmail.com>
-From: Kairui Song <kasong@redhat.com>
-Date: Mon, 27 May 2019 13:05:20 +0800
-Message-ID: <CACPcB9eGujOmDMfez2dWUtt2s6K=bDp2PEDSKhY9NLu2pHpfvg@mail.gmail.com>
-Subject: Re: [PATCH v3] vmcore: Add a kernel parameter vmcore_device_dump
-To: Bhupesh Sharma <bhsharma@redhat.com>
+Received: by 2002:a6b:d00f:0:0:0:0:0 with HTTP; Mon, 27 May 2019 01:15:00
+ -0700 (PDT)
+From: PEREZ PAULETTE <perezpaulette5@gmail.com>
+Date: Mon, 27 May 2019 09:15:00 +0100
+Message-ID: <CAAKr3SXZ88nngJpJBqzxw9A7ChuYHaPDc95BQ58V=DUayYTPdg@mail.gmail.com>
+Subject: Re
+To: undisclosed-recipients:;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190526_220532_322934_AA4D3BEB 
-X-CRM114-Status: GOOD (  30.39  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20190527_011504_428909_97A85F98 
+X-CRM114-Status: UNSURE (  -2.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.7 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
- -0.4 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (perezpaulette5[at]gmail.com)
+ 0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
+ digit (gsherri06[at]outlook.fr)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (perezpaulette5[at]gmail.com)
+ 0.9 URG_BIZ                BODY: Contains urgent matter
+ 0.0 T_DEAR_BENEFICIARY     BODY: Dear Beneficiary:
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain 0.0 LOTS_OF_MONEY          Huge... sums of money
+ 1.0 FREEMAIL_REPLYTO       Reply-To/From or Reply-To/body contain
+ different freemails
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
+ 0.4 FILL_THIS_FORM_FRAUD_PHISH Answer suspicious question(s)
+ 0.0 MONEY_FORM_SHORT       Lots of money if you fill out a short form
+ 0.0 MONEY_FRAUD_5          Lots of money and many fraud phrases
+ 0.0 FORM_FRAUD_5           Fill a form and many fraud phrases
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -76,124 +107,32 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S . Miller" <davem@davemloft.net>,
- Rahul Lakkireddy <rahul.lakkireddy@chelsio.com>,
- Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dave Young <dyoung@redhat.com>,
- Alexey Dobriyan <adobriyan@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: gsherri06@outlook.fr
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, May 27, 2019 at 2:45 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
->
-> On Fri, May 24, 2019 at 6:25 PM Dave Young <dyoung@redhat.com> wrote:
-> >
-> > On 05/24/19 at 02:29pm, Kairui Song wrote:
-> > > Since commit 2724273e8fd0 ("vmcore: add API to collect hardware dump in
-> > > second kernel"), drivers is allowed to add device related dump data to
-> > > vmcore as they want by using the device dump API. This have a potential
-> > > issue, the data is stored in memory, drivers may append too much data
-> > > and use too much memory. The vmcore is typically used in a kdump kernel
-> > > which runs in a pre-reserved small chunk of memory. So as a result it
-> > > will make kdump unusable at all due to OOM issues.
-> > >
-> > > So introduce new vmcore_device_dump= kernel parameter, and disable
-> > > device dump by default. User can enable it only if device dump data is
-> > > required for debugging, and have the chance to increase the kdump
-> > > reserved memory accordingly before device dump fails kdump.
-> > >
-> > > Signed-off-by: Kairui Song <kasong@redhat.com>
-> > >
-> > > ---
-> > >
-> > >  Update from V2:
-> > >   - Improve related docs
-> > >
-> > >  Update from V1:
-> > >   - Use bool parameter to turn it on/off instead of letting user give
-> > >     the size limit. Size of device dump is hard to determine.
-> > >
-> > >  Documentation/admin-guide/kernel-parameters.txt | 14 ++++++++++++++
-> > >  fs/proc/Kconfig                                 |  6 ++++--
-> > >  fs/proc/vmcore.c                                | 13 +++++++++++++
-> > >  3 files changed, 31 insertions(+), 2 deletions(-)
-> > >
-> > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> > > index 138f6664b2e2..3706ad9e1d97 100644
-> > > --- a/Documentation/admin-guide/kernel-parameters.txt
-> > > +++ b/Documentation/admin-guide/kernel-parameters.txt
-> > > @@ -5078,6 +5078,20 @@
-> > >                       decrease the size and leave more room for directly
-> > >                       mapped kernel RAM.
-> > >
-> > > +     vmcore_device_dump=     [KNL,KDUMP]
-> > > +                     Format: {"off" | "on"}
-> > > +                     Depends on CONFIG_PROC_VMCORE_DEVICE_DUMP.
-> > > +                     This parameter allows enable or disable device dump
-> > > +                     for vmcore on kernel start-up.
-> > > +                     Device dump allows drivers to append dump data to
-> > > +                     vmcore so you can collect driver specified debug info.
-> > > +                     Note that the drivers could append the data without
-> > > +                     any limit, and the data is stored in memory, this may
-> > > +                     bring a significant memory stress. If you want to turn
-> > > +                     on this option, make sure you have reserved enough memory
-> > > +                     with crashkernel= parameter.
-> > > +                     default: off
-> > > +
-> > >       vmcp_cma=nn[MG] [KNL,S390]
-> > >                       Sets the memory size reserved for contiguous memory
-> > >                       allocations for the vmcp device driver.
-> > > diff --git a/fs/proc/Kconfig b/fs/proc/Kconfig
-> > > index 817c02b13b1d..1a7a38976bb0 100644
-> > > --- a/fs/proc/Kconfig
-> > > +++ b/fs/proc/Kconfig
-> > > @@ -56,8 +56,10 @@ config PROC_VMCORE_DEVICE_DUMP
-> > >         recovery kernel's initramfs to collect its underlying device
-> > >         snapshot.
-> > >
-> > > -       If you say Y here, the collected device dumps will be added
-> > > -       as ELF notes to /proc/vmcore.
-> > > +       If you say Y here, a new kernel parameter 'vmcore_device_dump'
-> > > +       will be available. You can then enable device dump by passing
-> >
-> > "a new kernel parameter 'vmcore_device_dump' will be available" is not
-> > necessary, "new" is a not a clear word.  I suggest to remove this
-> > sentence.
-> >
-> > s/You can then/You can
->
-> I agree with Dave. We are just trying to say here that even if
-> CONFIG_PROC_VMCORE_DEVICE_DUMP is set to Y, one can still disable the
-> device dump feature by passing parameter 'vmcore_device_dump=off' to
-> the kernel.
->
-> May be you can use the wording I mentioned in the v2 patch review,
-> which tried to convey a similar meaning.
->
-> With the change addressed:
-> Reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
->
-> Thanks,
-> Bhupesh
->
-OK, How about:
-
-  If you say Y here, device dump is still disabled by default.
-  You can enable device dump by passing 'vmcore_device_dump=on'
-  to kernel, the collected device dumps will be added as ELF
-  notes to /proc/vmcore.
-
-If you think this is good I'll send V4 including the changes.
-
--- 
-Best Regards,
-Kairui Song
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+VW5pdGVkIE5hdGlvbnMgTGlhaXNvbiBPZmZpY2UKNDA1IEVhc3QgNDJuZCBTdHJlZXQsIE5ldyBZ
+b3JrLApOWSwgMTAwMTcsIFVTQS4KVGVsOiAoKyAxKSAoNjQ2KSA2MDEtNjU5NwpFbWFpbCAodW4y
+MDE5QHVzYS5jb20pCgpPdXIgRGVhciAyMDE5IEJlbmVmaWNpYXJ5CgpUaGUgVW5pdGVkIE5hdGlv
+bnMgaW4gY29vcGVyYXRpb24gd2l0aCBXb3JsZCBCYW5rIGhhdmUgYWdyZWVkIHRvCmNvbXBlbnNh
+dGUgeW91IHdpdGggdGhlIHN1bSBvZiBPbmUgTWlsbGlvbiBUd28gSHVuZHJlZCBUaG91c2FuZCBV
+UwpEb2xsYXJzICgkMS4yTSkgYWZ0ZXIgeW91ciBuYW1lIGFuZCBlbWFpbCB3YXMgc3VibWl0dGVk
+IGJ5IHRoZSBJbnRlcm5ldApJbnRlcm5hdGlvbmFsIE1vbml0b3JpbmcgR3JvdXAgZHVyaW5nIHRo
+ZSBVTkNDIENvbmZlcmVuY2UgTWVldGluZwp3aGljaCB3YXMgaGVsZCB0aGlzIDAxLzA1LzIwMTkg
+ZWRpdGlvbiB3aXRoIFVOIFNlY3JldGFyeSBHZW5lcmFsCkFudMOzbmlvIEd1dGVycmVzIGluIEdl
+bmV2YSBTd2l0emVybGFuZC4gVGhpcyBwYXltZW50IFByb2dyYW0gaXMKb3JnYW5pemVkIGZvciBj
+aGFyaXR5IG9yZ2FuaXphdGlvbi9TY2FtIHZpY3RpbXMgYW5kIGRldmVsb3BtZW50LgoKWW91ciBu
+YW1lIGFwcGVhcmVkIGFtb25nIHRoZSBiZW5lZmljaWFyaWVzIHdobyB3aWxsIHJlY2VpdmUgdGhl
+CnN1bSBvZiAkMS4yVVNELCBDcmVkaXRlZCB0byBPbmxpbmUgQmFuayBBVE0gQ2FyZCBhY2NvdW50
+IHRoYXQgd2FzIHNldAp1cCBmb3IgeW91IGluIHRoZSBCYW5rIGFuZCBpdCBoYXMgYmVlbiBhcHBy
+b3ZlZCBmb3IgaW1tZWRpYXRlIGRlbGl2ZXJ5CnRvIHlvdS4KCllvdXIgdXJnZW50IHJlc3BvbnNl
+IHRvIHRoaXMgZW1haWwgd2lsbCBoZWxwIGZhY2lsaXRhdGUgdGhlIG9ud2FyZApkZWxpdmVyeSBv
+ZiB5b3VyIEFUTSBjYXJkIHRvIHlvdSwgQ29udGFjdCBEZWxpdmVyeSBvZmZpY2VyIE1yLiBMYXJy
+eQpXYXluZSBFLW1haWwgKCBvZmlsZTE2MEBvdXRsb29rLmNvbSApIFBob25lICsyMjktOTgxMTkx
+NTcuCgpTZW5kIHRvIEhpbQpZb3VyIEZ1bGwgTmFtZSwgQWRkcmVzcywgVGVsOk5vLCBBbmQgQSBz
+Y2FuIENvcHkgT2YgWW91ciBJZGVudGlmaWNhdGlvbgoKVGhhbmtzLApQRVJFWiBQQVVMRVRURQoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFp
+bGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
