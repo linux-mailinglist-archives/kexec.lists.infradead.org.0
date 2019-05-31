@@ -2,67 +2,66 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D6C30BC5
-	for <lists+kexec@lfdr.de>; Fri, 31 May 2019 11:38:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46F8030BC6
+	for <lists+kexec@lfdr.de>; Fri, 31 May 2019 11:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IfyAFeCQYCdbzwAMDAosv6Uim/xG0ipExfxYomLyhJA=; b=FRv7Z4A1KqFbm9
-	8OlRf980uHrijjfA2oXo4uZZ7PsXCt1FRQ2l/WNHrhN5tlNPmydgxyaxpknycoD4db+/1ZUcYeFox
-	rzxckvaB1kncHjHuFWcs5YHdvZVW8D6i6f9mpzzAQWxO21F8EPB+sjePamWtQxCIF5T3Y06USRQFi
-	LZa8L9o46b8qprBlo42E8S7YeDRpgGVpybITe1whzTERPNY6gxLOhOWtfdWbYbqbMivGSElv60stg
-	Bb9kioy3RDcLVGWYne4zcWfAyNae6K1X2FZ4yrfp+uZ0xUYgf0s3SGVQmkO4GPE/E1BNb62jX/OSP
-	YXc4fFmaR1MhXJsspkYw==;
+	List-Owner; bh=5byq+hW/iE7tuREk2KKMLllfc5ADvhHPxd0G/+nMnBQ=; b=UHcL1k6IFcUScB
+	QTTXIES8RE+SYZZTiEcsK8SLTsUsZeNoRPvyIKu9act1l9xGZ/8LHuXcLtGB1x+nyJSZArKvqop44
+	xhDSZ3nfnqxf+qLF8VAnVKLRI+KgomOxPg2lCzGn5wIS8FMrNDeDnEtflTnTkaGeDj7FOWTLtNBoY
+	zB4+aAUD+mK13UkqT+AfEQ9/RzVJyrEcPPAHphWSBl24n7OW++G1mCSrg0HtADOWBs8Km3QYbvnDV
+	yAe0ULcYb2niEVLjFVRZ1xnt7kAWNF9ux3vnSs/lIgek7Q8hBry5mtdGs2SV3Gq1MxZLjIwkXVOtF
+	eG+WMKXmDsLLanX9y4GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hWdzr-0003zQ-Uh; Fri, 31 May 2019 09:38:47 +0000
-Received: from mail-it1-f196.google.com ([209.85.166.196])
+	id 1hWdzs-0003zt-Iq; Fri, 31 May 2019 09:38:48 +0000
+Received: from mail-it1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hWdzj-0003yh-FG
+ id 1hWdzp-0003yw-0r
  for kexec@lists.infradead.org; Fri, 31 May 2019 09:38:46 +0000
-Received: by mail-it1-f196.google.com with SMTP id j204so8884105ite.4
- for <kexec@lists.infradead.org>; Fri, 31 May 2019 02:38:36 -0700 (PDT)
+Received: by mail-it1-f194.google.com with SMTP id h20so14663143itk.4
+ for <kexec@lists.infradead.org>; Fri, 31 May 2019 02:38:44 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=pI6aqZu6hJ3qkr4++Q/yE6MMQ9g9dGaVUGIh/nKitjg=;
- b=S1M9+Y3TLTXk47uRDExsXyIn4pj3X2tY/pexq5zmtYUmtC/elqdQG6bXQrfzp+fFsi
- aIxt+5VcLv30e++FrBf2RnB+c7Miou9B+8XAhwylr9gZ72UIjgmr8925iZKDXsW7o4a8
- xW6m9djTzd0X6Eb3ZrBhnxghB5h0I/JOwLYpUrwGJIYzroepTVTfWeOiNu6ZKdSpRUKS
- lk8GqDkU+ZISlPDZvPkBLJuoLrkFWB9ZhzSBbjA44iuFsMJOzjLdN2UhGJHZMAw8jZMf
- N6lDWtYY3tC/NZz8jX3d9UeOXnSE6XIEWY7PPNqsNOElu7H+RmiHFjxkZE1c7MfZUF1i
- lFJg==
-X-Gm-Message-State: APjAAAXjS6OO7i60QGTQbj8zlKRRQRchYa6W0XLpVYivIYZvEW/yXvE6
- HD4bzW8SeDfo/2QF3/GsENmYQmjnjbh7QQhOetRQHg==
-X-Google-Smtp-Source: APXvYqwoB+2aBCuWxNjaElbzl2Sr85sMT6baSsUh5gBvTIgrwWNwHmKiVan4hq5e+Ubg5I2MFmh3wplV5RpXPIYFTic=
-X-Received: by 2002:a24:6cd5:: with SMTP id w204mr6176574itb.12.1559295516175; 
- Fri, 31 May 2019 02:38:36 -0700 (PDT)
+ bh=AWniAuaByR9wwPo8OpbfiN6LP6guy0TSvYrEyBA0goU=;
+ b=HEnZIfeUC9sTUhLGwVJrIKZ+bro9hmUfaZaFWY9Ah4ObDIBi00EYgR8CX4vkXX0zod
+ gAk0wIvIThCiBckZ55U1NiAyYUsLAbaSnLcgIk4shzpaYKykK6Bkl+aDMZ3SQoeMqtz5
+ BQ0y4TQbrdEzvyWJk/8fb4TvUcObCKKBH5Nqqq4BBrhfN2IJFSzZBPQfPQI4t6Ccsnoa
+ oov1wHf7LwbdDE4gQtnSWisMKqzCmLOXQTQ/gKMLxxg/eEHA/WRnh5vcF4FDO/Bgseus
+ YYiauggVmenkEO5a5S8+vr9VUvBXl3QjGlJljyH3V0XJBDHhRkSgu6BS1TLPBGMaLWMR
+ 9M+g==
+X-Gm-Message-State: APjAAAXoOBKwIPpZJRV4Z9qUSUjQ1+l6qiPL2v8aPhj2O16TgSvPQz1j
+ nuTRF9mbsD6GwWy9Y8UeWlBXvY1edpMxxknDVhdOPQ==
+X-Google-Smtp-Source: APXvYqzKGh1fdE12GcpdaQJIdNVrRKaMXjz8xKUkB3IBVhYZtP9iioLrWRDOZwogODq0eJ1eL7EZrGgnmw6wC8C0akM=
+X-Received: by 2002:a02:bb08:: with SMTP id y8mr1110523jan.51.1559295523370;
+ Fri, 31 May 2019 02:38:43 -0700 (PDT)
 MIME-Version: 1.0
-References: <20181123092801.16411-1-kasong@redhat.com>
- <20190531092923.ytuwwmmmmteh77cw@verge.net.au>
-In-Reply-To: <20190531092923.ytuwwmmmmteh77cw@verge.net.au>
+References: <20181123092633.16111-1-kasong@redhat.com>
+ <20190531092935.sfpbxeu7uquogtd5@verge.net.au>
+In-Reply-To: <20190531092935.sfpbxeu7uquogtd5@verge.net.au>
 From: Kairui Song <kasong@redhat.com>
-Date: Fri, 31 May 2019 17:38:25 +0800
-Message-ID: <CACPcB9fcrQybChtt1GHEYOQ1K2hOWJANJP3sH5kxwpEC9RbRnw@mail.gmail.com>
-Subject: Re: [PATCH] x86: Clear isVGA flag if current fb driver is mimicking
- VGA
+Date: Fri, 31 May 2019 17:38:32 +0800
+Message-ID: <CACPcB9fCDnvB-bQ0NngStydh4UBy0cV7CYA1QPj1+Apea1sSwQ@mail.gmail.com>
+Subject: Re: [PATCH] x86: Handle 64bit framebuffer memory address properly
 To: Simon Horman <horms@verge.net.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190531_023843_594113_616E194F 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20190531_023845_057172_22717FFB 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [209.85.166.194 listed in list.dnswl.org]
  -0.4 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
+ [209.85.166.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -84,24 +83,28 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 On Fri, May 31, 2019 at 5:29 PM Simon Horman <horms@verge.net.au> wrote:
 >
-> On Fri, Nov 23, 2018 at 05:28:01PM +0800, Kairui Song wrote:
-> > Some device (eg. hyperv_fb) will mimic EFI (or VESA) VGA on first boot
-> > up, but after the real driver is loaded, it will switch to new mode
-> > and no longer compatible with EFI/VESA VGA. Keep setting
-> > orig_video_isVGA to EFI/VESA VGA flag will get wrong driver loaded and
-> > try to manipulate the framebuffer in a wrong way.
+> On Fri, Nov 23, 2018 at 05:26:33PM +0800, Kairui Song wrote:
+> > In a EFI system, the frame buffer address is 64bit, so currently
+> > if the address is beyound 4G, kexec will set wrong address due to
+> > truncate.
 > >
-> > As we have already take care of "VESA VGA" and "EFI VGA", just set the
-> > orig_video_isVGA to 0 for any other driver reports as EFI/VESA VGA but
-> > is not EFI/VESA VGA.
+> > Linux kernel commit ae2ee627dc87 ('efifb: Add support for 64-bit
+> > frame buffer addresses') added support for 64bit frame buffer
+> > address, an 'ext_lfb_base' field is added as the upper 32-bits of
+> > the frame buffer, and introduced a new capability flag
+> > 'VIDEO_TYPE_CAPABILITY_64BIT_BASE' to indicate if the extend field is
+> > used.
+> >
+> > This patch adopts this change, set proper extent address and capability
+> > flag when the address is beyound 4G.
 > >
 > > Signed-off-by: Kairui Song <kasong@redhat.com>
 >
 > Sorry for letting this slip through the cracks.
 > Please let me know if this is still relevant.
 
-Hi Simon, after fb5a879 ("x86: Introduce a new option
---reuse-video-type") in kexec-tools, this patch is no longer needed.
+Hi Simon, I checked kexec-tools repo and this patch is merged already,
+maybe you replied the wrong mail?
 
 
 --
