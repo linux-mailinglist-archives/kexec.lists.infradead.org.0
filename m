@@ -2,54 +2,73 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 778D636FFC
-	for <lists+kexec@lfdr.de>; Thu,  6 Jun 2019 11:34:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1285E37D25
+	for <lists+kexec@lfdr.de>; Thu,  6 Jun 2019 21:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Yf8cWStYjpYeQfO1+HOujTptqTtxStZxi+x02U1Jblk=; b=EpTxrdF0m0LsZU
-	nDFU4vZ5tDcY/4bgcrpgx4brDwXl/cB8dF+0en6Rty9+ackD+9/w2uZ5S0cHFKQXMSJy3Vvn1Ubpd
-	tn5fVV1IjQaREezyZiWnx5FEUm8MVyze8bVaaGMYdKDckFKEUIBLgqvYk9kAU/+9NuA+A65odxE/7
-	WFXSnGCXeNoSBfTKcuJswamoVAx9eTjpfzvwRoFcC1E8S9AG0KXMAYIhjSPMARmvAfZhT21azsavV
-	UpA6buIDWFohEchsejluuIi0cVe3y7/DeeK7BoXVW8Q0toE38HUmS2WOOyuiYZO7qCG2eAY0xH8nO
-	FwYJ0gK0X8ON6PgIpceA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n4hjCEveL+V6Z2ADbJ8pnNA2EEYStXKrN5LDThfOgjg=; b=uIKzvaMD6qPumd
+	FmlxyZuWvD/NvZaf+Cn6HerMJB5f4E2HRyzgeYIgGRcxx72YLleIiqcvvBKIVeUFM83ihFpNo/2ON
+	sY4SvJOcUJb/xzXiNrCnedG6688sRVPTmrpMg2aFVTY2DQZ9QMTxgCknL/RJQOW/gHhU25fw0Rxat
+	xxMQgP7kzMIM4qyAjW6cMYWOEoQ9INfLTQ9PoL5zUdc37A5LChfZcZP0aF5hSvcx8yClQ79qgNce2
+	SmlxSvKXaO643yu1dOqTD/ssSNsWuYD6BApYP1i+qNfmXRj0SsaM5wu5eVHRLV1mXwPz69pd7Yw7b
+	Md+OI4cyYPwdbGBSsTBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hYonO-0000ew-Lc; Thu, 06 Jun 2019 09:34:54 +0000
-Received: from mail.omniworkers.eu ([80.211.60.52])
+	id 1hYxw6-00013S-Ay; Thu, 06 Jun 2019 19:20:30 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hYonJ-0000dJ-UR
- for kexec@lists.infradead.org; Thu, 06 Jun 2019 09:34:52 +0000
-Received: by mail.omniworkers.eu (Postfix, from userid 1001)
- id 86B0F875A4; Thu,  6 Jun 2019 11:28:34 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=omniworkers.eu;
- s=mail; t=1559813320;
- bh=D58Ekd58Iez5bmGTlkmSFAkQc44ZhiyfQ8pUxOQf3pc=;
- h=Date:From:To:Subject:From;
- b=W3deHmPra873qZoWq68keVKVkQcy2Bc9XRMA5NlDdkbANj3makjRqw18cxsoSnYpg
- GqMCab3jcNXtC66Wf+7a918yqcSYlxmvNMuHgFcxEwW6al3xGS2bTYJr0cbhss/NZn
- +PbMvAW8glXcARcTnOQfqH7VeKeXniQQrWdzRWo0=
-Received: by mail.omniworkers.eu for <kexec@lists.infradead.org>;
- Thu,  6 Jun 2019 09:28:32 GMT
-Message-ID: <20190606094820-0.1.h.1d4y.0.8l4zsnvdp0@omniworkers.eu>
-Date: Thu,  6 Jun 2019 09:28:32 GMT
-From: =?UTF-8?Q?"Kapolcs_M=C3=A1ty=C3=A1s"?= <kapolcs.matyas@omniworkers.eu>
-To: <kexec@lists.infradead.org>
-Subject: =?UTF-8?Q?Dolgoz=C3=B3i_juttat=C3=A1sok?=
-X-Mailer: mail.omniworkers.eu
+ id 1hYxvz-00011V-8h
+ for kexec@lists.infradead.org; Thu, 06 Jun 2019 19:20:24 +0000
+Received: from zn.tnic (p200300EC2F1EFA00985DCAE74D76316F.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f1e:fa00:985d:cae7:4d76:316f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id BAC1C1EC01AD;
+ Thu,  6 Jun 2019 21:20:10 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1559848810;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=yCNTMXZUE49/fLG5ZTMFnNHLY3mz38m+7qEFZfj0H2E=;
+ b=TO/Bj+VSjGd7aN55WYzQsAVoI0w1RWmtV/Y3Oca5Ee5Bo5CYMyuw1/RTjCbvmPTiS5C/+m
+ 50n9PcQVLNmtYaN0vA+TogvG2TGeUoSl74biq77mKb+44bm2BU5PaQ0KLQNrtY3MKL9e3h
+ KR/O+rKKNvNaZp3BemDaMJmU3y+WjIQ=
+Date: Thu, 6 Jun 2019 21:20:10 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: Kairui Song <kasong@redhat.com>
+Subject: Re: [PATCH v6 1/2] x86/kexec: Build identity mapping for EFI systab
+ and ACPI tables
+Message-ID: <20190606192010.GJ26146@zn.tnic>
+References: <20190513070725.GA20105@zn.tnic>
+ <20190513073254.GB16774@MiWiFi-R3L-srv>
+ <20190513075006.GB20105@zn.tnic>
+ <20190513080210.GC16774@MiWiFi-R3L-srv>
+ <20190515051717.GA13703@jeru.linux.bs1.fc.nec.co.jp>
+ <20190515065843.GA24212@zn.tnic>
+ <20190515070942.GA17154@jeru.linux.bs1.fc.nec.co.jp>
+ <CACPcB9cyiPc8JYmt1QhYNipSsJ5z3wTOJ90LS5LTx4YqwaG8rA@mail.gmail.com>
+ <20190521180855.GA7793@cz.tnic>
+ <CACPcB9fg5RGXcBbESNnn9rV0DSoh4jYkVWZrdcRWay5KKAjLww@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACPcB9fg5RGXcBbESNnn9rV0DSoh4jYkVWZrdcRWay5KKAjLww@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190606_023450_142201_E4D63772 
-X-CRM114-Status: UNSURE (   1.57  )
+X-CRM114-CacheID: sfid-20190606_122023_461176_BB826215 
+X-CRM114-Status: UNSURE (   4.72  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.1 (++)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -58,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 2.3 MIXED_ES               Too many es are not es
+ valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -70,24 +89,35 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "x86@kernel.org" <x86@kernel.org>, Baoquan He <bhe@redhat.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ "fanc.fnst@cn.fujitsu.com" <fanc.fnst@cn.fujitsu.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "hpa@zytor.com" <hpa@zytor.com>, Junichi Nomura <j-nomura@ce.jp.nec.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "dyoung@redhat.com" <dyoung@redhat.com>, Ingo Molnar <mingo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-w5xkdsO2emzDtm0hCgoyMDE5LXTFkWwgbWFqZG5lbSBheiDDtnNzemVzIGtpZWfDqXN6w610xZEg
-anV0dGF0w6FzIGrDtnZlZGVsZW1rw6ludCBmb2cgYWTDs3puaSAoa2l2w6l2ZSBhIFNaw4lQIGvD
-oXJ0ecOhdCkuCgpTemVyZXRuw6ltIGF6IMOWbsO2ayBmaWd5ZWxtw6liZSBhasOhbmxhbmkganV0
-dGF0w6FzIGvDoXJ0ecOhaW5rYXQsIG1lbHllayBheiDDumogdGVoZXRzw6lnZWsgbWVnbnllcsOp
-c8OpbmVrIMOpcyBhIGRvbGdvesOzayBtZWd0YXJ0w6Fzw6FuYWsgw6lzIG1vdGl2w6Fsw6Fzw6Fu
-YWsgdmVyc2VueWvDqXBlcyBlc3prw7Z6ZWkuCgpBIFNaw4lQIGvDoXJ0eWEgbWVnb2xkw6FzYWl0
-w7NsIGVsdMOpcsWRZW4gYSBtaSBrw6FydHnDoWlua2F0IGEgbXVua2F2w6FsbGFsw7MgdGV0c3rF
-kWxlZ2VzIGPDqWxva3JhIGhhc3puw6FsaGF0amEgZmVsOiDDqWxlbG1pc3plciB2w6Fzw6FybMOh
-c3JhLCBlZ8Opc3pzw6lnw7xneWkgZWxsw6F0w6FzcmEsIGVsZWt0cm9uaWvDoXJhLCBzesOhbGzD
-oXNyYSwgb2t0YXTDoXNyYSDDqXMgZWd5w6liIGPDqWxva3JhLCB2YWd5IGFrw6FyIGvDqXN6cMOp
-bnpmZWx2w6l0ZWxpIGxlaGV0xZFzw6lnZXQgaXMgdsOhbGFzenRoYXQuIAoKU3plcmV0bsOpayBt
-ZWdpc21lcm5pIGp1dHRhdMOhcyBrw6FydHnDoWluayBmZWxoYXN6bsOhbMOhc2kgbGVoZXTFkXPD
-qWdlaXQgYSBjw6lnw7xrbsOpbD8KCgpLYXBvbGNzIE3DoXR5w6FzCkh1bmdhcnkgVGVhbSBMZWFk
-ZXIgCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4
-ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
+On Tue, May 28, 2019 at 10:49:54AM +0800, Kairui Song wrote:
+> Hi, by now, I still didn't see any tip branch pick up this patch yet,
+> any update?
+
+Ok, stuff is queued in tip:x86/boot now. Please test it as much as you
+can and send all fixes ontop.
+
+Thx.
+
+-- 
+Regards/Gruss,
+    Boris.
+
+Good mailing practices for 400: avoid top-posting and trim the reply.
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
