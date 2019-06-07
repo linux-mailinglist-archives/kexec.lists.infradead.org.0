@@ -2,61 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9491239336
-	for <lists+kexec@lfdr.de>; Fri,  7 Jun 2019 19:30:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BF6839380
+	for <lists+kexec@lfdr.de>; Fri,  7 Jun 2019 19:42:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RmvgNL/eoXq/B69Nf+q+F50LRT4m+qOopTtWcTUhCBA=; b=X61m7x6eSDMZif
-	jNW4FGqJ6dUZ1O9TAZljqWbTlqsGsXa7fsPV5s3jXCSSeeRlRggQVJww/9Hc9PLm36J+alrSWfnOX
-	KyuZZg+m/mBMIXtFcz/9nlE8dNwJjzpXBpkPQixvmumFb0T3doenVDOpORVQRTKRRpuEJqlgpmpG3
-	WE/xJGyUWmLSWVn+jYYKlMiou4sT4bKS4Heb+ZFWKWLbXkXNtPEAoK30N4QVLff1Nqvn3yrMRdJV5
-	ti5vVXLZS92bdPE+Rw8VMo01rzMcHd1XRCc1gje/0DGrrtpctI34tgj2F1ARXc94Ebbf22lNKrkY8
-	aBA3zR+WX3t11dzC+glA==;
+	List-Owner; bh=SHwojOqF++Oratm/usMftAijGId1omoyME2YMxiv2sU=; b=nbTTNNAuFAxb4K
+	Tw64i3KQLFc7DruAVfQnLf76EmGBHcFfpWVeYuG013Ir0iDWOuPrkUAeKZEQZlBATdoFWYealIxJG
+	48MC/hnY/WkTMVqemkwqzrE4JueGiHJbNc+QzDUUPEc1yAu7Es7crWNSyTsEGAeYDKP7eE9QXCTLo
+	6M+9RJPbvyyeB3h9tYDiD9glVhwPKD66r1SUg2lADuWvQxucBTAvk239Ka0chlCXRhRz0qK/oQaoI
+	D/q9thEb2IyIL8qHd8KgjT3YohUw2jxDEPU7lSsfFX3+dKzJKjLBWsp/1NTn0v1mr+aYwV0NeRrBr
+	LD/cuEmYYquahPR3IOpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hZIh6-00028M-W2; Fri, 07 Jun 2019 17:30:24 +0000
+	id 1hZIsd-0006c8-8p; Fri, 07 Jun 2019 17:42:19 +0000
 Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hZIh3-00027c-MT
- for kexec@lists.infradead.org; Fri, 07 Jun 2019 17:30:23 +0000
+ id 1hZIsa-0006bp-IQ
+ for kexec@lists.infradead.org; Fri, 07 Jun 2019 17:42:18 +0000
 Received: from zn.tnic (p200300EC2F066300951FA2F4E0AD5C5F.dip0.t-ipconnect.de
  [IPv6:2003:ec:2f06:6300:951f:a2f4:e0ad:5c5f])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 5767C1EC0997;
- Fri,  7 Jun 2019 19:30:16 +0200 (CEST)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 0AB7F1EC0985;
+ Fri,  7 Jun 2019 19:42:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1559928616;
+ t=1559929335;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=T0oiUeJJ4yH6JALjOP9aRLwwDXx5xLU0ccWzcZC6ki4=;
- b=g+D00ICTFdwzwW2g2mw6pYLS2tw6CFd78aj88RlbG+UudJFX5v1G2Qr50L2t370gSzDuah
- fbf1AxA1DawepNa5oYEDfZWdYREuWnV0rHFi2VZ3k1whhodsJAZip5vYDtMhH8QziCP7+l
- EYhRUyv7hXiaT2CQkn/t6NX+JFZ2ngU=
-Date: Fri, 7 Jun 2019 19:30:16 +0200
+ bh=JQAA3WN3TzT4ccULLhRVUNCaToxHzRDaxQlu0v0KeKg=;
+ b=rIQF9uV41BvAC4hfRi8JcZbwUXDaNc64zAoy9ThP0f4r75Gr9YWrfKDJiI8r5Hm3CcAMo3
+ eEpBzGhEpnSvlmxv6snr8d4LM5DOmbodNzpImQN035obHy8RqWLj4ls4/DOK5CG/dKIWgl
+ PTkp9mSUVWoqx0lH20XB56ic/xGjWmU=
+Date: Fri, 7 Jun 2019 19:42:11 +0200
 From: Borislav Petkov <bp@alien8.de>
-To: Dave Young <dyoung@redhat.com>, Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv7] x86/kdump: bugfix, make the behavior of crashkernel=X
- consistent with kaslr
-Message-ID: <20190607173016.GM20269@zn.tnic>
-References: <1548047768-7656-1-git-send-email-kernelfans@gmail.com>
- <20190125103924.GB27998@zn.tnic>
- <20190125134518.GA23595@dhcp-128-65.nay.redhat.com>
- <20190125140823.GC27998@zn.tnic>
- <20190128095809.GC3732@dhcp-128-65.nay.redhat.com>
- <20190128101831.GA27154@zn.tnic>
+To: lijiang <lijiang@redhat.com>
+Subject: Re: [PATCH 0/3 v11] add reserved e820 ranges to the kdump kernel
+ e820 table
+Message-ID: <20190607174211.GN20269@zn.tnic>
+References: <20190423013007.17838-1-lijiang@redhat.com>
+ <12847a03-3226-0b29-97b5-04d404410147@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190128101831.GA27154@zn.tnic>
+In-Reply-To: <12847a03-3226-0b29-97b5-04d404410147@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190607_103021_885972_3C950425 
-X-CRM114-Status: GOOD (  14.75  )
+X-CRM114-CacheID: sfid-20190607_104216_762470_52ADA758 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -84,87 +81,34 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, Baoquan He <bhe@redhat.com>,
- Randy Dunlap <rdunlap@infradead.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, yinghai@kernel.org,
- vgoyal@redhat.com
+Cc: Thomas.Lendacky@amd.com, x86@kernel.org, bhe@redhat.com,
+ peterz@infradead.org, dave.hansen@linux.intel.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, luto@kernel.org, hpa@zytor.com,
+ tglx@linutronix.de, dyoung@redhat.com, akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Jan 28, 2019 at 11:18:31AM +0100, Borislav Petkov wrote:
-> On Mon, Jan 28, 2019 at 05:58:09PM +0800, Dave Young wrote:
-> > Another reason is in case ,high we will need automatically reserve a
-> > region in low area for swiotlb.  So for example one use
-> > crashkernel=256M,high,  actual reserved memory is 256M above 4G and
-> > another 256M under 4G for swiotlb.  Normally it is not necessary for
-> > most people.  Thus we can not make ,high as default.
+On Tue, May 28, 2019 at 03:30:21PM +0800, lijiang wrote:
+> Hi, Boris and Thomas
 > 
-> And how is the poor user to figure out that we decided for her/him that
-> swiotlb reservation is something not necessary for most people and thus
-> we fail the crashkernel= reservation?
-> 
-> IOW, that "logic" above doesn't make a whole lot of sense to me from
-> user friendliness perspective.
+> Could you give me any suggestions about this patch series? Other reviewers?
 
-So to show what I mean: I'm trying to reserve a crash kernel region on a
-box here. I tried:
+So I'm testing this on a box with SME enabled but after loading the
+crash kernel, it freezes instead of rebooting. My cmdline is:
 
-crashkernel=64M@16M
+ kexec -s -p /boot/vmlinuz-5.2.0-rc3+ --initrd=/boot/initrd.img-5.2.0-rc3+ --command-line="maxcpus=1 root=/dev/sda5 ro debug ignore_loglevel log_buf_len=16M no_console_suspend net.ifnames=0 systemd.log_target=null mem_encrypt=on kvm_amd.sev=1 nr_cpus=1 irqpoll reset_devices vga=normal LANG=en_US.UTF-8 earlyprintk=serial cgroup_disable=memory mce=off numa=off udev.children-max=2 panic=10 rootflags=nofail acpi_no_memhotplug transparent_hugepage=never disable_cpu_apicid=0"
 
-as it is stated in Documentation/kdump/kdump.txt.
+and the reserved range is:
 
-Box said:
+[    0.000000] Reserving 256MB of memory at 3392MB for crashkernel (System RAM: 16271MB)
 
-[    0.000000] crashkernel reservation failed - memory is in use.
+I'm wondering if it is related to
 
-Oh great.
+https://lkml.kernel.org/r/20190604134952.GC26891@MiWiFi-R3L-srv
 
-Then I tried:
-
-crashkernel=64M@64M
-
-Box said:
-
-[    0.000000] crashkernel reservation failed - memory is in use.
-
-So I simply did:
-
-crashkernel=64M
-
-and the box said:
-
-[    0.000000] Reserving 64MB of memory at 3392MB for crashkernel (System RAM: 16271MB)
-
-So I could've gone a long time poking at the memory to find a suitable
-address.
-
-So do you see what I mean with making this as user-friendly and as
-robust as possible?
-
-In this case I don't care about *where* my crash kernel is - I only want
-to have one loaded *somewhere*.
-
-And the same strategy should be applied to other reservation attempts
-- we should try hard to reserve and if we cannot reserve, then try an
-alternating range.
-
-I even think that
-
-crashkernel=X@Y
-
-should not simply fail if Y is occupied but keep trying and say
-
-[    0.000000] Reserving 64MB of memory at alternative address 3392MB for crashkernel (System RAM: 16271MB)
-
-and only fail when the user doesn't really want the kernel to try hard
-by booting with
-
-crashkernel=X@Y,strict
-
-But that's for another day.
+Thx.
 
 -- 
 Regards/Gruss,
