@@ -2,57 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71AD53B28B
-	for <lists+kexec@lfdr.de>; Mon, 10 Jun 2019 11:53:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A963B2DB
+	for <lists+kexec@lfdr.de>; Mon, 10 Jun 2019 12:19:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tWxWOQSAK4UJDpPtBakzKxrwDy3NbXWwOopVm0LFGz4=; b=VeelFk7j/ClLTZ
-	9wKvpWo7d8vRripCv8ZCObIlsSfgLrJ2qmSctdsZWQBAMmSupa4f7sSM0+uhCKuEXttkvtlcAaKAw
-	YvcLnCrFyKhXiwrpCJe3sZQYt2h8T/Ku14t+Z02xjYKy6Jzdv5ffM2/AxIRIvxqv007M9TGbHt91O
-	HA7pG3z8rTUXLFm+PMyhIoSLDVcLjiiqmdMdejIEdA8Jxbqmkbd/EwRMQI3F0sVZ9VmpEy0MaeW0X
-	ujAEQ8tiuSS2/JyxZmm/GAjqcF21G/ydtu6pZg6oxNGYcZIrYLFYSwZSr3YQKSE6lOzVqMtxuNKwX
-	9ORtd4WlXg6vZGhGzvfg==;
+	List-Owner; bh=ejfQSuys3C288N3LZ4qftPrFR0cWCoFWedz2rmJYY4E=; b=cl0WJesntJdMLp
+	gIxusjUu5XMj2/AtKBDzR2eHUEhZXPkFDP9qcANndB6A3fQEceEOLcFTw9q9qp8AMSsr+Gya8e1Cz
+	BktoxlkZKxjKBFHNRnC60zt8aY6ayqXNDFvhoIvA+HoKNtpVyaJlfuY94Yug+gAJBKpOeAr4Ofl78
+	X2VjCH8v60UnZ+LA7qKOuCMBXKXi7nOj+/amNrQxLkfJHYYRm9mPfPeStqdVp1C7H0xNFJmVYB/I+
+	FQVQChAwEQrPv61qms58/IktLEgW4E/ZFS9UX+r74RxvpdODAdORzfhbA5p77TaafBnLNq+tKDzgr
+	0zNKrlmAMMfoBU9VBnTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haGzf-0005tr-PT; Mon, 10 Jun 2019 09:53:35 +0000
+	id 1haHOP-0000dq-62; Mon, 10 Jun 2019 10:19:09 +0000
 Received: from mail-it1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haGzb-0005sy-RW
- for kexec@lists.infradead.org; Mon, 10 Jun 2019 09:53:33 +0000
-Received: by mail-it1-f196.google.com with SMTP id j204so12168741ite.4
- for <kexec@lists.infradead.org>; Mon, 10 Jun 2019 02:53:31 -0700 (PDT)
+ id 1haHOJ-0000Ye-QE
+ for kexec@lists.infradead.org; Mon, 10 Jun 2019 10:19:05 +0000
+Received: by mail-it1-f196.google.com with SMTP id j194so5402347ite.0
+ for <kexec@lists.infradead.org>; Mon, 10 Jun 2019 03:19:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=zP+U4owfQx+AxiXAq571meL0GzDGTRsnhiqrLs/D2hU=;
- b=ZpcQSlUGKPz2kGZZcMQ7oRvduaJi/zoWxjITcfoLm12RWmJDx3cY4N2LOXHyYcAJTf
- k7PfWo1e3PUJNcqnsiWZ2trZ2a0Bk1VktUhdBKByUyIsq5vWiytmm95eyQd5L5rALNoU
- AkIlYUT+Bbn9U0Lq844+ilq2rg0b9XyqIPbWqKZlAeVqS3PJaoh/LIlocumV1OdsQITs
- f9n+qEji38Y8aT68fhKYQBvq6tvDERNt7A9O5smbFz8oZHVS9lQgOqxcNiNPnBQBkw6R
- QgkPhJAbuYjt7kEE97OIHRUhyDGZ2sjE9OnQD2cbSgtMLZKSPepnpKNr8yOs1oPOk0H6
- uewg==
-X-Gm-Message-State: APjAAAV/QCsr5rvOWNXRdalJhNk1So8ZiZFXWCUg+N282d5eY7otzLNT
- MmiHwTfHe7aWsRpjDsnCAVzevbp3y0UgWvAg495U3A==
-X-Google-Smtp-Source: APXvYqxiB6IGg45gdK2p5guuqIhLLseg3VCwZw7cBiPX4uxiDiO6qRniP/UJNrbg/+4SuYQ5kw8sqXpkJ7a5PA1Wl8Q=
-X-Received: by 2002:a02:7b2d:: with SMTP id q45mr41554211jac.127.1560160410784; 
- Mon, 10 Jun 2019 02:53:30 -0700 (PDT)
+ bh=+s1qLXCvqwzbr22mFErQyyk+3j3cdDsCDDkT5MoVVBA=;
+ b=I96xiO9lZAl+rSJSa3xRV0afHOLWhwdcNRQbY0NWZbfSZhxxB6ph9cwP5n5A0YFAaB
+ 43vabYrRgd+zyxe1v0XTmR+nB/YVjR+rSSjaGp8Jwgq6yoodgNAy2AQMMlhkmsEq0eqz
+ BVD/2cTbRMGMS8UmslRwAIwjRbJ+wG5UbJJQI1AVsEHZjGx9SYF0Oa9PcEkHHEvoEn4S
+ to5QEk2x7t7PqLxq8AP+e7Ruq4nu8FBarnqUq667DUiAx5EFKpFke/JAHJP4z9tEjxdS
+ jjFXr3rBD7+bXJg+37bkWd2HPTL+0ha4v6ZGVObBTriKYg0fBJBsyoiMEScoSiExYLm6
+ oV4g==
+X-Gm-Message-State: APjAAAVFypWzXAeoH0W3AtU04N+1biCUqPzIbEeuQvDndFVxaCwJ7vBe
+ iC3DkLr32jWjMUdzFEEWKDe67BANMrwsNv935NRjEA==
+X-Google-Smtp-Source: APXvYqwIYVHEchoiN3iU8hLMeRqlH6jgxgWM3uWpVEsXU8i/JxzUlHw6l3phxSZG4PLaVsxPmDEWS3xensFf792xlg0=
+X-Received: by 2002:a24:2e8c:: with SMTP id i134mr13166926ita.9.1560161941664; 
+ Mon, 10 Jun 2019 03:19:01 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190610073617.19767-1-kasong@redhat.com>
-In-Reply-To: <20190610073617.19767-1-kasong@redhat.com>
+ <20190610095150.GA5488@zn.tnic>
+In-Reply-To: <20190610095150.GA5488@zn.tnic>
 From: Kairui Song <kasong@redhat.com>
-Date: Mon, 10 Jun 2019 17:53:19 +0800
-Message-ID: <CACPcB9cRjPPMkC7+yToCZ_MoVw8McMcycRQ6tZT3yjD6pi4-NA@mail.gmail.com>
+Date: Mon, 10 Jun 2019 18:18:50 +0800
+Message-ID: <CACPcB9f-sussXaOuOau6=CD85pS2KhcsknpJDQH_aEkwvLfvVA@mail.gmail.com>
 Subject: Re: [PATCH] x86/kexec: Add ACPI NVS region to the ident map
-To: Junichi Nomura <j-nomura@ce.jp.nec.com>, Dave Young <dyoung@redhat.com>, 
- Dirk van der Merwe <dirk.vandermerwe@netronome.com>
+To: Borislav Petkov <bp@alien8.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_025331_886650_1828AB93 
-X-CRM114-Status: GOOD (  20.91  )
+X-CRM114-CacheID: sfid-20190610_031903_874945_D2FCD845 
+X-CRM114-Status: GOOD (  16.29  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -75,84 +75,58 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Chao Fan <fanc.fnst@cn.fujitsu.com>, Baoquan He <bhe@redhat.com>,
- kexec@lists.infradead.org, the arch/x86 maintainers <x86@kernel.org>,
+Cc: the arch/x86 maintainers <x86@kernel.org>, Baoquan He <bhe@redhat.com>,
+ kexec@lists.infradead.org, Chao Fan <fanc.fnst@cn.fujitsu.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
- Ingo Molnar <mingo@kernel.org>
+ Dirk van der Merwe <dirk.vandermerwe@netronome.com>,
+ Junichi Nomura <j-nomura@ce.jp.nec.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Dave Young <dyoung@redhat.com>, Ingo Molnar <mingo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 3:37 PM Kairui Song <kasong@redhat.com> wrote:
+On Mon, Jun 10, 2019 at 5:52 PM Borislav Petkov <bp@alien8.de> wrote:
 >
-> With the recent addition of RSDP parsing in decompression stage, kexec
-> kernel now needs ACPI tables to be covered by the identity mapping.
-> And in commit 6bbeb276b71f ("x86/kexec: Add the EFI system tables and
-> ACPI tables to the ident map"), ACPI tables memory region was added to
-> the ident map.
+> On Mon, Jun 10, 2019 at 03:36:17PM +0800, Kairui Song wrote:
+> > With the recent addition of RSDP parsing in decompression stage, kexec
+> > kernel now needs ACPI tables to be covered by the identity mapping.
+> > And in commit 6bbeb276b71f ("x86/kexec: Add the EFI system tables and
+> > ACPI tables to the ident map"), ACPI tables memory region was added to
+> > the ident map.
+> >
+> > But on some machines, there is only ACPI NVS memory region, and the ACPI
+> > tables is located in the NVS region instead. In such case second kernel
 >
-> But on some machines, there is only ACPI NVS memory region, and the ACPI
-> tables is located in the NVS region instead. In such case second kernel
-> will still fail when trying to access ACPI tables.
+> *are* located - plural.
 >
-> So, to fix the problem, add NVS memory region in the ident map as well.
+> > will still fail when trying to access ACPI tables.
+> >
+> > So, to fix the problem, add NVS memory region in the ident map as well.
+> >
+> > Fixes: 6bbeb276b71f ("x86/kexec: Add the EFI system tables and ACPI tables to the ident map")
+> > Suggested-by: Junichi Nomura <j-nomura@ce.jp.nec.com>
+> > Signed-off-by: Kairui Song <kasong@redhat.com>
+> > ---
+> >
+> > Tested with my laptop and VM, on top of current tip:x86/boot.
 >
-> Fixes: 6bbeb276b71f ("x86/kexec: Add the EFI system tables and ACPI tables to the ident map")
-> Suggested-by: Junichi Nomura <j-nomura@ce.jp.nec.com>
-> Signed-off-by: Kairui Song <kasong@redhat.com>
-> ---
+> You tested this in a VM and not on the *actual* machine with the NVS
+> region?
 >
-> Tested with my laptop and VM, on top of current tip:x86/boot.
->
->  arch/x86/kernel/machine_kexec_64.c | 18 +++++++++++++++---
->  1 file changed, 15 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
-> index 3c77bdf7b32a..a406602fdb3c 100644
-> --- a/arch/x86/kernel/machine_kexec_64.c
-> +++ b/arch/x86/kernel/machine_kexec_64.c
-> @@ -54,14 +54,26 @@ static int mem_region_callback(struct resource *res, void *arg)
->  static int
->  map_acpi_tables(struct x86_mapping_info *info, pgd_t *level4p)
->  {
-> -       unsigned long flags = IORESOURCE_MEM | IORESOURCE_BUSY;
-> +       int ret;
-> +       unsigned long flags;
->         struct init_pgtable_data data;
->
->         data.info = info;
->         data.level4p = level4p;
->         flags = IORESOURCE_MEM | IORESOURCE_BUSY;
-> -       return walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
-> -                                  &data, mem_region_callback);
-> +
-> +       ret = walk_iomem_res_desc(IORES_DESC_ACPI_TABLES, flags, 0, -1,
-> +                                 &data, mem_region_callback);
-> +       if (ret && ret != -EINVAL)
-> +               return ret;
-> +
-> +       /* ACPI tables could be located in ACPI Non-volatile Storage region */
-> +       ret = walk_iomem_res_desc(IORES_DESC_ACPI_NV_STORAGE, flags, 0, -1,
-> +                                 &data, mem_region_callback);
-> +       if (ret && ret != -EINVAL)
-> +               return ret;
-> +
-> +       return 0;
->  }
->  #else
->  static int map_acpi_tables(struct x86_mapping_info *info, pgd_t *level4p) { return 0; }
-> --
-> 2.21.0
+> This is a joke, right?
 >
 
-Hi, could you help test the tip branch with this applied? This should
-fix all the issues, I can't find any other issues now. Thanks.
+Hi Boris, unfortunately I don't have a real machine which only have
+the NVS region.
+I did fake the memmap to emulate such problem but can't really promise
+this will fix the real case.
+So just declare it won't break anything that is already working. And
+I'm asking Junichi to have a try as he reported this issue on the
+machines he has.
 
-
---
+-- 
 Best Regards,
 Kairui Song
 
