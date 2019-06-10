@@ -2,68 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57A963B2DB
-	for <lists+kexec@lfdr.de>; Mon, 10 Jun 2019 12:19:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B24C3B363
+	for <lists+kexec@lfdr.de>; Mon, 10 Jun 2019 12:41:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ejfQSuys3C288N3LZ4qftPrFR0cWCoFWedz2rmJYY4E=; b=cl0WJesntJdMLp
-	gIxusjUu5XMj2/AtKBDzR2eHUEhZXPkFDP9qcANndB6A3fQEceEOLcFTw9q9qp8AMSsr+Gya8e1Cz
-	BktoxlkZKxjKBFHNRnC60zt8aY6ayqXNDFvhoIvA+HoKNtpVyaJlfuY94Yug+gAJBKpOeAr4Ofl78
-	X2VjCH8v60UnZ+LA7qKOuCMBXKXi7nOj+/amNrQxLkfJHYYRm9mPfPeStqdVp1C7H0xNFJmVYB/I+
-	FQVQChAwEQrPv61qms58/IktLEgW4E/ZFS9UX+r74RxvpdODAdORzfhbA5p77TaafBnLNq+tKDzgr
-	0zNKrlmAMMfoBU9VBnTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fQPg7MjSESBz0xyqYA878O5U56q3nobXx57CzcT8Kdg=; b=L1GcoXjrVg2fL/M24y8YNBjW/
+	Zq7ySBIjSmoG1F+vNKFr3cCcDLrg6G0ZDRO88B4RG65zhr5uL2LPIplF6qDDo8QZYi3c4CoI7myeJ
+	3xoXmydoTcejFaP4DRGI+eqLdVRveCF/I6ctH/t3827fxI6nlJ4b9rdM9UJk7jfxZLtDRuRBuN4Tr
+	RgFUTdiz6T24e8l/TcPFhXc1jQTWh+sVJX5Rdo1FKRNp6OAPdXZuCWPFXoWvSoWNciE8swZQe6wFk
+	0QLBvfL8EnNlmscvfOUZd/D3z2JBen3dZn9JUTrsYUbqDUELgYNI3nO9u+2YQQtnKYGchtQbGJ31q
+	fwbR5ymrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1haHOP-0000dq-62; Mon, 10 Jun 2019 10:19:09 +0000
-Received: from mail-it1-f196.google.com ([209.85.166.196])
+	id 1haHje-0005r3-RZ; Mon, 10 Jun 2019 10:41:06 +0000
+Received: from mail-pf1-f193.google.com ([209.85.210.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1haHOJ-0000Ye-QE
- for kexec@lists.infradead.org; Mon, 10 Jun 2019 10:19:05 +0000
-Received: by mail-it1-f196.google.com with SMTP id j194so5402347ite.0
- for <kexec@lists.infradead.org>; Mon, 10 Jun 2019 03:19:03 -0700 (PDT)
+ id 1haHjV-0005jF-Lt
+ for kexec@lists.infradead.org; Mon, 10 Jun 2019 10:40:59 +0000
+Received: by mail-pf1-f193.google.com with SMTP id i189so5058286pfg.10
+ for <kexec@lists.infradead.org>; Mon, 10 Jun 2019 03:40:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+s1qLXCvqwzbr22mFErQyyk+3j3cdDsCDDkT5MoVVBA=;
- b=I96xiO9lZAl+rSJSa3xRV0afHOLWhwdcNRQbY0NWZbfSZhxxB6ph9cwP5n5A0YFAaB
- 43vabYrRgd+zyxe1v0XTmR+nB/YVjR+rSSjaGp8Jwgq6yoodgNAy2AQMMlhkmsEq0eqz
- BVD/2cTbRMGMS8UmslRwAIwjRbJ+wG5UbJJQI1AVsEHZjGx9SYF0Oa9PcEkHHEvoEn4S
- to5QEk2x7t7PqLxq8AP+e7Ruq4nu8FBarnqUq667DUiAx5EFKpFke/JAHJP4z9tEjxdS
- jjFXr3rBD7+bXJg+37bkWd2HPTL+0ha4v6ZGVObBTriKYg0fBJBsyoiMEScoSiExYLm6
- oV4g==
-X-Gm-Message-State: APjAAAVFypWzXAeoH0W3AtU04N+1biCUqPzIbEeuQvDndFVxaCwJ7vBe
- iC3DkLr32jWjMUdzFEEWKDe67BANMrwsNv935NRjEA==
-X-Google-Smtp-Source: APXvYqwIYVHEchoiN3iU8hLMeRqlH6jgxgWM3uWpVEsXU8i/JxzUlHw6l3phxSZG4PLaVsxPmDEWS3xensFf792xlg0=
-X-Received: by 2002:a24:2e8c:: with SMTP id i134mr13166926ita.9.1560161941664; 
- Mon, 10 Jun 2019 03:19:01 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=eqqPVC0c1XlQFgVxlo4LALhKZmVo/wVOLAMo2XNQ5UU=;
+ b=CBapipgZxTpSHWf6812yUp7nXurDvPibDaKWoqS49ZH1pLki63phK+6iOmXz7UYqMH
+ 5hoHR7WSLOpMYnmo72wCyr7RVyjHuj01iW1RL8rYk13Q6RA2QfCcKAb6P0YnI0FvJ2L1
+ Y5C2jmZlOqKFYWxh/NGeVoDdKssH/cFhyIBsQSi/C0Y+HHlVI+U/ogrgWhMNirczyBSs
+ 6AprR85ucHIRKRwwRr6xwMK+xX7Kq3E4ljhAkW4XoJvRhNMgdmFFP/aCA9FuUmqTLQ9U
+ O9299sZCGGwBt8OLrqfCcijB5nPDs7cP5VS1ZzdMbXVv/zQEGcS1XmhD3XBy2n+hNUPz
+ pjcA==
+X-Gm-Message-State: APjAAAVBVZ0gakzL09XUL4hELQqR2ole4oDdkEQYmASfm2M+HyExuX/i
+ +9zVNyRoYC/H3dF0XrtMPA8f6uWV3d4=
+X-Google-Smtp-Source: APXvYqw8Vse3YJUP0Pt+OEyifpBA/I6fIUUumR68GqG3ox2Jqwzp2lr9PbBxjmLGv0pNXVtVvvFYxA==
+X-Received: by 2002:a17:90a:26e4:: with SMTP id
+ m91mr20573357pje.93.1560163256440; 
+ Mon, 10 Jun 2019 03:40:56 -0700 (PDT)
+Received: from localhost.localdomain ([122.177.221.32])
+ by smtp.gmail.com with ESMTPSA id c129sm19729082pfa.106.2019.06.10.03.40.52
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 10 Jun 2019 03:40:55 -0700 (PDT)
+Subject: Re: [PATCH v2 00/12] 52-bit kernel + user VAs
+To: Steve Capper <steve.capper@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <20190528161026.13193-1-steve.capper@arm.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Message-ID: <762411c4-1148-a10e-2a79-d2c9e38bc46e@redhat.com>
+Date: Mon, 10 Jun 2019 16:10:50 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.1
 MIME-Version: 1.0
-References: <20190610073617.19767-1-kasong@redhat.com>
- <20190610095150.GA5488@zn.tnic>
-In-Reply-To: <20190610095150.GA5488@zn.tnic>
-From: Kairui Song <kasong@redhat.com>
-Date: Mon, 10 Jun 2019 18:18:50 +0800
-Message-ID: <CACPcB9f-sussXaOuOau6=CD85pS2KhcsknpJDQH_aEkwvLfvVA@mail.gmail.com>
-Subject: Re: [PATCH] x86/kexec: Add ACPI NVS region to the ident map
-To: Borislav Petkov <bp@alien8.de>
+In-Reply-To: <20190528161026.13193-1-steve.capper@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190610_031903_874945_D2FCD845 
-X-CRM114-Status: GOOD (  16.29  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190610_034057_715117_60480654 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
+ no trust [209.85.210.193 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.193 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,60 +84,77 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: the arch/x86 maintainers <x86@kernel.org>, Baoquan He <bhe@redhat.com>,
- kexec@lists.infradead.org, Chao Fan <fanc.fnst@cn.fujitsu.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Dirk van der Merwe <dirk.vandermerwe@netronome.com>,
- Junichi Nomura <j-nomura@ce.jp.nec.com>, Thomas Gleixner <tglx@linutronix.de>,
- Dave Young <dyoung@redhat.com>, Ingo Molnar <mingo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: crecklin@redhat.com, ard.biesheuvel@linaro.org, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, will.deacon@arm.com,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Jun 10, 2019 at 5:52 PM Borislav Petkov <bp@alien8.de> wrote:
->
-> On Mon, Jun 10, 2019 at 03:36:17PM +0800, Kairui Song wrote:
-> > With the recent addition of RSDP parsing in decompression stage, kexec
-> > kernel now needs ACPI tables to be covered by the identity mapping.
-> > And in commit 6bbeb276b71f ("x86/kexec: Add the EFI system tables and
-> > ACPI tables to the ident map"), ACPI tables memory region was added to
-> > the ident map.
-> >
-> > But on some machines, there is only ACPI NVS memory region, and the ACPI
-> > tables is located in the NVS region instead. In such case second kernel
->
-> *are* located - plural.
->
-> > will still fail when trying to access ACPI tables.
-> >
-> > So, to fix the problem, add NVS memory region in the ident map as well.
-> >
-> > Fixes: 6bbeb276b71f ("x86/kexec: Add the EFI system tables and ACPI tables to the ident map")
-> > Suggested-by: Junichi Nomura <j-nomura@ce.jp.nec.com>
-> > Signed-off-by: Kairui Song <kasong@redhat.com>
-> > ---
-> >
-> > Tested with my laptop and VM, on top of current tip:x86/boot.
->
-> You tested this in a VM and not on the *actual* machine with the NVS
-> region?
->
-> This is a joke, right?
->
+Hi Steve,
 
-Hi Boris, unfortunately I don't have a real machine which only have
-the NVS region.
-I did fake the memmap to emulate such problem but can't really promise
-this will fix the real case.
-So just declare it won't break anything that is already working. And
-I'm asking Junichi to have a try as he reported this issue on the
-machines he has.
+Thanks for the v2. I still did not get much time to go through this in 
+deep and have a go with the same on LVA supporting prototype platforms 
+or old CPUs (which don't support ARMv8.2 LVA/LPA extensions) I have. May 
+be I will give this a quick check on the same in a day or two.
 
--- 
-Best Regards,
-Kairui Song
+On 05/28/2019 09:40 PM, Steve Capper wrote:
+> This patch series adds support for 52-bit kernel VAs using some of the
+> machinery already introduced by the 52-bit userspace VA code in 5.0.
+> 
+> As 52-bit virtual address support is an optional hardware feature,
+> software support for 52-bit kernel VAs needs to be deduced at early boot
+> time. If HW support is not available, the kernel falls back to 48-bit.
+> 
+> A significant proportion of this series focuses on "de-constifying"
+> VA_BITS related constants.
+> 
+> In order to allow for a KASAN shadow that changes size at boot time, one
+> must fix the KASAN_SHADOW_END for both 48 & 52-bit VAs and "grow" the
+> start address. Also, it is highly desirable to maintain the same
+> function addresses in the kernel .text between VA sizes. Both of these
+> requirements necessitate us to flip the kernel address space halves s.t.
+> the direct linear map occupies the lower addresses.
+> 
+> In V2 of this series (apologies for the long delay from V1), the major
+> change is that PAGE_OFFSET is retained as a constant. This allows for
+> much faster virt_to_page computations. This is achieved by expanding the
+> size of the VMEMMAP region to accommodate a disjoint 52-bit/48-bit
+> direct linear map. This has been found to work well in my testing, but I
+> would appreciate any feedback on this if it needs changing. To aid with
+> git bisect, this logic is broken down into a few smaller patches.
+> 
+> As far as I'm aware, there are two outstanding issues with this series
+> that need to be resolved:
+>   1) Is the code patching for ttbr1_offset safe? I need to analyse this
+>      a little more,
+>   2) How can this memory map be advertised to kdump tools/documentation?
+>      I was planning on getting the kernel VA structure agreed on, then I
+>      would add the relevant exports/documentation.
+
+
+Indeed, in the absence of corresponding changes to the Documentation 
+section,
+it is hard to visualize the changes being made in the memory map.
+
+Also I would suggest that we note in the patchset itself (may be the git 
+log) that kdump tools (or even crash for that matter) will be broken 
+with this patchset - to prevent kernel bugs being reported.
+
+BTW, James and I are already discussing more coherent methods (see [0]) 
+to manage this exporting of information to user-land (so to that we can 
+save ourselves from requiring to export new variables in the vmcoreinfo 
+in case we have similar changes to the virtual/physical address spaces 
+in future).
+
+I will work on and send a patchset addressing the same shortly.
+
+[0]. http://lists.infradead.org/pipermail/kexec/2019-June/023105.html
+
+Thanks,
+Bhupesh
+
 
 _______________________________________________
 kexec mailing list
