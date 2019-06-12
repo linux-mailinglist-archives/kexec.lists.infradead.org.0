@@ -2,57 +2,59 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91DD73C8E3
-	for <lists+kexec@lfdr.de>; Tue, 11 Jun 2019 12:26:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81ED7419E3
+	for <lists+kexec@lfdr.de>; Wed, 12 Jun 2019 03:15:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X/bnwZenbXfcg0SnGPGwyfoFwfMW4W8Ze068M124Weo=; b=hSQ1d9MrusfMz0
-	XkPpftxR+VgYr/LNrBC6cPQVBoSwHPLdMzVWvnI6EEujZZQ/JmBvtI6x+00dzLJNspwsx6fY+Vhmm
-	f6OX9TIdi+H6Xg49FRvq6SOpBdONi3bw44p0+3zKihm1Nw8uH3unn/zbSJgsiJwZW1k+1gzwcHr91
-	yPJoyROdSIzwjVhjZdI+NDBPemgCE3VcgW9P3IUKKjLkWbS9/XsSFajyAst/x432+6so8CDmFeob3
-	RNs4UkCa0nJgEPvEAd0/ArXXaVDP9IUy3B3YzQExmDx7SPYE00GjYuR0EmPkSGluoGdbzkbgMRbVM
-	f1BZmgPkF6LKl4JmIklA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Up+kNhRX1mnPEqhvbKAeYcpVo+paDxMdOFHT6FWwYYk=; b=cR9oO8tNf4w/Rm
+	PaH1B/VAM6mA6yjraN98TVXedQ3BjqL+mvWnFBXtkGe8Jc4ZjzTVQ7XtEFfJ8S6v4OIMWQtz2a1Tq
+	JdpalUBKsl09bEjCJFAAcKqRHBw4Y18pynr+fqI2yvmGIHmpOl/G48x+EICdscUbnJJuXlYYUEr4n
+	OrG0LL4uX6CcVNRrRVu6euSWPH6t58hKKfePiKWc5IkRUvmcVcG3bQCWLFk1eR/NEF68C821wEqrm
+	ySw+kIF9656XDGwHpOHCDkV2jtS7BenmUblZ0FIN3DY1D0mOOktpQ9NHp+FsSgu1kpAfcH3qj+/go
+	4q+z0h5bPdJO1mpIHTqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hadz3-0005Ev-Ju; Tue, 11 Jun 2019 10:26:29 +0000
+	id 1harrX-0002pe-LR; Wed, 12 Jun 2019 01:15:39 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hadxD-0002NU-6Q
- for kexec@lists.infradead.org; Tue, 11 Jun 2019 10:24:37 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ id 1harrU-0002om-Ly
+ for kexec@lists.infradead.org; Wed, 12 Jun 2019 01:15:38 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id E8A5331628E2;
- Tue, 11 Jun 2019 10:24:31 +0000 (UTC)
-Received: from localhost (ovpn-12-24.pek2.redhat.com [10.72.12.24])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 4FA1660BF1;
- Tue, 11 Jun 2019 10:24:31 +0000 (UTC)
-Date: Tue, 11 Jun 2019 18:24:28 +0800
-From: Baoquan He <bhe@redhat.com>
-To: lijiang <lijiang@redhat.com>
-Subject: Re: The current SME implementation fails kexec/kdump kernel booting.
-Message-ID: <20190611102428.GF26148@MiWiFi-R3L-srv>
-References: <20190604134952.GC26891@MiWiFi-R3L-srv>
- <508c2853-dc4f-70a6-6fa8-97c950dc31c6@amd.com>
- <20190605005600.GF26891@MiWiFi-R3L-srv>
- <0d9fba9d-7bbe-a7c7-dfe4-696da0dfecc4@amd.com>
- <2fe0e56c-9286-b71d-3d6d-c2a6fbcfba89@redhat.com>
- <33b9237f-5e8c-fe49-4f55-220ce9a492fb@redhat.com>
+ by mx1.redhat.com (Postfix) with ESMTPS id 75BD8C04FFF1;
+ Wed, 12 Jun 2019 01:15:18 +0000 (UTC)
+Received: from localhost.localdomain (ovpn-12-17.pek2.redhat.com [10.72.12.17])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 0BC67643DA;
+ Wed, 12 Jun 2019 01:15:02 +0000 (UTC)
+Subject: Re: [PATCH 0/3 v11] add reserved e820 ranges to the kdump kernel e820
+ table
+To: Borislav Petkov <bp@alien8.de>
+References: <20190423013007.17838-1-lijiang@redhat.com>
+ <12847a03-3226-0b29-97b5-04d404410147@redhat.com>
+ <20190607174211.GN20269@zn.tnic> <20190608035451.GB26148@MiWiFi-R3L-srv>
+ <20190608091030.GB32464@zn.tnic> <20190608100139.GC26148@MiWiFi-R3L-srv>
+ <20190608100623.GA9138@zn.tnic> <20190608102659.GA9130@MiWiFi-R3L-srv>
+ <20190610113747.GD5488@zn.tnic>
+From: lijiang <lijiang@redhat.com>
+Message-ID: <6d7f4c6f-9d7c-c316-ea53-0c6b8a7b9631@redhat.com>
+Date: Wed, 12 Jun 2019 09:14:57 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <33b9237f-5e8c-fe49-4f55-220ce9a492fb@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+In-Reply-To: <20190610113747.GD5488@zn.tnic>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.41]); Tue, 11 Jun 2019 10:24:32 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.31]); Wed, 12 Jun 2019 01:15:34 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190611_032435_313124_20FBA654 
-X-CRM114-Status: GOOD (  16.58  )
+X-CRM114-CacheID: sfid-20190611_181536_742929_3F3C1D68 
+X-CRM114-Status: GOOD (  15.01  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,44 +75,29 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "Lendacky, Thomas" <Thomas.Lendacky@amd.com>,
- "x86@kernel.org" <x86@kernel.org>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Thomas.Lendacky@amd.com, x86@kernel.org, Baoquan He <bhe@redhat.com>,
+ peterz@infradead.org, dave.hansen@linux.intel.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, luto@kernel.org, hpa@zytor.com,
+ akpm@linux-foundation.org, dyoung@redhat.com, tglx@linutronix.de
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Tom,
-
-On 06/11/19 at 05:52pm, lijiang wrote:
-> After applied Tom's patch, i changed the reserved memory(for crash kernel) to the
-> above 256M(>256M), such as crashkernel=320M or 384M,512M..., the kdump kernel can
-> work and successfully dump the vmcore.
-> 
-> But the kdump kernel always happened the panic or could not boot successfully in
-> the 256M(<= 256M) case, and on HP machine, i noticed that it printed OOM, the kdump
-> kernel was too smaller memory. But i never see the OOM on speedway machine(probably
-> related to the earlyprintk, it doesn't work and it loses many logs).
-> 
-> After removing the option 'CONFIG_DEBUG_INFO' from .config, i tested again, the kdump
-> kernel did not happen the panic in the 256M(crashkernel=256M), the kdump kernel can
-> work and succeed to dump the vmcore on HP machine or speedway machine.
-> 
-> It seems that the small memory caused the previous failure in kdump kernel. I would
-> suggest to post this patch to upstream. What's your opinion? Tom, Baoquan and other
-> people. Or do you have any comment?
-
-As Lianbo said at above, the previous failure in kdump kernel is caused
-by OOM. Just the log on speedway is incomplete, I am not sure what
-happened. Now after investigation, your patch works to fix the issue.
-Could you post it for riviewing?
-
-Thanks
-Baoquan
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+5ZyoIDIwMTnlubQwNuaciDEw5pelIDE5OjM3LCBCb3Jpc2xhdiBQZXRrb3Yg5YaZ6YGTOgo+IE9u
+IFNhdCwgSnVuIDA4LCAyMDE5IGF0IDA2OjI2OjU5UE0gKzA4MDAsIEJhb3F1YW4gSGUgd3JvdGU6
+Cj4+IE9LLCBJIHNlZS4gVGhlbiBpdCBzaG91bGQgYmUgdGhlIGlzc3VlIHdlIGhhdmUgbWV0IGFu
+ZCB0YWxrZWQgYWJvdXQgd2l0aAo+PiBUb20uCj4+IGh0dHBzOi8vbGttbC5rZXJuZWwub3JnL3Iv
+MjAxOTA2MDQxMzQ5NTIuR0MyNjg5MUBNaVdpRmktUjNMLXNydgo+Pgo+PiBZb3UgY2FuIGFwcGx5
+IFRvbSdzIHBhdGNoIGFzIGJlbG93LiBJIHRlc3RlZCBpdCwgaXQgY2FuIG1ha2Uga2V4ZWMKPj4g
+a2VybmVsIHN1Y2NlZWQgdG8gYm9vdCwgYnV0IGZhaWxlZCBmb3Iga2R1bXAga2VybmVsIGJvb3Rp
+bmcuIFRoZSBrZHVtcAo+PiBrZXJuZWwgY2FuIGJvb3QgdGlsbCB0aGUgZW5kIG9mIGtlcm5lbCBp
+bml0aWFsaXphdGlvbiwgdGhlbiBoYW5nIHdpdGggYQo+PiBjYWxsIHRyYWNlLiBJIGhhdmUgcGFz
+dGVkIHRoZSBsb2cgaW4gdGhlIGFib3ZlIHRocmVhZC4gSGF2ZW4ndCBnb3QgdGhlCj4+IHJlYXNv
+bi4KPj4gaHR0cDovL2xrbWwua2VybmVsLm9yZy9yLzUwOGMyODUzLWRjNGYtNzBhNi02ZmE4LTk3
+Yzk1MGRjMzFjNkBhbWQuY29tCj4gCj4gSSBjYW4gY29uZmlybSB0aGUgc2FtZSBvYnNlcnZhdGlv
+bi4KPiAKQ3VycmVudGx5LCBpIGhhdmVuJ3Qgc2VlbiBhbnkgdXBkYXRlcyB5ZXQsIHNvIGknbSBu
+b3Qgc3VyZSB3aGV0aGVyIHRoaXMgcGF0Y2gKcGFzc2VkIHlvdXIgdGVzdC4KClRoYW5rcy4KTGlh
+bmJvCgo+IFRoeC4KPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
