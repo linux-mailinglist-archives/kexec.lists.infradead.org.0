@@ -2,62 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7092B43418
-	for <lists+kexec@lfdr.de>; Thu, 13 Jun 2019 10:26:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE50E4357D
+	for <lists+kexec@lfdr.de>; Thu, 13 Jun 2019 13:27:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hONRVZ867h+TJ4n2EsZB1YSc+Yx4Jh1torQwS1ogE88=; b=Ya5HNfKSD0rfyb
-	7NR7EGAQj/xYMkqCfGONboaLvLZe8FKWicR2SKF4Suu4M3iyvb/GQqEDhgmBF49IWZGrunh2kJJfq
-	LUSkt+1aPsR1ZOmerUJPkHtrthOucyxM++dNd9SljS4/yU07SW9gtflUJWR81XWmGhuF9MLCLj2CL
-	Mnvkp8H1tuHxzCdjb8Kf3Q9quLfn/rR0nWterQQAm2tx7yxJgGDk1saf6UHTx0aDVscMudEubQJ/W
-	XhheQmXhUqdOMiUK0rdGArcNt4IaE4uKfJK2TuWZHzINCGh/8EfDkdOL66aipR+03XpOr45phoHiI
-	X87Pua0DhGprDxZzaIlA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HhxOGgrG25AoIBgMelj6YVSaHjj88KeGUZ9hLrXjxrE=; b=RDx5d+TRCwrDLW
+	vpdk7knyEfhZgbO9TADm4amqHNpPrZmblIzy0tEXLIVbjkqWHUW1BsD95BVLjueFvVgk6vQjTBew3
+	Cd6ilWR1gozh9fNx9sR4+uyH82CVJRaT/7j0KixUrXGnPjsgfoRdt02ZBX7rJn4XVcqI+tS+Sy08Z
+	coXDcXlQ4QzPvJF6i9fLHW2/lt2p9U++WH6J/GpauCrYPLXa09DVG/l/UWgHJKpFYN56WaKhjCCmi
+	kCD0KwvaI6mxyQgxNTB6Jqra0e1FuZprECuwJQPN+TiHLIfcyjLWpSLXJLLYK12pPizGhO6OhDnO1
+	f2MSvmgZlrcmKhyNmpgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hbL4P-000287-8t; Thu, 13 Jun 2019 08:26:53 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hbNt9-0000cY-QD; Thu, 13 Jun 2019 11:27:28 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hbL4J-00027V-LI
- for kexec@lists.infradead.org; Thu, 13 Jun 2019 08:26:49 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 73FF830860C0;
- Thu, 13 Jun 2019 08:26:39 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-87.pek2.redhat.com
- [10.72.12.87])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 6E3E960FB1;
- Thu, 13 Jun 2019 08:26:31 +0000 (UTC)
-Date: Thu, 13 Jun 2019 16:26:27 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Mimi Zohar <zohar@linux.ibm.com>
-Subject: Re: [PATCH V8 3/3] Call ima_kexec_cmdline to measure the cmdline args
-Message-ID: <20190613082627.GA30288@dhcp-128-65.nay.redhat.com>
-References: <20190612221549.28399-1-prsriva02@gmail.com>
- <20190612221549.28399-4-prsriva02@gmail.com>
- <1560378703.4578.91.camel@linux.ibm.com>
+ id 1hbNt4-0000bO-77; Thu, 13 Jun 2019 11:27:23 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 3EE9C84A0E22CFC1DCFB;
+ Thu, 13 Jun 2019 19:27:10 +0800 (CST)
+Received: from [127.0.0.1] (10.177.131.64) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Thu, 13 Jun 2019
+ 19:26:59 +0800
+Subject: Re: [PATCH 1/4] x86: kdump: move reserve_crashkernel_low() into
+ kexec_core.c
+To: James Morse <james.morse@arm.com>
+References: <20190507035058.63992-1-chenzhou10@huawei.com>
+ <20190507035058.63992-2-chenzhou10@huawei.com>
+ <6585f047-063c-6d6c-4967-1d8a472f30f4@arm.com>
+From: Chen Zhou <chenzhou10@huawei.com>
+Message-ID: <4716a864-9560-f198-5899-9a5dee1fac20@huawei.com>
+Date: Thu, 13 Jun 2019 19:26:54 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1560378703.4578.91.camel@linux.ibm.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.44]); Thu, 13 Jun 2019 08:26:39 +0000 (UTC)
+In-Reply-To: <6585f047-063c-6d6c-4967-1d8a472f30f4@arm.com>
+X-Originating-IP: [10.177.131.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190613_012647_734233_81C00B33 
-X-CRM114-Status: GOOD (  23.57  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190613_042722_498118_2F5A37E3 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -71,97 +66,189 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec <kexec@lists.infradead.org>, Prakhar Srivastava <prsriva02@gmail.com>,
- roberto.sassu@huawei.com, linux-kernel@vger.kernel.org,
- linux-security-module@vger.kernel.org,
- "Eric W. Biederman" <ebiederm@xmission.com>, linux-integrity@vger.kernel.org,
- vgoyal@redhat.com
+Cc: wangkefeng.wang@huawei.com, horms@verge.net.au, ard.biesheuvel@linaro.org,
+ catalin.marinas@arm.com, will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ rppt@linux.ibm.com, linux-mm@kvack.org, takahiro.akashi@linaro.org,
+ mingo@redhat.com, bp@alien8.de, ebiederm@xmission.com,
+ kexec@lists.infradead.org, akpm@linux-foundation.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 06/12/19 at 06:31pm, Mimi Zohar wrote:
-> [Cc: kexec mailing list]
-> 
-> Hi Eric, Dave,
-> 
-> On Wed, 2019-06-12 at 15:15 -0700, Prakhar Srivastava wrote:
-> > During soft reboot(kexec_file_load) boot cmdline args
-> > are not measured.Thus the new kernel on load boots with
-> > an assumption of cold reboot.
-> > 
-> > This patch makes a call to the ima hook ima_kexec_cmdline,
-> > added in "Define a new IMA hook to measure the boot command
-> > line arguments"
-> > to measure the boot cmdline args into the ima log.
-> > 
-> > - call ima_kexec_cmdline from kexec_file_load.
-> > - move the call ima_add_kexec_buffer after the cmdline
-> > args have been measured.
-> > 
-> > Signed-off-by: Prakhar Srivastava <prsriva02@gmail.com>
-> Cc: Eric W. Biederman <ebiederm@xmission.com>
-> Cc: Dave Young <dyoung@redhat.com>
-> 
-> Any chance we could get some Acks?
+Hi James,
 
-The ima_* is blackbox functions to me, looks like this patch is trying
-to measure kexec cmdline buffer and save in some ima logs and then add all the
-measure results including those for kernel/initrd to a kexec_buf and pass to 2nd
-kernel.
+Thanks for your review.
 
-It should be good and only take effect when IMA enabled. If all the
-assumptions are right:
+On 2019/6/6 0:29, James Morse wrote:
+> Hello,
+> 
+> On 07/05/2019 04:50, Chen Zhou wrote:
+>> In preparation for supporting reserving crashkernel above 4G
+>> in arm64 as x86_64 does, move reserve_crashkernel_low() into
+>> kexec/kexec_core.c.
+> 
+> 
+>> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
+>> index 905dae8..9ee33b6 100644
+>> --- a/arch/x86/kernel/setup.c
+>> +++ b/arch/x86/kernel/setup.c
+>> @@ -463,59 +460,6 @@ static void __init memblock_x86_reserve_range_setup_data(void)
+>>  # define CRASH_ADDR_HIGH_MAX	MAXMEM
+>>  #endif
+>>  
+>> -static int __init reserve_crashkernel_low(void)
+>> -{
+>> -#ifdef CONFIG_X86_64
+> 
+> The behaviour of this #ifdef has disappeared, won't 32bit x86 now try and reserve a chunk
+> of unnecessary 'low' memory?
+> 
+> [...]
 
-Acked-by: Dave Young <dyoung@redhat.com>
-> 
-> thanks,
-> 
-> Mimi
-> 
-> > ---
-> >  kernel/kexec_file.c | 9 ++++++---
-> >  1 file changed, 6 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-> > index 072b6ee55e3f..b0c724e5d86c 100644
-> > --- a/kernel/kexec_file.c
-> > +++ b/kernel/kexec_file.c
-> > @@ -198,9 +198,6 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
-> >  		return ret;
-> >  	image->kernel_buf_len = size;
-> >  
-> > -	/* IMA needs to pass the measurement list to the next kernel. */
-> > -	ima_add_kexec_buffer(image);
-> > -
-> >  	/* Call arch image probe handlers */
-> >  	ret = arch_kexec_kernel_image_probe(image, image->kernel_buf,
-> >  					    image->kernel_buf_len);
-> > @@ -241,8 +238,14 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
-> >  			ret = -EINVAL;
-> >  			goto out;
-> >  		}
-> > +
-> > +		ima_kexec_cmdline(image->cmdline_buf,
-> > +				  image->cmdline_buf_len - 1);
-> >  	}
-> >  
-> > +	/* IMA needs to pass the measurement list to the next kernel. */
-> > +	ima_add_kexec_buffer(image);
-> > +
-> >  	/* Call arch image load handlers */
-> >  	ldata = arch_kexec_kernel_image_load(image);
-> >  
-> 
-> 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
+At present, reserve_crashkernel_low() is called only when reserving crashkernel above 4G, so i deleted
+this #ifdef.
+If we called reserve_crashkernel_low() at the beginning of reserve_crashkernel(), i need to add it back.
 
-Thanks
-Dave
+> 
+> 
+>> @@ -579,9 +523,13 @@ static void __init reserve_crashkernel(void)
+>>  		return;
+>>  	}
+>>  
+>> -	if (crash_base >= (1ULL << 32) && reserve_crashkernel_low()) {
+>> -		memblock_free(crash_base, crash_size);
+>> -		return;
+>> +	if (crash_base >= (1ULL << 32)) {
+>> +		if (reserve_crashkernel_low()) {
+>> +			memblock_free(crash_base, crash_size);
+>> +			return;
+>> +		}
+>> +
+>> +		insert_resource(&iomem_resource, &crashk_low_res);
+> 
+> 
+> Previously reserve_crashkernel_low() was #ifdefed to do nothing if !CONFIG_X86_64, I don't
+> see how 32bit is skipping this reservation...
+> 
+> 
+>>  	}
+>>  
+>>  	pr_info("Reserving %ldMB of memory at %ldMB for crashkernel (System RAM: %ldMB)\n",
+>> diff --git a/include/linux/kexec.h b/include/linux/kexec.h
+>> index b9b1bc5..096ad63 100644
+>> --- a/include/linux/kexec.h
+>> +++ b/include/linux/kexec.h
+>> @@ -63,6 +63,10 @@
+>>  
+>>  #define KEXEC_CORE_NOTE_NAME	CRASH_CORE_NOTE_NAME
+>>  
+>> +#ifndef CRASH_ALIGN
+>> +#define CRASH_ALIGN SZ_128M
+>> +#endif
+> 
+> Why 128M? Wouldn't we rather each architecture tells us its minimum alignment?
+
+Yeah, each architecture should tells us its minimum alignment. I added this default size to
+fix compiling error on some architecture which didn't define it. I will add x86_64 and arm64
+restriction on reserve_crashkernel_low() and delete this define.
+
+> 
+> 
+>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+>> index d714044..3492abd 100644
+>> --- a/kernel/kexec_core.c
+>> +++ b/kernel/kexec_core.c
+>> @@ -39,6 +39,8 @@
+>>  #include <linux/compiler.h>
+>>  #include <linux/hugetlb.h>
+>>  #include <linux/frame.h>
+>> +#include <linux/memblock.h>
+>> +#include <linux/swiotlb.h>
+>>  
+>>  #include <asm/page.h>
+>>  #include <asm/sections.h>
+>> @@ -96,6 +98,60 @@ int kexec_crash_loaded(void)
+>>  }
+>>  EXPORT_SYMBOL_GPL(kexec_crash_loaded);
+>>  
+>> +int __init reserve_crashkernel_low(void)
+>> +{
+>> +	unsigned long long base, low_base = 0, low_size = 0;
+>> +	unsigned long total_low_mem;
+>> +	int ret;
+>> +
+>> +	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
+>> +
+>> +	/* crashkernel=Y,low */
+>> +	ret = parse_crashkernel_low(boot_command_line, total_low_mem,
+>> +			&low_size, &base);
+>> +	if (ret) {
+>> +		/*
+>> +		 * two parts from lib/swiotlb.c:
+>> +		 * -swiotlb size: user-specified with swiotlb= or default.
+>> +		 *
+>> +		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
+>> +		 * to 8M for other buffers that may need to stay low too. Also
+>> +		 * make sure we allocate enough extra low memory so that we
+>> +		 * don't run out of DMA buffers for 32-bit devices.
+>> +		 */
+>> +		low_size = max(swiotlb_size_or_default() + (8UL << 20),
+> 
+> SZ_8M?
+> 
+>> +				256UL << 20);
+> 
+> SZ_256M?
+> 
+
+There is compiling warning "warning: comparison of distinct pointer types lacks a cast" if just use
+SZ_8M or SZ_256M. We need cast swiotlb_size_or_default() to type int,so i kept the old as in x86_64.
+
+> 
+>> +	} else {
+>> +		/* passed with crashkernel=0,low ? */
+>> +		if (!low_size)
+>> +			return 0;
+>> +	}
+>> +
+>> +	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
+>> +	if (!low_base) {
+>> +		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
+>> +		       (unsigned long)(low_size >> 20));
+>> +		return -ENOMEM;
+>> +	}
+>> +
+>> +	ret = memblock_reserve(low_base, low_size);
+>> +	if (ret) {
+>> +		pr_err("%s: Error reserving crashkernel low memblock.\n",
+>> +				__func__);
+>> +		return ret;
+>> +	}
+>> +
+>> +	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
+>> +		(unsigned long)(low_size >> 20),
+>> +		(unsigned long)(low_base >> 20),
+>> +		(unsigned long)(total_low_mem >> 20));
+>> +
+>> +	crashk_low_res.start = low_base;
+>> +	crashk_low_res.end   = low_base + low_size - 1;
+>> +
+>> +	return 0;
+>> +}
+> 
+> 
+> Thanks,
+> 
+> James
+> 
+> .
+> 
+
+Thanks,
+Chen Zhou
+
 
 _______________________________________________
 kexec mailing list
