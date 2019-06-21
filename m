@@ -2,64 +2,91 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3ADD14E096
-	for <lists+kexec@lfdr.de>; Fri, 21 Jun 2019 08:44:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5B354EFE4
+	for <lists+kexec@lfdr.de>; Fri, 21 Jun 2019 22:14:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwSKEMVKsPCyg4jUqw6V1nLE2hUS+qXibUD1/1wXYXc=; b=giPIT4QHriq7xe
-	Lqrb29tBDWY9/mf6b78Pn6rsbfLQgG/WuKFmZ76xSU0gOFtzRFDNskplt9e6lhvrv5yMy8X3A7MSL
-	5+02xAv1KwsYWF/9iMFNav6JILgeSYm3wtX433RfPkYLKc7/ZxUYsleY1dfM6dqulX6OWs57p0ier
-	41KGrAbNWb1OJIln9E6w86Arp3dJx3KT5JmRONamPBLAEchddLXGIvvi4Vi3t1R1Iu3sggr4hpKR2
-	5H9IdSxBaVLjaRU/ywoVUQI9sDZuO2pDJEOYVMtIyZ5q+dRsIRQzHHJTznmXTvRNzmW1+tgMp9t61
-	+av9QKEpu+Jom0oGO4LQ==;
+	List-Owner; bh=FckL6Jdpt8iCaQ79idq3HCaqHMgcJFZY+oiQHZ0T8BQ=; b=j1yFVzYLhM+Y2R
+	V1tFTZzCHRKOS34KgqTyFgTaBH6EaURTLwHBoRT1bw4L7ZQPgHwl2IHKbRAl0aPS+o/sIYUyLTg6E
+	V2o54IwCgJmMDKK1zA6Lf3nrQWepxDLCto44S0GYsP7SZ+BFuW0RhkNyd0p7HQnl0iiH1y20o0Bu0
+	MwSKpCl55b+UB4fzq2VWPyXDGCwvhaneSG5fSgs2hDrVn5ElUHdYHD5ggLplWJX2LiLWtC+62L0Hp
+	BbgVe9KBdWKqzT9vjYW7cegYHM6XfLDsEApi4eirmm9eknn9Z2UyrjpnXybg5H7w1SE7lYfu6jr8V
+	ycAZ+/YYB6Mrx/4Am6ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1heDHA-00005J-6O; Fri, 21 Jun 2019 06:43:56 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hePv5-0003J3-In; Fri, 21 Jun 2019 20:13:59 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1heDH4-0008WS-ST
- for kexec@lists.infradead.org; Fri, 21 Jun 2019 06:43:52 +0000
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 0F651F74AE;
- Fri, 21 Jun 2019 06:43:48 +0000 (UTC)
-Received: from localhost.localdomain (ovpn-12-101.pek2.redhat.com
- [10.72.12.101])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 4DAFB5D739;
- Fri, 21 Jun 2019 06:43:44 +0000 (UTC)
-Date: Fri, 21 Jun 2019 14:43:40 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Matthew Garrett <matthewgarrett@google.com>
-Subject: Re: [PATCH V31 07/25] kexec_file: Restrict at runtime if the kernel
- is locked down
-Message-ID: <20190621064340.GB4528@localhost.localdomain>
-References: <20190326182742.16950-1-matthewgarrett@google.com>
- <20190326182742.16950-8-matthewgarrett@google.com>
+ id 1hePv0-0003Hr-Ah
+ for kexec@lists.infradead.org; Fri, 21 Jun 2019 20:13:55 +0000
+Received: by mail-io1-xd42.google.com with SMTP id k8so49231iot.1
+ for <kexec@lists.infradead.org>; Fri, 21 Jun 2019 13:13:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=PZ3HSopZ8scQspbF1YU2hVMlcP6almQVuwJAX1EnWwE=;
+ b=uSwOqok2TkKrZs6ef8LyutAmeIVAmrvTX+I0ogpzk10JIgISYRGYFwHbDr/jBjBhcQ
+ NA0jqzdzcHT1pNOkAqCHa8QCl44F1pjbQDOu2/zfc8yi+p+kQLK+f7uR4VD/+0cI4wHv
+ xyStzMvyDtyEBRWTLynVzKIoWNKAK9B/92biEVIcBuvl9q+1a7EvC4MuZxHvM0O4+pVw
+ +fhrIa/DQRoh5GnPuLG3ExEMN3D+SSHaIdgG3OESJHZBWFv0hVuDE2ptMeSG+iW12k/F
+ 75OD3qMFXdinEJIj3XJYvi/Bjf/DTLErZwwDftSc7wyoG4HP9trMYVkX1zPAwD+mXBb4
+ VHhg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=PZ3HSopZ8scQspbF1YU2hVMlcP6almQVuwJAX1EnWwE=;
+ b=A4GMlTWgdQ1XxHnYbrvdIewY2ZzbnwWQ/Am0sI4WXwfdoueF6Uwdv1n8FZOD/KoO30
+ sLL8sivr+Z/5t78TuXATvw8nKgTRDm3zwlsn04v7dNysoqfQwfyDsjEUWt2wIO+1g7JJ
+ DnTSxXATfUuLuL1cRl9IPZNwLRknqaft/tA5d1xK2AI5xBHfLS6YuyXrEC7Yw2iWl5Qq
+ z1dfCvR9B6GPPxUrElsRfGKHa/OZRV7XVmcoQ+6VPra0TDHaM1gyUmAMpZUh8df+rKo9
+ Lx7zfCRmcLSL7+UBoXCSOeh4UyhOms9QQQS/0bw0PAflIONVA3gXTHA/EPVCljVE8doQ
+ 2cCQ==
+X-Gm-Message-State: APjAAAWiRY5jnE5KFM+aMVCi71oK5mrpEMtMDviDvRijo/izU9yoYXOr
+ Vdm+NwRSOmed2Jqw67u3VyRfF7rTdS7ZnOQzTpdroo62jKA=
+X-Google-Smtp-Source: APXvYqyCItlv6yjcz3a4aTv8GzO1ooFirmCSp1fDi4OqQzk3T9nZxw8NBDxszz7jAyO4tbQoJtfUZh4Tl4uzOjWmdAA=
+X-Received: by 2002:a02:ab99:: with SMTP id t25mr8431415jan.113.1561148030643; 
+ Fri, 21 Jun 2019 13:13:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190326182742.16950-8-matthewgarrett@google.com>
-User-Agent: Mutt/1.9.1 (2017-09-22)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Fri, 21 Jun 2019 06:43:48 +0000 (UTC)
+References: <20190326182742.16950-1-matthewgarrett@google.com>
+ <20190326182742.16950-7-matthewgarrett@google.com>
+ <20190621063402.GA4528@localhost.localdomain>
+In-Reply-To: <20190621063402.GA4528@localhost.localdomain>
+From: Matthew Garrett <mjg59@google.com>
+Date: Fri, 21 Jun 2019 13:13:39 -0700
+Message-ID: <CACdnJuvmU8PcRztTYRHes-O3QVwiXy_PQvP9AP=B=byX4Pu3uA@mail.gmail.com>
+Subject: Re: [PATCH V31 06/25] kexec_file: split KEXEC_VERIFY_SIG into
+ KEXEC_SIG and KEXEC_SIG_FORCE
+To: Dave Young <dyoung@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190620_234350_943061_89C93A69 
-X-CRM114-Status: GOOD (  20.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190621_131354_380593_3958E615 
+X-CRM114-Status: UNSURE (   5.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -15.2 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-15.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,71 +98,21 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jiri Bohac <jbohac@suse.cz>, linux-api@vger.kernel.org,
- kexec@lists.infradead.org, jmorris@namei.org,
- Matthew Garrett <mjg59@google.com>, linux-kernel@vger.kernel.org,
- dhowells@redhat.com, linux-security-module@vger.kernel.org, luto@kernel.org
+Cc: Jiri Bohac <jbohac@suse.cz>, Linux API <linux-api@vger.kernel.org>,
+ kexec@lists.infradead.org, James Morris <jmorris@namei.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ LSM List <linux-security-module@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 03/26/19 at 11:27am, Matthew Garrett wrote:
-> From: Jiri Bohac <jbohac@suse.cz>
-> 
-> When KEXEC_SIG is not enabled, kernel should not load images through
-> kexec_file systemcall if the kernel is locked down.
-> 
-> [Modified by David Howells to fit with modifications to the previous patch
->  and to return -EPERM if the kernel is locked down for consistency with
->  other lockdowns. Modified by Matthew Garrett to remove the IMA
->  integration, which will be replaced by integrating with the IMA
->  architecture policy patches.]
-> 
-> Signed-off-by: Jiri Bohac <jbohac@suse.cz>
-> Signed-off-by: David Howells <dhowells@redhat.com>
-> Signed-off-by: Matthew Garrett <mjg59@google.com>
-> Reviewed-by: Jiri Bohac <jbohac@suse.cz>
-> cc: kexec@lists.infradead.org
-> ---
->  kernel/kexec_file.c | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-> index 67f3a866eabe..a1cc37c8b43b 100644
-> --- a/kernel/kexec_file.c
-> +++ b/kernel/kexec_file.c
-> @@ -239,6 +239,12 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
->  		}
->  
->  		ret = 0;
-> +
-> +		if (kernel_is_locked_down(reason, LOCKDOWN_INTEGRITY)) {
-> +			ret = -EPERM;
-> +			goto out;
-> +		}
-> +
+On Thu, Jun 20, 2019 at 11:34 PM Dave Young <dyoung@redhat.com> wrote:
+> Force use -EKEYREJECTED is odd,  why not just use original "ret"?
 
-Checking here is late, it would be good to move the check to earlier
-code around below code:
-        /* We only trust the superuser with rebooting the system. */
-        if (!capable(CAP_SYS_BOOT) || kexec_load_disabled)
-                return -EPERM;
-
->  		break;
->  
->  		/* All other errors are fatal, including nomem, unparseable
-> -- 
-> 2.21.0.392.gf8f6787159e-goog
-> 
-> 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
-
-Thanks
-Dave
+Fair question. Jiri, any feelings here?
 
 _______________________________________________
 kexec mailing list
