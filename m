@@ -2,68 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B354EFE4
-	for <lists+kexec@lfdr.de>; Fri, 21 Jun 2019 22:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0E594EFE9
+	for <lists+kexec@lfdr.de>; Fri, 21 Jun 2019 22:15:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FckL6Jdpt8iCaQ79idq3HCaqHMgcJFZY+oiQHZ0T8BQ=; b=j1yFVzYLhM+Y2R
-	V1tFTZzCHRKOS34KgqTyFgTaBH6EaURTLwHBoRT1bw4L7ZQPgHwl2IHKbRAl0aPS+o/sIYUyLTg6E
-	V2o54IwCgJmMDKK1zA6Lf3nrQWepxDLCto44S0GYsP7SZ+BFuW0RhkNyd0p7HQnl0iiH1y20o0Bu0
-	MwSKpCl55b+UB4fzq2VWPyXDGCwvhaneSG5fSgs2hDrVn5ElUHdYHD5ggLplWJX2LiLWtC+62L0Hp
-	BbgVe9KBdWKqzT9vjYW7cegYHM6XfLDsEApi4eirmm9eknn9Z2UyrjpnXybg5H7w1SE7lYfu6jr8V
-	ycAZ+/YYB6Mrx/4Am6ZQ==;
+	List-Owner; bh=rpbx4c51vcgxkdmPj266SD6V9/xBmQU0o/ZsBe2FgQU=; b=cCkA4tZtVpkyVu
+	as/X46uvludRMdaThfL2TDEhApn+P49TLKRPesmnRIcMHidbW1w93oG+7Mtcg5ELvnGwlPdqMjyXq
+	dvsDvtfbZ/JY/rvz5WB4pClmyCMinaHVA8mnqPU4hWB7GSp7gCRzrPxaeTTJoX2uCVKoykBYxlPmW
+	vgOWFwS2mHek6EvTF4DQWAkWOiTqiqFoUicAhSpjZOAfHasfek5skYAzYubgPLmhClj2Zh9zNSexL
+	KVn2HrEZccxlImbJ4gnHDVsUizLKr1NtJOz0esVrBV4c6DNGWVElBf0o7svkJ1TrR3NVk0OQHwx0m
+	cEw8iYsmi6e2Bxo0zWqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hePv5-0003J3-In; Fri, 21 Jun 2019 20:13:59 +0000
+	id 1hePwH-0004g0-Nz; Fri, 21 Jun 2019 20:15:13 +0000
 Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hePv0-0003Hr-Ah
- for kexec@lists.infradead.org; Fri, 21 Jun 2019 20:13:55 +0000
-Received: by mail-io1-xd42.google.com with SMTP id k8so49231iot.1
- for <kexec@lists.infradead.org>; Fri, 21 Jun 2019 13:13:51 -0700 (PDT)
+ id 1hePwD-0004Db-WE
+ for kexec@lists.infradead.org; Fri, 21 Jun 2019 20:15:11 +0000
+Received: by mail-io1-xd42.google.com with SMTP id u19so1459282ior.9
+ for <kexec@lists.infradead.org>; Fri, 21 Jun 2019 13:15:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PZ3HSopZ8scQspbF1YU2hVMlcP6almQVuwJAX1EnWwE=;
- b=uSwOqok2TkKrZs6ef8LyutAmeIVAmrvTX+I0ogpzk10JIgISYRGYFwHbDr/jBjBhcQ
- NA0jqzdzcHT1pNOkAqCHa8QCl44F1pjbQDOu2/zfc8yi+p+kQLK+f7uR4VD/+0cI4wHv
- xyStzMvyDtyEBRWTLynVzKIoWNKAK9B/92biEVIcBuvl9q+1a7EvC4MuZxHvM0O4+pVw
- +fhrIa/DQRoh5GnPuLG3ExEMN3D+SSHaIdgG3OESJHZBWFv0hVuDE2ptMeSG+iW12k/F
- 75OD3qMFXdinEJIj3XJYvi/Bjf/DTLErZwwDftSc7wyoG4HP9trMYVkX1zPAwD+mXBb4
- VHhg==
+ :cc; bh=AzDlMHYKYdPbav08td6cmrqKH87QGtCYlyXDXXOTgFk=;
+ b=tQXWoCT7u5RD2XblRn/rEN/phOj7fWsEmz5uMzn5kiCQyibx9ujzvtEvgK6iZ8pwsm
+ mf7OLToqshhDbzAdX8fnx8gG5wXPsbUk2uRMl5dBsMdWEHD5Z+LF4KSJeakOOmCxbyZP
+ C6E9MxZMnuitfO1C+d0TwHhQljoRubGQLCDZYiIC3Ru4fpIkiiQkIkjVkjh6d65rgarv
+ ZRAFTDUIefuKONBucRjVJjnw6fjoaa2gcyJQ0Coo8bG0g6t7lRYItK9Bw4q0CDU0gNf4
+ Zsbfow4kziPBKI25UKNcswXRd9uGeYPOmcGp6uvJ5+a1qIP4KwCzcIEieVzY6BjgRFNo
+ 86nQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=PZ3HSopZ8scQspbF1YU2hVMlcP6almQVuwJAX1EnWwE=;
- b=A4GMlTWgdQ1XxHnYbrvdIewY2ZzbnwWQ/Am0sI4WXwfdoueF6Uwdv1n8FZOD/KoO30
- sLL8sivr+Z/5t78TuXATvw8nKgTRDm3zwlsn04v7dNysoqfQwfyDsjEUWt2wIO+1g7JJ
- DnTSxXATfUuLuL1cRl9IPZNwLRknqaft/tA5d1xK2AI5xBHfLS6YuyXrEC7Yw2iWl5Qq
- z1dfCvR9B6GPPxUrElsRfGKHa/OZRV7XVmcoQ+6VPra0TDHaM1gyUmAMpZUh8df+rKo9
- Lx7zfCRmcLSL7+UBoXCSOeh4UyhOms9QQQS/0bw0PAflIONVA3gXTHA/EPVCljVE8doQ
- 2cCQ==
-X-Gm-Message-State: APjAAAWiRY5jnE5KFM+aMVCi71oK5mrpEMtMDviDvRijo/izU9yoYXOr
- Vdm+NwRSOmed2Jqw67u3VyRfF7rTdS7ZnOQzTpdroo62jKA=
-X-Google-Smtp-Source: APXvYqyCItlv6yjcz3a4aTv8GzO1ooFirmCSp1fDi4OqQzk3T9nZxw8NBDxszz7jAyO4tbQoJtfUZh4Tl4uzOjWmdAA=
-X-Received: by 2002:a02:ab99:: with SMTP id t25mr8431415jan.113.1561148030643; 
- Fri, 21 Jun 2019 13:13:50 -0700 (PDT)
+ bh=AzDlMHYKYdPbav08td6cmrqKH87QGtCYlyXDXXOTgFk=;
+ b=EZ2WEp71FeI/PzRXcmwHrDUEXD9yRAaN+IQ938Pk5i0mjwGUSEHp47KVxFCFLxLJ1/
+ ETb9eF73HbYzMNumT1NrXbjTo2v8eJaAgXrodhohIVdswr/bz5Bo84P6nNh8mk3P1JKl
+ aqemErrnb+CcFJYQT/tcXDVkSa4fxMcXZs/8FmYvBdhyxqxHr1SU5wjVHl6IDUfVUEJK
+ zJYLLha2w744IFrZ/9AJfEUlSPKUmLFP5RzKCYm5kUK8CBhvlnV6ZiH92kRxyVWx/Vzl
+ t0C6XPtm3BlAZ0ikpyAwXRGt5NlBylVALXZjUDcAAhJfjqgnvbz/49iniqtFlsOib+UW
+ wukg==
+X-Gm-Message-State: APjAAAWHziweuxXInt1P67RJG4yamw1XvfSoidYf3UwnZw8TGMoh2U81
+ Xx/u4vNnkR6qYlx7Br8mFtwdrMTuNSmoQBGO3SYT+Q==
+X-Google-Smtp-Source: APXvYqzER/6ghfGh+cCnTzWqlcRB44urm1l0GO8Y6AzN702AqR5wrDwl3TwRIfhgqi7cB1Nz5b8PL34nNbf3GVcacss=
+X-Received: by 2002:a05:6602:220d:: with SMTP id
+ n13mr19253423ion.104.1561148108546; 
+ Fri, 21 Jun 2019 13:15:08 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190326182742.16950-1-matthewgarrett@google.com>
  <20190326182742.16950-7-matthewgarrett@google.com>
  <20190621063402.GA4528@localhost.localdomain>
-In-Reply-To: <20190621063402.GA4528@localhost.localdomain>
+ <CACdnJuvmU8PcRztTYRHes-O3QVwiXy_PQvP9AP=B=byX4Pu3uA@mail.gmail.com>
+In-Reply-To: <CACdnJuvmU8PcRztTYRHes-O3QVwiXy_PQvP9AP=B=byX4Pu3uA@mail.gmail.com>
 From: Matthew Garrett <mjg59@google.com>
-Date: Fri, 21 Jun 2019 13:13:39 -0700
-Message-ID: <CACdnJuvmU8PcRztTYRHes-O3QVwiXy_PQvP9AP=B=byX4Pu3uA@mail.gmail.com>
+Date: Fri, 21 Jun 2019 13:14:57 -0700
+Message-ID: <CACdnJusyS=bHXTYMxQWObVL6rzGnh1g3KETayh0wyVEYdcjnpA@mail.gmail.com>
 Subject: Re: [PATCH V31 06/25] kexec_file: split KEXEC_VERIFY_SIG into
  KEXEC_SIG and KEXEC_SIG_FORCE
 To: Dave Young <dyoung@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190621_131354_380593_3958E615 
-X-CRM114-Status: UNSURE (   5.86  )
+X-CRM114-CacheID: sfid-20190621_131510_073228_9E677F43 
+X-CRM114-Status: UNSURE (   7.02  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.2 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -109,10 +111,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Jun 20, 2019 at 11:34 PM Dave Young <dyoung@redhat.com> wrote:
-> Force use -EKEYREJECTED is odd,  why not just use original "ret"?
+On Fri, Jun 21, 2019 at 1:13 PM Matthew Garrett <mjg59@google.com> wrote:
+>
+> On Thu, Jun 20, 2019 at 11:34 PM Dave Young <dyoung@redhat.com> wrote:
+> > Force use -EKEYREJECTED is odd,  why not just use original "ret"?
+>
+> Fair question. Jiri, any feelings here?
 
-Fair question. Jiri, any feelings here?
+Actually, looks like this change was made by Dave Howells.
 
 _______________________________________________
 kexec mailing list
