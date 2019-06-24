@@ -2,80 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C880151B1B
-	for <lists+kexec@lfdr.de>; Mon, 24 Jun 2019 21:02:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B90251CC2
+	for <lists+kexec@lfdr.de>; Mon, 24 Jun 2019 23:06:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4pNJmTJX/zH8WuHOyXMrJO9wZMTtTAKZCalxn1LlxOw=; b=pYj1i6/sm11waQE/0rgq1dzO1
-	8KtqN4PHl8h8L6eh8XPY3yXvrj8SsMQmYXJqcyn29MaxT8OwaOFjp2noLZcCtLJEUPJaOTbALMmOV
-	LZflmlv9asFroGKtbmDzOibdSLYEej42cd8kLsWDqw/yWXVLYG6MuZWRGvPgDiGEntm8rMC8+a2e5
-	EZqhPqgtwziq/5NXSFXj2Su9d/2WGrvXBhazEAnuq3mCpKAz7hRj0FhdZxoNjuwyPCfxToOn1pfeF
-	iPnEl5BIliCSr9b64rBvwmuDHiboaHfdoAMbzfTagathOCuacYc59AANmRFjJZRZSws7SqvsvuxTO
-	J2xzH9FFg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eTpWmGJkWTPnVf3lzk8bR/WXjvzNl6i81N7QzNMPD8k=; b=NtDc5YhJ9a0bPy
+	/pJ0hKueYYk0BO2XLDNc5zt5LrQr2qLYJBgTGFN0FfgarrEMjRYbEEk1ubKK6inRfxwAxxBJau8ln
+	P2P1V2iKTCXEvujSexsro6Fkm3dwz1kJ2YWBH9jl1WO3BOPQhRk+BeuZel862drnBJ/zb58AlKWh7
+	QImCRTBnmwpyIxOxckc4Qomy5s0/4Q0z53N8Yds+nSOCdj+xaAIxiIq1eGhy4r50x/ztd+iIBUaiN
+	qOKBaE7t1vE72bJKvSbS8XqYrWlXAYBw+RfXziKST2mJ/jtBMDbuFZOaJlDCKziJb56qlRUJSkFha
+	6n1/WAr8x2tj+rOWSWZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfUEb-0006wN-Fn; Mon, 24 Jun 2019 19:02:33 +0000
-Received: from smtp-fw-4101.amazon.com ([72.21.198.25])
+	id 1hfWAQ-0000rV-Vr; Mon, 24 Jun 2019 21:06:22 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfUEX-0006vg-VN
- for kexec@lists.infradead.org; Mon, 24 Jun 2019 19:02:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1561402949; x=1592938949;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=Fnm2eWyB+1jy6Egbk70y8+MqYiwm7WhpVGaZUD+rpdA=;
- b=Y3Bb3rF2OofgZAgNtrkHUYDHWNzlqBr1bEQ1fZYU/Ka0g3b64rMx4hni
- jZAEtWVWjihAadHo+U8q2tHoDNIHVvUtB+iXH2Akz4p4hpzMkj5NmPpKU
- arip2Ry9igfodQRzCcHOXybFWrque9rJ72wceUPAHq5w+LU6ZSRPFp2yL k=;
-X-IronPort-AV: E=Sophos;i="5.62,413,1554768000"; d="scan'208";a="771794727"
-Received: from iad6-co-svc-p1-lb1-vlan3.amazon.com (HELO
- email-inbound-relay-1d-2c665b5d.us-east-1.amazon.com) ([10.124.125.6])
- by smtp-border-fw-out-4101.iad4.amazon.com with ESMTP;
- 24 Jun 2019 19:02:26 +0000
-Received: from EX13MTAUEB001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
- by email-inbound-relay-1d-2c665b5d.us-east-1.amazon.com (Postfix) with ESMTPS
- id 2E5EBA2314; Mon, 24 Jun 2019 19:02:25 +0000 (UTC)
-Received: from EX13D08UEB001.ant.amazon.com (10.43.60.245) by
- EX13MTAUEB001.ant.amazon.com (10.43.60.129) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Mon, 24 Jun 2019 19:02:25 +0000
-Received: from EX13MTAUEB001.ant.amazon.com (10.43.60.96) by
- EX13D08UEB001.ant.amazon.com (10.43.60.245) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Mon, 24 Jun 2019 19:02:24 +0000
-Received: from u908889d5e8f057.ant.amazon.com (10.95.80.226) by
- mail-relay.amazon.com (10.43.60.129) with Microsoft SMTP Server (TLS) id
- 15.0.1367.3 via Frontend Transport; Mon, 24 Jun 2019 19:02:23 +0000
-Subject: Re: [PATCH 1/3] xen: Avoid overlapping segments in low memory
-To: Simon Horman <horms@verge.net.au>, Varad Gautam <vrd@amazon.de>
-References: <1558423948-24583-1-git-send-email-vrd@amazon.de>
- <20190531090746.ozf6kyezmj77gqyo@verge.net.au>
-From: <vrd@amazon.com>
-Message-ID: <38c53c73-30ad-0985-c08b-6b29b4ab8698@amazon.com>
-Date: Mon, 24 Jun 2019 21:02:21 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hfWAN-0000pn-VA
+ for kexec@lists.infradead.org; Mon, 24 Jun 2019 21:06:21 +0000
+Received: by mail-io1-xd41.google.com with SMTP id i10so535056iol.13
+ for <kexec@lists.infradead.org>; Mon, 24 Jun 2019 14:06:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Qsiy4GMqJp8OpN08sGtvyRN/iizHHt1yJkFR39fo0EA=;
+ b=AfDiePpE+a5nc6qa49QzPgmPwYggmKliwXdfvpiy7UQT/bVYNMVaOHV5Ktwh3u+YUZ
+ +TdIpcDQJUBkv2lxbRtRSmOVLI61Bn2aAW6Ge+Zai32LvXsxsfx/7ELuMHRfwC99S6Go
+ dHCihXe0aU2qgLK9jYy1cMsDvX4VYUuST3O5ovrC4/4nIJvAnWOfLCgzSHAUGZJD6qw8
+ /y/t/UNGfybachMS13UMBQ6y4dgTFO/ohApf7LqGxuz2ujPoOg2QR4xhW+QEvV96SQWk
+ khL/qDDPTdLoAmVKwNzNqFqoYISbEZ2ipCgj/ZomTocT/BQlHHuLS3qx6qdl2R/NSCUt
+ 89Ew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Qsiy4GMqJp8OpN08sGtvyRN/iizHHt1yJkFR39fo0EA=;
+ b=NBwgUB0/ZM3BBwq2fkr/1d1GUJINQA/2pr5cBACtW05qb/BbC4seZL5n6EYfjlCIOn
+ dscd1+x3ByUMWhVLlG2Jm6HohQ3TqEFMpqrjtfLggzfwKUFvybrJAAWczwuuFcJAjXIu
+ UusBgvig0ymzSCVFNZzqW1hRZb5yOKAosrAlnSFOOErGfMk6V8oCA2708mkXoDmOftWH
+ ouxbkay1nLDtF1job/2HWPQrSJkAWYBUuvY0eg9ldikMofk6o9I/yPNtmEd9k5/+auq+
+ 5ABxHllMY+cVJT4nhR4wFFf/b8SwHi4Phav672TlLk9/Y1lQUmSR8kHYEcP7VyBsZFur
+ DO9g==
+X-Gm-Message-State: APjAAAUGCyow4IsoNK2eT0awQiIHrfF/uV3TcRwuAJjIifh3JPUkkhkW
+ F8ZUOLFNEMieOgFQvmryHXTgjonA/GcgywROymUAbYnigNQ=
+X-Google-Smtp-Source: APXvYqwv4riJcpp85SGhSbO9g75WovIl5ds69I6e8yCEhOaWFyb3mGnt+TYj+cuUzPOyZ5lIXy/KTsrYc1TP3QArKeA=
+X-Received: by 2002:a6b:f114:: with SMTP id e20mr39290067iog.169.1561410371602; 
+ Mon, 24 Jun 2019 14:06:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190531090746.ozf6kyezmj77gqyo@verge.net.au>
-Content-Language: en-US
-Precedence: Bulk
+References: <20190326182742.16950-1-matthewgarrett@google.com>
+ <20190326182742.16950-8-matthewgarrett@google.com>
+ <20190621064340.GB4528@localhost.localdomain>
+ <CACdnJut=J1YTpM4s6g5XWCEs+=X0Jvf8otfMg+w=_oqSZmf01Q@mail.gmail.com>
+ <20190624015206.GB2976@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20190624015206.GB2976@dhcp-128-65.nay.redhat.com>
+From: Matthew Garrett <mjg59@google.com>
+Date: Mon, 24 Jun 2019 14:06:00 -0700
+Message-ID: <CACdnJusPtYLdg7ZPhBo=Y5EsBz6B+5M2zYscBrLcc89oNnPkdQ@mail.gmail.com>
+Subject: Re: [PATCH V31 07/25] kexec_file: Restrict at runtime if the kernel
+ is locked down
+To: Dave Young <dyoung@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_120230_188104_4E94D842 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20190624_140620_006720_AF1F2B3D 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -15.2 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (-15.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [72.21.198.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,9 +87,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <kexec.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=unsubscribe>
@@ -95,28 +99,35 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, David Woodhouse <dwmw@amazon.co.uk>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Jiri Bohac <jbohac@suse.cz>, Linux API <linux-api@vger.kernel.org>,
+ kexec@lists.infradead.org, James Morris <jmorris@namei.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ LSM List <linux-security-module@vger.kernel.org>,
+ Andy Lutomirski <luto@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gNS8zMS8xOSAxMTowNyBBTSwgU2ltb24gSG9ybWFuIHdyb3RlOgo+IE9uIFR1ZSwgTWF5IDIx
-LCAyMDE5IGF0IDA5OjMyOjI2QU0gKzAyMDAsIFZhcmFkIEdhdXRhbSB3cm90ZToKPj4gRnJvbTog
-RGF2aWQgV29vZGhvdXNlIDxkd213QGFtYXpvbi5jby51az4KPj4KPj4gVW5saWtlIExpbnV4IHdo
-aWNoIGNyZWF0ZXMgYSBmdWxsIGlkZW50aXR5IG1hcHBpbmcsIFhlbiBvbmx5IG1hcHMgdGhvc2UK
-Pj4gc2VnbWVudHMgd2hpY2ggYXJlIGV4cGxpY2l0bHkgcmVxdWVzdGVkLiBUaGVyZWZvcmUsIHhl
-bl9rZXhlY19sb2FkKCkKPj4gc2lsZW50bHkgYWRkcyBpbiBhIHNlZ21lbnQgZnJvbSB6ZXJvIHRv
-IDFNaUIgdG8gZW5zdXJlIHRoYXQgVkdBIG1lbW9yeQo+PiBhbmQgb3RoZXIgdGhpbmdzIGFyZSBh
-Y2Nlc3NpYmxlLgo+Pgo+PiBIb3dldmVyLCB0aGlzIGRvZXNuJ3Qgd29yayB3aGVuIHRoZXJlIGFy
-ZSBhbHJlYWR5IHNlZ21lbnRzIHRvIGJlIGxvYWRlZAo+PiB1bmRlciAxTWlCLCBiZWNhdXNlIHRo
-ZSBvdmVybGFwIGNhdXNlcyBYZW4gdG8gcmVqZWN0IHRoZSBrZXhlY19sb2FkLgo+Pgo+PiBCZSBt
-b3JlIGNhcmVmdWwgYW5kIGp1c3QgaW5maWxsIHRoZSByYW5nZXMgd2hpY2ggYXJlIHJlcXVpcmVk
-IGluc3RlYWQKPj4gb2YgbmHDr3ZlbHkgYWRkaW5nIGEgZnVsbCAwLTFNaUIgc2VnbWVudCBhdCB0
-aGUgZW5kLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBEYXZpZCBXb29kaG91c2UgPGR3bXdAYW1hem9u
-LmNvLnVrPgo+IFRoaXMgcGF0Y2ggYXBwZWFycyB0byBiZSBwcmVzZW50IGluIHRoZSBrZXhlYy10
-b29scyB0cmVlIGFzOgo+Cj4gZWZmNTMwODk1MjNjIHhlbjogQXZvaWQgb3ZlcmxhcHBpbmcgc2Vn
-bWVudHMgaW4gbG93IG1lbW9yeQoKQWgsIHBsZWFzZSBpZ25vcmUgdGhpcyBvbmUuIEkgaGFkIGFu
-IGVhcmxpZXIgY2hlY2tvdXQuCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
+On Sun, Jun 23, 2019 at 6:52 PM Dave Young <dyoung@redhat.com> wrote:
+>
+> On 06/21/19 at 01:18pm, Matthew Garrett wrote:
+> > I don't think so - we want it to be possible to load images if they
+> > have a valid signature.
+>
+> I know it works like this way because of the previous patch.  But from
+> the patch log "When KEXEC_SIG is not enabled, kernel should not load
+> images", it is simple to check it early for !IS_ENABLED(CONFIG_KEXEC_SIG) &&
+> kernel_is_locked_down(reason, LOCKDOWN_INTEGRITY)  instead of depending
+> on the late code to verify signature.  In that way, easier to
+> understand the logic, no?
+
+But that combination doesn't enforce signature validation? We can't
+depend on !IS_ENABLED(CONFIG_KEXEC_SIG_FORCE) because then it'll
+enforce signature validation even if lockdown is disabled.
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
