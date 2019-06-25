@@ -2,68 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9C2F520C6
-	for <lists+kexec@lfdr.de>; Tue, 25 Jun 2019 04:52:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DA6A5261F
+	for <lists+kexec@lfdr.de>; Tue, 25 Jun 2019 10:11:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/4p2bfkHgVG5VrId1JvfH7+7fMupjBNwnOq2q8fPLuk=; b=cRR5Ss3fNxrmjQ
-	ztR2ALwCkAH+OGHu73nkQvd4Vq8c1xzJxgua/jydkaOlJ0gmH1adzvi90T1GVGxalXhIFcQQe7RLt
-	xG68uVa1lKbUqM7mOWgr3UCK4vObr8z86zhDwvAlhIkqQLmEBxRWHE/WJNu0ebqHve2gqns2l2wPV
-	exs4Tq2bvuEDnyP6cA3Hq9+D4LyNW3F7nXxzahuGcvK5ficU7EJH7X088wR83FfkPXG1xYSxbqSZV
-	0bywZ2jrZRMHaUDYQQKnjumhF82+1ItrFTV/fosRJYTjV1ag8nLUhqTJ8lzu7FUnF4wotuXRkIckT
-	IoGgHCTfTvDUw7+yKmig==;
+	List-Owner; bh=qjlwTFaPKWCWDaatfTkWTY54irvoabEMEsp85QV8NT8=; b=i45smOZtcVbDAc
+	jXgzeSvbByDIrLMYz67PFMOgUbThuedfEM8pVCl7xJKKXviCq9o0TQyHCSDAb2vS6oOkmCaJ3/LwB
+	M1q5yBU5KcohZJ7jzizs7RpQWjjN8C5AXnHVXe1BQLJWwKY47Hnu3iUVS8FLlAyukc50cAghKQXUB
+	mNtNKCmx2FUJoj+EomHeQg/eiuiP8MsV0ySLrdTY6NL8ebClU9nIOPYEEF+uNoZ9qgN6PNxClLN6I
+	toPWWAbYQ327AeCk4MBUELj89SCumPHzJ1Yd352UlgNyWKIIkkCiyvGZ0uPEp9Eew1wWV9/h3P6NQ
+	xBsNLGGBZWtyjuX/+33Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfbYt-0006bP-Am; Tue, 25 Jun 2019 02:51:59 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1hfgYS-0005Wt-9X; Tue, 25 Jun 2019 08:11:52 +0000
+Received: from smtp-fw-6002.amazon.com ([52.95.49.90])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hfbYq-0006az-9e
- for kexec@lists.infradead.org; Tue, 25 Jun 2019 02:51:57 +0000
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 93E3159473;
- Tue, 25 Jun 2019 02:51:55 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-89.pek2.redhat.com
- [10.72.12.89])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 298936085B;
- Tue, 25 Jun 2019 02:51:51 +0000 (UTC)
-Date: Tue, 25 Jun 2019 10:51:48 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Matthew Garrett <mjg59@google.com>
-Subject: Re: [PATCH V31 07/25] kexec_file: Restrict at runtime if the kernel
- is locked down
-Message-ID: <20190625025148.GA4024@dhcp-128-65.nay.redhat.com>
-References: <20190326182742.16950-1-matthewgarrett@google.com>
- <20190326182742.16950-8-matthewgarrett@google.com>
- <20190621064340.GB4528@localhost.localdomain>
- <CACdnJut=J1YTpM4s6g5XWCEs+=X0Jvf8otfMg+w=_oqSZmf01Q@mail.gmail.com>
- <20190624015206.GB2976@dhcp-128-65.nay.redhat.com>
- <CACdnJusPtYLdg7ZPhBo=Y5EsBz6B+5M2zYscBrLcc89oNnPkdQ@mail.gmail.com>
+ id 1hfgYN-0005WE-TA
+ for kexec@lists.infradead.org; Tue, 25 Jun 2019 08:11:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.de; i=@amazon.de; q=dns/txt; s=amazon201209;
+ t=1561450307; x=1592986307;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=WNFF7eXsO32KRtDY+a8TJX1mzFmR7sfgFAwgcm+Y6/8=;
+ b=UJdCKPVISX379dg9Blhh8Mz4I5V69iexZTCn7VKOlaeYi0dDvDHMHHc1
+ Y+Jx+TDB5KMJua5dDly9ptIjXZ1VwSCEfbIld2I9tq05w2YaWaSpWqzbn
+ WPHsijkiq2bXO3mWXaAjEuo71JWfoaKn9OLE4etfSQomTlqQ1B1AX7NS6 I=;
+X-IronPort-AV: E=Sophos;i="5.62,415,1554768000"; d="scan'208";a="407944503"
+Received: from iad6-co-svc-p1-lb1-vlan3.amazon.com (HELO
+ email-inbound-relay-1a-715bee71.us-east-1.amazon.com) ([10.124.125.6])
+ by smtp-border-fw-out-6002.iad6.amazon.com with ESMTP;
+ 25 Jun 2019 08:11:43 +0000
+Received: from EX13MTAUEB001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1a-715bee71.us-east-1.amazon.com (Postfix) with ESMTPS
+ id C8CFAA26AF
+ for <kexec@lists.infradead.org>; Tue, 25 Jun 2019 08:11:43 +0000 (UTC)
+Received: from EX13D08UEB003.ant.amazon.com (10.43.60.11) by
+ EX13MTAUEB001.ant.amazon.com (10.43.60.129) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 25 Jun 2019 08:11:42 +0000
+Received: from EX13MTAUWA001.ant.amazon.com (10.43.160.58) by
+ EX13D08UEB003.ant.amazon.com (10.43.60.11) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Tue, 25 Jun 2019 08:11:41 +0000
+Received: from u908889d5e8f057.ant.amazon.com (10.28.86.19) by
+ mail-relay.amazon.com (10.43.160.118) with Microsoft SMTP Server id
+ 15.0.1367.3 via Frontend Transport; Tue, 25 Jun 2019 08:11:40 +0000
+From: Varad Gautam <vrd@amazon.de>
+To: <kexec@lists.infradead.org>
+Subject: [PATCH 2/3 RESEND] elf: Support ELF loading with relocation
+Date: Tue, 25 Jun 2019 10:11:24 +0200
+Message-ID: <1561450284-22003-1-git-send-email-vrd@amazon.de>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1558423948-24583-2-git-send-email-vrd@amazon.de>
+References: <1558423948-24583-2-git-send-email-vrd@amazon.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACdnJusPtYLdg7ZPhBo=Y5EsBz6B+5M2zYscBrLcc89oNnPkdQ@mail.gmail.com>
-User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.39]); Tue, 25 Jun 2019 02:51:55 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190624_195156_359840_F1FF2B5B 
-X-CRM114-Status: GOOD (  19.29  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190625_011148_159053_40317AA4 
+X-CRM114-Status: GOOD (  17.78  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [52.95.49.90 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,47 +91,295 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jiri Bohac <jbohac@suse.cz>, Linux API <linux-api@vger.kernel.org>,
- kexec@lists.infradead.org, James Morris <jmorris@namei.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- LSM List <linux-security-module@vger.kernel.org>,
- Andy Lutomirski <luto@kernel.org>
+Cc: Varad Gautam <vrd@amazon.de>, Amit Shah <aams@amazon.de>,
+ David Woodhouse <dwmw@amazon.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 06/24/19 at 02:06pm, Matthew Garrett wrote:
-> On Sun, Jun 23, 2019 at 6:52 PM Dave Young <dyoung@redhat.com> wrote:
-> >
-> > On 06/21/19 at 01:18pm, Matthew Garrett wrote:
-> > > I don't think so - we want it to be possible to load images if they
-> > > have a valid signature.
-> >
-> > I know it works like this way because of the previous patch.  But from
-> > the patch log "When KEXEC_SIG is not enabled, kernel should not load
-> > images", it is simple to check it early for !IS_ENABLED(CONFIG_KEXEC_SIG) &&
-> > kernel_is_locked_down(reason, LOCKDOWN_INTEGRITY)  instead of depending
-> > on the late code to verify signature.  In that way, easier to
-> > understand the logic, no?
-> 
-> But that combination doesn't enforce signature validation? We can't
-> depend on !IS_ENABLED(CONFIG_KEXEC_SIG_FORCE) because then it'll
-> enforce signature validation even if lockdown is disabled.
+Add a helper to allow loading an image within specified address range.
+This will be used to load multiboot2 images later.
 
-Ok, got your point. still something could be improved though, in the switch
-chunk, the errno, reason and IS_ENABLED(CONFIG_KEXEC_SIG_FORCE) etc is
-not necessary for this -EPERM case.
+Signed-off-by: Varad Gautam <vrd@amazon.de>
+---
+ kexec/kexec-elf-exec.c | 199 +++++++++++++++++++++++++++++++++----------------
+ kexec/kexec-elf.h      |   7 ++
+ 2 files changed, 141 insertions(+), 65 deletions(-)
 
-/* add some comment to describe the behavior */
-if (ret && security_is_locked_down(LOCKDOWN_KEXEC)) {
-	ret = -EPERM;
-	goto out;
-}
+diff --git a/kexec/kexec-elf-exec.c b/kexec/kexec-elf-exec.c
+index a9329ac..bea7b3e 100644
+--- a/kexec/kexec-elf-exec.c
++++ b/kexec/kexec-elf-exec.c
+@@ -11,6 +11,84 @@
+ 
+ static const int probe_debug = 0;
+ 
++static void load_elf_segments(struct mem_ehdr *ehdr, struct kexec_info *info, unsigned long base)
++{
++	size_t i;
++
++	/* Read in the PT_LOAD segments */
++	for(i = 0; i < ehdr->e_phnum; i++) {
++		struct mem_phdr *phdr;
++		size_t size;
++		phdr = &ehdr->e_phdr[i];
++		if (phdr->p_type != PT_LOAD) {
++			continue;
++		}
++		size = phdr->p_filesz;
++		if (size > phdr->p_memsz) {
++			size = phdr->p_memsz;
++		}
++		add_segment(info, phdr->p_data, size,
++					phdr->p_paddr + base, phdr->p_memsz);
++	}
++}
++
++static int get_elf_exec_load_base(struct mem_ehdr *ehdr, struct kexec_info *info,
++				  unsigned long min, unsigned long max,
++				  unsigned long align, unsigned long *base)
++{
++	unsigned long first, last;
++	size_t i;
++
++	/* Note on arm64:
++	 * arm64's vmlinux has virtual address in physical address
++	 * field of PT_LOAD segments. So the following validity check
++	 * and relocation makes no sense on arm64.
++	 */
++	if (ehdr->e_machine == EM_AARCH64)
++		return 0;
++
++	first = ULONG_MAX;
++	last  = 0;
++	for(i = 0; i < ehdr->e_phnum; i++) {
++		unsigned long start, stop;
++		struct mem_phdr *phdr;
++		phdr = &ehdr->e_phdr[i];
++		if ((phdr->p_type != PT_LOAD) ||
++			(phdr->p_memsz == 0))
++		{
++			continue;
++		}
++		start = phdr->p_paddr;
++		stop  = start + phdr->p_memsz;
++		if (first > start) {
++			first = start;
++		}
++		if (last < stop) {
++			last = stop;
++		}
++		if (align < phdr->p_align) {
++			align = phdr->p_align;
++		}
++	}
++
++	if ((max - min) < (last - first))
++		return -1;
++
++	if (!valid_memory_range(info, min > first ? min : first, max < last ? max : last)) {
++		unsigned long hole;
++		hole = locate_hole(info, last - first + 1, align, min, max, 1);
++		if (hole == ULONG_MAX)
++			return -1;
++
++		/* Base is the value that when added
++		 * to any virtual address in the file
++		 * yields it's load virtual address.
++		 */
++		*base = hole - first;
++	}
++	return 0;
++}
++
+ int build_elf_exec_info(const char *buf, off_t len, struct mem_ehdr *ehdr,
+ 				uint32_t flags)
+ {
+@@ -53,7 +131,6 @@ int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info)
+ {
+ 	unsigned long base;
+ 	int result;
+-	size_t i;
+ 
+ 	if (!ehdr->e_phdr) {
+ 		fprintf(stderr, "No program header?\n");
+@@ -63,75 +140,48 @@ int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info)
+ 
+ 	/* If I have a dynamic executable find it's size
+ 	 * and then find a location for it in memory.
+-	 * Note on arm64:
+-	 * arm64's vmlinux has virtual address in physical address
+-	 * field of PT_LOAD segments. So the following validity check
+-	 * and relocation makes no sense on arm64.
+ 	 */
+ 	base = 0;
+-	if ((ehdr->e_machine != EM_AARCH64) && (ehdr->e_type == ET_DYN)) {
+-		unsigned long first, last, align;
+-		first = ULONG_MAX;
+-		last  = 0;
+-		align = 0;
+-		for(i = 0; i < ehdr->e_phnum; i++) {
+-			unsigned long start, stop;
+-			struct mem_phdr *phdr;
+-			phdr = &ehdr->e_phdr[i];
+-			if ((phdr->p_type != PT_LOAD) ||
+-				(phdr->p_memsz == 0))
+-			{
+-				continue;
+-			}
+-			start = phdr->p_paddr;
+-			stop  = start + phdr->p_memsz;
+-			if (first > start) {
+-				first = start;
+-			}
+-			if (last < stop) {
+-				last = stop;
+-			}
+-			if (align < phdr->p_align) {
+-				align = phdr->p_align;
+-			}
+-		}
+-		/* If I can't use the default paddr find a new
+-		 * hole for the dynamic executable.
+-		 */
+-		if (!valid_memory_range(info, first, last)) {
+-			unsigned long hole;
+-			hole = locate_hole(info,
+-				last - first + 1, align, 
+-				0, elf_max_addr(ehdr), 1);
+-			if (hole == ULONG_MAX) {
+-				result = -1;
+-				goto out;
+-			}
+-			/* Base is the value that when added
+-			 * to any virtual address in the file
+-			 * yields it's load virtual address.
+-			 */
+-			base = hole - first;
+-		}
+-
++	if (ehdr->e_type == ET_DYN) {
++		result = get_elf_exec_load_base(ehdr, info, 0, elf_max_addr(ehdr), 0 /* align */, &base);
++		if (result < 0)
++			goto out;
+ 	}
+ 
+-	/* Read in the PT_LOAD segments */
+-	for(i = 0; i < ehdr->e_phnum; i++) {
+-		struct mem_phdr *phdr;
+-		size_t size;
+-		phdr = &ehdr->e_phdr[i];
+-		if (phdr->p_type != PT_LOAD) {
+-			continue;
+-		}
+-		size = phdr->p_filesz;
+-		if (size > phdr->p_memsz) {
+-			size = phdr->p_memsz;
+-		}
+-		add_segment(info,
+-			phdr->p_data, size,
+-			phdr->p_paddr + base, phdr->p_memsz);
++	load_elf_segments(ehdr, info, base);
++
++	/* Update entry point to reflect new load address*/
++	ehdr->e_entry += base;
++
++	result = 0;
++ out:
++	return result;
++}
++
++int elf_exec_load_relocatable(struct mem_ehdr *ehdr, struct kexec_info *info,
++			      unsigned long reloc_min, unsigned long reloc_max,
++			      unsigned long align)
++{
++	unsigned long base;
++	int result;
++
++	if (reloc_min > reloc_max) {
++		fprintf(stderr, "Bad relocation range, start=%lux > end=%lux.\n", reloc_min, reloc_max);
++		result = -1;
++		goto out;
+ 	}
++	if (!ehdr->e_phdr) {
++		fprintf(stderr, "No program header?\n");
++		result = -1;
++		goto out;
++	}
++
++	base = 0;
++	result = get_elf_exec_load_base(ehdr, info, reloc_min, reloc_max, align, &base);
++	if (result < 0)
++		goto out;
++
++	load_elf_segments(ehdr, info, base);
+ 
+ 	/* Update entry point to reflect new load address*/
+ 	ehdr->e_entry += base;
+@@ -157,3 +207,22 @@ void elf_exec_build_load(struct kexec_info *info, struct mem_ehdr *ehdr,
+ 		die("ELF exec load failed\n");
+ 	}
+ }
++
++void elf_exec_build_load_relocatable(struct kexec_info *info, struct mem_ehdr *ehdr,
++				     const char *buf, off_t len, uint32_t flags,
++				     unsigned long reloc_min, unsigned long reloc_max,
++				     unsigned long align)
++{
++	int result;
++	/* Parse the Elf file */
++	result = build_elf_exec_info(buf, len, ehdr, flags);
++	if (result < 0) {
++		die("%s: ELF exec parse failed\n", __func__);
++	}
++
++	/* Load the Elf data */
++	result = elf_exec_load_relocatable(ehdr, info, reloc_min, reloc_max, align);
++	if (result < 0) {
++		die("%s: ELF exec load failed\n", __func__);
++	}
++}
+\ No newline at end of file
+diff --git a/kexec/kexec-elf.h b/kexec/kexec-elf.h
+index 1164db4..1e512c8 100644
+--- a/kexec/kexec-elf.h
++++ b/kexec/kexec-elf.h
+@@ -100,11 +100,18 @@ extern int build_elf_rel_info(const char *buf, off_t len, struct mem_ehdr *ehdr,
+ extern int build_elf_core_info(const char *buf, off_t len,
+ 					struct mem_ehdr *ehdr, uint32_t flags);
+ extern int elf_exec_load(struct mem_ehdr *ehdr, struct kexec_info *info);
++extern int elf_exec_load_relocatable(struct mem_ehdr *ehdr, struct kexec_info *info,
++				     unsigned long reloc_min, unsigned long reloc_max,
++				     unsigned long align);
+ extern int elf_rel_load(struct mem_ehdr *ehdr, struct kexec_info *info,
+ 	unsigned long min, unsigned long max, int end);
+ 
+ extern void elf_exec_build_load(struct kexec_info *info, struct mem_ehdr *ehdr, 
+ 				const char *buf, off_t len, uint32_t flags);
++extern void elf_exec_build_load_relocatable(struct kexec_info *info, struct mem_ehdr *ehdr,
++					    const char *buf, off_t len, uint32_t flags,
++					    unsigned long reloc_min, unsigned long reloc_max,
++					    unsigned long align);
+ extern void elf_rel_build_load(struct kexec_info *info, struct mem_ehdr *ehdr, 
+ 	const char *buf, off_t len, unsigned long min, unsigned long max, 
+ 	int end, uint32_t flags);
+-- 
+2.7.4
 
-Thanks
-Dave
+
+
+
+Amazon Development Center Germany GmbH
+Krausenstr. 38
+10117 Berlin
+Geschaeftsfuehrung: Christian Schlaeger, Ralf Herbrich
+Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+Sitz: Berlin
+Ust-ID: DE 289 237 879
+
+
+
 
 _______________________________________________
 kexec mailing list
