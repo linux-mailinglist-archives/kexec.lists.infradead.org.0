@@ -2,70 +2,89 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D212583D1
-	for <lists+kexec@lfdr.de>; Thu, 27 Jun 2019 15:49:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01EE558590
+	for <lists+kexec@lfdr.de>; Thu, 27 Jun 2019 17:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4Dq7zKF6taaod0R9CR81voLeyIkRvb8jQKwKkFRW/04=; b=OnTA9+5sIMHdtn
-	NnMAnOa55anPf4W6SUtgJneraXQBUSscfdd122cmHju36yLQPq9xsZVVOTB4d6T8NUZ0WAEkO74LT
-	7DGkVAtCgNmFSCxsSdoYLSPLBTY4tj7ujOaq/H8EZzdVbWtJ7i9B/yThgaDUjlIGO6SYszm437r00
-	2SxO5antKWsIlJkE/V99cd18maP5buBkZUDAJSDe/m+tTdGmoATmRkXmGOv7IdwDNq8ljWXXZaRA0
-	vQvq+BxlvbiEsXWB9cMHcmnjMKK3XyJVhPhSP6lJEh0OI4fIDK4gqr5RZXyH+V3eNsjb/T0p53KNt
-	gb49NyeMeGKdFuAgN2qA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EyOfvjPOEmD7eN479Rjz6wezeuAIaSnB/IMkn+clUPo=; b=eRR7cNH/2hvOax
+	qlibkJgRqPII68ZpS3PytHLwiDXUYfY7yK6QSxIEz/a6sIgBcplZ+UpFzAQTIg8tsieYhOUv3r054
+	XLjKyibPvTdQcbLeJZsqlYtpY3gQWLPX562I2/EbqU7UoyrNHIaAjuhm+IsWmHaihohI6MQLx+QJG
+	Datxa/ypApFSCIUtGW4TYyai5IoL3Fhppjcer9J91D3OsCw54WKSUIpWEaL2G6NvHehSoaa63YRu1
+	9cAfeUSnKXA710Kp1H2Ci+f/pKbImumvb6/zeue8GDvAiUwp9nI7JUN0B2NWfASq8CZoLblterOST
+	fqyYNkK2Sqn8+a/d9qbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hgUlk-00047k-Hx; Thu, 27 Jun 2019 13:48:56 +0000
-Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
+	id 1hgWK4-0004Kx-JV; Thu, 27 Jun 2019 15:28:28 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hgUlf-00046p-5f
- for kexec@lists.infradead.org; Thu, 27 Jun 2019 13:48:53 +0000
-Received: from mailgate02.nec.co.jp ([114.179.233.122])
- by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id x5RDmkSv029785
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO)
- for <kexec@lists.infradead.org>; Thu, 27 Jun 2019 22:48:46 +0900
-Received: from mailsv02.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
- by mailgate02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x5RDmkL5012338
- for <kexec@lists.infradead.org>; Thu, 27 Jun 2019 22:48:46 +0900
-Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
- by mailsv02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x5RDmk7G015904
- for <kexec@lists.infradead.org>; Thu, 27 Jun 2019 22:48:46 +0900
-Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.137] [10.38.151.137]) by
- mail01b.kamome.nec.co.jp with ESMTP id BT-MMP-6337535;
- Thu, 27 Jun 2019 22:47:41 +0900
-Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
- BPXC09GP.gisp.nec.co.jp ([10.38.151.137]) with mapi id 14.03.0319.002; Thu,
- 27 Jun 2019 22:47:41 +0900
-From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-To: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
-Subject: [ANNOUNCE] makedumpfile 1.6.6 is released
-Thread-Topic: [ANNOUNCE] makedumpfile 1.6.6 is released
-Thread-Index: AdUsUzjoJSYKlIt7QWmuqzeA/gBZhg==
-Date: Thu, 27 Jun 2019 13:47:40 +0000
-Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC035794EF@BPXM09GP.gisp.nec.co.jp>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [143.101.133.126]
+ id 1hgWK0-0004JT-64
+ for kexec@lists.infradead.org; Thu, 27 Jun 2019 15:28:25 +0000
+Received: by mail-io1-xd42.google.com with SMTP id i10so5569161iol.13
+ for <kexec@lists.infradead.org>; Thu, 27 Jun 2019 08:28:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=g3RhI9DNvqsR2Iknx3LGGvk1u88PumHwEAJh9YfsKq4=;
+ b=gekKU/tGlO7Mg0UGCOLXXY+Ire65Q4Z2qg5wd1h/tWU9dzP0OjY9RAukwLeQIBSiqO
+ lOzOnp3OUJGMVLjCBBaxpYTOR7n0lu7pDCECDHHB+ew+MrRhPUsJ0/NzKMwdsdcqH0Ov
+ 7lUBWw8BNh134qpS92lj0nucRNsTHYxeobnt31H/hqDGy9ghty4FICuN8yjUcc9NWF/6
+ 905EiAC6mqg4SnIM0fMAjsXUMLsqln3Od29lkC8l+/yuWFoRGhklNh7wu6HdgobanftQ
+ uCGE/qdCkvuTW0BOqRXIuGm5aMHPy5aZt2n/GNm5dIfAcnbAFzKIOR34tkMtJDQm0I8O
+ xIiA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=g3RhI9DNvqsR2Iknx3LGGvk1u88PumHwEAJh9YfsKq4=;
+ b=dUVQbu9+2b3HMEGV/FCyt+8pNKkLXWOkXPZpy5LqK+PWOdElM9/lqkQ13wYFL+E8+J
+ HLBMQb+W5Ay9gr2aQt+vIHqnQZBwsqtsL2LAssWvMuVTFbgMCuLyovo8ruqJLkk3Fv+4
+ mHsnxTTTZz6YYmFEeO5cudITHbRoZf2Sf8DvibCSvzHJ5ff67eaOz9HND9aXrM0IMPy0
+ gLNgJx3ZmCA3iyD/oEaXG87afa2BWwgcq/r/e59UAKH3HJzpd9cp1w46X0VOqKUoEXDp
+ HMsq6PKLVtkmKTKh65lMISrNKGHtKVHmih+WTk/Q9PMdLtopSsmZJoEtsc9H9mWlpJ9Q
+ qu1w==
+X-Gm-Message-State: APjAAAUUpNBqT71/Jg93BOR+FNlTGi/qwF/IUJhkkYwjq/vWMIkHiHOc
+ YwHouUxyfg+z4DQTuPdM1q7tFLLS6jNIVRdCI3AYRw==
+X-Google-Smtp-Source: APXvYqxt+k0Ai9dyDn8LZuqnNMawxVvBOa3fPtlRblTKZbcATMFln2wqMn2SYedj7jJBGVi/ao2H/uL/Z68ruv8rRdU=
+X-Received: by 2002:a5d:9d97:: with SMTP id 23mr5395263ion.204.1561649300148; 
+ Thu, 27 Jun 2019 08:28:20 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-AS-MML: disable
+References: <20190622000358.19895-1-matthewgarrett@google.com>
+ <20190622000358.19895-10-matthewgarrett@google.com>
+ <alpine.LRH.2.21.1906271423070.16512@namei.org>
+In-Reply-To: <alpine.LRH.2.21.1906271423070.16512@namei.org>
+From: Matthew Garrett <mjg59@google.com>
+Date: Thu, 27 Jun 2019 08:28:08 -0700
+Message-ID: <CACdnJusJeCYPKVFHiu6yn+mfqQe5k0RqZhbCUZEkxtXx_shMmw@mail.gmail.com>
+Subject: Re: [PATCH V34 09/29] kexec_file: Restrict at runtime if the kernel
+ is locked down
+To: James Morris <jmorris@namei.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190627_064851_447624_085E8F34 
-X-CRM114-Status: UNSURE (   4.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190627_082824_231993_EF456A22 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: -15.2 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-15.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [114.179.232.161 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,48 +96,33 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: Jiri Bohac <jbohac@suse.cz>, Linux API <linux-api@vger.kernel.org>,
+ kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ LSM List <linux-security-module@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello,
+On Wed, Jun 26, 2019 at 9:59 PM James Morris <jmorris@namei.org> wrote:
+> This is not a criticism of the patch but a related issue which I haven't
+> seen discussed (apologies if it has).
+>
+> If signed code is loaded into ring 0, verified by the kernel, then
+> executed, you still lose your secure/trusted/verified boot state. If the
+> currently running kernel has been runtime-compromised, any signature
+> verification performed by the kernel cannot be trusted.
+>
+> This problem is out of scope for the lockdown threat model (which
+> naturally cannot include a compromised kernel), but folk should be aware
+> that signature-verified kexec does not provide equivalent assurance to a
+> full reboot on a secure-boot system.
 
-I'm pleased to announce the release of makedumpfile 1.6.6.
-Your comments/patches are welcome.
-
-Main new features:
-o Support for AMD Secure Memory Encryption
-o Exclude pages that are logically offline
-o Support new kernels
-  - The supported kernel is updated to 5.1.9 in this version.
-
-Changelog since v1.6.5:
-0a8b504102db [v1.6.6] Update version (Kazuhito Hagio)
-8c21fc7e7c52 [PATCH] Support newer kernels up to v5.1 (Kazuhito Hagio)
-3222d4ad04c6 [PATCH] x86_64: fix get_kaslr_offset_x86_64() to return kaslr_offset correctly (Kazuhito Hagio)
-d222b01e516b [PATCH] x86_64: Add support for AMD Secure Memory Encryption (Lianbo Jiang)
-1743c7370868 [PATCH] exclude pages that are logically offline (David Hildenbrand)
-feee755900e0 [PATCH] ppc64: fix a typo for checking the file pointer for null (Nisha Parrakat)
-2f007b48c581 [PATCH v2] honor the CFLAGS from environment variables (Kairui Song)
-b9da17259ef5 [PATCH] Some improvements of debugging messages (Kazuhito Hagio)
-f349b51f6211 [PATCH] ppc64: increase MAX_PHYSMEM_BITS to 2PB (Hari Bathini)
-
-Explanation of makedumpfile:
-  To shorten the size of the dumpfile and the time of creating the
-  dumpfile, makedumpfile copies only the necessary pages for analysis
-  to the dumpfile from /proc/vmcore. You can specify the kind of
-  unnecessary pages with dump_level. If you want to shorten the size
-  further, enable the compression of the page data.
-
-Download:
-  The latest makedumpfile can be downloaded from the following URL.
-  https://sourceforge.net/projects/makedumpfile/
-
-Thanks,
-Kazu
-
-
+By that metric, on a secure boot system how do we determine that code
+running in the firmware environment wasn't compromised before it
+launched the initial signed kernel?
 
 _______________________________________________
 kexec mailing list
