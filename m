@@ -2,67 +2,56 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66B5F5CA0C
-	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 09:43:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 215735CE22
+	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 13:10:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RC1ZjNHXcKo/ecCNntDNLogSlS74HML7/xTJhu21sTk=; b=hRnGyYwyuBxOU4
-	Gb2EVpLa252hykdFIkr3zOG9OcrjEaFTaDd3ugeOREmimMu5n+wWULfODuwGemEZlW3yziREgALJj
-	0v/6POPZ/CEi1JobliJ75Nk8wPjE0/KD1r83X+/f8Hg0KTJAgkSaUtfU74h7BF5WOviwY2IlfC+ZI
-	5UzzutUGouMPJlycK8kr0QuVy7nHXMzSEuXP/9CLWByhqi1s7GL3zg+Kx9/z/UYr2pz/AH5ltp7hm
-	DbGPB4s3uWeV433nvwS1oJcrs23qwG5HO1YY1K6ldwaDEVwBkYnyBoSus2FsVFrF9hjDqkq/yHjmD
-	r7UjQEi10JVMxaC+Opzw==;
+	List-Owner; bh=gwCHYeoNuWx50u0cEYs+uaItvluXAAHjMu/Zvb0BhXM=; b=Z4drw+ghxz6t0B
+	97XamgoDMW0CuqOGMq66InT+pIROFVktsKNviW6TLFFRz3Qdic3WkiDAK5Psy7LIJRLsqIVGb346d
+	mJzPl3ZB594NuE6+lQXZ6Tx6C9iZmRjvdNxzxmb1hlEN9owENW0yxkd3T57fq4Ur003tYYUWDRren
+	auKLhB+N2dKYV3rSoDsdofnvOT3v23gZ/2kt5XENGH64d5ePQ2aarsfFmMU1JOKYs19rVdddmqkJX
+	ZuuVXWt1w3QzKQQMitDJtnXbxaJTjWAx1dRIoo3xJEB2eIwxBlO9gH7CDA6wtdNZhSg9qnfor9W9U
+	EEMmNGK5ObI04TmskWdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiDRR-00072w-OX; Tue, 02 Jul 2019 07:43:06 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiDRO-00072I-9Q
- for kexec@lists.infradead.org; Tue, 02 Jul 2019 07:43:03 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id C5270356D3;
- Tue,  2 Jul 2019 07:42:55 +0000 (UTC)
-Received: from localhost.localdomain (ovpn-12-129.pek2.redhat.com
- [10.72.12.129])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 016915D9D6;
- Tue,  2 Jul 2019 07:42:50 +0000 (UTC)
-Date: Tue, 2 Jul 2019 15:42:46 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Baoquan He <bhe@redhat.com>
-Subject: Re: mgag200 fails kdump kernel booting
-Message-ID: <20190702074246.GB16436@localhost.localdomain>
-References: <20190626081522.GX24419@MiWiFi-R3L-srv>
- <20190626082907.GY24419@MiWiFi-R3L-srv>
- <CAMwc25oeskFG4bbrb3rwotqi1a5z4wYsGW=Qs_XJmhX_vAdNfQ@mail.gmail.com>
- <20190702014158.GC3178@localhost.localdomain>
- <20190702031715.GB3327@dhcp-128-65.nay.redhat.com>
- <20190702053443.GE3178@localhost.localdomain>
+	id 1hiGfc-0000qi-BH; Tue, 02 Jul 2019 11:09:56 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiGfW-0000q9-LI
+ for kexec@lists.infradead.org; Tue, 02 Jul 2019 11:09:52 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id AE52525AEC8;
+ Tue,  2 Jul 2019 21:09:47 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id D43FD940476; Tue,  2 Jul 2019 13:09:44 +0200 (CEST)
+Date: Tue, 2 Jul 2019 13:09:44 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Varad Gautam <vrd@amazon.de>
+Subject: Re: [PATCH 2/2] x86: Support multiboot2 images
+Message-ID: <20190702110944.mcugf6krueakfpam@verge.net.au>
+References: <1561630363-6342-1-git-send-email-vrd@amazon.de>
+ <1561630363-6342-2-git-send-email-vrd@amazon.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190702053443.GE3178@localhost.localdomain>
-User-Agent: Mutt/1.9.1 (2017-09-22)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.30]); Tue, 02 Jul 2019 07:42:55 +0000 (UTC)
+In-Reply-To: <1561630363-6342-2-git-send-email-vrd@amazon.de>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190702_004302_370161_BCA36B31 
-X-CRM114-Status: GOOD (  27.44  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190702_040950_845071_957762A6 
+X-CRM114-Status: GOOD (  19.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,93 +63,66 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Lyude Paul <lyude@redhat.com>, David Airlie <airlied@redhat.com>,
- x86@kernel.org, kexec@lists.infradead.org,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: Amit Shah <aams@amazon.de>, kexec@lists.infradead.org,
+ David Woodhouse <dwmw@amazon.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 07/02/19 at 01:34pm, Baoquan He wrote:
-> On 07/02/19 at 11:17am, Dave Young wrote:
-> > On 07/02/19 at 09:41am, Baoquan He wrote:
-> > > On 07/02/19 at 06:51am, David Airlie wrote:
-> > > > On Wed, Jun 26, 2019 at 6:29 PM Baoquan He <bhe@redhat.com> wrote:
-> > > > >
-> > > > > On 06/26/19 at 04:15pm, Baoquan He wrote:
-> > > > > > Hi Dave,
-> > > > > >
-> > > > > > We met an kdump kernel boot failure on a lenovo system. Kdump kernel
-> > > > > > failed to boot, but just reset to firmware to reboot system. And nothing
-> > > > > > is printed out.
-> > > > > >
-> > > > > > The machine is a big server, with 6T memory and many cpu, its graphic
-> > > > > > driver module is mgag200.
-> > > > > >
-> > > > > > When added 'earlyprintk=ttyS0' into kernel command line, it printed
-> > > > > > out only one line to console during kdump kernel booting:
-> > > > > >      KASLR disabled: 'nokaslr' on cmdline.
-> > > > > >
-> > > > > > Then reset to firmware to reboot system.
-> > > > > >
-> > > > > > By further code debugging, the failure happened in
-> > > > > > arch/x86/boot/compressed/misc.c, during kernel decompressing stage. It's
-> > > > > > triggered by the vga printing. As you can see, in __putstr() of
-> > > > > > arch/x86/boot/compressed/misc.c, the code checks if earlyprintk= is
-> > > > > > specified, and print out to the target. And no matter if earlyprintk= is
-> > > > > > added or not, it will print to VGA. And printing to VGA caused it to
-> > > > > > reset to firmware. That's why we see nothing when didn't specify
-> > > > > > earlyprintk=, but see only one line of printing about the 'KASLR
-> > > > > > disabled'.
-> > > > >
-> > > > > Here I mean:
-> > > > > That's why we see nothing when didn't specify earlyprintk=, but see only
-> > > > > one line of printing about the 'KASLR disabled' message when
-> > > > > earlyprintk=ttyS0 added.
-> > > > 
-> > > > Just to clarify, the original kernel is booted with mgag200 turned
-> > > > off, then kexec works, but if the original kernel loads mgag200, the
-> > > > kexec kernels resets hard when the VGA is used to write stuff out.
-> > > 
-> > > Thanks for looking into this, Dave.
-> > > 
-> > > Yeah, in fact the issue was found in kdump kernel. I haven't checked the
-> > > kexec jumping. Kexec jumping will call device_shutdown() to attempt to
-> > > shutdown all devices before jumping to the 2nd kernel. But kdump jumping
-> > > won't.
-> > > 
-> > > > 
-> > > > This *might* be fixable in the controlled kexec case, but having an
-> > > > mgag200 shutdown path that tries to put the gpu back into a state
-> > > > where VGA doesn't die, but for the uncontrolled kexec it'll still be a
-> > > > problem, since once the gpu is up and running and VGA is disabled, it
-> > > > doesn't expect to see anymore VGA transactions.
-> > > 
-> > > Yes, I see. It should have been shutdown by device_shutdown() in kexec
-> > > case. The uncontrolled case, I guess you mean the kdump case. In
-> > > kdump case, we don't call device_shutdown() before jumping because the
-> > > 1st kernel has been in crashed state, we just want to switch to kdump
-> > > kernel asap. So wondering how other GPU/VGA device/driver bebahve,
-> > > currently haven't got report about them. Probably mgag200 is very new,
-> > > or we may not meet them. This issue was met on a new bought server.
-> > 
-> > I assumed the vga writing only take effect when earlyprintk is provided.
-> > eg. earlyprintk=ttyS0, then x86 early decompress code will write to both
-> > vga and ttyS0.  So if one does not use earlyprintk, he/she still get
-> > nothing.  But if one provides earlyprintk, then he/she should provide a
-> > correct param he want, instead of blindly assume kernel will write to
-> > vga even if he use ttyS0.
+On Thu, Jun 27, 2019 at 12:12:43PM +0200, Varad Gautam wrote:
+> Add a new type `multiboot2-x86` that allows loading multiboot2 [1] images
+> within the relocation range specified in the image header. The image is
+> always placed at the lowest available address, regardless of the
+> preference information.
 > 
-> No, the vga printing takes effect always, otherwise those warn() and
-> error() won't work. It takes effect no matter if CONFIG_EARLY_PRINTK
-> is enabled, and if any earlyprintk= specified.
+> [1] https://www.gnu.org/software/grub/manual/multiboot2/multiboot.html
 > 
-> That's why I prefer to pursuit fix in driver side. It's making the
-> error/warn print out even though nothing specific needed, that's make
-> sense to me.
+> Signed-off-by: Varad Gautam <vrd@amazon.de>
+> ---
+>  include/x86/multiboot2.h         | 416 ++++++++++++++++++++++++++++++
+>  kexec/arch/i386/kexec-mb2-x86.c  | 543 +++++++++++++++++++++++++++++++++++++++
+>  kexec/arch/i386/kexec-x86.c      |   2 +
+>  kexec/arch/x86_64/Makefile       |   1 +
+>  kexec/arch/x86_64/kexec-x86_64.c |   2 +
+>  kexec/arch/x86_64/kexec-x86_64.h |   5 +
+>  kexec/kexec.8                    |  24 ++
+>  7 files changed, 993 insertions(+)
+>  create mode 100644 include/x86/multiboot2.h
+>  create mode 100644 kexec/arch/i386/kexec-mb2-x86.c
+> 
+> diff --git a/include/x86/multiboot2.h b/include/x86/multiboot2.h
+> new file mode 100644
+> index 0000000..5693923
+> --- /dev/null
+> +++ b/include/x86/multiboot2.h
+> @@ -0,0 +1,416 @@
+> +/*  multiboot2.h - Multiboot 2 header file.  */
+> +/*  Copyright (C) 1999,2003,2007,2008,2009,2010  Free Software Foundation, Inc.
+> + *
+> + *  Permission is hereby granted, free of charge, to any person obtaining a copy
+> + *  of this software and associated documentation files (the "Software"), to
+> + *  deal in the Software without restriction, including without limitation the
+> + *  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+> + *  sell copies of the Software, and to permit persons to whom the Software is
+> + *  furnished to do so, subject to the following conditions:
+> + *
+> + *  The above copyright notice and this permission notice shall be included in
+> + *  all copies or substantial portions of the Software.
+> + *
+> + *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> + *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> + *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL ANY
+> + *  DEVELOPER OR DISTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+> + *  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+> + *  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+> + */
 
-Ok, thanks for explanation.  A driver fix is better.
+As per my comment on your previous posting of this patch:
+
+multiboot2.h does not appear to be licenced as GPLv2.
+This seems incompatible with inclusion in kexec-tools.
+Can we discuss this?
 
 _______________________________________________
 kexec mailing list
