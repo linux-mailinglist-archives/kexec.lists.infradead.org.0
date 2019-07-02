@@ -2,54 +2,53 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 555345C6B6
-	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 03:42:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0731A5C719
+	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 04:21:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qSdUIo8uperC0K2VhPEsqk9Q1B8ndYxKVxofl7YgrMM=; b=mnGf5h90h9OFmv
-	YrZzsBjd2Bo4HpAQQ3gYHO1HGI1BcL6JxzKlZ4jtexC1d5AGeph/WYKpLr8SI751EQCu+Nj4pQWy5
-	TRgK60USW7H8LsLaw70DuBOpi1jSlr0S526pc5FtAnMz308kvXmzzTkYNJ5T8o326j/w51MmBDkja
-	DXvPMtg7i23H9yA5arCEymrcMXsIwTgL1fcrT4gwMndrWfxjgFCvb6llgguJp5hLHH0wcqZ8CeOel
-	gNX12pAOjMkpyqGnziHb7gN++FqFX+4KGkEpxrjHdCKa1T0ManuYUMejBJwvW96I13aFgnj0c8Z31
-	w0OeiZzBzS6+1xvwqA4Q==;
+	List-Owner; bh=lMma8YRLlPOikMUJKoaW6z7mbUGom5dhXj4gnV1fkFk=; b=VGxhaJyuUAaRo4
+	MZBEpd8SNWrafXMBBBEg2nF2jXSudFtwO7NLPQHNsUfTMQYt04bU0/DxMY+vEz1GkPyYgOnrJmMqV
+	6KTlF92AAol9+n9A7tiL+hjtzPolq8tJUSepSKLFljyxuUp2r4KY+e+DSdplEjHyhkaZifwryHzK7
+	FhQsMOm00Ey6DKImB2SOz0gsFNwDQpZn+hM443YHwVS0VzuHx31DdNWxdW1nGrg42nl77xbiPY80s
+	Ty5DxyCEI1v3ci5dom7YClHRVogmjy3h9zX2Z1FH/9d4rrYCmqznHnNLKaE9Txg00+IzOL1vXEhUT
+	YBAbYaclT3Ehd1+jSHBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hi7oJ-0005Ra-6M; Tue, 02 Jul 2019 01:42:19 +0000
+	id 1hi8Qa-0002Z4-9g; Tue, 02 Jul 2019 02:21:52 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hi7oC-0005Os-M4
- for kexec@lists.infradead.org; Tue, 02 Jul 2019 01:42:14 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ id 1hi8QW-0002YY-Pf
+ for kexec@lists.infradead.org; Tue, 02 Jul 2019 02:21:50 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 5B74B821EF;
- Tue,  2 Jul 2019 01:42:06 +0000 (UTC)
-Received: from localhost (ovpn-12-52.pek2.redhat.com [10.72.12.52])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 1718C5D977;
- Tue,  2 Jul 2019 01:42:00 +0000 (UTC)
-Date: Tue, 2 Jul 2019 09:41:58 +0800
-From: Baoquan He <bhe@redhat.com>
-To: David Airlie <airlied@redhat.com>
+ by mx1.redhat.com (Postfix) with ESMTPS id 27D253087930;
+ Tue,  2 Jul 2019 02:21:48 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-129.pek2.redhat.com
+ [10.72.12.129])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C3CF01001B38;
+ Tue,  2 Jul 2019 02:21:45 +0000 (UTC)
+Date: Tue, 2 Jul 2019 10:21:40 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Baoquan He <bhe@redhat.com>
 Subject: Re: mgag200 fails kdump kernel booting
-Message-ID: <20190702014158.GC3178@localhost.localdomain>
+Message-ID: <20190702022140.GA3327@dhcp-128-65.nay.redhat.com>
 References: <20190626081522.GX24419@MiWiFi-R3L-srv>
- <20190626082907.GY24419@MiWiFi-R3L-srv>
- <CAMwc25oeskFG4bbrb3rwotqi1a5z4wYsGW=Qs_XJmhX_vAdNfQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMwc25oeskFG4bbrb3rwotqi1a5z4wYsGW=Qs_XJmhX_vAdNfQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+In-Reply-To: <20190626081522.GX24419@MiWiFi-R3L-srv>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.28]); Tue, 02 Jul 2019 01:42:06 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.45]); Tue, 02 Jul 2019 02:21:48 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190701_184212_800266_6755824D 
-X-CRM114-Status: GOOD (  24.56  )
+X-CRM114-CacheID: sfid-20190701_192148_852769_03ED1632 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,75 +69,60 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Lyude Paul <lyude@redhat.com>, dyoung@redhat.com, x86@kernel.org,
- kexec@lists.infradead.org, linux-kernel <linux-kernel@vger.kernel.org>
+Cc: airlied@redhat.com, x86@kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 07/02/19 at 06:51am, David Airlie wrote:
-> On Wed, Jun 26, 2019 at 6:29 PM Baoquan He <bhe@redhat.com> wrote:
-> >
-> > On 06/26/19 at 04:15pm, Baoquan He wrote:
-> > > Hi Dave,
-> > >
-> > > We met an kdump kernel boot failure on a lenovo system. Kdump kernel
-> > > failed to boot, but just reset to firmware to reboot system. And nothing
-> > > is printed out.
-> > >
-> > > The machine is a big server, with 6T memory and many cpu, its graphic
-> > > driver module is mgag200.
-> > >
-> > > When added 'earlyprintk=ttyS0' into kernel command line, it printed
-> > > out only one line to console during kdump kernel booting:
-> > >      KASLR disabled: 'nokaslr' on cmdline.
-> > >
-> > > Then reset to firmware to reboot system.
-> > >
-> > > By further code debugging, the failure happened in
-> > > arch/x86/boot/compressed/misc.c, during kernel decompressing stage. It's
-> > > triggered by the vga printing. As you can see, in __putstr() of
-> > > arch/x86/boot/compressed/misc.c, the code checks if earlyprintk= is
-> > > specified, and print out to the target. And no matter if earlyprintk= is
-> > > added or not, it will print to VGA. And printing to VGA caused it to
-> > > reset to firmware. That's why we see nothing when didn't specify
-> > > earlyprintk=, but see only one line of printing about the 'KASLR
-> > > disabled'.
-> >
-> > Here I mean:
-> > That's why we see nothing when didn't specify earlyprintk=, but see only
-> > one line of printing about the 'KASLR disabled' message when
-> > earlyprintk=ttyS0 added.
+On 06/26/19 at 04:15pm, Baoquan He wrote:
+> Hi Dave,
 > 
-> Just to clarify, the original kernel is booted with mgag200 turned
-> off, then kexec works, but if the original kernel loads mgag200, the
-> kexec kernels resets hard when the VGA is used to write stuff out.
-
-Thanks for looking into this, Dave.
-
-Yeah, in fact the issue was found in kdump kernel. I haven't checked the
-kexec jumping. Kexec jumping will call device_shutdown() to attempt to
-shutdown all devices before jumping to the 2nd kernel. But kdump jumping
-won't.
-
+> We met an kdump kernel boot failure on a lenovo system. Kdump kernel
+> failed to boot, but just reset to firmware to reboot system. And nothing
+> is printed out.
 > 
-> This *might* be fixable in the controlled kexec case, but having an
-> mgag200 shutdown path that tries to put the gpu back into a state
-> where VGA doesn't die, but for the uncontrolled kexec it'll still be a
-> problem, since once the gpu is up and running and VGA is disabled, it
-> doesn't expect to see anymore VGA transactions.
+> The machine is a big server, with 6T memory and many cpu, its graphic
+> driver module is mgag200.
+> 
+> When added 'earlyprintk=ttyS0' into kernel command line, it printed
+> out only one line to console during kdump kernel booting:
+>      KASLR disabled: 'nokaslr' on cmdline.
+> 
+> Then reset to firmware to reboot system.
+> 
+> By further code debugging, the failure happened in
+> arch/x86/boot/compressed/misc.c, during kernel decompressing stage. It's
+> triggered by the vga printing. As you can see, in __putstr() of
+> arch/x86/boot/compressed/misc.c, the code checks if earlyprintk= is
+> specified, and print out to the target. And no matter if earlyprintk= is
+> added or not, it will print to VGA. And printing to VGA caused it to
+> reset to firmware. That's why we see nothing when didn't specify
+> earlyprintk=, but see only one line of printing about the 'KASLR
+> disabled'.
+> 
+> To confirm it's caused by VGA printing, I blacklist the mgag200 by
+> writting it into /etc/modprobe.d/blacklist.conf. The kdump kernel can
+> boot up successfully. And add 'nomodeset' can also make it work. So it's
+> for sure mgag driver or related code have something wrong when booting
+> code tries to re-init it.
+> 
+> This is the only case we ever see, tend to pursuit fix in mgag200 driver
+> side. Any idea or suggestion? We have two machines to be able to
+> reproduce it stablly.
 
-Yes, I see. It should have been shutdown by device_shutdown() in kexec
-case. The uncontrolled case, I guess you mean the kdump case. In
-kdump case, we don't call device_shutdown() before jumping because the
-1st kernel has been in crashed state, we just want to switch to kdump
-kernel asap. So wondering how other GPU/VGA device/driver bebahve,
-currently haven't got report about them. Probably mgag200 is very new,
-or we may not meet them. This issue was met on a new bought server.
+Personally I think early code should not blindly do vga writing, there
+are cases that does not work:
+1. efi booted machine,  just no output
+2. kdump kernel booted,  writing to vga caused undefined state, for
+example in your case it caused a system reset.
+
+So I suggest only write to vga when we see earlyprintk=vga in kernel
+cmdline.
 
 Thanks
-Baoquan
+Dave
 
 _______________________________________________
 kexec mailing list
