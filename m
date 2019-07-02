@@ -2,39 +2,39 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 664315D0AE
-	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 15:31:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86DC05D0AF
+	for <lists+kexec@lfdr.de>; Tue,  2 Jul 2019 15:31:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	Mime-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JoJCz/a2TY1tSZwumWRBEqd6jp4aTLiUaDGS2itFPbU=; b=kZKLc1CjDKwVAGVQS6Zt3D0MS
-	0S8uj3KBecs1JIHpGvW05gcUD3oiUjMAYIIBrL+08aFPwCd7w/d9stIkYvbFFbau5bcXYuTelQidS
-	Q2jyOZeAHX6y1jLTd0fX2VRS7OSAevwuek8C2cJae60jL7ag3NwMXRZB28mK+bnWulKwR48QAOmuV
-	8czMRea0DJNUzXx9mEm/8Ra1YgG8tQE9vGAbgOcWeB/yRaOGO17LoCHaXqznsPXEdinfCBIbE1YJ9
-	wckWE7pfMPeoJW/McSxGG1AiX8+T+J+QK7MPkrnhUwzHP0msWeIKhnXJsIIrQ8hVAIAbQeSZqZt/g
-	LeIT+hKHg==;
+	 bh=N77cNiiZzD/jonMdNwXBm2BjTS0/GrWpi7b975Jewkg=; b=DRZzYb8/j6uYmdlEldRVC0pgc
+	7PClGr2vGlK4G4fUQQLsEpyLFSJcZdm57Mi5fYAQo6xlilKtEL88vSIBXS4cKmr7zq2GdXaRsNCKK
+	Kr119abA+Y+xf3m2PDzFJLMBG39SzN0n+BtwGKn2mTG6fspLc4anhvrfQfKTB4zDKr7X1ZtV6pdXh
+	oCJF1EMoFQq2a+owZiDDqnhlp2wpQgb2a1Ond0wSaYHZzjw8PM/u8vtOKRMnpMzOH6cpcOzAM2lL0
+	r4reZvgEDTwDEGXWR/69Qig2xVfkRU2lG3gPJHS55G/V/fuEAeYUJzFFksu/53uSzgr6OTTM4l/5g
+	1YfToLtig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiIsH-0001Pd-QB; Tue, 02 Jul 2019 13:31:09 +0000
+	id 1hiIsJ-0001Qh-4e; Tue, 02 Jul 2019 13:31:11 +0000
 Received: from 54-240-197-234.amazon.com ([54.240.197.234]
  helo=freeip.amazon.com)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hiH5w-00030w-Gc; Tue, 02 Jul 2019 11:37:08 +0000
-Message-ID: <b01211c61610d022e65b00f39d3d7962e9c60d5f.camel@infradead.org>
+ id 1hiIr8-0008WC-SC; Tue, 02 Jul 2019 13:29:59 +0000
+Message-ID: <a8142dc999983b6fcd8c21314a1c082216226c92.camel@infradead.org>
 Subject: Re: [PATCH 2/2] x86: Support multiboot2 images
 From: David Woodhouse <dwmw2@infradead.org>
 To: Simon Horman <horms@verge.net.au>, Varad Gautam <vrd@amazon.de>
-Date: Tue, 02 Jul 2019 12:37:05 +0100
+Date: Tue, 02 Jul 2019 14:29:56 +0100
 In-Reply-To: <20190702110944.mcugf6krueakfpam@verge.net.au>
 References: <1561630363-6342-1-git-send-email-vrd@amazon.de>
  <1561630363-6342-2-git-send-email-vrd@amazon.de>
  <20190702110944.mcugf6krueakfpam@verge.net.au>
 X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
 Mime-Version: 1.0
-X-Mailman-Approved-At: Tue, 02 Jul 2019 06:31:02 -0700
+X-Mailman-Approved-At: Tue, 02 Jul 2019 06:31:03 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,33 +47,74 @@ List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Amit Shah <aams@amazon.de>, kexec@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4879126084949040190=="
+Content-Type: multipart/mixed; boundary="===============7706110708936781747=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 
---===============4879126084949040190==
+--===============7706110708936781747==
 Content-Type: multipart/signed; micalg="sha-256";
 	protocol="application/x-pkcs7-signature";
-	boundary="=-iVn7Q/4KGOP7tiyHe1IT"
+	boundary="=-o3WexcZ0r3UBv3avG+bM"
 
 
---=-iVn7Q/4KGOP7tiyHe1IT
+--=-o3WexcZ0r3UBv3avG+bM
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
 On Tue, 2019-07-02 at 13:09 +0200, Simon Horman wrote:
+> > diff --git a/include/x86/multiboot2.h b/include/x86/multiboot2.h
+> > new file mode 100644
+> > index 0000000..5693923
+> > --- /dev/null
+> > +++ b/include/x86/multiboot2.h
+> > @@ -0,0 +1,416 @@
+> > +/*  multiboot2.h - Multiboot 2 header file.  */
+> > +/*  Copyright (C) 1999,2003,2007,2008,2009,2010  Free Software Foundat=
+ion, Inc.
+> > + *
+> > + *  Permission is hereby granted, free of charge, to any person obtain=
+ing a copy
+> > + *  of this software and associated documentation files (the "Software=
+"), to
+> > + *  deal in the Software without restriction, including without limita=
+tion the
+> > + *  rights to use, copy, modify, merge, publish, distribute, sublicens=
+e, and/or
+> > + *  sell copies of the Software, and to permit persons to whom the Sof=
+tware is
+> > + *  furnished to do so, subject to the following conditions:
+> > + *
+> > + *  The above copyright notice and this permission notice shall be inc=
+luded in
+> > + *  all copies or substantial portions of the Software.
+> > + *
+> > + *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EX=
+PRESS OR
+> > + *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTAB=
+ILITY,
+> > + *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT=
+ SHALL ANY
+> > + *  DEVELOPER OR DISTRIBUTOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER=
+ LIABILITY,
+> > + *  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,=
+ OUT OF OR
+> > + *  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN TH=
+E SOFTWARE.
+> > + */
+>=20
 > As per my comment on your previous posting of this patch:
 >=20
 > multiboot2.h does not appear to be licenced as GPLv2.
 > This seems incompatible with inclusion in kexec-tools.
 > Can we discuss this?
 
-Ah, last time it was the documentation in multiboot2.html, which Varad
-dropped. We'll ensure we work it out for the header file too, which we
-can't drop quite so easily!
+Er... why do you say that isn't GPL-compatible? It's just a standard
+MIT licence, isn't it?
 
---=-iVn7Q/4KGOP7tiyHe1IT
+
+
+--=-o3WexcZ0r3UBv3avG+bM
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Disposition: attachment; filename="smime.p7s"
 Content-Transfer-Encoding: base64
@@ -156,26 +197,26 @@ BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
 BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
 ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
 ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
-NzAyMTEzNzA1WjAvBgkqhkiG9w0BCQQxIgQgHkB/fqYoKssLbe+ZMkmpz3ekWWXbrs40M3QnjD8k
-lbgwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+NzAyMTMyOTU2WjAvBgkqhkiG9w0BCQQxIgQgqmAizI7MdJ7Y8OdwmK6jmcCWEn4cgpordtKRi316
+7oAwgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
 TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
 PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
 aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
 BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
 A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
 bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
-DQEBAQUABIIBAD5lkuBpYWd9vXquRYEAQqRkfKoXLFOJW2g1Um26Yr/qns/ko0Ze0eR3g/957dwG
-tgYLkMtFs/lCxDNo5ztRticeOaIPjdjv1w87MsBTTVlGJpecaN5lhz7C2r2Epjw/bQ4ezl7RVbf5
-jNm5v5VzQSYngAeBs1lHNdFEBoFtGlzb7wRb20i5S3SWIsfoQNBf7OXevecgxbNGiMSHdVtY8owz
-iw8ov9NRssQWGMuhNHCbEcxlUBGmjyx6teJMAVnA1CjVYrHDPPrKhUsyCNA0RKEwnRXqhII76CT9
-pYcQCH9GkpqbFVIP/14Q8qF9LThb9A8R68ledrBM5fRp3YsUfXYAAAAAAAA=
+DQEBAQUABIIBAA2H8+PZ+6U109dLHdK9szZ4ySd6u6joUH6tpM8kBwcOPM5LCoPdJC9vLztydlG1
+3pJCblbze+Yj/M5OHmeToJRI2SrK61LQp+p8VQvaAQfmZMmCCIrYt/xR9pjq6LxZtyWNRoNeBWb1
+NwkCU/StR16OkWQIk8b24JyjvODYouEcT1na3DFPrdOPYaJvAjFSBCMulTSrIM8d2rRzCQOxxMvh
+XuFi0cN16/UCsOVvrWpUywtetNOJVc6STWO33JnXCerZlCIybWcoQojjEcczCaYrRSCtyGGgkmJZ
+RjRboy7OlcbeltIJtHw3c7QyAC7HlwCi8Fwct5RMFNaAkOHIkskAAAAAAAA=
 
 
---=-iVn7Q/4KGOP7tiyHe1IT--
+--=-o3WexcZ0r3UBv3avG+bM--
 
 
 
---===============4879126084949040190==
+--===============7706110708936781747==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -186,6 +227,6 @@ kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
 
---===============4879126084949040190==--
+--===============7706110708936781747==--
 
 
