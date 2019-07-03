@@ -2,63 +2,41 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5E625DFE6
-	for <lists+kexec@lfdr.de>; Wed,  3 Jul 2019 10:34:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B67F15E013
+	for <lists+kexec@lfdr.de>; Wed,  3 Jul 2019 10:43:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rXRg9FMJOuSxhJ/3NaKDaEfTFwGNgkUsoxe/i5JobAM=; b=kZhMn/D2T/3mTW
-	319B0ugUNEAY3XJaQ3SFLNWp0GLiym+4UgwiNKykcsWUwiFImwaNJWQ7v1v0shsKKAbl7O//cXBt+
-	yJI4yWNkBTzku3DOiI6JKBWPZQDdljW41npbRl7N4Fv67vkv1b2kCU1mmtHIwxdnS0QVhmfcFv7em
-	p4hYOv+sYP8rgj1VYHuGQ+ZagHHAMyTdGO9KVO1ZSiQvwBx7QQX7CAzpxXhWhEix5c2wDFMZZ8RW/
-	PBa/fOZAruq9IYhPa1qeBLXRSGEmrB34t/w92JOnCzsSQaGMsNqA94KA+j/4c0PknGvuGp+/WyWvq
-	LA0gJNZdOaSapo+9PObQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Mime-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1cfyZsWzmQa5NBIJ0ghpbRFudYgNqz+nN5yDvsxKzgw=; b=BufV2PdHR2ozJacRD3yTJ9buh
+	da7rVx4X5GGdiDWWiC9GLbYkmq9n6MtHjI5lBbj2tt8SKwVI0W924jIceQjnCyLzPMEsRQJj65L0C
+	HiPm2WAH2V9FTDFOWsUzOy4cV/rtFvaSE38HwmhZDP64t58HD5OzHZmq4MehMbYvDcGQGASoHsDGz
+	Dd/gEdJoirQ5JBzvHX9w66uww+63jyIr9X1xHvXLZjxexoy2F2ic0pB9/bybCpdyCm2VSkHj471Dd
+	kq9UGe8VN7W72DW6ghU9BAgF4IwfPaO3gJenqslT1dmjbOc239SfA19M0ZQECVkmMs6Xppz2Dy/hH
+	n6+M9k9rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hiaiz-0003Qq-Ct; Wed, 03 Jul 2019 08:34:45 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hiaiv-0003Pp-9X
- for kexec@lists.infradead.org; Wed, 03 Jul 2019 08:34:42 +0000
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 601DC3092652;
- Wed,  3 Jul 2019 08:34:40 +0000 (UTC)
-Received: from localhost.localdomain (ovpn-12-115.pek2.redhat.com
- [10.72.12.115])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 0B7C017D2F;
- Wed,  3 Jul 2019 08:34:37 +0000 (UTC)
-Date: Wed, 3 Jul 2019 16:34:34 +0800
-From: Dave Young <dyoung@redhat.com>
+	id 1hiarD-0007d7-4g; Wed, 03 Jul 2019 08:43:15 +0000
+Received: from 54-240-197-236.amazon.com ([54.240.197.236]
+ helo=u3832b3a9db3152.ant.amazon.com)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1hiao2-0005V2-I3; Wed, 03 Jul 2019 08:39:59 +0000
+Message-ID: <1c57868d7fc4fb47675875497eabdcb78bafda64.camel@infradead.org>
+Subject: Re: [PATCH 2/2] x86: Support multiboot2 images
+From: David Woodhouse <dwmw2@infradead.org>
 To: Simon Horman <horms@verge.net.au>
-Subject: Re: [PATCH kexec-tools] x86: re-order includes to avoid duplicate
- struct e820entry
-Message-ID: <20190703083434.GA7897@localhost.localdomain>
-References: <20190703080432.28806-1-horms@verge.net.au>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190703080432.28806-1-horms@verge.net.au>
-User-Agent: Mutt/1.9.1 (2017-09-22)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.43]); Wed, 03 Jul 2019 08:34:40 +0000 (UTC)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190703_013441_374720_285A19DE 
-X-CRM114-Status: GOOD (  22.71  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Date: Wed, 03 Jul 2019 09:39:56 +0100
+In-Reply-To: <20190703080007.aygcila3hdvnhjxb@verge.net.au>
+References: <1561630363-6342-1-git-send-email-vrd@amazon.de>
+ <1561630363-6342-2-git-send-email-vrd@amazon.de>
+ <20190702110944.mcugf6krueakfpam@verge.net.au>
+ <a8142dc999983b6fcd8c21314a1c082216226c92.camel@infradead.org>
+ <20190703080007.aygcila3hdvnhjxb@verge.net.au>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
+X-Mailman-Approved-At: Wed, 03 Jul 2019 01:43:11 -0700
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,114 +48,163 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, Kairui Song <kasong@redhat.com>,
- Baoquan He <bhe@redhat.com>, Lianbo Jiang <lijiang@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Varad Gautam <vrd@amazon.de>, Amit Shah <aams@amazon.de>,
+ kexec@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4420586118933920313=="
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 07/03/19 at 10:04am, Simon Horman wrote:
-> xenctrl.h defines struct e820entry as:
-> 
-> 	if defined(__i386__) || defined(__x86_64__)
-> 	...
-> 	#define E820_RAM	1
-> 	...
-> 	struct e820entry {
-> 		uint64_t addr;
-> 		uint64_t size;
-> 		uint32_t type;
-> 	} __attribute__((packed));
-> 	...
-> 	#endif
-> 
->  $ dpkg-query -S /usr/include/xenctrl.h
->  libxen-dev:amd64: /usr/include/xenctrl.h
->  $  dpkg-query -W libxen-dev:amd64
->  libxen-dev:amd64	4.8.5+shim4.10.2+xsa282-1+deb9u11
-> 
-> ./include/x86/x86-linux.h defines struct e820entry as:
-> 
-> 	#ifndef E820_RAM
-> 	struct e820entry {
-> 		uint64_t addr;  /* start of memory segment */
-> 		uint64_t size;  /* size of memory segment */
-> 		uint32_t type;  /* type of memory segment */
-> 		#define E820_RAM    1
-> 		...
-> 	} __attribute__((packed));
-> 	#endif
-> 
-> Since cedeee0a3007 ("x86: Introduce helpers for getting RSDP address")
-> ./kexec/arch/i386/kexec-x86-common.c includes
-> 
-> 	+#include "x86-linux-setup.h"
-> 	 #include "../../kexec-xen.h"
 
-Not sure if those get rsdp code can go to x86-linux-setup.c then no need
-the including.
+--===============4420586118933920313==
+Content-Type: multipart/signed; micalg="sha-256";
+	protocol="application/x-pkcs7-signature";
+	boundary="=-CMY0COD+2VnrVtFlnP9B"
 
-Let's see if Kairui has some thoughts.
 
-> 
-> When xenctrl.h is present the above results in:
-> 
->  $ gcc
->  ...
->  In file included from kexec/arch/i386/../../kexec-xen.h:5:0,
->                   from kexec/arch/i386/kexec-x86-common.c:43:
->  /usr/include/xenctrl.h:1271:8: error: redefinition of 'struct e820entry'
->   struct e820entry {
->          ^~~~~~~~~
-> 
->  In file included from kexec/arch/i386/x86-linux-setup.h:3:0,
->                   from kexec/arch/i386/kexec-x86-common.c:42:
->  ./include/x86/x86-linux.h:16:8: note: originally defined here
->   struct e820entry {
->          ^~~~~~~~~
->  ...
->  $ gcc --version | head -1
->  gcc (Debian 6.3.0-18+deb9u1) 6.3.0 20170516
-> 
-> To militate this this problem re-order the includes so that
-> x86-linux.h is included after xenctrl.h and thus
-> struct e820entry will only be defined once due to it
-> being devined conditionally in x86-linux.h.
-> 
-> In practice the definitions are the same so it should
-> not matter which is chosen.
-> 
-> It also seems rather unpleasent to me to need to play
-> with include ordering. Perhaps a better solution in the longer
-> term would be to rename the local definition of struct e820entry.
-> 
-> Fixes: cedeee0a3007 ("x86: Introduce helpers for getting RSDP address")
-> Signed-off-by: Simon Horman <horms@verge.net.au>
-> ---
->  kexec/arch/i386/kexec-x86-common.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/kexec/arch/i386/kexec-x86-common.c b/kexec/arch/i386/kexec-x86-common.c
-> index 5c55ec8a2cd3..61ea19380ab2 100644
-> --- a/kexec/arch/i386/kexec-x86-common.c
-> +++ b/kexec/arch/i386/kexec-x86-common.c
-> @@ -38,9 +38,9 @@
->  #include "../../kexec-syscall.h"
->  #include "../../firmware_memmap.h"
->  #include "../../crashdump.h"
-> +#include "../../kexec-xen.h"
->  #include "kexec-x86.h"
->  #include "x86-linux-setup.h"
-> -#include "../../kexec-xen.h"
->  
->  /* Used below but not present in (older?) xenctrl.h */
->  #ifndef E820_PMEM
-> -- 
-> 2.11.0
-> 
+--=-CMY0COD+2VnrVtFlnP9B
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, 2019-07-03 at 10:00 +0200, Simon Horman wrote:
+> On Tue, Jul 02, 2019 at 02:29:56PM +0100, David Woodhouse wrote:
+> > On Tue, 2019-07-02 at 13:09 +0200, Simon Horman wrote:
+> > > As per my comment on your previous posting of this patch:
+> > >=20
+> > > multiboot2.h does not appear to be licenced as GPLv2.
+> > > This seems incompatible with inclusion in kexec-tools.
+> > > Can we discuss this?
+> >=20
+> > Er... why do you say that isn't GPL-compatible? It's just a standard
+> > MIT licence, isn't it?
+>=20
+> Thanks David,
+>=20
+> this is kind of what I meant by discuss.
+>=20
+> Taking a look over the FSF site this morning I agree that:
+> a) this is the MIT license; and
+> b) it is compatible with GPLv2
+>=20
+> With that in mind I have no objections to this series and
+> have applied it for inclusion in kexec v2.0.20.
+
+Thanks.
+
+
+
+--=-CMY0COD+2VnrVtFlnP9B
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Disposition: attachment; filename="smime.p7s"
+Content-Transfer-Encoding: base64
+
+MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgEFADCABgkqhkiG9w0BBwEAAKCCECow
+ggUcMIIEBKADAgECAhEA4rtJSHkq7AnpxKUY8ZlYZjANBgkqhkiG9w0BAQsFADCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0EwHhcNMTkwMTAyMDAwMDAwWhcNMjIwMTAxMjM1
+OTU5WjAkMSIwIAYJKoZIhvcNAQkBFhNkd213MkBpbmZyYWRlYWQub3JnMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAsv3wObLTCbUA7GJqKj9vHGf+Fa+tpkO+ZRVve9EpNsMsfXhvFpb8
+RgL8vD+L133wK6csYoDU7zKiAo92FMUWaY1Hy6HqvVr9oevfTV3xhB5rQO1RHJoAfkvhy+wpjo7Q
+cXuzkOpibq2YurVStHAiGqAOMGMXhcVGqPuGhcVcVzVUjsvEzAV9Po9K2rpZ52FE4rDkpDK1pBK+
+uOAyOkgIg/cD8Kugav5tyapydeWMZRJQH1vMQ6OVT24CyAn2yXm2NgTQMS1mpzStP2ioPtTnszIQ
+Ih7ASVzhV6csHb8Yrkx8mgllOyrt9Y2kWRRJFm/FPRNEurOeNV6lnYAXOymVJwIDAQABo4IB0zCC
+Ac8wHwYDVR0jBBgwFoAUgq9sjPjF/pZhfOgfPStxSF7Ei8AwHQYDVR0OBBYEFLfuNf820LvaT4AK
+xrGK3EKx1DE7MA4GA1UdDwEB/wQEAwIFoDAMBgNVHRMBAf8EAjAAMB0GA1UdJQQWMBQGCCsGAQUF
+BwMEBggrBgEFBQcDAjBGBgNVHSAEPzA9MDsGDCsGAQQBsjEBAgEDBTArMCkGCCsGAQUFBwIBFh1o
+dHRwczovL3NlY3VyZS5jb21vZG8ubmV0L0NQUzBaBgNVHR8EUzBRME+gTaBLhklodHRwOi8vY3Js
+LmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWls
+Q0EuY3JsMIGLBggrBgEFBQcBAQR/MH0wVQYIKwYBBQUHMAKGSWh0dHA6Ly9jcnQuY29tb2RvY2Eu
+Y29tL0NPTU9ET1JTQUNsaWVudEF1dGhlbnRpY2F0aW9uYW5kU2VjdXJlRW1haWxDQS5jcnQwJAYI
+KwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmNvbW9kb2NhLmNvbTAeBgNVHREEFzAVgRNkd213MkBpbmZy
+YWRlYWQub3JnMA0GCSqGSIb3DQEBCwUAA4IBAQALbSykFusvvVkSIWttcEeifOGGKs7Wx2f5f45b
+nv2ghcxK5URjUvCnJhg+soxOMoQLG6+nbhzzb2rLTdRVGbvjZH0fOOzq0LShq0EXsqnJbbuwJhK+
+PnBtqX5O23PMHutP1l88AtVN+Rb72oSvnD+dK6708JqqUx2MAFLMevrhJRXLjKb2Mm+/8XBpEw+B
+7DisN4TMlLB/d55WnT9UPNHmQ+3KFL7QrTO8hYExkU849g58Dn3Nw3oCbMUgny81ocrLlB2Z5fFG
+Qu1AdNiBA+kg/UxzyJZpFbKfCITd5yX49bOriL692aMVDyqUvh8fP+T99PqorH4cIJP6OxSTdxKM
+MIIFHDCCBASgAwIBAgIRAOK7SUh5KuwJ6cSlGPGZWGYwDQYJKoZIhvcNAQELBQAwgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMB4XDTE5MDEwMjAwMDAwMFoXDTIyMDEwMTIz
+NTk1OVowJDEiMCAGCSqGSIb3DQEJARYTZHdtdzJAaW5mcmFkZWFkLm9yZzCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBALL98Dmy0wm1AOxiaio/bxxn/hWvraZDvmUVb3vRKTbDLH14bxaW
+/EYC/Lw/i9d98CunLGKA1O8yogKPdhTFFmmNR8uh6r1a/aHr301d8YQea0DtURyaAH5L4cvsKY6O
+0HF7s5DqYm6tmLq1UrRwIhqgDjBjF4XFRqj7hoXFXFc1VI7LxMwFfT6PStq6WedhROKw5KQytaQS
+vrjgMjpICIP3A/CroGr+bcmqcnXljGUSUB9bzEOjlU9uAsgJ9sl5tjYE0DEtZqc0rT9oqD7U57My
+ECIewElc4VenLB2/GK5MfJoJZTsq7fWNpFkUSRZvxT0TRLqznjVepZ2AFzsplScCAwEAAaOCAdMw
+ggHPMB8GA1UdIwQYMBaAFIKvbIz4xf6WYXzoHz0rcUhexIvAMB0GA1UdDgQWBBS37jX/NtC72k+A
+CsaxitxCsdQxOzAOBgNVHQ8BAf8EBAMCBaAwDAYDVR0TAQH/BAIwADAdBgNVHSUEFjAUBggrBgEF
+BQcDBAYIKwYBBQUHAwIwRgYDVR0gBD8wPTA7BgwrBgEEAbIxAQIBAwUwKzApBggrBgEFBQcCARYd
+aHR0cHM6Ly9zZWN1cmUuY29tb2RvLm5ldC9DUFMwWgYDVR0fBFMwUTBPoE2gS4ZJaHR0cDovL2Ny
+bC5jb21vZG9jYS5jb20vQ09NT0RPUlNBQ2xpZW50QXV0aGVudGljYXRpb25hbmRTZWN1cmVFbWFp
+bENBLmNybDCBiwYIKwYBBQUHAQEEfzB9MFUGCCsGAQUFBzAChklodHRwOi8vY3J0LmNvbW9kb2Nh
+LmNvbS9DT01PRE9SU0FDbGllbnRBdXRoZW50aWNhdGlvbmFuZFNlY3VyZUVtYWlsQ0EuY3J0MCQG
+CCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wHgYDVR0RBBcwFYETZHdtdzJAaW5m
+cmFkZWFkLm9yZzANBgkqhkiG9w0BAQsFAAOCAQEAC20spBbrL71ZEiFrbXBHonzhhirO1sdn+X+O
+W579oIXMSuVEY1LwpyYYPrKMTjKECxuvp24c829qy03UVRm742R9Hzjs6tC0oatBF7KpyW27sCYS
+vj5wbal+TttzzB7rT9ZfPALVTfkW+9qEr5w/nSuu9PCaqlMdjABSzHr64SUVy4ym9jJvv/FwaRMP
+gew4rDeEzJSwf3eeVp0/VDzR5kPtyhS+0K0zvIWBMZFPOPYOfA59zcN6AmzFIJ8vNaHKy5QdmeXx
+RkLtQHTYgQPpIP1Mc8iWaRWynwiE3ecl+PWzq4i+vdmjFQ8qlL4fHz/k/fT6qKx+HCCT+jsUk3cS
+jDCCBeYwggPOoAMCAQICEGqb4Tg7/ytrnwHV2binUlYwDQYJKoZIhvcNAQEMBQAwgYUxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMSswKQYDVQQDEyJDT01PRE8gUlNBIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5MB4XDTEzMDExMDAwMDAwMFoXDTI4MDEwOTIzNTk1OVowgZcxCzAJBgNVBAYT
+AkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAYBgNV
+BAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRoZW50
+aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+AQEAvrOeV6wodnVAFsc4A5jTxhh2IVDzJXkLTLWg0X06WD6cpzEup/Y0dtmEatrQPTRI5Or1u6zf
++bGBSyD9aH95dDSmeny1nxdlYCeXIoymMv6pQHJGNcIDpFDIMypVpVSRsivlJTRENf+RKwrB6vcf
+WlP8dSsE3Rfywq09N0ZfxcBa39V0wsGtkGWC+eQKiz4pBZYKjrc5NOpG9qrxpZxyb4o4yNNwTqza
+aPpGRqXB7IMjtf7tTmU2jqPMLxFNe1VXj9XB1rHvbRikw8lBoNoSWY66nJN/VCJv5ym6Q0mdCbDK
+CMPybTjoNCQuelc0IAaO4nLUXk0BOSxSxt8kCvsUtQIDAQABo4IBPDCCATgwHwYDVR0jBBgwFoAU
+u69+Aj36pvE8hI6t7jiY7NkyMtQwHQYDVR0OBBYEFIKvbIz4xf6WYXzoHz0rcUhexIvAMA4GA1Ud
+DwEB/wQEAwIBhjASBgNVHRMBAf8ECDAGAQH/AgEAMBEGA1UdIAQKMAgwBgYEVR0gADBMBgNVHR8E
+RTBDMEGgP6A9hjtodHRwOi8vY3JsLmNvbW9kb2NhLmNvbS9DT01PRE9SU0FDZXJ0aWZpY2F0aW9u
+QXV0aG9yaXR5LmNybDBxBggrBgEFBQcBAQRlMGMwOwYIKwYBBQUHMAKGL2h0dHA6Ly9jcnQuY29t
+b2RvY2EuY29tL0NPTU9ET1JTQUFkZFRydXN0Q0EuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2Nz
+cC5jb21vZG9jYS5jb20wDQYJKoZIhvcNAQEMBQADggIBAHhcsoEoNE887l9Wzp+XVuyPomsX9vP2
+SQgG1NgvNc3fQP7TcePo7EIMERoh42awGGsma65u/ITse2hKZHzT0CBxhuhb6txM1n/y78e/4ZOs
+0j8CGpfb+SJA3GaBQ+394k+z3ZByWPQedXLL1OdK8aRINTsjk/H5Ns77zwbjOKkDamxlpZ4TKSDM
+KVmU/PUWNMKSTvtlenlxBhh7ETrN543j/Q6qqgCWgWuMAXijnRglp9fyadqGOncjZjaaSOGTTFB+
+E2pvOUtY+hPebuPtTbq7vODqzCM6ryEhNhzf+enm0zlpXK7q332nXttNtjv7VFNYG+I31gnMrwfH
+M5tdhYF/8v5UY5g2xANPECTQdu9vWPoqNSGDt87b3gXb1AiGGaI06vzgkejL580ul+9hz9D0S0U4
+jkhJiA7EuTecP/CFtR72uYRBcunwwH3fciPjviDDAI9SnC/2aPY8ydehzuZutLbZdRJ5PDEJM/1t
+yZR2niOYihZ+FCbtf3D9mB12D4ln9icgc7CwaxpNSCPt8i/GqK2HsOgkL3VYnwtx7cJUmpvVdZ4o
+gnzgXtgtdk3ShrtOS1iAN2ZBXFiRmjVzmehoMof06r1xub+85hFQzVxZx5/bRaTKTlL8YXLI8nAb
+R9HWdFqzcOoB/hxfEyIQpx9/s81rgzdEZOofSlZHynoSMYIDyjCCA8YCAQEwga0wgZcxCzAJBgNV
+BAYTAkdCMRswGQYDVQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGjAY
+BgNVBAoTEUNPTU9ETyBDQSBMaW1pdGVkMT0wOwYDVQQDEzRDT01PRE8gUlNBIENsaWVudCBBdXRo
+ZW50aWNhdGlvbiBhbmQgU2VjdXJlIEVtYWlsIENBAhEA4rtJSHkq7AnpxKUY8ZlYZjANBglghkgB
+ZQMEAgEFAKCCAe0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMTkw
+NzAzMDgzOTU2WjAvBgkqhkiG9w0BCQQxIgQgMEd7Jemop7SasejgcL/01yA5Q5coxIJMbHwXRrGh
+w44wgb4GCSsGAQQBgjcQBDGBsDCBrTCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIg
+TWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQx
+PTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1h
+aWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMIHABgsqhkiG9w0BCRACCzGBsKCBrTCBlzELMAkGA1UE
+BhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgG
+A1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhl
+bnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEQDiu0lIeSrsCenEpRjxmVhmMA0GCSqGSIb3
+DQEBAQUABIIBAB3MLY8lyJMp6wd2H0iv6iU//btK7yNyo2ttmYc/HJ3o0LJAOyo1gYustg25vUF7
+Qfc7XtouAV0wUCX5QM3BUmKmlBwemapOqKUoOLPdmqX+IVKqt5RvEUQ+3kNhD4IjHAjR1LSJW8AO
+RAf2EEJ80lPGTzbdnQiagbTnbChkvQhRZPdA+R/LIZDjCptpMQ9ImVk5rI8tFGPHGY7dDtkbC4Eq
+5vfxD8esqNC3kThrvWOwFN7IS06DF4mRIn2tO0SRwh+T0hl5j2HiPZmrPXPe2vL+ZMGMn3bPKc/e
+E3s86OgI5Y4jlL7QX4KAj1uyvadfAPVsGCWgekD87EfGSO6sIEgAAAAAAAA=
+
+
+--=-CMY0COD+2VnrVtFlnP9B--
+
+
+
+--===============4420586118933920313==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/kexec
+
+--===============4420586118933920313==--
+
+
