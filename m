@@ -2,75 +2,76 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3EE662AC7
-	for <lists+kexec@lfdr.de>; Mon,  8 Jul 2019 23:15:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2E0C62AC8
+	for <lists+kexec@lfdr.de>; Mon,  8 Jul 2019 23:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OmDw41vUQaPBtXlvmwVPlyUaSLpLgyCWyoEgGH7j/Gw=; b=WvhLxAr47RThF/
-	Dj9DEZqTbcW1njRx1T+UymkKskl147xPiPrJMXZu8OpBCykfycbu6ZJNKLdz2E/OcoaK5PiUDvPep
-	XUZSoN5SGUzy5RUGPJLScm7JLOiE+mF1ptdadjaQ1vwzQe/6Cq0BL9ieOJJDqRLrQPaqVdIUUmhSB
-	mNEu9e0sJuiwBiD1EnDGXptDhwiDWH6w2cBwSDj36f1Uc2UlxVmvMvEabmXQedzUvvkpKUVkImOKD
-	aPvCaqB1iii9aw3quUGjx5mTTv8ONwc8nEFrSAEtZ/wzPUHx6+KKIwWn3S1j8A8TUs40JSyAmGPK3
-	8I5Wu2rB0s4xIK+wCzwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WVn3Q5vgyJcKMrIqYiWwFpHN3lTTvqjbAv6FqBia2JU=; b=aMO6hpH5S02hJD
+	i6f3gapFgkW5u0vjFukARyZkqDYdi8aIfp716XOiOriNclzUAQNQAXN7cltr/Yd13Gi0Ag6O7dbVX
+	TaP/TUpBxiS4woFXKPYoZBrMHl5Af8RBTW0XgSOz/cTL8W2umQtyam6XsYvN1Gv4998pp+/wXeyw3
+	mzAXRC+ZKDKCqfTc1YeREH8iGU2sZusKHUUzi8M8ukb5cJn/C4LsEdAyEuQSYonzX5WwjLoPqdydB
+	Da0UGZ7Z0vXCs15kQ7/tSjjBhPLnYTvjjBQSCkXcVXWobMvrZG2kwMnjNUzMwEP81fArjmKpp5mPq
+	sSYwFvbH5f+wcX3EUhRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkazG-0001Yy-H6; Mon, 08 Jul 2019 21:15:50 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1hkazY-0001qN-Bm; Mon, 08 Jul 2019 21:16:08 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkayz-0001MT-Da
- for kexec@lists.infradead.org; Mon, 08 Jul 2019 21:15:35 +0000
-Received: by mail-qk1-x743.google.com with SMTP id v22so14444732qkj.8
- for <kexec@lists.infradead.org>; Mon, 08 Jul 2019 14:15:32 -0700 (PDT)
+ id 1hkayz-0001N0-ID
+ for kexec@lists.infradead.org; Mon, 08 Jul 2019 21:15:37 +0000
+Received: by mail-qt1-x843.google.com with SMTP id h21so17317023qtn.13
+ for <kexec@lists.infradead.org>; Mon, 08 Jul 2019 14:15:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:mime-version
+ h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=9LBn+IrpD1vlilot1sDuhm5JaXmsdy7FeGQpNbYaEeU=;
- b=FJLVGEkBkaIWGq+BYeDm49b/d/5s8UkKFjcHQ3Pj9CIeR9WqFVBFK83oylM3vbGySY
- a/yz6JrxbrlxhkRBTTrMs0C2J/W6nlJ1vQjELf2Bdegk1pBajKXLyTOo73BGyhhwmgCp
- hpSOTkjSZ/m5LO73UP1Taf9WGt0Yjjcdf1SdEKLTO8Y9GwUwaOY9BZsOvoYDKw0JDWcj
- fPVVkLf6OQU8ckKMzR+Is03XGjLfH5O8FgfInnivtbaF6/BRHFciiuGjsy5dJM/sQZBZ
- zekQZpRlJY9hAgDxbXYaBw7Kc+lfhEPpvhBlKGrW2AWK3kgug85CfDgVzblJ1cXVS5Ot
- BVyg==
+ bh=O8sp7Ivz1alrz3xXygPalicyjdu3OPu+GkykS7h2DZg=;
+ b=n8BIhwWJ9zh0jUg2RW2/uYQy7FXCgRGeTdMBO55KXOXgAIespxSPLZq0PYdQHargu4
+ 8/6ZmX6+n021l86aooEGRSG6OOh9z87P2hsOb//zkA6XSfbnLwX1J6q9EqiRDhiSEkei
+ 37/LIxbZzFCypM5/mZYla7j/sFWUIrbc8e3qhgO4wFofOmUK0lhXe4tr6tDxWT0nr2tS
+ QQ0+d7Qy7D/REmw0t12Dt0EtWx80RzWMBAEUOejhW8CkeW2/+kE8QKMZkyyV8nLai6eQ
+ 0uWgAgMS4TLYACEQUE8stDXIn7xumtxeI3mjoGdxI0wMvKfmReYsVjRk6sJfFqriuHbY
+ Us6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9LBn+IrpD1vlilot1sDuhm5JaXmsdy7FeGQpNbYaEeU=;
- b=dIl5FJiN1T4/TcU4s9wHpQmxEjqJMykBgxcLHWj52lwIHVKwyqdPx6ecUV5gvNO+mT
- MhzV1WjuGWvjAsfcAj27C1VGecIFOQ8ct88p8R5RF0oUWyPD4Lselbqs/OMhqYRgWrjf
- TWCxn5ZH8v5Wh3MuL3Fug5VMaX7alGck4n6dowpo2Johp6KPUBFxjLNkogWjoQbLTTOZ
- JetBEWa3O1W4QpFbRHky7EUWtCYu/cynjtZx+Ue/1p5C95vh6jQobNstO3P3YpTWIcuc
- WN2Z8WHhR8XqmtO+VjV0MzOox06/hEEBuqjxI7XaI8w4fo//TjbH801e4PutlNgMXhPr
- A5kQ==
-X-Gm-Message-State: APjAAAXRy7Ki0gQFRA8Ho8+247WGMdqQzxGO9vYqPIH4Eotpui6raHer
- UAPJ58+IPFpaGXAUbwvq2gRgUcd5xyM=
-X-Google-Smtp-Source: APXvYqyjmTZLx8/N9MAAgH+1T1Fmph8LQJ2u9QiscaRxh3JxBlx4HZGFN/j+WzZn5c0D7KSK12erkQ==
-X-Received: by 2002:a37:bac2:: with SMTP id
- k185mr15419295qkf.211.1562620531230; 
- Mon, 08 Jul 2019 14:15:31 -0700 (PDT)
+ h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=O8sp7Ivz1alrz3xXygPalicyjdu3OPu+GkykS7h2DZg=;
+ b=K8KDeYbUYAa0z6OVDrSEVSz6jYpfjIqg6dlcG6VtVFXqeqZp+98SNhRC36BjySk+NZ
+ fq+1NUzt0LatuqS+KmCEfTny1d0/ZO6TQvdIRMlCT05GXoxdqLzeTxAc8+9Qf4pwZ2hp
+ 32sbUsdEf72t5UAh20E4Cj5bMwXfPOq0Kp2uxznv3v0qo7umXyrJJI1hU8ExcgQnV7SA
+ ZbDiBL0xqckXaz4kdXsZw4evGwbkDWepVke6QasHVz6atEhvGhc3d3Ek4VG5rMkcK5bg
+ z8Hb+WLsQIDoJMIGV6umxlIcgD67U7SqkS+VS0xj/O9sh0+NKwHbjCEuMn4NTjscXFEj
+ CkBA==
+X-Gm-Message-State: APjAAAXCHR/8RH0G+IjIyxREEwzqjXd2TqammoMTCxbSYOjemsPtQyS7
+ tWtbq1LMtTbWtQRGixl/bP7rng==
+X-Google-Smtp-Source: APXvYqyKqoOHu6EcUgIJIytE2kcvp422ziKgpaW7euQ8lCRv+YnhnmdNGlmL0VXgx8QTvMj1RSZ8nQ==
+X-Received: by 2002:a0c:b148:: with SMTP id r8mr16207600qvc.240.1562620532517; 
+ Mon, 08 Jul 2019 14:15:32 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id b67sm8335620qkd.82.2019.07.08.14.15.29
+ by smtp.gmail.com with ESMTPSA id b67sm8335620qkd.82.2019.07.08.14.15.31
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 08 Jul 2019 14:15:30 -0700 (PDT)
+ Mon, 08 Jul 2019 14:15:31 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
  will@kernel.org, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [v1 0/5] allow to reserve memory for normal kexec kernel
-Date: Mon,  8 Jul 2019 17:15:23 -0400
-Message-Id: <20190708211528.12392-1-pasha.tatashin@soleen.com>
+Subject: [v1 1/5] kexec: quiet down kexec reboot
+Date: Mon,  8 Jul 2019 17:15:24 -0400
+Message-Id: <20190708211528.12392-2-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190708211528.12392-1-pasha.tatashin@soleen.com>
+References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_141533_645480_9182C14F 
-X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-CacheID: sfid-20190708_141534_155998_B60311F0 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,50 +107,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Currently, it is only allowed to reserve memory for crash kernel, because
-it is a requirement in order to be able to boot into crash kernel without
-touching memory of crashed kernel is to have memory reserved.
+Here is a regular kexec command sequence and output:
+=====
+$ kexec --reuse-cmdline -i --load Image
+$ kexec -e
+[  161.342002] kexec_core: Starting new kernel
 
-The second benefit for having memory reserved for kexec kernel is
-that it does not require a relocation after segments are loaded into
-memory.
+Welcome to Buildroot
+buildroot login:
+=====
 
-If kexec functionality is used for a fast system update, with a minimal
-downtime, the relocation of kernel + initramfs might take a significant
-portion of reboot.
+Even when "quiet" kernel parameter is specified, "kexec_core: Starting
+new kernel" is printed.
 
-In fact, on the machine that we are using, that has ARM64 processor
-it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
-time:
+This message has  KERN_EMERG level, but there is no emergency, it is a
+normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
 
-kernel shutdown	0.03s
-relocation	0.35s
-kernel startup	0.29s
+Machines that have slow console baud rate benefit from less output.
 
-Image: 13M and initramfs is 24M. If initramfs increases, the relocation
-time increases proportionally.
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+Reviewed-by: Simon Horman <horms@verge.net.au>
+---
+ kernel/kexec_core.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-While, it is possible to add 'kexeckernel=' parameters support to other
-architectures by modifying reserve_crashkernel(), in this series this is
-done for arm64 only.
-
-Pavel Tatashin (5):
-  kexec: quiet down kexec reboot
-  kexec: add resource for normal kexec region
-  kexec: export common crashkernel/kexeckernel parser
-  kexec: use reserved memory for normal kexec reboot
-  arm64, kexec: reserve kexeckernel region
-
- .../admin-guide/kernel-parameters.txt         |  7 ++
- arch/arm64/kernel/setup.c                     |  5 ++
- arch/arm64/mm/init.c                          | 83 ++++++++++++-------
- include/linux/crash_core.h                    |  6 ++
- include/linux/ioport.h                        |  1 +
- include/linux/kexec.h                         |  6 +-
- kernel/crash_core.c                           | 27 +++---
- kernel/kexec_core.c                           | 50 +++++++----
- 8 files changed, 127 insertions(+), 58 deletions(-)
-
+diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+index d5870723b8ad..2c5b72863b7b 100644
+--- a/kernel/kexec_core.c
++++ b/kernel/kexec_core.c
+@@ -1169,7 +1169,7 @@ int kernel_kexec(void)
+ 		 * CPU hotplug again; so re-enable it here.
+ 		 */
+ 		cpu_hotplug_enable();
+-		pr_emerg("Starting new kernel\n");
++		pr_notice("Starting new kernel\n");
+ 		machine_shutdown();
+ 	}
+ 
 -- 
 2.22.0
 
