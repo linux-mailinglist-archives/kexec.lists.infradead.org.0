@@ -2,77 +2,76 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2E0C62AC8
-	for <lists+kexec@lfdr.de>; Mon,  8 Jul 2019 23:16:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6505D62AC9
+	for <lists+kexec@lfdr.de>; Mon,  8 Jul 2019 23:16:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WVn3Q5vgyJcKMrIqYiWwFpHN3lTTvqjbAv6FqBia2JU=; b=aMO6hpH5S02hJD
-	i6f3gapFgkW5u0vjFukARyZkqDYdi8aIfp716XOiOriNclzUAQNQAXN7cltr/Yd13Gi0Ag6O7dbVX
-	TaP/TUpBxiS4woFXKPYoZBrMHl5Af8RBTW0XgSOz/cTL8W2umQtyam6XsYvN1Gv4998pp+/wXeyw3
-	mzAXRC+ZKDKCqfTc1YeREH8iGU2sZusKHUUzi8M8ukb5cJn/C4LsEdAyEuQSYonzX5WwjLoPqdydB
-	Da0UGZ7Z0vXCs15kQ7/tSjjBhPLnYTvjjBQSCkXcVXWobMvrZG2kwMnjNUzMwEP81fArjmKpp5mPq
-	sSYwFvbH5f+wcX3EUhRQ==;
+	List-Owner; bh=vTGSjtFKOhUawOSXLZOxulNKcZLf9eZwEi5lORX250o=; b=PbtnYwluUPn/XI
+	goCyIA74feeFGLY/OJBmt8kDUI+0hp6a1KMYupe7V6zbu1nYg9SRIIBevHL5PCw1LsQEgLg+EQJwj
+	jHYAtI+vXV4SSjM7dCLLy/oLXq28J0CHT512PSq7H1jGj9MgyqGCVFJtnjNJf9o0Ckas24AMr/pqg
+	HDjuOrZ6/FBgNdlyW9JG0Uq6hj5uz5adE1xOfnIhibQCxjwLcxLg8BLXUNZHH7fOW3PkWVC9x7Iqy
+	WR49QsJLOXom3093WxEsDYqZYTUoQ7IlbKHVbrs42zQIeiHQceujPvlKqm7kAK/+K+sJAItlaXPzq
+	9wXbY2azTWCFiMGNY/CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkazY-0001qN-Bm; Mon, 08 Jul 2019 21:16:08 +0000
+	id 1hkazc-0001tW-P6; Mon, 08 Jul 2019 21:16:13 +0000
 Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkayz-0001N0-ID
+ id 1hkaz0-0001OL-Jq
  for kexec@lists.infradead.org; Mon, 08 Jul 2019 21:15:37 +0000
-Received: by mail-qt1-x843.google.com with SMTP id h21so17317023qtn.13
- for <kexec@lists.infradead.org>; Mon, 08 Jul 2019 14:15:33 -0700 (PDT)
+Received: by mail-qt1-x843.google.com with SMTP id h24so19574651qto.0
+ for <kexec@lists.infradead.org>; Mon, 08 Jul 2019 14:15:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=O8sp7Ivz1alrz3xXygPalicyjdu3OPu+GkykS7h2DZg=;
- b=n8BIhwWJ9zh0jUg2RW2/uYQy7FXCgRGeTdMBO55KXOXgAIespxSPLZq0PYdQHargu4
- 8/6ZmX6+n021l86aooEGRSG6OOh9z87P2hsOb//zkA6XSfbnLwX1J6q9EqiRDhiSEkei
- 37/LIxbZzFCypM5/mZYla7j/sFWUIrbc8e3qhgO4wFofOmUK0lhXe4tr6tDxWT0nr2tS
- QQ0+d7Qy7D/REmw0t12Dt0EtWx80RzWMBAEUOejhW8CkeW2/+kE8QKMZkyyV8nLai6eQ
- 0uWgAgMS4TLYACEQUE8stDXIn7xumtxeI3mjoGdxI0wMvKfmReYsVjRk6sJfFqriuHbY
- Us6g==
+ bh=VdsesycGrscxvl9VUJv2OrYGiO6I5hjIVNNGDZpPz+A=;
+ b=mbcbklPnE9aSK5WgO3DjHoIPCmDRPu0y6gFhVqT2wERSQkqrlINfT1Dum/1YBHqVIA
+ MHfCGiZYhNcyqdpiDNvMZSUSkBjk9mmUm2UzAXxyreXwkDarMe79+dMnFwRPOh7+l6Tk
+ aB6rNkHgLO7Y1Jiz9NmlCAtxcQsnJZJn3GDc2qcLNW/H2zSoSBaJvjnwMgsVYjZasY6h
+ wMgRHG4K4lnwl6PWSVbLTrSouwk/nknjx/sQIWAwaSwgSoByC78yhCB9mcQr5qM4iUFx
+ zS5tOkS+Tj8MCjoQW99WEy4HdQ8WxAlpnEJNn0bceuRbwkIodt64QR6c1sZewin18v6i
+ Sqww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=O8sp7Ivz1alrz3xXygPalicyjdu3OPu+GkykS7h2DZg=;
- b=K8KDeYbUYAa0z6OVDrSEVSz6jYpfjIqg6dlcG6VtVFXqeqZp+98SNhRC36BjySk+NZ
- fq+1NUzt0LatuqS+KmCEfTny1d0/ZO6TQvdIRMlCT05GXoxdqLzeTxAc8+9Qf4pwZ2hp
- 32sbUsdEf72t5UAh20E4Cj5bMwXfPOq0Kp2uxznv3v0qo7umXyrJJI1hU8ExcgQnV7SA
- ZbDiBL0xqckXaz4kdXsZw4evGwbkDWepVke6QasHVz6atEhvGhc3d3Ek4VG5rMkcK5bg
- z8Hb+WLsQIDoJMIGV6umxlIcgD67U7SqkS+VS0xj/O9sh0+NKwHbjCEuMn4NTjscXFEj
- CkBA==
-X-Gm-Message-State: APjAAAXCHR/8RH0G+IjIyxREEwzqjXd2TqammoMTCxbSYOjemsPtQyS7
- tWtbq1LMtTbWtQRGixl/bP7rng==
-X-Google-Smtp-Source: APXvYqyKqoOHu6EcUgIJIytE2kcvp422ziKgpaW7euQ8lCRv+YnhnmdNGlmL0VXgx8QTvMj1RSZ8nQ==
-X-Received: by 2002:a0c:b148:: with SMTP id r8mr16207600qvc.240.1562620532517; 
- Mon, 08 Jul 2019 14:15:32 -0700 (PDT)
+ bh=VdsesycGrscxvl9VUJv2OrYGiO6I5hjIVNNGDZpPz+A=;
+ b=CjxcvXe5VJ0fvJx6+YFZNWgDCwALvRXm94LYAFchcf9xOsDgXSB1sRpEPnKx1DWPLA
+ GV0Zy4UCCwKLGLGRRMJ3zZpAKWFWfXnc2N8XVaahPcBLlhr39FMcq673CvF/SLgbhC+r
+ Gv3PnfbkPg9YKXVRiwhCGzs4DuTiwLWWP3OzkvRq47+IUy3+64FS2CPyM0j2wDcGZpVI
+ O1w9MfWqPcEIZ2Wh8Z8Z6AoaObRbcupYh/Q9OavWbfhDc4aJEkIGT8RqkkOlzAFPlvFo
+ tit8Qm4tOQBmWxHswmjIpzDSYdU90augWVCkdiMLddrpaxTRPloBbnRbtiuDKuQ1f3G0
+ tVgg==
+X-Gm-Message-State: APjAAAXpNGaWjPRbi9zsJf1aUKtpyxVd2JhdDm9Uq0ab4kIUdYeGS1e1
+ zZQtlZjfxgxkbNJkoloiDKkK5Q==
+X-Google-Smtp-Source: APXvYqxh88FuDHDTA50xcvkZxoDS6gx6EQNHyyvXUFPd1oxFXlmv0rBVOQea/c8sZqigS6xV/quFaw==
+X-Received: by 2002:a0c:89b7:: with SMTP id 52mr16660367qvr.199.1562620533833; 
+ Mon, 08 Jul 2019 14:15:33 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id b67sm8335620qkd.82.2019.07.08.14.15.31
+ by smtp.gmail.com with ESMTPSA id b67sm8335620qkd.82.2019.07.08.14.15.32
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Mon, 08 Jul 2019 14:15:31 -0700 (PDT)
+ Mon, 08 Jul 2019 14:15:33 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
  will@kernel.org, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [v1 1/5] kexec: quiet down kexec reboot
-Date: Mon,  8 Jul 2019 17:15:24 -0400
-Message-Id: <20190708211528.12392-2-pasha.tatashin@soleen.com>
+Subject: [v1 2/5] kexec: add resource for normal kexec region
+Date: Mon,  8 Jul 2019 17:15:25 -0400
+Message-Id: <20190708211528.12392-3-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190708211528.12392-1-pasha.tatashin@soleen.com>
 References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190708_141534_155998_B60311F0 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190708_141534_891940_5E6AD1FE 
+X-CRM114-Status: GOOD (  11.46  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -107,43 +106,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Here is a regular kexec command sequence and output:
-=====
-$ kexec --reuse-cmdline -i --load Image
-$ kexec -e
-[  161.342002] kexec_core: Starting new kernel
+crashk_res resource is used to reserve memory for crash kernel. There is
+also, however, a benefit to reserve memory for normal kernel to speed up
+reboot performance. This is because during regular kexec reboot, kernel
+performs relocations to the final destination of the loaded segments, and
+the relocation might take a long time especially if initramfs is big.
 
-Welcome to Buildroot
-buildroot login:
-=====
-
-Even when "quiet" kernel parameter is specified, "kexec_core: Starting
-new kernel" is printed.
-
-This message has  KERN_EMERG level, but there is no emergency, it is a
-normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
-
-Machines that have slow console baud rate benefit from less output.
+Therefore, similarly to crashk_res, add kexeck_res that will be used to
+reserve memory for normal kexec kernel.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Reviewed-by: Simon Horman <horms@verge.net.au>
 ---
- kernel/kexec_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ include/linux/ioport.h | 1 +
+ include/linux/kexec.h  | 6 ++++--
+ kernel/kexec_core.c    | 9 +++++++++
+ 3 files changed, 14 insertions(+), 2 deletions(-)
 
+diff --git a/include/linux/ioport.h b/include/linux/ioport.h
+index da0ebaec25f0..3b18a3c112f3 100644
+--- a/include/linux/ioport.h
++++ b/include/linux/ioport.h
+@@ -133,6 +133,7 @@ enum {
+ 	IORES_DESC_PERSISTENT_MEMORY_LEGACY	= 5,
+ 	IORES_DESC_DEVICE_PRIVATE_MEMORY	= 6,
+ 	IORES_DESC_DEVICE_PUBLIC_MEMORY		= 7,
++	IORES_DESC_KEXEC_KERNEL			= 8,
+ };
+ 
+ /* helpers to define resources */
+diff --git a/include/linux/kexec.h b/include/linux/kexec.h
+index b9b1bc5f9669..4c1121b385fb 100644
+--- a/include/linux/kexec.h
++++ b/include/linux/kexec.h
+@@ -303,12 +303,14 @@ extern int kexec_load_disabled;
+ #define KEXEC_FILE_FLAGS	(KEXEC_FILE_UNLOAD | KEXEC_FILE_ON_CRASH | \
+ 				 KEXEC_FILE_NO_INITRAMFS)
+ 
+-/* Location of a reserved region to hold the crash kernel.
+- */
++/* Location of a reserved region to hold the crash kernel. */
+ extern struct resource crashk_res;
+ extern struct resource crashk_low_res;
+ extern note_buf_t __percpu *crash_notes;
+ 
++/* Location of a reserved region to hold normal kexec kernel. */
++extern struct resource kexeck_res;
++
+ /* flag to track if kexec reboot is in progress */
+ extern bool kexec_in_progress;
+ 
 diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index d5870723b8ad..2c5b72863b7b 100644
+index 2c5b72863b7b..932feadbeb3a 100644
 --- a/kernel/kexec_core.c
 +++ b/kernel/kexec_core.c
-@@ -1169,7 +1169,7 @@ int kernel_kexec(void)
- 		 * CPU hotplug again; so re-enable it here.
- 		 */
- 		cpu_hotplug_enable();
--		pr_emerg("Starting new kernel\n");
-+		pr_notice("Starting new kernel\n");
- 		machine_shutdown();
- 	}
+@@ -70,6 +70,15 @@ struct resource crashk_low_res = {
+ 	.desc  = IORES_DESC_CRASH_KERNEL
+ };
  
++/* Location of the reserved area for the normal kexec kernel */
++struct resource kexeck_res = {
++	.name  = "Kexec kernel",
++	.start = 0,
++	.end   = 0,
++	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
++	.desc  = IORES_DESC_KEXEC_KERNEL
++};
++
+ int kexec_should_crash(struct task_struct *p)
+ {
+ 	/*
 -- 
 2.22.0
 
