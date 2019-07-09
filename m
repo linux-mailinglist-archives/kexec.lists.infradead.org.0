@@ -2,49 +2,49 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 693AA63C1B
-	for <lists+kexec@lfdr.de>; Tue,  9 Jul 2019 21:44:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C91863C18
+	for <lists+kexec@lfdr.de>; Tue,  9 Jul 2019 21:43:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7iPPQhAg6yNgQan0aUcNvR38LL2k11W4zwhpT10L2e4=; b=DyVCmNHvaiTFXr
-	9dk8rrqKzUeB8rheUqk61lZynZMbJtLZdWqKerK4ZcCvv/+DKQE5mrnr/cbf4qpsik3KMHKSA/yog
-	HTXZEGMHxrI+XrgsabKKTeVAtZXf4DEhcUr3QpgtnxOkc6TuVvh95Ta3z/fpMI84Ih25L0vMmnJ2V
-	zpniYaL/52IG3wlvlus1Z5+Z9YYMERdvNiJwUJqREJ/DbPYK2noahcLlA2iizdv0SL/PLlG5LEHZV
-	QkekM1NXeh+ELjqqpPmtncYFSDoAEWa50tu+R/QufK2oaSnmmUwPpJY6eAh/OO1LMH3iKGdX/a1Pr
-	2fPPtgV2viLYk9x2i1+A==;
+	List-Owner; bh=bp2eK4yHFnQ9/QVruDnmX10LofrrJvdP24cvivJJLPY=; b=XIQph7woW/vBGp
+	46pVAUiBLzhiOCA/jbpE58iysy2I3axCrR1YUZMYqR7kM6jkvZXT7Ty2koCw2ZGJYgQuzpICqKEX8
+	rwhCsZSRIhrGJlqPBcFCU44VHuYr0D/mno7FZ8ooyt9w8I6iDmmYuPL5CkCY/EYjuJt2ElpgV7yct
+	3PGyEC5/ZHeFIfDkdWXb6hokRSWnw1vWCqyInKw8yWWKwt2rRQqAzneKnTbYJb3eH6bGa3l+m076l
+	kGwH+x1fRhbrFYZrORuOOoToww12Gi0RNuBc8OXjNpmaiuwkwzs7INVMKQU1XZWcvYbS7WK/6Wh+r
+	tlbTlWidFw3IpY060LnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hkw20-0004aV-6H; Tue, 09 Jul 2019 19:44:04 +0000
+	id 1hkw1o-0004S4-G2; Tue, 09 Jul 2019 19:43:52 +0000
 Received: from smtp.duncanthrax.net ([2001:470:70c5:1111::170])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hkw1d-0004Nc-Se
+ id 1hkw1d-0004Ne-R4
  for kexec@lists.infradead.org; Tue, 09 Jul 2019 19:43:45 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=duncanthrax.net; s=dkim; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From;
- bh=Vkxm0H9rDcCAwVn3U4wp8JZAu0mqfV7kPwynX7pUS7w=; b=gpZhV18H4LUsdb1hSDsQmNjDnX
- Pb+5HBtfdM+Ws2IOxkCraERq7X7ffKw3/tnE99P04Lmqz3X1I8CrUabTkv6FPlIQPbNkS6HEtpJAz
- 9kDah4IEOZvO5WPmrUYcTgjN/XfbrvB3N8qtM81lEeSByh4cXZzz//n6m+rCxQZiCNv4=;
+ bh=roPkL3987tSUlgZQQbJuu94Oaf/ohBLtK+a05FWNfM0=; b=HE5G8ItjrAsLD76MY+JCUWmqya
+ 9+Tf2GAxVPg2viA1vA077Add25KGI0iZgS8qkKr8fRs9D/coXCEg2CtqEmjpgHgRXk3vfjCRjQQvU
+ QOshCRuW8ZlNAJJcoCAw1jViaWje3i0LuXOebVwelhz43yqzIi5OrKhTEmXSXdQBWhcY=;
 Received: from [134.3.44.134] (helo=t470p.stackframe.org)
  by smtp.eurescom.eu with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.86_2) (envelope-from <svens@stackframe.org>)
- id 1hkw1Z-0007pP-JQ; Tue, 09 Jul 2019 21:43:37 +0200
+ id 1hkw1Z-0007pP-Py; Tue, 09 Jul 2019 21:43:37 +0200
 From: Sven Schnelle <svens@stackframe.org>
 To: kexec@lists.infradead.org
-Subject: [PATCH v2 5/7] kexec_elf: remove elf_addr_to_cpu macro
-Date: Tue,  9 Jul 2019 21:43:26 +0200
-Message-Id: <20190709194328.16991-6-svens@stackframe.org>
+Subject: [PATCH v2 6/7] kexec_elf: remove Elf_Rel macro
+Date: Tue,  9 Jul 2019 21:43:27 +0200
+Message-Id: <20190709194328.16991-7-svens@stackframe.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190709194328.16991-1-svens@stackframe.org>
 References: <20190709194328.16991-1-svens@stackframe.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190709_124342_213138_2DD03D10 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20190709_124342_224258_9703B803 
+X-CRM114-Status: UNSURE (   5.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,64 +74,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-It had only one definition, so just use the function directly.
+It wasn't used anywhere, so lets drop it.
 
 Signed-off-by: Sven Schnelle <svens@stackframe.org>
 ---
- kernel/kexec_elf.c | 20 +++++++++-----------
- 1 file changed, 9 insertions(+), 11 deletions(-)
+ kernel/kexec_elf.c | 4 ----
+ 1 file changed, 4 deletions(-)
 
 diff --git a/kernel/kexec_elf.c b/kernel/kexec_elf.c
-index 70d31b8feeae..99e6d63b5dfc 100644
+index 99e6d63b5dfc..b7e47ddd7cad 100644
 --- a/kernel/kexec_elf.c
 +++ b/kernel/kexec_elf.c
-@@ -8,8 +8,6 @@
+@@ -8,10 +8,6 @@
  #include <linux/slab.h>
  #include <linux/types.h>
  
--#define elf_addr_to_cpu	elf64_to_cpu
+-#ifndef Elf_Rel
+-#define Elf_Rel		Elf64_Rel
+-#endif /* Elf_Rel */
 -
- #ifndef Elf_Rel
- #define Elf_Rel		Elf64_Rel
- #endif /* Elf_Rel */
-@@ -143,9 +141,9 @@ static int elf_read_ehdr(const char *buf, size_t len, struct elfhdr *ehdr)
- 	ehdr->e_type      = elf16_to_cpu(ehdr, buf_ehdr->e_type);
- 	ehdr->e_machine   = elf16_to_cpu(ehdr, buf_ehdr->e_machine);
- 	ehdr->e_version   = elf32_to_cpu(ehdr, buf_ehdr->e_version);
--	ehdr->e_entry     = elf_addr_to_cpu(ehdr, buf_ehdr->e_entry);
--	ehdr->e_phoff     = elf_addr_to_cpu(ehdr, buf_ehdr->e_phoff);
--	ehdr->e_shoff     = elf_addr_to_cpu(ehdr, buf_ehdr->e_shoff);
-+	ehdr->e_entry     = elf64_to_cpu(ehdr, buf_ehdr->e_entry);
-+	ehdr->e_phoff     = elf64_to_cpu(ehdr, buf_ehdr->e_phoff);
-+	ehdr->e_shoff     = elf64_to_cpu(ehdr, buf_ehdr->e_shoff);
- 	ehdr->e_flags     = elf32_to_cpu(ehdr, buf_ehdr->e_flags);
- 	ehdr->e_phentsize = elf16_to_cpu(ehdr, buf_ehdr->e_phentsize);
- 	ehdr->e_phnum     = elf16_to_cpu(ehdr, buf_ehdr->e_phnum);
-@@ -190,18 +188,18 @@ static int elf_read_phdr(const char *buf, size_t len,
- 	buf_phdr = (struct elf_phdr *) pbuf;
- 
- 	phdr->p_type   = elf32_to_cpu(elf_info->ehdr, buf_phdr->p_type);
--	phdr->p_offset = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_offset);
--	phdr->p_paddr  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_paddr);
--	phdr->p_vaddr  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_vaddr);
-+	phdr->p_offset = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_offset);
-+	phdr->p_paddr  = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_paddr);
-+	phdr->p_vaddr  = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_vaddr);
- 	phdr->p_flags  = elf32_to_cpu(elf_info->ehdr, buf_phdr->p_flags);
- 
- 	/*
- 	 * The following fields have a type equivalent to Elf_Addr
- 	 * both in 32 bit and 64 bit ELF.
- 	 */
--	phdr->p_filesz = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_filesz);
--	phdr->p_memsz  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_memsz);
--	phdr->p_align  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_align);
-+	phdr->p_filesz = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_filesz);
-+	phdr->p_memsz  = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_memsz);
-+	phdr->p_align  = elf64_to_cpu(elf_info->ehdr, buf_phdr->p_align);
- 
- 	return elf_is_phdr_sane(phdr, len) ? 0 : -ENOEXEC;
- }
+ static inline bool elf_is_elf_file(const struct elfhdr *ehdr)
+ {
+ 	return memcmp(ehdr->e_ident, ELFMAG, SELFMAG) == 0;
 -- 
 2.20.1
 
