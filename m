@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EC9264D0B
-	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 21:54:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFED464D0D
+	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 21:55:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=hIoQ7a7wQOizXQjjsjXw5w36bklwO82p3OT3LC2AbIQ=; b=fgWpXFRtgsZlCNrtc9zzsuRqjz
-	3sgao9LeZRxJy4bOUlJGpUz9gAeIszceXBCMkteLTDdZH4sEEkXW7w2snLIws6wI7OiHwwbXEatwo
-	uUfzwvoaW0TN+mOXqHYdokN2w2GDLgzj5NizqoJRPA+Q1/xXslcNo9MRFJ2QiHo/tW69jKI5Df37V
-	azKGMYtdvrPzJncVUjHfZbYATm245d5qllOZ5VZG6SuZ1JFA9ZRqqkmgf3Pv41TIf/XpG8Qqr6xKL
-	ceC1/J50LcFj7ygE0tRyWcLaFNtXHk2m4IdBAzlnU/Tc6wlYKNY4KWeefuNTVHgPNYPOoFx0us5EG
-	evO1LF0A==;
+	bh=kOTOqStNBApKi9DIRgJxHKvuQ1HQlEDJ/EFD0npTPvY=; b=ffyh5HIy85BP/gL3PXxmt/cBej
+	hp09OYbt97edad2FBFyHMrsVMWKIeRJ810tFkD6AcJkOfZig1ZiMD+SVCXNcHW6Ev1M1gCA2fiJUu
+	KV1FZ/kYy+sQ63VO3UGm5JDBSISGfSdnf8oxSBrCbr8f0eoPAslzfkaYsRu21pDxUWpJEz9wZutkG
+	Jdx1TnkIHKF94xWXjP3jUzyIRxrc6+BcKnoNiLur75U2nyXAYBnmNTmgBa+7ASfshRRPO93gQeJlC
+	xNeGFpqbDbm9pCGiApF9u2OEonkD4o3JdiaQMTVxPKs39pHj7HegrWMEAyxoWSnjuhoWDPCrgWrjF
+	gmqRbu/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlIfx-0006Mb-Pq; Wed, 10 Jul 2019 19:54:49 +0000
+	id 1hlIg3-0006Nn-1Q; Wed, 10 Jul 2019 19:54:55 +0000
 Received: from mail-pg1-f193.google.com ([209.85.215.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlIfr-0006Jl-OV
- for kexec@lists.infradead.org; Wed, 10 Jul 2019 19:54:47 +0000
-Received: by mail-pg1-f193.google.com with SMTP id i18so1718835pgl.11
- for <kexec@lists.infradead.org>; Wed, 10 Jul 2019 12:54:43 -0700 (PDT)
+ id 1hlIfu-0006Lh-UI
+ for kexec@lists.infradead.org; Wed, 10 Jul 2019 19:54:48 +0000
+Received: by mail-pg1-f193.google.com with SMTP id g15so1736820pgi.4
+ for <kexec@lists.infradead.org>; Wed, 10 Jul 2019 12:54:46 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=jDpOWQTPoDch/PsU2kUUIzZgrSK6NY624z/QSq6u2cw=;
- b=fU+l1KHKa/86V6EalSXZhFW2fJ7CvYLFDwjtXiCtwqZTA/bao3sbisvzBiMBFdPVGA
- UEuMR/Y1L24SrHPiBP6DUWfTY6DwItDHGlSqA6DTYnCnCJWrXPf2rx6qpmhiOQrWlF1r
- hY7Qeot1XiE+tPjocBfqSY90IO1eRapceaB1X3qLmyX0NhsLHmx6Hs59TNrnLlfR9XUZ
- whTxAFdzLIEIbIckG13PWXm/X+3WsNzJOKoqedRN+zit9wRBfqX9iHPEZ5QWe1kSNWP6
- TIB5J28Om07Fyyh97WJqRVHnJLROu5iiYIFLChyWG4/v7NsXF/cj2zVHbo3AI2XD+agY
- MOsg==
-X-Gm-Message-State: APjAAAVynkfH938ZdToprkx6h5J5zQSChsPHZxT8nPF8TdrOoK9FLSlt
- l7xOxXsE1t6HCw/RbS2zzHT2psstoDk=
-X-Google-Smtp-Source: APXvYqwjBu5gCtMN+SObch/EFZuRarllmghnorFRnM9KrXdgKn0EJUgkWHAROh7F6erwevdcIX4Dew==
-X-Received: by 2002:a63:480a:: with SMTP id v10mr26491pga.60.1562788482232;
- Wed, 10 Jul 2019 12:54:42 -0700 (PDT)
+ bh=5DuUU9vvVDR5ARYpV0BAuZnUUFHUGfkQJTqovonTbYY=;
+ b=nDzvXVt54MQzPU8sbF9VpVRlsCHMrlrFhT8q78HeXOflgy0s4YNGSPszn+wzwv/Cbn
+ SauoxXOj4vrCLU0TuC11vMiq0bwNBOy0N2ktzb7V8EhOwBsGvLGE/QDSu2z3ipKk3OmE
+ YQf/ffpTQ5gd6rLgVY3Tmx781RYtsJfioS+RRYCeXAT9V2dCSEHulOJU9k5seIZKKaga
+ qrbXrZD++8ycVDN7tIIYkPfgDRr/0Kcyw5/VE/lD91phoklnj5e52Jxfo5iAwnvQNZjG
+ fOSSeaOLMADu7SYrdyTMsQX6nUUP3uVb0x4aViK/qd8GB5trvpAj+j0nzCtP+Sj0Az6B
+ nvFQ==
+X-Gm-Message-State: APjAAAWOrg8BlvCmKHFqvroX8WIgtdlRwayaZ9//YM7DNjy+xpAc230E
+ wBvGZspqiRUFkagg7XPlMYMp3RMyMiE=
+X-Google-Smtp-Source: APXvYqxS8ytdWPQTm/MfuPMW8VqrPZ777yGsoonSqtCxAGB/VbKdtgFrVUT8vFe4hXqSvwRXZtOGgQ==
+X-Received: by 2002:a63:2c8e:: with SMTP id s136mr3153322pgs.277.1562788485886; 
+ Wed, 10 Jul 2019 12:54:45 -0700 (PDT)
 Received: from localhost ([182.69.207.54])
- by smtp.gmail.com with ESMTPSA id v138sm3573952pfc.15.2019.07.10.12.54.40
+ by smtp.gmail.com with ESMTPSA id 12sm2925908pfi.60.2019.07.10.12.54.44
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 10 Jul 2019 12:54:41 -0700 (PDT)
+ Wed, 10 Jul 2019 12:54:45 -0700 (PDT)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: kexec@lists.infradead.org
-Subject: [PATCH 2/4] kexec-uImage-arm64.c: Fix return value of
- uImage_arm64_probe()
-Date: Thu, 11 Jul 2019 01:24:27 +0530
-Message-Id: <1562788469-22935-3-git-send-email-bhsharma@redhat.com>
+Subject: [PATCH 3/4] kexec/kexec-zlib.h: Add 'is_zlib_file()' helper function
+Date: Thu, 11 Jul 2019 01:24:28 +0530
+Message-Id: <1562788469-22935-4-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1562788469-22935-1-git-send-email-bhsharma@redhat.com>
 References: <1562788469-22935-1-git-send-email-bhsharma@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_125444_421577_62631043 
-X-CRM114-Status: GOOD (  13.55  )
+X-CRM114-CacheID: sfid-20190710_125446_980346_3E8ECB0A 
+X-CRM114-Status: GOOD (  13.31  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -90,51 +89,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Commit bf06cf2095e1 ("kexec/uImage: probe to identify a corrupted image"),
-defined the 'uImage_probe_kernel()' function return values and
-correspondingly ;uImage_arm64_probe()' returns the same (0 -> If the
-image is valid 'type' image, -1 -> If the image is corrupted and
-1 -> If the image is not a uImage).
+This patch adds 'is_zlib_file()' helper function which can be
+used to quickly determine with the passed kernel image is a zlib
+compressed kernel image.
 
-This causes issues because, in later patches we introduce zImage
-support for arm64, and since it is probed after uImage, the return
-values from 'uImage_arm64_probe()' needs to be fixed to make sure
-that kexec will not return with an invalid error code.
-
-Now, 'uImage_arm64_probe()' returns the following values instead:
-  0 - valid uImage.
- -1 - uImage is corrupted.
-  1 - image is not a uImage.
+This is specifically useful for arm64 zImage (or Image.gz) support,
+which is introduced by later patches in this patchset.
 
 Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 ---
- kexec/arch/arm64/kexec-uImage-arm64.c | 13 ++++++++++++-
- 1 file changed, 12 insertions(+), 1 deletion(-)
+ kexec/kexec-zlib.h |  1 +
+ kexec/zlib.c       | 32 ++++++++++++++++++++++++++++++++
+ 2 files changed, 33 insertions(+)
 
-diff --git a/kexec/arch/arm64/kexec-uImage-arm64.c b/kexec/arch/arm64/kexec-uImage-arm64.c
-index 126ea9c2555b..c4669131b667 100644
---- a/kexec/arch/arm64/kexec-uImage-arm64.c
-+++ b/kexec/arch/arm64/kexec-uImage-arm64.c
-@@ -11,7 +11,18 @@
+diff --git a/kexec/kexec-zlib.h b/kexec/kexec-zlib.h
+index 43c107bf4a72..16300f294759 100644
+--- a/kexec/kexec-zlib.h
++++ b/kexec/kexec-zlib.h
+@@ -6,5 +6,6 @@
  
- int uImage_arm64_probe(const char *buf, off_t len)
- {
--	return uImage_probe_kernel(buf, len, IH_ARCH_ARM64);
-+	int ret;
-+
-+	ret = uImage_probe_kernel(buf, len, IH_ARCH_ARM64);
-+
-+	/*  0 - valid uImage.
-+	 * -1 - uImage is corrupted.
-+	 *  1 - image is not a uImage.
-+	 */
-+	if (!ret)
-+		return 0;
-+	else
-+		return -1;
+ #include "config.h"
+ 
++int is_zlib_file(const char *filename, off_t *r_size);
+ char *zlib_decompress_file(const char *filename, off_t *r_size);
+ #endif /* __KEXEC_ZLIB_H */
+diff --git a/kexec/zlib.c b/kexec/zlib.c
+index 95b608059d41..34d5ca566769 100644
+--- a/kexec/zlib.c
++++ b/kexec/zlib.c
+@@ -23,6 +23,32 @@ static void _gzerror(gzFile fp, int *errnum, const char **errmsg)
+ 	}
  }
  
- int uImage_arm64_load(int argc, char **argv, const char *buf, off_t len,
++int is_zlib_file(const char *filename, off_t *r_size)
++{
++	gzFile fp;
++	int errnum;
++	const char *msg;
++
++	if (!filename)
++		goto out;
++
++	fp = gzopen(filename, "rb");
++	if (fp == 0) {
++		_gzerror(fp, &errnum, &msg);
++		dbgprintf("Cannot open `%s': %s\n", filename, msg);
++		goto out;
++	}
++
++	if (gzdirect(fp))
++		/* It's not in gzip format */
++		goto out;
++
++	/* It's in gzip format */
++	return 1;
++out:
++	return 0;
++}
++
+ char *zlib_decompress_file(const char *filename, off_t *r_size)
+ {
+ 	gzFile fp;
+@@ -84,6 +110,12 @@ fail:
+ 	return buf;
+ }
+ #else
++
++int is_zlib_file(const char *filename, off_t *r_size)
++{
++	return 0;
++}
++
+ char *zlib_decompress_file(const char *UNUSED(filename), off_t *UNUSED(r_size))
+ {
+ 	return NULL;
 -- 
 2.7.4
 
