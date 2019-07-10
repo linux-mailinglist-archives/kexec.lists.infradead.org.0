@@ -2,73 +2,73 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3838648B9
-	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 16:55:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E51C648DB
+	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 17:02:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wRLHmZmw/h8oNRY3mMgGWZttFkoB9lLqxsZUWTd8ZTI=; b=bkvnPGKOgMig/i3nBvWaRvwZR
-	7ivO8druODhBsKbOTmZHchOUgLbuI403fzsGBJsb8iSvWHvCpeH9rxJJE83G1SXZmc5Rhl9EhgPYF
-	OxoE7XN/6MPI2+zLMQG+/eyI3arL2FrBtzB2anJz1VuNVS0AjHWwKAw6uloceq1rUMWBVfGZzIA+G
-	83FZnMV6jcFMWFt4bM+ac5Zlz+tmxPUs9FBox+4ORVtccgjqR9D4WhEAahnIgfGZev7nD6g6lHM3p
-	O69waH8/7yIQ4ixMI5XXMNvMnRpx16QwD3B+vsl0LE+b10YsZgijeBNQay+4UP7LGcuR5wq+khnLa
-	UF39s4WNg==;
+	 bh=A1X3xeYRMEpGcrZ4Bs1Nk3Y4GkxTDbfKPnBdZ3HwiPU=; b=jfz/gT9ae2wZkp6kBg68d17Ui
+	MVF/TNS89Yd7ZQvBcjZvO6deu3ZM3UmS/3O6C1HKwhlcOwfl5RNGw0DmLgEwkR52h2Bko9kfnbngN
+	jCJFqGdK7h4OIUU/vahBc3xdRuBFIqaPi/FdB5bJ0k5eJpaR4tsbYrIqoR0wenXZuf/voSXrLSO+l
+	GQ8pAUe5Ny56NkPrEe61Y9/f5CkOL0JaLXb5DwEZ7fJDUiIf8cZy9D0Ow6tWGiEHMNACH5U8DVYa3
+	RPMq3XeEBOZAqOCgV2szxLJesCNv76bjthIwn7G+JcCUzYxfuE8qbm3Aqg0djD/ZcJ6licEoWceck
+	irkTAWp5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlE0J-0000Dw-VG; Wed, 10 Jul 2019 14:55:32 +0000
+	id 1hlE7I-0002bT-2M; Wed, 10 Jul 2019 15:02:44 +0000
 Received: from pegase1.c-s.fr ([93.17.236.30])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlE09-0000DU-LN
- for kexec@lists.infradead.org; Wed, 10 Jul 2019 14:55:23 +0000
+ id 1hlE7E-0002aT-6Y
+ for kexec@lists.infradead.org; Wed, 10 Jul 2019 15:02:41 +0000
 Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 45kMg011QGz9vBL9;
- Wed, 10 Jul 2019 16:55:08 +0200 (CEST)
+ by localhost (Postfix) with ESMTP id 45kMqX5g0Zz9vBK6;
+ Wed, 10 Jul 2019 17:02:32 +0200 (CEST)
 Authentication-Results: localhost; dkim=pass
  reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=kLZtyL5l; dkim-adsp=pass;
+ header.d=c-s.fr header.i=@c-s.fr header.b=BJ4sWu48; dkim-adsp=pass;
  dkim-atps=neutral
 X-Virus-Scanned: Debian amavisd-new at c-s.fr
 Received: from pegase1.c-s.fr ([192.168.12.234])
  by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id S2QPTAofV8Wp; Wed, 10 Jul 2019 16:55:08 +0200 (CEST)
+ with ESMTP id uJEqSXiV2ybC; Wed, 10 Jul 2019 17:02:32 +0200 (CEST)
 Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 45kMg000CBz9vBKx;
- Wed, 10 Jul 2019 16:55:08 +0200 (CEST)
+ by pegase1.c-s.fr (Postfix) with ESMTP id 45kMqX4b86z9vBJX;
+ Wed, 10 Jul 2019 17:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1562770508; bh=f04mWvdmBZY2FUDsS/VFc17IYEz8iYcB6pvDdm6nJ/c=;
+ t=1562770952; bh=p0Ol0rmBzFzZQpkrGhuxgq2fbJl2jXBPenG5CrgDc3A=;
  h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=kLZtyL5lE7nBm1ErK3byyuVey5XaQgz9Me5sRtZy3qLtE5xZFeB58gmCeDFnGVXsl
- +hwIN+jk8NgpDdkg/kYhjiatwapZFBaK/LNQL6HnfdhtNYQdkLvx8leP/IRnacpVmD
- 5xeDrGiNJQqXyznSlzNxjcO49nbyv3gqtCGNcEnA=
+ b=BJ4sWu480Or7vHdI+GpJfMMdYqr3S2ortsnyas2gueBIzi017w123fgbdaphQ12V1
+ hODB2wowkEr5/NuyEPeL41eecQHhSqClJHdA0HW7yGbKmWCBP3PvTkIT9ZrPTvZ3Mx
+ obrsTaDx6xAHGqT1Kg7663yn2lqHo0A4dZZXYERY=
 Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 890A58B80B;
- Wed, 10 Jul 2019 16:55:09 +0200 (CEST)
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 369738B80B;
+ Wed, 10 Jul 2019 17:02:34 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at c-s.fr
 Received: from messagerie.si.c-s.fr ([127.0.0.1])
  by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id eDcK6_YkQYDa; Wed, 10 Jul 2019 16:55:09 +0200 (CEST)
+ with ESMTP id rezQS68riQaZ; Wed, 10 Jul 2019 17:02:34 +0200 (CEST)
 Received: from [172.25.230.101] (po15451.idsi0.si.c-s.fr [172.25.230.101])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 3F8438B808;
- Wed, 10 Jul 2019 16:55:09 +0200 (CEST)
-Subject: Re: [PATCH v3 7/7] kexec_elf: remove unused variable in
- kexec_elf_load()
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id D97958B807;
+ Wed, 10 Jul 2019 17:02:33 +0200 (CEST)
+Subject: Re: [PATCH v3 6/7] kexec_elf: remove Elf_Rel macro
 To: Sven Schnelle <svens@stackframe.org>, kexec@lists.infradead.org
 References: <20190710142944.2774-1-svens@stackframe.org>
- <20190710142944.2774-8-svens@stackframe.org>
+ <20190710142944.2774-7-svens@stackframe.org>
 From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <5ff70f9b-905d-000d-af59-cba5c37f9328@c-s.fr>
-Date: Wed, 10 Jul 2019 16:55:06 +0200
+Message-ID: <e9ad2137-f0a9-38e1-87a6-f4e215c87b53@c-s.fr>
+Date: Wed, 10 Jul 2019 17:02:31 +0200
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190710142944.2774-8-svens@stackframe.org>
+In-Reply-To: <20190710142944.2774-7-svens@stackframe.org>
 Content-Language: fr
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_075522_035279_6E532410 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20190710_080240_386521_54189A4F 
+X-CRM114-Status: UNSURE (   9.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -102,31 +102,20 @@ Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-CgpMZSAxMC8wNy8yMDE5IMOgIDE2OjI5LCBTdmVuIFNjaG5lbGxlIGEgw6ljcml0wqA6Cj4gYmFz
-ZSB3YXMgbmV2ZXIgdW5zaWduZWQsIHNvIHdlIGNhbiByZW1vdmUgaXQuCgpEbyB5b3UgbWVhbiBu
-ZXZlciBhc3NpZ25lZCA/CgoKPiAKPiBTaWduZWQtb2ZmLWJ5OiBTdmVuIFNjaG5lbGxlIDxzdmVu
-c0BzdGFja2ZyYW1lLm9yZz4KClJldmlld2VkLWJ5OiBDaHJpc3RvcGhlIExlcm95IDxjaHJpc3Rv
-cGhlLmxlcm95QGMtcy5mcj4KCj4gLS0tCj4gICBrZXJuZWwva2V4ZWNfZWxmLmMgfCA3ICsrLS0t
-LS0KPiAgIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDUgZGVsZXRpb25zKC0pCj4g
-Cj4gZGlmZiAtLWdpdCBhL2tlcm5lbC9rZXhlY19lbGYuYyBiL2tlcm5lbC9rZXhlY19lbGYuYwo+
-IGluZGV4IGI3ZTQ3ZGRkN2NhZC4uYTU2ZWM1NDgxZTcxIDEwMDY0NAo+IC0tLSBhL2tlcm5lbC9r
-ZXhlY19lbGYuYwo+ICsrKyBiL2tlcm5lbC9rZXhlY19lbGYuYwo+IEBAIC0zNDgsNyArMzQ4LDcg
-QEAgaW50IGtleGVjX2VsZl9sb2FkKHN0cnVjdCBraW1hZ2UgKmltYWdlLCBzdHJ1Y3QgZWxmaGRy
-ICplaGRyLAo+ICAgCQkJIHN0cnVjdCBrZXhlY19idWYgKmtidWYsCj4gICAJCQkgdW5zaWduZWQg
-bG9uZyAqbG93ZXN0X2xvYWRfYWRkcikKPiAgIHsKPiAtCXVuc2lnbmVkIGxvbmcgYmFzZSA9IDAs
-IGxvd2VzdF9hZGRyID0gVUlOVF9NQVg7Cj4gKwl1bnNpZ25lZCBsb25nIGxvd2VzdF9hZGRyID0g
-VUlOVF9NQVg7Cj4gICAJaW50IHJldDsKPiAgIAlzaXplX3QgaTsKPiAgIAo+IEBAIC0zNzAsNyAr
-MzcwLDcgQEAgaW50IGtleGVjX2VsZl9sb2FkKHN0cnVjdCBraW1hZ2UgKmltYWdlLCBzdHJ1Y3Qg
-ZWxmaGRyICplaGRyLAo+ICAgCQlrYnVmLT5idWZzeiA9IHNpemU7Cj4gICAJCWtidWYtPm1lbXN6
-ID0gcGhkci0+cF9tZW1zejsKPiAgIAkJa2J1Zi0+YnVmX2FsaWduID0gcGhkci0+cF9hbGlnbjsK
-PiAtCQlrYnVmLT5idWZfbWluID0gcGhkci0+cF9wYWRkciArIGJhc2U7Cj4gKwkJa2J1Zi0+YnVm
-X21pbiA9IHBoZHItPnBfcGFkZHI7Cj4gICAJCXJldCA9IGtleGVjX2FkZF9idWZmZXIoa2J1Zik7
-Cj4gICAJCWlmIChyZXQpCj4gICAJCQlnb3RvIG91dDsKPiBAQCAtMzgwLDkgKzM4MCw2IEBAIGlu
-dCBrZXhlY19lbGZfbG9hZChzdHJ1Y3Qga2ltYWdlICppbWFnZSwgc3RydWN0IGVsZmhkciAqZWhk
-ciwKPiAgIAkJCWxvd2VzdF9hZGRyID0gbG9hZF9hZGRyOwo+ICAgCX0KPiAgIAo+IC0JLyogVXBk
-YXRlIGVudHJ5IHBvaW50IHRvIHJlZmxlY3QgbmV3IGxvYWQgYWRkcmVzcy4gKi8KPiAtCWVoZHIt
-PmVfZW50cnkgKz0gYmFzZTsKPiAtCj4gICAJKmxvd2VzdF9sb2FkX2FkZHIgPSBsb3dlc3RfYWRk
-cjsKPiAgIAlyZXQgPSAwOwo+ICAgIG91dDoKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4
-ZWMK
+CgpMZSAxMC8wNy8yMDE5IMOgIDE2OjI5LCBTdmVuIFNjaG5lbGxlIGEgw6ljcml0wqA6Cj4gSXQg
+d2Fzbid0IHVzZWQgYW55d2hlcmUsIHNvIGxldHMgZHJvcCBpdC4KCkFuZCBhbHNvLCBpdCBpcyBh
+bHJlYWR5IGRlZmluZWQgaW4gYXNtLWdlbmVyaWMvbW9kdWxlLmgKCj4gCj4gU2lnbmVkLW9mZi1i
+eTogU3ZlbiBTY2huZWxsZSA8c3ZlbnNAc3RhY2tmcmFtZS5vcmc+CgpSZXZpZXdlZC1ieTogQ2hy
+aXN0b3BoZSBMZXJveSA8Y2hyaXN0b3BoZS5sZXJveUBjLXMuZnI+Cgo+IC0tLQo+ICAga2VybmVs
+L2tleGVjX2VsZi5jIHwgNCAtLS0tCj4gICAxIGZpbGUgY2hhbmdlZCwgNCBkZWxldGlvbnMoLSkK
+PiAKPiBkaWZmIC0tZ2l0IGEva2VybmVsL2tleGVjX2VsZi5jIGIva2VybmVsL2tleGVjX2VsZi5j
+Cj4gaW5kZXggOTllNmQ2M2I1ZGZjLi5iN2U0N2RkZDdjYWQgMTAwNjQ0Cj4gLS0tIGEva2VybmVs
+L2tleGVjX2VsZi5jCj4gKysrIGIva2VybmVsL2tleGVjX2VsZi5jCj4gQEAgLTgsMTAgKzgsNiBA
+QAo+ICAgI2luY2x1ZGUgPGxpbnV4L3NsYWIuaD4KPiAgICNpbmNsdWRlIDxsaW51eC90eXBlcy5o
+Pgo+ICAgCj4gLSNpZm5kZWYgRWxmX1JlbAo+IC0jZGVmaW5lIEVsZl9SZWwJCUVsZjY0X1JlbAo+
+IC0jZW5kaWYgLyogRWxmX1JlbCAqLwo+IC0KPiAgIHN0YXRpYyBpbmxpbmUgYm9vbCBlbGZfaXNf
+ZWxmX2ZpbGUoY29uc3Qgc3RydWN0IGVsZmhkciAqZWhkcikKPiAgIHsKPiAgIAlyZXR1cm4gbWVt
+Y21wKGVoZHItPmVfaWRlbnQsIEVMRk1BRywgU0VMRk1BRykgPT0gMDsKPiAKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdApr
+ZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8va2V4ZWMK
