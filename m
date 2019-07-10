@@ -2,67 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11DF064A2A
-	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 17:55:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99A1864A34
+	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 17:57:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Fpf04MB0wYGLEFtJ4c94g12Tc/Ne+3tKdKFL+kKFzU=; b=l5EocUGCdlgxMJ
-	rVA3bQLiHyowb3CNmK2BC1nk8JY+dZs3zrdXIMoKZHhTwNE7vlFZdeUNRABXW2aAxKvole8fI/A90
-	rqJUnkxXk11FTexkp+LVNurS3B+e5NQIQGzN3a6AyJspqn3H7KiwYoeraIOl6wgSBqL1lDZ3YCMIo
-	nNotUMd0rA+zP4rLpCaXGasaJ+doMVObrVprfvRg3JhvvsLacJdjmwv/SQq+wBrUpUZxmBa6sPPb2
-	TZTFCVOWmH36jRWZm/DC3obOhbV+9lbGw8fPTIj+Pj7TIcEqafc+1C86ISTH8KjeMh//FBbe7HpYx
-	25oP5sdRnsmdLefLWmtw==;
+	List-Owner; bh=6x8EWVQ5EV0dZyJksdHwuXjKJ1B263U1aBDdt7utOWQ=; b=KXHgUrTNh+5NuH
+	XyNOcqPKYHtFqbHXGUN7+jRKpjM33bg4nnMrTJT4wG3jmKV7EAS9F0VMHFwgllo/EhhTpJ/zMthOw
+	uCveMLK6lQCW929EyQhjuHevOrmRPHn4hepf89WCzryrCGdPOX6LlaoK2LiD0wLBTtNelpFhFtWs+
+	GA/V5gqZSF/Lx7ANbUrgXx1YwvELIZuydSMYUt03oVyJbt40pg3gl7CsuQzl7ijNKxRXdXcEC57Ii
+	OZpttYULbKPRoA/OmvLK0Be78HcJSELHXSyeTRuLAJW/6O5Rvu/wo9yx+c92/IvzTK84LqkzC2NTP
+	7HzJOcTr22AU50Z8BvIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlEw6-0007rx-Q9; Wed, 10 Jul 2019 15:55:14 +0000
+	id 1hlExt-0008Ux-7k; Wed, 10 Jul 2019 15:57:05 +0000
 Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlEw3-0007rC-LJ
- for kexec@lists.infradead.org; Wed, 10 Jul 2019 15:55:13 +0000
-Received: by mail-ed1-x542.google.com with SMTP id s49so2687662edb.1
- for <kexec@lists.infradead.org>; Wed, 10 Jul 2019 08:55:11 -0700 (PDT)
+ id 1hlExp-0008UI-Tt
+ for kexec@lists.infradead.org; Wed, 10 Jul 2019 15:57:03 +0000
+Received: by mail-ed1-x542.google.com with SMTP id r12so2671422edo.5
+ for <kexec@lists.infradead.org>; Wed, 10 Jul 2019 08:57:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NaA7wPXrYr7zESysMrfljI9GtiDhiOThoc+Zj7rAeQA=;
- b=TqNYtLWI3NB5JsEVDIYRfoOI4EAUHP4qyxHSRm5QlvOdPdXg+XZBn6KbfVcA+ldNLI
- hfHdkLqaMhNIE5mo1ZJav81oJYcmTzznYM475X10Inp3sCwkcVSFjNi9PCNaC6G/K2Wt
- QX9qQHlgiffcwd7RGi1MUYVX8jaULZWLftt2Mznvv6iNu8iVu0iDA4SSHU3tHsHN3qM/
- o4it1CczGwSnYsettifQezPONE/tBvt/IMgWBy/zxxnFQpt5dhB6puDph7x5F/YyuESq
- m9PpMR3sqidn2gDwZhL58TVLvFBxoTivnIiHN3z96McCrM7yVipkS7cj8oWbeX4pZgu/
- bVFg==
+ :cc; bh=CZgPHxQSyDYYtNmHA3/wZ3DRhIFFkShs7w2jP3T5tpc=;
+ b=LEi6/PjejGkEIcti1eTkHdTyR2J5jxYV6psjYv6r+R4rq9PfMgiJvyz3sGPckQrQjf
+ lbugIKfybDu0Y7zKpFpaEvuHTT2l8vGEYy0HOBao0Cd4zR061ANMYJt6m/w7HHj6E1tb
+ ocYgs+QcC8JNjAUstT+ETcrq/OJtYTOLtc1b+S24v+b0gwp3Hyivo1pqM/mbRS6+5jdh
+ WnlzF7qZHETDtcyr28wnUTIMG2EIZHypwQqXV3z2p5ZjOi9Gv2nhDxwzoWBiIcs2kcrW
+ xTtxPMaM5lL20VjS6uVfPnp7Rlbf/WgAjHAi1S0bhstA9g1OCdvgp9kI3SWayKUOO6zT
+ WtmA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NaA7wPXrYr7zESysMrfljI9GtiDhiOThoc+Zj7rAeQA=;
- b=Dj2r5WDcRkyVFG9+bzfX0PIR7Cbhs9JPgIcVN9YEBNdl3tDNCj0k+AXSEnnUKDBs0z
- 3/OxOcf4r/yexRp7i1926cAtIwiMoTCDnh+kruVHgjX6B7tMmMZtbjYEirnfG0lTFvPe
- zUsxemNJ8vJzb/h0NsLVlwk/emUITX1MEgwxAbXKLUYRdlT97ZGW/wf+T+i/4kE97pSw
- s6kl+UOcN00NEP/1VaD/PTQhetgJp02EgpJ+UdkVWJ+aIfr9GdjGkc9n1qwFVjjFMJaF
- pedru8eCVwRPLJGw9CYV4ROEA2I/XWkZVXryp+cQKH1EeSHIzicwis5jXkGtn/I/h4ar
- lBsA==
-X-Gm-Message-State: APjAAAUCXClyU+wbvWg/4XuRmd2Mh+2kO2qfmb3MyGugRgaQVnAEld36
- ENSUGpFO7QaZzA3rIGTjLRMldtdmiYAHqlh/5gfcbw==
-X-Google-Smtp-Source: APXvYqxg9GNnMZ/W/1xpM+BzZ1/EcZfrkaZOycPesX2M/S7a3GF/j270Zx7XNeK8JZVUBd9XjN8MzzuAh6A7sMkVG/Y=
-X-Received: by 2002:a17:906:d1d0:: with SMTP id
- bs16mr26795899ejb.286.1562774110079; 
- Wed, 10 Jul 2019 08:55:10 -0700 (PDT)
+ bh=CZgPHxQSyDYYtNmHA3/wZ3DRhIFFkShs7w2jP3T5tpc=;
+ b=aasNmbwR3GXgBxnrU69Wx3dhm7igM2GJ50c1DRVX0Vo4SQje5ItYGsPpA/R3+LauZ2
+ /SnSn7QLldhiNaudaI3ed8cPqiYAsLPl8yR9bVOi0dibrVgBNkMr+Zmuc7/Cv9PbyMa9
+ Ukuo55dLWRtJ53KS6IHWCnD6lBvHpEJKq/SxocB0SUVHDyvcVphte9m3nZRK2z6AHGwV
+ 8+UIxHrioYHDpkwGRQXOw8yTMIikuZmCZmNWFjpeJl3luwgVtpDNqAskFDU/BZ/9FW8B
+ 9goZtXmuVGKYw5aYZ9lBslbuG91xAhPQTHvIUMewZPQyGsLl9YF+aFoqTKQzZZcygXJn
+ CoyA==
+X-Gm-Message-State: APjAAAXRa2KnYyx5we9er3PWrPxE/OiFpGjaekI8aq0RS9pMNJ2W4i68
+ TctoYytQsCdeVoOaFSrE5Ea7Bb9kAXxQS37RWHjsgw==
+X-Google-Smtp-Source: APXvYqw7x9BGSNLqWpKAPyh4/6mWWF6JBu/hcFz0l/xjgqeQSiFxs1kaM3mPVPaebQipBv1gm8i9kkO9aBNr+FGCS6c=
+X-Received: by 2002:a50:a4ef:: with SMTP id x44mr32799017edb.304.1562774220761; 
+ Wed, 10 Jul 2019 08:57:00 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190709182014.16052-1-pasha.tatashin@soleen.com>
- <d57ec270-a9dc-1820-195c-eb7ef61f9828@redhat.com>
-In-Reply-To: <d57ec270-a9dc-1820-195c-eb7ef61f9828@redhat.com>
+References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
+ <CACi5LpNGWhTnXyM8gB0Tn=682+08s-ppfDpX2SawfxMvue1GTQ@mail.gmail.com>
+ <CA+CK2bBrwBHhD-PFO_gVnDYoFi0Su6t456WNdtBWpOe4qM+oww@mail.gmail.com>
+ <2d60f302-5161-638a-76cd-d7d79e5631fe@arm.com>
+ <CA+CK2bA40wQvX=KieE5Qg2Ny5ZyiDAAjAb9W7Phu2Ou_9r6bOA@mail.gmail.com>
+ <f9bea5bd-370a-47b5-8ad1-a30bd43d6cca@arm.com>
+In-Reply-To: <f9bea5bd-370a-47b5-8ad1-a30bd43d6cca@arm.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 10 Jul 2019 11:54:59 -0400
-Message-ID: <CA+CK2bC_e=mkxeic--Rw6t84pnP139S_JqoGp9CsJ=aSrnY5mA@mail.gmail.com>
-Subject: Re: [v2 0/5] arm64: allow to reserve memory for normal kexec kernel
-To: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Wed, 10 Jul 2019 11:56:50 -0400
+Message-ID: <CA+CK2bBWis8TgyOmDhVgLYrOU95Za-UhSGSB3ufsjiNDt-Zd_w@mail.gmail.com>
+Subject: Re: [v1 0/5] allow to reserve memory for normal kexec kernel
+To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_085511_706933_F2248F67 
-X-CRM114-Status: GOOD (  36.48  )
+X-CRM114-CacheID: sfid-20190710_085701_972720_FF16AD17 
+X-CRM114-Status: GOOD (  15.82  )
 X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.1 points)
@@ -94,162 +97,50 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
  Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
  Linux Doc Mailing List <linux-doc@vger.kernel.org>,
  kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- "Eric W. Biederman" <ebiederm@xmission.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ James Morris <jmorris@namei.org>, Eric Biederman <ebiederm@xmission.com>,
+ will@kernel.org, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Jul 10, 2019 at 3:32 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
+On Wed, Jul 10, 2019 at 11:19 AM James Morse <james.morse@arm.com> wrote:
 >
-> Hi Pavel,
+> Hi Pasha,
 >
-> On 07/09/2019 11:50 PM, Pavel Tatashin wrote:
-> > Changelog
-> > v1 - v2
-> >       - No changes to patches, addressed suggestion from James Morse
-> >         to add "arm64" tag to cover letter.
+> On 09/07/2019 14:07, Pavel Tatashin wrote:
+> >>> Enabling MMU and D-Cache for relocation  would essentially require the
+> >>> same changes in kernel. Could you please share exactly why these were
+> >>> not accepted upstream into kexec-tools?
+> >>
+> >> Because '--no-checks' is a much simpler alternative.
+> >>
+> >> More of the discussion:
+> >> https://lore.kernel.org/linux-arm-kernel/5599813d-f83c-d154-287a-c131c48292ca@arm.com/
+> >>
+> >> While you can make purgatory a fully-fledged operating system, it doesn't really need to
+> >> do anything on arm64. Errata-workarounds alone are a reason not do start down this path.
+> >
+> > Thank you James. I will summaries the information gathered from the
+> > yesterday's/today's discussion and add it to the cover letter together
+> > with ARM64 tag. I think, the patch series makes sense for ARM64 only,
+> > unless there are other platforms that disable caching/MMU during
+> > relocation.
 >
-> Minor nit. Please also add PATCH to the subject line. Something like
-> [PATCH v2]
+> I'd prefer not to reserve additional memory for regular kexec just to avoid the relocation.
+> If the kernel's relocation work is so painful we can investigate doing it while the MMU is
+> enabled. If you can compare regular-kexec with kexec_file_load() you eliminate the
+> purgatory part of the work.
 
-OK
+Relocation time is exactly the same for regular-kexec and
+kexec_file_load(). So, the relocation is indeed painful for our case.
+I am working on adding MMU enabled kernel relocation.
 
->
-> Also will suggest to wait for atleast a couple of days before sending a
-> new version of the patchset so as to give sufficient time for reviews to
-> happen.
-
-OK
-
->
-> >       - Improved cover letter information based on discussion.
->
-> > Currently, it is only allowed to reserve memory for crash kernel, because
-> > it is a requirement in order to be able to boot into crash kernel without
-> > touching memory of crashed kernel is to have memory reserved.
->
-> > The second benefit for having memory reserved for kexec kernel is
-> > that it does not require a relocation after segments are loaded into
-> > memory.
->
-> > If kexec functionality is used for a fast system update, with a minimal
-> > downtime, the relocation of kernel + initramfs might take a significant
-> > portion of reboot.
-> >
-> > In fact, on the machine that we are using, that has ARM64 processor
-> > it takes 0.35s to relocate during kexec, thus taking 52% of kernel reboot
-> > time:
-> >
-> > kernel shutdown       0.03s
-> > relocation    0.35s
-> > kernel startup        0.29s
-> >
-> > Image: 13M and initramfs is 24M. If initramfs increases, the relocation
-> > time increases proportionally.
-> >
-> > While, it is possible to add 'kexeckernel=' parameters support to other
-> > architectures by modifying reserve_crashkernel(), in this series this is
-> > done for arm64 only.
->
-> Note that we normally have two dimensions to this (and similar)
-> problem(s) - time we spend in relocating the kernel + initramfs v/s the
-> memory space we reserve while enabling kexeckernel (in this case) in the
-> primary kernel.
-
-Yes, for our specific case (Microsoft), it is more important to faster
-reboot and have 64M permanently reserved. However, after thinking
-about this, I decided to go ahead, and implement MMU enabled kernel
-relocation for ARM64.
-
->
-> Just to give you an example, I have to shrink even the crashkernel
-> reservation size in the primary kernel on arm64 systems running fedora
-> which have very small memory footprint. I have a amazon ec2 (aarch64)
-> for example which runs with 256M memory space and even enabling
-> crashkernel on the same was quite a challenge :)
->
-> In such a case we need to do a comparison between the space we reserve
-> v/s the time we spend while relocating while doing a kexec load.
->
-> Note that we recently had issues with OOM in crashkernel boot, because
-> of which we had to introduce kernel command-line parameter to allow a
-> user to disable device dump to reduce memory usage, see the following
-> commit:
->
-> a3a3031b384f ("vmcore: Add a kernel parameter novmcoredd")
->
-> More on the same below ...
->
-> > The reason it is so slow on arm64 to relocate kernel is because the code
-> > that does relocation does this with MMU disabled, and thus D-Cache and
-> > I-Cache must also be disabled.
-> >
-> > Alternative solution is more complicated: Setup a temporary page table
-> > for relocation_routine and also for code from cpu_soft_restart. Perform
-> > relocation with MMU enabled, do cpu_soft_restart where MMU and caching
-> > are disabled, jump to purgatory. A similar approach was suggested for
-> > purgatory and was rejected due to making purgatory too complicated.
-> > On, the other hand hibernate does something similar already, but there
-> > MMU never needs to be disabled, and also by the time machine_kexec()
-> > is called, allocator is not available, as we can't fail to do reboot,
-> > so page table must be pre-allocated during kernel load time.
->
-> ... may be its time to explore this path now with a fresh mind. I know
-> Pratyush tried a bit on this and now I am experimenting on the same on
-> several aarch64 systems, mainly because we are really short on memory
-> resources on several aarch64 systems (used in embedded/cloud domain) and
-> frequently run into OOM issues even in the primary kernel.
->
-> Some more comments below:
->
-> 1. I recommend protecting this code under a CONFIG (CONFIG_FAST_KEXEC ?)
-> option and make it dependent on ARM64 being enabled (via CONFIG_ARM64
-> option) to avoid causing issues on other archs like s390, powerpc,
-> x86_64 (which probably don't need these changes).
->
-> Also better to make the CONFIG option disabled by default, so that we
-> can avoid OOM issues in primary kernel on arm64 systems with smaller
-> memory footprints. A user can enabled it, if he needs fast kexec load
-> experience..
->
-> 2. Also, I don't see timing results for kexec_file_load() in this cover
-> letter. Can you add some results for the same here, or are they on
-> similar lines?
->
-> I will give this a go on some aarch64 systems at my end and come back
-> with more on the kernel + initramfs relocation time v/s memory space
-> taken up results.
->
-> Thanks,
-> Bhupesh
->
-> > Note: the above time is relocation time only. Purgatory usually also
-> > computes checksum, but that is skipped, because --no-check is used when
-> > kernel image is loaded via kexec.
-> >
-> > Pavel Tatashin (5):
-> >    kexec: quiet down kexec reboot
-> >    kexec: add resource for normal kexec region
-> >    kexec: export common crashkernel/kexeckernel parser
-> >    kexec: use reserved memory for normal kexec reboot
-> >    arm64, kexec: reserve kexeckernel region
-> >
-> >   .../admin-guide/kernel-parameters.txt         |  7 ++
-> >   arch/arm64/kernel/setup.c                     |  5 ++
-> >   arch/arm64/mm/init.c                          | 83 ++++++++++++-------
-> >   include/linux/crash_core.h                    |  6 ++
-> >   include/linux/ioport.h                        |  1 +
-> >   include/linux/kexec.h                         |  6 +-
-> >   kernel/crash_core.c                           | 27 +++---
-> >   kernel/kexec_core.c                           | 50 +++++++----
-> >   8 files changed, 127 insertions(+), 58 deletions(-)
-> >
->
+Pasha
 
 _______________________________________________
 kexec mailing list
