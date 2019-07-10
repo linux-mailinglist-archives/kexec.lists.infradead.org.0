@@ -2,49 +2,49 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E11A6485C
-	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 16:30:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C10F36485F
+	for <lists+kexec@lfdr.de>; Wed, 10 Jul 2019 16:30:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bp2eK4yHFnQ9/QVruDnmX10LofrrJvdP24cvivJJLPY=; b=kS5czlBxa7rSaj
-	hZ1wrXH6GZbQOFF09oYniw4zAf8KGDkBzv5gjFsi9ujXuGykFTG87oLlyO+ybNxI/qZfKOUYUeXst
-	74vcHdXUZM0t8bilbgs3xJtiyRHtaW/G/HZ0EobnumgvowyXue5yHz82qrTAj7HPz8wYDLBlaitDd
-	HY+tyIYOyGa/VyuXGixKZui44QqnuwA6Jv974/6hcNApZZ8SN7iyu3JwRfdI9vnr+J7gEpdI6yxzA
-	FamxACCQ77Y9AVKEV2wHZjnv6l68nDp9qdexkslEAK8/rb9UqD9M39fJR3w1X9tpPFgtEaKQ8WsI2
-	Nwm8Xg4P7Ttv96DX72bg==;
+	List-Owner; bh=QGey33M0vxx34X238HKNPJSeCsH3S6UAt6GVqwpV6ac=; b=GUczP6m6t4Axz6
+	h0UTwl3qLwq++nnYsTZhXijn7/b9hoSNJrfJBKSvi4fgZy+cZ5R5GzPOdggXs92CkvMEaNV7QlYss
+	BlYKDfg8/YJe4kzhyopNjU2FRcgRZJvsN45bF4D2APa9HR6oYmdgAUsMq7xR/PjATqS8BWBymchMN
+	4bXi4cgLjHN5qHQCxvoi8iZmR1WBTjZfc91lNn2xfKR8EpfOBvVIValGqnEaKL6vbdoTBfkImcIsx
+	0yrXz5Vnfh4ODYvSf4TzTBcYstUZ9NmLXnVuUDSR2BUCsHRs4tEKKhcc1ZrepjqvwQFMd2ork6ijw
+	isM2qkROBwQJY9H//8aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlDc2-00080e-Li; Wed, 10 Jul 2019 14:30:26 +0000
+	id 1hlDcE-00089x-DJ; Wed, 10 Jul 2019 14:30:38 +0000
 Received: from smtp.duncanthrax.net ([2001:470:70c5:1111::170])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hlDbr-0007tj-Ux
- for kexec@lists.infradead.org; Wed, 10 Jul 2019 14:30:19 +0000
+ id 1hlDbs-0007tl-F8
+ for kexec@lists.infradead.org; Wed, 10 Jul 2019 14:30:20 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=duncanthrax.net; s=dkim; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From;
- bh=roPkL3987tSUlgZQQbJuu94Oaf/ohBLtK+a05FWNfM0=; b=QxH/mK2+ygCWTqNfYpHfoX+3iG
- 0D6K5MvnMxAFqeOBY7HZ8ndNwp0Zw5mSTVJlwYDKBjbevaBDrer4y2vGZAvPVgcRjm1Po1EdZS8eF
- 4A5oA7bndBOYwDR8zf9JQfjoEZ/gy2R1Atf5tTeGKgUqjov6OBvMJDYDHDolCktW3f4Q=;
+ bh=YUPePD+UO0P++gf30WC+0X90gznKyCGUYrxO2mafo98=; b=j0Wt4gHPq2hg5fiSryrUny5zka
+ q0EY3LcjpF6qSqfQlUpkc5AZmgvGnydMzByTeOYTFfQ/eq1/+f9gCUygr3HnKCH9yTUvPV5NjDVxc
+ MWOnaf6L+9lRy7UEQQfsoc+cOPrRz4azUdXvmcaxuyNO1NblJ5mpuhN9J33NHTUyGaaI=;
 Received: from [134.3.44.134] (helo=t470p.stackframe.org)
  by smtp.eurescom.eu with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.86_2) (envelope-from <svens@stackframe.org>)
- id 1hlDbq-0004hm-Kp; Wed, 10 Jul 2019 16:30:14 +0200
+ id 1hlDbq-0004hm-Py; Wed, 10 Jul 2019 16:30:14 +0200
 From: Sven Schnelle <svens@stackframe.org>
 To: kexec@lists.infradead.org
-Subject: [PATCH v3 6/7] kexec_elf: remove Elf_Rel macro
-Date: Wed, 10 Jul 2019 16:29:43 +0200
-Message-Id: <20190710142944.2774-7-svens@stackframe.org>
+Subject: [PATCH v3 7/7] kexec_elf: remove unused variable in kexec_elf_load()
+Date: Wed, 10 Jul 2019 16:29:44 +0200
+Message-Id: <20190710142944.2774-8-svens@stackframe.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190710142944.2774-1-svens@stackframe.org>
 References: <20190710142944.2774-1-svens@stackframe.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190710_073016_174714_8C4C6D80 
-X-CRM114-Status: UNSURE (   6.10  )
+X-CRM114-CacheID: sfid-20190710_073016_650640_3EDCEB02 
+X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -74,28 +74,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-It wasn't used anywhere, so lets drop it.
+base was never unsigned, so we can remove it.
 
 Signed-off-by: Sven Schnelle <svens@stackframe.org>
 ---
- kernel/kexec_elf.c | 4 ----
- 1 file changed, 4 deletions(-)
+ kernel/kexec_elf.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
 
 diff --git a/kernel/kexec_elf.c b/kernel/kexec_elf.c
-index 99e6d63b5dfc..b7e47ddd7cad 100644
+index b7e47ddd7cad..a56ec5481e71 100644
 --- a/kernel/kexec_elf.c
 +++ b/kernel/kexec_elf.c
-@@ -8,10 +8,6 @@
- #include <linux/slab.h>
- #include <linux/types.h>
- 
--#ifndef Elf_Rel
--#define Elf_Rel		Elf64_Rel
--#endif /* Elf_Rel */
--
- static inline bool elf_is_elf_file(const struct elfhdr *ehdr)
+@@ -348,7 +348,7 @@ int kexec_elf_load(struct kimage *image, struct elfhdr *ehdr,
+ 			 struct kexec_buf *kbuf,
+ 			 unsigned long *lowest_load_addr)
  {
- 	return memcmp(ehdr->e_ident, ELFMAG, SELFMAG) == 0;
+-	unsigned long base = 0, lowest_addr = UINT_MAX;
++	unsigned long lowest_addr = UINT_MAX;
+ 	int ret;
+ 	size_t i;
+ 
+@@ -370,7 +370,7 @@ int kexec_elf_load(struct kimage *image, struct elfhdr *ehdr,
+ 		kbuf->bufsz = size;
+ 		kbuf->memsz = phdr->p_memsz;
+ 		kbuf->buf_align = phdr->p_align;
+-		kbuf->buf_min = phdr->p_paddr + base;
++		kbuf->buf_min = phdr->p_paddr;
+ 		ret = kexec_add_buffer(kbuf);
+ 		if (ret)
+ 			goto out;
+@@ -380,9 +380,6 @@ int kexec_elf_load(struct kimage *image, struct elfhdr *ehdr,
+ 			lowest_addr = load_addr;
+ 	}
+ 
+-	/* Update entry point to reflect new load address. */
+-	ehdr->e_entry += base;
+-
+ 	*lowest_load_addr = lowest_addr;
+ 	ret = 0;
+  out:
 -- 
 2.20.1
 
