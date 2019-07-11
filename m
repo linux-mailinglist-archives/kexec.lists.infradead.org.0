@@ -2,58 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 432E7652E6
-	for <lists+kexec@lfdr.de>; Thu, 11 Jul 2019 10:12:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B29965441
+	for <lists+kexec@lfdr.de>; Thu, 11 Jul 2019 11:58:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jdf+/9UPh2UQZcp12gzMHLJswsxv6ZNDtzO7q5r2FCM=; b=UAWAE+iVNE/a29
-	aTly2XdaLTxuxYhOLuG9a/SPrTy0E/jHFks4iaICAWy+GSNoD78ZA0+fmhApFFKrfnzum9cbc/Vwf
-	jeGh2CBAHKD/EJwzUKTBDYfK5fw1Gh6FuereTdZhnLFs2F+om1M5na3eWcAQQ0KXfRPr+rsq9nJ3n
-	wnYmySemaXjpih0VSEYCZa3p7wmiD60ClSfxOc2tXgZ7fM67mHujnrfgLAKSEjHeP/6aVEnHAB4sK
-	LJpuKQSinS8wMMipwD3mWFq6GINfPTYmrR5IHQ6PCQQE2EgdunGp0q4QLezsokef/EXLwmxRf5E2K
-	AOKyx53Pw7KHpUjOnxtQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4rjxZ/8equOo+u1xNQMxHRvdiFykm9FClkjSnNdpIRA=; b=hJevBOahL0zPdV
+	a2KpdJuz/ekPzhIUpJMdHpQVYl/ToCpzSVHturPBbwLNAVf4HF19tuduiNebhpn0PP2EURoTv4gRb
+	hpQectZNJOPbXeUiKb78jmw445pt8zmO9XreHnLvhbGSfpRczwxmLhVghNcHj45sECQLXuXVOa9TG
+	yxVaU4arggTE8NzpBs0WSSeCyyu4J98TJCzi7bSfL053tSe1uiXmY76N/2jPYIz89qDFSG70CqIM7
+	8p0XSXyUyCHu3B22U65vBQUY0eUkIrbdMShPHzILJm+iF0Jbm6DycFL2ypNh2XDqc0p6W4op42ZG0
+	HXk9U045TimtDkFqYi0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hlUBg-0004p5-2t; Thu, 11 Jul 2019 08:12:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hlVqA-0000Qj-Mw; Thu, 11 Jul 2019 09:58:14 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hlUBY-0004nm-3y; Thu, 11 Jul 2019 08:12:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4D5992B;
- Thu, 11 Jul 2019 01:12:08 -0700 (PDT)
-Received: from [10.1.25.146] (e111740.arm.com [10.1.25.146])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A25713F59C;
- Thu, 11 Jul 2019 01:12:06 -0700 (PDT)
-Subject: Re: [v1 0/5] allow to reserve memory for normal kexec kernel
-To: Pavel Tatashin <pasha.tatashin@soleen.com>,
- James Morse <james.morse@arm.com>
-References: <20190708211528.12392-1-pasha.tatashin@soleen.com>
- <CACi5LpNGWhTnXyM8gB0Tn=682+08s-ppfDpX2SawfxMvue1GTQ@mail.gmail.com>
- <CA+CK2bBrwBHhD-PFO_gVnDYoFi0Su6t456WNdtBWpOe4qM+oww@mail.gmail.com>
- <2d60f302-5161-638a-76cd-d7d79e5631fe@arm.com>
- <CA+CK2bA40wQvX=KieE5Qg2Ny5ZyiDAAjAb9W7Phu2Ou_9r6bOA@mail.gmail.com>
- <f9bea5bd-370a-47b5-8ad1-a30bd43d6cca@arm.com>
- <CA+CK2bBWis8TgyOmDhVgLYrOU95Za-UhSGSB3ufsjiNDt-Zd_w@mail.gmail.com>
-From: Vladimir Murzin <vladimir.murzin@arm.com>
-Message-ID: <93f99d54-9fe4-a191-4877-080ad78322bb@arm.com>
-Date: Thu, 11 Jul 2019 09:12:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1hlVq4-0000FE-7D
+ for kexec@lists.infradead.org; Thu, 11 Jul 2019 09:58:12 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 3D87725B706;
+ Thu, 11 Jul 2019 19:58:03 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id 2093B94031C; Thu, 11 Jul 2019 11:58:01 +0200 (CEST)
+Date: Thu, 11 Jul 2019 11:58:01 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH 3/4] kexec/kexec-zlib.h: Add 'is_zlib_file()' helper
+ function
+Message-ID: <20190711095800.i6flfrcdidw2t6la@verge.net.au>
+References: <1562788469-22935-1-git-send-email-bhsharma@redhat.com>
+ <1562788469-22935-4-git-send-email-bhsharma@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <CA+CK2bBWis8TgyOmDhVgLYrOU95Za-UhSGSB3ufsjiNDt-Zd_w@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1562788469-22935-4-git-send-email-bhsharma@redhat.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190711_011212_215886_A9490788 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190711_025808_429685_D33A15A0 
+X-CRM114-Status: GOOD (  16.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
@@ -67,69 +64,94 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Jonathan Corbet <corbet@lwn.net>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morris <jmorris@namei.org>, Eric Biederman <ebiederm@xmission.com>,
- will@kernel.org, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: takahiro.akashi@linaro.org, bhupesh.linux@gmail.com,
+ kexec@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 7/10/19 4:56 PM, Pavel Tatashin wrote:
-> On Wed, Jul 10, 2019 at 11:19 AM James Morse <james.morse@arm.com> wrote:
->>
->> Hi Pasha,
->>
->> On 09/07/2019 14:07, Pavel Tatashin wrote:
->>>>> Enabling MMU and D-Cache for relocation  would essentially require the
->>>>> same changes in kernel. Could you please share exactly why these were
->>>>> not accepted upstream into kexec-tools?
->>>>
->>>> Because '--no-checks' is a much simpler alternative.
->>>>
->>>> More of the discussion:
->>>> https://lore.kernel.org/linux-arm-kernel/5599813d-f83c-d154-287a-c131c48292ca@arm.com/
->>>>
->>>> While you can make purgatory a fully-fledged operating system, it doesn't really need to
->>>> do anything on arm64. Errata-workarounds alone are a reason not do start down this path.
->>>
->>> Thank you James. I will summaries the information gathered from the
->>> yesterday's/today's discussion and add it to the cover letter together
->>> with ARM64 tag. I think, the patch series makes sense for ARM64 only,
->>> unless there are other platforms that disable caching/MMU during
->>> relocation.
->>
->> I'd prefer not to reserve additional memory for regular kexec just to avoid the relocation.
->> If the kernel's relocation work is so painful we can investigate doing it while the MMU is
->> enabled. If you can compare regular-kexec with kexec_file_load() you eliminate the
->> purgatory part of the work.
+On Thu, Jul 11, 2019 at 01:24:28AM +0530, Bhupesh Sharma wrote:
+> This patch adds 'is_zlib_file()' helper function which can be
+> used to quickly determine with the passed kernel image is a zlib
+> compressed kernel image.
 > 
-> Relocation time is exactly the same for regular-kexec and
-> kexec_file_load(). So, the relocation is indeed painful for our case.
-> I am working on adding MMU enabled kernel relocation.
-
-Out of curiosity, does enabling only I-cache make a difference? IIRC, it doesn't
-require setting MMU, in contrast to D-cache.
-
-Cheers
-Vladimir
-
+> This is specifically useful for arm64 zImage (or Image.gz) support,
+> which is introduced by later patches in this patchset.
 > 
-> Pasha
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+> ---
+>  kexec/kexec-zlib.h |  1 +
+>  kexec/zlib.c       | 32 ++++++++++++++++++++++++++++++++
+>  2 files changed, 33 insertions(+)
 > 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+> diff --git a/kexec/kexec-zlib.h b/kexec/kexec-zlib.h
+> index 43c107bf4a72..16300f294759 100644
+> --- a/kexec/kexec-zlib.h
+> +++ b/kexec/kexec-zlib.h
+> @@ -6,5 +6,6 @@
+>  
+>  #include "config.h"
+>  
+> +int is_zlib_file(const char *filename, off_t *r_size);
+>  char *zlib_decompress_file(const char *filename, off_t *r_size);
+>  #endif /* __KEXEC_ZLIB_H */
+> diff --git a/kexec/zlib.c b/kexec/zlib.c
+> index 95b608059d41..34d5ca566769 100644
+> --- a/kexec/zlib.c
+> +++ b/kexec/zlib.c
+> @@ -23,6 +23,32 @@ static void _gzerror(gzFile fp, int *errnum, const char **errmsg)
+>  	}
+>  }
+>  
+> +int is_zlib_file(const char *filename, off_t *r_size)
+> +{
+> +	gzFile fp;
+> +	int errnum;
+> +	const char *msg;
+> +
+> +	if (!filename)
+> +		goto out;
+> +
+> +	fp = gzopen(filename, "rb");
 
+Does fp need to be closed somewhere to avoid a leak?
+
+> +	if (fp == 0) {
+> +		_gzerror(fp, &errnum, &msg);
+> +		dbgprintf("Cannot open `%s': %s\n", filename, msg);
+> +		goto out;
+> +	}
+> +
+> +	if (gzdirect(fp))
+> +		/* It's not in gzip format */
+> +		goto out;
+> +
+> +	/* It's in gzip format */
+> +	return 1;
+> +out:
+> +	return 0;
+> +}
+> +
+>  char *zlib_decompress_file(const char *filename, off_t *r_size)
+>  {
+>  	gzFile fp;
+> @@ -84,6 +110,12 @@ fail:
+>  	return buf;
+>  }
+>  #else
+> +
+> +int is_zlib_file(const char *filename, off_t *r_size)
+> +{
+> +	return 0;
+> +}
+> +
+>  char *zlib_decompress_file(const char *UNUSED(filename), off_t *UNUSED(r_size))
+>  {
+>  	return NULL;
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 kexec mailing list
