@@ -2,59 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AEC36852A
-	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 10:28:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B30EE68798
+	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 13:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RvtBr4LW7YcpLT9dHnY0M8R9Skl95x15yUUjSFLxe8Q=; b=lDJ0TYnyacG8uV
-	SVmWD5M8Rp/0ItCvGjhIQ355Y4uSJ7FkxTKATuoBWaxXgqg3soUlL4viioXXLc7HkSNckJjh882Un
-	sEtjEzsGGAZGCe1kvigFB42VaE2TmdYjwO91me/RuoJ5CXgYLYO4l/fhFHAYksJTGWrPV+lW6feof
-	FOvW9tRs2iOwMpkeTNH0ueWkjWHT/38GdhvwLvzYTjA91sfAu5dS+qAvv/3wu3ZtofT/hzyExg/6S
-	jD8QGaGAkqnIJiTW5k2ei7IlGJEb2JI6MsN0VSgSYay65ziUICUTKzoOByAyAwNV4fOfmNvFhIsxr
-	XOnnRpc2UutvMhozKtQA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=41gPe2yfZsWEtBYTLOcqlThle/ZiRydrZHP6JLJxWBA=; b=TMF
+	MvXEKSciXlbjJaL6n9hoqsnQNCcfktsnsWRgDwoZ58V7v5fZaWP2vjQtUrfL1UQuT8pkAdDN300tJ
+	i+BoXYgIwh5hkCPVWw4EGa2eGc6oucSlYANZsoXUI+WTX0CYN6QWRoSk/M9s750el1MjsEda/PIEy
+	ipsquIWp67Q7NfJyjUqzuGb0Bv9vG39fI+/ymZmao8hocx4ubEEdEbHnxTRiKXEl8xvDGjdFNPGZA
+	Rltd7BERiUh9vpLnmfYRStnAjY+oif60jOKFHGvJjDhJwNFrNi6Igh19zwqG0seybQ9zQnYtpOGPo
+	iKYmA++YA4xqt+R3vf+NoDxQCOtfBKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmwL2-0005Lj-N5; Mon, 15 Jul 2019 08:28:00 +0000
-Received: from smtp.duncanthrax.net ([2001:470:70c5:1111::170])
+	id 1hmyja-0007hH-FK; Mon, 15 Jul 2019 11:01:30 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmwKc-00054H-9L
- for kexec@lists.infradead.org; Mon, 15 Jul 2019 08:27:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=duncanthrax.net; s=dkim; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From;
- bh=6W4688oyJZbtK14Anh8D9N7K+5SYgxQ13Y/LTUk7Lgc=; b=nGQsMdIO4EgF+cfyJJXLWY9WKJ
- bpt+QYkTb9GSP3x33vixwIVPFCiBbJaFIbngyulTSVPSxTuvNWNT5Aw6cnUknMv+wiqCf0zl9NX6V
- 9xOJrkERLw1X3CDFLIGEGnmJ5oH5Qx6xH5pd2DXt7RDkF7Re0PvKFEZF4zBCyps1NPXA=;
-Received: from frobwit.duncanthrax.net ([89.31.1.178] helo=t470p.intern)
- by smtp.eurescom.eu with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.86_2) (envelope-from <svens@stackframe.org>)
- id 1hmwKa-0005LV-90; Mon, 15 Jul 2019 10:27:32 +0200
-From: Sven Schnelle <svens@stackframe.org>
-To: kexec@lists.infradead.org
-Subject: [PATCH v4 7/7] kexec_elf: support 32 bit ELF files
-Date: Mon, 15 Jul 2019 10:27:02 +0200
-Message-Id: <20190715082702.27308-8-svens@stackframe.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190715082702.27308-1-svens@stackframe.org>
-References: <20190715082702.27308-1-svens@stackframe.org>
+ id 1hmyjW-0007gg-08
+ for kexec@lists.infradead.org; Mon, 15 Jul 2019 11:01:28 +0000
+Received: by mail-pg1-x544.google.com with SMTP id l21so7543419pgm.3
+ for <kexec@lists.infradead.org>; Mon, 15 Jul 2019 04:01:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to;
+ bh=at1U0zLzNGQlxAxn9clrRSHSPpGB2zlKGmciYViXmzQ=;
+ b=Z9oXVPFMLu2uHaJA1Qjp0ttNObBYRa75H5GL/4ONtRz8tfullG/Skqfnj/qhqsn2XF
+ 4XYx/OUlIT1ITxiKwJ0NLlTn9aJ/3SM0o29EuBJakQa3t/QZ+ieI2JVD9pPeovy+ik6Z
+ /hr3CEZ03JP+w2RMUiBpSqYxHvp2SIpeTkf+JqgSc2mA6I9ApZCviQ5R85k2HYy05AtN
+ LAYbUtTxdcTOOZET0hphoyT/XLVSCesl9pCLqOv9NR3Es2mk17JKwyWKgHFnjTWgxbat
+ dkO9QV6ePL/iu9cuUS+qRtoqQHI7F1CKVej3u1bTFntcgm8BMe7VPywWSQgOrk+Hd1la
+ Wy5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=at1U0zLzNGQlxAxn9clrRSHSPpGB2zlKGmciYViXmzQ=;
+ b=EjkzfMEZa3+9Yh8y+lK1puh/dtk6YRuu5UhCl1XjuOUUdotRN7dRXYt3BaHEJvPreK
+ KIJ3iz9hyXs5q7ArEGTyIqlVUwP04xN/EgJBiOeW7GUw9oFYowxNbPmFmqN8D/DP5XP9
+ N5LpvUhcYZXBY97RGhd9BMng/g0AJdRKFIo1fCT3hiTf3IPytZA4Dx4UvwXxkbDeAsbe
+ l4us39Q4w/kr7zJAf8BqXhe1NEQ4YZNthN8Z0hVak+f6EcoxWjrxDlDElpJrK4JJAbXl
+ hkQ2TZWkUnaUvvPniR1ey5Q2F+xgx16wSAZI38XxEf+//o+JIhZdDrkJAzXaOORsuZ3W
+ hzqQ==
+X-Gm-Message-State: APjAAAWKQJoYZRum9+V5zxr3qvW6kjoqO4lFsL3cmaYz4L4TUbX+1zYq
+ aThplatt4gcXMg/6a1aWnLq8KE3GH+z++MufLMk=
+X-Google-Smtp-Source: APXvYqzRiqEMdP2oCsG+oCHXb2GHUr0XEf1B7DVR+E89dsJE9BnV66dSLlkj/q/fQwMBNc78Lr9VZjkNFa6Zuiwz9HU=
+X-Received: by 2002:a63:ad07:: with SMTP id g7mr24465546pgf.405.1563188483879; 
+ Mon, 15 Jul 2019 04:01:23 -0700 (PDT)
 MIME-Version: 1.0
+Received: by 2002:a17:90a:b78d:0:0:0:0 with HTTP; Mon, 15 Jul 2019 04:01:23
+ -0700 (PDT)
+From: Donald Douglas <ddouglasng@gmail.com>
+Date: Mon, 15 Jul 2019 04:01:23 -0700
+Message-ID: <CALVR28FUKvdu9Zx=69na4BTSWx-HhVeo+1o3JMScYNkFchaezw@mail.gmail.com>
+Subject: Kindly Respond
+To: undisclosed-recipients:;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_012738_368785_22F9AD8B 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190715_040126_277835_DCFF8848 
+X-CRM114-Status: UNSURE (  -0.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 2.8 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (ddouglasng[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid 2.0 HK_SCAM                No description available.
+ 1.0 FREEMAIL_REPLY         From and body contain different freemails
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,124 +92,24 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sven Schnelle <svens@stackframe.org>, deller@gmx.de,
- linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-The powerpc version only supported 64 bit. Add some
-code to switch decoding of fields during runtime so
-we can kexec a 32 bit kernel from a 64 bit kernel and
-vice versa.
+Hello,
+I am Barr Fredrick Mbogo a business consultant i have a lucrative
+business to discuss with you from the Eastern part of Africa Uganda to
+be precise aimed at agreed percentage upon your acceptance of my hand
+in business and friendship. Kindly respond to me if you are interested
+to partner with me for an update. Very important.
 
-Signed-off-by: Sven Schnelle <svens@stackframe.org>
----
- kernel/kexec_elf.c | 57 ++++++++++++++++++++++++++++++++++------------
- 1 file changed, 42 insertions(+), 15 deletions(-)
-
-diff --git a/kernel/kexec_elf.c b/kernel/kexec_elf.c
-index 9421eebbacf0..a39d01154829 100644
---- a/kernel/kexec_elf.c
-+++ b/kernel/kexec_elf.c
-@@ -8,8 +8,6 @@
- #include <linux/slab.h>
- #include <linux/types.h>
- 
--#define elf_addr_to_cpu	elf64_to_cpu
--
- static inline bool elf_is_elf_file(const struct elfhdr *ehdr)
- {
- 	return memcmp(ehdr->e_ident, ELFMAG, SELFMAG) == 0;
-@@ -139,9 +137,6 @@ static int elf_read_ehdr(const char *buf, size_t len, struct elfhdr *ehdr)
- 	ehdr->e_type      = elf16_to_cpu(ehdr, buf_ehdr->e_type);
- 	ehdr->e_machine   = elf16_to_cpu(ehdr, buf_ehdr->e_machine);
- 	ehdr->e_version   = elf32_to_cpu(ehdr, buf_ehdr->e_version);
--	ehdr->e_entry     = elf_addr_to_cpu(ehdr, buf_ehdr->e_entry);
--	ehdr->e_phoff     = elf_addr_to_cpu(ehdr, buf_ehdr->e_phoff);
--	ehdr->e_shoff     = elf_addr_to_cpu(ehdr, buf_ehdr->e_shoff);
- 	ehdr->e_flags     = elf32_to_cpu(ehdr, buf_ehdr->e_flags);
- 	ehdr->e_phentsize = elf16_to_cpu(ehdr, buf_ehdr->e_phentsize);
- 	ehdr->e_phnum     = elf16_to_cpu(ehdr, buf_ehdr->e_phnum);
-@@ -149,6 +144,24 @@ static int elf_read_ehdr(const char *buf, size_t len, struct elfhdr *ehdr)
- 	ehdr->e_shnum     = elf16_to_cpu(ehdr, buf_ehdr->e_shnum);
- 	ehdr->e_shstrndx  = elf16_to_cpu(ehdr, buf_ehdr->e_shstrndx);
- 
-+	switch (ehdr->e_ident[EI_CLASS]) {
-+	case ELFCLASS64:
-+		ehdr->e_entry     = elf64_to_cpu(ehdr, buf_ehdr->e_entry);
-+		ehdr->e_phoff     = elf64_to_cpu(ehdr, buf_ehdr->e_phoff);
-+		ehdr->e_shoff     = elf64_to_cpu(ehdr, buf_ehdr->e_shoff);
-+		break;
-+
-+	case ELFCLASS32:
-+		ehdr->e_entry     = elf32_to_cpu(ehdr, buf_ehdr->e_entry);
-+		ehdr->e_phoff     = elf32_to_cpu(ehdr, buf_ehdr->e_phoff);
-+		ehdr->e_shoff     = elf32_to_cpu(ehdr, buf_ehdr->e_shoff);
-+		break;
-+
-+	default:
-+		pr_debug("Unknown ELF class.\n");
-+		return -EINVAL;
-+	}
-+
- 	return elf_is_ehdr_sane(ehdr, len) ? 0 : -ENOEXEC;
- }
- 
-@@ -179,6 +192,7 @@ static int elf_read_phdr(const char *buf, size_t len,
- {
- 	/* Override the const in proghdrs, we are the ones doing the loading. */
- 	struct elf_phdr *phdr = (struct elf_phdr *) &elf_info->proghdrs[idx];
-+	const struct elfhdr *ehdr = elf_info->ehdr;
- 	const char *pbuf;
- 	struct elf_phdr *buf_phdr;
- 
-@@ -186,18 +200,31 @@ static int elf_read_phdr(const char *buf, size_t len,
- 	buf_phdr = (struct elf_phdr *) pbuf;
- 
- 	phdr->p_type   = elf32_to_cpu(elf_info->ehdr, buf_phdr->p_type);
--	phdr->p_offset = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_offset);
--	phdr->p_paddr  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_paddr);
--	phdr->p_vaddr  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_vaddr);
- 	phdr->p_flags  = elf32_to_cpu(elf_info->ehdr, buf_phdr->p_flags);
- 
--	/*
--	 * The following fields have a type equivalent to Elf_Addr
--	 * both in 32 bit and 64 bit ELF.
--	 */
--	phdr->p_filesz = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_filesz);
--	phdr->p_memsz  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_memsz);
--	phdr->p_align  = elf_addr_to_cpu(elf_info->ehdr, buf_phdr->p_align);
-+	switch (ehdr->e_ident[EI_CLASS]) {
-+	case ELFCLASS64:
-+		phdr->p_offset = elf64_to_cpu(ehdr, buf_phdr->p_offset);
-+		phdr->p_paddr  = elf64_to_cpu(ehdr, buf_phdr->p_paddr);
-+		phdr->p_vaddr  = elf64_to_cpu(ehdr, buf_phdr->p_vaddr);
-+		phdr->p_filesz = elf64_to_cpu(ehdr, buf_phdr->p_filesz);
-+		phdr->p_memsz  = elf64_to_cpu(ehdr, buf_phdr->p_memsz);
-+		phdr->p_align  = elf64_to_cpu(ehdr, buf_phdr->p_align);
-+		break;
-+
-+	case ELFCLASS32:
-+		phdr->p_offset = elf32_to_cpu(ehdr, buf_phdr->p_offset);
-+		phdr->p_paddr  = elf32_to_cpu(ehdr, buf_phdr->p_paddr);
-+		phdr->p_vaddr  = elf32_to_cpu(ehdr, buf_phdr->p_vaddr);
-+		phdr->p_filesz = elf32_to_cpu(ehdr, buf_phdr->p_filesz);
-+		phdr->p_memsz  = elf32_to_cpu(ehdr, buf_phdr->p_memsz);
-+		phdr->p_align  = elf32_to_cpu(ehdr, buf_phdr->p_align);
-+		break;
-+
-+	default:
-+		pr_debug("Unknown ELF class.\n");
-+		return -EINVAL;
-+	}
- 
- 	return elf_is_phdr_sane(phdr, len) ? 0 : -ENOEXEC;
- }
--- 
-2.20.1
-
+Yours Sincerely,
+Donald Douglas,
+For,
+Barr Frederick Mbogo
+Legal Consultant.
+Reply to: barrfredmbogo@consultant.com
 
 _______________________________________________
 kexec mailing list
