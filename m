@@ -2,68 +2,72 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5FFA6835F
+	by mail.lfdr.de (Postfix) with ESMTPS id B00B568360
 	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 08:03:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZuLdT7dcZ4xYL7hEnwXBAfLfwo5heApk8g4jc52p6e8=; b=h/q
-	KZONn/NPeSYgA+V5qGKIB3WyjvJNHgLN+agv4xtccBPRuUoi8nxfWG7PqqWLH9StZZXX8Lyy02N4Z
-	P7BiMtcK7WQcYQUtbBKGrnonUBbVCNJ9x+aLSfd0SBMeECiQIecWJZcyuhBXo5YuZk92dGhUuqEIW
-	l3cHXGu3wyar36qsX6NSt/h41KGF0Oe9pXk7NMBBrJIS+3Fs64OmhPL6grVACn1dx46HABx8N2DdQ
-	r5ws0Mhj9fKOJRFh16yqv7jYYfpY9BzivexjlA3iwSSLaSyIs8izZWdLk46ganfHpDdE9PiOUh+OL
-	J88C6QQWAlv6aMQzLSC+aADftowiQcg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=sQ6rUXwRukO3BASlemxmJ14rEcKujQRg8cU0FKClow0=; b=KDlp4OBwz1qJLOQ3Dgm6JreHzO
+	hACQLEhohM3mh++J1kxjNbxRIVadFkz0PETeIUZ5mR0NyP+NQUSWHfgd/TtueGBq2DZlnswDwi5e5
+	6cEt8OB6rO94u7o/tI33tiV+g9WeB59w5QuaYrWI1IyIP6NZspNKIhNqPIT6YTIvsKqetmjQPHHVq
+	b4I7gWS8BbDxaMKTt8gsXuS4fmbD7+W2NEQqP93WfDt0rqQfYZk3migwI/5Av+/drFRJjH8qvIhUz
+	mpqsu/zL155WZSbBgsyuScDuxpO7XDVrED0bFf4AwE80ebcYwwNttEJ1QkYGx7juHTVopYWJUexN5
+	MqwGhmdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmu4v-0005r4-Uf; Mon, 15 Jul 2019 06:03:14 +0000
-Received: from mail-pl1-f194.google.com ([209.85.214.194])
+	id 1hmu4y-0005sC-EH; Mon, 15 Jul 2019 06:03:16 +0000
+Received: from mail-pg1-f193.google.com ([209.85.215.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmu4o-0005qD-Nl
- for kexec@lists.infradead.org; Mon, 15 Jul 2019 06:03:08 +0000
-Received: by mail-pl1-f194.google.com with SMTP id a93so7724077pla.7
- for <kexec@lists.infradead.org>; Sun, 14 Jul 2019 23:03:04 -0700 (PDT)
+ id 1hmu4q-0005qc-6Y
+ for kexec@lists.infradead.org; Mon, 15 Jul 2019 06:03:09 +0000
+Received: by mail-pg1-f193.google.com with SMTP id o13so7154614pgp.12
+ for <kexec@lists.infradead.org>; Sun, 14 Jul 2019 23:03:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=J2lWSaohAHo7vPwFExXuWk2m657wnEIfn61wMyJc3lw=;
- b=fsgdR9BeOj891t+Pu7jeEyVuIlYQrJW6A89veL0XSR6GO9Gk9/bP73lkuaIWQ+3KyL
- lvT2mATYpZ5f3JWFCBJSwt2d3+opiqEWplI7v9VAf+Dcu+Iote/k17Y1ddtY/61lQl2l
- LtU9Ezj66H+w6t5hXWcsH3Un7eQj0v41TBr2rjj3TpKNSeM412XZg5199N5vsFqUKy1t
- U7t1KPjNxgFkN3osj05SuadA/5o7XARMNKfb1w1gOFKKG4YPwSRjxkBLr19ErCvqziL7
- Q1FXcqc4SCkGjKRqb3sj5PkcMSqdjhYgkEpNgRkg7/Tgthfn7eosFp65wn3QK/hxt5wF
- IsKg==
-X-Gm-Message-State: APjAAAUb5TVednYF3IiibfZ8SufOEaiTzVAPy0UJnzWdjOBZnfSZxT4i
- kdMU4VUajhLM+iW2rRL4lAM+8NqL+m0=
-X-Google-Smtp-Source: APXvYqyTf9ALAEIt9n8jDMfsW5kkNFAQXBruCL7eoObmftP5qnxuMiIj7F0Nx1u3gCrZpm8nPGMrMg==
-X-Received: by 2002:a17:902:ab8f:: with SMTP id
- f15mr26140372plr.159.1563170583199; 
- Sun, 14 Jul 2019 23:03:03 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=zpFsWsCr/OqjVbJkKQ05MKxH0fgBxVzwWaDb1ichIOw=;
+ b=POy2vAPoWAtkLhRri5c4vfva8xsGshEtbZqTMOGZjHmVgpd5F3qVLIBHZd82mAVtJN
+ dKcuHotK6Tr/H7R0Q3rsJgiDu7oYbUtWwYU1eD7OJeD47lTBNB0dMy2nG3ZQCICs6rJY
+ ikY8jcRVgLExbdT4EoBlVddrph7Vr265038TpKSo+o0D7Uv+AXJvJPXn7KPGg6L1d9E/
+ +mrMOt5bYEy8wuH49hABX26Q26jBTw+M93FtAQg4r1Tpue9vkRU7AsRkjFcHvWNTUn4X
+ VSB0mv1GvivnF7q1tpFHRHp6v7ZQdi0p6xSQGD0gTY3sh+hRJ5FMcy592MoOTJGWX9aW
+ Da9A==
+X-Gm-Message-State: APjAAAWAYdnSeacLhdu5GUs0TJbGU3QS/XwYQvPDkk1ylyI4R3tC07G2
+ TSqNisULW3yuA7sPC9RBGtM/wAoSiHM=
+X-Google-Smtp-Source: APXvYqyZ4x1PJESHqsQdAuvWUdMUEB5atKRg1o5+f/mutwZu1aIj4M+PqCGEAu/7/pNPNJnlG+OLwg==
+X-Received: by 2002:a17:90a:2430:: with SMTP id
+ h45mr28077609pje.14.1563170586606; 
+ Sun, 14 Jul 2019 23:03:06 -0700 (PDT)
 Received: from localhost ([106.215.98.33])
- by smtp.gmail.com with ESMTPSA id z2sm14248578pgg.58.2019.07.14.23.03.01
+ by smtp.gmail.com with ESMTPSA id d14sm21508336pfo.154.2019.07.14.23.03.05
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 14 Jul 2019 23:03:02 -0700 (PDT)
+ Sun, 14 Jul 2019 23:03:05 -0700 (PDT)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: kexec@lists.infradead.org
-Subject: [PATCH v2 0/4] kexec/arm64: Add support for zlib compressed kernel
- images (Image.gz)
-Date: Mon, 15 Jul 2019 11:32:52 +0530
-Message-Id: <1563170576-13134-1-git-send-email-bhsharma@redhat.com>
+Subject: [PATCH v2 1/4] kexec/kexec.c: Add the missing close() for fd used for
+ kexec_file_load()
+Date: Mon, 15 Jul 2019 11:32:53 +0530
+Message-Id: <1563170576-13134-2-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1563170576-13134-1-git-send-email-bhsharma@redhat.com>
+References: <1563170576-13134-1-git-send-email-bhsharma@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190714_230306_774402_95566F0A 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20190714_230308_240627_D4C25475 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.194 listed in list.dnswl.org]
+ no trust [209.85.215.193 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.194 listed in wl.mailspike.net]
+ [209.85.215.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -86,55 +90,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Changes since v1:
-----------------
-(v1 can be viewed here: http://lists.infradead.org/pipermail/kexec/2019-July/023288.html)
- - Fixed the potential file descriptor leakage code legs pointed out by
-   Simon.
- - Ran Valgrind to make sure no potential memory leakage issues are
-   introduced by this patchset.
+In kexec/kexec.c, we open() the kernel Image file and pass this file
+descriptor to the kexec_file_load() system call, but never call a
+corresponding close().
 
-This patchset adds the support for zlib compressed kernel images
-(Image.gz) for arm64 kexec-tools.
+Fix the same via this patch.
 
-This was discussed a bit with the arm64 kernel maintainers (see [0]) and
-after discussing the pros and cons of adding this support in
-kernel-space v/s in user-space, we decided it makes more sense to add
-this support to the user-space kexec-tools.
+Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+---
+ kexec/kexec.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Note that this series adds support for unsigned arm64 Image.gz files
-only as signing an Image.gz type file is not a easy implementation from
-kexec-tools p-o-v. Also even standard signing tools like sbsign fail to
-recongize the Image.gz format:
-
- $ sbsign --key certs/signing_key.pem  --cert certs/signing_key.pem Image.gz
-   Invalid DOS header magic
-
-... because that gzip file isn't a PE32+ that can be loaded by UEFI.
-So I will work on the same in coming days and try to send a RFC
-patchset for the same later on.
-
-[0]. http://lists.infradead.org/pipermail/kexec/2019-June/023156.html
-
-Bhupesh Sharma (4):
-  kexec/kexec.c: Add the missing close() for fd used for
-    kexec_file_load()
-  kexec-uImage-arm64.c: Fix return value of uImage_arm64_probe()
-  kexec/kexec-zlib.h: Add 'is_zlib_file()' helper function
-  kexec/arm64: Add support for handling zlib compressed (Image.gz) image
-
- kexec/arch/arm64/Makefile             |   3 +-
- kexec/arch/arm64/kexec-arm64.c        |   1 +
- kexec/arch/arm64/kexec-arm64.h        |   7 ++
- kexec/arch/arm64/kexec-image-arm64.c  |   4 +-
- kexec/arch/arm64/kexec-uImage-arm64.c |  13 +-
- kexec/arch/arm64/kexec-zImage-arm64.c | 226 ++++++++++++++++++++++++++++++++++
- kexec/kexec-zlib.h                    |   1 +
- kexec/kexec.c                         |  14 +++
- kexec/zlib.c                          |  38 ++++++
- 9 files changed, 303 insertions(+), 4 deletions(-)
- create mode 100644 kexec/arch/arm64/kexec-zImage-arm64.c
-
+diff --git a/kexec/kexec.c b/kexec/kexec.c
+index 32ae56c8f1c3..8ca3b457cac8 100644
+--- a/kexec/kexec.c
++++ b/kexec/kexec.c
+@@ -1234,6 +1234,8 @@ static int do_kexec_file_load(int fileind, int argc, char **argv,
+ 	if (ret != 0)
+ 		fprintf(stderr, "kexec_file_load failed: %s\n",
+ 					strerror(errno));
++
++	close(kernel_fd);
+ 	return ret;
+ }
+ 
 -- 
 2.7.4
 
