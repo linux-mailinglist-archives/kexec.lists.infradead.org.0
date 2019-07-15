@@ -2,50 +2,49 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B62868523
-	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 10:27:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F5AF68529
+	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 10:28:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0ujaKi4LerRiRRk8SEcKe7M2T3aPZi6ZxUkWFwagqoI=; b=Ql8s3gnqG+FDCA
-	O/bCBQhESgjhtid8JsNwPdarb4C/8fGBXfGGUEyBkNTVUh7IX6CHKo1Z3N2uuU+xPMNZqSB9+6k1o
-	tzNzSqd0mlvoS/qhFxx+/VDB2rZvGiIgdiSWkEf347apOOkHtJ2zGT3OVbdFFoJSCBoL2nh3XU76y
-	qg0k20T52bpeZWfTweaEWV+D9mhjZqAngGe3dxhHXhrh+LnxGpoxUezG9Hr5XjsWsY9J1AHtLUaG9
-	zsL7OFhD71I1p1UZzw1O8CPmOnwNTdWUnuyYDgUYT/f9TJDZhyXzYWhV5j+D1gut84oWF7vXnlWwU
-	BcolyS50lVRIF9J8ZsvA==;
+	List-Owner; bh=8kzP2QlJ1R23lCEiaPfKXFbUnTJDW3IEH36BFJ7kIto=; b=BmrYClKSX4ZBP8
+	WpHgGt3tY9jyrsEQUIcIVOKv5GxE3Vfm713tB+qbe0Oi6dlw88Gt2jn0Z9mbrtAGhj9jcaYetAXch
+	4JMF1KmTZYiPCliARZkxg4i7PUxhdxtOlr6Cjaa7cwD+Lu3bb6o1OyqpwujbwvBdpu1sclE0qD0cC
+	qmgGg9uho0g27PRZnL1cMT4wGw5IWbpnqCkK8XvuX9kNk6m5P1EIYsrh+1F/335BKEzc5SCLbClmD
+	D50fiEeLUjD0U26Yu+iJxB4P22oJrgqwhcGY6phFitvfOjgUOZ0Z+lnestJ+Fx+gZUqTXm0YXN/rp
+	iU6WRoPRCVH1dBzCFY7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hmwKr-0005Bq-NL; Mon, 15 Jul 2019 08:27:49 +0000
+	id 1hmwKy-0005GV-RJ; Mon, 15 Jul 2019 08:27:56 +0000
 Received: from smtp.duncanthrax.net ([2001:470:70c5:1111::170])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hmwKc-000549-9K
+ id 1hmwKc-00054B-9Q
  for kexec@lists.infradead.org; Mon, 15 Jul 2019 08:27:41 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=duncanthrax.net; s=dkim; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From;
- bh=41hNx7RJF3M/NVaosyif8t4ddhlZec6gxVrDuKDyR9E=; b=RGeUccMT03M3UC8pJZ59RMhg83
- IhUd+/WszbXLJeJ6Q4Ye46Llv3nTNMX3mTAhVP388MEYf/bqACCYbmF80jWqzgWeFvTL50bOzneM5
- gyqTatH8KKSMydl18B1ykG+Xd0aDcoH7wfXVoRIFcxuStwu5kY4OK1keRcvLiT9RtsgQ=;
+ bh=S7LDnDqrF+KRwhMpZ7TCJEdQWTb51YB0cy9i1jicEGQ=; b=Y914hyBVIqqf8ztXezEbW6gDg5
+ +t2qKenSoFQFDb2DpXqAN7OpHNvO4dlYhKJ0nym/7l1SFevTXs4gw8YqLiHk1oY3D4LKZplkvhoXD
+ AV5g0iOJHLalqsEWcJ6mcJHW/fjVtqmm0Gg3lwFo2sq1RmCbJZoYCg2wMxxWkuANmpfA=;
 Received: from frobwit.duncanthrax.net ([89.31.1.178] helo=t470p.intern)
  by smtp.eurescom.eu with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
  (Exim 4.86_2) (envelope-from <svens@stackframe.org>)
- id 1hmwKZ-0005LV-JZ; Mon, 15 Jul 2019 10:27:31 +0200
+ id 1hmwKZ-0005LV-Ni; Mon, 15 Jul 2019 10:27:31 +0200
 From: Sven Schnelle <svens@stackframe.org>
 To: kexec@lists.infradead.org
-Subject: [PATCH v4 2/7] kexec_elf: change order of elf_*_to_cpu() functions
-Date: Mon, 15 Jul 2019 10:26:57 +0200
-Message-Id: <20190715082702.27308-3-svens@stackframe.org>
+Subject: [PATCH v4 3/7] kexec_elf: remove parsing of section headers
+Date: Mon, 15 Jul 2019 10:26:58 +0200
+Message-Id: <20190715082702.27308-4-svens@stackframe.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190715082702.27308-1-svens@stackframe.org>
 References: <20190715082702.27308-1-svens@stackframe.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_012738_291422_B23067B1 
-X-CRM114-Status: UNSURE (   7.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190715_012738_310762_89602D40 
+X-CRM114-Status: GOOD (  15.40  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,46 +73,188 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Change the order to have a 64/32/16 order, no functional change.
+We're not using them, so we can drop the parsing.
 
 Signed-off-by: Sven Schnelle <svens@stackframe.org>
 ---
- kernel/kexec_elf.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ include/linux/kexec.h |   1 -
+ kernel/kexec_elf.c    | 137 ------------------------------------------
+ 2 files changed, 138 deletions(-)
 
+diff --git a/include/linux/kexec.h b/include/linux/kexec.h
+index da2a6b1d69e7..f0b809258ed3 100644
+--- a/include/linux/kexec.h
++++ b/include/linux/kexec.h
+@@ -226,7 +226,6 @@ struct kexec_elf_info {
+ 
+ 	const struct elfhdr *ehdr;
+ 	const struct elf_phdr *proghdrs;
+-	struct elf_shdr *sechdrs;
+ };
+ 
+ int kexec_build_elf_info(const char *buf, size_t len, struct elfhdr *ehdr,
 diff --git a/kernel/kexec_elf.c b/kernel/kexec_elf.c
-index 6e9f52171ede..76e7df64d715 100644
+index 76e7df64d715..effe9dc0b055 100644
 --- a/kernel/kexec_elf.c
 +++ b/kernel/kexec_elf.c
-@@ -31,22 +31,22 @@ static uint64_t elf64_to_cpu(const struct elfhdr *ehdr, uint64_t value)
- 	return value;
+@@ -244,134 +244,6 @@ static int elf_read_phdrs(const char *buf, size_t len,
+ 	return 0;
  }
  
--static uint16_t elf16_to_cpu(const struct elfhdr *ehdr, uint16_t value)
-+static uint32_t elf32_to_cpu(const struct elfhdr *ehdr, uint32_t value)
+-/**
+- * elf_is_shdr_sane - check that it is safe to use the section header
+- * @buf_len:	size of the buffer in which the ELF file is loaded.
+- */
+-static bool elf_is_shdr_sane(const struct elf_shdr *shdr, size_t buf_len)
+-{
+-	bool size_ok;
+-
+-	/* SHT_NULL headers have undefined values, so we can't check them. */
+-	if (shdr->sh_type == SHT_NULL)
+-		return true;
+-
+-	/* Now verify sh_entsize */
+-	switch (shdr->sh_type) {
+-	case SHT_SYMTAB:
+-		size_ok = shdr->sh_entsize == sizeof(Elf_Sym);
+-		break;
+-	case SHT_RELA:
+-		size_ok = shdr->sh_entsize == sizeof(Elf_Rela);
+-		break;
+-	case SHT_DYNAMIC:
+-		size_ok = shdr->sh_entsize == sizeof(Elf_Dyn);
+-		break;
+-	case SHT_REL:
+-		size_ok = shdr->sh_entsize == sizeof(Elf_Rel);
+-		break;
+-	case SHT_NOTE:
+-	case SHT_PROGBITS:
+-	case SHT_HASH:
+-	case SHT_NOBITS:
+-	default:
+-		/*
+-		 * This is a section whose entsize requirements
+-		 * I don't care about.  If I don't know about
+-		 * the section I can't care about it's entsize
+-		 * requirements.
+-		 */
+-		size_ok = true;
+-		break;
+-	}
+-
+-	if (!size_ok) {
+-		pr_debug("ELF section with wrong entry size.\n");
+-		return false;
+-	} else if (shdr->sh_addr + shdr->sh_size < shdr->sh_addr) {
+-		pr_debug("ELF section address wraps around.\n");
+-		return false;
+-	}
+-
+-	if (shdr->sh_type != SHT_NOBITS) {
+-		if (shdr->sh_offset + shdr->sh_size < shdr->sh_offset) {
+-			pr_debug("ELF section location wraps around.\n");
+-			return false;
+-		} else if (shdr->sh_offset + shdr->sh_size > buf_len) {
+-			pr_debug("ELF section not in file.\n");
+-			return false;
+-		}
+-	}
+-
+-	return true;
+-}
+-
+-static int elf_read_shdr(const char *buf, size_t len,
+-			 struct kexec_elf_info *elf_info,
+-			 int idx)
+-{
+-	struct elf_shdr *shdr = &elf_info->sechdrs[idx];
+-	const struct elfhdr *ehdr = elf_info->ehdr;
+-	const char *sbuf;
+-	struct elf_shdr *buf_shdr;
+-
+-	sbuf = buf + ehdr->e_shoff + idx * sizeof(*buf_shdr);
+-	buf_shdr = (struct elf_shdr *) sbuf;
+-
+-	shdr->sh_name      = elf32_to_cpu(ehdr, buf_shdr->sh_name);
+-	shdr->sh_type      = elf32_to_cpu(ehdr, buf_shdr->sh_type);
+-	shdr->sh_addr      = elf_addr_to_cpu(ehdr, buf_shdr->sh_addr);
+-	shdr->sh_offset    = elf_addr_to_cpu(ehdr, buf_shdr->sh_offset);
+-	shdr->sh_link      = elf32_to_cpu(ehdr, buf_shdr->sh_link);
+-	shdr->sh_info      = elf32_to_cpu(ehdr, buf_shdr->sh_info);
+-
+-	/*
+-	 * The following fields have a type equivalent to Elf_Addr
+-	 * both in 32 bit and 64 bit ELF.
+-	 */
+-	shdr->sh_flags     = elf_addr_to_cpu(ehdr, buf_shdr->sh_flags);
+-	shdr->sh_size      = elf_addr_to_cpu(ehdr, buf_shdr->sh_size);
+-	shdr->sh_addralign = elf_addr_to_cpu(ehdr, buf_shdr->sh_addralign);
+-	shdr->sh_entsize   = elf_addr_to_cpu(ehdr, buf_shdr->sh_entsize);
+-
+-	return elf_is_shdr_sane(shdr, len) ? 0 : -ENOEXEC;
+-}
+-
+-/**
+- * elf_read_shdrs - read the section headers from the buffer
+- *
+- * This function assumes that the section header table was checked for sanity.
+- * Use elf_is_ehdr_sane() if it wasn't.
+- */
+-static int elf_read_shdrs(const char *buf, size_t len,
+-			  struct kexec_elf_info *elf_info)
+-{
+-	size_t shdr_size, i;
+-
+-	/*
+-	 * e_shnum is at most 65536 so calculating
+-	 * the size of the section header cannot overflow.
+-	 */
+-	shdr_size = sizeof(struct elf_shdr) * elf_info->ehdr->e_shnum;
+-
+-	elf_info->sechdrs = kzalloc(shdr_size, GFP_KERNEL);
+-	if (!elf_info->sechdrs)
+-		return -ENOMEM;
+-
+-	for (i = 0; i < elf_info->ehdr->e_shnum; i++) {
+-		int ret;
+-
+-		ret = elf_read_shdr(buf, len, elf_info, i);
+-		if (ret) {
+-			kfree(elf_info->sechdrs);
+-			elf_info->sechdrs = NULL;
+-			return ret;
+-		}
+-	}
+-
+-	return 0;
+-}
+-
+ /**
+  * elf_read_from_buffer - read ELF file and sets up ELF header and ELF info
+  * @buf:	Buffer to read ELF file from.
+@@ -404,14 +276,6 @@ static int elf_read_from_buffer(const char *buf, size_t len,
+ 		if (ret)
+ 			return ret;
+ 	}
+-	if (ehdr->e_shoff > 0 && ehdr->e_shnum > 0) {
+-		ret = elf_read_shdrs(buf, len, elf_info);
+-		if (ret) {
+-			kfree(elf_info->proghdrs);
+-			return ret;
+-		}
+-	}
+-
+ 	return 0;
+ }
+ 
+@@ -421,7 +285,6 @@ static int elf_read_from_buffer(const char *buf, size_t len,
+ void kexec_free_elf_info(struct kexec_elf_info *elf_info)
  {
- 	if (ehdr->e_ident[EI_DATA] == ELFDATA2LSB)
--		value = le16_to_cpu(value);
-+		value = le32_to_cpu(value);
- 	else if (ehdr->e_ident[EI_DATA] == ELFDATA2MSB)
--		value = be16_to_cpu(value);
-+		value = be32_to_cpu(value);
- 
- 	return value;
+ 	kfree(elf_info->proghdrs);
+-	kfree(elf_info->sechdrs);
+ 	memset(elf_info, 0, sizeof(*elf_info));
  }
- 
--static uint32_t elf32_to_cpu(const struct elfhdr *ehdr, uint32_t value)
-+static uint16_t elf16_to_cpu(const struct elfhdr *ehdr, uint16_t value)
- {
- 	if (ehdr->e_ident[EI_DATA] == ELFDATA2LSB)
--		value = le32_to_cpu(value);
-+		value = le16_to_cpu(value);
- 	else if (ehdr->e_ident[EI_DATA] == ELFDATA2MSB)
--		value = be32_to_cpu(value);
-+		value = be16_to_cpu(value);
- 
- 	return value;
- }
+ /**
 -- 
 2.20.1
 
