@@ -2,7 +2,7 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 992BA69BDB
+	by mail.lfdr.de (Postfix) with ESMTPS id 9847969BDA
 	for <lists+kexec@lfdr.de>; Mon, 15 Jul 2019 22:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,67 +10,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=20Yw3mCqjI1DE8t64p4xXcdIq+r6SZ5xgLYvy2NwH/0=; b=uiwBXxJVa0QcfL
-	qqbCfP/Vy5zR/Uo8poC7BIR00mde8CUUZcLlvpW/fq9nPJQg1ROZIGOY82U7+ijDQ2Zb22krpQnV7
-	Rfhyo3e1P2EeigKC4ZSLoX+wzMGNgXoU0MvgzDOuMCDDjwivJf1uD136kia2Xse354hKXTZVO/FGW
-	zpByHDGPWKnx36K6b5pJq6LiF0ETw0VupZAwnsXQRzBjWHvoZlVv6sbjBkJsJGf4qdlmed2aIEPt2
-	zkueOg7NoScMi3FCpkXJc/NmhcpGlUUAwDCotzu9SsBqRNP419pPKzDoJcuyg/lVgVSE79ejCgoOY
-	KsFpn27SFocv7FS4wSyw==;
+	List-Owner; bh=gGRzH4EJxDhxNryU4W7uicAeP6MaGPu6hnfBDcYnwCU=; b=sMMsCH9Go+avkS
+	irp1VT/cZSNUFZk3BCVUv7vDSwdh0yG70qhfOLW3blfPQ7gdo3/QotV11ToC7B4oikEQ7Cfz6w1c4
+	QzXMZL+gMcpT6UXMH2pfBRc4EtUB2h9Zzcip1gCl6KG+BkMN1bIBduYMIuecb8gYXEZlcW1CbsK6a
+	KsKyTRNYFpgmi1kwuZcfEPAx6LfNnCERhIBptnuFEixIFm+jIabkXuIidbw2Q0KGlMxlRkG5oCgoV
+	UayKborQ8Byo2OssrGOFgRJnXERJkVVmNkbdnMQvX2p/r9OpIE28eap86Ln/wT1S9prHnNF29TmNQ
+	5u0wMzHFOZz6KC1NyCEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hn794-0002Kd-5O; Mon, 15 Jul 2019 20:00:22 +0000
-Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
+	id 1hn792-0002Jy-FN; Mon, 15 Jul 2019 20:00:20 +0000
+Received: from mail-pl1-x649.google.com ([2607:f8b0:4864:20::649])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hn78x-0002H5-Gr
+ id 1hn78x-0002Hf-Ov
  for kexec@lists.infradead.org; Mon, 15 Jul 2019 20:00:17 +0000
-Received: by mail-qt1-x84a.google.com with SMTP id h47so15820789qtc.20
- for <kexec@lists.infradead.org>; Mon, 15 Jul 2019 13:00:10 -0700 (PDT)
+Received: by mail-pl1-x649.google.com with SMTP id k9so8812278pls.13
+ for <kexec@lists.infradead.org>; Mon, 15 Jul 2019 13:00:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=eu667FWqsyv1eiS+2MgLd1pI1Yi90NnjxQ1QKJHeSZs=;
- b=Ly3WMPXU1S4RyjVKw9rxuEW+oUhZzw9lqnq9BFk1blOsZzlx/rv+LHMtWwkLypsNsx
- xt5ySUIqKJcr2jhA4IxpsEio1sZN2ApfyF8YkWF2rTk9JRLWdO+EDXKFGtk9/Hk/swju
- sd96PlDKVvhKzefI9kwmhbQGiMg1JMKrirK+n0sTUK2AqbqHWilAYbF7KCFH8y7SWqwq
- E7vPiwA5s8TjPUrxfIczXqHjBQtJNa3meRsTMYOaYy30NqAvW8svCofDEcOSQgL+ST08
- 6g2Yaua9ngtJj5E574QVzroVOioZSTkRPYWXHp9zVKq8+iIIKNmi9s0OOSF4e4mVx3X9
- HwPA==
+ :cc; bh=Ze1m51/U9qyeKdYZTkURxXHO7/2Jq1vWiS2UsV2hr9c=;
+ b=AxSl7ByC571hgB4NOLtS7SsxUTZj2nJz1kjFEvu6QXZNWkTAq4ckIZ3uMUWLg+omXa
+ gQCF60SO+5FhvuloODfitEKxnqK2Ud9Ke7Ut2KXrASynck2/yJDhEmUCv/SiCL/LnS6Z
+ foFn7LR0MludcBbwvt/rK79Awp3YN1kE+UStUw6ZmdDsTm4ffGswjufyLrxfXF6AE/NN
+ 7a+spbgSULZAlT5LjRxTXyiyoO5QMa8kyRslayysR0pLUMt4Sna3aoVdhhA3DgT6uj94
+ DwwivdBwt/SuDS6eAWJhtbrGn7o2yongnexmhT6mrymBMoRm2BEZbfvlnh4PW+U/EQ41
+ XlvQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=eu667FWqsyv1eiS+2MgLd1pI1Yi90NnjxQ1QKJHeSZs=;
- b=gaN1MigEJUw6f5k0LpLu5Ou8BhK0PetOouQhm31EyrjrYSo2foQvQpkNUHWP5V7qpZ
- 7M11hF14rTpeCGVWB9K0n3BlJb6wSIrerey9v98hBflwTTpLjgu9DMwLWkLcWOT9ySUd
- wh85cgY32uuZ35qLkySH0QlaWIKUgPF8k+I+toMAdTBH2hXL8NwKyE+PQwJLqrQT7Pr4
- O86Zb9t7QPfWKXRyl8CtjOzrB/xbQZope3Iof4apoHffWIMMAGZygN/PJfQ6sbU6tfgz
- 7p6DbhXHsU871raBCAbDLDpn55/yWqzJPWEMt74GGqie18EVkaX78wToqpNX1RLcRTV8
- zY5Q==
-X-Gm-Message-State: APjAAAXZTLNW5Nrblg71pWimeQBmYb7FpAwzjAcMXmlfcuxVCTtG/hik
- GtjhTWp/FSLhhwzJAkHvOFKcy+DLXyjS6fsLaHXZ1g==
-X-Google-Smtp-Source: APXvYqy7oiu794xVtd5fUDkrGDGk/p0p31oCH0KAa0a2Zo9FPzjquLWnnXJBeY4GZfWjZ6zXgQvIPVxrTG9JXHGjBxXoDA==
-X-Received: by 2002:a05:620a:142e:: with SMTP id
- k14mr18219466qkj.336.1563220809135; 
- Mon, 15 Jul 2019 13:00:09 -0700 (PDT)
-Date: Mon, 15 Jul 2019 12:59:23 -0700
+ bh=Ze1m51/U9qyeKdYZTkURxXHO7/2Jq1vWiS2UsV2hr9c=;
+ b=AHRvhNGS2AGaTJTnzAmChUdDVfNNKDwfOx7YYs41PpbRSubFJJgjKT84OEG0DRBGns
+ AADH8xgs41NsVEoucuaQT/WW5Ihbno2GOpx+8uQoPLxVIp09842g8QB+T4GQdhBq01fN
+ McGgr+O4NfdOblL9sv8UCbEEIkEY9w5QRthkZNRWmx01DvmlTSgcA3s1B0LUBzFjNKZc
+ DY13jBjONdzlLQV4Aq40axDNh8HTJQcGCIDpLpNsauPkLSXW1QIOOfz4GilIbqThRZHZ
+ Vo+0PI6do/p9Y/QyfJVKPgS95QEqMKjeD5bCwcdnC8vemcKZlJMeRlSP3E5s5KOV0Z67
+ xIRg==
+X-Gm-Message-State: APjAAAXJiVA/G9BpGIJtxfom2O5enf51pTG4sWvHK/KQI0b5XrNCVSP/
+ F9L0EVQm2LRCFuU2MYJN0vnd3LlyNeFUyWpJjbDJ1g==
+X-Google-Smtp-Source: APXvYqw3kz8vxqJr04RTj1gLbL27dI8ApTISQuqjlO54p7acDyqHccEy7zqlCPthKqcQRy7/95xxR7ZdHBOEJmGBPjFQUA==
+X-Received: by 2002:a63:2ad5:: with SMTP id
+ q204mr15899633pgq.140.1563220811612; 
+ Mon, 15 Jul 2019 13:00:11 -0700 (PDT)
+Date: Mon, 15 Jul 2019 12:59:24 -0700
 In-Reply-To: <20190715195946.223443-1-matthewgarrett@google.com>
-Message-Id: <20190715195946.223443-7-matthewgarrett@google.com>
+Message-Id: <20190715195946.223443-8-matthewgarrett@google.com>
 Mime-Version: 1.0
 References: <20190715195946.223443-1-matthewgarrett@google.com>
 X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
-Subject: [PATCH V35 06/29] kexec_load: Disable at runtime if the kernel is
- locked down
+Subject: [PATCH V35 07/29] Copy secure_boot flag in boot params across kexec
+ reboot
 From: Matthew Garrett <matthewgarrett@google.com>
 To: jmorris@namei.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190715_130015_563625_1666DF78 
-X-CRM114-Status: GOOD (  13.03  )
+X-CRM114-CacheID: sfid-20190715_130015_810333_54C4F064 
+X-CRM114-Status: GOOD (  10.32  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:649 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,79 +94,49 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Matthew Garrett <mjg59@srcf.ucam.org>, Kees Cook <keescook@chromium.org>,
- linux-api@vger.kernel.org, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Matthew Garrett <mjg59@google.com>,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
- Dave Young <dyoung@redhat.com>
+Cc: Kees Cook <keescook@chromium.org>, linux-api@vger.kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Matthew Garrett <mjg59@google.com>, David Howells <dhowells@redhat.com>,
+ linux-security-module@vger.kernel.org, Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Matthew Garrett <mjg59@srcf.ucam.org>
+From: Dave Young <dyoung@redhat.com>
 
-The kexec_load() syscall permits the loading and execution of arbitrary
-code in ring 0, which is something that lock-down is meant to prevent. It
-makes sense to disable kexec_load() in this situation.
+Kexec reboot in case secure boot being enabled does not keep the secure
+boot mode in new kernel, so later one can load unsigned kernel via legacy
+kexec_load.  In this state, the system is missing the protections provided
+by secure boot.
 
-This does not affect kexec_file_load() syscall which can check for a
-signature on the image to be booted.
+Adding a patch to fix this by retain the secure_boot flag in original
+kernel.
 
+secure_boot flag in boot_params is set in EFI stub, but kexec bypasses the
+stub.  Fixing this issue by copying secure_boot flag across kexec reboot.
+
+Signed-off-by: Dave Young <dyoung@redhat.com>
 Signed-off-by: David Howells <dhowells@redhat.com>
 Signed-off-by: Matthew Garrett <mjg59@google.com>
-Acked-by: Dave Young <dyoung@redhat.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
 cc: kexec@lists.infradead.org
 ---
- include/linux/security.h     | 1 +
- kernel/kexec.c               | 8 ++++++++
- security/lockdown/lockdown.c | 1 +
- 3 files changed, 10 insertions(+)
+ arch/x86/kernel/kexec-bzimage64.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/include/linux/security.h b/include/linux/security.h
-index 9458152601b5..69c5de539e9a 100644
---- a/include/linux/security.h
-+++ b/include/linux/security.h
-@@ -105,6 +105,7 @@ enum lockdown_reason {
- 	LOCKDOWN_NONE,
- 	LOCKDOWN_MODULE_SIGNATURE,
- 	LOCKDOWN_DEV_MEM,
-+	LOCKDOWN_KEXEC,
- 	LOCKDOWN_INTEGRITY_MAX,
- 	LOCKDOWN_CONFIDENTIALITY_MAX,
- };
-diff --git a/kernel/kexec.c b/kernel/kexec.c
-index 1b018f1a6e0d..bc933c0db9bf 100644
---- a/kernel/kexec.c
-+++ b/kernel/kexec.c
-@@ -205,6 +205,14 @@ static inline int kexec_load_check(unsigned long nr_segments,
- 	if (result < 0)
- 		return result;
+diff --git a/arch/x86/kernel/kexec-bzimage64.c b/arch/x86/kernel/kexec-bzimage64.c
+index 5ebcd02cbca7..d2f4e706a428 100644
+--- a/arch/x86/kernel/kexec-bzimage64.c
++++ b/arch/x86/kernel/kexec-bzimage64.c
+@@ -180,6 +180,7 @@ setup_efi_state(struct boot_params *params, unsigned long params_load_addr,
+ 	if (efi_enabled(EFI_OLD_MEMMAP))
+ 		return 0;
  
-+	/*
-+	 * kexec can be used to circumvent module loading restrictions, so
-+	 * prevent loading in that case
-+	 */
-+	result = security_locked_down(LOCKDOWN_KEXEC);
-+	if (result)
-+		return result;
-+
- 	/*
- 	 * Verify we have a legal set of flags
- 	 * This leaves us room for future extensions.
-diff --git a/security/lockdown/lockdown.c b/security/lockdown/lockdown.c
-index d2ef29d9f0b2..6f302c156bc8 100644
---- a/security/lockdown/lockdown.c
-+++ b/security/lockdown/lockdown.c
-@@ -20,6 +20,7 @@ static char *lockdown_reasons[LOCKDOWN_CONFIDENTIALITY_MAX+1] = {
- 	[LOCKDOWN_NONE] = "none",
- 	[LOCKDOWN_MODULE_SIGNATURE] = "unsigned module loading",
- 	[LOCKDOWN_DEV_MEM] = "/dev/mem,kmem,port",
-+	[LOCKDOWN_KEXEC] = "kexec of unsigned images",
- 	[LOCKDOWN_INTEGRITY_MAX] = "integrity",
- 	[LOCKDOWN_CONFIDENTIALITY_MAX] = "confidentiality",
- };
++	params->secure_boot = boot_params.secure_boot;
+ 	ei->efi_loader_signature = current_ei->efi_loader_signature;
+ 	ei->efi_systab = current_ei->efi_systab;
+ 	ei->efi_systab_hi = current_ei->efi_systab_hi;
 -- 
 2.22.0.510.g264f2c817a-goog
 
