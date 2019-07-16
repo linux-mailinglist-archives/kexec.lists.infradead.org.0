@@ -2,84 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84CF86AD42
-	for <lists+kexec@lfdr.de>; Tue, 16 Jul 2019 18:58:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38A3E6AD44
+	for <lists+kexec@lfdr.de>; Tue, 16 Jul 2019 18:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAYEOQLlLCb0iRSbiLRtXo2DhPxZOeKmLSWqrWr6kdE=; b=leb+suBqeh3ru3
-	jOAQyqb+p12IzNFrGAmvto0yKtOxvnrSl7W5byOmVj455rYqQwfGGXPfuDNgdi2daCIlGG/u6mvx/
-	dYwI+VVe3KbOhcoAJYFhyAS1stMSpxILEN0Tyx8tpZKiWGjFO/BTZAdc6lAV1AtQoTZ8VlT/QFI24
-	TQef0AcFU120kCmtgqz0Smobem53BywwXLc8P3JF4/Q5tGEIPFNAk/qm2qVEqu4AFwYcK6LtD/wZb
-	SOKpRBmt69XZ01CllMn31G+qAzaPXLIodeyyn+JHsXmvYDNmM/bqHAC03frOtkZHXsWzJAQYlt7DS
-	FeovGPfgIi79B8Qm3L6A==;
+	List-Owner; bh=h3JAX5qfCO/B3R4eCK1gT4EKMr4BOJZUoeZQUI+ZSC8=; b=pPsE9D1xxsceFd
+	sk7pszpC1xvnjGpDocDySPSCeC4ftnqs1Oqud1zsUZi1RYrUq0vBl0bnbU/cxKR0mEtEiWYfn5fYf
+	HVjLyIAte1sVbPH5xxxT1/NT8TEAocahOQ4Me5c+FvxVxxSXnPuV7bGmL8l6xj/UUL3fGVs5F9XNp
+	ngE5Dd4/3mvvdIEkpGSl8tCCdGk8cIq/5QpQQ4YdaluS7f1Ua48yxN9eRKBAD4H+Mzj4et8r3ItEH
+	1skCSlwU2581rdrSnlZi+oOVk7DPMe+oI6Ztg0Zun11XE5lrccBpyBY4g1MZze/8mFlhe6XjU9KvU
+	AF9qf6suXpn28MfCFs2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnQmX-0006G5-Cq; Tue, 16 Jul 2019 16:58:25 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1hnQmt-0006ZT-DQ; Tue, 16 Jul 2019 16:58:47 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnQkx-00053t-En
+ id 1hnQkz-00055G-68
  for kexec@lists.infradead.org; Tue, 16 Jul 2019 16:56:51 +0000
-Received: by mail-qk1-x742.google.com with SMTP id r21so15174937qke.2
- for <kexec@lists.infradead.org>; Tue, 16 Jul 2019 09:56:47 -0700 (PDT)
+Received: by mail-qt1-x843.google.com with SMTP id w17so20287189qto.10
+ for <kexec@lists.infradead.org>; Tue, 16 Jul 2019 09:56:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=5D8mlvVawCjEgddelLAduhKCIQh0CPiyGgQp446bGsE=;
- b=VxsqpYcitDOLAtpg1Jls5stspr2tgCl0PGz2J1Z817sVMFGcuo/roOKCaavlnYeATr
- jU6YTyCAGZdlqYJ/jAs5NtTWvKRhJMmjirZcQE+Iucd/gw8X+OddfHUsoLTZ8sMYS/3c
- ve/dJt/iFA5AYuQOfT8c21qt+EjJ268NVoprOSpHjzlTm8z+pnUOXbMTcz0Wg8M1xsbA
- VBgDOJX8ALLB3Bwq5D6MxZszG6wXjnwReOXDz93IVfYtFF6y2ddjcZH7FZb1wO7Km03h
- cbJW0XLKEZ9fLZEWNShJLv0RqMAIYlex+//VRDwPg40RaMG+UAF8sT158AGKpfuS8DXz
- p6jw==
+ bh=OHreDCpotkEUucxoE5EiEKrcc9yzecv+duVH9vOORKc=;
+ b=GGIQw/kgAUl/eG3d2NKYO7rrigP3xCd6L3ITkDfbZyMEUnoEj0yVHLsV2LlbgRYbC+
+ wxGDoUKvbsOD49xDxxVjVMA/cVW24Ta7j9hj3+wxoFsCV7bE/6zX1BcHliTfmRJa2HL6
+ t1GMulrmuUdkYdtWJR3tWcDBbewttH11SYty1lYTYPi9/xqOKf63ADEYQ5vRWxW8OT6H
+ VHjxbQVnM+5FFok1c8bap5vm+E40C8t2yYrwiy22m4L+k24TpV5SxJbfpoBHfRpCqzb2
+ H6dm0a1hIjm8g/mZThetxdugoRf8Pcyv6ZduRuCZRIwQmu9srFbLpacSM3DPtY1OABO9
+ 4vlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=5D8mlvVawCjEgddelLAduhKCIQh0CPiyGgQp446bGsE=;
- b=I338b3wfnM4glTEICR43+q2uJ2jMAVjX2dYLBouGbHUZXX0d0DV/uC+JIRRbUKTEma
- LvRn8h6EZTcl9zrFX/4gO8cF6PqOBEn56HQ7mal5ZYaF0GDqf8xwDeJGyswrZ5AOLLhr
- bm7hA5NKbp2sJEw5wCHqgc7Y8/K+BQiXsNWMIYhcmR6TS6jtR8/qvCwJWGuKtWcmWb6z
- ixJg6IVCyU8baoQdb0oO0vOdQjlkybr9pb5a/2naBY6wBaLFSbfIUBVcecwEil4TF8re
- 845oH1PaWISdcumUKHoC8ubmBZuPCpDba+pONnnBxQStIFRT26LM/+pDDevq/96DHOti
- YL4Q==
-X-Gm-Message-State: APjAAAXpbV1hUiacxgdRFBZaii+Dn3QZXk52xC7sdhCzrd3LRKzlwBxC
- Yz8f2BN6hFPSR9VFhWyMclY=
-X-Google-Smtp-Source: APXvYqzvQ0JQLAGkRNhRdaqxRVuO7Hvjn0EZosyRHwPjvqeoogbj3QaW6JZ3XDhFK6dpEIze4WbX/w==
-X-Received: by 2002:a05:620a:69c:: with SMTP id
- f28mr22093343qkh.274.1563296206729; 
- Tue, 16 Jul 2019 09:56:46 -0700 (PDT)
+ bh=OHreDCpotkEUucxoE5EiEKrcc9yzecv+duVH9vOORKc=;
+ b=YU1H6zYv61zE2W6ti7SF1YGFNjhix0Rz3jxasxZkkdF6mXsBDrAI5N4vrN4U2YfaVI
+ 18syLxDehlea6pZ9fULkYIoIuzUGTwQ7YGLLayK6DwwzWjP04cZOXUgU5gHAb036P5/Y
+ ZcPg57vF7fMSVOAAkek/ljPt4YTKgSXVeZTRlFFPJ/6QhBJ8LL2VvAUWkNETCF6p4Zcv
+ wTqMdO+bKiB4bvYhmCQLrg93viOaYmpyBWzj6v0Hpw1IS/aBkax6NAaa9vmBaKWrNYFE
+ lTcJzDOCJEy8R/oHH4e3+vUtd+R+CnE6Uigb1HuEn/qp7ijIQyODfySKvjJvgoLUt5Bx
+ 6kVw==
+X-Gm-Message-State: APjAAAXaSi9bdg+CZPFxrWQvpJdo6LMDRcH8Il8jJ2ayJBmXRSC4fv6R
+ MaRsDQTIGm88KLaBVwl7swA=
+X-Google-Smtp-Source: APXvYqwxJ0A/FHhU5OVW66jrPFnnHKm79duNOHFiKTe25GUCXmo7/DTY10UCE+L1XIgV2bRdwMnQ6w==
+X-Received: by 2002:ac8:41d1:: with SMTP id o17mr23857397qtm.17.1563296207876; 
+ Tue, 16 Jul 2019 09:56:47 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id f20sm8519538qkh.15.2019.07.16.09.56.45
+ by smtp.gmail.com with ESMTPSA id f20sm8519538qkh.15.2019.07.16.09.56.46
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Tue, 16 Jul 2019 09:56:46 -0700 (PDT)
+ Tue, 16 Jul 2019 09:56:47 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
  will@kernel.org, linux-doc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [RFC v1 3/4] arm64, kexec: add kexec's own identity page table
-Date: Tue, 16 Jul 2019 12:56:40 -0400
-Message-Id: <20190716165641.6990-4-pasha.tatashin@soleen.com>
+Subject: [RFC v1 4/4] arm64: Keep MMU on while kernel is being relocated
+Date: Tue, 16 Jul 2019 12:56:41 -0400
+Message-Id: <20190716165641.6990-5-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190716165641.6990-1-pasha.tatashin@soleen.com>
 References: <20190716165641.6990-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190716_095647_505649_7F39BA01 
-X-CRM114-Status: GOOD (  13.94  )
+X-CRM114-CacheID: sfid-20190716_095649_436950_E5944713 
+X-CRM114-Status: UNSURE (   8.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,134 +106,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Allocate and configure identity page table to be used for kexec reboot.
-Note, for now we still have MMU disabled during kernel relocation phase,
-so this table is still used the same as idmap_pg_dir was used.
+It is inefficient to do kernel relocation with MMU disabled. This is
+because if MMU is disabled,  dcache must also be disabled.
+
+Now, that we have identity page table we can disable MMU after relocation
+is completed.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/kernel/machine_kexec.c | 78 ++++++++++++++++++++++++++++++-
- 1 file changed, 76 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/cpu-reset.S       |  8 -------
+ arch/arm64/kernel/relocate_kernel.S | 36 ++++++++++++++++++-----------
+ 2 files changed, 22 insertions(+), 22 deletions(-)
 
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index f4565eb01d09..60433c264178 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -12,6 +12,7 @@
- #include <linux/kexec.h>
- #include <linux/page-flags.h>
- #include <linux/smp.h>
-+#include <linux/memblock.h>
+diff --git a/arch/arm64/kernel/cpu-reset.S b/arch/arm64/kernel/cpu-reset.S
+index 6ea337d464c4..d5cfc17b8e1f 100644
+--- a/arch/arm64/kernel/cpu-reset.S
++++ b/arch/arm64/kernel/cpu-reset.S
+@@ -30,14 +30,6 @@
+  * flat identity mapping.
+  */
+ ENTRY(__cpu_soft_restart)
+-	/* Clear sctlr_el1 flags. */
+-	mrs	x12, sctlr_el1
+-	ldr	x13, =SCTLR_ELx_FLAGS
+-	bic	x12, x12, x13
+-	pre_disable_mmu_workaround
+-	msr	sctlr_el1, x12
+-	isb
+-
+ 	cbz	x0, 1f				// el2_switch?
+ 	mov	x0, #HVC_SOFT_RESTART
+ 	hvc	#0				// no return
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index c1d7db71a726..e2724fedd082 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -36,18 +36,6 @@ ENTRY(arm64_relocate_new_kernel)
+ 	mov	x14, xzr			/* x14 = entry ptr */
+ 	mov	x13, xzr			/* x13 = copy dest */
  
- #include <asm/cacheflush.h>
- #include <asm/cpu_ops.h>
-@@ -20,6 +21,7 @@
- #include <asm/mmu.h>
- #include <asm/mmu_context.h>
- #include <asm/page.h>
-+#include <asm/ident_map.h>
+-	/* Clear the sctlr_el2 flags. */
+-	mrs	x0, CurrentEL
+-	cmp	x0, #CurrentEL_EL2
+-	b.ne	1f
+-	mrs	x0, sctlr_el2
+-	ldr	x1, =SCTLR_ELx_FLAGS
+-	bic	x0, x0, x1
+-	pre_disable_mmu_workaround
+-	msr	sctlr_el2, x0
+-	isb
+-1:
+-
+ 	/* Check if the new image needs relocation. */
+ 	tbnz	x16, IND_DONE_BIT, .Ldone
  
- #include "cpu-reset.h"
+@@ -63,10 +51,10 @@ ENTRY(arm64_relocate_new_kernel)
+ 	add     x20, x0, #PAGE_SIZE
+ 	sub     x1, x15, #1
+ 	bic     x0, x0, x1
+-2:	dc      ivac, x0
++1:	dc      ivac, x0
+ 	add     x0, x0, x15
+ 	cmp     x0, x20
+-	b.lo    2b
++	b.lo    1b
+ 	dsb     sy
  
-@@ -55,6 +57,77 @@ static void _kexec_image_info(const char *func, int line,
- 	}
- }
+ 	mov x20, x13
+@@ -104,6 +92,26 @@ ENTRY(arm64_relocate_new_kernel)
+ 	dsb	nsh
+ 	isb
  
-+/* Allocates pages for kexec page table */
-+static void *kexec_pgtable_alloc(void *arg)
-+{
-+	struct kimage *kimage = (struct kimage *)arg;
-+	struct page *page = kimage_alloc_control_pages(kimage, 0);
++	/* Clear sctlr_el1 flags. */
++	mrs	x12, sctlr_el1
++	ldr	x13, =SCTLR_ELx_FLAGS
++	bic	x12, x12, x13
++	pre_disable_mmu_workaround
++	msr	sctlr_el1, x12
++	isb
 +
-+	if (!page)
-+		return NULL;
++	/* Clear the sctlr_el2 flags. */
++	mrs	x0, CurrentEL
++	cmp	x0, #CurrentEL_EL2
++	b.ne	2f
++	mrs	x0, sctlr_el2
++	ldr	x1, =SCTLR_ELx_FLAGS
++	bic	x0, x0, x1
++	pre_disable_mmu_workaround
++	msr	sctlr_el2, x0
++	isb
++2:
 +
-+	return page_address(page);
-+}
-+
-+/*
-+ * Create identity mapped page table for kexec purposes. The flags that are used
-+ * in this page table are the same as what is set in __create_page_tables. The
-+ * page table is needed for performance reasons. Without it, kernel relocation
-+ * is rather slow, because when MMU is off, d-caching is disabled as well.
-+ */
-+static int
-+kexec_create_pgtable(struct kimage *kimage)
-+{
-+	void *pgd_page = kexec_pgtable_alloc(kimage);
-+	phys_addr_t kexec_pgtable;
-+	int rv, i;
-+	struct memblock_region *reg;
-+	struct ident_map_info info = {
-+		.alloc_pgt_page	= kexec_pgtable_alloc,
-+		.alloc_arg	= kimage,
-+		.page_flags	= PMD_SECT_VALID | PMD_SECT_AF | PMD_SECT_S |
-+				  PMD_ATTRINDX(MT_NORMAL),
-+		.offset		= 0,
-+		.pud_pages	= false,
-+	};
-+
-+	if (!pgd_page)
-+		return -ENOMEM;
-+
-+	clear_page(pgd_page);
-+	kexec_pgtable = __pa(pgd_page);
-+
-+	for_each_memblock(memory, reg) {
-+		phys_addr_t mstart = reg->base;
-+		phys_addr_t mend   = reg->base + reg->size;
-+
-+		rv = ident_map_pgd_populate(&info, kexec_pgtable, mstart, mend);
-+		if (rv)
-+			return rv;
-+	}
-+
-+	/*
-+	 * It is possible new kernel knows of some physical addresses that this
-+	 * kernel does not know: for example a different device tree might
-+	 * provide information of a memory region, or memory could have been
-+	 * reduced via mem= kernel parameter.
-+	 * This is why also unconditionally map new kernel segments, even though
-+	 * most likely this is redundant.
-+	 */
-+	for (i = 0; i < kimage->nr_segments; i++) {
-+		phys_addr_t mstart = kimage->segment[i].mem;
-+		phys_addr_t mend   = mstart + kimage->segment[i].memsz;
-+
-+		rv = ident_map_pgd_populate(&info, kexec_pgtable, mstart, mend);
-+		if (rv)
-+			return rv;
-+	}
-+
-+	kimage->arch.kexec_pgtable = pgd_page;
-+
-+	return 0;
-+}
-+
- void machine_kexec_cleanup(struct kimage *kimage)
- {
- 	/* Empty routine needed to avoid build errors. */
-@@ -70,6 +143,7 @@ void machine_kexec_cleanup(struct kimage *kimage)
- int machine_kexec_prepare(struct kimage *kimage)
- {
- 	void *reloc_buf = page_address(kimage->control_code_page);
-+	int rv;
- 
- 	if (kimage->type != KEXEC_TYPE_CRASH && cpus_are_stuck_in_kernel()) {
- 		pr_err("Can't kexec: CPUs are stuck in the kernel.\n");
-@@ -84,10 +158,10 @@ int machine_kexec_prepare(struct kimage *kimage)
- 	       arm64_relocate_new_kernel_size);
- 
- 	kimage->arch.relocate_kern = reloc_buf;
--	kimage->arch.kexec_pgtable = lm_alias(idmap_pg_dir);
-+	rv = kexec_create_pgtable(kimage);
- 	kexec_image_info(kimage);
- 
--	return 0;
-+	return rv;
- }
- 
- /**
+ 	/* Start new image. */
+ 	mov	x0, x18
+ 	mov	x1, xzr
 -- 
 2.22.0
 
