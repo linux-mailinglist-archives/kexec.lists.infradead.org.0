@@ -2,84 +2,87 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C03F6C158
-	for <lists+kexec@lfdr.de>; Wed, 17 Jul 2019 21:13:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D2126D4EE
+	for <lists+kexec@lfdr.de>; Thu, 18 Jul 2019 21:44:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FhDR49rPspFPBbyhrb4XtlzAxJCTt++DsdHEpxgkRYA=; b=LRvcnhDzNwnaZ9
-	/IDtCwA0gmbtUkOlrFURlK4XMGxAHQBl3s6AQFdIqFoMCPQq1Zy9W00V/yx9rn0HiAqu27Z2gXd0O
-	gpQ8RWc/7pbB+hLxzS7Lj8wLEbnPtltXwjx1G91xY1H+eR17sfXeawWSMM19IRzR6BJbLpmJKO/Og
-	9OgJuMig/FFwuYH9Oubtct4Qzn5H9Z0gAUpTQFHuMW9Kt3IckZVgoApSlpBcxvCfxoQNaSKm2dLLA
-	9JY40s+iQUJEV/JeJ5m0po2otwWNENttvixh+/sO/7q9qPJFaeQwNHrIGESesUs0VWbhD/QN63p+i
-	KxIeb3doyXW2igfl5cVA==;
+	List-Owner; bh=20Yw3mCqjI1DE8t64p4xXcdIq+r6SZ5xgLYvy2NwH/0=; b=MjoTlIgdtydmyD
+	t0uuEUXZVY/FKAjjas+rYBbBdCxrP1nYTUYD5zsRYVCnlmcykwGd9bFJ5lbtyswH+q0QLCQ9goYb6
+	VMq/w6Nb0GG9XHe819cyfE0EsHpCV/Z3UkRVlO1gomvH7Ky7VVFH2SQa41MkzIU5GHEirLhvvHg59
+	qDyy7wdNyTg7mLS+Lj0SnzbhJjcVV4LVdXe/zz4dDyF6DrmA2DzzAJBAjM3SALd8zhbWtGSucp9JO
+	PJbuekDC7x9GXNHpmLSTKa44rnvijGR+I9zoEqIg5X1G4NFWUJpLE34NTUNZG869EtZj/E5x/wck2
+	qFi6EhcIneUrFYZhUVCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hnpNA-0007pq-4w; Wed, 17 Jul 2019 19:13:52 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1hoCKa-0003e2-8E; Thu, 18 Jul 2019 19:44:44 +0000
+Received: from mail-pg1-x549.google.com ([2607:f8b0:4864:20::549])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hnpMn-0007ee-1p
- for kexec@lists.infradead.org; Wed, 17 Jul 2019 19:13:31 +0000
-Received: by mail-ed1-x544.google.com with SMTP id x19so21274099eda.12
- for <kexec@lists.infradead.org>; Wed, 17 Jul 2019 12:13:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=af7XSHG9FUQt2yu1S5jYF4Zn8ho5gd7vQCkyA/tLau4=;
- b=HKNB7eUjLd+nxSmK5kC8wj8kzMts/Dpt6A34z7nveegtxZyhnKNjglMj7rQ0vCl6LG
- h/4t0uSBVCIua7IFT+yYWm2Fj59/6h40i8YUKwiETrPB6sZ6v8tarBe4z05I3+6KBe/o
- nVsQcwwepTM0+8r5FULsisZ5p08osnWUZkggEXqUrver/328oW7udcbaG4m29zLP4D64
- st4mdSY/slk8zOdH5QHV/oOGIFI6JB+jLZjhMhxwOlllr+eD2L1dm5L7pJsHWpHbz5iR
- kY5YFUJdTFHOUuTE0MvIKbBNaqb0rDaxBWnAC2VW1rRN5sIlI/nski3ZyMC97oNqcCWt
- vPbw==
+ id 1hoCKS-0003cu-Ht
+ for kexec@lists.infradead.org; Thu, 18 Jul 2019 19:44:37 +0000
+Received: by mail-pg1-x549.google.com with SMTP id h5so17242127pgq.23
+ for <kexec@lists.infradead.org>; Thu, 18 Jul 2019 12:44:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=eu667FWqsyv1eiS+2MgLd1pI1Yi90NnjxQ1QKJHeSZs=;
+ b=ohrtYog4gGPeInnSgPNEoQxrDXPaBrUloNn0kHObJFwMww/WL/1QitIjfRTdQ7Io3l
+ 3SFmno+zU0LHqnjj1iwf/EcXC0mkATM1jwJSktN3EWogC7qhjF9T+4Vc2XXS/dPtmlKX
+ mz5jQECVWQ2KxykCHqcx7Q4Oj8ogBpTDoACnxdCUgqa3Ot4HPl0AkiJXF4fk6mY7//oL
+ 7PbCHo+Yh6dVRTJvVO6GMzSfDJ2XD8gX5qc9TCAmUHKXJA2d2DOUhz+oq/Fg4W64rGof
+ PvjyvsAmKWx9isgpl4njBFhx7acc40bmEcgvG4s2a7Usp9NXUY50lVDgZ8lf+u3ipVh8
+ +y9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=af7XSHG9FUQt2yu1S5jYF4Zn8ho5gd7vQCkyA/tLau4=;
- b=RdiLN6wDARXa0PufDmbjIJQ+LHwN2jlISFrCQrQOQ4oWvVE9+HCLhqq5olDojN+LmU
- zUshB2pHQOliqTZoY/LvgyHLxqVI+6jybHy6Tx84zoXFwkEB1hGqeTm6CVkPzv6eqq7Z
- FH3625pxVZvF8UQMVSsw77GUljVq+qp1y77XP9gOn4sgyGXEwwOzbH63WKNeo6BOSTtN
- axGe+lKK+H5iwREQL0QyuAqwhQTGYsIY5Ohh5UXSGvXoZfBa/WuHh89wyvdy7QTrfb9c
- zbvIzsa6XVCErZZjNBoYL0brpKeIn67nYMF4ETVqT+8+oYUhxGIWWjcVxwMA/F5xUkXR
- fyTg==
-X-Gm-Message-State: APjAAAUkOUBRWKTkSpP2aMrks7VpqDVtdJuzr+1fdav9gLyGYIfuQkwD
- GpcWc42fdAsg6qu2GPb49wTyuJwbbP4ow0qhLC8=
-X-Google-Smtp-Source: APXvYqzGlg1pP7IjPvj4DxUTLs7iKsVaWKc3/xY8HdOnhR8EtZWtRowTgwJdp96WZgETcAPcZ/SpRP0xI4l4xnW+0CI=
-X-Received: by 2002:a17:906:684e:: with SMTP id
- a14mr33040768ejs.156.1563390806721; 
- Wed, 17 Jul 2019 12:13:26 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190716165641.6990-1-pasha.tatashin@soleen.com>
- <4c8a3a11-adc2-efa4-f765-6be338546ae4@arm.com>
-In-Reply-To: <4c8a3a11-adc2-efa4-f765-6be338546ae4@arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 17 Jul 2019 15:13:15 -0400
-Message-ID: <CA+CK2bBj9UsQZCLsy-S8c_Kd5SRAPvtdS8s9P_Fdg+VifTbT5w@mail.gmail.com>
-Subject: Re: [RFC v1 0/4] arm64: MMU enabled kexec kernel relocation
-To: James Morse <james.morse@arm.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=eu667FWqsyv1eiS+2MgLd1pI1Yi90NnjxQ1QKJHeSZs=;
+ b=g4mFoGgEeXTVtABOYVNg8lRJmucrJeiEGxOaPlVzonzwLa2zGpO2aVw8lZZ6j7QWqf
+ +7WLMIv98joFVwNRNgmZN/rvwW6+XtfzJsWS2W9VOe3xSnamxT/orBu4fEtnwGk63ln+
+ +/riqh2HkBBbUaO3dewK0xb2rC2YTMmRU5lx/ogqwxrlcNqZfoyAx2oQYFTn7hB7DCr5
+ 0ORokTWwqzx36WTDd+wDC/5OKA5QKCwwQev2wxDyKmxl75GKTi5EZnALt/78IQpDbmSs
+ rvY8OpqUN3KK+xIZP066iN+ux1dllEpUJ41GKcLedKShwg9cPQx9pV4nEq/0LYC7CIft
+ mvsQ==
+X-Gm-Message-State: APjAAAUYfQMqKJ3KajNI1qCMDltvE3peZ75IBKjXZ32fzyOqJrRaC9f/
+ wDPIAhvMSwkXsIyuFzJQd5PKjgJGQHdBmrk4e+F3ug==
+X-Google-Smtp-Source: APXvYqz2hh3xf3NNVSMQwnKxLqxoPr5fEA/x4WWO1oTU5T/O29MD4PGWgIppNaZkbdLHJf6ADY0SDRBtGzSuhQYGFEqqag==
+X-Received: by 2002:a65:500d:: with SMTP id f13mr48703316pgo.151.1563479074121; 
+ Thu, 18 Jul 2019 12:44:34 -0700 (PDT)
+Date: Thu, 18 Jul 2019 12:43:52 -0700
+In-Reply-To: <20190718194415.108476-1-matthewgarrett@google.com>
+Message-Id: <20190718194415.108476-7-matthewgarrett@google.com>
+Mime-Version: 1.0
+References: <20190718194415.108476-1-matthewgarrett@google.com>
+X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
+Subject: [PATCH V36 06/29] kexec_load: Disable at runtime if the kernel is
+ locked down
+From: Matthew Garrett <matthewgarrett@google.com>
+To: jmorris@namei.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190717_121329_284011_B498A7C9 
-X-CRM114-Status: GOOD (  34.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190718_124436_597340_46447EDC 
+X-CRM114-Status: GOOD (  12.86  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:549 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,148 +94,82 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- "Eric W. Biederman" <ebiederm@xmission.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Matthew Garrett <mjg59@srcf.ucam.org>, Kees Cook <keescook@chromium.org>,
+ linux-api@vger.kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Matthew Garrett <mjg59@google.com>,
+ David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
+ Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi James,
+From: Matthew Garrett <mjg59@srcf.ucam.org>
 
-Thank you for taking a look at this work.
+The kexec_load() syscall permits the loading and execution of arbitrary
+code in ring 0, which is something that lock-down is meant to prevent. It
+makes sense to disable kexec_load() in this situation.
 
-> After a quick skim:
->
-> This will map 'nomap' regions of memory with cacheable attributes. This is a non-starter.
-> These regions were described by firmware as having content that was/is written with
-> different attributes. The attributes must match whenever it is mapped, otherwise we have a
-> loss of coherency. Mapping this stuff as cacheable means the CPU can prefetch it into the
-> cache whenever it likes.
+This does not affect kexec_file_load() syscall which can check for a
+signature on the image to be booted.
 
-> It may be important that we do not ever map some of these regions, even though its
-> described as memory. On AMD-Seattle the bottom page of memory is reserved by firmware for
-> its own use; it is made secure-only, and any access causes an
-> external-abort/machine-check. UEFI describes this as 'Reserved', and we preserve this in
-> the kernel as 'nomap'. The equivalent DT support uses memreserve, possibly with the
-> 'nomap' attribute.
->
-> Mapping a 'new'/unknown region with cacheable attributes can never be safe, even if we
-> trusted kexec-tool to only write the kernel to memory. The host may be using a bigger page
-> size causing more memory to become cacheable than was intended.
-> Linux's EFI support rounds the UEFI memory map to the largest support page size, (and
-> winges about firmware bugs).
-> If we're allowing kexec to load images in a region not described as IORESOURCE_SYSTEM_RAM,
-> that is a bug we should fix.
+Signed-off-by: David Howells <dhowells@redhat.com>
+Signed-off-by: Matthew Garrett <mjg59@google.com>
+Acked-by: Dave Young <dyoung@redhat.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+cc: kexec@lists.infradead.org
+---
+ include/linux/security.h     | 1 +
+ kernel/kexec.c               | 8 ++++++++
+ security/lockdown/lockdown.c | 1 +
+ 3 files changed, 10 insertions(+)
 
-We are allowing this. If you consider this to be a bug, I will fix it,
-and this will actually simplify the idmap page table. User will
-receive an error during kexec load if a request is made to load into
-!IORESOURCE_SYSTEM_RAM region.
+diff --git a/include/linux/security.h b/include/linux/security.h
+index 9458152601b5..69c5de539e9a 100644
+--- a/include/linux/security.h
++++ b/include/linux/security.h
+@@ -105,6 +105,7 @@ enum lockdown_reason {
+ 	LOCKDOWN_NONE,
+ 	LOCKDOWN_MODULE_SIGNATURE,
+ 	LOCKDOWN_DEV_MEM,
++	LOCKDOWN_KEXEC,
+ 	LOCKDOWN_INTEGRITY_MAX,
+ 	LOCKDOWN_CONFIDENTIALITY_MAX,
+ };
+diff --git a/kernel/kexec.c b/kernel/kexec.c
+index 1b018f1a6e0d..bc933c0db9bf 100644
+--- a/kernel/kexec.c
++++ b/kernel/kexec.c
+@@ -205,6 +205,14 @@ static inline int kexec_load_check(unsigned long nr_segments,
+ 	if (result < 0)
+ 		return result;
+ 
++	/*
++	 * kexec can be used to circumvent module loading restrictions, so
++	 * prevent loading in that case
++	 */
++	result = security_locked_down(LOCKDOWN_KEXEC);
++	if (result)
++		return result;
++
+ 	/*
+ 	 * Verify we have a legal set of flags
+ 	 * This leaves us room for future extensions.
+diff --git a/security/lockdown/lockdown.c b/security/lockdown/lockdown.c
+index d2ef29d9f0b2..6f302c156bc8 100644
+--- a/security/lockdown/lockdown.c
++++ b/security/lockdown/lockdown.c
+@@ -20,6 +20,7 @@ static char *lockdown_reasons[LOCKDOWN_CONFIDENTIALITY_MAX+1] = {
+ 	[LOCKDOWN_NONE] = "none",
+ 	[LOCKDOWN_MODULE_SIGNATURE] = "unsigned module loading",
+ 	[LOCKDOWN_DEV_MEM] = "/dev/mem,kmem,port",
++	[LOCKDOWN_KEXEC] = "kexec of unsigned images",
+ 	[LOCKDOWN_INTEGRITY_MAX] = "integrity",
+ 	[LOCKDOWN_CONFIDENTIALITY_MAX] = "confidentiality",
+ };
+-- 
+2.22.0.510.g264f2c817a-goog
 
->
-> The only way to do this properly is to copy the linear mapping. The arch code has lots of
-> complex code to generate it correctly at boot, we do not want to duplicate it.
-> (this is why hibernate copies the linear mapping)
-
-As I understand, you would like to take a copy of idmap page table,
-and add entries only for segment
-sources and destinations into the new page table?
-
-If so, there is a slight problem: arch hook machine_kexec_prepare() is
-called prior to loading segments from userland. We can solve this by
-adding another hook that is called after kimage_terminate().
-
-> These patches do not remove the running page tables from TTBR1. As you overwrite the live
-> page tables you will corrupt the state of the CPU. The page-table walker may access things
-> that aren't memory, cache memory that shouldn't be cached (see above), and allocate
-> conflicting entries in the TLB.
-
-Indeed. However, I was following what is done in create_safe_exec_page():
-https://soleen.com/source/xref/linux/arch/arm64/kernel/hibernate.c?r=af873fce#263
-
-ttbr1 is not removed there. Am I missing something, or is not yet
-configured there?
-
-I will set ttbr1 to zero page.
-
-> You cannot use the mm page table helpers to build an idmap on arm64. The mm page table
-> helpers have a compile-time VA_BITS, and we support systems where there is no memory below
-> 1<<VA_BITS. (crazy huh!). Picking on AMD-Seattle again: if you boot a 4K 39bit VA kernel,
-> the idmap will have more page table levels than the page table helpers can build. This is
-> why there are special helpers to load the idmap, and twiddle TCR_EL1.T0SZ.
-> You already need to copy the linear-map, so using an idmap is extra work. You want to work
-> with linear-map addresses, you probably need to add the field to the appropriate structure.
-
-OK. Makes sense. I will do the way hibernate setup this table. I was
-indeed following x86, hoping that eventually it would be possible to
-unite: kasan, hibernate, and kexec implementation of this page table.
-
->
-> The kexec relocation code still runs at EL2. You can't use a copy of the linear map here
-> as there is only one TTBR on v8.0, and you'd need to setup EL2 as its been torn back to
-> the hyp-stub.
-
-As I understand normally on baremetal kexec runs at EL1 not EL2. On my
-machine is_kernel_in_hyp_mode() == false in cpu_soft_restart.
-
-This is the reason hibernate posts EL2 in a holding pen while it rewrites
-> all of memory, then calls back to fixup EL2. Keeping the rewrite phase at EL1 means it
-> doesn't need independently tweaking/testing. You need to do something similar, either
-> calling EL2 to start the new image, or disabling the MMU at EL1 to start the new image there.
-
-OK, I will study how hibernate does this. I was thinking that if we
-are running in EL2 we can simply configure TTBR0_EL2 instead of
-TTBR0_EL1. But, I need to understand this better.
-
->
-> You will need to alter the relocation code to do nothing for kdump, as no relocation is
-> required and building page-tables is extra work where the kernel may croak, preventing us
-> from reaching kdump.
-
-Yes, I was planning to do nothing for kdump, which involves not
-allocating page table. It is not part of the current patchest, as the
-current series is not ready.
-
->
-> Finally, having this independent idmap machinery isn't desirable from a maintenance
-> perspective. Please start with the hibernate code that already solves a very similar
-> problem, as it already has most of these problems covered.
-
-OK.
-
-> > This patch series works in terms, that I can kexec-reboot both in QEMU
->
-> I wouldn't expect Qemu's emulation of the MMU and caches to be performance accurate.
-
-I am not measuring performance in QEMU, I use it for
-development/verification only. The performance is measured on real
-hardware only.
-
->
-> > and on a physical machine. However, I do not see performance improvement
-> > during relocation. The performance is just as slow as before with disabled
-> > caches.
->
-> > Am I missing something? Perhaps, there is some flag that I should also
-> > enable in page table? Please provide me with any suggestions.
->
-> Some information about the physical machine you tested this on would help.
-> I'm guessing its v8.0, and booted at EL2....
-
-I am using Broadcom's Stingray SoC. Because  is_kernel_in_hyp_mode()
-returns false, I believe it is EL1. How can I boot it at EL2?
-
-So, I am still confused why I do not see performance improvements
-during relocation on this machine. Any theories?
-
-Thank you,
-Pasha
 
 _______________________________________________
 kexec mailing list
