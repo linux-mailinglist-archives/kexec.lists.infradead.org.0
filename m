@@ -2,87 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCB8E6D4F1
-	for <lists+kexec@lfdr.de>; Thu, 18 Jul 2019 21:44:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB6426E720
+	for <lists+kexec@lfdr.de>; Fri, 19 Jul 2019 16:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GptKIL1w+tcV/RegAIKLYGO+0WlEYEZ01zGMEhSPa7I=; b=B5AchLTjM7aWWN
-	iLGxek0OKN76uKtAt3nbHDNhKcc1Pc1YwIGyM4tHYdaO/ZB6VEzbrEekzA+7GTaXGYNV6bxcc6xl+
-	bPmXW3XimrKEKT1VGbGwVsB4iZ+5sZIKtp6fx5B3+NcemL4YZBmlgQedJ8/66KpDfofW1ozGaaETC
-	GA9+JjvEC94LPrewTJ335XboTlaMrOJkLdWg0/jtRF2UrXDZ0tGgz0WAMXXVeM1FzIIv9CuhRHUkB
-	JRbwQI/iT8oljZgmSB58jJ3tYCit3BWXMgE2kOMj1msu+SM25ivdDaSnOQQ4tFAGsxBh68rLW+zCs
-	sqa0DJz2I5+1TvfdFGVw==;
+	List-Owner; bh=vtwuoqoIziS/ofs7vhq42YXmgkAVc5wpqVEAUAmDX5o=; b=SdH1aJyRfL4eQp
+	+Fo9GqXbXD0JDacAVsbbjVaqdBuQjFKF+zgqCon6Qw3/EZ2/0uE/LcTqB8iYytPUigOX9/A/4ZGFD
+	3TP0CZNpbw4RURMKP+8DICxNXZIbsa3IoBDnX/rFxscFYjTUuavHuDkODCqCnDXHtpL+o80KSAJSQ
+	6ZdBgMrcJ64KjX/oJQiw9sISprUQ5P2R3LzzbksAPSAODKNcDd6Vu29qLNsZsr20A46M/skejLLLX
+	3T148B2KUspgvgbXXNgpD2GAby+BEHIwHsloforUveMZ9ysDvzThgMap2k9zViNIoLULB29AgCxuf
+	pr5QxGjdaV4KQ+1zWotg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hoCKj-0003l3-Sl; Thu, 18 Jul 2019 19:44:53 +0000
-Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
+	id 1hoTX0-0008OU-8j; Fri, 19 Jul 2019 14:06:42 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hoCKa-0003fO-JE
- for kexec@lists.infradead.org; Thu, 18 Jul 2019 19:44:46 +0000
-Received: by mail-qk1-x74a.google.com with SMTP id b139so24112600qkc.21
- for <kexec@lists.infradead.org>; Thu, 18 Jul 2019 12:44:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=9fXbmdfL5KhuvIZCfCGIG29n6zuww7qo8MROnWxS5+E=;
- b=vaFKk2Q89nA8m9zpY9o5P/RyryqHBdnZpR8gvBpiaUPOc73uQhRke4kFn/wkdzgCxl
- U2Duhl+4hspB7HHsAUKNt8g59w64Y0FqOLBAqNw3Pl3ej3rwSW/y589QZ6A6ApenF8w2
- daVo52oj5ggvqgEbXliWkyAt5Cs7XMh5cwhuDlUHhifbQULkx6UsimX5JAb/C2HZA3tE
- 9v4X/c4Q4p7oikJ+1P7BAsp1XkYXcYcR5trJpUpZGQes+T6Dbg0lDgBMS7KxMgKrVRS8
- wxeppP6Cw5FcMVwd1u0yQsxFPsfRzN6VoauEsS4u/2f0lfU6SeMZf9gUfADnLY8TtFWv
- o/Rw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=9fXbmdfL5KhuvIZCfCGIG29n6zuww7qo8MROnWxS5+E=;
- b=Omenhc28kzVAqHjQQH3210rqhYSvC/zvOYoQ3WgoFUpeq+wSQZgy1wzur+fAroIZgO
- YRtxbdhj4MFCde8PRDBZx2iSKfIRASLfjZE9zavdUDzi3RxT8pRvCu7fZe3v8u8wzYTZ
- mGGNg1vL6QGcC0MJl3rDO7YcUff/NQGiHob2ubyo3xFSbHbM61BdUjsSSFYfKfQi5ZjD
- q9h55pEpyuLRsF4MNRELAtAOupE85G/qvhLmN+cjg0YQX+YijApwqJ1R2dcTtTMtW/9t
- eOhtDeQfREyvLWICwZESJPSbRJMfnVE8JV5qDl/YrIFSUVldfSIRTqxAK7M/QXXLl2pW
- 9UUQ==
-X-Gm-Message-State: APjAAAV64QHpG3jN8ZPEpcOvAU8sDWt9f+2FQzd0HgzjLexmgOCwWHk+
- +1TcFzCv5NXqbmgx5swMFF1P1Mj2r0pu0uL6oHNYHw==
-X-Google-Smtp-Source: APXvYqw1Vt8jWwUEn/Hr2prhO6C8MXEOo0YzibKrMSn4iA+j+KGx0PZu3RjycZEmtM6rOA+IxN/17K2wlDLSPEXZw1FUWw==
-X-Received: by 2002:a0c:acfb:: with SMTP id n56mr34542609qvc.87.1563479082093; 
- Thu, 18 Jul 2019 12:44:42 -0700 (PDT)
-Date: Thu, 18 Jul 2019 12:43:55 -0700
-In-Reply-To: <20190718194415.108476-1-matthewgarrett@google.com>
-Message-Id: <20190718194415.108476-10-matthewgarrett@google.com>
-Mime-Version: 1.0
-References: <20190718194415.108476-1-matthewgarrett@google.com>
-X-Mailer: git-send-email 2.22.0.510.g264f2c817a-goog
-Subject: [PATCH V36 09/29] kexec_file: Restrict at runtime if the kernel is
- locked down
-From: Matthew Garrett <matthewgarrett@google.com>
-To: jmorris@namei.org
+ id 1hoTWu-0008Ny-Py
+ for kexec@lists.infradead.org; Fri, 19 Jul 2019 14:06:38 +0000
+Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by mail.ozlabs.org (Postfix) with ESMTPSA id 45qt8f5BxCz9s3Z;
+ Sat, 20 Jul 2019 00:06:25 +1000 (AEST)
+From: Michael Ellerman <mpe@ellerman.id.au>
+To: Sven Schnelle <svens@stackframe.org>
+Subject: Re: [PATCH v3 5/7] kexec_elf: remove elf_addr_to_cpu macro
+In-Reply-To: <20190715072417.GA25659@t470p.stackframe.org>
+References: <20190710142944.2774-1-svens@stackframe.org>
+ <20190710142944.2774-6-svens@stackframe.org>
+ <49206784-009c-391b-5f9a-11e9b1de930b@c-s.fr>
+ <20190710180518.GA6343@t470p.stackframe.org>
+ <871rywhlq4.fsf@concordia.ellerman.id.au>
+ <20190715072417.GA25659@t470p.stackframe.org>
+Date: Sat, 20 Jul 2019 00:06:21 +1000
+Message-ID: <87tvbi6rvm.fsf@concordia.ellerman.id.au>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190718_124444_726488_73EA0A1E 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190719_070637_057643_27D6F321 
+X-CRM114-Status: GOOD (  11.50  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:74a listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,57 +65,38 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jiri Bohac <jbohac@suse.cz>, Kees Cook <keescook@chromium.org>,
- linux-api@vger.kernel.org, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Matthew Garrett <mjg59@google.com>,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>, kexec@lists.infradead.org,
+ deller@gmx.de, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Jiri Bohac <jbohac@suse.cz>
-
-When KEXEC_SIG is not enabled, kernel should not load images through
-kexec_file systemcall if the kernel is locked down.
-
-[Modified by David Howells to fit with modifications to the previous patch
- and to return -EPERM if the kernel is locked down for consistency with
- other lockdowns. Modified by Matthew Garrett to remove the IMA
- integration, which will be replaced by integrating with the IMA
- architecture policy patches.]
-
-Signed-off-by: Jiri Bohac <jbohac@suse.cz>
-Signed-off-by: David Howells <dhowells@redhat.com>
-Signed-off-by: Matthew Garrett <mjg59@google.com>
-Reviewed-by: Jiri Bohac <jbohac@suse.cz>
-Reviewed-by: Kees Cook <keescook@chromium.org>
-cc: kexec@lists.infradead.org
----
- kernel/kexec_file.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-index 875482c34154..dd06f1070d66 100644
---- a/kernel/kexec_file.c
-+++ b/kernel/kexec_file.c
-@@ -228,7 +228,10 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
- 			goto out;
- 		}
- 
--		ret = 0;
-+		ret = security_locked_down(LOCKDOWN_KEXEC);
-+		if (ret)
-+			goto out;
-+
- 		break;
- 
- 		/* All other errors are fatal, including nomem, unparseable
--- 
-2.22.0.510.g264f2c817a-goog
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+U3ZlbiBTY2huZWxsZSA8c3ZlbnNAc3RhY2tmcmFtZS5vcmc+IHdyaXRlczoKPiBIaSBNaWNoYWVs
+LAo+Cj4gT24gVGh1LCBKdWwgMTEsIDIwMTkgYXQgMDk6MDg6NTFQTSArMTAwMCwgTWljaGFlbCBF
+bGxlcm1hbiB3cm90ZToKPj4gU3ZlbiBTY2huZWxsZSA8c3ZlbnNAc3RhY2tmcmFtZS5vcmc+IHdy
+aXRlczoKPj4gPiBPbiBXZWQsIEp1bCAxMCwgMjAxOSBhdCAwNTowOToyOVBNICswMjAwLCBDaHJp
+c3RvcGhlIExlcm95IHdyb3RlOgo+PiA+PiBMZSAxMC8wNy8yMDE5IMOgIDE2OjI5LCBTdmVuIFNj
+aG5lbGxlIGEgw6ljcml0wqA6Cj4+ID4+ID4gSXQgaGFkIG9ubHkgb25lIGRlZmluaXRpb24sIHNv
+IGp1c3QgdXNlIHRoZSBmdW5jdGlvbiBkaXJlY3RseS4KPj4gPj4gCj4+ID4+IEl0IGhhZCBvbmx5
+IG9uZSBkZWZpbml0aW9uIGJlY2F1c2UgaXQgd2FzIGZvciBwcGM2NCBvbmx5Lgo+PiA+PiBCdXQg
+YXMgZmFyIGFzIEkgdW5kZXJzdGFuZCAoYXQgbGVhc3QgZnJvbSB0aGUgbmFtZSBvZiB0aGUgbmV3
+IGZpbGUpLCB5b3UKPj4gPj4gd2FudCBpdCB0byBiZSBnZW5lcmljLCBkb24ndCB5b3UgPyBUaGVy
+ZWZvcmUgSSBnZXQgb24gMzIgYml0cyBpdCB3b3VsZCBiZQo+PiA+PiBlbGYzMl90b19jcHUoKS4K
+Pj4gPgo+PiA+IFRoYXQgYnJpbmdzIHVwIHRoZSBxdWVzdGlvbiB3aGV0aGVyIHdlIG5lZWQgdGhv
+c2UgZW5kaWFuZXNzIGNvbnZlcnNpb25zLiBJIHdvdWxkCj4+ID4gYXNzdW1lIHRoYXQgdGhlIEVM
+RiBmaWxlIGhhcyBhbHdheXMgdGhlIHNhbWUgZW5kaWFuZXNzIGFzIHRoZSBydW5uaW5nIGtlcm5l
+bC4gU28KPj4gPiBpIHRoaW5rIHdlIGNvdWxkIGp1c3QgZHJvcCB0aGVtLiBXaGF0IGRvIHlvdSB0
+aGluaz8KPj4gCj4+IFdlIHNob3VsZCBiZSBhYmxlIHRvIGtleGVjIGZyb20gYmlnIHRvIGxpdHRs
+ZSBlbmRpYW4gb3IgdmljZSB2ZXJzYSwgc28KPj4gdGhleSBhcmUgbmVjZXNzYXJ5Lgo+Cj4gSSds
+bCB1cGRhdGUgdGhlIHBhdGNoIHRvIGNoZWNrIGZvciBhIG5lZWRlZCAzMi82NCBiaXQgY29udmVy
+c2lvbiBkdXJpbmcgcnVudGltZSwKPiBzbyB3ZSBjYW4gYWxzbyBrZXhlYyBmcm9tIDMyIHRvIDY0
+IGJpdCBrZXJuZWxzIGFuZCB2aWNlIHZlcnNhLiBEb24ndCBrbm93Cj4gd2hldGhlciB0aGF0J3Mg
+cG9zc2libGUgb24gcG93ZXJwYywgYnV0IGF0IGxlYXN0IG9uIHBhcmlzYyBpdCBpcy4KCk9uIHNv
+bWUgb2YgdGhlIEZyZWVzY2FsZSAoTlhQKSBtYWNoaW5lcyB0aGF0IHNob3VsZCBhY3R1YWxseSBi
+ZQpwb3NzaWJsZSwgdGhlIGhhcmR3YXJlIGNhbiBydW4gYSA2NCBvciAzMi1iaXQga2VybmVsLCBi
+dXQgSSdtIG5vdCBzdXJlCmlmIGFueW9uZSBoYXMgYWN0dWFsbHkgdGVzdGVkIGtleGVjJ2luZyBm
+cm9tIG9uZSB0byB0aGUgb3RoZXIuCgpjaGVlcnMKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4
+ZWMK
