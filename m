@@ -2,62 +2,65 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF91671340
-	for <lists+kexec@lfdr.de>; Tue, 23 Jul 2019 09:49:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A84C071919
+	for <lists+kexec@lfdr.de>; Tue, 23 Jul 2019 15:23:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=chJORRDks1ijdsLNtNRU8j+YWtMLkhEbnZ3UraKdpao=; b=F/RG1wbQWIzO/U
-	I3W3zX3DnYxA2dERCWlX6ub/GyG9lScYH6ilf168C7w49z4/Wx2XwS9Fo4lCmZvqRP/4XLu7rK7M6
-	JCr9TRljPQdd9TcMnE5eQb0AsQtcPlswWGhIYSordpX/HCSx9N53cmldlbc7CoIP+h9075tJ3243B
-	qLJjOqiV+21CYbsFCDGUx1hktE0WZppHNYpv9OAsOSlJwx4BdDSNUKi4MpUJU0DZlM9ExPaf5vJy+
-	QVnbh7R9h1BUCxPDah30gT42W+mQQpWEj4CMscqwTeSMdq/oeGyLRjA9lvoM+8Txoyv3rmgPBvmun
-	e9CR5JrWtr0+M0KTgDDw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d/kpod1KEP8m4m3oT+OEuk12wL/Dkcx0KajJYc3DgyQ=; b=fFnyN/KG/vnvC3
+	XEsuH6JwTXBNgxZaJe+d64GqR4gRVEqP6cdTvIYMWphNKAlzw5YO8mdoh7Bcwxxs5oWY5Vc29FI62
+	ZKvwS+Q7nP6aZ90yY1EcN6GOBnYS+VKvz7lkFAaqDS7URUoep5g+g1m1TvaQQvUSDP2qPFEqozoP/
+	xPcCM+ushSdmRQx9KC8bc/KNNkM8MO22PVw1ZPtFhupPxS6/eOcE87DsfVQyGtGHbe+oHGtX99P0Y
+	b4IEARkdX8tOzczbeudcJyEWodVvv89fXeWznwwZAG7I35EFptrDYIKOnzm4P4Zap5YICs4zRgWS6
+	Qm/fdB74uiY55v2x+A4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hppY4-0004x3-IS; Tue, 23 Jul 2019 07:49:24 +0000
-Received: from mail.lunchcard.eu ([176.107.133.213] helo=lunchcard.eu)
+	id 1hpul6-0004xD-OF; Tue, 23 Jul 2019 13:23:12 +0000
+Received: from www262.sakura.ne.jp ([202.181.97.72])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hppY0-0004wl-6x
- for kexec@lists.infradead.org; Tue, 23 Jul 2019 07:49:21 +0000
-Received: by lunchcard.eu (Postfix, from userid 1001)
- id 537DA87CD6; Tue, 23 Jul 2019 09:32:43 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=lunchcard.eu; s=mail;
- t=1563867553; bh=Px3inMCiDAVEjQlYwbfy6i6vMp+P5hI6lpZ4ctHC6M0=;
- h=Date:From:To:Subject:From;
- b=yY7VEiYr4PfFcK4ri62Ec45J3IrQoRbtUjndacOuDqEJb1W7yXtD9ypLwop9sHJmx
- RYIUPP4EbSXf5PmvQnz6XUZD1r0Ce3shqcdPFG41GupkFYqqITjNbi2LhQV87epTrw
- Qmja6UzuwA2gLei6BSaZ0l0pvT8fXRzJzkCsxhWs=
-Received: by mail.lunchcard.eu for <kexec@lists.infradead.org>;
- Tue, 23 Jul 2019 07:32:35 GMT
-Message-ID: <20190723084500-0.1.4e.u5j.0.neh5jiij51@lunchcard.eu>
-Date: Tue, 23 Jul 2019 07:32:35 GMT
-From: =?UTF-8?Q?"Kapolcs_M=C3=A1ty=C3=A1s"?= <kapolcs.matyas@lunchcard.eu>
-To: <kexec@lists.infradead.org>
-Subject: =?UTF-8?Q?Dolgoz=C3=B3i_juttat=C3=A1sok?=
-X-Mailer: mail.lunchcard.eu
+ id 1hpul1-0004vc-W5
+ for kexec@lists.infradead.org; Tue, 23 Jul 2019 13:23:09 +0000
+Received: from fsav401.sakura.ne.jp (fsav401.sakura.ne.jp [133.242.250.100])
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x6NDMxDj022870;
+ Tue, 23 Jul 2019 22:22:59 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Received: from www262.sakura.ne.jp (202.181.97.72)
+ by fsav401.sakura.ne.jp (F-Secure/fsigk_smtp/530/fsav401.sakura.ne.jp);
+ Tue, 23 Jul 2019 22:22:59 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/530/fsav401.sakura.ne.jp)
+Received: from [192.168.1.8] (softbank126012062002.bbtec.net [126.12.62.2])
+ (authenticated bits=0)
+ by www262.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x6NDMq6D022842
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=NO);
+ Tue, 23 Jul 2019 22:22:59 +0900 (JST)
+ (envelope-from penguin-kernel@I-love.SAKURA.ne.jp)
+Subject: Re: [PATCH] kexec: Bail out upon SIGKILL when allocating memory.
+To: Andrew Morton <akpm@linux-foundation.org>
+References: <000000000000a861f6058b2699e0@google.com>
+ <000000000000c0103a058b2ba0ec@google.com>
+ <993c9185-d324-2640-d061-bed2dd18b1f7@I-love.SAKURA.ne.jp>
+ <612eebbe-336a-c1d0-904b-5970d3c4dbb0@I-love.SAKURA.ne.jp>
+From: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>
+Message-ID: <eb662b31-3a56-f3fd-6a0c-7e9f8b36ca8a@I-love.SAKURA.ne.jp>
+Date: Tue, 23 Jul 2019 22:22:55 +0900
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <612eebbe-336a-c1d0-904b-5970d3c4dbb0@I-love.SAKURA.ne.jp>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190723_004920_415702_4AF4A6AD 
-X-CRM114-Status: UNSURE (   1.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.1 (++)
+X-CRM114-CacheID: sfid-20190723_062308_239451_C18CB465 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 2.3 MIXED_ES               Too many es are not es
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,24 +72,50 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: kexec@lists.infradead.org, Eric Biederman <ebiederm@xmission.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-w5xkdsO2emzDtm0hCgoyMDE5LXTFkWwgbWFqZG5lbSBheiDDtnNzemVzIGtpZWfDqXN6w610xZEg
-anV0dGF0w6FzIGrDtnZlZGVsZW1rw6ludCBmb2cgYWTDs3puaSAoa2l2w6l2ZSBhIFNaw4lQIGvD
-oXJ0ecOhdCkuCgpTemVyZXRuw6ltIGF6IMOWbsO2ayBmaWd5ZWxtw6liZSBhasOhbmxhbmkganV0
-dGF0w6FzIGvDoXJ0ecOhaW5rYXQsIG1lbHllayBheiDDumogdGVoZXRzw6lnZWsgbWVnbnllcsOp
-c8OpbmVrIMOpcyBhIGRvbGdvesOzayBtZWd0YXJ0w6Fzw6FuYWsgw6lzIG1vdGl2w6Fsw6Fzw6Fu
-YWsgdmVyc2VueWvDqXBlcyBlc3prw7Z6ZWkuCgpBIFNaw4lQIGvDoXJ0eWEgbWVnb2xkw6FzYWl0
-w7NsIGVsdMOpcsWRZW4gYSBtaSBrw6FydHnDoWlua2F0IGEgbXVua2F2w6FsbGFsw7MgdGV0c3rF
-kWxlZ2VzIGPDqWxva3JhIGhhc3puw6FsaGF0amEgZmVsOiDDqWxlbG1pc3plciB2w6Fzw6FybMOh
-c3JhLCBlZ8Opc3pzw6lnw7xneWkgZWxsw6F0w6FzcmEsIGVsZWt0cm9uaWvDoXJhLCBzesOhbGzD
-oXNyYSwgb2t0YXTDoXNyYSDDqXMgZWd5w6liIGPDqWxva3JhLCB2YWd5IGFrw6FyIGvDqXN6cMOp
-bnpmZWx2w6l0ZWxpIGxlaGV0xZFzw6lnZXQgaXMgdsOhbGFzenRoYXQuIAoKU3plcmV0bsOpayBt
-ZWdpc21lcm5pIGp1dHRhdMOhcyBrw6FydHnDoWluayBmZWxoYXN6bsOhbMOhc2kgbGVoZXTFkXPD
-qWdlaXQgYSBjw6lnw7xrbsOpbD8KClN6w6lwIG5hcG90ISAgCgpLYXBvbGNzIE3DoXR5w6FzCkh1
-bmdhcnkgVGVhbSBMZWFkZXIKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+Andrew, can you pick up this patch? 
+
+On 2019/07/01 19:52, Tetsuo Handa wrote:
+> Andrew, can you pick up this patch? We might miss next merge window, for
+> Eric Biederman seems to be offline for two weeks. 
+> 
+> On 2019/06/14 19:16, Tetsuo Handa wrote:
+>> syzbot found that a thread can stall for minutes inside kexec_load() after
+>> that thread was killed by SIGKILL [1]. It turned out that the reproducer
+>> was trying to allocate 2408MB of memory using kimage_alloc_page() from
+>> kimage_load_normal_segment(). Let's check for SIGKILL before doing memory
+>> allocation.
+>>
+>> [1] https://syzkaller.appspot.com/bug?id=a0e3436829698d5824231251fad9d8e998f94f5e
+>>
+>> Signed-off-by: Tetsuo Handa <penguin-kernel@I-love.SAKURA.ne.jp>
+>> Reported-by: syzbot <syzbot+8ab2d0f39fb79fe6ca40@syzkaller.appspotmail.com>
+>> ---
+>>  kernel/kexec_core.c | 2 ++
+>>  1 file changed, 2 insertions(+)
+>>
+>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+>> index fd5c95f..2b25d95 100644
+>> --- a/kernel/kexec_core.c
+>> +++ b/kernel/kexec_core.c
+>> @@ -302,6 +302,8 @@ static struct page *kimage_alloc_pages(gfp_t gfp_mask, unsigned int order)
+>>  {
+>>  	struct page *pages;
+>>  
+>> +	if (fatal_signal_pending(current))
+>> +		return NULL;
+>>  	pages = alloc_pages(gfp_mask & ~__GFP_ZERO, order);
+>>  	if (pages) {
+>>  		unsigned int count, i;
+>>
+> 
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
