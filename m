@@ -2,55 +2,91 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D846C76AE6
-	for <lists+kexec@lfdr.de>; Fri, 26 Jul 2019 16:02:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BA1D777F6
+	for <lists+kexec@lfdr.de>; Sat, 27 Jul 2019 11:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DTWYsYXFTwhYhyzxE77nPG8LVu2AnzBk/oYsFnR26e4=; b=oKSVQiPtt6phfp
-	s9gapPdvDP1tEEQ4pvfcMyvP51T/nxuQfVXnb4riBELEocJY8NOc/qYJ/v/EF0glTWF0zgxpdKY/s
-	2rB4aJ1ZuqbKtSg5ht4J1p+4KfehnckuDsjH2SKtv4vVMkq51gN4YWVnDWvk7A4RNRunf9/vDeiuy
-	zosokNhDlFDOdvf510TLn0ZW7DWYkV0M353iFEIyoJIrsMtfDYUvAXkkbUz8n2X8B4NjkxeHz9Xxo
-	s5kslLbKD6Ikxab0V31brOPxLtM2HIm2qRPsPi2uONfdjlsVeG0xHmtF/hZUlI1jMpdcOp004MH3K
-	yYyAL8DQXfuVvB08weNQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:From:Date:
+	Message-ID:Reply-To:To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=l856yrg0DaITn1BTIyzClR/TCvkYBdX3YI8JqjkokRg=; b=T9B
+	SSsTsomGrhZfyrGyKVd/R9YQWbOF9yzs0qvA42JnY2hCIuhzHgxApnnjD9SE707A675ywJ9XMnwuo
+	0Weyh11kryBCxcF4sad04RkzWPU/yJWIfYmgofR0Gji8dT6yPvpw+aYwjaRDrIFJmDYRErtZWKIMg
+	s1ApOK2wKNC+RvYU4Y/5qeXVwnEiCk6Q/5JbHoFBB2eKbHMobHuTQOOz00NhpR2i/7Ef6PZxCEkeJ
+	5lVnqZboxGMaAe/qQBWup/N4NuRuZHDcWoLYwYmq34qgE3HmiIvSjLLwDbw7IKtXCi4bWRyq0pmNq
+	xMrxtS0yjf4kWQvLqJBWpAyJlrWDqAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hr0ni-0007B6-Oh; Fri, 26 Jul 2019 14:02:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1hrJFu-0003Np-Rw; Sat, 27 Jul 2019 09:44:46 +0000
+Received: from omta01.suddenlink.net ([208.180.40.71])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hr0mL-0005x8-OL; Fri, 26 Jul 2019 14:01:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35F03337;
- Fri, 26 Jul 2019 07:00:59 -0700 (PDT)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D37703F694;
- Fri, 26 Jul 2019 07:00:57 -0700 (PDT)
-Subject: Re: [RFC v1 0/4] arm64: MMU enabled kexec kernel relocation
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20190716165641.6990-1-pasha.tatashin@soleen.com>
- <4c8a3a11-adc2-efa4-f765-6be338546ae4@arm.com>
- <CA+CK2bBj9UsQZCLsy-S8c_Kd5SRAPvtdS8s9P_Fdg+VifTbT5w@mail.gmail.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <9f74788a-98e8-9839-2017-df64e8532026@arm.com>
-Date: Fri, 26 Jul 2019 15:00:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1hrJFm-0003Le-KN; Sat, 27 Jul 2019 09:44:40 +0000
+Received: from dalifep01 ([10.130.7.33]) by dalofep01.suddenlink.net
+ (InterMail vM.8.04.03.22.01 201-2389-100-168-20180813) with ESMTP
+ id <20190727094431.BKOM27689.dalofep01.suddenlink.net@dalifep01>;
+ Sat, 27 Jul 2019 04:44:31 -0500
+Message-ID: <20190727044431.BJUW0.1044371.root@dalifep01>
+Date: Sat, 27 Jul 2019 4:44:31 -0500
+From: <lmdlksdsee@suddenlink.net>
+Subject: Hola querido.
 MIME-Version: 1.0
-In-Reply-To: <CA+CK2bBj9UsQZCLsy-S8c_Kd5SRAPvtdS8s9P_Fdg+VifTbT5w@mail.gmail.com>
-Content-Language: en-GB
+X-Priority: 3 (Normal)
+Sensitivity: Normal
+X-Authentication-Info: Submitted using SMTP AUTH LOGIN at
+ dalofep01.suddenlink.net from [10.130.7.33] using ID
+ lmdlksdsee@suddenlink.net at Sat, 27 Jul 2019 04:44:31 -0500
+X-CM-Analysis: v=2.3 cv=JvWPU/wC c=1 sm=1 tr=0 cx=a_idp_d
+ a=gwGxBDJYB4KUBgJOPdl6RQ==:117 a=9cW_t1CCXrUA:10 a=IkcTkHD0fZMA:10
+ a=0o9FgrsRnhwA:10 a=CjxXgO3LAAAA:8 a=gBO9zXEbSPNVqkDIu14A:9 a=QEXdDO2ut3YA:10
+ a=pHzHmUro8NiASowvMSCR:22 a=Ew2E2A-JSTLzCXPT_086:22
+X-CM-Envelope: MS4wfO3wk7o9Y/USBECyp+AhKbE4RuFgVzjgaC8cVkVCQdg+3/hHJgYnrVUs0UHbPAUZDRsDIUtUQjvsh/OraeN0WolN0SjHQBIh1NUq7RfQvFSTpMDtAGvY
+ YRhvxvDVKguQsVqhA3+jTyk4fc2HwLAzNF9/LhctsgMQQpOC9yXNS8diBstArWeL89zIu6UcA1TFnLh8BZDUpmGQZmP39Ej4vTdMoFYoyq+qA6ydrtMwjDXx
+ 2cvOlCflbMmJ31qUCETEqH3jNa/xkVDHnhw3Fw9iNZrvPc6pI6feCsCoPrmvO+ivAjPYxHYVVejItUUCjIAHSBvzvUE1bolfvEqhUkYMHQK7j3PQrssRBcUj
+ v+2B1qBkveSN5o48HuXx+Z0iJsZmzNJ/vef3hgrVuGOJGFuGNkm2XeTUMp89lUPs6HpH3nbb76BjypS+o3OqEOZQb80AmQb/T9OJE2vLsEMyi/02N2k20/PV
+ /spJ2mKEpP8k9uW5rbuFwR1VA+2H2RzxD5Rgmj8HN8w3jlZEcZGZWjfNcOHbZYJecCBaNLPdMgrT2bmlDj3lQvhi8hisC7d/gc2y9qp+UppJI3/B483Zyp0k
+ 3iaYVKljgSvltYD2N45YnAZ3BaiPGTxtPn9zK5klegXX0v5KpYm+VBra1jpSqFCcQq7A94Outja7iqwnE4bCl+k+V9XMLt937YGj0lt7rWBCIn5XAEZs30pU
+ l+hoqH3beWA1JmNnHFqUFZOknc6mj5jtfgN81KvlZXOPkwOC9/9E+kNI0rscm04l5pEjTgCgN6lKkoA75T4fEZKsHjHg8C8qEzCkVlPNLbDCrnKJWPxCBPmj
+ t2shsqdiq/uI02n5z247rKGYnAtBmhsGTEFxs90Bu97GaILoXd0HKfo3XNFlj8ekk0tZcPgMwVCzmWiYREViWujAvWQSY5el+5P1UsjXJOHcajtwvJGp/MRW
+ O7SJbg4eXNmssigrpf0e8B/YBVxwicX7zbdWg/G+sG4ytDEmPMe2/BjnAI/sMO5GK+GI4KmK5gvpfzMfmvyTCaNQr6/5HLfEKjcKrWGoNhXtT1Y3Qv2uu2hC
+ JhefRiaciRFlpTdTs19crQu/wmxeltZ8kfWRvGLoM8k9WtBZWrw5OpfPOJUvKlZLnxCF+6i8WcZmcAzYB3PvKTaCTL1q+QeNSp3TVTBMhrj6C1ys6bYPx/Bp
+ aR8fmzBMlyzQm/ZVMABC/VHCIjfIVi/0Ic3nyUEctqNNOhanXvPAWK/XeMfsL/QXYvxd3UBAqRSIZtZS1Ci+YE56tgCWMYs3ErkHqjMOjQJrCeXOEv9Ev023
+ 9ISrpCAqTlZsz/JUMVle6eflPPWypgVgvBpycsdfD9MsjlEVVttl6WoijThL2teZoJG+lHOkr1iJIzugawrncTEm9AdCBp9cqvqnnz4NF4pCT7YTA5JLoerx
+ ZGVnI3ae/kSeJgs0yyskV4CPoWpQkCU8uxop69yg+Zpi4iOjSJ+fAC6frdzovG93gBVpMtsGD9/uECrCECUwv88En6ifcDr0V2zrVwTegWYZxUWoXSRuedCQ
+ XEt7SMBShKpn4iHV9RolRZQ/vId1lCvfN9nLrJb38/c8VTq9O8Rr3DosW9WPr3CJeAS22uBcRVg4KmD1I0iUsE2Mlv9Di1k+W2dBsAMjFkU27EV5GWvy3N7X
+ q2lTz2JQLwKcEDf29X96R6rRM+6oTcKn1nANCWd8PD6OMSeXagZd2RIeaC4mjXlFtFr8HyXigELmzWr2HDyMEy8S73U/LBn5ZL4b9r4hrnK+N4JqKme1foht
+ KPPLu6vXS6I+fgFpgru1evMDUwjGAfQwfVxiLh6qgnfkybP9hi7pf8wmaAsauDH+rQQWusxdhtQ/ldTGWaAjBPQd+Gz131n1VgkjRXnJZG8BPNVeVIWgja03
+ AnABkMT/X+8NtYl+ZawsuFhbBtiq/jfiyXu27/U9oyk0kH3ytWdRDA30G7sbgHxJsuVJ/Ez0cmoopQEgEJOnFIJhiHAKT/8bAjylwuga18kNKkLXDY+V36MY
+ UyaThHiaUEtuUWa2xNDAJ6xKjBahVkZec5lgyvAIr82rpppn8l1IXtE7e9g9mR3ISHtHF0DKBVFcTDpd1o6/zXBuDRWPWwBH7I7/nmi0tzNi9chykf7OmKV5
+ S/vIb1ifBrzb7+WIvxWORPdmSyZlUuOnOIqZXA/HoixODGavXR9kqcabHb4DoLD+25sIxNWEObKnjXEZCM4a04evwQeZIgcCpGbpgppA+e5HcEGT7YUJ18wC
+ cLxCjlcvMlga7+TCPzElqToM5gJz1YN1GNwz/etEOqU9mSHCxxW8EZ74vRA3dL2eXMGxCHH03VB3x6FMNPcbMGVcvN039Z8Km5+PcxhHOwhSkHylpPdljS4h
+ u1HGrQNFMDVCz0k+8lvaPy+u++/e6NL2lQH0YqKl5olQlB2MMCsySrw0QDB83WDBr0eeJvRFy0Sk/3FSUB7JFKLwUBpVOHbEpS71AqIbNCySOaSnZFgxF9uV
+ xSDEwEr5CyRgVIDsPwhf76/zjjBPyzIuuo65C9lT61e1Rr7x935NTvBARRuF59YeUD/vIuq1H3IfTRCy+sRPFzybLDaECEAJ7bmGnn30KYVBUH2w7chBaWYN
+ ANwnVT7Ag/WISn4uDY7Jhw/eq8HsPMhJnltW27WCcDU3/pxCqMfZB3DbylM9Bt4YrbA2PqahPZ2OJSoHHcBWjIOR7h0rmGn6Ajqykuxcswd4vdpVPmcnlESH
+ wQURmZFNm+K0dGItAxUPcd/5TLUYNT5dC+baewU2NB/tTEiOPnDzoAE8aVLrUb044gQ4EFd57JKbdBEFYJ3z5h4LPd1uZQhIYl98IprBeZ45o/j2qOv4yQ+s
+ dOMfAEbacqNHPZu6KvMD+F5OZIMwq6ItFiqL4th/heSpU+krBK9JHkRSVXZrYOXE+CO4kwu6Uno+BKZaKrZbC4Q2na5OKkjyhWMWpb9bntIyDknPFeYFwBH0
+ 5LUsNfWDs69ssyB+nf7U9crRtJ+DOT4C44gP9ubwFKylRBrrUZ3RKf/oFmW9KlbB46Oi2heSYIceVx4g0WheJtMnCi3hT16gWk0DJ82JQtcx1VitDeYU/vza
+ 0nvdO4srWpQE/B62saB17LtuAM8l7S4Ssw2+ENwRbTrLAHspj8/Q0FFrg1y2STztYL/COJps0fxxV3xOUaNQUgIeQxdYq6sEtS293Hzg5lEGVOKWwPlvMLQc
+ CQm364cbqMcq92SEpGuKoN36YYrsr5mxrvDhLi8XIKRrhQkrE2st59P6SoIvPp5W3EhkobETazmP1uhwzibjnN1mP+5nnFt7acyGai+Pa1afB62AiesvU2lF
+ RIcIrTBy97fPJHsaLV9CQa6Vu1fs5kat8wu/Xa/9m1GwPs6mibMGbxV9MHAUIigysAqjWZ2rGj3ltX9adZ+hAC8KJzkJy1KOor5vItyvTWLzEotV3SYMCeT+
+ OkL6tbia/Kbb/CkdmlS3yIE7NjVofK0dlC0ySDYk+adUV0OTLijjVUZ5sk1XtpnjVXk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190726_070102_047476_C093151F 
-X-CRM114-Status: GOOD (  40.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190727_024438_781990_6B71F701 
+X-CRM114-Status: SPAM  (  -6.02  )
+X-Spam-Score: 2.6 (++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (2.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [208.180.40.71 listed in list.dnswl.org]
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 0.5 FROM_LOCAL_NOVOWEL     From: localpart has series of non-vowel
+ letters 1.0 HK_RANDOM_FROM         From username looks random
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.2 MISSING_HEADERS        Missing To: header
+ 0.0 LOTS_OF_MONEY          Huge... sums of money
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,208 +98,36 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- "Eric W. Biederman" <ebiederm@xmission.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Pavel,
-
-On 17/07/2019 20:13, Pavel Tatashin wrote:
->> After a quick skim:
->>
->> This will map 'nomap' regions of memory with cacheable attributes. This is a non-starter.
->> These regions were described by firmware as having content that was/is written with
->> different attributes. The attributes must match whenever it is mapped, otherwise we have a
->> loss of coherency. Mapping this stuff as cacheable means the CPU can prefetch it into the
->> cache whenever it likes.
-> 
->> It may be important that we do not ever map some of these regions, even though its
->> described as memory. On AMD-Seattle the bottom page of memory is reserved by firmware for
->> its own use; it is made secure-only, and any access causes an
->> external-abort/machine-check. UEFI describes this as 'Reserved', and we preserve this in
->> the kernel as 'nomap'. The equivalent DT support uses memreserve, possibly with the
->> 'nomap' attribute.
->>
->> Mapping a 'new'/unknown region with cacheable attributes can never be safe, even if we
->> trusted kexec-tool to only write the kernel to memory. The host may be using a bigger page
->> size causing more memory to become cacheable than was intended.
->> Linux's EFI support rounds the UEFI memory map to the largest support page size, (and
->> winges about firmware bugs).
->> If we're allowing kexec to load images in a region not described as IORESOURCE_SYSTEM_RAM,
->> that is a bug we should fix.
-> 
-> We are allowing this. If you consider this to be a bug, I will fix it,
-> and this will actually simplify the idmap page table. User will
-> receive an error during kexec load if a request is made to load into
-> !IORESOURCE_SYSTEM_RAM region.
-
-I consider this a bug, but we can see what others think.
-This suggests kexec-tools can open /proc/iomem, find a likely looking gap, and try to load
-the new kernel between two platform devices.
-
-
->> The only way to do this properly is to copy the linear mapping. The arch code has lots of
->> complex code to generate it correctly at boot, we do not want to duplicate it.
->> (this is why hibernate copies the linear mapping)
-> 
-> As I understand, you would like to take a copy of idmap page table,
-> and add entries only for segment
-> sources and destinations into the new page table?
-
-I don't think there is a need to idmap memory at all. We should copy the linear map so you
-know you won't overwrite its page tables as part of loading the new kernel.
-
-
-> If so, there is a slight problem: arch hook machine_kexec_prepare() is
-> called prior to loading segments from userland. We can solve this by
-> adding another hook that is called after kimage_terminate().
-
-Yes, all this would need doing as machine_kexec() runs. We preferably need to allocate
-memory in this path, or at least have a bitmap of what we can/can't overwrite.
-
-
->> These patches do not remove the running page tables from TTBR1. As you overwrite the live
->> page tables you will corrupt the state of the CPU. The page-table walker may access things
->> that aren't memory, cache memory that shouldn't be cached (see above), and allocate
->> conflicting entries in the TLB.
-> 
-> Indeed. However, I was following what is done in create_safe_exec_page():
-> https://soleen.com/source/xref/linux/arch/arm64/kernel/hibernate.c?r=af873fce#263
-> 
-> ttbr1 is not removed there. Am I missing something, or is not yet
-> configured there?
-
-Hibernate maps a single executable page in ttbr0_el1 that holds its relocation code.
-The relocation code then switches ttbr1_el1 to point to the copy of the linear map. See
-the 'break_before_make_ttbr_switch' macro in swsusp_arch_suspend_exit().
-
-
-> I will set ttbr1 to zero page.
-> 
->> You cannot use the mm page table helpers to build an idmap on arm64. The mm page table
->> helpers have a compile-time VA_BITS, and we support systems where there is no memory below
->> 1<<VA_BITS. (crazy huh!). Picking on AMD-Seattle again: if you boot a 4K 39bit VA kernel,
->> the idmap will have more page table levels than the page table helpers can build. This is
->> why there are special helpers to load the idmap, and twiddle TCR_EL1.T0SZ.
->> You already need to copy the linear-map, so using an idmap is extra work. You want to work
->> with linear-map addresses, you probably need to add the field to the appropriate structure.
-> 
-> OK. Makes sense. I will do the way hibernate setup this table. I was
-> indeed following x86, hoping that eventually it would be possible to
-> unite: kasan, hibernate, and kexec implementation of this page table.
-
-Our kasan and hibernate code already went a different way. I doubt we can bring them back
-in to look like x86, they have different problems to solve.
-
-
->> The kexec relocation code still runs at EL2. You can't use a copy of the linear map here
->> as there is only one TTBR on v8.0, and you'd need to setup EL2 as its been torn back to
->> the hyp-stub.
-> 
-> As I understand normally on baremetal kexec runs at EL1 not EL2. On my
-> machine is_kernel_in_hyp_mode() == false in cpu_soft_restart.
-
-and is_hyp_mode_available() ?
-
-
-This depends on which exception-level your bootloader set Linux running. You should get a
-boot message that tells you:
-| CPU: All CPU(s) started at EL2
-
-is_kernel_in_hyp_mode() is for determining if the kernel is running at EL2. This is the
-case if you get a message like:
-| kvm [1]: VHE mode initialized successfully
-VHE is a v8.1 feature that repaints the system-registers so a kernel written to run at EL1
-can run almost unmodified at EL2.
-
-We also have is_hyp_mode_available(), which will return true if all the CPUs booted at EL2.
-
-
-kexec either runs its relocation code at EL1, or at EL2 if that is where the first kernel
-booted. If you call to EL2, the MMU was already off as KVM will reset EL2 to the hyp-stub
-in response to the reboot notifiers hardware_disable() call.
-
-(kvm_arch_hardware_disable() calls cpu_hyp_reset())
-
-
-> This is the reason hibernate posts EL2 in a holding pen while it rewrites
->> all of memory, then calls back to fixup EL2. Keeping the rewrite phase at EL1 means it
->> doesn't need independently tweaking/testing. You need to do something similar, either
->> calling EL2 to start the new image, or disabling the MMU at EL1 to start the new image there.
-
-> OK, I will study how hibernate does this. I was thinking that if we
-> are running in EL2 we can simply configure TTBR0_EL2 instead of
-> TTBR0_EL1. But, I need to understand this better.
-
-Yes, if you've got a VHE system it can skip the jumping around Exception-levels, but we
-still need to support the non-VHE systems.
-
-
->>> This patch series works in terms, that I can kexec-reboot both in QEMU
->>> and on a physical machine. However, I do not see performance improvement
->>> during relocation. The performance is just as slow as before with disabled
->>> caches.
->>
->>> Am I missing something? Perhaps, there is some flag that I should also
->>> enable in page table? Please provide me with any suggestions.
->>
->> Some information about the physical machine you tested this on would help.
->> I'm guessing its v8.0, and booted at EL2....
-
-> I am using Broadcom's Stingray SoC.
-
-First hit on google is [0]. Which assuming its the same SoC, says its Cortex-A72, this is
-a v8.0 part, it doesn't have VHE. The kernel will be running at EL1, if it supports KVM it
-must have booted at EL2.
-
-
-> Because  is_kernel_in_hyp_mode()
-> returns false, I believe it is EL1. How can I boot it at EL2?
-
-This check is for VHE.
-|static inline bool is_kernel_in_hyp_mode(void)
-| {
-|	return read_sysreg(CurrentEL) == CurrentEL_EL2;
-| }
-
-The kernel's early startup in head.S detects if its running at EL2 or EL1. If it has VHE,
-it enables the feature and stays at EL2. Otherwise it installs the 'hyp-stub' and drops to
-EL1.
-
-On v8.0 the kernel has to run at EL1 because we need the two ttbr registers.
-(kernel/user-space). EL2 on these parts only has one. v8.1's VHE adds a second ttbr to
-EL2, meaning we can run linux at EL2 and KVM avoids the jumping between exception levels.
-
-
-You can check for that:
-| CPU: All CPU(s) started at EL2
-message. If your bootloader is starting the OS at EL1, you will need to speak to the
-firmware folk about getting that changed.
-
-
-> So, I am still confused why I do not see performance improvements
-> during relocation on this machine. Any theories?
-
-I assume you started at EL2. You moved EL1's mmu-off code, but cpu_soft_restart() will
-call the relocation code at EL2 where the MMU is already off. Because you expected to be
-using an idmap, nothing goes wrong, but nothing has changed.
-
-
-Thanks,
-
-James
-
-[0] https://www.broadcom.com/products/storage/ethernet-storage-adapters-ics/ps1100r
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+IEhvbGEgcXVlcmlkby4KClBvciBmYXZvciwgbm8gc2Ugc2llbnRhIHBlcnR1cmJhZG8gcG9yIGNv
+bnRhY3RhcmxvLCBkZWJpZG8gYSBsYSBjb25kaWNpw7NuIGNyw610aWNhIGVuIGxhIHF1ZSBtZSBl
+bmN1ZW50cm8sIHBlcm8gbm8gZXMgdW4gcHJvYmxlbWEgZmluYW5jaWVybywgcGVybyBtaSBzYWx1
+ZCwgZXMgcG9zaWJsZSBxdWUgc2VwYSBxdWUgZWwgY8OhbmNlciBubyBlcyBkZSBsbyBxdWUgc2Ug
+cHVlZGUgaGFibGFyLCBlc3RveSBjYXNhZG8gY29uIGVsIFNyLiBLYXJpbXBvdXIgQmVocm91eiwg
+cXVpZW4gdHJhYmFqw7MgY29uIGxhIGVtYmFqYWRhIGRlIER1YmFpIGVuIGNvdGUgZCdpdm9pcmUg
+ZHVyYW50ZSBudWV2ZSBhw7FvcyBhbnRlcyBkZSBtb3JpciBlbiBlbCBhw7FvIDIwMTYuCgpFc3R1
+dmltb3MgY2FzYWRvcyDigIvigItkdXJhbnRlIG9uY2UgYcOxb3Mgc2luIHVuIGhpam8uIE11cmnD
+syBkZXNwdcOpcyBkZSB1bmEgYnJldmUgZW5mZXJtZWRhZCBxdWUgZHVyw7MgY2luY28gZMOtYXMu
+CgpEZXNkZSBzdSBtdWVydGUsIGRlY2lkw60gbm8gdm9sdmVyIGEgY2FzYXJtZS4gQ3VhbmRvIG1p
+IGRpZnVudG8gZXNwb3NvIGVzdGFiYSB2aXZvLCBkZXBvc2l0w7MgbGEgc3VtYSBkZSBVUyAkIDQs
+NSBtaWxsb25lcyAoY3VhdHJvIG1pbGxvbmVzIHF1aW5pZW50b3MgbWlsIGTDs2xhcmVzKSBlbiB1
+biBiYW5jbyBkZSBDb3RlIGQnaXZvaXJlLiBBY3R1YWxtZW50ZSwgZXN0ZSBkaW5lcm8gdG9kYXbD
+rWEgZXN0w6EgZW4gZWwgYmFuY28uIFkgbWkgZG9jdG9yIG1lIGRpam8gcXVlIG5vIHRlbmdvIG11
+Y2hvIHRpZW1wbyBwYXJhIHZpdmlyIGRlYmlkbyBhbCBwcm9ibGVtYSBkZWwgY8OhbmNlci4gQWwg
+Y29ub2NlciBtaSBjb25kaWNpw7NuLCBkZWNpZMOtIGVudHJlZ2FybGUgZXN0ZSBjYXJpw7FvIHBh
+cmEgY3VpZGFyIGRlIGxhcyBwZXJzb25hcyBtZW5vcyBwcml2aWxlZ2lhZGFzLCB1dGlsaXphcsOh
+IGVzdGUgZGluZXJvIGRlIGxhIG1hbmVyYSBWb3kgYSBpbnN0cnVpciBhcXXDrS4gUXVpZXJvIHF1
+ZSB0b21lcyBlbCAxMCBwb3IgY2llbnRvIGRlbCBkaW5lcm8gdG90YWwgcGFyYSB0dSB1c28gcGVy
+c29uYWwsIG1pZW50cmFzIHF1ZSBlbCA5MCUgZGVsIGRpbmVybyBzZSBkZXN0aW5hcsOhIGEgb3Jn
+YW5pemFjaW9uZXMgYmVuw6lmaWNhcyB5IGFsIG9yZmFuYXRvLgoKCk5vIHF1aWVybyBxdWUgZWwg
+Z29iaWVybm8gdXRpbGljZSBsb3MgZXNmdWVyem9zIGRlIG1pIGVzcG9zby4gQ3JlY8OtIHNpZW5k
+byBodcOpcmZhbmEgeSBubyB0ZW5nbyBhIG5hZGllIGNvbW8gbWllbWJybyBkZSBtaSBmYW1pbGlh
+LAoKRXN0b3kgZXNwZXJhbmRvIHN1IHJlc3B1ZXN0YS4gW21hc3NvdW1hMDAyaUB5YWhvby5jb21d
+CgpTYWx1ZG9zLApNYXNzb3VtYSBLYXJpbXBvdXIgQmVocm91egplc2NyaXRvIGRlc2RlIGVsIGhv
+c3BpdGFsLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+a2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
