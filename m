@@ -2,67 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38A1F7A5F6
-	for <lists+kexec@lfdr.de>; Tue, 30 Jul 2019 12:26:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 120047BCA3
+	for <lists+kexec@lfdr.de>; Wed, 31 Jul 2019 11:09:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3O5feIcDpXUKrTkmFD/lAW2Hpkb4jaEU115A9NqyXsg=; b=UTD+KsvG8DxDe5
-	H63vQVN4B1+FsOTDxLmHZ10lZT8JW9KNVlCZm8NqH8OkLpvjORVDJ93fPv6oSEOepu+7cZ85KYZ4Z
-	GqBB8SpWMNAdhaVAwSpcy9ihNhH0KP2ATfVEAb4JmrqfcAw5jSA872LQxhO4w9F8GWOWGRIvNvd11
-	o4MvtJuRt56Wao8vgHGQUaQqhjdlSaMFhUjDeeRqZc33ZTPIGCzoy3Mrc1CC99QqSrKZaBq+/8pWa
-	3dQpYj8CLZGu720Lh+4QyT7yshBctxfQudWIDdnJRK2d+wZxfXoPaQ9aC0JzBPkTO2V+qKwbvXNCt
-	BLPYl26gzm0XwCfSkz+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kxxK8LFD2TEVW8UQrRegndepIJHmexutp4OwWIiGLSE=; b=Eyr4mgYWAuTkYB
+	OWgJhpCtQHjdbnWsmrGm3dALAG6VUBP//hZjGKQMtgeuEGm+bDkqtEpzZofOtwbkrzGQY1dVKdV5U
+	QVp3lpG0tlhcaLVXD8cEHQ6+jkeYyQixtNEYn7qFR+AHZc0fLX5csp2VuoCPwuYpYKURU8RlJOKAb
+	IxJAx1vcfNJuoc4MRJ677r9ULZgIGgGPDFfSThGxLp08jgLZ1dVsNb7JgvS3BTglPxsh77xQGPncr
+	hFWmGnYWW6OX25oL8jQMmMWzIWmYhPj+P/fwLKZ3IQUybYXQyVPFTaohyKGVcx0ikelXM9WqlVPYJ
+	y2vkwS/xHKRlLx6DiniA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hsPKd-0000FF-OC; Tue, 30 Jul 2019 10:26:12 +0000
-Received: from mail-lj1-f196.google.com ([209.85.208.196])
+	id 1hskcF-0002O6-9c; Wed, 31 Jul 2019 09:09:47 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hsPKW-0000Do-KX
- for kexec@lists.infradead.org; Tue, 30 Jul 2019 10:26:06 +0000
-Received: by mail-lj1-f196.google.com with SMTP id t28so61538391lje.9
- for <kexec@lists.infradead.org>; Tue, 30 Jul 2019 03:26:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3AZrte9zGIaQdupl3qaH2oH0hTd9+Q2ZgEdDma4uaQY=;
- b=STpoydfQrbwm3PfkE2ZvPHQ0U1qzFQvyK0yCclWirIy6zED3fmrRVbpU51a8nyopke
- HaEEo1OVNHC6hPiKqLu8oa5l3WjNiQfgi3Fe5LS/n2JLN6jaY4lHJQhruuvjnSucKCCT
- NCc4RvQsiV998ml6558XgmRp/+oFquLkMMAiw4y748EDiVC72QJB+BML62fy6FapI07v
- oxg8nPwCsxxsKmpgM1Prods99kqO7bVTL5tyqImljuHxWSiwWQ1dsdCXBzUM1j1MInUE
- eNVVztAWVx88XompS/qYl4JUX3u9rM6uVfiazzMjOWvAZSt6ePQT4wMe8RtdZ5wYJLSh
- wiuQ==
-X-Gm-Message-State: APjAAAVIa5+FNBpy9Nc7zj1xTHuyNHj0GcL9/0JMy5KKPLqoue8FFfcG
- vnzXrmzlkjVRMWIM5YwZKYUihz5ZtYuHYQ8E1xFGiw==
-X-Google-Smtp-Source: APXvYqzqUCZfgnM9GrjGVPUd+zN+L+6rlwO3ATkueVi4I74ZRdHqk4Sa3JJmPLYPUXnNt++vpLFO0GqoKEtXeB8Psy8=
-X-Received: by 2002:a2e:8945:: with SMTP id b5mr59164374ljk.93.1564482360720; 
- Tue, 30 Jul 2019 03:26:00 -0700 (PDT)
+ id 1hskcB-0002Nn-LS
+ for kexec@lists.infradead.org; Wed, 31 Jul 2019 09:09:45 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id EC79130C133C;
+ Wed, 31 Jul 2019 09:09:42 +0000 (UTC)
+Received: from wlc-trust-99.pek2.redhat.com (wlc-trust-99.pek2.redhat.com
+ [10.72.3.99])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 666AE19C65;
+ Wed, 31 Jul 2019 09:09:38 +0000 (UTC)
+From: Kairui Song <kasong@redhat.com>
+To: kexec@lists.infradead.org
+Subject: [PATCH] x86: Fix broken multiboot2 buliding for i386
+Date: Wed, 31 Jul 2019 17:09:02 +0800
+Message-Id: <20190731090902.29481-1-kasong@redhat.com>
 MIME-Version: 1.0
-References: <patch.git-ff1c9045ebdc.your-ad-here.call-01564402297-ext-5690@work.hours>
-In-Reply-To: <patch.git-ff1c9045ebdc.your-ad-here.call-01564402297-ext-5690@work.hours>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Tue, 30 Jul 2019 15:55:48 +0530
-Message-ID: <CACi5LpNQ8bEC+2KE=DZaUjeSmA46U=3u8m2WQYJEexK7uE0L+A@mail.gmail.com>
-Subject: Re: [PATCH] kexec: restore arch_kexec_kernel_image_probe declaration
-To: Vasily Gorbik <gor@linux.ibm.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Wed, 31 Jul 2019 09:09:43 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190730_032604_847202_415994C3 
-X-CRM114-Status: GOOD (  14.23  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190731_020943_748073_2C2EC1BC 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.196 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.196 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,62 +65,96 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dave Young <dyoung@redhat.com>
+Cc: Varad Gautam <vrd@amazon.de>, Simon Horman <horms@verge.net.au>,
+ Dave Young <dyoung@redhat.com>, Kairui Song <kasong@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Vasily,
+When building for i386, an error occured:
 
-On Mon, Jul 29, 2019 at 5:44 PM Vasily Gorbik <gor@linux.ibm.com> wrote:
->
-> arch_kexec_kernel_image_probe function declaration has been removed by
-> commit 9ec4ecef0af7 ("kexec_file,x86,powerpc: factor out kexec_file_ops
-> functions"). Still this function is overridden by couple of architectures
-> and proper prototype declaration is therefore important, so bring it
-> back. This fixes the following sparse warning on s390:
-> arch/s390/kernel/machine_kexec_file.c:333:5: warning: symbol 'arch_kexec_kernel_image_probe' was not declared. Should it be static?
+kexec/arch/i386/kexec-x86.c:39:22: error: 'multiboot2_x86_probe'
+undeclared here (not in a function); did you mean 'multiboot_x86_probe'?
+39 |  { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
+   |                      ^~~~~~~~~~~~~~~~~~~~
+   |                      multiboot_x86_probe
 
-May be it would be better to add a 'Fixes:' tag here (but may be it
-can be added while picking it into the tree). With the above minor
-nitpick:
+kexec/arch/i386/kexec-x86.c:39:44: error: 'multiboot2_x86_load'
+undeclared here (not in a function); did you mean 'multiboot_x86_load'?
+39 |  { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
+   |                                            ^~~~~~~~~~~~~~~~~~~
+   |                                            multiboot_x86_load
+kexec/arch/i386/kexec-x86.c:40:4: error: 'multiboot2_x86_usage'
+ undeclared here (not in a function); did you mean 'multiboot_x86_usage'?
+40 |    multiboot2_x86_usage },
+   |    ^~~~~~~~~~~~~~~~~~~~
+   |    multiboot_x86_usage
 
-Reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
+Fix this issue by putting the definition in the right header, also tidy
+up Makefile.
 
-Thanks,
-Bhupesh
+Fixes: 22a2ed55132e ("x86: Support multiboot2 images")
+Signed-off-by: Kairui Song <kasong@redhat.com>
+---
+ kexec/arch/i386/Makefile         | 2 +-
+ kexec/arch/i386/kexec-x86.h      | 5 +++++
+ kexec/arch/x86_64/kexec-x86_64.h | 5 -----
+ 3 files changed, 6 insertions(+), 6 deletions(-)
 
-> Signed-off-by: Vasily Gorbik <gor@linux.ibm.com>
-> ---
->  include/linux/kexec.h | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/include/linux/kexec.h b/include/linux/kexec.h
-> index 1740fe36b5b7..f7529d120920 100644
-> --- a/include/linux/kexec.h
-> +++ b/include/linux/kexec.h
-> @@ -183,6 +183,8 @@ int kexec_purgatory_get_set_symbol(struct kimage *image, const char *name,
->                                    bool get_value);
->  void *kexec_purgatory_get_symbol_addr(struct kimage *image, const char *name);
->
-> +int __weak arch_kexec_kernel_image_probe(struct kimage *image, void *buf,
-> +                                        unsigned long buf_len);
->  void * __weak arch_kexec_kernel_image_load(struct kimage *image);
->  int __weak arch_kexec_apply_relocations_add(struct purgatory_info *pi,
->                                             Elf_Shdr *section,
-> --
-> 2.21.0
->
->
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
+diff --git a/kexec/arch/i386/Makefile b/kexec/arch/i386/Makefile
+index 105cefd..f486103 100644
+--- a/kexec/arch/i386/Makefile
++++ b/kexec/arch/i386/Makefile
+@@ -7,6 +7,7 @@ i386_KEXEC_SRCS += kexec/arch/i386/kexec-elf-x86.c
+ i386_KEXEC_SRCS += kexec/arch/i386/kexec-elf-rel-x86.c
+ i386_KEXEC_SRCS += kexec/arch/i386/kexec-bzImage.c
+ i386_KEXEC_SRCS += kexec/arch/i386/kexec-multiboot-x86.c
++i386_KEXEC_SRCS += kexec/arch/i386/kexec-mb2-x86.c
+ i386_KEXEC_SRCS += kexec/arch/i386/kexec-beoboot-x86.c
+ i386_KEXEC_SRCS += kexec/arch/i386/kexec-nbi.c
+ i386_KEXEC_SRCS += kexec/arch/i386/x86-linux-setup.c
+@@ -14,7 +15,6 @@ i386_KEXEC_SRCS += kexec/arch/i386/crashdump-x86.c
+ 
+ dist += kexec/arch/i386/Makefile $(i386_KEXEC_SRCS)			\
+ 	kexec/arch/i386/crashdump-x86.h					\
+-	kexec/arch/i386/kexec-mb2-x86.c					\
+ 	kexec/arch/i386/kexec-x86.h					\
+ 	kexec/arch/i386/x86-linux-setup.h				\
+ 	kexec/arch/i386/include/arch/options.h
+diff --git a/kexec/arch/i386/kexec-x86.h b/kexec/arch/i386/kexec-x86.h
+index 1b58c3b..16d0f6c 100644
+--- a/kexec/arch/i386/kexec-x86.h
++++ b/kexec/arch/i386/kexec-x86.h
+@@ -60,6 +60,11 @@ int multiboot_x86_load(int argc, char **argv, const char *buf, off_t len,
+ 	struct kexec_info *info);
+ void multiboot_x86_usage(void);
+ 
++int multiboot2_x86_load(int argc, char **argv, const char *buf, off_t len,
++                       struct kexec_info *info);
++void multiboot2_x86_usage(void);
++int multiboot2_x86_probe(const char *buf, off_t buf_len);
++
+ int elf_x86_probe(const char *buf, off_t len);
+ int elf_x86_load(int argc, char **argv, const char *buf, off_t len,
+ 	struct kexec_info *info);
+diff --git a/kexec/arch/x86_64/kexec-x86_64.h b/kexec/arch/x86_64/kexec-x86_64.h
+index 21c3a73..4cdeffb 100644
+--- a/kexec/arch/x86_64/kexec-x86_64.h
++++ b/kexec/arch/x86_64/kexec-x86_64.h
+@@ -33,9 +33,4 @@ int bzImage64_load(int argc, char **argv, const char *buf, off_t len,
+ 			struct kexec_info *info);
+ void bzImage64_usage(void);
+ 
+-int multiboot2_x86_load(int argc, char **argv, const char *buf, off_t len,
+-			struct kexec_info *info);
+-void multiboot2_x86_usage(void);
+-int multiboot2_x86_probe(const char *buf, off_t buf_len);
+-
+ #endif /* KEXEC_X86_64_H */
+-- 
+2.21.0
+
 
 _______________________________________________
 kexec mailing list
