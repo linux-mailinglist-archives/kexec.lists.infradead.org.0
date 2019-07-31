@@ -2,77 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 258B57C9D4
-	for <lists+kexec@lfdr.de>; Wed, 31 Jul 2019 19:04:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B0DA7D08E
+	for <lists+kexec@lfdr.de>; Thu,  1 Aug 2019 00:16:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SLGQJTCoPOVJg8WP4X6kbjqut0lGbcSjaqSQvsL2qVk=; b=D4JaZPuzTWPuZz
-	jkEPdzG0VPPWBnisLTns25J1Ja2erKMLo6E4YRXSVfsh0rBxd4zWjFEWSf3Sveqx9dYv1UxhHeE8l
-	8mBAYeUu3u/jdS2CFReqLC7N1VSxznF2pUtQmtBiMuauAWyzurlnXeqOUgM4gc+FVt1a30dty/pPj
-	dJsdeZHiGMKO6jWuj0JRqYJGd9UfKKW/ogSxOFH48s1GkuaHDNc2x1lW7f5s89Q2q1eAO1DBGPkpc
-	J7NxfIm+XmBexT44b6rfQ0ItPv50Ja4pXHZ3kGhhz2HadcpRonMWX2dG+3Ra5FW4AP3R0YgosFOa2
-	M7ExcCx4qzYMxRGIDR+w==;
+	List-Owner; bh=q+RghyXUxApW07E3PnZTwpQgEtuHqnI/VBCzulAhVq8=; b=U1owgYhLnW7TlF
+	T4m5gVHXVZ1xxI+9hGAMjpda6TruhIxIPjjIXP+hEYe4M7p8FfQQx/h2WtFwNIokX6rjBoFGCjiMf
+	b+mJ0Jf80+w1okJM9aCT4Qu3nC2uuQKWFo0ZmEZJ7tDxJKZ3OeM+U5RiovpWM224sD39K6vtb3MQZ
+	sSTmtt9OC+o3Kkv7F/VD7wLEFqCJxTp1JcFeSOq2ii+QCf+/ZzQZGE1DTIqdP4Hum5jUhWvEeMt+k
+	VB1EDBMbe3ECTRRXNFt1R8Aw8VGsnRtcj6bL1Y9MN+oKa8Z8EOFGH/qy6UOBrgxK3dFAjpdc+NZkc
+	aPcJWmMlvJVqWCVidXeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hss1e-0007F4-BW; Wed, 31 Jul 2019 17:04:30 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1hswtq-0002U7-Pi; Wed, 31 Jul 2019 22:16:46 +0000
+Received: from mail-vk1-xa4a.google.com ([2607:f8b0:4864:20::a4a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hss1V-00075s-9C
- for kexec@lists.infradead.org; Wed, 31 Jul 2019 17:04:22 +0000
-Received: by mail-ed1-x543.google.com with SMTP id s49so31545305edb.1
- for <kexec@lists.infradead.org>; Wed, 31 Jul 2019 10:04:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w3v6TLclWYCTjAr1Tti2BDVXfhzMXBqkZT8bGQWpyYs=;
- b=aOi9HiQRPHO4FOr23H0QJg5L4BRnfgz+Y7QvXWhB/ngiIQaEGHpBRMnl1OxzoXIBD2
- k43GqRNVGXw98UkWEJOgJJ2uCTXIijl6XMElm2r6cO8ZxA6p+VeKe0q36fAAh9KHjGXh
- YSgHNRaRuPZ5vFNks3rQ7KnUpdHhj099KPD3D99ZDMOC90fiBIPstXZKeDLSEGq6tymT
- 9ON4RFhkvi6jSB8/Oj5Xi0cdIYetxeUWiifFJKWczZ8hgQpqdsJUnl9/Uwx6rJkeFEJj
- 58AJWNsYbe4cmO3e3vyV70t0uKsb/DXhqgr2SLW8GdW3LoqfK74WF1+J9TrqIxeltae+
- yGYA==
+ id 1hswtn-0002Sd-NH
+ for kexec@lists.infradead.org; Wed, 31 Jul 2019 22:16:45 +0000
+Received: by mail-vk1-xa4a.google.com with SMTP id u202so30055125vku.5
+ for <kexec@lists.infradead.org>; Wed, 31 Jul 2019 15:16:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=F1VsQKe1CvGe90szBrckBeIyG/tsASbX2ypyWhc14LE=;
+ b=OA/ewO2STl/8HuS0PxOzP53cqnJU4I2To46Ls2zbIPrZrcu6dWb3BWrs8Gv7I+OTa/
+ 8YbrIh1IYkmK0OtcTqi75E137+aNk2E/WFI/YsvmZnzcOaaf98xzsMoisWzYfDfLC2B7
+ JN2b+P5R1eLpJX4dG9c9oeCWku4dL7sYsIrkTSNq5KSAuZFriPHkloD2Eg+XpfaeK/Ui
+ hlokk/dSOm/77WEK1BNNuhO3N3lFKkSgLy8FYH8Z9lCWel6MAa8V17P6MG633C4Wxbb8
+ b+F00xixmbEGqv+LwFArWUhV5ybH8n5Yo5qa0k/kDIAOJb71ElqEWbgXe+hHxUS3Ryct
+ U9GQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=w3v6TLclWYCTjAr1Tti2BDVXfhzMXBqkZT8bGQWpyYs=;
- b=TrmtBmtEb/198cdzJH3MKl8RzEw03TMWh/yQzF/pzSI+9hUzIVzy0iFWF1AsGFImcz
- efqP+F1LGMBqMJ0ueYXlVn9RVA8VLRpT0PyKLlUXkKlQy36rwmO2TRekyJw7VzoMfdnI
- vMVOTPaELd3prkUpo1ZDgclDSV+5T0Kab5I69TwOui9QSVR0Zyh6w9Qh/77dZdQ4e4kE
- +78s7+GtenoPE/96VSTL/55ocNHY2mtAqTa2F8EXFefjwvO7il6iRjhizHHKr4hBCqmZ
- i3AyVH3sUbKxvXyne+jRovNWXjfJbtcmGcsu4gglbsQUHLfKFtFNZPTV0eDkX1Lq97t0
- RyQg==
-X-Gm-Message-State: APjAAAWtwsG9J5y9LPg7HYOqZe/35MITRXjyDfFXidWl5sAT1KCLCdOF
- lYiCTivixjOBlm6K0mDp2BO7/zfudjmNaOnTE0A=
-X-Google-Smtp-Source: APXvYqyW5t23CPvCpiYNBbUwB050BijLjhKoZGvCCP6vJyE4voxLk8m00zN6oc8wm1lTBdkVRCt4NjssIfYO0PsdD3Y=
-X-Received: by 2002:a17:906:9447:: with SMTP id
- z7mr30023478ejx.165.1564592659700; 
- Wed, 31 Jul 2019 10:04:19 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190731153857.4045-1-pasha.tatashin@soleen.com>
- <20190731163258.GH39768@lakrids.cambridge.arm.com>
- <CA+CK2bAYUFBBGo-LHBK4UWRK1tpx3AZ4Z9NkDxiDK0UYEDozaQ@mail.gmail.com>
- <20190731165007.GJ39768@lakrids.cambridge.arm.com>
-In-Reply-To: <20190731165007.GJ39768@lakrids.cambridge.arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 31 Jul 2019 13:04:08 -0400
-Message-ID: <CA+CK2bBOSC0iYjq_A18DNaNCYskTTJJTkM4N-WAqssoxpxuNPg@mail.gmail.com>
-Subject: Re: [RFC v2 0/8] arm64: MMU enabled kexec relocation
-To: Mark Rutland <mark.rutland@arm.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=F1VsQKe1CvGe90szBrckBeIyG/tsASbX2ypyWhc14LE=;
+ b=Y8yR9ydEQOYNW9LtsjJRVDHwxwKwMU0YrwL2uzohEsldDM4CYh3d9UjREE26kH7DMa
+ 5RyAn2gs+J1+/cxce5yz39ui+c/gpbfTDr2fcvtkyRXdFdfo2/tTpl5/dAuU+VSKvKzY
+ nfKzGq/ND49E7XAdUadVhpGMq/9hy8u9ZauzhhR0mkMhdg0gYdnbC17k5liSnY6hm6pb
+ Djc/MyE0L0j4tqvMk6KF1+EBKKU9Jrv0sJLr20NW7tdnvEDAtZ3L6HK9SGYLu8l1UySg
+ Qev1ZlMWoGZrdX0ymbQViMfvTY798h5BNwyF0kV4L2jKxSbhm8Ny5uKxgJKQHBfcUg+w
+ tnpw==
+X-Gm-Message-State: APjAAAUF5Cdq4IAyo9vl9G9ww8KIXbTxdf8OPeIUFGKXZXEemvVrddkd
+ WwAOsnH+aBRLc+ZnZ8lgALM87q+/wDTwRHJ/m40M1A==
+X-Google-Smtp-Source: APXvYqx6UQL2kVcMcSAcMfiNdlcC1RYlaghiMf1GsQfTNxHzAwOnaMO09aJRTxLnk22BC2WML6UwPWYSOTr5JgeP2S6utw==
+X-Received: by 2002:a05:6102:3c5:: with SMTP id
+ n5mr42332847vsq.56.1564611401552; 
+ Wed, 31 Jul 2019 15:16:41 -0700 (PDT)
+Date: Wed, 31 Jul 2019 15:15:54 -0700
+In-Reply-To: <20190731221617.234725-1-matthewgarrett@google.com>
+Message-Id: <20190731221617.234725-7-matthewgarrett@google.com>
+Mime-Version: 1.0
+References: <20190731221617.234725-1-matthewgarrett@google.com>
+X-Mailer: git-send-email 2.22.0.770.g0f2c4a37fd-goog
+Subject: [PATCH V37 06/29] kexec_load: Disable at runtime if the kernel is
+ locked down
+From: Matthew Garrett <matthewgarrett@google.com>
+To: jmorris@namei.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190731_100421_330170_4CF994A3 
-X-CRM114-Status: GOOD (  18.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190731_151643_760850_64B2875E 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a4a listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,6 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,80 +95,82 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Vladimir Murzin <vladimir.murzin@arm.com>,
- Jonathan Corbet <corbet@lwn.net>, Marc Zyngier <marc.zyngier@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Matthew Garrett <mjg59@srcf.ucam.org>, Kees Cook <keescook@chromium.org>,
+ linux-api@vger.kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Matthew Garrett <mjg59@google.com>,
+ David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
+ Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Jul 31, 2019 at 12:50 PM Mark Rutland <mark.rutland@arm.com> wrote:
->
-> On Wed, Jul 31, 2019 at 12:40:51PM -0400, Pavel Tatashin wrote:
-> > On Wed, Jul 31, 2019 at 12:33 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> > >
-> > > Hi Pavel,
-> > >
-> > > Generally, the cover letter should state up-front what the goal is (or
-> > > what problem you're trying to solve). It would be really helpful to have
-> > > that so that we understand what you're trying to achieve, and why.
->
-> [...]
->
-> > > > Here is the current data from the real hardware:
-> > > > (because of bug, I forced EL1 mode by setting el2_switch always to zero in
-> > > > cpu_soft_restart()):
-> > > >
-> > > > For this experiment, the size of kernel plus initramfs is 25M. If initramfs
-> > > > was larger, than the improvements would be even greater, as time spent in
-> > > > relocation is proportional to the size of relocation.
-> > > >
-> > > > Previously:
-> > > > kernel shutdown       0.022131328s
-> > > > relocation    0.440510736s
-> > > > kernel startup        0.294706768s
-> > >
-> > > In total this takes ~0.76s...
-> > >
-> > > >
-> > > > Relocation was taking: 58.2% of reboot time
-> > > >
-> > > > Now:
-> > > > kernel shutdown       0.032066576s
-> > > > relocation    0.022158152s
-> > > > kernel startup        0.296055880s
-> > >
-> > > ... and this takes ~0.35s
-> > >
-> > > So do we really need this complexity for a few blinks of an eye?
-> >
-> > Yes, we have an extremely tight reboot budget, 0.35s is not an acceptable waste.
->
-> Could you please elaborate on your use-case?
->
-> Understanfin what you're trying to achieve would help us to understand
-> which solutions make sense.
+From: Matthew Garrett <mjg59@srcf.ucam.org>
 
-An extremely high availability device with an update story utilizing
-kexec functionality for a faster kernel update and also for being able
-to preserve some state in memory without wasting the time of copying
-it to and from a backing storage. We at Microsoft will be using a
-fleet of these devices. The total reboot budget is less than half a
-second, out of which 0.44s is currently spent in kexec relocation.
+The kexec_load() syscall permits the loading and execution of arbitrary
+code in ring 0, which is something that lock-down is meant to prevent. It
+makes sense to disable kexec_load() in this situation.
 
-Pasha
+This does not affect kexec_file_load() syscall which can check for a
+signature on the image to be booted.
 
->
-> Thanks,
-> Mark.
+Signed-off-by: David Howells <dhowells@redhat.com>
+Signed-off-by: Matthew Garrett <mjg59@google.com>
+Acked-by: Dave Young <dyoung@redhat.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+cc: kexec@lists.infradead.org
+---
+ include/linux/security.h     | 1 +
+ kernel/kexec.c               | 8 ++++++++
+ security/lockdown/lockdown.c | 1 +
+ 3 files changed, 10 insertions(+)
+
+diff --git a/include/linux/security.h b/include/linux/security.h
+index 9458152601b5..69c5de539e9a 100644
+--- a/include/linux/security.h
++++ b/include/linux/security.h
+@@ -105,6 +105,7 @@ enum lockdown_reason {
+ 	LOCKDOWN_NONE,
+ 	LOCKDOWN_MODULE_SIGNATURE,
+ 	LOCKDOWN_DEV_MEM,
++	LOCKDOWN_KEXEC,
+ 	LOCKDOWN_INTEGRITY_MAX,
+ 	LOCKDOWN_CONFIDENTIALITY_MAX,
+ };
+diff --git a/kernel/kexec.c b/kernel/kexec.c
+index 1b018f1a6e0d..bc933c0db9bf 100644
+--- a/kernel/kexec.c
++++ b/kernel/kexec.c
+@@ -205,6 +205,14 @@ static inline int kexec_load_check(unsigned long nr_segments,
+ 	if (result < 0)
+ 		return result;
+ 
++	/*
++	 * kexec can be used to circumvent module loading restrictions, so
++	 * prevent loading in that case
++	 */
++	result = security_locked_down(LOCKDOWN_KEXEC);
++	if (result)
++		return result;
++
+ 	/*
+ 	 * Verify we have a legal set of flags
+ 	 * This leaves us room for future extensions.
+diff --git a/security/lockdown/lockdown.c b/security/lockdown/lockdown.c
+index d2ef29d9f0b2..6f302c156bc8 100644
+--- a/security/lockdown/lockdown.c
++++ b/security/lockdown/lockdown.c
+@@ -20,6 +20,7 @@ static char *lockdown_reasons[LOCKDOWN_CONFIDENTIALITY_MAX+1] = {
+ 	[LOCKDOWN_NONE] = "none",
+ 	[LOCKDOWN_MODULE_SIGNATURE] = "unsigned module loading",
+ 	[LOCKDOWN_DEV_MEM] = "/dev/mem,kmem,port",
++	[LOCKDOWN_KEXEC] = "kexec of unsigned images",
+ 	[LOCKDOWN_INTEGRITY_MAX] = "integrity",
+ 	[LOCKDOWN_CONFIDENTIALITY_MAX] = "confidentiality",
+ };
+-- 
+2.22.0.770.g0f2c4a37fd-goog
+
 
 _______________________________________________
 kexec mailing list
