@@ -2,85 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74E2C7DF00
-	for <lists+kexec@lfdr.de>; Thu,  1 Aug 2019 17:27:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53EC27E4BD
+	for <lists+kexec@lfdr.de>; Thu,  1 Aug 2019 23:28:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Itcv07efOSSsVG9VHt6CML1l0j24Fqgb1JFAyreoqc=; b=C8VXiX7PvUa2aK
-	EWbTWE6Xa1dI9hmfbcl31saLZAD7zHK88dWeCRMWt2xl81rgb5tuHZ3DmoHilz9EZH8Dbh4cHlLPH
-	KZCSNspRojAlCfuFYHuqFjkqKZ+aUX8TZxtzBS6oqvtXqrFJqaQfBvvkqXJgacaN0U8YVloZeohgq
-	/GxMNgbsCX770LrJg0oErHHDCZ1eweMgS3gmzacBWGAvwi9js38lBWXlL3B9aU8GWacpqqMAFEQGy
-	gl/QCW3aC6+V3dtlcY873uex7/FO8utTC+Um1EkoRCE5roBZ+x4RaT7tIbW4IIP2Wtflsf0fMK40y
-	4nmawkwQqmjjRq59OlmA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BRoYhP3lZAqQ1Z69FNVH26Z94uBQIb5B7/9M61bcOCM=; b=QHF
+	942W+GBtOpymGkbxRjxIVMQvVq8SQMKCCBidOVMMzVElnx2R0pt251mjAxgtc3edYsxAHQwGjG8V3
+	seb5ad9cCmL7R24m9ox3sYszIUTA3yI+kzxSG/9IYlIZ0r0ob7C3HTqlQVlUlYlyLMNDDirJFSd77
+	d16jlkmT3mkpa2IPlmGF/WJKvGTiy6ZDrdCvE12RrZh+7APqJNawQ0qm5t1Lvkufqf7VrBBfhdJPn
+	tStlIWCZNPVR3o7PQ2ltoeY8IY+7+cNa/JhtTgYb+F0sSuY3AKEpY+De9cX5gw+akffYLGvnvcS6H
+	/i+d5CTPPX8e5mXEQv67q2NImguKdcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htCz3-0005bD-L3; Thu, 01 Aug 2019 15:27:13 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1htIcb-0006zC-Bf; Thu, 01 Aug 2019 21:28:25 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htCwo-0001Y0-JM
- for kexec@lists.infradead.org; Thu, 01 Aug 2019 15:24:59 +0000
-Received: by mail-qk1-x744.google.com with SMTP id r21so52387403qke.2
- for <kexec@lists.infradead.org>; Thu, 01 Aug 2019 08:24:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=PLoutsvDOEBcLXmSwpW/VZGz7Lju4ED/guZL5+5aMWk=;
- b=bHx/KWL8+n4rgdjRFcbGjEtrRWcEKSloAzai7HvQSjszByk74kWOBmHipCwjx6XwSx
- rE1+0hsLKEv3APKc686glCqfBg8FTWl35tThgBNaJYj5lRvT0EpEypNN4wX5pA5Zm69h
- GysDuc809eiUSe0zzbCwjvOyFu9/DKIKcNO46hWUOLkYfvK2MsoRRbwsnTtWJA00JfSU
- ePPjgGWAIRHMcODn/c2VeDQDZB+1MO+JKGtbt8Wrg/Lxv5x0KqN2gbCvsfvz4p9LFy87
- vnWndJXICcvUZQwKyLtEWVqdsqhjOEzXwWqAjnn3G2GV+9AJI5EQF4b/K8wknWR/1xMo
- WjFQ==
+ id 1htIcW-0006yj-Uq
+ for kexec@lists.infradead.org; Thu, 01 Aug 2019 21:28:22 +0000
+Received: by mail-io1-xd44.google.com with SMTP id k20so147594843ios.10
+ for <kexec@lists.infradead.org>; Thu, 01 Aug 2019 14:28:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=delphix.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=8FNA0qpVrYhtL9JdX97K97YA1XeOAEW9NW5Srfu4ATY=;
+ b=VyqSG/2QLTtgI9tcsLe04gM9Ffhq/QG5XHXhHeAbwACUHeX+KD/3AaTaxBHRrq7N/K
+ 7+g6gdr3gQnpyF6Jwv3PD2Fn5TF7JItrrfDRbgZtpogbDobEJiF53WCdoDmEaSr24OZd
+ /P0wZrOBLxHHKmp7d0t6hsWKqrN39VYzTl3Qk=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=PLoutsvDOEBcLXmSwpW/VZGz7Lju4ED/guZL5+5aMWk=;
- b=ScLgfzSoNoltfE4fcfbO91vMQGsXuYJi61nvTeF0+0LcZ8dwKG7hbxTIhNVUfbpSKB
- UEwLOOP4gMl0ijYMBUxRRgqm49cnTkYlPg9TzblI9nr3cjrvdx71MWbB3rDpZICUFDnl
- MOD0UHmt35J+qVRKbKiMyCa9QXKghmCyc8+gdCzDdC/D7lyXHezKF9E1TCQRINrFpHNI
- wvSqS7daNVyzFD6nApFwhW0NqkR5KBk6ZzWc+6o2VeYN5yOmXyHwekRfZmeoYJwse5yA
- +AlTm6ORxZdjXQgxtjXKWDQLUAasNfeXyHbeMTbxO6hlp9Y/G9PRMIay6r7aly7oLJlH
- 6gCg==
-X-Gm-Message-State: APjAAAWp0JqdfZJMcwTpnfUUFnPZj1s6jkyedq4lIyYbMgdO4OM3Jl5x
- nJmtRUzfhbs1IPu3Cr3LkuE=
-X-Google-Smtp-Source: APXvYqyLP4m/prZZeaEuGTVGpHEWZftvDsvYZZGYTrMEi6rZbmxVJ00jQEh1G8oV3NUUEFulu1gceg==
-X-Received: by 2002:a37:76c5:: with SMTP id
- r188mr85109323qkc.394.1564673093139; 
- Thu, 01 Aug 2019 08:24:53 -0700 (PDT)
-Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
- [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id o5sm30899952qkf.10.2019.08.01.08.24.51
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8FNA0qpVrYhtL9JdX97K97YA1XeOAEW9NW5Srfu4ATY=;
+ b=bP1myFcSaS7ry4OYb3jFCShaXilYY5g7dKs6uuU8T2SbX45j2N5MB5PHQQwxxwnUF/
+ De3vZhNA2vTr+WObyw83QGSttZXhUyD9xrsAnmpkJv9MPDekKukmqQ07NWQfzuMOPorm
+ m2X8Sf5NyfG/aPYBD0Zoh/Nvq8Di1ljW7AgRZw1Xc5I/Wvp9ctTTaGolLEuSLkHJaOAv
+ uaOSfH0BVOhP46M809ONsaJaWQpTp2Wj5RicXi1io1W+VJAptT2ezluRYs5rjbLw+P/Q
+ Q7GpDWLxq27qeDNSewjxDMhdClGgT7P1NrTIF82k3QJfLZsyB4LLtDxCYnUPhKe2ZAQY
+ 8CKQ==
+X-Gm-Message-State: APjAAAVz0DwQMbu3rOLln1OeXiFWtwkFMqMl/mYyuPPjiT/jVqrIEa90
+ +idDbP4xuRMip1oAUWyKvL76ThoZ9+4=
+X-Google-Smtp-Source: APXvYqwlYKWJfpk01KF/TYXZsg6GIPfn+j7rDqWJrVznZ3Jju+65XmsY5VbDgSoVYAaVAX2gCEc75g==
+X-Received: by 2002:a5d:9550:: with SMTP id a16mr82707703ios.106.1564694897187; 
+ Thu, 01 Aug 2019 14:28:17 -0700 (PDT)
+Received: from localhost.localdomain ([209.201.79.49])
+ by smtp.gmail.com with ESMTPSA id c11sm40663184ioi.72.2019.08.01.14.28.16
  (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 08:24:52 -0700 (PDT)
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
- ebiederm@xmission.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
- will@kernel.org, linux-arm-kernel@lists.infradead.org,
- marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
- matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org
-Subject: [PATCH v1 8/8] arm64, kexec: enable MMU during kexec relocation
-Date: Thu,  1 Aug 2019 11:24:39 -0400
-Message-Id: <20190801152439.11363-9-pasha.tatashin@soleen.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190801152439.11363-1-pasha.tatashin@soleen.com>
-References: <20190801152439.11363-1-pasha.tatashin@soleen.com>
-MIME-Version: 1.0
+ Thu, 01 Aug 2019 14:28:16 -0700 (PDT)
+From: =?UTF-8?q?Don=20Brady=C2=A0?= <don.brady@delphix.com>
+To: kexec@lists.infradead.org
+Subject: [RFC PATCH] makedumpfile: exclude ZFS file cache pages
+Date: Thu,  1 Aug 2019 15:26:17 -0600
+Message-Id: <20190801212617.9698-1-don.brady@delphix.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_082455_145350_DC6375C4 
-X-CRM114-Status: GOOD (  15.40  )
+X-CRM114-CacheID: sfid-20190801_142820_999757_DFB89480 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,246 +87,136 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: Don Brady <don.brady@delphix.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Now, that we have transitional page tables configured, temporarily enable
-MMU to allow faster relocation of segments to final destination.
+From: Don Brady <don.brady@delphix.com>
 
-The performance data: for a moderate size kernel + initramfs: 25M the
-relocation was taking 0.382s, with enabled MMU it now takes
-0.019s only or x20 improvement.
+ZFS caches pages for file data in its Adaptive Replacement Cache (ARC).
+This cache is separate from the VFS page cache.  The amount of data
+cached can be significant and it would be ideal to exclude it from the
+crashdump file.  ZFS can tag these pages so they are easily identifiable
+from within makedumpfile.
 
-The time is proportional to the size of relocation, therefore if initramfs
-is larger, 100M it could take over a second.
+ref https://github.com/zfsonlinux/zfs/pull/8899/files
 
-Also, remove reloc_arg->head, as it is not needed anymore once MMU is
-enabled.
+Below is a suggested patch that can work in tandem with the above ZFS
+changes to exclude the ZFS ARC file data pages from a dump file.
 
-Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+Signed-off-by: Don Brady <don.brady@delphix.com>
 ---
- arch/arm64/include/asm/kexec.h      |   2 -
- arch/arm64/kernel/asm-offsets.c     |   1 -
- arch/arm64/kernel/machine_kexec.c   |   1 -
- arch/arm64/kernel/relocate_kernel.S | 136 +++++++++++++++++-----------
- 4 files changed, 84 insertions(+), 56 deletions(-)
+ makedumpfile.c | 36 ++++++++++++++++++++++++++++++++++--
+ 1 file changed, 34 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 450d8440f597..ad81ed3e5751 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -109,7 +109,6 @@ extern const unsigned long kexec_el1_sync_size;
- 			((UL(0xffffffffffffffff) - PAGE_OFFSET) >> 1) + 1)
- /*
-  * kern_reloc_arg is passed to kernel relocation function as an argument.
-- * head		kimage->head, allows to traverse through relocation segments.
-  * entry_addr	kimage->start, where to jump from relocation function (new
-  *		kernel, or purgatory entry address).
-  * kern_arg0	first argument to kernel is its dtb address. The other
-@@ -125,7 +124,6 @@ extern const unsigned long kexec_el1_sync_size;
-  * copy_len	Number of bytes that need to be copied
-  */
- struct kern_reloc_arg {
--	unsigned long	head;
- 	unsigned long	entry_addr;
- 	unsigned long	kern_arg0;
- 	unsigned long	kern_arg1;
-diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-index 7c2ba09a8ceb..13ad00b1b90f 100644
---- a/arch/arm64/kernel/asm-offsets.c
-+++ b/arch/arm64/kernel/asm-offsets.c
-@@ -129,7 +129,6 @@ int main(void)
-   DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
- #endif
- #ifdef CONFIG_KEXEC_CORE
--  DEFINE(KRELOC_HEAD,		offsetof(struct kern_reloc_arg, head));
-   DEFINE(KRELOC_ENTRY_ADDR,	offsetof(struct kern_reloc_arg, entry_addr));
-   DEFINE(KRELOC_KERN_ARG0,	offsetof(struct kern_reloc_arg, kern_arg0));
-   DEFINE(KRELOC_KERN_ARG1,	offsetof(struct kern_reloc_arg, kern_arg1));
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index 16f761fc50c8..b5ff5fdb4777 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -199,7 +199,6 @@ int machine_kexec_post_load(struct kimage *kimage)
- 	kimage->arch.kern_reloc = kern_reloc;
- 	kimage->arch.kern_reloc_arg = __pa(kern_reloc_arg);
+diff --git a/makedumpfile.c b/makedumpfile.c
+index d76a435..b760934 100644
+--- a/makedumpfile.c
++++ b/makedumpfile.c
+@@ -85,6 +85,7 @@ mdf_pfn_t pfn_zero;
+ mdf_pfn_t pfn_memhole;
+ mdf_pfn_t pfn_cache;
+ mdf_pfn_t pfn_cache_private;
++mdf_pfn_t pfn_zfs_arc_pages;
+ mdf_pfn_t pfn_user;
+ mdf_pfn_t pfn_free;
+ mdf_pfn_t pfn_hwpoison;
+@@ -282,6 +283,20 @@ is_cache_page(unsigned long flags)
+ 	return FALSE;
+ }
  
--	kern_reloc_arg->head = kimage->head;
- 	kern_reloc_arg->entry_addr = kimage->start;
- 	kern_reloc_arg->el2_vector = el2_vector;
- 	kern_reloc_arg->kern_arg0 = kimage->arch.dtb_mem;
-diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
-index 14243a678277..96ff6760bd9c 100644
---- a/arch/arm64/kernel/relocate_kernel.S
-+++ b/arch/arm64/kernel/relocate_kernel.S
-@@ -4,6 +4,8 @@
-  *
-  * Copyright (C) Linaro.
-  * Copyright (C) Huawei Futurewei Technologies.
-+ * Copyright (c) 2019, Microsoft Corporation.
-+ * Pavel Tatashin <patatash@linux.microsoft.com>
-  */
++#define	ZFS_ABD_FILE_CACHE	0x2F5ABDF11ECAC4E
++
++static int
++is_zfs_cache_page(unsigned long flags, unsigned long private)
++{
++	/*
++	 * ZFS cached file data resides in pages with a private tag
++	 */
++	if (isPrivate(flags) && private == ZFS_ABD_FILE_CACHE)
++		return TRUE;
++
++	return FALSE;
++}
++
+ static inline unsigned long
+ calculate_len_buf_out(long page_size)
+ {
+@@ -6048,6 +6063,13 @@ __exclude_unnecessary_pages(unsigned long mem_map,
+ 			else
+ 				pfn_counter = &pfn_cache;
+ 		}
++		/*
++		 * Exclude ZFS ARC pages
++		 */
++		else if ((info->dump_level & DL_EXCLUDE_CACHE_PRI)
++		    && is_zfs_cache_page(flags, private)) {
++			pfn_counter = &pfn_zfs_arc_pages;
++		}
+ 		/*
+ 		 * Exclude the data page of the user process.
+ 		 *  - anonymous pages
+@@ -7551,6 +7573,7 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+ 	if (info->flag_cyclic) {
+ 		pfn_zero = pfn_cache = pfn_cache_private = 0;
+ 		pfn_user = pfn_free = pfn_hwpoison = pfn_offline = 0;
++		pfn_zfs_arc_pages = 0;
+ 		pfn_memhole = info->max_mapnr;
+ 	}
  
- #include <linux/kexec.h>
-@@ -14,6 +16,49 @@
- #include <asm/page.h>
- #include <asm/sysreg.h>
+@@ -8833,6 +8856,7 @@ write_kdump_pages_and_bitmap_cyclic(struct cache_data *cd_header, struct cache_d
+ 		 */
+ 		pfn_zero = pfn_cache = pfn_cache_private = 0;
+ 		pfn_user = pfn_free = pfn_hwpoison = pfn_offline = 0;
++		pfn_zfs_arc_pages = 0;
+ 		pfn_memhole = info->max_mapnr;
  
-+/* Invalidae TLB */
-+.macro tlb_invalidate
-+	dsb	sy
-+	dsb	ish
-+	tlbi	vmalle1
-+	dsb	ish
-+	isb
-+.endm
-+
-+/* Turn-off mmu at level specified by sctlr */
-+.macro turn_off_mmu sctlr, tmp1, tmp2
-+	mrs	\tmp1, \sctlr
-+	ldr	\tmp2, =SCTLR_ELx_FLAGS
-+	bic	\tmp1, \tmp1, \tmp2
-+	pre_disable_mmu_workaround
-+	msr	\sctlr, \tmp1
-+	isb
-+.endm
-+
-+/* Turn-on mmu at level specified by sctlr */
-+.macro turn_on_mmu sctlr, tmp1, tmp2
-+	mrs	\tmp1, \sctlr
-+	ldr	\tmp2, =SCTLR_ELx_FLAGS
-+	orr	\tmp1, \tmp1, \tmp2
-+	msr	\sctlr, \tmp1
-+	ic	iallu
-+	dsb	nsh
-+	isb
-+.endm
-+
-+/*
-+ * Set ttbr0 and ttbr1, called while MMU is disabled, so no need to temporarily
-+ * set zero_page table. Invalidate TLB after new tables are set.
-+ */
-+.macro set_ttbr arg, tmp
-+	ldr	\tmp, [\arg, #KRELOC_TRANS_TTBR0]
-+	msr	ttbr0_el1, \tmp
-+	ldr	\tmp, [\arg, #KRELOC_TRANS_TTBR1]
-+	offset_ttbr1 \tmp
-+	msr	ttbr1_el1, \tmp
-+	isb
-+.endm
-+
- /*
-  * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
-  *
-@@ -24,65 +69,52 @@
-  * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
-  * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
-  * safe memory that has been set up to be preserved during the copy operation.
-+ *
-+ * This function temporarily enables MMU if kernel relocation is needed.
-+ * Also, if we enter this function at EL2 on non-VHE kernel, we temporarily go
-+ * to EL1 to enable MMU, and escalate back to EL2 at the end to do the jump to
-+ * the new kernel. This is determined by presence of el2_vector.
-  */
- ENTRY(arm64_relocate_new_kernel)
--	/* Clear the sctlr_el2 flags. */
--	mrs	x2, CurrentEL
--	cmp	x2, #CurrentEL_EL2
-+	mrs	x1, CurrentEL
-+	cmp	x1, #CurrentEL_EL2
- 	b.ne	1f
--	mrs	x2, sctlr_el2
--	ldr	x1, =SCTLR_ELx_FLAGS
--	bic	x2, x2, x1
--	pre_disable_mmu_workaround
--	msr	sctlr_el2, x2
--	isb
--1:	/* Check if the new image needs relocation. */
--	ldr	x16, [x0, #KRELOC_HEAD]		/* x16 = kimage_head */
--	tbnz	x16, IND_DONE_BIT, .Ldone
--	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
--.Lloop:
--	and	x12, x16, PAGE_MASK		/* x12 = addr */
--	/* Test the entry flags. */
--.Ltest_source:
--	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
--
--	/* Invalidate dest page to PoC. */
--	mov     x2, x13
--	add     x20, x2, #PAGE_SIZE
--	sub     x1, x15, #1
--	bic     x2, x2, x1
--2:	dc      ivac, x2
--	add     x2, x2, x15
--	cmp     x2, x20
--	b.lo    2b
--	dsb     sy
--
--	copy_page x13, x12, x1, x2, x3, x4, x5, x6, x7, x8
--	b	.Lnext
--.Ltest_indirection:
--	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
--	mov	x14, x12			/* ptr = addr */
--	b	.Lnext
--.Ltest_destination:
--	tbz	x16, IND_DESTINATION_BIT, .Lnext
--	mov	x13, x12			/* dest = addr */
--.Lnext:
--	ldr	x16, [x14], #8			/* entry = *ptr++ */
--	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
--.Ldone:
--	/* wait for writes from copy_page to finish */
--	dsb	nsh
--	ic	iallu
--	dsb	nsh
--	isb
--
--	/* Start new image. */
--	ldr	x4, [x0, #KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
-+	turn_off_mmu sctlr_el2, x1, x2		/* Turn off MMU at EL2 */
-+1:	mov	x20, xzr			/* x20 will hold vector value */
-+	ldr	x11, [x0, #KRELOC_COPY_LEN]
-+	cbz	x11, 5f				/* Check if need to relocate */
-+	ldr	x20, [x0, #KRELOC_EL2_VECTOR]
-+	cbz	x20, 2f				/* need to reduce to EL1? */
-+	msr	vbar_el2, x20			/* el2_vector present, means */
-+	adr	x1, 2f				/* we will do copy in el1 but */
-+	msr	elr_el2, x1			/* do final jump from el2 */
-+	eret					/* Reduce to EL1 */
-+2:	set_ttbr x0, x1				/* Set our page tables */
-+	tlb_invalidate
-+	turn_on_mmu sctlr_el1, x1, x2		/* Turn MMU back on */
-+	ldr	x1, [x0, #KRELOC_DST_ADDR];
-+	ldr	x2, [x0, #KRELOC_SRC_ADDR];
-+	mov	x12, x1				/* x12 dst backup */
-+3:	copy_page x1, x2, x3, x4, x5, x6, x7, x8, x9, x10
-+	sub	x11, x11, #PAGE_SIZE
-+	cbnz	x11, 3b				/* page copy loop */
-+	raw_dcache_line_size x2, x3		/* x2 = dcache line size */
-+	sub	x3, x2, #1			/* x3 = dcache_size - 1 */
-+	bic	x12, x12, x3
-+4:	dc	cvau, x12			/* Flush D-cache */
-+	add	x12, x12, x2
-+	cmp	x12, x1				/* Compare to dst + len */
-+	b.ne	4b				/* D-cache flush loop */
-+	turn_off_mmu sctlr_el1, x1, x2		/* Turn off MMU */
-+	tlb_invalidate				/* Invalidate TLB */
-+5:	ldr	x4, [x0, #KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
- 	ldr	x3, [x0, #KRELOC_KERN_ARG3]
- 	ldr	x2, [x0, #KRELOC_KERN_ARG2]
- 	ldr	x1, [x0, #KRELOC_KERN_ARG1]
- 	ldr	x0, [x0, #KRELOC_KERN_ARG0]	/* x0 = dtb address */
--	br	x4
-+	cbnz	x20, 6f				/* need to escalate to el2? */
-+	br	x4				/* Jump to new world */
-+6:	hvc	#0				/* enters kexec_el1_sync */
- .ltorg
- .Larm64_relocate_new_kernel_end:
- END(arm64_relocate_new_kernel)
+ 		/*
+@@ -9777,7 +9801,8 @@ print_report(void)
+ 	pfn_original = info->max_mapnr - pfn_memhole;
+ 
+ 	pfn_excluded = pfn_zero + pfn_cache + pfn_cache_private
+-	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline;
++	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline
++	    + pfn_zfs_arc_pages;
+ 	shrinking = (pfn_original - pfn_excluded) * 100;
+ 	shrinking = shrinking / pfn_original;
+ 
+@@ -9788,6 +9813,9 @@ print_report(void)
+ 	REPORT_MSG("    Non-private cache pages : 0x%016llx\n", pfn_cache);
+ 	REPORT_MSG("    Private cache pages     : 0x%016llx\n",
+ 	    pfn_cache_private);
++	if (pfn_zfs_arc_pages != 0)
++		REPORT_MSG("    ZFS ARC file data pages : 0x%016llx\n",
++		    pfn_zfs_arc_pages);
+ 	REPORT_MSG("    User process data pages : 0x%016llx\n", pfn_user);
+ 	REPORT_MSG("    Free pages              : 0x%016llx\n", pfn_free);
+ 	REPORT_MSG("    Hwpoison pages          : 0x%016llx\n", pfn_hwpoison);
+@@ -9819,7 +9847,8 @@ print_mem_usage(void)
+ 	pfn_original = info->max_mapnr - pfn_memhole;
+ 
+ 	pfn_excluded = pfn_zero + pfn_cache + pfn_cache_private
+-	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline;
++	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline
++	    + pfn_zfs_arc_pages;
+ 	shrinking = (pfn_original - pfn_excluded) * 100;
+ 	shrinking = shrinking / pfn_original;
+ 	total_size = info->page_size * pfn_original;
+@@ -9833,6 +9862,9 @@ print_mem_usage(void)
+ 	    pfn_cache);
+ 	MSG("PRI_CACHE	%-16llu	yes		Cache pages with private flag\n",
+ 	    pfn_cache_private);
++	if (pfn_zfs_arc_pages != 0)
++		MSG("ZFS_CACHE	%-16llu	yes		ZFS ARC data pages\n",
++		    pfn_zfs_arc_pages);
+ 	MSG("USER		%-16llu	yes		User process pages\n", pfn_user);
+ 	MSG("FREE		%-16llu	yes		Free pages\n", pfn_free);
+ 	MSG("KERN_DATA	%-16llu	no		Dumpable kernel data \n",
 -- 
-2.22.0
+2.17.1
 
 
 _______________________________________________
