@@ -2,80 +2,63 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53EC27E4BD
-	for <lists+kexec@lfdr.de>; Thu,  1 Aug 2019 23:28:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 434AD7E75C
+	for <lists+kexec@lfdr.de>; Fri,  2 Aug 2019 03:05:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BRoYhP3lZAqQ1Z69FNVH26Z94uBQIb5B7/9M61bcOCM=; b=QHF
-	942W+GBtOpymGkbxRjxIVMQvVq8SQMKCCBidOVMMzVElnx2R0pt251mjAxgtc3edYsxAHQwGjG8V3
-	seb5ad9cCmL7R24m9ox3sYszIUTA3yI+kzxSG/9IYlIZ0r0ob7C3HTqlQVlUlYlyLMNDDirJFSd77
-	d16jlkmT3mkpa2IPlmGF/WJKvGTiy6ZDrdCvE12RrZh+7APqJNawQ0qm5t1Lvkufqf7VrBBfhdJPn
-	tStlIWCZNPVR3o7PQ2ltoeY8IY+7+cNa/JhtTgYb+F0sSuY3AKEpY+De9cX5gw+akffYLGvnvcS6H
-	/i+d5CTPPX8e5mXEQv67q2NImguKdcw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1hTHr34Uv3pBwbF8Xru6XaRicng0R5pfgmyP0JjPhII=; b=dUoSw9IYnjQQ/C
+	6C9N44RDVt7GN0360WfI6ncFQvOve6qrMY0/khz3JFxO382c8o0TDNArVM050yFA1VhUlwEQKH4Iw
+	PLt6GR4hpShj+9C97B8wUKsQNDsDratXRrXvwg/8B2y3NOSA6yi9cnX0JzRjf456RGWeLPxzRIMrr
+	HPk0skpIvhI9PRL3++1vNzPhDXEo6YUAS0gAZM5tRRpP+8mjtOwYwgu9i55MKA8o6/kKNjPxbMC75
+	BKUH//YevRkJFmBgmygqyjiepZlcgIxQ5du+RNcqiBp8QO2dXJI8DIR9m9uJUAvz5tQEs+yhBnVzy
+	dUmA1LsWMOc7aAUFpRSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htIcb-0006zC-Bf; Thu, 01 Aug 2019 21:28:25 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1htM11-000343-KM; Fri, 02 Aug 2019 01:05:51 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htIcW-0006yj-Uq
- for kexec@lists.infradead.org; Thu, 01 Aug 2019 21:28:22 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k20so147594843ios.10
- for <kexec@lists.infradead.org>; Thu, 01 Aug 2019 14:28:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=delphix.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=8FNA0qpVrYhtL9JdX97K97YA1XeOAEW9NW5Srfu4ATY=;
- b=VyqSG/2QLTtgI9tcsLe04gM9Ffhq/QG5XHXhHeAbwACUHeX+KD/3AaTaxBHRrq7N/K
- 7+g6gdr3gQnpyF6Jwv3PD2Fn5TF7JItrrfDRbgZtpogbDobEJiF53WCdoDmEaSr24OZd
- /P0wZrOBLxHHKmp7d0t6hsWKqrN39VYzTl3Qk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=8FNA0qpVrYhtL9JdX97K97YA1XeOAEW9NW5Srfu4ATY=;
- b=bP1myFcSaS7ry4OYb3jFCShaXilYY5g7dKs6uuU8T2SbX45j2N5MB5PHQQwxxwnUF/
- De3vZhNA2vTr+WObyw83QGSttZXhUyD9xrsAnmpkJv9MPDekKukmqQ07NWQfzuMOPorm
- m2X8Sf5NyfG/aPYBD0Zoh/Nvq8Di1ljW7AgRZw1Xc5I/Wvp9ctTTaGolLEuSLkHJaOAv
- uaOSfH0BVOhP46M809ONsaJaWQpTp2Wj5RicXi1io1W+VJAptT2ezluRYs5rjbLw+P/Q
- Q7GpDWLxq27qeDNSewjxDMhdClGgT7P1NrTIF82k3QJfLZsyB4LLtDxCYnUPhKe2ZAQY
- 8CKQ==
-X-Gm-Message-State: APjAAAVz0DwQMbu3rOLln1OeXiFWtwkFMqMl/mYyuPPjiT/jVqrIEa90
- +idDbP4xuRMip1oAUWyKvL76ThoZ9+4=
-X-Google-Smtp-Source: APXvYqwlYKWJfpk01KF/TYXZsg6GIPfn+j7rDqWJrVznZ3Jju+65XmsY5VbDgSoVYAaVAX2gCEc75g==
-X-Received: by 2002:a5d:9550:: with SMTP id a16mr82707703ios.106.1564694897187; 
- Thu, 01 Aug 2019 14:28:17 -0700 (PDT)
-Received: from localhost.localdomain ([209.201.79.49])
- by smtp.gmail.com with ESMTPSA id c11sm40663184ioi.72.2019.08.01.14.28.16
- (version=TLS1_3 cipher=AEAD-AES256-GCM-SHA384 bits=256/256);
- Thu, 01 Aug 2019 14:28:16 -0700 (PDT)
-From: =?UTF-8?q?Don=20Brady=C2=A0?= <don.brady@delphix.com>
-To: kexec@lists.infradead.org
-Subject: [RFC PATCH] makedumpfile: exclude ZFS file cache pages
-Date: Thu,  1 Aug 2019 15:26:17 -0600
-Message-Id: <20190801212617.9698-1-don.brady@delphix.com>
-X-Mailer: git-send-email 2.17.1
+ id 1htM0w-00033T-SE
+ for kexec@lists.infradead.org; Fri, 02 Aug 2019 01:05:48 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id D9D1430C1953;
+ Fri,  2 Aug 2019 01:05:45 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-80.pek2.redhat.com
+ [10.72.12.80])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 6A06E19C4F;
+ Fri,  2 Aug 2019 01:05:42 +0000 (UTC)
+Date: Fri, 2 Aug 2019 09:05:38 +0800
+From: Dave Young <dyoung@redhat.com>
+To: lijiang <lijiang@redhat.com>
+Subject: Re: crash: `kmem -s` reported "kmem: dma-kmalloc-512: slab:
+ ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e" on a dumped vmcore
+Message-ID: <20190802010538.GA2202@dhcp-128-65.nay.redhat.com>
+References: <e640b50a-a962-8e56-33a2-2ba2eb76e813@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <e640b50a-a962-8e56-33a2-2ba2eb76e813@redhat.com>
+User-Agent: Mutt/1.11.3 (2019-02-01)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.42]); Fri, 02 Aug 2019 01:05:45 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190801_142820_999757_DFB89480 
-X-CRM114-Status: GOOD (  13.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190801_180546_952590_FBDA7DCD 
+X-CRM114-Status: GOOD (  23.78  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,137 +70,95 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Don Brady <don.brady@delphix.com>
-MIME-Version: 1.0
+Cc: "Lendacky, Thomas" <thomas.lendacky@amd.com>, bhe@redhat.com,
+ kexec@lists.infradead.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Dave Anderson <anderson@redhat.com>, ebiederm@xmission.com, vgoyal@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Don Brady <don.brady@delphix.com>
-
-ZFS caches pages for file data in its Adaptive Replacement Cache (ARC).
-This cache is separate from the VFS page cache.  The amount of data
-cached can be significant and it would be ideal to exclude it from the
-crashdump file.  ZFS can tag these pages so they are easily identifiable
-from within makedumpfile.
-
-ref https://github.com/zfsonlinux/zfs/pull/8899/files
-
-Below is a suggested patch that can work in tandem with the above ZFS
-changes to exclude the ZFS ARC file data pages from a dump file.
-
-Signed-off-by: Don Brady <don.brady@delphix.com>
----
- makedumpfile.c | 36 ++++++++++++++++++++++++++++++++++--
- 1 file changed, 34 insertions(+), 2 deletions(-)
-
-diff --git a/makedumpfile.c b/makedumpfile.c
-index d76a435..b760934 100644
---- a/makedumpfile.c
-+++ b/makedumpfile.c
-@@ -85,6 +85,7 @@ mdf_pfn_t pfn_zero;
- mdf_pfn_t pfn_memhole;
- mdf_pfn_t pfn_cache;
- mdf_pfn_t pfn_cache_private;
-+mdf_pfn_t pfn_zfs_arc_pages;
- mdf_pfn_t pfn_user;
- mdf_pfn_t pfn_free;
- mdf_pfn_t pfn_hwpoison;
-@@ -282,6 +283,20 @@ is_cache_page(unsigned long flags)
- 	return FALSE;
- }
- 
-+#define	ZFS_ABD_FILE_CACHE	0x2F5ABDF11ECAC4E
-+
-+static int
-+is_zfs_cache_page(unsigned long flags, unsigned long private)
-+{
-+	/*
-+	 * ZFS cached file data resides in pages with a private tag
-+	 */
-+	if (isPrivate(flags) && private == ZFS_ABD_FILE_CACHE)
-+		return TRUE;
-+
-+	return FALSE;
-+}
-+
- static inline unsigned long
- calculate_len_buf_out(long page_size)
- {
-@@ -6048,6 +6063,13 @@ __exclude_unnecessary_pages(unsigned long mem_map,
- 			else
- 				pfn_counter = &pfn_cache;
- 		}
-+		/*
-+		 * Exclude ZFS ARC pages
-+		 */
-+		else if ((info->dump_level & DL_EXCLUDE_CACHE_PRI)
-+		    && is_zfs_cache_page(flags, private)) {
-+			pfn_counter = &pfn_zfs_arc_pages;
-+		}
- 		/*
- 		 * Exclude the data page of the user process.
- 		 *  - anonymous pages
-@@ -7551,6 +7573,7 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
- 	if (info->flag_cyclic) {
- 		pfn_zero = pfn_cache = pfn_cache_private = 0;
- 		pfn_user = pfn_free = pfn_hwpoison = pfn_offline = 0;
-+		pfn_zfs_arc_pages = 0;
- 		pfn_memhole = info->max_mapnr;
- 	}
- 
-@@ -8833,6 +8856,7 @@ write_kdump_pages_and_bitmap_cyclic(struct cache_data *cd_header, struct cache_d
- 		 */
- 		pfn_zero = pfn_cache = pfn_cache_private = 0;
- 		pfn_user = pfn_free = pfn_hwpoison = pfn_offline = 0;
-+		pfn_zfs_arc_pages = 0;
- 		pfn_memhole = info->max_mapnr;
- 
- 		/*
-@@ -9777,7 +9801,8 @@ print_report(void)
- 	pfn_original = info->max_mapnr - pfn_memhole;
- 
- 	pfn_excluded = pfn_zero + pfn_cache + pfn_cache_private
--	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline;
-+	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline
-+	    + pfn_zfs_arc_pages;
- 	shrinking = (pfn_original - pfn_excluded) * 100;
- 	shrinking = shrinking / pfn_original;
- 
-@@ -9788,6 +9813,9 @@ print_report(void)
- 	REPORT_MSG("    Non-private cache pages : 0x%016llx\n", pfn_cache);
- 	REPORT_MSG("    Private cache pages     : 0x%016llx\n",
- 	    pfn_cache_private);
-+	if (pfn_zfs_arc_pages != 0)
-+		REPORT_MSG("    ZFS ARC file data pages : 0x%016llx\n",
-+		    pfn_zfs_arc_pages);
- 	REPORT_MSG("    User process data pages : 0x%016llx\n", pfn_user);
- 	REPORT_MSG("    Free pages              : 0x%016llx\n", pfn_free);
- 	REPORT_MSG("    Hwpoison pages          : 0x%016llx\n", pfn_hwpoison);
-@@ -9819,7 +9847,8 @@ print_mem_usage(void)
- 	pfn_original = info->max_mapnr - pfn_memhole;
- 
- 	pfn_excluded = pfn_zero + pfn_cache + pfn_cache_private
--	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline;
-+	    + pfn_user + pfn_free + pfn_hwpoison + pfn_offline
-+	    + pfn_zfs_arc_pages;
- 	shrinking = (pfn_original - pfn_excluded) * 100;
- 	shrinking = shrinking / pfn_original;
- 	total_size = info->page_size * pfn_original;
-@@ -9833,6 +9862,9 @@ print_mem_usage(void)
- 	    pfn_cache);
- 	MSG("PRI_CACHE	%-16llu	yes		Cache pages with private flag\n",
- 	    pfn_cache_private);
-+	if (pfn_zfs_arc_pages != 0)
-+		MSG("ZFS_CACHE	%-16llu	yes		ZFS ARC data pages\n",
-+		    pfn_zfs_arc_pages);
- 	MSG("USER		%-16llu	yes		User process pages\n", pfn_user);
- 	MSG("FREE		%-16llu	yes		Free pages\n", pfn_free);
- 	MSG("KERN_DATA	%-16llu	no		Dumpable kernel data \n",
--- 
-2.17.1
-
+Add kexec cc list.
+On 08/01/19 at 11:02pm, lijiang wrote:
+> Hi, Tom
+> 
+> Recently, i ran into a problem about SME and used crash tool to check the vmcore as follow: 
+> 
+> crash> kmem -s | grep -i invalid
+> kmem: dma-kmalloc-512: slab: ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e
+> kmem: dma-kmalloc-512: slab: ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e
+> 
+> And the crash tool reported the above error, probably, the main reason is that kernel does not
+> correctly handle the first 640k region when SME is enabled.
+> 
+> When SME is enabled, the kernel and initramfs images are loaded into the decrypted memory, and
+> the backup area(first 640k) is also mapped as decrypted, but the first 640k data is copied to
+> the backup area in purgatory(). Please refer to this file: arch/x86/purgatory/purgatory.c
+> ......
+> static int copy_backup_region(void)
+> {
+>         if (purgatory_backup_dest) {
+>                 memcpy((void *)purgatory_backup_dest,
+>                        (void *)purgatory_backup_src, purgatory_backup_sz);
+>         }
+>         return 0;
+> }
+> ......
+> 
+> arch/x86/kernel/machine_kexec_64.c
+> ......
+> machine_kexec_prepare()->
+> arch_update_purgatory()->
+> .....
+> 
+> Actually, the firs 640k area is encrypted in the first kernel when SME is enabled, here kernel
+> copies the first 640k data to the backup area in purgatory(), because the backup area is mapped
+> as decrypted, this copying operation makes that the first 640k data is decrypted(decoded) and
+> saved to the backup area, but probably kernel can not aware of SME in purgatory(), which causes
+> kernel mistakenly read out the first 640k.
+> 
+> In addition, i hacked kernel code as follow:
+> 
+> diff --git a/fs/proc/vmcore.c b/fs/proc/vmcore.c
+> index 7bcc92add72c..a51631d36a7a 100644
+> --- a/fs/proc/vmcore.c
+> +++ b/fs/proc/vmcore.c
+> @@ -377,6 +378,16 @@ static ssize_t __read_vmcore(char *buffer, size_t buflen, loff_t *fpos,
+>                                             m->offset + m->size - *fpos,
+>                                             buflen);
+>                         start = m->paddr + *fpos - m->offset;
+> +                       if (m->paddr == 0x73f60000) {//the backup area's start address:0x73f60000
+> +                               tmp = read_from_oldmem(buffer, tsz, &start,
+> +                                               userbuf, false);
+> +                       } else
+>                                 tmp = read_from_oldmem(buffer, tsz, &start,
+>                                                userbuf, mem_encrypt_active());
+>                         if (tmp < 0)
+> 
+> Here, i used the crash tool to check the vmcore, i can see that the backup area is decrypted,
+> except for the dma-kmalloc-512. So i suspect that kernel did not correctly read out the first
+> 640k data to backup area. Do you happen to know how to deal with the first 640k area in purgatory()
+> when SME is enabled? Any idea?
+> 
+> BTW: I' curious the reason why the address of dma-kmalloc-512k always falls into the first 640k
+> region, and i did not see the same issue on another machine.
+> 
+> Machine:
+> Serial Number 	diesel-sys9079-0001
+> Model           AMD Diesel (A0C)
+> CPU             AMD EPYC 7601 32-Core Processor
+> 
+> 
+> Background:
+> On x86_64, the first 640k region is special because of some historical reasons. And kdump kernel will
+> reuse the first 640k region, so kernel will back up(copy) the first 640k region to a backup area in
+> purgatory(), in order not to rewrite the old region(640k) in kdump kernel, which makes sure that kdump
+> can read out the old memory from vmcore.
+> 
+> 
+> Thanks.
+> Lianbo
 
 _______________________________________________
 kexec mailing list
