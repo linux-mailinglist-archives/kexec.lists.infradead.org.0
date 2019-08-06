@@ -2,54 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 009F3829B8
-	for <lists+kexec@lfdr.de>; Tue,  6 Aug 2019 04:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 790D0829C2
+	for <lists+kexec@lfdr.de>; Tue,  6 Aug 2019 04:44:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vwv0V/NQ6NO8NvfJRvZ3vkhRAz13rUcE5RQPIbWIPJg=; b=KClXvnibZpu4Bm
-	NV57y7rsBLOOkuxlTzhevMUlV29L/vehxhamLRhyO4qxHliyq35fiFvhn/YO3GGs439lMMiVv647n
-	TmHGjY4PVeD7TOUSQY5XpzAFiQTNOcALqWzCGMqIg3owa9u0kRVUaR8G3QN0Yjr2aJtukOLABUbc0
-	DwFO+t0Na7pIap7rez2nz3szkdYfa+o/U5pPYoc6ZSNLB5O622kZWMyPYc+GFWH2jqdXTMMXDqUKH
-	UxXAw0v0boh4QRyI5qWva+3EH5X3c0lpHs0MIG6hnlLGVz19hJS6/2NLfOE5jhYzQ6utdNh74OsnU
-	cS+O5wX8QuY5/u5AaWwA==;
+	List-Owner; bh=UJaXhi07DmAxLqtzyLXCwwWpyKW31aVDQP/HlFsUG3Y=; b=g0s7G/siHjhBm8
+	RcibvdoyCzVCIFqnaw5YtDxfIurX7tprzoIjTmDS/rgAMJrlWs8Al1C0nQZfXZfwl/PkMWy5Oj9gR
+	mgwcovfaD6ch4yidN73B7ANo87ZJA5xxWJCpaZSpVlYbaSthaI0UGNecx4SuyS16/bF7K9+lglhr6
+	qYgj8y0fFbWcWPHWb2HW8+oBW+y6gdOrxPFq3RMfcrHT744kCFtbpIUC4nsOvo69MSRIECJTdvOyM
+	3JylHz54O9tPB4k7+C4vWfBhPcnyskWim8mSb2AD8L6xcjvjT6WEn07bccJqkqH1kz9RaoWUankbq
+	NA7vB0SOtbHdbAuaU+Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hupPa-0004dM-AS; Tue, 06 Aug 2019 02:41:18 +0000
+	id 1hupSZ-0004vK-Of; Tue, 06 Aug 2019 02:44:23 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hupPX-0004d1-Ou
- for kexec@lists.infradead.org; Tue, 06 Aug 2019 02:41:17 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ id 1hupSW-0004v1-PR
+ for kexec@lists.infradead.org; Tue, 06 Aug 2019 02:44:22 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 20FB9C0546F1;
- Tue,  6 Aug 2019 02:41:15 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 006523001AA4;
+ Tue,  6 Aug 2019 02:44:20 +0000 (UTC)
 Received: from dhcp-128-65.nay.redhat.com (ovpn-12-88.pek2.redhat.com
  [10.72.12.88])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 8E9365C1D4;
- Tue,  6 Aug 2019 02:41:12 +0000 (UTC)
-Date: Tue, 6 Aug 2019 10:41:08 +0800
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 6C5DC19C5B;
+ Tue,  6 Aug 2019 02:44:17 +0000 (UTC)
+Date: Tue, 6 Aug 2019 10:44:13 +0800
 From: Dave Young <dyoung@redhat.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+To: Matthew Garrett <mjg59@google.com>
 Subject: Re: [PATCH] do not clean dummy variable in kexec path
-Message-ID: <20190806024108.GA6956@dhcp-128-65.nay.redhat.com>
+Message-ID: <20190806024413.GB6956@dhcp-128-65.nay.redhat.com>
 References: <20190805083553.GA27708@dhcp-128-65.nay.redhat.com>
- <CAKv+Gu-my6EpLfxBnbMn21be62oHrF6PKFu2rt-4Pqk9wG9SXA@mail.gmail.com>
+ <CACdnJusRUnhmOLdowqbGoM9Z-tWsKrhZ8sFfQUUmjyKmRVN+vw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKv+Gu-my6EpLfxBnbMn21be62oHrF6PKFu2rt-4Pqk9wG9SXA@mail.gmail.com>
+In-Reply-To: <CACdnJusRUnhmOLdowqbGoM9Z-tWsKrhZ8sFfQUUmjyKmRVN+vw@mail.gmail.com>
 User-Agent: Mutt/1.11.3 (2019-02-01)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.32]); Tue, 06 Aug 2019 02:41:15 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.42]); Tue, 06 Aug 2019 02:44:20 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190805_194115_832790_B6905B04 
-X-CRM114-Status: GOOD (  20.87  )
+X-CRM114-CacheID: sfid-20190805_194420_877440_50200114 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -70,17 +70,17 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Matthew Garrett <matthewgarrett@google.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, linux-efi <linux-efi@vger.kernel.org>,
- Kexec Mailing List <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: bhsharma@redhat.com, linux-efi <linux-efi@vger.kernel.org>,
+ kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 08/05/19 at 06:55pm, Ard Biesheuvel wrote:
-> On Mon, 5 Aug 2019 at 11:36, Dave Young <dyoung@redhat.com> wrote:
+On 08/05/19 at 10:09am, Matthew Garrett wrote:
+> On Mon, Aug 5, 2019 at 1:36 AM Dave Young <dyoung@redhat.com> wrote:
 > >
 > > kexec reboot fails randomly in UEFI based kvm guest.  The firmware
 > > just reset while calling efi_delete_dummy_variable();  Unfortunately
@@ -91,43 +91,20 @@ On 08/05/19 at 06:55pm, Ard Biesheuvel wrote:
 > > when entering virtual mode.  But SetVirtualAddressMap can only run once
 > > for each physical reboot, thus kexec_enter_virtual_mode is not necessarily
 > > a good place to clean dummy object.
-> >
 > 
-> I would argue that this means it is not a good place to *create* the
-> dummy variable, and if we don't create it, we don't have to delete it
-> either.
-> 
-> > Drop efi_delete_dummy_variable so that kexec reboot can work.
-> >
-> 
-> Creating it and not deleting it is bad, so please try and see if we
-> can omit the creation on this code path instead.
+> I agree that this isn't necessarily the best place to do this in the
+> kexec case, but given we control the firmware, figuring out what's
+> actually breaking seems like a good plan.
 
-I'm not sure in this case the var is created or not, the logic seems
-tricky to me.  It seems to me it is intend to force delete a non-exist
-var here.
+I'm more than glad to get the root cause, if you can help on debugging I
+would like to share the efi var file etc.
 
-Matthew, can you comment here about Ard's question?
+But it is indeed a problem cause weird reset on end user part, but even if we can
+not find the root cause (in firmware..)  I think we still need avoid it
+with such workaround.
 
-> 
-> 
-> > Signed-off-by: Dave Young <dyoung@redhat.com>
-> > ---
-> >  arch/x86/platform/efi/efi.c |    3 ---
-> >  1 file changed, 3 deletions(-)
-> >
-> > --- linux-x86.orig/arch/x86/platform/efi/efi.c
-> > +++ linux-x86/arch/x86/platform/efi/efi.c
-> > @@ -894,9 +894,6 @@ static void __init kexec_enter_virtual_m
-> >
-> >         if (efi_enabled(EFI_OLD_MEMMAP) && (__supported_pte_mask & _PAGE_NX))
-> >                 runtime_code_page_mkexec();
-> > -
-> > -       /* clean DUMMY object */
-> > -       efi_delete_dummy_variable();
-> >  #endif
-> >  }
-> >
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
