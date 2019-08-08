@@ -2,60 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91B9C8572D
-	for <lists+kexec@lfdr.de>; Thu,  8 Aug 2019 02:18:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 913038578D
+	for <lists+kexec@lfdr.de>; Thu,  8 Aug 2019 03:21:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FEg+DJt1wp8YfJh4Aq7aDZgkfcfaSf4f5usW4l2aRb0=; b=Hcz2HF3AjOKWk3
-	XxzWAZyCRm/5Dy7AsEKG9vaciEdjN/YU8/sesMUN1XrdAKVm5wZpXLVELmL1RHP4EZiBLdX0YeH07
-	XqLIJKBxxXV7cvQZmC+JYXwSe0ECXGBKZnL1IgJBTVvJImiW5RYLbXllNx/G9JSoNm4GHoG6VpkrG
-	pBr4oC08G1Vazs6KpU2n/xRdakl0IpOgS2Sz3yhR2d3YjeLNJMnD+xySJC7dUE//ia7d8cmlXtPcq
-	juShssrkj0sqL3Nqukn9TfvdCmgz0a5GbFHiP0flpEOAxJoxYdgC0l8UmefQ5yvcEdZtzFjSjtikk
-	8mBTL4fdUpodzs/gV+ow==;
+	List-Owner; bh=b0EPNJ8/9gO0CknMvyiGqCpAlvJFgxd7v9RKmqpr8+o=; b=CTBczJhinwgfDh
+	VQvVT21EcAnrZ5T/89xrjTAERUpczbb0DX/ZcyJNlV9YBJv8V3NhAxg8043bhi3Ui8pgupbULAIHS
+	DvOFz9cZ8x8j+lsYJGzCoDeSU7ULynWmrWjjEvkoZ71NibJA2NhmUyAenge+7X28SSD+Ix18Hf7FZ
+	btXQX/RAW3Tdt11CudWH3z0dJrlis+LdVRvBs8CfSO7Hku3VI3V9/gOu64pdfBkXeF1O1hNrqZmqm
+	2rQfl7c+hbuUD4dOT+FoPEDvrARU5Hr0DbBNfI/ggwrramjZvyLzOBEkkYk581MH9GeyovT+Sx/GD
+	NVDB7LCybiuTjR3f1fzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvW8U-0003je-MG; Thu, 08 Aug 2019 00:18:30 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1hvX7W-0004Lk-BH; Thu, 08 Aug 2019 01:21:34 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvW8R-0003ir-4K
- for kexec@lists.infradead.org; Thu, 08 Aug 2019 00:18:28 +0000
-X-Amp-Result: UNSCANNABLE
+ id 1hvX7S-0004KY-Ne
+ for kexec@lists.infradead.org; Thu, 08 Aug 2019 01:21:32 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
 X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 07 Aug 2019 17:18:25 -0700
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Aug 2019 18:21:28 -0700
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,358,1559545200"; d="scan'208";a="349995877"
+X-IronPort-AV: E=Sophos;i="5.64,358,1559545200"; d="scan'208";a="176366240"
 Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga005.jf.intel.com with ESMTP; 07 Aug 2019 17:18:22 -0700
+ by fmsmga007.fm.intel.com with ESMTP; 07 Aug 2019 18:21:25 -0700
 Received: from kbuild by lkp-server01 with local (Exim 4.89)
  (envelope-from <lkp@intel.com>)
- id 1hvW8L-000Gdp-Ma; Thu, 08 Aug 2019 08:18:21 +0800
-Date: Thu, 8 Aug 2019 08:17:44 +0800
+ id 1hvX7N-0006wE-6n; Thu, 08 Aug 2019 09:21:25 +0800
+Date: Thu, 8 Aug 2019 09:20:54 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Pingfan Liu <kernelfans@gmail.com>
-Subject: [RFC PATCH] x86/apic: __cpu_capped_mask can be static
-Message-ID: <20190808001744.beecoooj27rph2ky@48261080c7f1>
-References: <1564995539-29609-3-git-send-email-kernelfans@gmail.com>
+Subject: Re: [PATCH 3/4] x86/smp: send capped cpus to a stable state when
+ smp_init()
+Message-ID: <201908080938.Rjv1ILYn%lkp@intel.com>
+References: <1564995539-29609-4-git-send-email-kernelfans@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1564995539-29609-3-git-send-email-kernelfans@gmail.com>
+In-Reply-To: <1564995539-29609-4-git-send-email-kernelfans@gmail.com>
 X-Patchwork-Hint: ignore
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190807_171827_215310_562816EE 
-X-CRM114-Status: GOOD (  14.87  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190807_182131_058965_032FCA62 
+X-CRM114-Status: GOOD (  12.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
@@ -85,26 +87,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Hi Pingfan,
 
-Fixes: 294b1ea98966 ("x86/apic: record capped cpu in generic_processor_info()")
-Signed-off-by: kbuild test robot <lkp@intel.com>
+Thank you for the patch! Perhaps something to improve:
+
+[auto build test WARNING on linus/master]
+[cannot apply to v5.3-rc3 next-20190807]
+[if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
+
+url:    https://github.com/0day-ci/linux/commits/Pingfan-Liu/x86-mce-protect-nr_cpus-from-rebooting-by-broadcast-mce/20190806-101748
+reproduce:
+        # apt-get install sparse
+        # sparse version: v0.6.1-rc1-7-g2b96cd8-dirty
+        make ARCH=x86_64 allmodconfig
+        make C=1 CF='-fdiagnostic-prefix -D__CHECK_ENDIAN__'
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+
+
+sparse warnings: (new ones prefixed by >>)
+
+   arch/x86/kernel/cpu/common.c:70:16: sparse: sparse: symbol '__cpu_capped_mask' was not declared. Should it be static?
+>> arch/x86/kernel/cpu/common.c:72:16: sparse: sparse: symbol '__cpu_capped_done_mask' was not declared. Should it be static?
+   arch/x86/kernel/cpu/common.c:138:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+   arch/x86/kernel/cpu/common.c:139:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+   arch/x86/kernel/cpu/common.c:140:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+   arch/x86/kernel/cpu/common.c:141:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+   arch/x86/kernel/cpu/common.c:168:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+   arch/x86/kernel/cpu/common.c:169:43: sparse: sparse: cast truncates bits from constant value (fffff becomes ffff)
+
+Please review and possibly fold the followup patch.
+
 ---
- common.c |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/x86/kernel/cpu/common.c b/arch/x86/kernel/cpu/common.c
-index 4d87df5be9124..b95721e7376d4 100644
---- a/arch/x86/kernel/cpu/common.c
-+++ b/arch/x86/kernel/cpu/common.c
-@@ -67,7 +67,7 @@ cpumask_var_t cpu_initialized_mask;
- cpumask_var_t cpu_callout_mask;
- cpumask_var_t cpu_callin_mask;
- /* size of NR_CPUS is required. */
--struct cpumask __cpu_capped_mask __initdata;
-+static struct cpumask __cpu_capped_mask __initdata;
- struct cpumask *cpu_capped_mask;
- 
- /* representing cpus for which sibling maps can be computed */
+0-DAY kernel test infrastructure                Open Source Technology Center
+https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
 
 _______________________________________________
 kexec mailing list
