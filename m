@@ -2,91 +2,116 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5476C868FE
-	for <lists+kexec@lfdr.de>; Thu,  8 Aug 2019 20:44:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7219686D59
+	for <lists+kexec@lfdr.de>; Fri,  9 Aug 2019 00:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UVEUZ5YWe6svsgPQ1mUSlxKCFXAeQXucckLOqwCGoq8=; b=KaMwk68WqkAn4f6s3TYFOpGCh5
-	fejpQ66jt40eoINteXiFnJIgk0rxxhwThgUy+FHn1dcGeO2LBGqSjw+ho37m5ue15lg15mEZ3AsY3
-	SJbb1JIxKMfoSingPkO8JTIPu8k3mDP70DLSz3GO+wAPGeys7gR5LooTa2Uyi8ytdN0WUPjC70Tv3
-	gR6288J2N1xKqbdfuGbkNgUHLhPG8oqO7Q0E1fEG3x4rRyg/JMpiCXTPPjsrzDsKzmxZaeh4BZJRh
-	pksLe7UVzREnDA8BKRPLC6YLRiziymfZSL2x4QsZgO4sxEjkJbcUaHC4MO5dDTmaTrOmiZocuC+NE
-	7DfrrTWA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YRSij+cHa420mnfA+NFjdmPROovDRRUS9aCltk7ahn8=; b=JTlk4EhXDKE/E1
+	F90K/4qlX+jFBlDmNOGLJUmOvVcTyXosbHH9BgF7kjkoPc9cNpfIyW55w/p64yNux8JqvsYM3Guqg
+	VCrLOAQe5P9B/EqO3dZMDHGO4Ze2A3+x6hWbKNueYHKdGu12T8Izr/iDpyb/Sh0kWdlv8Rvzpye/d
+	0MOo5ejvECGzZmZjOuK7Rpb2YQYmHW7WkoxaYDeFvOvFsFGQyVvjCUXU8eo+RhHu1ZB8Rw5stORT6
+	RDtNTaEESjppMeHGlu/3Ml0EEV+W5xIX5KenNfjHDCw9T6RcliUzOXz5dzbs7jcKbD0C3eyTqjE8p
+	RycRXfR4Ar8hZqwzFk9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hvnP9-0005su-L5; Thu, 08 Aug 2019 18:44:51 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1hvr2l-0002Q6-FG; Thu, 08 Aug 2019 22:37:59 +0000
+Received: from mail-eopbgr770048.outbound.protection.outlook.com
+ ([40.107.77.48] helo=NAM02-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hvnOr-0005hY-GL
- for kexec@lists.infradead.org; Thu, 08 Aug 2019 18:44:35 +0000
-Received: by mail-ed1-x542.google.com with SMTP id k21so91942733edq.3
- for <kexec@lists.infradead.org>; Thu, 08 Aug 2019 11:44:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=OnD8REJjiUQ09MeUwthsY9J1rWTm5v/HD9eRCPSk++8=;
- b=lsfCX3ztpMTCzqQ61QI4k4mLGAlSga+SA+JM6MdlUtTurWRbcKyta2HZw3aGr9JkSh
- lh083Z3RQT+f96/OdGYY7TOTlfAXs/Ct/3S0YbTSDYFzd8i69ZTheFeB3q4VymF/1yuN
- jqJju+D34kBHkVCSmAsH6IsyvyWSC+HhugcsOldPNvAEue88NIkHWqVWOtBZmSxafItq
- 4ClmEOENGPnKoxSymB55KP6UKk5UPwEq5MZjHjuDDxvtfUq7x0Tim3ajHEehi1BnGAt0
- 4EB3+8c0QNGsSJ9+adK3i80N5672PpkAQIZkxp+VGnC9YbnpQiwunnuyTku/bsdLLn3Y
- V2YQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=OnD8REJjiUQ09MeUwthsY9J1rWTm5v/HD9eRCPSk++8=;
- b=AvxrX99Wv89iXMwSluaUWTeDch5C8ioch5Or1bn6b4MBLZLJ8+VRniQyEp6fYeOqF6
- sm3WqnsxLHt8eSIe80Sr0vwfEEnk3k5LR7Im0aoj6QPKpHx+Zt4Lm3iDcNu/DAjScMhq
- jDaLvAJSwrXqmxnt3u16IOvN3aPc2i7Hi1Q+k3VIAEuHS+gVCIXdObsQ7EefcN5pecdo
- SkXon0S4aaqAYSx8VdSvWr8EjQ2prSk3fEfJt0Sd303KMrzBnrfCmCGcqG9TciaPCzKo
- NWC6WG9Ecl/jnhSoQiAolIFHgUHjWcZ0qfBFH+IsV5VuZbQCN4EMU0nlRXCLIL3wt6sU
- SxIA==
-X-Gm-Message-State: APjAAAVXdtMjqxDpdcNE4ojeaBHoZBI9zYBcetQtceK1TFiZ82B14xup
- afblMoaKKrSVlRDJGwIznqk2JGYp673kwG73CLIXKg==
-X-Google-Smtp-Source: APXvYqzNTM/2itQnnnFi1jbNoHH2r8FhmS0Cb3CycZsD8PIZEFgt7etfdlqdZQ/7cAtXUSR7Ohty4Mg1UyiSLvXGrPI=
-X-Received: by 2002:a17:906:5409:: with SMTP id
- q9mr15148025ejo.209.1565289871191; 
- Thu, 08 Aug 2019 11:44:31 -0700 (PDT)
+ id 1hvr2i-0002PZ-V4
+ for kexec@lists.infradead.org; Thu, 08 Aug 2019 22:37:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=bh/SHjf4q4ojeIdVMFcrohGmAVehyNjhQsf2dGqlLrI54c44IYQTQTNSUni6iRmRg/sC4nFOZk14owQoX2/AX0CDnHP8A4y9jwhUBCuDqOayjwlrNbGoEXvVUkJDMUJNwa52bytkEg9IB3ZGcWTUTEMdvf4kpyT3QZAt9twnVgaAZk1TDndPb49/QdXXW4d1D4coOo4pxKaLhJPLTAfCQ5GG7CeYV2nL4Ia1+3+kO6Q6wYyOGXudbUqB4rnyRt5khP+z8SmLFBN2Ps+CFm2ylex0mM9F6EYekT0uQlhpSXcb1ET9PO63tECXJSi4mz6Xb7lM++LCEvedaVnIn100sA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Lapq56wkDO8qurDEZtxcOVJqTYkZvfQ4AJtfpRLEIDY=;
+ b=jpEAxzXN3u8yic3u63kXrZ6h3DL7N0EGh1IW+GrvPayNDyx9hChO907qxsOvmA1OZiVTeycGbEzRaTICKx2LXMQxtkG5yj/GkWk6EQZvCVmDo0l68gTz73V9tMervXN4QYhIa/7EYRDKX++waGd6+VDDKeQTY0KkAvFKonR5PRuonxpWkeJwGFFT34ndOnAqM2G62CrJHpJiQeJgmozvFXzlPciarFEpfswCUcKKM8n6g06BcRJqfNB3f85PLDjg4bIP9s3k+SYtIOE4GtWCGg90x/u63ohrjjQHK+Sf7yerEnSLOaWIDvuO9w7bvqk58SLQBtSZ9YjGxk8H1mdMuQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amdcloud.onmicrosoft.com; s=selector1-amdcloud-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Lapq56wkDO8qurDEZtxcOVJqTYkZvfQ4AJtfpRLEIDY=;
+ b=AmB/7KVI0WySjYeUavmWckB5gk5OKO5N8gfSImBucMQ4RGfXY/A0fVm50sKsAvGtn/D9kygj5xgX/yo+coZzGpMaWOMSQqUFPCRJAeYPeV8vrsX7jE6rYgSeQ+FAwvcl88dofeVO4artEAnr9kAa2xw0gopTvP7Gh6JMfr4sZ4o=
+Received: from DM6PR12MB3163.namprd12.prod.outlook.com (20.179.104.150) by
+ DM6PR12MB3836.namprd12.prod.outlook.com (10.255.173.141) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2157.14; Thu, 8 Aug 2019 22:37:53 +0000
+Received: from DM6PR12MB3163.namprd12.prod.outlook.com
+ ([fe80::9c3d:8593:906c:e4f7]) by DM6PR12MB3163.namprd12.prod.outlook.com
+ ([fe80::9c3d:8593:906c:e4f7%6]) with mapi id 15.20.2157.015; Thu, 8 Aug 2019
+ 22:37:53 +0000
+From: "Lendacky, Thomas" <Thomas.Lendacky@amd.com>
+To: Dave Young <dyoung@redhat.com>, lijiang <lijiang@redhat.com>
+Subject: Re: crash: `kmem -s` reported "kmem: dma-kmalloc-512: slab:
+ ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e" on a dumped vmcore
+Thread-Topic: crash: `kmem -s` reported "kmem: dma-kmalloc-512: slab:
+ ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e" on a dumped vmcore
+Thread-Index: AQHVSHo224T5ol7hA0egv05Ed4x+JKbnC9YAgArW+YA=
+Date: Thu, 8 Aug 2019 22:37:53 +0000
+Message-ID: <5d91e856-01de-bc80-e4bc-497d57652072@amd.com>
+References: <e640b50a-a962-8e56-33a2-2ba2eb76e813@redhat.com>
+ <20190802010538.GA2202@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20190802010538.GA2202@dhcp-128-65.nay.redhat.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: SN6PR16CA0039.namprd16.prod.outlook.com
+ (2603:10b6:805:ca::16) To DM6PR12MB3163.namprd12.prod.outlook.com
+ (2603:10b6:5:182::22)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Thomas.Lendacky@amd.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [165.204.159.242]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3de5f93d-a440-42e1-af87-08d71c510d20
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DM6PR12MB3836; 
+x-ms-traffictypediagnostic: DM6PR12MB3836:
+x-microsoft-antispam-prvs: <DM6PR12MB383642141F39CE011FB31B79ECD70@DM6PR12MB3836.namprd12.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 012349AD1C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(136003)(376002)(366004)(396003)(346002)(40224003)(199004)(189003)(51444003)(486006)(316002)(76176011)(5660300002)(66446008)(478600001)(71190400001)(6486002)(305945005)(7736002)(99286004)(66476007)(81156014)(81166006)(26005)(71200400001)(25786009)(53546011)(66556008)(6436002)(6506007)(386003)(11346002)(2616005)(476003)(186003)(64756008)(53936002)(446003)(110136005)(54906003)(66946007)(31686004)(6512007)(86362001)(14454004)(229853002)(14444005)(66066001)(31696002)(52116002)(6116002)(102836004)(4326008)(2906002)(3846002)(8676002)(8936002)(256004)(36756003)(6246003)(81973001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR12MB3836;
+ H:DM6PR12MB3163.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: amd.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: ELkJqgWRQORqJoZoOhXAuSER4koWgQB2IvaKQbyyQ4lPt+9QPUBWX0W7KlJWk/QbIiB4eDVPxDsW03t5hsJihqphRBlzHuYu9sM6cO9aiDjZPL1NuhCw23Y+SWtosQRGYJmuy+DZ2TnnlxqJ2pWtuAQzG8QYG9oZ5fHN/0fWjGAhRotMVVM0cBKu4h0WKbhO1b7odNaQJ5AQq36fcQr2H9XrJQ+JscT20vvtdM5vPq/ySEiRacg93nXA8KcyXYBQ5w6TwJfbGOVJIJtAqQIaI+/Y/d9o6+bn2RQ7DyZcmwQZAo97hQ5+cFKooGAZB8p4GaDDNQ1wNdLzTsSBn50CRoQqxAX2XwtfvA2rF/F+vtVyK43H+5JoTAcklZ/81DVKFMXqFFZbdmvj6gjfdj6Sg0ebU4p7EXNFpGTQ5T6P3uA=
+x-ms-exchange-transport-forked: True
+Content-ID: <90AF5D7FF1C0014A9F7C643F3BE5F454@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-References: <20190801152439.11363-1-pasha.tatashin@soleen.com>
-In-Reply-To: <20190801152439.11363-1-pasha.tatashin@soleen.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Thu, 8 Aug 2019 14:44:20 -0400
-Message-ID: <CA+CK2bADiBMEx9cJuXT5fQkBYFZAtxUtc7ZzjrNfEjijPZkPtw@mail.gmail.com>
-Subject: Re: [PATCH v1 0/8] arm64: MMU enabled kexec relocation
-To: Pavel Tatashin <pasha.tatashin@soleen.com>,
- James Morris <jmorris@namei.org>, 
- Sasha Levin <sashal@kernel.org>, "Eric W. Biederman" <ebiederm@xmission.com>, 
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, 
- Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- will@kernel.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marc Zyngier <marc.zyngier@arm.com>, 
- James Morse <james.morse@arm.com>, Vladimir Murzin <vladimir.murzin@arm.com>, 
- Matthias Brugger <matthias.bgg@gmail.com>, Bhupesh Sharma <bhsharma@redhat.com>,
- linux-mm <linux-mm@kvack.org>
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3de5f93d-a440-42e1-af87-08d71c510d20
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Aug 2019 22:37:53.6447 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: v83NFPWIIo25YTeRDTY1x3XCA3/eEI23GsWOdM6jDGS1DCKKU9MsQBu4/hpp1qYiZDUbJFW9T2dfKbI8HF8UEw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR12MB3836
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190808_114433_556984_B1C36A8A 
-X-CRM114-Status: GOOD (  16.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190808_153757_070979_BA8B71AC 
+X-CRM114-Status: GOOD (  16.35  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [40.107.77.48 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,101 +126,111 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: "bhe@redhat.com" <bhe@redhat.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Dave Anderson <anderson@redhat.com>,
+ "ebiederm@xmission.com" <ebiederm@xmission.com>,
+ "vgoyal@redhat.com" <vgoyal@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Just a friendly reminder, please send your comments on this series.
-It's been a week since I sent out these patches, and no feedback yet.
-Also, I'd appreciate if anyone could test this series on vhe hardware
-with vhe kernel, it does not look like QEMU can emulate it yet
+On 8/1/19 8:05 PM, Dave Young wrote:
+> Add kexec cc list.
+> On 08/01/19 at 11:02pm, lijiang wrote:
+>> Hi, Tom
+>>
+>> Recently, i ran into a problem about SME and used crash tool to check the vmcore as follow:
+>>
+>> crash> kmem -s | grep -i invalid
+>> kmem: dma-kmalloc-512: slab: ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e
+>> kmem: dma-kmalloc-512: slab: ffffe192c0001000 invalid freepointer: e5ffef4e9a040b7e
+>>
+>> And the crash tool reported the above error, probably, the main reason is that kernel does not
+>> correctly handle the first 640k region when SME is enabled.
+>>
+>> When SME is enabled, the kernel and initramfs images are loaded into the decrypted memory, and
+>> the backup area(first 640k) is also mapped as decrypted, but the first 640k data is copied to
+>> the backup area in purgatory(). Please refer to this file: arch/x86/purgatory/purgatory.c
+>> ......
+>> static int copy_backup_region(void)
+>> {
+>>          if (purgatory_backup_dest) {
+>>                  memcpy((void *)purgatory_backup_dest,
+>>                         (void *)purgatory_backup_src, purgatory_backup_sz);
+>>          }
+>>          return 0;
+>> }
+>> ......
+>>
+>> arch/x86/kernel/machine_kexec_64.c
+>> ......
+>> machine_kexec_prepare()->
+>> arch_update_purgatory()->
+>> .....
+>>
+>> Actually, the firs 640k area is encrypted in the first kernel when SME is enabled, here kernel
+>> copies the first 640k data to the backup area in purgatory(), because the backup area is mapped
+>> as decrypted, this copying operation makes that the first 640k data is decrypted(decoded) and
+>> saved to the backup area, but probably kernel can not aware of SME in purgatory(), which causes
+>> kernel mistakenly read out the first 640k.
+>>
+>> In addition, i hacked kernel code as follow:
+>>
+>> diff --git a/fs/proc/vmcore.c b/fs/proc/vmcore.c
+>> index 7bcc92add72c..a51631d36a7a 100644
+>> --- a/fs/proc/vmcore.c
+>> +++ b/fs/proc/vmcore.c
+>> @@ -377,6 +378,16 @@ static ssize_t __read_vmcore(char *buffer, size_t buflen, loff_t *fpos,
+>>                                              m->offset + m->size - *fpos,
+>>                                              buflen);
+>>                          start = m->paddr + *fpos - m->offset;
+>> +                       if (m->paddr == 0x73f60000) {//the backup area's start address:0x73f60000
+>> +                               tmp = read_from_oldmem(buffer, tsz, &start,
+>> +                                               userbuf, false);
+>> +                       } else
+>>                                  tmp = read_from_oldmem(buffer, tsz, &start,
+>>                                                 userbuf, mem_encrypt_active());
+>>                          if (tmp < 0)
+>>
+>> Here, i used the crash tool to check the vmcore, i can see that the backup area is decrypted,
+>> except for the dma-kmalloc-512. So i suspect that kernel did not correctly read out the first
+>> 640k data to backup area. Do you happen to know how to deal with the first 640k area in purgatory()
+>> when SME is enabled? Any idea?
 
-Thank you,
-Pasha
+I'm not all that familiar with kexec and purgatory, etc., but I think
+that you want to setup the page table that is active when purgatory runs
+so that the src and dest both have the SME encryption mask set in their
+respective page table entries. This way, when the copy is performed,
+everything is copied correctly.  Remember, encrypted data from one page
+cannot be directly copied as unencrypted data and decrypted properly in
+the new location (e.g. a page of zeroes encrypted at one address will not
+appear the same as a page of zeroes encrypted at a different address).
 
-On Thu, Aug 1, 2019 at 11:24 AM Pavel Tatashin
-<pasha.tatashin@soleen.com> wrote:
->
-> Enable MMU during kexec relocation in order to improve reboot performance.
->
-> If kexec functionality is used for a fast system update, with a minimal
-> downtime, the relocation of kernel + initramfs takes a significant portion
-> of reboot.
->
-> The reason for slow relocation is because it is done without MMU, and thus
-> not benefiting from D-Cache.
->
-> Performance data
-> ----------------
-> For this experiment, the size of kernel plus initramfs is small, only 25M.
-> If initramfs was larger, than the improvements would be greater, as time
-> spent in relocation is proportional to the size of relocation.
->
-> Previously:
-> kernel shutdown 0.022131328s
-> relocation      0.440510736s
-> kernel startup  0.294706768s
->
-> Relocation was taking: 58.2% of reboot time
->
-> Now:
-> kernel shutdown 0.032066576s
-> relocation      0.022158152s
-> kernel startup  0.296055880s
->
-> Now: Relocation takes 6.3% of reboot time
->
-> Total reboot is x2.16 times faster.
->
-> Previous approaches and discussions
-> -----------------------------------
-> https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
-> reserve space for kexec to avoid relocation, involves changes to generic code
-> to optimize a problem that exists on arm64 only:
->
-> https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
-> The first attempt to enable MMU, some bugs that prevented performance
-> improvement. The page tables unnecessary configured idmap for the whole
-> physical space.
->
-> https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
-> No linear copy, bug with EL2 reboots.
->
-> Pavel Tatashin (8):
->   kexec: quiet down kexec reboot
->   arm64, mm: transitional tables
->   arm64: hibernate: switch to transtional page tables.
->   kexec: add machine_kexec_post_load()
->   arm64, kexec: move relocation function setup and clean up
->   arm64, kexec: add expandable argument to relocation function
->   arm64, kexec: configure transitional page table for kexec
->   arm64, kexec: enable MMU during kexec relocation
->
->  arch/arm64/Kconfig                     |   4 +
->  arch/arm64/include/asm/kexec.h         |  51 ++++-
->  arch/arm64/include/asm/pgtable-hwdef.h |   1 +
->  arch/arm64/include/asm/trans_table.h   |  68 ++++++
->  arch/arm64/kernel/asm-offsets.c        |  14 ++
->  arch/arm64/kernel/cpu-reset.S          |   4 +-
->  arch/arm64/kernel/cpu-reset.h          |   8 +-
->  arch/arm64/kernel/hibernate.c          | 261 ++++++-----------------
->  arch/arm64/kernel/machine_kexec.c      | 199 ++++++++++++++----
->  arch/arm64/kernel/relocate_kernel.S    | 196 +++++++++---------
->  arch/arm64/mm/Makefile                 |   1 +
->  arch/arm64/mm/trans_table.c            | 273 +++++++++++++++++++++++++
->  kernel/kexec.c                         |   4 +
->  kernel/kexec_core.c                    |   8 +-
->  kernel/kexec_file.c                    |   4 +
->  kernel/kexec_internal.h                |   2 +
->  16 files changed, 758 insertions(+), 340 deletions(-)
->  create mode 100644 arch/arm64/include/asm/trans_table.h
->  create mode 100644 arch/arm64/mm/trans_table.c
->
-> --
-> 2.22.0
->
+Thanks,
+Tom
 
+>>
+>> BTW: I' curious the reason why the address of dma-kmalloc-512k always falls into the first 640k
+>> region, and i did not see the same issue on another machine.
+>>
+>> Machine:
+>> Serial Number 	diesel-sys9079-0001
+>> Model           AMD Diesel (A0C)
+>> CPU             AMD EPYC 7601 32-Core Processor
+>>
+>>
+>> Background:
+>> On x86_64, the first 640k region is special because of some historical reasons. And kdump kernel will
+>> reuse the first 640k region, so kernel will back up(copy) the first 640k region to a backup area in
+>> purgatory(), in order not to rewrite the old region(640k) in kdump kernel, which makes sure that kdump
+>> can read out the old memory from vmcore.
+>>
+>>
+>> Thanks.
+>> Lianbo
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
