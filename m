@@ -2,77 +2,81 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDF08C176
-	for <lists+kexec@lfdr.de>; Tue, 13 Aug 2019 21:21:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 133298C365
+	for <lists+kexec@lfdr.de>; Tue, 13 Aug 2019 23:14:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O8l7M0K0aFr9WQV0ju8/2PQt4jTxK9lgTXrLBVgfS8M=; b=unNeS7joboEi8P
-	SvH67XnK6Ajf+tnFYDzzqqiQaktR57r4FsQ1d6AnBHobSWoE/mmCatk/ZNXEZAws3zFG2Vd/HBGKR
-	h23sd7qY58XgrSuZu//kC5A7RJLLm9LabvsKVZSgLIKmPvCcOtkrDttUguZYjwZB+hFrn5rMUTFRg
-	SwxS9hLCLNSsKNLCBb2dbRCslp2CE8IvAR5mBmMLxA25Ciz4gthdVoar9h2lcz9PiuKJ6Zi901V85
-	Yur2QByAAZUL26JoUHI/Te2Q+TTetBSifW3qHf2TtzXFvO6dXj5NIkq6rgEUb0KhBFkaiY4V2MoFY
-	QWb9l9N6b1y0WTv7Dnlg==;
+	List-Owner; bh=z5Hh3lbGmj14nJ9hd9VrF4tvsbMWA8FwDzaTMoyzIRk=; b=mtjA9gqBWAn5iN
+	05Jk87p08E3HNW4IdUvm2tawLM+Qr6X9X0qOzukPtEdfmx2Wo1hKMPSzqynQFp0NbyZrqu02DGMqR
+	nDgAicMHDE0s1GkWvysiiPGFYYV8Q2L69xeBZ76TUlASj/bHqKRpwbpQ54JXMLklT2Gq6LmxKUgGA
+	kv38lNOMROgk01tlKhA9cdR5zHCHx/jXxF+D+HbClslXCFA1cLgIB+bhpajGbJTcYv9RVf5jfIEts
+	/xJ65XqUK/poLo4FOVxZgi3X7ppMF7FaRF3807Db/IFBkQVflj5CT1AQhad8SlCuJRc7Emi3WfxBh
+	Hmc0/KQsRyrjfht7w4Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hxcMb-0000pK-Fb; Tue, 13 Aug 2019 19:21:45 +0000
-Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
+	id 1hxe7y-0001rf-0w; Tue, 13 Aug 2019 21:14:46 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hxcMW-0000or-Lf
- for kexec@lists.infradead.org; Tue, 13 Aug 2019 19:21:42 +0000
-Received: by mail-vs1-xe49.google.com with SMTP id u17so29338946vsq.17
- for <kexec@lists.infradead.org>; Tue, 13 Aug 2019 12:21:39 -0700 (PDT)
+ id 1hxe7v-0001rL-JD
+ for kexec@lists.infradead.org; Tue, 13 Aug 2019 21:14:45 +0000
+Received: by mail-oi1-x244.google.com with SMTP id k22so739889oiw.11
+ for <kexec@lists.infradead.org>; Tue, 13 Aug 2019 14:14:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=bm7tpjWVOUDYZx97BncdSkZ9NvRhZO8YSsPPBr5vkok=;
- b=slazxnn157c/8d5NLixGKQHNLN7VTx1GaxxgepSJpk+EhBUjfJoNCOjXNoBlzwtTgz
- ATQMg1/p6wmxCiwn3NqDaSdbn0sOCgj18C/YAUSAxFH1lVQCg5+UIR6idPpfaL02EAZH
- IIEIw4YVgw2HCssS06onnz1SgWi3wxL7U0JMJr/iDDouwY06MoWIPdhHHDmKOO16YIkx
- j5G4kkndQqP76ENddQHpPGQGcFOITR7tjSD3KkUsaWPXuqX9KcbxTR2w0/9BFBqYyGaY
- 8WoBEUCB9UM2pRs0iCKC8r+peYhTnubEAyqgJUXHJQvwP1KZzcqzE6ODHz9/GnNc2FLx
- LSWg==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dKDSmvLGlrQvGQ3HAcUc+jYZcrzOl6LEyzfOGmw66eg=;
+ b=wWaZ80E8ic701AwAMCLjx2TnGOAHQCCFjXuWurI2gm+VOYbBbczSg5i2dEyfQtT5pW
+ 79rEMAT8Utt5JAUNpwPx6MfWZrUEmJE2KeH7D+W0KhEW98BT4aEA4zky18YxUcIXLtqS
+ hjeampT6KRv8p2kTtPu0cKl6pG/nVV1hYnWxKcpD2B6ODv19vOc30bc7R+LMyxmXWk0w
+ rzu4etwOfBjJ/Uhx5q22XVKLzvE8q91xCx2zSdVk++ArxbBTvUTyfOFC3ag5+iG/NKWY
+ h36q16QytfL0L6o7aaUamXNk83WLpMP69XB9sLIvkjS1v9ME4ovoYLgHep61INw1rs3p
+ OK+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=bm7tpjWVOUDYZx97BncdSkZ9NvRhZO8YSsPPBr5vkok=;
- b=tKfcV3P6K3JPkvCUyaD0Dt5+PaNrvOHVuVhwaQdrhlAsvAy0njeqSjvr2JBwBSwTzf
- M1Vv3WHRrIWUxfJysk5lhtxpzaUcybfvT0vQB72QAlPqWRDFgukyX1cJ2X292fADEUxe
- E6JkF18FxjSZ0H5MDET76OjfqwerLXGKSIIRaPDmtQnis5uzFYJxqI2TXajsV0ejTWHw
- D1fBJ3hyrLNd7fEzI1ktINtckX+dgBYy53Yhfr5gwv02MHLUw3QOQEKyxqtMILZrfSAF
- bvp4ciBDHj3NMiqaBoTxffjVdScI1eO6L5QTmAPVIpjEMuN5NcK3UEmWX2ZjV6MesBQI
- yDNg==
-X-Gm-Message-State: APjAAAX01QK0ZXUu1zS7+5Jw0J/ARSSVTJD88UvY64D0qrgQ8mLoDks1
- Jc7+bED0kV3Pt/JAKu9WWvDeVZOIj4PzDK+39DiR9w==
-X-Google-Smtp-Source: APXvYqzRVkooHVUD52Jj7apoZc5mIoEhdYnVm95g08oervUdSjOgObCJlOhYCdmCQD7I3YQEPRfXBlAg4kq7Nznq8SGZ4Q==
-X-Received: by 2002:a1f:ec41:: with SMTP id k62mr7315266vkh.32.1565724098096; 
- Tue, 13 Aug 2019 12:21:38 -0700 (PDT)
-Date: Tue, 13 Aug 2019 12:21:23 -0700
-In-Reply-To: <20190813192126.122370-1-matthewgarrett@google.com>
-Message-Id: <20190813192126.122370-4-matthewgarrett@google.com>
-Mime-Version: 1.0
-References: <20190813192126.122370-1-matthewgarrett@google.com>
-X-Mailer: git-send-email 2.23.0.rc1.153.gdeed80330f-goog
-Subject: [PATCH 3/6] Avoid build warning when !CONFIG_KEXEC_SIG
-From: Matthew Garrett <matthewgarrett@google.com>
-To: jmorris@namei.org
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dKDSmvLGlrQvGQ3HAcUc+jYZcrzOl6LEyzfOGmw66eg=;
+ b=gRSoThb8+lGOXNkP8KPUc/C+f6+7LCtrsXnwi9t3BblKZUyV1CvZB7F6rSFPT+30Uu
+ Hh70G5jbl6a/DIdLQ2Z+7O3gtzRQ0FxvkofmCk5GG6IBFdJos/D1Y0vJQde6p7wuqZFl
+ RG5y8Vk3jTESaIxz4AZmTNOWH/qsDtbTvSywWTeZ4469QbyMzsJSOjT4BDqWfuK1suC5
+ /zMF1L6yk5AnlOTgQYqhcLCEMb4lc6hSeYqtoark0fMxKMoBWIxhhoqogF7ynvZyr197
+ +5QAIqBgMfAmgF5g7EwvrCDPAdpwCg5N1dNOhk7GYx2AMk3PoV9O//uKEon5Za1L7biw
+ KG9g==
+X-Gm-Message-State: APjAAAVwl/bw710752LD55CV+d/CapNiONXycvjqekXbG8CX0JCpIJwI
+ 7MPTcOnGKj29Cg2U9VXaCV3jjEQuJogrkL/sBnjwqQ==
+X-Google-Smtp-Source: APXvYqzVA2T7ZdMRzxhi8u9+3TJma8PehaHGmmSWdzXEUAgIpTkSR/LYHzF1VqJEAa6skkBtzpfGgS5WHP4LS0znqoU=
+X-Received: by 2002:a05:6638:303:: with SMTP id
+ w3mr44762939jap.103.1565730879632; 
+ Tue, 13 Aug 2019 14:14:39 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190805083553.GA27708@dhcp-128-65.nay.redhat.com>
+ <CAKv+Gu-my6EpLfxBnbMn21be62oHrF6PKFu2rt-4Pqk9wG9SXA@mail.gmail.com>
+ <fbea659c-6e8f-b854-66d2-2c928d1d3783@redhat.com>
+In-Reply-To: <fbea659c-6e8f-b854-66d2-2c928d1d3783@redhat.com>
+From: Matthew Garrett <mjg59@google.com>
+Date: Tue, 13 Aug 2019 14:14:27 -0700
+Message-ID: <CACdnJusU7FKPFTz9MbXWvs-NHLX7bPLwkVynyK6cLxbxCNjrNQ@mail.gmail.com>
+Subject: Re: [PATCH] do not clean dummy variable in kexec path
+To: Laszlo Ersek <lersek@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190813_122140_737628_512FABC8 
-X-CRM114-Status: GOOD (  12.97  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20190813_141443_660916_2B13D58E 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -15.2 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-15.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -92,142 +96,65 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jiri Bohac <jbohac@suse.cz>, kexec@lists.infradead.org,
- Matthew Garrett <matthewgarrett@google.com>,
- Matthew Garrett <mjg59@google.com>, linux-security-module@vger.kernel.org,
- Dave Young <dyoung@redhat.com>
+Cc: kexec devel list <kexec@lists.infradead.org>,
+ Dave Young <dyoung@redhat.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Refactor the signature validation and lockdown integration a little in
-order to avoid an unused variable.
+On Tue, Aug 13, 2019 at 4:28 AM Laszlo Ersek <lersek@redhat.com> wrote:
+> (I verified yesterday, using the edk2 source code, that there is no
+> varstore reclaim after ExitBootServices(), indeed.)
 
-Signed-off-by: Matthew Garrett <mjg59@google.com>
-Cc: Jiri Bohac <jbohac@suse.cz>
-Cc: Dave Young <dyoung@redhat.com>
-Cc: kexec@lists.infradead.org
----
- kernel/kexec_file.c | 72 ++++++++++++++++++++++++++++-----------------
- 1 file changed, 45 insertions(+), 27 deletions(-)
+Some implementations do reclaim at runtime, in which case the
+create/delete dance will permit variable creation.
 
-diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-index be0c13076056..e878587715b9 100644
---- a/kernel/kexec_file.c
-+++ b/kernel/kexec_file.c
-@@ -177,36 +177,13 @@ void kimage_file_post_load_cleanup(struct kimage *image)
- 	image->image_loader_data = NULL;
- }
- 
--/*
-- * In file mode list of segments is prepared by kernel. Copy relevant
-- * data from user space, do error checking, prepare segment list
-- */
-+#ifdef CONFIG_KEXEC_SIG
- static int
--kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
--			     const char __user *cmdline_ptr,
--			     unsigned long cmdline_len, unsigned flags)
-+kimage_validate_signature(struct kimage *image)
- {
- 	const char *reason;
- 	int ret;
--	void *ldata;
--	loff_t size;
--
--	ret = kernel_read_file_from_fd(kernel_fd, &image->kernel_buf,
--				       &size, INT_MAX, READING_KEXEC_IMAGE);
--	if (ret)
--		return ret;
--	image->kernel_buf_len = size;
--
--	/* IMA needs to pass the measurement list to the next kernel. */
--	ima_add_kexec_buffer(image);
- 
--	/* Call arch image probe handlers */
--	ret = arch_kexec_kernel_image_probe(image, image->kernel_buf,
--					    image->kernel_buf_len);
--	if (ret)
--		goto out;
--
--#ifdef CONFIG_KEXEC_SIG
- 	ret = arch_kexec_kernel_verify_sig(image, image->kernel_buf,
- 					   image->kernel_buf_len);
- 	switch (ret) {
-@@ -228,7 +205,7 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
- 	decide:
- 		if (IS_ENABLED(CONFIG_KEXEC_SIG_FORCE)) {
- 			pr_notice("%s rejected\n", reason);
--			goto out;
-+			break;
- 		}
- 
- 		ret = 0;
-@@ -251,9 +228,44 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
- 		 */
- 	default:
- 		pr_notice("kernel signature verification failed (%d).\n", ret);
--		goto out;
-+		break;
- 	}
-+
-+	return ret;
-+}
-+#endif
-+
-+/*
-+ * In file mode list of segments is prepared by kernel. Copy relevant
-+ * data from user space, do error checking, prepare segment list
-+ */
-+static int
-+kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
-+			     const char __user *cmdline_ptr,
-+			     unsigned long cmdline_len, unsigned flags)
-+{
-+	int ret;
-+	void *ldata;
-+	loff_t size;
-+
-+	ret = kernel_read_file_from_fd(kernel_fd, &image->kernel_buf,
-+				       &size, INT_MAX, READING_KEXEC_IMAGE);
-+	if (ret)
-+		return ret;
-+	image->kernel_buf_len = size;
-+
-+	/* Call arch image probe handlers */
-+	ret = arch_kexec_kernel_image_probe(image, image->kernel_buf,
-+					    image->kernel_buf_len);
-+	if (ret)
-+		goto out;
-+
-+#ifdef CONFIG_KEXEC_SIG
-+	ret = kimage_validate_signature(image);
-+	if (ret)
-+		goto out;
- #endif
-+
- 	/* It is possible that there no initramfs is being loaded */
- 	if (!(flags & KEXEC_FILE_NO_INITRAMFS)) {
- 		ret = kernel_read_file_from_fd(initrd_fd, &image->initrd_buf,
-@@ -279,8 +291,14 @@ kimage_file_prepare_segments(struct kimage *image, int kernel_fd, int initrd_fd,
- 			ret = -EINVAL;
- 			goto out;
- 		}
-+
-+		ima_kexec_cmdline(image->cmdline_buf,
-+				  image->cmdline_buf_len - 1);
- 	}
- 
-+	/* IMA needs to pass the measurement list to the next kernel. */
-+	ima_add_kexec_buffer(image);
-+
- 	/* Call arch image load handlers */
- 	ldata = arch_kexec_kernel_image_load(image);
- 
--- 
-2.23.0.rc1.153.gdeed80330f-goog
+> (a) Attempting to delete the dummy variable in efi_enter_virtual_mode().
 
+To be clear, the dummy variable should never actually come into
+existence - we explicitly attempt to create a variable that's bigger
+than the available space, so the expectation is that it will always
+fail. However, should it somehow end up being created, there's a race
+between the creation and the deletion and so there's a (small) risk
+that the variable actually ends up there. The cleanup in
+enter_virtual_mode() is just there to ensure that anything that did
+end up being created on a previous boot is deleted - the expectation
+is that it'll be a noop.
+
+> (b) The following part, in efi_query_variable_store():
+>
+> +               /*
+> +                * The runtime code may now have triggered a garbage collection
+> +                * run, so check the variable info again
+> +                */
+>
+> Let me start with (b). That code is essentially dead, I would say, based
+> on the information that had already been captured in the commit message
+> of [1]. Reclaim would never happen after ExitBootServices(). (I assume
+> efi_query_variable_store() is only invoked after ExitBootServices(),
+> i.e., from kernel space proper -- sorry if that's a wrong assumption.)
+
+It's dead code on Tiano, but not on at least one vendor implementation.
+
+> Considering (a): what justified the attempt to delete the dummy variable
+> in efi_enter_virtual_mode(), in commit [4]? Was that meant as a
+> fail-safe just so we don't leave a dummy variable lying around?
+
+Yes.
+
+> So even if we consider the "clean DUMMY object" hunk from [4] a
+> justified fail-safe for the normal boot path, it doesn't apply to the
+> kexec path -- the cold-booted primary kernel will have gone through
+> those motions already, will it not?
+>
+> Therefore, we should do two things:
+>
+> - Remove the cleanup from the kexec path -- the cleanup logic from [4],
+>   even if justified for the cold boot path, should have never modified
+>   the kexec path.
+
+I agree that there's no benefit in it being called in the kexec path.
 
 _______________________________________________
 kexec mailing list
