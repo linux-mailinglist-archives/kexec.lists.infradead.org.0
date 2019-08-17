@@ -2,60 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EBDE90C58
-	for <lists+kexec@lfdr.de>; Sat, 17 Aug 2019 04:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB96590C59
+	for <lists+kexec@lfdr.de>; Sat, 17 Aug 2019 04:50:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rZ2m9A9AJYuQZJuKvASq9tKpGPEn979PXdAIYaGHeqc=; b=fJxLrQxWiwqrcX
-	VkJbB4XIhQTWh/t/mHJUV4Muwq78jjeJC3Eg1UhsXzruAUq5SrUIaDzKrTIYv+Lmd3EWCYbl6J5Wj
-	zvI3jHp+00nrwqpE2QVj5yTxRDR9+tObepD+mgCEJEbcD5KShQ+XKQSb9rCNfEdftc7mHD96p4tHv
-	+ELWWYxOAxRIGNwvedc8M3dCCHJPduWkF0LXjn4RweRAmtBt2XzvgGV10HgiYFk34+1Ha1zdTuaVP
-	7oZQ3uJ8TGqXZC15IJPs7RGZFlQhqqYZAnEtJd4iKHBeoemwfsAdMhGo8y0lkqJ/o9BsLHDMQKv/+
-	4Wmv8c1WT1v9QlfmTBUA==;
+	List-Owner; bh=zV7OtoxQLZUkTRFvpgmro7PaCQ1ZJr4UhhSgy9uXY2w=; b=mMPHuX95nRuXt3
+	S5hxGAm04nD0xqTOqEvXLfseFvWwrWHbVuUshOgnarvhQ7XaS7QIMN21vuMy0euYwhNBxONU/aaV/
+	/kk9wLfAZBTNH6YFjiyCgL8deyej76FXktCjmuST0pPw/7d2nXERUP9/1lBAy95TR1SBiMBYNQq1l
+	h0R3wjxQUFxiXaxMCcRWSAQAmxm0bLLoQ9AzGSeXts2yEKWIcV5ZJYiGCQextIOoyKWD4RduWfzxo
+	OEREqN21QqQrqS7pkLEZXphyxI1udJWyM3QnxZ/Ac3wGaAeZNU5yOZVW+IBwa1cZQap6wtzsvqcdy
+	Sjg2vuQh0cB04GDqGcCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hyonH-0006oU-2s; Sat, 17 Aug 2019 02:50:15 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1hyonZ-00075K-OE; Sat, 17 Aug 2019 02:50:33 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1hyoju-0002bJ-VH
- for kexec@lists.infradead.org; Sat, 17 Aug 2019 02:46:49 +0000
-Received: by mail-qt1-x844.google.com with SMTP id l9so8217096qtu.6
- for <kexec@lists.infradead.org>; Fri, 16 Aug 2019 19:46:46 -0700 (PDT)
+ id 1hyojx-0002fA-8v
+ for kexec@lists.infradead.org; Sat, 17 Aug 2019 02:46:51 +0000
+Received: by mail-qt1-x842.google.com with SMTP id e8so8203349qtp.7
+ for <kexec@lists.infradead.org>; Fri, 16 Aug 2019 19:46:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=Gnt8yazO3N8sExIXY3j+u+ZqminYZIsiqJs/+B6OhTk=;
- b=cWRB2kBTWh4/y+MMGqB3R/WWgZ7sLaFYtihcnoSwSt6r7xSqwl4+S+IhqH4xOnp0vq
- ySf3411CzGXNQBIcDU+KzwjgmaJLR7fVjhfDpEJc1SruBOh25M0jDoOVJaEMEKNOil/3
- hVbjYxlfCLhJGujq6rLK9H6BlMLoTORcd81nvMdoc2GpMEtVkgD/aXP06Luk6cE/7pE8
- AB7O6RFL6XiMdpb3vCKLa1UAsgPUVEnO7Rmp5pIjbq7MYSSI6BvECvUA2YzN0rp2JTgy
- j2Ay7njDh/dyDW5KG1tPtOgqTCJkiwYA7wdLnaoHh8kHEsapZh1ufoTOsXnD8g9n8gc7
- LJyA==
+ bh=vcaJ4zTl+6D0yKE3uLiz/QO0CeSTulCYT7w5yEztZY0=;
+ b=lG10X9SSn1tRgn3/bTvAZeIawFhvuYRMlXypEHuiPRigLonCNgxliQZq0fmfvD7OUG
+ LCmq9lECxIYDyHy4J2HfvYD6lY6o8xvYH7ZRR/200XY6PjXq3h1BPVov3DVBIHZxSqPu
+ uIjCUq7rFyRDV1gkDDFI1vCdYYn2EXYygCcPrgGtLWM96o7HG8AyMwmGF8tvUbCUy/uA
+ Ax1GBNbLtRb71+3D53JJeeasXPvXi817ayxYHG0/JS2q8v73tEBVCgqGPrU4I/FxqeMf
+ sVL4wBuOVIkAD0M8csR10mSWfB5e1okV4go9DnalFsY+aSL/l2GFisgid7TkcawMGtiN
+ av6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Gnt8yazO3N8sExIXY3j+u+ZqminYZIsiqJs/+B6OhTk=;
- b=YsL1kzp/+yJpMTgvV5y9fDP5o3Vey50KXFLmduuFyEkQf69nUaBq7dlUdit5FNJPHd
- 58JThqo55s1OkFqxst5+3E6Xsr38mBKgXkN/j9KCVvqRCqHlLuKbbKD6AGgCLVUZWRm6
- dIOlB/ySMg2dyPp4eHEEvbfgBykPgOF4aw96FLID34NkNda+8jaJU8vWGhKXy3tgf0m0
- s6ouRlul00xrrFRICGfrdFRWWNuowfQ59gmfJvLl3tTwWJN/rKuQlaU1bZNzXLqGNRtN
- dMgAxOiHQaelQrC7xOv0kyvkB1fOVQT8nt5E61772UyLLRWp+7poUdu0JHzDc5bX648b
- NEWA==
-X-Gm-Message-State: APjAAAWLNh69r1hyLkg7J1ePq01xcDD+zthqBjhGKZwSi9VgJmQeHdZl
- MmoNS5cB8V75pLqPa2Qq0RkY6g==
-X-Google-Smtp-Source: APXvYqxszzLWkK2VLd5S53W8Fb3b8NJFaWMc7fwLM8sjAjZ7hGYnI41xlk+tqmjFr45dPKaJJpbf2w==
-X-Received: by 2002:aed:31c2:: with SMTP id 60mr10402242qth.331.1566010005435; 
- Fri, 16 Aug 2019 19:46:45 -0700 (PDT)
+ bh=vcaJ4zTl+6D0yKE3uLiz/QO0CeSTulCYT7w5yEztZY0=;
+ b=NFtZ+V3/e6gvyEluPjhTjAVWC+M/bzfUkbb11KrsGNF6q6Yrafag+l6AOhKJXc001W
+ II8PwseVwdjKcaQSJUsOKECfXdPg6YaLT+Zl5GlrfLHGAAEmEcuuYPqu8Qp/J7KA8agz
+ mRIkzlRmjPwAuPskRGJZkvk8/s2cING02kjLfV1IbIkY04V+6VQEiR/o5aKAWucw/YX9
+ RT8DowIMLzyz7EV2V2Q7qjJ2mIej4NYr/EhAWBpZpLcqitHEV2BjTW4tCv1E0uxQse9T
+ V4Njq8nxkhJEpWyG2wrlbrC/tvElNN9cuEWKSbDq0Nvp4SBh+NdTJ/nw3NCBr/p7VT6+
+ jZoQ==
+X-Gm-Message-State: APjAAAVYHhvR3JWtY3g8zrMm8Nu6688Ep9URk9o1vqOP4sraqX6I5Qx7
+ AcuVDw/nc/7QNOgGsiRr+9vL+g==
+X-Google-Smtp-Source: APXvYqyNZpd0W3AMNMCKk4q7SsH5rd/d4f8oJJqXvYAt/o6ajzX6SCWNIehm2wiFx/MRe8t4k5tVFQ==
+X-Received: by 2002:aed:2d83:: with SMTP id i3mr11634343qtd.368.1566010008240; 
+ Fri, 16 Aug 2019 19:46:48 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id o9sm3454657qtr.71.2019.08.16.19.46.44
+ by smtp.gmail.com with ESMTPSA id o9sm3454657qtr.71.2019.08.16.19.46.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 16 Aug 2019 19:46:44 -0700 (PDT)
+ Fri, 16 Aug 2019 19:46:47 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -63,23 +63,24 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  will@kernel.org, linux-arm-kernel@lists.infradead.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org
-Subject: [PATCH v2 10/14] kexec: add machine_kexec_post_load()
-Date: Fri, 16 Aug 2019 22:46:25 -0400
-Message-Id: <20190817024629.26611-11-pasha.tatashin@soleen.com>
+Subject: [PATCH v2 12/14] arm64,
+ kexec: add expandable argument to relocation function
+Date: Fri, 16 Aug 2019 22:46:27 -0400
+Message-Id: <20190817024629.26611-13-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.22.1
 In-Reply-To: <20190817024629.26611-1-pasha.tatashin@soleen.com>
 References: <20190817024629.26611-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190816_194647_260027_B1445650 
-X-CRM114-Status: GOOD (  10.23  )
+X-CRM114-CacheID: sfid-20190816_194649_538841_3F72213A 
+X-CRM114-Status: GOOD (  18.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,80 +107,357 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-It is the same as machine_kexec_prepare(), but is called after segments are
-loaded. This way, can do processing work with already loaded relocation
-segments. One such example is arm64: it has to have segments loaded in
-order to create a page table, but it cannot do it during kexec time,
-because at that time allocations won't be possible anymore.
+Currently, kexec relocation function (arm64_relocate_new_kernel) accepts
+the following arguments:
+
+head:		start of array that contains relocation information.
+entry:		entry point for new kernel or purgatory.
+dtb_mem:	first and only argument to entry.
+
+The number of arguments cannot be easily expended, because this
+function is also called from HVC_SOFT_RESTART, which preserves only
+three arguments. And, also arm64_relocate_new_kernel is written in
+assembly but called without stack, thus no place to move extra
+arguments to free registers.
+
+Soon, we will need to pass more arguments: once we enable MMU we
+will need to pass information about page tables.
+
+Another benefit of allowing this function to accept more arguments, is that
+kernel can actually accept up to 4 arguments (x0-x3), however currently
+only one is used, but if in the future we will need for more (for example,
+pass information about when previous kernel exited to have a precise
+measurement in time spent in purgatory), we won't be easilty do that
+if arm64_relocate_new_kernel can't accept more arguments.
+
+So, add a new struct: kern_reloc_arg, and place it in kexec safe page (i.e
+memory that is not overwritten during relocation).
+Thus, make arm64_relocate_new_kernel to only take one argument, that
+contains all the needed information.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- kernel/kexec.c          | 4 ++++
- kernel/kexec_core.c     | 6 ++++++
- kernel/kexec_file.c     | 4 ++++
- kernel/kexec_internal.h | 2 ++
- 4 files changed, 16 insertions(+)
+ arch/arm64/include/asm/kexec.h      | 18 ++++++
+ arch/arm64/kernel/asm-offsets.c     |  9 +++
+ arch/arm64/kernel/cpu-reset.S       |  4 +-
+ arch/arm64/kernel/cpu-reset.h       |  8 +--
+ arch/arm64/kernel/machine_kexec.c   | 28 ++++++++-
+ arch/arm64/kernel/relocate_kernel.S | 88 ++++++++++-------------------
+ 6 files changed, 86 insertions(+), 69 deletions(-)
 
-diff --git a/kernel/kexec.c b/kernel/kexec.c
-index 1b018f1a6e0d..27b71dc7b35a 100644
---- a/kernel/kexec.c
-+++ b/kernel/kexec.c
-@@ -159,6 +159,10 @@ static int do_kexec_load(unsigned long entry, unsigned long nr_segments,
+diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
+index d15ca1ca1e83..d5b79d4c7fae 100644
+--- a/arch/arm64/include/asm/kexec.h
++++ b/arch/arm64/include/asm/kexec.h
+@@ -90,12 +90,30 @@ static inline void crash_prepare_suspend(void) {}
+ static inline void crash_post_resume(void) {}
+ #endif
  
- 	kimage_terminate(image);
- 
-+	ret = machine_kexec_post_load(image);
-+	if (ret)
-+		goto out;
++/*
++ * kern_reloc_arg is passed to kernel relocation function as an argument.
++ * head		kimage->head, allows to traverse through relocation segments.
++ * entry_addr	kimage->start, where to jump from relocation function (new
++ *		kernel, or purgatory entry address).
++ * kern_arg0	first argument to kernel is its dtb address. The other
++ *		arguments are currently unused, and must be set to 0
++ */
++struct kern_reloc_arg {
++	unsigned long	head;
++	unsigned long	entry_addr;
++	unsigned long	kern_arg0;
++	unsigned long	kern_arg1;
++	unsigned long	kern_arg2;
++	unsigned long	kern_arg3;
++};
 +
- 	/* Install the new kernel and uninstall the old */
- 	image = xchg(dest_image, image);
+ #define ARCH_HAS_KIMAGE_ARCH
  
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index 2c5b72863b7b..8360645d1bbe 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -587,6 +587,12 @@ static void kimage_free_extra_pages(struct kimage *image)
- 	kimage_free_page_list(&image->unusable_pages);
- 
- }
-+
-+int __weak machine_kexec_post_load(struct kimage *image)
-+{
-+	return 0;
-+}
-+
- void kimage_terminate(struct kimage *image)
- {
- 	if (*image->entry != 0)
-diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-index b8cc032d5620..cb531d768114 100644
---- a/kernel/kexec_file.c
-+++ b/kernel/kexec_file.c
-@@ -391,6 +391,10 @@ SYSCALL_DEFINE5(kexec_file_load, int, kernel_fd, int, initrd_fd,
- 
- 	kimage_terminate(image);
- 
-+	ret = machine_kexec_post_load(image);
-+	if (ret)
-+		goto out;
-+
- 	/*
- 	 * Free up any temporary buffers allocated which are not needed
- 	 * after image has been loaded
-diff --git a/kernel/kexec_internal.h b/kernel/kexec_internal.h
-index 48aaf2ac0d0d..39d30ccf8d87 100644
---- a/kernel/kexec_internal.h
-+++ b/kernel/kexec_internal.h
-@@ -13,6 +13,8 @@ void kimage_terminate(struct kimage *image);
- int kimage_is_destination_range(struct kimage *image,
- 				unsigned long start, unsigned long end);
- 
-+int machine_kexec_post_load(struct kimage *image);
-+
- extern struct mutex kexec_mutex;
+ struct kimage_arch {
+ 	void *dtb;
+ 	unsigned long dtb_mem;
+ 	unsigned long kern_reloc;
++	unsigned long kern_reloc_arg;
+ };
  
  #ifdef CONFIG_KEXEC_FILE
+diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+index 214685760e1c..900394907fd8 100644
+--- a/arch/arm64/kernel/asm-offsets.c
++++ b/arch/arm64/kernel/asm-offsets.c
+@@ -23,6 +23,7 @@
+ #include <asm/suspend.h>
+ #include <linux/kbuild.h>
+ #include <linux/arm-smccc.h>
++#include <linux/kexec.h>
+ 
+ int main(void)
+ {
+@@ -126,6 +127,14 @@ int main(void)
+ #ifdef CONFIG_ARM_SDE_INTERFACE
+   DEFINE(SDEI_EVENT_INTREGS,	offsetof(struct sdei_registered_event, interrupted_regs));
+   DEFINE(SDEI_EVENT_PRIORITY,	offsetof(struct sdei_registered_event, priority));
++#endif
++#ifdef CONFIG_KEXEC_CORE
++  DEFINE(KRELOC_HEAD,		offsetof(struct kern_reloc_arg, head));
++  DEFINE(KRELOC_ENTRY_ADDR,	offsetof(struct kern_reloc_arg, entry_addr));
++  DEFINE(KRELOC_KERN_ARG0,	offsetof(struct kern_reloc_arg, kern_arg0));
++  DEFINE(KRELOC_KERN_ARG1,	offsetof(struct kern_reloc_arg, kern_arg1));
++  DEFINE(KRELOC_KERN_ARG2,	offsetof(struct kern_reloc_arg, kern_arg2));
++  DEFINE(KRELOC_KERN_ARG3,	offsetof(struct kern_reloc_arg, kern_arg3));
+ #endif
+   return 0;
+ }
+diff --git a/arch/arm64/kernel/cpu-reset.S b/arch/arm64/kernel/cpu-reset.S
+index 6ea337d464c4..64c78a42919f 100644
+--- a/arch/arm64/kernel/cpu-reset.S
++++ b/arch/arm64/kernel/cpu-reset.S
+@@ -43,9 +43,7 @@ ENTRY(__cpu_soft_restart)
+ 	hvc	#0				// no return
+ 
+ 1:	mov	x18, x1				// entry
+-	mov	x0, x2				// arg0
+-	mov	x1, x3				// arg1
+-	mov	x2, x4				// arg2
++	mov	x0, x2				// arg
+ 	br	x18
+ ENDPROC(__cpu_soft_restart)
+ 
+diff --git a/arch/arm64/kernel/cpu-reset.h b/arch/arm64/kernel/cpu-reset.h
+index ed50e9587ad8..7a8720ff186f 100644
+--- a/arch/arm64/kernel/cpu-reset.h
++++ b/arch/arm64/kernel/cpu-reset.h
+@@ -11,12 +11,10 @@
+ #include <asm/virt.h>
+ 
+ void __cpu_soft_restart(unsigned long el2_switch, unsigned long entry,
+-	unsigned long arg0, unsigned long arg1, unsigned long arg2);
++			unsigned long arg);
+ 
+ static inline void __noreturn cpu_soft_restart(unsigned long entry,
+-					       unsigned long arg0,
+-					       unsigned long arg1,
+-					       unsigned long arg2)
++					       unsigned long arg)
+ {
+ 	typeof(__cpu_soft_restart) *restart;
+ 
+@@ -25,7 +23,7 @@ static inline void __noreturn cpu_soft_restart(unsigned long entry,
+ 	restart = (void *)__pa_symbol(__cpu_soft_restart);
+ 
+ 	cpu_install_idmap();
+-	restart(el2_switch, entry, arg0, arg1, arg2);
++	restart(el2_switch, entry, arg);
+ 	unreachable();
+ }
+ 
+diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
+index 9b41da50e6f7..d745ea2051df 100644
+--- a/arch/arm64/kernel/machine_kexec.c
++++ b/arch/arm64/kernel/machine_kexec.c
+@@ -43,6 +43,7 @@ static void _kexec_image_info(const char *func, int line,
+ 	pr_debug("    head:        %lx\n", kimage->head);
+ 	pr_debug("    nr_segments: %lu\n", kimage->nr_segments);
+ 	pr_debug("    kern_reloc: %pa\n", &kimage->arch.kern_reloc);
++	pr_debug("    kern_reloc_arg: %pa\n", &kimage->arch.kern_reloc_arg);
+ 
+ 	for (i = 0; i < kimage->nr_segments; i++) {
+ 		pr_debug("      segment[%lu]: %016lx - %016lx, 0x%lx bytes, %lu pages\n",
+@@ -59,14 +60,38 @@ void machine_kexec_cleanup(struct kimage *kimage)
+ 	/* Empty routine needed to avoid build errors. */
+ }
+ 
++/* Allocates pages for kexec page table */
++static void *kexec_page_alloc(void *arg)
++{
++	struct kimage *kimage = (struct kimage *)arg;
++	struct page *page = kimage_alloc_control_pages(kimage, 0);
++
++	if (!page)
++		return NULL;
++
++	return page_address(page);
++}
++
+ int machine_kexec_post_load(struct kimage *kimage)
+ {
+ 	unsigned long kern_reloc;
++	struct kern_reloc_arg *kern_reloc_arg;
+ 
+ 	kern_reloc = page_to_phys(kimage->control_code_page);
+ 	memcpy(__va(kern_reloc), arm64_relocate_new_kernel,
+ 	       arm64_relocate_new_kernel_size);
++
++	kern_reloc_arg = kexec_page_alloc(kimage);
++	if (!kern_reloc_arg)
++		return -ENOMEM;
++	memset(kern_reloc_arg, 0, sizeof(struct kern_reloc_arg));
++
+ 	kimage->arch.kern_reloc = kern_reloc;
++	kimage->arch.kern_reloc_arg = __pa(kern_reloc_arg);
++
++	kern_reloc_arg->head = kimage->head;
++	kern_reloc_arg->entry_addr = kimage->start;
++	kern_reloc_arg->kern_arg0 = kimage->arch.dtb_mem;
+ 
+ 	kexec_image_info(kimage);
+ 	return 0;
+@@ -203,8 +228,7 @@ void machine_kexec(struct kimage *kimage)
+ 	 * userspace (kexec-tools).
+ 	 * In kexec_file case, the kernel starts directly without purgatory.
+ 	 */
+-	cpu_soft_restart(kimage->arch.kern_reloc, kimage->head, kimage->start,
+-			 kimage->arch.dtb_mem);
++	cpu_soft_restart(kimage->arch.kern_reloc, kimage->arch.kern_reloc_arg);
+ 
+ 	BUG(); /* Should never get here. */
+ }
+diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+index c1d7db71a726..d352faf7cbe6 100644
+--- a/arch/arm64/kernel/relocate_kernel.S
++++ b/arch/arm64/kernel/relocate_kernel.S
+@@ -8,7 +8,7 @@
+ 
+ #include <linux/kexec.h>
+ #include <linux/linkage.h>
+-
++#include <asm/asm-offsets.h>
+ #include <asm/assembler.h>
+ #include <asm/kexec.h>
+ #include <asm/page.h>
+@@ -17,86 +17,58 @@
+ /*
+  * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
+  *
+- * The memory that the old kernel occupies may be overwritten when coping the
++ * The memory that the old kernel occupies may be overwritten when copying the
+  * new image to its final location.  To assure that the
+  * arm64_relocate_new_kernel routine which does that copy is not overwritten,
+  * all code and data needed by arm64_relocate_new_kernel must be between the
+  * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
+  * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
+- * control_code_page, a special page which has been set up to be preserved
+- * during the copy operation.
++ * safe memory that has been set up to be preserved during the copy operation.
+  */
+ ENTRY(arm64_relocate_new_kernel)
+-
+-	/* Setup the list loop variables. */
+-	mov	x18, x2				/* x18 = dtb address */
+-	mov	x17, x1				/* x17 = kimage_start */
+-	mov	x16, x0				/* x16 = kimage_head */
+-	raw_dcache_line_size x15, x0		/* x15 = dcache line size */
+-	mov	x14, xzr			/* x14 = entry ptr */
+-	mov	x13, xzr			/* x13 = copy dest */
+-
+ 	/* Clear the sctlr_el2 flags. */
+-	mrs	x0, CurrentEL
+-	cmp	x0, #CurrentEL_EL2
++	mrs	x2, CurrentEL
++	cmp	x2, #CurrentEL_EL2
+ 	b.ne	1f
+-	mrs	x0, sctlr_el2
++	mrs	x2, sctlr_el2
+ 	ldr	x1, =SCTLR_ELx_FLAGS
+-	bic	x0, x0, x1
++	bic	x2, x2, x1
+ 	pre_disable_mmu_workaround
+-	msr	sctlr_el2, x0
++	msr	sctlr_el2, x2
+ 	isb
+-1:
+-
+-	/* Check if the new image needs relocation. */
++1:	/* Check if the new image needs relocation. */
++	ldr	x16, [x0, #KRELOC_HEAD]		/* x16 = kimage_head */
+ 	tbnz	x16, IND_DONE_BIT, .Ldone
+-
++	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
+ .Lloop:
+ 	and	x12, x16, PAGE_MASK		/* x12 = addr */
+-
+ 	/* Test the entry flags. */
+ .Ltest_source:
+ 	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
+ 
+ 	/* Invalidate dest page to PoC. */
+-	mov     x0, x13
+-	add     x20, x0, #PAGE_SIZE
++	mov     x2, x13
++	add     x20, x2, #PAGE_SIZE
+ 	sub     x1, x15, #1
+-	bic     x0, x0, x1
+-2:	dc      ivac, x0
+-	add     x0, x0, x15
+-	cmp     x0, x20
++	bic     x2, x2, x1
++2:	dc      ivac, x2
++	add     x2, x2, x15
++	cmp     x2, x20
+ 	b.lo    2b
+ 	dsb     sy
+ 
+-	mov x20, x13
+-	mov x21, x12
+-	copy_page x20, x21, x0, x1, x2, x3, x4, x5, x6, x7
+-
+-	/* dest += PAGE_SIZE */
+-	add	x13, x13, PAGE_SIZE
++	copy_page x13, x12, x1, x2, x3, x4, x5, x6, x7, x8
+ 	b	.Lnext
+-
+ .Ltest_indirection:
+ 	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
+-
+-	/* ptr = addr */
+-	mov	x14, x12
++	mov	x14, x12			/* ptr = addr */
+ 	b	.Lnext
+-
+ .Ltest_destination:
+ 	tbz	x16, IND_DESTINATION_BIT, .Lnext
+-
+-	/* dest = addr */
+-	mov	x13, x12
+-
++	mov	x13, x12			/* dest = addr */
+ .Lnext:
+-	/* entry = *ptr++ */
+-	ldr	x16, [x14], #8
+-
+-	/* while (!(entry & DONE)) */
+-	tbz	x16, IND_DONE_BIT, .Lloop
+-
++	ldr	x16, [x14], #8			/* entry = *ptr++ */
++	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
+ .Ldone:
+ 	/* wait for writes from copy_page to finish */
+ 	dsb	nsh
+@@ -105,18 +77,16 @@ ENTRY(arm64_relocate_new_kernel)
+ 	isb
+ 
+ 	/* Start new image. */
+-	mov	x0, x18
+-	mov	x1, xzr
+-	mov	x2, xzr
+-	mov	x3, xzr
+-	br	x17
+-
+-ENDPROC(arm64_relocate_new_kernel)
++	ldr	x4, [x0, #KRELOC_ENTRY_ADDR]	/* x4 = kimage_start */
++	ldr	x3, [x0, #KRELOC_KERN_ARG3]
++	ldr	x2, [x0, #KRELOC_KERN_ARG2]
++	ldr	x1, [x0, #KRELOC_KERN_ARG1]
++	ldr	x0, [x0, #KRELOC_KERN_ARG0]	/* x0 = dtb address */
++	br	x4
++END(arm64_relocate_new_kernel)
+ 
+ .ltorg
+-
+ .align 3	/* To keep the 64-bit values below naturally aligned. */
+-
+ .Lcopy_end:
+ .org	KEXEC_CONTROL_PAGE_SIZE
+ 
 -- 
 2.22.1
 
