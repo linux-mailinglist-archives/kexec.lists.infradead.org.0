@@ -2,47 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81CEE9490A
-	for <lists+kexec@lfdr.de>; Mon, 19 Aug 2019 17:50:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9282A9494C
+	for <lists+kexec@lfdr.de>; Mon, 19 Aug 2019 17:58:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8Vs4dIdK9VhQ8f8hrNGthvVbfTrGFE8GFt4w+6H56sI=; b=XFy19j1U+u/8mS
-	lWeiF3KS/7TR3zkZoD4n7pAyYPDI9eDJU8a5tKs+kbVLfnNWpQp4XMXDpxrMvX4267lEZZ3+MyOMR
-	W/6eV4k5c0Fey0By2vC6cWEjn3s5a3lqPcVAYOu1HJB61SBDOLEMFM1pe84LbGGfCdAYkWAjEZ+EC
-	NfOJs2cS4jJ7lc0u2NB8tyrkfkwllZ9GHLWIOIPOHiHIYGV4XJMED/DH+udJ1p1dlrbstWCaVfZZ3
-	o3YRmbtKxSaQONcc6ib/oRgEQIOuDpyvUBQYqD5R/fDcmsc8EQ3ecsUYt2HjMG/0WjabQnR+mhuKu
-	gXib/2WH+5VeIftaafAQ==;
+	List-Owner; bh=3SpzFnsCPtIF4YS1Em4/TJBkL/CtAoy+E3PtRgpUnMc=; b=h+LWxxssW4DbGN
+	l7UCwp5HaTHKpGkql2NTjUuwfu+pE+D7RmF5ig5qAritCBJmRb/Xz15mcBCFJFfw1pkEkzRkJNrpi
+	HQWMlCmvbzrftMapSruxedrc+Rpb+ap8Ci8snk0aRaYyyuRPYKgkd5QWcu5vTkqaJw9Wjq1ULmHcS
+	EfiXI52GJMLkU2qquP1smxLMkA2QqE91VRmtcYIm02mCodpUjjzXtZbU0/GTvL0jMQqIC7zH3qVCi
+	jn74w1AbT1n2kJVKXZnSlhlnbZVb1DItyzO6tqf+IPMJQydNf94+uNPjHvc8Y+qMe2bLFTsE8x70R
+	dJ88xov+iPAJVs3ZqUYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hzjvK-0005VW-Do; Mon, 19 Aug 2019 15:50:22 +0000
+	id 1hzk3E-00004q-Md; Mon, 19 Aug 2019 15:58:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1hzjvH-0005Uf-G3; Mon, 19 Aug 2019 15:50:20 +0000
+ id 1hzk3B-0008Vl-Db; Mon, 19 Aug 2019 15:58:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C28B3344;
- Mon, 19 Aug 2019 08:50:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D4C5A344;
+ Mon, 19 Aug 2019 08:58:28 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF6643F718;
- Mon, 19 Aug 2019 08:50:16 -0700 (PDT)
-Date: Mon, 19 Aug 2019 16:50:14 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D1D7B3F718;
+ Mon, 19 Aug 2019 08:58:26 -0700 (PDT)
+Date: Mon, 19 Aug 2019 16:58:24 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
-Subject: Re: [PATCH v2 02/14] arm64, hibernate: create_safe_exec_page cleanup
-Message-ID: <20190819155014.GD9927@lakrids.cambridge.arm.com>
+Subject: Re: [PATCH v2 03/14] arm64, hibernate: add trans_table public
+ functions
+Message-ID: <20190819155824.GE9927@lakrids.cambridge.arm.com>
 References: <20190817024629.26611-1-pasha.tatashin@soleen.com>
- <20190817024629.26611-3-pasha.tatashin@soleen.com>
+ <20190817024629.26611-4-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190817024629.26611-3-pasha.tatashin@soleen.com>
+In-Reply-To: <20190817024629.26611-4-pasha.tatashin@soleen.com>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190819_085019_583979_B110A078 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20190819_085829_553184_B2C9E0A5 
+X-CRM114-Status: GOOD (  22.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,69 +72,172 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 10:46:17PM -0400, Pavel Tatashin wrote:
-> create_safe_exec_page() is going to be split into two parts in preparation
-> of moving page table handling code out of hibernate.c
-> 
-> Remove allocator parameter, and rename dst to page. Also, remove the
-> goto's, as we can return directly without cleanups.
+On Fri, Aug 16, 2019 at 10:46:18PM -0400, Pavel Tatashin wrote:
+> trans_table_create_copy() and trans_table_map_page() are going to be
+> the basis for public interface of new subsystem that handles page
+> tables for cases which are between kernels: kexec, and hibernate.
 
-It would be nice if you could do the goto/allocator/rename changes as
-separate patches, since it's vastly easier to verify each change in
-isolation that way.
+While the architecture uses the term 'translation table', in the kernel
+we generally use 'pgdir' or 'pgd' to refer to the tables, so please keep
+to that naming scheme.
 
-What's the point of the rename? It's inconsistent with the phys_dst_addr
-that you leave as-is, so I'm not sure that's worthwhile.
+For example, in arch/arm64/mm/mmu.c we have a somewhat analagous
+function called create_pgd_mapping() -- could we use that here, to crate
+the mapping?
+
+Thanks,
+Mark.
 
 > 
 > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 > ---
->  arch/arm64/kernel/hibernate.c | 60 +++++++++++++++--------------------
->  1 file changed, 26 insertions(+), 34 deletions(-)
+>  arch/arm64/kernel/hibernate.c | 96 ++++++++++++++++++++++-------------
+>  1 file changed, 61 insertions(+), 35 deletions(-)
 > 
 > diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> index 9341fcc6e809..96b6f8da7e49 100644
+> index 96b6f8da7e49..449d69b5651c 100644
 > --- a/arch/arm64/kernel/hibernate.c
 > +++ b/arch/arm64/kernel/hibernate.c
-> @@ -196,57 +196,51 @@ EXPORT_SYMBOL(arch_hibernation_header_restore);
->   */
->  static int create_safe_exec_page(void *src_start, size_t length,
->  				 unsigned long dst_addr,
-> -				 phys_addr_t *phys_dst_addr,
-> -				 void *(*allocator)(gfp_t mask),
-> -				 gfp_t mask)
-> +				 phys_addr_t *phys_dst_addr)
+> @@ -182,39 +182,15 @@ int arch_hibernation_header_restore(void *addr)
+>  }
+>  EXPORT_SYMBOL(arch_hibernation_header_restore);
+>  
+> -/*
+> - * Copies length bytes, starting at src_start into an new page,
+> - * perform cache maintentance, then maps it at the specified address low
+> - * address as executable.
+> - *
+> - * This is used by hibernate to copy the code it needs to execute when
+> - * overwriting the kernel text. This function generates a new set of page
+> - * tables, which it loads into ttbr0.
+> - *
+> - * Length is provided as we probably only want 4K of data, even on a 64K
+> - * page system.
+> - */
+> -static int create_safe_exec_page(void *src_start, size_t length,
+> -				 unsigned long dst_addr,
+> -				 phys_addr_t *phys_dst_addr)
+> +int trans_table_map_page(pgd_t *trans_table, void *page,
+> +			 unsigned long dst_addr,
+> +			 pgprot_t pgprot)
 >  {
-> -	int rc = 0;
+> -	void *page = (void *)get_safe_page(GFP_ATOMIC);
+> -	pgd_t *trans_table;
+>  	pgd_t *pgdp;
+>  	pud_t *pudp;
+>  	pmd_t *pmdp;
+>  	pte_t *ptep;
+>  
+> -	if (!page)
+> -		return -ENOMEM;
+> -
+> -	memcpy((void *)page, src_start, length);
+> -	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
+> -
+> -	trans_table = (void *)get_safe_page(GFP_ATOMIC);
+> -	if (!trans_table)
+> -		return -ENOMEM;
+> -
+>  	pgdp = pgd_offset_raw(trans_table, dst_addr);
+>  	if (pgd_none(READ_ONCE(*pgdp))) {
+>  		pudp = (void *)get_safe_page(GFP_ATOMIC);
+> @@ -242,6 +218,44 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	ptep = pte_offset_kernel(pmdp, dst_addr);
+>  	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
+>  
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Copies length bytes, starting at src_start into an new page,
+> + * perform cache maintentance, then maps it at the specified address low
+> + * address as executable.
+> + *
+> + * This is used by hibernate to copy the code it needs to execute when
+> + * overwriting the kernel text. This function generates a new set of page
+> + * tables, which it loads into ttbr0.
+> + *
+> + * Length is provided as we probably only want 4K of data, even on a 64K
+> + * page system.
+> + */
+> +static int create_safe_exec_page(void *src_start, size_t length,
+> +				 unsigned long dst_addr,
+> +				 phys_addr_t *phys_dst_addr)
+> +{
 > +	void *page = (void *)get_safe_page(GFP_ATOMIC);
 > +	pgd_t *trans_table;
-
-The addition of this trans_table variable wasn't mentioned in the commit
-message...
-
+> +	int rc;
+> +
+> +	if (!page)
+> +		return -ENOMEM;
+> +
+> +	memcpy(page, src_start, length);
+> +	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
+> +
 > +	trans_table = (void *)get_safe_page(GFP_ATOMIC);
 > +	if (!trans_table)
 > +		return -ENOMEM;
+> +
+> +	rc = trans_table_map_page(trans_table, page, dst_addr,
+> +				  PAGE_KERNEL_EXEC);
+> +	if (rc)
+> +		return rc;
+> +
+>  	/*
+>  	 * Load our new page tables. A strict BBM approach requires that we
+>  	 * ensure that TLBs are free of any entries that may overlap with the
+> @@ -259,7 +273,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	write_sysreg(phys_to_ttbr(virt_to_phys(trans_table)), ttbr0_el1);
+>  	isb();
 >  
-> -	pgdp = pgd_offset_raw(allocator(mask), dst_addr);
-> +	pgdp = pgd_offset_raw(trans_table, dst_addr);
-
-> -	write_sysreg(phys_to_ttbr(virt_to_phys(pgdp)), ttbr0_el1);
-> +	write_sysreg(phys_to_ttbr(virt_to_phys(trans_table)), ttbr0_el1);
-
-
-... and I guess you're trying to ensure that we program the TTBR with
-the correct base address, without the offset of whatever pgd entry we
-happen to have plumbed in?
-
-I think that's a fix, and should come before any other cleanup or
-rework.
-
-If you can respin that specific change with s/trans_table/pgdir/, that
-would make sense to me.
-
-Thanks,
-Mark.
+> -	*phys_dst_addr = virt_to_phys((void *)page);
+> +	*phys_dst_addr = virt_to_phys(page);
+>  
+>  	return 0;
+>  }
+> @@ -462,6 +476,24 @@ static int copy_page_tables(pgd_t *dst_pgdp, unsigned long start,
+>  	return 0;
+>  }
+>  
+> +int trans_table_create_copy(pgd_t **dst_pgdp, unsigned long start,
+> +			    unsigned long end)
+> +{
+> +	int rc;
+> +	pgd_t *trans_table = (pgd_t *)get_safe_page(GFP_ATOMIC);
+> +
+> +	if (!trans_table) {
+> +		pr_err("Failed to allocate memory for temporary page tables.\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	rc = copy_page_tables(trans_table, start, end);
+> +	if (!rc)
+> +		*dst_pgdp = trans_table;
+> +
+> +	return rc;
+> +}
+> +
+>  /*
+>   * Setup then Resume from the hibernate image using swsusp_arch_suspend_exit().
+>   *
+> @@ -483,13 +515,7 @@ int swsusp_arch_resume(void)
+>  	 * Create a second copy of just the linear map, and use this when
+>  	 * restoring.
+>  	 */
+> -	tmp_pg_dir = (pgd_t *)get_safe_page(GFP_ATOMIC);
+> -	if (!tmp_pg_dir) {
+> -		pr_err("Failed to allocate memory for temporary page tables.\n");
+> -		rc = -ENOMEM;
+> -		goto out;
+> -	}
+> -	rc = copy_page_tables(tmp_pg_dir, PAGE_OFFSET, 0);
+> +	rc = trans_table_create_copy(&tmp_pg_dir, PAGE_OFFSET, 0);
+>  	if (rc)
+>  		goto out;
+>  
+> -- 
+> 2.22.1
+> 
 
 _______________________________________________
 kexec mailing list
