@@ -2,101 +2,94 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C029396EB5
-	for <lists+kexec@lfdr.de>; Wed, 21 Aug 2019 03:13:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C934982F1
+	for <lists+kexec@lfdr.de>; Wed, 21 Aug 2019 20:33:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=tDtURnY4+/biDPWJ1uko9yK7ohDl877meaDIhCi/0qU=; b=SoU0i6r3Y+60uOVvD5UEFWGP/y
-	FucxmrbQwHFb8s4pQyuTuRUZPJ/3rzS4M24GOVU1L6nWyGGOVbs2pZGRpKbj83vvXB7HC/N3IERkY
-	maa8Tj18VPsTXORoMV4ftzJreXB4pPJbQXuFP8eWvPdEFELqqltgCQbCnPWt5pd2jK8R70lvKmR7r
-	uX0x0/DmtokorBVe0nndZwo5FAkbNBJ9ADo3m04uz/molZMNRVC1txh7gNAI5AoWb1wy1zu+A819B
-	1/Pl0YDm2VDel6c+oTdUys2QzhGT0E44vGdr4axVEt5PgbhaxvXr+l0t3h8v6GgIkypoaCUz6pgB/
-	aX5ZMgIw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Rvkvuh7U8RecRb+/hTQNBLpCJwMpVDnv/+b7+RBUBEM=; b=jDtIpLBOasaZiY
+	BmeLQLD/c+FFY/T5XQPSvPB87XsPuZLHzOOnqsThSABkfKGOZk4+ir4LNj6q589/UDFtd/APxM2GP
+	0uEzt3LUSpDqoBozlq1NNhGoRsrGjyj60NjoTWia+4WpsqVqVgJq3GzWI75ytjfUFF8pQ4Jk5ahyW
+	tTUvKZ8Kz1/Y5/GPaj9VCrxc4recUddUTYjpgCmK1fXruT5jdH61FWaSemngKzVwiHUgVxF20XU9N
+	yI7g5M+rG75r5H9Gb9gGbXsrYG6wcJeM49T1qSQVi+i4TKGD+ay+Q2rpTrryjXbhOlTj15gWgW5wV
+	pKjlj1OlQpOETfzPrh0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0FBd-0006Rb-2d; Wed, 21 Aug 2019 01:13:17 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1i0VPs-00051C-Op; Wed, 21 Aug 2019 18:33:04 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0FBZ-0006RG-EZ
- for kexec@lists.infradead.org; Wed, 21 Aug 2019 01:13:14 +0000
-Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7L1CW6T075466
- for <kexec@lists.infradead.org>; Tue, 20 Aug 2019 21:13:12 -0400
-Received: from e34.co.us.ibm.com (e34.co.us.ibm.com [32.97.110.152])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2ugsqwvrn6-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <kexec@lists.infradead.org>; Tue, 20 Aug 2019 21:13:12 -0400
-Received: from localhost
- by e34.co.us.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <kexec@lists.infradead.org> from <bauerman@linux.ibm.com>;
- Wed, 21 Aug 2019 02:13:11 +0100
-Received: from b03cxnp08026.gho.boulder.ibm.com (9.17.130.18)
- by e34.co.us.ibm.com (192.168.1.134) with IBM ESMTP SMTP Gateway: Authorized
- Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 21 Aug 2019 02:13:08 +0100
-Received: from b03ledav006.gho.boulder.ibm.com
- (b03ledav006.gho.boulder.ibm.com [9.17.130.237])
- by b03cxnp08026.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7L1D7E835062186
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 01:13:07 GMT
-Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 16B88C6057;
- Wed, 21 Aug 2019 01:13:07 +0000 (GMT)
-Received: from b03ledav006.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id BDA45C6055;
- Wed, 21 Aug 2019 01:13:05 +0000 (GMT)
-Received: from morokweng.localdomain (unknown [9.85.187.8])
- by b03ledav006.gho.boulder.ibm.com (Postfix) with ESMTPS;
- Wed, 21 Aug 2019 01:13:05 +0000 (GMT)
-References: <20190715082702.27308-1-svens@stackframe.org>
- <20190715082702.27308-5-svens@stackframe.org>
- <87v9urmixq.fsf@morokweng.localdomain>
-User-agent: mu4e 1.2.0; emacs 26.2
-From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-To: kexec@lists.infradead.org
-Subject: Re: [PATCH v4 4/7] kexec_elf: remove PURGATORY_STACK_SIZE
-In-reply-to: <87v9urmixq.fsf@morokweng.localdomain>
-Date: Tue, 20 Aug 2019 22:13:01 -0300
+ id 1i0VOz-0003xc-Gt
+ for kexec@lists.infradead.org; Wed, 21 Aug 2019 18:32:12 +0000
+Received: by mail-qk1-x744.google.com with SMTP id d79so2695190qke.11
+ for <kexec@lists.infradead.org>; Wed, 21 Aug 2019 11:32:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3VISVZWuGNTiVd6JKqfbutJFN34lrqN05fvYPH9Kreg=;
+ b=HHJukI5cKFcu78i/O1Yn8iw05mYEjKQotNnDCY7uW/VDROaso248Cz4QQVCEUqJcRv
+ EBzDUyZOfUDX0OqfFfNYvmLzaOIniVyftuF2AgycrkM0czlodTpOiI5hsWSB3EmJ2IOF
+ Sdf0QIF5vjVVnt5v/fb4faCNkExE0O0J9E/u7OrVqBv3KwAkDQY25mF4NF6uZGiJmJaq
+ V5rSY+0126UdxSnVxgCpzdNP9IOeLPAdBIaRSaDqEYxUJRdmoxnf7zCcQdaMR1gPUppS
+ eit1DPkEzoQPfq6qmFm0NeeZa9yVUmAjXHBjiWUl8i01GTKsv8qd8JE2lN5bdfa1Jkf4
+ TRIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3VISVZWuGNTiVd6JKqfbutJFN34lrqN05fvYPH9Kreg=;
+ b=L9S6invqmF0YSU9y1xu+MQ9/UCWjc0Sl2eGN/lyML+Utl7H7y5f38suzE+nA7Ti2QT
+ CNe7lBR4bx02nrDjAq4CJppBQDwfo084QbqniNHhYKe5zmG2T8AtPOPI+RXux2p1uNa2
+ ij7SAihxjl3mTrPvCz17HuErdmTT0Yfa31zfIlIszqSA1YIcN4wdDvOKP/L1Rtc54VIz
+ w8oo/MJY2PlsfM6gXpFcPJwpaRrMmii8/ZBLWaKCc1Ga2h/BHoxrKr2eiMpQGePvjz1W
+ Ohe5vr4XmHk2Ir3Fnz6hEPs2Q8frDi8GMSjoAOenkfNKiNZ18tRNk+DsgzlxrAfs68yv
+ icLw==
+X-Gm-Message-State: APjAAAVKiCFtAlUaO+rhZfccOxeqB/+WC4pYJkCbvegJgVEl9kdf0ZZH
+ APqmjwSDuLaCRAhV9KjJny7ffg==
+X-Google-Smtp-Source: APXvYqxQXpDqPyZwJQWEPUkusjd/UilDz4Mpzt+wUtcrvVVsDPsRqQ1Np6P1GcXQU3ssA/+pWMdUqw==
+X-Received: by 2002:a37:a9c6:: with SMTP id
+ s189mr32305161qke.191.1566412326277; 
+ Wed, 21 Aug 2019 11:32:06 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id q13sm10443332qkm.120.2019.08.21.11.32.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 21 Aug 2019 11:32:05 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
+ matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
+ mark.rutland@arm.com
+Subject: [PATCH v3 00/17] arm64: MMU enabled kexec relocation
+Date: Wed, 21 Aug 2019 14:31:47 -0400
+Message-Id: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 19082101-0016-0000-0000-000009DD7DFE
-X-IBM-SpamModules-Scores: 
-X-IBM-SpamModules-Versions: BY=3.00011626; HX=3.00000242; KW=3.00000007;
- PH=3.00000004; SC=3.00000287; SDB=6.01249764; UDB=6.00659776; IPR=6.01031313; 
- MB=3.00028251; MTD=3.00000008; XFM=3.00000015; UTC=2019-08-21 01:13:09
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 19082101-0017-0000-0000-0000447D6993
-Message-Id: <87o90jmici.fsf@morokweng.localdomain>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-21_01:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=1 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=884 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908210008
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190820_181313_616207_6D0F44AD 
-X-CRM114-Status: GOOD (  18.10  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190821_113209_566654_29227266 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,48 +101,122 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, deller@gmx.de,
- Sven Schnelle <svens@stackframe.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Changelog:
+v3:
+	- Split changes to create_safe_exec_page() into several patches for
+	  easier review as request by Mark Rutland. This is why this series
+	  has 3 more patches.
+	- Renamed trans_table to tans_pgd as agreed with Mark. The header
+	  comment in trans_pgd.c explains that trans stands for
+	  transitional page tables. Meaning they are used in transition
+	  between two kernels.
+v2:
+	- Fixed hibernate bug reported by James Morse
+	- Addressed comments from James Morse:
+	  * More incremental changes to trans_table
+	  * Removed TRANS_FORCEMAP
+	  * Added kexec reboot data for image with 380M in size.
 
-Thiago Jung Bauermann <bauerman@linux.ibm.com> writes:
+Enable MMU during kexec relocation in order to improve reboot performance.
 
-> Sven Schnelle <svens@stackframe.org> writes:
->
->> It's not used anywhere so just drop it.
->>
->> Signed-off-by: Sven Schnelle <svens@stackframe.org>
->> ---
->>  kernel/kexec_elf.c | 2 --
->>  1 file changed, 2 deletions(-)
->>
->> diff --git a/kernel/kexec_elf.c b/kernel/kexec_elf.c
->> index effe9dc0b055..70d31b8feeae 100644
->> --- a/kernel/kexec_elf.c
->> +++ b/kernel/kexec_elf.c
->> @@ -8,8 +8,6 @@
->>  #include <linux/slab.h>
->>  #include <linux/types.h>
->>  
->> -#define PURGATORY_STACK_SIZE	(16 * 1024)
->> -
->>  #define elf_addr_to_cpu	elf64_to_cpu
->>  
->>  #ifndef Elf_Rel
->
-> Can you remove it from the file in arch/powerpc as well?
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs takes a significant portion
+of reboot.
 
-Sorry, forgot to add:
+The reason for slow relocation is because it is done without MMU, and thus
+not benefiting from D-Cache.
 
-Reviewed-by: Thiago Jung Bauermann <bauerman@linux.ibm.com>
+Performance data
+----------------
+For this experiment, the size of kernel plus initramfs is small, only 25M.
+If initramfs was larger, than the improvements would be greater, as time
+spent in relocation is proportional to the size of relocation.
+
+Previously:
+kernel shutdown	0.022131328s
+relocation	0.440510736s
+kernel startup	0.294706768s
+
+Relocation was taking: 58.2% of reboot time
+
+Now:
+kernel shutdown	0.032066576s
+relocation	0.022158152s
+kernel startup	0.296055880s
+
+Now: Relocation takes 6.3% of reboot time
+
+Total reboot is x2.16 times faster.
+
+With bigger userland (fitImage 380M), the reboot time is improved by 3.57s,
+and is reduced from 3.9s down to 0.33s
+
+Previous approaches and discussions
+-----------------------------------
+https://lore.kernel.org/lkml/20190817024629.26611-1-pasha.tatashin@soleen.com
+version 2 of this series
+
+https://lore.kernel.org/lkml/20190801152439.11363-1-pasha.tatashin@soleen.com
+version 1 of this series
+
+https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
+reserve space for kexec to avoid relocation, involves changes to generic code
+to optimize a problem that exists on arm64 only:
+
+https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
+The first attempt to enable MMU, some bugs that prevented performance
+improvement. The page tables unnecessary configured idmap for the whole
+physical space.
+
+https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
+No linear copy, bug with EL2 reboots.
+
+Pavel Tatashin (17):
+  kexec: quiet down kexec reboot
+  arm64, hibernate: use get_safe_page directly
+  arm64, hibernate: remove gotos in create_safe_exec_page
+  arm64, hibernate: rename dst to page in create_safe_exec_page
+  arm64, hibernate: check pgd table allocation
+  arm64, hibernate: add trans_pgd public functions
+  arm64, hibernate: move page handling function to new trans_pgd.c
+  arm64, trans_pgd: make trans_pgd_map_page generic
+  arm64, trans_pgd: add trans_pgd_create_empty
+  arm64, trans_pgd: adjust trans_pgd_create_copy interface
+  arm64, trans_pgd: add PUD_SECT_RDONLY
+  arm64, trans_pgd: complete generalization of trans_pgds
+  kexec: add machine_kexec_post_load()
+  arm64, kexec: move relocation function setup and clean up
+  arm64, kexec: add expandable argument to relocation function
+  arm64, kexec: configure trans_pgd page table for kexec
+  arm64, kexec: enable MMU during kexec relocation
+
+ arch/arm64/Kconfig                     |   4 +
+ arch/arm64/include/asm/kexec.h         |  51 ++++-
+ arch/arm64/include/asm/pgtable-hwdef.h |   1 +
+ arch/arm64/include/asm/trans_pgd.h     |  63 ++++++
+ arch/arm64/kernel/asm-offsets.c        |  14 ++
+ arch/arm64/kernel/cpu-reset.S          |   4 +-
+ arch/arm64/kernel/cpu-reset.h          |   8 +-
+ arch/arm64/kernel/hibernate.c          | 261 ++++++------------------
+ arch/arm64/kernel/machine_kexec.c      | 199 ++++++++++++++----
+ arch/arm64/kernel/relocate_kernel.S    | 196 +++++++++---------
+ arch/arm64/mm/Makefile                 |   1 +
+ arch/arm64/mm/trans_pgd.c              | 270 +++++++++++++++++++++++++
+ kernel/kexec.c                         |   4 +
+ kernel/kexec_core.c                    |   8 +-
+ kernel/kexec_file.c                    |   4 +
+ kernel/kexec_internal.h                |   2 +
+ 16 files changed, 750 insertions(+), 340 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_pgd.h
+ create mode 100644 arch/arm64/mm/trans_pgd.c
 
 -- 
-Thiago Jung Bauermann
-IBM Linux Technology Center
+2.23.0
 
 
 _______________________________________________
