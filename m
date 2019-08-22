@@ -2,54 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9F4798E67
-	for <lists+kexec@lfdr.de>; Thu, 22 Aug 2019 10:52:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2236B994A6
+	for <lists+kexec@lfdr.de>; Thu, 22 Aug 2019 15:14:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=loerOA4MUePiUvKIT7mFEaDWP/IlDa+vF1kc7ufvKpQ=; b=fMIa/qUJZYZNJ9
-	dmXblGtEn6LrVdaP9vqkNJ5p7496F+inra6Jvoo1hW22PqUewYYaUdVmyQlUWa3I+lD5sVF8DYXbU
-	nItTjwFmbn8hlRxjwd2POu82XxPBVn8pja0H0W0/UgiUnd6G70qWNJyRW39GmeHHk9QLCP++RqnXd
-	Bn1vrAVX6KzYXUgME1enqlXUdRLGy5PsNFuW8C150xACT1p0bmbmuqzGAiPJzBr08UZV4pVZNw9vf
-	EGDmoRYd9ynWV24fPMgr6qy5aiUbeeCOCVXx8aYIONew+SfyML5PbRBAMaaA5uxeyb3Mpv+XdMUir
-	5Si7Sfn5iNwodHUfAZTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6peTBWu76qywdy72DWJeN+AeGzlCHA4fLSft618jFxQ=; b=HGZOjPOGz8aYbEsK1hJDeiM4k
+	2RQXf4PwnhwQlDStYj4//EFaTz1tL+AgSJIwZRiItrGdCmbZJ8Yqi+RcRDnTuQUaQtavnUI5Hl9OY
+	sMkdxcP9+ocm85A6KEae/QqyDtseHvp8otT3m0OQwMHh8u8aOfJ29ys6uv6R2ZYIKquMQ2dhCQ/VW
+	W4uvs3PPmMYWP+klnIDpemlqATBfnq2jol344i4VZtM354jH0gd4txwigFmq8qbPNh/il7H3upFbo
+	a1w3/3MrTSeEMGtNBPeWm7p8mBCipIsDC0k4Q4ipU/iqdfd6KSLnvZ5NEyz6SHY/um/2641zhcv/H
+	A8IqmSCxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0ipZ-0002jp-FE; Thu, 22 Aug 2019 08:52:29 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0ipN-0002he-2g
- for kexec@lists.infradead.org; Thu, 22 Aug 2019 08:52:19 +0000
-Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id B618025AD59;
- Thu, 22 Aug 2019 18:52:15 +1000 (AEST)
-Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 4C65A940804; Thu, 22 Aug 2019 10:52:11 +0200 (CEST)
-Date: Thu, 22 Aug 2019 10:52:11 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Lianbo Jiang <lijiang@redhat.com>
-Subject: Re: [PATCH 2/2] Limit the size of vmcore-dmesg.txt to 2G
-Message-ID: <20190822085211.j2y736chwesxga4l@verge.net.au>
-References: <20190815033756.15587-1-lijiang@redhat.com>
- <20190815033756.15587-3-lijiang@redhat.com>
+	id 1i0mvM-0003do-IW; Thu, 22 Aug 2019 13:14:44 +0000
+Received: from mx3.molgen.mpg.de ([141.14.17.11] helo=mx1.molgen.mpg.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0mvG-0003cO-Dw
+ for kexec@lists.infradead.org; Thu, 22 Aug 2019 13:14:40 +0000
+Received: from theinternet.molgen.mpg.de (theinternet.molgen.mpg.de
+ [141.14.31.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: buczek)
+ by mx.molgen.mpg.de (Postfix) with ESMTPSA id E8B0F201A3C3E;
+ Thu, 22 Aug 2019 15:14:16 +0200 (CEST)
+Subject: Re: Brocken/incomplete `/proc/vmcore`
+To: Paul Menzel <pmenzel@molgen.mpg.de>, Dave Young <dyoung@redhat.com>,
+ Baoquan He <bhe@redhat.com>, Vivek Goyal <vgoyal@redhat.com>
+References: <1d18de74-76e3-823c-7480-fad1d6012026@molgen.mpg.de>
+From: Donald Buczek <buczek@molgen.mpg.de>
+Message-ID: <5431590a-e0fa-afac-2f38-8c3b60853d0d@molgen.mpg.de>
+Date: Thu, 22 Aug 2019 15:14:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190815033756.15587-3-lijiang@redhat.com>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1d18de74-76e3-823c-7480-fad1d6012026@molgen.mpg.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_015217_262271_F7E7F350 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20190822_061438_630547_8FDB61B8 
+X-CRM114-Status: GOOD (  15.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ medium trust [141.14.17.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -63,73 +64,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kasong@redhat.com, piliu@redhat.com, bhsharma@redhat.com,
- kexec@lists.infradead.org, junw99@yahoo.com, bhe@redhat.com, dyoung@redhat.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Aug 15, 2019 at 11:37:56AM +0800, Lianbo Jiang wrote:
-> With some corrupted vmcore files, the vmcore-dmesg.txt file may grow
-> forever till the kdump disk becomes full, and also probably causes
-> the disk error messages as follow:
-> ...
-> sd 0:0:0:0: [sda] tag#6 FAILED Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
-> sd 0:0:0:0: [sda] tag#6 CDB: Read(10) 28 00 08 06 4c 98 00 00 08 00
-> blk_update_request: I/O error, dev sda, sector 134630552
-> sd 0:0:0:0: [sda] tag#7 FAILED Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
-> sd 0:0:0:0: [sda] tag#7 CDB: Read(10) 28 00 08 06 4c 98 00 00 08 00
-> blk_update_request: I/O error, dev sda, sector 134630552
-> ...
-> 
-> If vmcore-dmesg.txt occupies the whole disk, the vmcore can not be
-> saved, this is also a problem.
-> 
-> Lets limit the size of vmcore-dmesg.txt to avoid such problems.
-> 
-> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+Dear Paul,
 
-Thanks, this looks good to me.
+On 8/15/19 1:36 PM, Paul Menzel wrote:
+> Dear Linux folks,
+> 
+> 
+> Using Linux 4.19.57 (configuration attached), crashing the system, and
+> starting it using the same Linux kernel as crash kernel, the available
+> `/proc/vmcore` seems to be incomplete.
+> 
+> Running GDB commands, working with `/proc/kcore`, do not work with
+> `/proc/vmcore`, and the addresses are not there.
+> 
+> In the running system, iterating through the tasks works.
+> 
+> ```
+> macro define offsetof(type, member) ((size_t)(&((type *)0)->member))
+> macro define container_of(ptr,type,member)  ((type *)((size_t)ptr-offsetof(type,member)))
+> ```
+> 
+> ### /proc/kcore ###
+> 
+> ```
+> Core was generated by `BOOT_IMAGE=/boot/bzImage-4.19.57.mx64.286 root=LABEL=root ro crashkernel=512M c'.
+> #0  0x0000000000000000 in irq_stack_union ()
+> (gdb) source gdb-macros.txt
+> (gdb) set $t=&init_task
+> (gdb) print $t->tasks
+> $1 = {next = 0xffff889ffbb0f080, prev = 0xffff88bff9b09300}
+> (gdb) print $t->pid
+> $2 = 0
+> (gdb) set $t=container_of($t->tasks->next,struct task_struct,tasks)
+> (gdb) print $t->tasks
+> $3 = {next = 0xffff889ffbb0e340, prev = 0xffffffff82411a80 <init_task+768>}
+> (gdb) print $t->pid
+> $4 = 1
+> (gdb) set $t=container_of($t->tasks->next,struct task_struct,tasks)
+> (gdb) print $t->tasks
+> $5 = {next = 0xffff889ffbb530c0, prev = 0xffff889ffbb0f080}
+> (gdb) print $t->pid
+> $6 = 2
+> ```
+> 
+> ### /proc/vmcore ###
+> 
+> After the crash by SysRQ trigger, values in `/proc/vmcore` are incorrect.
+> 
+> ```
+> (gdb) set $t=&init_task
+> (gdb) print $t->tasks
+> $1 = {next = 0xffff889ffbb0f080, prev = 0xffff88bff9b09300}
+> (gdb) print $t->pid
+> $2 = 0
+> (gdb) set $t=container_of($t->tasks->next,struct task_struct,tasks)
+> (gdb) print $t->tasks
+> $3 = {next = 0x0 <irq_stack_union>, prev = 0x0 <irq_stack_union>}
+> (gdb) print $t->pid
+> $4 = 0
+> ```
+> 
+> We can reproduce this in a virtual machine and on a big server.
 
-Please repost this patch with an updated version of Patch 1/2.
+It is the same bug as the one described in my mail "/proc/vmcore and wrong PAGE_OFFSET". The task list can be walked if addresses are corrected by 0x0000008000000000:
 
-> ---
->  vmcore-dmesg/vmcore-dmesg.c | 10 ++++++++++
->  1 file changed, 10 insertions(+)
-> 
-> diff --git a/vmcore-dmesg/vmcore-dmesg.c b/vmcore-dmesg/vmcore-dmesg.c
-> index ff0d540c9130..5ada3566972b 100644
-> --- a/vmcore-dmesg/vmcore-dmesg.c
-> +++ b/vmcore-dmesg/vmcore-dmesg.c
-> @@ -1,8 +1,18 @@
->  #include <elf_info.h>
->  
-> +/* stole this macro from kernel printk.c */
-> +#define LOG_BUF_LEN_MAX (uint32_t)(1 << 31)
-> +
->  static void write_to_stdout(char *buf, unsigned int nr)
->  {
->  	ssize_t ret;
-> +	static uint32_t n_bytes = 0;
-> +
-> +	n_bytes += nr;
-> +	if (n_bytes > LOG_BUF_LEN_MAX) {
-> +		fprintf(stderr, "The vmcore-dmesg.txt over 2G in size is not supported.\n");
-> +		exit(55);
-> +	}
->  
->  	ret = write(STDOUT_FILENO, buf, nr);
->  	if (ret != nr) {
-> -- 
-> 2.17.1
+(gdb) set $t=&init_task
+(gdb) print $t->pid
+$1 = 0
+(gdb) set $t=container_of($t->tasks->next,struct task_struct,tasks)
+(gdb) set $t=(struct task_struct *)( (char *)$t - 0x0000008000000000)
+(gdb) print $t->pid
+$2 = 1
+(gdb) set $t=container_of($t->tasks->next,struct task_struct,tasks)
+(gdb) set $t=(struct task_struct *)( (char *)$t - 0x0000008000000000)
+(gdb) print $t->pid
+$3 = 2
+
+The debugger has wrongly mapped the physical memory at virtual 0xffff880000000000 instead of at 0xffff888000000000, because the vmcore file says so for yet unknown reasons.
+
+Donald
+
 > 
 > 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
+> Kind regards,
 > 
+> Paul
+> 
+
+
+-- 
+Donald Buczek
+buczek@molgen.mpg.de
+Tel: +49 30 8413 1433
 
 _______________________________________________
 kexec mailing list
