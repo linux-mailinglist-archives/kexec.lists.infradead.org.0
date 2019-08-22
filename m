@@ -2,96 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 225FE98553
-	for <lists+kexec@lfdr.de>; Wed, 21 Aug 2019 22:16:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FCD598E5F
+	for <lists+kexec@lfdr.de>; Thu, 22 Aug 2019 10:51:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=uC/ZGujpHRHIcD/kSeXUB04X+DpAL3A98nJNBKD+12s=; b=ANYj1kg591Dnj3uZEOKC4+YoY7
-	yIIMsE42dVljrhLsIT32kRVW0J3voQ5BRdAKCFgsQmDaveXK+FWihj97E5TMgAIsTOxW4UCQ90mQx
-	a836z1eLUOx7sEBvH6Tl4BjID42BGNLkBHJaq2DnYzgxJ3+GjecbJoH4bjN7EFU0Xj54mAj4sr5K0
-	LsWcIoUIPPolCJ9e7qi2+qq7N3tm2zwgwL1GJTHSK9+KL3AUD513glX0y49BMlF3y11uyCWhqYXPk
-	6aoU/h0B+Kh3t25zUhc2tWWfFF5Sua1GR1odCkcUcW01/IPm67VLA2NDr5AAMBcksP9g7QnkMym7g
-	S0XA917g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=402u5yVyR+9/7hj9xEvmoYI7HppXmRIV6jr5RGDNikg=; b=mWF6HwFImFrkOJ
+	Yaccc06U4wopqFBkkjBkoGNieM0wFxV2DbqvAw28AXs/sfKuL6tfrKOVgeAXli7cSZBn9FLFJwSag
+	ei4TBCuHgJB4DOIh6p4YwPKH3cihRG/v8wGy2j0eCEOoMYWg0XI/MYwk6+rcMIr18dKoDspIO78YB
+	zyGs53qaWkzuFdc0Pikt2oQXM1rWICsVHCBh8WnedyG/jRy5X/IJwOrGU/4ASVr5TPKljjBA5yR5V
+	xl+nC5GBNRGlWOqPlFTvroIazvtk5h/mtyODNxmsRZOHXeM6teM09+0l7pg0j2LqBWOE+QOOxjN2l
+	G955Vs5nv+zBtqo6M19A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0X1Y-00087J-Fk; Wed, 21 Aug 2019 20:16:04 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0X1U-00086v-KZ
- for kexec@lists.infradead.org; Wed, 21 Aug 2019 20:16:01 +0000
-Received: from pps.filterd (m0098394.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7LKCm9d051565; Wed, 21 Aug 2019 16:15:59 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uhawhmbcc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 21 Aug 2019 16:15:59 -0400
-Received: from m0098394.ppops.net (m0098394.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x7LKENbX064511;
- Wed, 21 Aug 2019 16:15:58 -0400
-Received: from ppma01dal.us.ibm.com (83.d6.3fa9.ip4.static.sl-reverse.com
- [169.63.214.131])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uhawhmbc2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 21 Aug 2019 16:15:58 -0400
-Received: from pps.filterd (ppma01dal.us.ibm.com [127.0.0.1])
- by ppma01dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x7LKFiwq010568;
- Wed, 21 Aug 2019 20:15:57 GMT
-Received: from b03cxnp08026.gho.boulder.ibm.com
- (b03cxnp08026.gho.boulder.ibm.com [9.17.130.18])
- by ppma01dal.us.ibm.com with ESMTP id 2ue976xdme-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 21 Aug 2019 20:15:57 +0000
-Received: from b03ledav005.gho.boulder.ibm.com
- (b03ledav005.gho.boulder.ibm.com [9.17.130.236])
- by b03cxnp08026.gho.boulder.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x7LKFuFA59572482
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 21 Aug 2019 20:15:56 GMT
-Received: from b03ledav005.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 6F120BE053;
- Wed, 21 Aug 2019 20:15:56 +0000 (GMT)
-Received: from b03ledav005.gho.boulder.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 6619ABE051;
- Wed, 21 Aug 2019 20:15:54 +0000 (GMT)
-Received: from morokweng.localdomain (unknown [9.85.170.169])
- by b03ledav005.gho.boulder.ibm.com (Postfix) with ESMTPS;
- Wed, 21 Aug 2019 20:15:54 +0000 (GMT)
-References: <20190715082702.27308-1-svens@stackframe.org>
- <20190715082702.27308-2-svens@stackframe.org>
- <87zhk3mj0k.fsf@morokweng.localdomain>
-User-agent: mu4e 1.2.0; emacs 26.2
-From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-To: kexec@lists.infradead.org
-Subject: Re: [PATCH v4 1/7] kexec: add KEXEC_ELF
-In-reply-to: <87zhk3mj0k.fsf@morokweng.localdomain>
-Date: Wed, 21 Aug 2019 17:15:49 -0300
-Message-ID: <877e76w9ze.fsf@morokweng.localdomain>
+	id 1i0ioe-0002VA-Cv; Thu, 22 Aug 2019 08:51:32 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0ioK-0002M4-0r
+ for kexec@lists.infradead.org; Thu, 22 Aug 2019 08:51:15 +0000
+Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 57F2925AD59;
+ Thu, 22 Aug 2019 18:51:07 +1000 (AEST)
+Received: by reginn.horms.nl (Postfix, from userid 7100)
+ id 3D8F6940804; Thu, 22 Aug 2019 10:51:05 +0200 (CEST)
+Date: Thu, 22 Aug 2019 10:51:05 +0200
+From: Simon Horman <horms@verge.net.au>
+To: Lianbo Jiang <lijiang@redhat.com>
+Subject: Re: [PATCH 1/2] cleanup: move it back from util_lib/elf_info.c
+Message-ID: <20190822085105.yta4wozkfupvp2y3@verge.net.au>
+References: <20190815033756.15587-1-lijiang@redhat.com>
+ <20190815033756.15587-2-lijiang@redhat.com>
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-21_06:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=13 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1908210196
+Content-Disposition: inline
+In-Reply-To: <20190815033756.15587-2-lijiang@redhat.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190821_131600_682159_A7B68E98 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190822_015112_944442_D12FD9FC 
+X-CRM114-Status: GOOD (  28.36  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -105,66 +63,323 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, deller@gmx.de,
- Sven Schnelle <svens@stackframe.org>
+Cc: kasong@redhat.com, piliu@redhat.com, bhsharma@redhat.com,
+ kexec@lists.infradead.org, junw99@yahoo.com, bhe@redhat.com, dyoung@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Hi Lianbo,
 
-Thiago Jung Bauermann <bauerman@linux.ibm.com> writes:
+I like where this patch is going but I would like to request a few changes.
+Please see comments inline.
 
->> diff --git a/arch/powerpc/kernel/kexec_elf_64.c b/kernel/kexec_elf.c
->> similarity index 71%
->> copy from arch/powerpc/kernel/kexec_elf_64.c
->> copy to kernel/kexec_elf.c
->> index ba4f18a43ee8..6e9f52171ede 100644
->> --- a/arch/powerpc/kernel/kexec_elf_64.c
->> +++ b/kernel/kexec_elf.c
->> @@ -1,33 +1,10 @@
->> -/*
->> - * Load ELF vmlinux file for the kexec_file_load syscall.
->> - *
->> - * Copyright (C) 2004  Adam Litke (agl@us.ibm.com)
->> - * Copyright (C) 2004  IBM Corp.
->> - * Copyright (C) 2005  R Sharada (sharada@in.ibm.com)
->> - * Copyright (C) 2006  Mohan Kumar M (mohan@in.ibm.com)
->> - * Copyright (C) 2016  IBM Corporation
->> - *
->> - * Based on kexec-tools' kexec-elf-exec.c and kexec-elf-ppc64.c.
->> - * Heavily modified for the kernel by
->> - * Thiago Jung Bauermann <bauerman@linux.vnet.ibm.com>.
->> - *
->> - * This program is free software; you can redistribute it and/or modify
->> - * it under the terms of the GNU General Public License as published by
->> - * the Free Software Foundation (version 2 of the License).
->> - *
->> - * This program is distributed in the hope that it will be useful,
->> - * but WITHOUT ANY WARRANTY; without even the implied warranty of
->> - * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
->> - * GNU General Public License for more details.
->> - */
->> +// SPDX-License-Identifier: GPL-2.0-only
->
-> I may be wrong, but my understanding of the SPDX license identifier is
-> that it substitutes the license text (i.e., the last two paragraphs
-> above), but not the copyright statements. Is it ok to have a file with a
-> SPDX license identifier but no copyright statement?
+On Thu, Aug 15, 2019 at 11:37:55AM +0800, Lianbo Jiang wrote:
+> Some code related to vmcore-dmesg.c is put into the util_lib, which
+> is not very reasonable, so lets move it back and tidy up those code.
+> 
+> In addition, that will also help to limit the size of vmcore-dmesg.txt.
+> 
+> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+> ---
+>  kexec/arch/arm64/kexec-arm64.c |  2 +-
+>  util_lib/elf_info.c            | 73 ++++++++--------------------------
+>  util_lib/include/elf_info.h    |  8 +++-
+>  vmcore-dmesg/vmcore-dmesg.c    | 44 +++++++++++++++++---
+>  4 files changed, 61 insertions(+), 66 deletions(-)
+> 
+> diff --git a/kexec/arch/arm64/kexec-arm64.c b/kexec/arch/arm64/kexec-arm64.c
+> index eb3a3a37307c..6ad3b0a134b3 100644
+> --- a/kexec/arch/arm64/kexec-arm64.c
+> +++ b/kexec/arch/arm64/kexec-arm64.c
+> @@ -889,7 +889,7 @@ int get_phys_base_from_pt_load(unsigned long *phys_offset)
+>  		return EFAILED;
+>  	}
+>  
+> -	read_elf_kcore(fd);
+> +	read_elf(fd);
+>  
+>  	for (i = 0; get_pt_load(i,
+>  		    &phys_start, NULL, &virt_start, NULL);
+> diff --git a/util_lib/elf_info.c b/util_lib/elf_info.c
+> index 90a3b21662e7..2f254e972721 100644
+> --- a/util_lib/elf_info.c
+> +++ b/util_lib/elf_info.c
+> @@ -20,7 +20,6 @@
+>  /* The 32bit and 64bit note headers make it clear we don't care */
+>  typedef Elf32_Nhdr Elf_Nhdr;
+>  
+> -static const char *fname;
+>  static Elf64_Ehdr ehdr;
+>  static Elf64_Phdr *phdr;
+>  static int num_pt_loads;
+> @@ -120,8 +119,8 @@ void read_elf32(int fd)
+>  
+>  	ret = pread(fd, &ehdr32, sizeof(ehdr32), 0);
+>  	if (ret != sizeof(ehdr32)) {
+> -		fprintf(stderr, "Read of Elf header from %s failed: %s\n",
+> -			fname, strerror(errno));
+> +		fprintf(stderr, "Read of Elf header failed in %s: %s\n",
+> +				__func__, strerror(errno));
 
-Answering my own question: I just came accross commit b24413180f56
-("License cleanup: add SPDX GPL-2.0 license identifier to files with no
-license") which adds SPDX license identifiers to a lot of files without
-any copyright statement so I conclude that it is indeed ok to not have
-copyright statements in a file.
+I'm not sure of the merit of changing the loging output.
+And moreover I don't think it belongs in this patch
+as it doesn't seem related to the other changes.
 
-In this instance the new file is heavily based on the old one though, so
-IMHO it makes sense for it to inherit the copyright statements from the
-original file.
+>  		exit(10);
+>  	}
+>  
+> @@ -193,8 +192,8 @@ void read_elf64(int fd)
+>  
+>  	ret = pread(fd, &ehdr64, sizeof(ehdr64), 0);
+>  	if (ret < 0 || (size_t)ret != sizeof(ehdr)) {
+> -		fprintf(stderr, "Read of Elf header from %s failed: %s\n",
+> -			fname, strerror(errno));
+> +		fprintf(stderr, "Read of Elf header failed in %s: %s\n",
+> +				__func__, strerror(errno));
+>  		exit(10);
+>  	}
+>  
+> @@ -531,19 +530,7 @@ static int32_t read_file_s32(int fd, uint64_t addr)
+>  	return read_file_u32(fd, addr);
+>  }
+>  
+> -static void write_to_stdout(char *buf, unsigned int nr)
+> -{
+> -	ssize_t ret;
+> -
+> -	ret = write(STDOUT_FILENO, buf, nr);
+> -	if (ret != nr) {
+> -		fprintf(stderr, "Failed to write out the dmesg log buffer!:"
+> -			" %s\n", strerror(errno));
+> -		exit(54);
+> -	}
+> -}
+> -
+> -static void dump_dmesg_legacy(int fd)
+> +void dump_dmesg_legacy(int fd, handler_t handler)
+>  {
+>  	uint64_t log_buf, log_buf_offset;
+>  	unsigned log_end, logged_chars, log_end_wrapped;
+> @@ -604,7 +591,7 @@ static void dump_dmesg_legacy(int fd)
+>  	 */
+>  	logged_chars = log_end < log_buf_len ? log_end : log_buf_len;
+>  
+> -	write_to_stdout(buf + (log_buf_len - logged_chars), logged_chars);
+> +	handler(buf + (log_buf_len - logged_chars), logged_chars);
+>  }
+>  
+>  static inline uint16_t struct_val_u16(char *ptr, unsigned int offset)
+> @@ -623,7 +610,7 @@ static inline uint64_t struct_val_u64(char *ptr, unsigned int offset)
+>  }
+>  
+>  /* Read headers of log records and dump accordingly */
+> -static void dump_dmesg_structured(int fd)
+> +void dump_dmesg_structured(int fd, handler_t handler)
+>  {
+>  #define OUT_BUF_SIZE	4096
+>  	uint64_t log_buf, log_buf_offset, ts_nsec;
+> @@ -733,7 +720,7 @@ static void dump_dmesg_structured(int fd)
+>  				out_buf[len++] = c;
+>  
+>  			if (len >= OUT_BUF_SIZE - 64) {
+> -				write_to_stdout(out_buf, len);
+> +				handler(out_buf, len);
+>  				len = 0;
+>  			}
+>  		}
+> @@ -753,25 +740,24 @@ static void dump_dmesg_structured(int fd)
+>  	}
+>  	free(buf);
+>  	if (len)
+> -		write_to_stdout(out_buf, len);
+> +		handler(out_buf, len);
+>  }
+>  
+> -static void dump_dmesg(int fd)
+> +int check_log_first_idx_vaddr(void)
+>  {
+>  	if (log_first_idx_vaddr)
+> -		dump_dmesg_structured(fd);
+> -	else
+> -		dump_dmesg_legacy(fd);
+> +		return 1;
+> +
+> +	return 0;
+>  }
+>  
+> -static int read_elf(int fd)
+> +int read_elf(int fd)
+>  {
+>  	int ret;
+>  
+>  	ret = pread(fd, ehdr.e_ident, EI_NIDENT, 0);
+>  	if (ret != EI_NIDENT) {
+> -		fprintf(stderr, "Read of e_ident from %s failed: %s\n",
+> -			fname, strerror(errno));
+> +		fprintf(stderr, "Read of e_ident failed: %s\n", strerror(errno));
+>  		return 3;
+>  	}
+>  	if (memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0) {
+> @@ -808,40 +794,13 @@ static int read_elf(int fd)
+>  	return 0;
+>  }
+>  
+> -int read_elf_vmcore(int fd)
+> -{
+> -	int ret;
+> -
+> -	ret = read_elf(fd);
+> -	if (ret > 0) {
+> -		fprintf(stderr, "Unable to read ELF information"
+> -			" from vmcore\n");
+> -		return ret;
+> -	}
+> -
+> -	dump_dmesg(fd);
+> -
+> -	return 0;
+> -}
+> -
+> -int read_elf_kcore(int fd)
+> -{
+> -	int ret;
+> -
+> -	ret = read_elf(fd);
+> -	if (ret != 0)
+> -		return ret;
+> -
+> -	return 0;
+> -}
 
---
-Thiago Jung Bauermann
-IBM Linux Technology Center
+I think that removing read_elf_kcore is not related to the rest of this
+patch and should be in a separate patch - it is a nice cleanup.
+
+> -
+>  int read_phys_offset_elf_kcore(int fd, unsigned long *phys_off)
+>  {
+>  	int ret;
+>  
+>  	*phys_off = UINT64_MAX;
+>  
+> -	ret = read_elf_kcore(fd);
+> +	ret = read_elf(fd);
+>  	if (!ret) {
+>  		/* If we have a valid 'PHYS_OFFSET' by now,
+>  		 * return it to the caller now.
+> diff --git a/util_lib/include/elf_info.h b/util_lib/include/elf_info.h
+> index 1a4debd2d4ba..8ee7d3e2763f 100644
+> --- a/util_lib/include/elf_info.h
+> +++ b/util_lib/include/elf_info.h
+> @@ -23,13 +23,17 @@
+>  #include <inttypes.h>
+>  #include <ctype.h>
+>  
+> +typedef void (*handler_t)(char *msg, unsigned int bytes);
+
+I would prefer it if we did not add new typedefs.
+
+> +
+>  int get_pt_load(int idx,
+>  	unsigned long long *phys_start,
+>  	unsigned long long *phys_end,
+>  	unsigned long long *virt_start,
+>  	unsigned long long *virt_end);
+>  int read_phys_offset_elf_kcore(int fd, unsigned long *phys_off);
+> -int read_elf_kcore(int fd);
+> -int read_elf_vmcore(int fd);
+> +int check_log_first_idx_vaddr(void);
+> +void dump_dmesg_structured(int fd, handler_t handler);
+> +void dump_dmesg_legacy(int fd, handler_t handler);
+> +int read_elf(int fd);
+>  
+>  #endif /* ELF_INFO_H */
+> diff --git a/vmcore-dmesg/vmcore-dmesg.c b/vmcore-dmesg/vmcore-dmesg.c
+> index 7a386b380291..ff0d540c9130 100644
+> --- a/vmcore-dmesg/vmcore-dmesg.c
+> +++ b/vmcore-dmesg/vmcore-dmesg.c
+> @@ -1,21 +1,53 @@
+>  #include <elf_info.h>
+>  
+> -/* The 32bit and 64bit note headers make it clear we don't care */
+> -typedef Elf32_Nhdr Elf_Nhdr;
+> +static void write_to_stdout(char *buf, unsigned int nr)
+> +{
+> +	ssize_t ret;
+> +
+> +	ret = write(STDOUT_FILENO, buf, nr);
+> +	if (ret != nr) {
+> +		fprintf(stderr, "Failed to write out the dmesg log buffer!:"
+> +				" %s\n", strerror(errno));
+> +		exit(54);
+> +	}
+> +}
+> +
+> +static void dump_dmesg(int fd, handler_t handler)
+> +{
+> +	if (check_log_first_idx_vaddr())
+> +		dump_dmesg_structured(fd, handler);
+> +	else
+> +		dump_dmesg_legacy(fd, handler);
+> +}
+
+I think that dump_dmesg() could stay in kexec-arm64.c,
+it does not seem specific to vmcore handling.
+
+> -static const char *fname;
+> +static int read_vmcore_dmesg(int fd)
+> +{
+> +        int ret;
+> +
+> +        ret = read_elf(fd);
+> +        if (ret > 0) {
+> +                fprintf(stderr, "Unable to read ELF information"
+> +                        " from vmcore\n");
+> +                return ret;
+> +        }
+> +
+> +        dump_dmesg(fd, write_to_stdout);
+> +
+> +        return 0;
+> +}
+>  
+>  int main(int argc, char **argv)
+>  {
+>  	ssize_t ret;
+>  	int fd;
+> +	const char *fname;
+>  
+>  	if (argc != 2) {
+>  		fprintf(stderr, "usage: %s <kernel core file>\n", argv[0]);
+>  		return 1;
+>  	}
+> -	fname = argv[1];
+>  
+> +	fname = argv[1];
+>  	fd = open(fname, O_RDONLY);
+>  	if (fd < 0) {
+>  		fprintf(stderr, "Cannot open %s: %s\n",
+> @@ -23,8 +55,8 @@ int main(int argc, char **argv)
+>  		return 2;
+>  	}
+>  
+> -	ret = read_elf_vmcore(fd);
+> -	
+> +	ret = read_vmcore_dmesg(fd);
+> +
+>  	close(fd);
+>  
+>  	return ret;
+> -- 
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/kexec
+> 
 
 _______________________________________________
 kexec mailing list
