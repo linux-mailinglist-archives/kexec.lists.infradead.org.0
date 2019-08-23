@@ -2,60 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAAA49AEB3
-	for <lists+kexec@lfdr.de>; Fri, 23 Aug 2019 14:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D1AD9B74F
+	for <lists+kexec@lfdr.de>; Fri, 23 Aug 2019 21:49:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=jhAsRz+QuryMjTCrJXMl0TScaDop6kR/xAnRhoTG/GQ=; b=dTbLXw8BJ3MKMrLUMDiv8/LQ1X
-	/n2xyuQ2V0HgyUXCxw6IQX2xkAnLC5RJgaHtOxLdYGF3A0VD9PE+dERhJCpf/+1tX9T50Iqm2hKDe
-	TNYJtCL/3WHg/t2JnsVIIGC/d4NyFZeKRXY0gY7FX37Ilwce1Qia5f6V8e+bqkaYjpqrSaFGqP8xF
-	0qupF7B1k1qPclvUmDoel/QmHLt4n0C25d+l5xjsTNs5UZYCnZX0awO9SS1mOrCLmtt1E+TLa6xlX
-	UVWjUXfgsjHR/9JYwFqA53iKg+VO54cH71ZDVJpEZH4WvemB+0FP3/dJwoB3ETFqXrWxRS9UpbNGV
-	VpWWEnPg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k1mQ8TwbHPfIM38xhsj8ODXEMm4O+ANWW23Y54dLo70=; b=Pp0GzQP79rY4rE
+	/j9yKPJAhpaVNECECB3EPrgYCdOC7HfnrB3F6KSkCY1gewzLY2QlnX4fORv0j3Gz+eyrYIC4Nv7VR
+	+wlxqnza5kGJziuxzW3fV6lhvUu0h1Wt300SVzrZOmmOOIV8JY1P0KjmD7dJSwgdD32BXiC6siOp5
+	jIdGSrK0649CEG5GJ363+5SA90cnCddtCZLCi30HO5O+BIyjah/zlGZUb1NWOg1rUr2If6GpiFfoD
+	hxi67TUMA4uv8nuDZHgndpSMMKFDoWrsI3Z2KTSC9XPswQFavCJKVKD8kPqCrVLiDNtoQkqR1ESZC
+	GOB0A00HR82Y6MYfDKkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i18L5-0008KS-8y; Fri, 23 Aug 2019 12:06:43 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i1FZD-0000MK-43; Fri, 23 Aug 2019 19:49:47 +0000
+Received: from smtp.duncanthrax.net ([2001:470:70c5:1111::170])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i18Kz-0008JU-3L
- for kexec@lists.infradead.org; Fri, 23 Aug 2019 12:06:40 +0000
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id CEF8A8003E7;
- Fri, 23 Aug 2019 12:06:36 +0000 (UTC)
-Received: from localhost.localdomain.com (ovpn-12-117.pek2.redhat.com
- [10.72.12.117])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 6E73A65EB5;
- Fri, 23 Aug 2019 12:06:24 +0000 (UTC)
-From: Lianbo Jiang <lijiang@redhat.com>
+ id 1i1FZ8-0000JO-As
+ for kexec@lists.infradead.org; Fri, 23 Aug 2019 19:49:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=duncanthrax.net; s=dkim; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From;
+ bh=aYGInAzUl0pRN0zpAIIO8vJ9r1QZKJubVPM0UJO9dBI=; b=Im41WT9IYAtJS2etr6YHVfjUg5
+ Zua/fAQD/0mBmdHR+i+1I4y3J9CWRFK6IsiltBmHVjzRL3BnHjcxvygCXzCYyN60OTm+A5VKBA5Hs
+ EPgupl4Gu+4DPepfknwQkb9E1gJxeUvJiKIzL/2+VoBtI3VpZ4hBBMI0J9Bq0adpz4n0=;
+Received: from [134.3.44.134] (helo=x280.stackframe.org)
+ by smtp.eurescom.eu with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.86_2) (envelope-from <svens@stackframe.org>)
+ id 1i1FZ1-00071n-W6; Fri, 23 Aug 2019 21:49:36 +0200
+From: Sven Schnelle <svens@stackframe.org>
 To: kexec@lists.infradead.org
-Subject: [PATCH 4/4 v2] Limit the size of vmcore-dmesg.txt to 2G
-Date: Fri, 23 Aug 2019 20:05:39 +0800
-Message-Id: <20190823120539.18330-5-lijiang@redhat.com>
-In-Reply-To: <20190823120539.18330-1-lijiang@redhat.com>
-References: <20190823120539.18330-1-lijiang@redhat.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.67]); Fri, 23 Aug 2019 12:06:36 +0000 (UTC)
+Subject: [PATCH v5 0/7] kexec: add generic support for elf kernel images
+Date: Fri, 23 Aug 2019 21:49:12 +0200
+Message-Id: <20190823194919.30916-1-svens@stackframe.org>
+X-Mailer: git-send-email 2.23.0.rc1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_050637_158340_707F7F5E 
-X-CRM114-Status: GOOD (  11.87  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190823_124942_668572_E7405965 
+X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,62 +65,56 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kasong@redhat.com, bhe@redhat.com, piliu@redhat.com, bhsharma@redhat.com,
- junw99@yahoo.com, horms@verge.net.au, dyoung@redhat.com
-MIME-Version: 1.0
+Cc: Sven Schnelle <svens@stackframe.org>, Helge Deller <deller@gmx.de>,
+ linuxppc-dev@lists.ozlabs.org, Thiago Jung Bauermann <bauerman@linux.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-With some corrupted vmcore files, the vmcore-dmesg.txt file may grow
-forever till the kdump disk becomes full, and also probably causes
-the disk error messages as follow:
-...
-sd 0:0:0:0: [sda] tag#6 FAILED Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
-sd 0:0:0:0: [sda] tag#6 CDB: Read(10) 28 00 08 06 4c 98 00 00 08 00
-blk_update_request: I/O error, dev sda, sector 134630552
-sd 0:0:0:0: [sda] tag#7 FAILED Result: hostbyte=DID_BAD_TARGET driverbyte=DRIVER_OK
-sd 0:0:0:0: [sda] tag#7 CDB: Read(10) 28 00 08 06 4c 98 00 00 08 00
-blk_update_request: I/O error, dev sda, sector 134630552
-...
+Changes to v4:
+ - rebase on current powerpc/merge tree
+ - fix syscall name in commit message
+ - remove a few unused #defines in arch/powerpc/kernel/kexec_elf_64.c
 
-If vmcore-dmesg.txt occupies the whole disk, the vmcore can not be
-saved, this is also a problem.
+Changes to v3:
+ - add support for 32-bit ELF files
 
-Lets limit the size of vmcore-dmesg.txt to avoid such problems.
+Changes to v2:
+ - use git format-patch -C
 
-Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
----
- vmcore-dmesg/vmcore-dmesg.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Changes to v1:
+ - split up patch into smaller pieces
+ - rebase onto powerpc/next
+ - remove unused variable in kexec_elf_load()
 
-diff --git a/vmcore-dmesg/vmcore-dmesg.c b/vmcore-dmesg/vmcore-dmesg.c
-index fe7df8ec372c..81c2a58c9d86 100644
---- a/vmcore-dmesg/vmcore-dmesg.c
-+++ b/vmcore-dmesg/vmcore-dmesg.c
-@@ -5,9 +5,19 @@ typedef Elf32_Nhdr Elf_Nhdr;
- 
- extern const char *fname;
- 
-+/* stole this macro from kernel printk.c */
-+#define LOG_BUF_LEN_MAX (uint32_t)(1 << 31)
-+
- static void write_to_stdout(char *buf, unsigned int nr)
- {
- 	ssize_t ret;
-+	static uint32_t n_bytes = 0;
-+
-+	n_bytes += nr;
-+	if (n_bytes > LOG_BUF_LEN_MAX) {
-+		fprintf(stderr, "The vmcore-dmesg.txt over 2G in size is not supported.\n");
-+		exit(53);
-+	}
- 
- 	ret = write(STDOUT_FILENO, buf, nr);
- 	if (ret != nr) {
+Changes to RFC version:
+ - remove unused Elf_Rel macro
+ - remove section header parsing
+ - remove PURGATORY_STACK_SIZE
+ - change order of elf_*_to_cpu() functions
+ - remove elf_addr_to_cpu macro
+
+Sven Schnelle (7):
+  kexec: add KEXEC_ELF
+  kexec_elf: change order of elf_*_to_cpu() functions
+  kexec_elf: remove parsing of section headers
+  kexec_elf: remove PURGATORY_STACK_SIZE
+  kexec_elf: remove Elf_Rel macro
+  kexec_elf: remove unused variable in kexec_elf_load()
+  kexec_elf: support 32 bit ELF files
+
+ arch/Kconfig                                  |   3 +
+ arch/powerpc/Kconfig                          |   1 +
+ arch/powerpc/kernel/kexec_elf_64.c            | 545 +-----------------
+ include/linux/kexec.h                         |  23 +
+ kernel/Makefile                               |   1 +
+ .../kexec_elf_64.c => kernel/kexec_elf.c      | 394 +++----------
+ 6 files changed, 115 insertions(+), 852 deletions(-)
+ copy arch/powerpc/kernel/kexec_elf_64.c => kernel/kexec_elf.c (50%)
+
 -- 
-2.17.1
+2.23.0.rc1
 
 
 _______________________________________________
