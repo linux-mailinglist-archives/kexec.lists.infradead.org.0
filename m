@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BB7E9AEAE
-	for <lists+kexec@lfdr.de>; Fri, 23 Aug 2019 14:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9D1E9AEAF
+	for <lists+kexec@lfdr.de>; Fri, 23 Aug 2019 14:06:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=EiC3dF7NMn5U9lTJ+sDcJC/inARqIJLcT2nIXcfl8BY=; b=BF26J74Zf52sJMMrNBo9XvhKNJ
-	KLmvL7xxiPpINzRhcQ9w66GljKaF7Bjt9voCKEc1eiwWVO7ckgqq3Jy/VDjUlI8WEN4pEx1E6DiSr
-	G0GQsB6TGbT6CjxU0cp+5Kc59RtlnaYcAUVlFUoWaX3YQXIkA+Ug0PrWyZtiZeDVRc3caiYzmtnWe
-	lSMvYGOwUnTo7LGz/9ZXJbxNGRdAcnEQm1HcTCyckfcKzB31gAaXMue0j9qxLEI+4Axkq6MkmrA48
-	Sy0iW/eFz55J6H13+wk7SHC2pZcK6iX6tRJNtzczEpKobHUXYD7A2eNBjOlBEDlUCcKeHkLntBbGU
-	pRnZZeJA==;
+	bh=HbxDr4sLu4bu2x6qLd9HmnEkkb5Bj12t9PBtDatY/vc=; b=KMoeppQn6CL6si0cIHDK2tJyr1
+	+MTWlCkXYFpitMW+On5oVkhWlhExe2Zl9Hw6S8gCP2QLoKQAX6hM4jZq32XlYLA6CkkFrkfVsc6iz
+	PI/lx5dCc71p9648nsbdM/ZxdsU/IdRRiVFtM0ngaVV5NIitgW4CryCUndq+2YTuuPF2IdDsUQjjr
+	0zxtC9omepWEehhaV2V/YVk8DZ8WNuAaS/9qaoKWPTL0AsyGGU/HXN0q5IvQHOHl9jXjUizeMQE98
+	uf8MkeKJ6dCS1f7i+Wzu5JGpuLEG0waphAjVXLBkzPzwONpxiHdslLZ/398aVsxnn5OSeA1QKbtAF
+	uO/btP1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i18KX-0007lf-Hn; Fri, 23 Aug 2019 12:06:09 +0000
+	id 1i18Ki-0007p8-2b; Fri, 23 Aug 2019 12:06:20 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i18KU-0007l1-Bv
- for kexec@lists.infradead.org; Fri, 23 Aug 2019 12:06:07 +0000
+ id 1i18Ke-0007oQ-Gf
+ for kexec@lists.infradead.org; Fri, 23 Aug 2019 12:06:17 +0000
 Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
  [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 1E7638D5BB7;
- Fri, 23 Aug 2019 12:06:06 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3F8A1796FF;
+ Fri, 23 Aug 2019 12:06:16 +0000 (UTC)
 Received: from localhost.localdomain.com (ovpn-12-117.pek2.redhat.com
  [10.72.12.117])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CB52365EB5;
- Fri, 23 Aug 2019 12:05:54 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4FB1665EB5;
+ Fri, 23 Aug 2019 12:06:06 +0000 (UTC)
 From: Lianbo Jiang <lijiang@redhat.com>
 To: kexec@lists.infradead.org
-Subject: [PATCH 1/4 v2] Cleanup: remove the read_elf_kcore()
-Date: Fri, 23 Aug 2019 20:05:36 +0800
-Message-Id: <20190823120539.18330-2-lijiang@redhat.com>
+Subject: [PATCH 2/4 v2] Fix an error definition about the variable 'fname'
+Date: Fri, 23 Aug 2019 20:05:37 +0800
+Message-Id: <20190823120539.18330-3-lijiang@redhat.com>
 In-Reply-To: <20190823120539.18330-1-lijiang@redhat.com>
 References: <20190823120539.18330-1-lijiang@redhat.com>
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.69]); Fri, 23 Aug 2019 12:06:06 +0000 (UTC)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.25]); Fri, 23 Aug 2019 12:06:16 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_050606_426263_DF2FDD8F 
-X-CRM114-Status: GOOD (  12.99  )
+X-CRM114-CacheID: sfid-20190823_050616_572608_FEBAE2E3 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,81 +75,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Here, no need to wrap the read_elf() again, lets invoke it directly.
-So remove the read_elf_kcore() and clean up redundant code.
+The variable 'fname' is mistakenly defined two twice, the first definition
+is in the vmcore-dmesg.c, and the second definition is in the elf_info.c.
+That is confused and incorrect although it's a static type, because the
+value of variable 'fname' is not assigned(set) in elf_info.c. Anyway, its
+value will be always 'null' when printing an error information.
 
 Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
 ---
- kexec/arch/arm64/kexec-arm64.c |  2 +-
- util_lib/elf_info.c            | 15 ++-------------
- util_lib/include/elf_info.h    |  2 +-
- 3 files changed, 4 insertions(+), 15 deletions(-)
+ util_lib/elf_info.c         | 2 +-
+ vmcore-dmesg/vmcore-dmesg.c | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/kexec/arch/arm64/kexec-arm64.c b/kexec/arch/arm64/kexec-arm64.c
-index eb3a3a37307c..6ad3b0a134b3 100644
---- a/kexec/arch/arm64/kexec-arm64.c
-+++ b/kexec/arch/arm64/kexec-arm64.c
-@@ -889,7 +889,7 @@ int get_phys_base_from_pt_load(unsigned long *phys_offset)
- 		return EFAILED;
- 	}
- 
--	read_elf_kcore(fd);
-+	read_elf(fd);
- 
- 	for (i = 0; get_pt_load(i,
- 		    &phys_start, NULL, &virt_start, NULL);
 diff --git a/util_lib/elf_info.c b/util_lib/elf_info.c
-index 90a3b21662e7..d9397ecd8626 100644
+index d9397ecd8626..5d0efaafab53 100644
 --- a/util_lib/elf_info.c
 +++ b/util_lib/elf_info.c
-@@ -764,7 +764,7 @@ static void dump_dmesg(int fd)
- 		dump_dmesg_legacy(fd);
- }
+@@ -20,7 +20,7 @@
+ /* The 32bit and 64bit note headers make it clear we don't care */
+ typedef Elf32_Nhdr Elf_Nhdr;
  
--static int read_elf(int fd)
-+int read_elf(int fd)
+-static const char *fname;
++const char *fname;
+ static Elf64_Ehdr ehdr;
+ static Elf64_Phdr *phdr;
+ static int num_pt_loads;
+diff --git a/vmcore-dmesg/vmcore-dmesg.c b/vmcore-dmesg/vmcore-dmesg.c
+index 7a386b380291..bebc348a657e 100644
+--- a/vmcore-dmesg/vmcore-dmesg.c
++++ b/vmcore-dmesg/vmcore-dmesg.c
+@@ -3,7 +3,7 @@
+ /* The 32bit and 64bit note headers make it clear we don't care */
+ typedef Elf32_Nhdr Elf_Nhdr;
+ 
+-static const char *fname;
++extern const char *fname;
+ 
+ int main(int argc, char **argv)
  {
- 	int ret;
- 
-@@ -824,24 +824,13 @@ int read_elf_vmcore(int fd)
- 	return 0;
- }
- 
--int read_elf_kcore(int fd)
--{
--	int ret;
--
--	ret = read_elf(fd);
--	if (ret != 0)
--		return ret;
--
--	return 0;
--}
--
- int read_phys_offset_elf_kcore(int fd, unsigned long *phys_off)
- {
- 	int ret;
- 
- 	*phys_off = UINT64_MAX;
- 
--	ret = read_elf_kcore(fd);
-+	ret = read_elf(fd);
- 	if (!ret) {
- 		/* If we have a valid 'PHYS_OFFSET' by now,
- 		 * return it to the caller now.
-diff --git a/util_lib/include/elf_info.h b/util_lib/include/elf_info.h
-index 1a4debd2d4ba..c328a1b0ecf2 100644
---- a/util_lib/include/elf_info.h
-+++ b/util_lib/include/elf_info.h
-@@ -29,7 +29,7 @@ int get_pt_load(int idx,
- 	unsigned long long *virt_start,
- 	unsigned long long *virt_end);
- int read_phys_offset_elf_kcore(int fd, unsigned long *phys_off);
--int read_elf_kcore(int fd);
-+int read_elf(int fd);
- int read_elf_vmcore(int fd);
- 
- #endif /* ELF_INFO_H */
 -- 
 2.17.1
 
