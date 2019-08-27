@@ -2,91 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50D309DBD3
-	for <lists+kexec@lfdr.de>; Tue, 27 Aug 2019 05:03:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C854E9DD44
+	for <lists+kexec@lfdr.de>; Tue, 27 Aug 2019 07:46:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8DIIYjtlkaXyB+BzHhFamtwVZNOFwhEeunKmrmWP/zE=; b=j2AS2FbR+gtm/cz989fH8dSbRC
-	5UNAf+G9Qmc4A01k8VsReuw5bR3J6v5IB/q88Ro1b3BaITb2gx3P8b2K1pMpRDo3gYQCV50bS7BgG
-	eKn0lWdQZWflhfsuPwPxhwpp7BffsrzpP0Q1IX4vMfFA8C1y+3sAXux0dq4IFVH6ghuKdhygMqStB
-	pd8IHkx7GnV0wWi2b6AvC/Dgv2f4vUyAVuxbxYl75lXeYHTiAFRgOn+fc/m+KgTqo5W6Dg7rAbS5O
-	FcV84DibK4XDP4/4XCxrvDmzJDUSzPcyWOCBH+mpwemoijFlYsUpTnYbuakAs2+6Msj2+tF/0HfAQ
-	LpsShdqA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JwT6uJhtc3+HTClDEC5PATlbotDExQIyNlBcmVG0N1k=; b=GvRkZKGb26suzY
+	y74MzVWnRvuZ6zrTmHCoJIqGsPh80J72411wo/1JTPoOGwsSI51xTUzMkuYEtw7gWQFOsGfjxlc0w
+	C9WQGe9QHIK10o3YvjBVlR++i0DWlN8AozPtetTTdHCNhwkAFjRdqD/hXZlpkKL4hsylRlqPLgC33
+	eHvSjOW5XCEpjppY7yKo54k4fVT6T97GliKMcjvwWD5VEHedN9alZcZGg6RTTGZPyhGbVMyP2+ZgL
+	nAUWF62q1N9L5LZK+HK3ZY7HQMJxIc2cVMKZ5+pJCZE4EJ75avITUcDFIgtdcOpcDgio94XRTntTv
+	cXaDlIoZF5AnUtyx+O7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2RlT-0006n4-Ns; Tue, 27 Aug 2019 03:03:23 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1i2UJN-0003mU-Ep; Tue, 27 Aug 2019 05:46:33 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2RlQ-0006lq-3k
- for kexec@lists.infradead.org; Tue, 27 Aug 2019 03:03:21 +0000
-Received: by mail-pg1-x542.google.com with SMTP id l21so11776438pgm.3
- for <kexec@lists.infradead.org>; Mon, 26 Aug 2019 20:03:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=yrnQxlRs86i/s4KE8dmXp4rew3gb/2U7+nHFO3UAIAU=;
- b=F2Jm01hw78AjHW7i1ufTsmGtC7C6ScZRJovECfz4/aVtX0gTeoJjAIYvCBolKqFWXo
- YXqIDJGDTC5sNF6HiDLNrx7Wy0l2EAx8QcFWfM4xscQt9flKeN6JWqa22xrd2Qgj3oaw
- woE4OrOgmn8bIMwJ0zG8XWxYUY+Qwe2b/Eqj2DqYbaziI+vSGIO+aoYknTs7DYF+YRtT
- K6rHo6GsQgWiBarBmWCAGUKU1OiOFZB+Fy2H+Rmh2VaK/stWZ/1NyrB56V1l4ZjXq7uz
- Hqg7Zhlj+5o2ZZUA8KPfK7quAikFYFxRIhbXbY4r/Q6LTLWd6oa3oexYP5tnP5XHGpYY
- qCEQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=yrnQxlRs86i/s4KE8dmXp4rew3gb/2U7+nHFO3UAIAU=;
- b=cxMlsTJ6PneT2Al6nyRPSvj4hSWJ19vz7sXIrEP+nmhJ7eSLVvVquwdh8mowRJ/pN8
- 9X46sXLwMmnZ9MeXVKjfJiMgubI1JxfoRVW3qpA27eQlx3q9eNK4zV/TUD5D06M3A51x
- Ge2s4QcjPZ4T2xErIy+xbpwfgFR/9zwE0lUQlzgxmpSZdlRUXWQEa47AKdf21MrlvNXA
- TWYlx3uam7/63H8f5Jp+7HNmQPD2Z+M5VEfeW8PXm10sQR8eMA7W1UypFjkm0+8Q2Cvq
- rZR9++gn4t79OYqFFnxHQkelKrVmLe50oX5KO9leXXsVPqNr2y18WvVcwU91E5bYLxF8
- RKWw==
-X-Gm-Message-State: APjAAAVpy+Y1EtL8L4DvR4jrL+0vwzYuX0cELdOObb7Pkw4S5Z5kgEbv
- COnsmEwr6RED8zhWoWhvgA==
-X-Google-Smtp-Source: APXvYqwJ0X06Cu4Kq1ZWHNntMxm0v1/Tf5DqZWvem13GzmH6hfsYQE01S2exvWHzd4aO7oykLksU9g==
-X-Received: by 2002:a17:90a:b104:: with SMTP id
- z4mr23213301pjq.120.1566874999420; 
- Mon, 26 Aug 2019 20:03:19 -0700 (PDT)
-Received: from mylaptop.redhat.com ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id s24sm11696535pgm.3.2019.08.26.20.03.12
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 26 Aug 2019 20:03:18 -0700 (PDT)
-From: Pingfan Liu <kernelfans@gmail.com>
-To: Thomas Gleixner <tglx@linutronix.de>, Andy Lutomirski <luto@kernel.org>,
- x86@kernel.org
-Subject: [PATCHv2 4/4] x86/smp: disallow MCE handler on rebooting AP
-Date: Tue, 27 Aug 2019 11:02:23 +0800
-Message-Id: <1566874943-4449-5-git-send-email-kernelfans@gmail.com>
-X-Mailer: git-send-email 2.7.5
-In-Reply-To: <1566874943-4449-1-git-send-email-kernelfans@gmail.com>
-References: <1566874943-4449-1-git-send-email-kernelfans@gmail.com>
+ id 1i2UJI-0003lq-8r
+ for kexec@lists.infradead.org; Tue, 27 Aug 2019 05:46:30 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 33CA410C696C;
+ Tue, 27 Aug 2019 05:46:26 +0000 (UTC)
+Received: from localhost (ovpn-12-125.pek2.redhat.com [10.72.12.125])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id E30661001944;
+ Tue, 27 Aug 2019 05:46:22 +0000 (UTC)
+Date: Tue, 27 Aug 2019 13:46:20 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Kairui Song <kasong@redhat.com>
+Subject: Re: [PATCH v2] x86/kdump: Reserve extra memory when SME or SEV is
+ active
+Message-ID: <20190827054620.GB12242@MiWiFi-R3L-srv>
+References: <20190826044535.9646-1-kasong@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190826044535.9646-1-kasong@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.65]); Tue, 27 Aug 2019 05:46:26 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_200320_162530_B0E1271E 
-X-CRM114-Status: GOOD (  14.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_224628_362156_74C35284 
+X-CRM114-Status: GOOD (  27.88  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kernelfans[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,96 +69,138 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jacob Pan <jacob.jun.pan@linux.intel.com>, Baoquan He <bhe@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, kexec@lists.infradead.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Michal Hocko <mhocko@suse.com>,
- linux-kernel@vger.kernel.org, Pingfan Liu <kernelfans@gmail.com>,
- Daniel Drake <drake@endlessm.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, Masami Hiramatsu <mhiramat@kernel.org>,
- "H. Peter Anvin" <hpa@zytor.com>, Qian Cai <cai@lca.pw>,
- Dave Young <dyoung@redhat.com>, Vlastimil Babka <vbabka@suse.cz>,
- Eric Biederman <ebiederm@xmission.com>
-MIME-Version: 1.0
+Cc: Thomas Lendacky <Thomas.Lendacky@amd.com>,
+ Lianbo Jiang <lijiang@redhat.com>, x86@kernel.org,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, Thomas Gleixner <tglx@linutronix.de>,
+ Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-"kexec -l" sends the rest cpu to halt state with local apic disabled. But
-they can still respond to MCE.  Meanwhile the execution of MCE handler
-relies on the 1st kernel's page table and text, which may be cracked during
-the 2nd kernel bootup. Hence Before sending SIPI to AP in 2nd kernel, an
-MCE event makes AP take the risk of running in weird context.
+On 08/26/19 at 12:45pm, Kairui Song wrote:
+> Since commit c7753208a94c ("x86, swiotlb: Add memory encryption support"),
+> SWIOTLB will be enabled even if there is less than 4G of memory when SME
+> is active, to support DMA of devices that not support address with the
+> encrypt bit.
+> 
+> And commit aba2d9a6385a ("iommu/amd: Do not disable SWIOTLB if SME is
+> active") make the kernel keep SWIOTLB enabled even if there is an IOMMU.
+> 
+> Then commit d7b417fa08d1 ("x86/mm: Add DMA support for SEV memory
+> encryption") will always force SWIOTLB to be enabled when SEV is active
+> in all cases.
+> 
+> Now, when either SME or SEV is active, SWIOTLB will be force enabled,
+> and this is also true for kdump kernel. As a result kdump kernel will
+> run out of already scarce pre-reserved memory easily.
+> 
+> So when SME/SEV is active, reserve extra memory for SWIOTLB to ensure
+> kdump kernel have enough memory, except when "crashkernel=size[KMG],high"
+> is specified or any offset is used. As for the high reservation case, an
+> extra low memory region will always be reserved and that is enough for
+> SWIOTLB. Else if the offset format is used, user should be fully aware
+> of any possible kdump kernel memory requirement and have to organize the
+> memory usage carefully.
+> 
+> Signed-off-by: Kairui Song <kasong@redhat.com>
 
-Heavily suppress it by disallowing MCE handler on rebooting AP.
+The patch looks good to me, ack it.
 
-Note: after this patch, "kexec -l" still has a little window vulnerable to
-weird context, despite AP uses tlb cache and icache.  Consider the
-scenario: The 1st kernel code native_halt() in stop_this_cpu() is modified
-during the 2nd kernel bootup. Then AP is waken up by MCE after the
-modification, and will continue in a weired context. This needs extra
-effort.
+Acked-by: Baoquan He <bhe@redhat.com>
 
-Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-To: Thomas Gleixner <tglx@linutronix.de>
-To: Andy Lutomirski <luto@kernel.org>
-Cc: Ingo Molnar <mingo@redhat.com>
-Cc: Borislav Petkov <bp@alien8.de>
-Cc: "H. Peter Anvin" <hpa@zytor.com>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Peter Zijlstra <peterz@infradead.org>
-To: x86@kernel.org
-Cc: Masami Hiramatsu <mhiramat@kernel.org>
-Cc: Qian Cai <cai@lca.pw>
-Cc: Vlastimil Babka <vbabka@suse.cz>
-Cc: Daniel Drake <drake@endlessm.com>
-Cc: Jacob Pan <jacob.jun.pan@linux.intel.com>
-Cc: Michal Hocko <mhocko@suse.com>
-Cc: Eric Biederman <ebiederm@xmission.com>
-Cc: linux-kernel@vger.kernel.org
-Cc: Dave Young <dyoung@redhat.com>
-Cc: Baoquan He <bhe@redhat.com>
-Cc: kexec@lists.infradead.org
----
- arch/x86/kernel/smp.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+Thanks
+Baoquan
 
-diff --git a/arch/x86/kernel/smp.c b/arch/x86/kernel/smp.c
-index 96421f9..55b0f11 100644
---- a/arch/x86/kernel/smp.c
-+++ b/arch/x86/kernel/smp.c
-@@ -157,11 +157,15 @@ void native_send_call_func_ipi(const struct cpumask *mask)
- 
- static int smp_stop_nmi_callback(unsigned int val, struct pt_regs *regs)
- {
-+	struct desc_ptr null_ptr = { 0 };
-+
- 	/* We are registered on stopping cpu too, avoid spurious NMI */
- 	if (raw_smp_processor_id() == atomic_read(&stopping_cpu))
- 		return NMI_HANDLED;
- 
- 	cpu_emergency_vmxoff();
-+	/* prevent from dispatching MCE handler */
-+	load_idt(&null_ptr);
- 	stop_this_cpu(NULL);
- 
- 	return NMI_HANDLED;
-@@ -173,8 +177,12 @@ static int smp_stop_nmi_callback(unsigned int val, struct pt_regs *regs)
- 
- asmlinkage __visible void smp_reboot_interrupt(void)
- {
-+	struct desc_ptr null_ptr = { 0 };
-+
- 	ipi_entering_ack_irq();
- 	cpu_emergency_vmxoff();
-+	/* prevent from dispatching MCE handler */
-+	load_idt(&null_ptr);
- 	stop_this_cpu(NULL);
- 	irq_exit();
- }
--- 
-2.7.5
-
+> 
+> ---
+> Update from V1:
+> - Use mem_encrypt_active() instead of "sme_active() || sev_active()"
+> - Don't reserve extra memory when ",high" or "@offset" is used, and
+>   don't print redundant message.
+> - Fix coding style problem
+> 
+>  arch/x86/kernel/setup.c | 31 ++++++++++++++++++++++++++++---
+>  1 file changed, 28 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
+> index bbe35bf879f5..221beb10c55d 100644
+> --- a/arch/x86/kernel/setup.c
+> +++ b/arch/x86/kernel/setup.c
+> @@ -528,7 +528,7 @@ static int __init reserve_crashkernel_low(void)
+>  
+>  static void __init reserve_crashkernel(void)
+>  {
+> -	unsigned long long crash_size, crash_base, total_mem;
+> +	unsigned long long crash_size, crash_base, total_mem, mem_enc_req;
+>  	bool high = false;
+>  	int ret;
+>  
+> @@ -550,6 +550,15 @@ static void __init reserve_crashkernel(void)
+>  		return;
+>  	}
+>  
+> +	/*
+> +	 * When SME/SEV is active, it will always required an extra SWIOTLB
+> +	 * region.
+> +	 */
+> +	if (mem_encrypt_active())
+> +		mem_enc_req = ALIGN(swiotlb_size_or_default(), SZ_1M);
+> +	else
+> +		mem_enc_req = 0;
+> +
+>  	/* 0 means: find the address automatically */
+>  	if (!crash_base) {
+>  		/*
+> @@ -563,11 +572,19 @@ static void __init reserve_crashkernel(void)
+>  		if (!high)
+>  			crash_base = memblock_find_in_range(CRASH_ALIGN,
+>  						CRASH_ADDR_LOW_MAX,
+> -						crash_size, CRASH_ALIGN);
+> -		if (!crash_base)
+> +						crash_size + mem_enc_req,
+> +						CRASH_ALIGN);
+> +		/*
+> +		 * For high reservation, an extra low memory for SWIOTLB will
+> +		 * always be reserved later, so no need to reserve extra
+> +		 * memory for memory encryption case here.
+> +		 */
+> +		if (!crash_base) {
+> +			mem_enc_req = 0;
+>  			crash_base = memblock_find_in_range(CRASH_ALIGN,
+>  						CRASH_ADDR_HIGH_MAX,
+>  						crash_size, CRASH_ALIGN);
+> +		}
+>  		if (!crash_base) {
+>  			pr_info("crashkernel reservation failed - No suitable area found.\n");
+>  			return;
+> @@ -575,6 +592,7 @@ static void __init reserve_crashkernel(void)
+>  	} else {
+>  		unsigned long long start;
+>  
+> +		mem_enc_req = 0;
+>  		start = memblock_find_in_range(crash_base,
+>  					       crash_base + crash_size,
+>  					       crash_size, 1 << 20);
+> @@ -583,6 +601,13 @@ static void __init reserve_crashkernel(void)
+>  			return;
+>  		}
+>  	}
+> +
+> +	if (mem_enc_req) {
+> +		pr_info("Memory encryption is active, crashkernel needs %ldMB extra memory\n",
+> +			(unsigned long)(mem_enc_req >> 20));
+> +		crash_size += mem_enc_req;
+> +	}
+> +
+>  	ret = memblock_reserve(crash_base, crash_size);
+>  	if (ret) {
+>  		pr_err("%s: Error reserving crashkernel memblock.\n", __func__);
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 kexec mailing list
