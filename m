@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EAC39DBCC
-	for <lists+kexec@lfdr.de>; Tue, 27 Aug 2019 05:03:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADC8E9DBD1
+	for <lists+kexec@lfdr.de>; Tue, 27 Aug 2019 05:03:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=LxCRczPkkB9jXdKrDhGmZ/2l7TjuZZT5M981sVwWm9I=; b=eQwLs1eTm5iNGV/gIDKRloa3bJ
-	DGCtJTYBXEWcwF3riIJITrFiWUwlKXFLKRRug0E03IKRgs0GywwHx3F4baCH7RqyJBTwcrtWv+h8z
-	udjcD+KVXSNRZqwbRZKstJSg3a+IsSxt4XVPr1kxHFcKjf4V2tWDJD+kpiZ/jXIm8RSWh4TcnMfAH
-	qKo2kB62K5hfb7H9QxiwO3pw4hYMccwAzAxhidekodW1HWsekcgg05upPdtqE47yE/7FIQdSh6nx6
-	JegHxnhdtg2sTnkWoOD8pDjdUal20/u3/AoGLPnYI7saD/Bh7n5A1AqYwmzbr6JfE4rWcNA8Re3d6
-	72qujsfw==;
+	bh=jLeabWAX860dV+WdCXz3l2Ht2l/y0j7AKu49dkMlW0k=; b=R7gkAQIe9UsonRxOp1U6X/Rdwn
+	6NPJQDwN3SoPhrDcWWecsvVX3bMA3iBYEw35/kbFuH+UUMliKguJ+RSkZdHZt95aPF4iRLKVzbQ/T
+	cbxfw8qLIOfxfoWbHA1ii+Rd1OKRLdQbqMApdYgrC7NG8blh6TDKEre8Oy78Y5Ks1hv6nS+uWK++y
+	KttQIO43xJvRgPbGqRaXtTk7GiAfsYGHUiynWfaxFQBTS3uShODm6hYKPiqamAaMYbgE2BwOQN9pn
+	aeZt4FyUMgtVYNIvrhxfOlu3nEj1VzePQfJctAYepbSLkxBUjRSDRl09vv+mgs9r0oIx8OywSMhcy
+	76otbOwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Rl5-0006bG-RC; Tue, 27 Aug 2019 03:02:59 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1i2RlD-0006et-Rv; Tue, 27 Aug 2019 03:03:07 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Rl3-0006aD-1Q
- for kexec@lists.infradead.org; Tue, 27 Aug 2019 03:02:58 +0000
-Received: by mail-pl1-x643.google.com with SMTP id bj8so11020642plb.4
- for <kexec@lists.infradead.org>; Mon, 26 Aug 2019 20:02:56 -0700 (PDT)
+ id 1i2RlB-0006e3-0c
+ for kexec@lists.infradead.org; Tue, 27 Aug 2019 03:03:06 +0000
+Received: by mail-pg1-x541.google.com with SMTP id d1so11779433pgp.4
+ for <kexec@lists.infradead.org>; Mon, 26 Aug 2019 20:03:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+678Xv5ru8PcQuczzEyKD2Pw0q4hQ1y6t38q+jHCNZs=;
- b=IYjfYeg2SY10CgAnFjQidvjw8uO4HIpNGr+sWsaHzTVz8BzWkE+tl0xH6Bf6wWnfmY
- hJ3Y020hTO33N2n+CK9nuT/0LV2HZdFq8fb2pU04S8jTsSeXo60elpa9fcnjLxPsSsPC
- uRLPqxUiJw6/bqGhiLMXW722bfYpwCmfWwcH8xiWmlwLEVZR23sXDGLgW2GDWI17LCb5
- ydBHcw/CvX03GwJSlLYvL5dpsoOi4/+h3oKgCLN4rrd9J05jkoIoF0v3Vrdv+pySvv2O
- 0SeqN+kaN3LOhIz6gxiTzAZWfvIfkVz+zksM5a7XW2O5S+f9kQ6MxPS+HZ63ohbP3RmF
- fH6A==
+ bh=skmsHZOHc0GUvyBJg6E9lWxbDB6kRwoBkgWBhnFqhKs=;
+ b=Ck9vOoT9JhqS3AHBlUZ9u9RSyK9vbHUCmGHooclQYjszZjwRFyklKNdV2qJgyCfdRf
+ FOECFz4w0Vi2b+NUAIxtdI2NuNYIRxGNtCM/WyOS0xDV6n/3yT2bV4abrTUj093LKKz9
+ cVrWsaxjikv5aOu2UvIbGTOKJ+J8si1JWFYaJiFImR6FdtIe0KgY068hDHD94t66E5iU
+ dZZip3ohNQF4alhU4GDjJ5cH7OHEnsJGePk8pi4ReV7gr+XymUQlEwdvLbVYtT2oFSiQ
+ iHaQT0UHK6s9wYlUiC4ZT2titktU0QiLYsuwXKFdDSX3cRaVEu5xaGn3G6Y88uIi5xOe
+ CGpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=+678Xv5ru8PcQuczzEyKD2Pw0q4hQ1y6t38q+jHCNZs=;
- b=XLBr1LYzxWKZMDESFjjMVFAWkAiILOty8kVwXLzZ02OSs80N9749X5my/HMhDQEhdb
- t3+t16H5FFb4glu5KF9vLL9rFAMFZNN4Vd5JlnRiWdBQOCUiCdI+CHOb8dlsnnsN7LHF
- XGGrgb/KrVVcNHgmKYKCZmZ8VaGJYc354ZPxId1mgWr1jVttXl9vwn6C1tn5/2b3Um9P
- dgKsSnab/WiNKvLVX3seCW8vfvx4gjBed4HEnI/YG8/N23Rh5GETxV6AIZiTgqdsnBf+
- Ow/FKzXylMz6BomOJa9v7XB7Fp/yyXEdU0djZRMyOnNzJ1qwOd7QExuPhp2izMpuYCZo
- 7HjQ==
-X-Gm-Message-State: APjAAAXnaGpqdUoeWFCiwnuZWZ1G0Dj6U+Al148tcgx8AncDU6dAzEw8
- Kjqprk1DDUiOkPhOgpzIfA==
-X-Google-Smtp-Source: APXvYqxy5aax1zCxTBqsR8zHF1JVOxQUspv/kSUvTRdHfceCX0u+jQsLz1i41dOfUEMbkoqp6qcK2g==
-X-Received: by 2002:a17:902:6b88:: with SMTP id
- p8mr20470650plk.95.1566874976285; 
- Mon, 26 Aug 2019 20:02:56 -0700 (PDT)
+ bh=skmsHZOHc0GUvyBJg6E9lWxbDB6kRwoBkgWBhnFqhKs=;
+ b=HqS0KM6K4k8byFu+2epOiA+8+WBAxene7c/ry5UUtJvE8nly8gs2bmi1ePdXXfRsOx
+ dhJcXRuH8talIlbRcSVAY5JNYgTUCN6Rm8VD+i+AeImUpe5I38MX3B5mYZsA3rrZnha+
+ U5FB3FyZqeZDlx+m+O5mTKswOjHCNBHaMzIhXwQGFud1h1+oRoG6PBA2N2V/N205SKHp
+ F4nJtLOVoBYIFnTlwmw/D+/Gh5lT5fpKLzg6QRoyyRbXpVkqfF/LOogUa5qL+S64QWBi
+ aJ5Y7fS3/nctWggv/N5HMipHu4bni3GZmKRb2GWYqKwzOxGYEFKtOIIrOOFW0fa6gEaG
+ hFsA==
+X-Gm-Message-State: APjAAAXr5JRWaLp8cuH86Qojpz3JcAJplHaJTOeeGN8UvfwVPa7MuE54
+ B79Glqgw+xUwJ3xltsWw7w==
+X-Google-Smtp-Source: APXvYqzwfdPZ9oie+DoxTzkjELxMDqe6MH132qvK0r9T52mfvMxBA6NdMQUyFFPPAdqCY8dSCPIkFQ==
+X-Received: by 2002:a17:90a:c08f:: with SMTP id
+ o15mr23593215pjs.31.1566874984302; 
+ Mon, 26 Aug 2019 20:03:04 -0700 (PDT)
 Received: from mylaptop.redhat.com ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id s24sm11696535pgm.3.2019.08.26.20.02.48
+ by smtp.gmail.com with ESMTPSA id s24sm11696535pgm.3.2019.08.26.20.02.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 26 Aug 2019 20:02:55 -0700 (PDT)
+ Mon, 26 Aug 2019 20:03:03 -0700 (PDT)
 From: Pingfan Liu <kernelfans@gmail.com>
 To: Thomas Gleixner <tglx@linutronix.de>, Andy Lutomirski <luto@kernel.org>,
  x86@kernel.org
-Subject: [PATCHv2 1/4] x86/apic: correct the ENO in generic_processor_info()
-Date: Tue, 27 Aug 2019 11:02:20 +0800
-Message-Id: <1566874943-4449-2-git-send-email-kernelfans@gmail.com>
+Subject: [PATCHv2 2/4] x86/apic: record capped cpu in generic_processor_info()
+Date: Tue, 27 Aug 2019 11:02:21 +0800
+Message-Id: <1566874943-4449-3-git-send-email-kernelfans@gmail.com>
 X-Mailer: git-send-email 2.7.5
 In-Reply-To: <1566874943-4449-1-git-send-email-kernelfans@gmail.com>
 References: <1566874943-4449-1-git-send-email-kernelfans@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_200257_082166_1C262EE9 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20190826_200305_076614_335C59B8 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,8 +113,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-When capped by nr_cpu_ids, the current code return -EINVAL or -ENODEV. It
-is better to return -EINVAL for both cases.
+No matter the cpu is capped by nr_cpus option, recording the mapping
+between all cpus' id and apic id
+
+Later this mapping will be used by BSP to sent SIPI to bring capped cpu to
+stable state
 
 Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
 To: Thomas Gleixner <tglx@linutronix.de>
@@ -137,22 +140,111 @@ Cc: Dave Young <dyoung@redhat.com>
 Cc: Baoquan He <bhe@redhat.com>
 Cc: kexec@lists.infradead.org
 ---
- arch/x86/kernel/apic/apic.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/x86/include/asm/smp.h   |  2 ++
+ arch/x86/kernel/apic/apic.c  | 21 +++++++++++++++------
+ arch/x86/kernel/cpu/common.c |  4 ++++
+ 3 files changed, 21 insertions(+), 6 deletions(-)
 
+diff --git a/arch/x86/include/asm/smp.h b/arch/x86/include/asm/smp.h
+index e1356a3..5f63399 100644
+--- a/arch/x86/include/asm/smp.h
++++ b/arch/x86/include/asm/smp.h
+@@ -196,5 +196,7 @@ extern void nmi_selftest(void);
+ #define nmi_selftest() do { } while (0)
+ #endif
+ 
++extern struct cpumask *cpu_capped_mask;
++
+ #endif /* __ASSEMBLY__ */
+ #endif /* _ASM_X86_SMP_H */
 diff --git a/arch/x86/kernel/apic/apic.c b/arch/x86/kernel/apic/apic.c
-index f529136..f4f603a 100644
+index f4f603a..6a57bad3 100644
 --- a/arch/x86/kernel/apic/apic.c
 +++ b/arch/x86/kernel/apic/apic.c
-@@ -2346,7 +2346,7 @@ int generic_processor_info(int apicid, int version)
+@@ -2296,9 +2296,10 @@ static int allocate_logical_cpuid(int apicid)
+ 
+ int generic_processor_info(int apicid, int version)
+ {
+-	int cpu, max = nr_cpu_ids;
++	int thiscpu, cpu, max = nr_cpu_ids;
+ 	bool boot_cpu_detected = physid_isset(boot_cpu_physical_apicid,
+ 				phys_cpu_present_map);
++	bool capped = false;
+ 
+ 	/*
+ 	 * boot_cpu_physical_apicid is designed to have the apicid
+@@ -2322,7 +2323,7 @@ int generic_processor_info(int apicid, int version)
+ 	if (disabled_cpu_apicid != BAD_APICID &&
+ 	    disabled_cpu_apicid != read_apic_id() &&
+ 	    disabled_cpu_apicid == apicid) {
+-		int thiscpu = num_processors + disabled_cpus;
++		thiscpu = num_processors + disabled_cpus;
+ 
+ 		pr_warning("APIC: Disabling requested cpu."
+ 			   " Processor %d/0x%x ignored.\n",
+@@ -2338,7 +2339,7 @@ int generic_processor_info(int apicid, int version)
+ 	 */
+ 	if (!boot_cpu_detected && num_processors >= nr_cpu_ids - 1 &&
+ 	    apicid != boot_cpu_physical_apicid) {
+-		int thiscpu = max + disabled_cpus - 1;
++		thiscpu = max + disabled_cpus - 1;
+ 
+ 		pr_warning(
+ 			"APIC: NR_CPUS/possible_cpus limit of %i almost"
+@@ -2346,20 +2347,28 @@ int generic_processor_info(int apicid, int version)
  			"  Processor %d/0x%x ignored.\n", max, thiscpu, apicid);
  
  		disabled_cpus++;
--		return -ENODEV;
-+		return -EINVAL;
+-		return -EINVAL;
++		capped = true;
  	}
  
  	if (num_processors >= nr_cpu_ids) {
+-		int thiscpu = max + disabled_cpus;
++		thiscpu = max + disabled_cpus;
+ 
+ 		pr_warning("APIC: NR_CPUS/possible_cpus limit of %i "
+ 			   "reached. Processor %d/0x%x ignored.\n",
+ 			   max, thiscpu, apicid);
+ 
+ 		disabled_cpus++;
+-		return -EINVAL;
++		capped = true;
+ 	}
+ 
++	if (capped) {
++		/* record the mapping between capped cpu and apicid */
++		if (thiscpu < NR_CPUS && cpu_capped_mask != NULL) {
++			cpuid_to_apicid[thiscpu] = apicid;
++			cpumask_set_cpu(thiscpu, cpu_capped_mask);
++		}
++		return -EINVAL;
++	}
+ 	if (apicid == boot_cpu_physical_apicid) {
+ 		/*
+ 		 * x86_bios_cpu_apicid is required to have processors listed
+diff --git a/arch/x86/kernel/cpu/common.c b/arch/x86/kernel/cpu/common.c
+index 1147217..b95721e 100644
+--- a/arch/x86/kernel/cpu/common.c
++++ b/arch/x86/kernel/cpu/common.c
+@@ -66,6 +66,9 @@ u32 elf_hwcap2 __read_mostly;
+ cpumask_var_t cpu_initialized_mask;
+ cpumask_var_t cpu_callout_mask;
+ cpumask_var_t cpu_callin_mask;
++/* size of NR_CPUS is required. */
++static struct cpumask __cpu_capped_mask __initdata;
++struct cpumask *cpu_capped_mask;
+ 
+ /* representing cpus for which sibling maps can be computed */
+ cpumask_var_t cpu_sibling_setup_mask;
+@@ -84,6 +87,7 @@ void __init setup_cpu_local_masks(void)
+ 	alloc_bootmem_cpumask_var(&cpu_callin_mask);
+ 	alloc_bootmem_cpumask_var(&cpu_callout_mask);
+ 	alloc_bootmem_cpumask_var(&cpu_sibling_setup_mask);
++	cpu_capped_mask = &__cpu_capped_mask;
+ }
+ 
+ static void default_init(struct cpuinfo_x86 *c)
 -- 
 2.7.5
 
