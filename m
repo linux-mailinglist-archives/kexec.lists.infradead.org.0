@@ -2,53 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 321B4A302B
-	for <lists+kexec@lfdr.de>; Fri, 30 Aug 2019 08:40:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D17D7A305D
+	for <lists+kexec@lfdr.de>; Fri, 30 Aug 2019 09:09:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ONCI4AONYBXIfSb/eO4AQE1N9uSCslH7CHeIYRU48HY=; b=CfGZBX2lfdE41W
-	7k7eT6uF2ITs1SfLFGqNNJ1ON7lhX8BHBhFnUD/yyxiQtY8/TlFg1xxwrhaiizZJ71nUYbvEi90EF
-	Ju7DQBbE213t0d5IRciTaLTzaWgUr1fns2qzuOLOgbB3f6DtJDOQ2talDLQtR9KtwD4HtBoDuoUV0
-	hWtXMoEdMYx0i1ObqqpSDLQ8KXOCdQaPHBjXrEzjgorjAaRPeFWEYBs5+lg31JZdS0SDpGwMu2g9F
-	BC/oizfy1+fzOCS9FRFoAGayjCSEmVU17nHtI40JtTOBGIn4aWSQIpZHRzgqe4OHxLPzRSVIy9k/4
-	IuT+wyzK0SofWF/Wp1/Q==;
+	List-Owner; bh=dhKZyPxZdt5mGSjQKGMwtvTTEehSZc1DvrReqYwUg1M=; b=Qbjj0xBjzgSEuh
+	hr4MvOEB2IL3QE/PqE9jDvarzUC7uIGTZemYSSA05pqUmHRjOA2nBMRT3JclTPW4PevvG73HLsTDe
+	WnDpIr/KXMFY/fJdezYubyuGzGRiBd2/VH79yvfGCsWNVqbTggOAV+Z3NmqFnDGTan9U1j8bD13/3
+	HlQ4bZd8nPuV/DrFI9ivYJaeaIxoxq36v8XdADdVfkvbgyQz7hWtGqnzJYS8Hji7oFjAIKMbcISeD
+	XNbtIvHJcomuluYxheLFJhsW6ZLYFocS9HU+fb621PKORDQJIwjTgQudIU1U+EV7Vzd6VniS4DvMU
+	hTnMqgu69Hjl5T1PnexQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3aab-0001fp-Dn; Fri, 30 Aug 2019 06:40:53 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1i3b2A-0001pw-F9; Fri, 30 Aug 2019 07:09:23 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3aaV-0001et-4v
- for kexec@lists.infradead.org; Fri, 30 Aug 2019 06:40:48 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 61E7CFDE62EA47F40FAF
- for <kexec@lists.infradead.org>; Fri, 30 Aug 2019 14:40:37 +0800 (CST)
+ id 1i3b1m-0001nP-5n; Fri, 30 Aug 2019 07:09:00 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id DD2446750602CC9594D0;
+ Fri, 30 Aug 2019 15:08:55 +0800 (CST)
 Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS408-HUB.china.huawei.com (10.3.19.208) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 30 Aug 2019 14:40:31 +0800
+ DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 30 Aug 2019 15:08:47 +0800
 From: Chen Zhou <chenzhou10@huawei.com>
-To: <horms@verge.net.au>, <kexec@lists.infradead.org>
-Subject: [PATCH v2] arm64: kdump: add another DT property to crash dump
- kernel's dtb
-Date: Fri, 30 Aug 2019 14:43:05 +0800
-Message-ID: <20190830064305.36356-1-chenzhou10@huawei.com>
+To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
+ <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
+ <bhsharma@redhat.com>
+Subject: [PATCH v6 0/4] support reserving crashkernel above 4G on arm64 kdump
+Date: Fri, 30 Aug 2019 15:11:56 +0800
+Message-ID: <20190830071200.56169-1-chenzhou10@huawei.com>
 X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-Originating-IP: [10.175.113.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_234047_358647_46D0ED92 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20190830_000858_684856_F4DFD233 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -62,183 +63,101 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Chen Zhou <chenzhou10@huawei.com>, guohanjun@huawei.com
+Cc: Chen Zhou <chenzhou10@huawei.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, horms@verge.net.au, guohanjun@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Currently, there is only one crash kernel region on arm64, we add
-another region "crash kernel low" used for crash dump kernel devices.
+I am busy with other things, so it was a long time before this version was
+released.
 
-To do this, we add DT property "linux,low-memory-range" to crash
-dump kernel's dtb to pass the low region.
+This patch series enable reserving crashkernel above 4G in arm64.
 
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
----
-For "support reserving crashkernel above 4G on arm64 kdump", we need to
-modify the kexec-tools.
+There are following issues in arm64 kdump:
+1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+when there is no enough low memory.
+2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+in this case, if swiotlb or DMA buffers are requierd, crash dump kernel
+will boot failure because there is no low memory available for allocation.
 
-I will post patch series "[PATCH v6 0/4] support reserving crashkernel
-above 4G on arm64 kdump". This version is much different from the previous
-one and the kexec-tools part neeed to be modified.
+To solve these issues, introduce crashkernel=X,low to reserve specified
+size low memory.
+Crashkernel=X tries to reserve memory for the crash dump kernel under
+4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
+size low memory for crash kdump kernel devices firstly and then reserve
+memory above 4G.
+
+When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
+is specified simultaneously, kernel should reserve specified size low memory
+for crash dump kernel devices. So there may be two crash kernel regions, one
+is below 4G, the other is above 4G.
+In order to distinct from the high region and make no effect to the use of
+kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
+"linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
+
+Besides, we need to modify kexec-tools:
+arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
+
+The previous changes and discussions can be retrieved from:
+
+Changes since [v5]
+- Move reserve_crashkernel_low() into kernel/crash_core.c.
+- Delete crashkernel=X,high.
+- Modify crashkernel=X,low.
+If crashkernel=X,low is specified simultaneously, reserve spcified size low
+memory for crash kdump kernel devices firstly and then reserve memory above 4G.
+In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
+pass to crash dump kernel by DT property "linux,low-memory-range".
+- Update Documentation/admin-guide/kdump/kdump.rst.
+
+Changes since [v4]
+- Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+
+Changes since [v3]
+- Add memblock_cap_memory_ranges back for multiple ranges.
+- Fix some compiling warnings.
+
+Changes since [v2]
+- Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+patch.
 
 Changes since [v1]:
-- Add another DT property "linux,low-memory-range" to crash dump kernel's
-dtb to pass the low region instead of reusing "linux,usable-memory-range".
+- Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+- Remove memblock_cap_memory_ranges() i added in v1 and implement that
+in fdt_enforce_memory_region().
+There are at most two crash kernel regions, for two crash kernel regions
+case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+and then remove the memory range in the middle.
 
-[1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
----
- kexec/arch/arm64/crashdump-arm64.c | 29 +++++++++++++++++++++++++++--
- kexec/arch/arm64/crashdump-arm64.h |  2 ++
- kexec/arch/arm64/iomem.h           |  1 +
- kexec/arch/arm64/kexec-arm64.c     | 27 +++++++++++++++++++++++++++
- 4 files changed, 57 insertions(+), 2 deletions(-)
+[1]: http://lists.infradead.org/pipermail/kexec/2019-August/023569.html
+[v1]: https://lkml.org/lkml/2019/4/2/1174
+[v2]: https://lkml.org/lkml/2019/4/9/86
+[v3]: https://lkml.org/lkml/2019/4/9/306
+[v4]: https://lkml.org/lkml/2019/4/15/273
+[v5]: https://lkml.org/lkml/2019/5/6/1360
 
-diff --git a/kexec/arch/arm64/crashdump-arm64.c b/kexec/arch/arm64/crashdump-arm64.c
-index 4fd7aa8..a8be036 100644
---- a/kexec/arch/arm64/crashdump-arm64.c
-+++ b/kexec/arch/arm64/crashdump-arm64.c
-@@ -39,6 +39,14 @@ struct memory_ranges usablemem_rgns = {
- 	.ranges = &crash_reserved_mem,
- };
- 
-+/* memory range reserved for crashkernel low, optional */
-+struct memory_range crash_reserved_low_mem;
-+struct memory_ranges lowmem_rgns = {
-+	.size = 0,
-+	.max_size = 1,
-+	.ranges = &crash_reserved_low_mem,
-+};
-+
- struct memory_range elfcorehdr_mem;
- 
- static struct crash_elf_info elf_info = {
-@@ -89,7 +97,10 @@ static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
- 				char *str, unsigned long long base,
- 				unsigned long long length)
- {
--	if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
-+	if (strncmp(str, CRASH_KERNEL_LOW, strlen(CRASH_KERNEL_LOW)) == 0)
-+		return mem_regions_add(&lowmem_rgns,
-+				base, length, RANGE_RAM);
-+	else if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
- 		return mem_regions_add(&usablemem_rgns,
- 				       base, length, RANGE_RAM);
- 	else if (strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) == 0)
-@@ -129,7 +140,7 @@ static int crash_get_memory_ranges(void)
- 	if (!usablemem_rgns.size)
- 		kexec_iomem_for_each_line(NULL, iomem_range_callback, NULL);
- 
--	/* allow only a single region for crash dump kernel */
-+	/* allow only a single usablemem region for crash dump kernel */
- 	if (usablemem_rgns.size != 1)
- 		return -EINVAL;
- 
-@@ -141,6 +152,20 @@ static int crash_get_memory_ranges(void)
- 		return -ENOMEM;
- 	}
- 
-+	/* lowmem region for crash dump kernel is optional, at most one region */
-+	if (lowmem_rgns.size > 1)
-+		return -EINVAL;
-+
-+	if (lowmem_rgns.size) {
-+		dbgprint_mem_range("Reserved low memory range", &crash_reserved_low_mem,
-+				1);
-+
-+		if (mem_regions_exclude(&system_memory_rgns, &crash_reserved_low_mem)) {
-+			fprintf(stderr,
-+					"Error: Number of crash memory ranges excedeed the max limit\n");
-+			return -ENOMEM;
-+		}
-+	}
- 	/*
- 	 * Make sure that the memory regions are sorted.
- 	 */
-diff --git a/kexec/arch/arm64/crashdump-arm64.h b/kexec/arch/arm64/crashdump-arm64.h
-index 880b83a..f185534 100644
---- a/kexec/arch/arm64/crashdump-arm64.h
-+++ b/kexec/arch/arm64/crashdump-arm64.h
-@@ -18,6 +18,8 @@
- 
- extern struct memory_ranges usablemem_rgns;
- extern struct memory_range crash_reserved_mem;
-+extern struct memory_ranges lowmem_rgns;
-+extern struct memory_range crash_reserved_low_mem;
- extern struct memory_range elfcorehdr_mem;
- 
- extern int load_crashdump_segments(struct kexec_info *info);
-diff --git a/kexec/arch/arm64/iomem.h b/kexec/arch/arm64/iomem.h
-index d4864bb..45d7953 100644
---- a/kexec/arch/arm64/iomem.h
-+++ b/kexec/arch/arm64/iomem.h
-@@ -4,6 +4,7 @@
- #define SYSTEM_RAM		"System RAM\n"
- #define KERNEL_CODE		"Kernel code\n"
- #define KERNEL_DATA		"Kernel data\n"
-+#define CRASH_KERNEL_LOW	"Crash kernel (low)\n"
- #define CRASH_KERNEL		"Crash kernel\n"
- #define IOMEM_RESERVED		"reserved\n"
- 
-diff --git a/kexec/arch/arm64/kexec-arm64.c b/kexec/arch/arm64/kexec-arm64.c
-index eb3a3a3..dddec23 100644
---- a/kexec/arch/arm64/kexec-arm64.c
-+++ b/kexec/arch/arm64/kexec-arm64.c
-@@ -38,6 +38,7 @@
- #define PROP_SIZE_CELLS "#size-cells"
- #define PROP_ELFCOREHDR "linux,elfcorehdr"
- #define PROP_USABLE_MEM_RANGE "linux,usable-memory-range"
-+#define PROP_LOW_MEM_RANGE "linux,low-memory-range"
- 
- #define PAGE_OFFSET_36 ((0xffffffffffffffffUL) << 36)
- #define PAGE_OFFSET_39 ((0xffffffffffffffffUL) << 39)
-@@ -466,12 +467,24 @@ static int setup_2nd_dtb(struct dtb *dtb, char *command_line, int on_crash)
- 		goto on_error;
- 	}
- 
-+	if (lowmem_rgns.size) {
-+		if (!cells_size_fitted(address_cells, size_cells,
-+					&crash_reserved_low_mem)) {
-+			fprintf(stderr, "kexec: low memory range doesn't fit cells-size.\n");
-+			result = -EINVAL;
-+			goto on_error;
-+		}
-+	}
-+
- 	/* duplicate dt blob */
- 	range_len = sizeof(uint32_t) * (address_cells + size_cells);
- 	new_size = fdt_totalsize(dtb->buf)
- 		+ fdt_prop_len(PROP_ELFCOREHDR, range_len)
- 		+ fdt_prop_len(PROP_USABLE_MEM_RANGE, range_len);
- 
-+	if (lowmem_rgns.size)
-+		new_size += fdt_prop_len(PROP_LOW_MEM_RANGE, range_len);
-+
- 	new_buf = xmalloc(new_size);
- 	result = fdt_open_into(dtb->buf, new_buf, new_size);
- 	if (result) {
-@@ -575,6 +588,20 @@ static int setup_2nd_dtb(struct dtb *dtb, char *command_line, int on_crash)
- 			result = -EINVAL;
- 			goto on_error;
- 		}
-+
-+		/* add linux,low-memory-range */
-+		if (lowmem_rgns.size) {
-+			nodeoffset = fdt_path_offset(new_buf, "/chosen");
-+			result = fdt_setprop_range(new_buf, nodeoffset,
-+					PROP_LOW_MEM_RANGE, &crash_reserved_low_mem,
-+					address_cells, size_cells);
-+			if (result) {
-+				dbgprintf("%s: fdt_setprop failed: %s\n", __func__,
-+						fdt_strerror(result));
-+				result = -EINVAL;
-+				goto on_error;
-+			}
-+		}
- 	}
- 
- 	fdt_pack(new_buf);
+Chen Zhou (4):
+  x86: kdump: move reserve_crashkernel_low() into crash_core.c
+  arm64: kdump: reserve crashkenel above 4G for crash dump kernel
+  arm64: kdump: add memory for devices by DT property, low-memory-range
+  kdump: update Documentation about crashkernel on arm64
+
+ Documentation/admin-guide/kdump/kdump.rst       | 13 ++++-
+ Documentation/admin-guide/kernel-parameters.txt | 12 ++++-
+ arch/arm64/include/asm/kexec.h                  |  3 ++
+ arch/arm64/kernel/setup.c                       |  8 ++-
+ arch/arm64/mm/init.c                            | 61 +++++++++++++++++++++--
+ arch/x86/include/asm/kexec.h                    |  3 ++
+ arch/x86/kernel/setup.c                         | 65 +++----------------------
+ include/linux/crash_core.h                      |  4 ++
+ include/linux/kexec.h                           |  1 -
+ kernel/crash_core.c                             | 65 +++++++++++++++++++++++++
+ 10 files changed, 168 insertions(+), 67 deletions(-)
+
 -- 
 2.7.4
 
