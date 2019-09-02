@@ -2,94 +2,64 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D034A4E9B
-	for <lists+kexec@lfdr.de>; Mon,  2 Sep 2019 06:27:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1032DA4F08
+	for <lists+kexec@lfdr.de>; Mon,  2 Sep 2019 08:02:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/OI2r5M98f5p6DCUsIVpBGQs8hm7Inhj1ixqsBh8Ddc=; b=OFryVyDj01Xypm
-	tZSOo8EN7prU1WFnKoKNx8I2WN9oZ4Nf3aKHpCQX6TJdp5tE6/o4BBfoxKM0qFLjm+g8OXxflRiHm
-	VM1cHXi4As4Ctk4DM1ZFOg/I1JqjmrfOVaDbhDO9O0wHw3Rdrz1ErElKZii+CtOzbEQH8AO5VUMHK
-	dJ34Z7uBjeBh2KeBY/l4MGQWqfKsUTgl3YHGhzcjwEFwN+U6C7rIBLUGfSKhQ6h1OOV5LbUXc3xCG
-	SJ2ImPegSldXAjA0m97SWicCk2gP3TDDAicp7uC/azwVkObrCcKiLp25qYgrK7fzZ7K0uSbPek1DF
-	Y6hoh0DT73L2RD8W0ojg==;
+	List-Owner; bh=psQPF9uZXVHAf7Q0ufFZv6rfjthdqHyzK0JoHoZTJTA=; b=YMVX6EHX8dmUFE
+	iJvo0px3gJUhaunIwCileP/OI7Thvo0bZZsDt4+bQhEVKjXBko37y7p+qvUVxAJ86yvohbA/9PIOX
+	ovH7dQYATMR2W/ab4RnqF1LlQKupJe7CB51QZgPA0lhPeAusFp8LEKJMtrJjX55MyGxh4YstSZPsH
+	kRwGBS0qBslq+TkZs/Z4s6+1fTowsJpcJpNXGk7xAczYSKUG0M/dXB2P16OO3l01oNcfOS/NhJO2w
+	r9wK3xYUp05nwghwsRdnCm9QYDAqEw2LanZGvMETDioMdEKNrmbNodv35FO0ZEFEZjCBkhNPHhxoU
+	WILjrZZlxmnPZV2Xfn9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4dvi-0002is-Vx; Mon, 02 Sep 2019 04:27:02 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1i4fQI-0007Rt-Ps; Mon, 02 Sep 2019 06:02:42 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4dvb-0002hy-Ln
- for kexec@lists.infradead.org; Mon, 02 Sep 2019 04:26:57 +0000
-Received: by mail-pg1-x542.google.com with SMTP id d10so2212298pgo.5
- for <kexec@lists.infradead.org>; Sun, 01 Sep 2019 21:26:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=S99dbtNIAtu+fwZeUFVd1C5ofXlsVXppc5advXWFAIo=;
- b=B6vp5dOerKyW4NLf3UQOZPvA11me7OSFejt3Ba+/aik9Ypvc1YRH4Gy5f3yQguT6Hp
- b42hHB6zRWE4baUzr6mo6N/czsMsbYnTn3p6TXA2w9g6eSi7q+aILehWfoLrG99ZvU8h
- 4pHRV774A4iRLlwoQ3bO+PXNHKp0Se3avQaoHLwexcJHb6D1aAzkpDWIQVW76bA6wqPl
- HcjBBVmCi79YdtG0UNFPJs8ySVDxmd6CRzSrD2gsHx5DHQP4wNW93jXFvqs9sZWV3I3B
- OXHgrE+CMZ41dAY7Hz701SORZdVgS+RuYPmlnUWVhJkSIBZlpfinaHTnUZZh0CsW5zLw
- rXYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=S99dbtNIAtu+fwZeUFVd1C5ofXlsVXppc5advXWFAIo=;
- b=KxczVTl4Tvr1O64qqROw9ypBpmBBJFiwYyWjrIUNCXyK9mvXBIZ0TUJToW/VdoLgXb
- fMI+cLxA28T0rH1lrj80w+2wS8htZmZHGiV6ZXy/Ar6nnN3eD8HOvRX772yC0MNY6LeB
- DWgeY7oGnKsncEJvhV/vv37GolJwCpur1lpxMYPKdcEr4OnIAIp0lkpbij6e3hpiw2r8
- weE8wvhLOvgcOV68ADiNwGzeE09AcwIKX6nAWl+IgTLxZNPrTeZoghuXZnwhxIlAzxud
- Kw7++JDSKCjalRY6zUNZB5GScmdYWOq8B3lG4UTsPcyDoSbT98nBFwZZkvZxpSbY13TP
- aUBw==
-X-Gm-Message-State: APjAAAWsEEwR95POQ/pR3uUKkKJDOaE9lZUozLfdSw95lHEcBVKics7X
- zOFpfK3ImBCZIfAKTDO3UQ==
-X-Google-Smtp-Source: APXvYqy1/ntAqH/lkVfec8bhetu106SKNH+oiBAtpTg7cylPfqWEAgUb9YKZna3G3hV1NsR8mP+xpg==
-X-Received: by 2002:a17:90a:a47:: with SMTP id
- o65mr11128422pjo.90.1567398414855; 
- Sun, 01 Sep 2019 21:26:54 -0700 (PDT)
-Received: from mypc ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id s7sm2730630pjn.8.2019.09.01.21.26.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 01 Sep 2019 21:26:54 -0700 (PDT)
-Date: Mon, 2 Sep 2019 12:26:42 +0800
-From: Pingfan Liu <kernelfans@gmail.com>
-To: Borislav Petkov <bp@alien8.de>
-Subject: Re: [PATCHv2 0/4] x86/mce: protect nr_cpus from rebooting by
- broadcast mce
-Message-ID: <20190902042642.GA22792@mypc>
-References: <1566874943-4449-1-git-send-email-kernelfans@gmail.com>
- <20190830141156.GB30413@zn.tnic>
+ id 1i4fQD-0007RS-Sv
+ for kexec@lists.infradead.org; Mon, 02 Sep 2019 06:02:39 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id F1FE281F13;
+ Mon,  2 Sep 2019 06:02:36 +0000 (UTC)
+Received: from localhost (ovpn-12-28.pek2.redhat.com [10.72.12.28])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id E4D3219D7A;
+ Mon,  2 Sep 2019 06:02:35 +0000 (UTC)
+Date: Mon, 2 Sep 2019 14:02:33 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH] x86: Fix PAGE_OFFSET for kernels since 4.20
+Message-ID: <20190902060233.GA13964@MiWiFi-R3L-srv>
+References: <20190830091258.51133-1-buczek@molgen.mpg.de>
+ <20190830092351.GE12242@MiWiFi-R3L-srv>
+ <99faeaab-a4ea-e204-f4e8-9b74f86e5e43@molgen.mpg.de>
+ <CACi5LpOBQCXv1v=aGjLZ0tE_qUDgcR8DtcC_uA5nC-tmm4UnZw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190830141156.GB30413@zn.tnic>
-User-Agent: Mutt/1.11.3 (2019-02-01)
+In-Reply-To: <CACi5LpOBQCXv1v=aGjLZ0tE_qUDgcR8DtcC_uA5nC-tmm4UnZw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.27]); Mon, 02 Sep 2019 06:02:37 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_212655_711807_0A28921F 
-X-CRM114-Status: GOOD (  14.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190901_230237_954886_03342CEA 
+X-CRM114-Status: GOOD (  22.54  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kernelfans[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,77 +71,83 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>, Baoquan He <bhe@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, kexec@lists.infradead.org,
- Jacob Pan <jacob.jun.pan@linux.intel.com>, x86@kernel.org,
- Michal Hocko <mhocko@suse.com>, linux-kernel@vger.kernel.org,
- Daniel Drake <drake@endlessm.com>, Ingo Molnar <mingo@redhat.com>,
- Qian Cai <cai@lca.pw>, Masami Hiramatsu <mhiramat@kernel.org>,
- Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Gleixner <tglx@linutronix.de>, Dave Young <dyoung@redhat.com>,
- Vlastimil Babka <vbabka@suse.cz>, Eric Biederman <ebiederm@xmission.com>
+Cc: Simon Horman <horms@verge.net.au>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Donald Buczek <buczek@molgen.mpg.de>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 04:11:56PM +0200, Borislav Petkov wrote:
-> On Tue, Aug 27, 2019 at 11:02:19AM +0800, Pingfan Liu wrote:
-> > v1 -> v2: fix compile warning and error on x86_32
-> > 
-> > 
-> > This series include two related groups:
-> > [1-3/4]: protect nr_cpus from rebooting by broadcast mce
-> > [4/4]: improve "kexec -l" robustness against broadcast mce
-> > 
-> > When I tried to fix [1], Thomas raised concern about the nr_cpus' vulnerability
-> > to unexpected rebooting by broadcast mce. After analysis, I think only the
-> > following first case suffers from the rebooting by broadcast mce. [1-3/4] aims
-> > to fix that issue.
-> > 
-> > *** Back ground ***
-> > 
-> > On x86 it's required to have all logical CPUs set CR4.MCE=1. Otherwise, a
-> > broadcast MCE observing CR4.MCE=0b on any core will shutdown the machine.
-> > 
-> > The option 'nosmt' has already complied with the above rule by Thomas's patch.
-> > For detail, refer to 506a66f3748 (Revert "x86/apic: Ignore secondary threads if
-> > nosmt=force")
-> > 
-> > But for nr_cpus option, the exposure to broadcast MCE is a little complicated,
-> > and can be categorized into three cases.
+On 08/30/19 at 03:35pm, Bhupesh Sharma wrote:
+> On Fri, Aug 30, 2019 at 3:04 PM Donald Buczek <buczek@molgen.mpg.de> wrote:
+> >
+> > Dear Baoquan,
+> >
+> > On 8/30/19 11:23 AM, Baoquan He wrote:
+> > > On 08/30/19 at 11:12am, Donald Buczek wrote:
+> > >> Linux kernel commit d52888aa2753 ("x86/mm: Move LDT remap out of KASLR
+> > >> region on 5-level paging") changed the base of the direct mapping
+> > >> from 0xffff880000000000 to 0xffff888000000000. This was merged
+> > >> into v4.20-rc2.
+> > >
+> > > A good catch and necessary fix, thanks.
+> > >
+> > > Does it have issue in makedumpfile?
+> >
+> > We don't use makedumpfile. We use `cp /proc/vmcore /mnt/crash.vmcore` in the panic kernel.
 > 
-> One thing is not clear to me: are you "fixing" a hypothetical case here
-> or have you *actually* experienced an MCE happening while kdumping with
-> nr_cpus < num_online_cpus()?
-No, I do not hit this issue by myself.
+> That shouldn't be a problem in makedumpfile as we have a generic way
+> to calculate the PAGE_OFFSET value there from the PT_LOADs in the
+> '/proc/kcore' file (which I mentioned in the other email conversation,
+> see [0]):
 
-But from the following two commits:
-commit 5bc329503e8191c91c4c40836f062ef771d8ba83
-Author: Xunlei Pang <xlpang@redhat.com>
-Date:   Mon Mar 13 10:50:19 2017 +0100
-
-    x86/mce: Handle broadcasted MCE gracefully with kexec
-And
-commit 506a66f374891ff08e064a058c446b336c5ac760
-Author: Thomas Gleixner <tglx@linutronix.de>
-Date:   Fri Jun 29 16:05:47 2018 +0200
-
-    Revert "x86/apic: Ignore secondary threads if nosmt=force"
-
-This issue is in practice.
-
-BTW, clarify one thing kdumping (kexec -p) will not suffer from mce
-issue as described in case 2. Only "kexec -l" will.
+Yeah, right.
 
 > 
-> Btw, pls do not use lkml.org to refer to previous mails but
+> static int
+> get_page_offset_x86_64(void)
+> {
+> <..snip..>
+>     if (get_num_pt_loads()) {
+>         /*
+>          * Linux 4.19 (only) adds KCORE_REMAP PT_LOADs, which have
+>          * virt_start < __START_KERNEL_map, to /proc/kcore. In order
+>          * not to select them, we select the last valid PT_LOAD.
+>          */
+>         for (i = 0;
+>             get_pt_load(i, &phys_start, NULL, &virt_start, NULL);
+>             i++) {
+>             if (virt_start != NOT_KV_ADDR
+>                     && virt_start < __START_KERNEL_map
+>                     && phys_start != NOT_PADDR) {
+>                 page_offset = virt_start - phys_start;
+>             }
+>         }
+>         if (page_offset) {
+>             info->page_offset = page_offset;
+>             DEBUG_MSG("page_offset  : %lx (pt_load)\n",
+>                 info->page_offset);
+>             return TRUE;
+>         }
+>     }
+> <..snip..>
 > 
-> http://lkml.kernel.org/r/<Message-ID>
-OK, I will.
+> Also as I mentioned in the other thread, I don't think adding
+> different MACRO value for a kernel version is a long-term maintainable
+> approach. Instead I am working on adding a similar functionality as
+> present in makedumpfile to make the PAGE_OFFSET calculation generic.
+> Only if we fail to calculate PAGE_OFFSET through a generic method
+> should we fall back on MACRO values for backward compatibility.
+> 
+> I will try to post the patch for reviews by tomorrow.
+> 
+> [0]. https://lkml.org/lkml/2019/8/28/1060
 
-Thanks,
-	Pingfan
+Sounds a good idea, thanks for the effort.
+
+Thanks
+Baoquan
 
 _______________________________________________
 kexec mailing list
