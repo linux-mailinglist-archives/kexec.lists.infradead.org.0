@@ -2,69 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A116DAC011
-	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 21:02:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D732AC015
+	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 21:04:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k5svqtbRNN1xGLcbUiABEMb6+2tamMcGPA/79+PDiUQ=; b=n9O77WYDnJNnAr
-	8xthJCODjjBKlI+yY2K40rJP52whd02hwmmerRa7Jvx0VMULc30nXLB7YJoLC5cJofAcgOLD1QkYh
-	y+Ywm52HpZFyyVMWdirzYB65ZwtAgPpB5ntIKGL4tmuWCCXAJtipc9OS3qyfvrUw1jlkX9KhbOqqB
-	27kcwwCWiOVHyC/pB4/Lcip4YngBiakJJBd+Zj90StmGDYIwXOSUVtoWy7pSbPjGL4k0Uoab4DWok
-	7G+b1ggZ6DPX0NzO7n39Q/Hi/ksarvSOOPCUfg41mxZ2KP+eMFFNOmrYW17Hk1csng7MGvonJiyGz
-	qPeSCakMnc7vYK35uasA==;
+	List-Owner; bh=9a+WIXEoWoHnJp1xUN+jB6NegkNt1Ke/65c0uJNVP7Y=; b=i9oJlYqOjOzH7p
+	QFRYyzcxkF/mL4/Sza3AdoKcuBXnx+ZcajRQjWXtkuZroUthihp8WhKfsDBSsnKPF5p9m19vOMy1o
+	O1xTWfYe20Ei7q+0kH3tf3r5a1eD3H+5Lg+o/6QJfdSP3XPUvJYa7dLx7lm08pdDYgdP6273Qotu4
+	WxOWHXlgBKhIInNnq9RllVCF9TWc9fPSFgUoRyahl+aSDZjHtWDLgE1jgtSUo4waQJFzfz4uSPj4o
+	3O6dTNkEMWSV/6HtW4mi0PpyUaWuUUFH6g75gbIrdw2iZ+A5krZnmSNwPTpTBp8bJeBOuChjrBEHn
+	WfsNKsD1+mfSrTWj2xKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6JVR-0005sJ-4Y; Fri, 06 Sep 2019 19:02:49 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1i6JWZ-0005xV-5Y; Fri, 06 Sep 2019 19:03:59 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6JVN-0005cq-Hs
- for kexec@lists.infradead.org; Fri, 06 Sep 2019 19:02:46 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Sep 2019 12:00:44 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,474,1559545200"; d="scan'208";a="384313381"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 06 Sep 2019 12:00:41 -0700
-Received: from andy by smile with local (Exim 4.92.1)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1i6JTM-0004KJ-BX; Fri, 06 Sep 2019 22:00:40 +0300
-Date: Fri, 6 Sep 2019 22:00:40 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Dave Young <dyoung@redhat.com>
-Subject: Re: [PATCH v1 2/2] firmware: dmi_scan: Pass dmi_entry_point to
- kexec'ed kernel
-Message-ID: <20190906190040.GA16211@smile.fi.intel.com>
-References: <20161202195416.58953-1-andriy.shevchenko@linux.intel.com>
- <20161202195416.58953-3-andriy.shevchenko@linux.intel.com>
- <20161215122856.7d24b7a8@endymion>
- <20161216023213.GA4505@dhcp-128-65.nay.redhat.com>
- <1481890738.9552.70.camel@linux.intel.com>
- <20161216143330.69e9c8ee@endymion>
- <20161217105721.GB6922@dhcp-128-65.nay.redhat.com>
+ id 1i6JWV-0005wd-Cy
+ for kexec@lists.infradead.org; Fri, 06 Sep 2019 19:03:56 +0000
+Received: by mail-ed1-x544.google.com with SMTP id i1so7268102edv.4
+ for <kexec@lists.infradead.org>; Fri, 06 Sep 2019 12:03:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Y/7qqRveiNTR8UpDJH9jJYLPMgNqGjPqi5VfF21WzFE=;
+ b=QEPDQCvvF/sjHN2kJrzUVeb7IcXP2HWnSdRgACaIl585w3ZTFPm+c7jIRgZK0q2kuM
+ 92rKkxhkJNdxqD2rTigoeHOOBgEZvMLX1jEIN2PMc+bXuokn+I7auIRx3xEn1ykJyf1u
+ CXLkGSvmkg2ksV0wgOa7ekkr38WY61xs1odE9/PBZA3P7HsDw85795v0qIS9QWC3f1Mi
+ whJST2fStGwvRAp/SN37FFgS8pip/MVJJ1R051L4sBuMq5NVauiRReOfNiZJ14PNzP/r
+ tzF75BO2LMAqLB/WKPYKhZweNmKjX5bKa3K+ThUussgLwJ2PIJ50AROtJu9cwcDhVCk1
+ bJng==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Y/7qqRveiNTR8UpDJH9jJYLPMgNqGjPqi5VfF21WzFE=;
+ b=PYVYSm3g/LhYsqLGqyDq5AYuyBR6o+9iwU/8gdjHj1O7H8J5ZKkAw9dfmDlIYixNzJ
+ aUeIT/bmCL/oYJfqKJ8uU6mn7qdAW/2gD20/7b3LuwTjg0Bt7PfVFspjixnt4x+x2YjS
+ mMGunW8KkFubav0BkGXGcRhliCvgST9mR+03hW1opTST3LcA/ueihU0fi0GP9/xG3jG5
+ v4CXKigSI/NzU7mZaIDkuZmNcpFaPbKS7ypFjxbQvm6NmkAnL3FXuq2p6TPebjeDwGP/
+ uj6Arh96KVw5bNc9t+Wf1lJH9aQvHw3TmtqcVvMM3ic23JWBaR1r4HMjVoAZrNfntX7P
+ 72GQ==
+X-Gm-Message-State: APjAAAWk6uFkvtLmkADynv9bZks4c6/LNzytoRLUqOJ3G2y1wf6zelIM
+ ZemKkc4eOoaBfeI5aqhJ/okPvLaoDasWQg1Xiq3s0w==
+X-Google-Smtp-Source: APXvYqxBZr4A/XPsx9DL6X3UVVIiqZlxxSg15azW0Vlg1Y/GEwtp0qO5WsKKt8HfTWnnuA9cZMhLLr/nV3+FiR+zkNw=
+X-Received: by 2002:a17:906:bb0f:: with SMTP id
+ jz15mr8592077ejb.264.1567796633333; 
+ Fri, 06 Sep 2019 12:03:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20161217105721.GB6922@dhcp-128-65.nay.redhat.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+ <20190821183204.23576-11-pasha.tatashin@soleen.com>
+ <21f6eb6f-be3a-a715-a37c-2f59183ed183@arm.com>
+In-Reply-To: <21f6eb6f-be3a-a715-a37c-2f59183ed183@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Fri, 6 Sep 2019 15:03:42 -0400
+Message-ID: <CA+CK2bAS37vPa0FD7Ya1vnZR29hiEsNfkq6q7+UreNRjRgUEFw@mail.gmail.com>
+Subject: Re: [PATCH v3 10/17] arm64,
+ trans_pgd: adjust trans_pgd_create_copy interface
+To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_120245_635933_9FEC8984 
-X-CRM114-Status: GOOD (  20.30  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190906_120355_442976_617B3388 
+X-CRM114-Status: GOOD (  21.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,66 +93,108 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, ard.biesheuvel@linaro.org,
- matt@codeblueprint.co.uk, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Jean Delvare <jdelvare@suse.de>
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
+ linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Sat, Dec 17, 2016 at 06:57:21PM +0800, Dave Young wrote:
-> On 12/16/16 at 02:33pm, Jean Delvare wrote:
-> > On Fri, 16 Dec 2016 14:18:58 +0200, Andy Shevchenko wrote:
-> > > On Fri, 2016-12-16 at 10:32 +0800, Dave Young wrote:
-> > > > On 12/15/16 at 12:28pm, Jean Delvare wrote:
-> > > > > I am no kexec expert but this confuses me. Shouldn't the second
-> > > > > kernel have access to the EFI systab as the first kernel does? It
-> > > > > includes many more pointers than just ACPI and DMI tables, and it
-> > > > > would seem inconvenient to have to pass all these addresses
-> > > > > individually explicitly.
-> > > > 
-> > > > Yes, in modern linux kernel, kexec has the support for EFI, I think it
-> > > > should work naturally at least in x86_64.
-> > > 
-> > > Thanks for this good news!
-> > > 
-> > > Unfortunately Intel Galileo is 32-bit platform.
-> > 
-> > If it was done for X86_64 then maybe it can be generalized to X86?
-> 
-> For X86_64, we have a new way for efi runtime memmory mapping, in i386
-> code it still use old ioremap way. It is impossible to use same way as
-> the X86_64 since the virtual address space is limited.
-> 
-> But maybe for 32bit, kexec kernel can run in physical mode, but I'm not
-> sure, I would suggest Andy to do a test first with efi=noruntime for
-> kexec 2nd kernel.
+> > -int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
+> > +/*
+> > + * Create trans_pgd and copy entries from from_table to trans_pgd in range
+> > + * [start, end)
+> > + */
+> > +int trans_pgd_create_copy(struct trans_pgd_info *info, pgd_t **trans_pgd,
+> > +                       pgd_t *from_table, unsigned long start,
+> >                         unsigned long end);
+>
+> This creates a copy of the linear-map. Why does it need to be told from_table?
 
-Sorry for a delay.
-Eventually I found time to check this.
+This what done as a generic page table entries copy, but I agree, will
+remove the from_table.
 
-Unfortunately the efi=noruntime didn't help:
+>
+>
+> > diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+> > index 8c2641a9bb09..8bb602e91065 100644
+> > --- a/arch/arm64/kernel/hibernate.c
+> > +++ b/arch/arm64/kernel/hibernate.c
+> > @@ -323,15 +323,42 @@ int swsusp_arch_resume(void)
+> >       phys_addr_t phys_hibernate_exit;
+> >       void __noreturn (*hibernate_exit)(phys_addr_t, phys_addr_t, void *,
+> >                                         void *, phys_addr_t, phys_addr_t);
+> > +     struct trans_pgd_info trans_info = {
+> > +             .trans_alloc_page       = hibernate_page_alloc,
+> > +             .trans_alloc_arg        = (void *)GFP_ATOMIC,
+> > +             /*
+> > +              * Resume will overwrite areas that may be marked read only
+> > +              * (code, rodata). Clear the RDONLY bit from the temporary
+> > +              * mappings we use during restore.
+> > +              */
+> > +             .trans_flags            = TRANS_MKWRITE,
+> > +     };
+>
+>
+> > +     /*
+> > +      * debug_pagealloc will removed the PTE_VALID bit if the page isn't in
+> > +      * use by the resume kernel. It may have been in use by the original
+> > +      * kernel, in which case we need to put it back in our copy to do the
+> > +      * restore.
+> > +      *
+> > +      * Before marking this entry valid, check the pfn should be mapped.
+> > +      */
+> > +     if (debug_pagealloc_enabled())
+> > +             trans_info.trans_flags |= (TRANS_MKVALID | TRANS_CHECKPFN);
+>
+> The debug_pagealloc_enabled() check should be with the code that generates a different
+> entry. Whether the different entry is correct needs to be considered with
+> debug_pagealloc_enabled() in mind. You are making this tricky logic less clear.
+>
+> There is no way the existing code invents an entry for a !pfn_valid() page. With your
+> 'checkpfn' flag, this thing can. You don't need to generalise this for hypothetical users.
 
-# uname -a
-Linux buildroot 5.3.0-rc7+ #17 Thu Sep 5 16:08:22 EEST 2019 i586 GNU/Linux
-# dmidecode
-# dmidecode 4.2
-Scanning /dev/mem for entry point.
-# No SMBIOS nor DMI entry point found, sorry.
-#
-# cat /proc/cmdline
-... ignore_loglevel efi=noruntime earlycon=efifb acpi_rsdp=0xf01e014
+Ok
 
-So, I am all ears to anything else to try.
+>
+>
+> If kexec needs to create mappings for bogus pages, I'd like to know why.
+>
 
--- 
-With Best Regards,
-Andy Shevchenko
+It does not.
 
+>
+> >       /*
+> >        * Restoring the memory image will overwrite the ttbr1 page tables.
+> >        * Create a second copy of just the linear map, and use this when
+> >        * restoring.
+> >        */
+> > -     rc = trans_pgd_create_copy(&tmp_pg_dir, PAGE_OFFSET, 0);
+> > -     if (rc)
+> > +     rc = trans_pgd_create_copy(&trans_info, &tmp_pg_dir, init_mm.pgd,
+> > +                                PAGE_OFFSET, 0);
+>
+> > +     if (rc) {
+> > +             if (rc == -ENOMEM)
+> > +                     pr_err("Failed to allocate memory for temporary page tables.\n");
+> > +             else if (rc == -ENXIO)
+> > +                     pr_err("Tried to set PTE for PFN that does not exist\n");
+> >               goto out;
+> > +     }
+>
+> If you think the distinction for this error message is useful, it would be clearer to
+> change it in the current hibernate code before you move it. (_copy_pte() to return an
+> error, instead of silently failing). Done here, this is unrelated noise.
+>
 
+Ok, will do that.
 
 _______________________________________________
 kexec mailing list
