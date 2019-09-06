@@ -2,47 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61E82ABC18
-	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 17:19:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF548ABC1D
+	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 17:19:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CTf+NvGU6iLjsNRt/wKJURvWBnoUjTUjfDv+dC3QqTU=; b=t9lnOOSkOuUwzy
-	bqJazUnCODHN3J2PaBammEqr0o9RlCeyIFOxxe4ptMPCaROVeY0Z2j+93FudlWcZZi3ng2Rol2+6Y
-	QpkuCzI5XJJ3YwTwE8+SCA9SsTdzjHQFXhlEdzanDNIv5aqYvrwTWyJ1RxcqnhgR5VMXdhMB+CCXz
-	vNBlHnfkSeWdRpxFPDtXcmDUFU3Aeny+4410i05y06s0oV+yzhVMR4ZMJfgaUdJGjNkFrGVeu1572
-	f7s+8gBaj0OmuSH8FhE1YhfTbMEPsXShnYvVMO/xoiGhCv92Xey8TKsl2wDatNo7zrvyGH23qctyz
-	puG49BouXkpjuQdw4JIQ==;
+	List-Owner; bh=taT7ltyLjy92btzYZE0VczTfbkKrEuQQaXICFqs/jNM=; b=BANjQgMHHvM0xI
+	aA9pt4RTWKjF5xvQT+nOhIhboqa2N1z2qCeUI1T8mA7yvYecXMmfp7i8id4mi3J7fZA8GMA4qTIC3
+	iyPWlabeCzAYPOYw9T5z/fLRtCwymUSp6PR8j6U1TtlQ7CpbP9Jvq7y6iTF8t/BGFp4ZiubF0YsXu
+	m5Yno4yUaE+YqxEkZOybRg5P+1w8/xyCPCJ/9i13YVBclNS9yKC1NlblUa5hAGDAGjt1wZbxP7qG8
+	ZFdPUQ1rkl1jJYYrLGlYOHBA6ogIl6LrkXJ8V1PsH+/XOQACvGIfKKoqBbS3JeAoeqaQ7aLeN6g/+
+	nCPPP0429cjIj2ChMljw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6G0v-0003x9-Ig; Fri, 06 Sep 2019 15:19:05 +0000
+	id 1i6G1V-0004Wm-Bi; Fri, 06 Sep 2019 15:19:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6G02-00037o-Oi; Fri, 06 Sep 2019 15:18:12 +0000
+ id 1i6G0Y-0003aj-7b; Fri, 06 Sep 2019 15:18:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FAE828;
- Fri,  6 Sep 2019 08:18:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A95341576;
+ Fri,  6 Sep 2019 08:18:41 -0700 (PDT)
 Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 21E023F59C;
- Fri,  6 Sep 2019 08:18:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8B82E3F59C;
+ Fri,  6 Sep 2019 08:18:38 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v3 06/17] arm64, hibernate: add trans_pgd public functions
+Subject: Re: [PATCH v3 07/17] arm64, hibernate: move page handling function to
+ new trans_pgd.c
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-7-pasha.tatashin@soleen.com>
-Message-ID: <bcc3f71f-97d2-dff4-c55a-4798c6e2bede@arm.com>
-Date: Fri, 6 Sep 2019 16:18:06 +0100
+ <20190821183204.23576-8-pasha.tatashin@soleen.com>
+Message-ID: <f1db863a-de57-2d1a-6bec-6020b2130964@arm.com>
+Date: Fri, 6 Sep 2019 16:18:37 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190821183204.23576-7-pasha.tatashin@soleen.com>
+In-Reply-To: <20190821183204.23576-8-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_081810_947431_E0DC2F4B 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20190906_081842_559124_F7A462B1 
+X-CRM114-Status: GOOD (  18.25  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,90 +75,82 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 Hi Pavel,
 
 On 21/08/2019 19:31, Pavel Tatashin wrote:
-> trans_pgd_create_copy() and trans_pgd_map_page() are going to be
-> the basis for public interface of new subsystem that handles page
+> Now, that we abstracted the required functions move them to a new home.
+> Later, we will generalize these function in order to be useful outside
+> of hibernation.
 
-Please don't call this a subsystem. 'sound' and 'mm' are subsystems, this is just some
-shared code.
-
-> tables for cases which are between kernels: kexec, and hibernate.
-
-Even though you've baked the get_safe_page() calls into trans_pgd_map_page()?
-
-
-> diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> index 750ecc7f2cbe..2e29d620b56c 100644
-> --- a/arch/arm64/kernel/hibernate.c
-> +++ b/arch/arm64/kernel/hibernate.c
-> @@ -182,39 +182,15 @@ int arch_hibernation_header_restore(void *addr)
-
-> +int trans_pgd_map_page(pgd_t *trans_pgd, void *page,
-> +		       unsigned long dst_addr,
-> +		       pgprot_t pgprot)
-
-If this thing is going to be exposed, its name should reflect that its creating a set of
-page tables, to map a single page.
-
-A function called 'map_page' with this prototype should 'obviously' map @page at @dst_addr
-in @trans_pgd using the provided @pgprot... but it doesn't.
-
-This is what 'create' was doing in the old name, if that wasn't obvious, its because
-naming things is hard!
-| trans_create_single_page_mapping()?
-
-(might be too verbose)
-
-I think this bites you in patch 8, where you 'generalise' this.
-
-
->  {
-> -	void *page = (void *)get_safe_page(GFP_ATOMIC);
-> -	pgd_t *trans_pgd;
->  	pgd_t *pgdp;
->  	pud_t *pudp;
->  	pmd_t *pmdp;
->  	pte_t *ptep;
->  
-> -	if (!page)
-> -		return -ENOMEM;
-> -
-> -	memcpy(page, src_start, length);
-> -	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
-> -
-> -	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
-> -	if (!trans_pgd)
-> -		return -ENOMEM;
-> -
->  	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
->  	if (pgd_none(READ_ONCE(*pgdp))) {
->  		pudp = (void *)get_safe_page(GFP_ATOMIC);
-> @@ -242,6 +218,44 @@ static int create_safe_exec_page(void *src_start, size_t length,
->  	ptep = pte_offset_kernel(pmdp, dst_addr);
->  	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
->  
-> +	return 0;
-> +}
+> diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
+> new file mode 100644
+> index 000000000000..00b62d8640c2
+> --- /dev/null
+> +++ b/arch/arm64/mm/trans_pgd.c
+> @@ -0,0 +1,211 @@
+> +// SPDX-License-Identifier: GPL-2.0
 > +
 > +/*
-> + * Copies length bytes, starting at src_start into an new page,
-> + * perform cache maintentance, then maps it at the specified address low
+> + * Copyright (c) 2019, Microsoft Corporation.
+> + * Pavel Tatashin <patatash@linux.microsoft.com>
 
-Could you fix the spelling of maintenance as git thinks you've moved it?
+Hmmm, while line-count isn't a useful metric: this file contains 41% of the code that was
+in hibernate.c, but has stripped the substantial copyright-pedigree that the hibernate
+code had built up over the years.
+(counting lines identified by 'cloc' as code, not comments or blank)
+
+If you are copying or moving a non trivial quantity of code, you need to preserve the
+copyright. Something like 'Derived from the arm64 hibernate support which has:'....
 
 
-> + * address as executable.
-> + *
-> + * This is used by hibernate to copy the code it needs to execute when
-> + * overwriting the kernel text. This function generates a new set of page
-> + * tables, which it loads into ttbr0.
-> + *
-> + * Length is provided as we probably only want 4K of data, even on a 64K
-> + * page system.
 > + */
-> +static int create_safe_exec_page(void *src_start, size_t length,
-> +				 unsigned long dst_addr,
-> +				 phys_addr_t *phys_dst_addr)
+> +
+> +/*
+> + * Transitional tables are used during system transferring from one world to
+> + * another: such as during hibernate restore, and kexec reboots. During these
+> + * phases one cannot rely on page table not being overwritten.
+
+I think you need to mention that hibernate and kexec are rewriting memory, and may
+overwrite the live page tables, therefore ...
+
+
+> + *
+> + */
+> +
+> +#include <asm/trans_pgd.h>
+> +#include <asm/pgalloc.h>
+> +#include <asm/pgtable.h>
+> +#include <linux/suspend.h>
+
+#include <linux/bug.h>
+#include <linux/mm.h>
+#include <linux/mmzone.h>
+
+
+> +static void _copy_pte(pte_t *dst_ptep, pte_t *src_ptep, unsigned long addr)
 > +{
+> +	pte_t pte = READ_ONCE(*src_ptep);
+> +
+
+> +	if (pte_valid(pte)) {
+
+> +		/*
+> +		 * Resume will overwrite areas that may be marked
+> +		 * read only (code, rodata). Clear the RDONLY bit from
+> +		 * the temporary mappings we use during restore.
+> +		 */
+> +		set_pte(dst_ptep, pte_mkwrite(pte));
+
+> +	} else if (debug_pagealloc_enabled() && !pte_none(pte)) {
+
+> +		/*
+> +		 * debug_pagealloc will removed the PTE_VALID bit if
+> +		 * the page isn't in use by the resume kernel. It may have
+> +		 * been in use by the original kernel, in which case we need
+> +		 * to put it back in our copy to do the restore.
+> +		 *
+> +		 * Before marking this entry valid, check the pfn should
+> +		 * be mapped.
+> +		 */
+
+> +		BUG_ON(!pfn_valid(pte_pfn(pte)));
 
 
 Thanks,
