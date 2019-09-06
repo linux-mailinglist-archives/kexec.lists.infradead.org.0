@@ -2,48 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 863E3ABC29
-	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 17:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BF65ABC2D
+	for <lists+kexec@lfdr.de>; Fri,  6 Sep 2019 17:21:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HxuyBgxZ6nqd2LRylFTIKXbdjG/ka8NeFo3iwmXgQxo=; b=Olp5l+AuzeITNx
-	YfBlqdNntzepEYRKWahMtD9dH8YC7skprZPqkDgWC5IWGhDJdKW6tXH9+yg9cfUGjV/Tt5d5C4crx
-	LMFCr4f9gL7noFFAl/eVDTm3aEgGOSY0t59WrkstAvGPNyLDqFeygVVFT+2uPKG0OVhZbyKszpWCA
-	x8x5KrsC+aq5qBClsdC59IlSo4XkTvbyz3wJpU4iN4OHHM+BoQ5f8BwKKoyHPU2tyASkCjfIsyVJl
-	JMdq4bCMaBolLLm1qPv1GvyLPWWRuy6V9A7ruEgAfa2deIDhmkbnfC6wzt/vheEazYElRRjFEwiIg
-	4i39CFS6IuJYxiEwAybQ==;
+	List-Owner; bh=qd8qa5DXU/PBho8kTVCIMj1O0HamTmEl3ChWmydIXBA=; b=fHQUbOc5APZTXy
+	Pce/qwbb5WH/5GOjH/zW3Z8kcE+Iwgh/QxM9xaEQ/P1r+r/tgRiRqO/4NuCPLWNtlbBgTnImt++3k
+	dO93qxHPL3bNI1Q9CfGeoYheSfs7PQQiVPJc07QwAm8lP27pTPaVPawMvZz49ixUeUFVPb+l5gJNd
+	lkbwSUCqAmCd+6yCXggOlyerF5/H5lzu1PZ2Kei26Y2j9d1M/MI4Cq0i20F+3/uj+TnDI5y64XQZM
+	aA0V2bzy8AAaW92MLsy6JPUG92d2bYscxv7hI6PSfaPLbtk7ksHWGc69nxunLnL3Skn/nLTk23Xsz
+	NPxVIg8u0T2IfkOxyvLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6G2q-0006cx-Aw; Fri, 06 Sep 2019 15:21:04 +0000
+	id 1i6G3A-0006vD-9I; Fri, 06 Sep 2019 15:21:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6G2l-0006bm-Fi; Fri, 06 Sep 2019 15:21:01 +0000
+ id 1i6G30-0006no-RD; Fri, 06 Sep 2019 15:21:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 93B9728;
- Fri,  6 Sep 2019 08:20:58 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 37A861576;
+ Fri,  6 Sep 2019 08:21:14 -0700 (PDT)
 Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 85E793F59C;
- Fri,  6 Sep 2019 08:20:56 -0700 (PDT)
-Subject: Re: [PATCH v3 10/17] arm64, trans_pgd: adjust trans_pgd_create_copy
- interface
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 301A83F59C;
+ Fri,  6 Sep 2019 08:21:12 -0700 (PDT)
+Subject: Re: [PATCH v3 11/17] arm64, trans_pgd: add PUD_SECT_RDONLY
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-11-pasha.tatashin@soleen.com>
+ <20190821183204.23576-12-pasha.tatashin@soleen.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <21f6eb6f-be3a-a715-a37c-2f59183ed183@arm.com>
-Date: Fri, 6 Sep 2019 16:20:55 +0100
+Message-ID: <d53d973c-17dc-2f4f-c052-83d6df15b002@arm.com>
+Date: Fri, 6 Sep 2019 16:21:11 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190821183204.23576-11-pasha.tatashin@soleen.com>
+In-Reply-To: <20190821183204.23576-12-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_082059_608746_7734FAEA 
-X-CRM114-Status: GOOD (  23.42  )
+X-CRM114-CacheID: sfid-20190906_082114_978637_18E5234B 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,101 +75,15 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 Hi Pavel,
 
 On 21/08/2019 19:31, Pavel Tatashin wrote:
-> Make trans_pgd_create_copy inline with the other functions in
-> trans_pgd: use the trans_pgd_info argument, and also use the
-> trans_pgd_create_empty.
-> 
-> Note, that the functions that are called by trans_pgd_create_copy are
-> not yet adjusted to be compliant with trans_pgd: they do not yet use
-> the provided allocator, do not check for generic errors, and do not yet
-> use the flags in info argument.
+> Thre is PMD_SECT_RDONLY that is used in pud_* function which is confusing.
 
+Nit: There
 
-> diff --git a/arch/arm64/include/asm/trans_pgd.h b/arch/arm64/include/asm/trans_pgd.h
-> index 26e5a63676b5..f4a5f255d4a7 100644
-> --- a/arch/arm64/include/asm/trans_pgd.h
-> +++ b/arch/arm64/include/asm/trans_pgd.h
-> @@ -43,7 +43,12 @@ struct trans_pgd_info {
->  /* Create and empty trans_pgd page table */
->  int trans_pgd_create_empty(struct trans_pgd_info *info, pgd_t **trans_pgd);
->  
-> -int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
-> +/*
-> + * Create trans_pgd and copy entries from from_table to trans_pgd in range
-> + * [start, end)
-> + */
-> +int trans_pgd_create_copy(struct trans_pgd_info *info, pgd_t **trans_pgd,
-> +			  pgd_t *from_table, unsigned long start,
->  			  unsigned long end);
+I bet it was equally confusing before before you moved it! Could you do this earlier in
+the series with the rest of the cleanup?
 
-This creates a copy of the linear-map. Why does it need to be told from_table?
-
-
-> diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> index 8c2641a9bb09..8bb602e91065 100644
-> --- a/arch/arm64/kernel/hibernate.c
-> +++ b/arch/arm64/kernel/hibernate.c
-> @@ -323,15 +323,42 @@ int swsusp_arch_resume(void)
->  	phys_addr_t phys_hibernate_exit;
->  	void __noreturn (*hibernate_exit)(phys_addr_t, phys_addr_t, void *,
->  					  void *, phys_addr_t, phys_addr_t);
-> +	struct trans_pgd_info trans_info = {
-> +		.trans_alloc_page	= hibernate_page_alloc,
-> +		.trans_alloc_arg	= (void *)GFP_ATOMIC,
-> +		/*
-> +		 * Resume will overwrite areas that may be marked read only
-> +		 * (code, rodata). Clear the RDONLY bit from the temporary
-> +		 * mappings we use during restore.
-> +		 */
-> +		.trans_flags		= TRANS_MKWRITE,
-> +	};
-
-
-> +	/*
-> +	 * debug_pagealloc will removed the PTE_VALID bit if the page isn't in
-> +	 * use by the resume kernel. It may have been in use by the original
-> +	 * kernel, in which case we need to put it back in our copy to do the
-> +	 * restore.
-> +	 *
-> +	 * Before marking this entry valid, check the pfn should be mapped.
-> +	 */
-> +	if (debug_pagealloc_enabled())
-> +		trans_info.trans_flags |= (TRANS_MKVALID | TRANS_CHECKPFN);
-
-The debug_pagealloc_enabled() check should be with the code that generates a different
-entry. Whether the different entry is correct needs to be considered with
-debug_pagealloc_enabled() in mind. You are making this tricky logic less clear.
-
-There is no way the existing code invents an entry for a !pfn_valid() page. With your
-'checkpfn' flag, this thing can. You don't need to generalise this for hypothetical users.
-
-
-If kexec needs to create mappings for bogus pages, I'd like to know why.
-
-
->  	/*
->  	 * Restoring the memory image will overwrite the ttbr1 page tables.
->  	 * Create a second copy of just the linear map, and use this when
->  	 * restoring.
->  	 */
-> -	rc = trans_pgd_create_copy(&tmp_pg_dir, PAGE_OFFSET, 0);
-> -	if (rc)
-> +	rc = trans_pgd_create_copy(&trans_info, &tmp_pg_dir, init_mm.pgd,
-> +				   PAGE_OFFSET, 0);
-
-> +	if (rc) {
-> +		if (rc == -ENOMEM)
-> +			pr_err("Failed to allocate memory for temporary page tables.\n");
-> +		else if (rc == -ENXIO)
-> +			pr_err("Tried to set PTE for PFN that does not exist\n");
->  		goto out;
-> +	}
-
-If you think the distinction for this error message is useful, it would be clearer to
-change it in the current hibernate code before you move it. (_copy_pte() to return an
-error, instead of silently failing). Done here, this is unrelated noise.
-
-I doubt this is specific to kexec.
+With that,
+Acked-by: James Morse <james.morse@arm.com>
 
 
 Thanks,
