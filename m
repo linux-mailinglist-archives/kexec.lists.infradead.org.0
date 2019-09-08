@@ -2,98 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95144AC3EB
-	for <lists+kexec@lfdr.de>; Sat,  7 Sep 2019 03:35:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DA4BAD0FC
+	for <lists+kexec@lfdr.de>; Mon,  9 Sep 2019 00:14:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QnVivlLZ9jCyyaTMr6xM6KMi/UX9dYgDTPOEhCsUd2M=; b=hRluFSEX7yRr3kJfhANCDA0388
-	tYq4Tyf69U744c3y4LHxK7xvSrdvCJGtcf37pBEFS2Dq12KeQuvY6SPsQ1y/4dKDav9PJ5B74YpXp
-	vKjjsSoViSka4OapPO/vURXmkKEk1nT4Nu+ggeGwBIOBMYQNRBj9yKhyofjF8vgRUnh+ny3/diYR2
-	8c6HHxkknxn57pV2YBQaZbpXrGOFXiAYdc4RDp4VxJcW6LsrBdbssmTNQT265DHwJPg3FlCUdt+4p
-	+VfdH+ziEt9VteduaHUa9PYgVCgd8WYFYwaqZUeFzi5ScL3c3U9lfC96KfXoG43fg5VI5WJ/Q+GjI
-	haDRlv3w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aAv455YJjIrgTg9ZSikjK5haOtk/cRAPNlM42Ar67uI=; b=maNPuZCEE8qmyG
+	GVM0XFd/ZH2lfRj0RhmbMvWIuTwbxxjiQmpEySv9NeweDATOaVS5jA7L5cCNAISIwag1K/iiotEtz
+	YXt4PjzKNVHHM1nW0poXuvo9sH8krL5dRpPVhZSlgjImCxaYpGYJCif7L3PiOyhSnTpiguB6xGqJz
+	XE2jdf/C/L3k3T671CahACt2vBwqNnHuGjHS9NI491gUKxNFlmcjlIYV8PTNYUe/qI9UcSvwM66Un
+	7Oe1GujftZZZsBDLzdBXj6/k5Qf7AS+eZQMF0zgNDcQLUx0dSP4m4gw76Ykm8qo3APQkrywzTKVJD
+	61xX56PN89Ie8N3LN8bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Pd9-0002ib-Kf; Sat, 07 Sep 2019 01:35:11 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Pd5-0002Hd-NH
- for kexec@lists.infradead.org; Sat, 07 Sep 2019 01:35:09 +0000
-Received: from pps.filterd (m0098409.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x871VcxL039606; Fri, 6 Sep 2019 21:35:05 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uuwcns85u-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Sep 2019 21:35:05 -0400
-Received: from m0098409.ppops.net (m0098409.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.27/8.16.0.27) with SMTP id x871WNcd041002;
- Fri, 6 Sep 2019 21:35:04 -0400
-Received: from ppma01wdc.us.ibm.com (fd.55.37a9.ip4.static.sl-reverse.com
- [169.55.85.253])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2uuwcns85h-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Sep 2019 21:35:04 -0400
-Received: from pps.filterd (ppma01wdc.us.ibm.com [127.0.0.1])
- by ppma01wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id x871YncW013303;
- Sat, 7 Sep 2019 01:35:03 GMT
-Received: from b01cxnp23033.gho.pok.ibm.com (b01cxnp23033.gho.pok.ibm.com
- [9.57.198.28]) by ppma01wdc.us.ibm.com with ESMTP id 2uqgh7faxb-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Sat, 07 Sep 2019 01:35:03 +0000
-Received: from b01ledav005.gho.pok.ibm.com (b01ledav005.gho.pok.ibm.com
- [9.57.199.110])
- by b01cxnp23033.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- x871Z35r52560288
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Sat, 7 Sep 2019 01:35:03 GMT
-Received: from b01ledav005.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 281D9AE060;
- Sat,  7 Sep 2019 01:35:03 +0000 (GMT)
-Received: from b01ledav005.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EE52EAE05C;
- Sat,  7 Sep 2019 01:35:00 +0000 (GMT)
-Received: from morokweng.localdomain (unknown [9.85.199.12])
- by b01ledav005.gho.pok.ibm.com (Postfix) with ESMTPS;
- Sat,  7 Sep 2019 01:35:00 +0000 (GMT)
-References: <20190823194919.30916-1-svens@stackframe.org>
- <22b40bb7-6f86-0a69-12b2-12d90124173d@gmx.de>
- <87blvxgkqw.fsf@morokweng.localdomain>
- <ac109a98-8a41-b3b2-9b2e-2bfe5bd3166a@gmx.de>
-User-agent: mu4e 1.2.0; emacs 26.2
-From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-To: Helge Deller <deller@gmx.de>
-Subject: Re: [PATCH v5 0/7] kexec: add generic support for elf kernel images
-In-reply-to: <ac109a98-8a41-b3b2-9b2e-2bfe5bd3166a@gmx.de>
-Date: Fri, 06 Sep 2019 22:34:57 -0300
-Message-ID: <87a7bghose.fsf@morokweng.localdomain>
+	id 1i75SR-0001S9-5K; Sun, 08 Sep 2019 22:14:55 +0000
+Received: from kirsty.vergenet.net ([202.4.237.240])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i75SA-00017o-Je
+ for kexec@lists.infradead.org; Sun, 08 Sep 2019 22:14:39 +0000
+Received: from penelope.horms.nl (195-23-252-147.net.novis.pt [195.23.252.147])
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 5C8E325BE27;
+ Mon,  9 Sep 2019 08:14:30 +1000 (AEST)
+Received: by penelope.horms.nl (Postfix, from userid 7100)
+ id 12132E21664; Sun,  8 Sep 2019 14:40:08 +0200 (CEST)
+Date: Sun, 8 Sep 2019 13:40:08 +0100
+From: Simon Horman <horms@verge.net.au>
+To: lijiang <lijiang@redhat.com>
+Subject: Re: [PATCH 0/4 v2] Limit the size of vmcore-dmesg.txt to 2G
+Message-ID: <20190908124007.uxcbbhqshbnsymd2@verge.net.au>
+References: <20190823120539.18330-1-lijiang@redhat.com>
+ <21c5b324-c3f5-4fb4-25da-e62610b2becd@redhat.com>
+ <20190903143730.lz45x774rhmefjzg@verge.net.au>
+ <a4c38d0b-d702-037e-74aa-889900bb63a5@redhat.com>
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-09-07_01:, , signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- malwarescore=0 suspectscore=0 phishscore=0 bulkscore=0 spamscore=0
- clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-1906280000 definitions=main-1909070015
+Content-Disposition: inline
+In-Reply-To: <a4c38d0b-d702-037e-74aa-889900bb63a5@redhat.com>
+Organisation: Horms Solutions BV
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_183507_772473_A0601147 
-X-CRM114-Status: GOOD (  11.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190908_151438_798143_0F124B3F 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [202.4.237.240 listed in list.dnswl.org]
+ 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 2.0 PDS_TONAME_EQ_TOLOCAL_SHORT Short body with To: name matches
+ everything in local email
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,49 +69,21 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, Sven Schnelle <svens@stackframe.org>,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kasong@redhat.com, bhe@redhat.com, piliu@redhat.com, bhsharma@redhat.com,
+ kexec@lists.infradead.org, junw99@yahoo.com, dyoung@redhat.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-Helge Deller <deller@gmx.de> writes:
-
-> On 06.09.19 23:47, Thiago Jung Bauermann wrote:
->> Helge Deller <deller@gmx.de> writes:
->>> This kexec patch series is the groundwork for kexec on the parisc architecture.
->>> Since we want kexec on parisc, I've applied it to my for-next-kexec tree [1],
->>> and can push it to Linus in the next merge window through the parisc tree [2].
->>
->> I just had a look at this version and it looks fine to me. Identical to
->> the version I reviewed before except for the changes I suggested.
->> Thanks, Sven!
->>
->>> If someone has any objections, or if you prefer to take it through
->>> a kexec or powerpc tree, please let me know.
->>>
->>> Helge
->>>
->>> [1] https://git.kernel.org/pub/scm/linux/kernel/git/deller/parisc-linux.git/log/?h=for-next-kexec
->>> [2] https://git.kernel.org/pub/scm/linux/kernel/git/deller/parisc-linux.git/log/?h=for-next
->>
->> I noticed that the first patch is the only one that doesn't have my
->> Reviewed-by. If you want, you can add it:
->>
->> Reviewed-by: Thiago Jung Bauermann <bauerman@linux.ibm.com>
->
-> Thanks for reviewing again!
-> I added your Reviewed-by to the patches in the for-next tree.
-
-Thanks!
-
--- 
-Thiago Jung Bauermann
-IBM Linux Technology Center
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+T24gV2VkLCBTZXAgMDQsIDIwMTkgYXQgMDk6Mjk6MjBQTSArMDgwMCwgbGlqaWFuZyB3cm90ZToK
+PiDlnKggMjAxOeW5tDA55pyIMDPml6UgMjI6MzcsIFNpbW9uIEhvcm1hbiDlhpnpgZM6Cj4gPiBP
+biBXZWQsIEF1ZyAyOCwgMjAxOSBhdCAwNToxODo1OFBNICswODAwLCBsaWppYW5nIHdyb3RlOgo+
+ID4+IEhpLCBTaW1vbiBhbmQgb3RoZXIgcmV2aWV3ZXJzLCBhbnkgY29tbWVudCBhYm91dCB2Mj8K
+PiA+IAo+ID4gSGksCj4gPiAKPiA+IHNvcnJ5IGZvciB0aGUgZXh0ZW5kZWQgZGVsYXkuCj4gPiBJ
+IHdpbGwgbG9vayBvdmVyIHRoaXMuCj4gPiAKPiBOZXZlciBtaW5kLiBBbnkgc3VnZ2VzdGlvbnMg
+d2lsbCBiZSBhcHByZWNpYXRlZC4KPiAKPiBUaGFuayB5b3UgaW4gYWR2YW5jZS4KClNvcnJ5IG9u
+Y2UgYWdhaW4gZm9yIHRoZSBkZWxheS4KCkkgaGF2ZSBhcHBsaWVkIHRoaXMgc2VyaWVzLgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGlu
+ZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
