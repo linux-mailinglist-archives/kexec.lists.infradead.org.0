@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1F1DAE510
-	for <lists+kexec@lfdr.de>; Tue, 10 Sep 2019 10:03:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD02AE569
+	for <lists+kexec@lfdr.de>; Tue, 10 Sep 2019 10:21:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,23 +11,24 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5gVwQ8HRgf1KUMbkCSu5NHGvs+p20XxDrvalI/ztgQo=; b=MV6v1oErRoLRE9CtEhU6nOSAXd
-	Q5dhASI3aSAfCrPmdh/ZHFJPNoc1BN3LUfKLHXAZKyxC3UvQsBrjIqbGVAj/agpshg9Bflj2auZf/
-	ul/zvOJyh/RAlJwvmeCzzVYj/aYBPqpVe/RlDRtv/VqrqUp5DDt38imzHDDcFPmdlMODaC5MwaH4+
-	YBHBYsMwmWdJGvMGYdIf07H61NMxOBZl4fKU6yNaYhE0IaZi8tbP8Xg0owoIpbBr5rgkiOQqZVaB8
-	sWJs6cSk03c2Yly1YAzupZW78K5Ls3WrwjpSnWCIy551wyJ7aB/zcnm0zAImlbQRBbOrlseZlORL2
-	f7g1P+dg==;
+	bh=mm3WjUCiqNLN3v1Odz+SAvGgrFv6Bu6tW8dCUD+5LRE=; b=bELCTL+b1ku1503j5MBrAlky7z
+	hOzBY1g4TFqDd0ZBk8Wqby9DsTHw4VZe4QZcMO9e2FdpLLMAExo0kgraVK69MQUW1wCWDEbftceQY
+	AvHSnEgqBBW3jXt5M1auMLNHEye3eFjLWtCsAXI4XUNV8lUw3579cg7xHbF6Q3mUkdth8HLBeU+8S
+	PL2V6Berez3q9U/uA4cOZuJIlck84qZI01V6LQ10rXveYnw/V9U1gXup57cd9AM6DCbiKnoMciYbi
+	S9XpSSA1BCYH7vcbQQ3r4urNYTvpSt9N3WOrqDfXRkE84hJzHedw3x3vMfZzhuXgui9XDEdGRwovc
+	0D/G3MPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7b81-00069c-N7; Tue, 10 Sep 2019 08:03:57 +0000
+	id 1i7bOn-0004Ds-CS; Tue, 10 Sep 2019 08:21:17 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7b7u-00068P-Gn; Tue, 10 Sep 2019 08:03:52 +0000
+ id 1i7bOi-0004DL-EU; Tue, 10 Sep 2019 08:21:14 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 54954AED0;
- Tue, 10 Sep 2019 08:03:46 +0000 (UTC)
-Subject: Re: [PATCH v4 04/17] arm64: hibernate: use get_safe_page directly
+ by mx1.suse.de (Postfix) with ESMTP id 4C4E6AE78;
+ Tue, 10 Sep 2019 08:21:10 +0000 (UTC)
+Subject: Re: [PATCH v4 05/17] arm64: hibernate: remove gotos in
+ create_safe_exec_page
 To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
  sashal@kernel.org, ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
@@ -35,7 +36,7 @@ To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
  james.morse@arm.com, vladimir.murzin@arm.com, bhsharma@redhat.com,
  linux-mm@kvack.org, mark.rutland@arm.com
 References: <20190909181221.309510-1-pasha.tatashin@soleen.com>
- <20190909181221.309510-5-pasha.tatashin@soleen.com>
+ <20190909181221.309510-6-pasha.tatashin@soleen.com>
 From: Matthias Brugger <mbrugger@suse.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
@@ -130,16 +131,16 @@ Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  DnchsfHg18gCCrEtYZ9czwNjVoV1Tv2lpzTTk+6HEJaQpMnPeAKbOeehq3gYKcvmDL+bRCTj
  mXg8WrBZdUuj0BCDYqneaUgVnp+wQogA3mHGVs281v1XZmjlsVmM9Y8VPE614zSiZQBL5Cin
  BTTI8ssYlV/aIKYi0dxRcj6vYnAfUImOsdZ5AQja5xIqw1rwWWUOYb99
-Message-ID: <e2ceb43a-d7bf-e0c6-c3ea-b83c95ba880d@suse.com>
-Date: Tue, 10 Sep 2019 10:03:44 +0200
+Message-ID: <9135be3e-cf7e-821d-928d-db98aa3ec9c8@suse.com>
+Date: Tue, 10 Sep 2019 10:21:08 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190909181221.309510-5-pasha.tatashin@soleen.com>
+In-Reply-To: <20190909181221.309510-6-pasha.tatashin@soleen.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_010350_853187_89C783FC 
-X-CRM114-Status: GOOD (  17.43  )
+X-CRM114-CacheID: sfid-20190910_012113_140805_5E140457 
+X-CRM114-Status: GOOD (  15.92  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -168,93 +169,103 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 
 On 09/09/2019 20:12, Pavel Tatashin wrote:
-> create_safe_exec_page() uses hibernate's allocator to create a set of page
-> table to map a single page that will contain the relocation code.
+> Usually, gotos are used to handle cleanup after exception, but
+> in case of create_safe_exec_page there are no clean-ups. So,
+> simply return the errors directly.
 > 
-> Remove the allocator related arguments, and use get_safe_page directly, as
-> it is done in other local functions in this file to simplify function
-> prototype.
-> 
-> Removing this function pointer makes it easier to refactor the code later.
-> 
+
+While at it, how about also cleaning up swsusp_arch_resume() which has the same
+issue.
+
+Regards,
+Matthias
+
 > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-
-Reviewed-by: Matthias Brugger <mbrugger@suse.com>
-
+> Reviewed-by: James Morse <james.morse@arm.com>
 > ---
->  arch/arm64/kernel/hibernate.c | 17 +++++++----------
->  1 file changed, 7 insertions(+), 10 deletions(-)
+>  arch/arm64/kernel/hibernate.c | 34 +++++++++++-----------------------
+>  1 file changed, 11 insertions(+), 23 deletions(-)
 > 
 > diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> index 227cc26720f7..47a861e0cb0c 100644
+> index 47a861e0cb0c..7bbeb33c700d 100644
 > --- a/arch/arm64/kernel/hibernate.c
 > +++ b/arch/arm64/kernel/hibernate.c
-> @@ -196,9 +196,7 @@ EXPORT_SYMBOL(arch_hibernation_header_restore);
->   */
->  static int create_safe_exec_page(void *src_start, size_t length,
+> @@ -198,7 +198,6 @@ static int create_safe_exec_page(void *src_start, size_t length,
 >  				 unsigned long dst_addr,
-> -				 phys_addr_t *phys_dst_addr,
-> -				 void *(*allocator)(gfp_t mask),
-> -				 gfp_t mask)
-> +				 phys_addr_t *phys_dst_addr)
+>  				 phys_addr_t *phys_dst_addr)
 >  {
->  	int rc = 0;
+> -	int rc = 0;
 >  	pgd_t *trans_pgd;
-> @@ -206,7 +204,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	pgd_t *pgdp;
 >  	pud_t *pudp;
->  	pmd_t *pmdp;
+> @@ -206,47 +205,37 @@ static int create_safe_exec_page(void *src_start, size_t length,
 >  	pte_t *ptep;
-> -	unsigned long dst = (unsigned long)allocator(mask);
-> +	unsigned long dst = get_safe_page(GFP_ATOMIC);
+>  	unsigned long dst = get_safe_page(GFP_ATOMIC);
 >  
->  	if (!dst) {
->  		rc = -ENOMEM;
-> @@ -216,7 +214,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+> -	if (!dst) {
+> -		rc = -ENOMEM;
+> -		goto out;
+> -	}
+> +	if (!dst)
+> +		return -ENOMEM;
+>  
 >  	memcpy((void *)dst, src_start, length);
 >  	__flush_icache_range(dst, dst + length);
 >  
-> -	trans_pgd = allocator(mask);
-> +	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
->  	if (!trans_pgd) {
->  		rc = -ENOMEM;
->  		goto out;
-> @@ -224,7 +222,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
+> -	if (!trans_pgd) {
+> -		rc = -ENOMEM;
+> -		goto out;
+> -	}
+> +	if (!trans_pgd)
+> +		return -ENOMEM;
 >  
 >  	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
 >  	if (pgd_none(READ_ONCE(*pgdp))) {
-> -		pudp = allocator(mask);
-> +		pudp = (void *)get_safe_page(GFP_ATOMIC);
->  		if (!pudp) {
->  			rc = -ENOMEM;
->  			goto out;
-> @@ -234,7 +232,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  		pudp = (void *)get_safe_page(GFP_ATOMIC);
+> -		if (!pudp) {
+> -			rc = -ENOMEM;
+> -			goto out;
+> -		}
+> +		if (!pudp)
+> +			return -ENOMEM;
+>  		pgd_populate(&init_mm, pgdp, pudp);
+>  	}
 >  
 >  	pudp = pud_offset(pgdp, dst_addr);
 >  	if (pud_none(READ_ONCE(*pudp))) {
-> -		pmdp = allocator(mask);
-> +		pmdp = (void *)get_safe_page(GFP_ATOMIC);
->  		if (!pmdp) {
->  			rc = -ENOMEM;
->  			goto out;
-> @@ -244,7 +242,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  		pmdp = (void *)get_safe_page(GFP_ATOMIC);
+> -		if (!pmdp) {
+> -			rc = -ENOMEM;
+> -			goto out;
+> -		}
+> +		if (!pmdp)
+> +			return -ENOMEM;
+>  		pud_populate(&init_mm, pudp, pmdp);
+>  	}
 >  
 >  	pmdp = pmd_offset(pudp, dst_addr);
 >  	if (pmd_none(READ_ONCE(*pmdp))) {
-> -		ptep = allocator(mask);
-> +		ptep = (void *)get_safe_page(GFP_ATOMIC);
->  		if (!ptep) {
->  			rc = -ENOMEM;
->  			goto out;
-> @@ -530,8 +528,7 @@ int swsusp_arch_resume(void)
->  	 */
->  	rc = create_safe_exec_page(__hibernate_exit_text_start, exit_size,
->  				   (unsigned long)hibernate_exit,
-> -				   &phys_hibernate_exit,
-> -				   (void *)get_safe_page, GFP_ATOMIC);
-> +				   &phys_hibernate_exit);
->  	if (rc) {
->  		pr_err("Failed to create safe executable page for hibernate_exit code.\n");
->  		goto out;
+>  		ptep = (void *)get_safe_page(GFP_ATOMIC);
+> -		if (!ptep) {
+> -			rc = -ENOMEM;
+> -			goto out;
+> -		}
+> +		if (!ptep)
+> +			return -ENOMEM;
+>  		pmd_populate_kernel(&init_mm, pmdp, ptep);
+>  	}
+>  
+> @@ -272,8 +261,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  
+>  	*phys_dst_addr = virt_to_phys((void *)dst);
+>  
+> -out:
+> -	return rc;
+> +	return 0;
+>  }
+>  
+>  #define dcache_clean_range(start, end)	__flush_dcache_area(start, (end - start))
 > 
 
 _______________________________________________
