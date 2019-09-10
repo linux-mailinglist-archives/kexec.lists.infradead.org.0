@@ -2,76 +2,74 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BBDDAE666
-	for <lists+kexec@lfdr.de>; Tue, 10 Sep 2019 11:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73DC3AE6B4
+	for <lists+kexec@lfdr.de>; Tue, 10 Sep 2019 11:21:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ToV41+hKCz0y/UeTzvEJhOWfRioAycnf/KQ2/T7h6aU=; b=UI1CjRnKKVV4pX
-	UdhvtPlH89+EH2EHHe3sF4jCUmQnhZ1OBwyBW5ESf0/Ut6HXt8WOoJTe/6i+WKkX/YjfMtt/aozxK
-	SdLiZPfKKaRdfEVsSrmF5T58x1tiIXtD+pkeTjY1MfnGRBXgVuQ0U3UOMi+F0PkQwOGLELRt0CEJw
-	InjNHm+kxWpWszRmqYm9n8g5Guhs3oVEdqKPSuO1XHRYNgmZ3kjPGdKH7dqoiPzwBm2WW1ipLxRIk
-	r8ZtrKAmqWM3KKOfynFMjCi/KXrLcImQ+KHHjlNHqtvxY3Ocx49tElrUwocY9ibN5WZrxwFemlvQt
-	Us/3ISM4yuChK/ZXGFEQ==;
+	List-Owner; bh=0kwxUOa60lyJk/gFkpckPMsoUgmkm7qEXut0ZLKiZzg=; b=KEIKfUjP5KnjBT
+	oLn+KJqY6Kz/AXWqAR0iM+4/SyPJyLS6rX7soC4ENEQD3W7f8+0H+RvlHsthMK7LuYAvuyv1qnM2E
+	Dzw4EpuXmNRQiK7L6B2AkHIFHQ8CoQJoOE6vXRa65Eqv62jiJ1mBbNdr8+E1J33rMbm7FIMRIiNJd
+	rmZJl7TLSVBIYBlavA72yvMpcc1TW4mzIKWFBJRxsfmnJ0tFWA0wm0zpFQ4zisSTNxCu7IsdzK483
+	GqfkXOOJg0VOFlgGzqa0KST01ZjVNvl/WTbgZJSHkslKv2NBb5TWVjzyLcBGBnmCh6ILnH/cXqbsr
+	QbjluqASmJ1W5aiWhO6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7cD9-0006AE-Oj; Tue, 10 Sep 2019 09:13:19 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1i7cKa-00025z-1o; Tue, 10 Sep 2019 09:21:00 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7cCw-0005yn-OI
- for kexec@lists.infradead.org; Tue, 10 Sep 2019 09:13:08 +0000
-Received: by mail-ed1-x541.google.com with SMTP id f19so16292851eds.12
- for <kexec@lists.infradead.org>; Tue, 10 Sep 2019 02:13:06 -0700 (PDT)
+ id 1i7cKW-000259-HT
+ for kexec@lists.infradead.org; Tue, 10 Sep 2019 09:20:57 +0000
+Received: by mail-ed1-x544.google.com with SMTP id i8so16316536edn.13
+ for <kexec@lists.infradead.org>; Tue, 10 Sep 2019 02:20:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jbBZuUfX3eYzsTIc3XZwtrg9Htc+jzFYCQ9N85/KvC8=;
- b=Z5OxgccHbfn9g3PIB8bPABfGmcCaxxb1J7F7+yr0+pGuVMBBQo8ANum7+26tfvS4RC
- G9MhvM4u2bE+JEv+ewuotVeHnoUnEMymJcCm6fbOq3w5MhGsy0hCiKquBnVNH+5tUTJe
- KVSszKycXH/ARdNzK93YM+Nr1islpESB3U2PpA44vFenbEcXrBvdSr1Jl8cKPONV0f7t
- lMNh/HHY7OgbawBfOYH5CmxcbwMInVqOQydF3uyjVPuhXfy8POmejGJXwNpdOnq1ZnwW
- ChZVNZGSzPgQe1quf1GT8CWiuf1xFhGrKS5XKkCrtKg005TW0Ma1UYXs8TgHunhNocL4
- 4rYQ==
+ :cc; bh=fVGVsESSvCGQOFNvs9wLVPNtEbA+xNhK0Vsp0KuYL0U=;
+ b=l1enudLKhX+NelYlOqQKvgNY5xLG29otQPhknZNcMkv0NM6LGktXu52o7Rq9oXni7U
+ rT6qa9jJFvVV7DGrQcvT7TkQVr7YPjzLLN2yyQhzqc/3CKUefFYh0Wj1fNGmGs1LrBaU
+ +Rt/P8fFgugTd0kFHr2Ss0tY7TIbjyM5B9kitn9D5U0zYDDTKHkZiimf0vIykHPbq2fZ
+ mZWj8mIoPkIvn0hdw5gdaffVtvbc7DNotaOw6ScSEUxSsXK+bbSJXldYd/iSPSahFARY
+ wygqctO/41VVuzlrbXrPVfgvn1BZBO8SRggWpYtz77R2bRkNGZ3TfXnz9srnNazLkorr
+ QBDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jbBZuUfX3eYzsTIc3XZwtrg9Htc+jzFYCQ9N85/KvC8=;
- b=iDvQ1zhgREjzbB1KvO0EHWE8h45zKXk/o3R10/pBEeN3aSyA8mLj4KqpSDEwtLUF0q
- E99jEQmV1jU+vcXiAGgxzWgcRixPpMOW8k+GLfQCdY8TRiCLYvD+D5KaOWP3b/S9UoSd
- 5Fo+hCHNlDIeavJLD3Unym2oXLxO9bSYrG3hikNfI01qv11ORrgsZgzYW1acv/2uIN9X
- PhQd8MO2JnwaB+1+tphRyUj3YqTCvkDsO0ual/gxAgKtwJ77D8LnnooLUWSRrvY8dlCr
- gPjqBdVLtuUz5HLw3RchTEjQptew28agjXl0F+ZyIYFErQL1UswMRzIUu1iceeRbtRox
- GN6A==
-X-Gm-Message-State: APjAAAUetcprR3PTFqW1XBjgzwLBjlOXj5/iuUqYkgI+MYw63oXDVSKY
- lVazOc6sfxOdvRDvSFsy3p3X6K31iRHSdJCJN6iBUQ==
-X-Google-Smtp-Source: APXvYqwiy51QDBEUeHPFO4jWirM5BDZX1zPUw+Hne5qlRbnCZgObrJm78xql+txsNxH8uVTBgiORMGERQfs9UNrBN84=
-X-Received: by 2002:a17:906:414:: with SMTP id
- d20mr23875393eja.165.1568106785200; 
- Tue, 10 Sep 2019 02:13:05 -0700 (PDT)
+ bh=fVGVsESSvCGQOFNvs9wLVPNtEbA+xNhK0Vsp0KuYL0U=;
+ b=DyznaTup2McbQ4Vzpms9CEhp86FfJHCgf0AEEm09IdP+q1NEe4euujoyfjTM7VKEpR
+ zED9NGIzyUGlO/eeV47WcjEMk8aGTx+y9WgHuWdtqVY2PChrfNxRXnaKa0OBjIZP69oX
+ UmwIc8evsT54rXpcY3zWkr9vVOzpnImZ2vlicZzcP7LYPYaQmJSJFOyNkrRN00Kdoa6M
+ /PJgE+X6YQmNyur5ndSHZgFzNE36i91AI/0PmDCuOb/ZGH1AUc++xC2cB5U2fKQFuk5p
+ wuwFZ23CmipeL7mvJp4kU591n9E6jdALqRLh/+dZf30VSN+AdSMh5SgjgYcBeob/y2bt
+ BLcg==
+X-Gm-Message-State: APjAAAUCMGa8XxEVHNVfn43Fgmch3Y8cIU5XoqBykPHY8fWeg2GHtYAI
+ qd4joGQM3HNXH5PHAhmv+LcJJXvhQlUHRp9XqK87gw==
+X-Google-Smtp-Source: APXvYqxafwr9K7U55nRLBrBFKjJwhzRPMsyqMlNm7SM6xGY0Iw+4afMLkFcRjz7kyMGTKRb774E7d1RrUT7vfuc/ufA=
+X-Received: by 2002:aa7:dd17:: with SMTP id i23mr28832869edv.124.1568107254841; 
+ Tue, 10 Sep 2019 02:20:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190909181221.309510-1-pasha.tatashin@soleen.com>
- <20190909181221.309510-6-pasha.tatashin@soleen.com>
- <9135be3e-cf7e-821d-928d-db98aa3ec9c8@suse.com>
-In-Reply-To: <9135be3e-cf7e-821d-928d-db98aa3ec9c8@suse.com>
+ <20190909181221.309510-11-pasha.tatashin@soleen.com>
+ <60975350-87f8-56b3-437d-d9ee26ac3bd3@suse.com>
+In-Reply-To: <60975350-87f8-56b3-437d-d9ee26ac3bd3@suse.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Tue, 10 Sep 2019 10:12:54 +0100
-Message-ID: <CA+CK2bCGgAXDdjDVS1KYj8uYWmeBM6cTJ3Y-DXZ_8+93uCiV7w@mail.gmail.com>
-Subject: Re: [PATCH v4 05/17] arm64: hibernate: remove gotos in
- create_safe_exec_page
+Date: Tue, 10 Sep 2019 10:20:43 +0100
+Message-ID: <CA+CK2bBK40T_DEhNvz8nQaKSsanxXpGYhBm05N_NmZtq+JDVTg@mail.gmail.com>
+Subject: Re: [PATCH v4 10/17] arm64: trans_pgd: make trans_pgd_map_page generic
 To: Matthias Brugger <mbrugger@suse.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_021306_829537_BA134D95 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20190910_022056_585103_95DE4374 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,110 +105,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> On 09/09/2019 20:12, Pavel Tatashin wrote:
-> > Usually, gotos are used to handle cleanup after exception, but
-> > in case of create_safe_exec_page there are no clean-ups. So,
-> > simply return the errors directly.
+> > +/*
+> > + * Add map entry to trans_pgd for a base-size page at PTE level.
+> > + * page:     page to be mapped.
+> > + * dst_addr: new VA address for the pages
+> > + * pgprot:   protection for the page.
+>
+> For consistency please describe all function parameters. From my experience
+> function parameter description is normally done in the C-file that implements
+> the logic. Don't ask me why.
+
+Ok, I move the comment, and will describe every parameter. Thank you.
+
+>
+> > + */
+> > +int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
+> > +                    void *page, unsigned long dst_addr, pgprot_t pgprot);
 > >
->
-> While at it, how about also cleaning up swsusp_arch_resume() which has the same
-> issue.
-
-Thank you for suggestion. I will do cleanups in swsusp_arch_resume() as well.
-
-Pasha
-
->
-> Regards,
-> Matthias
->
-> > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-> > Reviewed-by: James Morse <james.morse@arm.com>
-> > ---
-> >  arch/arm64/kernel/hibernate.c | 34 +++++++++++-----------------------
-> >  1 file changed, 11 insertions(+), 23 deletions(-)
-> >
+> >  #endif /* _ASM_TRANS_TABLE_H */
 > > diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> > index 47a861e0cb0c..7bbeb33c700d 100644
+> > index 94ede33bd777..9b75b680ab70 100644
 > > --- a/arch/arm64/kernel/hibernate.c
 > > +++ b/arch/arm64/kernel/hibernate.c
-> > @@ -198,7 +198,6 @@ static int create_safe_exec_page(void *src_start, size_t length,
+> > @@ -179,6 +179,12 @@ int arch_hibernation_header_restore(void *addr)
+> >  }
+> >  EXPORT_SYMBOL(arch_hibernation_header_restore);
+> >
+> > +static void *
+> > +hibernate_page_alloc(void *arg)
+>
+> AFAICS no new line needed here.
+
+Right, will fix it.
+
+>
+> > +{
+> > +     return (void *)get_safe_page((gfp_t)(unsigned long)arg);
+> > +}
+> > +
+> >  /*
+> >   * Copies length bytes, starting at src_start into an new page,
+> >   * perform cache maintenance, then maps it at the specified address low
+> > @@ -195,6 +201,10 @@ static int create_safe_exec_page(void *src_start, size_t length,
 > >                                unsigned long dst_addr,
 > >                                phys_addr_t *phys_dst_addr)
 > >  {
-> > -     int rc = 0;
-> >       pgd_t *trans_pgd;
-> >       pgd_t *pgdp;
-> >       pud_t *pudp;
-> > @@ -206,47 +205,37 @@ static int create_safe_exec_page(void *src_start, size_t length,
-> >       pte_t *ptep;
-> >       unsigned long dst = get_safe_page(GFP_ATOMIC);
-> >
-> > -     if (!dst) {
-> > -             rc = -ENOMEM;
-> > -             goto out;
-> > -     }
-> > +     if (!dst)
-> > +             return -ENOMEM;
-> >
-> >       memcpy((void *)dst, src_start, length);
-> >       __flush_icache_range(dst, dst + length);
-> >
-> >       trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
-> > -     if (!trans_pgd) {
-> > -             rc = -ENOMEM;
-> > -             goto out;
-> > -     }
-> > +     if (!trans_pgd)
-> > +             return -ENOMEM;
-> >
-> >       pgdp = pgd_offset_raw(trans_pgd, dst_addr);
-> >       if (pgd_none(READ_ONCE(*pgdp))) {
-> >               pudp = (void *)get_safe_page(GFP_ATOMIC);
-> > -             if (!pudp) {
-> > -                     rc = -ENOMEM;
-> > -                     goto out;
-> > -             }
-> > +             if (!pudp)
-> > +                     return -ENOMEM;
-> >               pgd_populate(&init_mm, pgdp, pudp);
-> >       }
-> >
-> >       pudp = pud_offset(pgdp, dst_addr);
-> >       if (pud_none(READ_ONCE(*pudp))) {
-> >               pmdp = (void *)get_safe_page(GFP_ATOMIC);
-> > -             if (!pmdp) {
-> > -                     rc = -ENOMEM;
-> > -                     goto out;
-> > -             }
-> > +             if (!pmdp)
-> > +                     return -ENOMEM;
-> >               pud_populate(&init_mm, pudp, pmdp);
-> >       }
-> >
-> >       pmdp = pmd_offset(pudp, dst_addr);
-> >       if (pmd_none(READ_ONCE(*pmdp))) {
-> >               ptep = (void *)get_safe_page(GFP_ATOMIC);
-> > -             if (!ptep) {
-> > -                     rc = -ENOMEM;
-> > -                     goto out;
-> > -             }
-> > +             if (!ptep)
-> > +                     return -ENOMEM;
-> >               pmd_populate_kernel(&init_mm, pmdp, ptep);
-> >       }
-> >
-> > @@ -272,8 +261,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
-> >
-> >       *phys_dst_addr = virt_to_phys((void *)dst);
-> >
-> > -out:
-> > -     return rc;
-> > +     return 0;
-> >  }
-> >
-> >  #define dcache_clean_range(start, end)       __flush_dcache_area(start, (end - start))
-> >
+> > +     struct trans_pgd_info trans_info = {
+> > +             .trans_alloc_page       = hibernate_page_alloc,
+> > +             .trans_alloc_arg        = (void *)GFP_ATOMIC,
+> > +     };
+>
+> New line between end of struct and other variables.
+
+Sure.
+
+>
+> With these changes:
+> Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+
+Thank you,
+Pasha
 
 _______________________________________________
 kexec mailing list
