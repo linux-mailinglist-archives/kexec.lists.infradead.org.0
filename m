@@ -2,91 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 523F8B0887
-	for <lists+kexec@lfdr.de>; Thu, 12 Sep 2019 08:00:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38AF7B0F13
+	for <lists+kexec@lfdr.de>; Thu, 12 Sep 2019 14:48:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2g+de2a0Kx53Od7yMk9CXlS8hY4uQKRzirWS4Jffj9k=; b=C/qyeIWAvjlH7d
-	yEkhkPy9BFb/JLanGvV2kwt2P3ONxqXWM0ETON4+ip/L6D3IcRgM8pTm/XuUCaYDw+Wlt3sOV1T7P
-	bDOHt8Pm6bi/UHEzANJhrteel/PH9b39uPh6jsh88l/c/Otw9/SGeVDQB/gMPxS6ZC0KLtDNCbCAV
-	y2d3M8sH3cEcg5aykQ55UqZvsgc3n5M8ey/Qu1SeMnp+rOLeXrqCkwBg0JNT9olsFJ1z8u03SBlnX
-	5mb7Z/B1wXbMH+ibD0tzGwp0mRk+lVrPuUGmkKplDeDa0+7U/bzpIzzXimKKOiUWkSy7aLDv5KjAS
-	PoMi6wL9t/QoXPte757w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:From:To
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=deR+5tIIuQX656zAcY9hb8NarAanzA28ZqOxuXki4B0=; b=s3mYsWCehQpQZZ
+	1JfykwO3pxCjOJdOuVkY7pnAK4Lzj+ejauophBNQFb9ItCvj83eN8mS1k+bV6Qdfbe69N0dTaYmHY
+	7+mtux+o0PPvWcciUSBNt+mS+U6NagCT8Xp0NTeauqnkryIxze3/xp1bv+Wdm6gLaopXZkq9vhAc0
+	1AuPBdCXDG5uv2rjCk/GwC834GddNyiJf5xqX9uwYgAvoctXCiFK3AMR5pyPq7xP1oJ+V7bVu2TkF
+	BeLDddUvoP1V7eqJJjaChgT1EgIC3dv7YLbOW6FGibjbCSis6vM9RicJdg9Z+tWEojTfy9W62kTK9
+	PLCGSmwT6HhkA4akWX2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8I9l-0003PO-RV; Thu, 12 Sep 2019 06:00:37 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1i8OWh-0006tz-Ql; Thu, 12 Sep 2019 12:48:43 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8I8w-0001UJ-9g
- for kexec@lists.infradead.org; Thu, 12 Sep 2019 05:59:48 +0000
-Received: by mail-pg1-x542.google.com with SMTP id u17so12838543pgi.6
- for <kexec@lists.infradead.org>; Wed, 11 Sep 2019 22:59:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=FxFE8kRj/EbRgKoWP35uNVOjcf/RHJrS7TO4gPoF1aw=;
- b=eBDesVj3g+SbqAKG8q2xV8P2B/mupoEtGicY3Is/+aV/JLmtliD/CQj1oHz5AbTGzT
- ibeR+rVsYLMo2C6oEn3s7NCJLs8Z9tToLUbJZBP6WvV+0QBx2hcmhfNM/7LYDc5n2RmY
- cZoj8I/SJrol5TJQR3Bn4K+0e/5hXi1dkfiGlwNWQQIP3trO1v3hQFjlOqxjRmFIaPJO
- No8MV7FL7eXNx7wBqMopi0DAxFyySodWwynsSEFmtDXTBQJNuktqXOa/pKR6L6BZcxk/
- ZGxt5OVSHPNSl1ybKJhTalSIwduOPKikGWAF6yPVoK/teypHOhztCG1Bxg8gYA8rDw/J
- jceQ==
+ id 1i8OWd-0006tf-Gp
+ for kexec@lists.infradead.org; Thu, 12 Sep 2019 12:48:40 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n10so7506960wmj.0
+ for <kexec@lists.infradead.org>; Thu, 12 Sep 2019 05:48:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=prospectknight-com.20150623.gappssmtp.com; s=20150623;
+ h=date:to:from:subject:message-id:mime-version;
+ bh=2PYu/zvZFZ5VBzeOQWTqemWBJyekar1nVwWhtcrSnsU=;
+ b=cj5HhtpArAKHa1/wgSwx7gXcMfnTbTaa2xWCLa2/tATf9UxPVlyY2y8Tq0T//plhNY
+ SdEpHqmrSJ0PUMLFr1Uz0rBgj11a/B+d9fVF4bYu0l0wPYJjslbs/yPyUcOf/iR9NsDy
+ hAStF51flT17v+1di8V/ZPrEf4xeEmC1RqerMmTilQMcU0Qiw21ez/sVwWRN9Fx3P2yS
+ EtRemY4Tu1KK0kQBdgAWTBMZpGubYevextvE0JIxhP2907Z42eu+wEkQCjnCjOUyJLC4
+ v88KZeyalE8M97Hdq/j6960SmKVUy2S2uWQVkRGdLHyw6Js6SEgrcD1dfLGk/enZy+1s
+ ORcw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=FxFE8kRj/EbRgKoWP35uNVOjcf/RHJrS7TO4gPoF1aw=;
- b=ps+FPDo3tPK5Dnb8Ba8IPgNgVHYN3WkdECB9i6YpxobRe+eKzbsZ8ixub6IsSiPmY0
- H3EObjcRopaJ8yMBDjx/z+wmkVElvOo4t0iqQZsGvIlxSYHnjiVLvW0+d46X9Wd4TMaa
- zPk6Ifx918DGjU+en8h7HWxFBauJEOwEcf62/Zmu2GhZI52Pl/eAoVy+Ip5pIhfLxiKp
- 4F3Vi4Neq4q84IaVhGusoCUD62IqlHO3YvzAn/ZqG/WhGvO8WFtXQ/uxuDoyHAjROUS1
- Jlsss/rL8SxGiDx9VW+2lUk6JV3Aw7R2IwPIMpVW9kyn8jI02UcMDm3nnVcDjM5gyaws
- Nyfw==
-X-Gm-Message-State: APjAAAVg4K4TceFul7NYVAStIJY9WiVeRcNf5Iia+XQHzxSaDbGFJhtf
- ZWpTDzqaZXyiE5i/wQpHOiEbIg==
-X-Google-Smtp-Source: APXvYqzrUMHEJKlllEkbtSJF1fAnGNVZUDuEsmrY+s0nLn1qDSccMEfHsDcRj8CGFkCxHj7Q65zOwQ==
-X-Received: by 2002:a62:5c82:: with SMTP id
- q124mr47525159pfb.177.1568267985462; 
- Wed, 11 Sep 2019 22:59:45 -0700 (PDT)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id
- l62sm36827139pfl.167.2019.09.11.22.59.44
+ h=x-gm-message-state:date:to:from:subject:message-id:mime-version;
+ bh=2PYu/zvZFZ5VBzeOQWTqemWBJyekar1nVwWhtcrSnsU=;
+ b=WjeDi5GunaL1ZBpMhRhxtaLgz3+Jx0y0NL9JAE874fLv/GSY2u3jrT64tIpIQaOymp
+ 1ZIlEAIEx35XiGS1te8Fm3iDnvqXKXT6UTxCdFdzcT6kLxqy/DsIeq33ymWlklWK0xra
+ EplSHNWw0hiV2vW8XXTMPaYZFZHRvIIvciifXoF4GzRHSsr2Btngb1irvFohyFw8qyoZ
+ wguOmSeQlobGRwywhwKD/OVlbHJEHcf9xWbBAzMN8sMhKCfGvHfu9SKWycZb3L+sQ8HC
+ g4OKDCbbood4z3GBlIBmKmzT5nAg72UQD4QkAsHYdrkBh/6Kd4tbW3PV7+A4946WH7Tt
+ 1uUQ==
+X-Gm-Message-State: APjAAAWQTbsYVwvFm9CTlbNss2IrbN1rXxMBWm5gIOx6LFVNfpt2OCxM
+ 1fvE11hOtGph1Y/TNGbF2LU1MFCx85A=
+X-Google-Smtp-Source: APXvYqyz984tMaQuCQrDblDMi2SL8w1WvaDXhLeaCPvZLGvwjgXKxme69WQbZ3fGk8cebJdwCWsLeg==
+X-Received: by 2002:a1c:7902:: with SMTP id l2mr2439702wme.55.1568292508018;
+ Thu, 12 Sep 2019 05:48:28 -0700 (PDT)
+Received: from prospectknight.com (133.76.189.35.bc.googleusercontent.com.
+ [35.189.76.133])
+ by smtp.gmail.com with ESMTPSA id w125sm12324145wmg.32.2019.09.12.05.48.27
+ for <kexec@lists.infradead.org>
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Sep 2019 22:59:45 -0700 (PDT)
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com
-Subject: [PATCH 3/3] arm64: kexec_file: add crash dump support
-Date: Thu, 12 Sep 2019 15:01:50 +0900
-Message-Id: <20190912060150.10818-4-takahiro.akashi@linaro.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190912060150.10818-1-takahiro.akashi@linaro.org>
-References: <20190912060150.10818-1-takahiro.akashi@linaro.org>
+ Thu, 12 Sep 2019 05:48:27 -0700 (PDT)
+Date: Thu, 12 Sep 2019 12:48:25 +0000
+To: kexec@lists.infradead.org
+From: Prospect Knight <hello@prospectknight.com>
+Subject: Thanks for contacting Prospect Knight
+Message-ID: <55ded30c0efd26c8aee324066afbee30@prospectknight.com>
+X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_225946_408009_CF746610 
-X-CRM114-Status: GOOD (  18.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190912_054839_699140_CE5C55E7 
+X-CRM114-Status: UNSURE (   5.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,226 +91,22 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, james.morse@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- AKASHI Takahiro <takahiro.akashi@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Enabling crash dump (kdump) includes
-* prepare contents of ELF header of a core dump file, /proc/vmcore,
-  using crash_prepare_elf64_headers(), and
-* add two device tree properties, "linux,usable-memory-range" and
-  "linux,elfcorehdr", which represent respectively a memory range
-  to be used by crash dump kernel and the header's location
+Hi,
 
-Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Reviewed-by: James Morse <james.morse@arm.com>
----
- arch/arm64/include/asm/kexec.h         |   4 +
- arch/arm64/kernel/kexec_image.c        |   4 -
- arch/arm64/kernel/machine_kexec_file.c | 105 ++++++++++++++++++++++++-
- 3 files changed, 106 insertions(+), 7 deletions(-)
+Thanks so much for getting in touch! 
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..d24b527e8c00 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	unsigned long dtb_mem;
-+	/* Core ELF header buffer */
-+	void *elf_headers;
-+	unsigned long elf_headers_mem;
-+	unsigned long elf_headers_sz;
- };
- 
- extern const struct kexec_file_ops kexec_image_ops;
-diff --git a/arch/arm64/kernel/kexec_image.c b/arch/arm64/kernel/kexec_image.c
-index 2514fd6f12cb..60cedfa9529b 100644
---- a/arch/arm64/kernel/kexec_image.c
-+++ b/arch/arm64/kernel/kexec_image.c
-@@ -47,10 +47,6 @@ static void *image_load(struct kimage *image,
- 	struct kexec_segment *kernel_segment;
- 	int ret;
- 
--	/* We don't support crash kernels yet. */
--	if (image->type == KEXEC_TYPE_CRASH)
--		return ERR_PTR(-EOPNOTSUPP);
--
- 	/*
- 	 * We require a kernel with an unambiguous Image header. Per
- 	 * Documentation/arm64/booting.rst, this is the case when image_size
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 58871333737a..f5276e27c12b 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -17,12 +17,15 @@
- #include <linux/memblock.h>
- #include <linux/of_fdt.h>
- #include <linux/random.h>
-+#include <linux/slab.h>
- #include <linux/string.h>
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- #include <asm/byteorder.h>
- 
- /* relevant device tree properties */
-+#define FDT_PROP_KEXEC_ELFHDR	"linux,elfcorehdr"
-+#define FDT_PROP_MEM_RANGE	"linux,usable-memory-range"
- #define FDT_PROP_INITRD_START	"linux,initrd-start"
- #define FDT_PROP_INITRD_END	"linux,initrd-end"
- #define FDT_PROP_BOOTARGS	"bootargs"
-@@ -38,6 +41,10 @@ int arch_kimage_file_post_load_cleanup(struct kimage *image)
- 	vfree(image->arch.dtb);
- 	image->arch.dtb = NULL;
- 
-+	vfree(image->arch.elf_headers);
-+	image->arch.elf_headers = NULL;
-+	image->arch.elf_headers_sz = 0;
-+
- 	return kexec_image_post_load_cleanup_default(image);
- }
- 
-@@ -53,6 +60,31 @@ static int setup_dtb(struct kimage *image,
- 
- 	off = ret;
- 
-+	ret = fdt_delprop(dtb, off, FDT_PROP_KEXEC_ELFHDR);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+	ret = fdt_delprop(dtb, off, FDT_PROP_MEM_RANGE);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		/* add linux,elfcorehdr */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_KEXEC_ELFHDR,
-+				image->arch.elf_headers_mem,
-+				image->arch.elf_headers_sz);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+
-+		/* add linux,usable-memory-range */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_MEM_RANGE,
-+				crashk_res.start,
-+				crashk_res.end - crashk_res.start + 1);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+	}
-+
- 	/* add bootargs */
- 	if (cmdline) {
- 		ret = fdt_setprop_string(dtb, off, FDT_PROP_BOOTARGS, cmdline);
-@@ -110,7 +142,8 @@ static int setup_dtb(struct kimage *image,
- }
- 
- /*
-- * More space needed so that we can add initrd, bootargs and kaslr-seed.
-+ * More space needed so that we can add initrd, bootargs, kaslr-seed,
-+ * userable-memory-range and elfcorehdr.
-  */
- #define DTB_EXTRA_SPACE 0x1000
- 
-@@ -158,6 +191,43 @@ static int create_dtb(struct kimage *image,
- 	}
- }
- 
-+static int prepare_elf_headers(void **addr, unsigned long *sz)
-+{
-+	struct crash_mem *cmem;
-+	unsigned int nr_ranges;
-+	int ret;
-+	u64 i;
-+	phys_addr_t start, end;
-+
-+	nr_ranges = 1; /* for exclusion of crashkernel region */
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL)
-+		nr_ranges++;
-+
-+	cmem = kmalloc(sizeof(struct crash_mem) +
-+			sizeof(struct crash_mem_range) * nr_ranges, GFP_KERNEL);
-+	if (!cmem)
-+		return -ENOMEM;
-+
-+	cmem->max_nr_ranges = nr_ranges;
-+	cmem->nr_ranges = 0;
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL) {
-+		cmem->ranges[cmem->nr_ranges].start = start;
-+		cmem->ranges[cmem->nr_ranges].end = end - 1;
-+		cmem->nr_ranges++;
-+	}
-+
-+	/* Exclude crashkernel region */
-+	ret = crash_exclude_mem_range(cmem, crashk_res.start, crashk_res.end);
-+
-+	if (!ret)
-+		ret =  crash_prepare_elf64_headers(cmem, true, addr, sz);
-+
-+	kfree(cmem);
-+	return ret;
-+}
-+
- int load_other_segments(struct kimage *image,
- 			unsigned long kernel_load_addr,
- 			unsigned long kernel_size,
-@@ -165,14 +235,43 @@ int load_other_segments(struct kimage *image,
- 			char *cmdline)
- {
- 	struct kexec_buf kbuf;
--	void *dtb = NULL;
--	unsigned long initrd_load_addr = 0, dtb_len;
-+	void *headers, *dtb = NULL;
-+	unsigned long headers_sz, initrd_load_addr = 0, dtb_len;
- 	int ret = 0;
- 
- 	kbuf.image = image;
- 	/* not allocate anything below the kernel */
- 	kbuf.buf_min = kernel_load_addr + kernel_size;
- 
-+	/* load elf core header */
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		ret = prepare_elf_headers(&headers, &headers_sz);
-+		if (ret) {
-+			pr_err("Preparing elf core header failed\n");
-+			goto out_err;
-+		}
-+
-+		kbuf.buffer = headers;
-+		kbuf.bufsz = headers_sz;
-+		kbuf.mem = 0;
-+		kbuf.memsz = headers_sz;
-+		kbuf.buf_align = SZ_64K; /* largest supported page size */
-+		kbuf.buf_max = ULONG_MAX;
-+		kbuf.top_down = true;
-+
-+		ret = kexec_add_buffer(&kbuf);
-+		if (ret) {
-+			vfree(headers);
-+			goto out_err;
-+		}
-+		image->arch.elf_headers = headers;
-+		image->arch.elf_headers_mem = kbuf.mem;
-+		image->arch.elf_headers_sz = headers_sz;
-+
-+		pr_debug("Loaded elf core header at 0x%lx bufsz=0x%lx memsz=0x%lx\n",
-+			 image->arch.elf_headers_mem, headers_sz, headers_sz);
-+	}
-+
- 	/* load initrd */
- 	if (initrd) {
- 		kbuf.buffer = initrd;
--- 
-2.21.0
+One of our family will be in touch with you soon - if you want to learn more about us in the meantime, why not take a look at our LinkedIn or Instagram pages.
+
+
+PK
+
+--
+This e-mail was sent from a contact form on ProspectKnight.com
 
 
 _______________________________________________
