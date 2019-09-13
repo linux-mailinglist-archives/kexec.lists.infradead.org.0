@@ -2,84 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38AF7B0F13
-	for <lists+kexec@lfdr.de>; Thu, 12 Sep 2019 14:48:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34B41B1AA2
+	for <lists+kexec@lfdr.de>; Fri, 13 Sep 2019 11:18:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:From:To
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=deR+5tIIuQX656zAcY9hb8NarAanzA28ZqOxuXki4B0=; b=s3mYsWCehQpQZZ
-	1JfykwO3pxCjOJdOuVkY7pnAK4Lzj+ejauophBNQFb9ItCvj83eN8mS1k+bV6Qdfbe69N0dTaYmHY
-	7+mtux+o0PPvWcciUSBNt+mS+U6NagCT8Xp0NTeauqnkryIxze3/xp1bv+Wdm6gLaopXZkq9vhAc0
-	1AuPBdCXDG5uv2rjCk/GwC834GddNyiJf5xqX9uwYgAvoctXCiFK3AMR5pyPq7xP1oJ+V7bVu2TkF
-	BeLDddUvoP1V7eqJJjaChgT1EgIC3dv7YLbOW6FGibjbCSis6vM9RicJdg9Z+tWEojTfy9W62kTK9
-	PLCGSmwT6HhkA4akWX2A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0+4jiuknFuEbZQdg4hpquvuSa/M7A/tvvxnG1YP29lQ=; b=UDWb7uhmaAPSlw
+	dZHbtMdkTI3JstH+gsbTJrevwqlE9hD5hmkodvuGFbJeW2D95XtNtq2rjrOsg7ku9nI7dmrcoi0s5
+	Ff42XTyJ7iKhaJnzGljViBrOfdW+5YJ6rjj02Qh+zeuq/e5+yWMx9pjOTwkC81PtqYWcK97G41e2M
+	CPZbrhu6ler/P8Ln5WYuLK5M0r6u+9T412LUgDAODmQIZbCTLaYJRcJoyINevs3AdPz7qvadec8gn
+	+e8WgQkUgkijr4kIuUjhTe1idhTohdfWLQHpegyedmg8tWImQh1UQLPeiR+RBOfrDl18+2fZHI/sG
+	QqM0bLw3xDeh2UFtXCtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8OWh-0006tz-Ql; Thu, 12 Sep 2019 12:48:43 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i8hig-0003hE-4c; Fri, 13 Sep 2019 09:18:22 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8OWd-0006tf-Gp
- for kexec@lists.infradead.org; Thu, 12 Sep 2019 12:48:40 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n10so7506960wmj.0
- for <kexec@lists.infradead.org>; Thu, 12 Sep 2019 05:48:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=prospectknight-com.20150623.gappssmtp.com; s=20150623;
- h=date:to:from:subject:message-id:mime-version;
- bh=2PYu/zvZFZ5VBzeOQWTqemWBJyekar1nVwWhtcrSnsU=;
- b=cj5HhtpArAKHa1/wgSwx7gXcMfnTbTaa2xWCLa2/tATf9UxPVlyY2y8Tq0T//plhNY
- SdEpHqmrSJ0PUMLFr1Uz0rBgj11a/B+d9fVF4bYu0l0wPYJjslbs/yPyUcOf/iR9NsDy
- hAStF51flT17v+1di8V/ZPrEf4xeEmC1RqerMmTilQMcU0Qiw21ez/sVwWRN9Fx3P2yS
- EtRemY4Tu1KK0kQBdgAWTBMZpGubYevextvE0JIxhP2907Z42eu+wEkQCjnCjOUyJLC4
- v88KZeyalE8M97Hdq/j6960SmKVUy2S2uWQVkRGdLHyw6Js6SEgrcD1dfLGk/enZy+1s
- ORcw==
+ id 1i8hiY-0003gr-7a
+ for kexec@lists.infradead.org; Fri, 13 Sep 2019 09:18:16 +0000
+Received: by mail-wr1-x441.google.com with SMTP id u16so31360983wrr.0
+ for <kexec@lists.infradead.org>; Fri, 13 Sep 2019 02:18:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=B2qbVDv0PuskCRdtWRYhRKpgVrVIXpDKIun6rvpjjk0=;
+ b=J3IctKff/d1M3YwVS54OMQA1DBVNPZ13j5L2uUNaQZQuV8+MK8ntTIZmHNfBvly+XL
+ QexEJ32SdrOEIL8EIAg5ysCWjnrI1P97yaypqiC3WOWjwx6jtPyaOQwWn23bmMta16zL
+ WKAeVT1Hgr0puHt9dfuS5Dm5d7bv5sAjtdjTTWKmy3fWEzOzw3FfNJxgfUCLDp8ipBYR
+ hFmGLyh7lbkumr3kW8r1dzT5gou9gW0BKnEcJ1jnm9ffqb4Qi5W7w+i5CW2WncofGHMj
+ 3l/6SxDhdzgmpDAOhOWNYLSkWv4PYftrDG9ilRQQLQVoZel7JuIvZE9MWIKzzErCToee
+ vEEg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:to:from:subject:message-id:mime-version;
- bh=2PYu/zvZFZ5VBzeOQWTqemWBJyekar1nVwWhtcrSnsU=;
- b=WjeDi5GunaL1ZBpMhRhxtaLgz3+Jx0y0NL9JAE874fLv/GSY2u3jrT64tIpIQaOymp
- 1ZIlEAIEx35XiGS1te8Fm3iDnvqXKXT6UTxCdFdzcT6kLxqy/DsIeq33ymWlklWK0xra
- EplSHNWw0hiV2vW8XXTMPaYZFZHRvIIvciifXoF4GzRHSsr2Btngb1irvFohyFw8qyoZ
- wguOmSeQlobGRwywhwKD/OVlbHJEHcf9xWbBAzMN8sMhKCfGvHfu9SKWycZb3L+sQ8HC
- g4OKDCbbood4z3GBlIBmKmzT5nAg72UQD4QkAsHYdrkBh/6Kd4tbW3PV7+A4946WH7Tt
- 1uUQ==
-X-Gm-Message-State: APjAAAWQTbsYVwvFm9CTlbNss2IrbN1rXxMBWm5gIOx6LFVNfpt2OCxM
- 1fvE11hOtGph1Y/TNGbF2LU1MFCx85A=
-X-Google-Smtp-Source: APXvYqyz984tMaQuCQrDblDMi2SL8w1WvaDXhLeaCPvZLGvwjgXKxme69WQbZ3fGk8cebJdwCWsLeg==
-X-Received: by 2002:a1c:7902:: with SMTP id l2mr2439702wme.55.1568292508018;
- Thu, 12 Sep 2019 05:48:28 -0700 (PDT)
-Received: from prospectknight.com (133.76.189.35.bc.googleusercontent.com.
- [35.189.76.133])
- by smtp.gmail.com with ESMTPSA id w125sm12324145wmg.32.2019.09.12.05.48.27
- for <kexec@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Sep 2019 05:48:27 -0700 (PDT)
-Date: Thu, 12 Sep 2019 12:48:25 +0000
-To: kexec@lists.infradead.org
-From: Prospect Knight <hello@prospectknight.com>
-Subject: Thanks for contacting Prospect Knight
-Message-ID: <55ded30c0efd26c8aee324066afbee30@prospectknight.com>
-X-Mailer: PHPMailer 5.2.22 (https://github.com/PHPMailer/PHPMailer)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=B2qbVDv0PuskCRdtWRYhRKpgVrVIXpDKIun6rvpjjk0=;
+ b=JkBvn9poW0Mpxycte7okzaZQqw+9QXtCFzr1di+Nh0V1Sj7PhOW+LIXMDgS7z4em+d
+ M8ikVFLYuuGLqOV2cXkKi+RWWoaW+Nt3EchtP7fx/KkHJVDIgoXBVxECfrlgJi/BSFOA
+ oWoxiYA1C6ED+Kk3BVQnacxfS4WDeohC7ADu3eIkuGkWOCpwpkhLnNwKKDNGXnxB33cU
+ pBgnA8I+Q2W+I0NO5l5Cose7MQp55fW1mOVMYD/+CTn34DdOAMXg1DngAEl++9vFk6DB
+ 23wemkT7X7x1Wg41gi2n0ChY0s4Kh2SJwdJ/vPsU+uk13qQSHxpnniMJtME5QQT+Ktfh
+ kxfA==
+X-Gm-Message-State: APjAAAV+OTlBLDZR9FbSrofFNjPRCOwncnmKaIFZd1ht2LNJVX4DmfaL
+ 05uBAHxH6vQ1DV9cSDfXb8Vk0bN6dP/gVuuHGyrgnbIfaBOPww==
+X-Google-Smtp-Source: APXvYqy6DWYC+X9VNuJQwDiRZ7YIF4tjLsCmSiCad8jO+BT60cV+ZUTPVBYXBNqOFc3KzzraQOBh5+5bnQaOoA/p+Ng=
+X-Received: by 2002:a5d:638f:: with SMTP id p15mr2337379wru.169.1568366291913; 
+ Fri, 13 Sep 2019 02:18:11 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190805083553.GA27708@dhcp-128-65.nay.redhat.com>
+ <CAKv+Gu-my6EpLfxBnbMn21be62oHrF6PKFu2rt-4Pqk9wG9SXA@mail.gmail.com>
+ <fbea659c-6e8f-b854-66d2-2c928d1d3783@redhat.com>
+ <CACdnJusU7FKPFTz9MbXWvs-NHLX7bPLwkVynyK6cLxbxCNjrNQ@mail.gmail.com>
+In-Reply-To: <CACdnJusU7FKPFTz9MbXWvs-NHLX7bPLwkVynyK6cLxbxCNjrNQ@mail.gmail.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 13 Sep 2019 10:17:50 +0100
+Message-ID: <CAKv+Gu9_GDHiU2iBD7Lsk5dKupKBQO9Cfn3V2rhSU+DqQkAHOw@mail.gmail.com>
+Subject: Re: [PATCH] do not clean dummy variable in kexec path
+To: Matthew Garrett <mjg59@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_054839_699140_CE5C55E7 
-X-CRM114-Status: UNSURE (   5.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190913_021814_530639_AC252B7B 
+X-CRM114-Status: GOOD (  22.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,23 +92,69 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: Dave Young <dyoung@redhat.com>, Laszlo Ersek <lersek@redhat.com>,
+ kexec devel list <kexec@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, 13 Aug 2019 at 22:14, Matthew Garrett <mjg59@google.com> wrote:
+>
+> On Tue, Aug 13, 2019 at 4:28 AM Laszlo Ersek <lersek@redhat.com> wrote:
+> > (I verified yesterday, using the edk2 source code, that there is no
+> > varstore reclaim after ExitBootServices(), indeed.)
+>
+> Some implementations do reclaim at runtime, in which case the
+> create/delete dance will permit variable creation.
+>
+> > (a) Attempting to delete the dummy variable in efi_enter_virtual_mode().
+>
+> To be clear, the dummy variable should never actually come into
+> existence - we explicitly attempt to create a variable that's bigger
+> than the available space, so the expectation is that it will always
+> fail. However, should it somehow end up being created, there's a race
+> between the creation and the deletion and so there's a (small) risk
+> that the variable actually ends up there. The cleanup in
+> enter_virtual_mode() is just there to ensure that anything that did
+> end up being created on a previous boot is deleted - the expectation
+> is that it'll be a noop.
+>
+> > (b) The following part, in efi_query_variable_store():
+> >
+> > +               /*
+> > +                * The runtime code may now have triggered a garbage collection
+> > +                * run, so check the variable info again
+> > +                */
+> >
+> > Let me start with (b). That code is essentially dead, I would say, based
+> > on the information that had already been captured in the commit message
+> > of [1]. Reclaim would never happen after ExitBootServices(). (I assume
+> > efi_query_variable_store() is only invoked after ExitBootServices(),
+> > i.e., from kernel space proper -- sorry if that's a wrong assumption.)
+>
+> It's dead code on Tiano, but not on at least one vendor implementation.
+>
+> > Considering (a): what justified the attempt to delete the dummy variable
+> > in efi_enter_virtual_mode(), in commit [4]? Was that meant as a
+> > fail-safe just so we don't leave a dummy variable lying around?
+>
+> Yes.
+>
+> > So even if we consider the "clean DUMMY object" hunk from [4] a
+> > justified fail-safe for the normal boot path, it doesn't apply to the
+> > kexec path -- the cold-booted primary kernel will have gone through
+> > those motions already, will it not?
+> >
+> > Therefore, we should do two things:
+> >
+> > - Remove the cleanup from the kexec path -- the cleanup logic from [4],
+> >   even if justified for the cold boot path, should have never modified
+> >   the kexec path.
+>
+> I agree that there's no benefit in it being called in the kexec path.
 
-Thanks so much for getting in touch! 
-
-One of our family will be in touch with you soon - if you want to learn more about us in the meantime, why not take a look at our LinkedIn or Instagram pages.
-
-
-PK
-
---
-This e-mail was sent from a contact form on ProspectKnight.com
-
+Can I take that as an ack?
 
 _______________________________________________
 kexec mailing list
