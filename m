@@ -2,92 +2,66 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AA0BB549D
-	for <lists+kexec@lfdr.de>; Tue, 17 Sep 2019 19:52:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8C9BB5E7A
+	for <lists+kexec@lfdr.de>; Wed, 18 Sep 2019 10:00:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=byIQXL7ptkrfWX5FiuFvN2h1FSKD5vYC22ivGhM8vms=; b=Zyq1ytV6CJBhZV
-	viAtk2+XbVt+Anhi0XTJgacZOEC8uIm9bUF3QApZ1jbsGvQh35xGhGqf7NR1D/FXpHQIB7Q/J9jVo
-	a6Pb0tbINZ0oYa47j+SVyrpDyAj3Mcp+YaywRV9s0O2EpuDri5ppJrfeXwxlnRmxz80MnYzswFS80
-	Dwa4qKEPaHI+Pf3djWA9t+jXGGRxuuiG7hPdAk+HsHuRNydq80PwcdQfC1xiFwNF6MTOvod2iQ13D
-	hn7tmDrfwYyZcEDjqO3YasLpJFBz4NAGBgDSXHWSS3BoF6FXRRslWeSqrwQmrwioLlJ80qXJjvc7D
-	VrLXia84WLy3uUUiTqkg==;
+	List-Owner; bh=3qsDySBH1TZPChqw+n4saz40HQ7ClXgACjq2tjOGH4A=; b=d0hCc7Fpgfg15K
+	99haNLowLkq0rIj2lM8ttXdhw4d1noQuLWPPAJWS38JQ3RNaxbGHl7jwFpDGtKiKUPuGCKH+zQb+W
+	AIT/X0Vimjnpm28TeyvIg1tyKu6GxhHk4KT76kTNjysivZqLUUVdGainVHFT2OGmjQakcHT+dz7JD
+	Ub0JvvZPNpZNHcq4ch4ECpDeDkdOUzbPASUORCWXgEooGrzS4T+uW4vlQkhXGE616x3S/9uW2zWKj
+	H7TAk7VeSYB8NDV9RgVDw5ZWbT3HglTsXvA1HagMcpKnF6nqJa3/rztxdlWYwkBc1hro9PE2Yc0w0
+	/VbHWdg2M60EJqkbjccw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iAHeB-0006HG-3W; Tue, 17 Sep 2019 17:52:15 +0000
-Received: from mail-io1-xd2c.google.com ([2607:f8b0:4864:20::d2c])
+	id 1iAUsb-0005nC-OZ; Wed, 18 Sep 2019 08:00:02 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iAHdz-0005zz-8R
- for kexec@lists.infradead.org; Tue, 17 Sep 2019 17:52:06 +0000
-Received: by mail-io1-xd2c.google.com with SMTP id n197so9668867iod.9
- for <kexec@lists.infradead.org>; Tue, 17 Sep 2019 10:52:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RSSWU1+Xo+MtZV+4tIxWCoZYIdVnPDTh24mMeEdnfC8=;
- b=f6xXRNIdm2LfcatzUG+ELUCcKm2m4kbT8kRnU8rZ1axz6WgCCyZiRD8pNXqBQcrGry
- VBcXqcuVLu1n5hcT4tYlzSRGogwYCoRwlccl57LUEqkrV5VjnIoDibHoPIzSqiOOY4UJ
- 8gida/qI/s54DiQC4ADojlbZDw4UMc+Rznra9PW5Ry6hQyIQneSZZwyU5Mn9zuXJqpGI
- 1f6FQZpkBt5k5goRYoFay50ghmNL4Mqz9Th4AFKFz4w6iUeYO84DXYj9nH4x8LylKMFO
- 1U3Oy9ZQv9RPbLcd8Bj0WDmM6GcsJGzUC7h0NNJAWsnx1awtX9lcduGycVXOmbJbH5sW
- naIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RSSWU1+Xo+MtZV+4tIxWCoZYIdVnPDTh24mMeEdnfC8=;
- b=svuo3TM+GHIAix8yn4LuFVSfLetNOz4N571lS/8Ts/QNDf0tb2NkGv3YzVWPBCId99
- uMorKH1odCKHXmt8ySkxUT0AZHhP6Zhli8jFwmm33fRn2Kq/A9mG9HC89LOArLhgUlin
- P/t3TCZru95xQkp2xxmnHlNmT9z2DkxnfYKHhQ4zrU1te5aOaPSqnO3zvstdYda2xRMl
- pLpQTonJbXcDHHgEBMZ0rVIzFPmdTzi43GYWDHVFh1GhlVYo/kJpTI5CNPMD0aKZSgE+
- iYZG4lbP3m35m1J39psVUMAKNrjeDl/hQIo9O3utKMvrMbi/j2ZXJOtGkb5HiSuDyWtw
- bcXg==
-X-Gm-Message-State: APjAAAWRBfEQ14ny+21Yfj+XLpbd4Fg+PV4OyBOhEGQnC0lwJYHGCLYb
- kf4+p43GvTBm8yYMZDcO2cN+2nERtJCEm4vDgmw+VA==
-X-Google-Smtp-Source: APXvYqwoHCojXSeJGCX3EgaslGQWOpxdh+doiQXnH7lYZr7YVAIb0mFKqDE9RClUwJQK6gZuL+7a7aGceJIaMCkPfAM=
-X-Received: by 2002:a6b:c903:: with SMTP id z3mr5318420iof.204.1568742719067; 
- Tue, 17 Sep 2019 10:51:59 -0700 (PDT)
+ id 1iAUod-0003tf-NR
+ for kexec@lists.infradead.org; Wed, 18 Sep 2019 07:55:57 +0000
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 8A78B10F2E85;
+ Wed, 18 Sep 2019 07:55:54 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-104.pek2.redhat.com
+ [10.72.12.104])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 6BA99600C8;
+ Wed, 18 Sep 2019 07:55:50 +0000 (UTC)
+Date: Wed, 18 Sep 2019 15:55:46 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Kairui Song <kasong@redhat.com>
+Subject: Re: [PATCH v3 0/2] x86/kdump: Reserve extra memory when SME or SEV
+ is active
+Message-ID: <20190918075546.GA27186@dhcp-128-65.nay.redhat.com>
+References: <20190910151341.14986-1-kasong@redhat.com>
+ <20190910151341.14986-3-kasong@redhat.com>
+ <20190911055618.GA104115@gmail.com>
+ <CACPcB9cEE5eYWixkUvMeLVdRC5qhrru9PbjbLLxP3k1jsbRanQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190805083553.GA27708@dhcp-128-65.nay.redhat.com>
- <CAKv+Gu-my6EpLfxBnbMn21be62oHrF6PKFu2rt-4Pqk9wG9SXA@mail.gmail.com>
- <fbea659c-6e8f-b854-66d2-2c928d1d3783@redhat.com>
- <CACdnJusU7FKPFTz9MbXWvs-NHLX7bPLwkVynyK6cLxbxCNjrNQ@mail.gmail.com>
- <CAKv+Gu9_GDHiU2iBD7Lsk5dKupKBQO9Cfn3V2rhSU+DqQkAHOw@mail.gmail.com>
-In-Reply-To: <CAKv+Gu9_GDHiU2iBD7Lsk5dKupKBQO9Cfn3V2rhSU+DqQkAHOw@mail.gmail.com>
-From: Matthew Garrett <mjg59@google.com>
-Date: Tue, 17 Sep 2019 10:51:47 -0700
-Message-ID: <CACdnJut3t+TNLKg0=hUEFCT6wXmJtE2ju1hg6tuXue6L9Bxp6Q@mail.gmail.com>
-Subject: Re: [PATCH] do not clean dummy variable in kexec path
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Content-Disposition: inline
+In-Reply-To: <CACPcB9cEE5eYWixkUvMeLVdRC5qhrru9PbjbLLxP3k1jsbRanQ@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.66]); Wed, 18 Sep 2019 07:55:54 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_105203_476994_AD202FB4 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.2 (---------------)
+X-CRM114-CacheID: sfid-20190918_005555_980271_93EAD05F 
+X-CRM114-Status: GOOD (  36.82  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2c listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,25 +73,145 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Dave Young <dyoung@redhat.com>, Laszlo Ersek <lersek@redhat.com>,
- kexec devel list <kexec@lists.infradead.org>
+Cc: Thomas Lendacky <Thomas.Lendacky@amd.com>,
+ Lianbo Jiang <lijiang@redhat.com>, Baoquan He <bhe@redhat.com>,
+ "x86@kernel.org" <x86@kernel.org>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Sep 13, 2019 at 2:18 AM Ard Biesheuvel
-<ard.biesheuvel@linaro.org> wrote:
-
-> > > - Remove the cleanup from the kexec path -- the cleanup logic from [4],
-> > >   even if justified for the cold boot path, should have never modified
-> > >   the kexec path.
+On 09/12/19 at 12:23am, Kairui Song wrote:
+> On Wednesday, September 11, 2019, Ingo Molnar <mingo@kernel.org> wrote:
 > >
-> > I agree that there's no benefit in it being called in the kexec path.
->
-> Can I take that as an ack?
+> > * Kairui Song <kasong@redhat.com> wrote:
+> >
+> >> Since commit c7753208a94c ("x86, swiotlb: Add memory encryption
+> support"),
+> >> SWIOTLB will be enabled even if there is less than 4G of memory when SME
+> >> is active, to support DMA of devices that not support address with the
+> >> encrypt bit.
+> >>
+> >> And commit aba2d9a6385a ("iommu/amd: Do not disable SWIOTLB if SME is
+> >> active") make the kernel keep SWIOTLB enabled even if there is an IOMMU.
+> >>
+> >> Then commit d7b417fa08d1 ("x86/mm: Add DMA support for SEV memory
+> >> encryption") will always force SWIOTLB to be enabled when SEV is active
+> >> in all cases.
+> >>
+> >> Now, when either SME or SEV is active, SWIOTLB will be force enabled,
+> >> and this is also true for kdump kernel. As a result kdump kernel will
+> >> run out of already scarce pre-reserved memory easily.
+> >>
+> >> So when SME/SEV is active, reserve extra memory for SWIOTLB to ensure
+> >> kdump kernel have enough memory, except when "crashkernel=size[KMG],high"
+> >> is specified or any offset is used. As for the high reservation case, an
+> >> extra low memory region will always be reserved and that is enough for
+> >> SWIOTLB. Else if the offset format is used, user should be fully aware
+> >> of any possible kdump kernel memory requirement and have to organize the
+> >> memory usage carefully.
+> >>
+> >> Signed-off-by: Kairui Song <kasong@redhat.com>
+> >> ---
+> >>  arch/x86/kernel/setup.c | 20 +++++++++++++++++---
+> >>  1 file changed, 17 insertions(+), 3 deletions(-)
+> >>
+> >> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
+> >> index 71f20bb18cb0..ee6a2f1e2226 100644
+> >> --- a/arch/x86/kernel/setup.c
+> >> +++ b/arch/x86/kernel/setup.c
+> >> @@ -530,7 +530,7 @@ static int __init crashkernel_find_region(unsigned
+> long long *crash_base,
+> >>                                         unsigned long long *crash_size,
+> >>                                         bool high)
+> >>  {
+> >> -     unsigned long long base, size;
+> >> +     unsigned long long base, size, mem_enc_req = 0;
+> >>
+> >>       base = *crash_base;
+> >>       size = *crash_size;
+> >> @@ -561,11 +561,25 @@ static int __init crashkernel_find_region(unsigned
+> long long *crash_base,
+> >>       if (high)
+> >>               goto high_reserve;
+> >>
+> >> +     /*
+> >> +      * When SME/SEV is active and not using high reserve,
+> >> +      * it will always required an extra SWIOTLB region.
+> >> +      */
+> >> +     if (mem_encrypt_active())
+> >> +             mem_enc_req = ALIGN(swiotlb_size_or_default(), SZ_1M);
+> >> +
+> >>       base = memblock_find_in_range(CRASH_ALIGN,
+> >> -                                   CRASH_ADDR_LOW_MAX, size,
+> >> +                                   CRASH_ADDR_LOW_MAX,
+> >> +                                   size + mem_enc_req,
+> >>                                     CRASH_ALIGN);
+> >
+> > What sizes are we talking about here?
+> >
+> > - What is the possible size range of swiotlb_size_or_default()
+> >
+> > - What is the size of CRASH_ADDR_LOW_MAX (the old limit)?
+> >
+> > - Why do we replace one fixed limit with another fixed limit instead of
+> >   accurately sizing the area, with each required feature adding its own
+> >   requirement to the reservation size?
+> >
+> > I.e. please engineer this into a proper solution instead of just
+> > modifying it around the edges.
+> >
+> > For example have you considered adding some sort of
+> > kdump_memory_reserve(size) facility, which increases the reservation size
+> > as something like SWIOTLB gets activated? That would avoid the ugly
+> > mem_encrypt_active() flag, it would just automagically work.
+> 
+> Hi, thanks for the suggestions, actually I did try to workout a better
+> resolution, at least for SWIOTLB and crashkernel memory, like make
+> crashkernel reserve more memory as SWIOTLB get activated to be more
+> flexible and generic.
+> 
+> There are some problems:
+> 
+> - Usually, for SWIOTLB, even if the first booting kernel have SWIOTLB
+> activated, second kernel will most likely not need it. Currently, only the
+> high reservation case will still need SWIOTLB in second kernel, and it's
+> already reserving extra low memory automatically. SME/SEV systems is the
+> only other special case that will force both kernel to use it.
+> 
+> - There is a little complex procedure to judge whether SWIOTLB is required
+> (Depends on whether the system have >4G, if there is an iommu want to shut
+> down SWIOTLB, and some times iommu still expect SWIOTLB to exist, and
+> SWIOTLB could be activated first, then got closed later etc...). The crash
+> kernel reserve should happen very early to ensure the region is usable, but
+> kernel is not aware of if SWIOTLB is needed. Have to either move the
+> reservation to some later stage or always reserve extra memories early,
+> then release if not needed later. Neither sound a good solution, and after
+> all, as mentioned above, currently kernel need it doesn't mean kdump kernel
+> needs it.
+> 
+> - Also tried to reuse and improve the currently crashk_low_res facility to
+> reserve the memory in a different block at first, make the code simpler.
+> Didn't work well due to some other issue with all current version of user
+> space kexec-tools, which never expect there will be an extra memory region
+> for non-high reservation case, and failed to load the kernel for kdump.
+> Have to always make the another block in a lower position or rename the
+> memory resource. I think this will either break user space tools heavily,
+> or make the implementation even more complex and confusing.
 
-An ack of this hunk.
+Kairui, I remember you tried to reuse the swiotlb regions across kexec
+reboot, are you saying this as the 3rd problem above?
+
+It is not clear how you use crashk_low_res,  can you elaborate it I
+remember you mentioned some problem with this approach, maybe we can
+re-explore it.
+
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
