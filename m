@@ -2,57 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9085BD38A
-	for <lists+kexec@lfdr.de>; Tue, 24 Sep 2019 22:27:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A092BD810
+	for <lists+kexec@lfdr.de>; Wed, 25 Sep 2019 08:05:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NWjvunF2heJcZaVcFs3LMNMDGdlbAR5qOsBnObeQXc0=; b=uudCYt1StDTuzdEgAuwGBleDh
-	ucsYGqScyGgWbpq3gR2v4pjYPdIG7yRBs9TkC85hS5OfkWUq/YwGp/Esn4C5bFv9yNz+nJ4p4p9yT
-	XFigWnGGiHqDaTXw7Ku/UMGlSobqmSCDZ2+j8jmoV9SlJgK0jmCNouXv8CX0k8SEMguGPrHm5Y/wq
-	clas5UldyQ3aJkmA1fcfd7jsI8adpotjRKUBi0kN0qEXbhzTd2bySYNd6nOOnOaAN+oI9hL+QvqYE
-	/xyjIs7/K0WjSrlZ89dX1pv8XKq49n6zsxEcV77kIBQHE5oVeWvMMj3Cy2zfbexAtBxUUsjZckEOx
-	COOCv5wfg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Sq8bpe7iqmPTxCooLVlEdNs22hcWQ15SYVAEuHauVIo=; b=eT1XpRa394kt2h
+	mzChfLmRaS2elbvvKIghUp4mM4VECr4IjOTVtHkSWVqerbDZ/B6xVZKgD8/Bgw8jlE6Iukwlw1s7g
+	gIARBoqHY4t1onu+/wZoMjuF+9qKjAqlrfDYsmG5/4tIheKePl9N7q1jfk+UBK8lliq5ZqzLG7RZn
+	5pGDRrivok2rpLmOkiu5D4GDUgi5EROixSLg2oVgeVx2jnTMBBXs4juoFg88KiOLsqvYabRrmL+rY
+	7iNzZCJV7+4YMXXn61D2+mxk8JNqAoHWMfxqL9+A3+B8+x87rv4a8Dyk2TJZLziN6C02cJGQgzhP3
+	ryaaeIsZ0nwRL4Beli1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iCrOx-0005JO-8j; Tue, 24 Sep 2019 20:27:11 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iCrOt-0005Ir-J2; Tue, 24 Sep 2019 20:27:09 +0000
-Received: from [10.200.156.146] (unknown [167.220.2.18])
- by linux.microsoft.com (Postfix) with ESMTPSA id 0EEC620BBF87;
- Tue, 24 Sep 2019 13:27:07 -0700 (PDT)
-Subject: Re: [RFC PATCH v1 1/1] Add support for arm64 to carry ima measurement
- log in kexec_file_load
-To: Thiago Jung Bauermann <bauerman@linux.ibm.com>
-References: <20190913225009.3406-1-prsriva@linux.microsoft.com>
- <20190913225009.3406-2-prsriva@linux.microsoft.com>
- <87zhiz1x9l.fsf@morokweng.localdomain>
-From: prsriva <prsriva@linux.microsoft.com>
-Message-ID: <baf74901-a594-c15d-b93f-f7d0a8c584b8@linux.microsoft.com>
-Date: Tue, 24 Sep 2019 13:27:06 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1iD0QG-0005aL-Fv; Wed, 25 Sep 2019 06:05:08 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iD0Q5-0005Zz-NU; Wed, 25 Sep 2019 06:04:59 +0000
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 482378980F9;
+ Wed, 25 Sep 2019 06:04:56 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-181.pek2.redhat.com
+ [10.72.12.181])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 5E0A7608C0;
+ Wed, 25 Sep 2019 06:04:49 +0000 (UTC)
+Date: Wed, 25 Sep 2019 14:04:45 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v5 01/17] kexec: quiet down kexec reboot
+Message-ID: <20190925060445.GA30921@dhcp-128-65.nay.redhat.com>
+References: <20190923203427.294286-1-pasha.tatashin@soleen.com>
+ <20190923203427.294286-2-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
-In-Reply-To: <87zhiz1x9l.fsf@morokweng.localdomain>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190923203427.294286-2-pasha.tatashin@soleen.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.67]); Wed, 25 Sep 2019 06:04:56 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190924_132707_647654_8D0FD2B9 
-X-CRM114-Status: GOOD (  18.97  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20190924_230457_789253_38570DEF 
+X-CRM114-Status: GOOD (  17.83  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,81 +69,60 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- yamada.masahiro@socionext.com, sboyd@kernel.org, catalin.marinas@arm.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, zohar@linux.ibm.com,
- takahiro.akashi@linaro.org, kristina.martsenko@arm.org, duwe@lst.de,
- linux-arm-kernel@lists.infradead.org, james.morse@arm.org,
- linux-integrity@vger.kernel.org, tglx@linutronix.de, allison@lohutok.net
+Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
+ corbet@lwn.net, marc.zyngier@arm.com, catalin.marinas@arm.com,
+ bhsharma@redhat.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ jmorris@namei.org, linux-mm@kvack.org, james.morse@arm.com,
+ ebiederm@xmission.com, matthias.bgg@gmail.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-
-On 9/19/19 8:07 PM, Thiago Jung Bauermann wrote:
+On 09/23/19 at 04:34pm, Pavel Tatashin wrote:
+> Here is a regular kexec command sequence and output:
+> =====
+> $ kexec --reuse-cmdline -i --load Image
+> $ kexec -e
+> [  161.342002] kexec_core: Starting new kernel
 > 
-> Hello Prakhar,
+> Welcome to Buildroot
+> buildroot login:
+> =====
 > 
-> Prakhar Srivastava <prsriva@linux.microsoft.com> writes:
+> Even when "quiet" kernel parameter is specified, "kexec_core: Starting
+> new kernel" is printed.
 > 
->> During kexec_file_load, carrying forward the ima measurement log allows
->> a verifying party to get the entire runtime event log since the last
->> full reboot since that is when PCRs were last reset.
-
-<snip>
-
-> In the previous patch, you took the powerpc file and made a few
-> modifications to fit your needs. This file is now somewhat different
-> than the powerpc version, but I don't understand to what purpose. It's
-> not different in any significant way.
+> This message has  KERN_EMERG level, but there is no emergency, it is a
+> normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
 > 
-> Based on review comments from your previous patch, I was expecting to
-> see code from the powerpc file moved to an arch-independent part of the
-> the kernel and possibly adapted so that both arm64 and powerpc could use
-> it. Can you explain why you chose this approach instead? What is the
-> advantage of having superficially different but basically equivalent
-> code in the two architectures?
+> Machines that have slow console baud rate benefit from less output.
 > 
-> Actually, there's one change that is significant: instead of a single
-> linux,ima-kexec-buffer property holding the start address and size of
-> the buffer, ARM64 is now using two properties (linux,ima-kexec-buffer
-> and linux,ima-kexec-buffer-end) for the start and end addresses. In my
-> opinion, unless there's a good reason for it Linux should be consistent
-> accross architectures when possible.
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Reviewed-by: Simon Horman <horms@verge.net.au>
+> ---
+>  kernel/kexec_core.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> --
-> Thiago Jung Bauermann
-> IBM Linux Technology Center
+> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+> index d5870723b8ad..2c5b72863b7b 100644
+> --- a/kernel/kexec_core.c
+> +++ b/kernel/kexec_core.c
+> @@ -1169,7 +1169,7 @@ int kernel_kexec(void)
+>  		 * CPU hotplug again; so re-enable it here.
+>  		 */
+>  		cpu_hotplug_enable();
+> -		pr_emerg("Starting new kernel\n");
+> +		pr_notice("Starting new kernel\n");
+>  		machine_shutdown();
+>  	}
+>  
 
-I looked at the of_ drivers are it became apparent that the driver calls
-were already available for consumption. Adding ima specific code will be
-same as adding wrapper code for any other property. Which is true for
-all properties, effectively setting the property name and pass through
-for other parameters.
+Acked-by: Dave Young <dyoung@redhat.com>
 
-I still like to move both implementations to a arch independent code 
-path, i could not convince my self that of_*ima is probably the place, 
-but if that's the best place?, then i will go ahead and make that change 
-as well.
-
-Regarding using two properties, it just seemed more consistent how the
-properties(start-end) are being used in the kexec, and hides the inner 
-details for the cell structures, thats all.
-
-Its just the placement of the wrapper functions, but once thats done
-both archs will call the same.
-
-Thanks,
-Prakhar Srivastava
-
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
