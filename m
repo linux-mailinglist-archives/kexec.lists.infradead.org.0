@@ -2,60 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E17CC316
-	for <lists+kexec@lfdr.de>; Fri,  4 Oct 2019 20:55:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18B36CC31B
+	for <lists+kexec@lfdr.de>; Fri,  4 Oct 2019 20:56:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ksAclVeStlF8bFyC2pEHzhwtFx2cmkOgzpwAAaPx/oM=; b=UDiWCzSOsibhe2
-	/vI6dR/7pez2gU1kQoB4AL1UwNk8Njy3SB5SAqwK+PxC97oPa1x8/YzWCLws9DMu379w/9JfZQAlD
-	g3TFTYGg9cwynzup+/0iPWNqxbISGncLe+movFOwqFDJYwHUoR9fBp3kTqG0THjUUmrawy1CDF59Z
-	b9h4oFrkVio8iwp46iNxyYi/6C3hwp6mek727FqqjNZFN2eLkf45R8qeoeKL/0dRHmxrG3ai3U76Q
-	zEKBwCU2x1A1skaopz5xzlC0ypVOinQ/dDdhU80QT1eVqyAADVTzupRd+dWMugHXbxLk5/ftXyhqP
-	PJoyDcMP5RZ/mRMN48dg==;
+	List-Owner; bh=trIcwZ+xra+ZAj+PmhbJzz1wLfZj0ivZ6V/55uIkpCs=; b=SwzIke5dXZFX5d
+	EH/r+JcLcqhWPsndS8XOLRTKh1aIwJcLckJUF/SL/TLAyR7QB63f5QUSQJR02yHmovaH9bX5El58K
+	MRpL6jmTtcjn2SdYGdPYyT4j8KHQnhzdNwaLWkn7bXrrU7ozDxGBN+aAjJlC+c16dnrDdiQYNemah
+	kWtM/F/G8BXZmEMDrirZFdYEubmsQm2R4LJrru8DcWJrEVH2Blt0RwLgfcwCD2Y+M/jZDqNPk6KQD
+	x3B8XFSS8zK1S9FxMJjXs3iQmlRcDa5nsKIIGPfqXhHib4QbXzh3tzGUUomMlJXdCQBkTedijbkiw
+	InUzVFL+RpkACz2TER4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iGSjr-0005pl-4O; Fri, 04 Oct 2019 18:55:39 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1iGSkM-0006JR-Tq; Fri, 04 Oct 2019 18:56:11 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iGSh5-00029C-65
- for kexec@lists.infradead.org; Fri, 04 Oct 2019 18:52:48 +0000
-Received: by mail-qt1-x843.google.com with SMTP id u40so9908984qth.11
- for <kexec@lists.infradead.org>; Fri, 04 Oct 2019 11:52:46 -0700 (PDT)
+ id 1iGSh6-0002B5-Bo
+ for kexec@lists.infradead.org; Fri, 04 Oct 2019 18:52:50 +0000
+Received: by mail-qt1-x841.google.com with SMTP id c3so9902571qtv.10
+ for <kexec@lists.infradead.org>; Fri, 04 Oct 2019 11:52:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=1SIbn4I8MDCXYckkp2+GPJdKwVMA/7ROubKTL+86cvE=;
- b=GxD/3K/ycCEvxSiCWvnAT0GNjjm+4imYTIocK+9Ckg/Ul4GjTiRsEdFohkCTGhZWTE
- Q6HNlNrd9UIF0e1Q0sd+JIzh4upUqUWud2wKh2EVb8iN9NHOcmLrsww3vf1iUkle/Otr
- zmKTJUGeSpDA2IsVb3ZnIe1nnoUPg4C580BLlFwQjHVRqxLqbk/6KM0Maaf8lDucT/xz
- hudrVssAEfkKzZS3WbJ2jfUyj4rHsOc8Rmp9cWSDeHJt7Kr4zrM2MrlawyA7ePoU6Qe6
- hPq8al3oS07vFdn5m0pCpzE2qghjUSjuwRo7/B6X9+jO2cdUbHwdR6przKlPUgg6xuX/
- 5kLg==
+ bh=nna15T41FBOo8C0ScgrwWvHxD4xBB4A7rtr2LOcD0mg=;
+ b=VHCChoz0fROYiFF3E2hiGeINxfvJE7JQlXXzOJLd54akzbItA1+2rUzr4DI2djJ9O5
+ Hyca0gHi/BmtqWzaux8ehDmfQ1GQp6qxgoGtldtG8PBTLXRXEw1mFAwqJcbvoPQ/L/MV
+ b4QlOJB3QwU6EgG1nTI/SDmgwYuIGf0zvGu+jUWUpxSEFWz/Lo4IuyDOCCbcPAqreAzp
+ rUhodhHLR+4SY72e+9jzUO7EZbvvOu+iqjKQe/fIzZE9uwz0R13jwGpyOKt8BvQ5FjZ3
+ lKVmqELSCurVOwUZEKX5HmoOjjr1q/nYg8Cg0T6S+5qXTBzGv8rqKY71guAQ73XZA4U7
+ 73CQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1SIbn4I8MDCXYckkp2+GPJdKwVMA/7ROubKTL+86cvE=;
- b=fjUkBzkajZb+CQX6hXIchs5oa3upWCv9jRnkRL8bS0HxJ0f6ZHy4/UHMd0b2eglxSm
- yVZjvBXLDv20rEzGEIpXPJRIfInE8oN8O0rzDwprQJ+qIiLgUfaIQYGrOdeG/1s542Fu
- fAZIO63rtb0QdhxEobF9ssNz56y1QL7L6no02YCyNbR+R/e3xA7QbBfgsjL+SZj88I42
- odnvAtm7eZQ/z+qzD5D7838pWwy8LxDf+Xzp6PLYclN0YiboMijoy0Y9PUEpBr/NV+gh
- OtvazTkmb4XSFV8kp6L+cnlxl6UNPmFE7uSQYj/j79Cx7Ci7/VR864UoM3u4wlrgJopM
- r7NA==
-X-Gm-Message-State: APjAAAVUyUyn5Rxxc9+LnYcw9sBBcL/cJALPLyywXjLGdTFD720h4u8P
- IUQdChmRLN0keTYbH2VzAfA3HA==
-X-Google-Smtp-Source: APXvYqzBYygrCAyKlflIPQOgQ3QCrC7h+B+qaT3fjkOb6GuMQ0AxS7vIMR6W5MfdOa1zXeNuAEGMWQ==
-X-Received: by 2002:a0c:c541:: with SMTP id y1mr15297907qvi.116.1570215165841; 
- Fri, 04 Oct 2019 11:52:45 -0700 (PDT)
+ bh=nna15T41FBOo8C0ScgrwWvHxD4xBB4A7rtr2LOcD0mg=;
+ b=VTFkiWJ0UVVcW/UpvqbcwmTlNWAa90h+9rr5uwKWKA/suTEQ2VXtFSpDq6CRx/ZSH2
+ f5hWf2Iu1GiPips1X3bmVGnFWyvy5LXoADT8ZGx8jnDwUS/copKUZ6SnxE0hOjFUDPz5
+ NJBEZrZyZS2lrbbjMcjgjF9saptmvAcvVwR55zXJr/ZZqI7e22CMflzMSt9/Q3Mr9StU
+ sgpQyGJY5tN/LptORtZmz/8p82GBVmhzsRc/7by+81SSP19awf2FMFDPkCp8T6+xYszI
+ SlJafIzQcBD7kCkHOEYY+xzpKhMrvxhDGCrwFYyAzB+5JGpcXOpmE1JzATk0Gx9uShtK
+ Uxkw==
+X-Gm-Message-State: APjAAAWEuZcFlhqleMzvDvqIXFcNFQmSajcXt0fEmRBv0+xGSxEQB/1q
+ zL+TipWt2nkU/7PCvT5o2tYdrg==
+X-Google-Smtp-Source: APXvYqyNbFmYvCagLzsifj1RuTq8tuyaOwA4jFplBgyym0KPw1b7isWuxXmSyyHyKvb+tYw7MVrpqg==
+X-Received: by 2002:ad4:418c:: with SMTP id e12mr15569947qvp.70.1570215167250; 
+ Fri, 04 Oct 2019 11:52:47 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id p77sm4042514qke.6.2019.10.04.11.52.44
+ by smtp.gmail.com with ESMTPSA id p77sm4042514qke.6.2019.10.04.11.52.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 04 Oct 2019 11:52:45 -0700 (PDT)
+ Fri, 04 Oct 2019 11:52:46 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -64,17 +64,16 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  marc.zyngier@arm.com, james.morse@arm.com, vladimir.murzin@arm.com,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com
-Subject: [PATCH v6 06/17] arm64: hibernate: rename dst to page in
- create_safe_exec_page
-Date: Fri,  4 Oct 2019 14:52:23 -0400
-Message-Id: <20191004185234.31471-7-pasha.tatashin@soleen.com>
+Subject: [PATCH v6 07/17] arm64: hibernate: add PUD_SECT_RDONLY
+Date: Fri,  4 Oct 2019 14:52:24 -0400
+Message-Id: <20191004185234.31471-8-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191004185234.31471-1-pasha.tatashin@soleen.com>
 References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191004_115247_233472_93EF9A43 
-X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-CacheID: sfid-20191004_115248_448539_B7FA779F 
+X-CRM114-Status: UNSURE (   9.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -82,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,71 +108,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-create_safe_exec_page() allocates a safe page and maps it at a
-specific location, also this function returns the physical address
-of newly allocated page.
-
-The destination VA, and PA are specified in arguments: dst_addr,
-phys_dst_addr
-
-However, within the function it uses "dst" which has unsigned long
-type, but is actually a pointers in the current virtual space. This
-is confusing to read.
-
-Rename dst to more appropriate page (page that is created), and also
-change its time to "void *"
+There is PMD_SECT_RDONLY that is used in pud_* function which is confusing.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Reviewed-by: James Morse <james.morse@arm.com>
+Acked-by: James Morse <james.morse@arm.com>
 ---
- arch/arm64/kernel/hibernate.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm64/include/asm/pgtable-hwdef.h | 1 +
+ arch/arm64/kernel/hibernate.c          | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
+diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+index 3df60f97da1f..756a1dfb4f55 100644
+--- a/arch/arm64/include/asm/pgtable-hwdef.h
++++ b/arch/arm64/include/asm/pgtable-hwdef.h
+@@ -110,6 +110,7 @@
+ #define PUD_TABLE_BIT		(_AT(pudval_t, 1) << 1)
+ #define PUD_TYPE_MASK		(_AT(pudval_t, 3) << 0)
+ #define PUD_TYPE_SECT		(_AT(pudval_t, 1) << 0)
++#define PUD_SECT_RDONLY		(_AT(pudval_t, 1) << 7)		/* AP[2] */
+ 
+ /*
+  * Level 2 descriptor (PMD).
 diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-index 83c41a2f8400..1ca8af685e96 100644
+index 1ca8af685e96..ce60bceed357 100644
 --- a/arch/arm64/kernel/hibernate.c
 +++ b/arch/arm64/kernel/hibernate.c
-@@ -198,18 +198,18 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 				 unsigned long dst_addr,
- 				 phys_addr_t *phys_dst_addr)
- {
-+	void *page = (void *)get_safe_page(GFP_ATOMIC);
- 	pgd_t *trans_pgd;
- 	pgd_t *pgdp;
- 	pud_t *pudp;
- 	pmd_t *pmdp;
- 	pte_t *ptep;
--	unsigned long dst = get_safe_page(GFP_ATOMIC);
+@@ -436,7 +436,7 @@ static int copy_pud(pgd_t *dst_pgdp, pgd_t *src_pgdp, unsigned long start,
+ 				return -ENOMEM;
+ 		} else {
+ 			set_pud(dst_pudp,
+-				__pud(pud_val(pud) & ~PMD_SECT_RDONLY));
++				__pud(pud_val(pud) & ~PUD_SECT_RDONLY));
+ 		}
+ 	} while (dst_pudp++, src_pudp++, addr = next, addr != end);
  
--	if (!dst)
-+	if (!page)
- 		return -ENOMEM;
- 
--	memcpy((void *)dst, src_start, length);
--	__flush_icache_range(dst, dst + length);
-+	memcpy(page, src_start, length);
-+	__flush_icache_range((unsigned long)page, (unsigned long)page + length);
- 
- 	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
- 	if (!trans_pgd)
-@@ -240,7 +240,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	}
- 
- 	ptep = pte_offset_kernel(pmdp, dst_addr);
--	set_pte(ptep, pfn_pte(virt_to_pfn(dst), PAGE_KERNEL_EXEC));
-+	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
- 
- 	/*
- 	 * Load our new page tables. A strict BBM approach requires that we
-@@ -259,7 +259,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
- 	write_sysreg(phys_to_ttbr(virt_to_phys(trans_pgd)), ttbr0_el1);
- 	isb();
- 
--	*phys_dst_addr = virt_to_phys((void *)dst);
-+	*phys_dst_addr = virt_to_phys(page);
- 
- 	return 0;
- }
 -- 
 2.23.0
 
