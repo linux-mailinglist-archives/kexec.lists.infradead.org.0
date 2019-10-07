@@ -2,63 +2,63 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F2F1CDC48
-	for <lists+kexec@lfdr.de>; Mon,  7 Oct 2019 09:13:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9263CDE45
+	for <lists+kexec@lfdr.de>; Mon,  7 Oct 2019 11:33:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1fZb1tEivXNqqCzeqe8XKuOjD2WZdhePtsnnUlD5HpI=; b=uQW3eGNGAU2pML
-	o0Ktqkj2OQDJOINdvfex+ZK4hOxZSQhncl2YSrvUQ/xHsz018w8aMx+dTwEVJJ8YVN2ot6ykW6KLz
-	DzBA4Zu6r934AJbhChHUDuPE4uhEUBFJfQWrCKMtYMf05Xj+yZn9+/lX5/zdyp1UN7fFjq/k7rvhb
-	nbTqrb6hEZ0OCWay3br21lmQndvH38YL+yzgwIGqF0K6gl4RbWQoffM6kw2o2kCW8pMoZTHsz/G3j
-	aQIeTTckWf+koCNxhxtRzd1UyLOOMTLm1Tu2JsDLiJDJ09FJkcUCcFwyf4sLyX6K9L+EcmYLKNAX6
-	h5wwQE6G9XaCx0MkrUXw==;
+	List-Owner; bh=g4ZrhsnJmtosUa2EMnrxXzM3qpu1g+mwut935s1/Fqw=; b=YmYix4aPRm/qW1
+	8Kud3gmWdm3pQ4TRPnIDz66/gaaXCU+kufU7T1Uag9PWzUw326MFohMxgx3hK0QR2SAjzunnfGesW
+	gxymZFlz1AtojhkHGDB5GZNABjYT49gbkYKnm8n8MxKOnVh6kkjFBYqVZR81XFk/Ks6iKYprAtLzG
+	nz71P+GO5T/gtdd365QtkGLztdHi/jZNJUh/zaceV0UOitXfKjGYIR+P6N26cMUkLLjRqufN5C7X2
+	N15AkhOB+/5yQAa/yRsjGEeTjhf5J6j6gDnYBWn1FhNx8L4SzM7WyjsLcivCkcqtfMOGl5d9UHru1
+	aWYyr9pJdKHj0H4OpfsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHNCg-0003xf-ST; Mon, 07 Oct 2019 07:13:10 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHNCc-0003wf-3Q
- for kexec@lists.infradead.org; Mon, 07 Oct 2019 07:13:09 +0000
-Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 6D01425B7B2;
- Mon,  7 Oct 2019 18:12:59 +1100 (AEDT)
-Received: by penelope.horms.nl (Postfix, from userid 7100)
- id 63715E2108E; Mon,  7 Oct 2019 09:12:57 +0200 (CEST)
-Date: Mon, 7 Oct 2019 09:12:57 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Helge Deller <deller@gmx.de>
-Subject: Re: [PATCH] kexec-tools: Fix conversion overflow when compiling on
- 32-bit platforms
-Message-ID: <20191007071257.qs4dnqmyqk4difzy@verge.net.au>
-References: <20191001151416.GA25667@ls3530.fritz.box>
- <20191003081406.5qmzlmlpwobydfok@verge.net.au>
- <2ac17dd1-99ef-3528-a05e-d51f8af01c95@gmx.de>
- <20191004093737.wftu7iat2gk3abq6@verge.net.au>
- <8157edc8-69cb-33b8-ae1c-7a0d80845c9d@gmx.de>
- <20191004101423.jqpakrotimjjyp3w@verge.net.au>
- <20191004110109.GA15439@ls3530.fritz.box>
+	id 1iHPOr-0002OC-EA; Mon, 07 Oct 2019 09:33:53 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHPOn-0002NY-7b
+ for kexec@lists.infradead.org; Mon, 07 Oct 2019 09:33:51 +0000
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id CB7B9C0495A3;
+ Mon,  7 Oct 2019 09:33:47 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-29.pek2.redhat.com
+ [10.72.12.29])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id A4F6F100197A;
+ Mon,  7 Oct 2019 09:33:42 +0000 (UTC)
+Date: Mon, 7 Oct 2019 17:33:38 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Lianbo Jiang <lijiang@redhat.com>
+Subject: Re: [PATCH v2] x86/kdump: Fix 'kmem -s' reported an invalid
+ freepointer when SME was active
+Message-ID: <20191007093338.GA4710@dhcp-128-65.nay.redhat.com>
+References: <20191007070844.15935-1-lijiang@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191004110109.GA15439@ls3530.fritz.box>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20191007070844.15935-1-lijiang@redhat.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.31]); Mon, 07 Oct 2019 09:33:48 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_001308_125654_5A29A8CA 
-X-CRM114-Status: UNSURE (   7.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191007_023349_314182_4D0B4C1C 
+X-CRM114-Status: GOOD (  24.96  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,27 +70,114 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sven Schnelle <svens@stackframe.org>, kexec@lists.infradead.org
+Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ mingo@redhat.com, bp@alien8.de, ebiederm@xmission.com, hpa@zytor.com,
+ tglx@linutronix.de, vgoyal@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Oct 04, 2019 at 01:01:09PM +0200, Helge Deller wrote:
-> When compiling kexec-tools on a 32-bit platform, assigning an
-> (unsigned long long) value to an (unsigned long) variable creates
-> this warning:
+Hi Lianbo,
+On 10/07/19 at 03:08pm, Lianbo Jiang wrote:
+> Bugzilla: https://bugzilla.kernel.org/show_bug.cgi?id=204793
 > 
-> elf_info.c: In function 'read_phys_offset_elf_kcore':
-> elf_info.c:805:14: warning: conversion from 'long long unsigned int' to
->      'long unsigned int' changes value from '18446744073709551615' to '4294967295'
->   805 |  *phys_off = UINT64_MAX;
+> Kdump kernel will reuse the first 640k region because of some reasons,
+> for example: the trampline and conventional PC system BIOS region may
+> require to allocate memory in this area. Obviously, kdump kernel will
+> also overwrite the first 640k region, therefore, kernel has to copy
+> the contents of the first 640k area to a backup area, which is done in
+> purgatory(), because vmcore may need the old memory. When vmcore is
+> dumped, kdump kernel will read the old memory from the backup area of
+> the first 640k area.
 > 
-> Fix it by using ULONG_MAX instead of UINT64_MAX.
+> Basically, the main reason should be clear, kernel does not correctly
+> handle the first 640k region when SME is active, which causes that
+> kernel does not properly copy these old memory to the backup area in
+> purgatory(). Therefore, kdump kernel reads out the incorrect contents
+> from the backup area when dumping vmcore. Finally, the phenomenon is
+> as follow:
 > 
-> Signed-off-by: Helge Deller <deller@gmx.de>
+> [root linux]$ crash vmlinux /var/crash/127.0.0.1-2019-09-19-08\:31\:27/vmcore
+> WARNING: kernel relocated [240MB]: patching 97110 gdb minimal_symbol values
+> 
+>       KERNEL: /var/crash/127.0.0.1-2019-09-19-08:31:27/vmlinux
+>     DUMPFILE: /var/crash/127.0.0.1-2019-09-19-08:31:27/vmcore  [PARTIAL DUMP]
+>         CPUS: 128
+>         DATE: Thu Sep 19 08:31:18 2019
+>       UPTIME: 00:01:21
+> LOAD AVERAGE: 0.16, 0.07, 0.02
+>        TASKS: 1343
+>     NODENAME: amd-ethanol
+>      RELEASE: 5.3.0-rc7+
+>      VERSION: #4 SMP Thu Sep 19 08:14:00 EDT 2019
+>      MACHINE: x86_64  (2195 Mhz)
+>       MEMORY: 127.9 GB
+>        PANIC: "Kernel panic - not syncing: sysrq triggered crash"
+>          PID: 9789
+>      COMMAND: "bash"
+>         TASK: "ffff89711894ae80  [THREAD_INFO: ffff89711894ae80]"
+>          CPU: 83
+>        STATE: TASK_RUNNING (PANIC)
+> 
+> crash> kmem -s|grep -i invalid
+> kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+> kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+> crash>
+> 
+> BTW: I also tried to fix the above problem in purgatory(), but there
+> are too many restricts in purgatory() context, for example: i can't
+> allocate new memory to create the identity mapping page table for SME
+> situation.
+> 
+> Currently, there are two places where the first 640k area is needed,
+> the first one is in the find_trampoline_placement(), another one is
+> in the reserve_real_mode(), and their content doesn't matter. To avoid
+> the above error, lets occupy the remain memory of the first 640k region
+> (expect for the trampoline and real mode) so that the allocated memory
+> does not fall into the first 640k area when SME is active, which makes
+> us not to worry about whether kernel can correctly copy the contents of
+> the first 640k area to a backup region in the purgatory().
+> 
+> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+> ---
+> Changes since v1:
+> 1. Improve patch log
+> 2. Change the checking condition from sme_active() to sme_active()
+>    && strstr(boot_command_line, "crashkernel=")
+> 
+>  arch/x86/kernel/setup.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
+> index 77ea96b794bd..bdb1a02a84fd 100644
+> --- a/arch/x86/kernel/setup.c
+> +++ b/arch/x86/kernel/setup.c
+> @@ -1148,6 +1148,9 @@ void __init setup_arch(char **cmdline_p)
+>  
+>  	reserve_real_mode();
+>  
+> +	if (sme_active() && strstr(boot_command_line, "crashkernel="))
+> +		memblock_reserve(0, 640*1024);
+> +
 
-Thanks, applied.
+Seems you missed the comment about "unconditionally do it", only check
+crashkernel param looks better.
+
+Also I noticed reserve_crashkernel is called after initmem_init, I'm not
+sure if memblock_reserve is good enough in early code before
+initmem_init. 
+
+>  	trim_platform_memory_ranges();
+>  	trim_low_memory_range();
+>  
+> -- 
+> 2.17.1
+> 
+
+Thanks
+Dave
 
 _______________________________________________
 kexec mailing list
