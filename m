@@ -2,69 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D545CEC5D
-	for <lists+kexec@lfdr.de>; Mon,  7 Oct 2019 21:00:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5107ACED37
+	for <lists+kexec@lfdr.de>; Mon,  7 Oct 2019 22:14:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Ac2v/14h+n6Sg899LvYekXZ0KBrIsrwlWewtD6JxoBE=; b=ETU0AEbvwjH6PfqrPWEAxsBpv4
-	/xJOLbqLY+MB4YwkLa2/2Kp340KUsV9mUcHxGQNZg8u1U+U7f1z1mpKt058q5AzpjgLYV3z9lF+FP
-	Wdg+PBjJtufSLxivowJq+IwA/YYLfa7bJKtvUyHfay+zvGLmrEyGjDHgSp5khOJA9xnAWN36vMzSu
-	q47DelIIJwvyoDYo5ikRwpqWPpfPZjeVWUgQQR5wQZwGwNm6KHGJQsr52fTyI2VyOvPl/nVH+h6FB
-	O6QjBB8yMfLmlIgbk1TWRxak4zy/rxQtpl+yJDoCE51+9AI4TQ8ux6kKzl7ErqZia2sXXD9InTvA/
-	8UwSKikg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jg+3lhvoImgu83SizQe9/gOdGQQJffz2GxmUgOHw9jo=; b=DQpoofWVNUSnFZ
+	7BV1i8rKxkvyZx0FSQsZ8xaKUtqnsz3dv641Zv9O2VixjtPtXjPTd9uFGjt5B+Rc2tg1EQ9518Zmt
+	kFlEz02tOlJtHLnOmzJGJaX8rlIogis1W5vlUrDNT2808uaT5R/y+6y9GmrrrM+NtLxLEHqt+O2Zd
+	ZHIPKtTUkVic0pDA4MbBEBQGIG6roeuI+9FgrMZDLZGBP7tqbMSIFW4sZQDDwNVPFexHp2vAaKuh8
+	Qf9+Q7Txt0Eizp1P/fSho05oP0zMSNBJ4OuGotXfN0dKBRFCwsEsIkQHWIdEAPrJjvAFAGiY9/sJu
+	ZiNmWi0jui4x2dGB9vEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHYF0-0005oU-KP; Mon, 07 Oct 2019 19:00:18 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHYEf-0004NT-Ap; Mon, 07 Oct 2019 18:59:58 +0000
-Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
- [167.220.2.18])
- by linux.microsoft.com (Postfix) with ESMTPSA id D7B6220B711B;
- Mon,  7 Oct 2019 11:59:51 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com D7B6220B711B
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
- s=default; t=1570474792;
- bh=7P5k7YwpHfvQvOjglsK2XRSZ86bDHXhQgf/q8X1TJq0=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OFWRzwr8tBCMr/rCIT2e2II20clCP9B1Wp2tHRsfCyKFjNPf++iIAK2IluBsEn+HR
- MqakxTVSoZfLL/etUtFoN/hcrGAFv4mvrjT3OAUuuqQW3qxiNMYHsOOR7A6oLf4337
- b2BcCk67JgdSFbD+UiG03p1O2iqs/oPz7/9ajTmo=
-From: Prakhar Srivastava <prsriva@linux.microsoft.com>
-To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-integrity@vger.kernel.org, kexec@lists.infradead.org
-Subject: [PATCH v2 2/2] update powerpc implementation to call into of_ima*
-Date: Mon,  7 Oct 2019 11:59:43 -0700
-Message-Id: <20191007185943.1828-3-prsriva@linux.microsoft.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191007185943.1828-1-prsriva@linux.microsoft.com>
-References: <20191007185943.1828-1-prsriva@linux.microsoft.com>
+	id 1iHZP0-0007ir-S4; Mon, 07 Oct 2019 20:14:42 +0000
+Received: from tyo162.gate.nec.co.jp ([114.179.232.162])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iHZOw-0007iG-OK
+ for kexec@lists.infradead.org; Mon, 07 Oct 2019 20:14:40 +0000
+Received: from mailgate02.nec.co.jp ([114.179.233.122])
+ by tyo162.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id x97KENZN020588
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Tue, 8 Oct 2019 05:14:23 +0900
+Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x97KENsH023774;
+ Tue, 8 Oct 2019 05:14:23 +0900
+Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
+ by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id x97KEN87000608;
+ Tue, 8 Oct 2019 05:14:23 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
+ mail01b.kamome.nec.co.jp with ESMTP id BT-MMP-9181007;
+ Tue, 8 Oct 2019 05:13:09 +0900
+Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
+ BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Tue, 8
+ Oct 2019 05:13:08 +0900
+From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+To: Dave Jones <davej@codemonkey.org.uk>
+Subject: RE: makedumpfile: Fix divide by zero in print_report()
+Thread-Topic: makedumpfile: Fix divide by zero in print_report()
+Thread-Index: AQHVcw/g+V5I957X20SkpJOpVNgNBac8j8FggAE1oICAAiLZQIAKRjGAgAV6U+A=
+Date: Mon, 7 Oct 2019 20:13:07 +0000
+Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC0359146E@BPXM09GP.gisp.nec.co.jp>
+References: <20190924194005.GA7666@codemonkey.org.uk>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359079B@BPXM09GP.gisp.nec.co.jp>
+ <20190926193253.GA10258@codemonkey.org.uk>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC035909ED@BPXM09GP.gisp.nec.co.jp>
+ <20191004170357.GA12416@codemonkey.org.uk>
+In-Reply-To: <20191004170357.GA12416@codemonkey.org.uk>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [143.101.133.224]
+MIME-Version: 1.0
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191007_115957_418182_F1E4A186 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -15.6 (---------------)
+X-CRM114-CacheID: sfid-20191007_131439_211693_3696E2E9 
+X-CRM114-Status: GOOD (  24.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.6 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [114.179.232.162 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [114.179.232.162 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,285 +84,130 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
- zohar@linux.ibm.com, yamada.masahiro@socionext.com, kristina.martsenko@arm.org,
- duwe@lst.de, bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
- allison@lohutok.net
-MIME-Version: 1.0
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-update powerpc ima buffer pass implementationt to call into
-of_ima* for a cross architecture support.
+> -----Original Message-----
+> On Fri, Sep 27, 2019 at 08:39:04PM +0000, Kazuhito Hagio wrote:
+>  > > -----Original Message-----
+>  > > On Thu, Sep 26, 2019 at 06:41:48PM +0000, Kazuhito Hagio wrote:
+>  > >
+>  > >  > > -----Original Message-----
+>  > >  > > If info->max_mapnr and pfn_memhole are equal, we divide by zero when
+>  > >  > > trying determine the 'shrinking' value.
+>  > >  > >
+>  > >  > > On the system I saw this error, we arrived at this function with
+>  > >  > > info->max_mapnr:0x0000000001080000 pfn_memhole:0x0000000001080000
+>  > >  >
+>  > >  > Thank you for the patch.
+>  > >  > I suppose that you see the error with the -E option, right?
+>  > >  >
+>  > >  > It seems that the -E option has some problems with its statistics,
+>  > >  > so I'm checking whether there is a better way to fix this.
+>  > >
+>  > > Yes, we use the -E option.
+>  > > We manage to get useful info from the generated dump after this fix, so
+>  > > it seems it only affects the statistics output.
+>  >
+>  > OK, the statistics in cyclic mode with the -E option is completely wrong
+>  > but a possible fix is likely to affect the whole of cyclic processing, so
+>  > I just cover the hole with your patch and leave the statistics problem as
+>  > a known issue at this time.  I would revisit it when I have time.
+>  >
+>  > The patch was applied to the devel branch.
+> 
+> While this patch does avoid the divide by zero, some further analysis
+> shows that there seems to be some deeper problem when we encounter this
+> 'original pages = 0' situation.
+> 
+> Take a look at the attached output from makedumpfile.
+> 
+> Key part in the summary:
+> 
+> [  518.819690] Original pages  : 0x0000000000000000
+> [  518.828894]   Excluded pages   : 0x0000000003decd15
+> [  518.838635]     Pages filled with zero  : 0x00000000000210ee
+> [  518.849920]     Non-private cache pages : 0x000000000000271a
+> [  518.861218]     Private cache pages     : 0x000000000000da47
+> [  518.872502]     User process data pages : 0x0000000003d6bdc8
+> [  518.883786]     Free pages              : 0x000000000004fcfe
+> [  518.895070]     Hwpoison pages          : 0x0000000000000000
+> [  518.906356]     Offline pages           : 0x0000000000000000
+> [  518.917659]   Remaining pages  : 0xfffffffffc2132eb
+> [  518.927398] Memory Hole     : 0x0000000004080000
+> 
+> In this case, 'remaining pages' has gone negative which looks concerning.
 
-Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
----
- arch/powerpc/include/asm/ima.h  |   6 --
- arch/powerpc/kernel/Makefile    |   8 +-
- arch/powerpc/kernel/ima_kexec.c | 170 +++-----------------------------
- 3 files changed, 16 insertions(+), 168 deletions(-)
+This is the known issue that I wrote above and am looking for a safe fix.
+How does this patch work?
 
-diff --git a/arch/powerpc/include/asm/ima.h b/arch/powerpc/include/asm/ima.h
-index ead488cf3981..5ecff8896eed 100644
---- a/arch/powerpc/include/asm/ima.h
-+++ b/arch/powerpc/include/asm/ima.h
-@@ -6,12 +6,7 @@ struct kimage;
+--- a/makedumpfile.c
++++ b/makedumpfile.c
+@@ -56,6 +56,9 @@ static void first_cycle(mdf_pfn_t start, mdf_pfn_t max, struct cycle *cycle)
+	if (cycle->end_pfn > max)
+		cycle->end_pfn = max;
  
- int ima_get_kexec_buffer(void **addr, size_t *size);
- int ima_free_kexec_buffer(void);
--
--#ifdef CONFIG_IMA
- void remove_ima_buffer(void *fdt, int chosen_node);
--#else
--static inline void remove_ima_buffer(void *fdt, int chosen_node) {}
--#endif
- 
- #ifdef CONFIG_IMA_KEXEC
- int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-@@ -26,5 +21,4 @@ static inline int setup_ima_buffer(const struct kimage *image, void *fdt,
- 	return 0;
++	if (cycle->start_pfn < start)
++		cycle->start_pfn = start;
++
+	cycle->exclude_pfn_start = 0;
+	cycle->exclude_pfn_end = 0;
  }
- #endif /* CONFIG_IMA_KEXEC */
--
- #endif /* _ASM_POWERPC_IMA_H */
-diff --git a/arch/powerpc/kernel/Makefile b/arch/powerpc/kernel/Makefile
-index 56dfa7a2a6f2..6a3d8fd6f1df 100644
---- a/arch/powerpc/kernel/Makefile
-+++ b/arch/powerpc/kernel/Makefile
-@@ -126,12 +126,8 @@ obj-$(CONFIG_PCI)		+= pci_$(BITS).o $(pci64-y) \
- obj-$(CONFIG_PCI_MSI)		+= msi.o
- obj-$(CONFIG_KEXEC_CORE)	+= machine_kexec.o crash.o \
- 				   machine_kexec_$(BITS).o
--obj-$(CONFIG_KEXEC_FILE)	+= machine_kexec_file_$(BITS).o kexec_elf_$(BITS).o
--ifdef CONFIG_HAVE_IMA_KEXEC
--ifdef CONFIG_IMA
--obj-y				+= ima_kexec.o
--endif
--endif
-+obj-$(CONFIG_KEXEC_FILE)	+= machine_kexec_file_$(BITS).o kexec_elf_$(BITS).o \
-+				   ima_kexec.o
+@@ -7595,6 +7598,9 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+			}
  
- obj-$(CONFIG_AUDIT)		+= audit.o
- obj64-$(CONFIG_AUDIT)		+= compat_audit.o
-diff --git a/arch/powerpc/kernel/ima_kexec.c b/arch/powerpc/kernel/ima_kexec.c
-index 720e50e490b6..41f52297de0c 100644
---- a/arch/powerpc/kernel/ima_kexec.c
-+++ b/arch/powerpc/kernel/ima_kexec.c
-@@ -6,45 +6,21 @@
-  * Thiago Jung Bauermann <bauerman@linux.vnet.ibm.com>
-  */
- 
--#include <linux/slab.h>
- #include <linux/kexec.h>
- #include <linux/of.h>
--#include <linux/memblock.h>
--#include <linux/libfdt.h>
- 
--static int get_addr_size_cells(int *addr_cells, int *size_cells)
-+/**
-+ * remove_ima_buffer - remove the IMA buffer property and reservation from @fdt
-+ *
-+ * The IMA measurement buffer is of no use to a subsequent kernel, so we always
-+ * remove it from the device tree.
-+ */
-+void remove_ima_buffer(void *fdt, int chosen_node)
- {
--	struct device_node *root;
--
--	root = of_find_node_by_path("/");
--	if (!root)
--		return -EINVAL;
--
--	*addr_cells = of_n_addr_cells(root);
--	*size_cells = of_n_size_cells(root);
--
--	of_node_put(root);
--
--	return 0;
-+	fdt_remove_ima_buffer(fdt, chosen_node);
-+	return;
- }
- 
--static int do_get_kexec_buffer(const void *prop, int len, unsigned long *addr,
--			       size_t *size)
--{
--	int ret, addr_cells, size_cells;
--
--	ret = get_addr_size_cells(&addr_cells, &size_cells);
--	if (ret)
--		return ret;
--
--	if (len < 4 * (addr_cells + size_cells))
--		return -ENOENT;
--
--	*addr = of_read_number(prop, addr_cells);
--	*size = of_read_number(prop + 4 * addr_cells, size_cells);
--
--	return 0;
--}
- 
- /**
-  * ima_get_kexec_buffer - get IMA buffer from the previous kernel
-@@ -55,23 +31,7 @@ static int do_get_kexec_buffer(const void *prop, int len, unsigned long *addr,
-  */
- int ima_get_kexec_buffer(void **addr, size_t *size)
- {
--	int ret, len;
--	unsigned long tmp_addr;
--	size_t tmp_size;
--	const void *prop;
--
--	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer", &len);
--	if (!prop)
--		return -ENOENT;
--
--	ret = do_get_kexec_buffer(prop, len, &tmp_addr, &tmp_size);
--	if (ret)
--		return ret;
--
--	*addr = __va(tmp_addr);
--	*size = tmp_size;
--
--	return 0;
-+	return of_get_ima_buffer(addr, size);
- }
- 
- /**
-@@ -79,52 +39,7 @@ int ima_get_kexec_buffer(void **addr, size_t *size)
-  */
- int ima_free_kexec_buffer(void)
- {
--	int ret;
--	unsigned long addr;
--	size_t size;
--	struct property *prop;
--
--	prop = of_find_property(of_chosen, "linux,ima-kexec-buffer", NULL);
--	if (!prop)
--		return -ENOENT;
--
--	ret = do_get_kexec_buffer(prop->value, prop->length, &addr, &size);
--	if (ret)
--		return ret;
--
--	ret = of_remove_property(of_chosen, prop);
--	if (ret)
--		return ret;
--
--	return memblock_free(addr, size);
--
--}
--
--/**
-- * remove_ima_buffer - remove the IMA buffer property and reservation from @fdt
-- *
-- * The IMA measurement buffer is of no use to a subsequent kernel, so we always
-- * remove it from the device tree.
-- */
--void remove_ima_buffer(void *fdt, int chosen_node)
--{
--	int ret, len;
--	unsigned long addr;
--	size_t size;
--	const void *prop;
--
--	prop = fdt_getprop(fdt, chosen_node, "linux,ima-kexec-buffer", &len);
--	if (!prop)
--		return;
--
--	ret = do_get_kexec_buffer(prop, len, &addr, &size);
--	fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer");
--	if (ret)
--		return;
--
--	ret = delete_fdt_mem_rsv(fdt, addr, size);
--	if (!ret)
--		pr_debug("Removed old IMA buffer reservation.\n");
-+	return of_remove_ima_buffer();
- }
- 
- #ifdef CONFIG_IMA_KEXEC
-@@ -145,27 +60,6 @@ int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
- 	return 0;
- }
- 
--static int write_number(void *p, u64 value, int cells)
--{
--	if (cells == 1) {
--		u32 tmp;
--
--		if (value > U32_MAX)
--			return -EINVAL;
--
--		tmp = cpu_to_be32(value);
--		memcpy(p, &tmp, sizeof(tmp));
--	} else if (cells == 2) {
--		u64 tmp;
--
--		tmp = cpu_to_be64(value);
--		memcpy(p, &tmp, sizeof(tmp));
--	} else
--		return -EINVAL;
--
--	return 0;
--}
--
- /**
-  * setup_ima_buffer - add IMA buffer information to the fdt
-  * @image:		kexec image being loaded.
-@@ -176,44 +70,8 @@ static int write_number(void *p, u64 value, int cells)
-  */
- int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node)
- {
--	int ret, addr_cells, size_cells, entry_size;
--	u8 value[16];
--
--	remove_ima_buffer(fdt, chosen_node);
--	if (!image->arch.ima_buffer_size)
--		return 0;
--
--	ret = get_addr_size_cells(&addr_cells, &size_cells);
--	if (ret)
--		return ret;
--
--	entry_size = 4 * (addr_cells + size_cells);
--
--	if (entry_size > sizeof(value))
--		return -EINVAL;
--
--	ret = write_number(value, image->arch.ima_buffer_addr, addr_cells);
--	if (ret)
--		return ret;
--
--	ret = write_number(value + 4 * addr_cells, image->arch.ima_buffer_size,
--			   size_cells);
--	if (ret)
--		return ret;
--
--	ret = fdt_setprop(fdt, chosen_node, "linux,ima-kexec-buffer", value,
--			  entry_size);
--	if (ret < 0)
--		return -EINVAL;
--
--	ret = fdt_add_mem_rsv(fdt, image->arch.ima_buffer_addr,
--			      image->arch.ima_buffer_size);
--	if (ret)
--		return -EINVAL;
--
--	pr_debug("IMA buffer at 0x%llx, size = 0x%zx\n",
--		 image->arch.ima_buffer_addr, image->arch.ima_buffer_size);
--
--	return 0;
-+	return fdt_setup_ima_buffer(image->arch.ima_buffer_addr,
-+				    image->arch.ima_buffer_size,
-+				    fdt, chosen_node);
- }
- #endif /* CONFIG_IMA_KEXEC */
--- 
-2.17.1
+			for (pfn = MAX(pfn_start, cycle.start_pfn); pfn < cycle.end_pfn; pfn++) {
++				if (info->flag_cyclic)
++					pfn_memhole--;
++
+				if (!is_dumpable(info->bitmap2, pfn, &cycle)) {
+					num_excluded++;
+					if ((pfn == pfn_end - 1) && frac_tail)
+
+If it looks good, I'll look into its side effects further,
+but might take some time..
+
+> 
+> And the crashdump seems corrupt:
+> 
+> 'crash' complains:
+> WARNING: possibly corrupt Elf64_Nhdr: n_namesz: 2079035392 n_descsz: 3 n_type: 1000
+> 
+> vmcore-dmesg complains "Missing the log_buf symbol", even though the makedumpfile log
+> shows it was present at ffffffff822510a0
+> 
+> Readelf seems to think the notes sections are mangled.
+> 
+> # readelf -n vmcore
+> 
+> Displaying notes found at file offset 0x00015468 with length 0x0000556c:
+>   Owner                 Data size       Description
+>                        0x00000007       Unknown note type: (0x727c79d4)
+> readelf: vmcore: Warning: Corrupt note: name size is too big: 7beb9000
+>   (NONE)               0x00000003       Unknown note type: (0x00001000)
+> readelf: vmcore: Warning: Corrupt note: name size is too big: 55a000
+>   (NONE)               0x00000000       Unknown note type: (0x00000000)
+>   (NONE)               0x00000001       Unknown note type: (0x00000007)
+> readelf: vmcore: Warning: note with invalid namesz and/or descsz found at offset 0x44
+> readelf: vmcore: Warning:  type: 0xffff8803, namesize: 0x00000000, descsize: 0x7c413000
+
+I don't think that the statistics issue corrupts a dumpfile itself
+so far.  Could you show me the output of "readelf -a vmcore"?
+Does this issue always reproduce?
+
+Thanks,
+Kazu
+
+> 
+> 
+> 
+> Any thoughts on where to add additional debugging in makedumpfile ?
+> 
+> 	Dave
+
 
 
 _______________________________________________
