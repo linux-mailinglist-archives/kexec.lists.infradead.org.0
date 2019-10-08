@@ -2,70 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0E9D02C7
-	for <lists+kexec@lfdr.de>; Tue,  8 Oct 2019 23:22:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7307D02EA
+	for <lists+kexec@lfdr.de>; Tue,  8 Oct 2019 23:37:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CmUG/2s0YJbMiHdeeFHydj/GYJCbgoRJkUHbqXUAVQ8=; b=bL0dKQLur6hLk8GJl7NNB5VYg
-	PuUItMA7/BMzjSMmTmPyc4zBh44bMIjVbxvtnzD0h8xT+aElYBGPul7T9KSUkEl4C0ty0VRwC9vIl
-	p0YuX1jyQp2TWWsRJnQ/Yhs/WGTSBwxS1Q1c0H3aVHwl5FbaOGGMGiG+6HBdatoFDGBBaTiwF1lpW
-	TMOTxHoYccV1EELmIR6gHuhQ/h2eujmnSaWVlhisacfR3zmoBKwTKwtN5hbzxN7dSRcF92/F7zCeq
-	LgJD1TNe/0SDeJXdaS6giFB3ZzCqwZ1at4qYLo7As4ybwi9gsMSsHF7xJjTh2OReoq2N1v84eoya5
-	4hPKKTtqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=78ubV7EnZRbp1w+i6qKtpyhecM4tC/OsSKCLUB0BXiY=; b=DFCnTZTrYLLaig
+	bSGF8GefjWTZrL7/7xdTkmYccLFPBLw/RvgKjoFY8atg15jsIfGlCi+XNgdq51SOItBb2+t9EyoDs
+	SSAFZ5oGA4HdGAZiBDoQejaiOzHhYR0T6V2xdZTJJJVoc08l1d6lAayWU8bUyqD6pfwtfPx8bcqzA
+	VFWUz5FO83CaSbmzj9+BfZO0UM1h6COZFZOu28YUJkqwRSO/jmpOjsr6RZpo72eb4BQgmlqL7eeIG
+	ojBFBW6M8Hq7R25uZFHsCtjqi9oaLBlo7igjQcqQXCiJJwvNv2WNGIaf/05wKiE0D06GN7lrl4Hsc
+	LfJuIQ7SRp4T3LZmfgOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iHww7-0001Gt-AH; Tue, 08 Oct 2019 21:22:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1iHxAu-0007DE-BE; Tue, 08 Oct 2019 21:37:44 +0000
+Received: from scorn.kernelslacker.org ([2600:3c03:e000:2fb::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iHww5-0001GO-1e; Tue, 08 Oct 2019 21:22:26 +0000
-Received: from localhost (unknown [131.107.159.163])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A71421721;
- Tue,  8 Oct 2019 21:22:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1570569744;
- bh=b2R98nFWJA8KQ9V8pVgOiwJ2juY6CvTkExzj2ehzTIQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vpmmdg5MTkxwa3zXfobJHRUbwnWMiu+EA3sK18sc4ke2+W62vZaJFbZ57kmPBs4XC
- /CibLn3+WkAwGOu528NZN47XvQAOMcgaSH2WvDSLCql7NmQOjuGky5RZxkxFuz8sqE
- wndV0BcOdcpbxhftcdDQNhN6cSrv4059R9xjP+AA=
-Date: Tue, 8 Oct 2019 17:22:24 -0400
-From: Sasha Levin <sashal@kernel.org>
-To: Prakhar Srivastava <prsriva@linux.microsoft.com>
-Subject: Re: [PATCH v2 1/2] Add support for arm64 to carry ima measurement
- log in kexec_file_load
-Message-ID: <20191008212224.GC1396@sasha-vm>
-References: <20191007185943.1828-1-prsriva@linux.microsoft.com>
- <20191007185943.1828-2-prsriva@linux.microsoft.com>
+ id 1iHxAq-0007Ch-GL
+ for kexec@lists.infradead.org; Tue, 08 Oct 2019 21:37:42 +0000
+Received: from [2601:196:4600:6634:ae9e:17ff:feb7:72ca]
+ (helo=wopr.kernelslacker.org)
+ by scorn.kernelslacker.org with esmtp (Exim 4.92)
+ (envelope-from <davej@codemonkey.org.uk>)
+ id 1iHxAj-0005NA-FS; Tue, 08 Oct 2019 17:37:33 -0400
+Received: by wopr.kernelslacker.org (Postfix, from userid 1026)
+ id 20D6F56018A; Tue,  8 Oct 2019 17:37:33 -0400 (EDT)
+Date: Tue, 8 Oct 2019 17:37:33 -0400
+From: Dave Jones <davej@codemonkey.org.uk>
+To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+Subject: Re: makedumpfile: Fix divide by zero in print_report()
+Message-ID: <20191008213733.GA21304@codemonkey.org.uk>
+References: <20190924194005.GA7666@codemonkey.org.uk>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359079B@BPXM09GP.gisp.nec.co.jp>
+ <20190926193253.GA10258@codemonkey.org.uk>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC035909ED@BPXM09GP.gisp.nec.co.jp>
+ <20191004170357.GA12416@codemonkey.org.uk>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359146E@BPXM09GP.gisp.nec.co.jp>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191007185943.1828-2-prsriva@linux.microsoft.com>
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC0359146E@BPXM09GP.gisp.nec.co.jp>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Note: SpamAssassin invocation failed
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191008_142225_132106_BCFF0AC1 
-X-CRM114-Status: GOOD (  11.58  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191008_143740_544065_9531926B 
+X-CRM114-Status: GOOD (  10.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,85 +67,128 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, zohar@linux.ibm.com,
- bauerman@linux.ibm.com, yamada.masahiro@socionext.com,
- kristina.martsenko@arm.org, duwe@lst.de, allison@lohutok.net,
- james.morse@arm.org, linux-integrity@vger.kernel.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Oct 07, 2019 at 11:59:42AM -0700, Prakhar Srivastava wrote:
->During kexec_file_load, carrying forward the ima measurement log allows
->a verifying party to get the entire runtime event log since the last
->full reboot since that is when PCRs were last reset.
->
->Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
->---
-> arch/Kconfig                           |   6 +-
-> arch/arm64/include/asm/ima.h           |  24 +++
-> arch/arm64/include/asm/kexec.h         |   5 +
-> arch/arm64/kernel/Makefile             |   3 +-
-> arch/arm64/kernel/ima_kexec.c          |  78 ++++++++++
-> arch/arm64/kernel/machine_kexec_file.c |   6 +
-> drivers/of/Kconfig                     |   6 +
-> drivers/of/Makefile                    |   1 +
-> drivers/of/of_ima.c                    | 204 +++++++++++++++++++++++++
-> include/linux/of.h                     |  31 ++++
-> 10 files changed, 362 insertions(+), 2 deletions(-)
-> create mode 100644 arch/arm64/include/asm/ima.h
-> create mode 100644 arch/arm64/kernel/ima_kexec.c
-> create mode 100644 drivers/of/of_ima.c
->
->diff --git a/arch/Kconfig b/arch/Kconfig
->index a7b57dd42c26..d53e1596c5b1 100644
->--- a/arch/Kconfig
->+++ b/arch/Kconfig
->@@ -19,7 +19,11 @@ config KEXEC_CORE
-> 	bool
->
-> config HAVE_IMA_KEXEC
->-	bool
->+	bool "Carry over IMA measurement log during kexec_file_load() syscall"
->+	depends on KEXEC_FILE
->+	help
->+	  Select this option to carry over IMA measurement log during
->+	  kexec_file_load.
+On Mon, Oct 07, 2019 at 08:13:07PM +0000, Kazuhito Hagio wrote:
+ 
+ > > [  518.819690] Original pages  : 0x0000000000000000
+ > > [  518.828894]   Excluded pages   : 0x0000000003decd15
+ > > [  518.838635]     Pages filled with zero  : 0x00000000000210ee
+ > > [  518.849920]     Non-private cache pages : 0x000000000000271a
+ > > [  518.861218]     Private cache pages     : 0x000000000000da47
+ > > [  518.872502]     User process data pages : 0x0000000003d6bdc8
+ > > [  518.883786]     Free pages              : 0x000000000004fcfe
+ > > [  518.895070]     Hwpoison pages          : 0x0000000000000000
+ > > [  518.906356]     Offline pages           : 0x0000000000000000
+ > > [  518.917659]   Remaining pages  : 0xfffffffffc2132eb
+ > > [  518.927398] Memory Hole     : 0x0000000004080000
+ >
+ > This is the known issue that I wrote above and am looking for a safe fix.
+ > How does this patch work?
 
-This change looks very wrong: HAVE_* config symbols are used to indicate
-the availability of certain arch specific capability, rather than act as
-a config option. How does this work with CONFIG_IMA_KEXEC ?
+I'll give this a try, and see how it goes for a few days.
 
-Also, please, at the very least verify that basic functionality works on
-the architectures we have access to. Trying it on x86:
+ > If it looks good, I'll look into its side effects further,
+ > but might take some time..
 
-$ make allmodconfig
-scripts/kconfig/conf  --allmodconfig Kconfig
-#
-# No change to .config
-#
-$ make
-  CALL    scripts/checksyscalls.sh
-  CALL    scripts/atomic/check-atomics.sh
-  DESCEND  objtool
-  CC      security/integrity/ima/ima_fs.o
-In file included from security/integrity/ima/ima_fs.c:26:
-security/integrity/ima/ima.h:28:10: fatal error: asm/ima.h: No such file or directory
- #include <asm/ima.h>
-          ^~~~~~~~~~~
-compilation terminated.
-make[3]: *** [scripts/Makefile.build:266: security/integrity/ima/ima_fs.o] Error 1
-make[2]: *** [scripts/Makefile.build:509: security/integrity/ima] Error 2
-make[1]: *** [scripts/Makefile.build:509: security/integrity] Error 2
-make: *** [Makefile:1649: security] Error 2
 
---
-Thanks,
-Sasha
+ > > And the crashdump seems corrupt:
+ > > 
+ > Could you show me the output of "readelf -a vmcore"?
+
+See below.
+
+ > Does this issue always reproduce?
+
+Not 100% the time. Sometimes we do get valid dumps from these hosts.
+My guess so far is that it has something to do with how much of memory
+makedumpfile was able to discard with -d31
+
+
+Common case seems to be:
+
+<F28>ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              CORE (Core file)
+  Machine:                           Advanced Micro Devices X86-64
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          0 (bytes into file)
+  Flags:                             0x0
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         23881
+  Size of section headers:           0 (bytes)
+  Number of section headers:         0
+  Section header string table index: 0
+
+There are no sections in this file.
+
+There are no sections to group in this file.
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+... <repeats for thousands of lines>
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+  NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000         0
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+The decoding of unwind sections for machine type Advanced Micro Devices X86-64 is not currently supported.
+
+Dynamic symbol information is not available for displaying symbols.
+
+No version information found in this file.
+
+
+
+There are some other failure cases with non-null data, so maybe there's >1 bug here.
+I've not seen an obvious pattern to this. eg...
+
+https://pastebin.com/2uM4sBCF
+
+
+
+I'll put your patch on some of the affected hosts and see if this
+changes behaviour in any way.
+
+thanks,
+	Dave
+
 
 _______________________________________________
 kexec mailing list
