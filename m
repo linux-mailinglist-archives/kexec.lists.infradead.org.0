@@ -2,56 +2,67 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56BBAD1B0B
-	for <lists+kexec@lfdr.de>; Wed,  9 Oct 2019 23:39:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57185D1D48
+	for <lists+kexec@lfdr.de>; Thu, 10 Oct 2019 02:15:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sCxsL/Ja6y12oN+3xXUFvjqZBby+MjHbG/uaBlVy29Y=; b=TwQ8LPRwEnMJV6
-	hTK33hqiho8gYOfVsAjj9iSsEUHtwdYNHqir/V3TJezP31jbJVavHYMi/RiEj3Q5Q5XOP6sJbmQO8
-	ObOuk415acl6Eq4cLSlcAwB/ZLwPf1itRU3nAFpxc54TE6eEBO12g+tTO0HusVRClEEjkpT/wxz/j
-	r7AEMq7vdZayAZz5PRsnrWMgLS1vXc4UVgRICuPPZx2k2LNpac7mFVLznPPmdQ1caG9ys7vNw33iK
-	/mD0NivEuFCtyaSO8Fu7YA9rtbaZSIBZR/i9d33CD9/K+DJpxYO6up1ClfNWEtlpRrxn8+07ICthB
-	SclHIWrHUZZ2Wiy5uohw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=T2qz78ZzgAviA4HhCVWT9sw7aute2S6DsW17QlT9ho0=; b=sCa
+	j3wzd3b/CsexdgZRcXnwHMZ4SK5FZg7rP2rOqouSe9AFlnng57Jd5GZtpEDEiOVQul4PTt9KUw7ZK
+	nWHrA+9mAo15kHI96GznlV0tEW09CuI89k5uvH39PTwwzCRppX3XpGFjYht7g39xQexUoOEqgsO4U
+	w6Q2VbASv7XT7BNDxkFcS487HwNz022oYLD/EQEPhvYFOhlkkyHjeZgcsLWq8AzioPXyb7wi98QSH
+	dSkFoVlFzgw4TjrrEBjXiFlsxhepHk6XO7ss9RRSdEueXV4pcFfXfzYy49PIugu7IzSskBdOMmASZ
+	lngHsPtV6DYlPabOEX+VXDKmqLUmDNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iIJfh-0000Wd-VO; Wed, 09 Oct 2019 21:39:01 +0000
-Received: from scorn.kernelslacker.org ([2600:3c03:e000:2fb::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iIJfe-0000W8-VA
- for kexec@lists.infradead.org; Wed, 09 Oct 2019 21:39:00 +0000
-Received: from [2601:196:4600:6634:ae9e:17ff:feb7:72ca]
- (helo=wopr.kernelslacker.org)
- by scorn.kernelslacker.org with esmtp (Exim 4.92)
- (envelope-from <davej@codemonkey.org.uk>)
- id 1iIJfb-0006L1-Q8; Wed, 09 Oct 2019 17:38:55 -0400
-Received: by wopr.kernelslacker.org (Postfix, from userid 1026)
- id 65A39560186; Wed,  9 Oct 2019 17:38:55 -0400 (EDT)
-Date: Wed, 9 Oct 2019 17:38:55 -0400
-From: Dave Jones <davej@codemonkey.org.uk>
-To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-Subject: Re: makedumpfile: ELF format issues (RE: makedumpfile: Fix divide by
- zero in print_report())
-Message-ID: <20191009213855.GA14574@codemonkey.org.uk>
-References: <4AE2DC15AC0B8543882A74EA0D43DBEC03591761@BPXM09GP.gisp.nec.co.jp>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03591761@BPXM09GP.gisp.nec.co.jp>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Spam-Note: SpamAssassin invocation failed
+	id 1iIM6c-0000sx-Eu; Thu, 10 Oct 2019 00:14:58 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1iIM4j-0007Zp-CP; Thu, 10 Oct 2019 00:13:03 +0000
+Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
+ [167.220.2.18])
+ by linux.microsoft.com (Postfix) with ESMTPSA id C712320B71C6;
+ Wed,  9 Oct 2019 17:12:59 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com C712320B71C6
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+ s=default; t=1570666379;
+ bh=8PIUlpe4QGC+q/h/YpfHHQXYskMJ+TEhigux0nCSFXM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=qaOuO5Yn2yipBl6hZT8j8IFlCHBTtyJC7kkcW9FvlG5kGq4uyWFQDjYVtosLiWlQ+
+ 1D46wLbZo9t0EgiPI05/SVm9SsFhuQCQQOgfaxGIp8F9rqNKmrc+3JogfHl0Y7hZOY
+ cFsEVt4+weA6ky/j8ZbMQ1JG5JBtdUG4jXQoDpKU=
+From: Prakhar Srivastava <prsriva@linux.microsoft.com>
+To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-integrity@vger.kernel.org, kexec@lists.infradead.org
+Subject: [PATCH v3 0/2] Add support for arm64 to carry ima measurement log in
+ kexec_file_load
+Date: Wed,  9 Oct 2019 17:12:49 -0700
+Message-Id: <20191010001251.22746-1-prsriva@linux.microsoft.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191009_143859_000931_FE0D560A 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191009_171301_494382_D2B84580 
+X-CRM114-Status: GOOD (  11.88  )
+X-Spam-Score: -15.6 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,56 +74,79 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
+ takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
+ zohar@linux.ibm.com, yamada.masahiro@socionext.com, kristina.martsenko@arm.org,
+ duwe@lst.de, bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
+ allison@lohutok.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Oct 09, 2019 at 08:03:51PM +0000, Kazuhito Hagio wrote:
+Add support to carry ima measurement log
+to the next kexec'ed session triggered via kexec_file_load.
+- Top of Linux 5.3-rc6
 
- > >                  0x0000000000000000 0x0000000000000000         0
- > >   NULL           0x0000000000000000 0x0000000000000000 0x0000000000000000
- > >                  0x0000000000000000 0x0000000000000000         0
- > > 
- > 
- > In this case, was the "makedumpfile Completed." message emitted?
- > It looks like the buffer of program headers was not written to the file..
+Currently during kexec the kernel file signatures are/can be validated
+prior to actual load, the information(PE/ima signature) is not carried
+to the next session. This lead to loss of information.
 
-Our logging infra didn't capture the makedumpfile output. I've fixed
-that up, so hopefully next time..
+Carrying forward the ima measurement log to the next kexec'ed session 
+allows a verifying party to get the entire runtime event log since the
+last full reboot, since that is when PCRs were last reset.
 
- > Anyway, a debugging patch attached below.
- > 
- > > There are some other failure cases with non-null data, so maybe there's >1 bug here.
- > > I've not seen an obvious pattern to this. eg...
- > > 
- > > https://pastebin.com/2uM4sBCF
- > > 
- > 
- > As for this case, I suspect that Elf64_Ehdr.e_phnum overflows
- > (i.e. num_loads_dumpfile > 65535):
+Tested for arm64 qemu and real hardware.
+I have not been unable to test the patch for powerpc 64bit. Any testing
+is greatly appretiated.
 
-Oh, good catch.  These are 256GB machines, so after discarding
-everything, that explains why we end up with so many sections.
-This also explains why it sometimes works I think, when the discarding
-manages to get the total nr headers <64k.
+TODO: Add support for 32 bit in the of_ima.c
 
- > > I'll put your patch on some of the affected hosts and see if this
- > > changes behaviour in any way.
- > 
- > If you can try the patch below, which includes the previous patch,
- > please show me:
- > - the debugging output of makedumpfile
- > - readelf -a vmcore
- > - ls -ls vmcore
+v3:
+  - Fix build breaks due to bad config.
 
-Will take me a few days (travelling right now), but when hopefully by
-the time I get back we'll have some data.
+v2:
+  - move common code to drivers/of/of_ima.c.
+  - point arm64 to use of_ima implementation.
+  - point powerpc to use of_ima implementation
 
-thanks for looking into this.
+v1:
+  - add new fdt porperties to mark start and end for ima measurement
+    log.
+  - use fdt_* functions to add/remove fdt properties and memory
+    allocations.
+  - remove additional check for endian-ness as they are checked
+    in fdt_* functions.
 
-	Dave
+v0:
+  - Add support to carry ima measurement log in arm64, 
+   uses same code as powerpc.
+Prakhar Srivastava (2):
+  Add support for arm64 to carry ima measurement log in kexec_file_load
+  update powerpc implementation to call into of_ima*
+
+ arch/arm64/Kconfig                     |   7 +
+ arch/arm64/include/asm/ima.h           |  24 +++
+ arch/arm64/include/asm/kexec.h         |   5 +
+ arch/arm64/kernel/Makefile             |   3 +-
+ arch/arm64/kernel/ima_kexec.c          |  78 ++++++++++
+ arch/arm64/kernel/machine_kexec_file.c |   6 +
+ arch/powerpc/Kconfig                   |   6 +
+ arch/powerpc/include/asm/ima.h         |   6 -
+ arch/powerpc/kernel/Makefile           |   8 +-
+ arch/powerpc/kernel/ima_kexec.c        | 170 ++-------------------
+ drivers/of/Kconfig                     |   6 +
+ drivers/of/Makefile                    |   1 +
+ drivers/of/of_ima.c                    | 204 +++++++++++++++++++++++++
+ include/linux/of.h                     |  31 ++++
+ 14 files changed, 386 insertions(+), 169 deletions(-)
+ create mode 100644 arch/arm64/include/asm/ima.h
+ create mode 100644 arch/arm64/kernel/ima_kexec.c
+ create mode 100644 drivers/of/of_ima.c
+
+-- 
+2.17.1
 
 
 _______________________________________________
