@@ -2,49 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CEDFD474D
-	for <lists+kexec@lfdr.de>; Fri, 11 Oct 2019 20:17:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 829F5D4751
+	for <lists+kexec@lfdr.de>; Fri, 11 Oct 2019 20:17:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lgQ6PS15A7ZLczd8mOu95PGNchjl46yHH4b9ktqbnKY=; b=Pxww75kGbeaYBQ
-	Cbkr4v8M7T6x0fIw6mTJCGOtv9TFOcCKvTcR37ajaAVnKeobsTUX1RedVdAk9eIZOgVFeF8psZN/e
-	Oy2FYRgSiaZb2bdWd2+2U6WMFKWRxmXMvWpwSXCz9nPgHCdbBHgLKPKZhZ1TaIQF2t2IeDmQHGKnZ
-	6QG+/VPGeprr/+GA7Jds823kfxd3Sn843HASNQLIVMLGso+VSvneXYXsO1UTZ03snaZnpeyJFNpCv
-	FaIjyJsauhUk7gjUo/r/HwsHycIFVC+eausWiug5kzLM/Fq+aIQMCd2KWndk/NOnx97VhVtxZhjlx
-	EnPcR0ZAhCw6NurVB/SA==;
+	List-Owner; bh=BOh11GDhD+Brfp6B++4GKqDeEbbKmicSYbr1lVVOlao=; b=TPFNmhVuVEhNXr
+	u25KTtQqBh9C4aUp6YQbs/fN5MJ7NTZ5ngW5isWZv67u3+X0it0iz68sT6lSHSWp+bCPbOldqo0ny
+	KxnfY5QTZnY9jGuTZWugO2zBJXbZ7C+cFp3x9EBUeDiQH+6mkNj85cn3wY0mBv8a9MKQ+vs9HVU0F
+	us1xolZiTWLq9zAmkd8SO/rr+LOLuCnkaybhhbyBWNhbrN70nh5cPBSt+hctcxtBJJ1sd7M5HXYN2
+	h3Zea+CCHpjpy6NqA4aZrl8xh5akGwGUOuEKtkX1TVcfpkcHwpS2zX75tlCby7UyuCc9eGNfuzx1e
+	d5k4W+kOKFyn2dThSi+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iIzTI-0005KP-Hy; Fri, 11 Oct 2019 18:17:00 +0000
+	id 1iIzTm-0005d4-55; Fri, 11 Oct 2019 18:17:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iIzTE-0005Jp-V1; Fri, 11 Oct 2019 18:16:58 +0000
+ id 1iIzTj-0005cf-7c; Fri, 11 Oct 2019 18:17:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4212F142F;
- Fri, 11 Oct 2019 11:16:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9DF25142F;
+ Fri, 11 Oct 2019 11:17:26 -0700 (PDT)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7AAC3F703;
- Fri, 11 Oct 2019 11:16:52 -0700 (PDT)
-Subject: Re: [PATCH v3 06/17] arm64, hibernate: add trans_pgd public functions
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3BE8B3F703;
+ Fri, 11 Oct 2019 11:17:24 -0700 (PDT)
+Subject: Re: [PATCH v6 02/17] arm64: hibernate: pass the allocated pgdp to
+ ttbr0
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-7-pasha.tatashin@soleen.com>
- <bcc3f71f-97d2-dff4-c55a-4798c6e2bede@arm.com>
- <CA+CK2bCwRm_AQHzrJ8tdjp5k6Yj+32yRsvQsOoy7b44GTdd6wQ@mail.gmail.com>
+References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
+ <20191004185234.31471-3-pasha.tatashin@soleen.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <f1dbf5c6-7caf-daae-aec4-9a47a367c119@arm.com>
-Date: Fri, 11 Oct 2019 19:16:50 +0100
+Message-ID: <bb937db3-f23a-809b-4ad8-ca86f689554d@arm.com>
+Date: Fri, 11 Oct 2019 19:17:22 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <CA+CK2bCwRm_AQHzrJ8tdjp5k6Yj+32yRsvQsOoy7b44GTdd6wQ@mail.gmail.com>
+In-Reply-To: <20191004185234.31471-3-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_111657_088711_293AE44C 
-X-CRM114-Status: GOOD (  22.11  )
+X-CRM114-CacheID: sfid-20191011_111727_312665_0B05534F 
+X-CRM114-Status: GOOD (  10.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,15 +62,11 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
+ corbet@lwn.net, marc.zyngier@arm.com, catalin.marinas@arm.com,
+ bhsharma@redhat.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ jmorris@namei.org, linux-mm@kvack.org, ebiederm@xmission.com,
+ matthias.bgg@gmail.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
@@ -79,106 +74,30 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 Hi Pavel,
 
-On 06/09/2019 17:00, Pavel Tatashin wrote:
-> On Fri, Sep 6, 2019 at 11:18 AM James Morse <james.morse@arm.com> wrote:
->> On 21/08/2019 19:31, Pavel Tatashin wrote:
->>> trans_pgd_create_copy() and trans_pgd_map_page() are going to be
->>> the basis for public interface of new subsystem that handles page
->>
->> Please don't call this a subsystem. 'sound' and 'mm' are subsystems, this is just some
->> shared code.
-
-> Sounds good: just could not find a better term to call trans_pgd_*.
-
-I don't like the trans_pgd_ name either, but I can't think of anything better, and its
-only a name.
-
-
-> I won't fix log commits.
-
-Please avoid the word 'subsystem',
-
-
->>> diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
->>> index 750ecc7f2cbe..2e29d620b56c 100644
->>> --- a/arch/arm64/kernel/hibernate.c
->>> +++ b/arch/arm64/kernel/hibernate.c
->>> @@ -182,39 +182,15 @@ int arch_hibernation_header_restore(void *addr)
->>
->>> +int trans_pgd_map_page(pgd_t *trans_pgd, void *page,
->>> +                    unsigned long dst_addr,
->>> +                    pgprot_t pgprot)
->>
->> If this thing is going to be exposed, its name should reflect that its creating a set of
->> page tables, to map a single page.
->>
->> A function called 'map_page' with this prototype should 'obviously' map @page at @dst_addr
->> in @trans_pgd using the provided @pgprot... but it doesn't.
+On 04/10/2019 19:52, Pavel Tatashin wrote:
+> ttbr0 should be set to the beginning of pgdp, however, currently
+> in create_safe_exec_page it is set to pgdp after pgd_offset_raw(),
+> which works by accident.
 > 
-> Answered below...
-> 
->>
->> This is what 'create' was doing in the old name, if that wasn't obvious, its because
->> naming things is hard!
->> | trans_create_single_page_mapping()?
->>
->> (might be too verbose)
->>
->> I think this bites you in patch 8, where you 'generalise' this.
+> Fixes: 0194e760f7d2 ("arm64: hibernate: avoid potential TLB conflict")
 
-> The new naming makes more sense to me. The old code had function named:
-> 
-> create_safe_exec_page()
-> 
-> It was doing four things: 1. creating the actual page via provided
-> allocator, 2. copying content from the provided page to new page, 3
-> creating a new page table. 4 mapping it to a new page table at
-> specified destination address
+(That was a 'break before make' fix, the affected code comes from:
+ 82869ac57b5d (""arm64: kernel: Add support for hibernate/suspend-to-disk))
 
-Yup, all implied in the work of creation.
+But, it works in all one circumstances its used: we know all the top bits will be zero.
+I agree its by accident and we should fix it.
 
-
-> After, I generalize this the function the prototype looks like this:
-> 
-> int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
->                                          void *page, unsigned long
-> dst_addr, pgprot_t pgprot)
-> 
-> The function only does the "4" from the old code: map the specified
-> page at dst_addr.
-
-
-> The trans_pgd is already created.
-
-Which one is this?
-The existing hibernate code has two PGD. One for the copy of the linear-map, one for this
-safe page that contains the code doing the copying.
-
-
-> Of course, and
-> mapping function will have to allocate missing tables in the page
-> tables when necessary.
-
-I think you are over generalising this, to support a case that doesn't exist.
-
-Hibernate needs a copy of the linear map to relocate memory, without stepping in
-page-table, and an executable page it can do that from.
-
-To get kexec to relocate the kernel with the MMU on... you need the same.
-
-When do you need to add an arbitrary page to either of these sets of tables? Its either a
-copy of the linear-map, or the single executable page.
-
-When would does 'trans_pgd_map_page()' get used outside those two?
-
-(looking in your later series, I see you are using it to try and idmap stuff into the low
-memory. We can't do stuff like this because there may not be any memory in range of the
-page table helpers. More details in that patch)
+I don't think we should send it to stable.
+Please drop the fixes tag, with that:
+Reviewed-by: James Morse <james.morse@arm.com>
 
 
 Thanks,
 
 James
+
+
+[0] https://lore.kernel.org/linux-arm-kernel/ddd81093-89fc-5146-0b33-ad3bd9a1c10c@arm.com/
 
 _______________________________________________
 kexec mailing list
