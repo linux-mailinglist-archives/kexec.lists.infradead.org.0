@@ -2,49 +2,52 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0ED37D4C17
-	for <lists+kexec@lfdr.de>; Sat, 12 Oct 2019 04:22:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08FDED4C18
+	for <lists+kexec@lfdr.de>; Sat, 12 Oct 2019 04:22:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6OCF/RKkrkhd3GIVqBvqx0ZS0CfR40HEkz3fCufsNl8=; b=HbJ
-	m8vQYHe8MKxRt1hXhxdNYWAVNrUkoMFsbgxRDH3ZWF3dAoQ0WC3RfvozPEWh47sjHuyQuKaH8Q3ma
-	5N4u3gzDuLa/1sieiM4xGBtz2v9jqOXrF3uVLRxVJRr5EGImlVn8jAyBIBqQ4vnH8qf4nkoheJijC
-	P/QB+VmO6okM3d8c4aXp+tpZldOrxRRfsNmHEFuiVhJ2z9OlOEqb+uXeS+1OiuX3kSAY9iOEiPqnP
-	PSP0p+62vToVlttpCQ2N+gtWibFnLtM9kFPFaJGh03jcLY055NAKnjF1y6kjHnLW1Xj1/63N3E04i
-	9e1kJexeuiIsteNA4MPUuIzFFuWE1wg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=gljrLje/6a2GcTZc3TBAwUrTVxPBJSSZ9K7TDGRsc04=; b=avLhQw+ZMd5XRFXFiDh/QipZtU
+	YaTT+PwjTBNtyJg2K6YtnnA23mi0guU1yMtxSAjld6ejD6BzG7yRXq8dqi+AU9A/k8hzbh7UeT+4E
+	pbH22Rx+f/H/lC5vXyXwhfoXvJBBS/ORk3+piCxBOjFHWfcA0mxOctVC7zRBr6gyQ7k8zf3FJuLSo
+	az8udzA9aBTIbUzcGhgo/KUwIf3bRKWgG07QA9pGiLt6pW5usL6o4oDqok7WPehhcg0Oc0S51NrFV
+	QUnWS5/bHVHLZWe3DmyMBHlZ2KEmNPQr0imJ3mM141Gv9HTsxGB6lKtn7N6SRDRUSs6YBomUElWv1
+	XPTWokmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iJ72i-0007b4-8w; Sat, 12 Oct 2019 02:22:04 +0000
+	id 1iJ72k-0007ce-Qf; Sat, 12 Oct 2019 02:22:06 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iJ72b-0007aK-KM
- for kexec@lists.infradead.org; Sat, 12 Oct 2019 02:21:59 +0000
+ id 1iJ72h-0007bK-9T
+ for kexec@lists.infradead.org; Sat, 12 Oct 2019 02:22:04 +0000
 Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
  [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 4CBF110C0930;
- Sat, 12 Oct 2019 02:21:56 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id D6AF8309DEF0;
+ Sat, 12 Oct 2019 02:22:02 +0000 (UTC)
 Received: from localhost.localdomain.com (ovpn-12-50.pek2.redhat.com
  [10.72.12.50])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8115710018F8;
- Sat, 12 Oct 2019 02:21:45 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id DA6E910013D9;
+ Sat, 12 Oct 2019 02:21:56 +0000 (UTC)
 From: Lianbo Jiang <lijiang@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/3 v3] x86/kdump: Fix 'kmem -s' reported an invalid
+Subject: [PATCH 1/3 v3] x86/kdump: Fix 'kmem -s' reported an invalid
  freepointer when SME was active
-Date: Sat, 12 Oct 2019 10:21:37 +0800
-Message-Id: <20191012022140.19003-1-lijiang@redhat.com>
+Date: Sat, 12 Oct 2019 10:21:38 +0800
+Message-Id: <20191012022140.19003-2-lijiang@redhat.com>
+In-Reply-To: <20191012022140.19003-1-lijiang@redhat.com>
+References: <20191012022140.19003-1-lijiang@redhat.com>
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.66]); Sat, 12 Oct 2019 02:21:56 +0000 (UTC)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.45]); Sat, 12 Oct 2019 02:22:03 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191011_192157_685355_754C04C7 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20191011_192203_373067_6E588026 
+X-CRM114-Status: GOOD (  17.73  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,65 +78,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-In purgatory(), the main things are as below:
+Bugzilla: https://bugzilla.kernel.org/show_bug.cgi?id=204793
 
-[1] verify sha256 hashes for various segments.
-    Lets keep these codes, and do not touch the logic.
+Kdump kernel will reuse the first 640k region because of some reasons,
+for example: the trampline and conventional PC system BIOS region may
+require to allocate memory in this area. Obviously, kdump kernel will
+also overwrite the first 640k region, therefore, kernel has to copy
+the contents of the first 640k area to a backup area, which is done in
+purgatory(), because vmcore may need the old memory. When vmcore is
+dumped, kdump kernel will read the old memory from the backup area of
+the first 640k area.
 
-[2] copy the first 640k content to a backup region.
-    Lets safely remove it and clean all code related to backup region.
+Basically, the main reason should be clear, kernel does not correctly
+handle the first 640k region when SME is active, which causes that
+kernel does not properly copy these old memory to the backup area in
+purgatory(). Therefore, kdump kernel reads out the incorrect contents
+from the backup area when dumping vmcore. Finally, the phenomenon is
+as follow:
 
-This patch series will remove the backup region, because the current
-handling of copying the first 640k runs into problems when SME is
-active.
+[root linux]$ crash vmlinux /var/crash/127.0.0.1-2019-09-19-08\:31\:27/vmcore
+WARNING: kernel relocated [240MB]: patching 97110 gdb minimal_symbol values
 
-The low 1MiB region will always be reserved when the crashkernel kernel
-command line option is specified. And this way makes it unnecessary to
-do anything with the low 1MiB region, because the memory allocated later
-won't fall into the low 1MiB area.
+      KERNEL: /var/crash/127.0.0.1-2019-09-19-08:31:27/vmlinux
+    DUMPFILE: /var/crash/127.0.0.1-2019-09-19-08:31:27/vmcore  [PARTIAL DUMP]
+        CPUS: 128
+        DATE: Thu Sep 19 08:31:18 2019
+      UPTIME: 00:01:21
+LOAD AVERAGE: 0.16, 0.07, 0.02
+       TASKS: 1343
+    NODENAME: amd-ethanol
+     RELEASE: 5.3.0-rc7+
+     VERSION: #4 SMP Thu Sep 19 08:14:00 EDT 2019
+     MACHINE: x86_64  (2195 Mhz)
+      MEMORY: 127.9 GB
+       PANIC: "Kernel panic - not syncing: sysrq triggered crash"
+         PID: 9789
+     COMMAND: "bash"
+        TASK: "ffff89711894ae80  [THREAD_INFO: ffff89711894ae80]"
+         CPU: 83
+       STATE: TASK_RUNNING (PANIC)
 
-This series includes three patches:
-[1] Fix 'kmem -s' reported an invalid freepointer when SME was active
-    The low 1MiB region will always be reserved when the crashkernel
-    kernel command line option is specified, which ensures that the
-    memory allocated later won't fall into the low 1MiB area.
-    
-[2] x86/kdump cleanup: remove the unused crash_copy_backup_region()
-    The crash_copy_backup_region() has never been used, so clean
-    up the redundant code.
+crash> kmem -s|grep -i invalid
+kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+crash>
 
-[3] x86/kdump: clean up all the code related to the backup region
-    Remove the backup region and clean up.
+BTW: I also tried to fix the above problem in purgatory(), but there
+are too many restricts in purgatory() context, for example: i can't
+allocate new memory to create the identity mapping page table for SME
+situation.
 
-Changes since v1:
-[1] Add extra checking condition: when the crashkernel option is
-    specified, reserve the low 640k area.
+Currently, there are two places where the first 640k area is needed,
+the first one is in the find_trampoline_placement(), another one is
+in the reserve_real_mode(), and their content doesn't matter. To avoid
+the above error, when the crashkernel kernel command line option is
+specified, lets reserve the remain low 1MiB memory(after reserving
+real mode memroy) so that the allocated memory does not fall into the
+low 1MiB area, which makes us not to copy the first 640k content to a
+backup region in purgatory().
 
-Changes since v2:
-[1] Reserve the low 1MiB region when the crashkernel option is only
-    specified.(Suggested by Eric)
+In addition, also need to clean all the code related to the backup
+region later.
 
-[2] Remove the unused crash_copy_backup_region()
+Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+---
+ arch/x86/realmode/init.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-[3] Remove the backup region and clean up
-
-[4] Split them into three patches
-
-Lianbo Jiang (3):
-  x86/kdump: Fix 'kmem -s' reported an invalid freepointer when SME was
-    active
-  x86/kdump cleanup: remove the unused crash_copy_backup_region()
-  x86/kdump: clean up all the code related to the backup region
-
- arch/x86/include/asm/crash.h       |  1 -
- arch/x86/include/asm/kexec.h       | 10 ----
- arch/x86/include/asm/purgatory.h   | 10 ----
- arch/x86/kernel/crash.c            | 91 ++++++------------------------
- arch/x86/kernel/machine_kexec_64.c | 47 ---------------
- arch/x86/purgatory/purgatory.c     | 19 -------
- arch/x86/realmode/init.c           | 11 ++++
- 7 files changed, 27 insertions(+), 162 deletions(-)
-
+diff --git a/arch/x86/realmode/init.c b/arch/x86/realmode/init.c
+index 7dce39c8c034..bf4c8ffc5ed9 100644
+--- a/arch/x86/realmode/init.c
++++ b/arch/x86/realmode/init.c
+@@ -34,6 +34,17 @@ void __init reserve_real_mode(void)
+ 
+ 	memblock_reserve(mem, size);
+ 	set_real_mode_mem(mem);
++
++#ifdef CONFIG_KEXEC_CORE
++	/*
++	 * When the crashkernel option is specified, only use the low
++	 * 1MiB for the real mode trampoline.
++	 */
++	if (strstr(boot_command_line, "crashkernel=")) {
++		memblock_reserve(0, SZ_1M);
++		pr_info("Reserving low 1MiB of memory for crashkernel\n");
++	}
++#endif /* CONFIG_KEXEC_CORE */
+ }
+ 
+ static void __init setup_real_mode(void)
 -- 
 2.17.1
 
