@@ -2,76 +2,76 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61B23D6A23
-	for <lists+kexec@lfdr.de>; Mon, 14 Oct 2019 21:30:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95FB0D6C16
+	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 01:36:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jzD+H5AZCVoLcWkga6QhjCIXNnYCxsX+9Flj1bRpW6g=; b=KrD337mUHEU94D
-	UU3B2ZNooXMY4f0Ak7ejydF6IkW7YU1bni8S0Jn2Umc84eO+wye1hurLIJc0cxWnT8CCTlGqBg5HX
-	9BYqjoZj3KaxG918g4cmthhQ0LdEtTlPrZVHJ1sHEjEKyTCfJ0iwE2mBlqbcHNfkmSkr5U4I99jA+
-	cIgIA8Ib9e/AxniaYYU9EGkmTWMOgwNrcLuw/+ql5usoHgk1+ui++XnVxT6L7MYEeXjCrA+1k0TB/
-	CyCBRwk+D5rgifmCr0lp9TtUmqTKqR0iyNV9fSVrLdzhnDHmim0NBO4LJcsWFTnFIPMS32vJGDXA4
-	IYy4b90CtNbYSG3JyBBg==;
+	List-Owner; bh=k1LiaXO4kOSL6BIzcCQCxsQ6K4YVWs4F5lKbXFWmYGc=; b=fa29vHRvy8XNmD
+	NnTw/Ku0R4BmPi4oPepPS1myy+EGQ+PudXL9SoAwoOQbC7IjmWuitaqKW4qP8X8w9r2pkqYHcKPSW
+	WIzsIk9H3XJba+PkYBzcLUjRYAFrInObucHlQ5hg7S2lAkY+NtHW9AKVRqMYAtD7drDNhl/38HRIU
+	EZFQ84J79RA4SjsTLEYE5lui8gHfLhVnd7Uu3UH0pwh46qvgqUVWXKmg6as9kRDvQSTwRkZz+BwJM
+	1dpzB69ff0N7XmKzDWQJsJUq7BQuhkY5V8X+qXaTgmNbQ2mjbEWL5kFbpC6PlJk9T2nQdCk2HTK4M
+	AV0zqB+qPLTMYOMKLONg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK63B-00065R-RT; Mon, 14 Oct 2019 19:30:37 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1iK9sn-0003CF-2o; Mon, 14 Oct 2019 23:36:09 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK62m-0004V1-Kn
- for kexec@lists.infradead.org; Mon, 14 Oct 2019 19:30:18 +0000
-Received: by mail-ed1-x542.google.com with SMTP id r9so15786972edl.10
- for <kexec@lists.infradead.org>; Mon, 14 Oct 2019 12:30:11 -0700 (PDT)
+ id 1iK9sj-0003BQ-5l
+ for kexec@lists.infradead.org; Mon, 14 Oct 2019 23:36:06 +0000
+Received: by mail-ed1-x541.google.com with SMTP id r16so16197772edq.11
+ for <kexec@lists.infradead.org>; Mon, 14 Oct 2019 16:36:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kIlGWH7wshAdmQPQnvh6IPOGbDUQee/fBcMupsDy2Yg=;
- b=V5mdnIjnioWkVjrobG6tmEwjoXrFCBzemiMo18PIPiiNQFechVzXynv20H09Z+wndl
- OMqX6Yvcbob/cCOW/HG7f+QsYKt1sMYEfs2EFuygO5szJ1B3msXMCHsy/JdKCHLvtdDG
- yFYg55ufHy0FmyPgxHM2IyS7eIYsDknKnfTvLW9jQ9xkR2+IurjnFSi+osyTiNd7iBK/
- T/IS0M0tgeJpEOPuyaLXLT4tCCOb21zqZxeF5WUng4uAud/yRJr3y0xK3U15B+AH6Qhg
- gmgiPhyccTZth7D5jiiRTsjpxts8hf36+Fy3OW7clcAbGbSEJVHIJfIzSZEKBs2+cK5d
- HpsQ==
+ :cc; bh=gkziEWncJFESfbeN+tNU3lnfttVx9foN0npvs9N1QsY=;
+ b=O70o41Dmveei74jWdiTluAuKZOpFdp96KyP9T2+VLvoKG3708U5MU64uqWTOjJw2DI
+ 8fVopJbte7kdQDLDcOkGWxqOo1hPyLSGm9W5pwD9uSuKBWkYzkLQFnL0pO9rTTUkuOwv
+ YEKeJM4UaS36FSYnUDagTkfYpdKCDO1v58PJtngbqG4oKmWsHirTjN3FGADnX7mMblrq
+ UoC9Mmp7mBesVzhNvG+fDBUv3wy6kw0zxiKZxsynzZSe6ujfai3BCrztgADTlvkRGS6j
+ L5d9t+3fpiXBswUSa0ApWFQVBYX/GhB0xFLteIF/S20CrXAf1E8aB8uFws2F6tsq2Kpp
+ vUVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kIlGWH7wshAdmQPQnvh6IPOGbDUQee/fBcMupsDy2Yg=;
- b=BS78u52t1JZYtk2Bp1uKP8UzQqDWobVzW7Mlfcym1ggzCNlwGI3mjWows6gbsg9RSI
- fXl4uBmaJrsgV9rU1kIjEylz64t7XQPjg1Y/w+kX7gbNzs1o6Y5o4pQoc4bn5Y+GDc7P
- DCHICGXAym8aeWa5ijYBUGsHP+Fi2YBRa1pOF8JQ0hJhB4hxy9OYhr2DgxU1Qhex9RfE
- MdCxyVdbq+Q3jVSA2fA0CvQfHsF65REVCapjE+pWVCQ5TRlcTYBj+vWXiE/u2xsxOZtT
- W9dSn9tY2bM+aAMD3eaqlzv9lZ2e5jQDWdhHfT5S/9ukWECHatRmThxACtAC4UBIemuG
- CWUA==
-X-Gm-Message-State: APjAAAUst2NaxPJOUZDQA8PVNTW1eaay3FTJSrMKlb5F1H9RVJHqBsAQ
- 3aZAiC33BxoNop0JaWW5IpBGYc+CBzrpyicjSyZ0lQ==
-X-Google-Smtp-Source: APXvYqz3tIhyaGsZu4/lfjFbR9DxFhIt0sseQX6CsiNmmunhKYf+FnIGntsN+/O5mKhxIu232qNcvhzgmMK19NiaHWU=
+ bh=gkziEWncJFESfbeN+tNU3lnfttVx9foN0npvs9N1QsY=;
+ b=k5kd21OHiDgdqRx4uqM4d6/xfKM8oaUKiEfF6QgpMzpcAtFErAnBcGg4FQxVIoDxh2
+ lf7dWse1oLL2hsnjH/w7m2hBQYYKRTdlROKqBFXinkpivKwTlRlog3k/rjUSt3EmRSDV
+ lSRtUVkrnPFg/8Yg60BduBb0wTZWmWFAVtbAFhKW12FG+sq9KZMVnEKee7EopCWf63Xj
+ 81Xi0SqQ87aedIAgkXSwuxFtg4dQcjYhZV/VZdEJFnE3aoWxvevGk5Jjq5u6hAq+NFJd
+ 1MTF3F4NgMi62tFPnkm7ymOV2EMIviZ40w+D2IGGVRDeHpurydj3HO84ff3im04w0rEz
+ 44YQ==
+X-Gm-Message-State: APjAAAXRKc7+G+lj+g1FeS9lerQFffS/oyXnpJiJpdPLOTLfkoXCPwX8
+ H041d4ZjERW9Si1JDKY0Omtk3EWcXq4pv+pi4fwVvw==
+X-Google-Smtp-Source: APXvYqw21dAMS585cJditaHg7KjhOgxBh6OmUSMoHjJ0YGRuL7a8yLmdCHKtPPDp4d/BFzWCo6uVZPGvN8Y+J4yqjTw=
 X-Received: by 2002:a17:906:2cca:: with SMTP id
- r10mr30792016ejr.108.1571081409709; 
- Mon, 14 Oct 2019 12:30:09 -0700 (PDT)
+ r10mr31786307ejr.108.1571096163334; 
+ Mon, 14 Oct 2019 16:36:03 -0700 (PDT)
 MIME-Version: 1.0
 References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
- <20191004185234.31471-15-pasha.tatashin@soleen.com>
- <f1c50a5f-103e-e6d7-e93d-e873a169833e@arm.com>
-In-Reply-To: <f1c50a5f-103e-e6d7-e93d-e873a169833e@arm.com>
+ <20191004185234.31471-16-pasha.tatashin@soleen.com>
+ <fe5a4aae-fae3-f30f-db15-f3eced229a6e@arm.com>
+In-Reply-To: <fe5a4aae-fae3-f30f-db15-f3eced229a6e@arm.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Mon, 14 Oct 2019 15:29:58 -0400
-Message-ID: <CA+CK2bBU3ZkTRP8VuS7zwKLPBa+4nSdirq_ss7_aODoLe2iucA@mail.gmail.com>
-Subject: Re: [PATCH v6 14/17] arm64: kexec: move relocation function setup and
- clean up
+Date: Mon, 14 Oct 2019 19:35:51 -0400
+Message-ID: <CA+CK2bBRRQsepxrWnOUOnFfPUe5SYsOurQ3kL_P1ghxze77RFQ@mail.gmail.com>
+Subject: Re: [PATCH v6 15/17] arm64: kexec: add expandable argument to
+ relocation function
 To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_123013_111670_38837980 
-X-CRM114-Status: GOOD (  20.11  )
+X-CRM114-CacheID: sfid-20191014_163605_395040_92B0B679 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,121 +107,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> > In addition, do some cleanup: add infor about reloction function to
+> > +struct kern_reloc_arg {
+> > +     unsigned long   head;
+> > +     unsigned long   entry_addr;
+> > +     unsigned long   kern_arg0;
+> > +     unsigned long   kern_arg1;
+> > +     unsigned long   kern_arg2;
+> > +     unsigned long   kern_arg3;
 >
-> infor ? reloction?
+> ... at least one of these should by phys_addr_t!
 
-Typo. I have fixed commit log. It meant to be "info about
-arm64_relocate_new_kernel function"
-
->
->
-> > kexec_image_info(), and remove extra messages from machine_kexec().
->
->
-> > Make dtb_mem, always available, if CONFIG_KEXEC_FILE is not configured
-> > dtb_mem is set to zero anyway.
->
-> This is unrelated cleanup, please do it as an earlier patch to make it clearer what you
-> are changing here.
-Ok.
+OK, changed them to phys_addr_t
 
 >
-> (I'm not convinced you need to cache va<->pa)
+> While the sizes are the same on arm64, this reminds the reader what kind of address this
+> is, and lets the compiler warn you if you make a mistake.
+
+OK
+
 >
 >
-> > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > index 12a561a54128..d15ca1ca1e83 100644
-> > --- a/arch/arm64/include/asm/kexec.h
-> > +++ b/arch/arm64/include/asm/kexec.h
-> > @@ -90,14 +90,15 @@ static inline void crash_prepare_suspend(void) {}
-> >  static inline void crash_post_resume(void) {}
-> >  #endif
+> > +};
+>
+> > diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
+> > index 214685760e1c..900394907fd8 100644
+> > --- a/arch/arm64/kernel/asm-offsets.c
+> > +++ b/arch/arm64/kernel/asm-offsets.c
+> > @@ -23,6 +23,7 @@
+> >  #include <asm/suspend.h>
+> >  #include <linux/kbuild.h>
+> >  #include <linux/arm-smccc.h>
+> > +#include <linux/kexec.h>
 > >
-> > -#ifdef CONFIG_KEXEC_FILE
-> >  #define ARCH_HAS_KIMAGE_ARCH
+> >  int main(void)
+> >  {
+> > @@ -126,6 +127,14 @@ int main(void)
+> >  #ifdef CONFIG_ARM_SDE_INTERFACE
+> >    DEFINE(SDEI_EVENT_INTREGS, offsetof(struct sdei_registered_event, interrupted_regs));
+> >    DEFINE(SDEI_EVENT_PRIORITY,        offsetof(struct sdei_registered_event, priority));
+> > +#endif
+> > +#ifdef CONFIG_KEXEC_CORE
+> > +  DEFINE(KRELOC_HEAD,                offsetof(struct kern_reloc_arg, head));
+> > +  DEFINE(KRELOC_ENTRY_ADDR,  offsetof(struct kern_reloc_arg, entry_addr));
+> > +  DEFINE(KRELOC_KERN_ARG0,   offsetof(struct kern_reloc_arg, kern_arg0));
+> > +  DEFINE(KRELOC_KERN_ARG1,   offsetof(struct kern_reloc_arg, kern_arg1));
+> > +  DEFINE(KRELOC_KERN_ARG2,   offsetof(struct kern_reloc_arg, kern_arg2));
+> > +  DEFINE(KRELOC_KERN_ARG3,   offsetof(struct kern_reloc_arg, kern_arg3));
+>
+> Please use kexec as the prefix. The kernel also applies relocations during early boot.
+> These are global values, and in isolation doesn't imply kexec.
+
+OK
+> >  .align 3     /* To keep the 64-bit values below naturally aligned. */
+> > -
+> >  .Lcopy_end:
+> >  .org KEXEC_CONTROL_PAGE_SIZE
 > >
-> >  struct kimage_arch {
-> >       void *dtb;
-> >       unsigned long dtb_mem;
 >
-> > +     unsigned long kern_reloc;
+> My eyes!
 >
-> This is cache-ing the physical address of an all-architectures value from struct kimage,
-> in the arch specific part of struct kiamge. Why?
-> (You must have the struct kimage on hand to access this thing at all!)
-
-Because, currently only one physical page is used in order to do reboot:
-control_code_page; this is where arm64_relocate_new_kernel is copied.
-So, PA of control_code_page is used as a handler. But with MMU enabled
-kexec reboot, a number of pages are allocated for reboot purposes,
-they contain page table, arm64_relocate_new_kernel, and el2 vector
-table. This is why we need handlers. control_code_page is simply one
-of the pages that can contains any of the kexec reboot specific data.
-
-> If its supposed to be a physical address, please use phys_addr_t.
-
-Done that, also changed dtb_mem to phys_addr_t.
-
+> Please don't make unnecessary changes. Its hard enough to read the assembly, moving
+> whitespace, comments and re-allocating the register guarantees that no-one can work out
+> what is happening.
 >
-> >  };
->
->
-> > diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-> > index 0df8493624e0..9b41da50e6f7 100644
-> > --- a/arch/arm64/kernel/machine_kexec.c
-> > +++ b/arch/arm64/kernel/machine_kexec.c
-> > @@ -42,6 +42,7 @@ static void _kexec_image_info(const char *func, int line,
-> >       pr_debug("    start:       %lx\n", kimage->start);
-> >       pr_debug("    head:        %lx\n", kimage->head);
-> >       pr_debug("    nr_segments: %lu\n", kimage->nr_segments);
-> > +     pr_debug("    kern_reloc: %pa\n", &kimage->arch.kern_reloc);
-> >
-> >       for (i = 0; i < kimage->nr_segments; i++) {
-> >               pr_debug("      segment[%lu]: %016lx - %016lx, 0x%lx bytes, %lu pages\n",
-> > @@ -58,6 +59,19 @@ void machine_kexec_cleanup(struct kimage *kimage)
-> >       /* Empty routine needed to avoid build errors. */
-> >  }
-> >
-> > +int machine_kexec_post_load(struct kimage *kimage)
-> > +{
-> > +     unsigned long kern_reloc;
-> > +
-> > +     kern_reloc = page_to_phys(kimage->control_code_page);
->
-> kern_reloc should be phys_addr_t.
+> If something needs cleaning up to make the change obvious, it needs doing as a previous
+> patch. Mechanical changes are fairly easy to review.
+> Functional changes behind a whirlwind of mechanical changes will cause the reviewer to
+> give up.
 
-Ok
+Sure, I have split this patch into several patches, and moved
+clean-ups into separate patches.
 
->
->
-> > +     memcpy(__va(kern_reloc), arm64_relocate_new_kernel,
-> > +            arm64_relocate_new_kernel_size);
-> > +     kimage->arch.kern_reloc = kern_reloc;
->
->
-> Please move the cache maintenance in here too. This will save us doing it late during
-> kdump. This will also group the mmu-on changes together.
-
-OK, but I think we should do it in a separate patch. I assume you mean
-this code to be moved to load time:
-
-177         /* Flush the reboot_code_buffer in preparation for its execution. */
-178         __flush_dcache_area(reboot_code_buffer,
-arm64_relocate_new_kernel_size);
-179
-180         /*
-181          * Although we've killed off the secondary CPUs, we don't update
-182          * the online mask if we're handling a crash kernel and consequently
-183          * need to avoid flush_icache_range(), which will attempt to IPI
-184          * the offline CPUs. Therefore, we must use the __* variant here.
-185          */
-186         __flush_icache_range((uintptr_t)reboot_code_buffer,
-187                              arm64_relocate_new_kernel_size);
-
-Is it safe to do? We do not know what CPU is going to be executing
-kexec reboot for us at the load time.
-
+Thank you,
 Pasha
 
 _______________________________________________
