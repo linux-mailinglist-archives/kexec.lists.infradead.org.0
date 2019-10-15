@@ -2,68 +2,101 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40278D6D2D
-	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 04:19:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1325D742D
+	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 13:06:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UPiIJqRqllz3hJAf8fEHpWHqr9PlpTodAKo8WhhK0j8=; b=K5IW92ZhbCTA5k
-	poz8sVpFyYl9by95S+qcF/XU+dP4JdvA4qHci9+jftemkxgf9jF87Oha2lj86hmBNrNkCA4iBXw+d
-	djqT2/P1ciC4gE08SlnqkfieIr++jFlSRjQe0s4FvFMeLNcrLS1IJJ/XqCa4Dsu7aNbFqnMha29uz
-	arJDsgFPVc6GkjYeXUgJOm4mkq0nvuUGTqRcTpGo2jMq5se0Aq8CLdLT2ake+0yQSkMOrY6+FUBQO
-	CVzAk5zw6uwtRzedFB403q9afBRehnMFs1g0gzoLU0Sp8IwFNi1ToKpvSXR5Tg2PtCvBszDeCabvU
-	Eu9GmLagc/lXKHjQOJ0w==;
+	List-Owner; bh=VtqeDmArB17Jyv4wZWTu8rRLOaiU6QIYWyMhXLQlJBY=; b=NR1bi2Q5L6wwZy
+	2vYeg5djbEQ251VYgxFycGLqu1hDNgk1w663gD+c58vx3bjJ2a0oCwNqr29ogKL9t40BgGsH4Jyig
+	KzD0vfZvebr41HNVDQn2qFCz/mOg57D1L2vfflwy/n5xzpdNFrkDRhfHahHCiuUyihDGuthSzNOi3
+	ctTN8kwa+W6gXYKckQYpSTEOjaFKju6HTC8iXA3NZLri+KK2VWX9y3AGl2UQeD1d23Sv+D+Lauf/7
+	847e3gukkJ0KDxQjQd+Al3Yudtp+x099y+RxGGQtrGG7izeE1HfYU7nPvrWi5UmSHDJcbO4a637ye
+	N6qospASPD8IRPt1p4RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKCQU-0007lk-P0; Tue, 15 Oct 2019 02:19:06 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1iKKeh-0004gh-VJ; Tue, 15 Oct 2019 11:06:19 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKCQQ-0007kj-7t
- for kexec@lists.infradead.org; Tue, 15 Oct 2019 02:19:04 +0000
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 70D17859FC;
- Tue, 15 Oct 2019 02:18:57 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-17.pek2.redhat.com
- [10.72.12.17])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id ED97E60BE2;
- Tue, 15 Oct 2019 02:18:51 +0000 (UTC)
-Date: Tue, 15 Oct 2019 10:18:48 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Kairui Song <kasong@redhat.com>
-Subject: Re: [PATCH v3 2/2] x86/kdump: Reserve extra memory when SME or SEV
- is active
-Message-ID: <20191015021848.GA18043@dhcp-128-65.nay.redhat.com>
-References: <20190910151341.14986-1-kasong@redhat.com>
- <20190910151341.14986-3-kasong@redhat.com>
- <20190911055618.GA104115@gmail.com>
- <CACPcB9eZUZ1fCsc1GZs9MJnoqLK9Ld5KEx0_emx8J44Mjcy3WA@mail.gmail.com>
- <20190927054208.GA13426@dhcp-128-65.nay.redhat.com>
- <3e1f65de-4539-736e-a7b4-3c726a001f4b@redhat.com>
- <20191014110504.GA16271@dhcp-128-65.nay.redhat.com>
+ id 1iKKec-0004cb-1H
+ for kexec@lists.infradead.org; Tue, 15 Oct 2019 11:06:15 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1iKKdl-0007dW-VC; Tue, 15 Oct 2019 05:05:21 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1iKKdk-0007IJ-Jj; Tue, 15 Oct 2019 05:05:21 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: lijiang <lijiang@redhat.com>
+References: <20191012022140.19003-1-lijiang@redhat.com>
+ <20191012022140.19003-4-lijiang@redhat.com>
+ <87d0f22oi5.fsf@x220.int.ebiederm.org>
+ <20191012121625.GA11587@dhcp-128-65.nay.redhat.com>
+ <87zhi51ers.fsf@x220.int.ebiederm.org>
+ <72edff0b-9778-2e83-224b-7fe70dfb8d73@redhat.com>
+Date: Tue, 15 Oct 2019 06:04:27 -0500
+In-Reply-To: <72edff0b-9778-2e83-224b-7fe70dfb8d73@redhat.com> (lijiang's
+ message of "Sun, 13 Oct 2019 17:36:28 +0800")
+Message-ID: <8736fu1d8k.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191014110504.GA16271@dhcp-128-65.nay.redhat.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.26]); Tue, 15 Oct 2019 02:18:57 +0000 (UTC)
+X-XM-SPF: eid=1iKKdk-0007IJ-Jj; ; ; mid=<8736fu1d8k.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX19iVApUpJOYp2UXKbyUu9vVJ5ookFgRwWM=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa08.xmission.com
+X-Spam-Level: **
+X-Spam-Status: No, score=2.5 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels,XMSubLong,
+ XM_B_Unicode,XM_Body_Dirty_Words autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.5000]
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.7 XMSubLong Long Subject
+ *  0.0 XM_B_Unicode BODY: Testing for specific types of unicode
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa08 1397; Body=1 Fuz1=1 Fuz2=1]
+ *  0.5 XM_Body_Dirty_Words Contains a dirty word
+X-Spam-DCC: XMission; sa08 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: **;lijiang <lijiang@redhat.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 782 ms - load_scoreonly_sql: 0.03 (0.0%),
+ signal_user_changed: 3.2 (0.4%), b_tie_ro: 2.2 (0.3%), parse: 0.82
+ (0.1%), extract_message_metadata: 4.4 (0.6%), get_uri_detail_list: 2.4
+ (0.3%), tests_pri_-1000: 3.5 (0.4%), tests_pri_-950: 1.49 (0.2%),
+ tests_pri_-900: 1.25 (0.2%), tests_pri_-90: 34 (4.3%), check_bayes: 32
+ (4.1%), b_tokenize: 10 (1.3%), b_tok_get_all: 11 (1.4%), b_comp_prob:
+ 3.1 (0.4%), b_tok_touch_all: 4.4 (0.6%), b_finish: 0.82 (0.1%),
+ tests_pri_0: 717 (91.8%), check_dkim_signature: 0.62 (0.1%),
+ check_dkim_adsp: 2.5 (0.3%), poll_dns_idle: 0.90 (0.1%), tests_pri_10:
+ 2.2 (0.3%), tests_pri_500: 7 (0.9%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 3/3 v3] x86/kdump: clean up all the code related to the
+ backup region
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_191902_330113_5579E6BE 
-X-CRM114-Status: GOOD (  45.71  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191015_040614_104501_6F92B553 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.232 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -76,167 +109,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Lendacky <Thomas.Lendacky@amd.com>,
- Lianbo Jiang <lijiang@redhat.com>, Baoquan He <bhe@redhat.com>,
- the arch/x86 maintainers <x86@kernel.org>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ mingo@redhat.com, bp@alien8.de, hpa@zytor.com, tglx@linutronix.de,
+ Dave Young <dyoung@redhat.com>, vgoyal@redhat.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 10/14/19 at 07:05pm, Dave Young wrote:
-> On 10/12/19 at 05:24pm, Kairui Song wrote:
-> > On 9/27/19 1:42 PM, Dave Young wrote:
-> > > On 09/25/19 at 06:36pm, Kairui Song wrote:
-> > > > On Wed, Sep 11, 2019 at 1:56 PM Ingo Molnar <mingo@kernel.org> wrote:
-> > > > > * Kairui Song <kasong@redhat.com> wrote:
-> > > > > 
-> > > > > > Since commit c7753208a94c ("x86, swiotlb: Add memory encryption support"),
-> > > > > > SWIOTLB will be enabled even if there is less than 4G of memory when SME
-> > > > > > is active, to support DMA of devices that not support address with the
-> > > > > > encrypt bit.
-> > > > > > 
-> > > > > > And commit aba2d9a6385a ("iommu/amd: Do not disable SWIOTLB if SME is
-> > > > > > active") make the kernel keep SWIOTLB enabled even if there is an IOMMU.
-> > > > > > 
-> > > > > > Then commit d7b417fa08d1 ("x86/mm: Add DMA support for SEV memory
-> > > > > > encryption") will always force SWIOTLB to be enabled when SEV is active
-> > > > > > in all cases.
-> > > > > > 
-> > > > > > Now, when either SME or SEV is active, SWIOTLB will be force enabled,
-> > > > > > and this is also true for kdump kernel. As a result kdump kernel will
-> > > > > > run out of already scarce pre-reserved memory easily.
-> > > > > > 
-> > > > > > So when SME/SEV is active, reserve extra memory for SWIOTLB to ensure
-> > > > > > kdump kernel have enough memory, except when "crashkernel=size[KMG],high"
-> > > > > > is specified or any offset is used. As for the high reservation case, an
-> > > > > > extra low memory region will always be reserved and that is enough for
-> > > > > > SWIOTLB. Else if the offset format is used, user should be fully aware
-> > > > > > of any possible kdump kernel memory requirement and have to organize the
-> > > > > > memory usage carefully.
-> > > > > > 
-> > > > > > Signed-off-by: Kairui Song <kasong@redhat.com>
-> > > > > > ---
-> > > > > >   arch/x86/kernel/setup.c | 20 +++++++++++++++++---
-> > > > > >   1 file changed, 17 insertions(+), 3 deletions(-)
-> > > > > > 
-> > > > > > diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
-> > > > > > index 71f20bb18cb0..ee6a2f1e2226 100644
-> > > > > > --- a/arch/x86/kernel/setup.c
-> > > > > > +++ b/arch/x86/kernel/setup.c
-> > > > > > @@ -530,7 +530,7 @@ static int __init crashkernel_find_region(unsigned long long *crash_base,
-> > > > > >                                          unsigned long long *crash_size,
-> > > > > >                                          bool high)
-> > > > > >   {
-> > > > > > -     unsigned long long base, size;
-> > > > > > +     unsigned long long base, size, mem_enc_req = 0;
-> > > > > > 
-> > > > > >        base = *crash_base;
-> > > > > >        size = *crash_size;
-> > > > > > @@ -561,11 +561,25 @@ static int __init crashkernel_find_region(unsigned long long *crash_base,
-> > > > > >        if (high)
-> > > > > >                goto high_reserve;
-> > > > > > 
-> > > > > > +     /*
-> > > > > > +      * When SME/SEV is active and not using high reserve,
-> > > > > > +      * it will always required an extra SWIOTLB region.
-> > > > > > +      */
-> > > > > > +     if (mem_encrypt_active())
-> > > > > > +             mem_enc_req = ALIGN(swiotlb_size_or_default(), SZ_1M);
-> > > > > > +
-> > > > > >        base = memblock_find_in_range(CRASH_ALIGN,
-> > > > > > -                                   CRASH_ADDR_LOW_MAX, size,
-> > > > > > +                                   CRASH_ADDR_LOW_MAX,
-> > > > > > +                                   size + mem_enc_req,
-> > > > > >                                      CRASH_ALIGN);
-> > > > > 
-> > > > 
-> > > > Hi Ingo,
-> > > > 
-> > > > I re-read my previous reply, it's long and tedious, let me try to make
-> > > > a more effective reply:
-> > > > 
-> > > > > What sizes are we talking about here?
-> > > > 
-> > > > The size here is how much memory will be reserved for kdump kernel, to
-> > > > ensure kdump kernel and userspace can run without OOM.
-> > > > 
-> > > > > 
-> > > > > - What is the possible size range of swiotlb_size_or_default()
-> > > > 
-> > > > swiotlb_size_or_default() returns the swiotlb size, it's specified by
-> > > > user using swiotlb=<size>, or default size (64MB)
-> > > > 
-> > > > > 
-> > > > > - What is the size of CRASH_ADDR_LOW_MAX (the old limit)?
-> > > > 
-> > > > It's 4G.
-> > > > 
-> > > > > 
-> > > > > - Why do we replace one fixed limit with another fixed limit instead of
-> > > > >    accurately sizing the area, with each required feature adding its own
-> > > > >    requirement to the reservation size?
-> > > > 
-> > > > It's quite hard to "accurately sizing the area".
-> > > > 
-> > > > No way to tell the exact amount of memory kdump needs, we can only estimate.
-> > > > Kdump kernel use different cmdline, drivers and components will have
-> > > > special handling for kdump, and userspace is totally different.
-> > > 
-> > > Agreed about your above, but specific this the problem in this patch
-> > > There should be other ways.
-> > > 
-> > > First thought about doing generic handling in swiotlb part, and do
-> > > something like kdump_memory_reserve(size) Ingo suggested,  but according
-> > > to you swiotlb init is late, so it can not increase the size, OTOH if
-> > > reserve another region for kdump in swiotlb will cause other issues.
-> > > 
-> > > So let's think about other improvement, for example to see if you can
-> > > call kdump_memory_reserve(size) in AMD SME init path, for example in
-> > > mem_encrypt_init(), is it before crashkernel reservation?
-> > > 
-> > > If doable it will be at least cleaner than the code in this patch.
-> > > 
-> > > Thanks
-> > > Dave
-> > > 
-> > 
-> > How about something simple as following code? The logic and new function is as simple as
-> > possible, just always reserve extra low memory when SME/SEV is active, ignore the high/low
-> > reservation case. It will waste some memory with SME and high reservation though.
-> > 
-> > Was hesitating a lot about this series, one thing I'm thinking is that what is the point
-> > of "crashkernel=" argument, if the crashkernel value could be adjusted according, the value
-> > specified will seems more meanless or confusing...
-> > 
-> > And currently there isn't anything like crashkernel=auto or anything similiar to let kernel
-> > calculate the value automatically, maybe the admin should be aware of the value or be informed
-> > about the suitable crashkernel value after all?
-> 
-> Hmm, it is reasonable that a user defined value should be just as is
-> without any change by kernel.  So it is a good reason to introduce
-> a crashkernel=auto so that kernel can tune the crashkernel size
-> accordingly on top of some base value which can be configurable by
-> kernel configs (arch dependent).
-> 
-
-And for the time being, can just print a warning when crashkernel= param
-is used, in mem_encrypt_init() code. alert people to increase the memory
-size swiotlb_size_or_default().
-
-In the future, if the crashkernel=auto is doable then kernel can adapt
-to that in code.  Even if it is reasonable to let admin to provide a
-exact value but sometimes it is hard to know these kernel requirement
-details..
-
-Thanks
-Dave
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+bGlqaWFuZyA8bGlqaWFuZ0ByZWRoYXQuY29tPiB3cml0ZXM6Cgo+IOWcqCAyMDE55bm0MTDmnIgx
+M+aXpSAxMTo1NCwgRXJpYyBXLiBCaWVkZXJtYW4g5YaZ6YGTOgo+PiBEYXZlIFlvdW5nIDxkeW91
+bmdAcmVkaGF0LmNvbT4gd3JpdGVzOgo+PiAKPj4+IEhpIEVyaWMsCj4+Pgo+Pj4gT24gMTAvMTIv
+MTkgYXQgMDY6MjZhbSwgRXJpYyBXLiBCaWVkZXJtYW4gd3JvdGU6Cj4+Pj4gTGlhbmJvIEppYW5n
+IDxsaWppYW5nQHJlZGhhdC5jb20+IHdyaXRlczoKPj4+Pgo+Pj4+PiBXaGVuIHRoZSBjcmFzaGtl
+cm5lbCBrZXJuZWwgY29tbWFuZCBsaW5lIG9wdGlvbiBpcyBzcGVjaWZpZWQsIHRoZQo+Pj4+PiBs
+b3cgMU1pQiBtZW1vcnkgd2lsbCBhbHdheXMgYmUgcmVzZXJ2ZWQsIHdoaWNoIG1ha2VzIHRoYXQg
+dGhlIG1lbW9yeQo+Pj4+PiBhbGxvY2F0ZWQgbGF0ZXIgd29uJ3QgZmFsbCBpbnRvIHRoZSBsb3cg
+MU1pQiBhcmVhLCB0aGVyZWJ5LCBpdCdzIG5vdAo+Pj4+PiBuZWNlc3NhcnkgdG8gY3JlYXRlIGEg
+YmFja3VwIHJlZ2lvbiBhbmQgYWxzbyBubyBuZWVkIHRvIGNvcHkgdGhlIGZpcnN0Cj4+Pj4+IDY0
+MGsgY29udGVudCB0byBhIGJhY2t1cCByZWdpb24uCj4+Pj4+Cj4+Pj4+IEN1cnJlbnRseSwgdGhl
+IGNvZGUgcmVsYXRlZCB0byB0aGUgYmFja3VwIHJlZ2lvbiBjYW4gYmUgc2FmZWx5IHJlbW92ZWQs
+Cj4+Pj4+IHNvIGxldHMgY2xlYW4gdXAuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IExpYW5i
+byBKaWFuZyA8bGlqaWFuZ0ByZWRoYXQuY29tPgo+Pj4+PiAtLS0KPj4+Pgo+Pj4+PiBkaWZmIC0t
+Z2l0IGEvYXJjaC94ODYva2VybmVsL2NyYXNoLmMgYi9hcmNoL3g4Ni9rZXJuZWwvY3Jhc2guYwo+
+Pj4+PiBpbmRleCBlYjY1MWZiZGU5MmEuLmNjNTc3NGZjODRjMCAxMDA2NDQKPj4+Pj4gLS0tIGEv
+YXJjaC94ODYva2VybmVsL2NyYXNoLmMKPj4+Pj4gKysrIGIvYXJjaC94ODYva2VybmVsL2NyYXNo
+LmMKPj4+Pj4gQEAgLTE3Myw4ICsxNzMsNiBAQCB2b2lkIG5hdGl2ZV9tYWNoaW5lX2NyYXNoX3No
+dXRkb3duKHN0cnVjdCBwdF9yZWdzICpyZWdzKQo+Pj4+PiAgCj4+Pj4+ICAjaWZkZWYgQ09ORklH
+X0tFWEVDX0ZJTEUKPj4+Pj4gIAo+Pj4+PiAtc3RhdGljIHVuc2lnbmVkIGxvbmcgY3Jhc2hfemVy
+b19ieXRlczsKPj4+Pj4gLQo+Pj4+PiAgc3RhdGljIGludCBnZXRfbnJfcmFtX3Jhbmdlc19jYWxs
+YmFjayhzdHJ1Y3QgcmVzb3VyY2UgKnJlcywgdm9pZCAqYXJnKQo+Pj4+PiAgewo+Pj4+PiAgCXVu
+c2lnbmVkIGludCAqbnJfcmFuZ2VzID0gYXJnOwo+Pj4+PiBAQCAtMjM0LDkgKzIzMiwxNSBAQCBz
+dGF0aWMgaW50IHByZXBhcmVfZWxmNjRfcmFtX2hlYWRlcnNfY2FsbGJhY2soc3RydWN0IHJlc291
+cmNlICpyZXMsIHZvaWQgKmFyZykKPj4+Pj4gIHsKPj4+Pj4gIAlzdHJ1Y3QgY3Jhc2hfbWVtICpj
+bWVtID0gYXJnOwo+Pj4+PiAgCj4+Pj4+IC0JY21lbS0+cmFuZ2VzW2NtZW0tPm5yX3Jhbmdlc10u
+c3RhcnQgPSByZXMtPnN0YXJ0Owo+Pj4+PiAtCWNtZW0tPnJhbmdlc1tjbWVtLT5ucl9yYW5nZXNd
+LmVuZCA9IHJlcy0+ZW5kOwo+Pj4+PiAtCWNtZW0tPm5yX3JhbmdlcysrOwo+Pj4+PiArCWlmIChy
+ZXMtPnN0YXJ0ID49IFNaXzFNKSB7Cj4+Pj4+ICsJCWNtZW0tPnJhbmdlc1tjbWVtLT5ucl9yYW5n
+ZXNdLnN0YXJ0ID0gcmVzLT5zdGFydDsKPj4+Pj4gKwkJY21lbS0+cmFuZ2VzW2NtZW0tPm5yX3Jh
+bmdlc10uZW5kID0gcmVzLT5lbmQ7Cj4+Pj4+ICsJCWNtZW0tPm5yX3JhbmdlcysrOwo+Pj4+PiAr
+CX0gZWxzZSBpZiAocmVzLT5lbmQgPiBTWl8xTSkgewo+Pj4+PiArCQljbWVtLT5yYW5nZXNbY21l
+bS0+bnJfcmFuZ2VzXS5zdGFydCA9IFNaXzFNOwo+Pj4+PiArCQljbWVtLT5yYW5nZXNbY21lbS0+
+bnJfcmFuZ2VzXS5lbmQgPSByZXMtPmVuZDsKPj4+Pj4gKwkJY21lbS0+bnJfcmFuZ2VzKys7Cj4+
+Pj4+ICsJfQo+Pj4+Cj4+Pj4gV2hhdCBpcyBnb2luZyBvbiB3aXRoIHRoaXMgY2h1bms/ICBJIGNh
+biBndWVzcyBidXQgdGhpcyBuZWVkcyBhIGNsZWFyCj4+Pj4gY29tbWVudC4KPj4+Cj4+PiBJbmRl
+ZWQgaXQgbmVlZHMgc29tZSBjb2RlIGNvbW1lbnQsIHRoaXMgaXMgYmFzZWQgb24gc29tZSBvZmZs
+aW5lCj4+PiBkaXNjdXNzaW9uLiAgY2F0IC9wcm9jL3ZtY29yZSB3aWxsIGdpdmUgYSB3YXJuaW5n
+IGJlY2F1c2UgaW9yZW1hcCBpcwo+Pj4gbWFwcGluZyB0aGUgc3lzdGVtIHJhbS4KPj4+Cj4+PiBX
+ZSBwYXNzIHRoZSBmaXJzdCAxTSB0byBrZHVtcCBrZXJuZWwgaW4gZTgyMCBhcyBzeXN0ZW0gcmFt
+IHNvIHRoYXQgMm5kCj4+PiBrZXJuZWwgY2FuIHVzZSB0aGUgbG93IDFNIG1lbW9yeSBiZWNhdXNl
+IGZvciBleGFtcGxlIHRoZSB0cmFtcG9saW5lCj4+PiBjb2RlLgo+Pj4KPj4+Pgo+Pj4+PiAgCj4+
+Pj4+ICAJcmV0dXJuIDA7Cj4+Pj4+ICB9Cj4+Pj4KPj4+Pj4gQEAgLTM1Niw5ICszMzcsMTIgQEAg
+aW50IGNyYXNoX3NldHVwX21lbW1hcF9lbnRyaWVzKHN0cnVjdCBraW1hZ2UgKmltYWdlLCBzdHJ1
+Y3QgYm9vdF9wYXJhbXMgKnBhcmFtcykKPj4+Pj4gIAltZW1zZXQoJmNtZCwgMCwgc2l6ZW9mKHN0
+cnVjdCBjcmFzaF9tZW1tYXBfZGF0YSkpOwo+Pj4+PiAgCWNtZC5wYXJhbXMgPSBwYXJhbXM7Cj4+
+Pj4+ICAKPj4+Pj4gLQkvKiBBZGQgZmlyc3QgNjQwSyBzZWdtZW50ICovCj4+Pj4+IC0JZWkuYWRk
+ciA9IGltYWdlLT5hcmNoLmJhY2t1cF9zcmNfc3RhcnQ7Cj4+Pj4+IC0JZWkuc2l6ZSA9IGltYWdl
+LT5hcmNoLmJhY2t1cF9zcmNfc3o7Cj4+Pj4+ICsJLyoKPj4+Pj4gKwkgKiBBZGQgdGhlIGxvdyBt
+ZW1vcnkgcmFuZ2VbMHgxMDAwLCBTWl8xTV0sIHNraXAKPj4+Pj4gKwkgKiB0aGUgZmlyc3QgemVy
+byBwYWdlLgo+Pj4+PiArCSAqLwo+Pj4+PiArCWVpLmFkZHIgPSBQQUdFX1NJWkU7Cj4+Pj4+ICsJ
+ZWkuc2l6ZSA9IFNaXzFNIC0gUEFHRV9TSVpFOwo+Pj4+PiAgCWVpLnR5cGUgPSBFODIwX1RZUEVf
+UkFNOwo+Pj4+PiAgCWFkZF9lODIwX2VudHJ5KHBhcmFtcywgJmVpKTsKPj4+Pgo+Pj4+IExpa2V3
+aXNlIGhlcmUuICBXaHkgZG8gd2UgbmVlZCBhIHNwZWNpYWwgY2FzZT8KPj4+PiBXaHkgdGhlIG1h
+Z2ljIHdpdGggUEFHRV9TSVpFPwo+Pj4KPj4+IEdvb2QgY2F0Y2gsIHRoZSB6ZXJvIHBhZ2UgcGFy
+dCBpcyB1c2VsZXNzLCBJIHRoaW5rIG5vIG90aGVyIHNwZWNpYWwKPj4+IHJlYXNvbiwganVzdCBh
+c3N1bWVkIHplcm8gcGFnZSBpcyBub3QgdXNhYmxlLCBidXQgaXQgc2hvdWxkIGJlIG9rIHRvCj4+
+PiByZW1vdmUgdGhlIHNwZWNpYWwgaGFuZGxpbmcsIGp1c3QgcGFzcyAwIC0gMU0gaXMgZ29vZCBl
+bm91Z2guCj4+IAo+PiBCdXQgaWYgd2UgaGF2ZSBzdG9wcGVkIHNwZWNpYWwgY2FzaW5nIHRoZSBs
+b3cgMU0uICBXaHkgZG8gd2UgbmVlZCBhCj4+IHNwZWNpYWwgY2FzZSBoZXJlIGF0IGFsbD8KPj4g
+Cj4gSGVyZSwgbmVlZCB0byBwYXNzIHRoZSBsb3cgbWVtb3J5IHJhbmdlIHRvIGtkdW1wIGtlcm5l
+bCwgd2hpY2ggd2lsbCBndWFyYW50ZWUKPiB0aGUgYXZhaWxhYmlsaXR5IG9mIGxvdyBtZW1vcnkg
+aW4ga2R1bXAga2VybmVsLCBvdGhlcndpc2UsIGtkdW1wIGtlcm5lbCB3b24ndAo+IHVzZSB0aGUg
+bG93IG1lbW9yeSByZWdpb24uCj4KPj4gSWYgeW91IG5lZWQgdGhlIHNwZWNpYWwgY2FzZSBpdCBp
+cyBhbG1vc3QgY2VydGFpbmx5IHdyb25nIHRvIHNheSB5b3UKPj4gaGF2ZSByYW0gYWJvdmUgNjQw
+S2lCIGFuZCBiZWxvdyAxTWlCLiAgVGhhdCBpcyB0aGUgbGVnYWN5IFJPTSBhbmQgdmlkZW8KPj4g
+TU1JTyBhcmVhLgo+PiAKPj4gVGhlcmUgaXMgYSByZWFzb24gdGhlIG9yaWdpbmFsIGNvZGUgc2Fp
+ZCA2NDBLaUIuCj4+IAo+IERvIHlvdSBtZWFuIHRoYXQgdGhlIDY0MGsgcmVnaW9uIGlzIGdvb2Qg
+ZW5vdWdoIGhlcmUgaW5zdGVhZCBvZiAxTWlCPwoKUmVhZGluZyB0aHJvdWdoIHRoZSBjb2RlIG9m
+IGNyYXNoX3NldHVwX21lbWFwX2VudHJpZXMgSSBzZWUgdGhhdCB3aGF0CnRoZSBjb2RlIGlzIGRv
+aW5nIG5vdy4gIFRoZSBjb2RlIGlzIHJlcGVhdGluZyB0aGUgZTgyMCBtZW1vcnkgbWFwIHdpdGgK
+dGhlIG1lbW9yeSBhcmVhcyB0aGF0IHdlcmUgbm90IHJlc2VydmVkIGZvciB0aGUgY3Jhc2gga2Vy
+bmVsIHJlbW92ZWQuCgpJbiB3aGljaCBjYXNlIHdoYXQgdGhlIGNvZGUgbmVlZHMgdG8gYmUgZG9p
+bmcgc29tZXRoaW5nIGxpa2U6CgoJY21kLnR5cGUgPSBFODIwX1RZUEVfUkFNOwoJZmxhZ3MgPSBJ
+T1JFU09VUkNFX01FTTsKCXdhbGtfaW9tZW1fcmVzX2Rlc2MoSU9SRVNfREVTQ19SRVNFUlZFRCwg
+ZmxhZ3MsIDAsIDEwMjQqMTAyNCwgJmNtZCwKCQkJICAgICAgIG1lbW1hcF9lbnRyeV9jYWxsYmFj
+ayk7CgpEZXBlbmRpbmcgb24gd2hpY2ggYnVncyBleGlzdCBpdCBtaWdodCBtYWtlIHNlbnNlIHRv
+IGxpbWl0IHRoaXMgdG8KdGhlIGxvdyA2NDBLaUIuICBCdXQgZmluZGluZyBzb21ldGhpbmcgdGhl
+IGtlcm5lbCBhbHJlYWR5IHJlY29nbml6ZXMKYXMgUkFNIHNob3VsZCBwcmV2ZW50IG1vc3Qgb2Yg
+dGhvc2UgcHJvYmxlbXMgYWxyZWFkeS4gIEJhcnJpbmcgYnVncwpJIGFkbWl0IGl0IGRvZXNuJ3Qg
+bWFrZSBzZW5zZSB0byByZXBlYXQgdGhlIHdvcmsgdGhhdCBzb21lb25lIGVsc2UKaGFzIGFscmVh
+ZHkgZG9uZS4KClRoaXMgYml0OgoJLyogQWRkIGU4MjAgcmVzZXJ2ZWQgcmFuZ2VzICovCgljbWQu
+dHlwZSA9IEU4MjBfVFlQRV9SRVNFUlZFRDsKCWZsYWdzID0gSU9SRVNPVVJDRV9NRU07Cgl3YWxr
+X2lvbWVtX3Jlc19kZXNjKElPUkVTX0RFU0NfUkVTRVJWRUQsIGZsYWdzLCAwLCAtMSwgJmNtZCwK
+CQkJICAgbWVtbWFwX2VudHJ5X2NhbGxiYWNrKTsKClNob3VsZCBwcm9iYWJseSBzdGFydCBhdCAx
+TWlCIGluc3RlYWQgb2YgMC4gIEp1c3Qgc28gd2UgZG9uJ3QgcmVwb3J0IHRoZQptZW1vcnkgYmVs
+b3cgMU1pQiBhcyB1bmNvbmRpdGlvbmFsbHkgcmVzZXJ2ZWQuICAgSSBkb24ndCBwcm9wZXJseQp1
+bmRlcnN0YW5kIHRoZSBJT1JFU19ERVNDX1JFU0VSVkVEIGZsYWcsIGFuZCBob3cgdGhhdCBkaWZm
+ZXJzIGZyb20KZmxhZ3MuICBTbyBwbGVhc2UgdGVzdCBteSBzdWdnZXN0aW9ucyB0byB2ZXJpZnkg
+dGhlIGNvZGUgd29ya3MgYXMKZXhwZWN0ZWQuCgpFcmljCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2tleGVjCg==
