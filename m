@@ -2,55 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E679D7DFA
-	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 19:39:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E473D7F5A
+	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 20:47:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/5uhnszaWzIuhX/pKLA5yI18Rm5ovYV2/odZmD6Q5nA=; b=UQSyCWVr27lw58
-	r0QIxlfaayxxBmTZH4cuhP7fyiSbQ3UywXmt2y25GNc9w4M3RMwk6z35F/VScASKjjawz2X7hP1wt
-	4prxT0E/A0C5AhMjsp+Km2dCffA+dxd2yYdEiN1rdMgTSWQsAS9T3tuak3T587TM3gP5crSPGj1+y
-	eoVeUVUpzY2zwtkQ+FWgj0LY4chMPC6C4rGAFWawQZ/6drrxCZG09r8J7MvQ0pdd/yzVf2sJEtZrR
-	LqMeKkfgV7hxK4mlk8wzsgMb9Ev1rg1T7STRO8FH7EbrAomzFZRJfP85QQUMNv/GrWHEsqS3KgkKE
-	1KocwbGrfe/LaLqB2biQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IvrE01XVXoRIEyhy2XBf0yIX92hnj0pyuNYik64M8Ns=; b=Ghlj17rEpc9mQY
+	XqIwq9xWqfyDR410JFWkRMEEUJOJ6JifT1mO3aw42vADp9JP+QuBhnAdqesUdP2nEh1cZVzvJeizE
+	nt9/50L5M5EJCKH/YMIPLx7LDOiksv/xVwdAz4ac7Vvcc/FiUgonlBtXHidrIEXSlpc2RRyIcOxX4
+	cHM8jvfaCyTaCe3RYQa/HbpkuMp0NTvxGrjAoBtSMIYs67hz6V+NNh2eFpIkWNefxAb+OmEb/eHyj
+	tLsRQ8QeXFzFymrVjK7tNc9Sm2PcJxDGRiKhWJjQMVl3nl8Ix/UeI5wfqD+KrWAua4Z3lig8JIUUd
+	7bLpBt0FWy7arXAHWORg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKQmx-0001P2-Jh; Tue, 15 Oct 2019 17:39:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKQmu-0001Of-D4; Tue, 15 Oct 2019 17:39:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB18B337;
- Tue, 15 Oct 2019 10:39:11 -0700 (PDT)
-Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 550F53F6C4;
- Tue, 15 Oct 2019 10:39:09 -0700 (PDT)
-Subject: Re: [PATCH V4 0/2] Add support for arm64 to carry ima measurement
-To: prsriva <prsriva@linux.microsoft.com>
+	id 1iKRr4-0005Q9-Tr; Tue, 15 Oct 2019 18:47:34 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKRr1-0005PG-IF
+ for kexec@lists.infradead.org; Tue, 15 Oct 2019 18:47:33 +0000
+Received: by mail-ed1-x544.google.com with SMTP id c4so19023149edl.0
+ for <kexec@lists.infradead.org>; Tue, 15 Oct 2019 11:47:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Pfvg+FTtrisg7B2S8oM0CWu26E9e8Sf1gXQfTf34924=;
+ b=DWS32JsmOlg5VgikKYtVcPLKwn3b9Q4/V0KNahVXNAMx9O+6dQVwKcEF+Lndyz/cUP
+ T8qVbCzzI3QD4vSRPTkIfkRWU0VtopbR5bmjoK4EhIeo9z9nHu8Y2+S4WUCHESEGLueY
+ kZnycdUuYFT92OAHv90YZyjrMLD64mqJ+UjTBIxOfJG0g2TXBBHtiI1uNutceqDunni7
+ 83OPAVIphlgUTv6vOQ4XNmhn+EIzhha33eHjbIWmFxMuCd9Q36GIFYhc2Df2CVCFka+j
+ tj76RJeVAtrK9OBMXa9y9PmMSeCS5tBi6bId/9RNBVnNplRBX3EyVTbe+cvZFAJ/BjE7
+ ZpZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Pfvg+FTtrisg7B2S8oM0CWu26E9e8Sf1gXQfTf34924=;
+ b=MrKUh2eCyqjXLW5t6cpX0O1h+IXhhp3mlvVgD3CfG0wvlTe3D9D7y8wOxe5ocWR74Q
+ DpkwH/9pG5T4MJrSuJ6mR/Runf2Xv0aEoTil8UWb6eweH5/KTCm1npyMplKc70ufNcbs
+ xNIBdFlYFB+lnoxz8oCsLMv/vUXjx8b4HjyGzhPS5/0Nj9YdyiDvzluv6qAriwxoG5qW
+ MBainw89nb9eP52fZtZdBJR2agP5a/mLpkQP97eVkLDw4LyIvx4XzzeZBVxaDoexkSkC
+ stkfibStK0tHpHJqX1UJTThXHZv/XsmZ+BzChlV8wx7tPdrQEIszapYqLI+Ebg36vwte
+ gM2Q==
+X-Gm-Message-State: APjAAAXaO405zQn0qdj4TPPUSIrp8szsUr6QMub0grxaPK0M7CcPxsv/
+ K7uNqiXX2UYITOAI9WSDjTfaJeDxXJT6jEJm3zFdCw==
+X-Google-Smtp-Source: APXvYqwYBNXfzf8UL1/6WH3Lzo2PnVa4eH7g/2iw18YIH4cRXry4dS5x/CxY7akvONtDlQt0LutAiqvmrk0BHlBahoo=
+X-Received: by 2002:a05:6402:2022:: with SMTP id
+ ay2mr34963109edb.219.1571165249255; 
+ Tue, 15 Oct 2019 11:47:29 -0700 (PDT)
+MIME-Version: 1.0
 References: <20191011003600.22090-1-prsriva@linux.microsoft.com>
  <87d92514-e5e4-a79f-467f-f24a4ed279b6@arm.com>
  <b35b239c-990c-0d5b-0298-8f9e35064e2b@linux.microsoft.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com>
-Date: Tue, 15 Oct 2019 18:39:06 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <b35b239c-990c-0d5b-0298-8f9e35064e2b@linux.microsoft.com>
-Content-Language: en-GB
+ <0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com>
+In-Reply-To: <0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Tue, 15 Oct 2019 14:47:18 -0400
+Message-ID: <CA+CK2bBVcE91YbJx1f_BkNqbD03wGLNtyane7PjCnEu8i_cH2Q@mail.gmail.com>
+Subject: Re: [PATCH V4 0/2] Add support for arm64 to carry ima measurement
+To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191015_103912_531931_75A9DCC3 
-X-CRM114-Status: GOOD (  40.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191015_114731_758956_E587F267 
+X-CRM114-Status: GOOD (  10.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,206 +93,43 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- yamada.masahiro@socionext.com, sboyd@kernel.org, catalin.marinas@arm.com,
- ard.biesheuvel@linaro.org, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, zohar@linux.ibm.com, takahiro.akashi@linaro.org,
- duwe@lst.de, bauerman@linux.ibm.com, allison@lohutok.net,
- linux-integrity@vger.kernel.org, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, jean-philippe@linaro.org,
+ arnd@arndb.de, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ sboyd@kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, zohar@linux.ibm.com,
+ prsriva <prsriva@linux.microsoft.com>, takahiro.akashi@linaro.org, duwe@lst.de,
+ bauerman@linux.ibm.com, allison@lohutok.net, linux-integrity@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Prakhar,
+> I think the UEFI persistent-memory-reservations thing is a better fit for this [0][1].
 
-(CC: +Ard : passing reserved memory between kernels using Kexec?)
+Hi James,
 
-On 15/10/2019 02:31, prsriva wrote:
-> On 10/14/19 11:02 AM, James Morse wrote:
->> On 11/10/2019 01:35, Prakhar Srivastava wrote:
->>> Add support to carry ima measurement log
->>> to the next kexec'ed session triggered via kexec_file_load.
->>
->> I don't know much about 'ima', I'm assuming its the list of 'stuff' that has already been
->> fed into the TPM as part of SecureBoot. Please forgive the stupid questions,
->>
-> The IMA logs are event logs for module load time signature validation(based on policies)
-> which are backed by the TPM. No SecureBoot information is present in the log other than
-> the boot aggregate.
+Thank you for your thought. As I understand you propose the to use the
+existing method as such:
+1. Use the existing kexec ABI to pass reservation from kernel to
+kernel using EFI the same as is done for GICv3 tables.
+2. Allow this memory to be reservable only during first Linux boot via
+EFI memory reserve
+3. Allow to have this memory pre-reserved by firmware or to be
+embedded into device tree.
 
-Okay, so SecureBoot is optional with this thing.
+A question I have is how to tell that a reserved region is reserved
+for IMA use. With GICv3 it is done by reading the registers, finding
+the interrupt tables memory, and check that the memory ranges are
+indeed pre-reserved.
 
+Is there a way to name memory with the current ABI that you think is acceptable?
 
->>> Currently during kexec the kernel file signatures are/can be validated
->>> prior to actual load, the information(PE/ima signature) is not carried
->>> to the next session. This lead to loss of information.
->>>
->>> Carrying forward the ima measurement log to the next kexec'ed session
->>> allows a verifying party to get the entire runtime event log since the
->>> last full reboot, since that is when PCRs were last reset.
->>
->> Hmm, You're adding this as a linux-specific thing in the chosen node, which points at a
->> memreserve.
->>
->> The question that normally needs answering when adding to the stuff we have to treat as
->> ABI over kexec is: how would this work from a bootloader that isn't kexec? Does it need to
->> work for non-linux OS?
-
-> This change is only intended to be executed in the path of kexec_file_load and not
-> intended to be executed by any boot loader.(Not very aware of boot loader calls.).
-
-kexec_file_load only means something to the first kernel. If you boot something that isn't
-linux, does it need to delete this stuff from the DT?
-Even if you kexec_file_load linux, it could go on to regular-kexec something that is
-not... what should that do with these things?
-
-Other than the chosen node, the DT is treated as a cast-iron description of the platform,
-we shouldn't be tinkering with it.
-
-If its not describing hardware, it probably doesn't belong in the DT.
-
-
-> The logs are non intended to be injected by the boot loader at all.
-
-You're using linux as a bootloader with kexec. We have to treat the stuff that gets passed
-between kernels as ABI, as people expect to be able to kexec to a newer kernel.
-
-Is linux-as-a-bootloader special? Or should we work out what any bootloader should do here
-first. This avoids having to change this when it turns out someone wants to log UEFI
-DXE-drivers/modules in the TPM too.
-
-From the git-log of the ima code it looks like this is some linux-specific format.
-Are we certain it will never change, and nothing else ever needs to support it?
-(e.g. the DXE driver example above. Is there another way that sort of thing would work?).
-
-
-> The change is configurable(CONFIG_IMA_KEXEC) under the IMA subsection and can be disabled
-> if not needed.
-
-Sure, but not needed isn't the same as not supported.
-If we support it at all, we need to cover everything that needs supporting. If its ABI (we
-treat data passed between kernels as if it is), we need to get it right first time.
-
-(my point? We need to get the ACPI story sorted before we add any support... otherwise we
-end up with two incompatible ways of doing this).
-
-[...]
-
->> Sharing with powerpc is a great starting point ... but, how does this work for ACPI
->> systems?
->> How does this work if I keep kexecing between ACPI and DT?
-
-> I don't have an answer to this, just going through the call stack i dont believe it
-> depends on ACPI as such. I am not the expert here, but more than willing to try out the
-> scenario in question.(Can you point me to some documentation to setup some environment to
-> test this.)
-
-Yup: Documentation/arm64/arm-acpi.rst
-
-Arm64's ACPI support depends on UEFI. As a starter:
-https://wiki.ubuntu.com/ARM64/QEMU
-
-You may need to pass 'acpi=on' on the commandline if your UEFI build supports both DT and
-ACPI. The x86 name for UEFI-in-Qemu is OVMF, which helps when googling.
-
-
-> Kexec_file_load call depends purely on DT implementation.
-
-Heh. And it works with ACPI too! You'll note it only touches things in the chosen node...
-
-An ACPI system boots without a DT. Linux's EFI-stub can make API calls and poke around in
-the UEFI structures to find out about the system. When it finishes, the EFI-stub needs to
-pass on a set of values to the kernel... we need some kind of key-value store ...
-
-To avoid re-inventing the wheel, the EFI-stub creates an empty DT, and shoves the cmdline,
-the initrd etc in there... just like a DT bootloader would have done.
-
-From drivers/firmware/efi/libstub/arm-stub.c::efi_entry()
-|	if (!fdt_addr)
-|		pr_efi(sys_table, "Generating empty DTB\n");
-
-(you will see this message on an ACPI-only system)
-
-On an ACPI system there won't be anything else in the DT, other than the chosen node.
-
-When booted with UEFI, the memory is described in the UEFI memory-map. An ACPI system
-doesn't know to look for memreserve nodes in the DT. (it might work by accident, but I
-wouldn't rely on it).
-
-
->> I'd prefer it we only had one way this works on arm64, so whatever we do has to cover both.
-
-> I can move the code to be only part of arm64 arch if absolutely necessary. Thiago do you
-> have any concerns on going back the path of multiple code paths?
-
-Because arm64 needs to support ACPI too, I think its support for this will always look
-different to PowerPCs.
-
-I think the UEFI persistent-memory-reservations thing is a better fit for this [0][1].
-
-As U-boot supports booting the kernel via the UEFI stub, I think this is all we need to
-support this. (If your platform supports LPIs, you also need this UEFI table to kexec
-safely anyway. See [1])
-
-
-Removing something that was reserved memory might be tricky, I don't think we do this
-anywhere else. Why do you need to remove the reservations?
-
-
->> Does ima work without UEFI secure-boot?
-
-> Yes, IMA, the measurement is not dependent on any hardware capabilities.
-> TPM is needed to back the measurements but the IMA module will not fail if TPM is not
-> available.
-> In short Secure-boot has no impact on IMA.
-
-(thanks)
-
-
->> If not, the Linux-specific UEFI 'memreserve' table might be a better fit, this would be
->> the same for both DT and ACPI systems. Given U-boot supports the UEFI API too, its
->> probably the right thing to do regardless of secure-boot.
->>
->> It looks like x86 doesn't support this either yet. If we have to add something to support
->> ACPI, it would be good if it covers both firmware mechanisms for arm64, and works for x86
->> in the same way.
->>
->> (How does this thing interact with EFI's existing efi_tpm_eventlog_init()?)
-
-> IMA does not interact with the TPM event log.
-> Only one of the PCR's is extended but not logged in the TPM logs. The logging is done in
-> IMA. The IMA measurement log in question is whats needed to be carried over to via
-> kexec_file_load call.
-
-If SecureBoot isn't relevant, I'm confused as to why kexec_file_load() is.
-
-I thought kexec_file_load() only existed because SecureBoot systems need to validate the
-new OS images's signature before loading it, and we can't trust user-space calling Kexec
-to do this.
-
-If there is no secure boot, why does this thing only work with kexec_file_load()?
-(good news! With the UEFI memreseve table, it should work transparently with regular kexec
-too)
-
-
-> I am not sure if i addressed all your concerns, please let me know
-> if i missed anything. To me most concerns look to be towards the kexec case and dependency
-> on hardware(ACPI/TPM) during boot and early boot services, where as carrying the logs is
-> only during the kexec_file_load sys call and does not interfere with that code path.
-> IMA documentation: https://sourceforge.net/p/linux-ima/wiki/Home/
-
-Supporting ACPI in the same way is something we need to do from day one. kexec_file_load()
-already does this. I'm not sure "only kexec_file_load()" is a justifiable restriction...
-
-
-Thanks,
-
-James
-
-[0] https://marc.info/?l=linux-efi&m=153754757208163&w=2
-[1] https://lore.kernel.org/lkml/20180921195954.21574-1-marc.zyngier@arm.com/
+Thank you,
+Pasha
 
 _______________________________________________
 kexec mailing list
