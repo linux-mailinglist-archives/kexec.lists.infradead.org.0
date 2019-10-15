@@ -2,86 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95FB0D6C16
-	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 01:36:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D07FD6CE7
+	for <lists+kexec@lfdr.de>; Tue, 15 Oct 2019 03:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k1LiaXO4kOSL6BIzcCQCxsQ6K4YVWs4F5lKbXFWmYGc=; b=fa29vHRvy8XNmD
-	NnTw/Ku0R4BmPi4oPepPS1myy+EGQ+PudXL9SoAwoOQbC7IjmWuitaqKW4qP8X8w9r2pkqYHcKPSW
-	WIzsIk9H3XJba+PkYBzcLUjRYAFrInObucHlQ5hg7S2lAkY+NtHW9AKVRqMYAtD7drDNhl/38HRIU
-	EZFQ84J79RA4SjsTLEYE5lui8gHfLhVnd7Uu3UH0pwh46qvgqUVWXKmg6as9kRDvQSTwRkZz+BwJM
-	1dpzB69ff0N7XmKzDWQJsJUq7BQuhkY5V8X+qXaTgmNbQ2mjbEWL5kFbpC6PlJk9T2nQdCk2HTK4M
-	AV0zqB+qPLTMYOMKLONg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sqHp8PITNFUzBiO7PAmIcu4Ijlwy5KqZNAoqbS/fkt0=; b=Ji1MGA9/ZBFxLJqrTsvOUcxSI
+	bXxEtUE9fTIroo1C1hNpxCwpGOlH5xUGHwhciKyztyFHetrTQt/28iOZFmPCi1jR9WCVd4IvlZ8PV
+	RcjagQmXlemLiGWDT4jf7WWbXRY264/rVEo9GejBARgQ/B/Ria7iXtLckwkMntDPqQFz9vj54nxGg
+	j9cMviM5Ygl4ErFNKkmUOME7lAU8YSf3WCw9E8amyYw0YIHnYQhvgwhiyiaIxbgtRFJZuGvtt63Nl
+	/QRb3136oWddOyEzjP7lR8RHGhfKxYK+ERWHfMBMlp+fARgKA+s1xGw7L8tYkor5HOz7oGkf2Yist
+	ZSkofrYtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iK9sn-0003CF-2o; Mon, 14 Oct 2019 23:36:09 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iK9sj-0003BQ-5l
- for kexec@lists.infradead.org; Mon, 14 Oct 2019 23:36:06 +0000
-Received: by mail-ed1-x541.google.com with SMTP id r16so16197772edq.11
- for <kexec@lists.infradead.org>; Mon, 14 Oct 2019 16:36:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gkziEWncJFESfbeN+tNU3lnfttVx9foN0npvs9N1QsY=;
- b=O70o41Dmveei74jWdiTluAuKZOpFdp96KyP9T2+VLvoKG3708U5MU64uqWTOjJw2DI
- 8fVopJbte7kdQDLDcOkGWxqOo1hPyLSGm9W5pwD9uSuKBWkYzkLQFnL0pO9rTTUkuOwv
- YEKeJM4UaS36FSYnUDagTkfYpdKCDO1v58PJtngbqG4oKmWsHirTjN3FGADnX7mMblrq
- UoC9Mmp7mBesVzhNvG+fDBUv3wy6kw0zxiKZxsynzZSe6ujfai3BCrztgADTlvkRGS6j
- L5d9t+3fpiXBswUSa0ApWFQVBYX/GhB0xFLteIF/S20CrXAf1E8aB8uFws2F6tsq2Kpp
- vUVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gkziEWncJFESfbeN+tNU3lnfttVx9foN0npvs9N1QsY=;
- b=k5kd21OHiDgdqRx4uqM4d6/xfKM8oaUKiEfF6QgpMzpcAtFErAnBcGg4FQxVIoDxh2
- lf7dWse1oLL2hsnjH/w7m2hBQYYKRTdlROKqBFXinkpivKwTlRlog3k/rjUSt3EmRSDV
- lSRtUVkrnPFg/8Yg60BduBb0wTZWmWFAVtbAFhKW12FG+sq9KZMVnEKee7EopCWf63Xj
- 81Xi0SqQ87aedIAgkXSwuxFtg4dQcjYhZV/VZdEJFnE3aoWxvevGk5Jjq5u6hAq+NFJd
- 1MTF3F4NgMi62tFPnkm7ymOV2EMIviZ40w+D2IGGVRDeHpurydj3HO84ff3im04w0rEz
- 44YQ==
-X-Gm-Message-State: APjAAAXRKc7+G+lj+g1FeS9lerQFffS/oyXnpJiJpdPLOTLfkoXCPwX8
- H041d4ZjERW9Si1JDKY0Omtk3EWcXq4pv+pi4fwVvw==
-X-Google-Smtp-Source: APXvYqw21dAMS585cJditaHg7KjhOgxBh6OmUSMoHjJ0YGRuL7a8yLmdCHKtPPDp4d/BFzWCo6uVZPGvN8Y+J4yqjTw=
-X-Received: by 2002:a17:906:2cca:: with SMTP id
- r10mr31786307ejr.108.1571096163334; 
- Mon, 14 Oct 2019 16:36:03 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191004185234.31471-1-pasha.tatashin@soleen.com>
- <20191004185234.31471-16-pasha.tatashin@soleen.com>
- <fe5a4aae-fae3-f30f-db15-f3eced229a6e@arm.com>
-In-Reply-To: <fe5a4aae-fae3-f30f-db15-f3eced229a6e@arm.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Mon, 14 Oct 2019 19:35:51 -0400
-Message-ID: <CA+CK2bBRRQsepxrWnOUOnFfPUe5SYsOurQ3kL_P1ghxze77RFQ@mail.gmail.com>
-Subject: Re: [PATCH v6 15/17] arm64: kexec: add expandable argument to
- relocation function
+	id 1iKBgY-0001lj-8F; Tue, 15 Oct 2019 01:31:38 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iKBgU-0001kP-H2; Tue, 15 Oct 2019 01:31:36 +0000
+Received: from [10.137.104.46] (unknown [131.107.174.174])
+ by linux.microsoft.com (Postfix) with ESMTPSA id DD1DC20B71C6;
+ Mon, 14 Oct 2019 18:31:30 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com DD1DC20B71C6
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+ s=default; t=1571103091;
+ bh=JyQth7Ct3RzPrDMGGVL/0UtrVuwcC4tEO3GTBka83Hc=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=S1vggRK+d0gb1x/O0Shq8BSQkFFU6Gm+V4FMb09ZP5prEtMCjhnrePJquxG2lyPit
+ s5Wz/IivDkfxFtgXl2mZGrsvgpoVwBB9NbU3CY737tNMV8d5SejQAbiXATG8MWV9dW
+ 5JqQEz7TH3QBLqotT9rwGaQ2Mm9Ov8M13tLVOYuI=
+Subject: Re: [PATCH V4 0/2] Add support for arm64 to carry ima measurement
 To: James Morse <james.morse@arm.com>
+References: <20191011003600.22090-1-prsriva@linux.microsoft.com>
+ <87d92514-e5e4-a79f-467f-f24a4ed279b6@arm.com>
+From: prsriva <prsriva@linux.microsoft.com>
+Message-ID: <b35b239c-990c-0d5b-0298-8f9e35064e2b@linux.microsoft.com>
+Date: Mon, 14 Oct 2019 18:31:30 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
+MIME-Version: 1.0
+In-Reply-To: <87d92514-e5e4-a79f-467f-f24a4ed279b6@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191014_163605_395040_92B0B679 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191014_183134_637182_77DF21B8 
+X-CRM114-Status: GOOD (  30.98  )
+X-Spam-Score: -15.6 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,93 +77,125 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
- linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
+ yamada.masahiro@socionext.com, sboyd@kernel.org, catalin.marinas@arm.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, zohar@linux.ibm.com,
+ takahiro.akashi@linaro.org, kristina.martsenko@arm.org, duwe@lst.de,
+ bauerman@linux.ibm.com, allison@lohutok.net, james.morse@arm.org,
+ linux-integrity@vger.kernel.org, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> > +struct kern_reloc_arg {
-> > +     unsigned long   head;
-> > +     unsigned long   entry_addr;
-> > +     unsigned long   kern_arg0;
-> > +     unsigned long   kern_arg1;
-> > +     unsigned long   kern_arg2;
-> > +     unsigned long   kern_arg3;
->
-> ... at least one of these should by phys_addr_t!
 
-OK, changed them to phys_addr_t
+
+On 10/14/19 11:02 AM, James Morse wrote:
+> Hi Prakhar,
+> 
+> (You've CC'd a few folk who work for 'arm.org'...)
+> 
+> On 11/10/2019 01:35, Prakhar Srivastava wrote:
+>> Add support to carry ima measurement log
+>> to the next kexec'ed session triggered via kexec_file_load.
+> 
+> I don't know much about 'ima', I'm assuming its the list of 'stuff' that has already been
+> fed into the TPM as part of SecureBoot. Please forgive the stupid questions,
+> 
+The IMA logs are event logs for module load time signature 
+validation(based on policies) which are backed by the TPM. No SecureBoot 
+information is present in the log other than the boot aggregate.
+
+>> Currently during kexec the kernel file signatures are/can be validated
+>> prior to actual load, the information(PE/ima signature) is not carried
+>> to the next session. This lead to loss of information.
+>>
+>> Carrying forward the ima measurement log to the next kexec'ed session
+>> allows a verifying party to get the entire runtime event log since the
+>> last full reboot, since that is when PCRs were last reset.
+> 
+> Hmm, You're adding this as a linux-specific thing in the chosen node, which points at a
+> memreserve.
+> 
+> The question that normally needs answering when adding to the stuff we have to treat as
+> ABI over kexec is: how would this work from a bootloader that isn't kexec? Does it need to
+> work for non-linux OS?
+> 
+This change is only intended to be executed in the path of 
+kexec_file_load and not intended to be executed by any boot loader.(Not 
+very aware of boot loader calls.). The logs are non intended to be 
+injected by the boot loader at all.
+The change is configurable(CONFIG_IMA_KEXEC) under the IMA subsection 
+and can be disabled if not needed.
+
+> Changing anything other than the chosen node of the DT isn't something the kernel should
+> be doing. I suspect if you need reserved memory for this stuff, it should be carved out by
+> the bootloader, and like all other memreserves: should not be moved or deleted.
+> 
+> ('fdt_delete_mem_rsv()' is a terrifying idea, we depend on the memreserve nodes to tell
+> use which 'memory' we shouldn't touch!)
+> 
+fdt_delete_mem_rsv - is to cleanup any memory that's been mistakenly 
+still lying around in the same session while creating the fdt. 
+memblock_free is actually used to free up the reserved memory.
+
+Thiago may have more insight, This is primarily a code that's been 
+ported from existing kernel for PowerPC.
+https://github.com/torvalds/linux/blob/master/arch/powerpc/kernel/machine_kexec_file_64.c
+
+> 
+> Sharing with powerpc is a great starting point ... but, how does this work for ACPI systems?
+> How does this work if I keep kexecing between ACPI and DT?
+> 
+
+I don't have an answer to this, just going through the call stack i dont 
+believe it depends on ACPI as such. I am not the expert here, but more 
+than willing to try out the scenario in question.(Can you point me to 
+some documentation to setup some environment to test this.) 
+Kexec_file_load call depends purely on DT implementation.
+
+
+> I'd prefer it we only had one way this works on arm64, so whatever we do has to cover both.
+I can move the code to be only part of arm64 arch if absolutely 
+necessary. Thiago do you have any concerns on going back the path of 
+multiple code paths?
 
 >
-> While the sizes are the same on arm64, this reminds the reader what kind of address this
-> is, and lets the compiler warn you if you make a mistake.
+> Does ima work without UEFI secure-boot?
+Yes, IMA, the measurement is not dependent on any hardware capabilities.
+TPM is needed to back the measurements but the IMA module will not fail 
+if TPM is not available.
+In short Secure-boot has no impact on IMA.
 
-OK
+> If not, the Linux-specific UEFI 'memreserve' table might be a better fit, this would be
+> the same for both DT and ACPI systems. Given U-boot supports the UEFI API too, its
+> probably the right thing to do regardless of secure-boot.
+> 
+> It looks like x86 doesn't support this either yet. If we have to add something to support
+> ACPI, it would be good if it covers both firmware mechanisms for arm64, and works for x86
+> in the same way.
+> 
+> (How does this thing interact with EFI's existing efi_tpm_eventlog_init()?)
+> 
+IMA does not interact with the TPM event log.
+Only one of the PCR's is extended but not logged in the TPM logs. The 
+logging is done in IMA. The IMA measurement log in question is whats 
+needed to be carried over to via kexec_file_load call.
 
->
->
-> > +};
->
-> > diff --git a/arch/arm64/kernel/asm-offsets.c b/arch/arm64/kernel/asm-offsets.c
-> > index 214685760e1c..900394907fd8 100644
-> > --- a/arch/arm64/kernel/asm-offsets.c
-> > +++ b/arch/arm64/kernel/asm-offsets.c
-> > @@ -23,6 +23,7 @@
-> >  #include <asm/suspend.h>
-> >  #include <linux/kbuild.h>
-> >  #include <linux/arm-smccc.h>
-> > +#include <linux/kexec.h>
-> >
-> >  int main(void)
-> >  {
-> > @@ -126,6 +127,14 @@ int main(void)
-> >  #ifdef CONFIG_ARM_SDE_INTERFACE
-> >    DEFINE(SDEI_EVENT_INTREGS, offsetof(struct sdei_registered_event, interrupted_regs));
-> >    DEFINE(SDEI_EVENT_PRIORITY,        offsetof(struct sdei_registered_event, priority));
-> > +#endif
-> > +#ifdef CONFIG_KEXEC_CORE
-> > +  DEFINE(KRELOC_HEAD,                offsetof(struct kern_reloc_arg, head));
-> > +  DEFINE(KRELOC_ENTRY_ADDR,  offsetof(struct kern_reloc_arg, entry_addr));
-> > +  DEFINE(KRELOC_KERN_ARG0,   offsetof(struct kern_reloc_arg, kern_arg0));
-> > +  DEFINE(KRELOC_KERN_ARG1,   offsetof(struct kern_reloc_arg, kern_arg1));
-> > +  DEFINE(KRELOC_KERN_ARG2,   offsetof(struct kern_reloc_arg, kern_arg2));
-> > +  DEFINE(KRELOC_KERN_ARG3,   offsetof(struct kern_reloc_arg, kern_arg3));
->
-> Please use kexec as the prefix. The kernel also applies relocations during early boot.
-> These are global values, and in isolation doesn't imply kexec.
+I am not sure if i addressed all your concerns, please let me know
+if i missed anything. To me most concerns look to be towards the kexec 
+case and dependency on hardware(ACPI/TPM) during boot and early boot 
+services, where as carrying the logs is only during the kexec_file_load 
+sys call and does not interfere with that code path.
+IMA documentation: https://sourceforge.net/p/linux-ima/wiki/Home/
 
-OK
-> >  .align 3     /* To keep the 64-bit values below naturally aligned. */
-> > -
-> >  .Lcopy_end:
-> >  .org KEXEC_CONTROL_PAGE_SIZE
-> >
->
-> My eyes!
->
-> Please don't make unnecessary changes. Its hard enough to read the assembly, moving
-> whitespace, comments and re-allocating the register guarantees that no-one can work out
-> what is happening.
->
-> If something needs cleaning up to make the change obvious, it needs doing as a previous
-> patch. Mechanical changes are fairly easy to review.
-> Functional changes behind a whirlwind of mechanical changes will cause the reviewer to
-> give up.
-
-Sure, I have split this patch into several patches, and moved
-clean-ups into separate patches.
-
-Thank you,
-Pasha
+Prakhar Srivastava
+> 
+> Thanks,
+> 
+> James
+> 
 
 _______________________________________________
 kexec mailing list
