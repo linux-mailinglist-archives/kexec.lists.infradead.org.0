@@ -2,60 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C40FD9A9F
-	for <lists+kexec@lfdr.de>; Wed, 16 Oct 2019 22:01:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFC0ED9A9E
+	for <lists+kexec@lfdr.de>; Wed, 16 Oct 2019 22:01:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=25616Bbi+V6bhDUd0JvOp2/n/vyVpl7b3Xq6vTaPJ8A=; b=J5Er3bWL3eXaa7
-	y6EI1A3+W0/2xjhHpJajlFaJIqTSlJlBxktwmCJNhtXZQ0ndMSl+4hb7tpTxX3zPTNw6ry2QDAZEF
-	MZ7sckLxoTEdnvA+cSEjdx59EG8IlD5KLvgxl41x9FWXN4iPdWaks5bdQUckVmS4K6gVAZengQFf8
-	S1QSnPVbN/+XAjg0FidCX6iQFCTHwgrUDFF/eZBGjEr6uyLgBcIpQYAWEXs3nzqhCZBORyiZqyiO7
-	EfS9RaQthBT1O9d6kBghi9ogtJYVnZDO6EbRRX5is+ioXydnwGS5+TGWLO4PiWEAwoJrV89RevgcD
-	s7TzdEmmCYa0M3Ktv6zA==;
+	List-Owner; bh=Qczcda/hbNP+kQj96xbObaO4o/pRlc5LamzS/9taUe8=; b=UA1fNxfctsnJZh
+	xVVgJZlyhL5lcN7Qp1kYEFyT4IwOX7sazS2srvFxzu8mwZEGzHOcRhiPUomroTpUBQiPzLMcdPhF5
+	tzPhsie4THfAMp+bJzv6PD62IVmg2lHY00bg0IpF0N37kokopfMeoWxSJSOSV8s8MjWDojMyIUmoo
+	/GQA6bFxhO5Auagy3qXBG7hyF55Oj735QCDRynRATmIElRC8Mb4kz3mUkhwgMWxMQ7rp0rj2013gQ
+	8k7TrZNDAhxM1NiHniDOyw2mPUFTSehi8T+RVlKgD6FeE9EZPwisuLB6NtVlbbWLu2kXtyfvBvdqZ
+	N4r/x75TQTMNeWleKJ9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iKpU5-0004l3-Ng; Wed, 16 Oct 2019 20:01:25 +0000
+	id 1iKpU3-0004ih-4L; Wed, 16 Oct 2019 20:01:23 +0000
 Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iKpTM-00041o-2E
+ id 1iKpTN-00042m-85
  for kexec@lists.infradead.org; Wed, 16 Oct 2019 20:00:43 +0000
-Received: by mail-qk1-x744.google.com with SMTP id y144so23964388qkb.7
- for <kexec@lists.infradead.org>; Wed, 16 Oct 2019 13:00:39 -0700 (PDT)
+Received: by mail-qk1-x744.google.com with SMTP id p4so3436122qkf.5
+ for <kexec@lists.infradead.org>; Wed, 16 Oct 2019 13:00:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references:mime-version
  :content-transfer-encoding;
- bh=7bTbY9wWGaJLNQvZeFd+1QuaD6S0qAHt0InnROLT/Os=;
- b=D6xYwFacfqrSDzdKiZLP/TzT9Pqm/HyN3qCUyAhl++JnfcJj1zNrvqFXj80G7H0YAD
- 0oC7ITgJ1jpBh7bsno8amd9UDUDHZErELokqD3GaD1kg4LXtwLv8dPsn78AHP6ZqKH39
- E8M8n9Kv/DO9i8z90OKfTCngljmk0SNTy9xLhlawUp/NcuhYiPwsq6O7qxMXWh3quoUI
- Wd3TUbPEqiUxf2/4gs4CixenvdexjxXEEDtAz27okuFTHV9DnryTqfEq528hdjMcsw+b
- Omy3Z+4qDZeopuxmjCIHzRvgaTIHLFvL3pr1YdfXc+Z0AclbWLrPwyI7DwzdMFju98+p
- vf7g==
+ bh=XbQaUimD78vcQ5YhGt3SAqPD0eC6PCpt9aPKURlFvbA=;
+ b=S+LQGOsCXVbkDAppXLTZQWx3ApD3aZBcmqbRDcsmDfwye32g9YsI1DNq8SQDiITNx8
+ Mwxkd82MYZ12ycXdsRv9CNHcPC410C7eK3UWoKPbVXzWQiDW/SW84fKO45Is81s7Xfn5
+ jLGiv34q4GSCzK0Ob1pNRPgcllgcMNO3A+TwhI/1+OX+skjjzrq/5TCPng3VwjlB802m
+ OkPx+g9Te9uSWwswjm9qIli+JKp08CTymdE/XiM1DKv2c0SaxRZW13ytSw5XxWIptqNH
+ 1OjY3hg7xOxJbOnC2WT1wDnVZ+/mdRLSINcDNEBzMDdFGI4H07iXQxhIG8482S1SbKNp
+ qjww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7bTbY9wWGaJLNQvZeFd+1QuaD6S0qAHt0InnROLT/Os=;
- b=aLVFNlsC/D8yIwsdpt86d4tvQ583dT2z83SEfD5Z8joLMLzA6RePx//lZVJ1y/kkRi
- IYZMnHqtVwuUamTZGWJhmPax/sdbWWGb/3F7JCAfwuWg0E0z4H3XmcC5PrOH0Y316evh
- 1V9i8a1phtn8orHbBIYvkGLs5NW44iLmOuDpwX/qoe989/z9GAvxWES7vThVfjT4ucJz
- p2MKRLmQ0Opoyo9630BdKpjGwAqzt6KAViJ0b97FA2ssMsUbmeApqaYGy/rAdheXZyeB
- 1te4DUt1VWOgf45KI3JOYCXYq9gqtUh1yRydKNSdw+H4rTV4NW4K7Ko4Zhu8LUpY78PK
- hHhg==
-X-Gm-Message-State: APjAAAX3ymyxkeMOMCecNFWkKi3esMtu6AVOE178w5rlnyvy1B+coPbQ
- odTxWxH1nSwU4YOizyjVbedUPw==
-X-Google-Smtp-Source: APXvYqw/em1XYN8TtYqp0Zy3p+LEV2iCbYfwJbzFt0I3YCF5Whypfh4NQtzdx8ssjs/HvNqnpuzRmg==
-X-Received: by 2002:a37:9b81:: with SMTP id d123mr5380291qke.410.1571256038811; 
- Wed, 16 Oct 2019 13:00:38 -0700 (PDT)
+ bh=XbQaUimD78vcQ5YhGt3SAqPD0eC6PCpt9aPKURlFvbA=;
+ b=RrWohQHTnDnqjxAZ2c+qV2siidc/P3TIrUJ6sC/VI+DHqTOkBlDawHHTRve9UV5ELA
+ f3JbISFOgXWVWxpXDkBP1RPUVeX1RMRg5lA1p0Sz0Li7UECBGg0syVdRpx/0KXFMneMR
+ m2qyY+nMHtlGaMu3swLqkelB+UQ8tGjb/exq2kzWYbTIYDHf5kEIiawOVKo1wkFCdTwL
+ GTxycP8lp5CgC5tvU7xu/gk8E4z6x89hgxmzuRFvf5VPnRrjjTV0iHGvpeo5FsjgiIFq
+ 8pZQFAu/tmNLMklrv2olNpQKJGjUy1uhfsTS7Ca7QfWYE3Iv+CmIOtbXFYdMISwTltt3
+ xT8w==
+X-Gm-Message-State: APjAAAXIUU7/1x3m6K3OYaVNTF24P6zS3Www6Jnbghv047YrdgRYokF/
+ LAdgJbjX3ZqlqlQjKFJ1HPFKfA==
+X-Google-Smtp-Source: APXvYqxV3JHHx4EkCCQ727EFwQKuQaS1GMszla5iOLzh5CkwVHlhm3ZxtmVs9ZyOFMZpCXbaSs163w==
+X-Received: by 2002:a37:e503:: with SMTP id e3mr43333948qkg.491.1571256040373; 
+ Wed, 16 Oct 2019 13:00:40 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.37
+ by smtp.gmail.com with ESMTPSA id c204sm13342030qkb.90.2019.10.16.13.00.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 16 Oct 2019 13:00:38 -0700 (PDT)
+ Wed, 16 Oct 2019 13:00:39 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -65,17 +65,16 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  matthias.bgg@gmail.com, bhsharma@redhat.com, linux-mm@kvack.org,
  mark.rutland@arm.com, steve.capper@arm.com, rfontana@redhat.com,
  tglx@linutronix.de
-Subject: [PATCH v7 01/25] kexec: quiet down kexec reboot
-Date: Wed, 16 Oct 2019 16:00:10 -0400
-Message-Id: <20191016200034.1342308-2-pasha.tatashin@soleen.com>
+Subject: [PATCH v7 02/25] kexec: add machine_kexec_post_load()
+Date: Wed, 16 Oct 2019 16:00:11 -0400
+Message-Id: <20191016200034.1342308-3-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 References: <20191016200034.1342308-1-pasha.tatashin@soleen.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191016_130040_109324_30679379 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191016_130041_289112_848B925A 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,44 +108,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Here is a regular kexec command sequence and output:
-=====
-$ kexec --reuse-cmdline -i --load Image
-$ kexec -e
-[  161.342002] kexec_core: Starting new kernel
-
-Welcome to Buildroot
-buildroot login:
-=====
-
-Even when "quiet" kernel parameter is specified, "kexec_core: Starting
-new kernel" is printed.
-
-This message has  KERN_EMERG level, but there is no emergency, it is a
-normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
-
-Machines that have slow console baud rate benefit from less output.
+It is the same as machine_kexec_prepare(), but is called after segments are
+loaded. This way, can do processing work with already loaded relocation
+segments. One such example is arm64: it has to have segments loaded in
+order to create a page table, but it cannot do it during kexec time,
+because at that time allocations won't be possible anymore.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-Reviewed-by: Simon Horman <horms@verge.net.au>
 Acked-by: Dave Young <dyoung@redhat.com>
 ---
- kernel/kexec_core.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ kernel/kexec.c          | 4 ++++
+ kernel/kexec_core.c     | 6 ++++++
+ kernel/kexec_file.c     | 4 ++++
+ kernel/kexec_internal.h | 2 ++
+ 4 files changed, 16 insertions(+)
 
+diff --git a/kernel/kexec.c b/kernel/kexec.c
+index bc933c0db9bf..f977786fe498 100644
+--- a/kernel/kexec.c
++++ b/kernel/kexec.c
+@@ -159,6 +159,10 @@ static int do_kexec_load(unsigned long entry, unsigned long nr_segments,
+ 
+ 	kimage_terminate(image);
+ 
++	ret = machine_kexec_post_load(image);
++	if (ret)
++		goto out;
++
+ 	/* Install the new kernel and uninstall the old */
+ 	image = xchg(dest_image, image);
+ 
 diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index 15d70a90b50d..f7ae04b8de6f 100644
+index f7ae04b8de6f..c19c0dad1ebe 100644
 --- a/kernel/kexec_core.c
 +++ b/kernel/kexec_core.c
-@@ -1171,7 +1171,7 @@ int kernel_kexec(void)
- 		 * CPU hotplug again; so re-enable it here.
- 		 */
- 		cpu_hotplug_enable();
--		pr_emerg("Starting new kernel\n");
-+		pr_notice("Starting new kernel\n");
- 		machine_shutdown();
- 	}
+@@ -589,6 +589,12 @@ static void kimage_free_extra_pages(struct kimage *image)
+ 	kimage_free_page_list(&image->unusable_pages);
  
+ }
++
++int __weak machine_kexec_post_load(struct kimage *image)
++{
++	return 0;
++}
++
+ void kimage_terminate(struct kimage *image)
+ {
+ 	if (*image->entry != 0)
+diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
+index 79f252af7dee..5b7f802be177 100644
+--- a/kernel/kexec_file.c
++++ b/kernel/kexec_file.c
+@@ -441,6 +441,10 @@ SYSCALL_DEFINE5(kexec_file_load, int, kernel_fd, int, initrd_fd,
+ 
+ 	kimage_terminate(image);
+ 
++	ret = machine_kexec_post_load(image);
++	if (ret)
++		goto out;
++
+ 	/*
+ 	 * Free up any temporary buffers allocated which are not needed
+ 	 * after image has been loaded
+diff --git a/kernel/kexec_internal.h b/kernel/kexec_internal.h
+index 48aaf2ac0d0d..39d30ccf8d87 100644
+--- a/kernel/kexec_internal.h
++++ b/kernel/kexec_internal.h
+@@ -13,6 +13,8 @@ void kimage_terminate(struct kimage *image);
+ int kimage_is_destination_range(struct kimage *image,
+ 				unsigned long start, unsigned long end);
+ 
++int machine_kexec_post_load(struct kimage *image);
++
+ extern struct mutex kexec_mutex;
+ 
+ #ifdef CONFIG_KEXEC_FILE
 -- 
 2.23.0
 
