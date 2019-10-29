@@ -2,74 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1145EE7A87
-	for <lists+kexec@lfdr.de>; Mon, 28 Oct 2019 21:53:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52144E7E6E
+	for <lists+kexec@lfdr.de>; Tue, 29 Oct 2019 03:11:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5R3DJ9X2X2SE3gj4gqUCnUcoBIGjc+FtSU2BsCo+2u4=; b=kL8GzzG4Q1nKcw
-	wRZDzo7n7HS3SYkG888q5pT+faSpMHUtfDyQH9eaO5t5HZoud4z84J3pNjPagO2amcT7W0YEv9ySQ
-	uK8cYuxmJlbVMywOfDCfdfiBiifACGHUyOVpY59dnc4DE2ty7IQItovFVH30gu04uHefq6GQMlxBl
-	IRKH5XqeQqqQh50VGP8UGmUIFz9EiGNhn0bReKEwblFR6+xDr75hjg6NtFuibAhyIhMnXf9wiY+hM
-	E5zuBGpg1HOImE+uMY13WDgeIA0RuoQxV/UfAOhagcr2U9ZgcY4mDdiAdpnzl3eXV1YUU5thlaJ0R
-	OylkfoNKnNhc3BE9ng7A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=8BARHdVJNgP/qI71A5AKmW4/BItkJBR43oM0+x9z28Q=; b=kwR
+	5e+tXbusAZUs9NkKQS3qOCZFW1EZeeGew+IV5bbauHcOy/SLu5TrvTAwGSWS2kiZDJdMrveGyTmp6
+	Qfg5uGCVb59OdjIHgIcovsyoqi9VxxZxeNduFIOj1BDwBWTJuvB++dJGdu3n7OOP6rySEk55+AaZX
+	24f4jPo0UYNcIgX89bgFdw09auixkjv/jNGdYq3Fk9SQ4TctXe9pKQeYsT7aYztnCjzsMVMaV18CM
+	+Xyf45KEf6hhlRGIqN+yoU7Jj8dCCpSyVrR8q961I7IfSohw5ZlfxDTV94wTCxMyeN6xCnoc2fssH
+	LyZX0Kxv6qGqDBz4mnkXeFmnFpEcguQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPC0Z-0001hK-Vk; Mon, 28 Oct 2019 20:52:59 +0000
-Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
+	id 1iPGym-0002us-9r; Tue, 29 Oct 2019 02:11:28 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPC0V-0001gd-PV
- for kexec@lists.infradead.org; Mon, 28 Oct 2019 20:52:57 +0000
-Received: from mailgate01.nec.co.jp ([114.179.233.122])
- by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id x9SKqq1n004645
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Tue, 29 Oct 2019 05:52:52 +0900
-Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
- by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id x9SKqq9A020041;
- Tue, 29 Oct 2019 05:52:52 +0900
-Received: from mail02.kamome.nec.co.jp (mail02.kamome.nec.co.jp [10.25.43.5])
- by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id x9SKqqFI004046; 
- Tue, 29 Oct 2019 05:52:52 +0900
-Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
- mail03.kamome.nec.co.jp with ESMTP id BT-MMP-265450;
- Tue, 29 Oct 2019 05:49:34 +0900
-Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
- BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Tue,
- 29 Oct 2019 05:49:34 +0900
-From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: RE: Makedumpfile help for 5.4.0.rc3 : Arm
-Thread-Topic: Makedumpfile help for 5.4.0.rc3 : Arm
-Thread-Index: AQHViEDZSq812Kxm4UCQ/dmdPZPK46dk4M2AgADTPwCACtv74A==
-Date: Mon, 28 Oct 2019 20:49:33 +0000
-Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03593E47@BPXM09GP.gisp.nec.co.jp>
-References: <1C379272-3B10-432C-8A83-8F3008CEE87F@oracle.com>
- <CACi5LpM9eN7XuFRi-BapvGNSfu8GgDPTi0BRG9WT4E_nJkzwfw@mail.gmail.com>
- <B641BD39-6FA8-4382-AA04-D83CDCF5D278@oracle.com>
- <CACi5LpPRFi4BoyDp4dBDROJ48r6oZnenTJ_CE=MMefYnVnZ0ZA@mail.gmail.com>
-In-Reply-To: <CACi5LpPRFi4BoyDp4dBDROJ48r6oZnenTJ_CE=MMefYnVnZ0ZA@mail.gmail.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [143.101.134.177]
-MIME-Version: 1.0
-X-TM-AS-MML: disable
+ id 1iPGyi-0002tx-94
+ for kexec@lists.infradead.org; Tue, 29 Oct 2019 02:11:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1572315082;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=dxTh2aeqRz/SGJhGd2rcrJamUtecUG5SfHtNNQiPowQ=;
+ b=Y+v5+bk6YwtI2mpkP5oyPc9wsbwiSQZBXw+MbPHb1gJUXMNBQ/+sdnqOMxagh7Spw65azf
+ bErDWsT3kcs3Mg1X4LXnInzUJxfO42votSbM7tzdFU9sk1zzdJHwEVmqH+6WuQylDHLs5e
+ TZ0hG5PiKUKKkFY8g4vnSSygheXI0iY=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-189-3v9Rw4OyMQKzV50YZkpVqw-1; Mon, 28 Oct 2019 22:11:19 -0400
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 682FB2B6;
+ Tue, 29 Oct 2019 02:11:17 +0000 (UTC)
+Received: from localhost.localdomain.com (ovpn-12-41.pek2.redhat.com
+ [10.72.12.41])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 631911001B28;
+ Tue, 29 Oct 2019 02:11:04 +0000 (UTC)
+From: Lianbo Jiang <lijiang@redhat.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 0/2 v7] x86/kdump: Fix 'kmem -s' reported an invalid
+ freepointer when SME was active
+Date: Tue, 29 Oct 2019 10:10:57 +0800
+Message-Id: <20191029021059.22070-1-lijiang@redhat.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-MC-Unique: 3v9Rw4OyMQKzV50YZkpVqw-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_135256_062674_ACF16925 
-X-CRM114-Status: GOOD (  12.66  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191028_191124_402481_34B7944F 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [114.179.232.161 listed in list.dnswl.org]
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,50 +85,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: John Donnelly <john.p.donnelly@oracle.com>,
- kexec mailing list <kexec@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com,
+ horms@verge.net.au, x86@kernel.org, kexec@lists.infradead.org,
+ dhowells@redhat.com, mingo@redhat.com, bp@alien8.de, ebiederm@xmission.com,
+ hpa@zytor.com, tglx@linutronix.de, dyoung@redhat.com, d.hatayama@fujitsu.com,
+ vgoyal@redhat.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-SGkgQmh1cGVzaCwNCg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiA+ID4gSSBhbSB3
-b3JraW5nIG9uIHRoZSBjaGFuZ2VzIGluIHRoZSB2bWNvcmVpbmZvIGFmdGVyIHRoZSA1Mi1iaXQg
-VkENCj4gPiA+IGNoYW5nZXMgZnJvbSBTdGV2ZSB3ZXJlIGFjY2VwdGVkIGluIExpbnV4IDUuNC1y
-YzEgKCJTdXBwb3J0IGZvciA1Mi1iaXQNCj4gPiA+IHZpcnR1YWwgYWRkcmVzc2luZyBpbiBrZXJu
-ZWwgc3BhY2XigJ0pLg0KPiA+DQo+ID4NCj4gPiAgICBJIGRvbuKAmXQgc2VlIGEgY29tbWl0IHdp
-dGggdGhpcyB0aXRsZSBpbiBsaW51eC1zdGFibGUgIDsgIENvdWxkIHlvdSBiZSBhIGxpdHRsZSBt
-b3JlIHNwZWNpZmljIHdoYXQNCj4gZmlsZSAgdGhhdCB3YXMgYXBwbGllZCB0byA/DQo+IA0KPiBZ
-b3UgY2FuIGhhdmUgYSBsb29rIGF0IHRoZSBmb2xsb3dpbmcgY29tbWl0IChhbmQgZGVwZW5kZW5j
-aWVzKSBpbg0KPiBMaW51cydzIHRyZWUgKGdpdDovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGlu
-dXgva2VybmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQpDQo+IHdoaWNoIGludHJvZHVjZWQgNTIt
-Yml0IGtlcm5lbCBWQXMgZm9yIGFybTY0IGFyY2hpdGVjdHVyZToNCj4gDQo+IGNvbW1pdCBiNmQw
-MGQ0N2U4MWE0OWY2Y2Y0NjI1MThjMTA0MDhmMzdhM2U2Nzg1DQo+IEF1dGhvcjogU3RldmUgQ2Fw
-cGVyIDxzdGV2ZS5jYXBwZXJAYXJtLmNvbT4NCj4gRGF0ZTogICBXZWQgQXVnIDcgMTY6NTU6MjIg
-MjAxOSArMDEwMA0KPiANCj4gICAgIGFybTY0OiBtbTogSW50cm9kdWNlIDUyLWJpdCBLZXJuZWwg
-VkFzDQoNClRoYW5rIHlvdSBmb3Igd29ya2luZyBvbiB0aGlzLg0KDQpJJ3ZlIGFsc28gaGFkIGEg
-bG9vayBhdCB0aGVtLCBhbmQgbXkgdW5kZXJzdGFuZGluZyBpcyB0aGF0IHdlIG5lZWQNCmluIHZt
-Y29yZWluZm8gYXQgbGVhc3Q6DQoNCi0gVENSX0VMMS5UMVNaIChhbG1vc3QgZXF1YWxzIHRvIHZh
-Yml0c19hY3R1YWwpIHRvIGRldGVybWluZToNCiAgbyBQQUdFX09GRlNFVA0KICBvIHdoZXRoZXIg
-dGhlIGtlcm5lbCBoYXMgdGhlICJmbGlwcGVkIiBsaW5lYXIgbWFwIGFuZCB0aGUgb3RoZXJzLg0K
-ICAgIFdlIG5lZWQgYSBmaXggdG8gX19wYSgpIHdpdGggaXQuIChzZWUgdGhlIHBhdGNoIGJlbG93
-KQ0KDQotIFBBX0JJVFMgb3IgTUFYX1BIWVNNRU1fQklUUyB0byBkZXRlcm1pbmU6DQogIG8gd2hl
-dGhlciBTUEFSU0VNRU1fRVhUUkVNRSBvciBub3QsIGluIGlzX3NwYXJzZW1lbV9leHRyZW1lKCkN
-CiAgbyB3aGV0aGVyIHRoZSBrZXJuZWwgaGFzIDQ4LWJpdCBvciA1Mi1iaXQgUEEgdG8gc3dpdGNo
-DQogICAgdGhlIGNhbGN1bGF0aW9uIG9mIHB0ZS10by1wYWRkci4gKHRoaXMgbWlnaHQgYmUgdW5u
-ZWNlc3Nhcnk/KQ0KDQpJcyB0aGlzIHJpZ2h0Pw0KDQpBbmQgd3JvdGUgYSB2ZXJ5IGRyYWZ0IHBh
-dGNoLCB3aGljaCB3b3JrcyBvbiBhIDUuNC1yYzQga2VybmVsIHRoYXQNCkkgbW9kaWZpZWQgdG8g
-aGF2ZSBOVU1CRVIodmFiaXRzX2FjdHVhbCkgYW5kIE5VTUJFUihNQVhfUEhZU01FTV9CSVRTKSwN
-CndpdGggVkFfQklUUz00OCBjb25maWcgb3IgVkFfQklUUz01MiBjb25maWcgcnVubmluZyBpbiA0
-OC1iaXQgbW9kZS4NCmh0dHBzOi8vZ2l0aHViLmNvbS9rLWhhZ2lvL21ha2VkdW1wZmlsZS9jb21t
-aXQvZmQ5ZDg2ZWEwNWIzOGU5ZWRiYjhjMGFjM2ViZDYxMmQ1ZDQ4NWRmMw0KDQooSSBkb24ndCBp
-bnRlbmQgdG8gZXhwb3J0IHRoZW0gYXMgdGhleSBhcmUsIGl0J3MganVzdCBmb3IgYW4gZXhwZXJp
-bWVudC4NCkFuZCBubyBzdXBwb3J0IGZvciAtLW1lbS11c2FnZSBvcHRpb24sICJyZWFsIiA1Mi1i
-aXQgUEEsIGFuZCBzbyBvbi4pDQoNCkFzIGZvciBNQVhfUEhZU01FTV9CSVRTLCBJIGRvbid0IHN0
-aWNrIHRvIGV4cG9ydCBpdCBmb3IgYWxsIGFyY2hpdGVjdHVyZXMsDQphbHRob3VnaCBJIHRvbGQg
-eW91IHRoYXQgaXQgd291bGQgYmUgYmV0dGVyIHRvIGRvIHNvIGluIHRoZSBwYXN0Lg0KSWYgaXQn
-cyBoYXJkIHRvIGRvIHNvLCBpdCdzIGZpbmUgd2l0aCBtZSB0byBleHBvcnQgaXQgb3Igc29tZXRo
-aW5nIHNpbWlsYXINCm9ubHkgZm9yIGFybTY0IGZvciBub3cuLg0KDQpZb3VyIHRob3VnaHRzPw0K
-DQpUaGFua3MsDQpLYXp1DQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+In purgatory(), the main things are as below:
+
+[1] verify sha256 hashes for various segments.
+    Lets keep these codes, and do not touch the logic.
+
+[2] copy the first 640k content to a backup region.
+    Lets safely remove it and clean all code related to backup region.
+
+This patch series will remove the backup region, because the current
+handling of copying the first 640k runs into problems when SME is
+active(https://bugzilla.kernel.org/show_bug.cgi?id=204793).
+
+The low 1MiB region will always be reserved when the crashkernel kernel
+command line option is specified. And this way makes it unnecessary to
+do anything with the low 1MiB region, because the memory allocated later
+won't fall into the low 1MiB area.
+
+This series includes two patches:
+[1] x86/kdump: always reserve the low 1MiB when the crashkernel option
+    is specified
+    The low 1MiB region will always be reserved when the crashkernel
+    kernel command line option is specified, which ensures that the
+    memory allocated later won't fall into the low 1MiB area.
+
+[2] x86/kdump: clean up all the code related to the backup region
+    Remove the backup region and clean up.
+
+Changes since v1:
+[1] Add extra checking condition: when the crashkernel option is
+    specified, reserve the low 640k area.
+
+Changes since v2:
+[1] Reserve the low 1MiB region when the crashkernel option is only
+    specified.(Suggested by Eric)
+
+[2] Remove the unused crash_copy_backup_region()
+
+[3] Remove the backup region and clean up
+
+[4] Split them into three patches
+
+Changes since v3:
+[1] Improve the first patch's log
+
+[2] Improve the third patch based on Eric's suggestions
+
+Changes since v4:
+[1] Correct some typos, and also improve the first patch's log
+
+[2] Add a new function kexec_reserve_low_1MiB() in kernel/kexec_core.c
+    and which is called by reserve_real_mode(). (Suggested by Boris)
+
+Changes since v5:
+[1] Call the cmdline_find_option() instead of strstr() to check the
+    crashkernel option. (Suggested by Hatayama)
+
+[2] Add a weak function kexec_reserve_low_1MiB() in kernel/kexec_core.c,
+    and implement the kexec_reserve_low_1MiB() in arch/x86/kernel/
+    machine_kexec_64.c so that it does not cause the compile error
+    on non-x86 kernel, and also ensures that it can work well on x86
+    kernel.
+
+Changes since v6:
+[1] Move the kexec_reserve_low_1MiB() to arch/x86/kernel/crash.c and
+    also move its declaration function to arch/x86/include/asm/crash.h
+    (Suggested by Dave Young)
+
+[2] Adjust the corresponding header files.
+
+Lianbo Jiang (2):
+  x86/kdump: always reserve the low 1MiB when the crashkernel option is
+    specified
+  x86/kdump: clean up all the code related to the backup region
+
+ arch/x86/include/asm/crash.h       |   6 ++
+ arch/x86/include/asm/kexec.h       |  10 ---
+ arch/x86/include/asm/purgatory.h   |  10 ---
+ arch/x86/kernel/crash.c            | 102 ++++++++---------------------
+ arch/x86/kernel/machine_kexec_64.c |  47 -------------
+ arch/x86/purgatory/purgatory.c     |  19 ------
+ arch/x86/realmode/init.c           |   2 +
+ 7 files changed, 34 insertions(+), 162 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
