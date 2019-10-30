@@ -2,88 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A35E4E97F3
-	for <lists+kexec@lfdr.de>; Wed, 30 Oct 2019 09:17:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1116E9E7B
+	for <lists+kexec@lfdr.de>; Wed, 30 Oct 2019 16:09:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P/gRm25D8n5FfWvvlTnh47zDnl5DSQwdczM091T5TGM=; b=Q7C4LcHo0WYOc8
-	ooqRTnklWUJ38i3A3PVQBep99AEIpRk2bwCUypdwAGGd/qSJTz2ZxRtbZQ9sx4g3Hq3xC3QGcrXsl
-	VCRagfTtNmb50uwyQD7riu1G8wsFbUpNpBNPz5aOG4dQVgUGe2JkBmc7DBvovA67joWsTG76OXgo0
-	XUizfOO6CfAHpY/uU9JIO/KtZqpkmuWCdhJL/dfoNIQZr/6qtHXjiBMu8kmykeEvfyOmsrl/uJxjV
-	V5HsfJvHcZZHC6XFQh14ySl0PRSmsR7m6I3NCRwBU1O/C6Qw9UpYfs5hKwrZs+4ZafNiBsz1cZVEn
-	nnm62RXtEBtR/PT3yjbQ==;
+	List-Owner; bh=xMrsFh4Vll3K+YlTQTIeW8FNRYzwCaAwYyQjzeVNdmU=; b=cZlXhrZjGALU8O
+	4PEuAlEapoXPV7FtFo49wdQOxWYmQq/ubzddvZfpFOEaSsGIm0nqxW74hCa+966oox2XJdv5tyI4a
+	+WDnfqNhS4qY8acVj6VqK01GP/0VxjEWAvM9v67WQf1hlfzXwzhLCK6fh5X929jP5vetS4K1h5Jgd
+	fLzC0gNu1E91uC4tNI9eo7VcH8JUzmQkwUCdpsvtcZswHJ3UilfwYsB/dARblAYFe8w2IQQB16vEL
+	NgwoiGJ7P4GNJO4A97uWEf69/6BuUWhZdxETvxAktdr3N4B5ZqDa84WYk3Ur3JZb6d4v3TJTO8A0X
+	X7IK3bpR5RzTT1c5GjNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPjAA-00005y-RF; Wed, 30 Oct 2019 08:17:06 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1iPpb6-0005fR-9j; Wed, 30 Oct 2019 15:09:20 +0000
+Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPjA4-00004t-Ge
- for kexec@lists.infradead.org; Wed, 30 Oct 2019 08:17:01 +0000
-Received: by mail-io1-xd42.google.com with SMTP id r144so1484434iod.8
- for <kexec@lists.infradead.org>; Wed, 30 Oct 2019 01:16:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lpYGBg1jJ5KEN2i5nHLFGyRT07x4GIIRr3DHeUFz3Is=;
- b=D1deaDyaEfvXbQDKVIG0IHCUiSfGzM+4j1qziMkbFn12I4lNWM0j/wZhvc1VOUcPhX
- XMwn7PLdQaQ+b0M9vh8fTX784V/9ya8NyB2SX6namwoGiNr4iCAff4Ds6eUidMv+Ndmf
- ksbsLB1npJDpMv+Eod6rB5CgCyykGbaUDLXlkQuOvG5FvtD2xdFuGcREMx3WBsre9poW
- QXJyTnJnNOu5HIfssH2JVbjDfzJNUS8p3G6YCNdH1tD4uV87S3gLeL3dMpwZV12kVOAL
- nCcHVgZ8UAcIlcsAjWcwhqJIPshWnf2WMg11buOar5ZzHGOaotCj57is2HSMedNZw7da
- uGOw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lpYGBg1jJ5KEN2i5nHLFGyRT07x4GIIRr3DHeUFz3Is=;
- b=nOcTx9QMXzpkM0NdJHC2dHhZyebTqHG8qiq3vZJOMk7k9a7twB5Pl+RWj8tSMxojth
- EngpecvNxO01IcBPE55yUTBj6dlGQL/F9oHhcJQNbRpmu5sXtG9e2/A9ZvUTEt2SNWSD
- gvl1bG7iR5N8WTG4hrknFZiZkSojFkAYdU2feA2LC90jlb2BmMiDry4Kqetqf4Vds4Hy
- ck8NgG/zkFh7yjy3gOOTjvGoF0wlTaXIKzMU5bDxp5q9OVuZpZzGSDg0d17j0r5T4LcI
- mPJ0I0XNhlbxB9jh+dTbWEpIf2Aq/3lsX/NCOHNUgNQW2LsFHKIM5SrpIRQ/FvtliTMv
- yBwA==
-X-Gm-Message-State: APjAAAXW2sopX6l+pApLed3kCD3PYpWUBFasz0htt+ys8AbHXqrSx0g6
- 1EXikjanuw5GEzdPWrwO++BTeFBGY1WeI7zYKBBqJOUp
-X-Google-Smtp-Source: APXvYqypapPM5T3Br0ld3dkjJmWgX89hnX8BUfKUwzCWYxJwmyaChH/qiyHcmrdiyj7uj7zJujzeq+MceJftGcQT9LQ=
-X-Received: by 2002:a05:6602:2284:: with SMTP id
- d4mr6105827iod.10.1572423419195; 
- Wed, 30 Oct 2019 01:16:59 -0700 (PDT)
+ id 1iPpb2-0005eS-Lh
+ for kexec@lists.infradead.org; Wed, 30 Oct 2019 15:09:18 +0000
+Received: from mailgate02.nec.co.jp ([114.179.233.122])
+ by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id x9UF99W7026395
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 31 Oct 2019 00:09:09 +0900
+Received: from mailsv02.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x9UF99JE019119;
+ Thu, 31 Oct 2019 00:09:09 +0900
+Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
+ by mailsv02.nec.co.jp (8.15.1/8.15.1) with ESMTP id x9UF7rpV001696;
+ Thu, 31 Oct 2019 00:09:09 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.140] [10.38.151.140]) by
+ mail02.kamome.nec.co.jp with ESMTP id BT-MMP-9960174;
+ Thu, 31 Oct 2019 00:08:12 +0900
+Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
+ BPXC12GP.gisp.nec.co.jp ([10.38.151.140]) with mapi id 14.03.0439.000; Thu,
+ 31 Oct 2019 00:08:12 +0900
+From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>,
+ John Donnelly <john.p.donnelly@oracle.com>
+Subject: RE: Makedumpfile help for 5.4.0.rc3 : Arm
+Thread-Topic: Makedumpfile help for 5.4.0.rc3 : Arm
+Thread-Index: AQHViEDZSq812Kxm4UCQ/dmdPZPK46dk4M2AgADTPwCACtv74IAA4YUAgAHlemA=
+Date: Wed, 30 Oct 2019 15:08:11 +0000
+Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03594125@BPXM09GP.gisp.nec.co.jp>
+References: <1C379272-3B10-432C-8A83-8F3008CEE87F@oracle.com>
+ <CACi5LpM9eN7XuFRi-BapvGNSfu8GgDPTi0BRG9WT4E_nJkzwfw@mail.gmail.com>
+ <B641BD39-6FA8-4382-AA04-D83CDCF5D278@oracle.com>
+ <CACi5LpPRFi4BoyDp4dBDROJ48r6oZnenTJ_CE=MMefYnVnZ0ZA@mail.gmail.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03593E47@BPXM09GP.gisp.nec.co.jp>
+ <CACi5LpOexc5ss6DRHOSWJeSAwwGPQ55z1XiFqenGzY1rLkzeqA@mail.gmail.com>
+In-Reply-To: <CACi5LpOexc5ss6DRHOSWJeSAwwGPQ55z1XiFqenGzY1rLkzeqA@mail.gmail.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [143.101.133.238]
 MIME-Version: 1.0
-References: <ae74bb79-a68e-a319-f61c-5b93fd70ae59@gmail.com>
- <CAKv+Gu8oUfSfMLW17QOwBCrrn+3AggHND6b0KZWfB=Npo9d8Hw@mail.gmail.com>
- <CAJ2QiJLOE8D_Cf8ysRzv2oJ=+Bv1scpQCUX0yK=_zxjm6Rr6ow@mail.gmail.com>
- <CAKv+Gu981sk=GifDZbB-c-QYYP84RweHSmPQFkLPis1UDgrhAg@mail.gmail.com>
-In-Reply-To: <CAKv+Gu981sk=GifDZbB-c-QYYP84RweHSmPQFkLPis1UDgrhAg@mail.gmail.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Wed, 30 Oct 2019 13:46:48 +0530
-Message-ID: <CAJ2QiJJ4KKYGiEU2P_wuY3E0Q-FJm4LiNu+1jbOJoO84W_FDJw@mail.gmail.com>
-Subject: Re: [edk2-devel] How /sys/firmware/fdt getting created
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191030_011700_559073_070079D8 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191030_080916_939519_7DEA2DD5 
+X-CRM114-Status: GOOD (  25.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [114.179.232.161 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.pkin[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,95 +84,74 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: naresh.bhat@linaro.org, edk2-devel-groups-io <devel@edk2.groups.io>,
- kexec@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: kexec mailing list <kexec@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Oct 30, 2019 at 1:14 PM Ard Biesheuvel
-<ard.biesheuvel@linaro.org> wrote:
->
-> On Wed, 30 Oct 2019 at 08:36, Prabhakar Kushwaha
-> <prabhakar.pkin@gmail.com> wrote:
-> >
-> > On Wed, Oct 30, 2019 at 12:43 PM Ard Biesheuvel
-> > <ard.biesheuvel@linaro.org> wrote:
-> > >
-> > > On Tue, 29 Oct 2019 at 18:17, Prabhakar Kushwaha
-> > > <prabhakar.pkin@gmail.com> wrote:
-> > > >
-> > > > Hi All,
-> > > >
-> > > > I am working on Ubuntu-18.04 with UEFI on ARM64(64 bit) platform. The
-> > > > UEFI used is having ACPI tables.
-> > > >
-> > > > I am trying to understand where and how /sys/firmware/fdt is getting
-> > > > created. is it created by UEFI or grub and passed to Linux?
-> > > >
-> > >
-> > > Neither. It is created by Linux itself.
-> > >
-> > >
-> > >
-> >
-> > Thanks Ard,
-> >
-> > Can you please point me the code where it is getting created.
-> > I want to add below in /sys/firmware/fdt.
-> >
-> > #size-cells = <0x02>;
-> > #address-cells = <0x02>;
-> >
->
-> Actually, in your case it is GRUB not the kernel that creates the FDT.
-> It does this to pass the initrd information.
->
-> So if you want to add these properties, you should add them there.
->
-> Can you explain why doing this is necessary?
-
-I am trying to test kexec -p (kdump feature) on CentOS-release
-7.7.1908 and Ubuntu-18.04 distributions.
-
- "kexec -p" command show error on Ubuntu. While no error on CentOS
-
-CentOS:
-$ kexec -p /boot/vmlinuz-`uname -r` --initrd=/boot/initramfs-`uname
--r`.img --reuse-cmdline
-$    ==> No error
-
-Ubuntu
-$ kexec -p /boot/vmlinuz-`uname -r` --initrd=/boot/initrd.img-`uname
--r` --reuse-cmdline
-$ kexec: elfcorehdr doesn't fit cells-size.
-$ kexec: setup_2nd_dtb failed.
-$ kexec: load failed.
-$ Cannot load /boot/vmlinuz-5.4.0-rc4+
-
-Note: Both CentOS and Ubuntu has Linux-5.4-rc4 tag.
-
-When i debugged further reason for Ubuntu error is due to
-address-cells and size-cells as "1"
-log from kexec tool :-
-load_crashdump_segments: elfcorehdr 0x7f7cbfc000-0x7f7cbff7ff
-read_1st_dtb: found name =dtb_sys  /sys/firmware/fdt
-get_cells_size: #address-cells:1 #size-cells:1
-
-On CentOS both values are "2".
-log from kexec tool :-
-load_crashdump_segments: elfcorehdr 0xbf98bf0000-0xbf98bf33ff
-read_1st_dtb: found nmae=dtb_sys /sys/firmware/fdt
-get_cells_size: #address-cells:2 #size-cells:2
-
-Note: Kexec tool read values from /sys/firmware/fdt.
-
-I am trying to figure out why 2 distributions showing different values.
-
---pk
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+SGkgQmh1cGVzaCwNCg0KT0ssIHRoYW5rcyBmb3IgbGV0dGluZyBtZSBrbm93IHRoYXQgaW4geW91
+ciBob2xpZGF5cy4gSGF2ZSBnb29kIG9uZXMuDQpJIGp1c3QgdGhvdWdodCB0aGF0IGl0IG1pZ2h0
+IGJlIGdvb2QgdG8gc2hhcmUgb3VyIHVuZGVyc3RhbmRpbmcgYmVmb3JlDQpwb3N0aW5nIGEga2Vy
+bmVsIHBhdGNoIHNvIHRoYXQgSSBjYW4gZG8gc29tZXRoaW5nIHRvIHN1cHBvcnQgeW91IGlmDQpu
+ZWVkIGJlLg0KDQoNCkhpIEpvaG4sDQoNCllvdSBzZWUgdGhhdCBlcnJvciB3aXRoIG15IHRlc3Qg
+cGF0Y2gsIHdoaWNoIGlzIG9ubHkgZm9yIHRlc3RpbmcgdGhvdWdoLA0KYXMgSSB3cm90ZSBiZWxv
+dw0KDQo+ID4gQW5kIHdyb3RlIGEgdmVyeSBkcmFmdCBwYXRjaCwgd2hpY2ggd29ya3Mgb24gYSA1
+LjQtcmM0IGtlcm5lbCB0aGF0DQo+ID4gSSBtb2RpZmllZCB0byBoYXZlIE5VTUJFUih2YWJpdHNf
+YWN0dWFsKSBhbmQgTlVNQkVSKE1BWF9QSFlTTUVNX0JJVFMpLA0KDQp0aGF0IHBhdGNoIHJlcXVp
+cmVzIGEga2VybmVsIGZpeCB0byBoYXZlIHRoZXNlIGluIHZtY29yZWluZm8uDQpEaWQgeW91IHRy
+eSBpdD8NCg0KVGhhbmtzLA0KS2F6dQ0KDQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+
+IEhpIEthenUsDQo+IA0KPiBTb3JyeSBmb3IgdG9wIHBvc3RpbmcsIGJ1dCBJIGFtIG9uIGxlYXZl
+IGZvciBEaXdhbGkgSG9saWRheXMgYW5kIHdpbGwNCj4gcmV0dXJuIHRvIHRoZSBvZmZpY2UgaW4g
+YSBjb3VwbGUgb2YgZGF5cy4NCj4gDQo+IEkgaGF2ZSB0aGUgc29sdXRpb24vcGF0Y2hzZXQgcmVh
+ZHkgYW5kIEkganVzdCBuZWVkIHRvIGZpbmlzaCB0aGUNCj4gY29tbWl0IG1lc3NhZ2VzIHRvIG1h
+a2Ugc3VyZSB0aGV5IGFyZSBzZWxmLWV4cGxhbmF0b3J5IGZvciB1cHN0cmVhbQ0KPiBhY2NlcHRh
+bmNlLg0KPiANCj4gSSB3aWxsIHRyeSB0byBwb3N0IHRoZW0gYW5kIGFsc28gYW5zd2VyIHlvdXIg
+ZW1haWwgaW4gZGV0YWlsIHdoZW4gSQ0KPiByZXR1cm4gYmFjayBmcm9tIGhvbGlkYXlzLg0KPiAN
+Cj4gVGhhbmtzIGZvciB5b3VyIHBhdGllbmNlLg0KPiANCj4gUmVnYXJkcywNCj4gQmh1cGVzaA0K
+PiANCj4gKFNlbnQgZnJvbSBteSBBbmRyb2lkIFBob25lKQ0KPiANCj4gT24gVHVlLCBPY3QgMjks
+IDIwMTkgYXQgMjoyMyBBTSBLYXp1aGl0byBIYWdpbyA8ay1oYWdpb0BhYi5qcC5uZWMuY29tPiB3
+cm90ZToNCj4gPg0KPiA+IEhpIEJodXBlc2gsDQo+ID4NCj4gPiA+IC0tLS0tT3JpZ2luYWwgTWVz
+c2FnZS0tLS0tDQo+ID4gPiA+ID4gSSBhbSB3b3JraW5nIG9uIHRoZSBjaGFuZ2VzIGluIHRoZSB2
+bWNvcmVpbmZvIGFmdGVyIHRoZSA1Mi1iaXQgVkENCj4gPiA+ID4gPiBjaGFuZ2VzIGZyb20gU3Rl
+dmUgd2VyZSBhY2NlcHRlZCBpbiBMaW51eCA1LjQtcmMxICgiU3VwcG9ydCBmb3IgNTItYml0DQo+
+ID4gPiA+ID4gdmlydHVhbCBhZGRyZXNzaW5nIGluIGtlcm5lbCBzcGFjZeKAnSkuDQo+ID4gPiA+
+DQo+ID4gPiA+DQo+ID4gPiA+ICAgIEkgZG9u4oCZdCBzZWUgYSBjb21taXQgd2l0aCB0aGlzIHRp
+dGxlIGluIGxpbnV4LXN0YWJsZSAgOyAgQ291bGQgeW91IGJlIGEgbGl0dGxlIG1vcmUgc3BlY2lm
+aWMgd2hhdA0KPiA+ID4gZmlsZSAgdGhhdCB3YXMgYXBwbGllZCB0byA/DQo+ID4gPg0KPiA+ID4g
+WW91IGNhbiBoYXZlIGEgbG9vayBhdCB0aGUgZm9sbG93aW5nIGNvbW1pdCAoYW5kIGRlcGVuZGVu
+Y2llcykgaW4NCj4gPiA+IExpbnVzJ3MgdHJlZSAoZ2l0Oi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3Nj
+bS9saW51eC9rZXJuZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdCkNCj4gPiA+IHdoaWNoIGludHJv
+ZHVjZWQgNTItYml0IGtlcm5lbCBWQXMgZm9yIGFybTY0IGFyY2hpdGVjdHVyZToNCj4gPiA+DQo+
+ID4gPiBjb21taXQgYjZkMDBkNDdlODFhNDlmNmNmNDYyNTE4YzEwNDA4ZjM3YTNlNjc4NQ0KPiA+
+ID4gQXV0aG9yOiBTdGV2ZSBDYXBwZXIgPHN0ZXZlLmNhcHBlckBhcm0uY29tPg0KPiA+ID4gRGF0
+ZTogICBXZWQgQXVnIDcgMTY6NTU6MjIgMjAxOSArMDEwMA0KPiA+ID4NCj4gPiA+ICAgICBhcm02
+NDogbW06IEludHJvZHVjZSA1Mi1iaXQgS2VybmVsIFZBcw0KPiA+DQo+ID4gVGhhbmsgeW91IGZv
+ciB3b3JraW5nIG9uIHRoaXMuDQo+ID4NCj4gPiBJJ3ZlIGFsc28gaGFkIGEgbG9vayBhdCB0aGVt
+LCBhbmQgbXkgdW5kZXJzdGFuZGluZyBpcyB0aGF0IHdlIG5lZWQNCj4gPiBpbiB2bWNvcmVpbmZv
+IGF0IGxlYXN0Og0KPiA+DQo+ID4gLSBUQ1JfRUwxLlQxU1ogKGFsbW9zdCBlcXVhbHMgdG8gdmFi
+aXRzX2FjdHVhbCkgdG8gZGV0ZXJtaW5lOg0KPiA+ICAgbyBQQUdFX09GRlNFVA0KPiA+ICAgbyB3
+aGV0aGVyIHRoZSBrZXJuZWwgaGFzIHRoZSAiZmxpcHBlZCIgbGluZWFyIG1hcCBhbmQgdGhlIG90
+aGVycy4NCj4gPiAgICAgV2UgbmVlZCBhIGZpeCB0byBfX3BhKCkgd2l0aCBpdC4gKHNlZSB0aGUg
+cGF0Y2ggYmVsb3cpDQo+ID4NCj4gPiAtIFBBX0JJVFMgb3IgTUFYX1BIWVNNRU1fQklUUyB0byBk
+ZXRlcm1pbmU6DQo+ID4gICBvIHdoZXRoZXIgU1BBUlNFTUVNX0VYVFJFTUUgb3Igbm90LCBpbiBp
+c19zcGFyc2VtZW1fZXh0cmVtZSgpDQo+ID4gICBvIHdoZXRoZXIgdGhlIGtlcm5lbCBoYXMgNDgt
+Yml0IG9yIDUyLWJpdCBQQSB0byBzd2l0Y2gNCj4gPiAgICAgdGhlIGNhbGN1bGF0aW9uIG9mIHB0
+ZS10by1wYWRkci4gKHRoaXMgbWlnaHQgYmUgdW5uZWNlc3Nhcnk/KQ0KPiA+DQo+ID4gSXMgdGhp
+cyByaWdodD8NCj4gPg0KPiA+IEFuZCB3cm90ZSBhIHZlcnkgZHJhZnQgcGF0Y2gsIHdoaWNoIHdv
+cmtzIG9uIGEgNS40LXJjNCBrZXJuZWwgdGhhdA0KPiA+IEkgbW9kaWZpZWQgdG8gaGF2ZSBOVU1C
+RVIodmFiaXRzX2FjdHVhbCkgYW5kIE5VTUJFUihNQVhfUEhZU01FTV9CSVRTKSwNCj4gPiB3aXRo
+IFZBX0JJVFM9NDggY29uZmlnIG9yIFZBX0JJVFM9NTIgY29uZmlnIHJ1bm5pbmcgaW4gNDgtYml0
+IG1vZGUuDQo+ID4gaHR0cHM6Ly9naXRodWIuY29tL2staGFnaW8vbWFrZWR1bXBmaWxlL2NvbW1p
+dC9mZDlkODZlYTA1YjM4ZTllZGJiOGMwYWMzZWJkNjEyZDVkNDg1ZGYzDQo+ID4NCj4gPiAoSSBk
+b24ndCBpbnRlbmQgdG8gZXhwb3J0IHRoZW0gYXMgdGhleSBhcmUsIGl0J3MganVzdCBmb3IgYW4g
+ZXhwZXJpbWVudC4NCj4gPiBBbmQgbm8gc3VwcG9ydCBmb3IgLS1tZW0tdXNhZ2Ugb3B0aW9uLCAi
+cmVhbCIgNTItYml0IFBBLCBhbmQgc28gb24uKQ0KPiA+DQo+ID4gQXMgZm9yIE1BWF9QSFlTTUVN
+X0JJVFMsIEkgZG9uJ3Qgc3RpY2sgdG8gZXhwb3J0IGl0IGZvciBhbGwgYXJjaGl0ZWN0dXJlcywN
+Cj4gPiBhbHRob3VnaCBJIHRvbGQgeW91IHRoYXQgaXQgd291bGQgYmUgYmV0dGVyIHRvIGRvIHNv
+IGluIHRoZSBwYXN0Lg0KPiA+IElmIGl0J3MgaGFyZCB0byBkbyBzbywgaXQncyBmaW5lIHdpdGgg
+bWUgdG8gZXhwb3J0IGl0IG9yIHNvbWV0aGluZyBzaW1pbGFyDQo+ID4gb25seSBmb3IgYXJtNjQg
+Zm9yIG5vdy4uDQo+ID4NCj4gPiBZb3VyIHRob3VnaHRzPw0KPiA+DQo+ID4gVGhhbmtzLA0KPiA+
+IEthenUNCj4gPg0KPiANCg0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
