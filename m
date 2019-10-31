@@ -2,80 +2,67 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF40CEAD19
-	for <lists+kexec@lfdr.de>; Thu, 31 Oct 2019 11:08:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0F80EADCF
+	for <lists+kexec@lfdr.de>; Thu, 31 Oct 2019 11:48:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sTXiXNKvcpUqot+xk1rtPV009febSqMw4CtxP4FD+YA=; b=MgSA197HejkNyI
-	Kl3l5DWdWI8CVkuYaRVM8eQxemCb8zyE1qHVTT3beQfFouUwsAldCKO1KWxhnTj6d+kcvPf33nong
-	6s8qzZ7GuNEMQIJdfwfq7qvtmdS76fF+p6pZJrBf+DmpGL57x58eiqB5f6h3epLGGvy0+Zm7DW5Xc
-	eP8kY0cl+Zk8BxeWnO+RVL/S1Ncd6MhURGn5KX4Fhms+5oKJ6SV4gXE8jDVdRQJ8655Tx1GfRw5Lp
-	KWKJkXorAWTeg7Mw1QJptShTl5ywmpDqZwWioyuRIAfdL0F4usnXS5mk4XIaABEynrbKMBLgB5/+P
-	OTMh5TIeDpyxVdJ94Gvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/l9TGPNFeVEMhNDucsamkOc7N8F+/VBYvO0qc5mRFcQ=; b=l20QSBZlQqFGoQ
+	hzen0rgyTscsDo3XfWBcoOYavY2KKDJ2b18M+R8kxUTMkwRxK73yNItaaSQYCEsnMEsvK2bWop0l6
+	3x8ee6DSDVagVY/t3jCMz6Nn4AnvfYYL38rhtybr6PDEh9Skvnzd+4OHxKzt+ALrRCdP4h+cSqTQU
+	JNBWVyWo7iBWG896UEbOBRQUK2wuHNrGL0+xZQMipulPXeIaGqIhDvGZzSctgBZvcQt5ykbJOzqd4
+	VpoJYXwLmCkcvq2esmj8S7rQ2KeARTJICtxojIG4Ti/WXn5D04qliJCa2wChhSQptdmya/ixmkV7T
+	0bR2ML+zEWrtpirFi4eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ7N6-0003Wd-Hc; Thu, 31 Oct 2019 10:08:04 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iQ7zj-0005m2-Fk; Thu, 31 Oct 2019 10:47:59 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ7N2-0003Ug-RG
- for kexec@lists.infradead.org; Thu, 31 Oct 2019 10:08:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1572516479;
+ id 1iQ7zg-0005lO-Eo
+ for kexec@lists.infradead.org; Thu, 31 Oct 2019 10:47:58 +0000
+Received: from nazgul.tnic (unknown [91.217.168.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 387141EC0CD1;
+ Thu, 31 Oct 2019 11:47:49 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1572518869;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=gc/OlmBktQXoJ2zKzgI75ZpNAflSdHScjTfPoKL/jyc=;
- b=ZfMP7u66uCCRMs5RwXG9qgZ00gPLfWAUfK0hmtvNGoj3S+bkM/y+qIH4UncbdQHmnkOLFk
- /4NFCWfAKiobpPGBK0VwfmAQBwYVHPo9TqWWQaMmv0mAUqa2q0dTzBqAwOuEhGYYjS7vGI
- 1YBU8lvPeiq7kwm0c80BwCCfCIXhwjs=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-154-g1mLBRwrOBehoPEaGY2PwA-1; Thu, 31 Oct 2019 06:07:55 -0400
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7D12D1005500;
- Thu, 31 Oct 2019 10:07:54 +0000 (UTC)
-Received: from lacos-laptop-7.usersys.redhat.com (ovpn-117-6.ams2.redhat.com
- [10.36.117.6])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 087D4A7EA;
- Thu, 31 Oct 2019 10:07:52 +0000 (UTC)
-Subject: Re: [edk2-devel] How /sys/firmware/fdt getting created
-To: devel@edk2.groups.io, prabhakar.pkin@gmail.com,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <ae74bb79-a68e-a319-f61c-5b93fd70ae59@gmail.com>
- <CAKv+Gu8oUfSfMLW17QOwBCrrn+3AggHND6b0KZWfB=Npo9d8Hw@mail.gmail.com>
- <CAJ2QiJLOE8D_Cf8ysRzv2oJ=+Bv1scpQCUX0yK=_zxjm6Rr6ow@mail.gmail.com>
- <CAKv+Gu981sk=GifDZbB-c-QYYP84RweHSmPQFkLPis1UDgrhAg@mail.gmail.com>
- <CAJ2QiJJ4KKYGiEU2P_wuY3E0Q-FJm4LiNu+1jbOJoO84W_FDJw@mail.gmail.com>
-From: Laszlo Ersek <lersek@redhat.com>
-Message-ID: <2b268378-d9be-adb5-f139-a0ca8dab4329@redhat.com>
-Date: Thu, 31 Oct 2019 11:07:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=hTysPbLoe/2KqpZjkjX3aRFBzExmpYnWMUSCHexYqlo=;
+ b=R7XYfBumbxk3dFtMvEdSUWhepoOWP4p6T2VKlR743okyJkJ/l0fB9hWQDIuUdR5pHt+KQ9
+ SK6oEoprNmbFve5Ek27jI0gRdccHPNEWGiAsSf9uoZ1adn7yNdVbUsfBrlDxk/Hvm0DqiT
+ 64nhCIJUt4yUqppUuhjtNdqmtoz5iHA=
+Date: Thu, 31 Oct 2019 11:47:48 +0100
+From: Borislav Petkov <bp@alien8.de>
+To: lijiang <lijiang@redhat.com>
+Subject: Re: [PATCH 1/2 RESEND v8] x86/kdump: always reserve the low 1M when
+ the crashkernel option is specified
+Message-ID: <20191031104748.GC21133@nazgul.tnic>
+References: <20191031033517.11282-1-lijiang@redhat.com>
+ <20191031033517.11282-2-lijiang@redhat.com>
+ <20191031071345.GA17248@nazgul.tnic>
+ <fe68b796-c483-20c4-623c-2671c52a3bf9@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJ2QiJJ4KKYGiEU2P_wuY3E0Q-FJm4LiNu+1jbOJoO84W_FDJw@mail.gmail.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-MC-Unique: g1mLBRwrOBehoPEaGY2PwA-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <fe68b796-c483-20c4-623c-2671c52a3bf9@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_030800_988417_A477C26A 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191031_034756_645702_684DDE3A 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [91.217.168.176 listed in zen.spamhaus.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,107 +83,78 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: naresh.bhat@linaro.org, kexec@lists.infradead.org,
- Leif Lindholm <leif.lindholm@linaro.org>
+Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com,
+ horms@verge.net.au, x86@kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dhowells@redhat.com, mingo@redhat.com,
+ ebiederm@xmission.com, hpa@zytor.com, tglx@linutronix.de, dyoung@redhat.com,
+ d.hatayama@fujitsu.com, vgoyal@redhat.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-+Leif, comment at bottom
+On Thu, Oct 31, 2019 at 05:40:35PM +0800, lijiang wrote:
+> Maybe it should be a separate patch to fix the old compile warnings as follow.
+> And i should put the patch into this series.
 
-On 10/30/19 09:16, Prabhakar Kushwaha wrote:
-> On Wed, Oct 30, 2019 at 1:14 PM Ard Biesheuvel
-> <ard.biesheuvel@linaro.org> wrote:
->>
->> On Wed, 30 Oct 2019 at 08:36, Prabhakar Kushwaha
->> <prabhakar.pkin@gmail.com> wrote:
->>>
->>> On Wed, Oct 30, 2019 at 12:43 PM Ard Biesheuvel
->>> <ard.biesheuvel@linaro.org> wrote:
->>>>
->>>> On Tue, 29 Oct 2019 at 18:17, Prabhakar Kushwaha
->>>> <prabhakar.pkin@gmail.com> wrote:
->>>>>
->>>>> Hi All,
->>>>>
->>>>> I am working on Ubuntu-18.04 with UEFI on ARM64(64 bit) platform. The
->>>>> UEFI used is having ACPI tables.
->>>>>
->>>>> I am trying to understand where and how /sys/firmware/fdt is getting
->>>>> created. is it created by UEFI or grub and passed to Linux?
->>>>>
->>>>
->>>> Neither. It is created by Linux itself.
->>>>
->>>>
->>>>
->>>
->>> Thanks Ard,
->>>
->>> Can you please point me the code where it is getting created.
->>> I want to add below in /sys/firmware/fdt.
->>>
->>> #size-cells = <0x02>;
->>> #address-cells = <0x02>;
->>>
->>
->> Actually, in your case it is GRUB not the kernel that creates the FDT.
->> It does this to pass the initrd information.
->>
->> So if you want to add these properties, you should add them there.
->>
->> Can you explain why doing this is necessary?
-> 
-> I am trying to test kexec -p (kdump feature) on CentOS-release
-> 7.7.1908 and Ubuntu-18.04 distributions.
-> 
->  "kexec -p" command show error on Ubuntu. While no error on CentOS
-> 
-> CentOS:
-> $ kexec -p /boot/vmlinuz-`uname -r` --initrd=/boot/initramfs-`uname
-> -r`.img --reuse-cmdline
-> $    ==> No error
-> 
-> Ubuntu
-> $ kexec -p /boot/vmlinuz-`uname -r` --initrd=/boot/initrd.img-`uname
-> -r` --reuse-cmdline
-> $ kexec: elfcorehdr doesn't fit cells-size.
-> $ kexec: setup_2nd_dtb failed.
-> $ kexec: load failed.
-> $ Cannot load /boot/vmlinuz-5.4.0-rc4+
-> 
-> Note: Both CentOS and Ubuntu has Linux-5.4-rc4 tag.
-> 
-> When i debugged further reason for Ubuntu error is due to
-> address-cells and size-cells as "1"
-> log from kexec tool :-
-> load_crashdump_segments: elfcorehdr 0x7f7cbfc000-0x7f7cbff7ff
-> read_1st_dtb: found name =dtb_sys  /sys/firmware/fdt
-> get_cells_size: #address-cells:1 #size-cells:1
-> 
-> On CentOS both values are "2".
-> log from kexec tool :-
-> load_crashdump_segments: elfcorehdr 0xbf98bf0000-0xbf98bf33ff
-> read_1st_dtb: found nmae=dtb_sys /sys/firmware/fdt
-> get_cells_size: #address-cells:2 #size-cells:2
-> 
-> Note: Kexec tool read values from /sys/firmware/fdt.
-> 
-> I am trying to figure out why 2 distributions showing different values.
+Yes, maybe.
 
-http://git.savannah.gnu.org/cgit/grub.git/commit/?id=347210a5d5ce655b95315f320faa515afb723c11
+> commit d2091d1f4f67f1c38293b0e93fdbfefa766940cf (HEAD -> master)
+> Author: Lianbo Jiang <lijiang@redhat.com>
+> Date:   Thu Oct 31 15:48:02 2019 +0800
+> 
+>     kexec: Fix i386 build warnings that missed declaration of struct kimage
+>     
+>     Kbuild test robot reported some build warnings, please refer to the
+>     Link below for details.
 
-Ubuntu probably ships a grub version that lacks this commit.
+Explain here what the warnings are, why they trigger and how you're
+fixing it. How a commit message should look like is also explained in
+that document I pointed you at.
 
-(The commit was first released as part of upstream grub-2.04. I have no
-idea what version of grub is shipped in the CentOS distro you mention
-above -- it could be based upon upstream 2.04, or the upstream patch may
-have been backported to CentOS.)
+Refering to some link is not what we do in commit messages.
 
-Thanks
-Laszlo
+>     Add a declaration of struct kimage to fix these compile warnings.
+>     
+>     Fixes: dd5f726076cc ("kexec: support for kexec on panic using new system call")
+>     Reported-by: kbuild test robot <lkp@intel.com>
+>     Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+>     Link: https://lkml.org/lkml/2019/10/30/833
 
+*NEVER* use lkml.org or any other external URL for refering to mail
+threads but *always* use our own
+
+lkml.kernel.org/r/<Message-ID>
+
+redirector. See other tip commits for an example.
+
+> > You can read
+> > 
+> > https://www.kernel.org/doc/html/latest/process/submitting-patches.html
+> > 
+> > in the meantime, especially section
+> > 
+> > "9) Don't get discouraged - or impatient"
+> > 
+> > while waiting.
+> 
+> OK. Thanks.
+
+And make sure to read that whole document and also have a look at the
+process document
+
+https://www.kernel.org/doc/html/latest/process/index.html
+
+so that you can avoid such mistakes in the future.
+
+Thx.
+
+-- 
+Regards/Gruss,
+    Boris.
+
+ECO tip #101: Trim your mails when you reply.
+--
 
 _______________________________________________
 kexec mailing list
