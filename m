@@ -2,63 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FF2CEAAE5
-	for <lists+kexec@lfdr.de>; Thu, 31 Oct 2019 08:14:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26FD2EACAD
+	for <lists+kexec@lfdr.de>; Thu, 31 Oct 2019 10:41:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m1y4oMrc4rUWNGpxnfpDOWQYl83y+tSaAATL4am6Rh8=; b=aTHU3KvccObSxF
-	AGbdrewhW2RukQzIjq06d4RwX54H4Jud0SK1b41FRukUxEUjAEcPtPFhyoL7VVPmqxKGgUoarcVeU
-	Q8W4xcBR8rp6R85RaLlqFwTxx9UBIZCvLFVHPvLlc0lGDc/Zxbg3uGCxmtIOhdHYUvp8rtVTC3Rxb
-	u25Ss2boVm0qKTe9lLyvw74I1OMpl8HrqFINIhTHzSCtRr2O5cqalU6ThlOaexaQ6tP48NdziRZqu
-	6I8oJYHE19uUPKksgVG93P+R1J0cAjsegE78iHscFLeDO+QtxWxdCSkeeDH1Ho1B7anBVxvSRyv3i
-	vzFFSfItTFDUI689DLrw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p5qzduLPloaTLJ4rRdJjXO49I2+yGinUVDWw+7mqNAc=; b=Bnyfag40pR5D1k
+	W/Z95cUICwrfHp77VTp9DTX2OgIrAqtphXZx19q/nrLTdmhOO63ZMx97QvFBGtZ7HTJyF1+XgyzQp
+	+6ZExJzBBHfBSus9TyAGYIzfqwfSn139ax4f+xMsgczfrz64OLyGfNlDjjTRLhJ7yntrWj1aiufu+
+	lN7CPgGvFLIlA7wQ43FHhCeHx7G+ES+Ow21RvAuxZ2n52jUml7sVQXLbM5GmxDRvWiU+arJehIxyC
+	rOoG+HMJVFoX8/m4jHwzINUvNovhUK35lUaOuN6cv0pHa8HXJZardKk2/prw4tfimGBYmMTvUZx9A
+	B7Jpbg5XCsSDC1oPH9yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ4ei-0003WD-US; Thu, 31 Oct 2019 07:14:04 +0000
-Received: from mail.skyhub.de ([5.9.137.197])
+	id 1iQ6xA-0000yW-SC; Thu, 31 Oct 2019 09:41:16 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ4ed-0003VJ-PO
- for kexec@lists.infradead.org; Thu, 31 Oct 2019 07:14:03 +0000
-Received: from nazgul.tnic (unknown [46.218.74.72])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 21B001EC0CC3;
- Thu, 31 Oct 2019 08:13:51 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
- t=1572506031;
+ id 1iQ6x4-0000xk-6D
+ for kexec@lists.infradead.org; Thu, 31 Oct 2019 09:41:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1572514868;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
- bh=iSXPghAWzlU3fW//jNjEO3q3vXqfETkOCwCibktbWkY=;
- b=m7jOLGDqL1xwgbpgs/O8iIxBDc+jsqg5zmPK5lKvA0Hb4n0PdavGVcKrImucGyHsTYsYLX
- pBj0XC0+BiGEeENr0jw9SZiLqsplAgNA8g+vi07jBXUnBSmOi4ND+ravIFExkM1tzlyK/G
- YfboQAlTwwu8NSVgAiaMEOGluGtIaas=
-Date: Thu, 31 Oct 2019 08:13:45 +0100
-From: Borislav Petkov <bp@alien8.de>
-To: Lianbo Jiang <lijiang@redhat.com>
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=FphYlGHf0GOBbNL99gSzHiqeOzgs9Hepno3U9ekZfgk=;
+ b=Gi3/jghu9DPjWx7MxR3zjHVWIw2/pcLIqivMmVAhxwreqKZwiZnbxTNpHe3kic4Pn84VZ+
+ b6dIKgK/1bGFZsmNmWvK6f+ma4DF/VPwoYfoz3PR2G38Y8eTd3VzVB7PDMnVwdLFSNdBj0
+ OP9wZ8tT4Kv2fn5oUxUqwYX6ercDqfc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-148-FFvMLDcLMMOOAmBqX6VMqQ-1; Thu, 31 Oct 2019 05:41:01 -0400
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 91647800D49;
+ Thu, 31 Oct 2019 09:40:59 +0000 (UTC)
+Received: from localhost.localdomain (ovpn-12-31.pek2.redhat.com [10.72.12.31])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 339045D6A3;
+ Thu, 31 Oct 2019 09:40:39 +0000 (UTC)
 Subject: Re: [PATCH 1/2 RESEND v8] x86/kdump: always reserve the low 1M when
  the crashkernel option is specified
-Message-ID: <20191031071345.GA17248@nazgul.tnic>
+To: Borislav Petkov <bp@alien8.de>
 References: <20191031033517.11282-1-lijiang@redhat.com>
  <20191031033517.11282-2-lijiang@redhat.com>
+ <20191031071345.GA17248@nazgul.tnic>
+From: lijiang <lijiang@redhat.com>
+Message-ID: <fe68b796-c483-20c4-623c-2671c52a3bf9@redhat.com>
+Date: Thu, 31 Oct 2019 17:40:35 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191031033517.11282-2-lijiang@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20191031071345.GA17248@nazgul.tnic>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-MC-Unique: FFvMLDcLMMOOAmBqX6VMqQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_001359_976049_A29CCD3F 
-X-CRM114-Status: GOOD (  17.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191031_024110_302703_3D2F8730 
+X-CRM114-Status: GOOD (  18.79  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [5.9.137.197 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,78 +98,50 @@ Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com,
  linux-kernel@vger.kernel.org, dhowells@redhat.com, mingo@redhat.com,
  ebiederm@xmission.com, hpa@zytor.com, tglx@linutronix.de, dyoung@redhat.com,
  d.hatayama@fujitsu.com, vgoyal@redhat.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Oct 31, 2019 at 11:35:16AM +0800, Lianbo Jiang wrote:
-> Kdump kernel will reuse the first 640k region because the real mode
-> trampoline has to work in this area. When the vmcore is dumped, the
-> old memory in this area may be accessed, therefore, kernel has to
-> copy the contents of the first 640k area to a backup region so that
-> kdump kernel can read the old memory from the backup area of the
-> first 640k area, which is done in the purgatory().
-> 
-> But, the current handling of copying the first 640k area runs into
-> problems when SME is enabled, kernel does not properly copy these
-> old memory to the backup area in the purgatory(), thereby, kdump
-> kernel reads out the encrypted contents, because the kdump kernel
-> must access the first kernel's memory with the encryption bit set
-> when SME is enabled in the first kernel. Please refer to this link:
-> 
-> Bugzilla: https://bugzilla.kernel.org/show_bug.cgi?id=204793
-> 
-> Finally, it causes the following errors, and the crash tool gets
-> invalid pointers when parsing the vmcore.
-> 
-> crash> kmem -s|grep -i invalid
-> kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
-> kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
-> crash>
-> 
-> To avoid the above errors, when the crashkernel option is specified,
-> lets reserve the remaining low 1M memory(after reserving real mode
-> memory) so that the allocated memory does not fall into the low 1M
-> area, which makes us not to copy the first 640k content to a backup
-> region in purgatory(). This indicates that it does not need to be
-> included in crash dumps or used for anything except the processor
-> trampolines that must live in the low 1M.
-> 
-> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
-> Reported-by: kbuild test robot <lkp@intel.com>
-
-Please do not merge a 0day bot fix with another patch of yours which
-does not cause it in the first place. When you look at this patch alone,
-what do you think the Reported-by tag means, if anything at all?
-
-Also, it is not a "RESEND" if you change them. You can call them v8.1 or
-whatever to denote that the change is small.
-
-Also, do not send v9 or v8.1 or whatever, immediately but wait for other
-reviews. You have sent these patches 4(!) times in this week alone. How
-would you feel if I hammer your inbox with patches on a daily basis?
-
-You can read
-
-https://www.kernel.org/doc/html/latest/process/submitting-patches.html
-
-in the meantime, especially section
-
-"9) Don't get discouraged - or impatient"
-
-while waiting.
-
-Thx.
-
--- 
-Regards/Gruss,
-    Boris.
-
-ECO tip #101: Trim your mails when you reply.
---
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+5ZyoIDIwMTnlubQxMOaciDMx5pelIDE1OjEzLCBCb3Jpc2xhdiBQZXRrb3Yg5YaZ6YGTOgo+IFBs
+ZWFzZSBkbyBub3QgbWVyZ2UgYSAwZGF5IGJvdCBmaXggd2l0aCBhbm90aGVyIHBhdGNoIG9mIHlv
+dXJzIHdoaWNoCj4gZG9lcyBub3QgY2F1c2UgaXQgaW4gdGhlIGZpcnN0IHBsYWNlLiBXaGVuIHlv
+dSBsb29rIGF0IHRoaXMgcGF0Y2ggYWxvbmUsCj4gd2hhdCBkbyB5b3UgdGhpbmsgdGhlIFJlcG9y
+dGVkLWJ5IHRhZyBtZWFucywgaWYgYW55dGhpbmcgYXQgYWxsPwo+IApUaGFua3MgZm9yIHlvdXIg
+c3VnZ2VzdGlvbnMuCgpNYXliZSBpdCBzaG91bGQgYmUgYSBzZXBhcmF0ZSBwYXRjaCB0byBmaXgg
+dGhlIG9sZCBjb21waWxlIHdhcm5pbmdzIGFzIGZvbGxvdy4KQW5kIGkgc2hvdWxkIHB1dCB0aGUg
+cGF0Y2ggaW50byB0aGlzIHNlcmllcy4KCgpjb21taXQgZDIwOTFkMWY0ZjY3ZjFjMzgyOTNiMGU5
+M2ZkYmZlZmE3NjY5NDBjZiAoSEVBRCAtPiBtYXN0ZXIpCkF1dGhvcjogTGlhbmJvIEppYW5nIDxs
+aWppYW5nQHJlZGhhdC5jb20+CkRhdGU6ICAgVGh1IE9jdCAzMSAxNTo0ODowMiAyMDE5ICswODAw
+CgogICAga2V4ZWM6IEZpeCBpMzg2IGJ1aWxkIHdhcm5pbmdzIHRoYXQgbWlzc2VkIGRlY2xhcmF0
+aW9uIG9mIHN0cnVjdCBraW1hZ2UKICAgIAogICAgS2J1aWxkIHRlc3Qgcm9ib3QgcmVwb3J0ZWQg
+c29tZSBidWlsZCB3YXJuaW5ncywgcGxlYXNlIHJlZmVyIHRvIHRoZQogICAgTGluayBiZWxvdyBm
+b3IgZGV0YWlscy4KICAgIAogICAgQWRkIGEgZGVjbGFyYXRpb24gb2Ygc3RydWN0IGtpbWFnZSB0
+byBmaXggdGhlc2UgY29tcGlsZSB3YXJuaW5ncy4KICAgIAogICAgRml4ZXM6IGRkNWY3MjYwNzZj
+YyAoImtleGVjOiBzdXBwb3J0IGZvciBrZXhlYyBvbiBwYW5pYyB1c2luZyBuZXcgc3lzdGVtIGNh
+bGwiKQogICAgUmVwb3J0ZWQtYnk6IGtidWlsZCB0ZXN0IHJvYm90IDxsa3BAaW50ZWwuY29tPgog
+ICAgU2lnbmVkLW9mZi1ieTogTGlhbmJvIEppYW5nIDxsaWppYW5nQHJlZGhhdC5jb20+CiAgICBM
+aW5rOiBodHRwczovL2xrbWwub3JnL2xrbWwvMjAxOS8xMC8zMC84MzMKCmRpZmYgLS1naXQgYS9h
+cmNoL3g4Ni9pbmNsdWRlL2FzbS9jcmFzaC5oIGIvYXJjaC94ODYvaW5jbHVkZS9hc20vY3Jhc2gu
+aAppbmRleCAwYWNmNWVlNDVhMjEuLmVmNTYzOGY2NDFmMiAxMDA2NDQKLS0tIGEvYXJjaC94ODYv
+aW5jbHVkZS9hc20vY3Jhc2guaAorKysgYi9hcmNoL3g4Ni9pbmNsdWRlL2FzbS9jcmFzaC5oCkBA
+IC0yLDYgKzIsOCBAQAogI2lmbmRlZiBfQVNNX1g4Nl9DUkFTSF9ICiAjZGVmaW5lIF9BU01fWDg2
+X0NSQVNIX0gKIAorc3RydWN0IGtpbWFnZTsKKwogaW50IGNyYXNoX2xvYWRfc2VnbWVudHMoc3Ry
+dWN0IGtpbWFnZSAqaW1hZ2UpOwogaW50IGNyYXNoX2NvcHlfYmFja3VwX3JlZ2lvbihzdHJ1Y3Qg
+a2ltYWdlICppbWFnZSk7CiBpbnQgY3Jhc2hfc2V0dXBfbWVtbWFwX2VudHJpZXMoc3RydWN0IGtp
+bWFnZSAqaW1hZ2UsCgo+IEFsc28sIGl0IGlzIG5vdCBhICJSRVNFTkQiIGlmIHlvdSBjaGFuZ2Ug
+dGhlbS4gWW91IGNhbiBjYWxsIHRoZW0gdjguMSBvcgo+IHdoYXRldmVyIHRvIGRlbm90ZSB0aGF0
+IHRoZSBjaGFuZ2UgaXMgc21hbGwuCj4gClRoYW5rcyBmb3IgeW91ciBleHBsYW5hdGlvbiBpbiBk
+ZXRhaWwuCgo+IEFsc28sIGRvIG5vdCBzZW5kIHY5IG9yIHY4LjEgb3Igd2hhdGV2ZXIsIGltbWVk
+aWF0ZWx5IGJ1dCB3YWl0IGZvciBvdGhlcgo+IHJldmlld3MuCgpPSy4gTGV0cyB3YWl0IGEgd2Vl
+ayBvciBtb3JlLgoKPiBZb3UgaGF2ZSBzZW50IHRoZXNlIHBhdGNoZXMgNCghKSB0aW1lcyBpbiB0
+aGlzIHdlZWsgYWxvbmUuIEhvdwo+IHdvdWxkIHlvdSBmZWVsIGlmIEkgaGFtbWVyIHlvdXIgaW5i
+b3ggd2l0aCBwYXRjaGVzIG9uIGEgZGFpbHkgYmFzaXM/Cj5Qcm9iYWJseSBiZWNhdXNlIHRoZSBj
+aGFuZ2UgaXMgc21hbGwuCgpBbnl3YXksIHNvIHNvcnJ5LCBpdCBzZWVtcyBpbmNvbnNpZGVyYXRl
+LgoKPiBZb3UgY2FuIHJlYWQKPiAKPiBodHRwczovL3d3dy5rZXJuZWwub3JnL2RvYy9odG1sL2xh
+dGVzdC9wcm9jZXNzL3N1Ym1pdHRpbmctcGF0Y2hlcy5odG1sCj4gCj4gaW4gdGhlIG1lYW50aW1l
+LCBlc3BlY2lhbGx5IHNlY3Rpb24KPiAKPiAiOSkgRG9uJ3QgZ2V0IGRpc2NvdXJhZ2VkIC0gb3Ig
+aW1wYXRpZW50Igo+IAo+IHdoaWxlIHdhaXRpbmcuCgpPSy4gVGhhbmtzLgoKTGlhbmJvCgoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGlu
+ZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
