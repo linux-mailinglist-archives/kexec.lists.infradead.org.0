@@ -2,73 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F6F9EEB10
-	for <lists+kexec@lfdr.de>; Mon,  4 Nov 2019 22:26:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2693EEC6C
+	for <lists+kexec@lfdr.de>; Mon,  4 Nov 2019 22:57:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=egFKOvusy5mHUKhQMW2ND4nHbXYpvrI3rJGmdtyOkoM=; b=BuBvEZg2k4yk+5
-	4yVeb6fmK6pYLymJoMk89rCCLeRVtf2q8/iPfkV/bJwoZCMAuGiXRyMp/wOAnWiR6X3rnXRJH8kRP
-	w4PGQfcvc1l1PORfAc1fbR80uoHSBBfcUj1z6uHWshYNbrXao76UKqngxcsnYmFj06lRwclxLNNzx
-	9v1CrRnEfSRyXtE+UCNewrj75eRc5UlAA+E5MghdJhNVty3iuf2IJ6Y5zkEYEM7/QfsxGcxzzP6fm
-	seLtL0l925F/ke9/HSRb/T0bVc115pFREj3nXqtbGgf2qjWAvlNsN1T1GqCpHdJrFbOWR++BNRFb2
-	bcVNQOzSuzv+XtVotRkA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=SWs7zCuzJ1Dxywd2CpBkaLeDSJ4V+R1qDy9zKRihs74=; b=o5l
+	29ixVsTXrBoVKSNV9TuX7qIg8PegdxyqucD//pvnBzeu8sAtBCDzkS0SINQVea49WRR+OyoRNuxAG
+	vpWv+p7r++6ABz879/nb1F3lWLa2aHkKSKgnlArvn2CQAWgoRmRSEQYfeyThRwLJWmeWwn0RI3i4m
+	s04MulPT0SbxvjC/v1de1Zyp9jEpjX7LD9QB3TTBu035FRWDEanGA/+WpiJMsxy5wOsHEYSjeiL6u
+	EP+xoIP3nlyXAcQpK4GUHUz+mHp8LNIT9+feYOv4/UbCcAH2SJTHzl/RxSbKm1K42qbexakFk0rZ8
+	2NvfygL7k8rWPypgc6PHQ9QuSbFJswA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iRjrP-00035d-52; Mon, 04 Nov 2019 21:26:03 +0000
-Received: from tyo162.gate.nec.co.jp ([114.179.232.162])
+	id 1iRkLd-0007oM-TW; Mon, 04 Nov 2019 21:57:17 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iRjrK-00034K-Vq
- for kexec@lists.infradead.org; Mon, 04 Nov 2019 21:26:01 +0000
-Received: from mailgate01.nec.co.jp ([114.179.233.122])
- by tyo162.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xA4LPje5025760
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Tue, 5 Nov 2019 06:25:45 +0900
-Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
- by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xA4LPi3E010530;
- Tue, 5 Nov 2019 06:25:45 +0900
-Received: from mail03.kamome.nec.co.jp (mail03.kamome.nec.co.jp [10.25.43.7])
- by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xA4LPifL029468; 
- Tue, 5 Nov 2019 06:25:44 +0900
-Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
- mail01b.kamome.nec.co.jp with ESMTP id BT-MMP-10048153;
- Tue, 5 Nov 2019 06:24:38 +0900
-Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
- BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Tue, 5
- Nov 2019 06:24:37 +0900
-From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-To: Mikhail Zaslonko <zaslonko@linux.ibm.com>
-Subject: RE: [PATCH] makedumpfile: Fix off-by-one issue in
- exclude_nodata_pages()
-Thread-Topic: [PATCH] makedumpfile: Fix off-by-one issue in
- exclude_nodata_pages()
-Thread-Index: AQHVkxCU/OdkVmf2uUKkQbVo21uQs6d7hOoQ
-Date: Mon, 4 Nov 2019 21:24:36 +0000
-Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC035945E5@BPXM09GP.gisp.nec.co.jp>
-References: <20191104130515.26741-1-zaslonko@linux.ibm.com>
-In-Reply-To: <20191104130515.26741-1-zaslonko@linux.ibm.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [143.101.135.153]
-MIME-Version: 1.0
-X-TM-AS-MML: disable
+ id 1iRkLV-0007fp-0z
+ for kexec@lists.infradead.org; Mon, 04 Nov 2019 21:57:11 +0000
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com
+ [209.85.210.198])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 4D81481F0E
+ for <kexec@lists.infradead.org>; Mon,  4 Nov 2019 21:57:07 +0000 (UTC)
+Received: by mail-pf1-f198.google.com with SMTP id w16so3257154pfq.14
+ for <kexec@lists.infradead.org>; Mon, 04 Nov 2019 13:57:07 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=VEjZbpLdVwy3arAkz9SYmqq7myiGlsbhXTCJx2Y0Xq4=;
+ b=fEltr7BuvLJJO++Jj6Tx5eF3h6si7v1IvMM9vidT7ssPhzlO6wpBx8W39+dYnpRlye
+ 7V0sdQY0h1Q2/wfJyM87TsGnj1IRV8ia9hfU3i8LDz5FPYmfaUMr4Y5g3yvq/9oJr+u5
+ KuBJE4Nn2YyOFygRt8boinKFZcjrzyN6cg7Ve5zJhxp6G6Efj4Je5cVKGchVqhxM1XKq
+ s6j98UWl417w4H2KLFRSeR/7Dlqpsr58RRtQOw01EVh7O0zYavSAH6HE3SzFNr7wvrGI
+ /DO9oV7AcbCPbma9adm16hfhjBvq8jyFJ0+1EaSAPUwwtxe78wFwfK4N8/6ZMAIz/GNo
+ 1A2Q==
+X-Gm-Message-State: APjAAAWEXj6akq8twwfHgFE++oQ8SiCICfd84LsCVjzrmeusULi14Q+2
+ Gkv6DMF0Neh8ZtpT+nHgBut+JsRsChVtKl+KTuAbwOVRvS/IXuX6KAVYwfC8HjJpBUtgt2/ap5G
+ jPFAgB0CfdwKeKjkb8Ow0
+X-Received: by 2002:a17:90a:b90b:: with SMTP id
+ p11mr1792607pjr.73.1572904626741; 
+ Mon, 04 Nov 2019 13:57:06 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxek4cnLo2j7JE5LY3Fdlz8cmjGPUDJiJmdDcXnAJbnRW3R15BMc9ytXLGrz8UQlHX/du+CWQ==
+X-Received: by 2002:a17:90a:b90b:: with SMTP id
+ p11mr1792574pjr.73.1572904626420; 
+ Mon, 04 Nov 2019 13:57:06 -0800 (PST)
+Received: from localhost ([182.69.200.119])
+ by smtp.gmail.com with ESMTPSA id r8sm4661118pgr.59.2019.11.04.13.57.04
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 04 Nov 2019 13:57:05 -0800 (PST)
+From: Bhupesh Sharma <bhsharma@redhat.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: mm: Remove MAX_USER_VA_BITS definition
+Date: Tue,  5 Nov 2019 03:26:46 +0530
+Message-Id: <1572904606-27961-1-git-send-email-bhsharma@redhat.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191104_132559_278240_99BE37C2 
-X-CRM114-Status: GOOD (  17.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191104_135709_112738_173F774A 
+X-CRM114-Status: GOOD (  17.37  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [114.179.232.162 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,66 +84,95 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "prudo@linux.ibm.com" <prudo@linux.ibm.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- "dyoung@redhat.com" <dyoung@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Steve Capper <steve.capper@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhsharma@redhat.com,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ bhupesh.linux@gmail.com, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Mikhail,
+commit 9b31cf493ffa ("arm64: mm: Introduce MAX_USER_VA_BITS definition")
+introduced the MAX_USER_VA_BITS definition, which was used to support
+the arm64 mm use-cases where the user-space could use 52-bit virtual
+addresses whereas the kernel-space would still could a maximum of 48-bit
+virtual addressing.
 
-> -----Original Message-----
-> When building a dump bitmap (2nd bitmap) for the ELF dump, the last pfn
-> of the cycle is always ignored in exclude_nodata_pages() function due to
-> off-by-one error on cycle boundary check. Thus, the respective bit of
-> the bitmap is never cleared.
-> That can lead to the error when such a pfn should not be dumpable (e.g.
-> the last pfn of the ELF-load of zero filesize). Based on the bit in the
-> bitmap the page is treated as dumpable in write_elf_pages_cyclic() function
-> and the follow on error is triggered in write_elf_load_segment() function
-> due to the failing sanity check of paddr_to_offset2():
+But, now with commit b6d00d47e81a ("arm64: mm: Introduce 52-bit Kernel
+VAs"), we removed the 52-bit user/48-bit kernel kconfig option and hence
+there is no longer any scenario where user VA != kernel VA size
+(even with CONFIG_ARM64_FORCE_52BIT enabled, the same is true).
 
-Good catch.  I could reproduce this issue with a vmcore on hand and
-confirm that the patch fixed it.  Looks good to me, applied.
+Hence we can do away with the MAX_USER_VA_BITS macro as it is equal to
+VA_BITS (maximum VA space size) in all possible use-cases. Note that
+even though the 'vabits_actual' value would be 48 for arm64 hardware
+which don't support LVA-8.2 extension (even when CONFIG_ARM64_VA_BITS_52
+is enabled), VA_BITS would still be set to a value 52. Hence this change
+would be safe in all possible VA address space combinations.
 
-Thanks,
-Kazu
+Cc: James Morse <james.morse@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: linux-kernel@vger.kernel.org
+Cc: kexec@lists.infradead.org
+Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+---
+ arch/arm64/include/asm/memory.h        | 6 ------
+ arch/arm64/include/asm/pgtable-hwdef.h | 2 +-
+ arch/arm64/include/asm/processor.h     | 2 +-
+ 3 files changed, 2 insertions(+), 8 deletions(-)
 
-> 
->    $ makedumpfile -E dump.elf dump.elf.E
->    Checking for memory holes                         : [100.0 %] |
->    write_elf_load_segment: Can't convert physaddr(7ffff000) to an offset.
->    makedumpfile Failed.
-> 
-> Signed-off-by: Mikhail Zaslonko <zaslonko@linux.ibm.com>
-> ---
->  makedumpfile.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/makedumpfile.c b/makedumpfile.c
-> index de0973f..4a00011 100644
-> --- a/makedumpfile.c
-> +++ b/makedumpfile.c
-> @@ -4740,7 +4740,7 @@ exclude_nodata_pages(struct cycle *cycle)
->  		if (pfn < cycle->start_pfn)
->  			pfn = cycle->start_pfn;
->  		if (pfn_end >= cycle->end_pfn)
-> -			pfn_end = cycle->end_pfn - 1;
-> +			pfn_end = cycle->end_pfn;
->  		while (pfn < pfn_end) {
->  			clear_bit_on_2nd_bitmap(pfn, cycle);
->  			++pfn;
-> --
-> 2.17.1
-> 
-> 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
-
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index c23c47360664..a4f9ca5479b0 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -69,12 +69,6 @@
+ #define KERNEL_START		_text
+ #define KERNEL_END		_end
+ 
+-#ifdef CONFIG_ARM64_VA_BITS_52
+-#define MAX_USER_VA_BITS	52
+-#else
+-#define MAX_USER_VA_BITS	VA_BITS
+-#endif
+-
+ /*
+  * Generic and tag-based KASAN require 1/8th and 1/16th of the kernel virtual
+  * address space for the shadow region respectively. They can bloat the stack
+diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+index 3df60f97da1f..d9fbd433cc17 100644
+--- a/arch/arm64/include/asm/pgtable-hwdef.h
++++ b/arch/arm64/include/asm/pgtable-hwdef.h
+@@ -69,7 +69,7 @@
+ #define PGDIR_SHIFT		ARM64_HW_PGTABLE_LEVEL_SHIFT(4 - CONFIG_PGTABLE_LEVELS)
+ #define PGDIR_SIZE		(_AC(1, UL) << PGDIR_SHIFT)
+ #define PGDIR_MASK		(~(PGDIR_SIZE-1))
+-#define PTRS_PER_PGD		(1 << (MAX_USER_VA_BITS - PGDIR_SHIFT))
++#define PTRS_PER_PGD		(1 << (VA_BITS - PGDIR_SHIFT))
+ 
+ /*
+  * Section address mask and size definitions.
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index 5623685c7d13..586fcd4b1965 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -9,7 +9,7 @@
+ #define __ASM_PROCESSOR_H
+ 
+ #define KERNEL_DS		UL(-1)
+-#define USER_DS			((UL(1) << MAX_USER_VA_BITS) - 1)
++#define USER_DS			((UL(1) << VA_BITS) - 1)
+ 
+ /*
+  * On arm64 systems, unaligned accesses by the CPU are cheap, and so there is
+-- 
+2.7.4
 
 
 _______________________________________________
