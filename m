@@ -2,69 +2,73 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46459F42B3
-	for <lists+kexec@lfdr.de>; Fri,  8 Nov 2019 10:00:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89AD4F42C5
+	for <lists+kexec@lfdr.de>; Fri,  8 Nov 2019 10:01:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dFr+HM7Yhxk9ksnjMej3t4Td2PCjmaWGvjM6dp5N/C8=; b=Crx
-	mTZeQZwlyUsWNpSkPGu36e1z+lbVzPlmqeBslU+OFwBwQ/04hCW26LyRXXaWM1yr2bzGRvFu6Bdk3
-	pnlTUkfCxlb/nMcw/7jbC3CG+cIcW2goNvWb5QSIvw7qIxP9j4oiZ2P5rJUhra6UsTeZisrSD2PV6
-	cEydVwaiuSj1hk9Wl9S2wYg/PRMNBJByp4FYPozhDBaLXFbm78ToDGGCIr52iV6K/X0zt0WK8HyKd
-	9xZIJ4pbYIEFUyWNbZ9+uAGkTMrYmbZyARNkov1lBwmRrUnY+BY5+JEug0sq6n4qB2GBcHLqLxR/u
-	rXOgUDAinMX1+2K+j823NvDP8tLVFZA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=vTMvw5h5RYVKWQuB8WHaj/Va1SnRUoTdEv1YfOP0DIU=; b=nwFHoqMfBEbFjRwTjGZY8jDpb/
+	YVmgTzpDtJYuWhw5AlIuudxFr0uE0UQxMO4HSbuNRL8G2eV4oj4t0S5hyOSG6H5Cg/QYd6SWiZGsn
+	16Cxs7vZZzef38NeSTWST3vasXaBXHAPIgR1QwWZzX5/IQx9JJmLm97uIw06P1DxxvcJj/ddiuqVh
+	XMWrV9J1+kFD6L5C0gOHBpmfW+4vzv3g1jpLvT5rGbrNBSTPNtFry1NvvunX1pYJ4sqrpImezgjhV
+	nKJGCAphR3S+oJSVSc5mnztZPY8cRyHuyiksRJ24AemDrZPuOY048BJCuEKVao+7+BgXSNh8LARJ1
+	7RANVXNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT08V-0004Rr-JJ; Fri, 08 Nov 2019 09:00:55 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iT099-00057p-Uo; Fri, 08 Nov 2019 09:01:35 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT08R-0004OB-NP
- for kexec@lists.infradead.org; Fri, 08 Nov 2019 09:00:53 +0000
+ id 1iT08Y-0004UM-Oc
+ for kexec@lists.infradead.org; Fri, 08 Nov 2019 09:01:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1573203649;
+ s=mimecast20190719; t=1573203657;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=R1cBLL262d5PbXD6F0/Q3yv5N9eCafn0HD776UEyAek=;
- b=SG91JlLCeADjMyj5cTm5UO32Fa4MbJcFWFSa/rfsD+cHI1cxegWgd8kIQsoUxdN0Xnvt3X
- pchBTqqR1TWN9jf8vKlgQVKEIPwG/iia1OmsXz6e8Tn5KXpDXNCBXDTsXwgfbnjWOCx57W
- lEDWwjazV4sLIeptRolU/39IQ4GBp6o=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=DQgI6LR9Tf12y8XeIh2jR9nG2D8CgHUS6/V4oUyv4Q4=;
+ b=jNlYDkuupGuRBV8vxUEy8NExnC2yh3jusEcQzAwCRV9a1zrSGyYChKMMqd+dpUDiSKDtBz
+ pcTfjfRzG5lUb4m24ClUaaPFa5f2TWaNK3AcqtaHjLkvGrGBEdEh1oKvloHkL//8ExHKGD
+ DEdeMijN76NNuVX2JuhfPUNNZdAqZmU=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-354-uiASuWksMTKVsC_UFMqNDA-1; Fri, 08 Nov 2019 04:00:45 -0500
+ us-mta-304-w-acrUUZPq-jQXuerZDBhg-1; Fri, 08 Nov 2019 04:00:52 -0500
 Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
  [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id ADB88477;
- Fri,  8 Nov 2019 09:00:43 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id BB9E7477;
+ Fri,  8 Nov 2019 09:00:50 +0000 (UTC)
 Received: from localhost.localdomain.com (ovpn-12-112.pek2.redhat.com
  [10.72.12.112])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 94FFA5D6A5;
- Fri,  8 Nov 2019 09:00:32 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 453E15D6A5;
+ Fri,  8 Nov 2019 09:00:43 +0000 (UTC)
 From: Lianbo Jiang <lijiang@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/3 v9] x86/kdump: Fix 'kmem -s' reported an invalid
- freepointer when SME was active
-Date: Fri,  8 Nov 2019 17:00:24 +0800
-Message-Id: <20191108090027.11082-1-lijiang@redhat.com>
+Subject: [PATCH 1/3 v9] x86/kdump: always reserve the low 1M when the
+ crashkernel option is specified
+Date: Fri,  8 Nov 2019 17:00:25 +0800
+Message-Id: <20191108090027.11082-2-lijiang@redhat.com>
+In-Reply-To: <20191108090027.11082-1-lijiang@redhat.com>
+References: <20191108090027.11082-1-lijiang@redhat.com>
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-MC-Unique: uiASuWksMTKVsC_UFMqNDA-1
+X-MC-Unique: w-acrUUZPq-jQXuerZDBhg-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_010051_845700_971D5555 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20191108_010058_876320_1A765137 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -96,104 +100,120 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-In purgatory(), the main things are as below:
+Kdump kernel will reuse the first 640k region because the real mode
+trampoline has to work in this area. When the vmcore is dumped, the
+old memory in this area may be accessed, therefore, kernel has to
+copy the contents of the first 640k area to a backup region so that
+kdump kernel can read the old memory from the backup area of the
+first 640k area, which is done in the purgatory().
 
-[1] verify sha256 hashes for various segments.
-    Lets keep these codes, and do not touch the logic.
+But, the current handling of copying the first 640k area runs into
+problems when SME is enabled, kernel does not properly copy these
+old memory to the backup area in the purgatory(), thereby, kdump
+kernel reads out the encrypted contents, because the kdump kernel
+must access the first kernel's memory with the encryption bit set
+when SME is enabled in the first kernel. Please refer to this link:
 
-[2] copy the first 640k content to a backup region.
-    Lets safely remove it and clean all code related to backup region.
+Bugzilla: https://bugzilla.kernel.org/show_bug.cgi?id=204793
 
-This patch series will remove the backup region, because the current
-handling of copying the first 640k runs into problems when SME is
-active(https://bugzilla.kernel.org/show_bug.cgi?id=204793).
+Finally, it causes the following errors, and the crash tool gets
+invalid pointers when parsing the vmcore.
 
-The low 1M region will always be reserved when the crashkernel kernel
-command line option is specified. And this way makes it unnecessary to
-do anything with the low 1M region, because the memory allocated later
-won't fall into the low 1M area.
+crash> kmem -s|grep -i invalid
+kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+kmem: dma-kmalloc-512: slab:ffffd77680001c00 invalid freepointer:a6086ac099f0c5a4
+crash>
 
-This series includes three patches:
-[1] x86/kdump: always reserve the low 1M when the crashkernel option
-    is specified
-    The low 1M region will always be reserved when the crashkernel
-    kernel command line option is specified, which ensures that the
-    memory allocated later won't fall into the low 1M area.
+To avoid the above errors, when the crashkernel option is specified,
+lets reserve the remaining low 1M memory(after reserving real mode
+memory) so that the allocated memory does not fall into the low 1M
+area, which makes us not to copy the first 640k content to a backup
+region in purgatory(). This indicates that it does not need to be
+included in crash dumps or used for anything except the processor
+trampolines that must live in the low 1M.
 
-[2] x86/kdump: clean up all the code related to the backup region
-    Remove the backup region and clean up.
+Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+---
+ arch/x86/include/asm/crash.h |  6 ++++++
+ arch/x86/kernel/crash.c      | 15 +++++++++++++++
+ arch/x86/realmode/init.c     |  2 ++
+ 3 files changed, 23 insertions(+)
 
-[3] kexec: Fix i386 build warnings that missed declaration of struct
-    kimage
-
-Changes since v1:
-[1] Add extra checking condition: when the crashkernel option is
-    specified, reserve the low 640k area.
-
-Changes since v2:
-[1] Reserve the low 1M region when the crashkernel option is only
-    specified.(Suggested by Eric)
-
-[2] Remove the unused crash_copy_backup_region()
-
-[3] Remove the backup region and clean up
-
-[4] Split them into three patches
-
-Changes since v3:
-[1] Improve the first patch's log
-
-[2] Improve the third patch based on Eric's suggestions
-
-Changes since v4:
-[1] Correct some typos, and also improve the first patch's log
-
-[2] Add a new function kexec_reserve_low_1MiB() in kernel/kexec_core.c
-    and which is called by reserve_real_mode(). (Suggested by Boris)
-
-Changes since v5:
-[1] Call the cmdline_find_option() instead of strstr() to check the
-    crashkernel option. (Suggested by Hatayama)
-
-[2] Add a weak function kexec_reserve_low_1MiB() in kernel/kexec_core.c,
-    and implement the kexec_reserve_low_1MiB() in arch/x86/kernel/
-    machine_kexec_64.c so that it does not cause the compile error
-    on non-x86 kernel, and also ensures that it can work well on x86
-    kernel.
-
-Changes since v6:
-[1] Move the kexec_reserve_low_1MiB() to arch/x86/kernel/crash.c and
-    also move its declaration function to arch/x86/include/asm/crash.h
-    (Suggested by Dave Young)
-
-[2] Adjust the corresponding header files.
-
-Changes since v7:
-[1] Change the function name from kexec_reserve_low_1MiB() to
-    crash_reserve_low_1M().
-
-[2] Fix some warnings reported by kduild.
-
-Changes since v8:
-[1] Fix some build warnings reported by kbuild and make it as a separate
-    patch.
-
-Lianbo Jiang (3):
-  x86/kdump: always reserve the low 1M when the crashkernel option is
-    specified
-  x86/kdump: clean up all the code related to the backup region
-  kexec: Fix i386 build warnings that missed declaration of struct
-    kimage
-
- arch/x86/include/asm/crash.h       |   8 +++
- arch/x86/include/asm/kexec.h       |  10 ---
- arch/x86/include/asm/purgatory.h   |  10 ---
- arch/x86/kernel/crash.c            | 102 ++++++++---------------------
- arch/x86/kernel/machine_kexec_64.c |  47 -------------
- arch/x86/purgatory/purgatory.c     |  19 ------
- arch/x86/realmode/init.c           |   2 +
- 7 files changed, 36 insertions(+), 162 deletions(-)
-
+diff --git a/arch/x86/include/asm/crash.h b/arch/x86/include/asm/crash.h
+index 0acf5ee45a21..3dff55f4ed9d 100644
+--- a/arch/x86/include/asm/crash.h
++++ b/arch/x86/include/asm/crash.h
+@@ -8,4 +8,10 @@ int crash_setup_memmap_entries(struct kimage *image,
+ 		struct boot_params *params);
+ void crash_smp_send_stop(void);
+ 
++#ifdef CONFIG_KEXEC_CORE
++void __init crash_reserve_low_1M(void);
++#else
++static inline void __init crash_reserve_low_1M(void) { }
++#endif
++
+ #endif /* _ASM_X86_CRASH_H */
+diff --git a/arch/x86/kernel/crash.c b/arch/x86/kernel/crash.c
+index eb651fbde92a..db2301afade5 100644
+--- a/arch/x86/kernel/crash.c
++++ b/arch/x86/kernel/crash.c
+@@ -24,6 +24,7 @@
+ #include <linux/export.h>
+ #include <linux/slab.h>
+ #include <linux/vmalloc.h>
++#include <linux/memblock.h>
+ 
+ #include <asm/processor.h>
+ #include <asm/hardirq.h>
+@@ -39,6 +40,7 @@
+ #include <asm/virtext.h>
+ #include <asm/intel_pt.h>
+ #include <asm/crash.h>
++#include <asm/cmdline.h>
+ 
+ /* Used while preparing memory map entries for second kernel */
+ struct crash_memmap_data {
+@@ -68,6 +70,19 @@ static inline void cpu_crash_vmclear_loaded_vmcss(void)
+ 	rcu_read_unlock();
+ }
+ 
++/*
++ * When the crashkernel option is specified, only use the low
++ * 1M for the real mode trampoline.
++ */
++void __init crash_reserve_low_1M(void)
++{
++	if (cmdline_find_option(boot_command_line, "crashkernel",
++				NULL, 0) > 0) {
++		memblock_reserve(0, 1<<20);
++		pr_info("Reserving the low 1M of memory for crashkernel\n");
++	}
++}
++
+ #if defined(CONFIG_SMP) && defined(CONFIG_X86_LOCAL_APIC)
+ 
+ static void kdump_nmi_callback(int cpu, struct pt_regs *regs)
+diff --git a/arch/x86/realmode/init.c b/arch/x86/realmode/init.c
+index 7dce39c8c034..262f83cad355 100644
+--- a/arch/x86/realmode/init.c
++++ b/arch/x86/realmode/init.c
+@@ -8,6 +8,7 @@
+ #include <asm/pgtable.h>
+ #include <asm/realmode.h>
+ #include <asm/tlbflush.h>
++#include <asm/crash.h>
+ 
+ struct real_mode_header *real_mode_header;
+ u32 *trampoline_cr4_features;
+@@ -34,6 +35,7 @@ void __init reserve_real_mode(void)
+ 
+ 	memblock_reserve(mem, size);
+ 	set_real_mode_mem(mem);
++	crash_reserve_low_1M();
+ }
+ 
+ static void __init setup_real_mode(void)
 -- 
 2.17.1
 
