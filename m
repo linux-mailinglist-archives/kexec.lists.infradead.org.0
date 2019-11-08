@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AF2AF42CC
-	for <lists+kexec@lfdr.de>; Fri,  8 Nov 2019 10:02:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D556F42CD
+	for <lists+kexec@lfdr.de>; Fri,  8 Nov 2019 10:02:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qJ2LdtY7uCSMqxCluhLTF7MG512pA5wshtl2mj4zUpk=; b=qm6kuE13HT9qxVGSePET+lLBJ3
-	EmH/6llAnGwHhoKH3XfVDV+spOhdhYT+iXtrUX3zIoYjy6jS02QB301ZjtyrbOZLK2D5ECtfnTgyh
-	3gZauXzWec5FaRtFIHkDmOfLOSVVz/Nh7cAlS/HbT3ySIEHzH5S2Ct/7J0ieG4qmCj/oABp04cPF1
-	bm8vdbLwIVVBOAgJROWHpLSiv0bDPS1xBG5UWglbvioKS6RWl4GWSn304d+whYVRqx9f5M6Jzfh+u
-	AI0C2benm3W8DgISK4xLifmICWjZN2FOHjlgG20EYUrvZDmi0olREapzbkiS/k/EosmOPvw5dxHpw
-	PYqpw11w==;
+	bh=UnupKb9ROu7PE6+JhQQW4MfNwsHTi1Wqrt/rqFrIDCY=; b=UsLHjbDugyMlMekv0dEMmzkd4y
+	uMfnCSCtJPqBdJx/qYYs50SRqDqKrMGgyzYDqNqVmGOP/c3qEfBzIx19HU7kkxUArETf4o65InwuY
+	tIX2ttd4abna212m7COKhxpTl+0jgi+W9GLwBeS1Dt2I1n/xc4tjwgzbipAMRxGdTl6t5EhUDEjxi
+	LW2XLLenUn1+0GenVmsQZR6oDE+hXjZaR/txokvX8+gQ4KuBdw/yhghFavUfNWgmpq/09vw2HlMyH
+	9kTdai6Cqr9pVI3rUIBR3aMQoREfklpvbfQehr/ZrceZeXtlNW6IEv738I/1/Cd8gTF1wzCNbGcwJ
+	ljlNGyaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iT0A3-0005rk-4K; Fri, 08 Nov 2019 09:02:31 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iT0A5-0005uS-1S; Fri, 08 Nov 2019 09:02:33 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iT08e-0004c8-Ge
- for kexec@lists.infradead.org; Fri, 08 Nov 2019 09:01:06 +0000
+ id 1iT08q-0004nC-MO
+ for kexec@lists.infradead.org; Fri, 08 Nov 2019 09:01:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1573203663;
+ s=mimecast20190719; t=1573203675;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=+jjghK9R0lMbuYITPwblyuIiknRGv+8dU2qzMWqZXIA=;
- b=bWLTuHyAImVrscTISvwtcTkqEy6NmNuWfaxoHbNKEiUfXW/u9HwVTDIbmXgZqniBJLBdQn
- UxUZJTrDFbUF0w+CqbcGL4R5fgH21c/QNR0trDKqvNFOpZBjzaQqsd8rION+vCqHp0KtST
- 7obEYwgEnm8gj73ZSacjhtAlxZz4Shc=
+ bh=rcMCl02DtgAodZc1y0NYd9at6CosXJepzGQl98OpFNI=;
+ b=IZL4MLAJ5GIvf8LGB5qN4/ty5kssHyxchyOzabhkiec9O3NxHEsaaKmvWaGS/NlEvECbq3
+ u7NuVqu4E7KFwRxUBw/MdKyxdR6eWX9XBFgjJfrvj/Q9/CaWPrN9nzL9qRCu/ls1hdIHm5
+ CpUGzwwFvkV8iy6qfQSgf+jvnNnwNi0=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-262-R29VTCIfN3O4-tbuBex1SA-1; Fri, 08 Nov 2019 04:00:59 -0500
+ us-mta-412-yCeEA3aXM7mippN68agMJw-1; Fri, 08 Nov 2019 04:01:10 -0500
 Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
  [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CE5E5180491C;
- Fri,  8 Nov 2019 09:00:57 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 45FE0800054;
+ Fri,  8 Nov 2019 09:01:08 +0000 (UTC)
 Received: from localhost.localdomain.com (ovpn-12-112.pek2.redhat.com
  [10.72.12.112])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 558C05D6A5;
- Fri,  8 Nov 2019 09:00:51 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 68AA85D6A5;
+ Fri,  8 Nov 2019 09:00:58 +0000 (UTC)
 From: Lianbo Jiang <lijiang@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3 v9] x86/kdump: clean up all the code related to the backup
- region
-Date: Fri,  8 Nov 2019 17:00:26 +0800
-Message-Id: <20191108090027.11082-3-lijiang@redhat.com>
+Subject: [PATCH 3/3 v9] kexec: Fix i386 build warnings that missed declaration
+ of struct kimage
+Date: Fri,  8 Nov 2019 17:00:27 +0800
+Message-Id: <20191108090027.11082-4-lijiang@redhat.com>
 In-Reply-To: <20191108090027.11082-1-lijiang@redhat.com>
 References: <20191108090027.11082-1-lijiang@redhat.com>
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-MC-Unique: R29VTCIfN3O4-tbuBex1SA-1
+X-MC-Unique: yCeEA3aXM7mippN68agMJw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191108_010104_648772_90C65880 
-X-CRM114-Status: GOOD (  16.28  )
+X-CRM114-CacheID: sfid-20191108_010116_822474_95CF88B6 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,331 +101,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-When the crashkernel kernel command line option is specified, the
-low 1M memory will always be reserved, which makes that the memory
-allocated later won't fall into the low 1M area, thereby, it's not
-necessary to create a backup region and also no need to copy the
-first 640k content to a backup region.
+Kbuild test robot reported some build warnings as follow:
 
-Currently, the code related to the backup region can be safely
-removed, so lets clean up.
+arch/x86/include/asm/crash.h:5:32: warning: 'struct kimage' declared
+inside parameter list will not be visible outside of this definition
+or declaration
+    int crash_load_segments(struct kimage *image);
+                                   ^~~~~~
+    int crash_copy_backup_region(struct kimage *image);
+                                        ^~~~~~
+    int crash_setup_memmap_entries(struct kimage *image,
+                                          ^~~~~~
+The 'struct kimage' is defined in the header file include/linux/kexec.h,
+before using it, need to include its header file or make a declaration.
+Otherwise the above warnings may be triggered.
 
+Add a declaration of struct kimage to the file arch/x86/include/asm/
+crash.h, that will solve these compile warnings.
+
+Fixes: dd5f726076cc ("kexec: support for kexec on panic using new system call")
+Reported-by: kbuild test robot <lkp@intel.com>
 Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+Link: https://lkml.kernel.org/r/201910310233.EJRtTMWP%25lkp@intel.com
 ---
- arch/x86/include/asm/kexec.h       | 10 ----
- arch/x86/include/asm/purgatory.h   | 10 ----
- arch/x86/kernel/crash.c            | 87 ++++--------------------------
- arch/x86/kernel/machine_kexec_64.c | 47 ----------------
- arch/x86/purgatory/purgatory.c     | 19 -------
- 5 files changed, 11 insertions(+), 162 deletions(-)
+ arch/x86/include/asm/crash.h | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/x86/include/asm/kexec.h b/arch/x86/include/asm/kexec.h
-index 5e7d6b46de97..6802c59e8252 100644
---- a/arch/x86/include/asm/kexec.h
-+++ b/arch/x86/include/asm/kexec.h
-@@ -66,10 +66,6 @@ struct kimage;
- # define KEXEC_ARCH KEXEC_ARCH_X86_64
- #endif
+diff --git a/arch/x86/include/asm/crash.h b/arch/x86/include/asm/crash.h
+index 3dff55f4ed9d..88eadd08ad70 100644
+--- a/arch/x86/include/asm/crash.h
++++ b/arch/x86/include/asm/crash.h
+@@ -2,6 +2,8 @@
+ #ifndef _ASM_X86_CRASH_H
+ #define _ASM_X86_CRASH_H
  
--/* Memory to backup during crash kdump */
--#define KEXEC_BACKUP_SRC_START	(0UL)
--#define KEXEC_BACKUP_SRC_END	(640 * 1024UL - 1)	/* 640K */
--
- /*
-  * This function is responsible for capturing register states if coming
-  * via panic otherwise just fix up the ss and sp if coming via kernel
-@@ -154,12 +150,6 @@ struct kimage_arch {
- 	pud_t *pud;
- 	pmd_t *pmd;
- 	pte_t *pte;
--	/* Details of backup region */
--	unsigned long backup_src_start;
--	unsigned long backup_src_sz;
--
--	/* Physical address of backup segment */
--	unsigned long backup_load_addr;
- 
- 	/* Core ELF header buffer */
- 	void *elf_headers;
-diff --git a/arch/x86/include/asm/purgatory.h b/arch/x86/include/asm/purgatory.h
-index 92c34e517da1..5528e9325049 100644
---- a/arch/x86/include/asm/purgatory.h
-+++ b/arch/x86/include/asm/purgatory.h
-@@ -6,16 +6,6 @@
- #include <linux/purgatory.h>
- 
- extern void purgatory(void);
--/*
-- * These forward declarations serve two purposes:
-- *
-- * 1) Make sparse happy when checking arch/purgatory
-- * 2) Document that these are required to be global so the symbol
-- *    lookup in kexec works
-- */
--extern unsigned long purgatory_backup_dest;
--extern unsigned long purgatory_backup_src;
--extern unsigned long purgatory_backup_sz;
- #endif	/* __ASSEMBLY__ */
- 
- #endif /* _ASM_PURGATORY_H */
-diff --git a/arch/x86/kernel/crash.c b/arch/x86/kernel/crash.c
-index db2301afade5..40b04b6eb675 100644
---- a/arch/x86/kernel/crash.c
-+++ b/arch/x86/kernel/crash.c
-@@ -188,8 +188,6 @@ void native_machine_crash_shutdown(struct pt_regs *regs)
- 
- #ifdef CONFIG_KEXEC_FILE
- 
--static unsigned long crash_zero_bytes;
--
- static int get_nr_ram_ranges_callback(struct resource *res, void *arg)
- {
- 	unsigned int *nr_ranges = arg;
-@@ -232,6 +230,11 @@ static int elf_header_exclude_ranges(struct crash_mem *cmem)
- {
- 	int ret = 0;
- 
-+	/* Exclude the low 1M because it is always reserved */
-+	ret = crash_exclude_mem_range(cmem, 0, 1<<20);
-+	if (ret)
-+		return ret;
++struct kimage;
 +
- 	/* Exclude crashkernel region */
- 	ret = crash_exclude_mem_range(cmem, crashk_res.start, crashk_res.end);
- 	if (ret)
-@@ -261,9 +264,7 @@ static int prepare_elf_headers(struct kimage *image, void **addr,
- 					unsigned long *sz)
- {
- 	struct crash_mem *cmem;
--	Elf64_Ehdr *ehdr;
--	Elf64_Phdr *phdr;
--	int ret, i;
-+	int ret;
- 
- 	cmem = fill_up_crash_elf_data();
- 	if (!cmem)
-@@ -282,22 +283,7 @@ static int prepare_elf_headers(struct kimage *image, void **addr,
- 	/* By default prepare 64bit headers */
- 	ret =  crash_prepare_elf64_headers(cmem,
- 				IS_ENABLED(CONFIG_X86_64), addr, sz);
--	if (ret)
--		goto out;
- 
--	/*
--	 * If a range matches backup region, adjust offset to backup
--	 * segment.
--	 */
--	ehdr = (Elf64_Ehdr *)*addr;
--	phdr = (Elf64_Phdr *)(ehdr + 1);
--	for (i = 0; i < ehdr->e_phnum; phdr++, i++)
--		if (phdr->p_type == PT_LOAD &&
--				phdr->p_paddr == image->arch.backup_src_start &&
--				phdr->p_memsz == image->arch.backup_src_sz) {
--			phdr->p_offset = image->arch.backup_load_addr;
--			break;
--		}
- out:
- 	vfree(cmem);
- 	return ret;
-@@ -336,19 +322,11 @@ static int memmap_exclude_ranges(struct kimage *image, struct crash_mem *cmem,
- 				 unsigned long long mend)
- {
- 	unsigned long start, end;
--	int ret = 0;
- 
- 	cmem->ranges[0].start = mstart;
- 	cmem->ranges[0].end = mend;
- 	cmem->nr_ranges = 1;
- 
--	/* Exclude Backup region */
--	start = image->arch.backup_load_addr;
--	end = start + image->arch.backup_src_sz - 1;
--	ret = crash_exclude_mem_range(cmem, start, end);
--	if (ret)
--		return ret;
--
- 	/* Exclude elf header region */
- 	start = image->arch.elf_load_addr;
- 	end = start + image->arch.elf_headers_sz - 1;
-@@ -371,11 +349,11 @@ int crash_setup_memmap_entries(struct kimage *image, struct boot_params *params)
- 	memset(&cmd, 0, sizeof(struct crash_memmap_data));
- 	cmd.params = params;
- 
--	/* Add first 640K segment */
--	ei.addr = image->arch.backup_src_start;
--	ei.size = image->arch.backup_src_sz;
--	ei.type = E820_TYPE_RAM;
--	add_e820_entry(params, &ei);
-+	/* Add the low 1M */
-+	cmd.type = E820_TYPE_RAM;
-+	flags = IORESOURCE_SYSTEM_RAM | IORESOURCE_BUSY;
-+	walk_iomem_res_desc(IORES_DESC_NONE, flags, 0, (1<<20)-1, &cmd,
-+			memmap_entry_callback);
- 
- 	/* Add ACPI tables */
- 	cmd.type = E820_TYPE_ACPI;
-@@ -424,55 +402,12 @@ int crash_setup_memmap_entries(struct kimage *image, struct boot_params *params)
- 	return ret;
- }
- 
--static int determine_backup_region(struct resource *res, void *arg)
--{
--	struct kimage *image = arg;
--
--	image->arch.backup_src_start = res->start;
--	image->arch.backup_src_sz = resource_size(res);
--
--	/* Expecting only one range for backup region */
--	return 1;
--}
--
- int crash_load_segments(struct kimage *image)
- {
- 	int ret;
- 	struct kexec_buf kbuf = { .image = image, .buf_min = 0,
- 				  .buf_max = ULONG_MAX, .top_down = false };
- 
--	/*
--	 * Determine and load a segment for backup area. First 640K RAM
--	 * region is backup source
--	 */
--
--	ret = walk_system_ram_res(KEXEC_BACKUP_SRC_START, KEXEC_BACKUP_SRC_END,
--				image, determine_backup_region);
--
--	/* Zero or postive return values are ok */
--	if (ret < 0)
--		return ret;
--
--	/* Add backup segment. */
--	if (image->arch.backup_src_sz) {
--		kbuf.buffer = &crash_zero_bytes;
--		kbuf.bufsz = sizeof(crash_zero_bytes);
--		kbuf.memsz = image->arch.backup_src_sz;
--		kbuf.buf_align = PAGE_SIZE;
--		/*
--		 * Ideally there is no source for backup segment. This is
--		 * copied in purgatory after crash. Just add a zero filled
--		 * segment for now to make sure checksum logic works fine.
--		 */
--		ret = kexec_add_buffer(&kbuf);
--		if (ret)
--			return ret;
--		image->arch.backup_load_addr = kbuf.mem;
--		pr_debug("Loaded backup region at 0x%lx backup_start=0x%lx memsz=0x%lx\n",
--			 image->arch.backup_load_addr,
--			 image->arch.backup_src_start, kbuf.memsz);
--	}
--
- 	/* Prepare elf headers and add a segment */
- 	ret = prepare_elf_headers(image, &kbuf.buffer, &kbuf.bufsz);
- 	if (ret)
-diff --git a/arch/x86/kernel/machine_kexec_64.c b/arch/x86/kernel/machine_kexec_64.c
-index 5dcd438ad8f2..16e125a50b33 100644
---- a/arch/x86/kernel/machine_kexec_64.c
-+++ b/arch/x86/kernel/machine_kexec_64.c
-@@ -298,48 +298,6 @@ static void load_segments(void)
- 		);
- }
- 
--#ifdef CONFIG_KEXEC_FILE
--/* Update purgatory as needed after various image segments have been prepared */
--static int arch_update_purgatory(struct kimage *image)
--{
--	int ret = 0;
--
--	if (!image->file_mode)
--		return 0;
--
--	/* Setup copying of backup region */
--	if (image->type == KEXEC_TYPE_CRASH) {
--		ret = kexec_purgatory_get_set_symbol(image,
--				"purgatory_backup_dest",
--				&image->arch.backup_load_addr,
--				sizeof(image->arch.backup_load_addr), 0);
--		if (ret)
--			return ret;
--
--		ret = kexec_purgatory_get_set_symbol(image,
--				"purgatory_backup_src",
--				&image->arch.backup_src_start,
--				sizeof(image->arch.backup_src_start), 0);
--		if (ret)
--			return ret;
--
--		ret = kexec_purgatory_get_set_symbol(image,
--				"purgatory_backup_sz",
--				&image->arch.backup_src_sz,
--				sizeof(image->arch.backup_src_sz), 0);
--		if (ret)
--			return ret;
--	}
--
--	return ret;
--}
--#else /* !CONFIG_KEXEC_FILE */
--static inline int arch_update_purgatory(struct kimage *image)
--{
--	return 0;
--}
--#endif /* CONFIG_KEXEC_FILE */
--
- int machine_kexec_prepare(struct kimage *image)
- {
- 	unsigned long start_pgtable;
-@@ -353,11 +311,6 @@ int machine_kexec_prepare(struct kimage *image)
- 	if (result)
- 		return result;
- 
--	/* update purgatory as needed */
--	result = arch_update_purgatory(image);
--	if (result)
--		return result;
--
- 	return 0;
- }
- 
-diff --git a/arch/x86/purgatory/purgatory.c b/arch/x86/purgatory/purgatory.c
-index 3b95410ff0f8..2961234d0795 100644
---- a/arch/x86/purgatory/purgatory.c
-+++ b/arch/x86/purgatory/purgatory.c
-@@ -14,28 +14,10 @@
- 
- #include "../boot/string.h"
- 
--unsigned long purgatory_backup_dest __section(.kexec-purgatory);
--unsigned long purgatory_backup_src __section(.kexec-purgatory);
--unsigned long purgatory_backup_sz __section(.kexec-purgatory);
--
- u8 purgatory_sha256_digest[SHA256_DIGEST_SIZE] __section(.kexec-purgatory);
- 
- struct kexec_sha_region purgatory_sha_regions[KEXEC_SEGMENT_MAX] __section(.kexec-purgatory);
- 
--/*
-- * On x86, second kernel requries first 640K of memory to boot. Copy
-- * first 640K to a backup region in reserved memory range so that second
-- * kernel can use first 640K.
-- */
--static int copy_backup_region(void)
--{
--	if (purgatory_backup_dest) {
--		memcpy((void *)purgatory_backup_dest,
--		       (void *)purgatory_backup_src, purgatory_backup_sz);
--	}
--	return 0;
--}
--
- static int verify_sha256_digest(void)
- {
- 	struct kexec_sha_region *ptr, *end;
-@@ -66,7 +48,6 @@ void purgatory(void)
- 		for (;;)
- 			;
- 	}
--	copy_backup_region();
- }
- 
- /*
+ int crash_load_segments(struct kimage *image);
+ int crash_copy_backup_region(struct kimage *image);
+ int crash_setup_memmap_entries(struct kimage *image,
 -- 
 2.17.1
 
