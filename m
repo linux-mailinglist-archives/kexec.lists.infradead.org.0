@@ -2,77 +2,81 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC12FF8D9D
-	for <lists+kexec@lfdr.de>; Tue, 12 Nov 2019 12:09:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5DEEF8D9F
+	for <lists+kexec@lfdr.de>; Tue, 12 Nov 2019 12:09:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=CKVuwpxUmeU+eZ52/MPD4fPBxyGoX1lJalX+tAADe/4=; b=B11
-	6/k4T6CeMooM47kP7IkxNCV/qsTLlEkAW1CUeYfFK1r5BbuwG0No+o+EBPv4jj4VGtTbeweHNPkGb
-	76SGy2132EuNVQlKonU3IpyouhGWASmOHLSL/rNmUDEHBSUAmpBbQnw8o77n3GkpJ1UtFdodC9G4S
-	z7yIE2Mw3RVBkTgdZoWpzKLR6Ic3l9fQvuM+qd1oXKlWKEdGURqxEb0yeIQoacUld/mJZ4L9FKwER
-	af0GsgEvH5nqb7hUC+4ROzMPuiDF37SvJ5kgxDYu5O+nWdXrytEdbjm0G9DpUwlQaCRJxqHUvH1zQ
-	MZoqRfr8U6bXgK+GbNzgdmVaOlGYuOw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=OeppWit6Kzfp5lqC03+batP7IznE/7jpquNN5tTLbbg=; b=QEnkHXMXT3fhjbpqcxY156WAR9
+	wj+ciEdVOA2mfx/p3u0VS3o4ms+KJ3dcEGe0DfgX3Sq45jitd68/NIZS4Kg4RDKSJpMMjtFCPnaGc
+	Rbf43Ia/xvx6m7whtHHpxONBpRb4/gUpPA6lJpA6y6FhBDjXyN1s+UF0uCJtddLwYRx+KLbKbmINC
+	JIL0VCmmDvtgk/Okw3upQXRhV1NJj3iJyCDkkqHL1F2qTeqt6qaB01QcGMEBZRT8UTFjOzFY+y9us
+	XQbrj+UdVrgjiXBODv3ao6y9vdbK0FhpEK36CG3mtLWJKPLSkDhiBdUrynHXH0t7Ovec5JItQNDZ9
+	zHDjOf6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUU38-0000So-0H; Tue, 12 Nov 2019 11:09:30 +0000
+	id 1iUU3H-0000ay-E8; Tue, 12 Nov 2019 11:09:39 +0000
 Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUU31-0000SA-Fh
- for kexec@lists.infradead.org; Tue, 12 Nov 2019 11:09:25 +0000
+ id 1iUU3B-0000Uu-Mb
+ for kexec@lists.infradead.org; Tue, 12 Nov 2019 11:09:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1573556960;
+ s=mimecast20190719; t=1573556972;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=ilMpqo2QKiHNnh9NT0hmliRckL9F11TjTcNx0td295o=;
- b=PbcQ+S+j3RpsyA5gj2llbbmmv1jpY/BlTSJaOavUyfkDOcNEobjMghyex56B8gho2rgoY9
- 3D54yPSH333MlKWMNcdMv4e4QDYdPuFR+0mn7bxtt9ARIcp+OXrYCTYfXKpPzz8ha0Ut9E
- 1Q2H9hLgRc/779+AnU8C/+jw3Xye1lg=
-Received: from mail-pg1-f200.google.com (mail-pg1-f200.google.com
- [209.85.215.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-288--WNs3MIuNi6M7yw1NVAhzA-1; Tue, 12 Nov 2019 06:09:19 -0500
-Received: by mail-pg1-f200.google.com with SMTP id w22so14272704pgj.18
- for <kexec@lists.infradead.org>; Tue, 12 Nov 2019 03:09:18 -0800 (PST)
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=gIcaYi/Jrj6vOMEIh4AskDvU1zYAjXoiqPfytVb+9sQ=;
+ b=BIL1JpkVTUCdWr1ZHdPlyVeyG+CI8f1hibSCZF2B0nhM0eklO2VLFIEVJQj1RTkMbQwPqD
+ 8F8RsjItrq/k6lEGYtD0oy2yPz/2A2eygT6wvpegt3mBUyd+etO9w3JrDVgbbwTsYsY2Gd
+ LrMQAAw4f9rNgMh5mTZAEm4Std+v4Kw=
+Received: from mail-pl1-f197.google.com (mail-pl1-f197.google.com
+ [209.85.214.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-170-p2QJBWL2PFu9S_MdIw4oQw-1; Tue, 12 Nov 2019 06:09:23 -0500
+Received: by mail-pl1-f197.google.com with SMTP id a11so12693524plp.21
+ for <kexec@lists.infradead.org>; Tue, 12 Nov 2019 03:09:23 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=cEbp+n8jX5pLpRf5YpBuhD9aoL4i1AE4ccBLdcoXTlQ=;
- b=OiwZMsKx6j2tIwC6uTISXvWC6P8HrSEJvdGndKWNSfXW3ljnLk4wA+6H+gJSwYveLj
- 503Zdb5Qm28xgaYdycwYBLiVw8NCP6b5FZfl6SUffVbTjXXDIMQfaz2pFkbLin8vcyHD
- 2JSgoSqqp6PPY4QfdITbzDkatt5DOg6INbU7s5rqx2w3Ch8dB3/JLpyQBhBsk9p0YUHZ
- 9w5+eKEV+x5AC6YvrX4Wn2Gh/FBkq8RaOiht1GLjvzVWaZ48lHpqiQyMS89eZEyCii4F
- vlhnksRxcq8W4R5R7hRPkQrUGCpkOWohfgmJau5ECcFQ7vB7nmLXguclMo1ZSafUNUiZ
- 19bA==
-X-Gm-Message-State: APjAAAV+pIoI5q8FW6RlfhOprQUHrgSLXtixIwJt94Q8102TebtBD4e/
- SNcl+wN21U9DkUsmSg/q3agRIiVU8/urK5v083X7hT38QzBjScqwzHeAINJxBeNNQcbGOwo9Ev3
- navowSJMNj9DVoDu6079c
-X-Received: by 2002:a17:90b:300c:: with SMTP id
- hg12mr5771541pjb.75.1573556957219; 
- Tue, 12 Nov 2019 03:09:17 -0800 (PST)
-X-Google-Smtp-Source: APXvYqwMowpup9Qvqzh+PhHom7h4HySLiiNBa86rJQuCu5+7Lpg6s3xjtgGmefxw/36pExQTAawPGQ==
-X-Received: by 2002:a17:90b:300c:: with SMTP id
- hg12mr5771482pjb.75.1573556956861; 
- Tue, 12 Nov 2019 03:09:16 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=GRZ90/AN577p9VX5BizZHzyZFMkMbp/vxmMxD5Xdaxs=;
+ b=rGb/KIn4PimWcBk+DWS6RwMMQr1M2qATDV4A+q3swkNRe6oAV1HvKh21cS1cQu/QtT
+ Y73SKNScjf0S8eWy9S7mP2/NFkTOslHbd57mRIBKXBEDqh7B5dusHFav2+nnkJz/JeRr
+ wgFVMfhiHpyBLvxv++85HPM46Aa8xuVuwabQc75PBovoR/jHBKCBxUGfYo23F98c4x7a
+ 8O6og4wP7mBwQiYaLobMzE7QK/cWz5SFrhFcdb/k28RnZjZourlZivLnRO8+PunGPfoC
+ YZEuFb1pYp+6FBF0wQjiL8noMfKoiJ8HlAPhaT7EJEX9nFQLXpxZroE1u+qpuKtYmK6B
+ 8a0g==
+X-Gm-Message-State: APjAAAWY2w3PXhRSMQamVOEwgg7l/cOI/Jn6bxgHTeZubbSMHzg0DdBa
+ 8q1iCHLCp7+26JannoX0rgpEQEi3N8phCc18n+xa1aBg1V5O8Zv8+wPrHOgTbpwElrvvQta8MJM
+ rHWp6yuJOWShkyfc4aIdX
+X-Received: by 2002:a63:495b:: with SMTP id y27mr34307841pgk.438.1573556962023; 
+ Tue, 12 Nov 2019 03:09:22 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzB3XRHM6gDTr/+6PBnZif++jJQ2lXyaca607uIizLEdhQaw5bmdkcfBb/sMFGSmwFc82H65g==
+X-Received: by 2002:a63:495b:: with SMTP id y27mr34307805pgk.438.1573556961695; 
+ Tue, 12 Nov 2019 03:09:21 -0800 (PST)
 Received: from localhost ([122.177.0.15])
- by smtp.gmail.com with ESMTPSA id j186sm17682053pfg.161.2019.11.12.03.09.14
+ by smtp.gmail.com with ESMTPSA id v19sm2126742pjr.14.2019.11.12.03.09.19
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 12 Nov 2019 03:09:15 -0800 (PST)
+ Tue, 12 Nov 2019 03:09:19 -0800 (PST)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: kexec@lists.infradead.org
-Subject: [PATCH v4 0/4] makedumpfile/arm64: Add support for ARMv8.2 extensions
-Date: Tue, 12 Nov 2019 16:38:55 +0530
-Message-Id: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+Subject: [PATCH v4 1/4] tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from vmcoreinfo
+ (if available)
+Date: Tue, 12 Nov 2019 16:38:56 +0530
+Message-Id: <1573556939-17803-2-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
-X-MC-Unique: -WNs3MIuNi6M7yw1NVAhzA-1
+In-Reply-To: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+X-MC-Unique: p2QJBWL2PFu9S_MdIw4oQw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_030923_600907_8443FAA9 
-X-CRM114-Status: GOOD (  17.87  )
+X-CRM114-CacheID: sfid-20191112_030933_888672_62DADF3C 
+X-CRM114-Status: GOOD (  14.40  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -108,99 +112,304 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Changes since v3:
-----------------
-- v3 can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-March/022534.html
-- Added a new patch (via [PATCH 4/4]) which marks '--mem-usage' option as
-  unsupported for arm64 architecture. With the newer arm64 kernels
-  supporting 48-bit/52-bit VA address spaces and keeping a single
-  binary for supporting the same, the address of
-  kernel symbols like _stext, which could be earlier used to determine
-  VA_BITS value, can no longer to determine whether VA_BITS is set to 48
-  or 52 in the kernel space. Hence for now, it makes sense to mark
-  '--mem-usage' option as unsupported for arm64 architecture until
-  we have more clarity from arm64 kernel maintainers on how to manage
-  the same in future kernel/makedumpfile versions.
+This patch adds a common feature for archs (except arm64, for which
+similar support is added via subsequent patch) to retrieve
+'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
 
-Changes since v2:
-----------------
-- v2 can be seen here:
-  http://lists.infradead.org/pipermail/kexec/2019-February/022456.html
-- I missed some comments from Kazu sent on the LVA v1 patch when I sent
-  out the v2. So, addressing them now in v3.
-- Also added a patch that adds a tree-wide feature to read
-  'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
+I recently posted a kernel patch (see [0]) which appends
+'MAX_PHYSMEM_BITS' to vmcoreinfo in the core code itself rather than
+in arch-specific code, so that user-space code can also benefit from
+this addition to the vmcoreinfo and use it as a standard way of
+determining 'SECTIONS_SHIFT' value in 'makedumpfile' utility.
 
-Changes since v1:
-----------------
-- v1 was sent as two separate patches:
-  http://lists.infradead.org/pipermail/kexec/2019-February/022424.html
-  (ARMv8.2-LPA)
-  http://lists.infradead.org/pipermail/kexec/2019-February/022425.html
-  (ARMv8.2-LVA)
-- v2 combined the two in a single patchset and also addresses Kazu's
-  review comments.
-
-This patchset adds support for ARMv8.2 extensions in makedumpfile code.
-I cover the following two cases with this patchset:
- - 48-bit kernel VA + 52-bit PA (LPA)
- - 52-bit kernel VA (LVA) + 52-bit PA (LPA)
- - 48-bit kernel VA + 52-bit user-space VA (LVA)
- - 52-bit kernel VA + 52-bit user-space VA (Full LVA)
-
-This has been tested for the following user-cases:
-1. Creating a dumpfile using /proc/vmcore,
-2. Creating a dumpfile using /proc/kcore, and
-3. Post-processing a vmcore.
-
-I have tested this patchset on the following platforms, with kernels
-which support/do-not-support ARMv8.2 features:
-1. CPUs which don't support ARMv8.2 features, e.g. qualcomm-amberwing,
-   ampere-osprey.
-2. Prototype models which support ARMv8.2 extensions (e.g. ARMv8 FVP
-   simulation model).
-
-Also a preparation patch has been added in this patchset which adds a
-common feature for archs (except arm64, for which similar support is
-added via subsequent patch) to retrieve 'MAX_PHYSMEM_BITS' from
-vmcoreinfo (if available).
-
-I recently posted two kernel patches (see [0] and [1]) which append
-'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' to vmcoreinfo in the kernel
-code, so that user-space code can benefit from the same.
-
-This patchset ensures backward compatibility for kernel versions in
-which 'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' are not available in
-vmcoreinfo.
+This patch ensures backward compatibility for kernel versions in which
+'MAX_PHYSMEM_BITS' is not available in vmcoreinfo.
 
 [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023960.html
-[1]. http://lists.infradead.org/pipermail/kexec/2019-November/023962.html
 
-Cc: John Donnelly <john.p.donnelly@oracle.com>
 Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+Cc: John Donnelly <john.p.donnelly@oracle.com>
 Cc: kexec@lists.infradead.org
+Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+---
+ arch/arm.c     |  8 +++++++-
+ arch/ia64.c    |  7 ++++++-
+ arch/ppc.c     |  8 +++++++-
+ arch/ppc64.c   | 49 ++++++++++++++++++++++++++++---------------------
+ arch/s390x.c   | 29 ++++++++++++++++++-----------
+ arch/sparc64.c |  9 +++++++--
+ arch/x86.c     | 34 ++++++++++++++++++++--------------
+ arch/x86_64.c  | 27 ++++++++++++++++-----------
+ 8 files changed, 109 insertions(+), 62 deletions(-)
 
-Bhupesh Sharma (4):
-  tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from vmcoreinfo (if available)
-  makedumpfile/arm64: Add support for ARMv8.2-LPA (52-bit PA support)
-  makedumpfile/arm64: Add support for ARMv8.2-LVA (52-bit kernel VA
-    support)
-  makedumpfile: Mark --mem-usage option unsupported for arm64
-
- arch/arm.c     |   8 +-
- arch/arm64.c   | 438 ++++++++++++++++++++++++++++++++++++++++++---------------
- arch/ia64.c    |   7 +-
- arch/ppc.c     |   8 +-
- arch/ppc64.c   |  49 ++++---
- arch/s390x.c   |  29 ++--
- arch/sparc64.c |   9 +-
- arch/x86.c     |  34 +++--
- arch/x86_64.c  |  27 ++--
- makedumpfile.c |   7 +
- makedumpfile.h |   3 +-
- 11 files changed, 439 insertions(+), 180 deletions(-)
-
+diff --git a/arch/arm.c b/arch/arm.c
+index af7442ac70bf..33536fc4dfc9 100644
+--- a/arch/arm.c
++++ b/arch/arm.c
+@@ -81,7 +81,13 @@ int
+ get_machdep_info_arm(void)
+ {
+ 	info->page_offset = SYMBOL(_stext) & 0xffff0000UL;
+-	info->max_physmem_bits = _MAX_PHYSMEM_BITS;
++
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	else
++		info->max_physmem_bits = _MAX_PHYSMEM_BITS;
++
+ 	info->kernel_start = SYMBOL(_stext);
+ 	info->section_size_bits = _SECTION_SIZE_BITS;
+ 
+diff --git a/arch/ia64.c b/arch/ia64.c
+index 6c33cc7c8288..fb44dda47172 100644
+--- a/arch/ia64.c
++++ b/arch/ia64.c
+@@ -85,7 +85,12 @@ get_machdep_info_ia64(void)
+ 	}
+ 
+ 	info->section_size_bits = _SECTION_SIZE_BITS;
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
++
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	else
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+ 
+ 	return TRUE;
+ }
+diff --git a/arch/ppc.c b/arch/ppc.c
+index 37c6a3b60cd3..ed9447427a30 100644
+--- a/arch/ppc.c
++++ b/arch/ppc.c
+@@ -31,7 +31,13 @@ get_machdep_info_ppc(void)
+ 	unsigned long vmlist, vmap_area_list, vmalloc_start;
+ 
+ 	info->section_size_bits = _SECTION_SIZE_BITS;
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
++
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	else
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
++
+ 	info->page_offset = __PAGE_OFFSET;
+ 
+ 	if (SYMBOL(_stext) != NOT_FOUND_SYMBOL)
+diff --git a/arch/ppc64.c b/arch/ppc64.c
+index 9d8f2525f608..a3984eebdced 100644
+--- a/arch/ppc64.c
++++ b/arch/ppc64.c
+@@ -466,30 +466,37 @@ int
+ set_ppc64_max_physmem_bits(void)
+ {
+ 	long array_len = ARRAY_LENGTH(mem_section);
+-	/*
+-	 * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
+-	 * newer kernels 3.7 onwards uses 46 bits.
+-	 */
+-
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+-		return TRUE;
+-
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+-		return TRUE;
+ 
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+ 		return TRUE;
++	} else {
++		/*
++		 * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
++		 * newer kernels 3.7 onwards uses 46 bits.
++		 */
+ 
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+-		return TRUE;
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++	}
+ 
+ 	return FALSE;
+ }
+diff --git a/arch/s390x.c b/arch/s390x.c
+index bf9d58e54fb7..4d17a783e5bd 100644
+--- a/arch/s390x.c
++++ b/arch/s390x.c
+@@ -63,20 +63,27 @@ int
+ set_s390x_max_physmem_bits(void)
+ {
+ 	long array_len = ARRAY_LENGTH(mem_section);
+-	/*
+-	 * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
+-	 * newer kernels uses 46 bits.
+-	 */
+ 
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+ 		return TRUE;
++	} else {
++		/*
++		 * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
++		 * newer kernels uses 46 bits.
++		 */
+ 
+-	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
+-	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+-		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+-		return TRUE;
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++
++		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
++		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
++				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
++			return TRUE;
++	}
+ 
+ 	return FALSE;
+ }
+diff --git a/arch/sparc64.c b/arch/sparc64.c
+index 1cfaa854ce6d..b93a05bdfe59 100644
+--- a/arch/sparc64.c
++++ b/arch/sparc64.c
+@@ -25,10 +25,15 @@ int get_versiondep_info_sparc64(void)
+ {
+ 	info->section_size_bits = _SECTION_SIZE_BITS;
+ 
+-	if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	else if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
+ 		info->max_physmem_bits = _MAX_PHYSMEM_BITS_L4;
+-	else {
++	else
+ 		info->max_physmem_bits = _MAX_PHYSMEM_BITS_L3;
++
++	if (info->kernel_version < KERNEL_VERSION(3, 8, 13)) {
+ 		info->flag_vmemmap = TRUE;
+ 		info->vmemmap_start = VMEMMAP_BASE_SPARC64;
+ 		info->vmemmap_end = VMEMMAP_BASE_SPARC64 +
+diff --git a/arch/x86.c b/arch/x86.c
+index 3fdae93084b8..f1b43d4c8179 100644
+--- a/arch/x86.c
++++ b/arch/x86.c
+@@ -72,21 +72,27 @@ get_machdep_info_x86(void)
+ {
+ 	unsigned long vmlist, vmap_area_list, vmalloc_start;
+ 
+-	/* PAE */
+-	if ((vt.mem_flags & MEMORY_X86_PAE)
+-	    || ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
+-	      && (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
+-	      && ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
+-	      == 512)) {
+-		DEBUG_MSG("\n");
+-		DEBUG_MSG("PAE          : ON\n");
+-		vt.mem_flags |= MEMORY_X86_PAE;
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
+-	} else {
+-		DEBUG_MSG("\n");
+-		DEBUG_MSG("PAE          : OFF\n");
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	else {
++		/* PAE */
++		if ((vt.mem_flags & MEMORY_X86_PAE)
++				|| ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
++					&& (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
++					&& ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
++					== 512)) {
++			DEBUG_MSG("\n");
++			DEBUG_MSG("PAE          : ON\n");
++			vt.mem_flags |= MEMORY_X86_PAE;
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
++		} else {
++			DEBUG_MSG("\n");
++			DEBUG_MSG("PAE          : OFF\n");
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
++		}
+ 	}
++
+ 	info->page_offset = __PAGE_OFFSET;
+ 
+ 	if (SYMBOL(_stext) == NOT_FOUND_SYMBOL) {
+diff --git a/arch/x86_64.c b/arch/x86_64.c
+index 876644f932be..eff90307552c 100644
+--- a/arch/x86_64.c
++++ b/arch/x86_64.c
+@@ -268,17 +268,22 @@ get_machdep_info_x86_64(void)
+ int
+ get_versiondep_info_x86_64(void)
+ {
+-	/*
+-	 * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
+-	 */
+-	if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
+-	else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
+-	else if(check_5level_paging())
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
+-	else
+-		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
++	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
++	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
++		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
++	} else {
++		/*
++		 * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
++		 */
++		if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
++		else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
++		else if(check_5level_paging())
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
++		else
++			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
++	}
+ 
+ 	if (!get_page_offset_x86_64())
+ 		return FALSE;
 -- 
 2.7.4
 
