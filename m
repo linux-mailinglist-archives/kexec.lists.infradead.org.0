@@ -2,88 +2,71 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 979EEF961F
-	for <lists+kexec@lfdr.de>; Tue, 12 Nov 2019 17:54:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F09CCF9D9A
+	for <lists+kexec@lfdr.de>; Wed, 13 Nov 2019 00:00:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=TwPvtU+YDnJFMjWkYfpe9TrnZWSoCd+d5sKEZstsZUk=; b=DaO
-	WhGZlJzhBlsSZBXymLqUA+roefj0YiYKAx0P5TIpu0N0nxnPqJGBmrG3AOwG+JGJC4KSx0eEEDQK3
-	QXc5VpKgtPM1oP9e2Fv/nAP3wrYznMRcXYs373ldxvhJVMH/eNBHLMWTDitgIogHhU+CnByr4UNGO
-	K1FYpUVdeAKOAKxsYR5eARekK4zNTknkg3XOA7v54nZD4MxBYdYy9Dd/nMAhxCPR4Qk5oMkzFcOiP
-	tUDUv9o0c19gXf5ZW1tapDeiuIjk3p4PRNuBDfA6FiZ5rh8W2liZioqk2xdX115/vapQqMR3ZDjh9
-	vgZf610PexoGMbpHp+9z+dAeXcUAlWQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zGaSr3U7vNXHrmpD2Nvy+Onz0j8LkRL/5HJMDpmOFuU=; b=NevEBWGWFZw/YB
+	njrp0q99MTe5CrjtXHoEkUAB4SmeCKKKdQkZsWKyZ/KymkX3ajZJoeONEqj2JILc75BlZQcSgc+Fi
+	OoGYw3T6wbCzETACZFAuF1sT7Y5LFUHQDSpwv3mpt3Vxqa94HCvvxCR2QHIsgGEHxgwzw2pi3oz1h
+	x+6Og1SObMlKH7paE6q1oJp/a/HPImuOrWLeHor262E00emXW+C0b8Zde0YYJMNMaBS4zEfy7rlp7
+	51LtuY/fJIMMNmNmyNp55B9UODT0528k779Mdx0aBUmTa0eFwkGNqu8SkzNl3b+fZ/u2ZXzBUe9eJ
+	C3U/UYiPgIT6qA5FEFsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUZQf-0006Ud-QI; Tue, 12 Nov 2019 16:54:09 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1iUf9H-0005sX-Qa; Tue, 12 Nov 2019 23:00:35 +0000
+Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUZQS-0006KL-HZ; Tue, 12 Nov 2019 16:53:58 +0000
-Received: by mail-qt1-x842.google.com with SMTP id o11so20432606qtr.11;
- Tue, 12 Nov 2019 08:53:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=7EvQZ65acdZe4jczSmDkYKhL0KXQjakh/QwGvq5Tfuw=;
- b=TFd5NnkVvKSi1dSsVVxYNyBFKoxu+1nznqgn3s5CTTblJfw6jqSPOgVfduVNwr7/ch
- I6hz3bvyGapGaBuWE5l2lZ6WcTtabTcUkrKGQGqL+Fcs/PMDzje7TNm7l7zu1Za36XIR
- eFPjJ7gv/7+/Ug6GugrPvgydtiXuClEx+K7DOW/4dmz9EyYsqQsjyN/01uweICA/J5Ts
- +Np4F6fKzKoluWNNT4p13tbQj90uHKrfBfjjP+HjOdY0LLOhA8EgSjNfPPceYz9lIKoC
- hPsAVnTseIY78PNI9wqn0Cs4iXxQQTc1HikxcISaH43Nky5sY0rJxlcj0GWbKJHYeE3B
- 9Apw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=7EvQZ65acdZe4jczSmDkYKhL0KXQjakh/QwGvq5Tfuw=;
- b=gJ9U6FakIQ4kX5tzzosj5ZoaT8w9QOSnEPrb0YubIlS6R4rliepqR1YNpCOpMp9h8I
- txy6yIlTvhW2aONnlOCTRiHI/VOzdTk+aDiY/mC7PPpU/1UhAPPJO10VvurRdvsLr1DU
- wmBWu9B0Ydv86wMTyIrpv7T66Rx14uP4vnitdq6TEhCqQY8l4VpzVoFkbpodv3FHOKh9
- TQjOoG0Hx76hB+xShquvO+s8MS4gnEd+acH33H5xJXd4ZtBXMlmb6JkryQoDftt1EkAq
- 3XRUmHX8LOaoomEpZFJCyvv0DAEG5CBIQ35oPEIDo6qz/Gvd4bU/VlUvZkZd08fYcTfL
- kQaw==
-X-Gm-Message-State: APjAAAXOA3X6y1CCg22qE6rV2FCaJJrERw5YWST+PZ2eUP3yDmy7c9E8
- u/8R4SqDVW2zviFpXNfRUNp363o=
-X-Google-Smtp-Source: APXvYqzvYjNrYH3zR5+ZaL30BwiDtlCwbGJLO0eh1gdpJYCl//2Uo/hJrUsaont6ZAj/PhxvvWUbow==
-X-Received: by 2002:ac8:1209:: with SMTP id x9mr32665080qti.352.1573577635194; 
- Tue, 12 Nov 2019 08:53:55 -0800 (PST)
-Received: from gabell.redhat.com
- (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
- [209.6.122.159])
- by smtp.gmail.com with ESMTPSA id x65sm9461856qkd.15.2019.11.12.08.53.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 Nov 2019 08:53:54 -0800 (PST)
-From: Masayoshi Mizuma <msys.mizuma@gmail.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org
-Subject: [RFC PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve to
- tell the persistent pages
-Date: Tue, 12 Nov 2019 11:53:03 -0500
-Message-Id: <20191112165303.24270-1-msys.mizuma@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1iUf9E-0005rN-Ik
+ for kexec@lists.infradead.org; Tue, 12 Nov 2019 23:00:34 +0000
+Received: from mailgate01.nec.co.jp ([114.179.233.122])
+ by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xACN0OvY013289
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO)
+ for <kexec@lists.infradead.org>; Wed, 13 Nov 2019 08:00:24 +0900
+Received: from mailsv02.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xACN0O6a020257
+ for <kexec@lists.infradead.org>; Wed, 13 Nov 2019 08:00:24 +0900
+Received: from mail02.kamome.nec.co.jp (mail02.kamome.nec.co.jp [10.25.43.5])
+ by mailsv02.nec.co.jp (8.15.1/8.15.1) with ESMTP id xACN0OZn021384
+ for <kexec@lists.infradead.org>; Wed, 13 Nov 2019 08:00:24 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
+ mail03.kamome.nec.co.jp with ESMTP id BT-MMP-693208;
+ Wed, 13 Nov 2019 07:58:31 +0900
+Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
+ BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Wed,
+ 13 Nov 2019 07:58:30 +0900
+From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+To: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Subject: RE: [PATCH] makedumpfile: Fix wrong statistics in ELF format mode
+Thread-Topic: [PATCH] makedumpfile: Fix wrong statistics in ELF format mode
+Thread-Index: AdWUwlnZCBezwlDzQh69B+2ZAG8Z0wE2q8Vw
+Date: Tue, 12 Nov 2019 22:58:30 +0000
+Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03594E4D@BPXM09GP.gisp.nec.co.jp>
+References: <4AE2DC15AC0B8543882A74EA0D43DBEC03594800@BPXM09GP.gisp.nec.co.jp>
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03594800@BPXM09GP.gisp.nec.co.jp>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [143.101.135.88]
+MIME-Version: 1.0
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_085356_580425_07F3866E 
-X-CRM114-Status: GOOD (  10.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191112_150032_832138_96561397 
+X-CRM114-Status: GOOD (  25.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (msys.mizuma[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [114.179.232.161 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,122 +78,211 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- Masayoshi Mizuma <msys.mizuma@gmail.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> -----Original Message-----
+> The -E option, which creates a dumpfile in ELF format, reports wrong
+> statistics like the ones below, because:
+>  (1) counts excluded pages repeatedly due to overlapped cycles
+>  (2) does not calculate the number of memory hole pages in cyclic mode
+>  (3) does not take account of the number of pages excluded actually
+>      in ELF format, which excludes only contiguous 256 or more pages
+>      that can be excluded.
+> 
+>   Original pages  : 0x0000000000000000
+>     Excluded pages   : 0x00000000007daf05
+>       Pages filled with zero  : 0x0000000000002dcc
+>       Non-private cache pages : 0x00000000000471d6
+>       Private cache pages     : 0x0000000000000001
+>       User process data pages : 0x00000000000147f1
+>       Free pages              : 0x000000000077c771
+>       Hwpoison pages          : 0x0000000000000000
+>       Offline pages           : 0x0000000000000000
+>     Remaining pages  : 0xffffffffff8250fb
+>   Memory Hole     : 0x0000000000440000
+>   --------------------------------------------------
+>   Total pages     : 0x0000000000440000
+> 
+> In order to fix this issue:
+>  (1) start the first cycle from the start pfn of a segment to avoid
+>      overlaps between cycles
 
-kexec reboot stucks because efi_config_parse_tables() refers garbage
- (with memblock=debug):
+finally I found a fault with this change.
+Will merge the following patch into the original one.
 
-  efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000  MEMRESERVE=0x9820bfdc58
-  memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67] efi_config_parse_tables+0x228/0x278
-  memblock_reserve: [0x0000000082760000-0x00000000324d07ff] efi_config_parse_tables+0x228/0x278
-  memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9] efi_config_parse_tables+0x244/0x278
-  memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2] efi_config_parse_tables+0x244/0x278
-  memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12] efi_config_parse_tables+0x244/0x278
-  ...
-
-That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
-0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
-head page of pending table and prop table which are allocated by gic_reserve_range().
-
-The destroyer is kexec. kexec locates the inird to the area:
-
-# kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img --reuse-cmdline
-...
-initrd: base 82290000, size 388dd8ah (59301258)
-...
-
-From dynamic debug log:
-  machine_kexec_prepare:70:
-    kexec kimage info:
-      type:        0
-      start:       85b30680
-      head:        0
-      nr_segments: 4
-        segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481 pages
-        segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905 pages
-        segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1 pages
-        segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1 pages
-
-kexec searches the appropriate memory region to locate initrd through "System RAM"
-in /proc/iomem. The pending tables are included in "System RAM" because they are
-allocated by alloc_pages(), so kexec destroys the pending tables.
-
-Introduce /sys/firmware/efi/memreserve to tell the pages pointed by efi.mem_reserve
-so that kexec can avoid the area to locate initrd.
-
-Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
----
- drivers/firmware/efi/efi.c | 32 +++++++++++++++++++++++++++++++-
- 1 file changed, 31 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index e98bbf8e5..67b21ae7a 100644
---- a/drivers/firmware/efi/efi.c
-+++ b/drivers/firmware/efi/efi.c
-@@ -141,6 +141,36 @@ static ssize_t systab_show(struct kobject *kobj,
+diff --git a/makedumpfile.c b/makedumpfile.c
+index 9569251ce0c7..ac19ed858416 100644
+--- a/makedumpfile.c
++++ b/makedumpfile.c
+@@ -56,8 +56,13 @@ static void first_cycle(mdf_pfn_t start, mdf_pfn_t max, struct cycle *cycle)
+ 	if (cycle->end_pfn > max)
+ 		cycle->end_pfn = max;
  
- static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
++	/*
++	 * Mitigate statistics problem in ELF dump mode.
++	 * A cycle must start with a pfn that is divisible by BITPERBYTE.
++	 * See create_bitmap_from_memhole().
++	 */
+ 	if (info->flag_elf_dumpfile && cycle->start_pfn < start)
+-		cycle->start_pfn = start;
++		cycle->start_pfn = round(start, BITPERBYTE);
  
-+static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
-+static ssize_t memreserve_show(struct kobject *kobj,
-+			   struct kobj_attribute *attr, char *buf)
-+{
-+	struct linux_efi_memreserve *rsv;
-+	unsigned long prsv;
-+	char *str = buf;
-+	int index, i;
-+
-+	if (!kobj || !buf)
-+		return -EINVAL;
-+
-+	if (!efi_memreserve_root)
-+		return -ENODEV;
-+
-+	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
-+		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
-+		index = atomic_read(&rsv->count);
-+		for (i = 0; i < index; i++)
-+			str += sprintf(str, "%llx-%llx\n",
-+				rsv->entry[i].base,
-+				rsv->entry[i].base + rsv->entry[i].size - 1);
-+		memunmap(rsv);
-+	}
-+
-+	return str - buf;
-+}
-+
-+static struct kobj_attribute efi_attr_memreserve = __ATTR_RO_MODE(memreserve, 0444);
-+
- #define EFI_FIELD(var) efi.var
+ 	cycle->exclude_pfn_start = 0;
+ 	cycle->exclude_pfn_end = 0;
+@@ -7503,7 +7508,7 @@ get_loads_dumpfile_cyclic(void)
+ 				if (!create_2nd_bitmap(&cycle))
+ 					return FALSE;
+ 			}
+-			for (pfn = cycle.start_pfn; pfn < cycle.end_pfn; pfn++) {
++			for (pfn = MAX(pfn_start, cycle.start_pfn); pfn < cycle.end_pfn; pfn++) {
+ 				if (!is_dumpable(info->bitmap2, pfn, &cycle)) {
+ 					num_excluded++;
+ 					continue;
+@@ -7598,7 +7603,7 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+ 					return FALSE;
+ 			}
  
- #define EFI_ATTR_SHOW(name) \
-@@ -172,6 +202,7 @@ static struct attribute *efi_subsys_attrs[] = {
- 	&efi_attr_runtime.attr,
- 	&efi_attr_config_table.attr,
- 	&efi_attr_fw_platform_size.attr,
-+	&efi_attr_memreserve.attr,
- 	NULL,
- };
- 
-@@ -955,7 +986,6 @@ int efi_status_to_err(efi_status_t status)
- }
- 
- static DEFINE_SPINLOCK(efi_mem_reserve_persistent_lock);
--static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
- 
- static int __init efi_memreserve_map_root(void)
- {
--- 
-2.18.1
+-			for (pfn = cycle.start_pfn; pfn < cycle.end_pfn; pfn++) {
++			for (pfn = MAX(pfn_start, cycle.start_pfn); pfn < cycle.end_pfn; pfn++) {
+ 				if (info->flag_cyclic)
+ 					pfn_memhole--;
+
+
+Thanks,
+Kazu
+
+>  (2) calculate the number of memory hole pages in cyclic mode
+>  (3) introduce pfn_elf_excluded variable to store the actual number
+>      of the excluded pages in ELF format
+> 
+> With the patch, a report message in ELF format mode becomes like this:
+> 
+>   Original pages  : 0x00000000003f1538
+>     Excluded pages   : 0x00000000003c8c9d
+>        in ELF format : 0x00000000003c4319
+>       Pages filled with zero  : 0x00000000000026d8
+>       Non-private cache pages : 0x0000000000047032
+>       Private cache pages     : 0x0000000000000001
+>       User process data pages : 0x0000000000014794
+>       Free pages              : 0x000000000036adfe
+>       Hwpoison pages          : 0x0000000000000000
+>       Offline pages           : 0x0000000000000000
+>     Remaining pages  : 0x000000000002889b
+>        in ELF format : 0x000000000002d21f
+>     (The number of pages is reduced to 4%.)
+>   Memory Hole     : 0x000000000004eac8
+>   --------------------------------------------------
+>   Total pages     : 0x0000000000440000
+> 
+> where the "Excluded pages" and "Remaining pages" do not mean the
+> actual numbers of excluded and remaining pages.  But remain the
+> same for some reference.
+> 
+> Signed-off-by: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> ---
+>  makedumpfile.c | 27 +++++++++++++++++++++++++--
+>  1 file changed, 25 insertions(+), 2 deletions(-)
+> 
+> diff --git a/makedumpfile.c b/makedumpfile.c
+> index 4a000112ba59..9569251ce0c7 100644
+> --- a/makedumpfile.c
+> +++ b/makedumpfile.c
+> @@ -56,6 +56,9 @@ static void first_cycle(mdf_pfn_t start, mdf_pfn_t max, struct cycle *cycle)
+>  	if (cycle->end_pfn > max)
+>  		cycle->end_pfn = max;
+> 
+> +	if (info->flag_elf_dumpfile && cycle->start_pfn < start)
+> +		cycle->start_pfn = start;
+> +
+>  	cycle->exclude_pfn_start = 0;
+>  	cycle->exclude_pfn_end = 0;
+>  }
+> @@ -89,6 +92,7 @@ mdf_pfn_t pfn_user;
+>  mdf_pfn_t pfn_free;
+>  mdf_pfn_t pfn_hwpoison;
+>  mdf_pfn_t pfn_offline;
+> +mdf_pfn_t pfn_elf_excluded;
+> 
+>  mdf_pfn_t num_dumped;
+> 
+> @@ -7499,7 +7503,7 @@ get_loads_dumpfile_cyclic(void)
+>  				if (!create_2nd_bitmap(&cycle))
+>  					return FALSE;
+>  			}
+> -			for (pfn = MAX(pfn_start, cycle.start_pfn); pfn < cycle.end_pfn; pfn++) {
+> +			for (pfn = cycle.start_pfn; pfn < cycle.end_pfn; pfn++) {
+>  				if (!is_dumpable(info->bitmap2, pfn, &cycle)) {
+>  					num_excluded++;
+>  					continue;
+> @@ -7594,7 +7598,10 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+>  					return FALSE;
+>  			}
+> 
+> -			for (pfn = MAX(pfn_start, cycle.start_pfn); pfn < cycle.end_pfn; pfn++) {
+> +			for (pfn = cycle.start_pfn; pfn < cycle.end_pfn; pfn++) {
+> +				if (info->flag_cyclic)
+> +					pfn_memhole--;
+> +
+>  				if (!is_dumpable(info->bitmap2, pfn, &cycle)) {
+>  					num_excluded++;
+>  					if ((pfn == pfn_end - 1) && frac_tail)
+> @@ -7639,6 +7646,9 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+>  					continue;
+>  				}
+> 
+> +				/* The number of pages excluded actually in ELF format */
+> +				pfn_elf_excluded += num_excluded;
+> +
+>  				/*
+>  				 * If the number of the contiguous pages to be excluded
+>  				 * is 256 or more, those pages are excluded really.
+> @@ -7691,6 +7701,9 @@ write_elf_pages_cyclic(struct cache_data *cd_header, struct cache_data *cd_page)
+>  			}
+>  		}
+> 
+> +		/* The number of pages excluded actually in ELF format */
+> +		pfn_elf_excluded += num_excluded;
+> +
+>  		/*
+>  		 * Write the last PT_LOAD.
+>  		 */
+> @@ -9777,6 +9790,9 @@ print_report(void)
+>  	REPORT_MSG("\n");
+>  	REPORT_MSG("Original pages  : 0x%016llx\n", pfn_original);
+>  	REPORT_MSG("  Excluded pages   : 0x%016llx\n", pfn_excluded);
+> +	if (info->flag_elf_dumpfile)
+> +		REPORT_MSG("     in ELF format : 0x%016llx\n",
+> +			pfn_elf_excluded);
+>  	REPORT_MSG("    Pages filled with zero  : 0x%016llx\n", pfn_zero);
+>  	REPORT_MSG("    Non-private cache pages : 0x%016llx\n", pfn_cache);
+>  	REPORT_MSG("    Private cache pages     : 0x%016llx\n",
+> @@ -9788,6 +9804,13 @@ print_report(void)
+>  	REPORT_MSG("  Remaining pages  : 0x%016llx\n",
+>  	    pfn_original - pfn_excluded);
+> 
+> +	if (info->flag_elf_dumpfile) {
+> +		REPORT_MSG("     in ELF format : 0x%016llx\n",
+> +			pfn_original - pfn_elf_excluded);
+> +
+> +		pfn_excluded = pfn_elf_excluded;
+> +	}
+> +
+>  	if (pfn_original != 0) {
+>  		shrinking = (pfn_original - pfn_excluded) * 100;
+>  		shrinking = shrinking / pfn_original;
+> --
+> 2.18.1
+> 
+> 
+> 
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/kexec
+
 
 
 _______________________________________________
