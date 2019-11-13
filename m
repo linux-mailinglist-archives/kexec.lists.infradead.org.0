@@ -2,55 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D96ACFA1FD
-	for <lists+kexec@lfdr.de>; Wed, 13 Nov 2019 03:01:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 147FCFA235
+	for <lists+kexec@lfdr.de>; Wed, 13 Nov 2019 03:02:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/T/LTVgHXvDz+LNh1wzIXOY9fGI3vzIXnXo2vQAAtEc=; b=jVSpUbqU4B5qkl
-	nGbHy3rOutmrHWXg3OI5d9ca2nBTe/vPEpa8rDSMabv7Bg2Lr5g020oNSV9Y90hzuDVh8pOXeQ/jc
-	AV0PuN1+AOY37mlSKc/4JGUM14EYmgqg3m8cClNJmyYFR9ipR6V8rrQ/2tb24JfZadZZ/WE8gPPZ6
-	h/RvrBiT6eQCcwtKMJQdW979H7Ks1BBOC0TCjiXe/qc8KO/UmPrgJX0UfyI6q0FAR6etJcGhnwyj+
-	C+GUuOx9RuezGTi0YpreTSNBtQM+kw5mR3PhbVLk/EIxFSa8NZnZRufQfbIo/jfG9AQse1OOB+t7C
-	uJ4JhVLoRm51hVCmlTdg==;
+	List-Owner; bh=+LXsdy9hUv31PhGgcGVi7eWRr01g2fc6HFPjZkeh6K8=; b=sS9esWl81YGayb
+	JW0cLdppccJWf4DKnOU0yvD9qvA6Vu+mjE0Vt4cR5osuTSJBNM9SmvxzaIiS8qhwiiMvXzB7wN0Jg
+	GI5RnG5zzlR8MNpJi/5uZFfqEVgNxe8R3ypTZLHey2Us5hjOyLoPZP5KHHVjE1N33Z9ue5Pn4sDxr
+	HDoV+8dG3eKKK9VDt02kil3ze7unnddbO3w5+Fj9FmeMLozgGx3sX0OishwPS5pzXVMALo/sqbjb6
+	LVdzuTQw6F9oq3enBHYLvBx5u7/5GxnATduOGll3UaHyfBPBKT1sx9WYzl9pSw32sNPR9iVDn7E4e
+	dUnNTbv0mMI2QpJ+0U+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUhyB-0002O3-9n; Wed, 13 Nov 2019 02:01:19 +0000
+	id 1iUhza-0003Y6-KP; Wed, 13 Nov 2019 02:02:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUhy8-0002N7-Mb
- for kexec@lists.infradead.org; Wed, 13 Nov 2019 02:01:18 +0000
+ id 1iUhzW-0003Wi-Sg
+ for kexec@lists.infradead.org; Wed, 13 Nov 2019 02:02:44 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 628D92245A;
- Wed, 13 Nov 2019 02:01:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B0EDA204EC;
+ Wed, 13 Nov 2019 02:02:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1573610476;
- bh=uXJnpNa2DlT2etLUcYrrcS9giJvdo6ordh6k9tSg9PM=;
+ s=default; t=1573610562;
+ bh=rNvF+D9boZoPCiNVhtlnr9pBgxIcp4oAPRekViOg1Ms=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=BNMwlBuHRQZITS7IkKk7EJjqzbWeDvss8mR7eX7kaE4lh8Ppf4gQewGDZEAksivx0
- ERoY+nghVnDIjMcr+sKUcj78ETIa0DZtyxM08k66mbIXlYbxznZOLn3Ez+6qMIDZ9g
- Mmzr9iQ4p4HP0iaDF0R7apQ7ngvgmtLUsAl2Y854=
+ b=x3UgGdEKZ+YO4V+CY70HOC1NGdoMNJlb6iwQALolkotGkzY2+Sg2tWntS8QSw1RGr
+ U3NL8M8o0JwdD8puQxsN9s/PPdHuduIDGwMkE7JyKMRt2CcF2uTogGVuYJos42rdeZ
+ QBLMP/rh3Mk0gcYT7CwMQ/1M8uMVHqvI3feCuh2I=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 58/68] x86/kexec: Correct KEXEC_BACKUP_SRC_END
+Subject: [PATCH AUTOSEL 4.4 41/48] x86/kexec: Correct KEXEC_BACKUP_SRC_END
  off-by-one error
-Date: Tue, 12 Nov 2019 20:59:22 -0500
-Message-Id: <20191113015932.12655-58-sashal@kernel.org>
+Date: Tue, 12 Nov 2019 21:01:24 -0500
+Message-Id: <20191113020131.13356-41-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191113015932.12655-1-sashal@kernel.org>
-References: <20191113015932.12655-1-sashal@kernel.org>
+In-Reply-To: <20191113020131.13356-1-sashal@kernel.org>
+References: <20191113020131.13356-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191112_180116_781166_0E23CFF6 
+X-CRM114-CacheID: sfid-20191112_180242_967117_49F88C69 
 X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -141,7 +141,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/x86/include/asm/kexec.h b/arch/x86/include/asm/kexec.h
-index 282630e4c6ea4..1624a7ffa95d8 100644
+index d2434c1cad055..414f9b52e58e6 100644
 --- a/arch/x86/include/asm/kexec.h
 +++ b/arch/x86/include/asm/kexec.h
 @@ -66,7 +66,7 @@ struct kimage;
