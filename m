@@ -2,76 +2,92 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACEBBFB8F7
-	for <lists+kexec@lfdr.de>; Wed, 13 Nov 2019 20:37:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC727FB90D
+	for <lists+kexec@lfdr.de>; Wed, 13 Nov 2019 20:43:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VxZB2gSeedqWcxa6QnA28g0vATH4dzAywmmcW2SlDws=; b=hD3+jtVDP7bcgB
-	WnJiao+43nnZ/nOMtCabTQ/nrPlbotxR3toDx7w3T7H/EMkBzDJYHdNFC1/aOmrUS+dRX3RXeOs7g
-	zpn3Km3xpi8yJFQCYrI9aXndAhHGB4pYDUzVI79GBhoBrB3wYe/TUOhu7xt0LdKB3yBpInmNmEJ0c
-	hmgwWTxEQL3bsBdoJwlVEYvHqheXWZ0L70J0Y/81Mp3QNcI+J3RtSzT6/YuAn7qcMWV3kfYk2ri/r
-	0LAh6e3mZTf8QZbTVKa+hDl30FpdDdEVbIcMd8YIrnt6hyZu7inrXh82RCIVA3S1qFqpdo25geoiW
-	QBIHyANUf8t5PkxeP6AA==;
+	List-Owner; bh=c9qOebU19r48QwrOYGHP1PDVf1EYyx0WkH6b2d2h0tc=; b=AtwGe38yZN9LdQ
+	mD58Rhz/p66FJXYH9WS+ldkhIUQXZZkUnZ1g3f/aSkisu5iZsawtqQsuZz+M8arr+Nqaq95xgCvWC
+	qsUZHvNezO5cE/Y1ur5nrKgGDyX8yqESJ65vbcHD5p/FOoV1VFE8kErPLCpskWbrpn3kLoZU+IFaE
+	mAv2kSz40xXqB5tEWUBSSrXCIHUgHqmzdR/yPM5U/ZpMzHjCenYiQzVtAY6+VIrxbFOnGYW6lNFt7
+	FhRngwQafSnuWZsZazbyZpDYL1tMCLDIX79VkuDhYINKAR9EzuZN5fN6LoirbWREJ+Kpckdk0u39d
+	Go9kc5sDpQG1i3b7Yuzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iUySY-00021p-V3; Wed, 13 Nov 2019 19:37:46 +0000
-Received: from tyo162.gate.nec.co.jp ([114.179.232.162])
+	id 1iUyYD-0003zy-AZ; Wed, 13 Nov 2019 19:43:37 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iUySQ-00021B-VB
- for kexec@lists.infradead.org; Wed, 13 Nov 2019 19:37:41 +0000
-Received: from mailgate01.nec.co.jp ([114.179.233.122])
- by tyo162.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xADJbXC3004670
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 14 Nov 2019 04:37:33 +0900
-Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
- by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xADJbXsS032106;
- Thu, 14 Nov 2019 04:37:33 +0900
-Received: from mail02.kamome.nec.co.jp (mail02.kamome.nec.co.jp [10.25.43.5])
- by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xADJbXtf020884; 
- Thu, 14 Nov 2019 04:37:33 +0900
-Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.137] [10.38.151.137]) by
- mail03.kamome.nec.co.jp with ESMTP id BT-MMP-728370;
- Thu, 14 Nov 2019 04:36:03 +0900
-Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
- BPXC09GP.gisp.nec.co.jp ([10.38.151.137]) with mapi id 14.03.0439.000; Thu,
- 14 Nov 2019 04:36:02 +0900
-From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-To: Dave Jones <davej@codemonkey.org.uk>
-Subject: RE: makedumpfile: ELF format issues (RE: makedumpfile: Fix divide
- by zero in print_report())
-Thread-Topic: makedumpfile: ELF format issues (RE: makedumpfile: Fix divide
- by zero in print_report())
-Thread-Index: AdV+3GkEfQ9Ykbz/Q9OI6ddAj4Visv//hDSA/+Z3b+D/uLCzYP9ntB8Q
-Date: Wed, 13 Nov 2019 19:36:01 +0000
-Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03595014@BPXM09GP.gisp.nec.co.jp>
-References: <4AE2DC15AC0B8543882A74EA0D43DBEC03591761@BPXM09GP.gisp.nec.co.jp>
- <20191009213855.GA14574@codemonkey.org.uk>
- <4AE2DC15AC0B8543882A74EA0D43DBEC03593DA7@BPXM09GP.gisp.nec.co.jp>
- <4AE2DC15AC0B8543882A74EA0D43DBEC035949A4@BPXM09GP.gisp.nec.co.jp>
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC035949A4@BPXM09GP.gisp.nec.co.jp>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [143.101.135.196]
+ id 1iUyY1-0003sr-BH; Wed, 13 Nov 2019 19:43:27 +0000
+Received: by mail-qt1-x843.google.com with SMTP id p20so3924547qtq.5;
+ Wed, 13 Nov 2019 11:43:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=LTpeEfUp2aDF2PuVPItGfVBk3+wf98fXG2ncSzi/Vdk=;
+ b=tXz+MujYAez3+OpD7+2t674yspYgv6gqgmmgqG8P5mkHlKw1lGZKIqdaqMlTltismO
+ 2MSmHXgtSsuTAdXEMg3NxWRmaf4ifUEYqu/nSDxOCaefc5XLN+sOJyC67lhgdNiFDghd
+ ewDgcka08ijUkVgD7/CRLUykL00f+Ru6rlWkThupHKl//CGc5AZfLQwSHDyOfIk3YYFM
+ QpZjRPNjfFhtMF+PCZU0L4CmvrEGwsO03YVUwTMWS2LO12+FhB8sjYHWO05KdPMTAajC
+ m8X3EOg5jyLpiga9HQhExsqG+pMPjeyn33Ck/orFk4lyDiraONSmkN8wsfp5t/8uBJ2r
+ acTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LTpeEfUp2aDF2PuVPItGfVBk3+wf98fXG2ncSzi/Vdk=;
+ b=iZK46shDuPUEw+qmMaXcufDgrdCRcxXWUrNMRjJDmhLPAJk7zHvumK30lRJyncYqO7
+ 3PSCcHMMrW8oD41zeSme/jDGMoCg0i31Tg0QsOqE+qEPupMORpZIwqn4QwUAsCsAy7cj
+ DYrp2gNrcQSaRa37ByIj/rl+CphaWA43kLRgRxbUzWozQPw7muZbksxRxPKrN2Yrv8qd
+ hHaCoDIw0o0AW0MXCHF4MrT7enLdydzL0K8MI30T1EveVU+ud48NWA0PjNfRhQ4ukCwC
+ BPI4KFK9wGH/Ihk2kP4o80yJ5veI3t8Z0a1r6duNwEmHO45LyrrnMS3gQS9ntcXqlBv6
+ DUGg==
+X-Gm-Message-State: APjAAAVMwxT1ralarLCWiy0a28bd9Z8okYK8AFZpcCUwN5Auo+I+acFm
+ 6GSr4tkc2HzGdjYk0bTNHA==
+X-Google-Smtp-Source: APXvYqwuQjXnzhWn63dYa+pvmHYPOPoyVfz7wGIAq+IWPm8a4FT9l+pVXnuyAqjs+W+XzuMuGrJfbw==
+X-Received: by 2002:aed:2357:: with SMTP id i23mr4552514qtc.365.1573674203724; 
+ Wed, 13 Nov 2019 11:43:23 -0800 (PST)
+Received: from gabell (nat-pool-bos-t.redhat.com. [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id f191sm1419361qke.62.2019.11.13.11.43.23
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 13 Nov 2019 11:43:23 -0800 (PST)
+Date: Wed, 13 Nov 2019 14:43:16 -0500
+From: Masayoshi Mizuma <msys.mizuma@gmail.com>
+To: "d.hatayama@fujitsu.com" <d.hatayama@fujitsu.com>
+Subject: Re: [RFC PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve
+ to tell the persistent pages
+Message-ID: <20191113194229.jfaawdhummneri6s@gabell>
+References: <20191112165303.24270-1-msys.mizuma@gmail.com>
+ <OSBPR01MB4006D6F586695E2B867C95F095760@OSBPR01MB4006.jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
-X-TM-AS-MML: disable
+Content-Disposition: inline
+In-Reply-To: <OSBPR01MB4006D6F586695E2B867C95F095760@OSBPR01MB4006.jpnprd01.prod.outlook.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_113739_230529_67BE5E9B 
-X-CRM114-Status: GOOD (  16.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191113_114325_388841_96EEC94D 
+X-CRM114-Status: GOOD (  25.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [114.179.232.162 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (msys.mizuma[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,112 +99,197 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Cc: "m.mizuma@jp.fujitsu.com" <m.mizuma@jp.fujitsu.com>,
+ "linux-efi@vger.kernel.org" <linux-efi@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Dave,
+On Wed, Nov 13, 2019 at 07:59:04AM +0000, d.hatayama@fujitsu.com wrote:
+> > From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > 
+> > kexec reboot stucks because efi_config_parse_tables() refers garbage
+> >  (with memblock=debug):
+> > 
+> >   efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000
+> > MEMRESERVE=0x9820bfdc58
+> >   memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67]
+> > efi_config_parse_tables+0x228/0x278
+> >   memblock_reserve: [0x0000000082760000-0x00000000324d07ff]
+> > efi_config_parse_tables+0x228/0x278
+> >   memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9]
+> > efi_config_parse_tables+0x244/0x278
+> >   memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2]
+> > efi_config_parse_tables+0x244/0x278
+> >   memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12]
+> > efi_config_parse_tables+0x244/0x278
+> >   ...
+> > 
+> > That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
+> > 0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
+> > head page of pending table and prop table which are allocated by
+> > gic_reserve_range().
+> > 
+> > The destroyer is kexec. kexec locates the inird to the area:
+> > 
+> > # kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img
+> > --reuse-cmdline
+> > ...
+> > initrd: base 82290000, size 388dd8ah (59301258)
+> > ...
+> > 
+> > From dynamic debug log:
+> >   machine_kexec_prepare:70:
+> >     kexec kimage info:
+> >       type:        0
+> >       start:       85b30680
+> >       head:        0
+> >       nr_segments: 4
+> >         segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481
+> > pages
+> >         segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905
+> > pages
+> >         segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1
+> > pages
+> >         segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1
+> > pages
+> > 
+> > kexec searches the appropriate memory region to locate initrd through "System
+> > RAM"
+> > in /proc/iomem. The pending tables are included in "System RAM" because they
+> > are
+> > allocated by alloc_pages(), so kexec destroys the pending tables.
+> > 
+> > Introduce /sys/firmware/efi/memreserve to tell the pages pointed by
+> > efi.mem_reserve
+> > so that kexec can avoid the area to locate initrd.
+> > 
+> > Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > ---
+> >  drivers/firmware/efi/efi.c | 32 +++++++++++++++++++++++++++++++-
+> >  1 file changed, 31 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+> > index e98bbf8e5..67b21ae7a 100644
+> > --- a/drivers/firmware/efi/efi.c
+> > +++ b/drivers/firmware/efi/efi.c
+> > @@ -141,6 +141,36 @@ static ssize_t systab_show(struct kobject *kobj,
+> > 
+> >  static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
+> > 
+> > +static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
+> > +static ssize_t memreserve_show(struct kobject *kobj,
+> > +			   struct kobj_attribute *attr, char *buf)
+> > +{
+> > +	struct linux_efi_memreserve *rsv;
+> > +	unsigned long prsv;
+> > +	char *str = buf;
+> > +	int index, i;
+> > +
+> > +	if (!kobj || !buf)
+> > +		return -EINVAL;
+> > +
+> > +	if (!efi_memreserve_root)
+> > +		return -ENODEV;
+> 
+> Other functions use different conditions.
+> The latter efi_memreserve_root == (void *)ULONG_MAX is correct?
+> 
+> static int __init efi_memreserve_map_root(void)
+> {
+>         if (efi.mem_reserve == EFI_INVALID_TABLE_ADDR)
+>                 return -ENODEV;
+> int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
+> {
+>         struct linux_efi_memreserve *rsv;
+>         unsigned long prsv;
+>         int rc, index;
+> 
+>         if (efi_memreserve_root == (void *)ULONG_MAX)
+>                 return -ENODEV;
 
-I think I've fixed the ELF issues which I could reproduce:
-- wrong statistics
-- e_phnum overflow
+I think it's better to add both checks like as:
 
-If you still see any problems with the latest makedumpfile,
-please let me know.
+        if ((efi_memreserve_root == (void *)ULONG_MAX) ||
+                        (!efi_memreserve_root))
+                return -ENODEV;
+> 
+> > +
+> > +	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
+> > +		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
+> 
+> memremap() could fail with NULL as a return value.
+> You need to deal with such case.
+> 
+> It looks to me efi_mem_reserve_persistent() also doesn't deal with this.
+> Maybe you should fix this, too.
+
+OK, I'll post a patch sepaletely to add the sanity check.
+
+> 
+> > +		index = atomic_read(&rsv->count);
+> > +		for (i = 0; i < index; i++)
+> > +			str += sprintf(str, "%llx-%llx\n",
+> > +				rsv->entry[i].base,
+> > +				rsv->entry[i].base + rsv->entry[i].size -
+> > 1);
+> 
+> Is memreserve supported on 32-bit system?
+> If so, phy_addr_t could have a type of 4-byte length in such system
+> (not so if with PAE) and then %llx could lead to inconsistent type error.
+> It's enough to add a cast to unsigned long long.
+
+Good catch. I'll modify the sprintf() format to
+use %pa like as:
+
+  phys_addr_t start, end;
+
+  for (i = 0; i < index; i++) {
+          start = rsv->entry[i].base;
+          end = start + rsv->entry[i].size - 1;
+
+          str += sprintf(str, "%pa-%pa\n", &start, &end);
+  }
 
 Thanks,
-Kazu
-
-> -----Original Message-----
-> > -----Original Message-----
-> > >  > > There are some other failure cases with non-null data, so maybe there's >1 bug here.
-> > >  > > I've not seen an obvious pattern to this. eg...
-> > >  > >
-> > >  > > https://pastebin.com/2uM4sBCF
-> > >  > >
-> > >  >
-> > >  > As for this case, I suspect that Elf64_Ehdr.e_phnum overflows
-> > >  > (i.e. num_loads_dumpfile > 65535):
-> > >
-> > > Oh, good catch.  These are 256GB machines, so after discarding
-> > > everything, that explains why we end up with so many sections.
-> > > This also explains why it sometimes works I think, when the discarding
-> > > manages to get the total nr headers <64k.
+Masa
 > 
-> I also could reproduce this issue on a system with 192GB memory.
-> The note was actually overwritten by the following program headers.
-> -----
-> num_loads_dumpfile=76318                # more than 64k
-> ehdr64.e_phnum=10783                    # overflowed
-> note.p_offset=0x93708 .p_filesz=0x2958  # The note data is at 0x93708
-> note cd_header->offset=0x40
-> ...
->     head->off=     90040 load.p_addr= 44552e000 .p_off=  ed270060 ...
->                    ^^^^^ # these headers overwrote the note data.
->     head->off=     a0040 load.p_addr= 445630000 .p_off=  ed272060 ...
-> ...
-> The dumpfile is saved to dump.Ed25.devel.
+> > +		memunmap(rsv);
+> > +	}
+> > +
+> > +	return str - buf;
+> > +}
+> > +
+> > +static struct kobj_attribute efi_attr_memreserve =
+> > __ATTR_RO_MODE(memreserve, 0444);
+> > +
+> >  #define EFI_FIELD(var) efi.var
+> > 
+> >  #define EFI_ATTR_SHOW(name) \
+> > @@ -172,6 +202,7 @@ static struct attribute *efi_subsys_attrs[] = {
+> >  	&efi_attr_runtime.attr,
+> >  	&efi_attr_config_table.attr,
+> >  	&efi_attr_fw_platform_size.attr,
+> > +	&efi_attr_memreserve.attr,
+> >  	NULL,
+> >  };
+> > 
+> > @@ -955,7 +986,6 @@ int efi_status_to_err(efi_status_t status)
+> >  }
+> > 
+> >  static DEFINE_SPINLOCK(efi_mem_reserve_persistent_lock);
+> > -static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
+> > 
+> >  static int __init efi_memreserve_map_root(void)
+> >  {
+> > --
+> > 2.18.1
 > 
-> makedumpfile Completed.
-> 
-> # readelf -a dump.Ed25.devel
-> ...
->   Number of program headers:         10783
-> ...
-> Displaying notes found at file offset 0x00093708 with length 0x00002958:
->   Owner                 Data size       Description
->                        0x00000007       Unknown note type: (0xdbce6060)
->    description data: 00 00 7a 39 fffffff2 ffffff8a ffffffff
-> # ../crash vmlinux dump.Ed25.devel
-> 
-> WARNING: possibly corrupt Elf64_Nhdr: n_namesz: 4185522176 n_descsz: 3 n_type: f4000
-> ...
-> WARNING: cannot read linux_banner string
-> crash: vmlinux and dump.Ed25.devel do not match!
-> -----
-> 
-> > I think this will be the one of the causes, and had a look at how
-> > we can fix it.  If you get a vmcore where this pattern occurs,
-> > you can try this tree:
-> > https://github.com/k-hagio/makedumpfile/tree/support-extended-elf
-> >
-> > Then, the crash utility also needs a patch to support a dumpfile
-> > that has more than 64k program headers:
-> > https://github.com/k-hagio/crash/tree/support-extended-elf
-> 
-> These trees look to work well, though need more tests and tweaks.
-> -----
-> # readelf -a dump.Ed25.test
-> ...
->   Number of program headers:         65535 (76319)  <<-- note + loads
-> ...
-> Displaying notes found at file offset 0x00413748 with length 0x00002958:
->   Owner                 Data size       Description
->   CORE                 0x00000150       NT_PRSTATUS (prstatus structure)
->   CORE                 0x00000150       NT_PRSTATUS (prstatus structure)
->   CORE                 0x00000150       NT_PRSTATUS (prstatus structure)
-> ...
-> # ../crash-test vmlinux dump.Ed25.test
-> 
-> crash-test> help -D
-> vmcore_data:
->                   flags: c0 (KDUMP_LOCAL|KDUMP_ELF64)
->                    ndfd: 3
->                     ofp: 3141560
->             header_size: 4284576
->    num_pt_load_segments: 76318   <<-- loads
->      pt_load_segment[0]:
-> -----
-> 
-> It is possible that the issue occurs on general systems if they have
-> large memory, so I'm going to proceed with those patches.
-> 
-> Thanks,
-> Kazu
-> 
-
 
 _______________________________________________
 kexec mailing list
