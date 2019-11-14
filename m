@@ -2,79 +2,80 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 562FDFBF4D
-	for <lists+kexec@lfdr.de>; Thu, 14 Nov 2019 06:18:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F0CDFBF56
+	for <lists+kexec@lfdr.de>; Thu, 14 Nov 2019 06:18:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=G+CwcZ8fz++75GfxJ7EiPkPm225SIT9KwFsYOjaJ9FA=; b=FC+tN6cwgvxloG
-	xeZK2mb+41y5tZ38jkGqDqq7Ps5d0iM1211uAQDpbc0ox9T+6VT9ToueWATd8C3sFvjqWURFf0JER
-	j5i8rHlJJikLhff8C2b/mvgUuI133yG+j9IAebIrgpPWQtADFldtg2+DqyhNs91jVnUdFMzlmC51p
-	6/X41KPte0+Vwp1KkYQdjV6AuT0pan1KZgPG2QnJfFzF+paK15nUepM5DLLF6P1CczDMzMDdlPy9m
-	nVbXOiyMSSlCEqwRHPw/vlMID3URWZCtc1JavgjlX9noihBBL7ulHmnY9fzKHBOsEhJJfAr/CH2xN
-	oRQqUqUyKYhTlDLr616Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PMUfowvvOHtj6dGaeWpnXJ1SCx8dbQ2xac0UM1vY3k4=; b=cMNoV5Xs65065E
+	gYxStY63yX6UAJWNewBuqVt27OX7W30+wQeUbhSkjoqLCDgc/8c3tcsoATEh6PZmXkF1utl2S45Iu
+	Zg7Cd4C16mJaX860kdi+n83xhKr5ZTLtmv37syFsdd2c8qupbRINEIcdQ8IxkijxC23WJrSrbUUZ6
+	/ElHVLYmhPYveYaBahko77FHZl3TFk2Xclk8CQGTib+xNwqEc5GlHeX19cCljEcY6WyA5ShsYWgQt
+	58+XpTy1XwxZMPVUDOReTNGzypCIO/Yvy207UbjwsP6ty+TSzxXrZccgwikW6vwT4J4R5wfHb2j+M
+	b30N8GciKEievrP49dIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iV7W2-0003jN-TW; Thu, 14 Nov 2019 05:17:58 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iV7Wn-0004SP-Ht; Thu, 14 Nov 2019 05:18:45 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iV7Sl-0007KX-T8
- for kexec@lists.infradead.org; Thu, 14 Nov 2019 05:14:40 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e3so2077613plt.7
- for <kexec@lists.infradead.org>; Wed, 13 Nov 2019 21:14:35 -0800 (PST)
+ id 1iV7Sr-0007PR-U6
+ for kexec@lists.infradead.org; Thu, 14 Nov 2019 05:14:44 +0000
+Received: by mail-pf1-x442.google.com with SMTP id b19so3333918pfd.3
+ for <kexec@lists.infradead.org>; Wed, 13 Nov 2019 21:14:41 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=R7b2JPtWwEx72nyCRSKpBp7/BtsD5j/Gd6lSZi42tNY=;
- b=SAqGs6fQe8YE08HwbEoz3pMr+dp5RUp5r07rVVDRW1kTo3hsf1d0dzMBdMNQbAqOa+
- 6xDVVt10resWw/FTWyy8sWSzzlyQ5a0kQ50/t43SI/7LD8UkqOJsxJdriFxpoUFe8N6l
- hbL2nLKz5wc1YvFIfbr74jMQPuusyPBbR8Bg5CzEVBj85/whJlLXjWcQROl5qJqCTv40
- 5pNxOqKDIq/82f9UByGx9DP1aiNI6vHqxFaBPQGBlqnLeebjOcCQcQB2sZxjDyY8L88Q
- aiYpfon2RNigH4ZfGF8tbhyvLrQe5NiBtmBdC2KZ6cQl379vvUy2IbrfSHKpBv5aITAc
- 5SJQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=K2wlRR3w/KTNdVqCYnrEwvs7sg2WubrsMP6gUzcCK3w=;
+ b=zppns9CQ9NJAosr/LOsW1qDHdqq9EqFz5ZPBd7ZGpXbY79fJ2UVFUjsC9feu+OeRHH
+ jtupVXzvx24ZZtmezz8rILhUwtykHm72bbXRADz/wG5Xyooq0ab2j+kPJKt4jiwKJl2d
+ FH2/0qcxqyE1pxV4oVsrEIrqwNllLXxa5i0qQnqNr1U07RISfVBVpvjI8JKBOtAyQMtG
+ TPcfcF9CbhRNOJM8m+sCcSigAOWit4iAi+t6k1O8M6SDs42jo6jnMYYpF+IBAn8AYM/g
+ LA6GbbSwny1FrxmFPJ0PUtas1pgDTEqsAhyHs9QWGcgeXZClDrz4iDqFg1KfJvQXdYx3
+ Qp5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=R7b2JPtWwEx72nyCRSKpBp7/BtsD5j/Gd6lSZi42tNY=;
- b=ji+bxwWGUG3bGwIYwJEoXMLwxQj0BzFu7nLIQ6LbRY1Z6w7WVSidoTPwwDDMvg3CNF
- xh+ZWyryGhrq2VeAcXmqBc1tCCgOzcRJT7pcssuuEGxTCWRMMI1xdvgSnKBuL7DWlhWn
- 29MsS6nPsL1vscMOdZBbkeTM3rmNKK4oyORl0VM7qcgGEPk8L/2zufCosBxb2PfjCJiR
- O8I8TArog1Jiy7cBc/yCdH2S4HHXGPO/nzV0L/ip0mG5OBYNAPxVzCcGuq+Qa6ZwE9Ea
- EKfuiKwn7w54Kf/Im1980CsM8cfjivl5GEg3b6g7CMgViCch9EWAMeeWD/MMujMCgg6e
- +69g==
-X-Gm-Message-State: APjAAAUJ+yswOlnJ4qI5D/RQ52sk59P1+zUpbkmZKRGIUUOhJUzKHGpy
- fj2GXxfX0oZ9APCMjnDhLnz5lQ==
-X-Google-Smtp-Source: APXvYqyUGkyUr51KXBUYxjBncLe29pHZ3ycMcQpcMe9U0q8KrLojzhcQSJQH8Kdlb50vioiqEfwVzg==
-X-Received: by 2002:a17:902:aa42:: with SMTP id
- c2mr7453010plr.311.1573708474696; 
- Wed, 13 Nov 2019 21:14:34 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=K2wlRR3w/KTNdVqCYnrEwvs7sg2WubrsMP6gUzcCK3w=;
+ b=Te3VHpY609w7MwBc7E2sxm87a2098FO1qQBd0xA68TXorNHmGtaFeJuJHtRnpsRoFZ
+ cNC3gm2RMeFbyy9YdYjE13EoU0qCxNWzmTBced9TS/ynMU4DAlR4PlVPRm+eGjr1anSf
+ sNHsoFC2IUCe7hzDEU1LaP+DTUlIZCYKYGgMvQxfhQwu1PfS0ItGAh6gntwIPq6Z3845
+ 1ot+Bk0kq1AW6QSIvxMQFdFhiyVLsujrsh6IC0pVTwZmYyfXcAYBbfiIP/4lbjgHlg2P
+ FRZ5b76p3fD/zbX7cfsEv1VKrPvgXxMTWDderqfvOlmJkr0fJFSA/gFyB69x0F31wNIk
+ SOKA==
+X-Gm-Message-State: APjAAAVk/UQRK6vyN7Y77Z95c8hL2GHlM7vnYJk5zrpf+z6F2zL7i88+
+ dMWfyQgoWhkIVVaMjUnkRecuug==
+X-Google-Smtp-Source: APXvYqwlEusLa94m5U+3WaWntarTbEi19zhc16zy/LNNcM+ekH+5cMHfghn0WaJojuUTkNWrbbbtHA==
+X-Received: by 2002:a62:5e04:: with SMTP id s4mr8967673pfb.63.1573708481126;
+ Wed, 13 Nov 2019 21:14:41 -0800 (PST)
 Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id
- i123sm7799642pfe.145.2019.11.13.21.14.33
+ by smtp.googlemail.com with ESMTPSA id f5sm7329049pjp.1.2019.11.13.21.14.40
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 13 Nov 2019 21:14:34 -0800 (PST)
+ Wed, 13 Nov 2019 21:14:40 -0800 (PST)
 From: AKASHI Takahiro <takahiro.akashi@linaro.org>
 To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
  frowand.list@gmail.com
-Subject: [PATCH v2 0/3] arm64: kexec_file: add kdump
-Date: Thu, 14 Nov 2019 14:15:07 +0900
-Message-Id: <20191114051510.17037-1-takahiro.akashi@linaro.org>
+Subject: [PATCH v2 1/3] libfdt: define UINT32_MAX in libfdt_env.h
+Date: Thu, 14 Nov 2019 14:15:08 +0900
+Message-Id: <20191114051510.17037-2-takahiro.akashi@linaro.org>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20191114051510.17037-1-takahiro.akashi@linaro.org>
+References: <20191114051510.17037-1-takahiro.akashi@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191113_211436_123120_8EEAE698 
-X-CRM114-Status: GOOD (  10.00  )
+X-CRM114-CacheID: sfid-20191113_211441_984645_C31E608A 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,50 +105,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-This is the last piece of my kexec_file_load implementation for arm64.
-It is now ready for being merged as some relevant patch to dtc/libfdt[1]
-has finally been integrated in v5.3-rc1.
-(Nothing changed since kexec_file v16[2] except adding Patch#1 and #2.)
+In the implementation of kexec_file_load-based kdump for arm64,
+fdt_appendprop_addrrange() will be used, but fdt_addresses.c
+will fail to compile due to missing UINT32_MAX.
 
-Patch#1 and #2 are preliminary patches for libfdt component.
-Patch#3 is to add kdump support.
+So just define it in libfdt_env.h.
 
-Bhepesh's patch[3] will be required for 52-bit VA support.
-Once this patch is applied, whether or not CONFIG_ARM64_VA_BITS_52 is
-enabled or not, a matching fix on user space side, crash utility,
-will also be needed. 
+Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Frank Rowand <frowand.list@gmail.com>
+---
+ include/linux/libfdt_env.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Anyway, I tested my patch, at least, with the following configuration:
-1) CONFIG_ARM64_BITS_48=y
-2) CONFIG_ARM64_BITS_52=y, but vabits_actual=48
-
-(I don't have any platform to use for
-3) CONFIG_ARM64_BITS_52=y, and vabits_actual=52)
-
-[1] commit 9bb9c6a110ea ("scripts/dtc: Update to upstream version
-    v1.5.0-23-g87963ee20693"), in particular
-	7fcf8208b8a9 libfdt: add fdt_append_addrrange()
-[2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-November/612641.html
-[3] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/693411.html
-
-Changes in v2 (Nov 14, 2019)
-* rebased to v5.4-rc7
-* no functional changes
-
-AKASHI Takahiro (3):
-  libfdt: define UINT32_MAX in libfdt_env.h
-  libfdt: include fdt_addresses.c
-  arm64: kexec_file: add crash dump support
-
- arch/arm64/include/asm/kexec.h         |   4 +
- arch/arm64/kernel/kexec_image.c        |   4 -
- arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
- include/linux/libfdt_env.h             |   3 +
- lib/Makefile                           |   2 +-
- lib/fdt_addresses.c                    |   2 +
- 6 files changed, 112 insertions(+), 9 deletions(-)
- create mode 100644 lib/fdt_addresses.c
-
+diff --git a/include/linux/libfdt_env.h b/include/linux/libfdt_env.h
+index edb0f0c30904..9ca00f11d9b1 100644
+--- a/include/linux/libfdt_env.h
++++ b/include/linux/libfdt_env.h
+@@ -3,6 +3,7 @@
+ #define LIBFDT_ENV_H
+ 
+ #include <linux/kernel.h>	/* For INT_MAX */
++#include <linux/limits.h>	/* For UINT32_MAX */
+ #include <linux/string.h>
+ 
+ #include <asm/byteorder.h>
+@@ -11,6 +12,8 @@ typedef __be16 fdt16_t;
+ typedef __be32 fdt32_t;
+ typedef __be64 fdt64_t;
+ 
++#define UINT32_MAX U32_MAX
++
+ #define fdt32_to_cpu(x) be32_to_cpu(x)
+ #define cpu_to_fdt32(x) cpu_to_be32(x)
+ #define fdt64_to_cpu(x) be64_to_cpu(x)
 -- 
 2.21.0
 
