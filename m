@@ -2,114 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02FE2FD2A2
-	for <lists+kexec@lfdr.de>; Fri, 15 Nov 2019 02:59:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4917FE1C6
+	for <lists+kexec@lfdr.de>; Fri, 15 Nov 2019 16:49:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gEhAQGtGpx3J9ydz5l7F6Nbneg5mTQzcOt1QdBAbaXs=; b=inXf6eRNM2Yqq2
-	u0mhEZhDqFh0iMYymmS2OpuC8uufK7v+RAHWI8n5UbxCVVLFMpEuLqm1oaBVpWtAl4hBGvC3SKwxM
-	8iqAObmdVL9LmcK15dTfd/wXE3ym5NeC9FnB/Gt2kYmVgkaxWxx3rs3OtJeK87xtpY1WmH4j7TU7W
-	bxFirD76Ha9IGJgt5B/oeRyZtREM2Ub2daU4WjO45ZFjN9M68seX2/NmXs4Rjh+UoroVpc8v0pyay
-	fjKcDod1RbPNbOVwQyAr6w71Fr2SNIfBkoP+8qlfe4ngIW+Vp5y3OiR1Mbw8ygEU38AKlhFrdrics
-	gJRH0tbFjn1f8toBuAOg==;
+	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
+	From:MIME-Version:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nT+LD84XFmBg6jPTZg11vcC8yk8tni4SRnvH1QBsHGs=; b=n+8NbBONQdQ3PH
+	05CREksa1i5Jrt1XCNY1DEuDAhkQ1zB0zBcZ+R1IcQV2ZFwj3m3uIgQ04u5hyb4EmJr/UzmS6ihSW
+	qRIPw9PW72zwK1sI7PvK7FPXFNwz+BplsmqGn0QT/jgscZWHN9zJTToETmclMe+yYGxFJGETlEdHA
+	aVGYZiRE21Oxm6CDVgCGTTjoEuG1+/3ZNh6P9gGR1zBFXtoGz+pWdiMQuv8ngRuMkJZbDAesowexP
+	UVHjbBMVoAcYpNx8FnR6MfkV0mii8uz0XkTGKhBonJkTwZ0qOmy7/kiZ5hI0aoU9aOx++57biLdhB
+	neG83UpjJjO30D3Elirw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVQtP-0000HU-HK; Fri, 15 Nov 2019 01:59:23 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1iVdqT-0007V6-9m; Fri, 15 Nov 2019 15:49:13 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVQt9-00008c-Td
- for kexec@lists.infradead.org; Fri, 15 Nov 2019 01:59:10 +0000
-Received: by mail-pl1-x641.google.com with SMTP id h13so3578664plr.1
- for <kexec@lists.infradead.org>; Thu, 14 Nov 2019 17:59:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mail-followup-to:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=UWeLycX3A0XaEIn+C9Dl7zk7yTPULHadgCfDLM9l7TE=;
- b=ksvnu7eSOO4terAkNlaOfyb15/oDqNrOy0ORpo0bHBI2rhd9yD5pOsdT6WUKTLlDTv
- J3JM4RVHvP1LJP0mmL5H2hRq7oVoun79yD7ZM4D3ylcuToJckasjdaZzwaLyznvO1xGX
- wWplbFAv1VywWbeyraIAphIp4UTV+24rqlE/SPn9mI2gTrXkZd1AGTREWWhZ5k7/IvWr
- E+8slo2iwqf+Q3vUc2O/7jO5L09+LMQfXHB6zZi0ziq+EGgeuIm6prEdgznpSwxbTuqO
- AALvwT9E10R6YtyJ/ZMXbbxs5wHUuvk7o7Fc+eJ7FDvcLZkmZhAYVnqslFS8A99XyfHH
- V4Uw==
+ id 1iVdqQ-0007Uh-S9
+ for kexec@lists.infradead.org; Fri, 15 Nov 2019 15:49:12 +0000
+Received: by mail-io1-xd41.google.com with SMTP id s3so10928751ioe.3
+ for <kexec@lists.infradead.org>; Fri, 15 Nov 2019 07:49:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:reply-to:from:date:message-id:subject:to;
+ bh=X5NAAOrJ3bS32ihsXavVCESX6DNfXdWEE7aVqtLVIHM=;
+ b=ns7AzA2ritlf+w4n7iUYgEbgvytBVcwHp7X09TbM7dQVcpCjf0Kx2Hne3zU63IYviN
+ sHB4ktEFN8MehxLEOsDUS2gv07gWQzC4wr1Fr0q9Ugj/5GVxM4rTAhKlTpndSJDFRm1J
+ gQ9QNl+t101wS8D36evAd2oAhPTOyesmPvWLTS/R7H/3kY32kazycuTQH7l/v9Pd3PLW
+ lwczc26LaO9TYRDDmbgKBK5VdwJZbAfLETbsICLqQ6tSkXXXGNEPUiRvCQ5YrC248fFI
+ gS448Ddr9BE319ej0a8vz+sDlvbKiFtgh/s6OjNn4syV99Hva+J7phxi09WJQJ3mxKl6
+ FQGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=UWeLycX3A0XaEIn+C9Dl7zk7yTPULHadgCfDLM9l7TE=;
- b=meJLOg1tALQVKZl2vjs425gpL9duuy+CrsryOOJ85DumffFByw8K5JVU8QsQg3+Vdh
- wrPMUAMq8YJqTx2DX6ZRakoyPdD9x26jq5IJmrsgYouCGF0VQ/NHlNludczTmw5l7PjE
- 1IXtVXiOfxCXHjSiKuQsiMhVq+g25odJSVfvYYQzUwGL1ZzCjJRgTe8nrx4UG9meQAiN
- P3iJqfhSHweh8fnv9HqOiCOONSkT55MXfHIn0ZSDYR2t6FZ3C9tIQ572asA1B9koMGzV
- tj+kae04XPbqfglEzKA/EymJzqhqMxJKbNiLP4vv2fW+ZmvB1cRlCAKDomQ1ciavA4Sv
- ZsEA==
-X-Gm-Message-State: APjAAAW9DyXCNCCy53vYs/IO776SDY0e0baRLs/LBOgRPLaxkOTwf7+5
- 0DSHlWCUGHKd84NeihYGw0S/kA==
-X-Google-Smtp-Source: APXvYqwwRjwshy7pinCg9/dmaFEcUvuH69/xmFxI9FD5260D/dHSoq8L8gvQV0tVbWbwCJmg9b2XGA==
-X-Received: by 2002:a17:90a:d102:: with SMTP id
- l2mr16852070pju.132.1573783146553; 
- Thu, 14 Nov 2019 17:59:06 -0800 (PST)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id v15sm8132141pfe.44.2019.11.14.17.59.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 14 Nov 2019 17:59:05 -0800 (PST)
-Date: Fri, 15 Nov 2019 11:00:00 +0900
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191115015959.GI22427@linaro.org>
-Mail-Followup-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- Boris Petkov <bp@alien8.de>, Ingo Molnar <mingo@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Jonathan Corbet <corbet@lwn.net>, James Morse <james.morse@arm.com>,
- Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
- Steve Capper <steve.capper@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Paul Mackerras <paulus@samba.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Anderson <anderson@redhat.com>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>, x86@kernel.org,
- linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191113063858.GE22427@linaro.org>
- <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
+ h=x-gm-message-state:mime-version:reply-to:from:date:message-id
+ :subject:to;
+ bh=X5NAAOrJ3bS32ihsXavVCESX6DNfXdWEE7aVqtLVIHM=;
+ b=NpQFQon4Os3G1lkhFSSyCdC44lKx9+LYTeyZw6WSa3k6rfnNuZhmAujgt2ya9UqxIY
+ Wk0WgMmvnV8xwVEmf1hHm8mBZtLWFh6Y9Z6E9wf3onzVl9aIr4kqR11vhCyJaBJplVr1
+ 8wGlzgpwJdZFJHJ17HQD55CB0t5QFW5ipqp1aZyfaFOMUPkQDwoy6EFyNN6TQImsxMG3
+ /9PeHGEBLMm0AEtS7Rp7KiCrC+LemYCQpn2iH9IOazXRDwa50HaWqQLD5AzN5SePirCC
+ H1EdMti9wa2aRfz8i9IAJxtXt7RccYEVVAqs78xDVdhankZW36D/smBZHiOuKf5Qvu0s
+ D5RQ==
+X-Gm-Message-State: APjAAAXqUqPJ7AnFUILaLBTU28So9knGb5IQqgG31XftmticAvb2L2mO
+ /p9RZfuKxZh+EueU4WzoFTYzk0PFUbizdWniIA==
+X-Google-Smtp-Source: APXvYqzuqyaXCnn7Wuf7CvnQcijtEVMZwzsEH+at90dWqG4AgXuyFoMKTSsAXEAXOVsx8fo6rWt3WKOl/qx3gV2G2i0=
+X-Received: by 2002:a05:6638:950:: with SMTP id
+ f16mr1249670jad.107.1573832948753; 
+ Fri, 15 Nov 2019 07:49:08 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+Received: by 2002:a02:7749:0:0:0:0:0 with HTTP; Fri, 15 Nov 2019 07:49:07
+ -0800 (PST)
+From: "Ms.Mary Coster" <info.zennitbankplcnigerian@gmail.com>
+Date: Fri, 15 Nov 2019 16:49:07 +0100
+Message-ID: <CABHzvrmypb4iEkfX0yr_sS+ZzXejHbQoznfDnH3aVoOB9wq8jA@mail.gmail.com>
+Subject: Goodnews, I have deposited your transfer total amount US$4.8million
+ Dollars with Money Gram this morning. we agreed you will be receiving it
+ $5000.00 daily.
+To: undisclosed-recipients:;
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_175908_044536_2F461870 
-X-CRM114-Status: GOOD (  31.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191115_074910_913111_134A3716 
+X-CRM114-Status: UNSURE (  -2.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
+ digit (moneygram.1820[at]outlook.fr)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (info.zennitbankplcnigerian[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 LOTS_OF_MONEY          Huge... sums of money
+ 1.0 FREEMAIL_REPLYTO       Reply-To/From or Reply-To/body contain
+ different freemails
+ 0.0 FILL_THIS_FORM         Fill in a form with personal information
+ 2.0 FILL_THIS_FORM_LONG    Fill in a form with personal information
+ 0.3 MONEY_FORM             Lots of money if you fill out a form
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,155 +103,41 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- Ingo Molnar <mingo@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, Boris Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- linuxppc-dev@lists.ozlabs.org
+Reply-To: moneygram.1820@outlook.fr
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Bhupesh,
-
-On Fri, Nov 15, 2019 at 01:24:17AM +0530, Bhupesh Sharma wrote:
-> Hi Akashi,
-> 
-> On Wed, Nov 13, 2019 at 12:11 PM AKASHI Takahiro
-> <takahiro.akashi@linaro.org> wrote:
-> >
-> > Hi Bhupesh,
-> >
-> > Do you have a corresponding patch for userspace tools,
-> > including crash util and/or makedumpfile?
-> > Otherwise, we can't verify that a generated core file is
-> > correctly handled.
-> 
-> Sure. I am still working on the crash-utility related changes, but you
-> can find the makedumpfile changes I posted a couple of days ago here
-> (see [0]) and the github link for the makedumpfile changes can be seen
-> via [1].
-> 
-> I will post the crash-util changes shortly as well.
-> Thanks for having a look at the same.
-
-Thank you.
-I have tested my kdump patch with a hacked version of crash
-where VA_BITS_ACTUAL is calculated from tcr_el1_t1sz in vmcoreinfo.
-
--Takahiro Akashi
-
-
-> [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023963.html
-> [1]. https://github.com/bhupesh-sharma/makedumpfile/tree/52-bit-va-support-via-vmcore-upstream-v4
-> 
-> Regards,
-> Bhupesh
-> 
-> >
-> > Thanks,
-> > -Takahiro Akashi
-> >
-> > On Mon, Nov 11, 2019 at 01:31:19PM +0530, Bhupesh Sharma wrote:
-> > > Changes since v3:
-> > > ----------------
-> > > - v3 can be seen here:
-> > >   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-> > > - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
-> > >   instead of PTRS_PER_PGD.
-> > > - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
-> > >   'Documentation/arm64/memory.rst'
-> > >
-> > > Changes since v2:
-> > > ----------------
-> > > - v2 can be seen here:
-> > >   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-> > > - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
-> > >   ifdef sections, as suggested by Kazu.
-> > > - Updated vmcoreinfo documentation to add description about
-> > >   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
-> > >
-> > > Changes since v1:
-> > > ----------------
-> > > - v1 was sent out as a single patch which can be seen here:
-> > >   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
-> > >
-> > > - v2 breaks the single patch into two independent patches:
-> > >   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
-> > >   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
-> > >
-> > > This patchset primarily fixes the regression reported in user-space
-> > > utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-> > > with the availability of 52-bit address space feature in underlying
-> > > kernel. These regressions have been reported both on CPUs which don't
-> > > support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-> > > and also on prototype platforms (like ARMv8 FVP simulator model) which
-> > > support ARMv8.2 extensions and are running newer kernels.
-> > >
-> > > The reason for these regressions is that right now user-space tools
-> > > have no direct access to these values (since these are not exported
-> > > from the kernel) and hence need to rely on a best-guess method of
-> > > determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-> > > by underlying kernel.
-> > >
-> > > Exporting these values via vmcoreinfo will help user-land in such cases.
-> > > In addition, as per suggestion from makedumpfile maintainer (Kazu),
-> > > it makes more sense to append 'MAX_PHYSMEM_BITS' to
-> > > vmcoreinfo in the core code itself rather than in arm64 arch-specific
-> > > code, so that the user-space code for other archs can also benefit from
-> > > this addition to the vmcoreinfo and use it as a standard way of
-> > > determining 'SECTIONS_SHIFT' value in user-land.
-> > >
-> > > Cc: Boris Petkov <bp@alien8.de>
-> > > Cc: Ingo Molnar <mingo@kernel.org>
-> > > Cc: Thomas Gleixner <tglx@linutronix.de>
-> > > Cc: Jonathan Corbet <corbet@lwn.net>
-> > > Cc: James Morse <james.morse@arm.com>
-> > > Cc: Mark Rutland <mark.rutland@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Steve Capper <steve.capper@arm.com>
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > > Cc: Michael Ellerman <mpe@ellerman.id.au>
-> > > Cc: Paul Mackerras <paulus@samba.org>
-> > > Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> > > Cc: Dave Anderson <anderson@redhat.com>
-> > > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> > > Cc: x86@kernel.org
-> > > Cc: linuxppc-dev@lists.ozlabs.org
-> > > Cc: linux-arm-kernel@lists.infradead.org
-> > > Cc: linux-kernel@vger.kernel.org
-> > > Cc: linux-doc@vger.kernel.org
-> > > Cc: kexec@lists.infradead.org
-> > >
-> > > Bhupesh Sharma (3):
-> > >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-> > >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
-> > >   Documentation/arm64: Fix a simple typo in memory.rst
-> > >
-> > >  Documentation/arm64/memory.rst         | 2 +-
-> > >  arch/arm64/include/asm/pgtable-hwdef.h | 1 +
-> > >  arch/arm64/kernel/crash_core.c         | 9 +++++++++
-> > >  kernel/crash_core.c                    | 1 +
-> > >  4 files changed, 12 insertions(+), 1 deletion(-)
-> > >
-> > > --
-> > > 2.7.4
-> > >
-> >
-> 
+Attn, Dear
+Goodnews, I have deposited your transfer total amount US$4.8million
+Dollars with Money Gram this morning. we agreed you will be receiving
+it $5000.00 daily.
+Contact Mr. John Dave Director, Money Gram to pick up your first Money
+Gram payment $5000.00 today.
+Contact Person; Mr. John Dave Director, Money Gram,International
+Remittance-Benin
+Email; moneygram.1820@outlook.fr
+Telephone; +229 62619517
+Please re-confirm your address to him once again such as listed below.
+1.Your Full Name..............................
+2.Address.........................
+3.Country....................
+4.Sex.........................................
+5.Your telephone numbers..........................
+6. Copy of your ID...........................
+This is to avoid sending your funds to wrong person, He is waiting to
+hear from you urgent today.
+Let me know once you pick up your transfer $5000.00 today.
+Finally, Note I have paid for the service fees, but only money will
+send to him is $90.00 transfer fee before you can pick up the transfer
+today.
+Ask, Mr. John Dave Director, Money Gram to give you direction where to
+send your transfer fee $90.00 only to Him Immediately so that you can
+pick up $5000.00 us dollars today.
+Thanks for undrstanding.
+Mary Coster
+m.coster@aol.com
 
 _______________________________________________
 kexec mailing list
