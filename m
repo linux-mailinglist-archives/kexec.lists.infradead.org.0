@@ -2,101 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B401EFCEFA
-	for <lists+kexec@lfdr.de>; Thu, 14 Nov 2019 20:54:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC124FD1E7
+	for <lists+kexec@lfdr.de>; Fri, 15 Nov 2019 01:18:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zW5ASP8hgNNz0PGFxeV1eSzqmd7iRT/i64AIbS6v1KU=; b=qP6+wfMStcvEg4kxTC6ShCGUJf
-	f4klR7IwGtUx+CrVe97/cdOoG+oABEr+4BvIaAHkyp0F9GmMiWJ62QKG8XRMICKQBwfH0vl/mcXuZ
-	C1lBl2RaUDUREDovxZXH2GOgDvgoPsf+JTm/DaNi1wmLNMe/GDkga7m/KCRf0Dce7P+rQXKT5BotC
-	T+TNWr94DMuvpz2FtrQDqlTnA0590T8hCNa8OEfN3qd5zJFjNQNlhj/CP//gXFZJVkn8XfUFF/TRF
-	oifEAlZBYSTd4aKvvVG8mjjuPLUwGXahLX++OsksUugIDcCRuccDxnYFOIlTRwpv17MIYKeWYvWg1
-	lsXZ/L3Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q0O89vsz2G5nWr88uP9kQKc8ojqE8MeWLGiSZllX2Y4=; b=nWIPXRURL19ucy
+	wBtUUbpXGx4Un7FtIILCBDX1kWeXC7oj5edZxU0k7lNCGBImBL99h5VdguC2PRj1ufuhk/GbCY8zy
+	hgokaHaQlyhWKUj0kIEXl8Z9GVgCXUxEwLsk5x5K070vTd4yjtl5Wc7Fqb9040CAWvopd0IRXAk8u
+	T0H45aNiXtefBdYbNRgPUuTfZepxjEfcZyfN7/ptaF5qVZxGx8g4N3abQZRkDGDJXZwZR49htNk0/
+	r0Wkhdnp61KKShUIndSaTMaCVyzGrSB2R060BnbzOMhCF5rtyLWz6EexAQKp8GuuEpeU250UwQmh5
+	IksvxOalI8qSxtDvy8yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iVLCk-0001fA-0f; Thu, 14 Nov 2019 19:54:58 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1iVPJh-0006hz-Vd; Fri, 15 Nov 2019 00:18:25 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iVLCS-0001Pz-EU
- for kexec@lists.infradead.org; Thu, 14 Nov 2019 19:54:43 +0000
+ id 1iVPJf-0006hP-2w
+ for kexec@lists.infradead.org; Fri, 15 Nov 2019 00:18:24 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1573761278;
+ s=mimecast20190719; t=1573777101;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=ipOfIuZv4n7OMTuT05ttv+XiU0MiZdbWkcgUyU+rx/Q=;
- b=fmUXBPg8Zr1oKF8gZ7LEfuLnqor+S26BYNqNz7pjTDOis6EFk1AKX8IdNjiC5j9z8xnlJo
- Wy5FdQqXv5aVVufziVFBOEHIwYjD9yPvO6d2p82kelFIkENm+TlHLZCUVbh6sKEbvOhNBz
- pgrUVALA/hz/CP/42VXWpUi+Id2m9f4=
-Received: from mail-lf1-f70.google.com (mail-lf1-f70.google.com
- [209.85.167.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-175-CFe6_OYOOsqkmyvIvxTVyQ-1; Thu, 14 Nov 2019 14:54:37 -0500
-Received: by mail-lf1-f70.google.com with SMTP id t6so2316050lfd.13
- for <kexec@lists.infradead.org>; Thu, 14 Nov 2019 11:54:37 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=MDqH19kOOKY+TUPNPG0CxeBoBcGPMQfXKESSJwySm9E=;
- b=kgY/HrWCTRWg4ShiwJ8ndOpT6af14pDcnxs3JQ9U9ezuTjwxWHa3awD2FhJ34C0voN
- X+2rd6fcaDyHrIwd84lvgeeEIaqcN+2DvQOiHf6TLSCs9c83W05QPE+5qw5R1cafNrOK
- JeT7y/4YAI3j2WCiKu9/VfwFF1Fk3Cx1Drb8EXEPfyY1wFB0FH8AHaJzfLnHqmCwHYqG
- mau1Ejeg2BuK2/9g/TswI0uDkbtwjTiY7n1DrasIWh11qLvn/533lIPy9tVsNnQs1mGx
- 7SBLI1ocvwn2vcexpA/5cPisPXraAxUfG4wFhH9T0A1YHGZoSrU/pl7Fj6BtMXUH+Bov
- 9TTA==
-X-Gm-Message-State: APjAAAWVMobITqD/kJSD4rBpyS+e8F1kzdPKSfRJvdwcorOuSTdCnvoA
- vL2Ottv3XCwjCqRMphtmoIWdeynGvRU9bxCS2chld6XZo6VuMabAv5BNjnqaj0LN3t3VAGpvX4b
- bmBMGPn+1gNgtMKd4Fl106U2xV0GFElVtOEll
-X-Received: by 2002:a2e:9695:: with SMTP id q21mr7771501lji.206.1573761275773; 
- Thu, 14 Nov 2019 11:54:35 -0800 (PST)
-X-Google-Smtp-Source: APXvYqyvZP1Wg9zN6nJYQIloLkjVhepGTmfmXrp4BqyWB295YviNhYt2NN6gtXuLQLlI9WPMoiGos+kqPi2No7ektKQ=
-X-Received: by 2002:a2e:9695:: with SMTP id q21mr7771458lji.206.1573761275378; 
- Thu, 14 Nov 2019 11:54:35 -0800 (PST)
+ bh=ZC4oRKrw/qWdzHQoCwRQZNWCxM2orILGhYYmWScMkN8=;
+ b=gHubXHNew/mkVcGaYaMqRrWGEeAkWLVYPrKA47WAYffSSFu6KJYi3USmcnmrJ1HhrIShwr
+ KiAbCfWtbzt/tB0Q37QmiHIMACuyYVxtr/U9OefiVAaworV8FFsVbsXo4X4WE1T5oo1wsk
+ UgsQWCOGzmIFaXRSIyYrFVX1iJXR7HM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-218-GWv-dqrhPmGI0TpTUuYg4g-1; Thu, 14 Nov 2019 19:18:17 -0500
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7C270107ACC5;
+ Fri, 15 Nov 2019 00:18:15 +0000 (UTC)
+Received: from localhost.localdomain (ovpn-12-39.pek2.redhat.com [10.72.12.39])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 9BEC03DBB;
+ Fri, 15 Nov 2019 00:18:06 +0000 (UTC)
+Subject: Re: [PATCH 3/3 v9] kexec: Fix i386 build warnings that missed
+ declaration of struct kimage
+To: Borislav Petkov <bp@alien8.de>
+References: <20191108090027.11082-1-lijiang@redhat.com>
+ <20191108090027.11082-4-lijiang@redhat.com> <20191114123920.GA7222@zn.tnic>
+ <59fbd119-495a-4d00-9738-98c22b276c1f@redhat.com>
+ <20191114144353.GB7222@zn.tnic>
+From: lijiang <lijiang@redhat.com>
+Message-ID: <16a61f4d-a112-6766-0272-9cfd65e78503@redhat.com>
+Date: Fri, 15 Nov 2019 08:18:02 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191113063858.GE22427@linaro.org>
-In-Reply-To: <20191113063858.GE22427@linaro.org>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Fri, 15 Nov 2019 01:24:17 +0530
-Message-ID: <CACi5LpP54d9DKW63G5W6X4euBjAm2NwkHOiM01dB7g8d60s=4w@mail.gmail.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Bhupesh Sharma <bhsharma@redhat.com>, 
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>, 
- Boris Petkov <bp@alien8.de>, Ingo Molnar <mingo@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, 
- Jonathan Corbet <corbet@lwn.net>, James Morse <james.morse@arm.com>, 
- Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>, 
- Steve Capper <steve.capper@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Paul Mackerras <paulus@samba.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, 
- Dave Anderson <anderson@redhat.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- x86@kernel.org, linuxppc-dev@lists.ozlabs.org, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>
-X-MC-Unique: CFe6_OYOOsqkmyvIvxTVyQ-1
+In-Reply-To: <20191114144353.GB7222@zn.tnic>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-MC-Unique: GWv-dqrhPmGI0TpTUuYg4g-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191114_115440_573282_2F35CE7C 
-X-CRM114-Status: GOOD (  27.29  )
+X-CRM114-CacheID: sfid-20191114_161823_199213_7AAE7DAE 
+X-CRM114-Status: GOOD (  10.02  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -117,131 +94,42 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jgross@suse.com, Thomas.Lendacky@amd.com, bhe@redhat.com,
+ horms@verge.net.au, x86@kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, dhowells@redhat.com, mingo@redhat.com,
+ ebiederm@xmission.com, hpa@zytor.com, tglx@linutronix.de, dyoung@redhat.com,
+ d.hatayama@fujitsu.com, vgoyal@redhat.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Akashi,
-
-On Wed, Nov 13, 2019 at 12:11 PM AKASHI Takahiro
-<takahiro.akashi@linaro.org> wrote:
->
-> Hi Bhupesh,
->
-> Do you have a corresponding patch for userspace tools,
-> including crash util and/or makedumpfile?
-> Otherwise, we can't verify that a generated core file is
-> correctly handled.
-
-Sure. I am still working on the crash-utility related changes, but you
-can find the makedumpfile changes I posted a couple of days ago here
-(see [0]) and the github link for the makedumpfile changes can be seen
-via [1].
-
-I will post the crash-util changes shortly as well.
-Thanks for having a look at the same.
-
-[0]. http://lists.infradead.org/pipermail/kexec/2019-November/023963.html
-[1]. https://github.com/bhupesh-sharma/makedumpfile/tree/52-bit-va-support-via-vmcore-upstream-v4
-
-Regards,
-Bhupesh
-
->
-> Thanks,
-> -Takahiro Akashi
->
-> On Mon, Nov 11, 2019 at 01:31:19PM +0530, Bhupesh Sharma wrote:
-> > Changes since v3:
-> > ----------------
-> > - v3 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-> > - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
-> >   instead of PTRS_PER_PGD.
-> > - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
-> >   'Documentation/arm64/memory.rst'
-> >
-> > Changes since v2:
-> > ----------------
-> > - v2 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-> > - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
-> >   ifdef sections, as suggested by Kazu.
-> > - Updated vmcoreinfo documentation to add description about
-> >   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
-> >
-> > Changes since v1:
-> > ----------------
-> > - v1 was sent out as a single patch which can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
-> >
-> > - v2 breaks the single patch into two independent patches:
-> >   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
-> >   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
-> >
-> > This patchset primarily fixes the regression reported in user-space
-> > utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-> > with the availability of 52-bit address space feature in underlying
-> > kernel. These regressions have been reported both on CPUs which don't
-> > support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-> > and also on prototype platforms (like ARMv8 FVP simulator model) which
-> > support ARMv8.2 extensions and are running newer kernels.
-> >
-> > The reason for these regressions is that right now user-space tools
-> > have no direct access to these values (since these are not exported
-> > from the kernel) and hence need to rely on a best-guess method of
-> > determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-> > by underlying kernel.
-> >
-> > Exporting these values via vmcoreinfo will help user-land in such cases.
-> > In addition, as per suggestion from makedumpfile maintainer (Kazu),
-> > it makes more sense to append 'MAX_PHYSMEM_BITS' to
-> > vmcoreinfo in the core code itself rather than in arm64 arch-specific
-> > code, so that the user-space code for other archs can also benefit from
-> > this addition to the vmcoreinfo and use it as a standard way of
-> > determining 'SECTIONS_SHIFT' value in user-land.
-> >
-> > Cc: Boris Petkov <bp@alien8.de>
-> > Cc: Ingo Molnar <mingo@kernel.org>
-> > Cc: Thomas Gleixner <tglx@linutronix.de>
-> > Cc: Jonathan Corbet <corbet@lwn.net>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Steve Capper <steve.capper@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > Cc: Michael Ellerman <mpe@ellerman.id.au>
-> > Cc: Paul Mackerras <paulus@samba.org>
-> > Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> > Cc: Dave Anderson <anderson@redhat.com>
-> > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> > Cc: x86@kernel.org
-> > Cc: linuxppc-dev@lists.ozlabs.org
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-kernel@vger.kernel.org
-> > Cc: linux-doc@vger.kernel.org
-> > Cc: kexec@lists.infradead.org
-> >
-> > Bhupesh Sharma (3):
-> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
-> >   Documentation/arm64: Fix a simple typo in memory.rst
-> >
-> >  Documentation/arm64/memory.rst         | 2 +-
-> >  arch/arm64/include/asm/pgtable-hwdef.h | 1 +
-> >  arch/arm64/kernel/crash_core.c         | 9 +++++++++
-> >  kernel/crash_core.c                    | 1 +
-> >  4 files changed, 12 insertions(+), 1 deletion(-)
-> >
-> > --
-> > 2.7.4
-> >
->
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+5ZyoIDIwMTnlubQxMeaciDE05pelIDIyOjQzLCBCb3Jpc2xhdiBQZXRrb3Yg5YaZ6YGTOgo+IE9u
+IFRodSwgTm92IDE0LCAyMDE5IGF0IDEwOjIwOjQyUE0gKzA4MDAsIGxpamlhbmcgd3JvdGU6Cj4+
+IEkgcmVhbGx5IHNhdyBteSBidWlsZGluZyByZXN1bHQsIGJ1dCBrYnVpbGQgcmVwb3J0ZWQgdGhl
+IGZvbGxvd2luZyBtZXNzYWdlczoKPj4KPj4gdmltICs1IGFyY2gveDg2L2luY2x1ZGUvYXNtL2Ny
+YXNoLmgKPj4KPj4gZGQ1ZjcyNjA3NmNjNzYgVml2ZWsgR295YWwgMjAxNC0wOC0wOCAgIDQgIAo+
+PiBkZDVmNzI2MDc2Y2M3NiBWaXZlayBHb3lhbCAyMDE0LTA4LTA4ICBANSAgaW50IGNyYXNoX2xv
+YWRfc2VnbWVudHMoc3RydWN0IGtpbWFnZSAqaW1hZ2UpOwo+PiBkZDVmNzI2MDc2Y2M3NiBWaXZl
+ayBHb3lhbCAyMDE0LTA4LTA4ICAgNiAgaW50IGNyYXNoX2NvcHlfYmFja3VwX3JlZ2lvbihzdHJ1
+Y3Qga2ltYWdlICppbWFnZSk7Cj4+IGRkNWY3MjYwNzZjYzc2IFZpdmVrIEdveWFsIDIwMTQtMDgt
+MDggICA3ICBpbnQgY3Jhc2hfc2V0dXBfbWVtbWFwX2VudHJpZXMoc3RydWN0IGtpbWFnZSAqaW1h
+Z2UsCj4+IGRkNWY3MjYwNzZjYzc2IFZpdmVrIEdveWFsIDIwMTQtMDgtMDggICA4ICAJCXN0cnVj
+dCBib290X3BhcmFtcyAqcGFyYW1zKTsKPj4gODlmNTc5Y2U5OWY3ZTAgWWkgV2FuZyAgICAgMjAx
+OC0xMS0yMiAgIDkgIHZvaWQgY3Jhc2hfc21wX3NlbmRfc3RvcCh2b2lkKTsKPj4gZGQ1ZjcyNjA3
+NmNjNzYgVml2ZWsgR295YWwgMjAxNC0wOC0wOCAgMTAgIAo+Pgo+PiA6Ojo6OjogVGhlIGNvZGUg
+YXQgbGluZSA1IHdhcyBmaXJzdCBpbnRyb2R1Y2VkIGJ5IGNvbW1pdCAKPj4gICAgICAgIF5eXl5e
+Xl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KPj4gOjo6Ojo6IGRk
+NWY3MjYwNzZjYzc2MzlkOTcxM2IzMzRjOGMxMzNmNzdjNjc1N2Ega2V4ZWM6IHN1cHBvcnQgZm9y
+IGtleGVjIG9uIHBhbmljIHVzaW5nIG5ldyBzeXN0ZW0gY2FsbAo+PiAgICAgICAgXl5eXl5eXl5e
+Xl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5e
+Xl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eCj4gCj4gWW91IHNob3VsZCBub3QgdGFrZSB0
+aGUgcmVwb3J0IG9mIGEgYm90IGJsaW5kbHkgYnV0IHNob3VsZCBhbHdheXMgZG91YmxlCj4gY2hl
+Y2sgaXQuIExpa2UgZXZlcnkgb3RoZXIgY29tcHV0ZXIgc3lzdGVtIHByb2dyYW1tZWQgYnkgaHVt
+YW5zLCBpdCBjYW4KPiBtYWtlIG1pc3Rha2VzLgo+IAoKSW5kZWVkLCBpIHRvdGFsbHkgYWdyZWUu
+Cgo+PiBXb3VsZCB5b3UgbWluZCBnaXZpbmcgbWUgYW55IHN1Z2dlc3Rpb25zIGFib3V0IHRoaXM/
+Cj4gCj4gSSdsbCB0YWtlIGNhcmUgb2YgaXQgYWxsIGFuZCBwdXNoIHRoZSByZXN1bHRzIG91dCBz
+b29uLgo+IAoKT0ssIHRoYW5rIHlvdSBzbyBtdWNoLgoKTGlhbmJvCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVj
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9rZXhlYwo=
