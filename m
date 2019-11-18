@@ -2,95 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6E791009F6
-	for <lists+kexec@lfdr.de>; Mon, 18 Nov 2019 18:11:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A707D100BE6
+	for <lists+kexec@lfdr.de>; Mon, 18 Nov 2019 19:56:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ul9nV/y7bRYzt/ABH7TswSuDX9yeaUv6ciL8KYO4pSQ=; b=VWlACNfABY3tI5
-	fbonblrnpcY16HEepIs7loEcz4bE6FqlkEQxLhOPa1itx79smvfe6BylgP5Hr+COztl6Wwc7ydTSa
-	A1agCodZ24Hkj0VlAwrpZbcbtQ7bPh3IltOwbaUQW3St5+tyoGfl9N2oTpgebC6AITK8jP+8JkMb+
-	cjNZRmWXZYwRmb+N1TulBfHBQscVqVzYd2fHVc9CktWhI2Dz7JCnM5QeDmA21Nq8+b+N2EmR4eJOV
-	u92Gpvu684ACuGp8ax+uV4i7xV42mvCRy8ICXEmUqoUl7ATkDXC+2/x8P4+HeUh0wn70SZa83BuqP
-	WWDlvhNZIVFTgB+zdDBw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/FJogZdrQz/EcxmrG3Mg9nfqs2bdehaIG2Makx8Cs3s=; b=nt28sDokkJ4EOo
+	l4+MBEFStJBsGUKeyu8NOT8YZN68qOzzOc/ruWzzrtQypO1usXfuwajLLqsPHV3Rw66k5LKcbl2kK
+	T/FF2EkRDteOxfxNjaakG1MISJzEHbIESDNwinzJ9D8xMXOxhHsq6qRuO0bYESs+K7a94p4Y5rLby
+	PpYFSFnHlvV4tKYWPguQEF2kmpBGMMVv/ftmkStfY2LUrngm7W/VaISPzI92cqmtz3OC1RgjLA+Wn
+	iRQgZF3rpXvSGCCK+JnmhcVsKKhNQvHEN5oKZ8wm1LPM5+mPUmPUKoLxxwCjivGEA2NIfolsRJh/7
+	rfiSB3F8sWi/F/yAl4rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWkYq-0005cY-6J; Mon, 18 Nov 2019 17:11:36 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1iWmCP-000400-DO; Mon, 18 Nov 2019 18:56:33 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWkYm-0005bL-Kw
- for kexec@lists.infradead.org; Mon, 18 Nov 2019 17:11:35 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAIGwpgn143974;
- Mon, 18 Nov 2019 17:11:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2019-08-05; bh=e8k0R32/WqjUTTH+ilnCVaRnvtBEp7Fz10tfvuX0Vco=;
- b=BKTEBc2CGctIRHGoUDNk6+oy5b4+VD619IvJV4eDKheNJTTja2wqhGmPDH0GwA3/yG9H
- 0ziPHg8t0CiO7XytaGIbJRlUUNc8Jmc1vFf9ZTjGVLAV+EH8SaTMW67t92AXRDpQyVMN
- QDi8AIMUCoVOeLZRgw3iNs1kbEeJrG2A7HI8UH8G/19XAYZwJQzr4VeKrA000Djh2ntN
- QCQayV+DcLPYlHv80YEGFMp2K4vJLiNVt1eaBkYzw27G626hcrvBI4wjiGUxcxx9+9dZ
- V9j9ddtb27lUuz+FqB/qiUdqV2h8Mv1NQ4F1MZAidqvS0Hrfq1Pp2HSrRhL76H1ssXBo dA== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by aserp2120.oracle.com with ESMTP id 2wa92phkv7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 18 Nov 2019 17:11:21 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xAIGwKaJ090266;
- Mon, 18 Nov 2019 17:11:20 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3030.oracle.com with ESMTP id 2watjxvqt2-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 18 Nov 2019 17:11:20 +0000
-Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xAIHBJlw009598;
- Mon, 18 Nov 2019 17:11:19 GMT
-Received: from dhcp-10-154-112-16.vpn.oracle.com (/10.154.112.16)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 18 Nov 2019 09:11:18 -0800
-Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
-Subject: Re: [PATCH v4 0/4] makedumpfile/arm64: Add support for ARMv8.2
- extensions
-From: John Donnelly <john.p.donnelly@oracle.com>
-In-Reply-To: <CAJ2QiJJ6DdxFheRo78+n1=ZuqMQnHeuLVWchK8SApt3w9wBKLQ@mail.gmail.com>
-Date: Mon, 18 Nov 2019 11:11:16 -0600
-Message-Id: <B71B3868-9A0B-46AD-8777-97A1599BFB91@oracle.com>
+ id 1iWmCK-0003zN-O8
+ for kexec@lists.infradead.org; Mon, 18 Nov 2019 18:56:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1574103386;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=J0o29LLAF1v1mCnUHfmDwIRGypmxIF9XwOJdyH9NSrk=;
+ b=BjWQG4KpkI2dh9rTbUcVg8bDP/TttPDzuqpzyPa2z4i9gctKj03NGAlvxyI/k5QuSZkW98
+ nvOYRKXqDR9HLjww85D1UXEUSlp6vf5Exlz9fvLp6wcUC4EGJN5d6fueiKDW9vBa/h45EV
+ o83YPDHvuGQJ2/VNshx/nW8B3b3bFmI=
+Received: from mail-lj1-f197.google.com (mail-lj1-f197.google.com
+ [209.85.208.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-69-p2ryc94gPg6xMypUKoYMZw-1; Mon, 18 Nov 2019 13:56:23 -0500
+Received: by mail-lj1-f197.google.com with SMTP id e12so3569375ljk.19
+ for <kexec@lists.infradead.org>; Mon, 18 Nov 2019 10:56:23 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=y0uuw/p4jN22rpJ6ZIq8g6Bxz1L3tioVESnf1UmlumU=;
+ b=bynhVG9Pb+rI0tGS1pbFgdQ0cFxWgsy7r+d5JSIUEclMc9cPETAc6DyWrMBL8fswHa
+ SNB2+YSrO29Z46EU+ZeL/TmIsCebTDRQ//X6IDUnglZjZQtw5cO2h9RJsJVp1tGWurSp
+ fh734fEjdvWfmyC4tvWJxva0+obieTfB0hGih8Br79U0ncknHhwjJzoNYi/0Ui/IRADT
+ h95MRVilYBtqpwwWd0nz0WuSXaHnmC2RanDZjASpOE0R0ikKqpkOCBIC83dgPZZOzprN
+ +eSCZrGieLLb97W7h6ge/pqt/Kx4+JwLWedj90EiLB2qOdjLPwt5ZYaoWmPUZPFXZLB2
+ BbTg==
+X-Gm-Message-State: APjAAAVvbzDdSHaTRY3hin9SMyHKWu+NPQf/+lC/zrPyNTMy1qIXn7wI
+ oPBTJSDEh5za2ol9X5PmuCeJ3n2Vr/tQdxaw04JCQRpbcmDRSbBnujqpyGTZvmHxZdsUZQmf7EQ
+ pOaLXaf7UfwCLfPwWNBYxKi+JrrvkEW9aGSIx
+X-Received: by 2002:a05:6512:49c:: with SMTP id v28mr667838lfq.9.1574103382318; 
+ Mon, 18 Nov 2019 10:56:22 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzlu3PSLJP+exyabIB26cC6t73tM6/5w1kiR5YKhth04IlrVO/PR9JvZTUpIqy8qV4Sy4m3NvolV6Opva21tcw=
+X-Received: by 2002:a05:6512:49c:: with SMTP id v28mr667827lfq.9.1574103382010; 
+ Mon, 18 Nov 2019 10:56:22 -0800 (PST)
+MIME-Version: 1.0
 References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
  <CAJ2QiJJ6DdxFheRo78+n1=ZuqMQnHeuLVWchK8SApt3w9wBKLQ@mail.gmail.com>
+In-Reply-To: <CAJ2QiJJ6DdxFheRo78+n1=ZuqMQnHeuLVWchK8SApt3w9wBKLQ@mail.gmail.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Tue, 19 Nov 2019 00:26:08 +0530
+Message-ID: <CACi5LpOUbZBNhOMg-nUY1C7km5ip9MEU+mszGOXBS7V0hyapWg@mail.gmail.com>
+Subject: Re: [PATCH v4 0/4] makedumpfile/arm64: Add support for ARMv8.2
+ extensions
 To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-X-Mailer: Apple Mail (2.3445.9.1)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9445
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-1911180149
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9445
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-1911180149
+X-MC-Unique: p2ryc94gPg6xMypUKoYMZw-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191118_091132_778064_E280A385 
-X-CRM114-Status: GOOD (  26.30  )
+X-CRM114-CacheID: sfid-20191118_105628_866243_3DDBFCC2 
+X-CRM114-Status: GOOD (  29.41  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ medium trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,9 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,198 +100,134 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Prabhakar Kushwaha <pkushwaha@marvell.com>,
+Cc: John Donnelly <john.p.donnelly@oracle.com>,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>,
  Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
  kexec mailing list <kexec@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>, bhupesh.linux@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-SGksCgpTZWUgYmVsb3cgLgoKPiBPbiBOb3YgMTcsIDIwMTksIGF0IDExOjEyIFBNLCBQcmFiaGFr
-YXIgS3VzaHdhaGEgPHByYWJoYWthci5wa2luQGdtYWlsLmNvbT4gd3JvdGU6Cj4gCj4gUmUtc2Vu
-ZGluZyBpbiBwbGFpbiB0ZXh0IG1vZGUuCj4gCj4gT24gVHVlLCBOb3YgMTIsIDIwMTkgYXQgNDoz
-OSBQTSBCaHVwZXNoIFNoYXJtYSA8YmhzaGFybWFAcmVkaGF0LmNvbT4gd3JvdGU6Cj4+IAo+PiBD
-aGFuZ2VzIHNpbmNlIHYzOgo+PiAtLS0tLS0tLS0tLS0tLS0tCj4+IC0gdjMgY2FuIGJlIHNlZW4g
-aGVyZToKPj4gIGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRw
-LTNBX19saXN0cy5pbmZyYWRlYWQub3JnX3BpcGVybWFpbF9rZXhlY18yMDE5LTJETWFyY2hfMDIy
-NTM0Lmh0bWwmZD1Ed0lDQWcmYz1Sb1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVh
-cElfSm5FJnI9dDJmUGc5RDg3RjdEOGptMF8zQ0c5eW9pSUtkUmc0cWNfdGhCdzRiek1oYyZtPXlh
-SXItV1pOVllvdXN5ZnhEckFJbnBUZ0VXMG5Qc3p4cnl4SFF0dlhyRFEmcz10WE5TdVFTYlpQMDNo
-NHZ3bWVUaVh1XzlnVW45ZV9yWTQ3MFRtd3JOUVNVJmU9IAo+PiAtIEFkZGVkIGEgbmV3IHBhdGNo
-ICh2aWEgW1BBVENIIDQvNF0pIHdoaWNoIG1hcmtzICctLW1lbS11c2FnZScgb3B0aW9uIGFzCj4+
-ICB1bnN1cHBvcnRlZCBmb3IgYXJtNjQgYXJjaGl0ZWN0dXJlLiBXaXRoIHRoZSBuZXdlciBhcm02
-NCBrZXJuZWxzCj4+ICBzdXBwb3J0aW5nIDQ4LWJpdC81Mi1iaXQgVkEgYWRkcmVzcyBzcGFjZXMg
-YW5kIGtlZXBpbmcgYSBzaW5nbGUKPj4gIGJpbmFyeSBmb3Igc3VwcG9ydGluZyB0aGUgc2FtZSwg
-dGhlIGFkZHJlc3Mgb2YKPj4gIGtlcm5lbCBzeW1ib2xzIGxpa2UgX3N0ZXh0LCB3aGljaCBjb3Vs
-ZCBiZSBlYXJsaWVyIHVzZWQgdG8gZGV0ZXJtaW5lCj4+ICBWQV9CSVRTIHZhbHVlLCBjYW4gbm8g
-bG9uZ2VyIHRvIGRldGVybWluZSB3aGV0aGVyIFZBX0JJVFMgaXMgc2V0IHRvIDQ4Cj4+ICBvciA1
-MiBpbiB0aGUga2VybmVsIHNwYWNlLiBIZW5jZSBmb3Igbm93LCBpdCBtYWtlcyBzZW5zZSB0byBt
-YXJrCj4+ICAnLS1tZW0tdXNhZ2UnIG9wdGlvbiBhcyB1bnN1cHBvcnRlZCBmb3IgYXJtNjQgYXJj
-aGl0ZWN0dXJlIHVudGlsCj4+ICB3ZSBoYXZlIG1vcmUgY2xhcml0eSBmcm9tIGFybTY0IGtlcm5l
-bCBtYWludGFpbmVycyBvbiBob3cgdG8gbWFuYWdlCj4+ICB0aGUgc2FtZSBpbiBmdXR1cmUga2Vy
-bmVsL21ha2VkdW1wZmlsZSB2ZXJzaW9ucy4KPj4gCj4+IENoYW5nZXMgc2luY2UgdjI6Cj4+IC0t
-LS0tLS0tLS0tLS0tLS0KPj4gLSB2MiBjYW4gYmUgc2VlbiBoZXJlOgo+PiAgaHR0cHM6Ly91cmxk
-ZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHAtM0FfX2xpc3RzLmluZnJhZGVhZC5v
-cmdfcGlwZXJtYWlsX2tleGVjXzIwMTktMkRGZWJydWFyeV8wMjI0NTYuaHRtbCZkPUR3SUNBZyZj
-PVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10MmZQZzlEODdG
-N0Q4am0wXzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09eWFJci1XWk5WWW91c3lmeERyQUlu
-cFRnRVcwblBzenhyeXhIUXR2WHJEUSZzPUhkX1BKaTFhWGRLaDFqbU9EeEhhX1ZGTnk4SHd2U1l4
-Q0JILXdEaXR4a0kmZT0gCj4+IC0gSSBtaXNzZWQgc29tZSBjb21tZW50cyBmcm9tIEthenUgc2Vu
-dCBvbiB0aGUgTFZBIHYxIHBhdGNoIHdoZW4gSSBzZW50Cj4+ICBvdXQgdGhlIHYyLiBTbywgYWRk
-cmVzc2luZyB0aGVtIG5vdyBpbiB2My4KPj4gLSBBbHNvIGFkZGVkIGEgcGF0Y2ggdGhhdCBhZGRz
-IGEgdHJlZS13aWRlIGZlYXR1cmUgdG8gcmVhZAo+PiAgJ01BWF9QSFlTTUVNX0JJVFMnIGZyb20g
-dm1jb3JlaW5mbyAoaWYgYXZhaWxhYmxlKS4KPj4gCj4+IENoYW5nZXMgc2luY2UgdjE6Cj4+IC0t
-LS0tLS0tLS0tLS0tLS0KPj4gLSB2MSB3YXMgc2VudCBhcyB0d28gc2VwYXJhdGUgcGF0Y2hlczoK
-Pj4gIGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwLTNBX19s
-aXN0cy5pbmZyYWRlYWQub3JnX3BpcGVybWFpbF9rZXhlY18yMDE5LTJERmVicnVhcnlfMDIyNDI0
-Lmh0bWwmZD1Ed0lDQWcmYz1Sb1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElf
-Sm5FJnI9dDJmUGc5RDg3RjdEOGptMF8zQ0c5eW9pSUtkUmc0cWNfdGhCdzRiek1oYyZtPXlhSXIt
-V1pOVllvdXN5ZnhEckFJbnBUZ0VXMG5Qc3p4cnl4SFF0dlhyRFEmcz1aQjJiVGVQLTl6N1BWSVVo
-dFZqdjBhbzh3cVdGSlNPV1RuSC1rcWpfTFY4JmU9IAo+PiAgKEFSTXY4LjItTFBBKQo+PiAgaHR0
-cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHAtM0FfX2xpc3RzLmlu
-ZnJhZGVhZC5vcmdfcGlwZXJtYWlsX2tleGVjXzIwMTktMkRGZWJydWFyeV8wMjI0MjUuaHRtbCZk
-PUR3SUNBZyZjPVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10
-MmZQZzlEODdGN0Q4am0wXzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09eWFJci1XWk5WWW91
-c3lmeERyQUlucFRnRVcwblBzenhyeXhIUXR2WHJEUSZzPU96Q1M3alVVaWlCNFlaUGJENXhvMUdS
-UXRPdHNncEh0bndRRFY3QWdpTXMmZT0gCj4+ICAoQVJNdjguMi1MVkEpCj4+IC0gdjIgY29tYmlu
-ZWQgdGhlIHR3byBpbiBhIHNpbmdsZSBwYXRjaHNldCBhbmQgYWxzbyBhZGRyZXNzZXMgS2F6dSdz
-Cj4+ICByZXZpZXcgY29tbWVudHMuCj4+IAo+PiBUaGlzIHBhdGNoc2V0IGFkZHMgc3VwcG9ydCBm
-b3IgQVJNdjguMiBleHRlbnNpb25zIGluIG1ha2VkdW1wZmlsZSBjb2RlLgo+PiBJIGNvdmVyIHRo
-ZSBmb2xsb3dpbmcgdHdvIGNhc2VzIHdpdGggdGhpcyBwYXRjaHNldDoKPj4gLSA0OC1iaXQga2Vy
-bmVsIFZBICsgNTItYml0IFBBIChMUEEpCj4+IC0gNTItYml0IGtlcm5lbCBWQSAoTFZBKSArIDUy
-LWJpdCBQQSAoTFBBKQo+PiAtIDQ4LWJpdCBrZXJuZWwgVkEgKyA1Mi1iaXQgdXNlci1zcGFjZSBW
-QSAoTFZBKQo+PiAtIDUyLWJpdCBrZXJuZWwgVkEgKyA1Mi1iaXQgdXNlci1zcGFjZSBWQSAoRnVs
-bCBMVkEpCj4+IAo+PiBUaGlzIGhhcyBiZWVuIHRlc3RlZCBmb3IgdGhlIGZvbGxvd2luZyB1c2Vy
-LWNhc2VzOgo+PiAxLiBDcmVhdGluZyBhIGR1bXBmaWxlIHVzaW5nIC9wcm9jL3ZtY29yZSwKPj4g
-Mi4gQ3JlYXRpbmcgYSBkdW1wZmlsZSB1c2luZyAvcHJvYy9rY29yZSwgYW5kCj4+IDMuIFBvc3Qt
-cHJvY2Vzc2luZyBhIHZtY29yZS4KPj4gCj4+IEkgaGF2ZSB0ZXN0ZWQgdGhpcyBwYXRjaHNldCBv
-biB0aGUgZm9sbG93aW5nIHBsYXRmb3Jtcywgd2l0aCBrZXJuZWxzCj4+IHdoaWNoIHN1cHBvcnQv
-ZG8tbm90LXN1cHBvcnQgQVJNdjguMiBmZWF0dXJlczoKPj4gMS4gQ1BVcyB3aGljaCBkb24ndCBz
-dXBwb3J0IEFSTXY4LjIgZmVhdHVyZXMsIGUuZy4gcXVhbGNvbW0tYW1iZXJ3aW5nLAo+PiAgIGFt
-cGVyZS1vc3ByZXkuCj4+IDIuIFByb3RvdHlwZSBtb2RlbHMgd2hpY2ggc3VwcG9ydCBBUk12OC4y
-IGV4dGVuc2lvbnMgKGUuZy4gQVJNdjggRlZQCj4+ICAgc2ltdWxhdGlvbiBtb2RlbCkuCj4+IAo+
-PiBBbHNvIGEgcHJlcGFyYXRpb24gcGF0Y2ggaGFzIGJlZW4gYWRkZWQgaW4gdGhpcyBwYXRjaHNl
-dCB3aGljaCBhZGRzIGEKPj4gY29tbW9uIGZlYXR1cmUgZm9yIGFyY2hzIChleGNlcHQgYXJtNjQs
-IGZvciB3aGljaCBzaW1pbGFyIHN1cHBvcnQgaXMKPj4gYWRkZWQgdmlhIHN1YnNlcXVlbnQgcGF0
-Y2gpIHRvIHJldHJpZXZlICdNQVhfUEhZU01FTV9CSVRTJyBmcm9tCj4+IHZtY29yZWluZm8gKGlm
-IGF2YWlsYWJsZSkuCj4+IAo+PiBJIHJlY2VudGx5IHBvc3RlZCB0d28ga2VybmVsIHBhdGNoZXMg
-KHNlZSBbMF0gYW5kIFsxXSkgd2hpY2ggYXBwZW5kCj4+ICdUQ1JfRUwxLlQxU1onIGFuZCAnTUFY
-X1BIWVNNRU1fQklUUycgdG8gdm1jb3JlaW5mbyBpbiB0aGUga2VybmVsCj4+IGNvZGUsIHNvIHRo
-YXQgdXNlci1zcGFjZSBjb2RlIGNhbiBiZW5lZml0IGZyb20gdGhlIHNhbWUuCj4+IAo+PiBUaGlz
-IHBhdGNoc2V0IGVuc3VyZXMgYmFja3dhcmQgY29tcGF0aWJpbGl0eSBmb3Iga2VybmVsIHZlcnNp
-b25zIGluCj4+IHdoaWNoICdUQ1JfRUwxLlQxU1onIGFuZCAnTUFYX1BIWVNNRU1fQklUUycgYXJl
-IG5vdCBhdmFpbGFibGUgaW4KPj4gdm1jb3JlaW5mby4KPj4gCj4+IFswXS4gaHR0cHM6Ly91cmxk
-ZWZlbnNlLnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHAtM0FfX2xpc3RzLmluZnJhZGVhZC5v
-cmdfcGlwZXJtYWlsX2tleGVjXzIwMTktMkROb3ZlbWJlcl8wMjM5NjAuaHRtbCZkPUR3SUNBZyZj
-PVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10MmZQZzlEODdG
-N0Q4am0wXzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09eWFJci1XWk5WWW91c3lmeERyQUlu
-cFRnRVcwblBzenhyeXhIUXR2WHJEUSZzPUFpd3EzNnJ6SVR3RW1kQTZLSURLNTRKLUFXWktTTUJj
-ckdPRzJzc3BYQWcmZT0gCj4+IFsxXS4gaHR0cHM6Ly91cmxkZWZlbnNlLnByb29mcG9pbnQuY29t
-L3YyL3VybD91PWh0dHAtM0FfX2xpc3RzLmluZnJhZGVhZC5vcmdfcGlwZXJtYWlsX2tleGVjXzIw
-MTktMkROb3ZlbWJlcl8wMjM5NjIuaHRtbCZkPUR3SUNBZyZjPVJvUDFZdW1DWENnYVdIdmxaWVI4
-UFpoOEJ2N3FJck1VQjY1ZWFwSV9KbkUmcj10MmZQZzlEODdGN0Q4am0wXzNDRzl5b2lJS2RSZzRx
-Y190aEJ3NGJ6TWhjJm09eWFJci1XWk5WWW91c3lmeERyQUlucFRnRVcwblBzenhyeXhIUXR2WHJE
-USZzPXE5bk5NZ0lHclRab1R1U1oyeHltdXVYTjJncWhYbmZObG5SUFJpZlY2Q0kmZT0gCj4+IAo+
-PiBDYzogSm9obiBEb25uZWxseSA8am9obi5wLmRvbm5lbGx5QG9yYWNsZS5jb20+Cj4+IENjOiBL
-YXp1aGl0byBIYWdpbyA8ay1oYWdpb0BhYi5qcC5uZWMuY29tPgo+PiBDYzoga2V4ZWNAbGlzdHMu
-aW5mcmFkZWFkLm9yZwo+PiAKPj4gQmh1cGVzaCBTaGFybWEgKDQpOgo+PiAgdHJlZS13aWRlOiBS
-ZXRyaWV2ZSAnTUFYX1BIWVNNRU1fQklUUycgZnJvbSB2bWNvcmVpbmZvIChpZiBhdmFpbGFibGUp
-Cj4+ICBtYWtlZHVtcGZpbGUvYXJtNjQ6IEFkZCBzdXBwb3J0IGZvciBBUk12OC4yLUxQQSAoNTIt
-Yml0IFBBIHN1cHBvcnQpCj4+ICBtYWtlZHVtcGZpbGUvYXJtNjQ6IEFkZCBzdXBwb3J0IGZvciBB
-Uk12OC4yLUxWQSAoNTItYml0IGtlcm5lbCBWQQo+PiAgICBzdXBwb3J0KQo+PiAgbWFrZWR1bXBm
-aWxlOiBNYXJrIC0tbWVtLXVzYWdlIG9wdGlvbiB1bnN1cHBvcnRlZCBmb3IgYXJtNjQKPj4gCj4+
-IGFyY2gvYXJtLmMgICAgIHwgICA4ICstCj4+IGFyY2gvYXJtNjQuYyAgIHwgNDM4ICsrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tLS0tLS0tLS0tLQo+PiBhcmNo
-L2lhNjQuYyAgICB8ICAgNyArLQo+PiBhcmNoL3BwYy5jICAgICB8ICAgOCArLQo+PiBhcmNoL3Bw
-YzY0LmMgICB8ICA0OSArKysrLS0tCj4+IGFyY2gvczM5MHguYyAgIHwgIDI5ICsrLS0KPj4gYXJj
-aC9zcGFyYzY0LmMgfCAgIDkgKy0KPj4gYXJjaC94ODYuYyAgICAgfCAgMzQgKysrLS0KPj4gYXJj
-aC94ODZfNjQuYyAgfCAgMjcgKystLQo+PiBtYWtlZHVtcGZpbGUuYyB8ICAgNyArCj4+IG1ha2Vk
-dW1wZmlsZS5oIHwgICAzICstCj4+IDExIGZpbGVzIGNoYW5nZWQsIDQzOSBpbnNlcnRpb25zKCsp
-LCAxODAgZGVsZXRpb25zKC0pCj4+IAo+PiAtLQo+IAo+IFRlc3RlZCB0aGlzIHBhdGNoLXNldCBv
-biBNYXJ2ZWxsJ3MgVFgyIHBsYXRmb3JtIG9uIHRvcAo+IGNvbW1pdCg4MmU2Y2NlMjIxOWEpIG9m
-IGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9fZ2l0
-LmNvZGUuc2YubmV0X3BfbWFrZWR1bXBmaWxlX2NvZGUmZD1Ed0lDQWcmYz1Sb1AxWXVtQ1hDZ2FX
-SHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElfSm5FJnI9dDJmUGc5RDg3RjdEOGptMF8zQ0c5eW9p
-SUtkUmc0cWNfdGhCdzRiek1oYyZtPXlhSXItV1pOVllvdXN5ZnhEckFJbnBUZ0VXMG5Qc3p4cnl4
-SFF0dlhyRFEmcz1FZzZMY0JpTHM5TWxRZjNqbHZkUm51YVEtRE9EQ05BOVVLV25RZ2c5d1g4JmU9
-IAo+IChkZXZlbCBicmFuY2gpCj4gCj4gVGVzdGVkLWJ5OiBQcmFiaGFrYXIgS3VzaHdhaGEgPHBr
-dXNod2FoYUBtYXJ2ZWxsLmNvbT4KPiAKPiDigJRwCgoKICAgSGkgLAogICAKICAgSSB0ZXN0ZWQg
-dGhpcyBvbiBhIEFybSA4LjF2IHBsYXRmb3JtIHdpdGggYSA1LjQucmM0IGtlcm5lbCBhbmQgaXQg
-ZmFpbHMgOgoKCgprZHVtcDogc2F2aW5nIHZtY29yZS1kbWVzZy50eHQKa2R1bXA6IHNhdmluZyB2
-bWNvcmUtZG1lc2cudHh0IGNvbXBsZXRlCmtkdW1wOiBzYXZpbmcgdm1jb3JlCnNhZHVtcDogdW5z
-dXBwb3IgICAgIHBoeXNfc3RhcnQgICAgICAgICBwaHlzX2VuZCAgICAgICB2aXJ0X3N0YXJ0ICAg
-ICAgICAgdmlydF9lbmQKTE9BRFsgMF0gICAgICAgICA5MmE4MDAwMCAgICAgICAgIDk1MDQwMDAw
-IGZmZmY4MDAwMTAwODAwMDAgZmZmZjgwMDAxMjY0MDAwMApMT0FEWyAxXSAgICAgICAgIDkwMDAw
-MDAwICAgICAgICAgOTIwMDAwMDAgZmZmZmMwMDAxMDAwMDAwMCBmZmZmYzAwMDEyMDAwMDAwCkxP
-QURbIDJdICAgICAgICAgOTI4YzAwMDAgICAgICAgICBkZmUwMDAwMCBmZmZmYzAwMDEyOGMwMDAw
-IGZmZmZjMDAwNWZlMDAwMDAKTE9BRFsgM10gICAgICAgICBmZmUwMDAwMCAgICAgICAgIGZmZmEw
-MDAwIGZmZmZjMDAwN2ZlMDAwMDAgZmZmZmMwMDA3ZmZhMDAwMApMT0FEWyA0XSAgICAgICAgODgw
-MDAwMDAwICAgICAgIDEwMDAwMDAwMDAgZmZmZmMwMDgwMDAwMDAwMCBmZmZmYzAwZjgwMDAwMDAw
-CkxPQURbIDVdICAgICAgIDg4MDAwMDAwMDAgICAgICAgYmZmNzAxMDAwMCBmZmZmYzA4NzgwMDAw
-MDAwIGZmZmZjMGJmNzcwMTAwMDAKTE9BRFsgNl0gICAgICAgYmZmNzA0MDAwMCAgICAgICBiZmY3
-NzQwMDAwIGZmZmZjMGJmNzcwNDAwMDAgZmZmZmMwYmY3Nzc0MDAwMApMT0FEWyA3XSAgICAgICBi
-ZmY3NzcwMDAwICAgICAgIGJmZjgwMjAwMDAgZmZmZmMwYmY3Nzc3MDAwMCBmZmZmYzBiZjc4MDIw
-MDAwCkxPQURbIDhdICAgICAgIGJmZjgwNTAwMDAgICAgICAgYmZmODA3MDAwMCBmZmZmYzBiZjc4
-MDUwMDAwIGZmZmZjMGJmNzgwNzAwMDAKTE9BRFsgOV0gICAgICAgYmZmODBkMDAwMCAgICAgICBi
-ZmY4MjcwMDAwIGZmZmZjMGJmNzgwZDAwMDAgZmZmZmMwYmY3ODI3MDAwMApMT0FEWzEwXSAgICAg
-ICBiZmY4MjgwMDAwICAgICAgIGJmZjgzZDAwMDAgZmZmZmMwYmY3ODI4MDAwMCBmZmZmYzBiZjc4
-M2QwMDAwCkxPQURbMTFdICAgICAgIGJmZjg4NzAwMDAgICAgICAgYmZmYzFhMDAwMCBmZmZmYzBi
-Zjc4ODcwMDAwIGZmZmZjMGJmN2MxYTAwMDAKTE9BRFsxMl0gICAgICAgYmZmYzFjMDAwMCAgICAg
-ICBiZmZjMWQwMDAwIGZmZmZjMGJmN2MxYzAwMDAgZmZmZmMwYmY3YzFkMDAwMApMT0FEWzEzXSAg
-ICAgICBiZmZlMjEwMDAwICAgICAgIGJmZmZkMTAwMDAgZmZmZmMwYmY3ZTIxMDAwMCBmZmZmYzBi
-ZjdmZDEwMDAwCkxPQURbMTRdICAgICAgIGJmZmZkNDAwMDAgICAgICAgYmZmZmQ1MDAwMCBmZmZm
-YzBiZjdmZDQwMDAwIGZmZmZjMGJmN2ZkNTAwMDAKTE9BRFsxNV0gICAgICAgYmZmZmUwMDAwMCAg
-ICAgICBjMDAwMDAwMDAwIGZmZmZjMGJmN2ZlMDAwMDAgZmZmZmMwYmY4MDAwMDAwMApMaW51eCBr
-ZHVtcApWTUNPUkVJTkZPICAgOgogIE9TUkVMRUFTRT01LjQuMC0wCiAgUEFHRVNJWkU9NjU1MzYK
-cGFnZV9zaXplICAgIDogNjU1MzYKICBTWU1CT0woaW5pdF91dHNfbnMpPWZmZmY4MDAwMTFhYzVj
-YTgKICBTWU1CT0wobm9kZV9vbmxpbmVfbWFwKT1mZmZmODAwMDExYWJkNDkwCiAgU1lNQk9MKHN3
-YXBwZXJfcGdfZGlyKT1mZmZmODAwMDExMzQwMDAwCiAgU1lNQk9MKF9zdGV4dCk9ZmZmZjgwMDAx
-MDA4MTAwMAogIFNZTUJPTCh2bWFwX2FyZWFfbGlzdCk9ZmZmZjgwMDAxMWI4OTg5OAogIFNZTUJP
-TChtZW1fc2VjdGlvbik9ZmZmZjAwYmY3YmU3ZTMwMAogIExFTkdUSChtZW1fc2VjdGlvbik9NjQK
-ICBTSVpFKG1lbV9zZWN0aW9uKT0xNgogIE9GRlNFVChtZW1fc2VjdGlvbi5zZWN0aW9uX21lbV9t
-YXApPTAKICBTSVpFKHBhZ2UpPTY0CiAgU0laRShwZ2xpc3RfZGF0YSk9NjkxMgogIFNJWkUoem9u
-ZSk9MTkyMAogIFNJWkUoZnJlZV9hcmVhKT0xMDQKICBTSVpFKGxpc3RfaGVhZCk9MTYKICBTSVpF
-KG5vZGVtYXNrX3QpPTgKICBPRkZTRVQocGFnZS5mbGFncyk9MAogIE9GRlNFVChwYWdlLl9yZWZj
-b3VudCk9NTIKICBPRkZTRVQocGFnZS5tYXBwaW5nKT0yNAogIE9GRlNFVChwYWdlLmxydSk9OAog
-IE9GRlNFVChwYWdlLl9tYXBjb3VudCk9NDgKICBPRkZTRVQocGFnZS5wcml2YXRlKT00MAogIE9G
-RlNFVChwYWdlLmNvbXBvdW5kX2R0b3IpPTE2CiAgT0ZGU0VUKHBhZ2UuY29tcG91bmRfb3JkZXIp
-PTE3CiAgT0ZGU0VUKHBhZ2UuY29tcG91bmRfaGVhZCk9OAogIE9GRlNFVChwZ2xpc3RfZGF0YS5u
-b2RlX3pvbmVzKT0wCiAgT0ZGU0VUKHBnbGlzdF9kYXRhLm5yX3pvbmVzKT02MTc2CiAgT0ZGU0VU
-KHBnbGlzdF9kYXRhLm5vZGVfc3RhcnRfcGZuKT02MTg0CiAgT0ZGU0VUKHBnbGlzdF9kYXRhLm5v
-ZGVfc3Bhbm5lZF9wYWdlcyk9NjIwMAogIE9GRlNFVChwZ2xpc3RfZGF0YS5ub2RlX2lkKT02MjA4
-CiAgT0ZGU0VUKHpvbmUuZnJlZV9hcmVhKT0xOTIKICBPRkZTRVQoem9uZS52bV9zdGF0KT0xNzI4
-CiAgT0ZGU0VUKHpvbmUuc3Bhbm5lZF9wYWdlcyk9MTA0CiAgT0ZGU0VUKGZyZWVfYXJlYS5mcmVl
-X2xpc3QpPTAKICBPRkZTRVQobGlzdF9oZWFkLm5leHQpPTAKICBPRkZTRVQobGlzdF9oZWFkLnBy
-ZXYpPTgKICBPRkZTRVQodm1hcF9hcmUxNAogIFNZTUJPTChsb2d0X2lkeCk9ZmZmZjgwMDAxMWVk
-NzI5NAogIFNZTUJPTChjbGVhcl9pZHgpPWZmZmY4MDAwMTFlZDRjZTAKIG9nKT0xNgogIE9GRlNF
-VChwcmludGtfbG9nLnRzX25zZWMpPTAKICBPRkZTRVQocHJpbnRrX2xvZy5sZW4pPTgKICBPRkZT
-RVQocHJpbnRrX2xvZy50ZXh0X2xlbik9MTAKICBPRkZTRVQocHJpbnRrX2xvZy5kaWN0X2xlbik9
-MTIKICBMRU5HVEgoZnJlZV9hcmVhLmZyZWVfbGlzdCk9NgogIE5VTUJFUihOUl9GUkVFX1BBR0VT
-KT0wCiAgTlVNQkVSKFBHX2xydSk9NAogIE5VTUJFUihQR19wcml2YXRlKT0xMwogIE5VTUJFUihQ
-R19zd2FwY2FjaGUpPTEwCiAgTlVNQkVSKFBHX3N3YXBiYWNrZWQpPTE5CiAgTlVNQkVSKFBHX3Ns
-YWIpPTkKICBOVU1CRVIoUEdfaHdwb2lzb24pPTIyCiAgTlVNQkVSKFBHX2hlYWRfbWFzayk9NjU1
-MzYKICBOVU1CRVIoUEFHRV9CVUREWV9NQVBDT1VOVF9WQUxVRSk9LTEyOQogIE5VTUJFUihIVUdF
-VExCX1BBR0VfRFRPUik9MgogIE5VTUJFUihQQUdFX09GRkxJTkVfTUFQQ09VTlRfVkFMVUUpPS0y
-NTcKICBOVU1CRVIoVkFfQklUUyk9NTIKICBOVU1CRVIoa2ltYWdlX3ZvZmZzZXQpPTB4ZmZmZjdm
-ZmY3ZDYwMDAwMAogIE5VTUJFUihQSFlTX09GRlNFVCk9MHg4MDAwMDAwMAogIEtFUk5FTE9GRlNF
-VD0wCiAgQ1JBU0hUSU1FPTE1NzQwOTY0NDEKCnBoeXNfYmFzZSAgICA6IDgwMDAwMDAwICh2bWNv
-cmVpbmZvKQoKbWF4X21hcG5yICAgIDogYzAwMDAwClRoZXJlIGlzIGVub3VnaCBmcmVlIG1lbW9y
-eSB0byBiZSBkb25lIGluIG9uZSBjeWNsZS4KCkJ1ZmZlciBzaXplIGZvciB0aGUgY3ljbGljIG1v
-ZGU6IDMxNDU3MjgKdmFfYml0cyAgICAgIDogNDcKcGFnZV9vZmZzZXQgIDogZmZmZmMwMDAwMDAw
-MDAwMApjYWxjdWxhdGVfcGxhdF9jb25maWc6IFBhcm02NDogQ2FuJ3QgZGV0ZApbRkFJTEVEXSBG
-YWlsZWQgdG8gc3RhcnQgS2R1bXAgVm1jb3JlIFNhdmUgU2VydmljZS4KCgo8IHJlYm9vdCA+CgoK
-Q0FOIFlPVSBBREQgQSBWRVJTSU9OIEJBTk5FUiBUTyBUSEUgTUFLRURVTVBGSUxFIFNPIFdFIENB
-TiBCRSBTVVJFIE9GIFdIQVQgSVMgQkVJTkcgVVNFRCBXSEVOIElUIFNUQVJUUyA/CgpUaGFua3Mg
-ISAKCgoKCgoKCgoKPiBrCj4gCgo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4ga2V4ZWNAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwo+IGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwLTNB
-X19saXN0cy5pbmZyYWRlYWQub3JnX21haWxtYW5fbGlzdGluZm9fa2V4ZWMmZD1Ed0lDQWcmYz1S
-b1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElfSm5FJnI9dDJmUGc5RDg3RjdE
-OGptMF8zQ0c5eW9pSUtkUmc0cWNfdGhCdzRiek1oYyZtPXlhSXItV1pOVllvdXN5ZnhEckFJbnBU
-Z0VXMG5Qc3p4cnl4SFF0dlhyRFEmcz0ybl9INU5wdlRjeGxybUtLdUFxWnRtck1zTHdyYjhZNWw1
-a0tLeWpuSjhnJmU9IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+Hi Prabhakar,
+
+On Mon, Nov 18, 2019 at 10:42 AM Prabhakar Kushwaha
+<prabhakar.pkin@gmail.com> wrote:
+>
+> Re-sending in plain text mode.
+>
+> On Tue, Nov 12, 2019 at 4:39 PM Bhupesh Sharma <bhsharma@redhat.com> wrote:
+> >
+> > Changes since v3:
+> > ----------------
+> > - v3 can be seen here:
+> >   http://lists.infradead.org/pipermail/kexec/2019-March/022534.html
+> > - Added a new patch (via [PATCH 4/4]) which marks '--mem-usage' option as
+> >   unsupported for arm64 architecture. With the newer arm64 kernels
+> >   supporting 48-bit/52-bit VA address spaces and keeping a single
+> >   binary for supporting the same, the address of
+> >   kernel symbols like _stext, which could be earlier used to determine
+> >   VA_BITS value, can no longer to determine whether VA_BITS is set to 48
+> >   or 52 in the kernel space. Hence for now, it makes sense to mark
+> >   '--mem-usage' option as unsupported for arm64 architecture until
+> >   we have more clarity from arm64 kernel maintainers on how to manage
+> >   the same in future kernel/makedumpfile versions.
+> >
+> > Changes since v2:
+> > ----------------
+> > - v2 can be seen here:
+> >   http://lists.infradead.org/pipermail/kexec/2019-February/022456.html
+> > - I missed some comments from Kazu sent on the LVA v1 patch when I sent
+> >   out the v2. So, addressing them now in v3.
+> > - Also added a patch that adds a tree-wide feature to read
+> >   'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
+> >
+> > Changes since v1:
+> > ----------------
+> > - v1 was sent as two separate patches:
+> >   http://lists.infradead.org/pipermail/kexec/2019-February/022424.html
+> >   (ARMv8.2-LPA)
+> >   http://lists.infradead.org/pipermail/kexec/2019-February/022425.html
+> >   (ARMv8.2-LVA)
+> > - v2 combined the two in a single patchset and also addresses Kazu's
+> >   review comments.
+> >
+> > This patchset adds support for ARMv8.2 extensions in makedumpfile code.
+> > I cover the following two cases with this patchset:
+> >  - 48-bit kernel VA + 52-bit PA (LPA)
+> >  - 52-bit kernel VA (LVA) + 52-bit PA (LPA)
+> >  - 48-bit kernel VA + 52-bit user-space VA (LVA)
+> >  - 52-bit kernel VA + 52-bit user-space VA (Full LVA)
+> >
+> > This has been tested for the following user-cases:
+> > 1. Creating a dumpfile using /proc/vmcore,
+> > 2. Creating a dumpfile using /proc/kcore, and
+> > 3. Post-processing a vmcore.
+> >
+> > I have tested this patchset on the following platforms, with kernels
+> > which support/do-not-support ARMv8.2 features:
+> > 1. CPUs which don't support ARMv8.2 features, e.g. qualcomm-amberwing,
+> >    ampere-osprey.
+> > 2. Prototype models which support ARMv8.2 extensions (e.g. ARMv8 FVP
+> >    simulation model).
+> >
+> > Also a preparation patch has been added in this patchset which adds a
+> > common feature for archs (except arm64, for which similar support is
+> > added via subsequent patch) to retrieve 'MAX_PHYSMEM_BITS' from
+> > vmcoreinfo (if available).
+> >
+> > I recently posted two kernel patches (see [0] and [1]) which append
+> > 'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' to vmcoreinfo in the kernel
+> > code, so that user-space code can benefit from the same.
+> >
+> > This patchset ensures backward compatibility for kernel versions in
+> > which 'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' are not available in
+> > vmcoreinfo.
+> >
+> > [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023960.html
+> > [1]. http://lists.infradead.org/pipermail/kexec/2019-November/023962.html
+> >
+> > Cc: John Donnelly <john.p.donnelly@oracle.com>
+> > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> > Cc: kexec@lists.infradead.org
+> >
+> > Bhupesh Sharma (4):
+> >   tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from vmcoreinfo (if available)
+> >   makedumpfile/arm64: Add support for ARMv8.2-LPA (52-bit PA support)
+> >   makedumpfile/arm64: Add support for ARMv8.2-LVA (52-bit kernel VA
+> >     support)
+> >   makedumpfile: Mark --mem-usage option unsupported for arm64
+> >
+> >  arch/arm.c     |   8 +-
+> >  arch/arm64.c   | 438 ++++++++++++++++++++++++++++++++++++++++++---------------
+> >  arch/ia64.c    |   7 +-
+> >  arch/ppc.c     |   8 +-
+> >  arch/ppc64.c   |  49 ++++---
+> >  arch/s390x.c   |  29 ++--
+> >  arch/sparc64.c |   9 +-
+> >  arch/x86.c     |  34 +++--
+> >  arch/x86_64.c  |  27 ++--
+> >  makedumpfile.c |   7 +
+> >  makedumpfile.h |   3 +-
+> >  11 files changed, 439 insertions(+), 180 deletions(-)
+> >
+> > --
+>
+> Tested this patch-set on Marvell's TX2 platform on top
+> commit(82e6cce2219a) of https://git.code.sf.net/p/makedumpfile/code
+> (devel branch)
+>
+> Tested-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+
+Thanks for testing the patchset.
+
+Regards,
+Bhupesh
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
