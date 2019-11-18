@@ -2,70 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03863FFC56
-	for <lists+kexec@lfdr.de>; Mon, 18 Nov 2019 00:52:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3EB9FFDC3
+	for <lists+kexec@lfdr.de>; Mon, 18 Nov 2019 06:12:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lYQdGApwevmPR+oO0DGkQ8BN9CwbC6EGEgI9KeHuZB4=; b=nSsm+LCAn5hd7s
-	FBIwvNyMKTUI088bln/ouAbfLTbBLMX2dyNCnqbbKYoDCwsL6/EAvf5rsEZ1pU7U3rmWWrnQgsO1f
-	zF8s+pKECJoh6umfeSNSklWKwPNFD3k9uMw1j0Pd1+Kkl/S0jBeqCdkSMf85N/D/evAQa4NAcoT/t
-	tM7L2PRWrUIugfipOxDQ9fFP5m7FbJC0A5no+Vyu/K4D3NVC8U20FJmJ0I1/jciha2O4nphJn7bB8
-	GpQ2o25vM6bCA3iLtisXFWukofhpUEXnnzJ5ZMbQqNUVsQgNI1lG0BTI3naJwGiPKcIJXrusGoyZN
-	katMFXLxhfOZuDg7ZwCw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TCuY0UepHvjL3t4M8hGDLjutS+Mq5+iTglIWW1rid+Y=; b=j84uCMWsKCIvha
+	zMufWEYlhQozmlekEyCIyeohmnXEWzTF9ulCwRa4ctT4J8GavWBNgAyv9PRBeSnST8Lg8eQOxoQAn
+	5gu/Gj+L59HU2qQO62Rl5GeyqI5YAkTtHr/fVUJm3O55WN97HK9mksdGIK/Wjih5vmqhLym1OcyDr
+	A+sE1njsSoiZDurkfFhuKJh31yKHQJ608bOiX5lC5Qw9gDVGPf2WIiFNZ7eFPY4T8sqhCKK9HcGdm
+	aUVQ3zbOzcZ1CGs3MHj/1hIuaOC7qNrviP3ZQTAO25iZsuYkygpZ7JLVXndsrdEZiuIGB9yaIwafK
+	1HF7TFbsVpf5TlNFj3wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iWULO-00026M-4T; Sun, 17 Nov 2019 23:52:38 +0000
-Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
+	id 1iWZKq-00052Q-I0; Mon, 18 Nov 2019 05:12:24 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iWULH-00024M-MM
- for kexec@lists.infradead.org; Sun, 17 Nov 2019 23:52:33 +0000
-Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 9274180237;
- Mon, 18 Nov 2019 12:52:22 +1300 (NZDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
- s=mail181024; t=1574034742;
- bh=RD2eIvbrOvFXaQWNLlhfDJB3AN5KeEH3nnMADVAJrWo=;
- h=From:To:Cc:Subject:Date;
- b=uFZryFg0zWf7Xags5DnA5SmYWiXFeSQulGz0LJBNEE6K72zy+Iuhs5EktsVE4mBwM
- gCImkDBs+DiZG6LEmjdkCn2l+i/PHHJflE+AfUFQC1C/mgdxtRRd93+tm66P+eXuZZ
- fHlUz1dXHhL8lDj3a/KXCQwghsPmIUw6G+7uv7jOkImIiEFAczoKB+KZMbV0p2KyLV
- WSxr2lFBDpajDgoyndzI1+Pv1jf60lrulw/CaLWj29X65UW5mKulF18mvvuvhc6UtO
- HafLRlcF90u0Jfb3ESbeEN+VXYTmF3XotVvKIc7EUcInbCnQH5u5l1rm9tyM2VK/yM
- rSrFskMDuY8zw==
-Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
- Trustwave SEG (v7, 5, 8, 10121)
- id <B5dd1dd310000>; Mon, 18 Nov 2019 12:52:21 +1300
-Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
- by smtp (Postfix) with ESMTP id 2C2EF13EDE4;
- Mon, 18 Nov 2019 12:52:17 +1300 (NZDT)
-Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
- id 52D4B28005F; Mon, 18 Nov 2019 12:52:18 +1300 (NZDT)
-From: Chris Packham <chris.packham@alliedtelesis.co.nz>
-To: kexec@lists.infradead.org
-Subject: [PATCH] kexec: build multiboot2 for i386
-Date: Mon, 18 Nov 2019 12:52:15 +1300
-Message-Id: <20191117235215.18159-1-chris.packham@alliedtelesis.co.nz>
-X-Mailer: git-send-email 2.24.0
+ id 1iWZKn-00051Z-2T
+ for kexec@lists.infradead.org; Mon, 18 Nov 2019 05:12:22 +0000
+Received: by mail-il1-x141.google.com with SMTP id q1so14791087ile.13
+ for <kexec@lists.infradead.org>; Sun, 17 Nov 2019 21:12:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=gc0Vh1HSacMdh1Wogm1edpIRm0UZnGE2y65ojA1UUZc=;
+ b=Jh6Tmlrk7i4bO8crJKyC0H9dcLLZn1v8E+TB5EUR/BOeUIypmRUdXN/d/HjAiw88IZ
+ Xks4qAuxaBjgRlepl4jqPwEyAqbq2iO/HTjU2H/cCcANehJf+u7whq3FFpBXEtDF4DvO
+ HDyzCe/AsIt07jARDpJ61veuUdPlZBCm0Q9QXrSkJMMO48fKqiXgivRJnqcOFhhSdHKc
+ aMYJ8rPsP6kufW2u0wCa7PvnAwmXqL5PISxEiZ5YJsI2Y4OIay32c39nHfkHTN4Ut1F/
+ o7OsxRwXHwWubmoMdV16qaW0rNyGyFqazuaag7zPoOdap8DWWwnlDu7A81hs5rXZ4nVQ
+ iHQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=gc0Vh1HSacMdh1Wogm1edpIRm0UZnGE2y65ojA1UUZc=;
+ b=HD5ns/z4eFuXrlHifOUjuZftJTnNQ12mPoqcjgxLMTmYfAcKKB/zS+fyiV0eauVqBE
+ XvZuhXn4VcFCh3GMJl3B0C6RZhCBjwZy+OVDi82/EV+gIdFTZPP+4ZXVwydjkQy3zz+N
+ Z2BlxHmo6pW6Yt5jS6X4Z8QVwQVXX+GwA/42es4LOFFTAvf1bVSC21tFt4da1pqyFOpu
+ UFk9fmOoD6/MZP25Ex1ncgHDx2NktNxZac+zN+ZrAu6I4sHlwQ9Q09zY9psJFgN45UKk
+ v9qwKs80DUicZq2s6fb74Ysc5STbSpsszxh1Uw5BfNKDBoagmZlVrR1MTnI4PwVD4Arc
+ bDuw==
+X-Gm-Message-State: APjAAAWUDf4czYevyq9jmWbtNrLX8z7Ta0haUmAMHdtLtI8MBcUVsp36
+ i1iH9s0Ya2JZQLbdyrEF1cDv4Vy/ELMyOc34HAk=
+X-Google-Smtp-Source: APXvYqx5AHgmx6W+ff6Q8Y1JqJW/nSIioaumnJQ1XkaNZkjq/H1albvsTLLui3nTcBdofTCsJajesEtS69Ibr44WQQ0=
+X-Received: by 2002:a92:9adb:: with SMTP id c88mr13662599ill.193.1574053936583; 
+ Sun, 17 Nov 2019 21:12:16 -0800 (PST)
 MIME-Version: 1.0
-x-atlnz-ls: pat
+References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+In-Reply-To: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Date: Mon, 18 Nov 2019 10:42:05 +0530
+Message-ID: <CAJ2QiJJ6DdxFheRo78+n1=ZuqMQnHeuLVWchK8SApt3w9wBKLQ@mail.gmail.com>
+Subject: Re: [PATCH v4 0/4] makedumpfile/arm64: Add support for ARMv8.2
+ extensions
+To: Bhupesh Sharma <bhsharma@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191117_155232_308091_80899981 
-X-CRM114-Status: UNSURE (   8.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20191117_211221_141652_5E5F6C43 
+X-CRM114-Status: GOOD (  24.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.36.163.20 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (prabhakar.pkin[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,78 +92,122 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au, Chris Packham <chris.packham@alliedtelesis.co.nz>
+Cc: John Donnelly <john.p.donnelly@oracle.com>,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>, bhupesh.linux@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-This addresses the following compilation issues when building for i386.
+Re-sending in plain text mode.
 
- kexec/arch/i386/kexec-x86.c:39:22: error: 'multiboot2_x86_probe' undeclared here (not in a function); did you mean 'multiboot_x86_probe'?
-   { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
-                       ^~~~~~~~~~~~~~~~~~~~
-                       multiboot_x86_probe
- kexec/arch/i386/kexec-x86.c:39:44: error: 'multiboot2_x86_load' undeclared here (not in a function); did you mean 'multiboot_x86_load'?
-   { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
-                                             ^~~~~~~~~~~~~~~~~~~
-                                             multiboot_x86_load
- kexec/arch/i386/kexec-x86.c:40:4: error: 'multiboot2_x86_usage' undeclared here (not in a function); did you mean 'multiboot_x86_usage'?
-     multiboot2_x86_usage },
-     ^~~~~~~~~~~~~~~~~~~~
-     multiboot_x86_usage
- make: *** [Makefile:114: kexec/arch/i386/kexec-x86.o] Error 1
- make: *** Waiting for unfinished jobs....
+On Tue, Nov 12, 2019 at 4:39 PM Bhupesh Sharma <bhsharma@redhat.com> wrote:
+>
+> Changes since v3:
+> ----------------
+> - v3 can be seen here:
+>   http://lists.infradead.org/pipermail/kexec/2019-March/022534.html
+> - Added a new patch (via [PATCH 4/4]) which marks '--mem-usage' option as
+>   unsupported for arm64 architecture. With the newer arm64 kernels
+>   supporting 48-bit/52-bit VA address spaces and keeping a single
+>   binary for supporting the same, the address of
+>   kernel symbols like _stext, which could be earlier used to determine
+>   VA_BITS value, can no longer to determine whether VA_BITS is set to 48
+>   or 52 in the kernel space. Hence for now, it makes sense to mark
+>   '--mem-usage' option as unsupported for arm64 architecture until
+>   we have more clarity from arm64 kernel maintainers on how to manage
+>   the same in future kernel/makedumpfile versions.
+>
+> Changes since v2:
+> ----------------
+> - v2 can be seen here:
+>   http://lists.infradead.org/pipermail/kexec/2019-February/022456.html
+> - I missed some comments from Kazu sent on the LVA v1 patch when I sent
+>   out the v2. So, addressing them now in v3.
+> - Also added a patch that adds a tree-wide feature to read
+>   'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
+>
+> Changes since v1:
+> ----------------
+> - v1 was sent as two separate patches:
+>   http://lists.infradead.org/pipermail/kexec/2019-February/022424.html
+>   (ARMv8.2-LPA)
+>   http://lists.infradead.org/pipermail/kexec/2019-February/022425.html
+>   (ARMv8.2-LVA)
+> - v2 combined the two in a single patchset and also addresses Kazu's
+>   review comments.
+>
+> This patchset adds support for ARMv8.2 extensions in makedumpfile code.
+> I cover the following two cases with this patchset:
+>  - 48-bit kernel VA + 52-bit PA (LPA)
+>  - 52-bit kernel VA (LVA) + 52-bit PA (LPA)
+>  - 48-bit kernel VA + 52-bit user-space VA (LVA)
+>  - 52-bit kernel VA + 52-bit user-space VA (Full LVA)
+>
+> This has been tested for the following user-cases:
+> 1. Creating a dumpfile using /proc/vmcore,
+> 2. Creating a dumpfile using /proc/kcore, and
+> 3. Post-processing a vmcore.
+>
+> I have tested this patchset on the following platforms, with kernels
+> which support/do-not-support ARMv8.2 features:
+> 1. CPUs which don't support ARMv8.2 features, e.g. qualcomm-amberwing,
+>    ampere-osprey.
+> 2. Prototype models which support ARMv8.2 extensions (e.g. ARMv8 FVP
+>    simulation model).
+>
+> Also a preparation patch has been added in this patchset which adds a
+> common feature for archs (except arm64, for which similar support is
+> added via subsequent patch) to retrieve 'MAX_PHYSMEM_BITS' from
+> vmcoreinfo (if available).
+>
+> I recently posted two kernel patches (see [0] and [1]) which append
+> 'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' to vmcoreinfo in the kernel
+> code, so that user-space code can benefit from the same.
+>
+> This patchset ensures backward compatibility for kernel versions in
+> which 'TCR_EL1.T1SZ' and 'MAX_PHYSMEM_BITS' are not available in
+> vmcoreinfo.
+>
+> [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023960.html
+> [1]. http://lists.infradead.org/pipermail/kexec/2019-November/023962.html
+>
+> Cc: John Donnelly <john.p.donnelly@oracle.com>
+> Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> Cc: kexec@lists.infradead.org
+>
+> Bhupesh Sharma (4):
+>   tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from vmcoreinfo (if available)
+>   makedumpfile/arm64: Add support for ARMv8.2-LPA (52-bit PA support)
+>   makedumpfile/arm64: Add support for ARMv8.2-LVA (52-bit kernel VA
+>     support)
+>   makedumpfile: Mark --mem-usage option unsupported for arm64
+>
+>  arch/arm.c     |   8 +-
+>  arch/arm64.c   | 438 ++++++++++++++++++++++++++++++++++++++++++---------------
+>  arch/ia64.c    |   7 +-
+>  arch/ppc.c     |   8 +-
+>  arch/ppc64.c   |  49 ++++---
+>  arch/s390x.c   |  29 ++--
+>  arch/sparc64.c |   9 +-
+>  arch/x86.c     |  34 +++--
+>  arch/x86_64.c  |  27 ++--
+>  makedumpfile.c |   7 +
+>  makedumpfile.h |   3 +-
+>  11 files changed, 439 insertions(+), 180 deletions(-)
+>
+> --
 
-Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
----
-I wasn't sure whether this should be fixed by linking with kexec-mb2-x86.o or
-by removing the code from kexec-x86.c. I went for the former but I'd happily
-change to the latter.
+Tested this patch-set on Marvell's TX2 platform on top
+commit(82e6cce2219a) of https://git.code.sf.net/p/makedumpfile/code
+(devel branch)
 
- kexec/arch/i386/Makefile    | 2 +-
- kexec/arch/i386/kexec-x86.h | 5 +++++
- 2 files changed, 6 insertions(+), 1 deletion(-)
+Tested-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
 
-diff --git a/kexec/arch/i386/Makefile b/kexec/arch/i386/Makefile
-index 105cefd..f486103 100644
---- a/kexec/arch/i386/Makefile
-+++ b/kexec/arch/i386/Makefile
-@@ -7,6 +7,7 @@ i386_KEXEC_SRCS += kexec/arch/i386/kexec-elf-x86.c
- i386_KEXEC_SRCS += kexec/arch/i386/kexec-elf-rel-x86.c
- i386_KEXEC_SRCS += kexec/arch/i386/kexec-bzImage.c
- i386_KEXEC_SRCS += kexec/arch/i386/kexec-multiboot-x86.c
-+i386_KEXEC_SRCS += kexec/arch/i386/kexec-mb2-x86.c
- i386_KEXEC_SRCS += kexec/arch/i386/kexec-beoboot-x86.c
- i386_KEXEC_SRCS += kexec/arch/i386/kexec-nbi.c
- i386_KEXEC_SRCS += kexec/arch/i386/x86-linux-setup.c
-@@ -14,7 +15,6 @@ i386_KEXEC_SRCS += kexec/arch/i386/crashdump-x86.c
- 
- dist += kexec/arch/i386/Makefile $(i386_KEXEC_SRCS)			\
- 	kexec/arch/i386/crashdump-x86.h					\
--	kexec/arch/i386/kexec-mb2-x86.c					\
- 	kexec/arch/i386/kexec-x86.h					\
- 	kexec/arch/i386/x86-linux-setup.h				\
- 	kexec/arch/i386/include/arch/options.h
-diff --git a/kexec/arch/i386/kexec-x86.h b/kexec/arch/i386/kexec-x86.h
-index 1b58c3b..0f941df 100644
---- a/kexec/arch/i386/kexec-x86.h
-+++ b/kexec/arch/i386/kexec-x86.h
-@@ -60,6 +60,11 @@ int multiboot_x86_load(int argc, char **argv, const char *buf, off_t len,
- 	struct kexec_info *info);
- void multiboot_x86_usage(void);
- 
-+int multiboot2_x86_load(int argc, char **argv, const char *buf, off_t len,
-+			struct kexec_info *info);
-+void multiboot2_x86_usage(void);
-+int multiboot2_x86_probe(const char *buf, off_t buf_len);
-+
- int elf_x86_probe(const char *buf, off_t len);
- int elf_x86_load(int argc, char **argv, const char *buf, off_t len,
- 	struct kexec_info *info);
--- 
-2.24.0
-
+--pk
 
 _______________________________________________
 kexec mailing list
