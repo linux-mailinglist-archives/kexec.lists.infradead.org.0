@@ -2,93 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14632104989
-	for <lists+kexec@lfdr.de>; Thu, 21 Nov 2019 05:06:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45193105715
+	for <lists+kexec@lfdr.de>; Thu, 21 Nov 2019 17:32:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3/uVpAzR99imdi/5tu8x5Twa2R/y9/4u6ywg3pkPtKg=; b=oLBh/BKE9pjVsy
-	irur2rtJeY1U7zwusRaple6hxSukV9fTBEIF6OD+ywugxzgOiXZEdktf3b8wH7QH3tzz+IglD/Udb
-	JwDnEh6H90WMKPRxwc39iQKxXr+Pd7nlWiiERwvpeW3xaCGhn7J5qqDWgrHCiJ3QiT5FAR+F/mvFw
-	gCJS3QCZe2+Ya5PILsJM8Rkpl97+th7Z46IBKVp8+/Ov2QHa3l+iXSvYPa+y9pz1Yar8YfMd/Exdw
-	N5u1BbOSahCgcq9p78PKhpmg2JEClx/7KWJBLyrttKpw10tPYQWGJJI9lmirku4mSWI6ApVH9eqdJ
-	pO/0dGQqSPyAJ6+VUFuQ==;
+	List-Owner; bh=6SJA2qIxHGE4TgijhYm+osqNfJooXGXmw8nA6e3VVLA=; b=soQRraig5qlzgh
+	lXdpebCJbrBqL52EH9BlHZroxe4ios31rd/GEPl/kE6mReTQZTsUHd3Jo784ofG421AtFlqFBC4YY
+	fSf+MaOB2V+uzbUBPUpGAtieSjQm5PbsB5V8k/p3f22fVFv9U4/W6VJuXOCdeGvwzbJmQ5KUmNhM2
+	EtzXgegxLUJtoo8ruQJ6zF1IWSHy/SEV2pUh56fQ62EUU36Xh2VYtYdN9mGnMWvXcEaRLCyvl1zNv
+	Erh7QfcVcoF/yydc19I8c98hLr4J4qF3IJvfTRVdNOaEYBdJ6Y5MVWcU3Lt9rOebvCIXOIoPZ25BX
+	mCamkoTg/MM9ROMhd19w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iXdjI-0003EK-3d; Thu, 21 Nov 2019 04:06:04 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+	id 1iXpO5-00011z-Fl; Thu, 21 Nov 2019 16:32:57 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iXdj5-00034b-Ce
- for kexec@lists.infradead.org; Thu, 21 Nov 2019 04:05:53 +0000
+ id 1iXpO1-00011g-Cc
+ for kexec@lists.infradead.org; Thu, 21 Nov 2019 16:32:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574309147;
+ s=mimecast20190719; t=1574353971;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=ddcL9As6t6N2W7FClqz+MM4Vj5YcYH8nBzk/ipEcve0=;
- b=YlEOov1KgX/dyD+QILmBCPs9izD2voLE9iPBpCobzFsbRqC4YBDrE4m3Ij1yABITjtZ7Gu
- Ru9o2sD9pkCkT0GOkII7yR1I+opn4dPET0EW7QRkhysmmSeMs4YbxjHyTAYX/bqJMnPwyn
- 5tSS7m3ij4pqZVq4faTlrNom2gLAaaA=
-Received: from mail-lf1-f69.google.com (mail-lf1-f69.google.com
- [209.85.167.69]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-251-e6ahuwNCO-GQZeg_U9ELsw-1; Wed, 20 Nov 2019 23:05:44 -0500
-Received: by mail-lf1-f69.google.com with SMTP id m2so499923lfo.20
- for <kexec@lists.infradead.org>; Wed, 20 Nov 2019 20:05:44 -0800 (PST)
+ bh=BzAnohYB9CSy5z9LMZ3eKPWV3wB9qWffN1wYr02kvyg=;
+ b=CAO4vvEamLvfO67s1sh9vHSiueh046kyYuzuIz7EUGrzKgvlKOqC3Vo2QxBAcszGjABDLN
+ BrPDKIXzUveXYscqJHJv28VK/QabwzWJHGlqUPlE11MTmup21UnWtkFmL8wcSZSse29fBJ
+ NGG2KRmywM4Ru0UqbMFPr0i+cC2Mr54=
+Received: from mail-lf1-f70.google.com (mail-lf1-f70.google.com
+ [209.85.167.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-194-5uvf8zAJOFekdvUTBym7lw-1; Thu, 21 Nov 2019 11:32:49 -0500
+Received: by mail-lf1-f70.google.com with SMTP id j16so1067167lfk.2
+ for <kexec@lists.infradead.org>; Thu, 21 Nov 2019 08:32:49 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=XAdRIJ2WowQ38gyWjLPpmLE8JvGLeIMdMt69fOJjIH4=;
- b=UPA16Xuv57Nn2yUNgevjlOZ7ORnyijTJevGYQU6ayaPnFa8xNzXpp7orOQ2EZLiY/C
- CBum5RT2IlNFO3vn3fRdfb2lLACUSexfht8oDJBUEToF6HFgcc/mOybijSTNdfa3QDak
- 0iMlocS5rib7ZMTJZm97ZF9G2fWPYMaLV4CW7u4hQeRXbEuRB6fgA+bp4gPVihjSVSna
- bmIuHrKL978L+oSEwJDVOvkNXMpOt73JNzGQ5xp550p/9RkZikCdRZFZUTJAP90mUyqf
- 1naVObFNLay+IJ/v9EqPr6+hOnrKbA/MX0sFyj7b7bpHytHt52cyS79bUQ+q27grc6qv
- dzSA==
-X-Gm-Message-State: APjAAAX3OdBEbS9RWRWwy2Ky+KpM3/GdxtCrUwNw8HXxiwXpt/BdphNd
- vlqmApo4+4JBnmZfwEd7NeTbR6JRf20Arncpg63+delcIxC6N09IdHyyT6qtiwUaWltwEkMue3g
- pG9M1A9Cw7FwZJkBbpP34BR8BRCwgP6IlH6R3
-X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652118lff.140.1574309143458; 
- Wed, 20 Nov 2019 20:05:43 -0800 (PST)
-X-Google-Smtp-Source: APXvYqy5dgsLiGw/+gMUCqCKW9wbveCY62iBIDQZk8TIYLgEUZuvgMt3xbY56NyFoSWIFRlYSXo+FYcMeO7+9TakXnE=
-X-Received: by 2002:a19:bec5:: with SMTP id o188mr5652105lff.140.1574309143167; 
- Wed, 20 Nov 2019 20:05:43 -0800 (PST)
+ bh=tys6+I/q68ZFlF+wg5F/eo2+HwJ48b32mA4q6kJCO5A=;
+ b=jBjW7Ryw2jZzSMarkfpIwOsNSlG5HNLIUMmw/cMAFS45RnRxcC2NvgWXg5cSxYLks+
+ 57jGe5vLqvlusAYPjW37Ag4J23DEdBBmzXPVHs+nyj7w3LPyOPFMtyiFPopefr8LVRcC
+ D2NoJBNzvThV3zDJAv/JCnZzrfvgvxEKkU/cAbxDKefi1pSqkFtHv9ZeLBYsWAdIWYG0
+ OS3L8gJXGqWvBsNYoC73fkKCwILlsE6XHgsrZzYqrwjfXa6DPkzo08ti6/yOllTxWDDz
+ 76Cwdbyvh+LoMiPR9YD8i48aGPAuAdULsQgqVP38pSAM9MHtXfZPpZJX801ChtzAmo0M
+ bWpg==
+X-Gm-Message-State: APjAAAVEyEGsUD5f1x3JgMf+/fGURsgOG4DrGpFsdvHEHNAByeWUUg/3
+ mMI+19+6VX1n+fR3A8Dy3pOEkVqHYIj+2n6Wp2YcgMFtJWt5kwkyntW0op1gSHb4dUgtC4CJVP3
+ kUoAlgJdqzZWtX9LsIHI4wb2T51Q9l+uo72IF
+X-Received: by 2002:ac2:508f:: with SMTP id f15mr8335848lfm.146.1574353967820; 
+ Thu, 21 Nov 2019 08:32:47 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxtund0b/eEEqSs/wRTuXtcoZTDa6xBEyc0qhyow9H3HfQNBkcY2dPkkq+GoqLiJrYBiDt6ko8gillu1V1H0Yc=
+X-Received: by 2002:ac2:508f:: with SMTP id f15mr8335821lfm.146.1574353967548; 
+ Thu, 21 Nov 2019 08:32:47 -0800 (PST)
 MIME-Version: 1.0
-References: <1573459282-26989-1-git-send-email-bhsharma@redhat.com>
- <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
-In-Reply-To: <20191121032047.GB23368@dhcp-128-65.nay.redhat.com>
+References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+ <CAJ2QiJJ6DdxFheRo78+n1=ZuqMQnHeuLVWchK8SApt3w9wBKLQ@mail.gmail.com>
+ <B71B3868-9A0B-46AD-8777-97A1599BFB91@oracle.com>
+ <CACi5LpOF2FLrmXEyJ4FfjqJBxxt-np2+1V0EFK__EH=6ubFE0A@mail.gmail.com>
+ <276620F6-E9AC-4BC6-B413-D84677C3D6BC@oracle.com>
+In-Reply-To: <276620F6-E9AC-4BC6-B413-D84677C3D6BC@oracle.com>
 From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Thu, 21 Nov 2019 09:35:29 +0530
-Message-ID: <CACi5LpOXW+HTsAZfxbwnCnypSdpk4=t8bsS=SRx0crc=4261VA@mail.gmail.com>
-Subject: Re: [PATCH v4 0/3] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-To: Dave Young <dyoung@redhat.com>
-X-MC-Unique: e6ahuwNCO-GQZeg_U9ELsw-1
+Date: Thu, 21 Nov 2019 22:02:34 +0530
+Message-ID: <CACi5LpO9hRKotoMAgEQiLPEHWm7DO_NXWmTL1Wcfi3A0OyGJMQ@mail.gmail.com>
+Subject: Re: [PATCH v4 0/4] makedumpfile/arm64: Add support for ARMv8.2
+ extensions
+To: John Donnelly <john.p.donnelly@oracle.com>
+X-MC-Unique: 5uvf8zAJOFekdvUTBym7lw-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191120_200551_504041_3E898BE1 
-X-CRM114-Status: GOOD (  22.98  )
+X-CRM114-CacheID: sfid-20191121_083253_501986_6773DBC1 
+X-CRM114-Status: GOOD (  14.08  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,115 +103,143 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Jonathan Corbet <corbet@lwn.net>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Anderson <anderson@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Steve Capper <steve.capper@arm.com>,
+Cc: Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
  kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- James Morse <james.morse@arm.com>, Boris Petkov <bp@alien8.de>,
- linuxppc-dev@lists.ozlabs.org
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Prabhakar Kushwaha <prabhakar.pkin@gmail.com>,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Dave,
-
-On Thu, Nov 21, 2019 at 8:51 AM Dave Young <dyoung@redhat.com> wrote:
+> On Wed, Nov 20, 2019 at 10:03 PM John Donnelly <john.p.donnelly@oracle.com> wrote:
 >
-> On 11/11/19 at 01:31pm, Bhupesh Sharma wrote:
-> > Changes since v3:
-> > ----------------
-> > - v3 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
-> > - Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
-> >   instead of PTRS_PER_PGD.
-> > - Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
-> >   'Documentation/arm64/memory.rst'
-> >
-> > Changes since v2:
-> > ----------------
-> > - v2 can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
-> > - Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
-> >   ifdef sections, as suggested by Kazu.
-> > - Updated vmcoreinfo documentation to add description about
-> >   'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
-> >
-> > Changes since v1:
-> > ----------------
-> > - v1 was sent out as a single patch which can be seen here:
-> >   http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
-> >
-> > - v2 breaks the single patch into two independent patches:
-> >   [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
-> >   [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
-> >
-> > This patchset primarily fixes the regression reported in user-space
-> > utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
-> > with the availability of 52-bit address space feature in underlying
-> > kernel. These regressions have been reported both on CPUs which don't
-> > support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
-> > and also on prototype platforms (like ARMv8 FVP simulator model) which
-> > support ARMv8.2 extensions and are running newer kernels.
-> >
-> > The reason for these regressions is that right now user-space tools
-> > have no direct access to these values (since these are not exported
-> > from the kernel) and hence need to rely on a best-guess method of
-> > determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
-> > by underlying kernel.
-> >
-> > Exporting these values via vmcoreinfo will help user-land in such cases.
-> > In addition, as per suggestion from makedumpfile maintainer (Kazu),
-> > it makes more sense to append 'MAX_PHYSMEM_BITS' to
-> > vmcoreinfo in the core code itself rather than in arm64 arch-specific
-> > code, so that the user-space code for other archs can also benefit from
-> > this addition to the vmcoreinfo and use it as a standard way of
-> > determining 'SECTIONS_SHIFT' value in user-land.
-> >
-> > Cc: Boris Petkov <bp@alien8.de>
-> > Cc: Ingo Molnar <mingo@kernel.org>
-> > Cc: Thomas Gleixner <tglx@linutronix.de>
-> > Cc: Jonathan Corbet <corbet@lwn.net>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Steve Capper <steve.capper@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> > Cc: Michael Ellerman <mpe@ellerman.id.au>
-> > Cc: Paul Mackerras <paulus@samba.org>
-> > Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> > Cc: Dave Anderson <anderson@redhat.com>
-> > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> > Cc: x86@kernel.org
-> > Cc: linuxppc-dev@lists.ozlabs.org
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-kernel@vger.kernel.org
-> > Cc: linux-doc@vger.kernel.org
-> > Cc: kexec@lists.infradead.org
-> >
-> > Bhupesh Sharma (3):
-> >   crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
-> >   arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
+> Hi,
 >
-> Soft reminder:  the new introduced vmcoreinfo needs documentation
->
-> Please check Documentation/admin-guide/kdump/vmcoreinfo.rst
+>   Recent test below
+>  This is your makedumpfile pulled from sourceforge .
 
-Sure, will send a v5 to address the same.
+Do you mean github? I don't remember pushing anything to sourceforge.
+Please share the exact branch name and the source URL for the
+makedumpfile you are using
 
-Thanks,
+> It would be helpful if you bumped the VERSION and DATE to be certain we are using the correct pieces .
+
+You can print makedumpfile version in your scriptware. It lets you
+know the latest makedumpfile version. Note that this indicates the
+latest released version and not the development branch. The
+development branch is for things under test (like this change) and
+being stabilized whereas the released version contains a bump to a new
+VERSION number and DATE at which a release is made.
+
+# makedumpfile -v
+makedumpfile: version 1.6.6 (released on 27 Jun 2019)
+lzo    enabled
+
+> kdump: saving vmcore
+> makedumpfile 1.6.6, 27 Jun 2019.
+> sadump: unsupported architecture
+>               phys_start         phys_end       virt_start         virt_end
+> LOAD[ 0]         92a80000         94fe0000 ffff800010080000 ffff8000125e0000
+> LOAD[ 1]         90000000         92000000 ffffc00010000000 ffffc00012000000
+> LOAD[ 2]         928c0000         dfe00000 ffffc000128c0000 ffffc0005fe00000
+> LOAD[ 3]         ffe00000         fffa0000 ffffc0007fe00000 ffffc0007ffa0000
+> LOAD[ 4]        880000000       1000000000 ffffc00800000000 ffffc00f80000000
+> LOAD[ 5]       8800000000       bff7030000 ffffc08780000000 ffffc0bf77030000
+> LOAD[ 6]       bff7060000       bff72b0000 ffffc0bf77060000 ffffc0bf772b0000
+> LOAD[ 7]       bff72f0000       bff8030000 ffffc0bf772f0000 ffffc0bf78030000
+> LOAD[ 8]       bff8050000       bff8070000 ffffc0bf78050000 ffffc0bf78070000
+> LOAD[ 9]       bff80d0000       bff8270000 ffffc0bf780d0000 ffffc0bf78270000
+> LOAD[10]       bff8280000       bff83d0000 ffffc0bf78280000 ffffc0bf783d0000>
+> LOAD[11]       bff8870000       bffc1a0000 ffffc0bf78870000 ffffc0bf7c1a0000
+> LOAD[12]       bffc1c0000       bffc1d0000 ffffc0bf7c1c0000 ffffc0bf7c1d0000
+> LOAD[13]       bffe210000       bfffd10000 ffffc0bf7e210000 ffffc0bf7fd10000
+> LOAD[14]       bfffd40000       bfffd50000 ffffc0bf7fd40000 ffffc0bf7fd50000
+> LOAD[15]       bfffe00000       c000000000 ffffc0bf7fe00000 ffffc0bf80000000
+> Linux kdump
+> VMCOREINFO   :
+  OSRELEASE=5.4.0-rc8
+  PAGESIZE=65536
+> page_size    : 65536
+  SYMBOL(init_uts_ns)=ffff800011a65ca8
+  SYMBOL(node_online_map)=ffff800011a5d490
+  SYMBOL(swapper_pg_dir)=ffff8000112f0000
+  SYMBOL(_stext)=ffff800010081000
+  SYMBOL(vmap_area_list)=ffff800011b29a98
+  SYMBOL(mem_section)=ffff00bf7be7e300
+  LENGTH(mem_section)=64
+  SIZE(mem_section)=16
+  OFFSET(mem_section.section_mem_map)=0
+  NUMBER(MAX_PHYSMEM_BITS)=48   OFFSET(vmap_area.va_start)=0
+  OFFSET(vmap_area.list)=40
+  LENGTH(zone.free_area)=14
+  SYMBOL(log_buf)=ffff800011ada808
+  SYMBOL(log_buf_len)=ffff800011ada810
+  SYMBOL(log_first_idx)=ffff800011e772d4
+  SYMBOL(clear_idx)=ffff800011e74d20
+  SYMBOL(log_next_idx)=ffff800011e772e0
+  SIZE(printk_log)=16
+  OFFSET(printk_log.ts_nsec)=0
+  OFFSET(printk_log.len)=8
+  OFFSET(printk_log.text_len)=10
+  OFFSET(printk_log.dict_len)=12
+  LENGTH(free_area.free_list)=6
+  NUMBER(NR_FREE_PAGES)=0
+  NUMBER(PG_lru)=4
+  NUMBER(PG_private)=13
+  NUMBER(PG_swapcache)=10
+  NUMBER(PG_swapbacked)=19
+  NUMBER(PG_slab)=9
+  NUMBER(PG_hwpoison)=22
+  NUMBER(PG_head_mask)=65536
+  NUMBER(PAGE_BUDDY_MAPCOUNT_VALUE)=-129
+  NUMBER(HUGETLB_PAGE_DTOR)=2
+  NUMBER(PAGE_OFFLINE_MAPCOUNT_VALUE)=-257
+  NUMBER(VA_BITS)=48
+  NUMBER(kimage_voffset)=0xffff7fff7d600000
+  NUMBER(PHYS_OFFSET)=0x80000000
+  NUMBER(tcr_el1_t1sz)=0x10
+  KERNELOFFSET=0
+  CRASHTIME=1574266958
+
+> phys_base    : 80000000 (vmcoreinfo)
+
+> max_mapnr    : c00000
+> There is enough free memory to be done in one cycle.
+
+> Buffer size for the cyclic mode: 3145728
+> va_bits      : 47
+> page_offset  : ffffc00000000000
+> kdump: saving vmcore failed
+
+You again seem to be using an old/incorrect version of makedumpfile.
+As you can see here from [0] and [1] the newer makedumpfile patches I
+posted print where the va_bits are derived from - _stext symbol or
+vmcoreinfo.
+
+Since you are running a kdump test, it should print something like
+this for va_bits if you have the correct makedumpfile changes compiled
+in and installed (via make install) - notice the source from where
+va_bits is determined properly is printed in brackets:
+phys_base    : 80000000 (vmcoreinfo)
+
+max_mapnr    : 97fd00
+There is enough free memory to be done in one cycle.
+
+Buffer size for the cyclic mode: 2490176
+va_bits        : 48 (vmcoreinfo)
+page_offset    : ffff000000000000 (approximation)
+kimage_voffset   : fffeffff8fc00000
+max_physmem_bits : 52
+section_size_bits: 30
+
+Regards,
 Bhupesh
+
+[0]. <https://github.com/bhupesh-sharma/makedumpfile/blob/52-bit-va-support-via-vmcore-upstream-v4/arch/arm64.c#L468>
+[1]. <https://github.com/bhupesh-sharma/makedumpfile/blob/52-bit-va-support-via-vmcore-upstream-v4/arch/arm64.c#L511>
 
 
 _______________________________________________
