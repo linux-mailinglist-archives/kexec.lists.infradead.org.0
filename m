@@ -2,54 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 705DF106D1D
-	for <lists+kexec@lfdr.de>; Fri, 22 Nov 2019 11:57:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF82106AC5
+	for <lists+kexec@lfdr.de>; Fri, 22 Nov 2019 11:38:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iI6bRk4rqVQq6GN3DEYqy2/HfrGtSZ094gzhXZgGT20=; b=CNlS0ZhWSJQe4C
-	x4SaH/JEe6MOhmxVXA9WdnfpDHR+VGgz4BZCGZTWnlMhKeoupYOYAKRv42R2zhpBkKEJcwz0FD1n/
-	qR1b8w6obWxEDbSh0y4DaP7Jn1j855DkIhY1u8MwllRyXtGkXoR37ppwuUTdn9XeT31tBG+CF5mxY
-	0fSMboy4FNjvqTk2nkPl1/upq3scP/kGwbXxvxS3Sv9NWxEJDMvzeyVSTiSMGl3uFiN378mdWZtcs
-	1BPgFX2+z5OUAh5XY8v7oTdvNCptk60sPJ9WGe2DiikSX3I5YnH4+RstT/qRGAjyNa22uY3g4GMEJ
-	Ifp36h1YTS9XNaHkBdVg==;
+	List-Owner; bh=Dt+fFiAzdYaJpGGIlRfUTA/zVyS+mDqE8i2M3uvNOtY=; b=Kc22BDGoCYHgxd
+	dx8RQiSLXByGmx7NnpCr+cY/o73Ca3G5sIpZTvkrrDewLWqVhxOFvVLFgxLYDHlaGEN04+ZXmWRV3
+	Cu3nG/dCJWTcvK6JFRk4IXetwpqYTSqlEj6xpnq/MxDDBOJZcjqHErvDNZNsaQA2oBiSxBX5ji7AV
+	4Qo7yNGJ4yCQvQPtEo1fPgLJ+d+hdMZOVBjKPPjPdVE0UWnzPt7QZxWz66REplQHz1Af/Iw/cnmnR
+	YpWio5pO088kRYHVr/FKF+4OAbS5kamVdyZLnZano3gbDviWcFKe2bdW3zjhD7ygNo6XJZNrKL1/F
+	8pbyP+YKXAeZLXXyVjmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iY6dB-0004NS-1E; Fri, 22 Nov 2019 10:57:41 +0000
+	id 1iY6KH-0002mg-Uj; Fri, 22 Nov 2019 10:38:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iY6av-0001z9-MW
- for kexec@lists.infradead.org; Fri, 22 Nov 2019 10:55:25 +0000
+ id 1iY6KD-0002l7-Nl
+ for kexec@lists.infradead.org; Fri, 22 Nov 2019 10:38:07 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A811E2071F;
- Fri, 22 Nov 2019 10:55:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E627C20708;
+ Fri, 22 Nov 2019 10:38:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1574420121;
- bh=YM+20L3XfJDfQla675w1xo0yGmW/B4bzJN2PdZ3ouaw=;
+ s=default; t=1574419085;
+ bh=rNvF+D9boZoPCiNVhtlnr9pBgxIcp4oAPRekViOg1Ms=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=E9ix6s8f3NqbyS7S4l6gKFqzAlZ4ZIDuiI/5TKFFJY8aDb5ZD2flc5RO2/yW08Mop
- e6RMYmaPEIra9C9q8+4W/hRJ8XkxpYtTgU1/1YorMuMOGT5UywgVqQcQo9Lcwyda53
- g8/dPLwYxv1jtNbkj7S/cAFHsjvX1BdIJ6SAatTs=
+ b=VQPztIvia0LjRuNxJ/pozDp9vwV5fC04iJkfBecZ9Moy0jiU53Pl+g4d4oK2gsiE8
+ 3zMniqXXbEGB0F/a3aFAs5wJUiJd+omJDnmMvskaZjdq2PyuwCKXdinW5u6ukFLKCS
+ 8j9GmcQ+IFIbxhmto+U+OcNova/4LoMmQedO93pE=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.14 079/122] kexec: Allocate decrypted control pages for
- kdump if SME is enabled
-Date: Fri, 22 Nov 2019 11:28:52 +0100
-Message-Id: <20191122100819.526924385@linuxfoundation.org>
+Subject: [PATCH 4.4 151/159] x86/kexec: Correct KEXEC_BACKUP_SRC_END
+ off-by-one error
+Date: Fri, 22 Nov 2019 11:29:02 +0100
+Message-Id: <20191122100844.637485011@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191122100722.177052205@linuxfoundation.org>
-References: <20191122100722.177052205@linuxfoundation.org>
+In-Reply-To: <20191122100704.194776704@linuxfoundation.org>
+References: <20191122100704.194776704@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191122_025521_779744_BF671172 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20191122_023805_811663_86C9BA2D 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -75,80 +75,79 @@ List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, Tom Lendacky <thomas.lendacky@amd.com>,
- jroedel@suse.de, brijesh.singh@amd.com, Lianbo Jiang <lijiang@redhat.com>,
- bhe@redhat.com, tiwai@suse.de, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- kexec@lists.infradead.org, stable@vger.kernel.org, mingo@redhat.com,
- baiyaowei@cmss.chinamobile.com, hpa@zytor.com, bhelgaas@google.com,
- tglx@linutronix.de, Borislav Petkov <bp@suse.de>, dyoung@redhat.com,
- akpm@linux-foundation.org, dan.j.williams@intel.com
+ Brijesh Singh <brijesh.singh@amd.com>, Lianbo Jiang <lijiang@redhat.com>,
+ bhe@redhat.com, Takashi Iwai <tiwai@suse.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dan.j.williams@intel.com,
+ stable@vger.kernel.org, kexec@lists.infradead.org,
+ Ingo Molnar <mingo@redhat.com>, baiyaowei@cmss.chinamobile.com,
+ "H. Peter Anvin" <hpa@zytor.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Borislav Petkov <bp@suse.de>,
+ dyoung@redhat.com, Thomas Gleixner <tglx@linutronix.de>,
+ Vivek Goyal <vgoyal@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Lianbo Jiang <lijiang@redhat.com>
+From: Bjorn Helgaas <bhelgaas@google.com>
 
-[ Upstream commit 9cf38d5559e813cccdba8b44c82cc46ba48d0896 ]
+[ Upstream commit 51fbf14f2528a8c6401290e37f1c893a2412f1d3 ]
 
-When SME is enabled in the first kernel, it needs to allocate decrypted
-pages for kdump because when the kdump kernel boots, these pages need to
-be accessed decrypted in the initial boot stage, before SME is enabled.
+The only use of KEXEC_BACKUP_SRC_END is as an argument to
+walk_system_ram_res():
 
- [ bp: clean up text. ]
+  int crash_load_segments(struct kimage *image)
+  {
+    ...
+    walk_system_ram_res(KEXEC_BACKUP_SRC_START, KEXEC_BACKUP_SRC_END,
+                        image, determine_backup_region);
 
-Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+walk_system_ram_res() expects "start, end" arguments that are inclusive,
+i.e., the range to be walked includes both the start and end addresses.
+
+KEXEC_BACKUP_SRC_END was previously defined as (640 * 1024UL), which is the
+first address *past* the desired 0-640KB range.
+
+Define KEXEC_BACKUP_SRC_END as (640 * 1024UL - 1) so the KEXEC_BACKUP_SRC
+region is [0-0x9ffff], not [0-0xa0000].
+
+Fixes: dd5f726076cc ("kexec: support for kexec on panic using new system call")
+Signed-off-by: Bjorn Helgaas <bhelgaas@google.com>
 Signed-off-by: Borislav Petkov <bp@suse.de>
-Reviewed-by: Tom Lendacky <thomas.lendacky@amd.com>
-Cc: kexec@lists.infradead.org
-Cc: tglx@linutronix.de
-Cc: mingo@redhat.com
-Cc: hpa@zytor.com
-Cc: akpm@linux-foundation.org
-Cc: dan.j.williams@intel.com
-Cc: bhelgaas@google.com
-Cc: baiyaowei@cmss.chinamobile.com
-Cc: tiwai@suse.de
-Cc: brijesh.singh@amd.com
-Cc: dyoung@redhat.com
-Cc: bhe@redhat.com
-Cc: jroedel@suse.de
-Link: https://lkml.kernel.org/r/20180930031033.22110-3-lijiang@redhat.com
+CC: "H. Peter Anvin" <hpa@zytor.com>
+CC: Andrew Morton <akpm@linux-foundation.org>
+CC: Brijesh Singh <brijesh.singh@amd.com>
+CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+CC: Ingo Molnar <mingo@redhat.com>
+CC: Lianbo Jiang <lijiang@redhat.com>
+CC: Takashi Iwai <tiwai@suse.de>
+CC: Thomas Gleixner <tglx@linutronix.de>
+CC: Tom Lendacky <thomas.lendacky@amd.com>
+CC: Vivek Goyal <vgoyal@redhat.com>
+CC: baiyaowei@cmss.chinamobile.com
+CC: bhe@redhat.com
+CC: dan.j.williams@intel.com
+CC: dyoung@redhat.com
+CC: kexec@lists.infradead.org
+Link: http://lkml.kernel.org/r/153805811578.1157.6948388946904655969.stgit@bhelgaas-glaptop.roam.corp.google.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- kernel/kexec_core.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/x86/include/asm/kexec.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index 8f15665ab6167..27cf24e285e0c 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -473,6 +473,10 @@ static struct page *kimage_alloc_crash_control_pages(struct kimage *image,
- 		}
- 	}
+diff --git a/arch/x86/include/asm/kexec.h b/arch/x86/include/asm/kexec.h
+index d2434c1cad055..414f9b52e58e6 100644
+--- a/arch/x86/include/asm/kexec.h
++++ b/arch/x86/include/asm/kexec.h
+@@ -66,7 +66,7 @@ struct kimage;
  
-+	/* Ensure that these pages are decrypted if SME is enabled. */
-+	if (pages)
-+		arch_kexec_post_alloc_pages(page_address(pages), 1 << order, 0);
-+
- 	return pages;
- }
+ /* Memory to backup during crash kdump */
+ #define KEXEC_BACKUP_SRC_START	(0UL)
+-#define KEXEC_BACKUP_SRC_END	(640 * 1024UL)	/* 640K */
++#define KEXEC_BACKUP_SRC_END	(640 * 1024UL - 1)	/* 640K */
  
-@@ -867,6 +871,7 @@ static int kimage_load_crash_segment(struct kimage *image,
- 			result  = -ENOMEM;
- 			goto out;
- 		}
-+		arch_kexec_post_alloc_pages(page_address(page), 1, 0);
- 		ptr = kmap(page);
- 		ptr += maddr & ~PAGE_MASK;
- 		mchunk = min_t(size_t, mbytes,
-@@ -884,6 +889,7 @@ static int kimage_load_crash_segment(struct kimage *image,
- 			result = copy_from_user(ptr, buf, uchunk);
- 		kexec_flush_icache_page(page);
- 		kunmap(page);
-+		arch_kexec_pre_free_pages(page_address(page), 1);
- 		if (result) {
- 			result = -EFAULT;
- 			goto out;
+ /*
+  * CPU does not save ss and sp on stack if execution is already
 -- 
 2.20.1
 
