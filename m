@@ -2,80 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D6391093B7
-	for <lists+kexec@lfdr.de>; Mon, 25 Nov 2019 19:50:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D836410999D
+	for <lists+kexec@lfdr.de>; Tue, 26 Nov 2019 08:34:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PwzZolymcd4yUB8uq/1bPf1s8UURVdRDuavYe2LBToE=; b=KfU
-	R3tw/t1kM9YO1Yyqpw+JJqcoYHNvalVR+THpeL5VDvHJ75luMG9/MY79SRqfQLiD+F6tmzyaeDDjd
-	4USjUwewaD08TFAZjbyCsxSWe+QPKsBWePgxb2jwtcX6ujEloUbtDFibg22e+rnlfF/q1hVwB0cje
-	zmG1K9uC+5cNzMgD4ya1CRxmjqXE0Dgl3e9EGQw8LfQZhnSVkeQl2w+gftY/PZSlCZ5pjwEMSQqiy
-	5yUlZoPC3mUkQRPmHgDpT3e6WGLrs/3S+lCOgfBTt0qt0Ad+aTdRPAEHGgmS4s6kVWdSXSKOUqF0f
-	EKwejXvTpsjDMp8kUJzwWxPQ6OSqA6w==;
+	References:List-Owner; bh=47hj5LWv5MUP92BDomwWnkPYHdsscOMU8tVg9fc9zy4=; b=jUf
+	+WugQhmuMboJJhDisCsR7HsptKEcCyWCMyZnl13AYXwQeH8A/p612eeaTMcvD20sIVNvHE61a9obN
+	Zd9ccAJA1RvVzi7/luMiu8Xe07Ubmfdy82GUqV/N7/pBxHTGWiK1JZo/Qwr2HidEBFODCzWoxxH5X
+	gQxJz9xxar8dEbFmmPrifEw6NT3IhgNpWXBA2owJx9Eddwf4hLWbEIsftwV3+1+vLVp98zCEPQJkD
+	oBmTouKElkGexG9XeoDAvzU0koxrvH+f6k3ZQPY7HPKUl2LhM60KeuE2BzJrIVLbZ92LC5neqXBkj
+	PZVkOJ54CROdO+2mlEyI80uB+uORWQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iZJRD-0006uC-Ng; Mon, 25 Nov 2019 18:50:19 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1iZVMY-0003U0-AX; Tue, 26 Nov 2019 07:34:18 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iZJQv-0005Zy-9n; Mon, 25 Nov 2019 18:50:02 +0000
-Received: by mail-qt1-x844.google.com with SMTP id o49so18365793qta.7;
- Mon, 25 Nov 2019 10:49:57 -0800 (PST)
+ id 1iZVMV-0003Tg-AZ
+ for kexec@lists.infradead.org; Tue, 26 Nov 2019 07:34:16 +0000
+Received: by mail-il1-x143.google.com with SMTP id f6so12729265ilh.9
+ for <kexec@lists.infradead.org>; Mon, 25 Nov 2019 23:34:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=vOdEYfSLcSRQ2bXNji+76Jh95fAHCd8bgzGlm9iUFu0=;
- b=l4S6IFBopNG2XYv2TWjpGqM1oX7mHASdcW4up6r/2cKf116uoE6EatDpr0XvEC9DFN
- MYyMcB7D56QLLfQyZqx4295anORTx+i483ZJDuqQgtcmdKfCxFn9/Om9HLganmfWWd69
- MMvpsxqYwaQGT6Z8d0tWYTu8MZpmgQfD+eDQOh8EuEJA1dxXinNRdlwJALo5tvxq9oLz
- +azHJxug2hAjfYnwVKgyWUg625FLNM6wQOKPiky0b75GFMbtJfuZIWzkuQJhpIxQwgRc
- HXbAnSLWi7t0fA2q7g9uLkADh73DKPINf8yY9pPdskCHeW19vnEKfy8LBrdjVNkwb4oy
- 1ndQ==
+ h=mime-version:from:date:message-id:subject:to;
+ bh=42LQ/vAeQAVc+HIMHB/Y9Pk85iuGUepQQL+qsmama14=;
+ b=FLPOU9oWNA9N+QPOL9KdSuLDipMyTVGknX6TUZbgQE/zqr7lbJhFTeuwCj85xc6GiD
+ telo6O7SlqrOkar1rlQEv57caNi1xrz51g9B7oTt4kZvdAL/5c+zP+Q1+a6uwjL3xv+J
+ qUBUNHUxDpskvmszNJEHiC9Vw8jagxelqC6AkrJyAFD078aUYhSQN1ftdz0intdlcvCj
+ 4+aqpER++cU9vakzFF6lOB3KbmgHTjfuulN44+vLedxrAcy6qdBra6xNvCMQkEu5IAC9
+ jd8/w3q+fvFHiUSkDySEDdTrOWY++r/0d9An80dHdwNa4jPA9Lc3tmQmyvjv6DUagBgq
+ 90ig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=vOdEYfSLcSRQ2bXNji+76Jh95fAHCd8bgzGlm9iUFu0=;
- b=ryL2qGT3XUoruR15DC4z9lmAFcMz47DU8NfxpGc4aE/QTZnDe/JH7rqyEYWBnK7JBD
- KR0xnOEPVpUHgHeRXxrXGFVQATtH3GKAeclpiGNaJmw+zvCHPA3WYTWgAgQcuvMxOfcV
- v3kn3z9vq8VeGHjHLWgcL+JU8bbaSF/84JtCqTnqhxAQzV3khkq80+IkNkaQ2VA78mdu
- okwY6CJ2LNdbQFzgcqU7KA3pxGBeAySDlXJxU/7A5XYlIWjHmzKS06P+9+FNk61aIxAJ
- 2jzd0wwoATER3YXM8ub0CiQGEW/0XmKqFYVBv2fMyV39ZSnDTcv9ER64zIoceeSC/LDH
- 0o6Q==
-X-Gm-Message-State: APjAAAWh3Kw20TOlRbfIc4LgspR4sENIg58JEtvSWcUDhi+KcFdRYoh/
- osju/e9zwFKd4kHkQx6f3A==
-X-Google-Smtp-Source: APXvYqyH+uQBIhmLXQh7YB6SztVR4zZD2fmZQuMaCu8+shPUERS1F7LZfSu4IjRmRE+8csgZg4mj2A==
-X-Received: by 2002:aed:3924:: with SMTP id l33mr13196213qte.6.1574707797093; 
- Mon, 25 Nov 2019 10:49:57 -0800 (PST)
-Received: from gabell.redhat.com
- (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
- [209.6.122.159])
- by smtp.gmail.com with ESMTPSA id f7sm3780315qkb.79.2019.11.25.10.49.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 Nov 2019 10:49:56 -0800 (PST)
-From: Masayoshi Mizuma <msys.mizuma@gmail.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-efi@vger.kernel.org
-Subject: [PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve to tell
- the persistent pages
-Date: Mon, 25 Nov 2019 13:49:44 -0500
-Message-Id: <20191125184944.15556-1-msys.mizuma@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=42LQ/vAeQAVc+HIMHB/Y9Pk85iuGUepQQL+qsmama14=;
+ b=mbN0cyNxJLrYZu4BaIjKwfV6zsJFDrVzPnG5SqdxQTwXwCOb1M1PLXGOEfWOkVazKw
+ UaIx7lofUlnVW0UQJaRURCI5hQl+pwiyDQJjwT1lUACC/MAmpEuDQcNtR48gbiPsI//z
+ OXspbLpXzDHdOvhHm/3C6lTxd68e+HvdWGqhTbdVAtsp2EjoWAw5uPGUhZ6r1QKAPfso
+ ig5bbl37tHm4RuKo5QSNhHCcL7/WRCPZCJx937rblE1FeJkMhkKgbYHvb6iGc/n9cNXp
+ stdIAPvPzo5oeGdRHMa0akjHyikMjRQmJx31hVcPq1umYWwkfJ8v7ohRt0GzmQ+Qnuag
+ ZZLw==
+X-Gm-Message-State: APjAAAXsAqtyylH28T1CfhAizeAlAgTVRsvpJlAKPI61Wt0fF078yk5m
+ QYyCCIi71TZfBM7/Jf95mE4MNBMV/2Az2rIcnqS+lHOm690=
+X-Google-Smtp-Source: APXvYqxlzempOwmbz210gzVFXOb0LZKFj7PD8mXcHpL1e1dYD9ySV/XBY1cHK27c/sncVPoiVgHSBKFWc2KceH7swhY=
+X-Received: by 2002:a92:6f05:: with SMTP id k5mr36229617ilc.98.1574753653786; 
+ Mon, 25 Nov 2019 23:34:13 -0800 (PST)
+MIME-Version: 1.0
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Date: Tue, 26 Nov 2019 13:04:02 +0530
+Message-ID: <CAJ2QiJLBcmdVrmJmfKehadUzzUkmMsn8b2BxmGh7LHXzo7PtJw@mail.gmail.com>
+Subject: kexec-tools/vmcore-demsg: No program header covering vaddr
+ 0xffff000be7a00000found kexec bug?
+To: kexec mailing list <kexec@lists.infradead.org>, 
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191125_105001_341302_54177621 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20191125_233415_387956_2B88F883 
+X-CRM114-Status: UNSURE (   5.13  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (msys.mizuma[at]gmail.com)
+ provider (prabhakar.pkin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,138 +92,33 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
- Masayoshi Mizuma <msys.mizuma@gmail.com>, d.hatayama@fujitsu.com
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+Hi All,
 
-kexec reboot stops in early boot sequence because efi_config_parse_tables()
-refers garbage data. We can see the log with memblock=debug kernel option:
+I am facing issue below error with latest kexec-tools/vmcore-demsg tools.
 
-  efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000  MEMRESERVE=0x9820bfdc58
-  memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67] efi_config_parse_tables+0x228/0x278
-  memblock_reserve: [0x0000000082760000-0x00000000324d07ff] efi_config_parse_tables+0x228/0x278
-  memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9] efi_config_parse_tables+0x244/0x278
-  memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2] efi_config_parse_tables+0x244/0x278
-  memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12] efi_config_parse_tables+0x244/0x278
-  ...
+$ ./build/sbin/vmcore-dmesg /proc/vmcore
+No program header covering vaddr 0xffff000be7a00000found kexec bug?
 
-That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
-0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
-head page of LPI pending table and LPI property table which are allocated by
-gic_reserve_range().
+I am testing on AARM64 platform with following git repos.
+A) kexec tools:
+https://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git
+top commit: bd077966e2b9041c (kexec-tools: Fix conversion overflow
+when compiling on 32-bit platforms)
 
-The destroyer is kexec. kexec locates the initrd to the area:
+B) Linux:git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+top commit: af42d3466bdc8f3980 (Linux 5.4-rc8)
 
-  ]# kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img --reuse-cmdline
-  ...
-  initrd: base 82290000, size 388dd8ah (59301258)
-  ...
+I am seeing similar issue in past also in couple of discussions. has
+it not fixed earlier or it keep arises with time to time
 
-From dynamic debug log. initrd is located in segment[1]:
-  machine_kexec_prepare:70:
-    kexec kimage info:
-      type:        0
-      start:       85b30680
-      head:        0
-      nr_segments: 4
-        segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481 pages
-        segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905 pages
-        segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1 pages
-        segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1 pages
+Please suggest.
 
-kexec searches the memory region to locate initrd through
-"System RAM" in /proc/iomem. The pending tables are included in
-"System RAM" because they are allocated by alloc_pages(), so kexec
-destroys the LPI pending tables.
-
-Introduce /sys/firmware/efi/memreserve to tell the pages pointed by
-efi.mem_reserve so that kexec can avoid the area to locate initrd.
-
-Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
----
- drivers/firmware/efi/efi.c | 45 +++++++++++++++++++++++++++++++++++++-
- 1 file changed, 44 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-index e98bbf8e5..0aa07cc09 100644
---- a/drivers/firmware/efi/efi.c
-+++ b/drivers/firmware/efi/efi.c
-@@ -141,6 +141,47 @@ static ssize_t systab_show(struct kobject *kobj,
- 
- static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
- 
-+static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
-+#ifdef CONFIG_KEXEC
-+static ssize_t memreserve_show(struct kobject *kobj,
-+			   struct kobj_attribute *attr, char *buf)
-+{
-+	struct linux_efi_memreserve *rsv;
-+	phys_addr_t start, end;
-+	unsigned long prsv;
-+	char *str = buf;
-+	int count, i;
-+
-+	if (!kobj || !buf)
-+		return -EINVAL;
-+
-+	if ((efi_memreserve_root == (void *)ULONG_MAX) ||
-+			(!efi_memreserve_root))
-+		return -ENODEV;
-+
-+	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
-+		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
-+		if (!rsv) {
-+			pr_err("Could not map efi_memreserve\n");
-+			return -ENOMEM;
-+		}
-+		count = atomic_read(&rsv->count);
-+		for (i = 0; i < count; i++) {
-+			start = rsv->entry[i].base;
-+			end = start + rsv->entry[i].size - 1;
-+
-+			str += sprintf(str, "%pa-%pa\n", &start, &end);
-+		}
-+		memunmap(rsv);
-+	}
-+
-+	return str - buf;
-+}
-+
-+static struct kobj_attribute efi_attr_memreserve =
-+			__ATTR_RO_MODE(memreserve, 0444);
-+#endif /* CONFIG_KEXEC */
-+
- #define EFI_FIELD(var) efi.var
- 
- #define EFI_ATTR_SHOW(name) \
-@@ -172,6 +213,9 @@ static struct attribute *efi_subsys_attrs[] = {
- 	&efi_attr_runtime.attr,
- 	&efi_attr_config_table.attr,
- 	&efi_attr_fw_platform_size.attr,
-+#ifdef CONFIG_KEXEC
-+	&efi_attr_memreserve.attr,
-+#endif
- 	NULL,
- };
- 
-@@ -955,7 +999,6 @@ int efi_status_to_err(efi_status_t status)
- }
- 
- static DEFINE_SPINLOCK(efi_mem_reserve_persistent_lock);
--static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
- 
- static int __init efi_memreserve_map_root(void)
- {
--- 
-2.18.1
-
+--pk
 
 _______________________________________________
 kexec mailing list
