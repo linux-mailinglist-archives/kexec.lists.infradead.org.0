@@ -2,60 +2,95 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD47D10C1F1
-	for <lists+kexec@lfdr.de>; Thu, 28 Nov 2019 02:53:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFAA010CF28
+	for <lists+kexec@lfdr.de>; Thu, 28 Nov 2019 21:24:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0m9n93suuRQb8q1c81byQ7KSG/eMr0cpfAkOsq+Kp6g=; b=lNAygmofLPBPO4
-	LKAlXG2e1G1UQ/ETJ9/vXPFsYivEA9gjRNtYRAAIPBT89CjjGF0GRps243rRjSGk+1amKEIgyjpFm
-	kUWobEwAPgqhMJQAvzUsupuLGLB9OPRlZ2QsFvNFdOHKtpvtc1spOirRKL98cV7yETSG5bMqytMOK
-	zt0D5emq6IOKWIiKvQDoz281e5Vzr3vP0ZR5IVQB/m+zsBbmNVJA+cHF0A+dVGZSY6sXYNc4iHCm6
-	NmgQU4xou8SF54JU8eRXI/H+bUChrmNi5n/3eSuuy6pszzkmbabkoYOdZ9k4AZWNaXwxzV+qPg/Km
-	O/aqq62Q5KLgQ9j2MrDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=E3sLMBI29mvuLRDQimm+bglU46yvLkbjBy1Mrzxt9Jk=; b=IDf
+	9jllgoCCJ2h0Pug9m8bVNvCwnaOVIP8unHZAwRDmiDMlVrYNsq8HkNN0HI2g98MgB5IrlC+5Oa+KG
+	Arlc+LgJAODzWG4EgctZLI7C8Q6+563pVgIt9SWTuLzt++RAOGhIiGdzoRzQmzIQixT1bd2RQiNR9
+	QJBGgaevdljSd6fTTFqY8BQSbvb+B9phmRh07QW9zAObVdBsmSiBiJsajVBBDXk53tw7jSIZNyHrw
+	IimSKVTbQRUKX0GPzHO1iGzP7guGTTvH5dDWd0tcZZhQPihU7zgAboFlOG5cDqN1KQwAAvMCZq5dh
+	ieLlqP08LVGDBi3l5zGB2SmKbh8gB/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ia90E-0004W6-7q; Thu, 28 Nov 2019 01:53:54 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1iaQKq-0005XX-J5; Thu, 28 Nov 2019 20:24:20 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ia905-0004S1-Ju
- for kexec@lists.infradead.org; Thu, 28 Nov 2019 01:53:47 +0000
-Received: from [5.158.153.53] (helo=g2noscherz.lab.linutronix.de.)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA1:256)
- (Exim 4.80) (envelope-from <john.ogness@linutronix.de>)
- id 1ia8zK-00083b-Qc; Thu, 28 Nov 2019 02:52:58 +0100
-From: John Ogness <john.ogness@linutronix.de>
+ id 1iaQKZ-0005Lu-Fk
+ for kexec@lists.infradead.org; Thu, 28 Nov 2019 20:24:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1574972640;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=XqTwc5ebz6tenvnG6zkONwdSyh0ZcAJ7/GPADSmX7as=;
+ b=daj/EdjYZyauOID1QtsTH6Bw5IeoGciF4aqx6kxqUUi+1fyUlrX/ZSyUOAbs5BOVkN/24T
+ +u4PeeZYCPhA8rgl0LCAYGQigo8Pyj96oPiYgoc5Khmbl4Fx00UqaB8jxjc2tnTcwZmOX/
+ ug1agBcZRNtQNttTHz4vwLWEcTecZBA=
+Received: from mail-pl1-f199.google.com (mail-pl1-f199.google.com
+ [209.85.214.199]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-303-U3vpfZMvNxODYg7ol8BAcg-1; Thu, 28 Nov 2019 15:23:57 -0500
+Received: by mail-pl1-f199.google.com with SMTP id c18so11706679plo.17
+ for <kexec@lists.infradead.org>; Thu, 28 Nov 2019 12:23:57 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=GPEyz/IHgt6mAW0R3tmNHtqBX2Y5bDBhF2H/Q45W8jA=;
+ b=MWkRjAIOgEKOqgysFDyvGUTcDdAVGQKjpsmq2wI49WAO5QiQa2OODmur1UchWMMrSF
+ PDi2rGsxrSlN46ucQ4GMA6O/UaKWpiTUw5T+Fvwky8OofMfHw6cI2AiNbXcOMSrdq0r7
+ C7XbMmgtO6Sa3ag/I8K0WVGtazczXP/Cq5TYezkkJbplV4VjRbYJ65VCCUiQBUqsy7t7
+ 9PILHYMkitCdYKAgmUFxUa8WdY42RsIzdyJip6vVFuxP1XB0Ye00K1uuHEG5kVbSL6Re
+ C0w1K4trCYHn3ERB+CGEkzvYcvBrLrtbVqZzPLKNpVZrdce4uj35fW0nDV7PbLwLjXcP
+ +GOQ==
+X-Gm-Message-State: APjAAAXSF53d4hkeOeH0COFe0mZvNsRPaCO2ccXTiKv8MI+qP83A/irI
+ WP3y72OyQ3GMmTj1+jsWDOa/0bOznXkhu8pa4lLlM5Avq1t0kp1Y9p3T2BYXir0c0pWHzqRjRRP
+ gXtIe32bSeflTYNO7LLNG
+X-Received: by 2002:a17:90b:3109:: with SMTP id
+ gc9mr9966537pjb.30.1574972636141; 
+ Thu, 28 Nov 2019 12:23:56 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwLgmQBIVDgB8JTDBBuFEwN/117Vx9qIR4Jgevr8C1kD585Wc5/+quQsfVlRjSD579x56aJyQ==
+X-Received: by 2002:a17:90b:3109:: with SMTP id
+ gc9mr9966493pjb.30.1574972635767; 
+ Thu, 28 Nov 2019 12:23:55 -0800 (PST)
+Received: from localhost ([122.177.85.74])
+ by smtp.gmail.com with ESMTPSA id a15sm2778299pfh.169.2019.11.28.12.23.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 28 Nov 2019 12:23:54 -0800 (PST)
+From: Bhupesh Sharma <bhsharma@redhat.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v5 3/3] printk-rb: add test module
-Date: Thu, 28 Nov 2019 02:58:35 +0106
-Message-Id: <20191128015235.12940-4-john.ogness@linutronix.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191128015235.12940-1-john.ogness@linutronix.de>
-References: <20191128015235.12940-1-john.ogness@linutronix.de>
-MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+Subject: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ for
+ arm64 and MAX_PHYSMEM_BITS for all archs)
+Date: Fri, 29 Nov 2019 01:53:36 +0530
+Message-Id: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
+X-Mailer: git-send-email 2.7.4
+X-MC-Unique: U3vpfZMvNxODYg7ol8BAcg-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191127_175345_804374_944415B2 
-X-CRM114-Status: GOOD (  20.69  )
-X-Spam-Score: -1.6 (-)
+X-CRM114-CacheID: sfid-20191128_122403_622212_B2E66C8D 
+X-CRM114-Status: GOOD (  15.40  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.6 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
- 0.6 INVALID_DATE_TZ_ABSURD Invalid Date: header (timezone does not
- exist)
- 0.1 BUG6152_INVALID_DATE_TZ_ABSURD No description available.
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,397 +102,119 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <andrea.parri@amarulasolutions.com>,
- Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Brendan Higgins <brendanhiggins@google.com>,
- Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, kexec@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-doc@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, bhsharma@redhat.com,
+ Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@kernel.org>, Jonathan Corbet <corbet@lwn.net>,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Dave Anderson <anderson@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, bhupesh.linux@gmail.com,
+ linux-arm-kernel@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Steve Capper <steve.capper@arm.com>, kexec@lists.infradead.org,
+ James Morse <james.morse@arm.com>, Boris Petkov <bp@alien8.de>,
+ linuxppc-dev@lists.ozlabs.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-This module does some heavy write stress testing on the ringbuffer
-with a reader that is checking for integrity.
+Changes since v4:
+----------------
+- v4 can be seen here:
+  http://lists.infradead.org/pipermail/kexec/2019-November/023961.html
+- Addressed comments from Dave and added patches for documenting
+  new variables appended to vmcoreinfo documentation.
+- Added testing report shared by Akashi for PATCH 2/5.
 
-Signed-off-by: John Ogness <john.ogness@linutronix.de>
----
- kernel/printk/Makefile   |   3 +
- kernel/printk/test_prb.c | 347 +++++++++++++++++++++++++++++++++++++++
- 2 files changed, 350 insertions(+)
- create mode 100644 kernel/printk/test_prb.c
+Changes since v3:
+----------------
+- v3 can be seen here:
+  http://lists.infradead.org/pipermail/kexec/2019-March/022590.html
+- Addressed comments from James and exported TCR_EL1.T1SZ in vmcoreinfo
+  instead of PTRS_PER_PGD.
+- Added a new patch (via [PATCH 3/3]), which fixes a simple typo in
+  'Documentation/arm64/memory.rst'
 
-diff --git a/kernel/printk/Makefile b/kernel/printk/Makefile
-index 4d052fc6bcde..2aabbe561efc 100644
---- a/kernel/printk/Makefile
-+++ b/kernel/printk/Makefile
-@@ -2,3 +2,6 @@
- obj-y	= printk.o
- obj-$(CONFIG_PRINTK)	+= printk_safe.o
- obj-$(CONFIG_A11Y_BRAILLE_CONSOLE)	+= braille.o
-+
-+prbtest-y = printk_ringbuffer.o test_prb.o
-+obj-m += prbtest.o
-diff --git a/kernel/printk/test_prb.c b/kernel/printk/test_prb.c
-new file mode 100644
-index 000000000000..d038b16bf01b
---- /dev/null
-+++ b/kernel/printk/test_prb.c
-@@ -0,0 +1,347 @@
-+// SPDX-License-Identifier: GPL-2.0
-+
-+#include <linux/init.h>
-+#include <linux/module.h>
-+#include <linux/kthread.h>
-+#include <linux/delay.h>
-+#include <linux/random.h>
-+#include <linux/slab.h>
-+#include <linux/wait.h>
-+#include "printk_ringbuffer.h"
-+
-+/*
-+ * This is a test module that starts "num_online_cpus()" writer threads
-+ * that each write data of varying length. They do this as fast as
-+ * they can.
-+ *
-+ * Dictionary data is stored in a separate data ring. The writers will
-+ * only write dictionary data about half the time. This is to make the
-+ * test more realistic with text and dict data rings containing
-+ * different data blocks.
-+ *
-+ * Because the threads are running in such tight loops, they will call
-+ * schedule() from time to time so the system stays alive.
-+ *
-+ * If the writers encounter an error, the test is aborted. Test results are
-+ * recorded to the ftrace buffers, with some additional information also
-+ * provided via printk. The test can be aborted manually by removing the
-+ * module. (Ideally the test should never abort on its own.)
-+ */
-+
-+/* not used right now */
-+DECLARE_WAIT_QUEUE_HEAD(test_wait);
-+
-+/* test data structure */
-+struct rbdata {
-+	int len;
-+	char text[0];
-+};
-+
-+static char *test_running;
-+static int halt_test;
-+
-+/* dump text or dictionary data to the trace buffers */
-+static void print_record(const char *name, struct rbdata *dat, u64 seq)
-+{
-+	char buf[160];
-+
-+	snprintf(buf, sizeof(buf), "%s", dat->text);
-+	buf[sizeof(buf) - 1] = 0;
-+
-+	trace_printk("seq=%llu len=%d %sval=%s\n",
-+		     seq, dat->len, name,
-+		     dat->len < sizeof(buf) ? buf : "<invalid>");
-+}
-+
-+/*
-+ * sequentially dump all the valid records in the ringbuffer
-+ * (used to verify memory integrity)
-+ *
-+ * Since there is no reader interface, the internal members are
-+ * directly accessed. This function is called after all writers
-+ * are finished so there is no need for any memory barriers.
-+ */
-+static void dump_rb(struct printk_ringbuffer *rb)
-+{
-+	struct printk_info info;
-+	struct printk_record r;
-+	char text_buf[200];
-+	char dict_buf[200];
-+	u64 seq = 0;
-+
-+	r.info = &info;
-+	r.text_buf = &text_buf[0];
-+	r.dict_buf = &dict_buf[0];
-+	r.text_buf_size = sizeof(text_buf);
-+	r.dict_buf_size = sizeof(dict_buf);
-+
-+	trace_printk("BEGIN full dump\n");
-+
-+	while (prb_read_valid(rb, seq, &r)) {
-+		/* check/track the sequence */
-+		if (info.seq != seq)
-+			trace_printk("DROPPED %llu\n", info.seq - seq);
-+
-+		print_record("TEXT", (struct rbdata *)&r.text_buf[0],
-+			     info.seq);
-+		if (info.dict_len) {
-+			print_record("DICT", (struct rbdata *)&r.dict_buf[0],
-+				     info.seq);
-+		}
-+
-+		seq = info.seq + 1;
-+	}
-+
-+	trace_printk("END full dump\n");
-+}
-+
-+DECLARE_PRINTKRB(test_rb, 15, 5, 5);
-+
-+static int prbtest_writer(void *data)
-+{
-+	unsigned long num = (unsigned long)data;
-+	struct prb_reserved_entry e;
-+	char text_id = 'A' + num;
-+	char dict_id = 'a' + num;
-+	unsigned long count = 0;
-+	struct printk_record r;
-+	struct rbdata *dat;
-+	int len;
-+
-+	pr_err("prbtest: start thread %03lu (writer)\n", num);
-+
-+	for (;;) {
-+		len = sizeof(struct rbdata) + (prandom_u32() & 0x7f) + 2;
-+
-+		/* specify the text/dict sizes for reservation */
-+		r.text_buf_size = len;
-+		/* only add a dictionary on some records */
-+		if (len % 2)
-+			r.dict_buf_size = len;
-+		else
-+			r.dict_buf_size = 0;
-+
-+		if (prb_reserve(&e, &test_rb, &r)) {
-+			len -= sizeof(struct rbdata) + 1;
-+
-+			dat = (struct rbdata *)&r.text_buf[0];
-+			dat->len = len;
-+			memset(&dat->text[0], text_id, len);
-+			dat->text[len] = 0;
-+
-+			/* dictionary reservation is allowed to fail */
-+			if (r.dict_buf) {
-+				dat = (struct rbdata *)&r.dict_buf[0];
-+				dat->len = len;
-+				memset(&dat->text[0], dict_id, len);
-+				dat->text[len] = 0;
-+			} else if (r.text_buf_size % 2) {
-+				trace_printk(
-+				    "writer%lu (%c) dict dropped: seq=%llu\n",
-+				    num, text_id, r.info->seq);
-+			}
-+
-+			prb_commit(&e);
-+			wake_up_interruptible(&test_wait);
-+		} else {
-+			WRITE_ONCE(halt_test, 1);
-+			trace_printk("writer%lu (%c) reserve failed\n",
-+				     num, text_id);
-+		}
-+
-+		if ((count++ & 0x3fff) == 0)
-+			schedule();
-+
-+		if (READ_ONCE(halt_test) == 1)
-+			break;
-+	}
-+
-+	pr_err("prbtest: end thread %03lu (writer, wrote %lu)\n", num, count);
-+
-+	test_running[num] = 0;
-+
-+	return 0;
-+}
-+
-+static bool check_data(struct rbdata *dat, u64 seq, unsigned long num)
-+{
-+	int len;
-+
-+	len = strnlen(dat->text, 160);
-+
-+	if (len != dat->len || len >= 160) {
-+		WRITE_ONCE(halt_test, 1);
-+		trace_printk("reader%lu invalid len for %llu (%d<->%d)\n",
-+			     num, seq, len, dat->len);
-+		return false;
-+	}
-+
-+	while (len) {
-+		len--;
-+		if (dat->text[len] != dat->text[0]) {
-+			WRITE_ONCE(halt_test, 1);
-+			trace_printk("reader%lu bad data\n", num);
-+			return false;
-+		}
-+	}
-+
-+	return true;
-+}
-+
-+static int prbtest_reader(void *data)
-+{
-+	unsigned long num = (unsigned long)data;
-+	unsigned long total_lost = 0;
-+	unsigned long max_lost = 0;
-+	unsigned long count = 0;
-+	struct printk_info info;
-+	struct printk_record r;
-+	char text_buf[200];
-+	char dict_buf[200];
-+	int did_sched = 1;
-+	u64 seq = 0;
-+
-+	r.info = &info;
-+	r.text_buf = &text_buf[0];
-+	r.dict_buf = &dict_buf[0];
-+	r.text_buf_size = sizeof(text_buf);
-+	r.dict_buf_size = sizeof(dict_buf);
-+
-+	pr_err("prbtest: start thread %03lu (reader)\n", num);
-+
-+	while (!wait_event_interruptible(test_wait,
-+				kthread_should_stop() ||
-+				prb_read_valid(&test_rb, seq, &r))) {
-+		if (kthread_should_stop())
-+			break;
-+		/* check/track the sequence */
-+		if (info.seq < seq) {
-+			WRITE_ONCE(halt_test, 1);
-+			trace_printk("reader%lu invalid seq %llu -> %llu\n",
-+				num, seq, info.seq);
-+			break;
-+		} else if (info.seq != seq && !did_sched) {
-+			total_lost += info.seq - seq;
-+			if (max_lost < info.seq - seq)
-+				max_lost = info.seq - seq;
-+		}
-+
-+		if (!check_data((struct rbdata *)&r.text_buf[0],
-+				info.seq, num)) {
-+			trace_printk("text error\n");
-+			break;
-+		}
-+
-+		if (info.dict_len) {
-+			if (!check_data((struct rbdata *)&r.dict_buf[0],
-+					info.seq, num)) {
-+				trace_printk("dict error\n");
-+				break;
-+			}
-+		} else if (info.text_len % 2) {
-+			trace_printk("dict dropped: seq=%llu\n", info.seq);
-+		}
-+
-+		did_sched = 0;
-+		if ((count++ & 0x3fff) == 0) {
-+			did_sched = 1;
-+			schedule();
-+		}
-+
-+		if (READ_ONCE(halt_test) == 1)
-+			break;
-+
-+		seq = info.seq + 1;
-+	}
-+
-+	pr_err(
-+	 "reader%lu: total_lost=%lu max_lost=%lu total_read=%lu seq=%llu\n",
-+	 num, total_lost, max_lost, count, info.seq);
-+
-+	pr_err("prbtest: end thread %03lu (reader)\n", num);
-+
-+	while (!kthread_should_stop())
-+		msleep(1000);
-+	test_running[num] = 0;
-+
-+	return 0;
-+}
-+
-+static int module_test_running;
-+static struct task_struct *reader_thread;
-+
-+static int start_test(void *arg)
-+{
-+	struct task_struct *thread;
-+	unsigned long i;
-+	int num_cpus;
-+
-+	num_cpus = num_online_cpus();
-+	test_running = kzalloc(num_cpus, GFP_KERNEL);
-+	if (!test_running)
-+		return -ENOMEM;
-+
-+	module_test_running = 1;
-+
-+	pr_err("prbtest: starting test\n");
-+
-+	for (i = 0; i < num_cpus; i++) {
-+		test_running[i] = 1;
-+		if (i < num_cpus - 1) {
-+			thread = kthread_run(prbtest_writer, (void *)i,
-+					     "prbtest writer");
-+		} else {
-+			thread = kthread_run(prbtest_reader, (void *)i,
-+					     "prbtest reader");
-+			reader_thread = thread;
-+		}
-+		if (IS_ERR(thread)) {
-+			pr_err("prbtest: unable to create thread %lu\n", i);
-+			test_running[i] = 0;
-+		}
-+	}
-+
-+	for (;;) {
-+		msleep(1000);
-+
-+		for (i = 0; i < num_cpus; i++) {
-+			if (test_running[i] == 1)
-+				break;
-+		}
-+		if (i == num_cpus)
-+			break;
-+	}
-+
-+	pr_err("prbtest: completed test\n");
-+
-+	dump_rb(&test_rb);
-+
-+	module_test_running = 0;
-+
-+	return 0;
-+}
-+
-+static int prbtest_init(void)
-+{
-+	kthread_run(start_test, NULL, "prbtest");
-+	return 0;
-+}
-+
-+static void prbtest_exit(void)
-+{
-+	if (reader_thread && !IS_ERR(reader_thread))
-+		kthread_stop(reader_thread);
-+
-+	WRITE_ONCE(halt_test, 1);
-+
-+	while (module_test_running)
-+		msleep(1000);
-+	kfree(test_running);
-+}
-+
-+module_init(prbtest_init);
-+module_exit(prbtest_exit);
-+
-+MODULE_AUTHOR("John Ogness <john.ogness@linutronix.de>");
-+MODULE_DESCRIPTION("printk ringbuffer test");
-+MODULE_LICENSE("GPL v2");
+Changes since v2:
+----------------
+- v2 can be seen here:
+  http://lists.infradead.org/pipermail/kexec/2019-March/022531.html
+- Protected 'MAX_PHYSMEM_BITS' vmcoreinfo variable under CONFIG_SPARSEMEM
+  ifdef sections, as suggested by Kazu.
+- Updated vmcoreinfo documentation to add description about
+  'MAX_PHYSMEM_BITS' variable (via [PATCH 3/3]).
+
+Changes since v1:
+----------------
+- v1 was sent out as a single patch which can be seen here:
+  http://lists.infradead.org/pipermail/kexec/2019-February/022411.html
+
+- v2 breaks the single patch into two independent patches:
+  [PATCH 1/2] appends 'PTRS_PER_PGD' to vmcoreinfo for arm64 arch, whereas
+  [PATCH 2/2] appends 'MAX_PHYSMEM_BITS' to vmcoreinfo in core kernel code (all archs)
+
+This patchset primarily fixes the regression reported in user-space
+utilities like 'makedumpfile' and 'crash-utility' on arm64 architecture
+with the availability of 52-bit address space feature in underlying
+kernel. These regressions have been reported both on CPUs which don't
+support ARMv8.2 extensions (i.e. LVA, LPA) and are running newer kernels
+and also on prototype platforms (like ARMv8 FVP simulator model) which
+support ARMv8.2 extensions and are running newer kernels.
+
+The reason for these regressions is that right now user-space tools
+have no direct access to these values (since these are not exported
+from the kernel) and hence need to rely on a best-guess method of
+determining value of 'vabits_actual' and 'MAX_PHYSMEM_BITS' supported
+by underlying kernel.
+
+Exporting these values via vmcoreinfo will help user-land in such cases.
+In addition, as per suggestion from makedumpfile maintainer (Kazu),
+it makes more sense to append 'MAX_PHYSMEM_BITS' to
+vmcoreinfo in the core code itself rather than in arm64 arch-specific
+code, so that the user-space code for other archs can also benefit from
+this addition to the vmcoreinfo and use it as a standard way of
+determining 'SECTIONS_SHIFT' value in user-land.
+
+Cc: Boris Petkov <bp@alien8.de>
+Cc: Ingo Molnar <mingo@kernel.org>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Jonathan Corbet <corbet@lwn.net>
+Cc: James Morse <james.morse@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Steve Capper <steve.capper@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Dave Anderson <anderson@redhat.com>
+Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+Cc: x86@kernel.org
+Cc: linuxppc-dev@lists.ozlabs.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+Cc: linux-doc@vger.kernel.org
+Cc: kexec@lists.infradead.org
+
+Bhupesh Sharma (5):
+  crash_core, vmcoreinfo: Append 'MAX_PHYSMEM_BITS' to vmcoreinfo
+  arm64/crash_core: Export TCR_EL1.T1SZ in vmcoreinfo
+  Documentation/arm64: Fix a simple typo in memory.rst
+  Documentation/vmcoreinfo: Add documentation for 'MAX_PHYSMEM_BITS'
+  Documentation/vmcoreinfo: Add documentation for 'TCR_EL1.T1SZ'
+
+ Documentation/admin-guide/kdump/vmcoreinfo.rst | 11 +++++++++++
+ Documentation/arm64/memory.rst                 |  2 +-
+ arch/arm64/include/asm/pgtable-hwdef.h         |  1 +
+ arch/arm64/kernel/crash_core.c                 |  9 +++++++++
+ kernel/crash_core.c                            |  1 +
+ 5 files changed, 23 insertions(+), 1 deletion(-)
+
 -- 
-2.20.1
+2.7.4
 
 
 _______________________________________________
