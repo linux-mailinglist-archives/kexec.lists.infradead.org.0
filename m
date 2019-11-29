@@ -2,90 +2,68 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7369E10CF3B
-	for <lists+kexec@lfdr.de>; Thu, 28 Nov 2019 21:27:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE2AD10D04C
+	for <lists+kexec@lfdr.de>; Fri, 29 Nov 2019 02:09:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=nM4ahfo8tRmLnZeJYd+ljnatCbxMtR2QMcvQOMVdc8s=; b=VPpWYBJfyCtv1qkfUunfhWuZo8
-	HyBlpE0oXRGUsXTjiEEYfmC3xsY3w5is3I97NqDyLixalXGkvW9MYyn5mfS95PxQhZ+LkJnhxntn/
-	DrAyhpRIjlCyk2YWz6C4LEdmhrILQ+d/+DSx6/+Ne4OQX6ESHJ7HfnynaILEFjk0tjhn0Ux50demN
-	nkXoY8g7wu1u9Zn78U2XKQ1m8URNyvM93uXoxIKsoGPfMsJxILrt7O1tYex+NSB+uyW1x0T0OiBUe
-	U7ZDG0DgfBYDEjJQUemhuQbAYYlFjlsqV7svB5HcmY0GjsWDniMtQnfuju8J57YMczHCBQ2d/6nNF
-	IEDJrjfA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6XKbA38mOlvdw/st1RB3tHy1Mjs0z2/kSDVljLhBzAM=; b=f1I
+	wJ2X/muxuNGshbi4iiRZYV/pzdp9Tw0KzcL/HsMllHR4Bj9Nm4gk+kCMh4c/qiAuYDcFnMMz8Lhgm
+	z3azj+eQZtGE0wf8IpdxcY4wv1nxQJuvnYzQsB+7e1Gr9WLiMWMBqWDWM5qYTBIfPbF5U1c2og8ku
+	Md7t6xv13bvEKNGndMAaRBFJGno00EVMtJ9QSb/8Rk9q0ClLmdrCtCYUZx+XcJts3c4dgZiaQnE2+
+	TWUvTDcHJssJlpAqE2dTdDo0OZoP98UyYM/JCQbj5UOmlE9Gz2IvUa8UVAwP1DheEIdCMDT+QUb/z
+	1AEb/NSOp4wqhjzycGB+xSeRm/DsdOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iaQNX-0008Rn-8d; Thu, 28 Nov 2019 20:27:07 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iaUmh-00044o-Tm; Fri, 29 Nov 2019 01:09:23 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iaQMC-0007Jx-RD
- for kexec@lists.infradead.org; Thu, 28 Nov 2019 20:25:49 +0000
+ id 1iaUmd-00044A-B8
+ for kexec@lists.infradead.org; Fri, 29 Nov 2019 01:09:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1574972743;
+ s=mimecast20190719; t=1574989753;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=41xNMejmkDpiENDKO7RxAxz9cPSeln8z2A1ifqUYAvQ=;
- b=XCaVDvtTGiCvnPXWT2UArwCUG5gfP7YNdiRewsTFOqHwObREjvf3u7dvEMxg+gf/79JdLx
- 43rqrYbO7ObyYzdQdTsD13S2NMd9OfLxOlrxzI5Bk7A3jfLW9IhhM39FMFe7hQTIOMeC33
- XuaFq+TTYP3+aVLIsWeW5qZIbVLr7Vo=
-Received: from mail-pf1-f197.google.com (mail-pf1-f197.google.com
- [209.85.210.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-329-EFCUdlxfMgGyDtYYK16BCw-1; Thu, 28 Nov 2019 15:25:42 -0500
-Received: by mail-pf1-f197.google.com with SMTP id e13so16699681pff.17
- for <kexec@lists.infradead.org>; Thu, 28 Nov 2019 12:25:41 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=TnU1CF4ydXp0Re/7xQPqByhi17OoIqWu96aUm7ilAL8=;
- b=CYEBX7Y0XSC/E5+EGibOTr4Z8tInFtN0Vn4MK/4hkLUSbAVZie9n4FbNy1Gar4YFBU
- LR23fc5PmJ16ay3j6tDTvrZkalP1SKbX+PoNb+yzQzmsyToP3VnOILLVhT0rKJIuGmvi
- 7DaIsHx8q4PRZGKs6Qp4IzTPELB8aYtxWPbUosyECMJMejUvVavb5HTj6RjalhSZil4j
- yK4OsC7rQx4ScHpj1KI9Yst60JuRl7yju0djNxRAOQbDbIAtiemb53nj9kHI0Vpx+DC6
- r/EELjNdE5Hz21Gq8NxTlllvxkrFugkTNYSgzf02bkBZ/FnLsEExEeKJAQ5Ob0FHvR7G
- 4o4w==
-X-Gm-Message-State: APjAAAUGalo8KFx32gc9etiQuKKbifHXhvMK+uh5P3xHg4Bpwlceow74
- SiJdki+D5Papdpz4tQ1iP+o5rGtJiwW8o2i+UZgRY95C0o3Gj6823gasIct6DLtKcU0+pnqe+yT
- xoNKf4FoXkYKMopINNDPP
-X-Received: by 2002:a17:90a:3463:: with SMTP id
- o90mr14440645pjb.4.1574972741095; 
- Thu, 28 Nov 2019 12:25:41 -0800 (PST)
-X-Google-Smtp-Source: APXvYqw1994kyjpL8nA7jbNA2MDbvleaYMa6ZgrsQMiMtjPLDmyjZ21lIhTP8RXhXz67xc7yDAqxlg==
-X-Received: by 2002:a17:90a:3463:: with SMTP id
- o90mr14440628pjb.4.1574972740900; 
- Thu, 28 Nov 2019 12:25:40 -0800 (PST)
-Received: from localhost ([122.177.85.74])
- by smtp.gmail.com with ESMTPSA id c184sm22569924pfc.159.2019.11.28.12.25.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 28 Nov 2019 12:25:40 -0800 (PST)
-From: Bhupesh Sharma <bhsharma@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v5 5/5] Documentation/vmcoreinfo: Add documentation for
- 'TCR_EL1.T1SZ'
-Date: Fri, 29 Nov 2019 01:55:16 +0530
-Message-Id: <1574972716-25858-4-git-send-email-bhsharma@redhat.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1574972716-25858-1-git-send-email-bhsharma@redhat.com>
-References: <1574972716-25858-1-git-send-email-bhsharma@redhat.com>
-X-MC-Unique: EFCUdlxfMgGyDtYYK16BCw-1
+ content-transfer-encoding:content-transfer-encoding;
+ bh=R28EpKZ0/2yI+xqLsWU7apf6gQMKJF4Q2esbHdaGGiE=;
+ b=gRNN7IRmKRu+n1DxBmQcEiFEvlzckvZGDTB0k07SelRBTi399Vln4tctGLe9RqdIk0gac3
+ hZz0GYveENTgHj+6/tXD6k4kqezxOEqutHsaBKfnRdFvK4tI6RgyKoWJy3PisyTtX3MUz4
+ IiADNHNhY59kOnhdyAlmCKJlPqaL9nM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-92-XxyfG4SEMHGwEBGZn0Sing-1; Thu, 28 Nov 2019 20:09:10 -0500
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 19D92107ACC5;
+ Fri, 29 Nov 2019 01:09:09 +0000 (UTC)
+Received: from mylaptop.redhat.com (ovpn-8-24.pek2.redhat.com [10.72.8.24])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 900335D9E1;
+ Fri, 29 Nov 2019 01:09:07 +0000 (UTC)
+From: Pingfan Liu <piliu@redhat.com>
+To: kexec@lists.infradead.org
+Subject: [PATCH] makedumpfile/Makefile: remove -lebl from LIBS
+Date: Fri, 29 Nov 2019 09:09:05 +0800
+Message-Id: <1574989745-5262-1-git-send-email-piliu@redhat.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-MC-Unique: XxyfG4SEMHGwEBGZn0Sing-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191128_122545_106603_FFD33226 
-X-CRM114-Status: GOOD (  11.54  )
+X-CRM114-CacheID: sfid-20191128_170919_454587_CDC2CC58 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.211.31.81 listed in list.dnswl.org]
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -107,61 +85,48 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
- Will Deacon <will@kernel.org>, bhsharma@redhat.com, x86@kernel.org,
- kexec@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- James Morse <james.morse@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Anderson <anderson@redhat.com>, bhupesh.linux@gmail.com,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
- Steve Capper <steve.capper@arm.com>
+Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Add documentation for TCR_EL1.T1SZ variable being added to
-vmcoreinfo.
+since the following commit, -lebl has been removed from elfutils.
+commit b833c731359af12af9f16bcb621b3cdc170eafbc
+Author: Mark Wielaard <mark@klomp.org>
+Date:   Thu Aug 29 23:34:11 2019 +0200
 
-It indicates the size offset of the memory region addressed by TTBR1_EL1
-and hence can be used for determining the vabits_actual value.
+    libebl: Don't install libebl.a, libebl.h and remove backends from spec.
 
-Cc: James Morse <james.morse@arm.com>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Steve Capper <steve.capper@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Dave Anderson <anderson@redhat.com>
-Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: kexec@lists.infradead.org
-Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+    All archive members from libebl.a are now in libdw.a. We don't generate
+    separate backend shared libraries anymore. So remove them from the
+    elfutils.spec file.
+
+    Signed-off-by: Mark Wielaard <mark@klomp.org>
+
+So remove it from LIBS for makedumpfile
+
+Signed-off-by: Pingfan Liu <piliu@redhat.com>
 ---
- Documentation/admin-guide/kdump/vmcoreinfo.rst | 6 ++++++
- 1 file changed, 6 insertions(+)
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 447b64314f56..f9349f9d3345 100644
---- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
-+++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-@@ -398,6 +398,12 @@ KERNELOFFSET
- The kernel randomization offset. Used to compute the page offset. If
- KASLR is disabled, this value is zero.
+diff --git a/Makefile b/Makefile
+index 1fdb628..df21b93 100644
+--- a/Makefile
++++ b/Makefile
+@@ -50,7 +50,7 @@ OBJ_PART=$(patsubst %.c,%.o,$(SRC_PART))
+ SRC_ARCH = arch/arm.c arch/arm64.c arch/x86.c arch/x86_64.c arch/ia64.c arch/ppc64.c arch/s390x.c arch/ppc.c arch/sparc64.c
+ OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
  
-+TCR_EL1.T1SZ
-+------------
-+
-+Indicates the size offset of the memory region addressed by TTBR1_EL1
-+and hence can be used for determining the vabits_actual value.
-+
- arm
- ===
- 
+-LIBS = -ldw -lbz2 -lebl -ldl -lelf -lz
++LIBS = -ldw -lbz2 -ldl -lelf -lz
+ ifneq ($(LINKTYPE), dynamic)
+ LIBS := -static $(LIBS)
+ endif
 -- 
-2.7.4
+2.7.5
 
 
 _______________________________________________
