@@ -2,60 +2,56 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4880610FFFF
-	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 15:18:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 785CF11006C
+	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 15:36:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HPnC1LHBpndRhQjS7sctcne2YANfAvwHjGE1xQGd0YM=; b=LmWqfBOxfT5lnt
-	wga+tgyJIi8sbzh+dm986f9MJeiAJEZGrjHo10uXdOCG2zJs5zpnfzqN57kkbRiHeWOt17DHpx+uQ
-	WTn6rGO+7aJTB36W/jZgsJ9SUK6l9Krl27sbkST4uH87D4AI7my2qTS5EFOZDw0tstT3WBCZtqWkq
-	0l7+I2jyBVgYeVf0NWSQ42v/MpKiDjhzYRbG3Bs9F/5lL8xHMmYwo6iGCQWTMem6EK/SnLQdooJeX
-	k4mg9niAErljFqfB3QzNGhNI3o22UtPp3VaXAjjzzp/l0F33631YIG2GXSZDIsa0w5Y28GHq8kmkg
-	wVA098ZoG0VDQHdwYAhA==;
+	List-Owner; bh=R4m29MetiA/qi+W6Ci3Tzwff/7hlKuBFjqAHTn9rSSM=; b=NIUdOSpFx+tw1b
+	fIJBxg+PcBro8cVR9GQudrI72es5ChZmra+qN+SEb7X8ugJgJiaubrZWktvf9zItiisC72oBKPs/a
+	YuAgUt/HPP/+yRQ37pxXlgVmiWPBoaRF8uZSdF+vbkZ1DYox8on2POY91IO29OKoH/4w3UR0ro+48
+	FcGreSp/xj6mWwZrk7+uAuVsHORu6sacz/G2SpZu4kjQOJvwNJqwrtmSVU+vEnMuiqhdkKL9Ahaoy
+	rWawCcWN/yT1/Z+8eD7d9YLL3NH/b8yxQVqN7i23uSeI084m0Iy1FQyp5VNdm4XT06b/Fb0dhKZZV
+	T2PgPU3A01R6bgirBNnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic90s-0005KU-J0; Tue, 03 Dec 2019 14:18:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ic9I9-0004cf-Ni; Tue, 03 Dec 2019 14:36:41 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic90p-0005Jc-5z
- for kexec@lists.infradead.org; Tue, 03 Dec 2019 14:18:48 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DE35420684;
- Tue,  3 Dec 2019 14:18:44 +0000 (UTC)
-Date: Tue, 3 Dec 2019 09:18:43 -0500
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+ id 1ic9I6-0004bx-Ic
+ for kexec@lists.infradead.org; Tue, 03 Dec 2019 14:36:40 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id C21A3B365;
+ Tue,  3 Dec 2019 14:36:36 +0000 (UTC)
+Date: Tue, 3 Dec 2019 15:36:35 +0100
+From: Petr Mladek <pmladek@suse.com>
+To: John Ogness <john.ogness@linutronix.de>
 Subject: Re: [RFC PATCH v5 1/3] printk-rb: new printk ringbuffer
  implementation (writer)
-Message-ID: <20191203091843.678461e4@gandalf.local.home>
-In-Reply-To: <20191203011721.GH93017@google.com>
+Message-ID: <20191203143635.cc6hh6bscr6kw4zw@pathway.suse.cz>
 References: <20191128015235.12940-1-john.ogness@linutronix.de>
  <20191128015235.12940-2-john.ogness@linutronix.de>
  <20191202154841.qikvuvqt4btudxzg@pathway.suse.cz>
- <20191202155955.meawljmduiciw5t2@pathway.suse.cz>
- <87sgm2fzuh.fsf@linutronix.de> <20191203011721.GH93017@google.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <87fti1bipb.fsf@linutronix.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <87fti1bipb.fsf@linutronix.de>
+User-Agent: NeoMutt/20170912 (1.9.0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_061847_240337_31375E5F 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20191203_063638_760529_50DCEB05 
+X-CRM114-Status: GOOD (  19.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,10 +65,11 @@ List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Andrea Parri <andrea.parri@amarulasolutions.com>,
- Petr Mladek <pmladek@suse.com>, John Ogness <john.ogness@linutronix.de>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
  Peter Zijlstra <peterz@infradead.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
  Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>,
  Linus Torvalds <torvalds@linux-foundation.org>, kexec@lists.infradead.org
@@ -81,28 +78,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Tue, 3 Dec 2019 10:17:21 +0900
-Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com> wrote:
-
-> > > BTW: If I am counting correctly. The ABA problem would happen when
-> > > exactly 2^30 (1G) messages is written in the mean time.  
-> > 
-> > All the ringbuffer code assumes that the use of index numbers handles
-> > the ABA problem (i.e. there must not be 1 billion printk's within an
-> > NMI). If we want to support 1 billion+ printk's within an NMI, then
-> > perhaps the index number should be increased. For 64-bit systems it
-> > would be no problem to go to 62 bits. For 32-bit systems, I don't know
-> > how well the 64-bit atomic operations are supported.  
+On Tue 2019-12-03 15:13:36, John Ogness wrote:
+> On 2019-12-02, Petr Mladek <pmladek@suse.com> wrote:
+> >> +/*
+> >> + * Sanity checker for reserve size. The ringbuffer code assumes that a data
+> >> + * block does not exceed the maximum possible size that could fit within the
+> >> + * ringbuffer. This function provides that basic size check so that the
+> >> + * assumption is safe.
+> >> + */
+> >> +static bool data_check_size(struct prb_data_ring *data_ring, unsigned int size)
+> >> +{
+> >> +	struct prb_data_block *db = NULL;
+> >> +
+> >> +	/* Writers are not allowed to write data-less records. */
+> >> +	if (size == 0)
+> >> +		return false;
+> >
+> > I would personally let this decision to the API caller.
+> >
+> > The code actually have to support data-less records. They are used
+> > when the descriptor is reserved but the data block can't get reserved.
 > 
-> ftrace dumps from NMI (DUMP_ALL type ftrace_dump_on_oops on a $BIG
-> machine)? 1G seems large enough, but who knows.
+> Exactly. Data-less records are how the ringbuffer identifies that data
+> has been lost. If users were allowed to store data-less records, that
+> destinction is no longer possible (unless I created some extra field in
+> the descriptor). Does it even make sense for printk to store data-less
+> records explicitly?
 
-ftrace dump from NMI is the most likely case to hit this, but when that
-happens, you are in debugging mode, and the system usually becomes
-unreliable at this moment. I agree with Petr, that we should not
-complicate the code more to handle this theoretical condition.
+From my POV, it does not make much sense.
 
--- Steve
+> The current printk implementation silently ignores empty messages.
+
+I am not able to find it. I only see that empty continuous framgments
+are ignored in log_output(). Normal empty lines seems to be strored.
+
+Well, I can't see any usecase for this. I think that we could ignore
+all empty strings.
+
+
+> > The above statement might create false feeling that it could not
+> > happen later in the code. It might lead to bugs in writer code.
+> 
+> Then let me change the statement to describe that data-less records are
+> used internally by the ringbuffer and cannot be explicitly created by
+> writers.
+
+Sounds godo to me.
+
+> > Also reader API users might not expect to get a "valid" data-less
+> > record.
+> 
+> Readers will never see them. The reader API implementation skips over
+> data-less records.
+
+Yeah. They will see bump in the seq number. We would need to
+distinguish empty records and lost records as you wrote above.
+It looks better to ignore empty records already during write.
+
+Best Regards,
+Petr
 
 _______________________________________________
 kexec mailing list
