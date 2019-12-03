@@ -2,88 +2,82 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E91210F470
-	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 02:17:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B840A10F47C
+	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 02:29:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QSeisnDpQfT7VWKrlgBaeMAyhf0YWo1j3Ctb6q1XgiU=; b=SrwYwPEw8/bWxj
-	UY2uu5Wp9tbFLEHfb3nu1NKBM1z7+009DGJ06306iIWRtwMOotNmmwNpfoEbtNkA6ZoY1nnKjmrV5
-	+XKTPHfH8fLbWKbXrNNJ4pwXQ30Q5j5EeCuQ16GDRVaYbVOWdNZGqkNfdVkHl8Z86oiC+mgGuhqJc
-	52f8ioQocSf82zhv360hHtqA3zObSaP8M6jSIEbT3qG2s1suHh7kZARDKtJQDQ6dyitjc62T1qPSZ
-	bl1C6Vyd2VwpHLgzuLEMN7YT37N0vIyg2ZJvvfpShwrhWL+gR1zqd7zN9a+IfKGSmhgC29rqRVyct
-	qvR5O40sCKbJOdrrPnKw==;
+	List-Owner; bh=z8mUfSGxPpMOUCE5zHJcGQxNmEN2CFVWMmsFKhhNgEc=; b=jl4e5QSFH4Nd9J
+	mmvqLqXOdzhDYOjQWd8Hne8nmygWvsZpkw2KmeyPrCO/6oscBDo4tZvmgM6ZcUwl+bKmd8qqQdtjY
+	ylzkPTnhIuJbVS+et+jrF4sDJqX1jPHY5ZfXoR5lm9I2rt448o9D9rqqjkrAfgtHbf5q6/XB7u5iV
+	cjEjxqR5M8tsruumY3OJ0VOtkZllanIiirvnql7O22c3fBSxXUzOqa6dUWsD2Z2cI0P8/tlFxLwOX
+	CG82MT571IXYX5P0VolSXO/4DUQr+zvhZWk6eAVOkej/1bqgVkh3lblxg4eR0GLmkOn+BTwBCOdZ8
+	lN6JjA7Vl3da/jdEyleg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ibwol-0006vA-JH; Tue, 03 Dec 2019 01:17:31 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1ibx07-00021F-TM; Tue, 03 Dec 2019 01:29:15 +0000
+Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ibwog-0006uJ-MR
- for kexec@lists.infradead.org; Tue, 03 Dec 2019 01:17:30 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y206so869878pfb.0
- for <kexec@lists.infradead.org>; Mon, 02 Dec 2019 17:17:24 -0800 (PST)
+ id 1ibwzt-0001st-Oq; Tue, 03 Dec 2019 01:29:03 +0000
+Received: by mail-qv1-xf44.google.com with SMTP id d17so814498qvs.2;
+ Mon, 02 Dec 2019 17:29:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=gpkHGfMnAbBIyHMTVJxkg4C53iHTuLlw5bP50AIqABQ=;
- b=OJazjn4dJQ2XU6QMdTYDi6Ehk3RROAXULx0PZwJwrEaOSDdgV8+QBKBRvGgeMeagGq
- TIkbnayPo6OF/dIVaHgqcMMPUaHrI4/x3eEStiS1gPp0Q5PCkolFxlAuryJVK+dtJxLh
- VVyf1pHutzWfgdDczDBABWJXcr6nw8xVebRMxvc6wzLFRrhUweoLVxjbMzvo+XH200b0
- MwKRgYXfb3zZiLaE1s8OEOm3BBvQow/HcDe/aduPyTagEA2kuiITxdU+TFxeuwZK09aa
- 1uHjdwxlDp5VHHkOpWJ+hC7acOg2rNiwxqXQLJEgoB4PAk2zFelZkWOCKTb4LNAInDj4
- X4aA==
+ :content-disposition:in-reply-to;
+ bh=RNgvM+k/lpMnH+XOjhYxTq6D1hp93U5fCuPYP6yw85g=;
+ b=KH4tvJaQ/O2fFG29Wj3m7IMzniYRtYmBaYBlUN7XdIVedhY/rE9NZfP+UtUgvZ2Jra
+ VcRNQylQKNUWRAd7gtTvbTz2tYZzugLGJebNmlRUQ1hpy77M2PRbbGtH6k65vtyt2CNR
+ lBI46czPccfxmdstgc6oawjKOKysx1pGcNcbeWzov94SLzQmp12NoGBQB+bFLXEJlc7z
+ zkSUCYBvH9cyUvyYFyQG3HhjdWjS8x4hv3o5315BMOM5uAys7n5CUflodao48Wd/nKDU
+ tVE7C/d6sY94BdDik+UqgB0ZdgoEVlOhktW5xtxxggzm9BNFpNWGFR/YJxcq/qI2Rqfy
+ L7Mg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=gpkHGfMnAbBIyHMTVJxkg4C53iHTuLlw5bP50AIqABQ=;
- b=sZkk0gBKF1dPfOO+I4fbXI1cBED5h2FEF6L9Z8EiwPJc6hYopiGgwT3KhFCCqOHjvQ
- iH2Gi6rJppoTQ9G4RyxdeWY0UWwQIQVg+eaqAmhHktcGY8J3rybF0cc4+KmYC7Uousm5
- gCrPfG7t52OJ3tBFfD1jAjK/ipCi/wr0UFe3Zd3scepAgUCk0aDKOOJYON39mXGvxxxs
- pTZPuBQC/kAk7+JQmfiZr6WotFmnpArmnFSznGiHNQ42GCJcDd/8z3cjsOHNBgHc14WJ
- fHVffj3Pbj36H3Y7NRDuz5xy/4cysIquF/IaSJAT1dOLS0fOplaCaI/wfq4Y6+vxIKe7
- RBlw==
-X-Gm-Message-State: APjAAAXVBVL2GTb0uUl/999NtH/VMqWSflKP4M8XH0yt8tESt2AfemVF
- rrbNeh7ntod+CZzL/8nrrPZOg8SG
-X-Google-Smtp-Source: APXvYqw+oWcJw/VMWxq5kNurpKlY83AoJh5RMHYhCrN1w0WetKruGwPmnt8fYYpvNRw67u0Z84DT6g==
-X-Received: by 2002:a65:578e:: with SMTP id b14mr2442103pgr.444.1575335844294; 
- Mon, 02 Dec 2019 17:17:24 -0800 (PST)
-Received: from localhost ([2401:fa00:8f:203:250d:e71d:5a0a:9afe])
- by smtp.gmail.com with ESMTPSA id i3sm738898pfd.154.2019.12.02.17.17.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Dec 2019 17:17:23 -0800 (PST)
-Date: Tue, 3 Dec 2019 10:17:21 +0900
-From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-To: John Ogness <john.ogness@linutronix.de>
-Subject: Re: [RFC PATCH v5 1/3] printk-rb: new printk ringbuffer
- implementation (writer)
-Message-ID: <20191203011721.GH93017@google.com>
-References: <20191128015235.12940-1-john.ogness@linutronix.de>
- <20191128015235.12940-2-john.ogness@linutronix.de>
- <20191202154841.qikvuvqt4btudxzg@pathway.suse.cz>
- <20191202155955.meawljmduiciw5t2@pathway.suse.cz>
- <87sgm2fzuh.fsf@linutronix.de>
+ :mime-version:content-disposition:in-reply-to;
+ bh=RNgvM+k/lpMnH+XOjhYxTq6D1hp93U5fCuPYP6yw85g=;
+ b=KrfHyuBwPHlVbSqVsDxSIPPaPLf4eFx/fugUa/3zvd5s+s4tGjBoi5fAbANqjbBaqL
+ 0soSofbJnpn4KUKa6nMQ4emI8kefpBDAUSt1dRJ/9M/c/pSE0F3VyEgLXewnd9/qOJSi
+ c1WnJqy387loI685MI6UexPFqzEFjPhaopS7iJ2ywtCLvvmKHWMgm2on2ZivJuhQmO+y
+ gFzrmU26xSRTIrKwdg0RJ+o7C0Rnr5qQGmy69Ph2COYI+TRELDrmIMwKxMoam8ygUtsl
+ 7HqcsL/pHN/wuTltcQ/ER0gQqNxyh4dDK7cN597ZGsgRJnP2nDaSkSgIDTvtHjWwU8wG
+ KsyQ==
+X-Gm-Message-State: APjAAAVbAzpnm7MVlr6kfkZXnDwxWS/T1T1w9hOI5HbrujMgNCHloZOo
+ q/NLmuAnUkktypoANwTIDg==
+X-Google-Smtp-Source: APXvYqzu3dZjpDk9O/4U9qT5DGI9leNoMi9/ywTWw0jInOxp/9Jd8Z43U+tV2M8UfLnAF8ODQwxJgw==
+X-Received: by 2002:a0c:89f2:: with SMTP id 47mr2677364qvs.43.1575336540308;
+ Mon, 02 Dec 2019 17:29:00 -0800 (PST)
+Received: from gabell
+ (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
+ [209.6.122.159])
+ by smtp.gmail.com with ESMTPSA id y18sm762179qtn.11.2019.12.02.17.28.58
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 02 Dec 2019 17:28:58 -0800 (PST)
+Date: Mon, 2 Dec 2019 20:28:53 -0500
+From: Masayoshi Mizuma <msys.mizuma@gmail.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: Re: [PATCH] efi: arm64: Introduce /sys/firmware/efi/memreserve to
+ tell the persistent pages
+Message-ID: <20191203012853.hwnbs6dfcbnkbtgp@gabell>
+References: <20191125184944.15556-1-msys.mizuma@gmail.com>
+ <c27b6f69-befc-0c88-24b9-7b89d4f6e5a6@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87sgm2fzuh.fsf@linutronix.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <c27b6f69-befc-0c88-24b9-7b89d4f6e5a6@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191202_171726_759824_48D96415 
-X-CRM114-Status: GOOD (  16.82  )
+X-CRM114-CacheID: sfid-20191202_172901_834688_D7164CF9 
+X-CRM114-Status: GOOD (  25.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (sergey.senozhatsky.work[at]gmail.com)
+ provider (msys.mizuma[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -103,71 +97,136 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <andrea.parri@amarulasolutions.com>,
- Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, kexec@lists.infradead.org
+Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>, linux-efi@vger.kernel.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Eric Biederman <ebiederm@xmission.com>,
+ d.hatayama@fujitsu.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On (19/12/02 17:37), John Ogness wrote:
-> On 2019-12-02, Petr Mladek <pmladek@suse.com> wrote:
-> >> > +/* Reserve a new descriptor, invalidating the oldest if necessary. */
-> >> > +static bool desc_reserve(struct printk_ringbuffer *rb, u32 *id_out)
-> >> > +{
-> >> > +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
-> >> > +	struct prb_desc *desc;
-> >> > +	u32 id_prev_wrap;
-> >> > +	u32 head_id;
-> >> > +	u32 id;
-> >> > +
-> >> > +	head_id = atomic_read(&desc_ring->head_id);
-> >> > +
-> >> > +	do {
-> >> > +		desc = to_desc(desc_ring, head_id);
-> >> > +
-> >> > +		id = DESC_ID(head_id + 1);
-> >> > +		id_prev_wrap = DESC_ID_PREV_WRAP(desc_ring, id);
-> >> > +
-> >> > +		if (id_prev_wrap == atomic_read(&desc_ring->tail_id)) {
-> >> > +			if (!desc_push_tail(rb, id_prev_wrap))
-> >> > +				return false;
-> >> > +		}
-> >> > +	} while (!atomic_try_cmpxchg(&desc_ring->head_id, &head_id, id));
-> >> 
-> >> Hmm, in theory, ABA problem might cause that we successfully
-> >> move desc_ring->head_id when tail has not been pushed yet.
-> >> 
-> >> As a result we would never call desc_push_tail() until
-> >> it overflows again.
-> >> 
-> >> I am not sure if we need to take care of it. The code is called with
-> >> interrupts disabled. IMHO, only NMI could cause ABA problem
-> >> in reality. But the game (debugging) is lost anyway when NMI ovewrites
-> >> the buffer several times.
-> >
-> > BTW: If I am counting correctly. The ABA problem would happen when
-> > exactly 2^30 (1G) messages is written in the mean time.
+On Fri, Nov 29, 2019 at 01:25:36PM +0100, Matthias Brugger wrote:
 > 
-> All the ringbuffer code assumes that the use of index numbers handles
-> the ABA problem (i.e. there must not be 1 billion printk's within an
-> NMI). If we want to support 1 billion+ printk's within an NMI, then
-> perhaps the index number should be increased. For 64-bit systems it
-> would be no problem to go to 62 bits. For 32-bit systems, I don't know
-> how well the 64-bit atomic operations are supported.
+> 
+> On 25/11/2019 19:49, Masayoshi Mizuma wrote:
+> > From: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > 
+> > kexec reboot stops in early boot sequence because efi_config_parse_tables()
+> > refers garbage data. We can see the log with memblock=debug kernel option:
+> > 
+> >   efi:  ACPI 2.0=0x9821790014  PROP=0x8757f5c0  SMBIOS 3.0=0x9820740000  MEMRESERVE=0x9820bfdc58
+> >   memblock_reserve: [0x0000009820bfdc58-0x0000009820bfdc67] efi_config_parse_tables+0x228/0x278
+> >   memblock_reserve: [0x0000000082760000-0x00000000324d07ff] efi_config_parse_tables+0x228/0x278
+> >   memblock_reserve: [0xcc4f84ecc0511670-0x5f6e5214a7fd91f9] efi_config_parse_tables+0x244/0x278
+> >   memblock_reserve: [0xd2fd4144b9af693d-0xad0c1db1086f40a2] efi_config_parse_tables+0x244/0x278
+> >   memblock_reserve: [0x0c719bb159b1fadc-0x5aa6e62a1417ce12] efi_config_parse_tables+0x244/0x278
+> >   ...
+> > 
+> > That happens because 0x82760000, struct linux_efi_memreserve, is destroyed.
+> > 0x82760000 is pointed from efi.mem_reseve, and efi.mem_reserve points the
+> > head page of LPI pending table and LPI property table which are allocated by
+> > gic_reserve_range().
+> > 
+> > The destroyer is kexec. kexec locates the initrd to the area:
+> > 
+> >   ]# kexec -d -l /boot/vmlinuz-5.4.0-rc7 /boot/initramfs-5.4.0-rc7.img --reuse-cmdline
+> >   ...
+> >   initrd: base 82290000, size 388dd8ah (59301258)
+> >   ...
+> > 
+> > From dynamic debug log. initrd is located in segment[1]:
+> >   machine_kexec_prepare:70:
+> >     kexec kimage info:
+> >       type:        0
+> >       start:       85b30680
+> >       head:        0
+> >       nr_segments: 4
+> >         segment[0]: 0000000080480000 - 0000000082290000, 0x1e10000 bytes, 481 pages
+> >         segment[1]: 0000000082290000 - 0000000085b20000, 0x3890000 bytes, 905 pages
+> >         segment[2]: 0000000085b20000 - 0000000085b30000, 0x10000 bytes, 1 pages
+> >         segment[3]: 0000000085b30000 - 0000000085b40000, 0x10000 bytes, 1 pages
+> > 
+> > kexec searches the memory region to locate initrd through
+> > "System RAM" in /proc/iomem. The pending tables are included in
+> > "System RAM" because they are allocated by alloc_pages(), so kexec
+> > destroys the LPI pending tables.
+> > 
+> 
+> Doesn't that mean that you haven't enough memory reserved so that you have to
+> fallback to allocate it via __get_free_page()?
 
-ftrace dumps from NMI (DUMP_ALL type ftrace_dump_on_oops on a $BIG
-machine)? 1G seems large enough, but who knows.
+That's a not fallback allocation. The pending tables and also property
+tables are allocated by alloc_pages() on its_allocate_prop_table() and
+its_allocate_pending_table().
 
-	-ss
+> 
+> 
+> > Introduce /sys/firmware/efi/memreserve to tell the pages pointed by
+> > efi.mem_reserve so that kexec can avoid the area to locate initrd.
+> > 
+> 
+> Doesn't that need a patch for kexec-tools to actually take this into account?
+
+Yes, we need a patch for kexec-tools as well. I'm preparing the kexec
+patch.
+
+> 
+> > Signed-off-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
+> > ---
+> >  drivers/firmware/efi/efi.c | 45 +++++++++++++++++++++++++++++++++++++-
+> >  1 file changed, 44 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+> > index e98bbf8e5..0aa07cc09 100644
+> > --- a/drivers/firmware/efi/efi.c
+> > +++ b/drivers/firmware/efi/efi.c
+> > @@ -141,6 +141,47 @@ static ssize_t systab_show(struct kobject *kobj,
+> >  
+> >  static struct kobj_attribute efi_attr_systab = __ATTR_RO_MODE(systab, 0400);
+> >  
+> > +static struct linux_efi_memreserve *efi_memreserve_root __ro_after_init;
+> > +#ifdef CONFIG_KEXEC
+> > +static ssize_t memreserve_show(struct kobject *kobj,
+> > +			   struct kobj_attribute *attr, char *buf)
+> > +{
+> > +	struct linux_efi_memreserve *rsv;
+> > +	phys_addr_t start, end;
+> > +	unsigned long prsv;
+> > +	char *str = buf;
+> > +	int count, i;
+> > +
+> > +	if (!kobj || !buf)
+> > +		return -EINVAL;
+> > +
+> > +	if ((efi_memreserve_root == (void *)ULONG_MAX) ||
+> > +			(!efi_memreserve_root))
+> > +		return -ENODEV;
+> > +
+> > +	for (prsv = efi_memreserve_root->next; prsv; prsv = rsv->next) {
+> > +		rsv = memremap(prsv, sizeof(*rsv), MEMREMAP_WB);
+> > +		if (!rsv) {
+> > +			pr_err("Could not map efi_memreserve\n");
+> > +			return -ENOMEM;
+> > +		}
+> > +		count = atomic_read(&rsv->count);
+> > +		for (i = 0; i < count; i++) {
+> > +			start = rsv->entry[i].base;
+> > +			end = start + rsv->entry[i].size - 1;
+> > +
+> > +			str += sprintf(str, "%pa-%pa\n", &start, &end);
+> 
+> What happens if we provide a buf which is too small?
+
+Good point.
+The strings may exceed the buffer size (PAGE_SIZE) in case
+efi_memreserve_root has a lot of entries.
+It might be better to use seq_printf() to show efi_memreserve_root...
+I'll move the file from a sysfs entry to a proc entry so that 
+efi_memreserve_root can be handled by seq_printf().
+
+Thanks,
+Masa
 
 _______________________________________________
 kexec mailing list
