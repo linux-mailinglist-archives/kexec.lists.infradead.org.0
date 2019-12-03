@@ -2,77 +2,51 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA47010FBB6
-	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 11:27:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1649810FCA9
+	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 12:48:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7PUZshwIvPegnt+ezqyz3jBOSJU0YxKtsgzuMVwTNpY=; b=F1hmPJ5LsTPK8A
-	/WZ+HVLqbsXrf3bbSDko2o8O+xb0xm3IgEK4lL2TAQtzzXsCY2H6YuzV/TNXxoSuFkiMBRMeoimWN
-	C5HzqfWca+SZuNK83o9eA/hq0Ei/g6VoX2XMl/wWK1SMN2np/RpOhWN6vy1df76L4LfcFWQObPjE4
-	BcJzevrDKdM1apxqPmqy9Ln+3Haje+hV4v3BvOSCTV/aghqxG5ItCNIbf7mAwAkZbf6EVecbpLCd1
-	8YYKs2mQUFLZONICoi/+rP8N3WNNX73pXtiZMe2kzOgjLJTBSwdUUoh3WQ3H8Z7fgVbQzkdGO2qhL
-	8oNKl7sGgPNeqEx+iyRQ==;
+	List-Owner; bh=OkDUj6KuVSRPptIc2d4lT2AWw5vS00+yBjJRimzTBZc=; b=Li58T0d+dZtIfs
+	zXUXHHhuAS8+29Yyz65x9pEVF7VHBElvsFDclm/TU2QW2Uwb4rNBBihrBiG0mKr5A2fqDPi2oCUwB
+	0zePxtlYLh/IMlAV/E8zH8meP3wdQrWYbghk3RAZY/NzlD1mf2fDlhMsS2ZwTBDkzR1u8OJteGECQ
+	3tCn2Fdo+6mYcEUp9/+8f/4tI0r1dAV0lzPny5Pl3wHIWfjOcjWOwP8TYYBFMNsPet0YAcr9foeia
+	psyK2IvqJ0RnUWol38wh5F1jQHlRCv0X5ZaUoFLF5+YcvYIilJbInnE+QivJxksffz2ApIM1Z/TiJ
+	R6bu40KC3zyVJqmNJX4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5PM-0004au-S4; Tue, 03 Dec 2019 10:27:52 +0000
-Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
+	id 1ic6er-0000nJ-Ls; Tue, 03 Dec 2019 11:47:57 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5PJ-0004aP-RA
- for kexec@lists.infradead.org; Tue, 03 Dec 2019 10:27:51 +0000
-Received: by mail-wm1-x32a.google.com with SMTP id g206so2381544wme.1
- for <kexec@lists.infradead.org>; Tue, 03 Dec 2019 02:27:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=VoIuD2RHKwOSFSi50PKiRY7gQH9Rd9RznaFDvaCqbH4=;
- b=r3wJBlOjuNNbsWIREb1Nguunwp44ysnci0ENTMhC9UWytqb1DVHeTca1+doYWB88/w
- /NWRNXziLXKwqdkBkO6a8W5m3mpoo23xvBnCiMIc6TWVNGgURfW841thUO+tomt9l8If
- BdDJIeKcpDM+y7kEfD7sTU7CmzrKNqXbKBWSWZyv09UGn1CslTShb1jWqaK2VNCdaab+
- pjd1dyHReiLbPlLVkDXbPRQbHx2Epm6uN3HJfmUq6CLwFBbs6TSsLzEiWF9JQZYUsuG1
- fpV1C0dyqgdhiGHphcVF44vWbLrdhDt44gMz+EY0PaN5mkw94ZZqDlQsDX2L8cvntBgS
- cUSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=VoIuD2RHKwOSFSi50PKiRY7gQH9Rd9RznaFDvaCqbH4=;
- b=Xco2j8aKhMtKoR3RrYxFkY3O+EcyjUScA3r0K2MP4SnF3KxBjchfQj8/3amr2EL9+n
- eCj+8QP2uDC+Ww0yCTIALL905lxiLEkwgnkHIBv7A87kdhvfXvB40rElvgKUi1enIkKJ
- XMZ236JuAXXteN+yUlQposvVEurFAZY+dzJNTXhjVhWPR/UwDkgNarsGr763TSSwkzSh
- ihre+n4rGFFuEb/MmJRufVYTkCm9KMN3Yam9jYL2T8EgOz3nMcZki/f7COX3BcZMKbbm
- aMD3kmY17zvJl0jfeRr47VBb9I6+1aMr2vSMpSqOc1y75xZB8WfJyIWoNKNChN3sN/zT
- 9PgQ==
-X-Gm-Message-State: APjAAAXDyiGGWIGJLGblVmDOguaQtqgs3MEOIyn/JYXZPIwxFrvGGmRo
- pCBsaFv3rh7fcwwVEXOlW7WTnq/071Hqt+xyWylUnGApOZn5vCEB
-X-Google-Smtp-Source: APXvYqzFL3Ue/ityzzZ7FWOptUnU102+tPLwSeNLDrvfRDHehqdeflc0QpOfTlD6EGuUKne+ZrwLdwiTp/4euoz0pkE=
-X-Received: by 2002:a7b:c389:: with SMTP id s9mr16226780wmj.7.1575368866758;
- Tue, 03 Dec 2019 02:27:46 -0800 (PST)
+ id 1ic6en-0000lW-55; Tue, 03 Dec 2019 11:47:55 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 6C137B183;
+ Tue,  3 Dec 2019 11:47:49 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: andrew.murray@arm.com,
+	maz@kernel.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/8] Raspberry Pi 4 PCIe support
+Date: Tue,  3 Dec 2019 12:47:33 +0100
+Message-Id: <20191203114743.1294-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-From: Khouloud Touil <ktouil@baylibre.com>
-Date: Tue, 3 Dec 2019 11:27:36 +0100
-Message-ID: <CALL1Z1xngzUT3bGQCargLDBSHvjZNWrgFuQOK2jpwoLLkvS+RQ@mail.gmail.com>
-Subject: Using kexec for rpi-4-b
-To: kexec@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_022749_879628_D2866649 
-X-CRM114-Status: UNSURE (   5.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191203_034753_489942_6CA8CE7C 
+X-CRM114-Status: GOOD (  15.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:32a listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,48 +58,122 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Corentin Labbe <clabbe@baylibre.com>
+Cc: linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
+ linux-nfs@vger.kernel.org, f.fainelli@gmail.com,
+ linux-rockchip@lists.infradead.org, linux-rdma@vger.kernel.org,
+ linux-pci@vger.kernel.org, phil@raspberrypi.org, jeremy.linton@arm.com,
+ kexec@lists.infradead.org, linux-acpi@vger.kernel.org,
+ iommu@lists.linux-foundation.org, mbrugger@suse.com,
+ bcm-kernel-feedback-list@broadcom.com, wahrenst@gmx.net,
+ james.quinlan@broadcom.com, netdev@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-clk@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello,
+This series aims at providing support for Raspberry Pi 4's PCIe
+controller, which is also shared with the Broadcom STB family of
+devices.
 
-I am trying to boot another kernel for rpi4, using a kexec tools,
-The kernel booted already, is compiled with KEXEC=y,
-using the official sources for rpi (4.19.86-v8+)
-The rootfs generated with debootstarp for arch 64
-The command I am trying to execute is:
-kexec -l /boot/Image --dtb=/boot/bcm2711-rpi-4-b.dtb --ramdisk=/boot/rootfs.cpio
--- reuse-cmdline
-this doesn't work and the logs are:
-[    99.107018] Can't kexec: CPUs are stuck in the kernel.
-kexec_load failed: Device or resource busy
-entry      = 0x3d9d690 flags = 0xb70000
-nr_segments = 4
-segment[0].buf = 0x7f84316010
-segment[0].bufsz = 0x1951a99
-segment[0].mem = 0x80000
-segment[0].memsz = 0x19ca000
-segment[1].buf = 0x7f81fc9010
-segment[1.bufsz = 0x234c800
-segment[1].mem = 0x1a4a000
-segment[1].memsz = 0x234d000
-segment[2].buf = 0x5597abe9b0
-segment[2].bufsz = 0x521b
-segment[2].mem = 3d97000
-segment[2].memsz = 0x6000
-segment[3].buf = 0x5597ac4030
-segment[3].bufsz = 0x3458
-segment[3].mem = 0x3d9d000
-segment[3].memsz =  0x4000
+There was a previous attempt to upstream this some years ago[1] but was
+blocked as most STB PCIe integrations have a sparse DMA mapping[2] which
+is something currently not supported by the kernel.  Luckily this is not
+the case for the Raspberry Pi 4.
 
-Could someone please help to figure out what's the problem ?
+Note that the driver code is to be based on top of Rob Herring's series
+simplifying inbound and outbound range parsing.
 
-Regards,
+[1] https://patchwork.kernel.org/cover/10605933/
+[2] https://patchwork.kernel.org/patch/10605957/
 
-Khouloud
+---
+
+Changes since v3:
+  - Moved all the log2.h related changes at the end of the series, as I
+    presume they will be contentious and I don't want the PCIe patches
+    to depend on them. Ultimately I think I'll respin them on their own
+    series but wanted to keep them in for this submission just for the
+    sake of continuity.
+  - Addressed small nits here and there.
+
+Changes since v2:
+  - Redo register access in driver avoiding indirection while keeping
+    the naming intact
+  - Add patch editing ARM64's config
+  - Last MSI cleanups, notably removing MSIX flag
+  - Got rid of all _RB writes
+  - Got rid of all of_data
+  - Overall churn removal
+  - Address the rest of Andrew's comments
+
+Changes since v1:
+  - add generic rounddown/roundup_pow_two64() patch
+  - Add MAINTAINERS patch
+  - Fix Kconfig
+  - Cleanup probe, use up to date APIs, exit on MSI failure
+  - Get rid of linux,pci-domain and other unused constructs
+  - Use edge triggered setup for MSI
+  - Cleanup MSI implementation
+  - Fix multiple cosmetic issues
+  - Remove supend/resume code
+
+Jim Quinlan (3):
+  dt-bindings: PCI: Add bindings for brcmstb's PCIe device
+  PCI: brcmstb: Add Broadcom STB PCIe host controller driver
+  PCI: brcmstb: Add MSI support
+
+Nicolas Saenz Julienne (5):
+  ARM: dts: bcm2711: Enable PCIe controller
+  MAINTAINERS: Add brcmstb PCIe controller
+  arm64: defconfig: Enable Broadcom's STB PCIe controller
+  linux/log2.h: Fix 64bit calculations in roundup/down_pow_two()
+  linux/log2.h: Use roundup/dow_pow_two() on 64bit calculations
+
+ .../bindings/pci/brcm,stb-pcie.yaml           |   97 ++
+ MAINTAINERS                                   |    4 +
+ arch/arm/boot/dts/bcm2711.dtsi                |   37 +
+ arch/arm64/configs/defconfig                  |    1 +
+ drivers/acpi/arm64/iort.c                     |    2 +-
+ drivers/clk/clk-divider.c                     |    8 +-
+ drivers/clk/sunxi/clk-sunxi.c                 |    2 +-
+ drivers/infiniband/hw/hfi1/chip.c             |    4 +-
+ drivers/infiniband/hw/hfi1/init.c             |    4 +-
+ drivers/infiniband/hw/mlx4/srq.c              |    2 +-
+ drivers/infiniband/hw/mthca/mthca_srq.c       |    2 +-
+ drivers/infiniband/sw/rxe/rxe_qp.c            |    4 +-
+ drivers/iommu/intel-iommu.c                   |    4 +-
+ drivers/iommu/intel-svm.c                     |    4 +-
+ drivers/iommu/intel_irq_remapping.c           |    2 +-
+ drivers/net/ethernet/amd/xgbe/xgbe-ethtool.c  |    4 +-
+ drivers/net/ethernet/marvell/sky2.c           |    2 +-
+ drivers/net/ethernet/mellanox/mlx4/en_clock.c |    3 +-
+ drivers/net/ethernet/rocker/rocker_hw.h       |    4 +-
+ drivers/net/ethernet/sfc/ef10.c               |    2 +-
+ drivers/net/ethernet/sfc/efx.h                |    2 +-
+ drivers/net/ethernet/sfc/falcon/efx.h         |    2 +-
+ drivers/of/device.c                           |    3 +-
+ drivers/pci/controller/Kconfig                |    9 +
+ drivers/pci/controller/Makefile               |    1 +
+ .../pci/controller/cadence/pcie-cadence-ep.c  |    3 +-
+ drivers/pci/controller/cadence/pcie-cadence.c |    3 +-
+ drivers/pci/controller/pcie-brcmstb.c         | 1008 +++++++++++++++++
+ drivers/pci/controller/pcie-rockchip-ep.c     |    5 +-
+ drivers/pci/msi.c                             |    2 +-
+ include/linux/log2.h                          |   44 +-
+ kernel/dma/direct.c                           |    2 +-
+ kernel/kexec_core.c                           |    3 +-
+ lib/rhashtable.c                              |    2 +-
+ net/sunrpc/xprtrdma/verbs.c                   |    2 +-
+ 35 files changed, 1211 insertions(+), 72 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+ create mode 100644 drivers/pci/controller/pcie-brcmstb.c
+
+-- 
+2.24.0
+
 
 _______________________________________________
 kexec mailing list
