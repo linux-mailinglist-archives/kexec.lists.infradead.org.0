@@ -2,71 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 304A910FB74
-	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 11:12:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA47010FBB6
+	for <lists+kexec@lfdr.de>; Tue,  3 Dec 2019 11:27:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JHHFztDzEqD3A5ZwON4sqIGum45qHDilw/U5I7n92FE=; b=fB6N5NVw4vlPSJ
-	pp+PpR+dK90aLKgPDCWwXVU9adjdW5v8zmEHFLogupB73cKK5z9zAlzx94BLHe2uKhRe1Zo0xomvg
-	Dg5fWh96fS8m4jwgzlv6M679bGhsi11NvjSh4h7D+230htPkDeDp6SQ+5hgVEKAjo3/H6fm1kUCwR
-	ngOm3RvC5TfpAyW8Qzw6CXNtdwG/GCVvr9OnWn1lCx4HaVZnOZg0C9SbJGB71Z14/KtZV+xtXC2VW
-	rWs984PQGL16azwB2NLU0Pzsx/L7EclaWsyoWQjQzpzUr6DMymZcuJaaseUI8bEE3UQSOjWfeafzp
-	Ijic5ABjNk21NvTAvBfA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7PUZshwIvPegnt+ezqyz3jBOSJU0YxKtsgzuMVwTNpY=; b=F1hmPJ5LsTPK8A
+	/WZ+HVLqbsXrf3bbSDko2o8O+xb0xm3IgEK4lL2TAQtzzXsCY2H6YuzV/TNXxoSuFkiMBRMeoimWN
+	C5HzqfWca+SZuNK83o9eA/hq0Ei/g6VoX2XMl/wWK1SMN2np/RpOhWN6vy1df76L4LfcFWQObPjE4
+	BcJzevrDKdM1apxqPmqy9Ln+3Haje+hV4v3BvOSCTV/aghqxG5ItCNIbf7mAwAkZbf6EVecbpLCd1
+	8YYKs2mQUFLZONICoi/+rP8N3WNNX73pXtiZMe2kzOgjLJTBSwdUUoh3WQ3H8Z7fgVbQzkdGO2qhL
+	8oNKl7sGgPNeqEx+iyRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ic5AK-0006ys-AF; Tue, 03 Dec 2019 10:12:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ic5PM-0004au-S4; Tue, 03 Dec 2019 10:27:52 +0000
+Received: from mail-wm1-x32a.google.com ([2a00:1450:4864:20::32a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ic5AG-0006y7-WD; Tue, 03 Dec 2019 10:12:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD68A206DF;
- Tue,  3 Dec 2019 10:12:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575367935;
- bh=njEa6+IrLjuvJPILzHBnWSOeMyzbeQ4z6Q3+166H/eE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=EwECi3FPLB/gvnYoP5ns47k1Roo8LLto0gKhd1RbDt8bHESwF/OS5NpOW/mDzvbBU
- aNAi2vigGNx3RvjT6bsRLY06FdN/918p4dNXEvOAMkx+FqMjBl+PWB3UrR7P1cM92U
- sGuAtpf5TUSO3fHv9ZfheiDtJ8l0aAS48yG5iCLU=
-Date: Tue, 3 Dec 2019 10:12:03 +0000
-From: Will Deacon <will@kernel.org>
-To: Bhupesh Sharma <bhsharma@redhat.com>
-Subject: Re: [PATCH v5 0/5] Append new variables to vmcoreinfo (TCR_EL1.T1SZ
- for arm64 and MAX_PHYSMEM_BITS for all archs)
-Message-ID: <20191203101202.GA6815@willie-the-truck>
-References: <1574972621-25750-1-git-send-email-bhsharma@redhat.com>
- <20191129102421.GA28322@willie-the-truck>
- <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
+ id 1ic5PJ-0004aP-RA
+ for kexec@lists.infradead.org; Tue, 03 Dec 2019 10:27:51 +0000
+Received: by mail-wm1-x32a.google.com with SMTP id g206so2381544wme.1
+ for <kexec@lists.infradead.org>; Tue, 03 Dec 2019 02:27:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=VoIuD2RHKwOSFSi50PKiRY7gQH9Rd9RznaFDvaCqbH4=;
+ b=r3wJBlOjuNNbsWIREb1Nguunwp44ysnci0ENTMhC9UWytqb1DVHeTca1+doYWB88/w
+ /NWRNXziLXKwqdkBkO6a8W5m3mpoo23xvBnCiMIc6TWVNGgURfW841thUO+tomt9l8If
+ BdDJIeKcpDM+y7kEfD7sTU7CmzrKNqXbKBWSWZyv09UGn1CslTShb1jWqaK2VNCdaab+
+ pjd1dyHReiLbPlLVkDXbPRQbHx2Epm6uN3HJfmUq6CLwFBbs6TSsLzEiWF9JQZYUsuG1
+ fpV1C0dyqgdhiGHphcVF44vWbLrdhDt44gMz+EY0PaN5mkw94ZZqDlQsDX2L8cvntBgS
+ cUSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=VoIuD2RHKwOSFSi50PKiRY7gQH9Rd9RznaFDvaCqbH4=;
+ b=Xco2j8aKhMtKoR3RrYxFkY3O+EcyjUScA3r0K2MP4SnF3KxBjchfQj8/3amr2EL9+n
+ eCj+8QP2uDC+Ww0yCTIALL905lxiLEkwgnkHIBv7A87kdhvfXvB40rElvgKUi1enIkKJ
+ XMZ236JuAXXteN+yUlQposvVEurFAZY+dzJNTXhjVhWPR/UwDkgNarsGr763TSSwkzSh
+ ihre+n4rGFFuEb/MmJRufVYTkCm9KMN3Yam9jYL2T8EgOz3nMcZki/f7COX3BcZMKbbm
+ aMD3kmY17zvJl0jfeRr47VBb9I6+1aMr2vSMpSqOc1y75xZB8WfJyIWoNKNChN3sN/zT
+ 9PgQ==
+X-Gm-Message-State: APjAAAXDyiGGWIGJLGblVmDOguaQtqgs3MEOIyn/JYXZPIwxFrvGGmRo
+ pCBsaFv3rh7fcwwVEXOlW7WTnq/071Hqt+xyWylUnGApOZn5vCEB
+X-Google-Smtp-Source: APXvYqzFL3Ue/ityzzZ7FWOptUnU102+tPLwSeNLDrvfRDHehqdeflc0QpOfTlD6EGuUKne+ZrwLdwiTp/4euoz0pkE=
+X-Received: by 2002:a7b:c389:: with SMTP id s9mr16226780wmj.7.1575368866758;
+ Tue, 03 Dec 2019 02:27:46 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CACi5LpNQPw41kGsW+d0PyZaC7gSrbgwT2VxwyO5r3j83h-mkEQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+From: Khouloud Touil <ktouil@baylibre.com>
+Date: Tue, 3 Dec 2019 11:27:36 +0100
+Message-ID: <CALL1Z1xngzUT3bGQCargLDBSHvjZNWrgFuQOK2jpwoLLkvS+RQ@mail.gmail.com>
+Subject: Using kexec for rpi-4-b
+To: kexec@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191203_021217_057697_9A542BB5 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191203_022749_879628_D2866649 
+X-CRM114-Status: UNSURE (   5.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:32a listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,57 +84,48 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Boris Petkov <bp@alien8.de>, Dave Anderson <anderson@redhat.com>,
- Michael Ellerman <mpe@ellerman.id.au>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- linuxppc-dev@lists.ozlabs.org, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: Corentin Labbe <clabbe@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Sat, Nov 30, 2019 at 01:35:36AM +0530, Bhupesh Sharma wrote:
-> On Fri, Nov 29, 2019 at 3:54 PM Will Deacon <will@kernel.org> wrote:
-> > On Fri, Nov 29, 2019 at 01:53:36AM +0530, Bhupesh Sharma wrote:
-> > > Changes since v4:
-> > > ----------------
-> > > - v4 can be seen here:
-> > >   http://lists.infradead.org/pipermail/kexec/2019-November/023961.html
-> > > - Addressed comments from Dave and added patches for documenting
-> > >   new variables appended to vmcoreinfo documentation.
-> > > - Added testing report shared by Akashi for PATCH 2/5.
-> >
-> > Please can you fix your mail setup? The last two times you've sent this
-> > series it seems to get split into two threads, which is really hard to
-> > track in my inbox:
-> >
-> > First thread:
-> >
-> > https://lore.kernel.org/lkml/1574972621-25750-1-git-send-email-bhsharma@redhat.com/
-> >
-> > Second thread:
-> >
-> > https://lore.kernel.org/lkml/1574972716-25858-1-git-send-email-bhsharma@redhat.com/
-> 
-> There seems to be some issue with my server's msmtp settings. I have
-> tried resending the v5 (see
-> <http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/696833.html>).
-> 
-> I hope the threading is ok this time.
+Hello,
 
-Much better now, thanks for sorting it out.
+I am trying to boot another kernel for rpi4, using a kexec tools,
+The kernel booted already, is compiled with KEXEC=y,
+using the official sources for rpi (4.19.86-v8+)
+The rootfs generated with debootstarp for arch 64
+The command I am trying to execute is:
+kexec -l /boot/Image --dtb=/boot/bcm2711-rpi-4-b.dtb --ramdisk=/boot/rootfs.cpio
+-- reuse-cmdline
+this doesn't work and the logs are:
+[    99.107018] Can't kexec: CPUs are stuck in the kernel.
+kexec_load failed: Device or resource busy
+entry      = 0x3d9d690 flags = 0xb70000
+nr_segments = 4
+segment[0].buf = 0x7f84316010
+segment[0].bufsz = 0x1951a99
+segment[0].mem = 0x80000
+segment[0].memsz = 0x19ca000
+segment[1].buf = 0x7f81fc9010
+segment[1.bufsz = 0x234c800
+segment[1].mem = 0x1a4a000
+segment[1].memsz = 0x234d000
+segment[2].buf = 0x5597abe9b0
+segment[2].bufsz = 0x521b
+segment[2].mem = 3d97000
+segment[2].memsz = 0x6000
+segment[3].buf = 0x5597ac4030
+segment[3].bufsz = 0x3458
+segment[3].mem = 0x3d9d000
+segment[3].memsz =  0x4000
 
-Will
+Could someone please help to figure out what's the problem ?
+
+Regards,
+
+Khouloud
 
 _______________________________________________
 kexec mailing list
