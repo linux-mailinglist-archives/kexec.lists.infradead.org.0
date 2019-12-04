@@ -2,73 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BB79113112
-	for <lists+kexec@lfdr.de>; Wed,  4 Dec 2019 18:50:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04A7F11335A
+	for <lists+kexec@lfdr.de>; Wed,  4 Dec 2019 19:18:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fNQPxIQ2BnTN3e/zc+U+Vs5j5CXhK/BGEoJvEIs3ZG0=; b=JNCNzfBA4DVUfN
-	9+whYHkOE7QcdRPLaP6X14Hx6OTKx9eLJthGLMmyvsAeqV7VfWlMf2CXY7OtXd2eq5ODpLB5EI+gL
-	CMxJmwBQKilL8ruRcfQ3Au7iSEbbXRIha+LE6OGKdf31BL082RldKdUGdWz49pPG4Jl8nYyHqoieH
-	MpSfX0m3rfEWQ2CmoICIl9zOSrslzL8xLQG7J97biljL/lyyYqj2nMPTHpdfOkI4otHKPfLh5Y52n
-	qIjK+fBBJP8PYotajlDKOdgD1XAElvUOW9wbpBuIxyGuSuFEozv+gf1Ir12JZ+o0aEFRhG0seQPS7
-	WCKQ9VcZxGRTof9BmEQQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OC5XzSmhRmadP6NGZErr3U7ickn/sEZV7ndbajzPhr0=; b=BIYAEveyv972dR
+	39z35EIH46DPueZ1VEBnUZiJvefsQ/ZP6Q46Aq8+EgXB6xCtwdtAnyaS5VA1F/JJR8lmMUg67tLRY
+	CEweowoGS/ISl0iOHQC4bd1VJnUCLgCBmb5mRA6qIkWHbqQcMjKLu8b57YDwh+MVK6ZdiNuOWWuNG
+	fi/dorcmitCmFvH2qgOSYLuHIns5broNWALVI7gtjVtF05QNoXGLjehb4RUc4pWoAcE2TILRKdXa9
+	uQmA4y70qV/kevpPowvPKEUdISqhYmCh6dxFkE6t403Y1jOpZ9SAsCcTXEZ3h5uUY0FjPg2gyETkg
+	KXyJsw3J7pm+rxEW9ZpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icYmw-0007b3-TB; Wed, 04 Dec 2019 17:50:10 +0000
-Received: from tyo162.gate.nec.co.jp ([114.179.232.162])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icYmr-0007Et-DF
- for kexec@lists.infradead.org; Wed, 04 Dec 2019 17:50:08 +0000
-Received: from mailgate01.nec.co.jp ([114.179.233.122])
- by tyo162.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xB4Ho288004074
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 5 Dec 2019 02:50:02 +0900
-Received: from mailsv02.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
- by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xB4Ho2TU012104;
- Thu, 5 Dec 2019 02:50:02 +0900
-Received: from mail02.kamome.nec.co.jp (mail02.kamome.nec.co.jp [10.25.43.5])
- by mailsv02.nec.co.jp (8.15.1/8.15.1) with ESMTP id xB4Ho2hK003760; 
- Thu, 5 Dec 2019 02:50:02 +0900
-Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
- mail02.kamome.nec.co.jp with ESMTP id BT-MMP-10988203;
- Thu, 5 Dec 2019 02:49:27 +0900
-Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
- BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Thu, 5
- Dec 2019 02:49:27 +0900
-From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-To: Bhupesh Sharma <bhsharma@redhat.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>
-Subject: RE: [PATCH v4 4/4] makedumpfile: Mark --mem-usage option
- unsupported for arm64
-Thread-Topic: [PATCH v4 4/4] makedumpfile: Mark --mem-usage option
- unsupported for arm64
-Thread-Index: AQHVmUmtxPX++oocoEqzf96s2rw03aeoz1WA
-Date: Wed, 4 Dec 2019 17:49:26 +0000
-Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC035971D4@BPXM09GP.gisp.nec.co.jp>
-References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
- <1573556939-17803-5-git-send-email-bhsharma@redhat.com>
-In-Reply-To: <1573556939-17803-5-git-send-email-bhsharma@redhat.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [143.101.135.194]
+	id 1icZE2-0003bv-NU; Wed, 04 Dec 2019 18:18:10 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1icZDw-0003Uk-Ng
+ for kexec@lists.infradead.org; Wed, 04 Dec 2019 18:18:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0220731B;
+ Wed,  4 Dec 2019 10:18:02 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D5083F718;
+ Wed,  4 Dec 2019 10:18:00 -0800 (PST)
+Subject: Re: [PATCH] efi/memreserve: register reservations as 'reserved' in
+ /proc/iomem
+To: Masayoshi Mizuma <msys.mizuma@gmail.com>, Ard Biesheuvel <ardb@kernel.org>
+References: <20191204145233.11962-1-ardb@kernel.org>
+ <20191204171744.o3ijdspnelqn5fgd@gabell>
+From: James Morse <james.morse@arm.com>
+Message-ID: <08f05b18-12b2-0ba4-b819-b95ba27d1862@arm.com>
+Date: Wed, 4 Dec 2019 18:17:59 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-TM-AS-MML: disable
+In-Reply-To: <20191204171744.o3ijdspnelqn5fgd@gabell>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_095007_314309_3AF813E7 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20191204_101804_859009_F0BAC1C1 
+X-CRM114-Status: GOOD (  15.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [114.179.232.162 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -82,67 +63,69 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: John Donnelly <john.p.donnelly@oracle.com>,
- "bhupesh.linux@gmail.com" <bhupesh.linux@gmail.com>
+Cc: mark.rutland@arm.com, Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ linux-efi@vger.kernel.org, kexec@lists.infradead.org, d.hatayama@fujitsu.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> This patch marks '--mem-usage' option as unsupported for arm64
-> architecture.
+Hi Masa,
+
+On 04/12/2019 17:17, Masayoshi Mizuma wrote:
+> Thank you for sending the patch, but unfortunately it doesn't work for the issue...
 > 
-> With the newer arm64 kernels supporting 48-bit/52-bit VA address spaces
-> and keeping a single binary for supporting the same, the address of
-> kernel symbols like _stext which could be earlier used to determine
-> VA_BITS value, can no longer to determine whether VA_BITS is set to 48
-> or 52 in the kernel space.
+> After applied your patch, the LPI tables are marked as reserved in
+> /proc/iomem like as:
+> 
+> 80300000-a1fdffff : System RAM
+>   80480000-8134ffff : Kernel code
+>   81350000-817bffff : reserved
+>   817c0000-82acffff : Kernel data
+>   830f0000-830fffff : reserved # Property table
+>   83480000-83480fff : reserved # Pending table
+>   83490000-8349ffff : reserved # Pending table
+> 
+> However, kexec tries to allocate memory from System RAM, it doesn't care
+> the reserved in System RAM.
 
-The --mem-usage option works with older arm64 kernels, so we should not
-mark it unsupported for all arm64 kernels.
+> I'm not sure why kexec doesn't care the reserved in System RAM, however,
 
-(If we use ELF note vmcoreinfo in kcore, is it possible to support the
-option?  Let's think about it later..)
+Hmm, we added these to fix a problem with the UEFI memory map, and more recently ACPI
+tables being overwritten by kexec.
+
+Which version of kexec-tools are you using? Could you try:
+https://git.linaro.org/people/takahiro.akashi/kexec-tools.git/commit/?h=arm64/resv_mem
+
+
+> if the kexec behaivor is right, the LPI tables should not belong to
+> System RAM.
+
+> Like as:
+> 
+> 80300000-830effff : System RAM
+>   80480000-8134ffff : Kernel code
+>   81350000-817bffff : reserved
+>   817c0000-82acffff : Kernel data
+> 830f0000-830fffff : reserved # Property table
+> 83480000-83480fff : reserved # Pending table
+> 83490000-8349ffff : reserved # Pending table
+> 834a0000-a1fdffff : System RAM
+> 
+> I don't have ideas to separete LPI tables from System RAM... so I tried
+> to add a new file to inform the LPI tables to userspace.
+
+This is how 'nomap' memory appears, we carve it out of System RAM. A side effect of this
+is kdump can't touch it, as you've told it this isn't memory.
+
+As these tables are memory, mapped by the linear map, I think Ard's patch is the right
+thing to do ... I suspect your kexec-tools doesn't have those patches from Akashi to make
+it honour all second level entries.
+
 
 Thanks,
-Kazu
 
-> 
-> Hence for now, it makes sense to mark '--mem-usage' option as
-> unsupported for arm64 architecture until we have more clarity from arm64
-> kernel maintainers on how to manage the same in future
-> kernel/makedumpfile versions.
-> 
-> Cc: John Donnelly <john.p.donnelly@oracle.com>
-> Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-> Cc: kexec@lists.infradead.org
-> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
-> ---
->  makedumpfile.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/makedumpfile.c b/makedumpfile.c
-> index baf559e4d74e..ae60466a1e9c 100644
-> --- a/makedumpfile.c
-> +++ b/makedumpfile.c
-> @@ -11564,6 +11564,11 @@ main(int argc, char *argv[])
->  		MSG("\n");
->  		MSG("The dmesg log is saved to %s.\n", info->name_dumpfile);
->  	} else if (info->flag_mem_usage) {
-> +#ifdef __aarch64__
-> +		MSG("mem-usage not supported for arm64 architecure.\n");
-> +		goto out;
-> +#endif
-> +
->  		if (!check_param_for_creating_dumpfile(argc, argv)) {
->  			MSG("Commandline parameter is invalid.\n");
->  			MSG("Try `makedumpfile --help' for more information.\n");
-> --
-> 2.7.4
-> 
-
-
+James
 
 _______________________________________________
 kexec mailing list
