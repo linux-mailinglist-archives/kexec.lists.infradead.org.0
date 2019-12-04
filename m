@@ -2,93 +2,75 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F8B61130A3
-	for <lists+kexec@lfdr.de>; Wed,  4 Dec 2019 18:18:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F1071130DE
+	for <lists+kexec@lfdr.de>; Wed,  4 Dec 2019 18:34:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzQLECvhRtfnTZpAK33sQnLOIgisFUhlMeaFPV2DROQ=; b=FZFqHfHflKs6E0
-	AlHj8UVoQFeu31cTFpMNTe+2I/vLoflSUZ+5k5fL9dtOnliwJrP7dLG+KURSRAlKe4WUIkYIuF705
-	srnAzRT5eTAkQt9kvM/nbPTc2RfneOzeAxg9J53DH84t9fBRCXQxlGuY9U1jrGJOUJc7q/V7+JBf/
-	vE4dZy7Bft2S/ccS+iQFJqFUmRpp/AEGNb1lb/INSVCdGdcHtAzY6dUbJyakVi3/uqqKHzRB5BvMr
-	UjzVK7lKHkoPM+8VTH6lTowkYx26MKKZU2eh3T5WqCSRBcUripyWUDK7UE5rnqLa5Tu5soVWMDTf9
-	LKricCsyAAIcRqs3X97A==;
+	List-Owner; bh=ktI8ba+d8kwFzAGDSY2wM1rSdftek6bQyPZ47uAzBj8=; b=CS9IKWtMEmgPVL
+	AT/KurwIfz8AIKGuy2aUXky+PWeUB6yu2U7A7D0JPAxkPJ2fs9OUSyeeM2egLGj0qYCb3Vh9slL8s
+	YM9OK4hPqH6V/3lHggsaMKcd0ODIJtydDpvN2JNjDJN/CaiMdGaUodknueoLhpE1iSW1P3nZjVwYr
+	i95g3PWW4kdZwX7oPKKq/XFwkSkAsrAuAD6SMGeHQF8bK9THyfK3MnK4JxRpYmeaQ82ysg58H33EY
+	RE+V4TECUVRgZsNXN2OmihHsJac2sB1ProRw81WHzPAL0KluxWqXfGBhQuxsMrvV+BGpnA6dq5jRJ
+	4NOE862P69GLSiSBPidQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icYHn-0003qa-Jw; Wed, 04 Dec 2019 17:17:59 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1icYYB-0000uH-6D; Wed, 04 Dec 2019 17:34:55 +0000
+Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icYHg-0003q5-Q5
- for kexec@lists.infradead.org; Wed, 04 Dec 2019 17:17:54 +0000
-Received: by mail-qt1-x844.google.com with SMTP id z22so501758qto.7
- for <kexec@lists.infradead.org>; Wed, 04 Dec 2019 09:17:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=uJmxSM90BwOzzfnCIuJaV9fTmYo4GaP5ZVkBe3GqlAQ=;
- b=p62RXt/9TccQo8gUT6RUoVqezJF5HJZYGPQFcY/Q0vOTplwkif/Dflq4JNR96iE9Dc
- zd4GIMWIminNeEcO9hrDw9lRTenDYwN/x7MFE9HYNLLq/nT/yEtYDt0La+Lua+/XIhBG
- yLrADh2/j6IEvT5G9vjns0Vb4PPjYg6sP+GTuS3y4xvCmC56h5GuW35lvQFT6Rn0AWP/
- hEzdigz1bErHRa7F7bPstEZEP3kSIK3X/F4AR4OMWWcFdxQzjKrVSlcgi9x5VLmpDS6T
- c/FpvAKgHio3G6Q6LXsz1UfnbO9U+dGxYMfMYboZYFLKLj7O/ExjCp3xSz9nK+JPAtp8
- zKZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=uJmxSM90BwOzzfnCIuJaV9fTmYo4GaP5ZVkBe3GqlAQ=;
- b=lKnBWmGAfgVBSwKQ62wdfqY9ReujI12ooyh6WuHEP+pPiEo0qPmXvjhJlZb90u9Zbx
- Y0UlwQR6HrONIR78vjzxTxeNhzVqy4+trH1sJuqs0n6gE/pFeEawM7pbwqECndtNGSCm
- WGCm59gV9hEiKbAHc9Wv/NAMRO2kuEbnqfAb/QaVQmqgEYFyRds0qqHZZDgi6uoaN8x1
- r1fxjfyz3ReHMGEdzf18SuMZogR8ulxgpxGp41majbDvlslqLklNVleFdUtI/aGQ/4Bq
- +LmiQ/2bLfd5XV7KhbYA7hWsiCAUbbYr1sN9RVu3V5hJthY+FwB52H9Mn/qCYApA9voN
- PmNg==
-X-Gm-Message-State: APjAAAVWIMDkhNBPADJmBxGFQi2yEijzA8T/v17EuSZi2F88IwHF7lhW
- kd1KRXz7qtXJZRQnSM2W/Q==
-X-Google-Smtp-Source: APXvYqyFjloF4HHs2p8CJyaWpYiWdOKbFhcP8ySf1aoAj3Li0WFsP5nOT3NwG6pJkCbokqe5UPb+HQ==
-X-Received: by 2002:ac8:4509:: with SMTP id q9mr3619553qtn.214.1575479871519; 
- Wed, 04 Dec 2019 09:17:51 -0800 (PST)
-Received: from gabell
- (209-6-122-159.s2973.c3-0.arl-cbr1.sbo-arl.ma.cable.rcncustomer.com.
- [209.6.122.159])
- by smtp.gmail.com with ESMTPSA id y184sm3950517qkd.128.2019.12.04.09.17.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 04 Dec 2019 09:17:50 -0800 (PST)
-Date: Wed, 4 Dec 2019 12:17:44 -0500
-From: Masayoshi Mizuma <msys.mizuma@gmail.com>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH] efi/memreserve: register reservations as 'reserved' in
- /proc/iomem
-Message-ID: <20191204171744.o3ijdspnelqn5fgd@gabell>
-References: <20191204145233.11962-1-ardb@kernel.org>
+ id 1icYY6-0000tq-On
+ for kexec@lists.infradead.org; Wed, 04 Dec 2019 17:34:53 +0000
+Received: from mailgate02.nec.co.jp ([114.179.233.122])
+ by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xB4HYhs0013084
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 5 Dec 2019 02:34:43 +0900
+Received: from mailsv02.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate02.nec.co.jp (8.15.1/8.15.1) with ESMTP id xB4HYhKu001261;
+ Thu, 5 Dec 2019 02:34:43 +0900
+Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
+ by mailsv02.nec.co.jp (8.15.1/8.15.1) with ESMTP id xB4HYRP4027840;
+ Thu, 5 Dec 2019 02:34:43 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.135] [10.38.151.135]) by
+ mail01b.kamome.nec.co.jp with ESMTP id BT-MMP-10970976;
+ Thu, 5 Dec 2019 02:34:18 +0900
+Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
+ BPXC07GP.gisp.nec.co.jp ([10.38.151.135]) with mapi id 14.03.0439.000; Thu, 5
+ Dec 2019 02:34:17 +0900
+From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Subject: RE: [PATCH v4 1/4] tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from
+ vmcoreinfo (if available)
+Thread-Topic: [PATCH v4 1/4] tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from
+ vmcoreinfo (if available)
+Thread-Index: AQHVmUmqtNteu8alVkO71mm3tbyMxqeozBcA
+Date: Wed, 4 Dec 2019 17:34:16 +0000
+Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03597103@BPXM09GP.gisp.nec.co.jp>
+References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
+ <1573556939-17803-2-git-send-email-bhsharma@redhat.com>
+In-Reply-To: <1573556939-17803-2-git-send-email-bhsharma@redhat.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [143.101.135.194]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191204145233.11962-1-ardb@kernel.org>
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191204_091752_846155_237EA05D 
-X-CRM114-Status: GOOD (  24.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191204_093451_047330_84CF0A16 
+X-CRM114-Status: GOOD (  21.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [114.179.232.161 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (msys.mizuma[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,153 +82,329 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- linux-efi@vger.kernel.org, kexec@lists.infradead.org, james.morse@arm.com,
- d.hatayama@fujitsu.com
+Cc: John Donnelly <john.p.donnelly@oracle.com>,
+ "bhupesh.linux@gmail.com" <bhupesh.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello Ard,
+Hi Bhupesh,
 
-Thank you for sending the patch, but unfortunately it doesn't work for the issue...
+Sorry for the late reply.
 
-After applied your patch, the LPI tables are marked as reserved in
-/proc/iomem like as:
+> -----Original Message-----
+> This patch adds a common feature for archs (except arm64, for which
+> similar support is added via subsequent patch) to retrieve
+> 'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
 
-80300000-a1fdffff : System RAM
-  80480000-8134ffff : Kernel code
-  81350000-817bffff : reserved
-  817c0000-82acffff : Kernel data
-  830f0000-830fffff : reserved # Property table
-  83480000-83480fff : reserved # Pending table
-  83490000-8349ffff : reserved # Pending table
-
-However, kexec tries to allocate memory from System RAM, it doesn't care
-the reserved in System RAM.
-
-Following example, kexec allocates memory 0x82ad0000-0x86640000 to locate
-the initrd, and LPI tables are also in the memory region, so LPI tables
-will be destroyed by kexec reboot.
-
-# kexec -d -l /boot/vmlinuz-5.4.1+ --initrd=/boot/initramfs-5.4.1+.img
-...
-initrd: base 82ad0000, size 3b67c6fh (62291055)
-...
-segment[1].mem   = 0x82ad0000
-segment[1].memsz = 0x3b70000   # 0x86640000 (== 0x82ad0000 + 0x3b70000)
-...
-
-I'm not sure why kexec doesn't care the reserved in System RAM, however,
-if the kexec behaivor is right, the LPI tables should not belong to
-System RAM.
-Like as:
-
-80300000-830effff : System RAM
-  80480000-8134ffff : Kernel code
-  81350000-817bffff : reserved
-  817c0000-82acffff : Kernel data
-830f0000-830fffff : reserved # Property table
-83480000-83480fff : reserved # Pending table
-83490000-8349ffff : reserved # Pending table
-834a0000-a1fdffff : System RAM
-
-I don't have ideas to separete LPI tables from System RAM... so I tried
-to add a new file to inform the LPI tables to userspace.
+We already have the calibrate_machdep_info() function, which sets
+info->max_physmem_bits from vmcoreinfo, so practically we don't need
+to add this patch for the benefit.
 
 Thanks,
-Masa
+Kazu
 
-On Wed, Dec 04, 2019 at 02:52:33PM +0000, Ard Biesheuvel wrote:
-> Memory regions that are reserved using efi_mem_reserve_persistent()
-> are recorded in a special EFI config table which survives kexec,
-> allowing the incoming kernel to honour them as well. However,
-> such reservations are not visible in /proc/iomem, and so the kexec
-> tools that load the incoming kernel and its initrd into memory may
-> overwrite these reserved regions before the incoming kernel has a
-> chance to reserve them from further use.
 > 
-> So add these reservations to /proc/iomem as they are created. Note
-> that reservations that are inherited from a previous kernel are
-> memblock_reserve()'d early on, so they are already visible in
-> /proc/iomem.
+> I recently posted a kernel patch (see [0]) which appends
+> 'MAX_PHYSMEM_BITS' to vmcoreinfo in the core code itself rather than
+> in arch-specific code, so that user-space code can also benefit from
+> this addition to the vmcoreinfo and use it as a standard way of
+> determining 'SECTIONS_SHIFT' value in 'makedumpfile' utility.
 > 
-> Cc: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
-> Cc: d.hatayama@fujitsu.com
+> This patch ensures backward compatibility for kernel versions in which
+> 'MAX_PHYSMEM_BITS' is not available in vmcoreinfo.
+> 
+> [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023960.html
+> 
+> Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> Cc: John Donnelly <john.p.donnelly@oracle.com>
 > Cc: kexec@lists.infradead.org
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 > ---
->  drivers/firmware/efi/efi.c | 29 ++++++++++++++++++--
->  1 file changed, 26 insertions(+), 3 deletions(-)
+>  arch/arm.c     |  8 +++++++-
+>  arch/ia64.c    |  7 ++++++-
+>  arch/ppc.c     |  8 +++++++-
+>  arch/ppc64.c   | 49 ++++++++++++++++++++++++++++---------------------
+>  arch/s390x.c   | 29 ++++++++++++++++++-----------
+>  arch/sparc64.c |  9 +++++++--
+>  arch/x86.c     | 34 ++++++++++++++++++++--------------
+>  arch/x86_64.c  | 27 ++++++++++++++++-----------
+>  8 files changed, 109 insertions(+), 62 deletions(-)
 > 
-> diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-> index d101f072c8f8..fcd82dde23c8 100644
-> --- a/drivers/firmware/efi/efi.c
-> +++ b/drivers/firmware/efi/efi.c
-> @@ -979,6 +979,24 @@ static int __init efi_memreserve_map_root(void)
->  	return 0;
->  }
->  
-> +static int efi_mem_reserve_iomem(phys_addr_t addr, u64 size)
-> +{
-> +	struct resource *res, *parent;
-> +
-> +	res = kzalloc(sizeof(struct resource), GFP_ATOMIC);
-> +	if (!res)
-> +		return -ENOMEM;
-> +
-> +	res->name	= "reserved";
-> +	res->flags	= IORESOURCE_MEM;
-> +	res->start	= addr;
-> +	res->end	= addr + size - 1;
-> +
-> +	/* we expect a conflict with a 'System RAM' region */
-> +	parent = request_resource_conflict(&iomem_resource, res);
-> +	return parent ? request_resource(parent, res) : 0;
-> +}
-> +
->  int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
+> diff --git a/arch/arm.c b/arch/arm.c
+> index af7442ac70bf..33536fc4dfc9 100644
+> --- a/arch/arm.c
+> +++ b/arch/arm.c
+> @@ -81,7 +81,13 @@ int
+>  get_machdep_info_arm(void)
 >  {
->  	struct linux_efi_memreserve *rsv;
-> @@ -1001,9 +1019,8 @@ int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
->  		if (index < rsv->size) {
->  			rsv->entry[index].base = addr;
->  			rsv->entry[index].size = size;
-> -
->  			memunmap(rsv);
-> -			return 0;
-> +			return efi_mem_reserve_iomem(addr, size);
->  		}
->  		memunmap(rsv);
->  	}
-> @@ -1013,6 +1030,12 @@ int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
->  	if (!rsv)
->  		return -ENOMEM;
->  
-> +	rc = efi_mem_reserve_iomem(__pa(rsv), SZ_4K);
-> +	if (rc) {
-> +		free_page(rsv);
-> +		return rc;
-> +	}
+>  	info->page_offset = SYMBOL(_stext) & 0xffff0000UL;
+> -	info->max_physmem_bits = _MAX_PHYSMEM_BITS;
 > +
->  	/*
->  	 * The memremap() call above assumes that a linux_efi_memreserve entry
->  	 * never crosses a page boundary, so let's ensure that this remains true
-> @@ -1029,7 +1052,7 @@ int __ref efi_mem_reserve_persistent(phys_addr_t addr, u64 size)
->  	efi_memreserve_root->next = __pa(rsv);
->  	spin_unlock(&efi_mem_reserve_persistent_lock);
->  
-> -	return 0;
-> +	return efi_mem_reserve_iomem(addr, size);
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	else
+> +		info->max_physmem_bits = _MAX_PHYSMEM_BITS;
+> +
+>  	info->kernel_start = SYMBOL(_stext);
+>  	info->section_size_bits = _SECTION_SIZE_BITS;
+> 
+> diff --git a/arch/ia64.c b/arch/ia64.c
+> index 6c33cc7c8288..fb44dda47172 100644
+> --- a/arch/ia64.c
+> +++ b/arch/ia64.c
+> @@ -85,7 +85,12 @@ get_machdep_info_ia64(void)
+>  	}
+> 
+>  	info->section_size_bits = _SECTION_SIZE_BITS;
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> +
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	else
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> 
+>  	return TRUE;
 >  }
->  
->  static int __init efi_memreserve_root_init(void)
-> -- 
-> 2.17.1
+> diff --git a/arch/ppc.c b/arch/ppc.c
+> index 37c6a3b60cd3..ed9447427a30 100644
+> --- a/arch/ppc.c
+> +++ b/arch/ppc.c
+> @@ -31,7 +31,13 @@ get_machdep_info_ppc(void)
+>  	unsigned long vmlist, vmap_area_list, vmalloc_start;
 > 
+>  	info->section_size_bits = _SECTION_SIZE_BITS;
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> +
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	else
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> +
+>  	info->page_offset = __PAGE_OFFSET;
 > 
+>  	if (SYMBOL(_stext) != NOT_FOUND_SYMBOL)
+> diff --git a/arch/ppc64.c b/arch/ppc64.c
+> index 9d8f2525f608..a3984eebdced 100644
+> --- a/arch/ppc64.c
+> +++ b/arch/ppc64.c
+> @@ -466,30 +466,37 @@ int
+>  set_ppc64_max_physmem_bits(void)
+>  {
+>  	long array_len = ARRAY_LENGTH(mem_section);
+> -	/*
+> -	 * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
+> -	 * newer kernels 3.7 onwards uses 46 bits.
+> -	 */
+> -
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> -		return TRUE;
+> -
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> -		return TRUE;
 > 
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+>  		return TRUE;
+> +	} else {
+> +		/*
+> +		 * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
+> +		 * newer kernels 3.7 onwards uses 46 bits.
+> +		 */
+> 
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> -		return TRUE;
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +	}
+> 
+>  	return FALSE;
+>  }
+> diff --git a/arch/s390x.c b/arch/s390x.c
+> index bf9d58e54fb7..4d17a783e5bd 100644
+> --- a/arch/s390x.c
+> +++ b/arch/s390x.c
+> @@ -63,20 +63,27 @@ int
+>  set_s390x_max_physmem_bits(void)
+>  {
+>  	long array_len = ARRAY_LENGTH(mem_section);
+> -	/*
+> -	 * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
+> -	 * newer kernels uses 46 bits.
+> -	 */
+> 
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+>  		return TRUE;
+> +	} else {
+> +		/*
+> +		 * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
+> +		 * newer kernels uses 46 bits.
+> +		 */
+> 
+> -	info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
+> -	if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> -		|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> -		return TRUE;
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +
+> +		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
+> +		if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
+> +				|| (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
+> +			return TRUE;
+> +	}
+> 
+>  	return FALSE;
+>  }
+> diff --git a/arch/sparc64.c b/arch/sparc64.c
+> index 1cfaa854ce6d..b93a05bdfe59 100644
+> --- a/arch/sparc64.c
+> +++ b/arch/sparc64.c
+> @@ -25,10 +25,15 @@ int get_versiondep_info_sparc64(void)
+>  {
+>  	info->section_size_bits = _SECTION_SIZE_BITS;
+> 
+> -	if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	else if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
+>  		info->max_physmem_bits = _MAX_PHYSMEM_BITS_L4;
+> -	else {
+> +	else
+>  		info->max_physmem_bits = _MAX_PHYSMEM_BITS_L3;
+> +
+> +	if (info->kernel_version < KERNEL_VERSION(3, 8, 13)) {
+>  		info->flag_vmemmap = TRUE;
+>  		info->vmemmap_start = VMEMMAP_BASE_SPARC64;
+>  		info->vmemmap_end = VMEMMAP_BASE_SPARC64 +
+> diff --git a/arch/x86.c b/arch/x86.c
+> index 3fdae93084b8..f1b43d4c8179 100644
+> --- a/arch/x86.c
+> +++ b/arch/x86.c
+> @@ -72,21 +72,27 @@ get_machdep_info_x86(void)
+>  {
+>  	unsigned long vmlist, vmap_area_list, vmalloc_start;
+> 
+> -	/* PAE */
+> -	if ((vt.mem_flags & MEMORY_X86_PAE)
+> -	    || ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
+> -	      && (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
+> -	      && ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
+> -	      == 512)) {
+> -		DEBUG_MSG("\n");
+> -		DEBUG_MSG("PAE          : ON\n");
+> -		vt.mem_flags |= MEMORY_X86_PAE;
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
+> -	} else {
+> -		DEBUG_MSG("\n");
+> -		DEBUG_MSG("PAE          : OFF\n");
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	else {
+> +		/* PAE */
+> +		if ((vt.mem_flags & MEMORY_X86_PAE)
+> +				|| ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
+> +					&& (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
+> +					&& ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
+> +					== 512)) {
+> +			DEBUG_MSG("\n");
+> +			DEBUG_MSG("PAE          : ON\n");
+> +			vt.mem_flags |= MEMORY_X86_PAE;
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
+> +		} else {
+> +			DEBUG_MSG("\n");
+> +			DEBUG_MSG("PAE          : OFF\n");
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> +		}
+>  	}
+> +
+>  	info->page_offset = __PAGE_OFFSET;
+> 
+>  	if (SYMBOL(_stext) == NOT_FOUND_SYMBOL) {
+> diff --git a/arch/x86_64.c b/arch/x86_64.c
+> index 876644f932be..eff90307552c 100644
+> --- a/arch/x86_64.c
+> +++ b/arch/x86_64.c
+> @@ -268,17 +268,22 @@ get_machdep_info_x86_64(void)
+>  int
+>  get_versiondep_info_x86_64(void)
+>  {
+> -	/*
+> -	 * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
+> -	 */
+> -	if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
+> -	else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
+> -	else if(check_5level_paging())
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
+> -	else
+> -		info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
+> +	/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
+> +	if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
+> +		info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> +	} else {
+> +		/*
+> +		 * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
+> +		 */
+> +		if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
+> +		else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
+> +		else if(check_5level_paging())
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
+> +		else
+> +			info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
+> +	}
+> 
+>  	if (!get_page_offset_x86_64())
+>  		return FALSE;
+> --
+> 2.7.4
+> 
+
+
 
 _______________________________________________
 kexec mailing list
