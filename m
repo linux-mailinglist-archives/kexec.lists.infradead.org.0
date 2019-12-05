@@ -2,69 +2,69 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BD661148B3
-	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 22:30:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9530A114950
+	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 23:30:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NX2X+Eplt7qdg8gkMxFHlpNXEVYiPrR/I4BSGN7Dk1s=; b=kmGQP/U1Wv0zMW
-	Za0LCHKa6OAfX0g/1wYltDOLLh8rjcf+aND9l2QcR/xXgdno3NwAXnoTcCeB5hdatVhFF49aQd9Om
-	U6jmqtCZLIGAZVCaIHqRWBlrr9sle7Sk+YeP4I3oI0RddP4WaD4bYeAtwIBMcfSzug40nfwFOae7g
-	ZXfyth/LceOTqaPme2IDxLG+qA87mLC5gdCXkiWwm5phGy4aeknDz8dofCvpP5dZ0vuL96j9nINCi
-	6VdE2fee8gcknk+MEK03kb2JYt773ZcAEOsZXoTCYUyPooKuhCNQikETuJJCgjrRR4+9DYFzjYAjy
-	1wUFLghwjXKMDVjZ8gUw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=ynif5LBzCUF7jqOZhrKGKhDgeYw54Y4j3Hz2bfXfqI0=; b=kE5UFatARaqoQT
+	JcG06yYSF1gUgh+NcbbpoT3F2xIy/tog3tdgGFk3nfBoL6Zp3sFTwS7vybbU7blJy8VEBAPtjCz2U
+	+4GAlFJ80DC0FEBvLqoyCv2XnPGw3FxyQpC5FCG8ZXXSG5c6Uw3IPndIDVLWlV/2UvhfJscSifs4n
+	wboplcO49xaZLeBHySoeDfBVgaOMZ490rRDjqjKzAKvirNLnLR+ZKPBErsTJeh0kwj8309eUY8Svo
+	vuwgDnH1SJaxcTzsUyDBAKFFj/SUZQ+DsBbEr5X28lodrNz71tmXTJT195z7nuI7UlZiM1WTUVAPX
+	OWDrg8n43V9vqvKKUhJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icyhz-0003MQ-KX; Thu, 05 Dec 2019 21:30:47 +0000
-Received: from heinz.dinsnail.net ([81.169.187.250])
+	id 1iczeB-0007fy-Ag; Thu, 05 Dec 2019 22:30:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icyhs-0003LY-Jw
- for kexec@lists.infradead.org; Thu, 05 Dec 2019 21:30:46 +0000
-Received: from heinz.dinsnail.net ([IPv6:0:0:0:0:0:0:0:1])
- by heinz.dinsnail.net (8.15.2/8.15.2) with ESMTP id xB5LUEC0010903;
- Thu, 5 Dec 2019 22:30:14 +0100
-Received: from eldalonde.UUCP (uucp@localhost)
- by heinz.dinsnail.net (8.15.2/8.15.2/Submit) with bsmtp id xB5LUDNb010898;
- Thu, 5 Dec 2019 22:30:13 +0100
-Received: from eldalonde.weiser.dinsnail.net (localhost [IPv6:0:0:0:0:0:0:0:1])
- by eldalonde.weiser.dinsnail.net (8.15.2/8.15.2) with ESMTP id xB5LFWAK010648; 
- Thu, 5 Dec 2019 22:15:32 +0100
-Received: (from michael@localhost)
- by eldalonde.weiser.dinsnail.net (8.15.2/8.15.2/Submit) id xB5LFWDY010647;
- Thu, 5 Dec 2019 22:15:32 +0100
-Date: Thu, 5 Dec 2019 22:15:32 +0100
-From: Michael Weiser <michael@weiser.dinsnail.net>
-To: Dave Young <dyoung@redhat.com>
-Subject: Re: [PATCH] x86/efi: update e820 about reserved EFI boot services
- data to fix kexec breakage
-Message-ID: <20191205211532.GA10177@weiser.dinsnail.net>
-References: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
- <20191204075917.GA10587@dhcp-128-65.nay.redhat.com>
- <20191204101412.GD114697@gmail.com>
- <20191205105545.GA6710@dhcp-128-65.nay.redhat.com>
+ id 1icze4-0007Z9-TL; Thu, 05 Dec 2019 22:30:50 +0000
+Received: from localhost (mobile-166-170-221-197.mycingular.net
+ [166.170.221.197])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84F6520707;
+ Thu,  5 Dec 2019 22:30:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1575585047;
+ bh=rwc2W/J/V58JZoKOWg2doRruK6KWPbQgM5Sb2F/Ai60=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=cliOZcUxDWzGZ1UQTKJkPsD++s/EPrjyE7H/snJuA3uqE7NURH520sOnVje6nd0Ts
+ Td38CmfeZyMBlRyr+Rypsepv/EG8hoAOa7B7sJiJzOVgMDkiBquX3yxdZnHzKOkS/c
+ BBv+wew7DxEj2QDNBsIebdp/nYnu0CS5l8OPwMaM=
+Date: Thu, 5 Dec 2019 16:30:44 -0600
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH v4 7/8] linux/log2.h: Fix 64bit calculations in
+ roundup/down_pow_two()
+Message-ID: <20191205223044.GA250573@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191205105545.GA6710@dhcp-128-65.nay.redhat.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
-X-dinsnail-net-MailScanner-Information: Please contact the ISP for more
- information
-X-dinsnail-net-MailScanner-ID: xB5LUEC0010903
-X-dinsnail-net-MailScanner: Found to be clean
-X-dinsnail-net-MailScanner-From: michael@weiser.dinsnail.net
-X-Spam-Status: No
+In-Reply-To: <20191203114743.1294-8-nsaenzjulienne@suse.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_133040_808849_EAB86878 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20191205_143049_068772_69E30AAE 
+X-CRM114-Status: GOOD (  10.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 FAKE_REPLY_C           No description available.
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,39 +76,83 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- x86@kernel.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "Eric W. Biederman" <ebiederm@xmission.com>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>
+Cc: linux-pci@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-nfs@vger.kernel.org,
+ Edward Cree <ecree@solarflare.com>, linux-clk@vger.kernel.org,
+ f.fainelli@gmail.com, Herbert Xu <herbert@gondor.apana.org.au>,
+ Emilio =?iso-8859-1?Q?L=F3pez?= <emilio@elopez.com.ar>, maz@kernel.org,
+ Joerg Roedel <joro@8bytes.org>, phil@raspberrypi.org,
+ Doug Ledford <dledford@redhat.com>, Jason Gunthorpe <jgg@ziepe.ca>,
+ Chen-Yu Tsai <wens@csie.org>, Chuck Lever <chuck.lever@oracle.com>,
+ Martin Habets <mhabets@solarflare.com>, wahrenst@gmx.net,
+ Tom Lendacky <thomas.lendacky@amd.com>, Jiri Pirko <jiri@resnulli.us>,
+ Solarflare linux maintainers <linux-net-drivers@solarflare.com>,
+ Maxime Ripard <mripard@kernel.org>, linux-rpi-kernel@lists.infradead.org,
+ Anna Schumaker <anna.schumaker@netapp.com>,
+ Trond Myklebust <trond.myklebust@hammerspace.com>,
+ linux-arm-kernel@lists.infradead.org, Mirko Lindner <mlindner@marvell.com>,
+ Mike Marciniszyn <mike.marciniszyn@intel.com>, mbrugger@suse.com,
+ Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
+ Yishai Hadas <yishaih@mellanox.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
+ "David S. Miller" <davem@davemloft.net>,
+ Stephen Hemminger <stephen@networkplumber.org>, linux-rdma@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Moni Shoua <monis@mellanox.com>,
+ Eric Biederman <ebiederm@xmission.com>, james.quinlan@broadcom.com,
+ Thomas Graf <tgraf@suug.ch>, andrew.murray@arm.com,
+ Robin Murphy <robin.murphy@arm.con>, David Woodhouse <dwmw2@infradead.org>,
+ Dennis Dalessandro <dennis.dalessandro@intel.com>,
+ Lu Baolu <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Dec 05, 2019 at 06:55:45PM +0800, Dave Young wrote:
+You got the "n" on "down" in the subject, but still missing "of" ;)
 
-> >    esrt: Unsupported ESRT version 2904149718861218184.
-> > 
-> >  The ESRT memory stays in EFI boot services data, and it was reserved
-> >  in kernel via efi_mem_reserve().  The initial purpose of the reservation
-> >  is to reuse the EFI boot services data across kexec reboot. For example
-> >  the BGRT image data and some ESRT memory like Michael reported.
-> > 
-> >  But although the memory is reserved it is not updated in the X86 E820 table,
-> >  and kexec_file_load() iterates system RAM in the IO resource list to find places
-> >  for kernel, initramfs and other stuff. In Michael's case the kexec loaded
-> >  initramfs overwrote the ESRT memory and then the failure happened.
-> > 
-> >  Since kexec_file_load() depends on the E820 table being updated, just fix this
-> >  by updating the reserved EFI boot services memory as reserved type in E820.
-> Thanks for the amending, also thank all for the review and test.
+On Tue, Dec 03, 2019 at 12:47:40PM +0100, Nicolas Saenz Julienne wrote:
+> Some users need to make sure their rounding function accepts and returns
+> 64bit long variables regardless of the architecture. Sadly
+> roundup/rounddown_pow_two() takes and returns unsigned longs. It turns
+> out ilog2() already handles 32/64bit calculations properly, and being
+> the building block to the round functions we can rework them as a
+> wrapper around it.
 
-Same from me, particularly everyone's patience with my haphazard
-guesswork around an area I clearly know nothing about. :)
--- 
-Thanks,
-Michael
+Missing "of" in the function names here.
+s/a wrapper/wrappers/
+
+IIUC the point of this is that roundup_pow_of_two() returned
+"unsigned long", which can be either 32 or 64 bits (worth pointing
+out, I think), and many callers need something that returns
+"unsigned long long" (always 64 bits).
+
+It's a nice simplification to remove the "__" variants.  Just as a
+casual reader of this commit message, I'd like to know why we had both
+the roundup and the __roundup versions in the first place, and why we
+no longer need both.
+
+> -#define roundup_pow_of_two(n)			\
+> -(						\
+> -	__builtin_constant_p(n) ? (		\
+> -		(n == 1) ? 1 :			\
+> -		(1UL << (ilog2((n) - 1) + 1))	\
+> -				   ) :		\
+> -	__roundup_pow_of_two(n)			\
+> - )
+> +#define roundup_pow_of_two(n)			  \
+> +(						  \
+> +	(__builtin_constant_p(n) && ((n) == 1)) ? \
+> +	1 : (1ULL << (ilog2((n) - 1) + 1))        \
+> +)
+
+Should the resulting type of this expression always be a ULL, even
+when n==1, i.e., should it be this?
+
+  1ULL : (1ULL << (ilog2((n) - 1) + 1))        \
+
+Or maybe there's no case where that makes a difference?
+
+Bjorn
 
 _______________________________________________
 kexec mailing list
