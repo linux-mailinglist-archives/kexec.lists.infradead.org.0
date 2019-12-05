@@ -2,85 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A0181146B5
-	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 19:18:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FED21146CD
+	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 19:21:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n5tcXOIGfdYIfrsjQghx3l3APBPbThe+V7HuC2/rwXY=; b=HzC69iOfCDdUbx
-	8AfvFB5CNzMBav/1k1C8avU1uEge6ddd1IRMSqzlvUjKtGll0zUj+eOlCwlJFDadUvsKfU+j9nctH
-	1GsdsTYUoP8W/ECSwU3iuXk1/UU5FS4Oh0IlaErgzlCuRT3BQu5unm75JYhZUYsBEMkr922FdbpQW
-	MYgsh8ZLt10mTjX/JYOPKb5rze9rHCcZlZWYBgF6ryqVQHj3gjf67/z7NImumVNSqyNcQAGKcEgjf
-	jwBELW9GimE+e+yDdZ+fkwQj13uqHnjntuDsZ/aDRRa1jGzYJdAWcQzNmIuLcIBFUzB++XCfjPTcY
-	OnuFRt6o7QafHWWYMHEA==;
+	List-Owner; bh=YKwrHp2MGSADM5r/1vf0mnXwI25ehyXyryzaeeW6XTE=; b=lMKjU7bk/iVrG7
+	S9G5u4h2z7jv2qwFKT8+oXFoC7WDUAhYaGGizczB6eGws/EyCf4U/tLWF+oa2eodTz+Dgx+GT+aoD
+	fUt0tmAW1J1FLDHyzOdcwhX66ZhSehRMTwtfidDsTEmFXau9Ns02mOGi2EenEsDP91I0pfZMYbjXw
+	tWAdbb5AoApbWAFHNTbMvyYTSsDemgwf1ErdPDL1y0klcgduqOD4DiG0BFANpZ8cJkXuArCRVqaB5
+	4VnaaHejNGmZu8DT7XhqQD/jE17P45scJ/WRhm1wd7p1NDKM79s2QCznm6RayRLkz395Co/MOspF1
+	8tz3evMki5t1Lf7auMtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icvhV-0000uY-1Q; Thu, 05 Dec 2019 18:18:05 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1icvkw-0002b2-Je; Thu, 05 Dec 2019 18:21:38 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icvhQ-0000tI-9J
- for kexec@lists.infradead.org; Thu, 05 Dec 2019 18:18:02 +0000
+ id 1icvks-0002aN-3e
+ for kexec@lists.infradead.org; Thu, 05 Dec 2019 18:21:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1575569878;
+ s=mimecast20190719; t=1575570089;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=MGXzdspOCpw+ItvxJspm+Wmxc51kvjoO6id4G5yBx4U=;
- b=dfxLdBbMq683swkSHnqL/7VTqSzXNcTxjUQttVC7Rv0strfo9rh+SJh9TcEgfWa7KJxX7e
- ndvkELt8EYT7swZM7jURAuRYw0FCZlZbT4SkFdNEu5A2Cbf0iSuLUUvjnCSmlYilInshtU
- 6YTPWm/C5FSyqEXPg1KSur8tvzn3neg=
-Received: from mail-lj1-f197.google.com (mail-lj1-f197.google.com
- [209.85.208.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-384-MK_DoRMcPtiTEoLHw0RHdQ-1; Thu, 05 Dec 2019 13:17:56 -0500
-Received: by mail-lj1-f197.google.com with SMTP id l10so1194578ljb.15
- for <kexec@lists.infradead.org>; Thu, 05 Dec 2019 10:17:55 -0800 (PST)
+ bh=RhnqfjcZKe47X9lgPay67lfVvwRlCYGJddBfAWDpYeU=;
+ b=Xo3nEcg6Ch5Z6VJLHSRIXP2f77hZ7tTA2+HndysmIl5xYstT31WwhrRwCaCLnVuwiNAiS4
+ yHj0gUKcRV8h1bMSxDPccFiBZOFRiGHE50GKI3qm05NYYSxUzUSodeLlhG4y+qsNBCpb+d
+ 7jyYXy/qdvyHDZUK8HA/eOhXnicgLxE=
+Received: from mail-lf1-f71.google.com (mail-lf1-f71.google.com
+ [209.85.167.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-365-8DGvtNNmMlWYPsnq9g1I8g-1; Thu, 05 Dec 2019 13:21:27 -0500
+Received: by mail-lf1-f71.google.com with SMTP id a11so646417lff.12
+ for <kexec@lists.infradead.org>; Thu, 05 Dec 2019 10:21:27 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=HmK++1IgVoHun6QoVaR1lAKqNmyAtqwALWTUnJMGwt0=;
- b=ZH6YxT5yhfMhj+yvWsuxkvdhqdT0Q2Ulfs2D28wwQTlqr/2AHtap0mUkt+ub84CYTi
- CTzesihpyw4UtrlcYhzL6xmcQ5aT6M+0hRVxoGCQ9j9wyqBo770PPCy6XFMZl1MRWMhE
- 4nnkOtBeIzD16bjURrFmSb9FKB+4Mx2gUok9w0Gc3BsRkDz7Tull1GKKoPUchtCmdw5/
- lwfaZgRjf66CUfcWPEZD8w1yZdClACtX8uXENGIWNMkYJr5PTrBsmJmiH4lrBlNsXheD
- mU+NNKCTbvlqYZVyoO0lXa+ZnuwEtVVROXWOja552ArOsN3DF4PFLBBu+bwl8wHqNZhr
- 0Ghg==
-X-Gm-Message-State: APjAAAV/7npNuklOqN9JrwN2j5cEBsaUi2omCjIxMt6AfN/O+T+Z9I1K
- sm4PHjATFdsNzdTjmp1BqOkNe+poJAHuqJ0bWUcZM97lbf9AyJElijhzO/dkGqorYvOraxxGWHt
- reEEM2UtZHGD3x9psFL+8F6IezfbWWn06gPFe
-X-Received: by 2002:a2e:9e19:: with SMTP id e25mr6317964ljk.226.1575569874018; 
- Thu, 05 Dec 2019 10:17:54 -0800 (PST)
-X-Google-Smtp-Source: APXvYqzZbCfQzJchL9T1+ssTQ6lLWssHTZuKBYBRRZQWJINQdyxbV83ejo3z+5IVSgIAwR3kiaU3VlbvFdmKApBdAeY=
-X-Received: by 2002:a2e:9e19:: with SMTP id e25mr6317945ljk.226.1575569873758; 
- Thu, 05 Dec 2019 10:17:53 -0800 (PST)
+ bh=EijFC5/smUmEpwHodS5KG9B70Mdj5ZtqhTwSCiT0/CU=;
+ b=WwvnUYXRh7QupssBe92xkYBkXghblUsFkQ7JJ5lr6HilaoyvbS+YJHQ8PAoQJnhzq3
+ R5XGLTIU93c59kqkOXbvfZLx2GoVSJ4jx+xWTTQRG9jsjQlxnvk04Hhyd4Ry2U0/hLQ6
+ s2181nU+fEa4UdHxl58PTIlg5/0UyGyhbRiFlJ+93Zn7m+ypZqT2QR15I7/C7SEtx2Qd
+ 5cmup426h9pDNa8/ctaZygx6XETpBlR8vvs7lZIMsJKXk+wRzbQ+jWAzm9j7QTwmXHHf
+ 8DK6IK4Jjpi1OMKyJGrS7ZInBKxzzkPavR/C55qPppVA4/KOEw/Dvzy0mvttMbX2RrnG
+ Fljg==
+X-Gm-Message-State: APjAAAU4ETv/a1YkCqaQa7cdIDBbDY6T14R3skrFSgpsfjY11x9WzCpF
+ Vppxao8M1Chebl9nYiPTClxmPV2XYU5smD2EP/55impDHcDyhbagkiZRg/1BjqYc7l8uXIWFzrR
+ B6KYixSFISHtpUUugDQtSC7mJ7TQ4VBQymhIg
+X-Received: by 2002:a2e:9e19:: with SMTP id e25mr6325823ljk.226.1575570086458; 
+ Thu, 05 Dec 2019 10:21:26 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwvJg2En3WxQp09QBe9Zzvrcn5fD+xdQ9QGKOcKN5XiWoAAtL7vkRF0ZVN7olbgPaeYzaunAtPo8A+LpdPHEJI=
+X-Received: by 2002:a2e:9e19:: with SMTP id e25mr6325801ljk.226.1575570086079; 
+ Thu, 05 Dec 2019 10:21:26 -0800 (PST)
 MIME-Version: 1.0
 References: <1573556939-17803-1-git-send-email-bhsharma@redhat.com>
- <1573556939-17803-2-git-send-email-bhsharma@redhat.com>
- <4AE2DC15AC0B8543882A74EA0D43DBEC03597103@BPXM09GP.gisp.nec.co.jp>
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597103@BPXM09GP.gisp.nec.co.jp>
+ <1573556939-17803-3-git-send-email-bhsharma@redhat.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597144@BPXM09GP.gisp.nec.co.jp>
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597144@BPXM09GP.gisp.nec.co.jp>
 From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Thu, 5 Dec 2019 23:47:40 +0530
-Message-ID: <CACi5LpNVeQYYYoXovVweaBwFbqrkFacMdiZzCn0G_Tp6OhZ=2A@mail.gmail.com>
-Subject: Re: [PATCH v4 1/4] tree-wide: Retrieve 'MAX_PHYSMEM_BITS' from
- vmcoreinfo (if available)
+Date: Thu, 5 Dec 2019 23:51:12 +0530
+Message-ID: <CACi5LpN1BEPma8Gg_TGY5HHWm7ydpcDPKarjTwAX=SNzoMDRmw@mail.gmail.com>
+Subject: Re: [PATCH v4 2/4] makedumpfile/arm64: Add support for ARMv8.2-LPA
+ (52-bit PA support)
 To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-X-MC-Unique: MK_DoRMcPtiTEoLHw0RHdQ-1
+X-MC-Unique: 8DGvtNNmMlWYPsnq9g1I8g-1
 X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_101800_477967_174C51A0 
-X-CRM114-Status: GOOD (  25.81  )
+X-CRM114-CacheID: sfid-20191205_102134_310725_C4D04F17 
+X-CRM114-Status: GOOD (  29.92  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -112,93 +112,27 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 Hi Kazu,
 
-On Wed, Dec 4, 2019 at 11:05 PM Kazuhito Hagio <k-hagio@ab.jp.nec.com> wrote:
+On Wed, Dec 4, 2019 at 11:07 PM Kazuhito Hagio <k-hagio@ab.jp.nec.com> wrote:
 >
-> Hi Bhupesh,
->
-> Sorry for the late reply.
-
-No problem.
-
 > > -----Original Message-----
-> > This patch adds a common feature for archs (except arm64, for which
-> > similar support is added via subsequent patch) to retrieve
-> > 'MAX_PHYSMEM_BITS' from vmcoreinfo (if available).
->
-> We already have the calibrate_machdep_info() function, which sets
-> info->max_physmem_bits from vmcoreinfo, so practically we don't need
-> to add this patch for the benefit.
-
-Since other user-space tools like crash use the 'MAX_PHYSMEM_BITS' value as well
-it was agreed with the arm64 maintainers that it would be a good
-approach to export the
-same in vmcoreinfo and not use different methods to determine the same
-in user-space.
-
-Take an example of the PPC makedumpfile implementation for example. It
-uses the following complex method of dtereming
-'info->max_physmem_bits':
-int
-set_ppc64_max_physmem_bits(void)
-{
-    long array_len = ARRAY_LENGTH(mem_section);
-    /*
-     * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
-     * newer kernels 3.7 onwards uses 46 bits.
-     */
-
-    info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
-    if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-        || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-        return TRUE;
-
-    info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
-    if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-        || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-        return TRUE;
-
-    info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
-    if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-        || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-        return TRUE;
-
-    info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
-    if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-        || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-        return TRUE;
-
-    return FALSE;
-}
-
-This might need modification and introduction of another
-_MAX_PHYSMEM_BITS_x_y macro when this changes for a newer kernel
-version.
-
-I think this makes the code error-prone and hard to read. Its much
-better to replace it with:
-/* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-    if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
-        info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-        return TRUE;
-} else {
-..
-}
-
-I think it will reduce future reworks (as per kernel versions) and
-also reduce issues while backporting makedumpfile to older kernels.
-
-What do you think?
-
-Regards,
-Bhupesh
-> > I recently posted a kernel patch (see [0]) which appends
-> > 'MAX_PHYSMEM_BITS' to vmcoreinfo in the core code itself rather than
-> > in arch-specific code, so that user-space code can also benefit from
-> > this addition to the vmcoreinfo and use it as a standard way of
-> > determining 'SECTIONS_SHIFT' value in 'makedumpfile' utility.
+> > ARMv8.2-LPA architecture extension (if available on underlying hardware)
+> > can support 52-bit physical addresses, while the kernel virtual
+> > addresses remain 48-bit.
 > >
-> > This patch ensures backward compatibility for kernel versions in which
-> > 'MAX_PHYSMEM_BITS' is not available in vmcoreinfo.
+> > Make sure that we read the 52-bit PA address capability from
+> > 'MAX_PHYSMEM_BITS' variable (if available in vmcoreinfo) and
+> > accordingly change the pte_to_phy() mask values and also traverse
+> > the page-table walk accordingly.
+> >
+> > Also make sure that it works well for the existing 48-bit PA address
+> > platforms and also on environments which use newer kernels with 52-bit
+> > PA support but hardware which is not ARM8.2-LPA compliant.
+> >
+> > I have sent a kernel patch upstream to add 'MAX_PHYSMEM_BITS' to
+> > vmcoreinfo for arm64 (see [0]).
+> >
+> > This patch is in accordance with ARMv8 Architecture Reference Manual
+> > version D.a
 > >
 > > [0]. http://lists.infradead.org/pipermail/kexec/2019-November/023960.html
 > >
@@ -207,284 +141,413 @@ Bhupesh
 > > Cc: kexec@lists.infradead.org
 > > Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 > > ---
-> >  arch/arm.c     |  8 +++++++-
-> >  arch/ia64.c    |  7 ++++++-
-> >  arch/ppc.c     |  8 +++++++-
-> >  arch/ppc64.c   | 49 ++++++++++++++++++++++++++++---------------------
-> >  arch/s390x.c   | 29 ++++++++++++++++++-----------
-> >  arch/sparc64.c |  9 +++++++--
-> >  arch/x86.c     | 34 ++++++++++++++++++++--------------
-> >  arch/x86_64.c  | 27 ++++++++++++++++-----------
-> >  8 files changed, 109 insertions(+), 62 deletions(-)
+> >  arch/arm64.c | 292 +++++++++++++++++++++++++++++++++++++++++------------------
+> >  1 file changed, 204 insertions(+), 88 deletions(-)
 > >
-> > diff --git a/arch/arm.c b/arch/arm.c
-> > index af7442ac70bf..33536fc4dfc9 100644
-> > --- a/arch/arm.c
-> > +++ b/arch/arm.c
-> > @@ -81,7 +81,13 @@ int
-> >  get_machdep_info_arm(void)
-> >  {
-> >       info->page_offset = SYMBOL(_stext) & 0xffff0000UL;
-> > -     info->max_physmem_bits = _MAX_PHYSMEM_BITS;
+> > diff --git a/arch/arm64.c b/arch/arm64.c
+> > index 3516b340adfd..ecb19139e178 100644
+> > --- a/arch/arm64.c
+> > +++ b/arch/arm64.c
+> > @@ -39,72 +39,184 @@ typedef struct {
+> >       unsigned long pte;
+> >  } pte_t;
+> >
+>
+> > +#define __pte(x)     ((pte_t) { (x) } )
+> > +#define __pmd(x)     ((pmd_t) { (x) } )
+> > +#define __pud(x)     ((pud_t) { (x) } )
+> > +#define __pgd(x)     ((pgd_t) { (x) } )
+>
+> Is it possible to remove these macros?
+
+Ok, will fix in v5.
+
 > > +
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> > +static int lpa_52_bit_support_available;
+> >  static int pgtable_level;
+> >  static int va_bits;
+> >  static unsigned long kimage_voffset;
+> >
+> > -#define SZ_4K                        (4 * 1024)
+> > -#define SZ_16K                       (16 * 1024)
+> > -#define SZ_64K                       (64 * 1024)
+> > -#define SZ_128M                      (128 * 1024 * 1024)
+> > +#define SZ_4K                        4096
+> > +#define SZ_16K                       16384
+> > +#define SZ_64K                       65536
+> >
+> > -#define PAGE_OFFSET_36 ((0xffffffffffffffffUL) << 36)
+> > -#define PAGE_OFFSET_39 ((0xffffffffffffffffUL) << 39)
+> > -#define PAGE_OFFSET_42 ((0xffffffffffffffffUL) << 42)
+> > -#define PAGE_OFFSET_47 ((0xffffffffffffffffUL) << 47)
+> > -#define PAGE_OFFSET_48 ((0xffffffffffffffffUL) << 48)
+> > +#define PAGE_OFFSET_36               ((0xffffffffffffffffUL) << 36)
+> > +#define PAGE_OFFSET_39               ((0xffffffffffffffffUL) << 39)
+> > +#define PAGE_OFFSET_42               ((0xffffffffffffffffUL) << 42)
+> > +#define PAGE_OFFSET_47               ((0xffffffffffffffffUL) << 47)
+> > +#define PAGE_OFFSET_48               ((0xffffffffffffffffUL) << 48)
+> > +#define PAGE_OFFSET_52               ((0xffffffffffffffffUL) << 52)
+> >
+> >  #define pgd_val(x)           ((x).pgd)
+> >  #define pud_val(x)           (pgd_val((x).pgd))
+> >  #define pmd_val(x)           (pud_val((x).pud))
+> >  #define pte_val(x)           ((x).pte)
+> >
+> > -#define PAGE_MASK            (~(PAGESIZE() - 1))
+> > -#define PGDIR_SHIFT          ((PAGESHIFT() - 3) * pgtable_level + 3)
+> > -#define PTRS_PER_PGD         (1 << (va_bits - PGDIR_SHIFT))
+> > -#define PUD_SHIFT            get_pud_shift_arm64()
+> > -#define PUD_SIZE             (1UL << PUD_SHIFT)
+> > -#define PUD_MASK             (~(PUD_SIZE - 1))
+> > -#define PTRS_PER_PTE         (1 << (PAGESHIFT() - 3))
+> > -#define PTRS_PER_PUD         PTRS_PER_PTE
+> > -#define PMD_SHIFT            ((PAGESHIFT() - 3) * 2 + 3)
+> > -#define PMD_SIZE             (1UL << PMD_SHIFT)
+> > -#define PMD_MASK             (~(PMD_SIZE - 1))
+>
+> > +/* See 'include/uapi/linux/const.h' for definitions below */
+> > +#define __AC(X,Y)    (X##Y)
+> > +#define _AC(X,Y)     __AC(X,Y)
+> > +#define _AT(T,X)     ((T)(X))
+> > +
+> > +/* See 'include/asm/pgtable-types.h' for definitions below */
+> > +typedef unsigned long pteval_t;
+> > +typedef unsigned long pmdval_t;
+> > +typedef unsigned long pudval_t;
+> > +typedef unsigned long pgdval_t;
+>
+> Is it possible to remove these macros/typedefs as well?
+> I don't think they make the code easier to read..
+
+Ok. The idea behind it was to keep the makedumpfile(user-space)
+page-table-walk code similar to Linux kernel (as much as possible), so
+that if we identify an issue in user-space code, it is easier to
+correlate it with the corresponding kernel code.
+
+I will try to see how this can be addressed while making the code
+easier to read/understand.
+
+Regards,
+Bhupesh
+
+> > +
+> > +#define PAGE_SHIFT   PAGESHIFT()
+> > +
+> > +/* See 'arch/arm64/include/asm/pgtable-hwdef.h' for definitions below */
+> > +
+> > +#define ARM64_HW_PGTABLE_LEVEL_SHIFT(n)      ((PAGE_SHIFT - 3) * (4 - (n)) + 3)
+> > +
+> > +#define PTRS_PER_PTE         (1 << (PAGE_SHIFT - 3))
+> > +
+> > +/*
+> > + * PMD_SHIFT determines the size a level 2 page table entry can map.
+> > + */
+> > +#define PMD_SHIFT            ARM64_HW_PGTABLE_LEVEL_SHIFT(2)
+> > +#define PMD_SIZE             (_AC(1, UL) << PMD_SHIFT)
+> > +#define PMD_MASK             (~(PMD_SIZE-1))
+> >  #define PTRS_PER_PMD         PTRS_PER_PTE
+> >
+> > -#define PAGE_PRESENT         (1 << 0)
+> > +/*
+> > + * PUD_SHIFT determines the size a level 1 page table entry can map.
+> > + */
+> > +#define PUD_SHIFT            ARM64_HW_PGTABLE_LEVEL_SHIFT(1)
+> > +#define PUD_SIZE             (_AC(1, UL) << PUD_SHIFT)
+> > +#define PUD_MASK             (~(PUD_SIZE-1))
+> > +#define PTRS_PER_PUD         PTRS_PER_PTE
+> > +
+> > +/*
+> > + * PGDIR_SHIFT determines the size a top-level page table entry can map
+> > + * (depending on the configuration, this level can be 0, 1 or 2).
+> > + */
+> > +#define PGDIR_SHIFT          ARM64_HW_PGTABLE_LEVEL_SHIFT(4 - (pgtable_level))
+> > +#define PGDIR_SIZE           (_AC(1, UL) << PGDIR_SHIFT)
+> > +#define PGDIR_MASK           (~(PGDIR_SIZE-1))
+> > +#define PTRS_PER_PGD         (1 << ((va_bits) - PGDIR_SHIFT))
+> > +
+> > +/*
+> > + * Section address mask and size definitions.
+> > + */
+> >  #define SECTIONS_SIZE_BITS   30
+> > -/* Highest possible physical address supported */
+> > -#define PHYS_MASK_SHIFT              48
+> > -#define PHYS_MASK            ((1UL << PHYS_MASK_SHIFT) - 1)
+> > +
+> >  /*
+> > - * Remove the highest order bits that are not a part of the
+> > - * physical address in a section
+> > + * Hardware page table definitions.
+> > + *
+> > + * Level 1 descriptor (PUD).
+> >   */
+> > -#define PMD_SECTION_MASK     ((1UL << 40) - 1)
+> > +#define PUD_TYPE_TABLE               (_AT(pudval_t, 3) << 0)
+> > +#define PUD_TABLE_BIT                (_AT(pudval_t, 1) << 1)
+> > +#define PUD_TYPE_MASK                (_AT(pudval_t, 3) << 0)
+> > +#define PUD_TYPE_SECT                (_AT(pudval_t, 1) << 0)
+> >
+> > -#define PMD_TYPE_MASK                3
+> > -#define PMD_TYPE_SECT                1
+> > -#define PMD_TYPE_TABLE               3
+> > +/*
+> > + * Level 2 descriptor (PMD).
+> > + */
+> > +#define PMD_TYPE_MASK                (_AT(pmdval_t, 3) << 0)
+> > +#define PMD_TYPE_FAULT               (_AT(pmdval_t, 0) << 0)
+> > +#define PMD_TYPE_TABLE               (_AT(pmdval_t, 3) << 0)
+> > +#define PMD_TYPE_SECT                (_AT(pmdval_t, 1) << 0)
+> > +#define PMD_TABLE_BIT                (_AT(pmdval_t, 1) << 1)
+> > +
+> > +/*
+> > + * Level 3 descriptor (PTE).
+> > + */
+> > +#define PTE_ADDR_LOW         (((_AT(pteval_t, 1) << (48 - PAGE_SHIFT)) - 1) << PAGE_SHIFT)
+> > +#define PTE_ADDR_HIGH                (_AT(pteval_t, 0xf) << 12)
+> > +
+> > +static inline unsigned long
+> > +get_pte_addr_mask_arm64(void)
+> > +{
+> > +     if (lpa_52_bit_support_available)
+> > +             return (PTE_ADDR_LOW | PTE_ADDR_HIGH);
 > > +     else
-> > +             info->max_physmem_bits = _MAX_PHYSMEM_BITS;
+> > +             return PTE_ADDR_LOW;
+> > +}
 > > +
-> >       info->kernel_start = SYMBOL(_stext);
-> >       info->section_size_bits = _SECTION_SIZE_BITS;
+> > +#define PTE_ADDR_MASK                get_pte_addr_mask_arm64()
 > >
-> > diff --git a/arch/ia64.c b/arch/ia64.c
-> > index 6c33cc7c8288..fb44dda47172 100644
-> > --- a/arch/ia64.c
-> > +++ b/arch/ia64.c
-> > @@ -85,7 +85,12 @@ get_machdep_info_ia64(void)
+> > -#define PUD_TYPE_MASK                3
+> > -#define PUD_TYPE_SECT                1
+> > -#define PUD_TYPE_TABLE               3
+> > +#define PAGE_MASK            (~(PAGESIZE() - 1))
+> > +#define PAGE_PRESENT         (1 << 0)
+> >
+> > +/* Helper API to convert between a physical address and its placement
+> > + * in a page table entry, taking care of 52-bit addresses.
+> > + */
+> > +static inline unsigned long
+> > +__pte_to_phys(pte_t pte)
+> > +{
+> > +     if (lpa_52_bit_support_available)
+> > +             return ((pte_val(pte) & PTE_ADDR_LOW) | ((pte_val(pte) & PTE_ADDR_HIGH) << 36));
+> > +     else
+> > +             return (pte_val(pte) & PTE_ADDR_MASK);
+> > +}
+> > +
+> > +/* Find an entry in a page-table-directory */
+> >  #define pgd_index(vaddr)             (((vaddr) >> PGDIR_SHIFT) & (PTRS_PER_PGD - 1))
+> > -#define pgd_offset(pgdir, vaddr)     ((pgd_t *)(pgdir) + pgd_index(vaddr))
+> >
+> > -#define pte_index(vaddr)             (((vaddr) >> PAGESHIFT()) & (PTRS_PER_PTE - 1))
+> > -#define pmd_page_paddr(pmd)          (pmd_val(pmd) & PHYS_MASK & (int32_t)PAGE_MASK)
+> > -#define pte_offset(dir, vaddr)               ((pte_t*)pmd_page_paddr((*dir)) + pte_index(vaddr))
+> > +static inline pte_t
+> > +pgd_pte(pgd_t pgd)
+> > +{
+> > +     return __pte(pgd_val(pgd));
+> > +}
+> >
+> > -#define pmd_index(vaddr)             (((vaddr) >> PMD_SHIFT) & (PTRS_PER_PMD - 1))
+> > -#define pud_page_paddr(pud)          (pud_val(pud) & PHYS_MASK & (int32_t)PAGE_MASK)
+> > -#define pmd_offset_pgtbl_lvl_2(pud, vaddr) ((pmd_t *)pud)
+> > -#define pmd_offset_pgtbl_lvl_3(pud, vaddr) ((pmd_t *)pud_page_paddr((*pud)) + pmd_index(vaddr))
+> > +#define __pgd_to_phys(pgd)           __pte_to_phys(pgd_pte(pgd))
+> > +#define pgd_offset(pgd, vaddr)               ((pgd_t *)(pgd) + pgd_index(vaddr))
+> > +
+> > +static inline pte_t pud_pte(pud_t pud)
+> > +{
+> > +     return __pte(pud_val(pud));
+> > +}
+> >
+> > +static inline unsigned long
+> > +pgd_page_paddr(pgd_t pgd)
+> > +{
+> > +     return __pgd_to_phys(pgd);
+> > +}
+> > +
+> > +/* Find an entry in the first-level page table. */
+> >  #define pud_index(vaddr)             (((vaddr) >> PUD_SHIFT) & (PTRS_PER_PUD - 1))
+> > -#define pgd_page_paddr(pgd)          (pgd_val(pgd) & PHYS_MASK & (int32_t)PAGE_MASK)
+> > +#define __pud_to_phys(pud)           __pte_to_phys(pud_pte(pud))
+> > +
+> > +static inline unsigned long
+> > +pud_page_paddr(pud_t pud)
+> > +{
+> > +     return __pud_to_phys(pud);
+> > +}
+> > +
+> > +/* Find an entry in the second-level page table. */
+> > +#define pmd_index(vaddr)             (((vaddr) >> PMD_SHIFT) & (PTRS_PER_PMD - 1))
+> > +
+> > +static inline pte_t pmd_pte(pmd_t pmd)
+> > +{
+> > +     return __pte(pmd_val(pmd));
+> > +}
+> > +
+> > +#define __pmd_to_phys(pmd)           __pte_to_phys(pmd_pte(pmd))
+> > +
+> > +static inline unsigned long
+> > +pmd_page_paddr(pmd_t pmd)
+> > +{
+> > +     return __pmd_to_phys(pmd);
+> > +}
+> > +
+> > +/* Find an entry in the third-level page table. */
+> > +#define pte_index(vaddr)             (((vaddr) >> PAGESHIFT()) & (PTRS_PER_PTE - 1))
+> > +#define pte_offset(dir, vaddr)               (pmd_page_paddr((*dir)) + pte_index(vaddr) * sizeof(pte_t))
+> >
+> >  static unsigned long long
+> >  __pa(unsigned long vaddr)
+> > @@ -116,32 +228,22 @@ __pa(unsigned long vaddr)
+> >               return (vaddr - kimage_voffset);
+> >  }
+> >
+> > -static int
+> > -get_pud_shift_arm64(void)
+> > +static pud_t *
+> > +pud_offset(pgd_t *pgda, pgd_t *pgdv, unsigned long vaddr)
+> >  {
+> > -     if (pgtable_level == 4)
+> > -             return ((PAGESHIFT() - 3) * 3 + 3);
+> > +     if (pgtable_level > 3)
+> > +             return (pud_t *)(pgd_page_paddr(*pgdv) + pud_index(vaddr) * sizeof(pud_t));
+> >       else
+> > -             return PGDIR_SHIFT;
+> > +             return (pud_t *)(pgda);
+> >  }
+> >
+> >  static pmd_t *
+> >  pmd_offset(pud_t *puda, pud_t *pudv, unsigned long vaddr)
+> >  {
+> > -     if (pgtable_level == 2) {
+> > -             return pmd_offset_pgtbl_lvl_2(puda, vaddr);
+> > -     } else {
+> > -             return pmd_offset_pgtbl_lvl_3(pudv, vaddr);
+> > -     }
+> > -}
+> > -
+> > -static pud_t *
+> > -pud_offset(pgd_t *pgda, pgd_t *pgdv, unsigned long vaddr)
+> > -{
+> > -     if (pgtable_level == 4)
+> > -             return ((pud_t *)pgd_page_paddr((*pgdv)) + pud_index(vaddr));
+> > +     if (pgtable_level > 2)
+> > +             return (pmd_t *)(pud_page_paddr(*pudv) + pmd_index(vaddr) * sizeof(pmd_t));
+> >       else
+> > -             return (pud_t *)(pgda);
+> > +             return (pmd_t*)(puda);
+> >  }
+> >
+> >  static int calculate_plat_config(void)
+> > @@ -307,6 +409,14 @@ get_stext_symbol(void)
+> >  int
+> >  get_machdep_info_arm64(void)
+> >  {
+> > +     /* Determine if the PA address range is 52-bits: ARMv8.2-LPA */
+> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
+> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
+> > +             if (info->max_physmem_bits == 52)
+> > +                     lpa_52_bit_support_available = 1;
+> > +     } else
+> > +             info->max_physmem_bits = 48;
+> > +
+> >       /* Check if va_bits is still not initialized. If still 0, call
+> >        * get_versiondep_info() to initialize the same.
+> >        */
+> > @@ -319,12 +429,11 @@ get_machdep_info_arm64(void)
 > >       }
 > >
-> >       info->section_size_bits = _SECTION_SIZE_BITS;
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
-> > +
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> > +     else
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
+> >       kimage_voffset = NUMBER(kimage_voffset);
+> > -     info->max_physmem_bits = PHYS_MASK_SHIFT;
+> >       info->section_size_bits = SECTIONS_SIZE_BITS;
+> >
+> >       DEBUG_MSG("kimage_voffset   : %lx\n", kimage_voffset);
+> > -     DEBUG_MSG("max_physmem_bits : %lx\n", info->max_physmem_bits);
+> > -     DEBUG_MSG("section_size_bits: %lx\n", info->section_size_bits);
+> > +     DEBUG_MSG("max_physmem_bits : %ld\n", info->max_physmem_bits);
+> > +     DEBUG_MSG("section_size_bits: %ld\n", info->section_size_bits);
 > >
 > >       return TRUE;
 > >  }
-> > diff --git a/arch/ppc.c b/arch/ppc.c
-> > index 37c6a3b60cd3..ed9447427a30 100644
-> > --- a/arch/ppc.c
-> > +++ b/arch/ppc.c
-> > @@ -31,7 +31,13 @@ get_machdep_info_ppc(void)
-> >       unsigned long vmlist, vmap_area_list, vmalloc_start;
-> >
-> >       info->section_size_bits = _SECTION_SIZE_BITS;
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
-> > +
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> > +     else
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
-> > +
-> >       info->page_offset = __PAGE_OFFSET;
-> >
-> >       if (SYMBOL(_stext) != NOT_FOUND_SYMBOL)
-> > diff --git a/arch/ppc64.c b/arch/ppc64.c
-> > index 9d8f2525f608..a3984eebdced 100644
-> > --- a/arch/ppc64.c
-> > +++ b/arch/ppc64.c
-> > @@ -466,30 +466,37 @@ int
-> >  set_ppc64_max_physmem_bits(void)
-> >  {
-> >       long array_len = ARRAY_LENGTH(mem_section);
-> > -     /*
-> > -      * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
-> > -      * newer kernels 3.7 onwards uses 46 bits.
-> > -      */
-> > -
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > -             return TRUE;
-> > -
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > -             return TRUE;
-> >
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> >               return TRUE;
-> > +     } else {
-> > +             /*
-> > +              * The older ppc64 kernels uses _MAX_PHYSMEM_BITS as 42 and the
-> > +              * newer kernels 3.7 onwards uses 46 bits.
-> > +              */
-> >
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > -             return TRUE;
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
-> > +
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_7;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
-> > +
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_19;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
-> > +
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_4_20;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
-> > +     }
-> >
-> >       return FALSE;
+> > @@ -382,6 +491,19 @@ get_versiondep_info_arm64(void)
+> >       return TRUE;
 > >  }
-> > diff --git a/arch/s390x.c b/arch/s390x.c
-> > index bf9d58e54fb7..4d17a783e5bd 100644
-> > --- a/arch/s390x.c
-> > +++ b/arch/s390x.c
-> > @@ -63,20 +63,27 @@ int
-> >  set_s390x_max_physmem_bits(void)
-> >  {
-> >       long array_len = ARRAY_LENGTH(mem_section);
-> > -     /*
-> > -      * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
-> > -      * newer kernels uses 46 bits.
-> > -      */
 > >
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> >               return TRUE;
-> > +     } else {
-> > +             /*
-> > +              * The older s390x kernels uses _MAX_PHYSMEM_BITS as 42 and the
-> > +              * newer kernels uses 46 bits.
-> > +              */
-> >
-> > -     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
-> > -     if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > -             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > -             return TRUE;
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG ;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
+> > +/* 1GB section for Page Table level = 4 and Page Size = 4KB */
+> > +static int
+> > +is_pud_sect(pud_t pud)
+> > +{
+> > +     return ((pud_val(pud) & PUD_TYPE_MASK) == PUD_TYPE_SECT);
+> > +}
 > > +
-> > +             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_3_3;
-> > +             if ((array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT_EXTREME()))
-> > +                             || (array_len == (NR_MEM_SECTIONS() / _SECTIONS_PER_ROOT())))
-> > +                     return TRUE;
-> > +     }
-> >
-> >       return FALSE;
-> >  }
-> > diff --git a/arch/sparc64.c b/arch/sparc64.c
-> > index 1cfaa854ce6d..b93a05bdfe59 100644
-> > --- a/arch/sparc64.c
-> > +++ b/arch/sparc64.c
-> > @@ -25,10 +25,15 @@ int get_versiondep_info_sparc64(void)
-> >  {
-> >       info->section_size_bits = _SECTION_SIZE_BITS;
-> >
-> > -     if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> > +     else if (info->kernel_version >= KERNEL_VERSION(3, 8, 13))
-> >               info->max_physmem_bits = _MAX_PHYSMEM_BITS_L4;
-> > -     else {
-> > +     else
-> >               info->max_physmem_bits = _MAX_PHYSMEM_BITS_L3;
+> > +static int
+> > +is_pmd_sect(pmd_t pmd)
+> > +{
+> > +     return ((pmd_val(pmd) & PMD_TYPE_MASK) == PMD_TYPE_SECT);
+> > +}
 > > +
-> > +     if (info->kernel_version < KERNEL_VERSION(3, 8, 13)) {
-> >               info->flag_vmemmap = TRUE;
-> >               info->vmemmap_start = VMEMMAP_BASE_SPARC64;
-> >               info->vmemmap_end = VMEMMAP_BASE_SPARC64 +
-> > diff --git a/arch/x86.c b/arch/x86.c
-> > index 3fdae93084b8..f1b43d4c8179 100644
-> > --- a/arch/x86.c
-> > +++ b/arch/x86.c
-> > @@ -72,21 +72,27 @@ get_machdep_info_x86(void)
-> >  {
-> >       unsigned long vmlist, vmap_area_list, vmalloc_start;
-> >
-> > -     /* PAE */
-> > -     if ((vt.mem_flags & MEMORY_X86_PAE)
-> > -         || ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
-> > -           && (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
-> > -           && ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
-> > -           == 512)) {
-> > -             DEBUG_MSG("\n");
-> > -             DEBUG_MSG("PAE          : ON\n");
-> > -             vt.mem_flags |= MEMORY_X86_PAE;
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
-> > -     } else {
-> > -             DEBUG_MSG("\n");
-> > -             DEBUG_MSG("PAE          : OFF\n");
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER)
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> > +     else {
-> > +             /* PAE */
-> > +             if ((vt.mem_flags & MEMORY_X86_PAE)
-> > +                             || ((SYMBOL(pkmap_count) != NOT_FOUND_SYMBOL)
-> > +                                     && (SYMBOL(pkmap_count_next) != NOT_FOUND_SYMBOL)
-> > +                                     && ((SYMBOL(pkmap_count_next)-SYMBOL(pkmap_count))/sizeof(int))
-> > +                                     == 512)) {
-> > +                     DEBUG_MSG("\n");
-> > +                     DEBUG_MSG("PAE          : ON\n");
-> > +                     vt.mem_flags |= MEMORY_X86_PAE;
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_PAE;
-> > +             } else {
-> > +                     DEBUG_MSG("\n");
-> > +                     DEBUG_MSG("PAE          : OFF\n");
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS;
-> > +             }
+> >  /*
+> >   * vaddr_to_paddr_arm64() - translate arbitrary virtual address to physical
+> >   * @vaddr: virtual address to translate
+> > @@ -419,10 +541,9 @@ vaddr_to_paddr_arm64(unsigned long vaddr)
+> >               return NOT_PADDR;
 > >       }
-> > +
-> >       info->page_offset = __PAGE_OFFSET;
 > >
-> >       if (SYMBOL(_stext) == NOT_FOUND_SYMBOL) {
-> > diff --git a/arch/x86_64.c b/arch/x86_64.c
-> > index 876644f932be..eff90307552c 100644
-> > --- a/arch/x86_64.c
-> > +++ b/arch/x86_64.c
-> > @@ -268,17 +268,22 @@ get_machdep_info_x86_64(void)
-> >  int
-> >  get_versiondep_info_x86_64(void)
-> >  {
-> > -     /*
-> > -      * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
-> > -      */
-> > -     if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
-> > -     else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
-> > -     else if(check_5level_paging())
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
-> > -     else
-> > -             info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
-> > +     /* Check if we can get MAX_PHYSMEM_BITS from vmcoreinfo */
-> > +     if (NUMBER(MAX_PHYSMEM_BITS) != NOT_FOUND_NUMBER) {
-> > +             info->max_physmem_bits = NUMBER(MAX_PHYSMEM_BITS);
-> > +     } else {
-> > +             /*
-> > +              * On linux-2.6.26, MAX_PHYSMEM_BITS is changed to 44 from 40.
-> > +              */
-> > +             if (info->kernel_version < KERNEL_VERSION(2, 6, 26))
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_ORIG;
-> > +             else if (info->kernel_version < KERNEL_VERSION(2, 6, 31))
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_26;
-> > +             else if(check_5level_paging())
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_5LEVEL;
-> > +             else
-> > +                     info->max_physmem_bits  = _MAX_PHYSMEM_BITS_2_6_31;
+> > -     if ((pud_val(pudv) & PUD_TYPE_MASK) == PUD_TYPE_SECT) {
+> > -             /* 1GB section for Page Table level = 4 and Page Size = 4KB */
+> > -             paddr = (pud_val(pudv) & (PUD_MASK & PMD_SECTION_MASK))
+> > -                                     + (vaddr & (PUD_SIZE - 1));
+> > +     if (is_pud_sect(pudv)) {
+> > +             paddr = (pud_page_paddr(pudv) & PUD_MASK) +
+> > +                             (vaddr & (PUD_SIZE - 1));
+> >               return paddr;
+> >       }
+> >
+> > @@ -432,29 +553,24 @@ vaddr_to_paddr_arm64(unsigned long vaddr)
+> >               return NOT_PADDR;
+> >       }
+> >
+> > -     switch (pmd_val(pmdv) & PMD_TYPE_MASK) {
+> > -     case PMD_TYPE_TABLE:
+> > -             ptea = pte_offset(&pmdv, vaddr);
+> > -             /* 64k page */
+> > -             if (!readmem(PADDR, (unsigned long long)ptea, &ptev, sizeof(ptev))) {
+> > -                     ERRMSG("Can't read pte\n");
+> > -                     return NOT_PADDR;
+> > -             }
+> > +     if (is_pmd_sect(pmdv)) {
+> > +             paddr = (pmd_page_paddr(pmdv) & PMD_MASK) +
+> > +                             (vaddr & (PMD_SIZE - 1));
+> > +             return paddr;
 > > +     }
 > >
-> >       if (!get_page_offset_x86_64())
-> >               return FALSE;
+> > -             if (!(pte_val(ptev) & PAGE_PRESENT)) {
+> > -                     ERRMSG("Can't get a valid pte.\n");
+> > -                     return NOT_PADDR;
+> > -             } else {
+> > +     ptea = (pte_t *)pte_offset(&pmdv, vaddr);
+> > +     if (!readmem(PADDR, (unsigned long long)ptea, &ptev, sizeof(ptev))) {
+> > +             ERRMSG("Can't read pte\n");
+> > +             return NOT_PADDR;
+> > +     }
+> >
+> > -                     paddr = (PAGEBASE(pte_val(ptev)) & PHYS_MASK)
+> > -                                     + (vaddr & (PAGESIZE() - 1));
+> > -             }
+> > -             break;
+> > -     case PMD_TYPE_SECT:
+> > -             /* 512MB section for Page Table level = 3 and Page Size = 64KB*/
+> > -             paddr = (pmd_val(pmdv) & (PMD_MASK & PMD_SECTION_MASK))
+> > -                                     + (vaddr & (PMD_SIZE - 1));
+> > -             break;
+> > +     if (!(pte_val(ptev) & PAGE_PRESENT)) {
+> > +             ERRMSG("Can't get a valid pte.\n");
+> > +             return NOT_PADDR;
+> > +     } else {
+> > +             paddr = __pte_to_phys(ptev) +
+> > +                             (vaddr & (PAGESIZE() - 1));
+> >       }
+> >
+> >       return paddr;
 > > --
 > > 2.7.4
 > >
