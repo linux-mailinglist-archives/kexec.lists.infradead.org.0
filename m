@@ -2,78 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 418B9113DEE
-	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 10:28:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C79A113FC1
+	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 11:56:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BaiBNxTc2dP7SJ+yOfXkP2p8ExarRwIEPdNCprgiud0=; b=r15tawF842qeZu
-	5GsYbNZpq9K/LJclWZn0YIvhQ163m1YulZQqFP3e/gnRVaIOiwkp0URAgom9PNlqzFdg+rlBVA9AC
-	qL5HcM83SheK6BtaHx4ykV5rtdzDZScrICzBiavJrRFkt+Q9Xa07psNPtBfwiKh4Gm8/eshulTtOW
-	Wg9Ov86qMh7zEJYH8dl+ll0UJ5df+vBUJHGlRhCMa/rRReCiyKkRelsUl4GBWOS67GBSvhOzAgOLO
-	AQxkBNANJdoSy3J02jdVIYhwcOxh7ETo0eHWVpLB1SL7CjWifP6APzO9+q2fyln24kUcKbc+KMFtj
-	uIXB890XOXl5qExg8pLg==;
+	List-Owner; bh=8fhZwD7FR/SwDsvnd3hvhQGiJo5ATulUX7dG2KXv8g0=; b=p1rMWXln7Ur8wB
+	WEwvwxHXpb7g7CWw2ve7Q01Abab7Tsbac2Asl+Byjqbpe/EC9bolbdEgYS2dzfMIDI0Hnf05H3yKW
+	Y/ADeGwo5Csmeo/2eAth9NMMXdESkanFhe51XjAoGPeVjoFC7vavwr8197vEYUtHCcqpKHnUZxp7t
+	JriKUebFv65SsO1Usfvl+G3kZ0hpKc9y/P9B88ScN8KHVJTArxzQFrKOXo90JVsF0dqrFnmjtFQ3F
+	Rt60CRPP8MWzFpggAk+fTH4pdl2NsAwejkAofpN2WFeuwY8wO13JSgCwKUV4ZZ+rsfCHrUSZluoGf
+	xMceC0LSQh3ywXh4OdzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1icnR9-0006NT-QA; Thu, 05 Dec 2019 09:28:39 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1iconp-0006ZM-U2; Thu, 05 Dec 2019 10:56:09 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icnR4-0006My-Pj
- for kexec@lists.infradead.org; Thu, 05 Dec 2019 09:28:38 +0000
-Received: by mail-wm1-x344.google.com with SMTP id g206so2826904wme.1
- for <kexec@lists.infradead.org>; Thu, 05 Dec 2019 01:28:34 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=r2SNB3l19ozRDzHNGQD+HCGVJCYcshprqr+6bK6lq4Y=;
- b=vKLV4WmFBt862M5lqvg3dMm3zH/ZV2vtcnk0l9au5fmUB5PO0Uf0xoOD1+fo9uvmvK
- CIWZ2X5OP4KXfwIni59ZZaGKIGn7pBlttdB09oPWdZWxmHVQF2q/7USsT6XKNLENg+tc
- GSerzVyuVQKycn8mtKlLKxNBXdEFzJjNrdfQrFV03pr7HLEC5yGod+JCxjgcvBWldxHL
- NRW6HcnNCA59J7Q9eefRkrurMQqr6osX8LUtZrZLaRYi7e0p13tfAv2TjjLrC8WiZJwQ
- BxPlo1Az1u12+cfyCVW6ObB+2047pCTP+Okxb56spJxm0jU6jWL5mrKz4lt86loloIWY
- ++2Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=r2SNB3l19ozRDzHNGQD+HCGVJCYcshprqr+6bK6lq4Y=;
- b=EwW4vWrPANdApJeaIUsq5wSBOE43x95jNIq2t3bfra2ku1AX3hqlfQDD61i+Jt7psh
- 6dl26VEY+i1+8HwKgJ3iq6pKusuerI8ZhiP8Vce4/9tl5XMGMLN4hrAkAysdMxS1elL6
- Fw4xEU8DfyWT5VagJsS6nHv/uKqXb874yoIa5PScfKYuVeVP+pPiqmjI0YFkxz8vW3oE
- qasnBKhVI/9G/iSOidRIgrebPgtkKIB/nnO6GhwnST/L0/Or80bzyVxz0MVZXIch37DN
- LD3EAkJgoAs+bmSkkgFOSrbVz6vHG5Pu5aamhoCOsiaGEikxU/IUZc9pkvfkb3sUoWyH
- oUUA==
-X-Gm-Message-State: APjAAAXGBf/BP1KqrOpOklUJPOnaWrhSBEv9JD3+zw9oznekUGE2ycOZ
- ycRLIsEI0xG6W7XDTwDLfPaKYCrQZoD40diXlDzqdQ==
-X-Google-Smtp-Source: APXvYqyGFuPgx5/Vf1TDlqbpy8l+PU91mXIP8Q6Yx96k9y/h7397xdAVP2YG1BdZjxMHNQaC6hIoee3BwvSl+QqhnJs=
-X-Received: by 2002:a1c:7205:: with SMTP id n5mr4202075wmc.9.1575538113040;
- Thu, 05 Dec 2019 01:28:33 -0800 (PST)
+ id 1iconm-0006Yc-As
+ for kexec@lists.infradead.org; Thu, 05 Dec 2019 10:56:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575543363;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=dcSvDAAQF2KhEEObz4gP9gUoPID8X22sgxJqtYom4vk=;
+ b=L6PLR5k3q/Aog4ni9DzN1IwXQbFjRnHkhwSVYaB9bCV4BGE6c/9E0rLKzzThkEEHpKxZxB
+ /KhJxdOOaCtE4sB3jdq+xqi++NbqK7GpS4BZa/XixFWTiKC7+mNze6dt2E03oDkYYrFpuW
+ MId5o8PoTnfJ7m952GUmYEAz47vU5Bc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-274-3ho80iwfOzeRYyNYyHkmRA-1; Thu, 05 Dec 2019 05:55:56 -0500
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 357A2800D41;
+ Thu,  5 Dec 2019 10:55:54 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-23.pek2.redhat.com
+ [10.72.12.23])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 813305D9C5;
+ Thu,  5 Dec 2019 10:55:49 +0000 (UTC)
+Date: Thu, 5 Dec 2019 18:55:45 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Ingo Molnar <mingo@kernel.org>
+Subject: Re: [PATCH] x86/efi: update e820 about reserved EFI boot services
+ data to fix kexec breakage
+Message-ID: <20191205105545.GA6710@dhcp-128-65.nay.redhat.com>
+References: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
+ <20191204075917.GA10587@dhcp-128-65.nay.redhat.com>
+ <20191204101412.GD114697@gmail.com>
 MIME-Version: 1.0
-References: <20191204145233.11962-1-ardb@kernel.org>
- <20191204171744.o3ijdspnelqn5fgd@gabell>
- <08f05b18-12b2-0ba4-b819-b95ba27d1862@arm.com>
- <20191204185708.hdoa5gzmfr547q53@gabell>
- <CAFTCetTTgJRN+3+vqS+XbMMrra3xKqrEXzqEKpLsMn=G8peUjw@mail.gmail.com>
-In-Reply-To: <CAFTCetTTgJRN+3+vqS+XbMMrra3xKqrEXzqEKpLsMn=G8peUjw@mail.gmail.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Thu, 5 Dec 2019 09:28:29 +0000
-Message-ID: <CAKv+Gu8tOho+5DDQ-N4vkgLENEsLzgmNO9A+Vgf_G2sSCRuNNQ@mail.gmail.com>
-Subject: Re: [PATCH] efi/memreserve: register reservations as 'reserved' in
- /proc/iomem
-To: Bhupesh SHARMA <bhupesh.linux@gmail.com>
+In-Reply-To: <20191204101412.GD114697@gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-MC-Unique: 3ho80iwfOzeRYyNYyHkmRA-1
+X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_012835_035580_01BCB792 
-X-CRM114-Status: GOOD (  27.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191205_025606_447293_7A027464 
+X-CRM114-Status: GOOD (  17.28  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,116 +94,91 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
- linux-efi <linux-efi@vger.kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- Kexec Mailing List <kexec@lists.infradead.org>,
- Ard Biesheuvel <ardb@kernel.org>, Simon Horman <horms@verge.net.au>,
- James Morse <james.morse@arm.com>, Masayoshi Mizuma <msys.mizuma@gmail.com>,
- d.hatayama@fujitsu.com
+Cc: Michael Weiser <michael@weiser.dinsnail.net>, linux-efi@vger.kernel.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, "H. Peter Anvin" <hpa@zytor.com>,
+ Thomas Gleixner <tglx@linutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, 4 Dec 2019 at 20:13, Bhupesh SHARMA <bhupesh.linux@gmail.com> wrote:
->
-> Hello Masa,
->
-> (+Cc Simon)
->
-> On Thu, Dec 5, 2019 at 12:27 AM Masayoshi Mizuma <msys.mizuma@gmail.com> wrote:
-> >
-> > On Wed, Dec 04, 2019 at 06:17:59PM +0000, James Morse wrote:
-> > > Hi Masa,
-> > >
-> > > On 04/12/2019 17:17, Masayoshi Mizuma wrote:
-> > > > Thank you for sending the patch, but unfortunately it doesn't work for the issue...
-> > > >
-> > > > After applied your patch, the LPI tables are marked as reserved in
-> > > > /proc/iomem like as:
-> > > >
-> > > > 80300000-a1fdffff : System RAM
-> > > >   80480000-8134ffff : Kernel code
-> > > >   81350000-817bffff : reserved
-> > > >   817c0000-82acffff : Kernel data
-> > > >   830f0000-830fffff : reserved # Property table
-> > > >   83480000-83480fff : reserved # Pending table
-> > > >   83490000-8349ffff : reserved # Pending table
-> > > >
-> > > > However, kexec tries to allocate memory from System RAM, it doesn't care
-> > > > the reserved in System RAM.
-> > >
-> > > > I'm not sure why kexec doesn't care the reserved in System RAM, however,
-> > >
-> > > Hmm, we added these to fix a problem with the UEFI memory map, and more recently ACPI
-> > > tables being overwritten by kexec.
-> > >
-> > > Which version of kexec-tools are you using? Could you try:
-> > > https://git.linaro.org/people/takahiro.akashi/kexec-tools.git/commit/?h=arm64/resv_mem
-> >
-> > Thanks a lot! It worked and the issue is gone with Ard's patch and
-> > the linaro kexec (arm64/resv_mem branch).
-> >
-> > Ard, please feel free to add:
-> >
-> >         Tested-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
->
-> Same results at my side, so:
-> Tested-and-Reviewed-by: Bhipesh Sharma <bhsharma@redhat.com>
->
+On 12/04/19 at 11:14am, Ingo Molnar wrote:
+> 
+> * Dave Young <dyoung@redhat.com> wrote:
+> 
+> > On 12/04/19 at 03:52pm, Dave Young wrote:
+> > > Michael Weiser reported he got below error during a kexec rebooting:
+> > > esrt: Unsupported ESRT version 2904149718861218184.
+> > > 
+> > > The ESRT memory stays in EFI boot services data, and it was reserved
+> > > in kernel via efi_mem_reserve().  The initial purpose of the reservation
+> > > is to reuse the EFI boot services data across kexec reboot. For example
+> > > the BGRT image data and some ESRT memory like Michael reported. 
+> > > 
+> > > But although the memory is reserved it is not updated in X86 e820 table.
+> > > And kexec_file_load iterate system ram in io resource list to find places
+> > > for kernel, initramfs and other stuff. In Michael's case the kexec loaded
+> > > initramfs overwritten the ESRT memory and then the failure happened.
+> > 
+> > s/overwritten/overwrote :)  If need a repost please let me know..
+> > 
+> > > 
+> > > Since kexec_file_load depends on the e820 to be updated, just fix this
+> > > by updating the reserved EFI boot services memory as reserved type in e820.
+> > > 
+> > > Originally any memory descriptors with EFI_MEMORY_RUNTIME attribute are
+> > > bypassed in the reservation code path because they are assumed as reserved.
+> > > But the reservation is still needed for multiple kexec reboot.
+> > > And it is the only possible case we come here thus just drop the code
+> > > chunk then everything works without side effects. 
+> > > 
+> > > On my machine the ESRT memory sits in an EFI runtime data range, it does
+> > > not trigger the problem, but I successfully tested with BGRT instead.
+> > > both kexec_load and kexec_file_load work and kdump works as well.
+> > > 
+> > > Signed-off-by: Dave Young <dyoung@redhat.com>
+> 
+> 
+> So I edited this to:
+> 
+>  From: Dave Young <dyoung@redhat.com>
+> 
+>  Michael Weiser reported he got this error during a kexec rebooting:
+> 
+>    esrt: Unsupported ESRT version 2904149718861218184.
+> 
+>  The ESRT memory stays in EFI boot services data, and it was reserved
+>  in kernel via efi_mem_reserve().  The initial purpose of the reservation
+>  is to reuse the EFI boot services data across kexec reboot. For example
+>  the BGRT image data and some ESRT memory like Michael reported.
+> 
+>  But although the memory is reserved it is not updated in the X86 E820 table,
+>  and kexec_file_load() iterates system RAM in the IO resource list to find places
+>  for kernel, initramfs and other stuff. In Michael's case the kexec loaded
+>  initramfs overwrote the ESRT memory and then the failure happened.
+> 
+>  Since kexec_file_load() depends on the E820 table being updated, just fix this
+>  by updating the reserved EFI boot services memory as reserved type in E820.
+> 
+>  Originally any memory descriptors with EFI_MEMORY_RUNTIME attribute are
+>  bypassed in the reservation code path because they are assumed as reserved.
+> 
+>  But the reservation is still needed for multiple kexec reboots,
+>  and it is the only possible case we come here thus just drop the code
+>  chunk, then everything works without side effects.
+> 
+>  On my machine the ESRT memory sits in an EFI runtime data range, it does
+>  not trigger the problem, but I successfully tested with BGRT instead.
+>  both kexec_load() and kexec_file_load() work and kdump works as well.
+> 
 
-Thank you all. I'll get this queued as a fix with cc:stable for v5.4
+Thanks for the amending, also thank all for the review and test.
 
+Dave
 
-> > >
-> > > > if the kexec behaivor is right, the LPI tables should not belong to
-> > > > System RAM.
-> > >
-> > > > Like as:
-> > > >
-> > > > 80300000-830effff : System RAM
-> > > >   80480000-8134ffff : Kernel code
-> > > >   81350000-817bffff : reserved
-> > > >   817c0000-82acffff : Kernel data
-> > > > 830f0000-830fffff : reserved # Property table
-> > > > 83480000-83480fff : reserved # Pending table
-> > > > 83490000-8349ffff : reserved # Pending table
-> > > > 834a0000-a1fdffff : System RAM
-> > > >
-> > > > I don't have ideas to separete LPI tables from System RAM... so I tried
-> > > > to add a new file to inform the LPI tables to userspace.
-> > >
-> > > This is how 'nomap' memory appears, we carve it out of System RAM. A side effect of this
-> > > is kdump can't touch it, as you've told it this isn't memory.
-> > >
-> > > As these tables are memory, mapped by the linear map, I think Ard's patch is the right
-> > > thing to do ... I suspect your kexec-tools doesn't have those patches from Akashi to make
-> > > it honour all second level entries.
-> >
-> > I used the kexec on the top of master branch:
-> > git://git.kernel.org/pub/scm/utils/kernel/kexec/kexec-tools.git
-> >
-> > Should we use the linaro kexec for aarch64 machine?
-> > Or will the arm64/resv_mem branch be merged to the kexec on
-> > git.kernel.org...?
->
-> Glad that Ard's patch fixes the issue for you.
-> Regarding Akashi's patch, I think it was sent to upstream kexec-tools
-> some time ago (see [0}) but  seems not integrated in upstream
-> kexec-tools (now I noticed my Tested-by email for the same got bounced
-> off due to some gmail msmtp setting issues at my end - sorry for
-> that). I have added Simon in Cc list.
->
-> Hi Simon,
->
-> Can you please help pick [0] in upstream kexec-tools with Tested-by
-> from Masa and myself? Thanks a lot for your help.
->
-> [0]. http://lists.infradead.org/pipermail/kexec/2019-January/022201.html
->
-> Thanks,
-> Bhupesh
 
 _______________________________________________
 kexec mailing list
