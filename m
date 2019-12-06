@@ -2,59 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9530A114950
-	for <lists+kexec@lfdr.de>; Thu,  5 Dec 2019 23:30:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0B0114C30
+	for <lists+kexec@lfdr.de>; Fri,  6 Dec 2019 06:54:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=ynif5LBzCUF7jqOZhrKGKhDgeYw54Y4j3Hz2bfXfqI0=; b=kE5UFatARaqoQT
-	JcG06yYSF1gUgh+NcbbpoT3F2xIy/tog3tdgGFk3nfBoL6Zp3sFTwS7vybbU7blJy8VEBAPtjCz2U
-	+4GAlFJ80DC0FEBvLqoyCv2XnPGw3FxyQpC5FCG8ZXXSG5c6Uw3IPndIDVLWlV/2UvhfJscSifs4n
-	wboplcO49xaZLeBHySoeDfBVgaOMZ490rRDjqjKzAKvirNLnLR+ZKPBErsTJeh0kwj8309eUY8Svo
-	vuwgDnH1SJaxcTzsUyDBAKFFj/SUZQ+DsBbEr5X28lodrNz71tmXTJT195z7nuI7UlZiM1WTUVAPX
-	OWDrg8n43V9vqvKKUhJw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=ke1yGYFI3b9dvmt7Eqho0o+1rCuNrTl2L2dJ1Ukgz+o=; b=mYJzF6G8vX5QI4sN8+71sBUQaE
+	bZI4F4VX4kvNd8uvi59Z9g7K4gtTmgz8DaGUCHdWQJF3p6K0IfeqDa+JVqxj+t5iKGUIdsfL06YfW
+	9SXT8wIMLJlOP5xgcEpdujYMbtslod6qV6E1gbLxegdksrxmColONFBY97qOfnv1iLE5JgYHyth3N
+	DfSdHYOa0niyEc0rp94s2+F6OPhznESttUSSESYY/jeVl0OaBMr5Ri8WQcWZJsFL7crsVaxciB7XH
+	//38wPMnN5BnP7OSmiPvS2wnVGJ/FRRv/mKguEswtePkVZ8RLf6MeMZ/AKRKfM5W9+Jw+H0jjOkky
+	Fz9HDfiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iczeB-0007fy-Ag; Thu, 05 Dec 2019 22:30:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1id6Zd-0001nT-4R; Fri, 06 Dec 2019 05:54:41 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1icze4-0007Z9-TL; Thu, 05 Dec 2019 22:30:50 +0000
-Received: from localhost (mobile-166-170-221-197.mycingular.net
- [166.170.221.197])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1id6ZZ-0001mr-M5
+ for kexec@lists.infradead.org; Fri, 06 Dec 2019 05:54:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575611671;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=1vcTko9lXKwdtbispH4xXZeWIs0TXZL6P3wUFHKnTX0=;
+ b=cQENH9cxRJch5BPOzkudJauBKSpC+FA+h7YgYpnjT3vF6RhEMqxw3oujJ9mK1KL92zPkJ8
+ xJYc3qXfufY3J8bQtYvWBpxnQnG9WpbOrzFKPwAthGnj7o4zUzugrO4uKlxRkd8PQ8ja7g
+ 7IxkjIO195hlhIK66SLjENdyiSa0/jo=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-194-FhhkvlWkP5GJWav7lLy-3A-1; Fri, 06 Dec 2019 00:54:29 -0500
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 84F6520707;
- Thu,  5 Dec 2019 22:30:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1575585047;
- bh=rwc2W/J/V58JZoKOWg2doRruK6KWPbQgM5Sb2F/Ai60=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=cliOZcUxDWzGZ1UQTKJkPsD++s/EPrjyE7H/snJuA3uqE7NURH520sOnVje6nd0Ts
- Td38CmfeZyMBlRyr+Rypsepv/EG8hoAOa7B7sJiJzOVgMDkiBquX3yxdZnHzKOkS/c
- BBv+wew7DxEj2QDNBsIebdp/nYnu0CS5l8OPwMaM=
-Date: Thu, 5 Dec 2019 16:30:44 -0600
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v4 7/8] linux/log2.h: Fix 64bit calculations in
- roundup/down_pow_two()
-Message-ID: <20191205223044.GA250573@google.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8B31A18543A0;
+ Fri,  6 Dec 2019 05:54:28 +0000 (UTC)
+Received: from [10.72.8.18] (ovpn-8-18.pek2.redhat.com [10.72.8.18])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 838A060BF1;
+ Fri,  6 Dec 2019 05:54:27 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile/Makefile: remove -lebl from LIBS
+To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+References: <1574989745-5262-1-git-send-email-piliu@redhat.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359725A@BPXM09GP.gisp.nec.co.jp>
+From: piliu <piliu@redhat.com>
+X-Enigmail-Draft-Status: N1110
+Message-ID: <6dc65874-803a-10f3-dc42-d8704323ea0b@redhat.com>
+Date: Fri, 6 Dec 2019 13:54:24 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191203114743.1294-8-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC0359725A@BPXM09GP.gisp.nec.co.jp>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-MC-Unique: FhhkvlWkP5GJWav7lLy-3A-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191205_143049_068772_69E30AAE 
-X-CRM114-Status: GOOD (  10.77  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20191205_215437_794321_84F3AD76 
+X-CRM114-Status: GOOD (  17.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -63,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 FAKE_REPLY_C           No description available.
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -76,83 +94,77 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-nfs@vger.kernel.org,
- Edward Cree <ecree@solarflare.com>, linux-clk@vger.kernel.org,
- f.fainelli@gmail.com, Herbert Xu <herbert@gondor.apana.org.au>,
- Emilio =?iso-8859-1?Q?L=F3pez?= <emilio@elopez.com.ar>, maz@kernel.org,
- Joerg Roedel <joro@8bytes.org>, phil@raspberrypi.org,
- Doug Ledford <dledford@redhat.com>, Jason Gunthorpe <jgg@ziepe.ca>,
- Chen-Yu Tsai <wens@csie.org>, Chuck Lever <chuck.lever@oracle.com>,
- Martin Habets <mhabets@solarflare.com>, wahrenst@gmx.net,
- Tom Lendacky <thomas.lendacky@amd.com>, Jiri Pirko <jiri@resnulli.us>,
- Solarflare linux maintainers <linux-net-drivers@solarflare.com>,
- Maxime Ripard <mripard@kernel.org>, linux-rpi-kernel@lists.infradead.org,
- Anna Schumaker <anna.schumaker@netapp.com>,
- Trond Myklebust <trond.myklebust@hammerspace.com>,
- linux-arm-kernel@lists.infradead.org, Mirko Lindner <mlindner@marvell.com>,
- Mike Marciniszyn <mike.marciniszyn@intel.com>, mbrugger@suse.com,
- Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
- Yishai Hadas <yishaih@mellanox.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, jeremy.linton@arm.com,
- "David S. Miller" <davem@davemloft.net>,
- Stephen Hemminger <stephen@networkplumber.org>, linux-rdma@vger.kernel.org,
- iommu@lists.linux-foundation.org, Moni Shoua <monis@mellanox.com>,
- Eric Biederman <ebiederm@xmission.com>, james.quinlan@broadcom.com,
- Thomas Graf <tgraf@suug.ch>, andrew.murray@arm.com,
- Robin Murphy <robin.murphy@arm.con>, David Woodhouse <dwmw2@infradead.org>,
- Dennis Dalessandro <dennis.dalessandro@intel.com>,
- Lu Baolu <baolu.lu@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-You got the "n" on "down" in the subject, but still missing "of" ;)
 
-On Tue, Dec 03, 2019 at 12:47:40PM +0100, Nicolas Saenz Julienne wrote:
-> Some users need to make sure their rounding function accepts and returns
-> 64bit long variables regardless of the architecture. Sadly
-> roundup/rounddown_pow_two() takes and returns unsigned longs. It turns
-> out ilog2() already handles 32/64bit calculations properly, and being
-> the building block to the round functions we can rework them as a
-> wrapper around it.
 
-Missing "of" in the function names here.
-s/a wrapper/wrappers/
+On 12/05/2019 06:36 AM, Kazuhito Hagio wrote:
+> Hi Pingfan,
+> 
+> Thank you for the patch.
+> 
+>> -----Original Message-----
+>> since the following commit, -lebl has been removed from elfutils.
+>> commit b833c731359af12af9f16bcb621b3cdc170eafbc
+>> Author: Mark Wielaard <mark@klomp.org>
+>> Date:   Thu Aug 29 23:34:11 2019 +0200
+>>
+>>     libebl: Don't install libebl.a, libebl.h and remove backends from spec.
+>>
+>>     All archive members from libebl.a are now in libdw.a. We don't generate
+>>     separate backend shared libraries anymore. So remove them from the
+>>     elfutils.spec file.
+>>
+>>     Signed-off-by: Mark Wielaard <mark@klomp.org>
+>>
+>> So remove it from LIBS for makedumpfile
+> 
+> It seems that this is ok with the latest elfutils, but with older ones?
+> Is it possible to remove -lebl when elfutils does not have libebl.a?
+I have no idea about it for now. The method to check version depends on
+distribution. Is it doable by checking /usr/lib64/libebl ?
 
-IIUC the point of this is that roundup_pow_of_two() returned
-"unsigned long", which can be either 32 or 64 bits (worth pointing
-out, I think), and many callers need something that returns
-"unsigned long long" (always 64 bits).
+Thanks,
+Pingfan
+> 
+> Thanks,
+> Kazu
+> 
+>>
+>> Signed-off-by: Pingfan Liu <piliu@redhat.com>
+>> ---
+>>  Makefile | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/Makefile b/Makefile
+>> index 1fdb628..df21b93 100644
+>> --- a/Makefile
+>> +++ b/Makefile
+>> @@ -50,7 +50,7 @@ OBJ_PART=$(patsubst %.c,%.o,$(SRC_PART))
+>>  SRC_ARCH = arch/arm.c arch/arm64.c arch/x86.c arch/x86_64.c arch/ia64.c arch/ppc64.c arch/s390x.c
+>> arch/ppc.c arch/sparc64.c
+>>  OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
+>>
+>> -LIBS = -ldw -lbz2 -lebl -ldl -lelf -lz
+>> +LIBS = -ldw -lbz2 -ldl -lelf -lz
+>>  ifneq ($(LINKTYPE), dynamic)
+>>  LIBS := -static $(LIBS)
+>>  endif
+>> --
+>> 2.7.5
+>>
+> 
+> 
+> 
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/kexec
+> 
 
-It's a nice simplification to remove the "__" variants.  Just as a
-casual reader of this commit message, I'd like to know why we had both
-the roundup and the __roundup versions in the first place, and why we
-no longer need both.
-
-> -#define roundup_pow_of_two(n)			\
-> -(						\
-> -	__builtin_constant_p(n) ? (		\
-> -		(n == 1) ? 1 :			\
-> -		(1UL << (ilog2((n) - 1) + 1))	\
-> -				   ) :		\
-> -	__roundup_pow_of_two(n)			\
-> - )
-> +#define roundup_pow_of_two(n)			  \
-> +(						  \
-> +	(__builtin_constant_p(n) && ((n) == 1)) ? \
-> +	1 : (1ULL << (ilog2((n) - 1) + 1))        \
-> +)
-
-Should the resulting type of this expression always be a ULL, even
-when n==1, i.e., should it be this?
-
-  1ULL : (1ULL << (ilog2((n) - 1) + 1))        \
-
-Or maybe there's no case where that makes a difference?
-
-Bjorn
 
 _______________________________________________
 kexec mailing list
