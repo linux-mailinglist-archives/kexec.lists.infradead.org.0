@@ -2,81 +2,76 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90191116530
-	for <lists+kexec@lfdr.de>; Mon,  9 Dec 2019 04:02:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 965C71166AC
+	for <lists+kexec@lfdr.de>; Mon,  9 Dec 2019 07:04:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L6IUA+z0gXKNztDXlm8SQbuRjt+ya41l5yHwuF9fhYw=; b=bEqt/odNWeMgjM
-	Ig5FEPJ3Mnf/h/IiX3RTxmS5WryjGlTM29ZKinFFBVQnJAzBTSFqXoxTjl6+MWNUu/CRWEPnXw9k+
-	kGxYmMZQ2IGNKiycztR1/3iWUrB5iYcxh9OCZ/j9WqO98EjsHWY20xkv47eBDCTBCLk9u3dr+fOPI
-	Lzkbq9o3Eo/kUBWGq8iO0YizkD95ElaoAaZRs3ZbLO8olCbnnnbcphlsPZ5z9nxdbYhLwF08mmZcs
-	s8DPaxR6cxeqxRv6Bto6OLThD27MLb0mYfeXVeDxrtoZk2/hFyaDN6clOOTdi9FFfgWZzXUJLvKU+
-	LA+fP8VG2CDQvEw4KkKQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5HRUSd8iYCbRBJ+jt5FAT7lOAxseD0/2N+KSWyj39+c=; b=Cxt1cLcQwLdyHM
+	F/WkF+bh56enBkcQG+EX11aOfTZoilRE18nX/WgIz8bscxr7sbfi4JlTtDVTIOPeCqa0o2cN/o78/
+	oRdyIGkEsxVLINleBmdZj2EuptfeiHA1AG2U/xlBf5WbCqFlPbiL43qTlfPxDoxkhrs+B7u0GKUsv
+	PUrKU/TkxHgNBAqGFKa4NpkSEyYFaA18QttWeSTDAhoKG7pD0ti7b9DjUTl+DuyDhtAltpGsFKBXj
+	Wi9DRrfurNSiGxISDpyk9AHmDCsUchjUhldxiS+xmXEBPCYKuxEgoKUzpX6kL1SRbzEFYWozwmTdG
+	+GijIy88BxpojaykK00Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ie9K0-0006i1-L3; Mon, 09 Dec 2019 03:02:52 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ieC9w-0007oy-5J; Mon, 09 Dec 2019 06:04:40 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ie9JZ-0006AA-21
- for kexec@lists.infradead.org; Mon, 09 Dec 2019 03:02:28 +0000
-Received: by mail-pl1-x642.google.com with SMTP id g6so5161120plp.7
- for <kexec@lists.infradead.org>; Sun, 08 Dec 2019 19:02:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=K1LLOVeJtONoqpWzLiZzppWNSNBZ0v/NxRhgPKC4b2k=;
- b=O7dFI6rD2zZnI2kre5EzJMO+Bw36s1NGTVWnohQAwFMBsg/xt8z9WShTKOKuP4qDJ9
- F0kZkuBVevWNnPNkQXqblak50hDfM/Crlj2vR6U/6aNTwc5FTvde+cCcdeSc2mfEtKt+
- 8PIWMj0rPUhWUPX2YgMecsL05uwxCVpP0XUO/9B4dmesxsn4eVeKp0dBdGn6A2PE/4Yq
- /bAxZQL43RAUrYfrSozwIyyxIz/A59jgQkqOFJnyoIOwxwoYmbTasHpUb2WW75PyGH5o
- VG2f4CBmngK6zm0RIhDF4sCr8wJNMGeBQBBfSW0f6hlcmf+LNVE+X6UZqM581U1V7Nv3
- TjTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=K1LLOVeJtONoqpWzLiZzppWNSNBZ0v/NxRhgPKC4b2k=;
- b=aPmkoOX9GZnCkjxoMCL9yqtPQuL6R+7rqSwEQe/DfqdWWeL1nyTam8o1jCmwS6A6z0
- CzJfjCARl48pZOrFFp5BMw5SQFyDsiwS5geyMzRq0RZ0s/9NCtStzIVZmvpdZTyUzjIY
- MNFPZ2V4e7Zvn1QmIIPHdOKfgoRdPgh0+3HqvstxxkfcqQDCk4bA2WYrQIpIoOKvGVBw
- v4l+SKQmqj+Fh4blM8d64a3jQFGT+bqhS2gqLW/MmtDX0RO+Eau4DZLz2+AVdl1dSxxi
- Jr8Mi8qy57i2GZHHrUFOpviNe8O+PyS2OTr7yFXuRmRe45kSR1sKgYz4lu1f86+OlEQJ
- hrYA==
-X-Gm-Message-State: APjAAAXeolKirXG5oJtzzA2Y7qkhAJfSmuG5EbF63Og/WC15pXQMJuFO
- bllRK50SoQs5Q7g3bjRhVpxlyQ==
-X-Google-Smtp-Source: APXvYqyJvjBg3ma14h+/TdMJZyPnWqz4Ej8Vw8Ndc1+bfZTO7tFYRTO9/cJ9oOgd3i4IMecEW9nX1A==
-X-Received: by 2002:a17:902:ab86:: with SMTP id
- f6mr24215136plr.78.1575860543219; 
- Sun, 08 Dec 2019 19:02:23 -0800 (PST)
-Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id b2sm7497299pjq.3.2019.12.08.19.02.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 08 Dec 2019 19:02:22 -0800 (PST)
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
-To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
- frowand.list@gmail.com
-Subject: [PATCH v3 2/2] arm64: kexec_file: add crash dump support
-Date: Mon,  9 Dec 2019 12:03:45 +0900
-Message-Id: <20191209030345.5735-3-takahiro.akashi@linaro.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <20191209030345.5735-1-takahiro.akashi@linaro.org>
-References: <20191209030345.5735-1-takahiro.akashi@linaro.org>
+ id 1ieC9r-0007nz-FC
+ for kexec@lists.infradead.org; Mon, 09 Dec 2019 06:04:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1575871471;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=AiyF5HzMxqouy7pn1ozziQ4mklZX+y4DCafQG/xdvQk=;
+ b=QWCax3q1ReItftOgeSIN9X0uL8BG5DLW2seR3kE1kb3joVRvU8rL26FtfZxEhgA4ZP5my6
+ WPy35pIPybUPMk/Yxp6gZ0RI538xh/DZMt36DgtkYamP0J9tT3zh1adxu5XSDW6AHShnXZ
+ Z9Q3V77Kefw9TYkW/EpAswo2Nu0TVsQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-339-NJ2a3R7KNkiq3OkcPE7TSg-1; Mon, 09 Dec 2019 01:04:29 -0500
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 42EF58024FC;
+ Mon,  9 Dec 2019 06:04:28 +0000 (UTC)
+Received: from [10.72.8.34] (ovpn-8-34.pek2.redhat.com [10.72.8.34])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C42015C21A;
+ Mon,  9 Dec 2019 06:04:26 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile/Makefile: remove -lebl from LIBS
+To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+References: <1574989745-5262-1-git-send-email-piliu@redhat.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359725A@BPXM09GP.gisp.nec.co.jp>
+ <6dc65874-803a-10f3-dc42-d8704323ea0b@redhat.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC0359773A@BPXM09GP.gisp.nec.co.jp>
+From: piliu <piliu@redhat.com>
+Message-ID: <b5577cc9-20f9-4676-2596-b8444e3ab8d6@redhat.com>
+Date: Mon, 9 Dec 2019 14:04:23 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
 MIME-Version: 1.0
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC0359773A@BPXM09GP.gisp.nec.co.jp>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-MC-Unique: NJ2a3R7KNkiq3OkcPE7TSg-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191208_190225_128584_80048B07 
-X-CRM114-Status: GOOD (  18.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191208_220435_587604_682A3584 
+X-CRM114-Status: GOOD (  15.47  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,227 +93,82 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, james.morse@arm.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- AKASHI Takahiro <takahiro.akashi@linaro.org>
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Enabling crash dump (kdump) includes
-* prepare contents of ELF header of a core dump file, /proc/vmcore,
-  using crash_prepare_elf64_headers(), and
-* add two device tree properties, "linux,usable-memory-range" and
-  "linux,elfcorehdr", which represent respectively a memory range
-  to be used by crash dump kernel and the header's location
 
-Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will.deacon@arm.com>
-Reviewed-by: James Morse <james.morse@arm.com>
----
- arch/arm64/include/asm/kexec.h         |   4 +
- arch/arm64/kernel/kexec_image.c        |   4 -
- arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
- 3 files changed, 106 insertions(+), 8 deletions(-)
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..d24b527e8c00 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	unsigned long dtb_mem;
-+	/* Core ELF header buffer */
-+	void *elf_headers;
-+	unsigned long elf_headers_mem;
-+	unsigned long elf_headers_sz;
- };
- 
- extern const struct kexec_file_ops kexec_image_ops;
-diff --git a/arch/arm64/kernel/kexec_image.c b/arch/arm64/kernel/kexec_image.c
-index 29a9428486a5..af9987c154ca 100644
---- a/arch/arm64/kernel/kexec_image.c
-+++ b/arch/arm64/kernel/kexec_image.c
-@@ -47,10 +47,6 @@ static void *image_load(struct kimage *image,
- 	struct kexec_segment *kernel_segment;
- 	int ret;
- 
--	/* We don't support crash kernels yet. */
--	if (image->type == KEXEC_TYPE_CRASH)
--		return ERR_PTR(-EOPNOTSUPP);
--
- 	/*
- 	 * We require a kernel with an unambiguous Image header. Per
- 	 * Documentation/arm64/booting.rst, this is the case when image_size
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 7b08bf9499b6..f1d1bb895fd2 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -17,12 +17,15 @@
- #include <linux/memblock.h>
- #include <linux/of_fdt.h>
- #include <linux/random.h>
-+#include <linux/slab.h>
- #include <linux/string.h>
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- #include <asm/byteorder.h>
- 
- /* relevant device tree properties */
-+#define FDT_PROP_KEXEC_ELFHDR	"linux,elfcorehdr"
-+#define FDT_PROP_MEM_RANGE	"linux,usable-memory-range"
- #define FDT_PROP_INITRD_START	"linux,initrd-start"
- #define FDT_PROP_INITRD_END	"linux,initrd-end"
- #define FDT_PROP_BOOTARGS	"bootargs"
-@@ -40,6 +43,10 @@ int arch_kimage_file_post_load_cleanup(struct kimage *image)
- 	vfree(image->arch.dtb);
- 	image->arch.dtb = NULL;
- 
-+	vfree(image->arch.elf_headers);
-+	image->arch.elf_headers = NULL;
-+	image->arch.elf_headers_sz = 0;
-+
- 	return kexec_image_post_load_cleanup_default(image);
- }
- 
-@@ -55,6 +62,31 @@ static int setup_dtb(struct kimage *image,
- 
- 	off = ret;
- 
-+	ret = fdt_delprop(dtb, off, FDT_PROP_KEXEC_ELFHDR);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+	ret = fdt_delprop(dtb, off, FDT_PROP_MEM_RANGE);
-+	if (ret && ret != -FDT_ERR_NOTFOUND)
-+		goto out;
-+
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		/* add linux,elfcorehdr */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_KEXEC_ELFHDR,
-+				image->arch.elf_headers_mem,
-+				image->arch.elf_headers_sz);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+
-+		/* add linux,usable-memory-range */
-+		ret = fdt_appendprop_addrrange(dtb, 0, off,
-+				FDT_PROP_MEM_RANGE,
-+				crashk_res.start,
-+				crashk_res.end - crashk_res.start + 1);
-+		if (ret)
-+			return (ret == -FDT_ERR_NOSPACE ? -ENOMEM : -EINVAL);
-+	}
-+
- 	/* add bootargs */
- 	if (cmdline) {
- 		ret = fdt_setprop_string(dtb, off, FDT_PROP_BOOTARGS, cmdline);
-@@ -125,8 +157,8 @@ static int setup_dtb(struct kimage *image,
- }
- 
- /*
-- * More space needed so that we can add initrd, bootargs, kaslr-seed, and
-- * rng-seed.
-+ * More space needed so that we can add initrd, bootargs, kaslr-seed,
-+ * rng-seed, userable-memory-range and elfcorehdr.
-  */
- #define DTB_EXTRA_SPACE 0x1000
- 
-@@ -174,6 +206,43 @@ static int create_dtb(struct kimage *image,
- 	}
- }
- 
-+static int prepare_elf_headers(void **addr, unsigned long *sz)
-+{
-+	struct crash_mem *cmem;
-+	unsigned int nr_ranges;
-+	int ret;
-+	u64 i;
-+	phys_addr_t start, end;
-+
-+	nr_ranges = 1; /* for exclusion of crashkernel region */
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL)
-+		nr_ranges++;
-+
-+	cmem = kmalloc(sizeof(struct crash_mem) +
-+			sizeof(struct crash_mem_range) * nr_ranges, GFP_KERNEL);
-+	if (!cmem)
-+		return -ENOMEM;
-+
-+	cmem->max_nr_ranges = nr_ranges;
-+	cmem->nr_ranges = 0;
-+	for_each_mem_range(i, &memblock.memory, NULL, NUMA_NO_NODE,
-+					MEMBLOCK_NONE, &start, &end, NULL) {
-+		cmem->ranges[cmem->nr_ranges].start = start;
-+		cmem->ranges[cmem->nr_ranges].end = end - 1;
-+		cmem->nr_ranges++;
-+	}
-+
-+	/* Exclude crashkernel region */
-+	ret = crash_exclude_mem_range(cmem, crashk_res.start, crashk_res.end);
-+
-+	if (!ret)
-+		ret =  crash_prepare_elf64_headers(cmem, true, addr, sz);
-+
-+	kfree(cmem);
-+	return ret;
-+}
-+
- int load_other_segments(struct kimage *image,
- 			unsigned long kernel_load_addr,
- 			unsigned long kernel_size,
-@@ -181,14 +250,43 @@ int load_other_segments(struct kimage *image,
- 			char *cmdline)
- {
- 	struct kexec_buf kbuf;
--	void *dtb = NULL;
--	unsigned long initrd_load_addr = 0, dtb_len;
-+	void *headers, *dtb = NULL;
-+	unsigned long headers_sz, initrd_load_addr = 0, dtb_len;
- 	int ret = 0;
- 
- 	kbuf.image = image;
- 	/* not allocate anything below the kernel */
- 	kbuf.buf_min = kernel_load_addr + kernel_size;
- 
-+	/* load elf core header */
-+	if (image->type == KEXEC_TYPE_CRASH) {
-+		ret = prepare_elf_headers(&headers, &headers_sz);
-+		if (ret) {
-+			pr_err("Preparing elf core header failed\n");
-+			goto out_err;
-+		}
-+
-+		kbuf.buffer = headers;
-+		kbuf.bufsz = headers_sz;
-+		kbuf.mem = 0;
-+		kbuf.memsz = headers_sz;
-+		kbuf.buf_align = SZ_64K; /* largest supported page size */
-+		kbuf.buf_max = ULONG_MAX;
-+		kbuf.top_down = true;
-+
-+		ret = kexec_add_buffer(&kbuf);
-+		if (ret) {
-+			vfree(headers);
-+			goto out_err;
-+		}
-+		image->arch.elf_headers = headers;
-+		image->arch.elf_headers_mem = kbuf.mem;
-+		image->arch.elf_headers_sz = headers_sz;
-+
-+		pr_debug("Loaded elf core header at 0x%lx bufsz=0x%lx memsz=0x%lx\n",
-+			 image->arch.elf_headers_mem, headers_sz, headers_sz);
-+	}
-+
- 	/* load initrd */
- 	if (initrd) {
- 		kbuf.buffer = initrd;
--- 
-2.24.0
+On 12/07/2019 12:28 AM, Kazuhito Hagio wrote:
+>> -----Original Message-----
+>>
+>> On 12/05/2019 06:36 AM, Kazuhito Hagio wrote:
+>>> Hi Pingfan,
+>>>
+>>> Thank you for the patch.
+>>>
+>>>> -----Original Message-----
+>>>> since the following commit, -lebl has been removed from elfutils.
+>>>> commit b833c731359af12af9f16bcb621b3cdc170eafbc
+>>>> Author: Mark Wielaard <mark@klomp.org>
+>>>> Date:   Thu Aug 29 23:34:11 2019 +0200
+>>>>
+>>>>     libebl: Don't install libebl.a, libebl.h and remove backends from spec.
+>>>>
+>>>>     All archive members from libebl.a are now in libdw.a. We don't generate
+>>>>     separate backend shared libraries anymore. So remove them from the
+>>>>     elfutils.spec file.
+>>>>
+>>>>     Signed-off-by: Mark Wielaard <mark@klomp.org>
+>>>>
+>>>> So remove it from LIBS for makedumpfile
+>>>
+>>> It seems that this is ok with the latest elfutils, but with older ones?
+>>> Is it possible to remove -lebl when elfutils does not have libebl.a?
+>> I have no idea about it for now. The method to check version depends on
+>> distribution. Is it doable by checking /usr/lib64/libebl ?
+> 
+> We have 'try-run' function written by Petr in the Makefile, which checks
+> if clock_gettime() requies -lrt.  How about utilizing it like this?
+> 
+> diff --git a/Makefile b/Makefile
+> index 1fdb6286e85d..d4d1fb563209 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -50,7 +50,7 @@ OBJ_PART=$(patsubst %.c,%.o,$(SRC_PART))
+>  SRC_ARCH = arch/arm.c arch/arm64.c arch/x86.c arch/x86_64.c arch/ia64.c arch/ppc64.c arch/s390x.c arch/ppc.c arch/sparc64.c
+>  OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
+>  
+> -LIBS = -ldw -lbz2 -lebl -ldl -lelf -lz
+> +LIBS = -ldw -lbz2 -ldl -lelf -lz
+>  ifneq ($(LINKTYPE), dynamic)
+>  LIBS := -static $(LIBS)
+>  endif
+> @@ -79,6 +79,11 @@ LINK_TEST_PROG="int clock_gettime(); int main(){ return clock_gettime(); }"
+>  LIBS := $(LIBS) $(call try-run,\
+>  	echo $(LINK_TEST_PROG) | $(CC) $(CFLAGS) -o "$$TMP" -x c -,,-lrt)
+>  
+> +# elfutils-0.178 or later does not install libebl.a.
+> +LINK_TEST_PROG="int main() { return 0; }"
+> +LIBS := $(LIBS) $(call try-run,\
+> +	echo $(LINK_TEST_PROG) | $(CC) -o "$$TMP" -x c - -lebl,-lebl,)
+> +
+>  all: makedumpfile
+>  
+>  $(OBJ_PART): $(SRC_PART)
+> 
+> 
+> If libebl.a does not exist (gcc with -lebl fails), it will not append
+> -lebl to LIBS.
+> 
+Yes, it sounds a good idea.
+
+Should I sumbit another patch or you will do by yourself?
+
+Thanks,
+Pingfan
 
 
 _______________________________________________
