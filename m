@@ -2,89 +2,77 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2BF911A538
-	for <lists+kexec@lfdr.de>; Wed, 11 Dec 2019 08:42:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D392611BA91
+	for <lists+kexec@lfdr.de>; Wed, 11 Dec 2019 18:45:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=dDam2ynGyDDwIqZHPpdjw6WjQc2BY661ql4PvpOrpes=; b=pU2/jpvzPGLDcOBwE9BlFmBpgO
-	e2mWJVHx5LNP54PzuQ1MxakTU5PNnOkSAsRdK1LRMhJiWAg+fObvMF/f5TOfuP45jdryVH7SphXqS
-	vTYaGVHNOQHelcgoRVX9VKTCM0YMNBMK6Y8PsTetgWr6cghFpdWhlz2KYi40vV+BHV34ISDzfkE7s
-	3Yj4fEuESnjgwhcFAN/ypK/iEJGk5UYmkEu1B41P7DZiyPPUPHlQaYcv2/NVizFL6b47Y8zdZNpl1
-	8y8ExqxMHkyiAIokh9I67S1IF1yiS5/AzGPbZ/CzJJhiFsrvjDM/CdaK+tBMOr+89VqDQeH9qMXqF
-	bjjNN+Ow==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xsB68RjhBlUBbI0216oPH+DobENbCT6n855a2lXKED0=; b=AKejgfaOZFlCwq
+	wlSBBd8YKsbVLF68oUbtGf+JaV/Y8MNFYJqLVi0G0nrQ0mNV23XCaOSCwZ8BCDugY1oH4VpBMozVi
+	0OJycgVOnuV1mT4pFD17qQy5FfsX7gFl243Q7XCT/xLVyoeZj0qFkkqK5iho3zuInPBFWcIoeKO6n
+	kZO7OMq8pB9XeSYVK6Hpr+7u/eycCiyFY2FKC4a5z3sQhI+W8PxB3871S+9Z3Z4rAdX3gX4aVK+Ww
+	76AA+TU0b8TClpF3vMORkb+sGLk6ysm8lxI+Bi4G+oS4lstZXMsjMU2YLMDXcpr+sWsklZL5rNDm4
+	w7F0SogHZnsPkUGSZYaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iewdD-000720-Qr; Wed, 11 Dec 2019 07:41:59 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1if637-0003MD-TK; Wed, 11 Dec 2019 17:45:21 +0000
+Received: from tyo161.gate.nec.co.jp ([114.179.232.161])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iewdA-00070P-7J
- for kexec@lists.infradead.org; Wed, 11 Dec 2019 07:41:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576050109;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=jmZ+2v4McX4xLHQHjkmFqjS1rMnTD56LDlx/BH4jDlE=;
- b=CqAC8Jzg88CRFpDfsDXGzNi5mFYhbDq4AdyS40NPw2hCGMMI2ZcbcnuSrpoU6fRjj0libW
- HBY0IiDaZrsra8JeklXdjt9G7m4KeKacaHfZl16dUHFExPd5wtAHFwwCTkeYrBobCKN8Zo
- H2QSWTWoSWNijjXYcjVGjUE0dkBcAx4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-284-yuXFFjtdOqSGdpwsMsytQg-1; Wed, 11 Dec 2019 02:41:45 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 918B9184B3EE;
- Wed, 11 Dec 2019 07:41:44 +0000 (UTC)
-Received: from [10.72.8.21] (ovpn-8-21.pek2.redhat.com [10.72.8.21])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 96BA35C1B0;
- Wed, 11 Dec 2019 07:41:43 +0000 (UTC)
-Subject: Re: [PATCH] makedumpfile: assign bitmap2 fd for sub process during
+ id 1if631-00035C-36
+ for kexec@lists.infradead.org; Wed, 11 Dec 2019 17:45:16 +0000
+Received: from mailgate01.nec.co.jp ([114.179.233.122])
+ by tyo161.gate.nec.co.jp (8.15.1/8.15.1) with ESMTPS id xBBHj7YD004547
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 12 Dec 2019 02:45:07 +0900
+Received: from mailsv01.nec.co.jp (mailgate-v.nec.co.jp [10.204.236.94])
+ by mailgate01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xBBHj7G5010352;
+ Thu, 12 Dec 2019 02:45:07 +0900
+Received: from mail01b.kamome.nec.co.jp (mail01b.kamome.nec.co.jp [10.25.43.2])
+ by mailsv01.nec.co.jp (8.15.1/8.15.1) with ESMTP id xBBHj7YL004594;
+ Thu, 12 Dec 2019 02:45:07 +0900
+Received: from bpxc99gp.gisp.nec.co.jp ([10.38.151.137] [10.38.151.137]) by
+ mail02.kamome.nec.co.jp with ESMTP id BT-MMP-11153607;
+ Thu, 12 Dec 2019 02:44:10 +0900
+Received: from BPXM09GP.gisp.nec.co.jp ([10.38.151.201]) by
+ BPXC09GP.gisp.nec.co.jp ([10.38.151.137]) with mapi id 14.03.0439.000; Thu,
+ 12 Dec 2019 02:44:09 +0900
+From: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+To: piliu <piliu@redhat.com>
+Subject: RE: [PATCH] makedumpfile: assign bitmap2 fd for sub process during
  refiltering
-To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Thread-Topic: [PATCH] makedumpfile: assign bitmap2 fd for sub process during
+ refiltering
+Thread-Index: AQHVqax/wdTLCYKVa02W9vBLyeR8caeqiAKAgAY7MwCAAVkGcIAB5mSAgAErftA=
+Date: Wed, 11 Dec 2019 17:44:09 +0000
+Message-ID: <4AE2DC15AC0B8543882A74EA0D43DBEC03597DC4@BPXM09GP.gisp.nec.co.jp>
 References: <1575358627-17152-1-git-send-email-piliu@redhat.com>
  <4AE2DC15AC0B8543882A74EA0D43DBEC035977E6@BPXM09GP.gisp.nec.co.jp>
  <0d793e2d-6698-6543-13de-a3de8732df75@redhat.com>
  <4AE2DC15AC0B8543882A74EA0D43DBEC03597A16@BPXM09GP.gisp.nec.co.jp>
-From: piliu <piliu@redhat.com>
-Message-ID: <22c89e8b-49ab-0cd2-2e63-9e380ad4ba8a@redhat.com>
-Date: Wed, 11 Dec 2019 15:41:39 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ <22c89e8b-49ab-0cd2-2e63-9e380ad4ba8a@redhat.com>
+In-Reply-To: <22c89e8b-49ab-0cd2-2e63-9e380ad4ba8a@redhat.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [143.101.132.159]
 MIME-Version: 1.0
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597A16@BPXM09GP.gisp.nec.co.jp>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: yuXFFjtdOqSGdpwsMsytQg-1
-X-Mimecast-Spam-Score: 0
+X-TM-AS-MML: disable
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191210_234156_539291_4D214ED7 
-X-CRM114-Status: GOOD (  22.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191211_094515_360059_D8E8B9FA 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [114.179.232.161 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,122 +84,58 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-2022-jp"
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Hi Pingfan,
 
+> -----Original Message-----
+> > Reading the code, I think
+> > - the issue might occur not only in refiltering, but also the first filtering
+> >   with --split and --work-dir option (forced non-cyclic mode).
+> > - pefer to gather things for --split option into writeout_multiple_dumpfiles()
+> >   if we can, for readability.
+> Yes, all of the cases suffer from sharing fd across processes
+> >
+> > So does the following patch work for you and your test?
+> > I could not have reproduced the issue yet.
+> I tried to fetch a machine to test. It pass 50 times test with your
+> patch. While if without this patch, it failed about 1 out of 4 times.
 
-On 12/10/2019 04:10 AM, Kazuhito Hagio wrote:
-> 
->> -----Original Message-----
->> From: piliu <piliu@redhat.com>
->> Sent: Monday, December 9, 2019 1:06 AM
->> To: Hagio Kazuhito(萩尾 一仁) <k-hagio@ab.jp.nec.com>; kexec@lists.infradead.org
->> Subject: Re: [PATCH] makedumpfile: assign bitmap2 fd for sub process during refiltering
->>
->>
->>
->> On 12/07/2019 06:11 AM, Kazuhito Hagio wrote:
->>> Hi Pingfan,
->>>
->>>> -----Original Message-----
->>>> In refiltering mode, each sub process inherits bitmap2->fd from parent.
->>>> Then they lseek()/read() on the same fd, which means that they interference
->>>> with each other.
->>>>
->>>> This breaks the purpose of SPLITTING_FD_BITMAP(i) for each sub process.
->>>> Fix it by assigning a sub process dedicated fd to bitmap2->fd.
->>>>
->>>> Signed-off-by: Pingfan Liu <piliu@redhat.com>
->>>
->>> Thanks for the patch.
->>> I'm still reading the code, but it might be better to apply this to bitmap1->fd
->>> as well?  see you next week..
->> Yes. Although during my test, bitmap1 is not touched, but it is a
->> reasonable step to against any future bug.
-> 
-> Reading the code, I think
-> - the issue might occur not only in refiltering, but also the first filtering
->   with --split and --work-dir option (forced non-cyclic mode).
-> - pefer to gather things for --split option into writeout_multiple_dumpfiles()
->   if we can, for readability.
-Yes, all of the cases suffer from sharing fd across processes
-> 
-> So does the following patch work for you and your test?
-> I could not have reproduced the issue yet.
-I tried to fetch a machine to test. It pass 50 times test with your
-patch. While if without this patch, it failed about 1 out of 4 times.
-> 
-> diff --git a/makedumpfile.c b/makedumpfile.c
-> index b9e9dfbd45ba..674c6a00e2dd 100644
-> --- a/makedumpfile.c
-> +++ b/makedumpfile.c
-> @@ -10091,6 +10091,10 @@ writeout_multiple_dumpfiles(void)
->  			info->split_start_pfn = SPLITTING_START_PFN(i);
->  			info->split_end_pfn   = SPLITTING_END_PFN(i);
->  
-> +			if (!info->flag_cyclic) {
-> +				info->bitmap1->fd = info->fd_bitmap;
-> +				info->bitmap2->fd = info->fd_bitmap;
-> +			}
->  			if (!reopen_dump_memory())
->  				exit(1);
->  			if ((status = writeout_dumpfile()) == FALSE)
-> 
-> 
-> BTW, what do you see when the issue occurs? an error or broken dump?
-The test case is refiltering, "makedumpfile --split  -d 31
-/root/vmcore-p9b-21 dumpfile_{1,2,3} 2>&1"
-And it can not complete the dump.
+Good. Thank you for testing.
+
+> > BTW, what do you see when the issue occurs? an error or broken dump?
+> The test case is refiltering, "makedumpfile --split  -d 31
+> /root/vmcore-p9b-21 dumpfile_{1,2,3} 2>&1"
+> And it can not complete the dump.
+
+Ah, I got it. I probably could reproduce the issue:
+---
+Excluding unnecessary pages                       : [100.0 %] \
+readpage_kdump_compressed: pfn(2fc1000) is excluded from vmcore.
+readmem: type_addr: 1, addr:2fc1000000, size:4096
+read_pfn: Can't get the page data.
+...
+writeout_multiple_dumpfiles: Child process(30993) finished incompletely.(256)
+
+makedumpfile Failed.
+---
+
+Refiltering was the factor that makedumpfile failed, but I think this bug
+also can break the dumpfile silently by excluding pages wrongly even in
+first filtering.
+
+I guess this bug was hard to debug. Thank you so much for working on this!
+Modified your patch and pushed.
+https://sourceforge.net/p/makedumpfile/code/ci/5519b3eba68544dc484d85e9540d440d93f8c924/
 
 Thanks,
-Pingfan
+Kazu
 
-> 
-> Thanks,
-> Kazu
-> 
->>
->> Thanks,
->> Pingfan
->>>
->>> Thanks,
->>> Kazu
->>>
->>>> ---
->>>>  makedumpfile.c | 3 ++-
->>>>  1 file changed, 2 insertions(+), 1 deletion(-)
->>>>
->>>> diff --git a/makedumpfile.c b/makedumpfile.c
->>>> index d76a435..1dc8640 100644
->>>> --- a/makedumpfile.c
->>>> +++ b/makedumpfile.c
->>>> @@ -8857,7 +8857,8 @@ write_kdump_pages_and_bitmap_cyclic(struct cache_data *cd_header, struct cache_d
->>>>  	if (info->flag_cyclic) {
->>>>  		if (!prepare_bitmap2_buffer())
->>>>  			return FALSE;
->>>> -	}
->>>> +	} else if (info->flag_refiltering)
->>>> +		info->bitmap2->fd = info->fd_bitmap;
->>>>
->>>>  	/*
->>>>  	 * Write pages and bitmap cyclically.
->>>> --
->>>> 2.7.5
->>>>
->>>
->>>
->>>
->>> _______________________________________________
->>> kexec mailing list
->>> kexec@lists.infradead.org
->>> http://lists.infradead.org/mailman/listinfo/kexec
->>>
->>
-> 
-> 
+
 
 
 _______________________________________________
