@@ -2,96 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DF7C11C9D9
-	for <lists+kexec@lfdr.de>; Thu, 12 Dec 2019 10:51:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4AFC11CAD8
+	for <lists+kexec@lfdr.de>; Thu, 12 Dec 2019 11:32:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=19e/hQp0vVMUp7ZHKEq1bwEpgsG6v/bP894mnxAdoBY=; b=DyHCl4U+Nbrynz
-	ywIyClPtiGWNVCQaPtWTFfywxaXlkaVS3vVIpHX0vwCCVa6neN6ykLK3fSeFULJQfiba27/9kyqYZ
-	AE/DKoxwxBhfEOhYmVZz7noqYPYjzaPKRclNE98Ghd1CzSaAdVgZVehkVzd3dD2wcdicj8A5C6YZz
-	WifdAnlhQRQv6vUpdwuCG8CQEOnpzrPqVQtS481Lhls6pGhp1UIoaYFNrQ/AFtY06Mf6bALk9hwFY
-	v4kQpxGMmAXlGECjpq0pIGIttgYsNu1u+W7GjqqHxUnGuGEiwHyR8bQdtoesiOT3ifavkMHBfRuXF
-	P2UXJzWr05fWMz0t4XPw==;
+	List-Owner; bh=nyBRq5NIc6gjd9MoKd8PH511fX6IuIGhA79HBHZlM2c=; b=cmsS/sRIzNO7MA
+	tWgqqQAdsloBldgySOrnNcXZxmCvt1VKZrM4Q2PyefQM+nNojmp/k57tBISda3iJIkBnBgmfuZ+y4
+	rFQNrvyShqutCJ6urYYFMA+oCX8aROAzkAJpc0kTXEuzccaf/FzZnQII/QOtaDyFBZd6x+CgCjhQU
+	ckPdAGb6aVuOrlOlMwmO7nUIkPl3kjQD7Jii57hjgzA3V1hySXDg0+VkFSQvxKgcHGMo9NXLWfCnS
+	NdwG8JQOKWMn+tvvQ6192HoWs5oCzFuofnJzCeNF/HfIe5krhRSPJxEk1V3rUR73mbm/1cfhoWFJI
+	Q5bPSQlEVewnjsZKzUiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifL7Z-0005tK-Ak; Thu, 12 Dec 2019 09:50:57 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifL7W-0005sv-3a
- for kexec@lists.infradead.org; Thu, 12 Dec 2019 09:50:56 +0000
-Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- xBC9lKJ3100999; Thu, 12 Dec 2019 04:50:51 -0500
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2wugd25pff-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 12 Dec 2019 04:50:50 -0500
-Received: from m0098399.ppops.net (m0098399.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id xBC9lJx4100933;
- Thu, 12 Dec 2019 04:50:50 -0500
-Received: from ppma01wdc.us.ibm.com (fd.55.37a9.ip4.static.sl-reverse.com
- [169.55.85.253])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2wugd25peh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 12 Dec 2019 04:50:50 -0500
-Received: from pps.filterd (ppma01wdc.us.ibm.com [127.0.0.1])
- by ppma01wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id xBC9kZ7c017349;
- Thu, 12 Dec 2019 09:50:54 GMT
-Received: from b01cxnp22034.gho.pok.ibm.com (b01cxnp22034.gho.pok.ibm.com
- [9.57.198.24]) by ppma01wdc.us.ibm.com with ESMTP id 2wr3q6vq70-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 12 Dec 2019 09:50:54 +0000
-Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
- [9.57.199.108])
- by b01cxnp22034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- xBC9on2w54854050
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 12 Dec 2019 09:50:49 GMT
-Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EB119B2065;
- Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
-Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 67C8FB205F;
- Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
-Received: from [9.152.96.21] (unknown [9.152.96.21])
- by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTPS;
- Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
-Subject: Re: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
-To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>
-References: <20191203222725.64734-1-zaslonko@linux.ibm.com>
- <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
-From: Zaslonko Mikhail <zaslonko@linux.ibm.com>
-Message-ID: <323f61d4-6aab-a0b4-faa3-e41756fb9913@linux.ibm.com>
-Date: Thu, 12 Dec 2019 10:50:48 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+	id 1ifLm9-0007J3-0E; Thu, 12 Dec 2019 10:32:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ifLm3-0007HY-4Y; Thu, 12 Dec 2019 10:32:51 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A5204328;
+ Thu, 12 Dec 2019 02:32:41 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA63E3F6CF;
+ Thu, 12 Dec 2019 02:32:39 -0800 (PST)
+Subject: Re: [RESEND PATCH v5 5/5] Documentation/vmcoreinfo: Add documentation
+ for 'TCR_EL1.T1SZ'
+To: Bhupesh Sharma <bhsharma@redhat.com>, linux-kernel@vger.kernel.org
+References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
+ <1575057559-25496-6-git-send-email-bhsharma@redhat.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <8a982138-f1fa-34e8-18fd-49a79cea3652@arm.com>
+Date: Thu, 12 Dec 2019 10:32:38 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
-Content-Language: en-US
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
- definitions=2019-12-12_02:2019-12-12,2019-12-12 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 suspectscore=0
- mlxlogscore=999 clxscore=1011 adultscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1910280000 definitions=main-1912120071
+In-Reply-To: <1575057559-25496-6-git-send-email-bhsharma@redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191212_015054_834857_1B3C948A 
-X-CRM114-Status: GOOD (  24.46  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20191212_023249_960547_9E3A3475 
+X-CRM114-Status: GOOD (  14.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
@@ -105,136 +64,63 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "prudo@linux.ibm.com" <prudo@linux.ibm.com>,
- "dyoung@redhat.com" <dyoung@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
+ Will Deacon <will@kernel.org>, x86@kernel.org, kexec@lists.infradead.org,
+ Kazuhito Hagio <k-hagio@ab.jp.nec.com>, Dave Anderson <anderson@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhupesh.linux@gmail.com,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello Kazu,
+Hi Bhupesh,
 
-I think we can try to generalize the kaslr offset extraction. 
-I won't speak for other architectures, but for s390 that get_kaslr_offset_arm64() 
-should work fine. The only concern of mine is this TODO statement:
+On 29/11/2019 19:59, Bhupesh Sharma wrote:
+> Add documentation for TCR_EL1.T1SZ variable being added to
+> vmcoreinfo.
+> 
+> It indicates the size offset of the memory region addressed by TTBR1_EL1
 
-if (_text <= vaddr && vaddr <= _end) {
-	DEBUG_MSG("info->kaslr_offset: %lx\n", info->kaslr_offset);
-	return info->kaslr_offset;
-	} else {
-	/*
-	* TODO: we need to check if it is vmalloc/vmmemmap/module
-	* address, we will have different offset
-	*/
-	return 0;
-}
+> and hence can be used for determining the vabits_actual value.
 
-Could you explain this one?
+used for determining random-internal-kernel-variable, that might not exist tomorrow.
+
+Could you describe how this is useful/necessary if a debugger wants to walk the page
+tables from the core file? I think this is a better argument.
+
+Wouldn't the documentation be better as part of the patch that adds the export?
+(... unless these have to go via different trees? ..)
+
+
+> diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> index 447b64314f56..f9349f9d3345 100644
+> --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> @@ -398,6 +398,12 @@ KERNELOFFSET
+>  The kernel randomization offset. Used to compute the page offset. If
+>  KASLR is disabled, this value is zero.
+>  
+> +TCR_EL1.T1SZ
+> +------------
+> +
+> +Indicates the size offset of the memory region addressed by TTBR1_EL1
+
+> +and hence can be used for determining the vabits_actual value.
+
+'vabits_actual' may not exist when the next person comes to read this documentation (its
+going to rot really quickly).
+
+I think the first half of this text is enough to say what this is for. You should include
+words to the effect that its the hardware value that goes with swapper_pg_dir. You may
+want to point readers to the arm-arm for more details on what the value means.
+
 
 Thanks,
-Mikhail
 
-On 09.12.2019 23:02, Kazuhito Hagio wrote:
-> Hi Mikhail,
-> 
-> Sorry for late reply.
-> 
->> -----Original Message-----
->> Since kernel v5.2 KASLR is supported on s390. In makedumpfile however no
->> support has been added yet. This patch adds the arch specific function
->> get_kaslr_offset() for s390x.
->> Since the values in vmcoreinfo are already relocated, the patch is
->> mainly relevant for vmlinux processing (-x option).
-> 
-> In the current implementation of makedumpfile, the get_kaslr_offset(vaddr)
-> is supposed to return the KASLR offset only when the offset is needed to
-> add to the vaddr.  So generally symbols from kernel (vmlinux) need it, but
-> symbols from modules are resolved dynamically and don't need the offset.
-\> 
-> This patch always returns the offset if any, as a result, I guess this patch
-> will not work as expected with module symbols in filter config file.
-> 
-> So... How about making get_kaslr_offset_arm64() general for other archs
-> (get_kaslr_offset_general() or something), then using it also for s390?
-> If OK, I can do that generalization.
-> 
-> Thanks,
-> Kazu
-> 
->>
->> Signed-off-by: Philipp Rudo <prudo@linux.ibm.com>
->> Signed-off-by: Mikhail Zaslonko <zaslonko@linux.ibm.com>
->> ---
->>  arch/s390x.c   | 32 ++++++++++++++++++++++++++++++++
->>  makedumpfile.h |  3 ++-
->>  2 files changed, 34 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/s390x.c b/arch/s390x.c
->> index bf9d58e..892df14 100644
->> --- a/arch/s390x.c
->> +++ b/arch/s390x.c
->> @@ -122,6 +122,38 @@ get_machdep_info_s390x(void)
->>  	return TRUE;
->>  }
->>
->> +unsigned long
->> +get_kaslr_offset_s390x(unsigned long vaddr)
->> +{
->> +	unsigned int i;
->> +	char buf[BUFSIZE_FGETS], *endp;
->> +
->> +	if (!info->file_vmcoreinfo)
->> +		return FALSE;
->> +
->> +	if (fseek(info->file_vmcoreinfo, 0, SEEK_SET) < 0) {
->> +		ERRMSG("Can't seek the vmcoreinfo file(%s). %s\n",
->> +		       info->name_vmcoreinfo, strerror(errno));
->> +		return FALSE;
->> +	}
->> +
->> +	while (fgets(buf, BUFSIZE_FGETS, info->file_vmcoreinfo)) {
->> +		i = strlen(buf);
->> +		if (!i)
->> +			break;
->> +		if (buf[i - 1] == '\n')
->> +			buf[i - 1] = '\0';
->> +		if (strncmp(buf, STR_KERNELOFFSET,
->> +			    strlen(STR_KERNELOFFSET)) == 0) {
->> +			info->kaslr_offset =
->> +				strtoul(buf + strlen(STR_KERNELOFFSET), &endp, 16);
->> +			DEBUG_MSG("info->kaslr_offset: %lx\n", info->kaslr_offset);
->> +		}
->> +	}
->> +
->> +	return info->kaslr_offset;
->> +}
->> +
->>  static int
->>  is_vmalloc_addr_s390x(unsigned long vaddr)
->>  {
->> diff --git a/makedumpfile.h b/makedumpfile.h
->> index ac11e90..26f6247 100644
->> --- a/makedumpfile.h
->> +++ b/makedumpfile.h
->> @@ -1071,11 +1071,12 @@ unsigned long long vaddr_to_paddr_ppc(unsigned long vaddr);
->>  int get_machdep_info_s390x(void);
->>  unsigned long long vaddr_to_paddr_s390x(unsigned long vaddr);
->>  int is_iomem_phys_addr_s390x(unsigned long addr);
->> +unsigned long get_kaslr_offset_s390x(unsigned long vaddr);
->>  #define find_vmemmap()		stub_false()
->>  #define get_phys_base()		stub_true()
->>  #define get_machdep_info()	get_machdep_info_s390x()
->>  #define get_versiondep_info()	stub_true()
->> -#define get_kaslr_offset(X)	stub_false()
->> +#define get_kaslr_offset(X)	get_kaslr_offset_s390x(X)
->>  #define vaddr_to_paddr(X)	vaddr_to_paddr_s390x(X)
->>  #define paddr_to_vaddr(X)	paddr_to_vaddr_general(X)
->>  #define is_phys_addr(X)		is_iomem_phys_addr_s390x(X)
->> --
->> 2.17.1
->>
-> 
-> 
+James
 
 _______________________________________________
 kexec mailing list
