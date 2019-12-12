@@ -2,91 +2,98 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52F6A11C260
-	for <lists+kexec@lfdr.de>; Thu, 12 Dec 2019 02:41:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF7C11C9D9
+	for <lists+kexec@lfdr.de>; Thu, 12 Dec 2019 10:51:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=3ONnqfc1ER0J5KjybytoMOuCqxztD6qMcNcPMjPXSHE=; b=D6J8e2azdows0L26sX03dd3fLD
-	C5ul5BgrwAX6KN2+MG9pM8mRa1NBUb0S0GRzlt0F3/BaeIctimVpy/ntX+XPHRJGyHmYrmhAfKXpY
-	My1/HAFfRumlur3gd1c7xW6hMET84c4hg4/BQTJn+J4GSisxUcuhSdm+jORh6j8ZTFXOseTG7w+aP
-	iJ/0rcodys/bykFOVz+SfYyhJ8VzHJQtrJUCAZ1q3pUkre5a23ejIhlk5UrYIE1AbU/hjmPkZi1Ze
-	zqinxPc1dV5IF3cvUxasOHcjL1DIXdChT7/+l8rMSKR9OngLvlwKRUGYOYNyLlwQAzKWlP7z0bpQ0
-	MX4PW8AA==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=19e/hQp0vVMUp7ZHKEq1bwEpgsG6v/bP894mnxAdoBY=; b=DyHCl4U+Nbrynz
+	ywIyClPtiGWNVCQaPtWTFfywxaXlkaVS3vVIpHX0vwCCVa6neN6ykLK3fSeFULJQfiba27/9kyqYZ
+	AE/DKoxwxBhfEOhYmVZz7noqYPYjzaPKRclNE98Ghd1CzSaAdVgZVehkVzd3dD2wcdicj8A5C6YZz
+	WifdAnlhQRQv6vUpdwuCG8CQEOnpzrPqVQtS481Lhls6pGhp1UIoaYFNrQ/AFtY06Mf6bALk9hwFY
+	v4kQpxGMmAXlGECjpq0pIGIttgYsNu1u+W7GjqqHxUnGuGEiwHyR8bQdtoesiOT3ifavkMHBfRuXF
+	P2UXJzWr05fWMz0t4XPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ifDTX-0002lD-Ec; Thu, 12 Dec 2019 01:41:07 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ifL7Z-0005tK-Ak; Thu, 12 Dec 2019 09:50:57 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ifDTT-0002kQ-6Y
- for kexec@lists.infradead.org; Thu, 12 Dec 2019 01:41:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1576114859;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=TK5fVZqwX06iKV61csWVYE0QS9VupOISgrdn8GWZ4iM=;
- b=LsN1AgHt6ZtRl1MBPqVClorfKAk7Zk3ts+ckJD8Blsa72Mau4qZWkJ1RC8NK4wEJy5Hsrg
- H5WvnumqXT1M5Gw3ue686Ynux6vUzDZLVxgCJeGa3TgsV8q9CUXLTrCax9fRQ+9uY81jfD
- pH7uU9aI1U2sVeit64B2qdbBxCVa55Y=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-288-ADDy_Sv6O8moorDn1QP8cA-1; Wed, 11 Dec 2019 20:40:55 -0500
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C4852101F4F5;
- Thu, 12 Dec 2019 01:40:54 +0000 (UTC)
-Received: from [10.72.8.18] (ovpn-8-18.pek2.redhat.com [10.72.8.18])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id ABBAF60E1C;
- Thu, 12 Dec 2019 01:40:53 +0000 (UTC)
-Subject: Re: [PATCH] makedumpfile: assign bitmap2 fd for sub process during
- refiltering
-To: kexec@lists.infradead.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-References: <1575358627-17152-1-git-send-email-piliu@redhat.com>
- <4AE2DC15AC0B8543882A74EA0D43DBEC035977E6@BPXM09GP.gisp.nec.co.jp>
- <0d793e2d-6698-6543-13de-a3de8732df75@redhat.com>
- <4AE2DC15AC0B8543882A74EA0D43DBEC03597A16@BPXM09GP.gisp.nec.co.jp>
- <22c89e8b-49ab-0cd2-2e63-9e380ad4ba8a@redhat.com>
- <4AE2DC15AC0B8543882A74EA0D43DBEC03597DC4@BPXM09GP.gisp.nec.co.jp>
-From: piliu <piliu@redhat.com>
-X-Enigmail-Draft-Status: N1110
-Message-ID: <9d5b162e-8d7e-1f2f-92a9-676476398e91@redhat.com>
-Date: Thu, 12 Dec 2019 09:40:51 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ id 1ifL7W-0005sv-3a
+ for kexec@lists.infradead.org; Thu, 12 Dec 2019 09:50:56 +0000
+Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ xBC9lKJ3100999; Thu, 12 Dec 2019 04:50:51 -0500
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2wugd25pff-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 12 Dec 2019 04:50:50 -0500
+Received: from m0098399.ppops.net (m0098399.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id xBC9lJx4100933;
+ Thu, 12 Dec 2019 04:50:50 -0500
+Received: from ppma01wdc.us.ibm.com (fd.55.37a9.ip4.static.sl-reverse.com
+ [169.55.85.253])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2wugd25peh-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 12 Dec 2019 04:50:50 -0500
+Received: from pps.filterd (ppma01wdc.us.ibm.com [127.0.0.1])
+ by ppma01wdc.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id xBC9kZ7c017349;
+ Thu, 12 Dec 2019 09:50:54 GMT
+Received: from b01cxnp22034.gho.pok.ibm.com (b01cxnp22034.gho.pok.ibm.com
+ [9.57.198.24]) by ppma01wdc.us.ibm.com with ESMTP id 2wr3q6vq70-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 12 Dec 2019 09:50:54 +0000
+Received: from b01ledav003.gho.pok.ibm.com (b01ledav003.gho.pok.ibm.com
+ [9.57.199.108])
+ by b01cxnp22034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ xBC9on2w54854050
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 12 Dec 2019 09:50:49 GMT
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id EB119B2065;
+ Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
+Received: from b01ledav003.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 67C8FB205F;
+ Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
+Received: from [9.152.96.21] (unknown [9.152.96.21])
+ by b01ledav003.gho.pok.ibm.com (Postfix) with ESMTPS;
+ Thu, 12 Dec 2019 09:50:48 +0000 (GMT)
+Subject: Re: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
+To: Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+References: <20191203222725.64734-1-zaslonko@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
+From: Zaslonko Mikhail <zaslonko@linux.ibm.com>
+Message-ID: <323f61d4-6aab-a0b4-faa3-e41756fb9913@linux.ibm.com>
+Date: Thu, 12 Dec 2019 10:50:48 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597DC4@BPXM09GP.gisp.nec.co.jp>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-MC-Unique: ADDy_Sv6O8moorDn1QP8cA-1
-X-Mimecast-Spam-Score: 0
+In-Reply-To: <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
+Content-Language: en-US
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2019-12-12_02:2019-12-12,2019-12-12 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxscore=0 suspectscore=0
+ mlxlogscore=999 clxscore=1011 adultscore=0 malwarescore=0
+ priorityscore=1501 spamscore=0 bulkscore=0 phishscore=0 lowpriorityscore=0
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1910280000 definitions=main-1912120071
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191211_174103_460214_CFAB9B3F 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191212_015054_834857_1B3C948A 
+X-CRM114-Status: GOOD (  24.46  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,62 +105,136 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: "prudo@linux.ibm.com" <prudo@linux.ibm.com>,
+ "dyoung@redhat.com" <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Hello Kazu,
 
+I think we can try to generalize the kaslr offset extraction. 
+I won't speak for other architectures, but for s390 that get_kaslr_offset_arm64() 
+should work fine. The only concern of mine is this TODO statement:
 
-On 12/12/2019 01:44 AM, Kazuhito Hagio wrote:
-> Hi Pingfan,
+if (_text <= vaddr && vaddr <= _end) {
+	DEBUG_MSG("info->kaslr_offset: %lx\n", info->kaslr_offset);
+	return info->kaslr_offset;
+	} else {
+	/*
+	* TODO: we need to check if it is vmalloc/vmmemmap/module
+	* address, we will have different offset
+	*/
+	return 0;
+}
+
+Could you explain this one?
+
+Thanks,
+Mikhail
+
+On 09.12.2019 23:02, Kazuhito Hagio wrote:
+> Hi Mikhail,
+> 
+> Sorry for late reply.
 > 
 >> -----Original Message-----
->>> Reading the code, I think
->>> - the issue might occur not only in refiltering, but also the first filtering
->>>   with --split and --work-dir option (forced non-cyclic mode).
->>> - pefer to gather things for --split option into writeout_multiple_dumpfiles()
->>>   if we can, for readability.
->> Yes, all of the cases suffer from sharing fd across processes
->>>
->>> So does the following patch work for you and your test?
->>> I could not have reproduced the issue yet.
->> I tried to fetch a machine to test. It pass 50 times test with your
->> patch. While if without this patch, it failed about 1 out of 4 times.
+>> Since kernel v5.2 KASLR is supported on s390. In makedumpfile however no
+>> support has been added yet. This patch adds the arch specific function
+>> get_kaslr_offset() for s390x.
+>> Since the values in vmcoreinfo are already relocated, the patch is
+>> mainly relevant for vmlinux processing (-x option).
 > 
-> Good. Thank you for testing.
+> In the current implementation of makedumpfile, the get_kaslr_offset(vaddr)
+> is supposed to return the KASLR offset only when the offset is needed to
+> add to the vaddr.  So generally symbols from kernel (vmlinux) need it, but
+> symbols from modules are resolved dynamically and don't need the offset.
+\> 
+> This patch always returns the offset if any, as a result, I guess this patch
+> will not work as expected with module symbols in filter config file.
 > 
->>> BTW, what do you see when the issue occurs? an error or broken dump?
->> The test case is refiltering, "makedumpfile --split  -d 31
->> /root/vmcore-p9b-21 dumpfile_{1,2,3} 2>&1"
->> And it can not complete the dump.
+> So... How about making get_kaslr_offset_arm64() general for other archs
+> (get_kaslr_offset_general() or something), then using it also for s390?
+> If OK, I can do that generalization.
 > 
-> Ah, I got it. I probably could reproduce the issue:
-> ---
-> Excluding unnecessary pages                       : [100.0 %] \
-> readpage_kdump_compressed: pfn(2fc1000) is excluded from vmcore.
-> readmem: type_addr: 1, addr:2fc1000000, size:4096
-> read_pfn: Can't get the page data.
-> ...
-> writeout_multiple_dumpfiles: Child process(30993) finished incompletely.(256)
+> Thanks,
+> Kazu
 > 
-> makedumpfile Failed.
-> ---
+>>
+>> Signed-off-by: Philipp Rudo <prudo@linux.ibm.com>
+>> Signed-off-by: Mikhail Zaslonko <zaslonko@linux.ibm.com>
+>> ---
+>>  arch/s390x.c   | 32 ++++++++++++++++++++++++++++++++
+>>  makedumpfile.h |  3 ++-
+>>  2 files changed, 34 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/s390x.c b/arch/s390x.c
+>> index bf9d58e..892df14 100644
+>> --- a/arch/s390x.c
+>> +++ b/arch/s390x.c
+>> @@ -122,6 +122,38 @@ get_machdep_info_s390x(void)
+>>  	return TRUE;
+>>  }
+>>
+>> +unsigned long
+>> +get_kaslr_offset_s390x(unsigned long vaddr)
+>> +{
+>> +	unsigned int i;
+>> +	char buf[BUFSIZE_FGETS], *endp;
+>> +
+>> +	if (!info->file_vmcoreinfo)
+>> +		return FALSE;
+>> +
+>> +	if (fseek(info->file_vmcoreinfo, 0, SEEK_SET) < 0) {
+>> +		ERRMSG("Can't seek the vmcoreinfo file(%s). %s\n",
+>> +		       info->name_vmcoreinfo, strerror(errno));
+>> +		return FALSE;
+>> +	}
+>> +
+>> +	while (fgets(buf, BUFSIZE_FGETS, info->file_vmcoreinfo)) {
+>> +		i = strlen(buf);
+>> +		if (!i)
+>> +			break;
+>> +		if (buf[i - 1] == '\n')
+>> +			buf[i - 1] = '\0';
+>> +		if (strncmp(buf, STR_KERNELOFFSET,
+>> +			    strlen(STR_KERNELOFFSET)) == 0) {
+>> +			info->kaslr_offset =
+>> +				strtoul(buf + strlen(STR_KERNELOFFSET), &endp, 16);
+>> +			DEBUG_MSG("info->kaslr_offset: %lx\n", info->kaslr_offset);
+>> +		}
+>> +	}
+>> +
+>> +	return info->kaslr_offset;
+>> +}
+>> +
+>>  static int
+>>  is_vmalloc_addr_s390x(unsigned long vaddr)
+>>  {
+>> diff --git a/makedumpfile.h b/makedumpfile.h
+>> index ac11e90..26f6247 100644
+>> --- a/makedumpfile.h
+>> +++ b/makedumpfile.h
+>> @@ -1071,11 +1071,12 @@ unsigned long long vaddr_to_paddr_ppc(unsigned long vaddr);
+>>  int get_machdep_info_s390x(void);
+>>  unsigned long long vaddr_to_paddr_s390x(unsigned long vaddr);
+>>  int is_iomem_phys_addr_s390x(unsigned long addr);
+>> +unsigned long get_kaslr_offset_s390x(unsigned long vaddr);
+>>  #define find_vmemmap()		stub_false()
+>>  #define get_phys_base()		stub_true()
+>>  #define get_machdep_info()	get_machdep_info_s390x()
+>>  #define get_versiondep_info()	stub_true()
+>> -#define get_kaslr_offset(X)	stub_false()
+>> +#define get_kaslr_offset(X)	get_kaslr_offset_s390x(X)
+>>  #define vaddr_to_paddr(X)	vaddr_to_paddr_s390x(X)
+>>  #define paddr_to_vaddr(X)	paddr_to_vaddr_general(X)
+>>  #define is_phys_addr(X)		is_iomem_phys_addr_s390x(X)
+>> --
+>> 2.17.1
+>>
 > 
-> Refiltering was the factor that makedumpfile failed, but I think this bug
-> also can break the dumpfile silently by excluding pages wrongly even in
-> first filtering.
-Yes, you are right.
 > 
-> I guess this bug was hard to debug. Thank you so much for working on this!
-Yeah, it took me some time. I had thought it should be a kernel bug
-about the file{}.
-> Modified your patch and pushed.
-> https://sourceforge.net/p/makedumpfile/code/ci/5519b3eba68544dc484d85e9540d440d93f8c924/
-> 
-Thanks,
-Pingfan
-
 
 _______________________________________________
 kexec mailing list
