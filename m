@@ -2,78 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4FD911FCBE
-	for <lists+kexec@lfdr.de>; Mon, 16 Dec 2019 03:11:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A227C11FCBF
+	for <lists+kexec@lfdr.de>; Mon, 16 Dec 2019 03:11:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mG+ZwVLGoBpzsZMNIP5nR2nCA6dvUq0zHA3wO7qG+7w=; b=Ewq01umu32Yook
-	jJHfSIg+OQfpq4TB+Xzw0pK9s1v9ZmmNdmExYY/IRen5Gu16TwoHDbNJ7/P4KzNQMRWwBG64qCE+g
-	FWYXx4wxtUf4xV7NXG16PGbgBfG1vXQ+RM4EOur40/NLlpISDJTnClxgKjpL2qJXWONmBljEjv+Wi
-	VuRX58v71ZbczjHiaT5XOpC9EWrBSQjbz3l/wi4cgwyV/L16t0Oe/vahBGo1aN3cnYdBxXQ0NkY00
-	L/kQ7ouoHETLWhMxv23E1ViC//uYcDIaWmOGRMj4ksIaf3Bi3gcN0YqdFbyYTNv9eOaLbAPuvXcCX
-	C7+cEPRUd+5QJ/AvWlhA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0+2sopPGeDYrv9pnnUiC2SM11HfKhoMIyPgBn9bVMeA=; b=WpBNUA9HlxohO1
+	Tv6AiU5nxUXnBbUOH7VNFZoSfvgLT+j4pF1AlPEpSN0EGRgw8V8cXNnW9rp6v5nA5L5o6HpWfUrsP
+	DPHdS6swCERrQ5oA3UtP8R4B8QMrYxmo+5H7DibGIbSoPPK5thQ7lT6rC/9ANML4Y1M5DMAIpnB17
+	Ia31MDtTpKFK2EuBCy5Vp+cTWBpq0vT7yGmg3MrHRZhFF1Je6qorX3As0a13ENRZFImco20uNbdJ+
+	dQ88VdxBi4ca3OLK0N/vim/yoP+5SZ0txNR09hxChgWmLFwkxN2KkGOblzlxgUkTJnAhQ1ourSXim
+	+oup65CFB+oFoQGXeOnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1igfqs-0008WB-Br; Mon, 16 Dec 2019 02:11:14 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1igfqu-00009K-G0; Mon, 16 Dec 2019 02:11:16 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1igfqX-0008K1-By
- for kexec@lists.infradead.org; Mon, 16 Dec 2019 02:10:55 +0000
-Received: by mail-pg1-x543.google.com with SMTP id l24so2759302pgk.2
- for <kexec@lists.infradead.org>; Sun, 15 Dec 2019 18:10:53 -0800 (PST)
+ id 1igfqc-0008M8-MD
+ for kexec@lists.infradead.org; Mon, 16 Dec 2019 02:11:00 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id ca19so2271024pjb.8
+ for <kexec@lists.infradead.org>; Sun, 15 Dec 2019 18:10:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dA+Be6hjL2cHUlLT4b0QsKh2SO4TkadtZEXugHfpPn0=;
- b=YFtjl2oOg9s6QG+eXFDBYnsP4sW5M5MAy/pdUOOJ6vuyeF1jflPjV2z/YOo+il9v4R
- /eGDJcWYRPV1NoTwxvKC28S5k8H1bEsJsLsmVv2mt/jVvcBlYNhrgg+B+7pllBvUZw6I
- d3qmgKuQI/28TpQHnmxJ0pAF9x0DLSZMbVaEK+8l14cJvPKAdTYCJnYtt/PNXh5iwi+Z
- ajVNj0fF9ptvGl7KRtstEdNoI5kWTL0NyIAE6eOtR1auwBLObX+NfVqNYtG5/PoE/oIv
- d62acGTLwbz8ud1mB2Jn9d/s0jSRR069/iAUPxmsEijJaOVAR7RfiGz/br8Hvpm6UEHA
- ufEQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=3FqOO3wE0tn2QZf6UyRIRojyX4xpI+NMDGsdK9w/Ap4=;
+ b=wGyoF6jRoSwSqw+ChtmsGgyLywamuwnCySkdQERJLwj6c5L5qb0fdxqrFu931tlm6N
+ 8yVFrAfggJMKfdNHQsaLv8RR/v0oqSdDn7G6b4zu0f7F3ZHMCgOEBRNBDYfo1EvnNJ5S
+ tbUvpunr92twBkFUM63SSt+pRBt8o1HUUaol7gl/QKAx+uOE6avNdSaIfuNvf9TRBeoE
+ tMHoF2u8UktPVgVuCRHiXaV3jEFrAx2XCB8Jo8yDsILDJJu7T+Tt7Ld/7/1ZkOXISopf
+ B89pLzreYs2xQKOOj0VmCUR6VPJ8g43mhhEKBO+tHUgicS+W5JXVB8Op5XgmE3iPFIJ9
+ l/QA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dA+Be6hjL2cHUlLT4b0QsKh2SO4TkadtZEXugHfpPn0=;
- b=OQf2iIJ73wkAYP/gGM4hgeti6jI8VQFe1k/KTC02isTyu90JLAfL9k/aNffG6/H/sW
- CY+Gj85cBCisfAqtRVe5Zaxt+opricSE9uo8b8u1oecDL16gLSJg/1ZrV5butdEBkrA7
- EXZ4A99YReV3wuIJKJJP+tw29Z1BrCcZVwHGNzf2y6ZWfS7fiIJJC1fvJXvwQRx6dnaW
- akizJPB0nRPJN3y7qf8J0P1lecS99dk4oizfL/LyZIX0b2KS0X5rUqnVc2RgLWoR24On
- NcY3x+ao3iJ5jxOWdLrm9cGzwochtXvUBW97DZUiKWexXBBakJjvwKLnx1Iq4FgHymnn
- qgBQ==
-X-Gm-Message-State: APjAAAUAJxKHnEiIaPoixyilxM2PGWH0l/svRCAU3agpQ1NdS8Qa+oJ8
- LBOr/9rjLQk7lNt10zW6RyFywh7NFyk=
-X-Google-Smtp-Source: APXvYqylJxqANyN2tsXOloyg9jZCWJSFnvigEIIla7pk6dyyIchgI7ylkTViTT47zhAEhRlY2Fi3yg==
-X-Received: by 2002:a65:644b:: with SMTP id s11mr15436130pgv.332.1576462252631; 
- Sun, 15 Dec 2019 18:10:52 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=3FqOO3wE0tn2QZf6UyRIRojyX4xpI+NMDGsdK9w/Ap4=;
+ b=mHMbf9TPPCvjSnnZmP7em9ehp8opGesyRSYHzncjsddQ1LWMQQOyH1q/K86QzdUVTw
+ PLwnf8gX5bRqQ3R+u8rSAOo3PSHgHZ7/IRrSgWaMUlHGRINcMZGp/lMRwfJRenz6tkSK
+ DSNZXeN2Oadfw03qpsr2N3WtQr1XQA2ubgMefGHvqPaUAJxX7vGsIyy8w0UzVflodSBJ
+ UlLdTTaiXH/AXubT8ryVkes2nl77e2ePMIxFP16rBaCRBPYbfRA2jlCfuujZsoeJRr5D
+ wJihJVuZod1PLN+kKbcGFUHRReyDmaUnPhfunlOgx3v2LNCBZoa8Syr32VSpd5eEoyXt
+ nSwg==
+X-Gm-Message-State: APjAAAWp9hIZYcEihHlb5nxJUf2VPMWKGXCdRHtyliIKRiRLosLF3MP/
+ 7Nvga0zbSKIAOzJqw+hs9UB+Ug==
+X-Google-Smtp-Source: APXvYqwqnj6pjtxlkbHv7rjmVjeSeNcfkdhHZLvOyl96O2c83UZCkHGR30ssVZjoytDPl1puOozqUg==
+X-Received: by 2002:a17:90a:fa92:: with SMTP id
+ cu18mr15301981pjb.114.1576462257870; 
+ Sun, 15 Dec 2019 18:10:57 -0800 (PST)
 Received: from linaro.org ([121.95.100.191])
- by smtp.googlemail.com with ESMTPSA id o31sm18900626pgb.56.2019.12.15.18.10.51
+ by smtp.googlemail.com with ESMTPSA id p5sm18997185pgs.28.2019.12.15.18.10.56
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 15 Dec 2019 18:10:51 -0800 (PST)
+ Sun, 15 Dec 2019 18:10:57 -0800 (PST)
 From: AKASHI Takahiro <takahiro.akashi@linaro.org>
 To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
  frowand.list@gmail.com
-Subject: [PATCH v4 0/2] arm64: kexec_file: add kdump
-Date: Mon, 16 Dec 2019 11:12:45 +0900
-Message-Id: <20191216021247.24950-1-takahiro.akashi@linaro.org>
+Subject: [PATCH v4 1/2] libfdt: include fdt_addresses.c
+Date: Mon, 16 Dec 2019 11:12:46 +0900
+Message-Id: <20191216021247.24950-2-takahiro.akashi@linaro.org>
 X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20191216021247.24950-1-takahiro.akashi@linaro.org>
+References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191215_181053_514015_DE9BAE5B 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20191215_181058_744164_2FA40986 
+X-CRM114-Status: GOOD (  10.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -102,61 +102,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-This is the last piece of my kexec_file_load implementation for arm64.
-It is now ready for being merged as some relevant patch to dtc/libfdt[1]
-has finally been integrated in v5.3-rc1.
-(Nothing changed since kexec_file v16[2] except adding Patch#1 and #2.)
+In the implementation of kexec_file_loaded-based kdump for arm64,
+fdt_appendprop_addrrange() will be needed.
 
-Patch#1 and #2 are preliminary patches for libfdt component.
-Patch#3 is to add kdump support.
+So include fdt_addresses.c in making libfdt.
 
-Bhepesh's patch[3] will be required for 52-bit VA support either against
-legacy kexec or kexec_file.
-Once this patch is applied, whether or not CONFIG_ARM64_VA_BITS_52 is
-enabled or not, a matching fix[4] on user space side, crash utility,
-will also be needed. 
-
-Anyway, I tested my patch, at least, with the following configuration:
-1) CONFIG_ARM64_BITS_48=y
-2) CONFIG_ARM64_BITS_52=y, but vabits_actual=48
-
-(I don't have any platform to use for
-3) CONFIG_ARM64_BITS_52=y, and vabits_actual=52)
-
-[1] commit 9bb9c6a110ea ("scripts/dtc: Update to upstream version
-    v1.5.0-23-g87963ee20693"), in particular
-	7fcf8208b8a9 libfdt: add fdt_append_addrrange()
-[2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-November/612641.html
-[3] http://lists.infradead.org/pipermail/linux-arm-kernel/2019-November/693411.html
-[4] https://www.redhat.com/archives/crash-utility/2019-November/msg00014.html
-
-Changes in v4 (Dec 16, 2019)
-* rebased to v5.5-rc2
-* use KEXEC_BUF_MEM_UNKNOWN instead of "0" (patch#2)
-
-Changes in v3 (Dec 9, 2019)
-* rebased to v5.5-rc1
-* no functional changes (since v1)
-
-Changes in v2 (Nov 14, 2019)
-* rebased to v5.4-rc7
-* no functional changes
-
-v1 (Sept 12, 2019)
-* on top of v5.3-rc8
-
-AKASHI Takahiro (2):
-  libfdt: include fdt_addresses.c
-  arm64: kexec_file: add crash dump support
-
- arch/arm64/include/asm/kexec.h         |   4 +
- arch/arm64/kernel/kexec_image.c        |   4 -
- arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
- lib/Makefile                           |   2 +-
- lib/fdt_addresses.c                    |   2 +
- 5 files changed, 109 insertions(+), 9 deletions(-)
+Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Frank Rowand <frowand.list@gmail.com>
+---
+ lib/Makefile        | 2 +-
+ lib/fdt_addresses.c | 2 ++
+ 2 files changed, 3 insertions(+), 1 deletion(-)
  create mode 100644 lib/fdt_addresses.c
 
+diff --git a/lib/Makefile b/lib/Makefile
+index 93217d44237f..c20b1debe9b4 100644
+--- a/lib/Makefile
++++ b/lib/Makefile
+@@ -223,7 +223,7 @@ KASAN_SANITIZE_stackdepot.o := n
+ KCOV_INSTRUMENT_stackdepot.o := n
+ 
+ libfdt_files = fdt.o fdt_ro.o fdt_wip.o fdt_rw.o fdt_sw.o fdt_strerror.o \
+-	       fdt_empty_tree.o
++	       fdt_empty_tree.o fdt_addresses.o
+ $(foreach file, $(libfdt_files), \
+ 	$(eval CFLAGS_$(file) = -I $(srctree)/scripts/dtc/libfdt))
+ lib-$(CONFIG_LIBFDT) += $(libfdt_files)
+diff --git a/lib/fdt_addresses.c b/lib/fdt_addresses.c
+new file mode 100644
+index 000000000000..23610bcf390b
+--- /dev/null
++++ b/lib/fdt_addresses.c
+@@ -0,0 +1,2 @@
++#include <linux/libfdt_env.h>
++#include "../scripts/dtc/libfdt/fdt_addresses.c"
 -- 
 2.24.0
 
