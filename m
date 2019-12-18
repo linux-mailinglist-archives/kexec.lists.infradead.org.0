@@ -2,7 +2,7 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B011124E1B
+	by mail.lfdr.de (Postfix) with ESMTPS id AC217124E1C
 	for <lists+kexec@lfdr.de>; Wed, 18 Dec 2019 17:43:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -11,72 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=V81TJFRCfrL+JLVagDHUEBMYAKeB+YJeBR/MX6aOa7k=; b=Xdk+Q2JJWQPaZlvmm9rBCl3IRY
-	mgXCSxDwL5N3eiXslP8KqVm+eAdwtXIP31Cj3y3szu9OAZiDwuiPsh3+mUVbCc7DKt97BddRK8QhC
-	zPWMbaHGXSkyHq0zWbPPjS/0gFW8kFz6TWC18JzC5f1R5j1vflhZAbf0HxL2QvHI5pyQzxoMdRvsd
-	iAIptJhviioagxfVeQ6vRP/DdQtimYyYhBZdkgVDtTQdmGrrpvno451bznJL/SU7E9rFim7c8F2eE
-	dO/FH0PrZbl8pDgI0lhmZ29WDAJj5bCpR0Dsa9XJ5imRos4jfS/Ch+u5NyyU8Myv2pL6NSvZGT7LC
-	0ukH/ELQ==;
+	bh=pSfstYAuuK7aMf8GK5syWRx/arqjFmakFKLUpLJKyRA=; b=UVyuZ4qj4D1uZ3E0GDZg8GRFaf
+	DTN/Bn5eyvEFLM0r+TbG2igGWn5ZiFm4eTBbdHcbUsM685FxnWk/hsC8b6I1k4AOpbTScYWG1tnwt
+	1MZRl+JMzP5AeS5BxjZronPLsoYwP9qLXU0Db+BkciSWGUPv2S6jNtkK2LN6XZHLRmCsgXNdt8Jsk
+	8VysoTfhABZLyjhTyC/kjTmU8bCxkGUNDNAgcCKdjiCStib6Atmb+s4vrwNSieyZ72Lfhi+DNoy/6
+	+B8fI3JtdLBQF99/ONyuUAt8b/o0f3OVNGZSTVSsxYdDivCwS0soo2EU81is8HBgMs5EvhOBDVlAF
+	Wc6rT+aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcQD-0006i4-UT; Wed, 18 Dec 2019 16:43:37 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1ihcQF-0006kD-JG; Wed, 18 Dec 2019 16:43:39 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihcQ7-0006bq-7G
- for kexec@lists.infradead.org; Wed, 18 Dec 2019 16:43:33 +0000
-Received: by mail-qt1-x841.google.com with SMTP id e5so2454202qtm.6
- for <kexec@lists.infradead.org>; Wed, 18 Dec 2019 08:43:30 -0800 (PST)
+ id 1ihcQ8-0006ds-Tv
+ for kexec@lists.infradead.org; Wed, 18 Dec 2019 16:43:34 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id t6so1004595qvs.5
+ for <kexec@lists.infradead.org>; Wed, 18 Dec 2019 08:43:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Mn7lT/v33beqUUHzTYcxw1ZuuVT33ZNDOi+r+jNEqrI=;
- b=S4eONsoNCtlvWb1SXb0HSyC/Xewk/6u/pvaM/zQHPwXXLcGag7UibnSt3vj1Y+eZDq
- sq/HNhNWGfK/7RIBwsLH8vVrVtozKIka/f9cin02GpzENEtpCwlF+Y42Fm43v6WVyOvY
- k3VMXBXf824LGqIdFbYh+VMLPgy9uyEsqctN7k2V0e8OVUhY7fCY74uPopqIlNJrBLEu
- TvaLVHcEaTsyBmkUjDH+7on2+MRjh6SYpxiHJP3e+rbzatCMx45bxhs8s52mo6RaF40V
- 3ZOWf3vTEW74ikGw9k1n0kDAOZs71ZW7OfQhFkjLp8gmuHhRgBIAT57419XcTw+JU5Ur
- iKcw==
+ bh=AuYbVTTFHt8IOFWlacJrH6aliLDgthD59oT5nrUjys4=;
+ b=rMfMuL7NhhEx1KygBNams+URRoloeJKePq7onw/fAx7HC8iT/lAKZLPcCI3xYpU6Zg
+ S83EllJVbzDyHLqDA6TqygjLEVeDwx5Qsg+/9JnrcJfKsXCL9wSt1JULrMfOSOujv4Id
+ KcuLHEMLvwsVtiFnkXjoZVLBgdEGTNFrkg0gxcqx+spJmjsF3010mv3Rk6QdiaomcxT7
+ +FxapmbHxYANgIcU2W++Jlq2MOlXEsD3nkBBpSyY4jv5BRyQag+MWd/PZhOj/xo5COhq
+ q7GDkvgGr96jYqeWrOgRdUqxSRaAHdNOqkOlZV+ikaQpBFfeBMwAbND0wVrkyo4Ehgh9
+ CMZw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Mn7lT/v33beqUUHzTYcxw1ZuuVT33ZNDOi+r+jNEqrI=;
- b=JYTmzEfuj6QcdPvPBXj7eMuogCqw8FzbpZMsdpKahk+w1Csa7OyFZ0uPU4zj6bTNXi
- 3U0BZ8vysazZVRUTLnNcvCC4zhGy7wLyShv+qt7DPGdgKV+vGxq3JWsk0eIIkEmFeyMK
- 8G30tQMWPx37mNwn+IRIV+TzLTkH2scpUVFo7MS/OOLlkZZwCmUoGlQ/W/Uw4xnm+RqI
- u89YIGsrPPUgW2W2W8vhQY8VY/QESCRbRutDGVt2G8aFgX07vvrBHFnzS3jrAQElt6nt
- ecueopcRhFgPPoxiHAPWzE8VpkN4zyUki69yTZ+VEBMVC6hAU90W1Uf5yd9s0qJa1Frr
- kzmg==
-X-Gm-Message-State: APjAAAVJhojZMuAzducCzj5/RWSqYVFW8WUJ0DM6LRRmt5PB7InbHC2q
- Ofuv78YoeAkkn80SXZU8szSPfYE=
-X-Google-Smtp-Source: APXvYqz9oVbNa9sK4moZqzNK0k6ZkMsSF0MTT87Fq4xaIaDI/VDqijByRGhEtBA2anPCCh3TXm9vow==
-X-Received: by 2002:ac8:3751:: with SMTP id p17mr3070241qtb.9.1576687409202;
- Wed, 18 Dec 2019 08:43:29 -0800 (PST)
+ bh=AuYbVTTFHt8IOFWlacJrH6aliLDgthD59oT5nrUjys4=;
+ b=gPSSGkzwNiQE4qtrV6wMOnIOzs7KGww2inz8+dN3vUgWnw66Ufv9IWET6gbIMmSCqz
+ E0dYgFlLUK0Ai12omU+rq59xS2gH3xW89Z6skiAKHk/yVifhw5aQl4+7IkEDJVRjqpaT
+ rmFi9JZj1lSy4lVS+xl57bNfQtMvoYh9UXWCmhSekPQVmB8FjCDuZHlyP267ZZ+v7Opj
+ beWRKJK7nbbzqupwrBMb4stdJbyT2ABJBESct5LHFKZafPHcKSiD0hXuNko8fex2SI4n
+ 8dx7DoIyy6zoqBPYsoC83zIZ+WtKNZId4dFr8X7fOuWueHnuL4v37zSFpKDtcnA+Ophz
+ yVqQ==
+X-Gm-Message-State: APjAAAVSvcvwk+4MJ0tiwfZ0kBO6HpqjkzfLxp1QJQf3nqiaA3+6Bodf
+ mMw9KfbimIqBhb2M3eSd16QotqY=
+X-Google-Smtp-Source: APXvYqz3gARHo9yn+Ks84JT1eJcSxWZFBcz0V/XJquZZVUv8jgpzjN/yjpXYgkc4bgKcsKvWxP3XTA==
+X-Received: by 2002:ad4:580e:: with SMTP id dd14mr3274129qvb.84.1576687410864; 
+ Wed, 18 Dec 2019 08:43:30 -0800 (PST)
 Received: from gabell.bos.redhat.com (nat-pool-bos-t.redhat.com.
  [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id r66sm752051qkd.125.2019.12.18.08.43.28
+ by smtp.gmail.com with ESMTPSA id r66sm752051qkd.125.2019.12.18.08.43.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 08:43:28 -0800 (PST)
+ Wed, 18 Dec 2019 08:43:30 -0800 (PST)
 From: Masayoshi Mizuma <msys.mizuma@gmail.com>
 To: kexec mailing list <kexec@lists.infradead.org>,
  Simon Horman <horms@verge.net.au>
-Subject: [PATCH v3 2/3] arm64: kexec: allocate memory space avoiding reserved
- regions
-Date: Wed, 18 Dec 2019 11:42:31 -0500
-Message-Id: <20191218164232.6086-3-msys.mizuma@gmail.com>
+Subject: [PATCH v3 3/3] arm64: kdump: deal with a lot of resource entries in
+ /proc/iomem
+Date: Wed, 18 Dec 2019 11:42:32 -0500
+Message-Id: <20191218164232.6086-4-msys.mizuma@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20191218164232.6086-1-msys.mizuma@gmail.com>
 References: <20191218164232.6086-1-msys.mizuma@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_084331_316513_7C3E957F 
-X-CRM114-Status: GOOD (  19.53  )
+X-CRM114-CacheID: sfid-20191218_084332_967279_E1C85F8D 
+X-CRM114-Status: GOOD (  12.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (msys.mizuma[at]gmail.com)
@@ -110,244 +107,78 @@ Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 From: AKASHI Takahiro <takahiro.akashi@linaro.org>
 
-On UEFI/ACPI-only system, some memory regions, including but not limited
-to UEFI memory map and ACPI tables, must be preserved across kexec'ing.
-Otherwise, they can be corrupted and result in early failure in booting
-a new kernel.
+As described in the commit ("arm64: kexec: allocate memory space avoiding
+reserved regions"), /proc/iomem now has a lot of "reserved" entries, and
+it's not just enough to have a fixed size of memory range array.
 
-In recent kernels, /proc/iomem now has an extended file format like:
-
- 40000000-5871ffff : System RAM
-   41800000-426affff : Kernel code
-   426b0000-42aaffff : reserved
-   42ab0000-42c64fff : Kernel data
-   54400000-583fffff : Crash kernel
-   58590000-585effff : reserved
-   58700000-5871ffff : reserved
- 58720000-58b5ffff : reserved
- 58b60000-5be3ffff : System RAM
-   58b61000-58b61fff : reserved
-
-where the "reserved" entries at the top level or under System RAM (and
-its descendant resources) are ones of such kind and should not be regarded
-as usable memory ranges where several free spaces for loading kexec data
-will be allocated.
-
-With this patch, get_memory_ranges() will handle this format of file
-correctly. Note that, for safety, unknown regions, in addition to
-"reserved" ones, will also be excluded.
+With this patch, kdump is allowed to handle arbitrary number of memory
+ranges, using mem_regions_alloc_and_xxx() functions.
 
 Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
 Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
 Tested-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
 ---
- kexec/arch/arm64/kexec-arm64.c | 153 ++++++++++++++++++++-------------
- 1 file changed, 94 insertions(+), 59 deletions(-)
+ kexec/arch/arm64/crashdump-arm64.c | 25 ++++++++++---------------
+ 1 file changed, 10 insertions(+), 15 deletions(-)
 
-diff --git a/kexec/arch/arm64/kexec-arm64.c b/kexec/arch/arm64/kexec-arm64.c
-index 6ad3b0a..45ebc54 100644
---- a/kexec/arch/arm64/kexec-arm64.c
-+++ b/kexec/arch/arm64/kexec-arm64.c
-@@ -10,7 +10,9 @@
- #include <inttypes.h>
- #include <libfdt.h>
- #include <limits.h>
-+#include <stdio.h>
- #include <stdlib.h>
-+#include <string.h>
- #include <sys/stat.h>
- #include <linux/elf-em.h>
- #include <elf.h>
-@@ -29,6 +31,7 @@
- #include "fs2dt.h"
- #include "iomem.h"
- #include "kexec-syscall.h"
-+#include "mem_regions.h"
- #include "arch/options.h"
+diff --git a/kexec/arch/arm64/crashdump-arm64.c b/kexec/arch/arm64/crashdump-arm64.c
+index 4fd7aa8..38d1a0f 100644
+--- a/kexec/arch/arm64/crashdump-arm64.c
++++ b/kexec/arch/arm64/crashdump-arm64.c
+@@ -23,13 +23,8 @@
+ #include "kexec-elf.h"
+ #include "mem_regions.h"
  
- #define ROOT_NODE_ADDR_CELLS_DEFAULT 1
-@@ -905,19 +908,33 @@ int get_phys_base_from_pt_load(unsigned long *phys_offset)
- 	return 0;
- }
+-/* memory ranges on crashed kernel */
+-static struct memory_range system_memory_ranges[CRASH_MAX_MEMORY_RANGES];
+-static struct memory_ranges system_memory_rgns = {
+-	.size = 0,
+-	.max_size = CRASH_MAX_MEMORY_RANGES,
+-	.ranges = system_memory_ranges,
+-};
++/* memory ranges of crashed kernel */
++static struct memory_ranges system_memory_rgns;
  
-+static bool to_be_excluded(char *str)
-+{
-+	if (!strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) ||
-+	    !strncmp(str, KERNEL_CODE, strlen(KERNEL_CODE)) ||
-+	    !strncmp(str, KERNEL_DATA, strlen(KERNEL_DATA)) ||
-+	    !strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)))
-+		return false;
-+	else
-+		return true;
-+}
-+
- /**
-- * get_memory_ranges_iomem_cb - Helper for get_memory_ranges_iomem.
-+ * get_memory_ranges - Try to get the memory ranges from
-+ * /proc/iomem.
+ /* memory range reserved for crashkernel */
+ struct memory_range crash_reserved_mem;
+@@ -82,7 +77,7 @@ static uint64_t get_kernel_page_offset(void)
+  *
+  * This function is called once for each memory region found in /proc/iomem.
+  * It locates system RAM and crashkernel reserved memory and places these to
+- * variables, respectively, system_memory_ranges and crash_reserved_mem.
++ * variables, respectively, system_memory_rgns and usablemem_rgns.
   */
--
--static int get_memory_ranges_iomem_cb(void *data, int nr, char *str,
--	unsigned long long base, unsigned long long length)
-+int get_memory_ranges(struct memory_range **range, int *ranges,
-+	unsigned long kexec_flags)
- {
--	int ret;
- 	unsigned long phys_offset = UINT64_MAX;
--	struct memory_range *r;
--
--	if (nr >= KEXEC_SEGMENT_MAX)
--		return -1;
-+	FILE *fp;
-+	const char *iomem = proc_iomem();
-+	char line[MAX_LINE], *str;
-+	unsigned long long start, end;
-+	int n, consumed;
-+	struct memory_ranges memranges;
-+	struct memory_range *last, excl_range;
-+	int ret;
  
- 	if (!try_read_phys_offset_from_kcore) {
- 		/* Since kernel version 4.19, 'kcore' contains
-@@ -951,17 +968,72 @@ static int get_memory_ranges_iomem_cb(void *data, int nr, char *str,
- 		try_read_phys_offset_from_kcore = true;
+ static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
+@@ -90,11 +85,11 @@ static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
+ 				unsigned long long length)
+ {
+ 	if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
+-		return mem_regions_add(&usablemem_rgns,
+-				       base, length, RANGE_RAM);
++		return mem_regions_alloc_and_add(&usablemem_rgns,
++						base, length, RANGE_RAM);
+ 	else if (strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) == 0)
+-		return mem_regions_add(&system_memory_rgns,
+-				       base, length, RANGE_RAM);
++		return mem_regions_alloc_and_add(&system_memory_rgns,
++						base, length, RANGE_RAM);
+ 	else if (strncmp(str, KERNEL_CODE, strlen(KERNEL_CODE)) == 0)
+ 		elf_info.kern_paddr_start = base;
+ 	else if (strncmp(str, KERNEL_DATA, strlen(KERNEL_DATA)) == 0)
+@@ -135,9 +130,9 @@ static int crash_get_memory_ranges(void)
+ 
+ 	dbgprint_mem_range("Reserved memory range", &crash_reserved_mem, 1);
+ 
+-	if (mem_regions_exclude(&system_memory_rgns, &crash_reserved_mem)) {
+-		fprintf(stderr,
+-			"Error: Number of crash memory ranges excedeed the max limit\n");
++	if (mem_regions_alloc_and_exclude(&system_memory_rgns,
++						&crash_reserved_mem)) {
++		fprintf(stderr, "Cannot allocate memory for ranges\n");
+ 		return -ENOMEM;
  	}
  
--	r = (struct memory_range *)data + nr;
-+	fp = fopen(iomem, "r");
-+	if (!fp)
-+		die("Cannot open %s\n", iomem);
-+
-+	memranges.ranges = NULL;
-+	memranges.size = memranges.max_size  = 0;
-+
-+	while (fgets(line, sizeof(line), fp) != 0) {
-+		n = sscanf(line, "%llx-%llx : %n", &start, &end, &consumed);
-+		if (n != 2)
-+			continue;
-+		str = line + consumed;
-+
-+		if (!strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM))) {
-+			ret = mem_regions_alloc_and_add(&memranges,
-+					start, end - start + 1, RANGE_RAM);
-+			if (ret) {
-+				fprintf(stderr,
-+					"Cannot allocate memory for ranges\n");
-+				fclose(fp);
-+				return -ENOMEM;
-+			}
- 
--	if (!strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)))
--		r->type = RANGE_RAM;
--	else if (!strncmp(str, IOMEM_RESERVED, strlen(IOMEM_RESERVED)))
--		r->type = RANGE_RESERVED;
--	else
--		return 1;
-+			dbgprintf("%s:+[%d] %016llx - %016llx\n", __func__,
-+				memranges.size - 1,
-+				memranges.ranges[memranges.size - 1].start,
-+				memranges.ranges[memranges.size - 1].end);
-+		} else if (to_be_excluded(str)) {
-+			if (!memranges.size)
-+				continue;
-+
-+			/*
-+			 * Note: mem_regions_exclude() doesn't guarantee
-+			 * that the ranges are sorted out, but as long as
-+			 * we cope with /proc/iomem, we only operate on
-+			 * the last entry and so it is safe.
-+			 */
- 
--	r->start = base;
--	r->end = base + length - 1;
-+			/* The last System RAM range */
-+			last = &memranges.ranges[memranges.size - 1];
-+
-+			if (last->end < start)
-+				/* New resource outside of System RAM */
-+				continue;
-+			if (end < last->start)
-+				/* Already excluded by parent resource */
-+				continue;
-+
-+			excl_range.start = start;
-+			excl_range.end = end;
-+			ret = mem_regions_alloc_and_exclude(&memranges, &excl_range);
-+			if (ret) {
-+				fprintf(stderr,
-+					"Cannot allocate memory for ranges (exclude)\n");
-+				fclose(fp);
-+				return -ENOMEM;
-+			}
-+			dbgprintf("%s:-      %016llx - %016llx\n",
-+					__func__, start, end);
-+		}
-+	}
-+
-+	fclose(fp);
-+
-+	*range = memranges.ranges;
-+	*ranges = memranges.size;
- 
- 	/* As a fallback option, we can try determining the PHYS_OFFSET
- 	 * value from the '/proc/iomem' entries as well.
-@@ -982,52 +1054,15 @@ static int get_memory_ranges_iomem_cb(void *data, int nr, char *str,
- 	 * between the user-space and kernel space 'PHYS_OFFSET'
- 	 * value.
- 	 */
--	set_phys_offset(r->start, "iomem");
--
--	dbgprintf("%s: %016llx - %016llx : %s", __func__, r->start,
--		r->end, str);
--
--	return 0;
--}
--
--/**
-- * get_memory_ranges_iomem - Try to get the memory ranges from
-- * /proc/iomem.
-- */
-+	if (memranges.size)
-+		set_phys_offset(memranges.ranges[0].start, "iomem");
- 
--static int get_memory_ranges_iomem(struct memory_range *array,
--	unsigned int *count)
--{
--	*count = kexec_iomem_for_each_line(NULL,
--		get_memory_ranges_iomem_cb, array);
--
--	if (!*count) {
--		dbgprintf("%s: failed: No RAM found.\n", __func__);
--		return EFAILED;
--	}
-+	dbgprint_mem_range("System RAM ranges;",
-+				memranges.ranges, memranges.size);
- 
- 	return 0;
- }
- 
--/**
-- * get_memory_ranges - Try to get the memory ranges some how.
-- */
--
--int get_memory_ranges(struct memory_range **range, int *ranges,
--	unsigned long kexec_flags)
--{
--	static struct memory_range array[KEXEC_SEGMENT_MAX];
--	unsigned int count;
--	int result;
--
--	result = get_memory_ranges_iomem(array, &count);
--
--	*range = result ? NULL : array;
--	*ranges = result ? 0 : count;
--
--	return result;
--}
--
- int arch_compat_trampoline(struct kexec_info *info)
- {
- 	return 0;
 -- 
 2.18.1
 
