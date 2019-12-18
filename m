@@ -2,81 +2,93 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC217124E1C
-	for <lists+kexec@lfdr.de>; Wed, 18 Dec 2019 17:43:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B55BC124EFA
+	for <lists+kexec@lfdr.de>; Wed, 18 Dec 2019 18:20:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=pSfstYAuuK7aMf8GK5syWRx/arqjFmakFKLUpLJKyRA=; b=UVyuZ4qj4D1uZ3E0GDZg8GRFaf
-	DTN/Bn5eyvEFLM0r+TbG2igGWn5ZiFm4eTBbdHcbUsM685FxnWk/hsC8b6I1k4AOpbTScYWG1tnwt
-	1MZRl+JMzP5AeS5BxjZronPLsoYwP9qLXU0Db+BkciSWGUPv2S6jNtkK2LN6XZHLRmCsgXNdt8Jsk
-	8VysoTfhABZLyjhTyC/kjTmU8bCxkGUNDNAgcCKdjiCStib6Atmb+s4vrwNSieyZ72Lfhi+DNoy/6
-	+B8fI3JtdLBQF99/ONyuUAt8b/o0f3OVNGZSTVSsxYdDivCwS0soo2EU81is8HBgMs5EvhOBDVlAF
-	Wc6rT+aA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y++kj7VX7Nj9CdrOuh26GC/4Jrnfy+dqUlHanStFzgk=; b=k+MKuvDfTBlVpM
+	Z5xGu5yfyZqSBOyty9xbXw320H+QSHnHx+JeG1vF1cj+Vwc3LTQ0lWolaYXTRAec5E/tXeOj9wiNI
+	yhWxQx8rPhqNivTgfRkrKv2ndvay7ErBB5+HX9WfwKxUmuIBVU48VrWEydzMnTuGluFVSEmkDhOFr
+	ccbffP+Gkyr7StxUsCbiqb8TIerV8LbJIS+2preC0ut6IHuizEwGZsSvyJuRyP5PPvlDht70/A5Es
+	qyA5CORseeh3yu68L20omOs75Ox/veKA2apeyiXfw3ZaCtO7hpB7KWaIpM+N9ZmmiovZ/f61dCW8T
+	syLwfqZOASa0UYQSCzhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ihcQF-0006kD-JG; Wed, 18 Dec 2019 16:43:39 +0000
-Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
+	id 1ihczc-0006ZV-Ni; Wed, 18 Dec 2019 17:20:12 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ihcQ8-0006ds-Tv
- for kexec@lists.infradead.org; Wed, 18 Dec 2019 16:43:34 +0000
-Received: by mail-qv1-xf41.google.com with SMTP id t6so1004595qvs.5
- for <kexec@lists.infradead.org>; Wed, 18 Dec 2019 08:43:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=AuYbVTTFHt8IOFWlacJrH6aliLDgthD59oT5nrUjys4=;
- b=rMfMuL7NhhEx1KygBNams+URRoloeJKePq7onw/fAx7HC8iT/lAKZLPcCI3xYpU6Zg
- S83EllJVbzDyHLqDA6TqygjLEVeDwx5Qsg+/9JnrcJfKsXCL9wSt1JULrMfOSOujv4Id
- KcuLHEMLvwsVtiFnkXjoZVLBgdEGTNFrkg0gxcqx+spJmjsF3010mv3Rk6QdiaomcxT7
- +FxapmbHxYANgIcU2W++Jlq2MOlXEsD3nkBBpSyY4jv5BRyQag+MWd/PZhOj/xo5COhq
- q7GDkvgGr96jYqeWrOgRdUqxSRaAHdNOqkOlZV+ikaQpBFfeBMwAbND0wVrkyo4Ehgh9
- CMZw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=AuYbVTTFHt8IOFWlacJrH6aliLDgthD59oT5nrUjys4=;
- b=gPSSGkzwNiQE4qtrV6wMOnIOzs7KGww2inz8+dN3vUgWnw66Ufv9IWET6gbIMmSCqz
- E0dYgFlLUK0Ai12omU+rq59xS2gH3xW89Z6skiAKHk/yVifhw5aQl4+7IkEDJVRjqpaT
- rmFi9JZj1lSy4lVS+xl57bNfQtMvoYh9UXWCmhSekPQVmB8FjCDuZHlyP267ZZ+v7Opj
- beWRKJK7nbbzqupwrBMb4stdJbyT2ABJBESct5LHFKZafPHcKSiD0hXuNko8fex2SI4n
- 8dx7DoIyy6zoqBPYsoC83zIZ+WtKNZId4dFr8X7fOuWueHnuL4v37zSFpKDtcnA+Ophz
- yVqQ==
-X-Gm-Message-State: APjAAAVSvcvwk+4MJ0tiwfZ0kBO6HpqjkzfLxp1QJQf3nqiaA3+6Bodf
- mMw9KfbimIqBhb2M3eSd16QotqY=
-X-Google-Smtp-Source: APXvYqz3gARHo9yn+Ks84JT1eJcSxWZFBcz0V/XJquZZVUv8jgpzjN/yjpXYgkc4bgKcsKvWxP3XTA==
-X-Received: by 2002:ad4:580e:: with SMTP id dd14mr3274129qvb.84.1576687410864; 
- Wed, 18 Dec 2019 08:43:30 -0800 (PST)
-Received: from gabell.bos.redhat.com (nat-pool-bos-t.redhat.com.
- [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id r66sm752051qkd.125.2019.12.18.08.43.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 18 Dec 2019 08:43:30 -0800 (PST)
-From: Masayoshi Mizuma <msys.mizuma@gmail.com>
-To: kexec mailing list <kexec@lists.infradead.org>,
- Simon Horman <horms@verge.net.au>
-Subject: [PATCH v3 3/3] arm64: kdump: deal with a lot of resource entries in
- /proc/iomem
-Date: Wed, 18 Dec 2019 11:42:32 -0500
-Message-Id: <20191218164232.6086-4-msys.mizuma@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20191218164232.6086-1-msys.mizuma@gmail.com>
-References: <20191218164232.6086-1-msys.mizuma@gmail.com>
+ id 1ihczY-0005G3-7D; Wed, 18 Dec 2019 17:20:10 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBIHJOOR034038;
+ Wed, 18 Dec 2019 17:19:33 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2019-08-05; bh=r3/Nxdgw7C9i3Ps59Nix06XSuTi4MWt2cP5VOrIiwCU=;
+ b=UBk74vskXkgoq8ER+tkG3c6lpQdMTtYJqBlWkhoRUgnSO61j/YHqQe6xHYy9KyzXxIma
+ xed7RROU/HWJB5M9yNpphvTQ3LNd0g84kKVVkWDso1qggLct7eBY8ZgPMTkYiIi5wc/c
+ k5ok6SvH6LgXgFiBUztRUTfwSPi8jOOBFx2wo1qlgxm+9OF3UUsTwJ57iQ0emSNSGKWH
+ 0OCnrmnamrM3oicXX9iy8k9/RkfXAEXblwmN0lBoAuMkgkhXS5uihia8djUZMPkx2Nxq
+ qCPyHmLQvZvhf1EDOi7G3CC2camhTJGNt1V5VQS3bPEzg00kz+auMZeiSP+UxYEpGNE2 6g== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 2wvq5uq5yq-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Dec 2019 17:19:33 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id xBIHJMVD191361;
+ Wed, 18 Dec 2019 17:19:32 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by aserp3020.oracle.com with ESMTP id 2wyp4xcs8v-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 18 Dec 2019 17:19:32 +0000
+Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id xBIHIoZk025082;
+ Wed, 18 Dec 2019 17:18:50 GMT
+Received: from dhcp-10-154-159-47.vpn.oracle.com (/10.154.159.47)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 18 Dec 2019 09:18:50 -0800
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+Subject: Re: [PATCH v6 0/4] support reserving crashkernel above 4G on arm64
+ kdump
+From: John Donnelly <john.p.donnelly@oracle.com>
+In-Reply-To: <2a97b296-59e7-0a26-84fa-e2ddcd7987b6@huawei.com>
+Date: Wed, 18 Dec 2019 11:18:48 -0600
+Message-Id: <11E080AF-28F1-481A-BF16-9C062091D900@oracle.com>
+References: <20190830071200.56169-1-chenzhou10@huawei.com>
+ <2a97b296-59e7-0a26-84fa-e2ddcd7987b6@huawei.com>
+To: Chen Zhou <chenzhou10@huawei.com>
+X-Mailer: Apple Mail (2.3445.9.1)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9475
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-1912180141
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9475
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-1912180141
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191218_084332_967279_E1C85F8D 
-X-CRM114-Status: GOOD (  12.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191218_092008_419583_48D37A13 
+X-CRM114-Status: GOOD (  20.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (msys.mizuma[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +97,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,91 +111,126 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Bhupesh Sharma <bhsharma@redhat.com>, Masayoshi Mizuma <msys.mizuma@gmail.com>,
- James Morse <james.morse@arm.com>
-MIME-Version: 1.0
+Cc: horms@verge.net.au, will@kernel.org, catalin.marinas@arm.com,
+ bhsharma@redhat.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, james.morse@arm.com, guohanjun@huawei.com,
+ tglx@linutronix.de, dyoung@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: AKASHI Takahiro <takahiro.akashi@linaro.org>
+HI 
 
-As described in the commit ("arm64: kexec: allocate memory space avoiding
-reserved regions"), /proc/iomem now has a lot of "reserved" entries, and
-it's not just enough to have a fixed size of memory range array.
+SEE INLINE ON A QUESTION :
 
-With this patch, kdump is allowed to handle arbitrary number of memory
-ranges, using mem_regions_alloc_and_xxx() functions.
+> On Dec 17, 2019, at 8:07 PM, Chen Zhou <chenzhou10@huawei.com> wrote:
+> 
+> Hi all,
+> 
+> Friendly ping...
+> 
+> On 2019/8/30 15:11, Chen Zhou wrote:
+>> I am busy with other things, so it was a long time before this version was
+>> released.
+>> 
+>> This patch series enable reserving crashkernel above 4G in arm64.
+>> 
+>> There are following issues in arm64 kdump:
+>> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+>> when there is no enough low memory.
+>> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+>> in this case, if swiotlb or DMA buffers are requierd, crash dump kernel
+>> will boot failure because there is no low memory available for allocation.
 
-Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-Tested-by: Bhupesh Sharma <bhsharma@redhat.com>
-Tested-by: Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>
----
- kexec/arch/arm64/crashdump-arm64.c | 25 ++++++++++---------------
- 1 file changed, 10 insertions(+), 15 deletions(-)
+  
+      Can you elaborate when the boot failures may fail due to lacking  swiotlb or DMA buffers ? Are these related to certain adapters or specific  platforms  ? 
 
-diff --git a/kexec/arch/arm64/crashdump-arm64.c b/kexec/arch/arm64/crashdump-arm64.c
-index 4fd7aa8..38d1a0f 100644
---- a/kexec/arch/arm64/crashdump-arm64.c
-+++ b/kexec/arch/arm64/crashdump-arm64.c
-@@ -23,13 +23,8 @@
- #include "kexec-elf.h"
- #include "mem_regions.h"
- 
--/* memory ranges on crashed kernel */
--static struct memory_range system_memory_ranges[CRASH_MAX_MEMORY_RANGES];
--static struct memory_ranges system_memory_rgns = {
--	.size = 0,
--	.max_size = CRASH_MAX_MEMORY_RANGES,
--	.ranges = system_memory_ranges,
--};
-+/* memory ranges of crashed kernel */
-+static struct memory_ranges system_memory_rgns;
- 
- /* memory range reserved for crashkernel */
- struct memory_range crash_reserved_mem;
-@@ -82,7 +77,7 @@ static uint64_t get_kernel_page_offset(void)
-  *
-  * This function is called once for each memory region found in /proc/iomem.
-  * It locates system RAM and crashkernel reserved memory and places these to
-- * variables, respectively, system_memory_ranges and crash_reserved_mem.
-+ * variables, respectively, system_memory_rgns and usablemem_rgns.
-  */
- 
- static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
-@@ -90,11 +85,11 @@ static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
- 				unsigned long long length)
- {
- 	if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
--		return mem_regions_add(&usablemem_rgns,
--				       base, length, RANGE_RAM);
-+		return mem_regions_alloc_and_add(&usablemem_rgns,
-+						base, length, RANGE_RAM);
- 	else if (strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) == 0)
--		return mem_regions_add(&system_memory_rgns,
--				       base, length, RANGE_RAM);
-+		return mem_regions_alloc_and_add(&system_memory_rgns,
-+						base, length, RANGE_RAM);
- 	else if (strncmp(str, KERNEL_CODE, strlen(KERNEL_CODE)) == 0)
- 		elf_info.kern_paddr_start = base;
- 	else if (strncmp(str, KERNEL_DATA, strlen(KERNEL_DATA)) == 0)
-@@ -135,9 +130,9 @@ static int crash_get_memory_ranges(void)
- 
- 	dbgprint_mem_range("Reserved memory range", &crash_reserved_mem, 1);
- 
--	if (mem_regions_exclude(&system_memory_rgns, &crash_reserved_mem)) {
--		fprintf(stderr,
--			"Error: Number of crash memory ranges excedeed the max limit\n");
-+	if (mem_regions_alloc_and_exclude(&system_memory_rgns,
-+						&crash_reserved_mem)) {
-+		fprintf(stderr, "Cannot allocate memory for ranges\n");
- 		return -ENOMEM;
- 	}
- 
--- 
-2.18.1
+     I have not seen this when using   crashkernel=2024M@35GB . 
+
+
+>> 
+>> To solve these issues, introduce crashkernel=X,low to reserve specified
+>> size low memory.
+>> Crashkernel=X tries to reserve memory for the crash dump kernel under
+>> 4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
+>> size low memory for crash kdump kernel devices firstly and then reserve
+>> memory above 4G.
+>> 
+>> When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
+>> is specified simultaneously, kernel should reserve specified size low memory
+>> for crash dump kernel devices. So there may be two crash kernel regions, one
+>> is below 4G, the other is above 4G.
+>> In order to distinct from the high region and make no effect to the use of
+>> kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
+>> "linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
+>> 
+>> Besides, we need to modify kexec-tools:
+>> arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
+>> 
+>> The previous changes and discussions can be retrieved from:
+>> 
+>> Changes since [v5]
+>> - Move reserve_crashkernel_low() into kernel/crash_core.c.
+>> - Delete crashkernel=X,high.
+>> - Modify crashkernel=X,low.
+>> If crashkernel=X,low is specified simultaneously, reserve spcified size low
+>> memory for crash kdump kernel devices firstly and then reserve memory above 4G.
+>> In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
+>> pass to crash dump kernel by DT property "linux,low-memory-range".
+>> - Update Documentation/admin-guide/kdump/kdump.rst.
+>> 
+>> Changes since [v4]
+>> - Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+>> 
+>> Changes since [v3]
+>> - Add memblock_cap_memory_ranges back for multiple ranges.
+>> - Fix some compiling warnings.
+>> 
+>> Changes since [v2]
+>> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+>> two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+>> patch.
+>> 
+>> Changes since [v1]:
+>> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+>> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
+>> in fdt_enforce_memory_region().
+>> There are at most two crash kernel regions, for two crash kernel regions
+>> case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+>> and then remove the memory range in the middle.
+>> 
+>> [1]: https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_pipermail_kexec_2019-2DAugust_023569.html&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=9tn9kUBabiuYhVtXauANSDGaISnCnHLYcAUQgsPBFxs&e= 
+>> [v1]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_2_1174&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=F-lM7II2cuMF_sK3b6-QhSbWM3X-pI_WZEs0sZitS7A&e= 
+>> [v2]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_9_86&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=5Y-S6sqMTklHkOQsNtjTX3C7pV05BjKLGhJVfMHEvDs&e= 
+>> [v3]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_9_306&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=cWn4zSRQupaZ3jjz4eDvD-pNkoLyL_hsZoRx4yJoD0c&e= 
+>> [v4]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_15_273&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=Nslk4RJKIyIuT0IoQoolXNjupEDXplPhQQwnTSoXNWE&e= 
+>> [v5]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_5_6_1360&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=HJVAM6sCxV2DnNg5d4pw8WPqtkmQnKvztEmkSIgtQ5M&e= 
+>> 
+>> Chen Zhou (4):
+>>  x86: kdump: move reserve_crashkernel_low() into crash_core.c
+>>  arm64: kdump: reserve crashkenel above 4G for crash dump kernel
+>>  arm64: kdump: add memory for devices by DT property, low-memory-range
+>>  kdump: update Documentation about crashkernel on arm64
+>> 
+>> Documentation/admin-guide/kdump/kdump.rst       | 13 ++++-
+>> Documentation/admin-guide/kernel-parameters.txt | 12 ++++-
+>> arch/arm64/include/asm/kexec.h                  |  3 ++
+>> arch/arm64/kernel/setup.c                       |  8 ++-
+>> arch/arm64/mm/init.c                            | 61 +++++++++++++++++++++--
+>> arch/x86/include/asm/kexec.h                    |  3 ++
+>> arch/x86/kernel/setup.c                         | 65 +++----------------------
+>> include/linux/crash_core.h                      |  4 ++
+>> include/linux/kexec.h                           |  1 -
+>> kernel/crash_core.c                             | 65 +++++++++++++++++++++++++
+>> 10 files changed, 168 insertions(+), 67 deletions(-)
+>> 
+> 
+> 
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_mailman_listinfo_kexec&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=XMcFx61B_QPg-FUfG_-t88DKCnGm4grqu6zRguiHYrU&e= 
 
 
 _______________________________________________
