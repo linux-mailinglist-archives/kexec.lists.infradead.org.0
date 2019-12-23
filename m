@@ -2,57 +2,54 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C29C012983E
-	for <lists+kexec@lfdr.de>; Mon, 23 Dec 2019 16:28:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CC4112988B
+	for <lists+kexec@lfdr.de>; Mon, 23 Dec 2019 17:01:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LLrBZ0Z2xlaEPR07y6gS64cQFvFXy5kUahvd5uapqSI=; b=CwzN2ycc+3lEZe
-	lIm5wgI8+IOno7hn3mPLJqemfrCLjVaYOrO+ho9q/RDRH9Y2IFQ6y137MTM5mwt/bqeHcAmEWg7oO
-	NGtHWfZNaVLIFHb04DMNvac3I0Qgfmlqya2mSRYH/BYNbgzY32+t+nMk4XoxepbM3sXkTB047QrNf
-	lxGtSMu0XJu0OcVooe61Z2bDJ7MO/Jy6PK55JIhuKE/bkx/79GWM/DJWN3yjRmj++nfeqig6SjO3F
-	R/j1waZOnr4ztqBPW4njZpmRy19V517cjXk/34tN6fUebWTtXLTtCZJDrFmjDMbOaYviiPGcMqrlV
-	NV6JoEBFrVOrlmKs+UWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=LTBJkq3n39s1CCByw+HwQnMgBTOGMryTntVCKGENHpw=; b=BAC5JGelGqq1/0
+	RG4Ujb4EOIuvjEiMdnEO7cnQYGEhpaAj+kzD38T0pNC3EPekzIS4gekhFxyv0MiH93Ke7ofZxfUPV
+	lgNtgIJsoGIQpQeVrHHvKYZDHqrMCGynrjNJXujOIBuhqeB4NBnuP6d62RBVQefWaXgSocC8+ZPc/
+	LyInVxfYRx5DGsy17UIE4YlLmhHq7uJFnjM/WNEkljwOiPgD8nH1HijQCuwh7DKOEnNVA89fkwxnS
+	kdstLtG/n4Vj3gXNjT+er8f3T7iMC320ViYTmXqPBVPRlnGFb+Dm0Ob5acagCG6dk5FvJRqwWLIlM
+	YuiHGc/sNKp/ZNt5gDTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ijPdW-0007zE-15; Mon, 23 Dec 2019 15:28:46 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1ijQ98-0005Dx-3H; Mon, 23 Dec 2019 16:01:26 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ijPcN-0006zQ-Od; Mon, 23 Dec 2019 15:27:37 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id F084ABCDE26DCA5B8009;
- Mon, 23 Dec 2019 23:27:29 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 23 Dec 2019 23:27:19 +0800
-From: Chen Zhou <chenzhou10@huawei.com>
-To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
- <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
- <bhsharma@redhat.com>
-Subject: [PATCH v7 4/4] kdump: update Documentation about crashkernel on arm64
-Date: Mon, 23 Dec 2019 23:23:49 +0800
-Message-ID: <20191223152349.180172-5-chenzhou10@huawei.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191223152349.180172-1-chenzhou10@huawei.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ id 1ijQ8t-0005A8-24
+ for kexec@lists.infradead.org; Mon, 23 Dec 2019 16:01:12 +0000
+Received: from localhost ([127.0.0.1] helo=vostro.local)
+ by Galois.linutronix.de with esmtp (Exim 4.80)
+ (envelope-from <john.ogness@linutronix.de>)
+ id 1ijQ8k-0004jA-Bx; Mon, 23 Dec 2019 17:01:02 +0100
+From: John Ogness <john.ogness@linutronix.de>
+To: Andrea Parri <parri.andrea@gmail.com>
+Subject: Re: [RFC PATCH v5 1/3] printk-rb: new printk ringbuffer
+ implementation (writer)
+References: <20191128015235.12940-1-john.ogness@linutronix.de>
+ <20191128015235.12940-2-john.ogness@linutronix.de>
+ <20191221142235.GA7824@andrea>
+Date: Mon, 23 Dec 2019 17:01:00 +0100
+Message-ID: <87imm7820z.fsf@linutronix.de>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191223_072735_967517_520E5333 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20191223_080111_242409_47A78000 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,92 +61,70 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: xiexiuqi@huawei.com, chenzhou10@huawei.com, linux-doc@vger.kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, horms@verge.net.au,
- linux-arm-kernel@lists.infradead.org
+Cc: Petr Mladek <pmladek@suse.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>, kexec@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Now we support crashkernel=X,[low] on arm64, update the Documentation.
+Hi Andrea,
 
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
----
- Documentation/admin-guide/kdump/kdump.rst       | 13 +++++++++++--
- Documentation/admin-guide/kernel-parameters.txt | 12 +++++++++++-
- 2 files changed, 22 insertions(+), 3 deletions(-)
+On 2019-12-21, Andrea Parri <parri.andrea@gmail.com> wrote:
+>> +	*desc_out = READ_ONCE(*desc);
+>> +
+>> +	/* Load data before re-checking state. */
+>> +	smp_rmb(); /* matches LMM_REF(desc_reserve:A) */
+>
+> I looked for a matching WRITE_ONCE() or some other type of marked write,
+> but I could not find it.  What is the rationale?  Or what did I miss?
 
-diff --git a/Documentation/admin-guide/kdump/kdump.rst b/Documentation/admin-guide/kdump/kdump.rst
-index ac7e131..e55173e 100644
---- a/Documentation/admin-guide/kdump/kdump.rst
-+++ b/Documentation/admin-guide/kdump/kdump.rst
-@@ -299,7 +299,13 @@ Boot into System Kernel
-    "crashkernel=64M@16M" tells the system kernel to reserve 64 MB of memory
-    starting at physical address 0x01000000 (16MB) for the dump-capture kernel.
- 
--   On x86 and x86_64, use "crashkernel=64M@16M".
-+   On x86 use "crashkernel=64M@16M".
-+
-+   On x86_64, use "crashkernel=Y[@X]" to select a region under 4G first, and
-+   fall back to reserve region above 4G when '@offset' hasn't been specified.
-+   We can also use "crashkernel=X,high" to select a region above 4G, which
-+   also tries to allocate at least 256M below 4G automatically and
-+   "crashkernel=Y,low" can be used to allocate specified size low memory.
- 
-    On ppc64, use "crashkernel=128M@32M".
- 
-@@ -316,8 +322,11 @@ Boot into System Kernel
-    kernel will automatically locate the crash kernel image within the
-    first 512MB of RAM if X is not given.
- 
--   On arm64, use "crashkernel=Y[@X]".  Note that the start address of
-+   On arm64, use "crashkernel=Y[@X]". Note that the start address of
-    the kernel, X if explicitly specified, must be aligned to 2MiB (0x200000).
-+   If crashkernel=Z,low is specified simultaneously, reserve spcified size
-+   low memory for crash kdump kernel devices firstly and then reserve memory
-+   above 4G.
- 
- Load the Dump-capture Kernel
- ============================
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index ade4e6e..bde3ab4 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -706,6 +706,9 @@
- 			[KNL, x86_64] select a region under 4G first, and
- 			fall back to reserve region above 4G when '@offset'
- 			hasn't been specified.
-+			[KNL, arm64] If crashkernel=X,low is specified, reserve
-+			spcified size low memory for crash kdump kernel devices
-+			firstly, and then reserve memory above 4G.
- 			See Documentation/admin-guide/kdump/kdump.rst for further details.
- 
- 	crashkernel=range1:size1[,range2:size2,...][@offset]
-@@ -730,12 +733,19 @@
- 			requires at least 64M+32K low memory, also enough extra
- 			low memory is needed to make sure DMA buffers for 32-bit
- 			devices won't run out. Kernel would try to allocate at
--			at least 256M below 4G automatically.
-+			least 256M below 4G automatically.
- 			This one let user to specify own low range under 4G
- 			for second kernel instead.
- 			0: to disable low allocation.
- 			It will be ignored when crashkernel=X,high is not used
- 			or memory reserved is below 4G.
-+			[KNL, arm64] range under 4G.
-+			This one let user to specify own low range under 4G
-+			for crash dump kernel instead.
-+			Different with x86_64, kernel allocates specified size
-+			physical memory region only when this parameter is specified
-+			instead of trying to allocate at least 256M below 4G
-+			automatically.
- 
- 	cryptomgr.notests
- 			[KNL] Disable crypto self-tests
--- 
-2.7.4
+This smp_rmb() matches LMM_TAG(desc_reserve:A).
 
+>> +	do {
+>> +		next_lpos = get_next_lpos(data_ring, begin_lpos, size);
+>> +
+>> +		if (!data_push_tail(rb, data_ring,
+>> +				    next_lpos - DATA_SIZE(data_ring))) {
+>> +			/* Failed to allocate, specify a data-less block. */
+>> +			blk_lpos->begin = INVALID_LPOS;
+>> +			blk_lpos->next = INVALID_LPOS;
+>> +			return NULL;
+>> +		}
+>> +	} while (!atomic_long_try_cmpxchg(&data_ring->head_lpos, &begin_lpos,
+>> +					  next_lpos));
+>> +
+>> +	/*
+>> +	 * No barrier is needed here. The data validity is defined by
+>> +	 * the state of the associated descriptor. They are marked as
+>> +	 * invalid at the moment. And only the winner of the above
+>> +	 * cmpxchg() could write here.
+>> +	 */
+>
+> The (successful) CMPXCHG provides a full barrier.  This comment suggests
+> that that could be somehow relaxed?  Or the comment could be improved?
+
+You are correct. There is no need for the full barrier here. This code
+is based on Petr's POC. I focussed on making sure needed barriers are in
+place, but did not try to eliminate excessive barriers.
+
+> (The patch introduces a number of CMPXCHG: similar questions would
+> apply to those other instances...)
+
+LMM_TAG(data_push_tail:A) is the only CMPXCHG that requires its full
+barrier. All others can be relaxed. I will make this change for the next
+series.
+
+Thanks for taking time for this.
+
+John Ogness
 
 _______________________________________________
 kexec mailing list
