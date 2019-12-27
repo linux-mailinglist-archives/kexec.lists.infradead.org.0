@@ -2,55 +2,55 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B394212B645
-	for <lists+kexec@lfdr.de>; Fri, 27 Dec 2019 18:41:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C782B12B6DA
+	for <lists+kexec@lfdr.de>; Fri, 27 Dec 2019 18:46:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xHSEO8UYbvqTrWB15YGQJJNnQxr4oKTAOWVPnHCNd6w=; b=CKry3uhmcXmngY
-	v/h/IQAx8hT8ZabRPNZn+VCOUj7ECIcptqQ/sKznCSAaGg/re33zbuQq+AWkc95fsNWIlb0wMYE+l
-	O5X7EJql9RPKt5RxJV69Zr22A79F3WQnuRS5hBC5qbZewIT6UaG72c1zg72hOhnyR3BlAjc1MCY8D
-	31YwhwW/D9CP4LLUa3r5/96mdlNsVOiDCL72DEtkrHMJPxy/jsvlhsOStsf3j8UINlK1XnYCElP+Q
-	BE/lMZR9/urJkLu1qpmWT2wTF/iCJkwANlnG+ok2xptEcfcAhlz3mahd2Gvjna42C0kMRLsNwnW77
-	IqmtYar1lXnJ9RyOn1Xw==;
+	List-Owner; bh=WBk1fb2uCa7u7Z6C+wHYyVdgy+Icu/UtoUeLu5xyOW0=; b=kgOlRJrulnUR53
+	/HqTZtFv8Rb4kNlb2VTLufdhfsuzXvvHI+K2dboRnbS9T2B2RsNZLRV/0345Hx71UqP7XXx+rp4uV
+	6iM4hIbbsvo0V9rTRC+PfjK8JtnLnchXkKTvpoXOV+QEvcIh6NcxuMdNwylhMNxK0wCJZ9J4SkFym
+	UezT9qqiaZBW35VxG87t8PNk3JCz4UxyFSPGxHvBPcSGJz4du62DimlyzO4izmNr+zzWP8kkJT5Ji
+	RjmIDlI+nTEgFQm4OJqAD5WzcqlZ94E4Pnr/fSOiyfuVJKW6otwDeeMzaJMD5KaGhFw2xnh2k4V0Y
+	JA3BeYyj+lo6aYQ+0nFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iktc8-0007Ts-O5; Fri, 27 Dec 2019 17:41:28 +0000
+	id 1iktgZ-0003zh-3P; Fri, 27 Dec 2019 17:46:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iktc4-0007T7-Sj
- for kexec@lists.infradead.org; Fri, 27 Dec 2019 17:41:26 +0000
+ id 1ikteg-0001IZ-4s
+ for kexec@lists.infradead.org; Fri, 27 Dec 2019 17:44:08 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F322A22B48;
- Fri, 27 Dec 2019 17:41:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2D30621582;
+ Fri, 27 Dec 2019 17:44:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1577468484;
- bh=PAOUSNAxojEzCiLlv75nNZS799ylz9MjHsY1qAlDUQ4=;
+ s=default; t=1577468645;
+ bh=GO7tGw4PWBWDUud0LUtRlKZcxaeqxivaTtMUKSsvUI8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q4zdVrjxH4agQM6pwN7FRkBdsqmC2+5lQLTXW7cymaVqUQW0lP/4bWnCIGg2t8HaR
- w2E/vCJ4tJT9T/fgDgceK2cO64RqAsQ1eG/GdsfJf2bf2RkCaNMBCoLIGlghEHPCzi
- MB5xlSw4XCy59M3XNkwzcxUniX/E2x/rzbhqLwrY=
+ b=YVELbQLvNvUEp1wqOI4Qr/JqArQ2PX8cDD+EbR02A33JwppmSvntUFNtKdSguWEdH
+ bSygsd8U75u2IyBEEVa5LUbGkRO/EcUgejwMB8xLVqxXbd+PbGEDgwFNfPDofXRbLm
+ Hmn135iH5kDBvDPSvb955NJDECzjhfndOmWpWz/A=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 022/187] x86/efi: Update e820 with reserved EFI
+Subject: [PATCH AUTOSEL 4.19 10/84] x86/efi: Update e820 with reserved EFI
  boot services data to fix kexec breakage
-Date: Fri, 27 Dec 2019 12:38:10 -0500
-Message-Id: <20191227174055.4923-22-sashal@kernel.org>
+Date: Fri, 27 Dec 2019 12:42:38 -0500
+Message-Id: <20191227174352.6264-10-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20191227174055.4923-1-sashal@kernel.org>
-References: <20191227174055.4923-1-sashal@kernel.org>
+In-Reply-To: <20191227174352.6264-1-sashal@kernel.org>
+References: <20191227174352.6264-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191227_094124_963095_BE0F1758 
+X-CRM114-CacheID: sfid-20191227_094406_280857_970AF15C 
 X-CRM114-Status: GOOD (  13.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -148,10 +148,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 2 insertions(+), 4 deletions(-)
 
 diff --git a/arch/x86/platform/efi/quirks.c b/arch/x86/platform/efi/quirks.c
-index 3b9fd679cea9..aefe845dff59 100644
+index 844d31cb8a0c..c9873c9168ad 100644
 --- a/arch/x86/platform/efi/quirks.c
 +++ b/arch/x86/platform/efi/quirks.c
-@@ -260,10 +260,6 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
+@@ -259,10 +259,6 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
  		return;
  	}
  
@@ -162,7 +162,7 @@ index 3b9fd679cea9..aefe845dff59 100644
  	size += addr % EFI_PAGE_SIZE;
  	size = round_up(size, EFI_PAGE_SIZE);
  	addr = round_down(addr, EFI_PAGE_SIZE);
-@@ -293,6 +289,8 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
+@@ -292,6 +288,8 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
  	early_memunmap(new, new_size);
  
  	efi_memmap_install(new_phys, num_entries);
