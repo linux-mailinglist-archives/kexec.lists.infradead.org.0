@@ -2,78 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D426E12BD2D
-	for <lists+kexec@lfdr.de>; Sat, 28 Dec 2019 10:33:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FDB612BF45
+	for <lists+kexec@lfdr.de>; Sat, 28 Dec 2019 21:54:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FwLgZKrQ573agSvaNA5zAcPX6w4SGBGZ+NDdGeVuo2U=; b=Bxt528kblTwHoY
-	CgG2NOWhyH10rfRLOy/o2bZ8KnPfoP/vM2fW+3HL223a9DH7iBmm9AudDBzEyEQroJqj6fyXW29YT
-	nNCevKbCno1+FU0kvMkJ5PxPv+JsD0sOJM9XQMW0qsQEAdTf+FLg+aXCOXi8P1khRP59cLwcW9tsQ
-	sgE+sO+NGuzSh0/QPNN2hAWWOccDLAloMYBxYoy35Rtd/sbtog8hreDapoyXnI/MLxyOOfb4p/1Up
-	sMs49gBSo8Z5Qz40H0rFFGOJVFPEx1T7bK3PQUDKNarAnY0W8DpM7scgXVdUXMf6Oqb2og3IcRMWI
-	4kdno4F7siH1sjJT1nxg==;
+	List-Owner; bh=GZFi4trbVLPO+nZLPUPSq2r0zv86A2bVhR0HRKAQMx4=; b=C9dKOMlw2TAMxw
+	zEMviW1Ucxq/qJOaYvjpfteyfZL1P91AhTV5zFd+OVTDxMcCfhRyjbGcGKDTh013RWnTBnpC02YXH
+	5VivKrkojlvThxrNgeal+VC8e/Fg5aRjRhsMGUU5nWdZLeY/lBccyEXGLOtJ6pqSJUMv9ZIqlzuGu
+	2LrxbSbDYnE/WRkf2CIxcFoohSjNKluSk9p/VYPJC61r1rGRBS06AhTMptjdisp3Gy/ftneoBuNp2
+	ne9tHy1ppWY62v0j3om31uOuby8wqhkHZiXFUNE73ulU5p94Sxu6r0KNQabDePCIAFHbWRgAtUPF8
+	jeG2jEtrZaLb1deKHR8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1il8T3-0002jh-2k; Sat, 28 Dec 2019 09:33:05 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ilJ6T-0005CN-2M; Sat, 28 Dec 2019 20:54:29 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1il8So-0002cL-1s
- for kexec@lists.infradead.org; Sat, 28 Dec 2019 09:32:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1577525567;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=R/ed2bIJde+VHhN1RIGsEEo6GK8PhQGGiZ4Gf5Ce3sI=;
- b=ZFF7LKBlkL3OwwLiqh1GVxo3Dcgs7uGmpsByD0I7T1y5+f2SyKlFCkPMV+Jjy8Y93HGm7m
- lNFTX1jKyzB3Re2C03zZkShRV9U7Sm39aHtpMxt+g1lW4A1OKDxBmumk0c1+aYXQrAUOIy
- GHHga/zRnQ+kMl2gAGi+2R1lGRKRp0Q=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-304-JI4zvU32Ml2-Zg_cQ3al_Q-1; Sat, 28 Dec 2019 04:32:45 -0500
-X-MC-Unique: JI4zvU32Ml2-Zg_cQ3al_Q-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6A0C0185432E;
- Sat, 28 Dec 2019 09:32:39 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-24.pek2.redhat.com
- [10.72.12.24])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B3BF36A84A;
- Sat, 28 Dec 2019 09:32:31 +0000 (UTC)
-Date: Sat, 28 Dec 2019 17:32:27 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Chen Zhou <chenzhou10@huawei.com>
-Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
- crash_core.c
-Message-ID: <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-2-chenzhou10@huawei.com>
- <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
- <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
+ id 1ilJ6P-0005Bc-Bf
+ for kexec@lists.infradead.org; Sat, 28 Dec 2019 20:54:27 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c16so24926448ioo.8
+ for <kexec@lists.infradead.org>; Sat, 28 Dec 2019 12:54:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=E76VhA6+/ZrBIyRCsnWyOQg6YbJeoiHUNcjR94zQd3I=;
+ b=E5DDVujOnEp57q7i/BSeK3GVw5XBqaB5InXyuR9+JC9MoAnOW/YC/lPcWcxr0mGQGh
+ L5n6q5e89ePMOLn8nUeTJoy2ECnr4q6Z3dWtqFPrRp8KGmGTZgC8p+Pp5SL+aU/T9EyB
+ TTyzbB+Zq2CWFvPj/SUjqzZ7DT7uejeP/BrtT64i7dFInZRLL3CaSXcTJ1YN6K/0WU4d
+ bnYG9KAOWHyqm0h5MJZrSDAAvpxqSUxo5scFV+/D4LuokGSEooJqHUx19Z5/ilPzwomP
+ EK3oGUGTdJCoNZSfgkYX/d0A7mO47CMqCeqrS/yMv4vnzBzoJX9wjZDHiCBAhLwtEbtY
+ jYmA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=E76VhA6+/ZrBIyRCsnWyOQg6YbJeoiHUNcjR94zQd3I=;
+ b=p6fd8qnQtTKFsu9DLH8VUOOCVA2t1lvLozr3LKxeeEA7pxM+N62nEksAtLIczWL7Za
+ gqdrn8MWG2m6gpOiFz/Y8FkGbSahTzb5JqDSedZvVj/EySAcNp1+IG+PqSiyh7wvhLhc
+ zzVp12mTkM0ByVVb25r0Ux4WzaFfAo/PoRp436gJ1wDTj+uYPDcuVsme10vAf76qz92v
+ MQ4kC8QPx5u2yerq0t3JKrzTHi7t9+k2BTep9LwXBP3BnTjYseorLcv+GxaP9DVP/vPG
+ 77FyWkp32Q4RqoXYpRKLHD1JOvFgl4D30FfZ0tbmGNVPRc5BGgYURV2mxNLZSEIJ9TBv
+ TmfQ==
+X-Gm-Message-State: APjAAAX8d83iDS71/K5CKprQ58+7i97f29bIHAb/Jpg9GS/FwMQncmw7
+ OppFWqkk06c773RxT9WxmmP/6u1eS4EXcyVN640=
+X-Google-Smtp-Source: APXvYqxQVMMkZRR9L3by6JE1ApXMMCe9ngnyrh6hZRYHV7R0mSIR3UoEtpISeD0e1Po99FUkul6VtibYqggIVtNDLBI=
+X-Received: by 2002:a6b:d219:: with SMTP id q25mr26334114iob.49.1577566462461; 
+ Sat, 28 Dec 2019 12:54:22 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+References: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
+From: Dan Williams <dan.j.williams.korg@gmail.com>
+Date: Sat, 28 Dec 2019 12:54:11 -0800
+Message-ID: <CANTgghnsdijH90qnm24qat70T7FA5qOwmnXXt+NYVxHYa4SLJA@mail.gmail.com>
+Subject: Re: [PATCH] x86/efi: update e820 about reserved EFI boot services
+ data to fix kexec breakage
+To: Dave Young <dyoung@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191228_013250_393009_8DE3ED3B 
-X-CRM114-Status: GOOD (  32.70  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191228_125425_426156_04E87841 
+X-CRM114-Status: GOOD (  20.66  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (dan.j.williams.korg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,380 +92,144 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, horms@verge.net.au,
- linux-doc@vger.kernel.org, catalin.marinas@arm.com, bhsharma@redhat.com,
- xiexiuqi@huawei.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- mingo@redhat.com, james.morse@arm.com, tglx@linutronix.de, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Michael Weiser <michael@weiser.dinsnail.net>, linux-efi@vger.kernel.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, "H. Peter Anvin" <hpa@zytor.com>,
+ Thomas Gleixner <tglx@linutronix.de>, dan.j.williams@intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 12/27/19 at 07:04pm, Chen Zhou wrote:
-> Hi Dave
-> 
-> On 2019/12/27 13:54, Dave Young wrote:
-> > Hi,
-> > On 12/23/19 at 11:23pm, Chen Zhou wrote:
-> >> In preparation for supporting reserve_crashkernel_low in arm64 as
-> >> x86_64 does, move reserve_crashkernel_low() into kernel/crash_core.c.
-> >>
-> >> Note, in arm64, we reserve low memory if and only if crashkernel=X,low
-> >> is specified. Different with x86_64, don't set low memory automatically.
-> > 
-> > Do you have any reason for the difference?  I'd expect we have same
-> > logic if possible and remove some of the ifdefs.
-> 
-> In x86_64, if we reserve crashkernel above 4G, then we call reserve_crashkernel_low()
-> to reserve low memory.
-> 
-> In arm64, to simplify, we call reserve_crashkernel_low() at the beginning of reserve_crashkernel()
-> and then relax the arm64_dma32_phys_limit if reserve_crashkernel_low() allocated something.
-> In this case, if reserve crashkernel below 4G there will be 256M low memory set automatically
-> and this needs extra considerations.
+On Tue, Dec 3, 2019 at 11:53 PM Dave Young <dyoung@redhat.com> wrote:
+>
+> Michael Weiser reported he got below error during a kexec rebooting:
+> esrt: Unsupported ESRT version 2904149718861218184.
+>
+> The ESRT memory stays in EFI boot services data, and it was reserved
+> in kernel via efi_mem_reserve().  The initial purpose of the reservation
+> is to reuse the EFI boot services data across kexec reboot. For example
+> the BGRT image data and some ESRT memory like Michael reported.
+>
+> But although the memory is reserved it is not updated in X86 e820 table.
+> And kexec_file_load iterate system ram in io resource list to find places
+> for kernel, initramfs and other stuff. In Michael's case the kexec loaded
+> initramfs overwritten the ESRT memory and then the failure happened.
+>
+> Since kexec_file_load depends on the e820 to be updated, just fix this
+> by updating the reserved EFI boot services memory as reserved type in e820.
+>
+> Originally any memory descriptors with EFI_MEMORY_RUNTIME attribute are
+> bypassed in the reservation code path because they are assumed as reserved.
+> But the reservation is still needed for multiple kexec reboot.
+> And it is the only possible case we come here thus just drop the code
+> chunk then everything works without side effects.
+>
+> On my machine the ESRT memory sits in an EFI runtime data range, it does
+> not trigger the problem, but I successfully tested with BGRT instead.
+> both kexec_load and kexec_file_load work and kdump works as well.
+>
+> Signed-off-by: Dave Young <dyoung@redhat.com>
+> ---
+>  arch/x86/platform/efi/quirks.c |    6 ++----
+>  1 file changed, 2 insertions(+), 4 deletions(-)
+>
+> --- linux-x86.orig/arch/x86/platform/efi/quirks.c
+> +++ linux-x86/arch/x86/platform/efi/quirks.c
+> @@ -260,10 +260,6 @@ void __init efi_arch_mem_reserve(phys_ad
+>                 return;
+>         }
+>
+> -       /* No need to reserve regions that will never be freed. */
+> -       if (md.attribute & EFI_MEMORY_RUNTIME)
+> -               return;
+> -
+>         size += addr % EFI_PAGE_SIZE;
+>         size = round_up(size, EFI_PAGE_SIZE);
+>         addr = round_down(addr, EFI_PAGE_SIZE);
+> @@ -293,6 +289,8 @@ void __init efi_arch_mem_reserve(phys_ad
+>         early_memunmap(new, new_size);
+>
+>         efi_memmap_install(new_phys, num_entries);
+> +       e820__range_update(addr, size, E820_TYPE_RAM, E820_TYPE_RESERVED);
+> +       e820__update_table(e820_table);
+>  }
+>
+>  /*
+>
 
-Sorry that I did not read the old thread details and thought that is
-arch dependent.  But rethink about that, it would be better that we can
-have same semantic about crashkernel parameters across arches.  If we
-make them different then it causes confusion, especially for
-distributions.
+Bisect says this change (commit af1648984828) is triggering a
+regression, likely not urgent, in my testing of the new efi_fake_mem=
+facility to allow memory to be marked "soft reserved" via the kernel
+command line (commit 199c84717612 x86/efi: Add efi_fake_mem support
+for EFI_MEMORY_SP). The following command line triggers the crash
+signature below:
 
-OTOH, I thought if we reserve high memory then the low memory should be
-needed.  There might be some exceptions, but I do not know the exact
-one, can we make the behavior same, and special case those systems which
-do not need low memory reservation.
+    efi_fake_mem=4G@9G:0x40000,4G@13G:0x40000
 
-> 
-> previous discusses:
-> 	https://lkml.org/lkml/2019/6/5/670
-> 	https://lkml.org/lkml/2019/6/13/229
+However, this command line works ok:
 
-Another concern from James:
-"
-With both crashk_low_res and crashk_res, we end up with two entries in /proc/iomem called
-"Crash kernel". Because its sorted by address, and kexec-tools stops searching when it
-find "Crash kernel", you are always going to get the kernel placed in the lower portion.
-"
+    efi_fake_mem=8G@9G:0x40000
 
-The kexec-tools code is iterating all "Crash kernel" ranges and add them
-in an array.  In X86 code, it uses the higher range to locate memory.
+So, something about multiple efi_fake_mem statements interacts badly
+with this change. Nothing obvious occurs to me at the moment, I'll
+keep debugging, but wanted to highlight this in the meantime in case
+someone else sees a deeper issue or the root cause.
 
-> 
-> > 
-> >>
-> >> Reported-by: kbuild test robot <lkp@intel.com>
-> >> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> >> ---
-> >>  arch/x86/kernel/setup.c    | 62 ++++-----------------------------
-> >>  include/linux/crash_core.h |  3 ++
-> >>  include/linux/kexec.h      |  2 --
-> >>  kernel/crash_core.c        | 87 ++++++++++++++++++++++++++++++++++++++++++++++
-> >>  kernel/kexec_core.c        | 17 ---------
-> >>  5 files changed, 96 insertions(+), 75 deletions(-)
-> >>
-> >> diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
-> >> index cedfe20..5f38942 100644
-> >> --- a/arch/x86/kernel/setup.c
-> >> +++ b/arch/x86/kernel/setup.c
-> >> @@ -486,59 +486,6 @@ static void __init memblock_x86_reserve_range_setup_data(void)
-> >>  # define CRASH_ADDR_HIGH_MAX	SZ_64T
-> >>  #endif
-> >>  
-> >> -static int __init reserve_crashkernel_low(void)
-> >> -{
-> >> -#ifdef CONFIG_X86_64
-> >> -	unsigned long long base, low_base = 0, low_size = 0;
-> >> -	unsigned long total_low_mem;
-> >> -	int ret;
-> >> -
-> >> -	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
-> >> -
-> >> -	/* crashkernel=Y,low */
-> >> -	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size, &base);
-> >> -	if (ret) {
-> >> -		/*
-> >> -		 * two parts from kernel/dma/swiotlb.c:
-> >> -		 * -swiotlb size: user-specified with swiotlb= or default.
-> >> -		 *
-> >> -		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
-> >> -		 * to 8M for other buffers that may need to stay low too. Also
-> >> -		 * make sure we allocate enough extra low memory so that we
-> >> -		 * don't run out of DMA buffers for 32-bit devices.
-> >> -		 */
-> >> -		low_size = max(swiotlb_size_or_default() + (8UL << 20), 256UL << 20);
-> >> -	} else {
-> >> -		/* passed with crashkernel=0,low ? */
-> >> -		if (!low_size)
-> >> -			return 0;
-> >> -	}
-> >> -
-> >> -	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
-> >> -	if (!low_base) {
-> >> -		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
-> >> -		       (unsigned long)(low_size >> 20));
-> >> -		return -ENOMEM;
-> >> -	}
-> >> -
-> >> -	ret = memblock_reserve(low_base, low_size);
-> >> -	if (ret) {
-> >> -		pr_err("%s: Error reserving crashkernel low memblock.\n", __func__);
-> >> -		return ret;
-> >> -	}
-> >> -
-> >> -	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
-> >> -		(unsigned long)(low_size >> 20),
-> >> -		(unsigned long)(low_base >> 20),
-> >> -		(unsigned long)(total_low_mem >> 20));
-> >> -
-> >> -	crashk_low_res.start = low_base;
-> >> -	crashk_low_res.end   = low_base + low_size - 1;
-> >> -	insert_resource(&iomem_resource, &crashk_low_res);
-> >> -#endif
-> >> -	return 0;
-> >> -}
-> >> -
-> >>  static void __init reserve_crashkernel(void)
-> >>  {
-> >>  	unsigned long long crash_size, crash_base, total_mem;
-> >> @@ -602,9 +549,12 @@ static void __init reserve_crashkernel(void)
-> >>  		return;
-> >>  	}
-> >>  
-> >> -	if (crash_base >= (1ULL << 32) && reserve_crashkernel_low()) {
-> >> -		memblock_free(crash_base, crash_size);
-> >> -		return;
-> >> +	if (crash_base >= (1ULL << 32)) {
-> >> +		if (reserve_crashkernel_low()) {
-> >> +			memblock_free(crash_base, crash_size);
-> >> +			return;
-> >> +		}
-> >> +		insert_resource(&iomem_resource, &crashk_low_res);
-> > 
-> > Some specific reason to move insert_resouce out of the
-> > reserve_crashkernel_low function?
-> 
-> No specific reason.
-> I just exposed arm64 "Crash kernel low" in request_standard_resources() as other resources,
-> so did this change.
-
-Ok.
-
-> 
-> > 
-> >>  	}
-> >>  
-> >>  	pr_info("Reserving %ldMB of memory at %ldMB for crashkernel (System RAM: %ldMB)\n",
-> >> diff --git a/include/linux/crash_core.h b/include/linux/crash_core.h
-> >> index 525510a..4df8c0b 100644
-> >> --- a/include/linux/crash_core.h
-> >> +++ b/include/linux/crash_core.h
-> >> @@ -63,6 +63,8 @@ phys_addr_t paddr_vmcoreinfo_note(void);
-> >>  extern unsigned char *vmcoreinfo_data;
-> >>  extern size_t vmcoreinfo_size;
-> >>  extern u32 *vmcoreinfo_note;
-> >> +extern struct resource crashk_res;
-> >> +extern struct resource crashk_low_res;
-> >>  
-> >>  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
-> >>  			  void *data, size_t data_len);
-> >> @@ -74,5 +76,6 @@ int parse_crashkernel_high(char *cmdline, unsigned long long system_ram,
-> >>  		unsigned long long *crash_size, unsigned long long *crash_base);
-> >>  int parse_crashkernel_low(char *cmdline, unsigned long long system_ram,
-> >>  		unsigned long long *crash_size, unsigned long long *crash_base);
-> >> +int __init reserve_crashkernel_low(void);
-> >>  
-> >>  #endif /* LINUX_CRASH_CORE_H */
-> >> diff --git a/include/linux/kexec.h b/include/linux/kexec.h
-> >> index 1776eb2..5d5d963 100644
-> >> --- a/include/linux/kexec.h
-> >> +++ b/include/linux/kexec.h
-> >> @@ -330,8 +330,6 @@ extern int kexec_load_disabled;
-> >>  
-> >>  /* Location of a reserved region to hold the crash kernel.
-> >>   */
-> >> -extern struct resource crashk_res;
-> >> -extern struct resource crashk_low_res;
-> >>  extern note_buf_t __percpu *crash_notes;
-> >>  
-> >>  /* flag to track if kexec reboot is in progress */
-> >> diff --git a/kernel/crash_core.c b/kernel/crash_core.c
-> >> index 9f1557b..eb72fd6 100644
-> >> --- a/kernel/crash_core.c
-> >> +++ b/kernel/crash_core.c
-> >> @@ -7,6 +7,8 @@
-> >>  #include <linux/crash_core.h>
-> >>  #include <linux/utsname.h>
-> >>  #include <linux/vmalloc.h>
-> >> +#include <linux/memblock.h>
-> >> +#include <linux/swiotlb.h>
-> >>  
-> >>  #include <asm/page.h>
-> >>  #include <asm/sections.h>
-> >> @@ -19,6 +21,22 @@ u32 *vmcoreinfo_note;
-> >>  /* trusted vmcoreinfo, e.g. we can make a copy in the crash memory */
-> >>  static unsigned char *vmcoreinfo_data_safecopy;
-> >>  
-> >> +/* Location of the reserved area for the crash kernel */
-> >> +struct resource crashk_res = {
-> >> +	.name  = "Crash kernel",
-> >> +	.start = 0,
-> >> +	.end   = 0,
-> >> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> >> +	.desc  = IORES_DESC_CRASH_KERNEL
-> >> +};
-> >> +struct resource crashk_low_res = {
-> >> +	.name  = "Crash kernel",
-> >> +	.start = 0,
-> >> +	.end   = 0,
-> >> +	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> >> +	.desc  = IORES_DESC_CRASH_KERNEL
-> >> +};
-> >> +
-> >>  /*
-> >>   * parsing the "crashkernel" commandline
-> >>   *
-> >> @@ -292,6 +310,75 @@ int __init parse_crashkernel_low(char *cmdline,
-> >>  				"crashkernel=", suffix_tbl[SUFFIX_LOW]);
-> >>  }
-> >>  
-> >> +#if defined(CONFIG_X86_64)
-> >> +#define CRASH_ALIGN		SZ_16M
-> >> +#elif defined(CONFIG_ARM64)
-> >> +#define CRASH_ALIGN		SZ_2M
-> >> +#endif
-> > 
-> > I think no need to have the #ifdef, although I can not think out of
-> > reason we have 16M for X86, maybe move it to 2M as well if no other
-> > objections.  Then it will be easier to reserve crashkernel successfully
-> > considering nowadays we have KASLR and other stuff it becomes harder.
-> 
-> I also don't figure out why it is 16M in x86.
-
-IMHO, if we do not know why and in theory it should work with 2M, can
-you do some basic testing and move it to 2M?
-
-We can easily move back to 16M if someone really report something, but
-if we do not change it will always stay there but we do not know why.
-
-> 
-> > 
-> >> +
-> >> +int __init reserve_crashkernel_low(void)
-> >> +{
-> >> +#if defined(CONFIG_X86_64) || defined(CONFIG_ARM64)
-> >> +	unsigned long long base, low_base = 0, low_size = 0;
-> >> +	unsigned long total_low_mem;
-> >> +	int ret;
-> >> +
-> >> +	total_low_mem = memblock_mem_size(1UL << (32 - PAGE_SHIFT));
-> >> +
-> >> +	/* crashkernel=Y,low */
-> >> +	ret = parse_crashkernel_low(boot_command_line, total_low_mem, &low_size,
-> >> +			&base);
-> >> +	if (ret) {
-> >> +#ifdef CONFIG_X86_64
-> >> +		/*
-> >> +		 * two parts from lib/swiotlb.c:
-> >> +		 * -swiotlb size: user-specified with swiotlb= or default.
-> >> +		 *
-> >> +		 * -swiotlb overflow buffer: now hardcoded to 32k. We round it
-> >> +		 * to 8M for other buffers that may need to stay low too. Also
-> >> +		 * make sure we allocate enough extra low memory so that we
-> >> +		 * don't run out of DMA buffers for 32-bit devices.
-> >> +		 */
-> >> +		low_size = max(swiotlb_size_or_default() + (8UL << 20),
-> >> +				256UL << 20);
-> >> +#else
-> >> +		/*
-> >> +		 * in arm64, reserve low memory if and only if crashkernel=X,low
-> >> +		 * specified.
-> >> +		 */
-> >> +		return -EINVAL;
-> >> +#endif
-> > 
-> > As said before, can you explore about why it needs different logic, it
-> > would be good to keep two arches same.
-> > 
-> >> +	} else {
-> >> +		/* passed with crashkernel=0,low ? */
-> >> +		if (!low_size)
-> >> +			return 0;
-> >> +	}
-> >> +
-> >> +	low_base = memblock_find_in_range(0, 1ULL << 32, low_size, CRASH_ALIGN);
-> >> +	if (!low_base) {
-> >> +		pr_err("Cannot reserve %ldMB crashkernel low memory, please try smaller size.\n",
-> >> +		       (unsigned long)(low_size >> 20));
-> >> +		return -ENOMEM;
-> >> +	}
-> >> +
-> >> +	ret = memblock_reserve(low_base, low_size);
-> >> +	if (ret) {
-> >> +		pr_err("%s: Error reserving crashkernel low memblock.\n",
-> >> +				__func__);
-> >> +		return ret;
-> >> +	}
-> >> +
-> >> +	pr_info("Reserving %ldMB of low memory at %ldMB for crashkernel (System low RAM: %ldMB)\n",
-> >> +		(unsigned long)(low_size >> 20),
-> >> +		(unsigned long)(low_base >> 20),
-> >> +		(unsigned long)(total_low_mem >> 20));
-> >> +
-> >> +	crashk_low_res.start = low_base;
-> >> +	crashk_low_res.end   = low_base + low_size - 1;
-> >> +#endif
-> >> +	return 0;
-> >> +}
-> >> +
-> >>  Elf_Word *append_elf_note(Elf_Word *buf, char *name, unsigned int type,
-> >>  			  void *data, size_t data_len)
-> >>  {
-> >> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-> >> index 15d70a9..458d093 100644
-> >> --- a/kernel/kexec_core.c
-> >> +++ b/kernel/kexec_core.c
-> >> @@ -53,23 +53,6 @@ note_buf_t __percpu *crash_notes;
-> >>  /* Flag to indicate we are going to kexec a new kernel */
-> >>  bool kexec_in_progress = false;
-> >>  
-> >> -
-> >> -/* Location of the reserved area for the crash kernel */
-> >> -struct resource crashk_res = {
-> >> -	.name  = "Crash kernel",
-> >> -	.start = 0,
-> >> -	.end   = 0,
-> >> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> >> -	.desc  = IORES_DESC_CRASH_KERNEL
-> >> -};
-> >> -struct resource crashk_low_res = {
-> >> -	.name  = "Crash kernel",
-> >> -	.start = 0,
-> >> -	.end   = 0,
-> >> -	.flags = IORESOURCE_BUSY | IORESOURCE_SYSTEM_RAM,
-> >> -	.desc  = IORES_DESC_CRASH_KERNEL
-> >> -};
-> >> -
-> >>  int kexec_should_crash(struct task_struct *p)
-> >>  {
-> >>  	/*
-> >> -- 
-> >> 2.7.4
-> >>
-> > 
-> > Thanks
-> > Dave
-> > 
-> > 
-> > .
-> > 
-> Thanks,
-> Chen Zhou
-> 
-
-Thanks
-Dave
-
+BUG: unable to handle page fault for address: ffffffffff281000
+#PF: supervisor write access in kernel mode
+#PF: error_code(0x0002) - not-present page
+PGD 188615067 P4D 188615067 PUD 188617067 PMD 188e4d067 PTE 0
+Oops: 0002 [#1] SMP PTI
+CPU: 0 PID: 0 Comm: swapper Not tainted 5.4.0+ #154
+Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS 0.0.0 02/06/2015
+RIP: 0010:efi_memmap_insert+0xed/0x14b
+Code: 48 89 48 18 49 39 d9 76 67 49 39 d1 73 62 4c 89 c9 48 2b 48 08
+4c 89 c6 48 c1 e9 0c 48 89 48 18 49 8b 4a 28 48 01 c8 48 89 c7 <f3> a4
+49 39 d3 73 2c 4c 89 48 08 4c 29 da 4c 89 c6 4c 89 68 18 48
+RSP: 0000:ffffffffb7603d70 EFLAGS: 00010086
+RAX: ffffffffff280ff0 RBX: 0000000000000000 RCX: 0000000000000020
+RDX: ffffffffffffffff RSI: ffffffffff200fe0 RDI: ffffffffff281000
+RBP: 00000000bea2d000 R08: ffffffffff200fd0 R09: 00000000bea06000
+R10: ffffffffb77e1718 R11: 00000000bea2cfff R12: 800000000000000f
+R13: 0000000000000027 R14: ffffffff415fa001 R15: 0000000000000ab0
+FS:  0000000000000000(0000) GS:ffffffffb7c31000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffffffff281000 CR3: 0000000188610000 CR4: 00000000000606b0
+Call Trace:
+ ? efi_arch_mem_reserve+0x149/0x1a6
+ ? bgrt_init+0xbe/0xbe
+ ? bgrt_init+0xbe/0xbe
+ ? acpi_parse_bgrt+0xa/0xd
+ ? acpi_table_parse+0x86/0xb8
+ ? acpi_boot_init+0x494/0x4e3
+ ? acpi_parse_x2apic+0x87/0x87
+ ? setup_acpi_sci+0xa2/0xa2
+ ? setup_arch+0x8db/0x9e1
+ ? start_kernel+0x6a/0x547
+ ? secondary_startup_64+0xb6/0xc0
+Modules linked in:
+CR2: ffffffffff281000
+random: get_random_bytes called from print_oops_end_marker+0x26/0x40
+with crng_init=0
+---[ end trace 2acc14aa0990ee9d ]---
+RIP: 0010:efi_memmap_insert+0xed/0x14b
+Code: 48 89 48 18 49 39 d9 76 67 49 39 d1 73 62 4c 89 c9 48 2b 48 08
+4c 89 c6 48 c1 e9 0c 48 89 48 18 49 8b 4a 28 48 01 c8 48 89 c7 <f3> a4
+49 39 d3 73 2c 4c 89 48 08 4c 29 da 4c 89 c6 4c 89 68 18 48
+RSP: 0000:ffffffffb7603d70 EFLAGS: 00010086
+RAX: ffffffffff280ff0 RBX: 0000000000000000 RCX: 0000000000000020
+RDX: ffffffffffffffff RSI: ffffffffff200fe0 RDI: ffffffffff281000
+RBP: 00000000bea2d000 R08: ffffffffff200fd0 R09: 00000000bea06000
+R10: ffffffffb77e1718 R11: 00000000bea2cfff R12: 800000000000000f
+R13: 0000000000000027 R14: ffffffff415fa001 R15: 0000000000000ab0
+FS:  0000000000000000(0000) GS:ffffffffb7c31000(0000) knlGS:0000000000000000
+CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+CR2: ffffffffff281000 CR3: 0000000188610000 CR4: 00000000000606b0
+Kernel panic - not syncing: Fatal exception
+---[ end Kernel panic - not syncing: Fatal exception ]---
 
 _______________________________________________
 kexec mailing list
