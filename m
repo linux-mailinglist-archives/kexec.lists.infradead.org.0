@@ -2,84 +2,67 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04FB112C2AD
-	for <lists+kexec@lfdr.de>; Sun, 29 Dec 2019 15:25:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3247C12C406
+	for <lists+kexec@lfdr.de>; Sun, 29 Dec 2019 18:25:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SxH3RY0gDDTfvWrfNcmxPKGRAwPjxCgQCoQ7zgjBudI=; b=VWRghDp9rz44S9
-	/fZu/CLREKF7lmdZQmYDzKODDGAnGpLz9cTDztmi2MbXLA47SJvYxw7MaoGY76TLv6+QAgNTDdP8+
-	9/L4c4D3OehqmFZhwMyuhQwKIgbPCgAFDNcV0oSN3GlDGGOqFbwztA8uX5Zw/JKOkw/ia19KWJ57J
-	Rlhs4C9tg2IsxSw18w6SoBxTG4dZ6eJGZWT5MgSavG8WFbbyMeWYkWbRFoRkpznNEK9x9g40PCVM9
-	gw9rwLjGteGaF/WdV3SVYBpZZASGeLOfdENgxZW5YWI2Rc6/ldJozrPQfShCzAgGtIOKV3AqUIHT0
-	ATTUbVmmHU0sMjERtzPw==;
+	List-Owner; bh=bHUN20EObnC0sXIMpSRoBITTmN5cjVv6l6pEhaclX6c=; b=h2KH8kEsz1uLQd
+	nyJrF1+0G3h5tFwZR7jMZKWIW7z22db8Zd5klhBmq6rXx+Zci7MpkoOvYoEuXkEf+bBsiHjwWiJ5D
+	JOGF4lz3zT0/n7Y/n+J2Q3sy7K7B0Y/JnAWEsESDpbURtYTzgG0sNSEhMzrsq01GH8c5s9FxlwDMw
+	QOu02n4VwQr/92wiHNdDA9bqSZDTZcyM9Ar3uZIbK8j7iRvzU402fLmH1LBxzVpl4n8jrpkloViHX
+	i2jAO7R6XSecQAS71MYatLa3Y/ikbpL48+leSNwVjKMSgPZB3RtZRh8548MARoHhwjCns1hXjln3O
+	zMaIlqp8OQIE9UPC9JqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ilZVT-0003rI-Ge; Sun, 29 Dec 2019 14:25:23 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1ilcK4-00008g-Jc; Sun, 29 Dec 2019 17:25:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ilZVJ-0003qG-Lw
- for kexec@lists.infradead.org; Sun, 29 Dec 2019 14:25:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1577629509;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=RfWTGUOufJ9bQ4pR2PaE/6zDr2zhuJs0ed/uUQTcRSM=;
- b=bEJSrD304ZNCC5+kUdwg9pxVc83BpdJYnOMk0h3VZM1/Dvjqfhy9OCuNLAIjMMVPojoxmK
- XamyQkV26h7Dawe2NTL2pwl4YdElydmEUTOMHX2S2wacmiuSd4lb7Cz1rvND1GdX4rJdTI
- F03fEpcJb7zgQEpGj+XXGWR9lNp0teo=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-202-vKIOHU98MjaBghCgwbmzGQ-1; Sun, 29 Dec 2019 09:25:05 -0500
-X-MC-Unique: vKIOHU98MjaBghCgwbmzGQ-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1ilcK1-00008E-A0
+ for kexec@lists.infradead.org; Sun, 29 Dec 2019 17:25:47 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E442310054E3;
- Sun, 29 Dec 2019 14:25:02 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-73.pek2.redhat.com
- [10.72.12.73])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 566EA1A7E4;
- Sun, 29 Dec 2019 14:24:57 +0000 (UTC)
-Date: Sun, 29 Dec 2019 22:24:53 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Dan Williams <dan.j.williams@intel.com>
-Subject: Re: [PATCH] x86/efi: update e820 about reserved EFI boot services
- data to fix kexec breakage
-Message-ID: <20191229142453.GA18486@dhcp-128-65.nay.redhat.com>
-References: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
- <CANTgghnsdijH90qnm24qat70T7FA5qOwmnXXt+NYVxHYa4SLJA@mail.gmail.com>
- <CAPcyv4iRdJO6xrCaN=vrSvYFLZanLazmJLArT5YMfdJ6rc-PEQ@mail.gmail.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id EC90220409;
+ Sun, 29 Dec 2019 17:25:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1577640344;
+ bh=/4gVWON24o3gT/sJg+4JO2SrZ5r/nsfaYVwhQp0Oat4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=u5/ZMhsKjmwBZzqoG6OZtLnKjT4NeVL3yNMPDXWNsiqaUEcgBdhcyispQv0TFTQEe
+ wA1kfZZsKbEuyAtV3qg+sUxfJwtfr6p2dLnQhe1Qpu7VBUcFR/Si1oPKgmBqPr+YTU
+ oIhZyH8/T20rZzF6alqcD7nxyWd8RN+PPLKHRdic=
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 4.14 118/161] x86/crash: Add a forward declaration of struct
+ kimage
+Date: Sun, 29 Dec 2019 18:19:26 +0100
+Message-Id: <20191229162433.898340980@linuxfoundation.org>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20191229162355.500086350@linuxfoundation.org>
+References: <20191229162355.500086350@linuxfoundation.org>
+User-Agent: quilt/0.66
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPcyv4iRdJO6xrCaN=vrSvYFLZanLazmJLArT5YMfdJ6rc-PEQ@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191229_062513_833937_3B81E350 
-X-CRM114-Status: GOOD (  28.96  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20191229_092545_388772_AC2DFBCE 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -92,117 +75,64 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Weiser <michael@weiser.dinsnail.net>,
- linux-efi <linux-efi@vger.kernel.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, X86 ML <x86@kernel.org>,
- kexec@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Dan Williams <dan.j.williams.korg@gmail.com>, "H. Peter Anvin" <hpa@zytor.com>,
- Thomas Gleixner <tglx@linutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?J=C3=BCrgen=20Gross?= <jgross@suse.com>,
+ Tom Lendacky <thomas.lendacky@amd.com>, Sasha Levin <sashal@kernel.org>,
+ kbuild test robot <lkp@intel.com>, bhe@redhat.com,
+ Ingo Molnar <mingo@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, x86-ml <x86@kernel.org>,
+ kexec@lists.infradead.org, stable@vger.kernel.org, dhowells@redhat.com,
+ horms@verge.net.au, ebiederm@xmission.com, "H. Peter Anvin" <hpa@zytor.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Borislav Petkov <bp@suse.de>,
+ dyoung@redhat.com, d.hatayama@fujitsu.com, vgoyal@redhat.com,
+ Lianbo Jiang <lijiang@redhat.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Dan,
-On 12/28/19 at 10:13pm, Dan Williams wrote:
-> On Sat, Dec 28, 2019 at 12:54 PM Dan Williams
-> <dan.j.williams.korg@gmail.com> wrote:
-> >
-> > On Tue, Dec 3, 2019 at 11:53 PM Dave Young <dyoung@redhat.com> wrote:
-> > >
-> > > Michael Weiser reported he got below error during a kexec rebooting:
-> > > esrt: Unsupported ESRT version 2904149718861218184.
-> > >
-> > > The ESRT memory stays in EFI boot services data, and it was reserved
-> > > in kernel via efi_mem_reserve().  The initial purpose of the reservation
-> > > is to reuse the EFI boot services data across kexec reboot. For example
-> > > the BGRT image data and some ESRT memory like Michael reported.
-> > >
-> > > But although the memory is reserved it is not updated in X86 e820 table.
-> > > And kexec_file_load iterate system ram in io resource list to find places
-> > > for kernel, initramfs and other stuff. In Michael's case the kexec loaded
-> > > initramfs overwritten the ESRT memory and then the failure happened.
-> > >
-> > > Since kexec_file_load depends on the e820 to be updated, just fix this
-> > > by updating the reserved EFI boot services memory as reserved type in e820.
-> > >
-> > > Originally any memory descriptors with EFI_MEMORY_RUNTIME attribute are
-> > > bypassed in the reservation code path because they are assumed as reserved.
-> > > But the reservation is still needed for multiple kexec reboot.
-> > > And it is the only possible case we come here thus just drop the code
-> > > chunk then everything works without side effects.
-> > >
-> > > On my machine the ESRT memory sits in an EFI runtime data range, it does
-> > > not trigger the problem, but I successfully tested with BGRT instead.
-> > > both kexec_load and kexec_file_load work and kdump works as well.
-> > >
-> > > Signed-off-by: Dave Young <dyoung@redhat.com>
-> > > ---
-> > >  arch/x86/platform/efi/quirks.c |    6 ++----
-> > >  1 file changed, 2 insertions(+), 4 deletions(-)
-> > >
-> > > --- linux-x86.orig/arch/x86/platform/efi/quirks.c
-> > > +++ linux-x86/arch/x86/platform/efi/quirks.c
-> > > @@ -260,10 +260,6 @@ void __init efi_arch_mem_reserve(phys_ad
-> > >                 return;
-> > >         }
-> > >
-> > > -       /* No need to reserve regions that will never be freed. */
-> > > -       if (md.attribute & EFI_MEMORY_RUNTIME)
-> > > -               return;
-> > > -
-> > >         size += addr % EFI_PAGE_SIZE;
-> > >         size = round_up(size, EFI_PAGE_SIZE);
-> > >         addr = round_down(addr, EFI_PAGE_SIZE);
-> > > @@ -293,6 +289,8 @@ void __init efi_arch_mem_reserve(phys_ad
-> > >         early_memunmap(new, new_size);
-> > >
-> > >         efi_memmap_install(new_phys, num_entries);
-> > > +       e820__range_update(addr, size, E820_TYPE_RAM, E820_TYPE_RESERVED);
-> > > +       e820__update_table(e820_table);
-> > >  }
-> > >
-> > >  /*
-> > >
-> >
-> > Bisect says this change (commit af1648984828) is triggering a
-> > regression, likely not urgent, in my testing of the new efi_fake_mem=
-> > facility to allow memory to be marked "soft reserved" via the kernel
-> > command line (commit 199c84717612 x86/efi: Add efi_fake_mem support
-> > for EFI_MEMORY_SP). The following command line triggers the crash
-> > signature below:
-> >
-> >     efi_fake_mem=4G@9G:0x40000,4G@13G:0x40000
-> >
-> > However, this command line works ok:
-> >
-> >     efi_fake_mem=8G@9G:0x40000
-> >
-> > So, something about multiple efi_fake_mem statements interacts badly
-> > with this change. Nothing obvious occurs to me at the moment, I'll
-> > keep debugging, but wanted to highlight this in the meantime in case
-> > someone else sees a deeper issue or the root cause.
-> 
-> Still looking, but this failure does not seem to be specific to the
-> "soft reservation" changes. Any update to the efi memmap that pushes
-> it over a page boundary triggers this failure. I.e. I can fix the
-> problem by over-allocating the efi memmap and then page aligning the
-> result. __early_ioremap "should" be handling this case, but it appears
-> something else is messing this up.
-
-I seems can not reproduce the bug, but maybe my vm setup is different.
-Can you do some debugging about the efi_memmap_insert function see if
-something wrong happened, maybe happens when memcpy to some new allocated buffer via
-memblock_alloc, just some guess.
-
-Thanks
-Dave
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+RnJvbTogTGlhbmJvIEppYW5nIDxsaWppYW5nQHJlZGhhdC5jb20+CgpbIFVwc3RyZWFtIGNvbW1p
+dCAxMTJlZWU1ZDA2MDA3ZGFlNTYxZjE0NDU4YmRlN2YyYTQ4NzllZjRlIF0KCkFkZCBhIGZvcndh
+cmQgZGVjbGFyYXRpb24gb2Ygc3RydWN0IGtpbWFnZSB0byB0aGUgY3Jhc2guaCBoZWFkZXIgYmVj
+YXVzZQpmdXR1cmUgY2hhbmdlcyB3aWxsIGludm9rZSBhIGNyYXNoLXNwZWNpZmljIGZ1bmN0aW9u
+IGZyb20gdGhlIHJlYWxtb2RlCmluaXQgcGF0aCBhbmQgdGhlIGNvbXBpbGVyIHdpbGwgY29tcGxh
+aW4gb3RoZXJ3aXNlIGxpa2UgdGhpczoKCiAgSW4gZmlsZSBpbmNsdWRlZCBmcm9tIGFyY2gveDg2
+L3JlYWxtb2RlL2luaXQuYzoxMToKICAuL2FyY2gveDg2L2luY2x1ZGUvYXNtL2NyYXNoLmg6NToz
+Mjogd2FybmluZzog4oCYc3RydWN0IGtpbWFnZeKAmSBkZWNsYXJlZCBpbnNpZGVcCiAgIHBhcmFt
+ZXRlciBsaXN0IHdpbGwgbm90IGJlIHZpc2libGUgb3V0c2lkZSBvZiB0aGlzIGRlZmluaXRpb24g
+b3IgZGVjbGFyYXRpb24KICAgICAgNSB8IGludCBjcmFzaF9sb2FkX3NlZ21lbnRzKHN0cnVjdCBr
+aW1hZ2UgKmltYWdlKTsKICAgICAgICB8ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBe
+fn5+fn4KICAuL2FyY2gveDg2L2luY2x1ZGUvYXNtL2NyYXNoLmg6NjozNzogd2FybmluZzog4oCY
+c3RydWN0IGtpbWFnZeKAmSBkZWNsYXJlZCBpbnNpZGVcCiAgIHBhcmFtZXRlciBsaXN0IHdpbGwg
+bm90IGJlIHZpc2libGUgb3V0c2lkZSBvZiB0aGlzIGRlZmluaXRpb24gb3IgZGVjbGFyYXRpb24K
+ICAgICAgNiB8IGludCBjcmFzaF9jb3B5X2JhY2t1cF9yZWdpb24oc3RydWN0IGtpbWFnZSAqaW1h
+Z2UpOwogICAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+
+CiAgLi9hcmNoL3g4Ni9pbmNsdWRlL2FzbS9jcmFzaC5oOjc6Mzk6IHdhcm5pbmc6IOKAmHN0cnVj
+dCBraW1hZ2XigJkgZGVjbGFyZWQgaW5zaWRlXAogICBwYXJhbWV0ZXIgbGlzdCB3aWxsIG5vdCBi
+ZSB2aXNpYmxlIG91dHNpZGUgb2YgdGhpcyBkZWZpbml0aW9uIG9yIGRlY2xhcmF0aW9uCiAgICAg
+IDcgfCBpbnQgY3Jhc2hfc2V0dXBfbWVtbWFwX2VudHJpZXMoc3RydWN0IGtpbWFnZSAqaW1hZ2Us
+CiAgICAgICAgfAoKIFsgYnA6IFJld3JpdGUgdGhlIGNvbW1pdCBtZXNzYWdlLiBdCgpSZXBvcnRl
+ZC1ieToga2J1aWxkIHRlc3Qgcm9ib3QgPGxrcEBpbnRlbC5jb20+ClNpZ25lZC1vZmYtYnk6IExp
+YW5ibyBKaWFuZyA8bGlqaWFuZ0ByZWRoYXQuY29tPgpTaWduZWQtb2ZmLWJ5OiBCb3Jpc2xhdiBQ
+ZXRrb3YgPGJwQHN1c2UuZGU+CkNjOiBiaGVAcmVkaGF0LmNvbQpDYzogZC5oYXRheWFtYUBmdWpp
+dHN1LmNvbQpDYzogZGhvd2VsbHNAcmVkaGF0LmNvbQpDYzogZHlvdW5nQHJlZGhhdC5jb20KQ2M6
+IGViaWVkZXJtQHhtaXNzaW9uLmNvbQpDYzogaG9ybXNAdmVyZ2UubmV0LmF1CkNjOiAiSC4gUGV0
+ZXIgQW52aW4iIDxocGFAenl0b3IuY29tPgpDYzogSW5nbyBNb2xuYXIgPG1pbmdvQHJlZGhhdC5j
+b20+CkNjOiBKw7xyZ2VuIEdyb3NzIDxqZ3Jvc3NAc3VzZS5jb20+CkNjOiBrZXhlY0BsaXN0cy5p
+bmZyYWRlYWQub3JnCkNjOiBUaG9tYXMgR2xlaXhuZXIgPHRnbHhAbGludXRyb25peC5kZT4KQ2M6
+IFRvbSBMZW5kYWNreSA8dGhvbWFzLmxlbmRhY2t5QGFtZC5jb20+CkNjOiB2Z295YWxAcmVkaGF0
+LmNvbQpDYzogeDg2LW1sIDx4ODZAa2VybmVsLm9yZz4KTGluazogaHR0cHM6Ly9sa21sLmtlcm5l
+bC5vcmcvci8yMDE5MTEwODA5MDAyNy4xMTA4Mi00LWxpamlhbmdAcmVkaGF0LmNvbQpMaW5rOiBo
+dHRwczovL2xrbWwua2VybmVsLm9yZy9yLzIwMTkxMDMxMDIzMy5FSlJ0VE1XUCUyNWxrcEBpbnRl
+bC5jb20KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3JnPgotLS0K
+IGFyY2gveDg2L2luY2x1ZGUvYXNtL2NyYXNoLmggfCAyICsrCiAxIGZpbGUgY2hhbmdlZCwgMiBp
+bnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvYXJjaC94ODYvaW5jbHVkZS9hc20vY3Jhc2guaCBi
+L2FyY2gveDg2L2luY2x1ZGUvYXNtL2NyYXNoLmgKaW5kZXggYTdhZGIyYmZiZjBiLi42YjhhZDZm
+YTM5NzkgMTAwNjQ0Ci0tLSBhL2FyY2gveDg2L2luY2x1ZGUvYXNtL2NyYXNoLmgKKysrIGIvYXJj
+aC94ODYvaW5jbHVkZS9hc20vY3Jhc2guaApAQCAtMiw2ICsyLDggQEAKICNpZm5kZWYgX0FTTV9Y
+ODZfQ1JBU0hfSAogI2RlZmluZSBfQVNNX1g4Nl9DUkFTSF9ICiAKK3N0cnVjdCBraW1hZ2U7CisK
+IGludCBjcmFzaF9sb2FkX3NlZ21lbnRzKHN0cnVjdCBraW1hZ2UgKmltYWdlKTsKIGludCBjcmFz
+aF9jb3B5X2JhY2t1cF9yZWdpb24oc3RydWN0IGtpbWFnZSAqaW1hZ2UpOwogaW50IGNyYXNoX3Nl
+dHVwX21lbW1hcF9lbnRyaWVzKHN0cnVjdCBraW1hZ2UgKmltYWdlLAotLSAKMi4yMC4xCgoKCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWls
+aW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
