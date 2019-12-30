@@ -2,59 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8181212D455
-	for <lists+kexec@lfdr.de>; Mon, 30 Dec 2019 21:14:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB60112D460
+	for <lists+kexec@lfdr.de>; Mon, 30 Dec 2019 21:16:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:To:From:
-	Subject:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9KKanO0GZdAMvkGeMgsn+4nY+A7S/1IHLYNHrPAQO7Q=; b=GfNRMk8V4CA43B
-	sGOxCriRTCH76p86nI6uTwo2LEU9gJFDeIPExN9Mzt7xSnIiZuNBcuUmxEy/MntOFLqNAQeG+lxbh
-	kXVUHg6eO2m6ZG9WO5DcNLJk91OPfCoticaPkXjAOiWTp1O+QG+bYMDMXmkgJOd/Qbux0cqcjDSYP
-	7Y+zJUlNugaW6JiEuD0kJ12RHek6DQolazKotlmhxvOV34VKOrxelzedwuFN2Tn/PAVS6IR/EI/gb
-	mEfNXHc/Sy+t/LmSS89vB2GP91lFuxZ0SJwBQa6EbGCssJBL4lBUuTDMwvBC1jOzctkMQPXUlb+q4
-	/9027HPzPvHS2DJVh+4Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6bycaiN7k3NY8Uh/E/2ZVoZr9noKUxjQDB1lAKsaeTM=; b=c6PFZDbtbntQPG
+	iOUGGu1xfvHtAABWvOcplzTUoq1WfNWCyFjz9azgy170lEvMgE9GJ15tUluhcgxz0Sa9+s6C3X9n2
+	/u+51zJqbBanlBElcRhx0Dt1SJZ5nQNnAOzwRS5iexPacQ5g9w5mF45+jx7aDJQckFFvyzeJAOmtZ
+	R5lbxn5LImDsAwSLsOFImIeoyhYDGXVsiD1Tu+8nORvuCYNT/GRKJm1jpMDBnq3JqzEmGs1n2fNco
+	xwXqLM3UJLda3zxGVApCzjAhTR2V+Qz/AiqRg2WIao+tcDxrBZznQDMNXw9QfLL2FdhGnbq3Fxfxk
+	b37EuMivbAvLzi+YCgMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1im1Qx-00063J-G3; Mon, 30 Dec 2019 20:14:35 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1im1TC-0007Rt-Gx; Mon, 30 Dec 2019 20:16:54 +0000
+Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1im1Qp-00062m-NJ
- for kexec@lists.infradead.org; Mon, 30 Dec 2019 20:14:29 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 30 Dec 2019 12:14:25 -0800
-X-IronPort-AV: E=Sophos;i="5.69,376,1571727600"; d="scan'208";a="213420200"
-Received: from dwillia2-desk3.jf.intel.com (HELO
- dwillia2-desk3.amr.corp.intel.com) ([10.54.39.16])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 30 Dec 2019 12:14:25 -0800
-Subject: [PATCH] efi: Fix handling of multiple contiguous efi_fake_mem= entries
-From: Dan Williams <dan.j.williams@intel.com>
-To: mingo@redhat.com
-Date: Mon, 30 Dec 2019 11:58:23 -0800
-Message-ID: <157773590338.4153451.5898675419563883883.stgit@dwillia2-desk3.amr.corp.intel.com>
-User-Agent: StGit/0.18-3-g996c
+ id 1im1T9-0007RY-5I
+ for kexec@lists.infradead.org; Mon, 30 Dec 2019 20:16:52 +0000
+Received: by mail-oi1-x243.google.com with SMTP id p125so9271627oif.10
+ for <kexec@lists.infradead.org>; Mon, 30 Dec 2019 12:16:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=intel-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=vGoYHJkV2sBuC/EabEMn2jT6G42n0LQcEtNTThbzJvo=;
+ b=LOFA+mxlmd5oV8l+Ly2ITiGE7quCUFquXLsCfnDW9MllcsxJM+xgnpfdFKisb8BlW1
+ GsO5VONykMGvsC/iRi6Eid6vExDoXX/AGXk3RgaQSaV/KJstjudxFNuYhLaX/O/sRVgI
+ fCl75NApfe3sM2ibIn7p9xCxDkpU9lBZeIiHUmzhr+s8RGLjZMMlrnEOtoVPjzn7bz+8
+ qAXlEZ4WIdspGkErzVHHtXGP+qBfG7Ig0sNFiB5LEExIhOb0uo+rkIgNuo/eDxEcTcVA
+ mHuU2UpXe/KNqH19ffb+XBrtbUJmugSY6caSLnbRawTieig0KcwDS3330Y27EYSFO6nG
+ GO5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vGoYHJkV2sBuC/EabEMn2jT6G42n0LQcEtNTThbzJvo=;
+ b=qY+wp47cDS60r61y5Zam31W9kS+PRGRmzMzgcAW0W7Mk5WeLW1qOPhQ8zJh3XL8ve2
+ OZVRHD2GRFd9L138PoVOhicjhk5fztys2n7J5HD4+TG4x0yRAZSjgjCmTUvsGPCywwL5
+ NTuKzJn9yFNzGsY4NNHt7js5+Wx3bYy0YRyQ7rTcRvU54mXbUC5DPq8jl2AtS/vALbwZ
+ aNGWf4/YBV6Z6sTxJmHKM3O/Zz7cA/UYk5rDRFGgADL/VSh5TInAHM3/ukoIZmvz7Fbz
+ Hf5N+8ZijB6vMx5N4YSzykaHWyc1trwEv6WIyc9Rghchn9iORhUbrQZa0Ha1c0vFFprF
+ QRbw==
+X-Gm-Message-State: APjAAAUBFJWCd+FaSGp9BMHzt97EOXRb7sbDmUd1nctrRNe47D8QC8Nl
+ hC3f3lW4GCKcT3MXq1gBdWjm3fe1/ax9GYHuPz6Tfg==
+X-Google-Smtp-Source: APXvYqx3ceamtmJUChp1TLuDkDv4af0iLI+bwyDSS+upKsqsk+U0Ob0XHRDXqZ29dmIwB0CA1zn0kxN2oJlTNMRltC0=
+X-Received: by 2002:aca:3f54:: with SMTP id m81mr333228oia.73.1577737010159;
+ Mon, 30 Dec 2019 12:16:50 -0800 (PST)
 MIME-Version: 1.0
+References: <20191204075233.GA10520@dhcp-128-65.nay.redhat.com>
+ <CANTgghnsdijH90qnm24qat70T7FA5qOwmnXXt+NYVxHYa4SLJA@mail.gmail.com>
+ <CAPcyv4iRdJO6xrCaN=vrSvYFLZanLazmJLArT5YMfdJ6rc-PEQ@mail.gmail.com>
+ <CAPcyv4hT9HXN2CqZw96zqgdNaapc=9oqSYvGrnEbeqSmx0t5xw@mail.gmail.com>
+In-Reply-To: <CAPcyv4hT9HXN2CqZw96zqgdNaapc=9oqSYvGrnEbeqSmx0t5xw@mail.gmail.com>
+From: Dan Williams <dan.j.williams@intel.com>
+Date: Mon, 30 Dec 2019 12:16:39 -0800
+Message-ID: <CAPcyv4jLxqPaB22Ao9oV31Gm=b0+Phty+Uz33Snex4QchOUb0Q@mail.gmail.com>
+Subject: Re: [PATCH] x86/efi: update e820 about reserved EFI boot services
+ data to fix kexec breakage
+To: Dan Williams <dan.j.williams.korg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191230_121427_803386_DB03428C 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20191230_121651_247083_416323DC 
+X-CRM114-Status: UNSURE (   6.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,105 +91,26 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Weiser <michael@weiser.dinsnail.net>, linux-efi@vger.kernel.org,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Taku Izumi <izumi.taku@jp.fujitsu.com>,
- Thomas Gleixner <tglx@linutronix.de>, Dave Young <dyoung@redhat.com>,
- Ingo Molnar <mingo@kernel.org>
+Cc: Michael Weiser <michael@weiser.dinsnail.net>,
+ linux-efi <linux-efi@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, X86 ML <x86@kernel.org>,
+ kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, "H. Peter Anvin" <hpa@zytor.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-A recent test of efi_fake_mem=4G@9G:0x40000,4G@13G:0x40000 crashed with
-a signature of:
+On Mon, Dec 30, 2019 at 1:42 AM Dan Williams <dan.j.williams@intel.com> wrote:
+[..]
+> I'll send a patch to fix up efi_fake_memmap().
 
-    BUG: unable to handle page fault for address: ffffffffff281000
-    [..]
-    RIP: 0010:efi_memmap_insert+0x11d/0x191
-    [..]
-    Call Trace:
-     ? bgrt_init+0xbe/0xbe
-     ? efi_arch_mem_reserve+0x1cb/0x228
-     ? acpi_parse_bgrt+0xa/0xd
-     ? acpi_table_parse+0x86/0xb8
-     ? acpi_boot_init+0x494/0x4e3
-     ? acpi_parse_x2apic+0x87/0x87
-     ? setup_acpi_sci+0xa2/0xa2
-     ? setup_arch+0x8db/0x9e1
-     ? start_kernel+0x6a/0x547
-     ? secondary_startup_64+0xb6/0xc0
+For others following this thread, that patch is here:
 
-efi_memmap_insert() is attempting to insert entries past the end of the
-new map. This condition is setup by efi_fake_mem() leaking empty entries
-to the end of memory map, and then efi_arch_mem_reserve() trips over the
-bad entry when attempting an additional efi_memmap_insert(). The empty
-entry causes efi_memmap_insert() to attempt more memmap splits / copies
-than efi_memmap_split_count() accounted for when sizing the new map.
-
-Update efi_fake_memmap() to cleanup lagging empty entries.
-
-This change is related to commit af1648984828 "x86/efi: Update e820 with
-reserved EFI boot services data to fix kexec breakage" since that
-introduces more occurrences where efi_memmap_insert() is invoked after
-an efi_fake_mem= configuration has been parsed. Previously the side
-effects of vestigial empty entries were benign, but with commit
-af1648984828 that follow-on efi_memmap_insert() invocation triggers the
-above crash signature.
-
-Fixes: 0f96a99dab36 ("efi: Add 'efi_fake_mem' boot option")
-Fixes: af1648984828 ("x86/efi: Update e820 with reserved EFI boot services...")
-Cc: Taku Izumi <izumi.taku@jp.fujitsu.com>
-Cc: Michael Weiser <michael@weiser.dinsnail.net>
-Cc: Dave Young <dyoung@redhat.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-Cc: Ingo Molnar <mingo@kernel.org>
-Signed-off-by: Dan Williams <dan.j.williams@intel.com>
----
- drivers/firmware/efi/fake_mem.c |   22 +++++++++++++++++++++-
- 1 file changed, 21 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/firmware/efi/fake_mem.c b/drivers/firmware/efi/fake_mem.c
-index bb9fc70d0cfa..6df51ba93ae8 100644
---- a/drivers/firmware/efi/fake_mem.c
-+++ b/drivers/firmware/efi/fake_mem.c
-@@ -67,13 +67,33 @@ void __init efi_fake_memmap(void)
- 		return;
- 	}
- 
-+	memset(new_memmap, 0, efi.memmap.desc_size * new_nr_map);
- 	for (i = 0; i < nr_fake_mem; i++)
- 		efi_memmap_insert(&efi.memmap, new_memmap, &efi_fake_mems[i]);
- 
-+	/*
-+	 * efi_memmap_split_count() may over count the number of
-+	 * required splits in the case when contiguous fake entries are
-+	 * specified. Check that all new_nr_map entries were consumed.
-+	 */
-+	for (i = new_nr_map; i > 0; i--) {
-+		efi_memory_desc_t *md;
-+		u64 start, end;
-+
-+		md = new_memmap + efi.memmap.desc_size * (new_nr_map - i - 1);
-+		end = md->phys_addr + (md->num_pages << EFI_PAGE_SHIFT) - 1;
-+		start = md->phys_addr;
-+
-+		if (start == 0 && end + 1 == 0)
-+			continue;
-+		break;
-+	}
-+
- 	/* swap into new EFI memmap */
- 	early_memunmap(new_memmap, efi.memmap.desc_size * new_nr_map);
- 
--	efi_memmap_install(new_memmap_phy, new_nr_map);
-+	/* install only the valid entries */
-+	efi_memmap_install(new_memmap_phy, i);
- 
- 	/* print new EFI memmap */
- 	efi_print_memmap();
-
+http://lore.kernel.org/r/157773590338.4153451.5898675419563883883.stgit@dwillia2-desk3.amr.corp.intel.com
 
 _______________________________________________
 kexec mailing list
