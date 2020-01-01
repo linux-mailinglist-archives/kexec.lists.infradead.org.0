@@ -2,75 +2,75 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA0412DDA2
-	for <lists+kexec@lfdr.de>; Wed,  1 Jan 2020 05:53:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AD6412DDA8
+	for <lists+kexec@lfdr.de>; Wed,  1 Jan 2020 06:05:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6O0x0Bwn2JT0OWXhoiqYgCEydlYcgk8mLUXKLF4Osds=; b=VfkBUM49MFIBdh
-	1nTwsv/OEATL8NExc1+VMC52jO27Ht9YSpcIq3MSZ0DYpi0HA0bHu4SSolQH+BjebQTzs5Z/dGhTL
-	YCM9QtJcLLGKvWJVg+3dvP9kpt34sPlNF9qIjbsYq9x9+r0N+RxDdWVOq94n+c3aEHabrA78zd0rF
-	dLNVwEI3AK1k9BgrX7l5p1XTKOk5+Ta8Z4eiFIYp1gku2NSYCiQMy8L9DaeWWn+PTmzNBkgeDdyJR
-	WETRyN2sd/fZPBbRc2hC/xmlSNK1vz0D9I2sCuZA1KyShyRfMTR/EK5vAvzAfU/AJYOCI4gV+AsIC
-	OSsojbb+GPyOyCM58xQg==;
+	List-Owner; bh=ogGKilZQvRt8Gacx893ptFEQfZsqdVDxeYxPUJIOuUE=; b=hl/Y6PHS7gKD3f
+	0ZMlM+mhhZdAcEwJINlNkJEAF9rvMueZPBJp3XDjIjnBDD/7Vq7MaZCZYrp8+5n566KbrSejQdDBY
+	AKHdKOVKbMo0x5nG9hkukAPzwhpGwyyz9EgEUIX26HvsMsxqHyqOdcAL0KSASTzFNvl2D47hX/LwY
+	fpjE1vtp4kCRQhi8hpCWOYcgtaAkOhU0xtifjTFOXKcy3LB5vyhyjQZNGgrKMcsqv1Um+BNri23fW
+	xNF4miW0V/rqglbAeodHkIi3mHKWpCZmw4/3LMVn4PDPo2eM2DAHk3OFBXcl8hHwanbvyxztSLjkC
+	JrSeRj+Aq7b+WulflKZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1imW0P-0002ru-Cj; Wed, 01 Jan 2020 04:53:13 +0000
-Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+	id 1imWBu-0006HJ-Eq; Wed, 01 Jan 2020 05:05:06 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1imW0M-0002ra-0p
- for kexec@lists.infradead.org; Wed, 01 Jan 2020 04:53:11 +0000
-Received: by mail-ot1-x342.google.com with SMTP id 19so39916571otz.3
- for <kexec@lists.infradead.org>; Tue, 31 Dec 2019 20:53:09 -0800 (PST)
+ id 1imWBp-0005ht-Fl
+ for kexec@lists.infradead.org; Wed, 01 Jan 2020 05:05:03 +0000
+Received: by mail-oi1-x241.google.com with SMTP id c16so12389122oic.3
+ for <kexec@lists.infradead.org>; Tue, 31 Dec 2019 21:05:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=intel-com.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jfNNEg4YWXmXqYR9H7tCNhq2xPlPNDmuq3DmGMJWmh8=;
- b=jlKqsdFtlMYUFLmF58ewBNrKwzaCKl+MmNrsw/WrE148uBmGVfUJNtM16hf2u3sdjJ
- osz95h41zYayoSkYD3C8mxIAhV//e16lOi+q6EgFBJTAgsC9XYvBJayFob8IMOJYpZHG
- ReiEfSmlxm0jHMSm9mIsyV2WKia//95oBq2N0Ww4UVbR+KVQHbW4cU/eDcpKYJ66jUzD
- 6FHsyog+U1sIiDs2juKzZErwdyMJo1xM1r6XiYGgARdukPE2wAgVnWndtkeY9lJhkd1D
- e74iWa1WwMs3vHLuNXG86LgNbx1lWP0eZG11AmU3jDrdB8d5SlB141BNNl96NWzgphat
- 6QJQ==
+ :cc; bh=eOPNXB6Xk/9bMW2uOkkU+s8IZY30ZYawh5JZf1y2MIo=;
+ b=JOVHi6tqb1rlBNhPbFm9/EEa5MJto3/i/WyNI0+4nYE4wpjHIhXajOPXthUsvX6/f1
+ D9pPf1QaZczjBgWkBb9l7MlflvcqQ3838uhdJ6JDfCKLsnqRaW8taEBmgQkxy4uoHr9M
+ 9pm1AtwOrFLpdpqv0U+zWStXwlwGsArzSI76T51MGHBYYmIEcuqLXN5bCTvynMPRA/qr
+ roAAOKM4f5zkT+6GoPGxqivOq8pFBT9V1lJ/DfauIb79aW5xsM41GGBAVUDRoIUlRFnb
+ MEOBNtwCkBl9oPw6qyMEJYBkIPE30rKP7m63syzGlcGTQszVvmgunv73cTfrVCZFCUxp
+ ibpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jfNNEg4YWXmXqYR9H7tCNhq2xPlPNDmuq3DmGMJWmh8=;
- b=WBQB+JXk46l25tS2DMGtBsE7nWk43u/W/reiZ7Vo8u0Wo0JM3P61+U+ftHiHGRfIaW
- XDGPgp2cJ9FDo4gd2ArPVdGtuz0jMtlkEcH0l2OBbhHdYpQYXIJtjzB42A0aCFm6R7iu
- Jjvl8A8ndTEGQaf1z65hPdreKgtEczw33h5JkaEHLkvOVOALpuem3bwEvOlOiDP46c88
- Q77dgkbVka4C3xpDNi3SEyrJT6ynOiT7nsiUBpOYfTpMFUUNzJjHp971m0bo3UaQcTW5
- HHuvLU3BwHqf0YoAwVcmFdrDM70s7fin6QII+CCGEhv55w5bMB1xXa97qYY83Ret7YyK
- os6A==
-X-Gm-Message-State: APjAAAXVAsgT0itYHf4Sz/hAlzpQcPt1CZxk4X/S+RpfNQYRTLyvB06S
- LojUyFWwWFf6Ula/cePdIGTtmkCjUNqDGbocXiBDgQ==
-X-Google-Smtp-Source: APXvYqzv6e+DqoNRilibIFzUVaa/7v8Np7/jZeI2hLlLcZACEoPElkCWi4mxDCufsiBXdFI1s30kAhVPlUeSW2yIhpY=
-X-Received: by 2002:a9d:68cc:: with SMTP id i12mr47412305oto.207.1577854388602; 
- Tue, 31 Dec 2019 20:53:08 -0800 (PST)
+ bh=eOPNXB6Xk/9bMW2uOkkU+s8IZY30ZYawh5JZf1y2MIo=;
+ b=RR/fSsgl+JIguyVuf9YKrHMQopJkCuMZdi9G0eB7ELut/LR3Ht6BoX27HzfDRFJ5Od
+ J0d4j3nt4NhgXSezaiDqdHFm8vSdvuwFQglkHptnzXpseWBugud7WIZceIxLt2iiKpFf
+ vC++re8d0Ptn+ppu+OWJsZq9OnnOGU/ZoceFuXJcihh8OctHj+LdDRG2nf9LqZuwwkH7
+ eRsj1Ov3Zx0AXUomS9oOgaY+dlKEGAZ5HCDrSx3DcKXy2GS1MaIbHnup6dN9BEFYrL23
+ qdHxctCKsq0wTnCTpWlVhJMl+XlN+jz72NXUXMIWv5r24nTclxhtFuCUlztdl0PfGoGO
+ pHoA==
+X-Gm-Message-State: APjAAAUsAZ22I+eQEI/5gifzYIoUtLCXP0XAbbd66Zt4zg9CTHw5dCCz
+ 175KM5IuzZj7cNlfWv7cV3DaEPJEeJxxekdipW4eWg==
+X-Google-Smtp-Source: APXvYqytitIOduL+M4M9U0lY09BLNrz5HLgUQb45VAorwwNMnbqRHTSGtQd3uN/0akWinU9KA0zJXFG/+BnDPhkUTPs=
+X-Received: by 2002:a05:6808:a83:: with SMTP id q3mr1870737oij.0.1577855099505; 
+ Tue, 31 Dec 2019 21:04:59 -0800 (PST)
 MIME-Version: 1.0
 References: <157782985777.367056.14741265874314204783.stgit@dwillia2-desk3.amr.corp.intel.com>
- <157782987346.367056.16932641815225610530.stgit@dwillia2-desk3.amr.corp.intel.com>
- <20200101033517.GB14346@dhcp-128-65.nay.redhat.com>
-In-Reply-To: <20200101033517.GB14346@dhcp-128-65.nay.redhat.com>
+ <157782987865.367056.15199592105978588123.stgit@dwillia2-desk3.amr.corp.intel.com>
+ <20200101045141.GA15155@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20200101045141.GA15155@dhcp-128-65.nay.redhat.com>
 From: Dan Williams <dan.j.williams@intel.com>
-Date: Tue, 31 Dec 2019 20:52:57 -0800
-Message-ID: <CAPcyv4hXJi6v57L=-n8H9F_5Zvonr1idyijW7MqPdyMoGCj=2A@mail.gmail.com>
-Subject: Re: [PATCH v2 3/4] efi: Fix efi_memmap_alloc() leaks
+Date: Tue, 31 Dec 2019 21:04:48 -0800
+Message-ID: <CAPcyv4hSB9B5tiKVwtNOgDS6KS2Pj6f962OPBZVZpPjrBt6Z8A@mail.gmail.com>
+Subject: Re: [PATCH v2 4/4] efi: Fix handling of multiple efi_fake_mem= entries
 To: Dave Young <dyoung@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191231_205310_120574_2F3A5C5D 
-X-CRM114-Status: GOOD (  17.91  )
+X-CRM114-CacheID: sfid-20191231_210501_528672_8A199619 
+X-CRM114-Status: GOOD (  31.02  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -88,78 +88,144 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>,
+Cc: Michael Weiser <michael@weiser.dinsnail.net>,
+ linux-efi <linux-efi@vger.kernel.org>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, X86 ML <x86@kernel.org>,
  kexec@lists.infradead.org,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Taku Izumi <izumi.taku@jp.fujitsu.com>
+ Ingo Molnar <mingo@redhat.com>, Taku Izumi <izumi.taku@jp.fujitsu.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Tue, Dec 31, 2019 at 7:35 PM Dave Young <dyoung@redhat.com> wrote:
+On Tue, Dec 31, 2019 at 8:52 PM Dave Young <dyoung@redhat.com> wrote:
 >
 > Hi Dan,
 > On 12/31/19 at 02:04pm, Dan Williams wrote:
-> > With efi_fake_memmap() and efi_arch_mem_reserve() the efi table may be
-> > updated and replaced multiple times. When that happens a previous
-> > dynamically allocated efi memory map can be garbage collected. Use the
-> > new EFI_MEMMAP_{SLAB,MEMBLOCK} flags to detect when a dynamically
-> > allocated memory map is being replaced.
+> > Dave noticed that when specifying multiple efi_fake_mem= entries only
+> > the last entry was successfully being reflected in the efi memory map.
+> > This is due to the fact that the efi_memmap_insert() is being called
+> > multiple times, but on successive invocations the insertion should be
+> > applied to the last new memmap rather than the original map at
+> > efi_fake_memmap() entry.
 > >
+> > Rework efi_fake_memmap() to install the new memory map after each
+> > efi_fake_mem= entry is parsed.
+> >
+> > This also fixes an issue in efi_fake_memmap() that caused it to litter
+> > emtpy entries into the end of the efi memory map. The empty entry causes
+> > efi_memmap_insert() to attempt more memmap splits / copies than
+> > efi_memmap_split_count() accounted for when sizing the new map.
+> >
+> >     BUG: unable to handle page fault for address: ffffffffff281000
+> >     [..]
+> >     RIP: 0010:efi_memmap_insert+0x11d/0x191
+> >     [..]
+> >     Call Trace:
+> >      ? bgrt_init+0xbe/0xbe
+> >      ? efi_arch_mem_reserve+0x1cb/0x228
+> >      ? acpi_parse_bgrt+0xa/0xd
+> >      ? acpi_table_parse+0x86/0xb8
+> >      ? acpi_boot_init+0x494/0x4e3
+> >      ? acpi_parse_x2apic+0x87/0x87
+> >      ? setup_acpi_sci+0xa2/0xa2
+> >      ? setup_arch+0x8db/0x9e1
+> >      ? start_kernel+0x6a/0x547
+> >      ? secondary_startup_64+0xb6/0xc0
+> >
+> > Commit af1648984828 "x86/efi: Update e820 with reserved EFI boot
+> > services data to fix kexec breakage" is listed in Fixes: since it
+> > introduces more occurrences where efi_memmap_insert() is invoked after
+> > an efi_fake_mem= configuration has been parsed. Previously the side
+> > effects of vestigial empty entries were benign, but with commit
+> > af1648984828 that follow-on efi_memmap_insert() invocation triggers the
+> > above crash signature.
+> >
+> > Fixes: 0f96a99dab36 ("efi: Add 'efi_fake_mem' boot option")
+> > Fixes: af1648984828 ("x86/efi: Update e820 with reserved EFI boot services...")
+> > Link: https://lore.kernel.org/r/20191231014630.GA24942@dhcp-128-65.nay.redhat.com
+> > Reported-by: Dave Young <dyoung@redhat.com>
 > > Cc: Taku Izumi <izumi.taku@jp.fujitsu.com>
+> > Cc: Michael Weiser <michael@weiser.dinsnail.net>
 > > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > Cc: Thomas Gleixner <tglx@linutronix.de>
+> > Cc: Ingo Molnar <mingo@kernel.org>
 > > Signed-off-by: Dan Williams <dan.j.williams@intel.com>
 > > ---
-> >  drivers/firmware/efi/memmap.c |   24 ++++++++++++++++++++++++
-> >  1 file changed, 24 insertions(+)
+> >  drivers/firmware/efi/fake_mem.c |   32 +++++++++++++++++---------------
+> >  drivers/firmware/efi/memmap.c   |    2 +-
+> >  include/linux/efi.h             |    2 ++
+> >  3 files changed, 20 insertions(+), 16 deletions(-)
 > >
-> > diff --git a/drivers/firmware/efi/memmap.c b/drivers/firmware/efi/memmap.c
-> > index 2b81ee6858a9..188ab3cd5c52 100644
-> > --- a/drivers/firmware/efi/memmap.c
-> > +++ b/drivers/firmware/efi/memmap.c
-> > @@ -29,6 +29,28 @@ static phys_addr_t __init __efi_memmap_alloc_late(unsigned long size)
-> >       return PFN_PHYS(page_to_pfn(p));
+> > diff --git a/drivers/firmware/efi/fake_mem.c b/drivers/firmware/efi/fake_mem.c
+> > index 7e53e5520548..68d752d8af21 100644
+> > --- a/drivers/firmware/efi/fake_mem.c
+> > +++ b/drivers/firmware/efi/fake_mem.c
+> > @@ -34,26 +34,17 @@ static int __init cmp_fake_mem(const void *x1, const void *x2)
+> >       return 0;
 > >  }
 > >
-> > +static void __init __efi_memmap_free(u64 phys, unsigned long size, unsigned long flags)
-> > +{
-> > +     if (WARN_ON(slab_is_available() && (flags & EFI_MEMMAP_MEMBLOCK)))
-> > +             return;
-> > +
-> > +     if (flags & EFI_MEMMAP_MEMBLOCK) {
-> > +             memblock_free(phys, size);
-> > +     } else if (flags & EFI_MEMMAP_SLAB) {
-> > +             struct page *p = pfn_to_page(PHYS_PFN(phys));
-> > +             unsigned int order = get_order(size);
-> > +
-> > +             free_pages((unsigned long) page_address(p), order);
-> > +     }
-> > +}
-> > +
-> > +static void __init efi_memmap_free(void)
-> > +{
-> > +     __efi_memmap_free(efi.memmap.phys_map,
-> > +                     efi.memmap.desc_size * efi.memmap.nr_map,
-> > +                     efi.memmap.flags);
-> > +}
-> > +
-> >  /**
-> >   * efi_memmap_alloc - Allocate memory for the EFI memory map
-> >   * @num_entries: Number of entries in the allocated map.
-> > @@ -209,6 +231,8 @@ int __init efi_memmap_install(phys_addr_t addr, unsigned int nr_map,
-> >       data.desc_size = efi.memmap.desc_size;
-> >       flags |= efi.memmap.flags & EFI_MEMMAP_LATE;
+> > -void __init efi_fake_memmap(void)
+> > +static void __init efi_fake_range(struct efi_mem_range *efi_range)
+> >  {
+> >       int new_nr_map = efi.memmap.nr_map;
+> >       efi_memory_desc_t *md;
+> >       phys_addr_t new_memmap_phy;
+> >       unsigned long flags = 0;
+> >       void *new_memmap;
+> > -     int i;
+> > -
+> > -     if (!efi_enabled(EFI_MEMMAP) || !nr_fake_mem)
+> > -             return;
 > >
-> > +     efi_memmap_free();
-> > +
-> >       return __efi_memmap_init(&data, flags);
+> >       /* count up the number of EFI memory descriptor */
+> > -     for (i = 0; i < nr_fake_mem; i++) {
+> > -             for_each_efi_memory_desc(md) {
+> > -                     struct range *r = &efi_fake_mems[i].range;
+> > -
+> > -                     new_nr_map += efi_memmap_split_count(md, r);
+> > -             }
+> > -     }
+> > +     for_each_efi_memory_desc(md)
+> > +             new_nr_map += efi_memmap_split_count(md, &efi_range->range);
 >
-> Hmm, only free the memmap in case __efi_memmap_init succeeded..
+> I have another concern here :(
+>
+> THe efi_memmap_split_count mean to only split for a specific md, and you
+> can see arch/x86/platform/efi/quirks.c about the use:
+>         if (addr + size > md.phys_addr + (md.num_pages << EFI_PAGE_SHIFT)) {
+>                 pr_err("Region spans EFI memory descriptors, %pa\n", &addr);
+>                 return;
+>         }
+>
+> Any memory region to be inserted but spans different md will be
+> rejected.  So the memmap insert logic seems does not support the
+> spanned ranges.  I did not find a case two contiguous same type ranges
+> eg. two "Conventional memory", if have they should have been merged.
+>
+> So maybe just use same way as the quirks.c here to find the valid md first
+> then get the split count?
 
-Ah true, that is a hastily chosen placement. Probably better in
-__efi_memmap_init() after we're committed to the new map.
+I don't immediately see why it would be a problem to just let the md
+loop that efi_fake_memmap() performs try to split multiple entries. It
+may end up with more splits than necessary in which case we'll need
+that piece from my original patch to clean those up. Thanks for the
+heads up, I'll give it a try and see what shakes out. Are you seeing
+any misbehavior on your end?
+
+>
+> Otherwise I tested the series bootup test passed.
+>
+> BTW, another issue about fakemem,  currently it only works with normal
+> physical boot,  in case of kexec reboot the kernel only aware of EFI
+> runtime memory ranges, we do not pass other types in memmap.  But maybe
+> we can live with it considering fake mem is only for debugging purpose.
+
+Does kexec preserve iomem? I.e. as long as the initial translation of
+efi entries to e820, and resulting resource tree, is preserved by
+successive kexec cycles then I think we're ok.
 
 _______________________________________________
 kexec mailing list
