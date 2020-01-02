@@ -2,53 +2,53 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9957E12EDA6
-	for <lists+kexec@lfdr.de>; Thu,  2 Jan 2020 23:30:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D30212EE48
+	for <lists+kexec@lfdr.de>; Thu,  2 Jan 2020 23:37:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MQRs7PZL5xBrgG+QFetoapMrk8aUEUfSg8iZuzEid2w=; b=H4MuH5sBUVEmn0
-	lRL+ZDBCT7XmIlSW6t8pA9FH72xtfxV6BlGjaEve/w16tbU9/fs6HQi2xcwzK23yRnFei0oMxFMtT
-	SBNf1+v1C57Di+42ryTX5flJ1JzZ+kJjR3jAtSst9hTI9jm1+HFyvUQ768V3qpozCVyi8LZWoD/PJ
-	0vhSPH+gqsAh3/8tXl6FDGEZlo4FhxNT8p/7Qd10ZG4asnAYYnGfxoxhkolmiQPSFMsqZdxYlPQPZ
-	tZ6lfl4nCp3oVKmgESk8XHYiu6XLM5mtL7/22BK8QMI5dR51j9je/AGEBTtVcWwmJlUyDzMJh2ar4
-	Qan9i3NAIOQkmUHj3Klw==;
+	List-Owner; bh=MQRs7PZL5xBrgG+QFetoapMrk8aUEUfSg8iZuzEid2w=; b=ioXEHcPfRdYoIt
+	YBdWx1FfiCqJ/YTc5sYAq8Glfqbj2dHPwMVop60VA//36GB4g8cDoRcp7kRYLr22byobbF15LUinB
+	ZXc/SxL4JczHOqyI+PdZs/fmxY6Xu7DV0uRSVpcQEcSL5eMF00X8t//7HHW1RqIgFxvi6cZWq9Qaz
+	9s7bwzmS5/hLfS7RsiPlVWHvEis+cOpeg+gjASHB8+8Z7BBgdR9D+47CrmMrczkGHlIiObYc3Yk3N
+	TPZ/UptXqk5u48nGEn8nNanw2/QefIQsGm1i+sQi/9yYxoD54cQK+e70iOesGugDYcs94HBklRYco
+	yKkk0PqqigG/Oij6aFvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1in8zP-0000VE-1K; Thu, 02 Jan 2020 22:30:47 +0000
+	id 1in95V-0002pd-FR; Thu, 02 Jan 2020 22:37:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1in8zL-0000UX-H9
- for kexec@lists.infradead.org; Thu, 02 Jan 2020 22:30:45 +0000
+ id 1in95R-0002p4-UK
+ for kexec@lists.infradead.org; Thu, 02 Jan 2020 22:37:03 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D864420866;
- Thu,  2 Jan 2020 22:30:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2849121835;
+ Thu,  2 Jan 2020 22:37:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1578004241;
+ s=default; t=1578004621;
  bh=ppgK/Z1Tl2mzmrMrhwV0dBlz3PbE2nuuFq53RhKPk8Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=2ZG5SSQ+S/9AesE2Vpdj7XfzijblQ1q/2DFBYaLucMrE0A2MOBqnkBeZeIka8i8lK
- q+lw9JVeE2XfGbREyuYzsRa24y3D3qEmEhGgsMhi1OfRbgT42zpoW84BjDQWfRDtyn
- 4eG9e1amETL2EJ+44W7Olf/kJG1IhSuq5FoEUgzo=
+ b=cZoy/HCK2l+Ey5Y2yDysOlQ1LNbVUbjlG54K6yCfbB2q/adtiRD4DK0uPgi/kqi4I
+ +zqw75CHD8BGvDjAZ5QUkcoYGc88J/fZFV2EQgV0wvEsxp1zdkMa058399nEsVSBeL
+ JbQfmAehN1ARWC05Yymks4uOf0NnEiwVPDDEadUo=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.9 071/171] x86/crash: Add a forward declaration of struct
+Subject: [PATCH 4.4 057/137] x86/crash: Add a forward declaration of struct
  kimage
-Date: Thu,  2 Jan 2020 23:06:42 +0100
-Message-Id: <20200102220556.769271408@linuxfoundation.org>
+Date: Thu,  2 Jan 2020 23:07:10 +0100
+Message-Id: <20200102220554.193611012@linuxfoundation.org>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200102220546.960200039@linuxfoundation.org>
-References: <20200102220546.960200039@linuxfoundation.org>
+In-Reply-To: <20200102220546.618583146@linuxfoundation.org>
+References: <20200102220546.618583146@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200102_143043_616125_15FFDCB1 
+X-CRM114-CacheID: sfid-20200102_143702_016855_53E356DC 
 X-CRM114-Status: UNSURE (   9.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
