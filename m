@@ -2,59 +2,118 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B87D112F6B4
-	for <lists+kexec@lfdr.de>; Fri,  3 Jan 2020 11:24:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE24F12FE27
+	for <lists+kexec@lfdr.de>; Fri,  3 Jan 2020 21:56:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RQIFJ+QnIbUnVUYBH3n3clw4pUvKU8W3M1cowqEwwmQ=; b=i4Yn/1wpa+eXUf
-	VHwcGLfCo8PhTh03zKZt6aq7egmEfqd50yS0+A99mxY3oXUw2wns8IS1RSqh9TQB75abxaiEN3Kij
-	ypMFywUoSxJKUazU28netB0nEyw2b7Cyqh3oAt1pMu7u2E01RRKv4VzCjKFBkYtjFShmlE9oxXux+
-	IxhEiC0H+v+zykkC9I8EnWAxsxY/thaij/X3TXTK7xPZfXZvbVmHHVKDrHa0ev6BYHRPoEAFo7Z8F
-	9kGHEf4FYeTQVxC0rlFWuXLTdoLCnzfJiA+T4ZJjQaytsOV8d8Rnf0Ybz4dCL+K9dxeoq+d5rjWIX
-	nAqbkyn48BgzVFloi5iw==;
+	List-Owner; bh=AK8y0pkLWpRRic7FwBMib/jwkUryNHe9qIaxBEmll9Y=; b=SdTHS4C80FPD1l
+	wzXJJn92gQ/HEY93DqDo7xOqeenqoXmX2rmAdj0VhqoPm8/c0HrkIdTbMOyrfIjexRmwc4d6sycVs
+	o5b7UBy1Jim2lTXhgKZ0BL6juv3Y+dmnG8YpMvMLWk47r2eVt9JixdxtwsPl7czO3oN9HNFVcjnX+
+	1rMvGFtXuVLOacNCt1D/5OZPN8cChLCVJ4PFjorNC0EHrmnSsZtrA2NxnUwItOGBAFKlgyWRffS0e
+	QWXOggHava5/gupxbnRmBwShW3D9YYYX8yP9excPJnklX1PBEr5n32dWqLC1CWvyj7omgvKEQBzKC
+	mnIGn8FGz/e1FXSJRqGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inK86-0005En-O2; Fri, 03 Jan 2020 10:24:30 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1inTzB-0003QQ-O8; Fri, 03 Jan 2020 20:55:57 +0000
+Received: from mail-eopbgr1320051.outbound.protection.outlook.com
+ ([40.107.132.51] helo=APC01-PU1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inK83-0005Dn-DF
- for kexec@lists.infradead.org; Fri, 03 Jan 2020 10:24:29 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C2B03B266;
- Fri,  3 Jan 2020 10:24:22 +0000 (UTC)
-Date: Fri, 3 Jan 2020 11:24:20 +0100
-From: Petr Mladek <pmladek@suse.com>
-To: John Ogness <john.ogness@linutronix.de>
-Subject: Re: [RFC PATCH v5 1/3] printk-rb: new printk ringbuffer
- implementation (writer)
-Message-ID: <20200103102420.n6i5chgxaygfvx5h@pathway.suse.cz>
-References: <20191128015235.12940-1-john.ogness@linutronix.de>
- <20191128015235.12940-2-john.ogness@linutronix.de>
- <20191221142235.GA7824@andrea> <87imm7820z.fsf@linutronix.de>
+ id 1inTz7-0003O2-NX
+ for kexec@lists.infradead.org; Fri, 03 Jan 2020 20:55:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LneBci5twotluQuDElpFv/t1lTpvKB+Q4X72OMQLGW1DdKbjiLl2ssZwNEaLAd38auAfrUXpGrZSKYrDREB9JpeiSAa6hlNXBIKTGmg0Qv56xljE/EdR6R0OuCq02DIN7x6ItUiScsQIL1/bboAjYjWWjJ1qpEW0EpTNOIh42M63bTrkodiajDnL1zsoGO7oGH0KlwiFE5cSAXft5E/IrCT4CQKmxnymlKGNsWwoLXjPRwDFSMCGy1b5++FJMqWCtSH6fZRB2Gh44OfWARAZCZ+KXlouqknQE0TAhOHPezFcp9WQU1J83GtzQVGrFrBy6yAMNwOyjgjtHWNVQAFLNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KtzA/63AEVJYq34p/TnZ3dhqArFm/9NBYaqNA2Tb1t0=;
+ b=L/m22z4qusedEwlvqMDHk/mhVwpjC2sznRjhh4VPzwvVuy0A6/1/iQUqkDgB87FgX7U1BwgpIUWY3loaBSS+QWrDTg1NGQKGntA3kcKdpTwlYTiW5oGFKliRY2+hWcaTpRBKt1/sRut2UCQZvBJoiyL2IfXlXQySxQtNLcBrP9I67/+MvPAj3MNI8apj7LLYLrv2SP6QCgtFsZn5zEembO27NU/Lz6bbJR3OWLmkKD+SOSslHPgEXOHj8O/rSG0u8M7PqNOVdc1I4oiB6C99n9KewCeGwk85oEVnQwCDm4xI1V7juqndpWiaj28pUzRu9+eml5GIEiUi/0zAWFLxCg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KtzA/63AEVJYq34p/TnZ3dhqArFm/9NBYaqNA2Tb1t0=;
+ b=eKZcs2NG9UEDegdjaC0mn0zsNTnqZpn9SThAe07VmDUVzIdItFvBFTJJOIRyveHQsaPC2HF7CcN0JKSZ6F9HX/4FRucjUsQ6KWDVTe4NzgWqmWnncX/rVS15W7aa6lthfsEGcG0CjeagfxL1IaG5uRZ4Kl1emeMnJUpiptQ6enc=
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
+ TY2SPR01MB0015.jpnprd01.prod.outlook.com (20.177.150.9) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.10; Fri, 3 Jan 2020 20:55:42 +0000
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::f580:4b2c:c69c:c28c]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::f580:4b2c:c69c:c28c%5]) with mapi id 15.20.2602.012; Fri, 3 Jan 2020
+ 20:55:42 +0000
+From: =?utf-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+To: lijiang <lijiang@redhat.com>
+Subject: RE: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
+Thread-Topic: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
+Thread-Index: AQHVu539YdIeeoZhrkK9VP733OiLmafLzJ4AgAJPLKCABGEPgIAGvFLg
+Date: Fri, 3 Jan 2020 20:55:41 +0000
+Message-ID: <TY2PR01MB5210EC16730BC6D382D5E543DD230@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+References: <20191203222725.64734-1-zaslonko@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
+ <323f61d4-6aab-a0b4-faa3-e41756fb9913@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597F4E@BPXM09GP.gisp.nec.co.jp>
+ <8fd807f1-c296-1a34-e42a-a102df62f3a0@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03598540@BPXM09GP.gisp.nec.co.jp>
+ <726b8852-77af-b440-99b2-6b5a7b05e674@redhat.com>
+ <2aa868b8-83f4-cb23-9acf-178a9ab8144a@redhat.com>
+ <TY2PR01MB5210EBE26FC1603B3E7FF491DD2A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <ecaa7f62-d58f-080d-27de-176b3d592a11@redhat.com>
+In-Reply-To: <ecaa7f62-d58f-080d-27de-176b3d592a11@redhat.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [66.187.232.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 13887b81-139f-4e54-7237-08d7908f4bba
+x-ms-traffictypediagnostic: TY2SPR01MB0015:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TY2SPR01MB00153E0B5ECC1EBEB0034E66DD230@TY2SPR01MB0015.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0271483E06
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(346002)(376002)(366004)(396003)(136003)(13464003)(199004)(189003)(7696005)(71200400001)(6506007)(64756008)(478600001)(81156014)(66446008)(81166006)(54906003)(316002)(66556008)(26005)(8936002)(86362001)(8676002)(2906002)(52536014)(186003)(9686003)(4326008)(85182001)(5660300002)(55016002)(6916009)(33656002)(966005)(66946007)(66476007)(76116006)(317694003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:TY2SPR01MB0015;
+ H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: DNXLbUBSC+HQKoehQbwPdKAdoqehLSuxo6WntKwlumaV6qupN7QH014C4XmMEmZaYwpvJvsIPgIhPrYbUbrsXisvxdvWv9F6mAaK1VTr00t6pVBlNuk6GBONfegq8lvaNKSC5fU5ZxGHdPsFgX8EnZuUgPLqYiyJoPQ46NCtQvxYmWc5o+LopfcGsE4awXiwYRVTqtiZxOqYmJwc3Uv7bnTNtb1x57njwqNV6GOvf00ISphq4HDtsZ5j7bivU3JoIFOvEK2cbHOqJ1evrise/rxRDNz0cdd0Fk9v12jN1iUt0PbEoQot7rAGpbIS0oGqreH50I5sK12K7EkwVmUdEgTYFN1twjd4+bEQbqtfF1pupy8MJuHAQaV30xg9TIsKJnn/ilit4EmrX7o+xAxE9IPV2mzikMVBlGiydcTJSWh21MAxDGWaOwyK3vItU5MKs4RDB3bjygX+s5n6ROsphRFDmvgzrs1eK+hPGG+zddFQsAIPtzlAN+Mhe3kX6j7JxKYZAGw/kv7cok62WFeAUfMEK7P76sc2fWexwHzppDyG1TlbA6FtLyaxw9hbFjne
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87imm7820z.fsf@linutronix.de>
-User-Agent: NeoMutt/20170912 (1.9.0)
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 13887b81-139f-4e54-7237-08d7908f4bba
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Jan 2020 20:55:42.0498 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sAxtNgb22gt/Q+8NngaOCZSPVkjJGsovqBecVlKl3jUoII0cXbPLcxZtmJjg0mwTiAMfKFuGQ0CQ/lGzVeu//g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2SPR01MB0015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_022427_733861_80A4DF15 
-X-CRM114-Status: GOOD (  20.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200103_125553_819809_7CFED7E3 
+X-CRM114-Status: GOOD (  10.98  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.132.51 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,92 +125,43 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, kexec@lists.infradead.org
+Cc: Mikhail Zaslonko <zaslonko@linux.ibm.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon 2019-12-23 17:01:00, John Ogness wrote:
-> Hi Andrea,
-> 
-> On 2019-12-21, Andrea Parri <parri.andrea@gmail.com> wrote:
-> >> +	*desc_out = READ_ONCE(*desc);
-> >> +
-> >> +	/* Load data before re-checking state. */
-> >> +	smp_rmb(); /* matches LMM_REF(desc_reserve:A) */
+Hi Lianbo, Mikhail,
+
+> -----Original Message-----
+> >>
+> >> In addition, the above code confused me, it will always return 0 on s390(please refer to my logs).
 > >
-> > I looked for a matching WRITE_ONCE() or some other type of marked write,
-> > but I could not find it.  What is the rationale?  Or what did I miss?
-
-Good question. READ_ONCE() looks superfluous here because it is
-surrounded by two read barriers. In each case, there is no
-corresponding WRITE_ONCE().
-
-Note that we are copying the entire struct prb_desc here. All values
-are written only when state_val is in desc_reserved state. It happens
-between two full write barriers:
-
-  + A writer is allowed to modify the descriptor after successful
-    cmpxchg in desc_reserve(), see LMM_TAG(desc_reserve:A).
-
-  + The writer must not touch the descriptor after changing
-    state_var to committed state, see
-    LMM_TAG(prb_commit:A) in prb_commit().
-
-These barriers are mentioned in the comments for the two
-read barriers here.
-
-> >> +	do {
-> >> +		next_lpos = get_next_lpos(data_ring, begin_lpos, size);
-> >> +
-> >> +		if (!data_push_tail(rb, data_ring,
-> >> +				    next_lpos - DATA_SIZE(data_ring))) {
-> >> +			/* Failed to allocate, specify a data-less block. */
-> >> +			blk_lpos->begin = INVALID_LPOS;
-> >> +			blk_lpos->next = INVALID_LPOS;
-> >> +			return NULL;
-> >> +		}
-> >> +	} while (!atomic_long_try_cmpxchg(&data_ring->head_lpos, &begin_lpos,
-> >> +					  next_lpos));
-> >> +
-> >> +	/*
-> >> +	 * No barrier is needed here. The data validity is defined by
-> >> +	 * the state of the associated descriptor. They are marked as
-> >> +	 * invalid at the moment. And only the winner of the above
-> >> +	 * cmpxchg() could write here.
-> >> +	 */
+> > The aim of get_kaslr_offset() here is only setting info->kaslr_offset to the value
+> > from vmcoreinfo for the SYMBOL_INIT() macro.
+> > (get_kaslr_offset() returns the kaslr offset in the resolve_config_entry().)
 > >
-> > The (successful) CMPXCHG provides a full barrier.  This comment suggests
-> > that that could be somehow relaxed?  Or the comment could be improved?
+> Thanks for your explanation, Kazu.
 > 
-> You are correct. There is no need for the full barrier here. This code
-> is based on Petr's POC. I focussed on making sure needed barriers are in
-> place, but did not try to eliminate excessive barriers.
+> > But yeah, the get_kaslr_offset(SYMBOL(_stext)) is confusing and not good.
+> > Passing 0 might be a bit better..?
+> >
+> Yes, looks good to me.
 
-I hope that I'll get better understanding of the guarantees
-of different atomic operations one day. There are so many variants now.
+OK, I pushed an additional patch fixing it to the test branch:
+https://github.com/k-hagio/makedumpfile/tree/add-get_kaslr_offset_general
+Thanks Lianbo for pointing it out.
 
-BTW: Documentation/memory-barriers.txt describes various aspects of
-the memory barriers. It describes implicit barriers provided
-by spin locks, mutexes, semaphores, and various scheduler-related
-operations.
+Mikhail, if you update your patch on top of the tree above,
+I'll merge it upstream.
 
-But I can't find any explanation of the various variants of the atomic
-operations: acquire, release, fetch, return, try, relaxed. I can find
-some clues here and there but it is hard to get the picture.
+Thanks,
+Kazu
 
-Best Regards,
-Petr
-
+P.S. My email address has been changed to k-hagio-ab@nec.com.
+Please send email to this address in the future. Thanks.
+(Ugh, it seems I cannot remove my kanji name in the From: field..)
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
