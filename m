@@ -2,47 +2,46 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 744DD12F5B6
-	for <lists+kexec@lfdr.de>; Fri,  3 Jan 2020 09:49:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5226A12F5F1
+	for <lists+kexec@lfdr.de>; Fri,  3 Jan 2020 10:12:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mCat5MzJc2ZjRkXBsrYo2UrRJ33i3gM/k/98XcajMvM=; b=OyEvY1n4ywEmgO
-	/8u43oX60XdCkZChndktzW8OBMRFmqTTJgfeF++qw0O0htHq8g/IizuR7atGn74aCWL+ZbQLAFxX8
-	Lz1SkdNnhtGDxRmXVsHIAR1gXmQji5lLQ+onyv7PYHFTvFWDIVgrSPvbjp/QaoLajWjpUus4XSECI
-	56K/OFuVRmeHIXLmah9GrBkxR2XkTeiPeNB/Q8onmsPyXuxYEESgwq5KVJ4G1BWDOX3MRGNKmzGiL
-	TZiakLsu2mGouV4PaK186r43++fb10sv/YQosomn8YmtrtKo9N024gH8OeKqhYGf5OOaPtBOtHNyk
-	wTw5bjoA8vqHMo9CrFsQ==;
+	List-Owner; bh=5w4DSEmm7YNWT0wXzInYGfpzI7iL03PwRbH+CEKEk4k=; b=cDdxaHr9ig/g24
+	En2qWfv3SzoM+piKgRzwnWJW1D95gBIenJV8El1eLp18zhM+eU30wcQXpMW9bHeG+PSUuxE5h4S/Z
+	wjUO1/g5v2zmYLwSnB6/FfKU2tnQrBmsSLITHHQIh8m5azid7fEgly+MFgZhl1Wr8Rm1sVfYbeXqJ
+	MWw/+HX1lkceNLDqwejBLo8XchBliHjuuadBh8/pOA9Fh9yG8CdYpdjzDLDbi5UJS5Yzpy1oAD4aX
+	CsrMV/MuGlszWs/5aBbOXDm366hsHJK8It/48nKDZ8TmPrVKpndVDPUQd43UlS0l5LwGs5Lujte+Z
+	/fpzFs0qaIUzjHggckMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1inIdu-0004Ei-8B; Fri, 03 Jan 2020 08:49:14 +0000
+	id 1inJ05-0004CQ-Vt; Fri, 03 Jan 2020 09:12:09 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1inIdr-0004EL-1G
- for kexec@lists.infradead.org; Fri, 03 Jan 2020 08:49:12 +0000
+ id 1inJ01-0004By-Ri
+ for kexec@lists.infradead.org; Fri, 03 Jan 2020 09:12:07 +0000
 Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id BDCB825AEFB;
- Fri,  3 Jan 2020 19:49:08 +1100 (AEDT)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 8236925AEFB;
+ Fri,  3 Jan 2020 20:12:04 +1100 (AEDT)
 Received: by reginn.horms.nl (Postfix, from userid 7100)
- id B44089402A2; Fri,  3 Jan 2020 09:49:06 +0100 (CET)
-Date: Fri, 3 Jan 2020 09:49:06 +0100
+ id 5B44594025F; Fri,  3 Jan 2020 10:12:02 +0100 (CET)
+Date: Fri, 3 Jan 2020 10:12:02 +0100
 From: Simon Horman <horms@verge.net.au>
-To: Brandon Maier <brandon.maier@rockwellcollins.com>
-Subject: Re: [PATCH] ARM: Use mmap for zImage initrd
-Message-ID: <20200103084906.GI17507@vergenet.net>
-References: <20191108180854.126452-1-brandon.maier@rockwellcollins.com>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Subject: Re: [PATCH] kexec: build multiboot2 for i386
+Message-ID: <20200103091202.GJ17507@vergenet.net>
+References: <20191117235215.18159-1-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191108180854.126452-1-brandon.maier@rockwellcollins.com>
+In-Reply-To: <20191117235215.18159-1-chris.packham@alliedtelesis.co.nz>
 Organisation: Horms Solutions BV
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200103_004911_228312_8BEA4377 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200103_011206_049213_4E0C48F7 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,16 +71,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Nov 08, 2019 at 12:08:54PM -0600, Brandon Maier wrote:
-> We use a large initrd that maxes out our available RAM when loading
-> kexec. The problem can be mitigated by using slurp_file_mmap(), which
-> avoids creating a copy of the initrd. The initrd does not use free,
-> realloc, etc, so it should be safe to use.
+On Mon, Nov 18, 2019 at 12:52:15PM +1300, Chris Packham wrote:
+> This addresses the following compilation issues when building for i386.
 > 
-> Signed-off-by: Brandon Maier <brandon.maier@rockwellcollins.com>
+>  kexec/arch/i386/kexec-x86.c:39:22: error: 'multiboot2_x86_probe' undeclared here (not in a function); did you mean 'multiboot_x86_probe'?
+>    { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
+>                        ^~~~~~~~~~~~~~~~~~~~
+>                        multiboot_x86_probe
+>  kexec/arch/i386/kexec-x86.c:39:44: error: 'multiboot2_x86_load' undeclared here (not in a function); did you mean 'multiboot_x86_load'?
+>    { "multiboot2-x86", multiboot2_x86_probe, multiboot2_x86_load,
+>                                              ^~~~~~~~~~~~~~~~~~~
+>                                              multiboot_x86_load
+>  kexec/arch/i386/kexec-x86.c:40:4: error: 'multiboot2_x86_usage' undeclared here (not in a function); did you mean 'multiboot_x86_usage'?
+>      multiboot2_x86_usage },
+>      ^~~~~~~~~~~~~~~~~~~~
+>      multiboot_x86_usage
+>  make: *** [Makefile:114: kexec/arch/i386/kexec-x86.o] Error 1
+>  make: *** Waiting for unfinished jobs....
+> 
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+> I wasn't sure whether this should be fixed by linking with kexec-mb2-x86.o or
+> by removing the code from kexec-x86.c. I went for the former but I'd happily
+> change to the latter.
+> 
+>  kexec/arch/i386/Makefile    | 2 +-
+>  kexec/arch/i386/kexec-x86.h | 5 +++++
+>  2 files changed, 6 insertions(+), 1 deletion(-)
 
-Sorry for letting this one slip through the cracks.
-I have applied this for inclusion in the next release of kexec-tools.
+Hi Chris,
+
+sorry for letting this slip through the cracks.
+This change looks good to me and I've applied it for inclusion in
+the next release of kexec tools.
 
 _______________________________________________
 kexec mailing list
