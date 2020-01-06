@@ -2,84 +2,81 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F150F1311A5
-	for <lists+kexec@lfdr.de>; Mon,  6 Jan 2020 12:55:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6342F131840
+	for <lists+kexec@lfdr.de>; Mon,  6 Jan 2020 20:05:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=MReFDRcuCRPgOZyN2gYwXt8yBjTdfcbWTXgIOvAuKB0=; b=hVH
-	2ENogbJGSOAsLz3/KqxkTqcCwJyXDsjI3jJsdAnSxmA4w3olFxPqblU09Zz8Ap7N5H7gQRR7VavVR
-	CQriQpTqaHwfC7L8ecWUJpqDpIiTcJrKqs05PVIbgGXNoOvaNY6PK9BwmwlAKDOlrkc43za0VrkUt
-	G0GvcourvAHe8bnEvdIVcJolXgesJjWzRUeYcwxjBxnMQTISuuvX7pFooVEmT0vFKS6js95yNrFnK
-	4shlEH3bqjEFAO44njyqEFbp8IRNHh+LbmL3buCUzvpsyC6MVpR5SeBOEtuGQvEYmRQGRVJGRGWKe
-	q59BDTGGF5YDYfyObs4tMlsSokE3VYg==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EXsat44053NIqUZMmmyVD3lvg1cxpkaRcSLU/nWfkiU=; b=Q+XIDph+viJGhE
+	QBWKT+Xp7JQ8YrDN9HfuXRX0H+cjFkekUtd1KGuay4egMesLN2k9AzOPUiNJRYq9nH7cwdO/2VBq1
+	D7ivAUEIOhcSrHzdUj+Z6IRS2BktVfY7RJNCzMG5q1HywxNxuJsX+DgDxB0wm071rJUauRTY0AUFI
+	glPy8mB088TBiGqFcAIeAXw/S/eQhitsw1/qpcMvh0ii8XJmhB+8WWFq+rwHPK0XOwoUK0PZ5jq7Y
+	DYAJMhywdOH7fre0CQCveGbnlG+z56uU5KFlfFSV2HM6i2KTHX5VaPzUSB0xCk3n8oTGkEM60FvRM
+	H+wMiGNeNcVqI5+ooQzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ioQyl-0000lr-MB; Mon, 06 Jan 2020 11:55:27 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1ioXh6-0000LR-Ur; Mon, 06 Jan 2020 19:05:40 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ioQyf-0000kk-Fp
- for kexec@lists.infradead.org; Mon, 06 Jan 2020 11:55:22 +0000
-Received: by mail-io1-xd44.google.com with SMTP id d15so4864685iog.3
- for <kexec@lists.infradead.org>; Mon, 06 Jan 2020 03:55:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:from:date:message-id:subject:to;
- bh=6Di6ffajBH2cZR+pVdW7IOpKkZDUHrowT9et6cWo7uY=;
- b=L8gc2XfmZbBDtaLDePZyXvUltjzM6ScSH0/znKIKaMCtMCibv+eO04IaTmDlBTGhbT
- 1rWQ6Vxtd+o4e39T+uUEzmVcl6tC6lTKZECYTG3ADyckeJ2TKRJsyelTSAZPGKez8D1u
- m9AV1p7UxTh7bcRIN24V638UW6qgwex5yhHpV1oBPHLuyL16FphzTKID3dnJ402mwY7T
- fNA+T9uDhZOQbhiwhChgDX/xjmgG4zPj25Gy6KRmUXp8XXJJSewwhBEmcXUuqTv8EAue
- UdDLrzLHpxFMpL4MJqK4cUngKwqznMSJAKFLCIvYGaknkBlUacMMgm2Nm416NF7SRbZg
- mAYA==
+ id 1ioXh3-0000Kg-9Q
+ for kexec@lists.infradead.org; Mon, 06 Jan 2020 19:05:39 +0000
+Received: by mail-oi1-x241.google.com with SMTP id p67so16612558oib.13
+ for <kexec@lists.infradead.org>; Mon, 06 Jan 2020 11:05:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=intel-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=alX9B07HokhP3ECivMm8pGprXZuv/KIuu13Y0Jtq3rg=;
+ b=BLpK3J9bEkd6Wg2RItLkAFU/N5U4jsc764hHw3yBcw3+usDirwaNCn/42kqfH64cV+
+ oKl6ogYaLW4hZg2GMAIQY0ho7+sKRVlxpCnOWd1sfmjIQDCC//p1wTsMNI01AdG3w0xU
+ SyowTtxuWicITn6hSIbggt9P5IFTn59TBd546vxUCqVjqcNCGSOAmZc30Q/KzmimdxjZ
+ wGae8x99zXO3rnxaXWswDTOYTWFvuwsMAgFJ/HGB1gy5RLdic16ylAV8tyxK3WaFz8l2
+ oBor7VmJvgBEg4hKcfLxI8gGUqp4cpQcVFxeLFLoRfWqHyWAj3JKgU57vYi0ksVjST35
+ rJEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=6Di6ffajBH2cZR+pVdW7IOpKkZDUHrowT9et6cWo7uY=;
- b=Z6bwgBnkln50kus3+i68PkkbWbjHMIDl8nAr7fOCjTloYX6AYROOt07iprUt68siOQ
- 2iPbpbp8GW/WyuayAdhe887ihfRNgJNlWo6MOAddxIIWrhaIkQ3SdPrmvVo1x41/MZ2i
- pIPnUBW/LGty2lxEeeGpBOh8soKQqf7vnW7ajTcwEsNgvNH7QQMmEOmcJNjeWxaShg50
- upNtYt66EN20XK9dU/FnAOxiI7kBZBKfz9KI0ypDt39Y55jmHSnSYnE2YBfSgqjVYJOE
- RXFwbGQylFCxfH+fJ2GlILeLIq27V+qxYgDevHZphiEV15KtCqhm3XSVlgSjhP1FvP9X
- +dqQ==
-X-Gm-Message-State: APjAAAXujBwDzIHIMloYc2F19MbhoxNVCGKDeaU3hqe3UI3Ht3djbLzS
- ecIdM6w74LKHOahZ0ZZiCs6mn81tJNL5ksv6GZY=
-X-Google-Smtp-Source: APXvYqyK5B13r8HZFUhRRLwCjL031uyNVHRJy14fnkwQW+NME79KYnHpYoaVPSOY+KwNL7GKReAVKzghVs3O6n2eRC8=
-X-Received: by 2002:a02:c90a:: with SMTP id t10mr77309211jao.25.1578311720271; 
- Mon, 06 Jan 2020 03:55:20 -0800 (PST)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=alX9B07HokhP3ECivMm8pGprXZuv/KIuu13Y0Jtq3rg=;
+ b=OUmbbqtI6uWr6UoAzmG99AqOpHcjkrW7jTPR/ybK+Ek8J1CFelfsfLx+lleNv34b72
+ foLDwV4EwtMeDXwW6dLtruTMJBdbJ++QHXLvD6f93O9NKzsbsnbuUcH6VpGNhm1HKND1
+ U6Jjn8BZXzyoAJOuExjRJW7F2jayS/ka2ZPBoGu5vMwRtfF2GeW/zqTAyER+QMmZKiID
+ GT1rCVaiDaL4fE6MPW/RJjkDH/pVEdl/ZO+16D01zNPYQwoRHqBHVORtmBE5RHz0Lu3K
+ BWDBOc03R+I1SpHKurAryy/hiCospIL0h5ejNhqqcIWKEpFX1V768IbKy1ma4a8xo+wn
+ bFpw==
+X-Gm-Message-State: APjAAAVevOVCBnL7Q1wDx8QCkYolUdOwzyRFYam61/ANsVhMa+s11ckL
+ nWoJIt6QiodNXqWqNJurdz1wfb9qZqVQAQiuRJ/b6w==
+X-Google-Smtp-Source: APXvYqwq2F38iwC/q1v5HcOMi4czC/1PUV5A5pBl22QCQ8iuB1wjy6FX5YvmNx5+uzxdNN5E951SvkRKr6IFVGHaryg=
+X-Received: by 2002:aca:3f54:: with SMTP id m81mr5940073oia.73.1578337535501; 
+ Mon, 06 Jan 2020 11:05:35 -0800 (PST)
 MIME-Version: 1.0
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Mon, 6 Jan 2020 17:24:44 +0530
-Message-ID: <CAJ2QiJ+MVVztHONagmYc2-BzbtdGQhABRKO7h4+kOE9cCK=CxA@mail.gmail.com>
-Subject: kexec -e not working: root disk not able to detect
-To: linux-pci@vger.kernel.org, linux-ide@vger.kernel.org, 
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Kamlakant Patel <kamlakantp@marvell.com>, 
- kexec mailing list <kexec@lists.infradead.org>
+References: <157793839827.977550.7845382457971215205.stgit@dwillia2-desk3.amr.corp.intel.com>
+ <157793840865.977550.1385745645244916944.stgit@dwillia2-desk3.amr.corp.intel.com>
+ <CAKv+Gu8JTha-Os6uzg_ghxodEKgjnkgLwJYFkXZiTbqqdKU6_Q@mail.gmail.com>
+In-Reply-To: <CAKv+Gu8JTha-Os6uzg_ghxodEKgjnkgLwJYFkXZiTbqqdKU6_Q@mail.gmail.com>
+From: Dan Williams <dan.j.williams@intel.com>
+Date: Mon, 6 Jan 2020 11:05:24 -0800
+Message-ID: <CAPcyv4jqqJwxk8-dZxhZQX0PqNpdsAUVJBG+QufsJx+fhPzmug@mail.gmail.com>
+Subject: Re: [PATCH v3 2/4] efi: Add tracking for dynamically allocated memmaps
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_035521_553886_4C2284B7 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200106_110537_378621_A5D0E843 
+X-CRM114-Status: GOOD (  25.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (prabhakar.pkin[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,100 +88,186 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: linux-efi <linux-efi@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ Kexec Mailing List <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Taku Izumi <izumi.taku@jp.fujitsu.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi All,
+On Thu, Jan 2, 2020 at 1:02 AM Ard Biesheuvel <ard.biesheuvel@linaro.org> wrote:
+>
+> Hi Dan,
+>
+> Thanks for taking the time to really fix this properly.
+>
+> Comments/questions below.
+>
+> On Thu, 2 Jan 2020 at 05:29, Dan Williams <dan.j.williams@intel.com> wrote:
+> >
+> > In preparation for fixing efi_memmap_alloc() leaks, add support for
+> > recording whether the memmap was dynamically allocated from slab,
+> > memblock, or is the original physical memmap provided by the platform.
+> >
+> > Cc: Taku Izumi <izumi.taku@jp.fujitsu.com>
+> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > Signed-off-by: Dan Williams <dan.j.williams@intel.com>
+> > ---
+> >  arch/x86/platform/efi/efi.c     |    2 +-
+> >  arch/x86/platform/efi/quirks.c  |   11 ++++++-----
+> >  drivers/firmware/efi/fake_mem.c |    5 +++--
+> >  drivers/firmware/efi/memmap.c   |   16 ++++++++++------
+> >  include/linux/efi.h             |    8 ++++++--
+> >  5 files changed, 26 insertions(+), 16 deletions(-)
+> >
+> > diff --git a/arch/x86/platform/efi/efi.c b/arch/x86/platform/efi/efi.c
+> > index 38d44f36d5ed..7086afbb84fd 100644
+> > --- a/arch/x86/platform/efi/efi.c
+> > +++ b/arch/x86/platform/efi/efi.c
+> > @@ -333,7 +333,7 @@ static void __init efi_clean_memmap(void)
+> >                 u64 size = efi.memmap.nr_map - n_removal;
+> >
+> >                 pr_warn("Removing %d invalid memory map entries.\n", n_removal);
+> > -               efi_memmap_install(efi.memmap.phys_map, size);
+> > +               efi_memmap_install(efi.memmap.phys_map, size, 0);
+> >         }
+> >  }
+> >
+> > diff --git a/arch/x86/platform/efi/quirks.c b/arch/x86/platform/efi/quirks.c
+> > index f8f0220b6a66..4a71c790f9c3 100644
+> > --- a/arch/x86/platform/efi/quirks.c
+> > +++ b/arch/x86/platform/efi/quirks.c
+> > @@ -244,6 +244,7 @@ EXPORT_SYMBOL_GPL(efi_query_variable_store);
+> >  void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
+> >  {
+> >         phys_addr_t new_phys, new_size;
+> > +       unsigned long flags = 0;
+> >         struct efi_mem_range mr;
+> >         efi_memory_desc_t md;
+> >         int num_entries;
+> > @@ -272,8 +273,7 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
+> >         num_entries += efi.memmap.nr_map;
+> >
+> >         new_size = efi.memmap.desc_size * num_entries;
+> > -
+> > -       new_phys = efi_memmap_alloc(num_entries);
+> > +       new_phys = efi_memmap_alloc(num_entries, &flags);
+> >         if (!new_phys) {
+> >                 pr_err("Could not allocate boot services memmap\n");
+> >                 return;
+> > @@ -288,7 +288,7 @@ void __init efi_arch_mem_reserve(phys_addr_t addr, u64 size)
+> >         efi_memmap_insert(&efi.memmap, new, &mr);
+> >         early_memunmap(new, new_size);
+> >
+> > -       efi_memmap_install(new_phys, num_entries);
+> > +       efi_memmap_install(new_phys, num_entries, flags);
+> >         e820__range_update(addr, size, E820_TYPE_RAM, E820_TYPE_RESERVED);
+> >         e820__update_table(e820_table);
+> >  }
+> > @@ -408,6 +408,7 @@ static void __init efi_unmap_pages(efi_memory_desc_t *md)
+> >  void __init efi_free_boot_services(void)
+> >  {
+> >         phys_addr_t new_phys, new_size;
+> > +       unsigned long flags = 0;
+> >         efi_memory_desc_t *md;
+> >         int num_entries = 0;
+> >         void *new, *new_md;
+> > @@ -463,7 +464,7 @@ void __init efi_free_boot_services(void)
+> >                 return;
+> >
+> >         new_size = efi.memmap.desc_size * num_entries;
+> > -       new_phys = efi_memmap_alloc(num_entries);
+> > +       new_phys = efi_memmap_alloc(num_entries, &flags);
+> >         if (!new_phys) {
+> >                 pr_err("Failed to allocate new EFI memmap\n");
+> >                 return;
+> > @@ -493,7 +494,7 @@ void __init efi_free_boot_services(void)
+> >
+> >         memunmap(new);
+> >
+> > -       if (efi_memmap_install(new_phys, num_entries)) {
+> > +       if (efi_memmap_install(new_phys, num_entries, flags)) {
+> >                 pr_err("Could not install new EFI memmap\n");
+> >                 return;
+> >         }
+> > diff --git a/drivers/firmware/efi/fake_mem.c b/drivers/firmware/efi/fake_mem.c
+> > index bb9fc70d0cfa..7e53e5520548 100644
+> > --- a/drivers/firmware/efi/fake_mem.c
+> > +++ b/drivers/firmware/efi/fake_mem.c
+> > @@ -39,6 +39,7 @@ void __init efi_fake_memmap(void)
+> >         int new_nr_map = efi.memmap.nr_map;
+> >         efi_memory_desc_t *md;
+> >         phys_addr_t new_memmap_phy;
+> > +       unsigned long flags = 0;
+> >         void *new_memmap;
+> >         int i;
+> >
+> > @@ -55,7 +56,7 @@ void __init efi_fake_memmap(void)
+> >         }
+> >
+> >         /* allocate memory for new EFI memmap */
+> > -       new_memmap_phy = efi_memmap_alloc(new_nr_map);
+> > +       new_memmap_phy = efi_memmap_alloc(new_nr_map, &flags);
+> >         if (!new_memmap_phy)
+> >                 return;
+> >
+> > @@ -73,7 +74,7 @@ void __init efi_fake_memmap(void)
+> >         /* swap into new EFI memmap */
+> >         early_memunmap(new_memmap, efi.memmap.desc_size * new_nr_map);
+> >
+> > -       efi_memmap_install(new_memmap_phy, new_nr_map);
+> > +       efi_memmap_install(new_memmap_phy, new_nr_map, flags);
+> >
+>
+> So it is the caller's responsibility to record the flags returned by
+> efi_memmap_alloc() and pass them into efi_memmap_install(), right?
+> Given that we are now passing three pieces of info that need to be in
+> sync between the two, could we use a dedicated data structure instead,
+> a reference to which is taken by both?
 
-I am trying kexec -e with latest kernel i.e. Linux-5.5.0-rc4.  Here
-second kernel is not able to detect/mount hard-disk having root file
-system (INTEL SSDSC2BB240G7).
+Sounds good, looks like I can mostly reuse 'struct
+efi_memory_map_data' for this purpose.
 
-[  279.690575] ata1: softreset failed (1st FIS failed)
-[  279.695446] ata1: limiting SATA link speed to 3.0 Gbps
-[  280.910020] ata1: SATA link down (SStatus 0 SControl 320)
-[  282.626018] ata1: SATA link down (SStatus 0 SControl 300)
-[  282.631409] ata1: link online but 1 devices misclassified, retrying
-[  282.637665] ata1: reset failed (errno=-11), retrying in 9 secs
-[  298.294546] ata1: failed to reset engine (errno=-5)
-[  302.042967] ata1: softreset failed (1st FIS failed)
-[  308.798609] ata1: failed to reset engine (errno=-5)
-[  337.546605] ata1: softreset failed (1st FIS failed)
-[  337.551475] ata1: limiting SATA link speed to 3.0 Gbps
-[  338.766022] ata1: SATA link down (SStatus 0 SControl 320)
-[  339.270943] ata1: EH pending after 5 tries, giving up
+>
+>
+> >         /* print new EFI memmap */
+> >         efi_print_memmap();
+> > diff --git a/drivers/firmware/efi/memmap.c b/drivers/firmware/efi/memmap.c
+> > index 813674ef9000..2b81ee6858a9 100644
+> > --- a/drivers/firmware/efi/memmap.c
+> > +++ b/drivers/firmware/efi/memmap.c
+> > @@ -32,6 +32,7 @@ static phys_addr_t __init __efi_memmap_alloc_late(unsigned long size)
+> >  /**
+> >   * efi_memmap_alloc - Allocate memory for the EFI memory map
+> >   * @num_entries: Number of entries in the allocated map.
+> > + * @flags: Late map, memblock alloc, slab alloc flags
+> >   *
+> >   * Depending on whether mm_init() has already been invoked or not,
+> >   * either memblock or "normal" page allocation is used.
+> > @@ -39,20 +40,23 @@ static phys_addr_t __init __efi_memmap_alloc_late(unsigned long size)
+> >   * Returns the physical address of the allocated memory map on
+> >   * success, zero on failure.
+> >   */
+> > -phys_addr_t __init efi_memmap_alloc(unsigned int num_entries)
+> > +phys_addr_t __init efi_memmap_alloc(unsigned int num_entries, unsigned long *flags)
+> >  {
+> >         unsigned long size = num_entries * efi.memmap.desc_size;
+> >
+> > -       if (slab_is_available())
+> > +       if (slab_is_available()) {
+> > +               *flags |= EFI_MEMMAP_SLAB;
+> >                 return __efi_memmap_alloc_late(size);
+> > +       }
+> >
+> > +       *flags |= EFI_MEMMAP_MEMBLOCK;
+>
+> This assumes flags has neither bit set, but perhaps we should at least
+> clear the memblock one if we set the slab one?
 
-I found following two workaround for this issue.
-A) Define ".shutdown" in driver/ata/ahci.c.
-
-reboot --> kernel_kexec() --> kernel_restart_prepare() -->
-device_shutdown() --> pci_device_shutdown() --> ahci_shutdown_one()
---> new function
-
-diff --git a/drivers/ata/ahci.c b/drivers/ata/ahci.c
-index 4bfd1b14b390..50a101002885 100644
---- a/drivers/ata/ahci.c
-+++ b/drivers/ata/ahci.c
-@@ -81,6 +81,7 @@ enum board_ids {
-
- static int ahci_init_one(struct pci_dev *pdev, const struct
-pci_device_id *ent);
- static void ahci_remove_one(struct pci_dev *dev);
- +static void ahci_shutdown_one(struct pci_dev *dev);
- static int ahci_vt8251_hardreset(struct ata_link *link, unsigned int *class,
-                                  unsigned long deadline);
-  static int ahci_avn_hardreset(struct ata_link *link, unsigned int *class,
- @@ -606,6 +607,7 @@ static struct pci_driver ahci_pci_driver = {
-         .id_table               = ahci_pci_tbl,
-         .probe                  = ahci_init_one,
-         .remove                 = ahci_remove_one,
- +       .shutdown               = ahci_shutdown_one,
-         .driver = {
-                 .pm             = &ahci_pci_pm_ops,
-         },
-
- +static void ahci_shutdown_one(struct pci_dev *pdev)
- +{
- +       pm_runtime_get_noresume(&pdev->dev);
- +       ata_pci_remove_one(pdev);
- +}
- +
-Note: After defining shutdown, error related to file-system write
-seen. Looks like even after device_shutdown, file system related
-transaction goes to disk.
-
-B)) Commenting of pci_clear_master() from pci_device_shutdown()
-reboot --> kernel_kexec() --> kernel_restart_prepare() -->
-device_shutdown() --> pci_device_shutdown()
-
-diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
-index 0454ca0e4e3f..ddffaa9321bb 100644
---- a/drivers/pci/pci-driver.c
-+++ b/drivers/pci/pci-driver.c
-@@ -481,8 +481,10 @@ static void pci_device_shutdown(struct device *dev)
-        /*
-         * If this is a kexec reboot, turn off Bus Master bit on the
-@@ -491,8 +493,16 @@ static void pci_device_shutdown(struct device *dev)
-         * If it is not a kexec reboot, firmware will hit the PCI
-         * devices with big hammer and stop their DMA any way.
-         */
-
- - if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
- -                pci_clear_master(pci_dev);
-
-Here pci_dev current_state. It is "0" i.e. D0.
-
-From A and B. Looks like even after pci_clear_master(), Some DMA
-transactions going on PCIe device  causing device in unstable.
-Not sure if this is the reason and how to solve this problem.
-
-Any help/guidance will help me in moving forward.
-
-Thanks!!
-
---prabhakar (pk)
+Ok.
 
 _______________________________________________
 kexec mailing list
