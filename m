@@ -2,85 +2,122 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D73F9131F05
-	for <lists+kexec@lfdr.de>; Tue,  7 Jan 2020 06:19:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC59B132B19
+	for <lists+kexec@lfdr.de>; Tue,  7 Jan 2020 17:31:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=26HQDPf43qrunlKvrQ8PyrrjJjgz7s1Pf9/BIdl5h/o=; b=JiZ6lKl5tl2tJR
-	BHwda5nqpBG3e0XH6eDlIlupA6dcf26wX6KDq3OHo19xWWs2ykn2vJEmHKCQ/QPRnVCfxp9RCjbtX
-	XQ7TcuVIW4Dfb6KTkNF0CFxGFsjstDH1u5weZRX6sUNAJ3a6MbPJVHchuRQMN1SgKLKEGJlfYbTCr
-	ExmQ6Xgtdc8zVNr1aWhAflz5MWtIz+5itmWVqbuylPBzPgM1gUyaoybYj/C6cdkNNtMcGoyq/BWrl
-	f0YipuVywSi6/yb5JmOMlMOtqyTz8atkp4AHvRNEnw7EBqeprAjSRQzlBdDezi7F6vp4vxQhRtNy3
-	uEOA1K2e7k/ZQacQ5BAw==;
+	List-Owner; bh=61jlDITR92wI32kyFfd56Sds+nOzZP0sr5fMUQlHPZs=; b=VO3aa2nC67WRnj
+	SSnJwGmKALlhQZPEmTV0lS0nZlvCaC0oCk848zXHIl69zkH8oL1M1Wf1ifqcQp/tn+Ed1U7TepqVV
+	BivzvCMwYxx6ZI5k6Lg6a9Icens13XCrhMTcQEgRU0RuFP/z6cu5wEGGybxa62dgfyRueywnoGdcX
+	N+ogUWZHlSNLnpTPS2PZa5EShbDrFx3G9wzB3yetCNwK6OpQ8hyyFGp+LqNyjz5eUIT25WV/PAZUY
+	VwtXfh27NNKh3v2aUCBjUJIP/qLphNRHJ9qb1K/BlXRNQEl+nENryTvl4yff59ZDFvwTE/hg9jqCv
+	edm6WfTi44RTJXC66VWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iohHF-0002n0-Uy; Tue, 07 Jan 2020 05:19:37 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iorlK-0002XV-LB; Tue, 07 Jan 2020 16:31:22 +0000
+Received: from mail-eopbgr1400049.outbound.protection.outlook.com
+ ([40.107.140.49] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iohHD-0002lp-5n
- for kexec@lists.infradead.org; Tue, 07 Jan 2020 05:19:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578374373;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=76hRmswgUa7V5RIleDh99QRzTzR2VY/Wx1+aVBKahK0=;
- b=V0JUbl3UScaHvgzgQq2+3eWdB5SgSe1R+P+dhzxguOUes4o4p6GLGcYKzFd/8K68xZK9B6
- 6r9mTxj39npg2orNdmueYJ5FmPtOj8ocjrcnXbQlDx9TETcBS9RapIO3M+L++ZHEUZ4rGY
- XPUg+oOKJaI1vNoAyATttihAirjsL/4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-347-h6eFQ58-N_GM4NTmD5lDvA-1; Tue, 07 Jan 2020 00:19:29 -0500
-X-MC-Unique: h6eFQ58-N_GM4NTmD5lDvA-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 23CB4107ACC4;
- Tue,  7 Jan 2020 05:19:28 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-32.pek2.redhat.com
- [10.72.12.32])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id C68847DB53;
- Tue,  7 Jan 2020 05:19:23 +0000 (UTC)
-Date: Tue, 7 Jan 2020 13:19:19 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Dan Williams <dan.j.williams@intel.com>
-Subject: Re: [PATCH v4 4/4] efi: Fix handling of multiple efi_fake_mem= entries
-Message-ID: <20200107051919.GC19080@dhcp-128-65.nay.redhat.com>
-References: <157835762222.1456824.290100196815539830.stgit@dwillia2-desk3.amr.corp.intel.com>
- <157835764298.1456824.224151767362114611.stgit@dwillia2-desk3.amr.corp.intel.com>
- <20200107040415.GA19309@dhcp-128-65.nay.redhat.com>
- <CAPcyv4g_W4PoH6Wfj_SDGzGLpNLwxtoeGP7uwpzVMS4JWbXSTg@mail.gmail.com>
+ id 1iorlD-0002Wu-Mf
+ for kexec@lists.infradead.org; Tue, 07 Jan 2020 16:31:17 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=gCrereguWqtq1vBI0XuXW4xUlcCJ+zwztIcFXA1MZ5W7lZuDPpy6f52emrqKjzNhDWo7i1F8S62d/ecx2COMeSqF8J1GJsxf8WY3QclzfB3qjUmyHjJGKEY6b0IZO35Q32QaA43101zua1tm/Hc58dxzq/dgFT77KNhDpT7n6v5NeexG/wFnjET5BB3OVLRMdQZ8yNmjL998MvkvSJjAoplR8b+Cv3+fZGnYPsOgrVrRwNq0GMfKvThYkqA7lsCe01SYmybdVcb7Eh7BeVOVqjTvfcSjU6A/S1omscRDJvyrktXrcOcOMzvrfNUOeDNmPJAafMktyVFjsckVV7baLA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=J5mTiseZQr3A5FThD0iN2foJLha/YxaTBnSKgqYbhsM=;
+ b=jXbWBbFr49Ku/fs7sc8Zv+XoRCSiqF22NRgp3XfrBUL3c+GScl7ddS0JUHdSBwfi0IQJL07rUWXg5t8abtzQp+pYw74pAbmjNDi3Ujw/DvBkiDhkazvIoRq7B/r4eK0KilURD5gxXD9Mp/rvNx4IqiUnfvxIW5b2nNpuJ6dROh2xYlhoyV+T0YwVenIRSO4p9kQ0AZUlg/arIvYcjN82WwxMISPKxBMMrqQKIhlP0yjJKvtaL6AoAVh6p2EeQRkSfRyKFaChPWd2mzC1TI6a67xcXTyS6R2IDxMiETh484AY4Pk/fDWCdKf5+Ue85YO26hYwXiMAO/ypJj4EF3SFnA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=J5mTiseZQr3A5FThD0iN2foJLha/YxaTBnSKgqYbhsM=;
+ b=mCA6srVD53TXjNyRuN4wFsduT5zkCC40mhHg7gN/f3j/3MNT/YJGHNu4JyTULl6AKWDXo8MtvzCypI6rrlrENQecJ2+NaosYOQVElCcBWZpcXocF35Q/jyyw3QQGuo2eaNJACv8QHTQl5K+Wi6ZFWslwJr6NzbOWfEplqMU9TGo=
+Received: from OSBPR01MB5207.jpnprd01.prod.outlook.com (20.179.181.86) by
+ OSBPR01MB1558.jpnprd01.prod.outlook.com (52.134.225.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2602.12; Tue, 7 Jan 2020 16:31:10 +0000
+Received: from OSBPR01MB5207.jpnprd01.prod.outlook.com
+ ([fe80::1831:869f:87ef:9ccf]) by OSBPR01MB5207.jpnprd01.prod.outlook.com
+ ([fe80::1831:869f:87ef:9ccf%7]) with mapi id 15.20.2602.015; Tue, 7 Jan 2020
+ 16:31:10 +0000
+From: =?utf-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+To: Zaslonko Mikhail <zaslonko@linux.ibm.com>
+Subject: RE: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
+Thread-Topic: [PATCH] makedumpfile/s390: Add get_kaslr_offset() for s390x
+Thread-Index: AQHVu539YdIeeoZhrkK9VP733OiLmafLzJ4AgAJPLKCABGEPgIAGvFLggABGiACABKTRYIABHJaAgAAxRCA=
+Date: Tue, 7 Jan 2020 16:31:10 +0000
+Message-ID: <OSBPR01MB5207F39755A4ADE6BD3ABBF7DD3F0@OSBPR01MB5207.jpnprd01.prod.outlook.com>
+References: <20191203222725.64734-1-zaslonko@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597AB9@BPXM09GP.gisp.nec.co.jp>
+ <323f61d4-6aab-a0b4-faa3-e41756fb9913@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03597F4E@BPXM09GP.gisp.nec.co.jp>
+ <8fd807f1-c296-1a34-e42a-a102df62f3a0@linux.ibm.com>
+ <4AE2DC15AC0B8543882A74EA0D43DBEC03598540@BPXM09GP.gisp.nec.co.jp>
+ <726b8852-77af-b440-99b2-6b5a7b05e674@redhat.com>
+ <2aa868b8-83f4-cb23-9acf-178a9ab8144a@redhat.com>
+ <TY2PR01MB5210EBE26FC1603B3E7FF491DD2A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <ecaa7f62-d58f-080d-27de-176b3d592a11@redhat.com>
+ <TY2PR01MB5210EC16730BC6D382D5E543DD230@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <3e5e68a2-edfe-6545-db97-277d5be36f8a@linux.ibm.com>
+ <TY2PR01MB521032C755BF1FCCDA0239B9DD3C0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <cdabc393-e507-9357-b2f1-9797b0bbc153@linux.ibm.com>
+In-Reply-To: <cdabc393-e507-9357-b2f1-9797b0bbc153@linux.ibm.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [66.187.233.206]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6befda1d-9ae5-4358-a306-08d7938f0130
+x-ms-traffictypediagnostic: OSBPR01MB1558:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <OSBPR01MB1558C458C74D3EB7A5F80236DD3F0@OSBPR01MB1558.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 027578BB13
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(346002)(136003)(396003)(366004)(39860400002)(189003)(199004)(13464003)(71200400001)(966005)(33656002)(81156014)(81166006)(8676002)(53546011)(6506007)(26005)(8936002)(186003)(316002)(7696005)(66946007)(76116006)(86362001)(54906003)(52536014)(9686003)(66446008)(64756008)(66556008)(66476007)(85182001)(5660300002)(478600001)(4326008)(2906002)(6916009)(55016002)(317694003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:OSBPR01MB1558;
+ H:OSBPR01MB5207.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: W5wXUjJWK1frQWG6EfWrEMKlh9itdmUk274d7G8nNGrq9jPfpZFPNQeUi6YzXDT9xnjTWsoFjbPJwUkEwHDo+9xWDyGr/dOFANVftYTASvdT4qjGqLkQp1zlt7uyMsrgfmEQk/QGN3qn0cIXY5z0b3Xb+c9pZjUF9VhOFTrNcuBMetGHMgqkMLXpTtf2XQZaOXa8RvZxV16JtNtLfGsVhto2NvynblE0SIddTBhXRyFsPcFxpgENvmCFR7u5C0qWlUaCc7s9/hEWW4jvsylrOPRpVEBhzLF8PTvACir2oKNL27GoVjxpKppPk0FiMFm7dMOPtnve/m5vZto2wiii1B1yRfhKu7gnTzQhO6429wKb9Q2kL5NTil1aYAzcRFojaX2k8RK0/M5pMA5Yl023JDFg5oaOswKbYwFhmEEOJe7DYnOzKFq69iknmR2WUnVlk42X1ZeifPK/OUSXgBNkYu2kEPYjkjTHVilMKpKUX5t/0qsVcVqFzd54qczxBxE0QCzkGRAr4RKbLuqJTERSE9Ng6AqkAsk0t07z3vAwrD1Junv5v1IazCwpZ7adbmRx
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPcyv4g_W4PoH6Wfj_SDGzGLpNLwxtoeGP7uwpzVMS4JWbXSTg@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6befda1d-9ae5-4358-a306-08d7938f0130
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Jan 2020 16:31:10.5325 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FBDmloQ4htgYA2mug6dj4jrqfbc5OBHyx6fh0SZsvADszXE0IrLmohbp1JBgeggLbKk/4jhkIMWzywNqFwF4LQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB1558
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200106_211935_291076_082DB818 
-X-CRM114-Status: GOOD (  22.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200107_083115_812387_E2F661CE 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.140.49 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,86 +129,52 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Weiser <michael@weiser.dinsnail.net>,
- linux-efi <linux-efi@vger.kernel.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, X86 ML <x86@kernel.org>,
- Kexec Mailing List <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, Taku Izumi <izumi.taku@jp.fujitsu.com>,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Philipp Rudo <prudo@linux.ibm.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ lijiang <lijiang@redhat.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 01/06/20 at 08:16pm, Dan Williams wrote:
-> On Mon, Jan 6, 2020 at 8:04 PM Dave Young <dyoung@redhat.com> wrote:
-> >
-> > On 01/06/20 at 04:40pm, Dan Williams wrote:
-> > > Dave noticed that when specifying multiple efi_fake_mem= entries only
-> > > the last entry was successfully being reflected in the efi memory map.
-> > > This is due to the fact that the efi_memmap_insert() is being called
-> > > multiple times, but on successive invocations the insertion should be
-> > > applied to the last new memmap rather than the original map at
-> > > efi_fake_memmap() entry.
-> > >
-> > > Rework efi_fake_memmap() to install the new memory map after each
-> > > efi_fake_mem= entry is parsed.
-> > >
-> > > This also fixes an issue in efi_fake_memmap() that caused it to litter
-> > > emtpy entries into the end of the efi memory map. An empty entry causes
-> > > efi_memmap_insert() to attempt more memmap splits / copies than
-> > > efi_memmap_split_count() accounted for when sizing the new map. When
-> > > that happens efi_memmap_insert() may overrun its allocation, and if you
-> > > are lucky will spill over to an unmapped page leading to crash
-> > > signature like the following rather than silent corruption:
-> > >
-> > >     BUG: unable to handle page fault for address: ffffffffff281000
-> > >     [..]
-> > >     RIP: 0010:efi_memmap_insert+0x11d/0x191
-> > >     [..]
-> > >     Call Trace:
-> > >      ? bgrt_init+0xbe/0xbe
-> > >      ? efi_arch_mem_reserve+0x1cb/0x228
-> > >      ? acpi_parse_bgrt+0xa/0xd
-> > >      ? acpi_table_parse+0x86/0xb8
-> > >      ? acpi_boot_init+0x494/0x4e3
-> > >      ? acpi_parse_x2apic+0x87/0x87
-> > >      ? setup_acpi_sci+0xa2/0xa2
-> > >      ? setup_arch+0x8db/0x9e1
-> > >      ? start_kernel+0x6a/0x547
-> > >      ? secondary_startup_64+0xb6/0xc0
-> > >
-> > > Commit af1648984828 "x86/efi: Update e820 with reserved EFI boot
-> > > services data to fix kexec breakage" is listed in Fixes: since it
-> > > introduces more occurrences where efi_memmap_insert() is invoked after
-> > > an efi_fake_mem= configuration has been parsed. Previously the side
-> > > effects of vestigial empty entries were benign, but with commit
-> > > af1648984828 that follow-on efi_memmap_insert() invocation triggers
-> > > efi_memmap_insert() overruns.
-> > >
-> > > Fixes: 0f96a99dab36 ("efi: Add 'efi_fake_mem' boot option")
-> > > Fixes: af1648984828 ("x86/efi: Update e820 with reserved EFI boot services...")
-> >
-> > A nitpick for the Fixes flags, as I replied in the thread below:
-> > https://lore.kernel.org/linux-efi/CAPcyv4jLxqPaB22Ao9oV31Gm=b0+Phty+Uz33Snex4QchOUb0Q@mail.gmail.com/T/#m2bb2dd00f7715c9c19ccc48efef0fcd5fdb626e7
-> >
-> > I reproduced two other panics without the patches applied, so this issue
-> > is not caused by either of the commits, maybe just drop the Fixes.
-> 
-> Just the "Fixes: af1648984828", right? No objection from me. I'll let
-> Ingo say if he needs a resend for that.
-> 
-> The "Fixes: 0f96a99dab36" is valid because the original implementation
-> failed to handle the multiple argument case from the beginning.
-
-Agreed, thanks!
-
-Thanks
-Dave
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+SGkgTWlraGFpbCwNCg0KPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiBIZWxsbyBLYXp1
+LA0KPiANCj4gSSd2ZSByZWZyZXNoZWQgbXkgcGF0Y2ggb24gdG9wIG9mICdvcmlnaW4vYWRkLWdl
+dF9rYXNscl9vZmZzZXRfZ2VuZXJhbCcuIFBsZWFzZSBmaW5kIGl0IGF0dGFjaGVkIGJlbG93Lg0K
+PiBIb3BlIHRoZXJlIGlzIHN0aWxsIGEgY2hhbmNlIHRvIGluY2x1ZGUgaXQgaW50byB0aGUgcmVs
+ZWFzZS4NCg0KVGhhbmsgeW91LiBZb3VyIHBhdGNoIGlzIHF1ZXVlZCBmb3IgbWFrZWR1bXBmaWxl
+IHYxLjYuNy4NCg0KS2F6dQ0KDQo+IA0KPiBUaGFua3MsDQo+IE1pa2hhaWwgWmFzbG9ua28NCj4g
+DQo+IA0KPiBPbiAwNi4wMS4yMDIwIDIyOjQyLCBIQUdJTyBLQVpVSElUTyjokKnlsL4g5LiA5LuB
+KSB3cm90ZToNCj4gPg0KPiA+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQ0KPiA+PiBIaSBL
+YXp1LA0KPiA+Pg0KPiA+PiBTb3JyeSwgSSBkaWQndCBoYXZlIGEgY2hhbmNlIHRvIHRyeSB5b3Vy
+IHBhdGNoIHlldC4NCj4gPj4gSSB3aWxsIHVwZGF0ZSBtaW5lIG5leHQgd2Vlay4NCj4gPg0KPiA+
+IE9LLg0KPiA+IEZZSSwgSSdtIHBsYW5uaW5nIHRvIHJlbGFzZSB0aGUgbmV4dCB2ZXJzaW9uIG9m
+IG1ha2VkdW1wZmlsZSBieSB0aGUgZW5kDQo+ID4gb2YgbmV4dCB3ZWVrLiAgSXQgbmVlZHMgc29t
+ZSByZWdyZXNzaW9uIHRlc3Rpbmcgd2l0aCBvbGQgdm1jb3JlcywgZXRjLiwgc28NCj4gPiBJIGNh
+biBpbmNsdWRlIHBhdGNoZXMgbWVyZ2VkIGJ5IHRoZSBiZWdpbm5pbmcgb2YgbmV4dCB3ZWVrIGlu
+IHRoZSByZWxlYXNlLg0KPiA+DQo+ID4gVGhhbmtzLA0KPiA+IEthenUNCj4gPg0KPiA+Pg0KPiA+
+PiBUaGFua3MsDQo+ID4+IE1pa2hhaWwNCj4gPj4NCj4gPj4NCj4gPj4gT24gMDMuMDEuMjAyMCAy
+MTo1NSwgSEFHSU8gS0FaVUhJVE8o6JCp5bC+IOS4gOS7gSkgd3JvdGU6DQo+ID4+PiBIaSBMaWFu
+Ym8sIE1pa2hhaWwsDQo+ID4+Pg0KPiA+Pj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+
+ID4+Pj4+Pg0KPiA+Pj4+Pj4gSW4gYWRkaXRpb24sIHRoZSBhYm92ZSBjb2RlIGNvbmZ1c2VkIG1l
+LCBpdCB3aWxsIGFsd2F5cyByZXR1cm4gMCBvbiBzMzkwKHBsZWFzZSByZWZlciB0byBteSBsb2dz
+KS4NCj4gPj4+Pj4NCj4gPj4+Pj4gVGhlIGFpbSBvZiBnZXRfa2FzbHJfb2Zmc2V0KCkgaGVyZSBp
+cyBvbmx5IHNldHRpbmcgaW5mby0+a2FzbHJfb2Zmc2V0IHRvIHRoZSB2YWx1ZQ0KPiA+Pj4+PiBm
+cm9tIHZtY29yZWluZm8gZm9yIHRoZSBTWU1CT0xfSU5JVCgpIG1hY3JvLg0KPiA+Pj4+PiAoZ2V0
+X2thc2xyX29mZnNldCgpIHJldHVybnMgdGhlIGthc2xyIG9mZnNldCBpbiB0aGUgcmVzb2x2ZV9j
+b25maWdfZW50cnkoKS4pDQo+ID4+Pj4+DQo+ID4+Pj4gVGhhbmtzIGZvciB5b3VyIGV4cGxhbmF0
+aW9uLCBLYXp1Lg0KPiA+Pj4+DQo+ID4+Pj4+IEJ1dCB5ZWFoLCB0aGUgZ2V0X2thc2xyX29mZnNl
+dChTWU1CT0woX3N0ZXh0KSkgaXMgY29uZnVzaW5nIGFuZCBub3QgZ29vZC4NCj4gPj4+Pj4gUGFz
+c2luZyAwIG1pZ2h0IGJlIGEgYml0IGJldHRlci4uPw0KPiA+Pj4+Pg0KPiA+Pj4+IFllcywgbG9v
+a3MgZ29vZCB0byBtZS4NCj4gPj4+DQo+ID4+PiBPSywgSSBwdXNoZWQgYW4gYWRkaXRpb25hbCBw
+YXRjaCBmaXhpbmcgaXQgdG8gdGhlIHRlc3QgYnJhbmNoOg0KPiA+Pj4gaHR0cHM6Ly9naXRodWIu
+Y29tL2staGFnaW8vbWFrZWR1bXBmaWxlL3RyZWUvYWRkLWdldF9rYXNscl9vZmZzZXRfZ2VuZXJh
+bA0KPiA+Pj4gVGhhbmtzIExpYW5ibyBmb3IgcG9pbnRpbmcgaXQgb3V0Lg0KPiA+Pj4NCj4gPj4+
+IE1pa2hhaWwsIGlmIHlvdSB1cGRhdGUgeW91ciBwYXRjaCBvbiB0b3Agb2YgdGhlIHRyZWUgYWJv
+dmUsDQo+ID4+PiBJJ2xsIG1lcmdlIGl0IHVwc3RyZWFtLg0KPiA+Pj4NCj4gPj4+IFRoYW5rcywN
+Cj4gPj4+IEthenUNCj4gPj4+DQo+ID4+PiBQLlMuIE15IGVtYWlsIGFkZHJlc3MgaGFzIGJlZW4g
+Y2hhbmdlZCB0byBrLWhhZ2lvLWFiQG5lYy5jb20uDQo+ID4+PiBQbGVhc2Ugc2VuZCBlbWFpbCB0
+byB0aGlzIGFkZHJlc3MgaW4gdGhlIGZ1dHVyZS4gVGhhbmtzLg0KPiA+Pj4gKFVnaCwgaXQgc2Vl
+bXMgSSBjYW5ub3QgcmVtb3ZlIG15IGthbmppIG5hbWUgaW4gdGhlIEZyb206IGZpZWxkLi4pDQo+
+ID4+Pg0KPiA+DQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
