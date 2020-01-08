@@ -2,75 +2,74 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B2181349F5
-	for <lists+kexec@lfdr.de>; Wed,  8 Jan 2020 18:59:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EE381349F8
+	for <lists+kexec@lfdr.de>; Wed,  8 Jan 2020 18:59:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WQ205K7h112ucf+yFi9AdTQDmZ/w4GwLL3R/KOUn/QI=; b=HFyGc1I/uFmUQR
-	VDJxg0d+nPGFG3hzj5WjP7WXV8w+PcHo4QqZSzqYjJ0qz/R6U5UmVYXgnyeKr6X0XFcxMNAkwpWdE
-	OHWRFybF0DR2LY5iWrLlilVFMZQyQFZq6JICHTmgqUU5NBLt0a6aC+kOgQmAvj7BrjSaR5uu108ya
-	EFpQfQTre4uCpgfCm7oQElT/oRRtWK/5W0nVrNuz9Ay+WJH94x7geHn9Xs9pV+sTl5lcCesba55WW
-	faZBM6PRAM9AwPEy4jIydU6Yu7LsC+Javr5we43gD54I33ZLPdLu3qyFcVLyoRg7RHDqG2GP5Y1SF
-	f/kp/SlQ8WdoHwI2EUOA==;
+	List-Owner; bh=yra2LhHfGCaQh7iO9QPn/wLsxaWkE+yAtxSKl0CQyK8=; b=nryKiUFIHfQL+v
+	4niDQR5VVzDr22IpHPYZh3dkmlX+VG3zJIeETejkshM0Nw/U9xnLlQmUHei4bVIPJwqv8kSkIzy3q
+	pA3evv7Da4OYF96DzWsQsYGiQFDexbWj7QDb+ypY0vbddyKiokTSeDievihD418yDa8fouNemRAft
+	lNBFm1VmR7af3OWzisEUxMzU3dtLgoNmqJb8uQRIKzD72zjjOi+0TCGi1l1hdBGPNYCadgQhfGViQ
+	xPzv4+Buy0SqVo+0i4LFV/s9UdR1UllAPry5jGERTCkmlqTYQty1p5c7RaDZzXXPWfWGO2ZYQ5EsU
+	ZA0r5Ve8KH9p+CUgD7jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ipFc3-0004Jz-6K; Wed, 08 Jan 2020 17:59:23 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1ipFcZ-0004lB-Ic; Wed, 08 Jan 2020 17:59:55 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ipFbl-00044t-Kv
- for kexec@lists.infradead.org; Wed, 08 Jan 2020 17:59:07 +0000
-Received: by mail-ed1-x542.google.com with SMTP id cy15so3337308edb.4
- for <kexec@lists.infradead.org>; Wed, 08 Jan 2020 09:59:04 -0800 (PST)
+ id 1ipFcJ-0004W4-SM
+ for kexec@lists.infradead.org; Wed, 08 Jan 2020 17:59:42 +0000
+Received: by mail-ed1-x543.google.com with SMTP id e10so3303839edv.9
+ for <kexec@lists.infradead.org>; Wed, 08 Jan 2020 09:59:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2uEGBOLSJ2/X/0eS51RiNhJGw7wJMIxKLyleFhVXCjU=;
- b=bNfU3pqQAxrJLz5YamHpEVqhAqbwtCyAQtia8G0VcYhNt4oMjsMyEKEFJSsaPM023k
- WwYyZCoRFiDvgBZqyHWGBIwb33HRviCqZzPQ9Rwvnv+3mXF6zDMBX3LYLNWRmADSxWnU
- AhTLCkfwuKN5URHZy0XQG0kOUs2ESmqZZBjf0yO6gd7DiHyWEZal/nUYAH4tnfghehRx
- Hwhd0v7hpxd/nXxGkC6sxAB4fgSJFoTM9sld6Z/jH37HNI8+Uto9KE3qombk7p4dmMtc
- pULM+JnTaOvu7dHzcEFKAWuMIvImdzzHZ74vUt8yadsb9zL1bvktTIkcoeJkG0CZjuJB
- wQRQ==
+ :cc; bh=NYI9BdokG2IbKyPM2CZW5USlC6MewEmU/EsguFiov3s=;
+ b=hruQrdLyR9/6799NqXMaIG2kcPTB33SpTMDmQYiE6vp6kHoBE5stgW1MaZKyjvZEHS
+ 9pyrvpkV+NQv/kkb8q5nTz1tTLWuuT1OgqWGMyCl4SrNwKg/Vmk9/2G+WNkwGgezngDA
+ FYKlRdEN8J3h19TIKwynRppUNImOq+Xhfr3fGTJ6sArPvEm4gpxNjaYPxhftTMoienYA
+ 2nOYAZHd7I0S2gi9MDvpYHkqCYX3dor6aiynnAumkuiKYfaz570phRxWWrlZ0pKSAcpm
+ +DQBUyvQHCVPMUWbYH+7XD0ec/9hm9xW7UVxT/sAZIIw8Rb3pnK4QfV3hYqG7QqRiLen
+ xJeQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=2uEGBOLSJ2/X/0eS51RiNhJGw7wJMIxKLyleFhVXCjU=;
- b=KmPxT2+akqj938yJWEQsNA7EtZlK4xXyaGfm7BuQW19YJYKCEvpI/+ix0u9+MIZ0kk
- CmqvsA8WiPmBqUgGM9jPgqrf6H710O+wjhf7cc8GBPlIa/xnT505pRQ35Wj6k/oXtYMc
- WL/8GKgbJHXa7w+fa5t8ymPzwBXJa9VIXo2QqFGzw/DA3YgPyRyxY8+g93P/HRO91DAw
- 5WaFkeogGZ/nfJsPlVExsixXgSe7IH8sB9XQuSUnSPEtaIV8b7M+VcO/OUajjLmyA8Nj
- SBGFDcc22zw4cm4LAcCgBSFdLDS1SODvaJ2cxg0R02ZYIy305mbEv6hx1Q9WoJiydsWL
- d2pQ==
-X-Gm-Message-State: APjAAAWInAZwn1iPaqavFNlOZCc2EQYSfwTB6+U4j/j9LSuqWOevWmTl
- liN3OJq46qXgJ9zzcypU6NGM5rP0Uy4RXY0wycLuEg==
-X-Google-Smtp-Source: APXvYqzJNhUYj7BUDWq/b5VLfPHGhXZOH/nyV2Gie8IiGDhSBzYXZZsk8IWFKTu5blsELnHIiDrlPgfetGRZnwf7rWQ=
-X-Received: by 2002:a17:906:3798:: with SMTP id
- n24mr6133397ejc.15.1578506343460; 
- Wed, 08 Jan 2020 09:59:03 -0800 (PST)
+ bh=NYI9BdokG2IbKyPM2CZW5USlC6MewEmU/EsguFiov3s=;
+ b=ieBRcLQ/cJZBaEdskP3o24AtkkOk79JCGS1v2vM6lVZ+tAKsNyVmzpcPaDwT/0Sicq
+ UHB+imJs20uhPX3J0hmo6QEDMaPG+KOy7TscYWx0RZsbb/SyAUf0Mxu737ppfGAMao2t
+ XDoIXDEwJMpMSNheCZcGgglLKDpt6+dzK166YhhNz1VzgFzxa/vNCH7vzI59uhJVIjC/
+ XS57kDZzAcyOE/i9cHff1rCn7kV5xTbMgy4Cq8lTAtI2Po53J+vXAZN3Wk1b09y2UcBg
+ KXhlwCQJgGUY8y3MkXiNXOUC+IlJH23PkhkPDm4YnJ3OGGYudjfr8LWJV9DXROzmJ2uX
+ kmNw==
+X-Gm-Message-State: APjAAAUWiecusiUuJPBtDPgLXv8M34Oty1Bc4DmT8fiJyjD1BDmRBDvc
+ u+0OM13QCIv5rpaubYo6AwQrXayimVRRjqUtc8ehCA==
+X-Google-Smtp-Source: APXvYqy0z28/dzBrNsd91I0p0ovtGg4Owrd9cilLSqMFv+lDXxI4gLLHOwdGWBi7vzbaJVrwcuwcObUtdOg6AO/wMiw=
+X-Received: by 2002:a17:906:4d43:: with SMTP id
+ b3mr6268026ejv.109.1578506378310; 
+ Wed, 08 Jan 2020 09:59:38 -0800 (PST)
 MIME-Version: 1.0
-References: <20191216021247.24950-1-takahiro.akashi@linaro.org>
- <20191216021247.24950-3-takahiro.akashi@linaro.org>
- <20200108174839.GB21242@willie-the-truck>
-In-Reply-To: <20200108174839.GB21242@willie-the-truck>
+References: <20191204155938.2279686-1-pasha.tatashin@soleen.com>
+ <20200108173225.GA21242@willie-the-truck>
+In-Reply-To: <20200108173225.GA21242@willie-the-truck>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Wed, 8 Jan 2020 12:58:52 -0500
-Message-ID: <CA+CK2bBg2zaUONC_wf5na4CF0Tj3sThEPT7AgNmevycSZRdMeA@mail.gmail.com>
-Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
+Date: Wed, 8 Jan 2020 12:59:27 -0500
+Message-ID: <CA+CK2bBDhF4YuFOeagzZ48-BigDmOVuBKZTAC8fd6tojcJN-0g@mail.gmail.com>
+Subject: Re: [PATCH v8 00/25] arm64: MMU enabled kexec relocation
 To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200108_095905_752894_F9322604 
-X-CRM114-Status: GOOD (  15.74  )
+X-CRM114-CacheID: sfid-20200108_095939_916643_7B23A403 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,64 +91,36 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Will Deacon <will.deacon@arm.com>,
- LKML <linux-kernel@vger.kernel.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, robh+dt@kernel.org,
- James Morse <james.morse@arm.com>, frowand.list@gmail.com,
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, steve.capper@arm.com,
  kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
+ linux-mm <linux-mm@kvack.org>, James Morse <james.morse@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, rfontana@redhat.com,
+ Thomas Gleixner <tglx@linutronix.de>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Looks good to me.
+On Wed, Jan 8, 2020 at 12:32 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Wed, Dec 04, 2019 at 10:59:13AM -0500, Pavel Tatashin wrote:
+> > Many changes compared to version 6, so I decided to send it out now.
+> > James Morse raised an important issue to which I do not have a solution
+> > yet. But would like to discuss it.
+>
+> Thanks. In the meantime, I've queued the first 10 patches of the series
+> since they look like sensible cleanup, they've been reviewed and it saves
+> you from having to repost them when you make changes to the later stuff.
+
+Great, thank you!
 
 Pasha
-
-On Wed, Jan 8, 2020 at 12:48 PM Will Deacon <will@kernel.org> wrote:
->
-> On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
-> > Enabling crash dump (kdump) includes
-> > * prepare contents of ELF header of a core dump file, /proc/vmcore,
-> >   using crash_prepare_elf64_headers(), and
-> > * add two device tree properties, "linux,usable-memory-range" and
-> >   "linux,elfcorehdr", which represent respectively a memory range
-> >   to be used by crash dump kernel and the header's location
-> >
-> > Signed-off-by: AKASHI Takahiro <takahiro.akashi@linaro.org>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will.deacon@arm.com>
-> > Reviewed-by: James Morse <james.morse@arm.com>
-> > Tested-and-reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
-> > ---
-> >  arch/arm64/include/asm/kexec.h         |   4 +
-> >  arch/arm64/kernel/kexec_image.c        |   4 -
-> >  arch/arm64/kernel/machine_kexec_file.c | 106 ++++++++++++++++++++++++-
-> >  3 files changed, 106 insertions(+), 8 deletions(-)
-> >
-> > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > index 12a561a54128..d24b527e8c00 100644
-> > --- a/arch/arm64/include/asm/kexec.h
-> > +++ b/arch/arm64/include/asm/kexec.h
-> > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
-> >  struct kimage_arch {
-> >       void *dtb;
-> >       unsigned long dtb_mem;
-> > +     /* Core ELF header buffer */
-> > +     void *elf_headers;
-> > +     unsigned long elf_headers_mem;
-> > +     unsigned long elf_headers_sz;
-> >  };
->
-> This conflicts with the cleanup work from Pavel. Please can you check my
-> resolution? [1]
->
-> Will
->
-> [1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/diff/?h=for-kernelci&id=aef73191765a88cadc0a627cdc070e5a0086b015
->
 
 _______________________________________________
 kexec mailing list
