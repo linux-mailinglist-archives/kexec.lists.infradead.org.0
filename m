@@ -2,56 +2,56 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14CB0137ACA
-	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 01:52:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57750137AF4
+	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 02:47:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jk0v+KEBbQEL3Ka99AGj48HEAfi1T2fguLgAKjijdDE=; b=XUHUg1L6TPQ//o
-	5j+ttlPoCCcqO5TAlwrioroAn7/5BgdLQL2pPPNaRqt6NvHSZgjE5y5uSxutxXGD8C7YCS9Pc26YY
-	60aQ+iwuVbUDzt9giPeNCnZFvdBLvE07tOmpxV1Au4E6yg4tawgrqHpetZacEk2axueMf3kYRlTwl
-	ovq20i3BxujOHMUGiDVhbG1cVj6cVeyI/0/c9imVFDe/j+op68X5O/Qc9mj8Ev0Chr8GMO+ylZ2xF
-	b2PTbfzZu7xhO+iZDrZWEsZA6JFYmT26reAQENVFx6cfKjDIP2EWmPEOz6YhW/qLnccEkVBbK6ofP
-	VEHy+0eSNpjGfavQkvDg==;
+	List-Owner; bh=krfMP8aX5hGlh1ZxoAnvTIQFK1WwdsXryn9kFWpE1DA=; b=BVvRVmO7Vw4ap9
+	g1fk3tE/5ynaxWUkXou9A5hSvXmiL80ZesNB1wzZVFOxHUiW8DHzlH6w0Ih0Nxr1FkM9dVsZ1iU5k
+	ZPI4ZAXWSO0qFQ73g4f3v8l/sSGsLk2nH2TYjqLrczKIqAvikryQdFvmUp8FKI2IUlQC7wzrIXknZ
+	JljEIa6gs7NzCIXo+trQerpnIoRLh2bLIUskifpNcX1H0+5AyhTMBDCGpRegmoT4fZZEt9O/0Bp08
+	TQxdWxSwfRe0wZSIgJfpoDg7d1Uu4Aedsh5PHZuRgJ45rcxOuCKbxbbH+MJnnjtMpeQsHjDgdW3/g
+	ncAg6z+ZQd0L54LOcWig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq50T-0006pk-0s; Sat, 11 Jan 2020 00:52:01 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+	id 1iq5rw-0001U8-3v; Sat, 11 Jan 2020 01:47:16 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq50P-0006oq-PM
- for kexec@lists.infradead.org; Sat, 11 Jan 2020 00:51:59 +0000
+ id 1iq5rr-0001TE-82
+ for kexec@lists.infradead.org; Sat, 11 Jan 2020 01:47:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578703916;
+ s=mimecast20190719; t=1578707229;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=zbgMmgPunuCU+6eAQTwKzCS91MthkUUJmXAiSzigQk4=;
- b=bfnHAhM6cPU5AxgbLKbDKqTJX/FM8B//3zMZN2p0a4rDJhWfdJyXERhKpwv+/2QBRL8CM+
- OKGRh8bOCSt6Rsh30hu8X/ayc36+8979+XraQcuH33MqUDxuJgrlFTi7R0sGdhPLLSzxje
- 76ZXZXYmb+4oRgiOJ1qW9z0MeAYfPCM=
+ bh=jPPryPK1OzAOrv4+dW4KgmKutLsT1pslZulH2MfJk2s=;
+ b=hslK5rcH4fUzFmxbJkOZs3qst7QnW5w6RGeMPjukZyU5VA6wFJ+Jj2LcRJNVB3gJxGYuad
+ 7RmxLe9vJYpQOYjNsiXnl1fg5HLM9+f4ahTebLIHIJfRQ43YdY41N8tYNZnBs8eaAHXkoJ
+ mYMopGCpt6H6l5X6kEWOpqhOKp8LQTk=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-101-GnAe3hIvPAGU2VTL5DUq0w-1; Fri, 10 Jan 2020 19:51:53 -0500
-X-MC-Unique: GnAe3hIvPAGU2VTL5DUq0w-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-346-aLeYG5BTPdu8ka9bzGE9Zw-1; Fri, 10 Jan 2020 20:47:06 -0500
+X-MC-Unique: aLeYG5BTPdu8ka9bzGE9Zw-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DDF0B800EBF;
- Sat, 11 Jan 2020 00:51:51 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 28F7A107ACC4;
+ Sat, 11 Jan 2020 01:47:05 +0000 (UTC)
 Received: from localhost (ovpn-12-27.pek2.redhat.com [10.72.12.27])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id D68521001B00;
- Sat, 11 Jan 2020 00:51:48 +0000 (UTC)
-Date: Sat, 11 Jan 2020 08:51:46 +0800
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 488955C1D4;
+ Sat, 11 Jan 2020 01:47:01 +0000 (UTC)
+Date: Sat, 11 Jan 2020 09:46:57 +0800
 From: Baoquan He <bhe@redhat.com>
 To: Jerry Hoemann <jerry.hoemann@hpe.com>
 Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
  kdump kernel
-Message-ID: <20200111005146.GC19291@MiWiFi-R3L-srv>
+Message-ID: <20200111014657.GD19291@MiWiFi-R3L-srv>
 References: <20200110214217.GA88274@google.com>
  <e0194581-4cdd-3629-d9fe-10a1cfd29d03@gonehiking.org>
  <20200110230003.GB1875851@anatevka.americas.hpqcorp.net>
@@ -60,17 +60,17 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20200111004510.GA19291@MiWiFi-R3L-srv>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_165157_901279_22820F2E 
-X-CRM114-Status: GOOD (  23.27  )
+X-CRM114-CacheID: sfid-20200110_174711_398605_72099E79 
+X-CRM114-Status: GOOD (  23.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -159,13 +159,13 @@ On 01/11/20 at 08:45am, Baoquan He wrote:
 > driver. So HPSA device will never have chance to calibrate its status,
 > and can't be shut down by pci_device_shutdown() called by reboot
 > service. It's still PCI_D3hot, then crash happened when system try to
+                                      ~~~~~ s/crash/hang/, sorry, typo again
 > shutdown its upper bridge.
 > 
 > Fix:
 > 
 > Here, Kairui uses a quirk to get PM state and mask off value bigger than
 > PCI_D3cold. Means, all devices will get PM state 
-  ~~~~~~~~~ s/PCI_D3cold/PCI_D3hot/, typo
 > pci_dev->current_state = PCI_D0 or PCI_D3hot. Finally, during kdump
 > reboot stage, this device can be shut down successfully by clearing its
 > master bit.
