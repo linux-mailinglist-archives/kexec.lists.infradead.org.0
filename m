@@ -2,78 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C29D137E02
-	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 11:04:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC09F1382E0
+	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 19:33:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/fjO40oM8SBsLGlKhyIkCPG3CZ7CiREMS2W14w8IxpM=; b=LB6wFQ+86VjY72
-	j/dcq7vNXjd3oIRsxM1wPe7ONWCRZEqqbCxQgq67DHIA1EqxgpxDfsOexk2TTnvoBgJCm/cazf7u5
-	GQecOx0Ak8ayPMp+Z+iGtteSSR8hoCO1I6sMFtrgTVSxGOCaURUEuE6RNvYYKeQNZzPhPIU1DT7Rp
-	YCXqAIpTSchvVx54pXQnKBxCdWLW5x39iQ9OcVRjtOpqT7gi/J9I+0nxBrVyUBvV1ssd94ZTK2qyV
-	WUQac5u1UVd0Y8IYqKcldsnJ1VX//+87zyy4COgZJz4NQmrEo8qRawwklnAe5lMm6AdSZ2tcBvoRv
-	v7WXRkFSp4sQC8j1ZZ5w==;
+	List-Owner; bh=OCEdhTefH9NAVz60SzpOGSzHH3C2x8tGO9KLo8PDCEM=; b=qzUsVYNDCZV1Fs
+	Gc2kRqyzRTecb3vtVRgDGIZDO8x91jadoSlKWhcglLCwKFs/ocph/xBVliHRezo9SZmA9k/7+ms0n
+	OuuPK/urzm4NxJ5zUW5ctpinN9JDdar540bdSNfSL+aAOKSeejx66sfSE2Lnun8E8J9BhOuotW/wT
+	qkE5+cVSgjeWfQt3r17ZHuUOZisB2iw3/4AvZ5BJWdgWLSUKcbf605PIHuwC3wFt7qUDWJ5suuK9B
+	2TlZB0MXymn95zfRHybGBlsTXFc/KQL045EVcODHwavjMRR1w/pnXtzbCjBFw5A0MVgmkg4usdCYD
+	JsA6h5+S4I6BzfI8wiLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iqDcx-0005NY-85; Sat, 11 Jan 2020 10:04:19 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iqLZL-0000A8-MP; Sat, 11 Jan 2020 18:33:07 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iqDcr-0005LL-5z
- for kexec@lists.infradead.org; Sat, 11 Jan 2020 10:04:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1578737048;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=+A7qVqL+kOfiotLJYXOYSH7AWSTgiw9QTUBY34scgx4=;
- b=bzENziGGN3yRq7wElvS4CJ/m0uBtlsXdhjMDomQV2+YoJbr3W+MvjnoK1C7ArewTYIdKN6
- P4c2yiMScalJVeJW9Nx1+ZcfuWHwcn99RBN3W3fvnGj+7ew1XjESTvbFaEpNWNpUsPoQwh
- +qsJU0LcVlh77h5gRr7HmSqtx6sWc4k=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-131-RDdW0EfqOTaHm80AVpxXOg-1; Sat, 11 Jan 2020 05:04:07 -0500
-X-MC-Unique: RDdW0EfqOTaHm80AVpxXOg-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8DF24800D41;
- Sat, 11 Jan 2020 10:04:05 +0000 (UTC)
-Received: from localhost (ovpn-12-65.pek2.redhat.com [10.72.12.65])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id A0E3A8062A;
- Sat, 11 Jan 2020 10:04:04 +0000 (UTC)
-Date: Sat, 11 Jan 2020 18:04:01 +0800
-From: Baoquan He <bhe@redhat.com>
-To: Khalid Aziz <khalid@gonehiking.org>
-Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
- kdump kernel
-Message-ID: <20200111100401.GE19291@MiWiFi-R3L-srv>
+ id 1iqLZH-00009P-Sl
+ for kexec@lists.infradead.org; Sat, 11 Jan 2020 18:33:05 +0000
+Received: by mail-io1-xd42.google.com with SMTP id t26so5485471ioi.13
+ for <kexec@lists.infradead.org>; Sat, 11 Jan 2020 10:33:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=oHKy6sP4q/jszsnrjUSGz6lJhsm0cQK7CaZ5RcUUJmw=;
+ b=WCiQukZ9NwvA2wCS/2MHkw5FREFgqhX/Bi1vPMtIbsDFzebnpnQVbrvxZn1VwjRRVI
+ O1gSlCQdAqT1kYLx7qcmcznEmq4Q1PWHGrbvxtEjUuBeqrcf4oHjNLroSSd6/MuS4j7b
+ Af1Zgk/64bQoWXigMOGPhWQ5rxw+mkquUhL2Fll6KnQb7g73qhAgS+M/MIY/Rq4pgaBU
+ UWbGK/us5CSvKPO/P+4qgg2OV4DgecEU0F1WlZkQ1vmuaKlB3WS90D8M158qk3XVk/Lt
+ siwVpcIfOUyS37JwGoxUfZBBTo57vKBf1QJss25VceE3XPtB0u61pG3vWOpJDAgmT5mG
+ PgEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=oHKy6sP4q/jszsnrjUSGz6lJhsm0cQK7CaZ5RcUUJmw=;
+ b=DUcAh8j1EI4SqVqmBIQc7qSChsSrqtIYVHVMnJOKPSbMiQwN+m/xMw2xzBVu+EStXq
+ siJH914qNr5Y7TzvSOzJR6PpMmnmLahbKFBeheFe09ptCMhti1NGBwEJWhzPFf1Tt5Ej
+ 3bu/MfoV4Yn4UAfunJNNb2TIEC8OWsFpJRqaHbxTldMRSDYHUSjRgfDaIwbOd1i7O0lm
+ lyVuNlkkIe4ihZ3syJkIDGcI9VgCeJfQbjCfHkofw45zKSa754a/zRllSNc+B2CADYID
+ DHgqlXJWF/am0oZwseAiS0/etzsf3yfA1SkPaaXuYNClO+jC4i4/FZTBzmvTQbb2O4yR
+ QNKw==
+X-Gm-Message-State: APjAAAUPCOPbMVe7ONVjGzCvoZ+umRPryGbi1OpOm9UZ2oRP4c/eUSO4
+ XdSpF58CwbAKO+PmM0ICg61XLZj/gZlY/BXky08=
+X-Google-Smtp-Source: APXvYqzLa9J0R960aMyOgVH0pHxEAL3cPWTk+hUUJtGClH06AtPVaaG/DSG0u8SMvVzY8wYEQMCwkwhND9aCJriSEok=
+X-Received: by 2002:a5e:8516:: with SMTP id i22mr7623995ioj.130.1578767582287; 
+ Sat, 11 Jan 2020 10:33:02 -0800 (PST)
+MIME-Version: 1.0
 References: <20200110214217.GA88274@google.com>
  <e0194581-4cdd-3629-d9fe-10a1cfd29d03@gonehiking.org>
  <20200110230003.GB1875851@anatevka.americas.hpqcorp.net>
  <d2715683-f171-a825-3c0b-678b6c5c1a79@gonehiking.org>
  <20200111005041.GB19291@MiWiFi-R3L-srv>
  <dc46c904-1652-09b3-f351-6b3a3e761d74@gonehiking.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dc46c904-1652-09b3-f351-6b3a3e761d74@gonehiking.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+ <CACPcB9c0-nRjM3DSN8wzZBTPsJKWjZ9d_aNTq5zUj4k4egb32Q@mail.gmail.com>
+In-Reply-To: <CACPcB9c0-nRjM3DSN8wzZBTPsJKWjZ9d_aNTq5zUj4k4egb32Q@mail.gmail.com>
+From: Deepa Dinamani <deepa.kernel@gmail.com>
+Date: Sat, 11 Jan 2020 10:32:51 -0800
+Message-ID: <CABeXuvqquCU+1G=5onk9owASorhpcYWeWBge9U35BrorABcsuw@mail.gmail.com>
+Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
+ kdump kernel
+To: Kairui Song <kasong@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200111_020413_305836_45607D25 
-X-CRM114-Status: GOOD (  27.15  )
+X-CRM114-CacheID: sfid-20200111_103303_957775_24E842BA 
+X-CRM114-Status: GOOD (  14.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (deepa.kernel[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,100 +98,57 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kairui Song <kasong@redhat.com>, linux-pci@vger.kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Randy Wright <rwright@hpe.com>, Jerry.Hoemann@hpe.com,
- Bjorn Helgaas <helgaas@kernel.org>, Deepa Dinamani <deepa.kernel@gmail.com>
+Cc: Baoquan He <bhe@redhat.com>, linux-pci@vger.kernel.org,
+ kexec@lists.infradead.org, Jerry Hoemann <Jerry.Hoemann@hpe.com>,
+ Randy Wright <rwright@hpe.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Khalid Aziz <khalid@gonehiking.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 01/10/20 at 08:45pm, Khalid Aziz wrote:
-> >>>>>> -	if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
-> >>>>>> +	if ((kexec_in_progress || is_kdump_kernel()) &&
-> >>>>>> +			pci_dev->current_state <= PCI_D3hot)
-> >>>>>>  		pci_clear_master(pci_dev);
-> >>>>>
-> >>>>> I'm clearly missing something because this will turn off bus mastering
-> >>>>> in cases where we previously left it enabled.
-> >>>>>
-> >>>>> I was assuming the crash was related to a device doing DMA when the
-> >>>>> Root Port had bus mastering disabled.  But that must be wrong.
-> >>>>>
-> >>>>> I'd like to understand the crash/hang better because the quirk
-> >>>>> especially is hard to connect to anything.  If the crash is because of
-> >>>>> an AER or other PCIe error, maybe another possibility is that we could
-> >>>>> handle it better or disable signaling of it or something.
-> >>>>>
-> >>>>
-> >>>> I am not understanding this failure mode either. That code in
-> >>>> pci_device_shutdown() was added originally to address this very issue.
-> >>>> The patch 4fc9bbf98fd6 ("PCI: Disable Bus Master only on kexec reboot")
-> >>>> shut down any errant DMAs from PCI devices as we kexec a new kernel. In
-> >>>> this new patch, this is the same code path that will be taken again when
-> >>>> kdump kernel is shutting down. If the errant DMA problem was not fixed
-> >>>> by clearing Bus Master bit in this path when kdump kernel was being
-> >>>> kexec'd, why does the same code path work the second time around when
-> >>>> kdump kernel is shutting down? Is there more going on that we don't
-> >>>> understand?
-> >>>>
-> >>>
-> >>>   Khalid,
-> >>>
-> >>>   I don't believe we execute that code path in the crash case.
-> >>>
-> >>>   The variable kexec_in_progress is set true in kernel_kexec() before calling
-> >>>   machine_kexec().  This is the fast reboot case.
-> >>>
-> >>>   I don't see kexec_in_progress set true elsewhere.
-> >>>
-> >>>
-> >>>   The code path for crash is different.
-> >>>
-> >>>   For instance, panic() will call
-> >>> 	-> __crash_kexec()  which calls
-> >>> 		-> machine_kexec().
-> >>>
-> >>>  So the setting of kexec_in_progress is bypassed.
-> >>>
-> >>
-> >> True, but what that means is if it is an errant DMA causing the issue
-> >> you are seeing, that errant DMA can happen any time between when we
-> > 
-> > Here, there could be misunderstanding. It's not an errant DMA, it's an
-> > device which may be in DMA transporting state in normal kernel, but in
-> > kdump kernel it's not manipulated by its driver because we don't use it
-> > to dump, so exlucde its driver from kdump initramfs for saving space. 
-> > 
-> 
-> Errant DMA as in currently running kernel did not enable the device to
-> do DMA and is not ready for it. If a device can issue DMA request in
-> this state, it could do it well before kdump kernel starts shutting
-> down. Don't we need to fix this before we start shutting down kdump in
-> preparation for reboot? I can see the need for this fix, but I am not
-> sure if this patch places the fix in right place.
+> Hi, there are some previous works about this issue, reset PCI devices
+> in kdump kernel to stop ongoing DMA:
+>
+> [v7,0/5] Reset PCIe devices to address DMA problem on kdump with iommu
+> https://lore.kernel.org/patchwork/cover/343767/
+>
+> [v2] PCI: Reset PCIe devices to stop ongoing DMA
+> https://lore.kernel.org/patchwork/patch/379191/
+>
+> And didn't get merged, that patch are trying to fix some DMAR error
+> problem, but resetting devices is a bit too destructive, and the
+> problem is later fixed in IOMMU side. And in most case the DMA seems
+> harmless, as they targets first kernel's memory and kdump kernel only
+> live in crash memory.
 
-Ah, I could get your point now, but not very sure. Do you mean the HPSA
-is in errant DMA state, because it doesn't have driver to re-initilize
-to correct state? 
+I was going to ask the same. If the kdump kernel had IOMMU on, would
+that still be a problem?
 
-We have been doing like this for kdump kernel always, to only
-include needed devices' driver to kdump initrd so that the driver will
-initialize and opearte the device. For other unneeded devices by kdump
-kernel, we just leave it as is. This error is only seen on this HPE
-owned system. Wondering if HPE can do something to check their
-firmware/hardware setting.
+> Also, by the time kdump kernel is able to scan and reset devices,
+> there are already a very large time window where things could go
+> wrong.
+>
+> The currently problem observed only happens upon kdump kernel
+> shutdown, as the upper bridge is disabled before the device is
+> disabledm so DMA will raise error. It's more like a problem of wrong
+> device shutting down order.
 
-This patch is using a quirk to adjust all those devices if its
-pci_dev->current_state is beyond PCI_D3hot during bootup. Then clear the
-master bit of device firstly, next clear its parent bridge's master bit,
-to make reboot proceed further. This need you PCI experts to offer help
-to evaluate.
+The way it was described earlier "During this time, the SUT sometimes
+gets a PCI error that raises an NMI." suggests that it isn't really
+restricted to kexec/kdump.
+Any attached device without an active driver might attempt spurious or
+malicious DMA and trigger the same during normal operation.
+Do you have available some more reporting of what happens during the
+PCIe error handling?
 
-Thanks
-Baoquan
+"The reaction to the NMI that the kdump kernel takes is problematic."
+Or the NMI should not have been triggered to begin with? Where does that happen?
 
+I couldn't access the bug report.
+
+-Deepa
 
 _______________________________________________
 kexec mailing list
