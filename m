@@ -2,111 +2,93 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6A54137B50
-	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 04:46:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93579137C73
+	for <lists+kexec@lfdr.de>; Sat, 11 Jan 2020 09:46:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dHpExoB9qyp09oN+vzSG/7O5BLJt4gdSMbH65w9mUaY=; b=gpx0uftFxcfU28
-	y7aAWO6CX9KOfncTTfTUq2yMmGO6xdumwkHbtHSnel39s2Qb3ayexmPF+mL5VFPAvJ6/8FwLXc++4
-	Xl1EXWWd43oU0CpIeHtD5xk4PQvw2RlniX2zsAWJr4cil1gnFJnVgTh8L0RZRNyZ+e9a9uC2eMOj/
-	WyKs7Kn281NB7wPUVbB6xLgHSj1eX1stagq/zaGjDZfBpg4J39Hf0z6F3WR6/etm5tQoLbe4D+/L3
-	FwgJid4yydw7kMbf4xlZSxJV9ak89eo3smRTNrtX8N7W6WZ028IkPSHRtSRO6qFTyiPtn8m923WZr
-	P7dzC1L+Nt1KD2ls3vrA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hClNwlQZmrHb3bUP5vo2RMhfAIHrba4D9lj/66ZXGtU=; b=Me902G35VLQKGK
+	GY2Woi7Qx0/BMkvfWZlds5zlaJEXuBaXC91g9VPDRLyzB5FxPm4qhnGQaNbSvsY/SfqAuOYgNmiW1
+	28nspacsEYvEHxaYGNH+rR9s3P3TuTX0TcNudv/zeY9Sn1qwP01xeRnNwXrNWb4Zakis814m28/2M
+	vaMzysYKSliHS90XeSxCpSwFfWqeY2mR1xVqKlSXGHHT2DoZhrBlJfyO3JufaegdyzC7fVsYJscYP
+	DT7PfhzOXtWIYQhgbrFBc0YtSoy4DdTZMzFRAhXCjLzBuRY6ZqJ6UoZJu7mzO80cko32eI5H8Yr3I
+	MhRi4MflnCrJwHWdGF9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iq7is-0002fX-Fg; Sat, 11 Jan 2020 03:46:02 +0000
-Received: from mailout.easymail.ca ([64.68.200.34])
+	id 1iqCPs-0003Hx-MD; Sat, 11 Jan 2020 08:46:44 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iq7io-0002eY-SB
- for kexec@lists.infradead.org; Sat, 11 Jan 2020 03:46:00 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mailout.easymail.ca (Postfix) with ESMTP id 65A052122E;
- Sat, 11 Jan 2020 03:45:56 +0000 (UTC)
-X-Virus-Scanned: Debian amavisd-new at emo06-pco.easydns.vpn
-Received: from mailout.easymail.ca ([127.0.0.1])
- by localhost (emo06-pco.easydns.vpn [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id sBerH9McGsTG; Sat, 11 Jan 2020 03:45:56 +0000 (UTC)
-Received: from mail.gonehiking.org (c-24-9-64-241.hsd1.co.comcast.net
- [24.9.64.241])
- by mailout.easymail.ca (Postfix) with ESMTPA id 3E072210FE;
- Sat, 11 Jan 2020 03:45:35 +0000 (UTC)
-Received: from [192.168.1.4] (rhapsody.internal [192.168.1.4])
- by mail.gonehiking.org (Postfix) with ESMTP id E47D13EEEF;
- Fri, 10 Jan 2020 20:45:34 -0700 (MST)
+ id 1iqCPp-0003GO-5u
+ for kexec@lists.infradead.org; Sat, 11 Jan 2020 08:46:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1578732397;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=0aHvJXYZzcJCz7vPY424q+D8y+hWrSbdS4ktK7C1ZMc=;
+ b=apYhxl3x/XRAUsEz7wF5hMX4T5D7dm39xOJXPP0Cz/U/s706i2I4/HGzmVvnCFjv3qF5E+
+ 08NT3L9H92+ldRNXPTWxG1ClEBABd8141Gne8gkuueqedMXcxNUcXX0pik2WjOuv0oxJP3
+ k3c83kqF6TWXusY8LsyYpzDKefu5IjM=
+Received: from mail-il1-f197.google.com (mail-il1-f197.google.com
+ [209.85.166.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-2-Vtr9zh8WNheXBKF2lG1FAQ-1; Sat, 11 Jan 2020 03:46:34 -0500
+Received: by mail-il1-f197.google.com with SMTP id z12so3420891ilh.17
+ for <kexec@lists.infradead.org>; Sat, 11 Jan 2020 00:46:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ryPwgX4h0fv0PqQURJdtqBJqmMzlmxt0UnN1Eaml9k8=;
+ b=gexf7vnYjb9IjiAgXClg22kTrRHWnrxi89sPfOEyLR1PT4DJreWk8FPQtlUxieU168
+ LoSUqcZY/gE3UK4rVH6/DUgWKGA34NQ07TJbbdW8bbshTaV06f7HoB9houCWF3TMlmwF
+ PKzzkt+OvQVQ8e2Z3farx0PGx4W+nxt/I3EdwIsf6TA9h0qaHR8Qbm7j3tx/GaSM8zf+
+ tPOGRTSPHU/bwRbdyKgcAwyDe+yBX7z7WO0GA+jdq99jpZ7PZf1CeGQv1tkYgHGc50Oo
+ FH37xGVJFA4MVZED3gFiQ61eyPa5wmf40zzZGjUBAZJStJQ910ZlLBfsu7nE5ROvrCIP
+ PzZQ==
+X-Gm-Message-State: APjAAAV7NDse9xX4wCSmGzHTaCOqMlc3ssq1VPlcUj1S3hEj7DCQgcuu
+ tUWMvzE3UM8jghfOHI29ymgsGDXR8t+MePpXc3xFUsQZ5rTkQE1mf07U/nMxYMdRwYit2+bjcfs
+ WKzLNhrY4qSnXpNz7VBXdYBI8U8dN3xqMogIe
+X-Received: by 2002:a92:5e46:: with SMTP id s67mr6481960ilb.162.1578732393598; 
+ Sat, 11 Jan 2020 00:46:33 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwEEuR6hFZaMskU7KT02zTWtoS0CzMF6B3DJtVuJAC7rZjKipG3HRyG1I0FgcNnqA1itY5dyMn7CzfpmIrj1BQ=
+X-Received: by 2002:a92:5e46:: with SMTP id s67mr6481943ilb.162.1578732393346; 
+ Sat, 11 Jan 2020 00:46:33 -0800 (PST)
+MIME-Version: 1.0
+References: <20191225192118.283637-1-kasong@redhat.com>
+ <20200110214217.GA88274@google.com>
+In-Reply-To: <20200110214217.GA88274@google.com>
+From: Kairui Song <kasong@redhat.com>
+Date: Sat, 11 Jan 2020 16:46:22 +0800
+Message-ID: <CACPcB9d7Fq=6Fvz_Tjsq_E2qgyaPQKc=KdzfTdBj3uhygoN5qA@mail.gmail.com>
 Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
  kdump kernel
-To: Baoquan He <bhe@redhat.com>
-References: <20200110214217.GA88274@google.com>
- <e0194581-4cdd-3629-d9fe-10a1cfd29d03@gonehiking.org>
- <20200110230003.GB1875851@anatevka.americas.hpqcorp.net>
- <d2715683-f171-a825-3c0b-678b6c5c1a79@gonehiking.org>
- <20200111005041.GB19291@MiWiFi-R3L-srv>
-From: Khalid Aziz <khalid@gonehiking.org>
-Autocrypt: addr=khalid@gonehiking.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <dc46c904-1652-09b3-f351-6b3a3e761d74@gonehiking.org>
-Date: Fri, 10 Jan 2020 20:45:34 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
-MIME-Version: 1.0
-In-Reply-To: <20200111005041.GB19291@MiWiFi-R3L-srv>
-Content-Language: en-US
+To: Bjorn Helgaas <helgaas@kernel.org>
+X-MC-Unique: Vtr9zh8WNheXBKF2lG1FAQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200110_194559_037029_502BED04 
-X-CRM114-Status: GOOD (  32.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200111_004641_294917_3FAA303C 
+X-CRM114-Status: GOOD (  28.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [64.68.200.34 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,190 +100,119 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kairui Song <kasong@redhat.com>, linux-pci@vger.kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Randy Wright <rwright@hpe.com>, Jerry.Hoemann@hpe.com,
- Bjorn Helgaas <helgaas@kernel.org>, Deepa Dinamani <deepa.kernel@gmail.com>
+Cc: Baoquan He <bhe@redhat.com>, linux-pci@vger.kernel.org,
+ kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jerry Hoemann <jerry.hoemann@hpe.com>, Deepa Dinamani <deepa.kernel@gmail.com>,
+ khalid@gonehiking.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 1/10/20 5:50 PM, Baoquan He wrote:
-> On 01/10/20 at 05:18pm, Khalid Aziz wrote:
->> On 1/10/20 4:00 PM, Jerry Hoemann wrote:
->>> On Fri, Jan 10, 2020 at 03:25:36PM -0700, Khalid Aziz and Shuah Khan wrote:
->>>> On 1/10/20 2:42 PM, Bjorn Helgaas wrote:
->>>>> [+cc Deepa (also working in this area)]
->>>>>
->>>>> On Thu, Dec 26, 2019 at 03:21:18AM +0800, Kairui Song wrote:
->>>>>> There are reports about kdump hang upon reboot on some HPE machines,
->>>>>> kernel hanged when trying to shutdown a PCIe port, an uncorrectable
->>>>>> error occurred and crashed the system.
->>>>>
->>>>> Details?  Do you have URLs for bug reports, dmesg logs, etc?
->>>>>
->>>>>> On the machine I can reproduce this issue, part of the topology
->>>>>> looks like this:
->>>>>>
->>>>>> [0000:00]-+-00.0  Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 DMI2
->>>>>>           +-01.0-[02]--
->>>>>>           +-01.1-[05]--
->>>>>>           +-02.0-[06]--+-00.0  tEmulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.1  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.2  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.3  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.4  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.5  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            +-00.6  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           |            \-00.7  Emulex Corporation OneConnect NIC (Skyhawk)
->>>>>>           +-02.1-[0f]--
->>>>>>           +-02.2-[07]----00.0  Hewlett-Packard Company Smart Array Gen9 Controllers
->>>>>>
->>>>>> When shutting down PCIe port 0000:00:02.2 or 0000:00:02.0, the machine
->>>>>> will hang, depend on which device is reinitialized in kdump kernel.
->>>>>>
->>>>>> If force remove unused device then trigger kdump, the problem will never
->>>>>> happen:
->>>>>>
->>>>>>     echo 1 > /sys/bus/pci/devices/0000\:00\:02.2/0000\:07\:00.0/remove
->>>>>>     echo c > /proc/sysrq-trigger
->>>>>>
->>>>>>     ... Kdump save vmcore through network, the NIC get reinitialized and
->>>>>>     hpsa is untouched. Then reboot with no problem. (If hpsa is used
->>>>>>     instead, shutdown the NIC in first kernel will help)
->>>>>>
->>>>>> The cause is that some devices are enabled by the first kernel, but it
->>>>>> don't have the chance to shutdown the device, and kdump kernel is not
->>>>>> aware of it, unless it reinitialize the device.
->>>>>>
->>>>>> Upon reboot, kdump kernel will skip downstream device shutdown and
->>>>>> clears its bridge's master bit directly. The downstream device could
->>>>>> error out as it can still send requests but upstream refuses it.
->>>>>
->>>>> Can you help me understand the sequence of events?  If I understand
->>>>> correctly, the desired sequence is:
->>>>>
->>>>>   - user kernel boots
->>>>>   - user kernel panics and kexecs to kdump kernel
->>>>>   - kdump kernel writes vmcore to network or disk
->>>>>   - kdump kernel reboots
->>>>>   - user kernel boots
->>>>>
->>>>> But the problem is that as part of the kdump kernel reboot,
->>>>>
->>>>>   - kdump kernel disables bus mastering for a Root Port
->>>>>   - device below the Root Port attempts DMA
->>>>>   - Root Port receives DMA transaction, handles it as Unsupported
->>>>>     Request, sends UR Completion to device
->>>>>   - device signals uncorrectable error
->>>>>   - uncorrectable error causes a crash (Or a hang?  You mention both
->>>>>     and I'm not sure which it is)
->>>>>
->>>>> Is that right so far?
->>>>>
->>>>>> So for kdump, let kernel read the correct hardware power state on boot,
->>>>>> and always clear the bus master bit of PCI device upon shutdown if the
->>>>>> device is on. PCIe port driver will always shutdown all downstream
->>>>>> devices first, so this should ensure all downstream devices have bus
->>>>>> master bit off before clearing the bridge's bus master bit.
->>>>>>
->>>>>> Signed-off-by: Kairui Song <kasong@redhat.com>
->>>>>> ---
->>>>>>  drivers/pci/pci-driver.c | 11 ++++++++---
->>>>>>  drivers/pci/quirks.c     | 20 ++++++++++++++++++++
->>>>>>  2 files changed, 28 insertions(+), 3 deletions(-)
->>>>>>
->>>>>> diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
->>>>>> index 0454ca0e4e3f..84a7fd643b4d 100644
->>>>>> --- a/drivers/pci/pci-driver.c
->>>>>> +++ b/drivers/pci/pci-driver.c
->>>>>> @@ -18,6 +18,7 @@
->>>>>>  #include <linux/kexec.h>
->>>>>>  #include <linux/of_device.h>
->>>>>>  #include <linux/acpi.h>
->>>>>> +#include <linux/crash_dump.h>
->>>>>>  #include "pci.h"
->>>>>>  #include "pcie/portdrv.h"
->>>>>>  
->>>>>> @@ -488,10 +489,14 @@ static void pci_device_shutdown(struct device *dev)
->>>>>>  	 * If this is a kexec reboot, turn off Bus Master bit on the
->>>>>>  	 * device to tell it to not continue to do DMA. Don't touch
->>>>>>  	 * devices in D3cold or unknown states.
->>>>>> -	 * If it is not a kexec reboot, firmware will hit the PCI
->>>>>> -	 * devices with big hammer and stop their DMA any way.
->>>>>> +	 * If this is kdump kernel, also turn off Bus Master, the device
->>>>>> +	 * could be activated by previous crashed kernel and may block
->>>>>> +	 * it's upstream from shutting down.
->>>>>> +	 * Else, firmware will hit the PCI devices with big hammer
->>>>>> +	 * and stop their DMA any way.
->>>>>>  	 */
->>>>>> -	if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
->>>>>> +	if ((kexec_in_progress || is_kdump_kernel()) &&
->>>>>> +			pci_dev->current_state <= PCI_D3hot)
->>>>>>  		pci_clear_master(pci_dev);
->>>>>
->>>>> I'm clearly missing something because this will turn off bus mastering
->>>>> in cases where we previously left it enabled.
->>>>>
->>>>> I was assuming the crash was related to a device doing DMA when the
->>>>> Root Port had bus mastering disabled.  But that must be wrong.
->>>>>
->>>>> I'd like to understand the crash/hang better because the quirk
->>>>> especially is hard to connect to anything.  If the crash is because of
->>>>> an AER or other PCIe error, maybe another possibility is that we could
->>>>> handle it better or disable signaling of it or something.
->>>>>
->>>>
->>>> I am not understanding this failure mode either. That code in
->>>> pci_device_shutdown() was added originally to address this very issue.
->>>> The patch 4fc9bbf98fd6 ("PCI: Disable Bus Master only on kexec reboot")
->>>> shut down any errant DMAs from PCI devices as we kexec a new kernel. In
->>>> this new patch, this is the same code path that will be taken again when
->>>> kdump kernel is shutting down. If the errant DMA problem was not fixed
->>>> by clearing Bus Master bit in this path when kdump kernel was being
->>>> kexec'd, why does the same code path work the second time around when
->>>> kdump kernel is shutting down? Is there more going on that we don't
->>>> understand?
->>>>
->>>
->>>   Khalid,
->>>
->>>   I don't believe we execute that code path in the crash case.
->>>
->>>   The variable kexec_in_progress is set true in kernel_kexec() before calling
->>>   machine_kexec().  This is the fast reboot case.
->>>
->>>   I don't see kexec_in_progress set true elsewhere.
->>>
->>>
->>>   The code path for crash is different.
->>>
->>>   For instance, panic() will call
->>> 	-> __crash_kexec()  which calls
->>> 		-> machine_kexec().
->>>
->>>  So the setting of kexec_in_progress is bypassed.
->>>
->>
->> True, but what that means is if it is an errant DMA causing the issue
->> you are seeing, that errant DMA can happen any time between when we
-> 
-> Here, there could be misunderstanding. It's not an errant DMA, it's an
-> device which may be in DMA transporting state in normal kernel, but in
-> kdump kernel it's not manipulated by its driver because we don't use it
-> to dump, so exlucde its driver from kdump initramfs for saving space. 
-> 
+On Sat, Jan 11, 2020 at 5:42 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> Can you help me understand the sequence of events?  If I understand
+> correctly, the desired sequence is:
+>
+>   - user kernel boots
+>   - user kernel panics and kexecs to kdump kernel
 
-Errant DMA as in currently running kernel did not enable the device to
-do DMA and is not ready for it. If a device can issue DMA request in
-this state, it could do it well before kdump kernel starts shutting
-down. Don't we need to fix this before we start shutting down kdump in
-preparation for reboot? I can see the need for this fix, but I am not
-sure if this patch places the fix in right place.
+One thing imported need to be mentioned here, user kernel kexec into
+kdump kernel using the fast path, which does very few things, and
+leave all the PCI devices untouched. If they are on, or doing DMA,
+will just keep doing that, nothing will stop them.
+
+In most cases the on going DMA seems harmless though, as kdump kernel
+only live in reserved crash memory.
+
+>   - kdump kernel writes vmcore to network or disk
+>   - kdump kernel reboots
+>   - user kernel boots
+>
+> But the problem is that as part of the kdump kernel reboot,
+>
+>   - kdump kernel disables bus mastering for a Root Port
+>   - device below the Root Port attempts DMA
+>   - Root Port receives DMA transaction, handles it as Unsupported
+>     Request, sends UR Completion to device
+>   - device signals uncorrectable error
+>   - uncorrectable error causes a crash (Or a hang?  You mention both
+>     and I'm not sure which it is)
+>
+> Is that right so far?
+
+Yes everything else all correct. On the machine I can reproduce it,
+system just hanged, even serial console is dead with no output.
+
+>
+> > So for kdump, let kernel read the correct hardware power state on boot,
+> > and always clear the bus master bit of PCI device upon shutdown if the
+> > device is on. PCIe port driver will always shutdown all downstream
+> > devices first, so this should ensure all downstream devices have bus
+> > master bit off before clearing the bridge's bus master bit.
+> >
+> > Signed-off-by: Kairui Song <kasong@redhat.com>
+> > ---
+> >  drivers/pci/pci-driver.c | 11 ++++++++---
+> >  drivers/pci/quirks.c     | 20 ++++++++++++++++++++
+> >  2 files changed, 28 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
+> > index 0454ca0e4e3f..84a7fd643b4d 100644
+> > --- a/drivers/pci/pci-driver.c
+> > +++ b/drivers/pci/pci-driver.c
+> > @@ -18,6 +18,7 @@
+> >  #include <linux/kexec.h>
+> >  #include <linux/of_device.h>
+> >  #include <linux/acpi.h>
+> > +#include <linux/crash_dump.h>
+> >  #include "pci.h"
+> >  #include "pcie/portdrv.h"
+> >
+> > @@ -488,10 +489,14 @@ static void pci_device_shutdown(struct device *dev)
+> >        * If this is a kexec reboot, turn off Bus Master bit on the
+> >        * device to tell it to not continue to do DMA. Don't touch
+> >        * devices in D3cold or unknown states.
+> > -      * If it is not a kexec reboot, firmware will hit the PCI
+> > -      * devices with big hammer and stop their DMA any way.
+> > +      * If this is kdump kernel, also turn off Bus Master, the device
+> > +      * could be activated by previous crashed kernel and may block
+> > +      * it's upstream from shutting down.
+> > +      * Else, firmware will hit the PCI devices with big hammer
+> > +      * and stop their DMA any way.
+> >        */
+> > -     if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
+> > +     if ((kexec_in_progress || is_kdump_kernel()) &&
+> > +                     pci_dev->current_state <= PCI_D3hot)
+> >               pci_clear_master(pci_dev);
+>
+> I'm clearly missing something because this will turn off bus mastering
+> in cases where we previously left it enabled.
+>
+> I was assuming the crash was related to a device doing DMA when the
+> Root Port had bus mastering disabled.  But that must be wrong.
+
+That is just what is happening. When kdump kernel try to reboot, it
+only cleared bus mastering bit of the Root Port, ignoring enabled
+device under it, because it's not the kdump kernel that enabled the
+device, it's the first kernel enabled it, and kdump kernel don't know
+it.
+
+>
+> I'd like to understand the crash/hang better because the quirk
+> especially is hard to connect to anything.  If the crash is because of
+> an AER or other PCIe error, maybe another possibility is that we could
+> handle it better or disable signaling of it or something.
+>
+
+Maybe if we can solve the problem by properly shutdown the devices in
+right order, then better don't disable any error handling features? Or
+kernel might miss some real hardware issue.
 
 --
-Khalid
+Best Regards,
+Kairui Song
 
 
 _______________________________________________
