@@ -2,108 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C08AD13DE6D
-	for <lists+kexec@lfdr.de>; Thu, 16 Jan 2020 16:17:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EF9113DE6E
+	for <lists+kexec@lfdr.de>; Thu, 16 Jan 2020 16:18:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=apF7bPA60+IiHcPIf4PWexP7NdTO3ZVY9cnp4qHyFMg=; b=azVb4F2CsRYcg6
-	JRr4H9YOP6/rUQYEevA+eZZgBPWUDn25uiDTU4UbU2hWfL4N18eQ7hZjDgKfK/r6PwyVOVcBr+wRe
-	P9+Wq7UwfL8KkvwKXBxxkjYWb9LLPaIfThKYAZVmGX+/qOkQ1Kh/Ko8gQFuAm5w5S3b9jUUoAXQjc
-	1Q9+HZ00PnDZCFmWQiifrAqWrkGPfXz7Q1nXWmagSUD977YS4RF0a2k771P6ko+2gPrGEcO4XzdFi
-	+BBew4EQu7r0h5k/ra4ZusJHFSvIvviXXTyfkRmcVQ+nZLCIqTDNQHjdUv/A4jw8vsxhalQJT+EQA
-	MCiU2d4H34BSIP/kpJWQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UM2V/xuzpxWp+KYJtObtHMb3sXmIJbTW+RnWNmNxbxM=; b=RdKdM0NnU7G7B8
+	F4f4/8CKLXWzK0VQSPtkXwh7Q4wfr7sW+aPz1uEjnlJ7fnIN8vRmKJz8RAIHC/cJVv1PjgsKHNpud
+	aLfFiim6it6B7oLFJ7Vu558CLTprcqupFLoV8uOosQSF3yTGXrQDNK5wAog0N84+jiuLM/nspijy2
+	k0dVKyG+NDbWWCy8xN/1++LsXRcawdh8pRQ+aPP2F36u5FVS9Fu1S0GpKZsBHRxug4GvMPGHnv4e8
+	PijOic+ERlqE5kXnAjxRE5ZSS1wnJLUjgyeLdHCFkk/JsL5Wq6eiKylApdvebJQ8+2qzaR3At2CCn
+	QmeyyXsDQfCzGYkqMDWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is6u6-0006Db-QK; Thu, 16 Jan 2020 15:17:50 +0000
-Received: from mail-eopbgr1300048.outbound.protection.outlook.com
- ([40.107.130.48] helo=APC01-HK2-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is6u0-0006CN-LY
- for kexec@lists.infradead.org; Thu, 16 Jan 2020 15:17:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=cFw9LtIlbgcGU7vVUR3xlcbT53EatRjtiEEKD2GFKnByqDCNNntOgIoXi4mBZcXAqv3E8mig7VDUewTi+jv0IgKBTCHWYrvvwHMIUf3XnAxYyGecBHvWa2Z3PKDRmIxCGp9/R0PfWDTnSaljFbBxIH4TX20weQ67qEBJC7QtJRmGOqyrlFVXKhRbmTtrKjMM+id8plBt8hlCly2yaC6nCS9zan7EgTe55Stb3A4+Q1Ai7XdKl67sNPb/0bEf/kHG34KzMOmYC4L+5+8cVkBNby2qiHMJLCWQ9979rMCrO0oAnaFpDQywm0vQcBml1DiXhMVVHjnZDsfikwQGAFrPKQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IpUPWmJR8L5Q8MUI5xOyDzQNRvkv64w2w/87Dzma6HQ=;
- b=NQX9a3q6xEKh8+ZWaDY8hDd2edQpToUV6d8fcpkwYdYvCh73Iu0xoXcqFcj5Y2wAhJabHzU3VPJd9U7df3CrqBII8dqWlU4nizobP6tsFy54VyqoaT1dAOs6B2S8HephfWgBUbumUfUVZNzLLWHGcl3qzubryFkA/59hdge4y/cw4AVsrdvO6DQGFkOm0GMc290LBz+YuGOSZe2zijqI9guxEOO1xve88pfU615bgMKM3ItlF4FylX3qQ4bRzUv01KvHV4EwULgSddb/5L3mFnfzeaIDgdeP1UP4AjKkymEOFYoWQ6EikKFXGidAWUB29zH4rGPdKBhDvlejelLdXA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
- header.d=nec.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=IpUPWmJR8L5Q8MUI5xOyDzQNRvkv64w2w/87Dzma6HQ=;
- b=xz81edGIOUnPyVp8kpFN87mw2nP+ziShFm/VjfskpxpiTCnHbmWYao81kEd24Ojq6Ujeh4KYhzci3+z8I+DZGPJ/BxjMu+pMMgC+IOzsUXJzOpW5BLVKjarkZnC3hbZeseiLs7KyNig79tjzFIaAJ1TQPsQ/7350lgbZws3IbSw=
-Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
- TY2PR01MB1948.jpnprd01.prod.outlook.com (52.133.182.149) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.20; Thu, 16 Jan 2020 15:17:37 +0000
-Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
- ([fe80::99e3:8a09:840f:9b89]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
- ([fe80::99e3:8a09:840f:9b89%4]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
- 15:17:37 +0000
-From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
- <k-hagio-ab@nec.com>
-To: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
-Subject: [ANNOUNCE] makedumpfile 1.6.7 is released
-Thread-Topic: [ANNOUNCE] makedumpfile 1.6.7 is released
-Thread-Index: AdXMfYM8KDL/M7tcR/2yYsrFJAtlPA==
-Date: Thu, 16 Jan 2020 15:17:37 +0000
-Message-ID: <TY2PR01MB5210DB8057FAC84DD3C0C687DD360@TY2PR01MB5210.jpnprd01.prod.outlook.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=k-hagio-ab@nec.com; 
-x-originating-ip: [66.187.232.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2ffa598f-8297-48ac-2ebd-08d79a973876
-x-ms-traffictypediagnostic: TY2PR01MB1948:
-x-microsoft-antispam-prvs: <TY2PR01MB1948E961107D7DF98E9AFA8CDD360@TY2PR01MB1948.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 02843AA9E0
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(396003)(376002)(136003)(366004)(199004)(189003)(66476007)(76116006)(64756008)(66446008)(66556008)(7696005)(316002)(66946007)(85182001)(5660300002)(6506007)(52536014)(186003)(33656002)(26005)(6916009)(2906002)(86362001)(9686003)(55016002)(478600001)(966005)(81156014)(81166006)(8676002)(8936002)(71200400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:TY2PR01MB1948;
- H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nec.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: ZGzKjKI1s9xnukyUu9hVc7TNgxeEiDQb6r1hIpfa5JTlbBMsj+GRmr8ESFewGBQHmz0cUDGV2PsZOz90LxqSMfAzH//HRQUNdmTDF4MGpy4DMc6N0ULvMiDNh9lNC5VUBCu5n4bu3Ag8gfqOo9f7Ga2Szxi111/07ylIxKre498nlHqOagYHiiD21jENGMwrT5auN4f3zmqkQXDoKzcP/rJV6MywsJUUnfjP+Y6B3KcX2f4bQGDdiwCnX0o3uYv7kXpBoWRiMNxjmhmuwcdgLwu/LkJDYyZpOaO7dyj2nda+yZ9qS0WBC5BHrHlbgINKGUZv+QAwNRSfy5nUCeiTsMl+A3xZ7ziA2szx9LlPmLtrZyHKObYq/u8R550495u+Ie1J4bez+qm+uxK0vzDpbOz+9INEUXczTFkWXuKxLNmfkLvyGvnLxlxk6kiBSM0CAtP7oU8Njs0JEQdDSVwNnnOk6arOJa3CfcgXliXSB4g=
-x-ms-exchange-transport-forked: True
+	id 1is6uG-0006HC-JE; Thu, 16 Jan 2020 15:18:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1is6uA-0006Ee-Vz; Thu, 16 Jan 2020 15:17:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C26F61396;
+ Thu, 16 Jan 2020 07:17:51 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0E74B3F68E;
+ Thu, 16 Jan 2020 07:17:49 -0800 (PST)
+Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
+ crash_core.c
+To: Dave Young <dyoung@redhat.com>, Chen Zhou <chenzhou10@huawei.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <20191223152349.180172-2-chenzhou10@huawei.com>
+ <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
+ <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
+ <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <77c971a4-608f-ee35-40cb-77186a2ddbd1@arm.com>
+Date: Thu, 16 Jan 2020 15:17:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-OriginatorOrg: nec.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2ffa598f-8297-48ac-2ebd-08d79a973876
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 15:17:37.3603 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vhjUAijGIoFREmjr2qP7QyPfPH9ifL/UOSAJCjRpxEohh7pz2E/Lf8qKi1nHTm3NIF7qfmVnE5ka5dHvV2ABgQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB1948
+In-Reply-To: <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_071744_765378_B1F1E504 
-X-CRM114-Status: UNSURE (   5.28  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200116_071755_116114_F40EE626 
+X-CRM114-Status: GOOD (  20.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.130.48 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,57 +67,96 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: kbuild test robot <lkp@intel.com>, horms@verge.net.au,
+ linux-doc@vger.kernel.org, catalin.marinas@arm.com, bhsharma@redhat.com,
+ xiexiuqi@huawei.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, tglx@linutronix.de, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello,
+Hi guys,
 
-I'm pleased to announce the release of makedumpfile-1.6.7.
-Your comments/patches are welcome.
+On 28/12/2019 09:32, Dave Young wrote:
+> On 12/27/19 at 07:04pm, Chen Zhou wrote:
+>> On 2019/12/27 13:54, Dave Young wrote:
+>>> On 12/23/19 at 11:23pm, Chen Zhou wrote:
+>>>> In preparation for supporting reserve_crashkernel_low in arm64 as
+>>>> x86_64 does, move reserve_crashkernel_low() into kernel/crash_core.c.
+>>>>
+>>>> Note, in arm64, we reserve low memory if and only if crashkernel=X,low
+>>>> is specified. Different with x86_64, don't set low memory automatically.
+>>>
+>>> Do you have any reason for the difference?  I'd expect we have same
+>>> logic if possible and remove some of the ifdefs.
+>>
+>> In x86_64, if we reserve crashkernel above 4G, then we call reserve_crashkernel_low()
+>> to reserve low memory.
+>>
+>> In arm64, to simplify, we call reserve_crashkernel_low() at the beginning of reserve_crashkernel()
+>> and then relax the arm64_dma32_phys_limit if reserve_crashkernel_low() allocated something.
+>> In this case, if reserve crashkernel below 4G there will be 256M low memory set automatically
+>> and this needs extra considerations.
 
-Main new features:
-o Support for ELF extended numbering for large memory system
-o Support for KASLR with -x makedumpfile option on s390x
-o Support for newer kernels up to v5.4.8 (x86_64)
+> Sorry that I did not read the old thread details and thought that is
+> arch dependent.  But rethink about that, it would be better that we can
+> have same semantic about crashkernel parameters across arches.  If we
+> make them different then it causes confusion, especially for
+> distributions.
 
-Changelog since v1.6.6:
-a4fe839d25fb [PATCH] Support newer kernels up to v5.4 (Kazuhito Hagio)
-6d6db1a40772 [PATCH] Update README file (Kazuhito Hagio)
-577854dd62a6 [PATCH] s390: Use get_kaslr_offset_general() for s390x (Mikhail Zaslonko)
-60cf280ebfe8 [PATCH] Pass 0 to get_kaslr_offset() in find_kaslr_offsets() (Kazuhito Hagio)
-c6992684b51b [PATCH] Generalize get_kaslr_offset_arm64() for other architectures (Kazuhito Hagio)
-49baecc7c13f [PATCH] Fix compilation warnings on 32-bit system (Kazuhito Hagio)
-5519b3eba685 [PATCH] assign bitmap1/2 fd for subprocess in non-cyclic mode (Pingfan Liu)
-180a3958c30d [PATCH] Print version and command line in debugging message (Kazuhito Hagio)
-71e798cb1b85 [PATCH] Makefile: remove -lebl from LIBS when no libebl.a (Pingfan Liu)
-82e6cce2219a [PATCH] Add support for ELF extended numbering (Kazuhito Hagio)
-44dc8919f28c [PATCH] Fix wrong statistics in ELF format mode (Kazuhito Hagio)
-56511628fa67 [PATCH] Fix off-by-one issue in exclude_nodata_pages() (Mikhail Zaslonko)
-d22f8e1f8c88 [PATCH] Fix divide by zero in print_report() (Dave Jones)
-aa5ee50a3396 [PATCH] Improve performance for non-thread compression with zlib (Kazuhito Hagio)
-964116f403cd [PATCH] Cleanup: Remove unnecessary len_buf_out_* variables (Kazuhito Hagio)
-8425342a52b2 [PATCH] Fix inconsistent return value from find_vmemmap() (Kazuhito Hagio)
-b461971bfac0 [PATCH] Fix exclusion range in find_vmemmap_pages() (Kazuhito Hagio)
-aa5ab4cf6c73 [PATCH] x86_64: Fix incorrect exclusion by -e option with KASLR (Kazuhito Hagio)
-76f9cc0f3de2 [PATCH] arm64: fix get_kaslr_offset_arm64() to return kaslr_offset correctly (Kazuhito Hagio)
-7bdb468c2c99 [PATCH] Increase SECTION_MAP_LAST_BIT to 4 (Kazuhito Hagio)
-c1b834f80311 [PATCH] Do not proceed when get_num_dumpable_cyclic() fails (Kazuhito Hagio)
+Surely distros also want one crashkernel* string they can use on all platforms without
+having to detect the kernel version, platform or changeable memory layout...
 
-Explanation of makedumpfile:
-  To shorten the size of the dumpfile and the time of creating the
-  dumpfile, makedumpfile copies only the necessary pages for analysis
-  to the dumpfile from /proc/vmcore. You can specify the kind of
-  unnecessary pages with dump_level. If you want to shorten the size
-  further, enable the compression of the page data.
 
-Download:
-  The latest makedumpfile can be downloaded from the following URL.
-  https://sourceforge.net/projects/makedumpfile/
+> OTOH, I thought if we reserve high memory then the low memory should be
+> needed.  There might be some exceptions, but I do not know the exact
+> one,
 
-Thank you,
-Kazu
+> can we make the behavior same, and special case those systems which
+> do not need low memory reservation.
+
+Its tricky to work out which systems are the 'normal' ones.
+
+We don't have a fixed memory layout for arm64. Some systems have no memory below 4G.
+Others have no memory above 4G.
+
+Chen Zhou's machine has some memory below 4G, but its too precious to reserve a large
+chunk for kdump. Without any memory below 4G some of the drivers won't work.
+
+I don't see what distros can set as their default for all platforms if high/low are
+mutually exclusive with the 'crashkernel=' in use today. How did x86 navigate this, ... or
+was it so long ago?
+
+No one else has reported a problem with the existing placement logic, hence treating this
+'low' thing as the 'in addition' special case.
+
+
+>> previous discusses:
+>> 	https://lkml.org/lkml/2019/6/5/670
+>> 	https://lkml.org/lkml/2019/6/13/229
+> 
+> Another concern from James:
+> "
+> With both crashk_low_res and crashk_res, we end up with two entries in /proc/iomem called
+> "Crash kernel". Because its sorted by address, and kexec-tools stops searching when it
+> find "Crash kernel", you are always going to get the kernel placed in the lower portion.
+> "
+> 
+> The kexec-tools code is iterating all "Crash kernel" ranges and add them
+> in an array.  In X86 code, it uses the higher range to locate memory.
+
+Then my hurried reading of what the user-space code does was wrong!
+
+If kexec-tools places the kernel in the low region, there may not be enough memory left
+for whatever purpose it was reserved for. This was the motivation for giving it a
+different name.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 kexec mailing list
