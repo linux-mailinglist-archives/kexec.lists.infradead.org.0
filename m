@@ -2,132 +2,108 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91A6713D644
-	for <lists+kexec@lfdr.de>; Thu, 16 Jan 2020 09:57:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C08AD13DE6D
+	for <lists+kexec@lfdr.de>; Thu, 16 Jan 2020 16:17:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A2/GzPa6coQ/sowrRnEuH4adCypcKXowUB9bM1QBzRo=; b=jwcLyPpAAEEA0a
-	wlpn5OmNQN92aiI7GXXsSmL9cfHapSbXYGXKTGs+4FhcBTVfAjajQq0Zuj3vBj+0uGStIQZ6q2ADD
-	go/HHfh6wCWWLlkYP+LsZ1cRLWIKY4bWBWjjio26ho11RkhFC+UIDe3E//HKTp2ILLdrlxIPvLLLA
-	fndRTMpi+nCNu7kz4Ta0s46FSyg/YHUU/Zi5PYPOrpZeMalrdEpx1II+wQ79U3O8TnLp3tQGa/loj
-	FGWt/sTNBetZ56rzHYN/uAoHam244z7PXl+IH4+z/AjvYAYSYOjJzm/UJj6iaAOHGXPF2Rs08hGbv
-	ZOpcz80uaV3WFvMAekuw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=apF7bPA60+IiHcPIf4PWexP7NdTO3ZVY9cnp4qHyFMg=; b=azVb4F2CsRYcg6
+	JRr4H9YOP6/rUQYEevA+eZZgBPWUDn25uiDTU4UbU2hWfL4N18eQ7hZjDgKfK/r6PwyVOVcBr+wRe
+	P9+Wq7UwfL8KkvwKXBxxkjYWb9LLPaIfThKYAZVmGX+/qOkQ1Kh/Ko8gQFuAm5w5S3b9jUUoAXQjc
+	1Q9+HZ00PnDZCFmWQiifrAqWrkGPfXz7Q1nXWmagSUD977YS4RF0a2k771P6ko+2gPrGEcO4XzdFi
+	+BBew4EQu7r0h5k/ra4ZusJHFSvIvviXXTyfkRmcVQ+nZLCIqTDNQHjdUv/A4jw8vsxhalQJT+EQA
+	MCiU2d4H34BSIP/kpJWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1is0y2-0002Bv-TA; Thu, 16 Jan 2020 08:57:30 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1is6u6-0006Db-QK; Thu, 16 Jan 2020 15:17:50 +0000
+Received: from mail-eopbgr1300048.outbound.protection.outlook.com
+ ([40.107.130.48] helo=APC01-HK2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1is0xu-0002BM-Ti
- for kexec@lists.infradead.org; Thu, 16 Jan 2020 08:57:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579165041;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=1NI+j8f8/aC88UjqgtO2kRAPBTpH+K6B8i77yNR4JMs=;
- b=LCC9cuQ/dDPQe1eSBWuujh3AXY9lFyThHIZ1oJIxMzr1ILOGZFq03m+tSU9FK9WYndnaFy
- K6y0c9yTETayekKx66zR7sm80pi518jd4NQFKEw78/C7i1QbPWothgKrF98L/PDXLX098o
- UUMCYkBFj2B3WFzykcrfFW98KFF6kVY=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-82-_pmFI8G6PLiNOojyQ8q6EA-1; Thu, 16 Jan 2020 03:57:18 -0500
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A29CE801E77;
- Thu, 16 Jan 2020 08:57:16 +0000 (UTC)
-Received: from [10.36.117.84] (ovpn-117-84.ams2.redhat.com [10.36.117.84])
- by smtp.corp.redhat.com (Postfix) with ESMTP id AE7C884333;
- Thu, 16 Jan 2020 08:57:14 +0000 (UTC)
-Subject: Re: [PATCH] mm/sparse: reset section's mem_map when fully deactivated
-To: Baoquan He <bhe@redhat.com>
-References: <1579143668-27941-1-git-send-email-kernelfans@gmail.com>
- <97ab281f-d038-d40c-648a-e0085a906dcf@redhat.com>
- <6cfd834a-72cc-656a-3954-40b37db5a66f@redhat.com>
- <20200116082451.GC26758@MiWiFi-R3L-srv>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <c928ace3-71bb-979a-d2f5-4df75a7dc8ed@redhat.com>
-Date: Thu, 16 Jan 2020 09:57:13 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
-MIME-Version: 1.0
-In-Reply-To: <20200116082451.GC26758@MiWiFi-R3L-srv>
+ id 1is6u0-0006CN-LY
+ for kexec@lists.infradead.org; Thu, 16 Jan 2020 15:17:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cFw9LtIlbgcGU7vVUR3xlcbT53EatRjtiEEKD2GFKnByqDCNNntOgIoXi4mBZcXAqv3E8mig7VDUewTi+jv0IgKBTCHWYrvvwHMIUf3XnAxYyGecBHvWa2Z3PKDRmIxCGp9/R0PfWDTnSaljFbBxIH4TX20weQ67qEBJC7QtJRmGOqyrlFVXKhRbmTtrKjMM+id8plBt8hlCly2yaC6nCS9zan7EgTe55Stb3A4+Q1Ai7XdKl67sNPb/0bEf/kHG34KzMOmYC4L+5+8cVkBNby2qiHMJLCWQ9979rMCrO0oAnaFpDQywm0vQcBml1DiXhMVVHjnZDsfikwQGAFrPKQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IpUPWmJR8L5Q8MUI5xOyDzQNRvkv64w2w/87Dzma6HQ=;
+ b=NQX9a3q6xEKh8+ZWaDY8hDd2edQpToUV6d8fcpkwYdYvCh73Iu0xoXcqFcj5Y2wAhJabHzU3VPJd9U7df3CrqBII8dqWlU4nizobP6tsFy54VyqoaT1dAOs6B2S8HephfWgBUbumUfUVZNzLLWHGcl3qzubryFkA/59hdge4y/cw4AVsrdvO6DQGFkOm0GMc290LBz+YuGOSZe2zijqI9guxEOO1xve88pfU615bgMKM3ItlF4FylX3qQ4bRzUv01KvHV4EwULgSddb/5L3mFnfzeaIDgdeP1UP4AjKkymEOFYoWQ6EikKFXGidAWUB29zH4rGPdKBhDvlejelLdXA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IpUPWmJR8L5Q8MUI5xOyDzQNRvkv64w2w/87Dzma6HQ=;
+ b=xz81edGIOUnPyVp8kpFN87mw2nP+ziShFm/VjfskpxpiTCnHbmWYao81kEd24Ojq6Ujeh4KYhzci3+z8I+DZGPJ/BxjMu+pMMgC+IOzsUXJzOpW5BLVKjarkZnC3hbZeseiLs7KyNig79tjzFIaAJ1TQPsQ/7350lgbZws3IbSw=
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
+ TY2PR01MB1948.jpnprd01.prod.outlook.com (52.133.182.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2644.20; Thu, 16 Jan 2020 15:17:37 +0000
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89%4]) with mapi id 15.20.2623.018; Thu, 16 Jan 2020
+ 15:17:37 +0000
+From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
+ <k-hagio-ab@nec.com>
+To: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Subject: [ANNOUNCE] makedumpfile 1.6.7 is released
+Thread-Topic: [ANNOUNCE] makedumpfile 1.6.7 is released
+Thread-Index: AdXMfYM8KDL/M7tcR/2yYsrFJAtlPA==
+Date: Thu, 16 Jan 2020 15:17:37 +0000
+Message-ID: <TY2PR01MB5210DB8057FAC84DD3C0C687DD360@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+Accept-Language: ja-JP, en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
-X-MC-Unique: _pmFI8G6PLiNOojyQ8q6EA-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [66.187.232.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 2ffa598f-8297-48ac-2ebd-08d79a973876
+x-ms-traffictypediagnostic: TY2PR01MB1948:
+x-microsoft-antispam-prvs: <TY2PR01MB1948E961107D7DF98E9AFA8CDD360@TY2PR01MB1948.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 02843AA9E0
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(396003)(376002)(136003)(366004)(199004)(189003)(66476007)(76116006)(64756008)(66446008)(66556008)(7696005)(316002)(66946007)(85182001)(5660300002)(6506007)(52536014)(186003)(33656002)(26005)(6916009)(2906002)(86362001)(9686003)(55016002)(478600001)(966005)(81156014)(81166006)(8676002)(8936002)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:TY2PR01MB1948;
+ H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ZGzKjKI1s9xnukyUu9hVc7TNgxeEiDQb6r1hIpfa5JTlbBMsj+GRmr8ESFewGBQHmz0cUDGV2PsZOz90LxqSMfAzH//HRQUNdmTDF4MGpy4DMc6N0ULvMiDNh9lNC5VUBCu5n4bu3Ag8gfqOo9f7Ga2Szxi111/07ylIxKre498nlHqOagYHiiD21jENGMwrT5auN4f3zmqkQXDoKzcP/rJV6MywsJUUnfjP+Y6B3KcX2f4bQGDdiwCnX0o3uYv7kXpBoWRiMNxjmhmuwcdgLwu/LkJDYyZpOaO7dyj2nda+yZ9qS0WBC5BHrHlbgINKGUZv+QAwNRSfy5nUCeiTsMl+A3xZ7ziA2szx9LlPmLtrZyHKObYq/u8R550495u+Ie1J4bez+qm+uxK0vzDpbOz+9INEUXczTFkWXuKxLNmfkLvyGvnLxlxk6kiBSM0CAtP7oU8Njs0JEQdDSVwNnnOk6arOJa3CfcgXliXSB4g=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2ffa598f-8297-48ac-2ebd-08d79a973876
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Jan 2020 15:17:37.3603 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: vhjUAijGIoFREmjr2qP7QyPfPH9ifL/UOSAJCjRpxEohh7pz2E/Lf8qKi1nHTm3NIF7qfmVnE5ka5dHvV2ABgQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB1948
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200116_005723_032300_31217529 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200116_071744_765378_B1F1E504 
+X-CRM114-Status: UNSURE (   5.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [40.107.130.48 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,75 +115,57 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>, kexec@lists.infradead.org,
- Pingfan Liu <kernelfans@gmail.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
- Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 16.01.20 09:24, Baoquan He wrote:
-> On 01/16/20 at 09:14am, David Hildenbrand wrote:
->> On 16.01.20 09:06, David Hildenbrand wrote:
->>> On 16.01.20 04:01, Pingfan Liu wrote:
->>>> When fully deactivated, it is meaningless to keep the value of a section's
->>>> mem_map. And its mem_map will be reassigned during re-added.
->>>>
->>>> Beside this, it breaks the user space tool "makedumpfile", which makes
->>>> assumption that a hot-removed section having mem_map as NULL.
->>>>
->>>> The bug can be reproduced on IBM POWERVM by "drmgr -c mem -r -q 5" ,
->>>> trigger a crash, and save vmcore by makedumpfile
->>>
->>> Are you using an up-to-date makedumfile and did kdump.service properly
->>> get reloaded on the udev events? I remember that this works.
->>>
->>> makedumpfile will not dump memory sections that a) are not marked
->>> offline (SECTION_IS_ONLINE) - after offlining b) are not part of an
->>> iomem resource - after memory unplug.
-> 
-> Makedumpfile seems to only check SECTION_MARKED_PRESENT. Then the NULL
-> memmap will fail vmcore dumping, I guess.
+Hello,
 
-But why should the section be marked SECTION_MARKED_PRESENT? After
-unplugging a section, the flag will be cleared.
+I'm pleased to announce the release of makedumpfile-1.6.7.
+Your comments/patches are welcome.
 
-validate_mem_section() seems to iterate over all sections 0..num_section
-- 1 and validates them.
+Main new features:
+o Support for ELF extended numbering for large memory system
+o Support for KASLR with -x makedumpfile option on s390x
+o Support for newer kernels up to v5.4.8 (x86_64)
 
-section = nr_to_section(section_nr, mem_sec);
-if (section == NOT_KV_ADDR) {
-	mem_map = NOT_MEMMAP_ADDR:
-} else {
-	mem_map = section_mem_map_addr(section, &map_mask)
-	if (!(map_mask & SECTION_MARKED_PRESENT)) {
-		return FALSE;
-	}
-	if (mem_map == 0) {
-		mem_map = NOT_MEMMAP_ADDR;
-	} else {
-	...
+Changelog since v1.6.6:
+a4fe839d25fb [PATCH] Support newer kernels up to v5.4 (Kazuhito Hagio)
+6d6db1a40772 [PATCH] Update README file (Kazuhito Hagio)
+577854dd62a6 [PATCH] s390: Use get_kaslr_offset_general() for s390x (Mikhail Zaslonko)
+60cf280ebfe8 [PATCH] Pass 0 to get_kaslr_offset() in find_kaslr_offsets() (Kazuhito Hagio)
+c6992684b51b [PATCH] Generalize get_kaslr_offset_arm64() for other architectures (Kazuhito Hagio)
+49baecc7c13f [PATCH] Fix compilation warnings on 32-bit system (Kazuhito Hagio)
+5519b3eba685 [PATCH] assign bitmap1/2 fd for subprocess in non-cyclic mode (Pingfan Liu)
+180a3958c30d [PATCH] Print version and command line in debugging message (Kazuhito Hagio)
+71e798cb1b85 [PATCH] Makefile: remove -lebl from LIBS when no libebl.a (Pingfan Liu)
+82e6cce2219a [PATCH] Add support for ELF extended numbering (Kazuhito Hagio)
+44dc8919f28c [PATCH] Fix wrong statistics in ELF format mode (Kazuhito Hagio)
+56511628fa67 [PATCH] Fix off-by-one issue in exclude_nodata_pages() (Mikhail Zaslonko)
+d22f8e1f8c88 [PATCH] Fix divide by zero in print_report() (Dave Jones)
+aa5ee50a3396 [PATCH] Improve performance for non-thread compression with zlib (Kazuhito Hagio)
+964116f403cd [PATCH] Cleanup: Remove unnecessary len_buf_out_* variables (Kazuhito Hagio)
+8425342a52b2 [PATCH] Fix inconsistent return value from find_vmemmap() (Kazuhito Hagio)
+b461971bfac0 [PATCH] Fix exclusion range in find_vmemmap_pages() (Kazuhito Hagio)
+aa5ab4cf6c73 [PATCH] x86_64: Fix incorrect exclusion by -e option with KASLR (Kazuhito Hagio)
+76f9cc0f3de2 [PATCH] arm64: fix get_kaslr_offset_arm64() to return kaslr_offset correctly (Kazuhito Hagio)
+7bdb468c2c99 [PATCH] Increase SECTION_MAP_LAST_BIT to 4 (Kazuhito Hagio)
+c1b834f80311 [PATCH] Do not proceed when get_num_dumpable_cyclic() fails (Kazuhito Hagio)
 
-But here it is:
+Explanation of makedumpfile:
+  To shorten the size of the dumpfile and the time of creating the
+  dumpfile, makedumpfile copies only the necessary pages for analysis
+  to the dumpfile from /proc/vmcore. You can specify the kind of
+  unnecessary pages with dump_level. If you want to shorten the size
+  further, enable the compression of the page data.
 
-section_mem_map_addr():
+Download:
+  The latest makedumpfile can be downloaded from the following URL.
+  https://sourceforge.net/projects/makedumpfile/
 
-map = ULONG(mem_section + OFFSET(mem_section.section_mem_map));
-mask = SECTION_MAP_MASK;
-*map_mask = map & ~mask;
-if (map == 0x0)
-	*map_mask |= SECTION_MARKED_PRESENT;
-
-If the map is zero, the section is assumed to be present. The way the
-map is calculated, it will be zero due to the changes in the kernel.
-
--- 
-Thanks,
-
-David / dhildenb
-
+Thank you,
+Kazu
 
 _______________________________________________
 kexec mailing list
