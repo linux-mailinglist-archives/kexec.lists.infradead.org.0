@@ -2,84 +2,117 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8451409E9
-	for <lists+kexec@lfdr.de>; Fri, 17 Jan 2020 13:45:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08B3D140E12
+	for <lists+kexec@lfdr.de>; Fri, 17 Jan 2020 16:44:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dIQF7E3mWGmM/1ZBq9F8eUUPFs9uJjn8xPLOwIVrEqc=; b=B/RQBZ5pJG+xtX
-	r0O+NdmtjAhVfG/msxRcCeFC4SV1HEwCb75C79vCRw6+LslusBcBNJLyTZ2aB0abI3ju+jl0yhVXL
-	EFm9s2SnGej6RFIdUEGAzLV9ouDDxkZX4GqfbM0MUjWYpRCc/18vrlia8EGt8YaApYktBEfEifc3+
-	+k8RHMR9BI3NU3WaaGIzeMvVgWJiAj0np2yF9SgPFNU0rAoYy0cQCxaaJCXkZCbwCwjVY8dYmaLcj
-	k+tI8CE0NNthm1kiOCxxatnvvqwFkVD0Kt3xNJ3Rvh1Pe8fTrkwUa6aQXFRpeHwiIWwheXEnywBZk
-	r4zwAg9C6f8NDBd5Y+0g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RI+L90ypzxVLQQM1OQRtp4oBWwg7TxZmfhKZciPN9XI=; b=Lnp2Ix+UgE4gtx
+	8g8cqXdYGcQM8n8yVVkl57g7nNlQzRWdFTgcPi80WYHyjJwkyDM8J2IOX1s7hLZPR/6dyTV2EyIJ/
+	yQQ/dAUR3pnwK0rqDdx/gJ3adMV9G4/B6GzputrMYyqUZutP7kJ69o7Ha4N0v3dZWalEQv6Y7nBj1
+	L9fBNJF90p6xQjO6NNmCVDgY+cHfjWI4VN8s5hAC+q/lUC4y+2Bo55dTuNbAO7RYnyvHlOmnmdd7b
+	6DLi21KkQ6NQ8nk4G41cl0KANnVbmT1O3G9CSrJnBjuCNL3ItNhYUDw1/h0hu0Zck3cJsHElrbkR4
+	KSAv5jgRVMayCL72st+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1isR0Q-0000OK-8Z; Fri, 17 Jan 2020 12:45:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1isTnb-0004sq-96; Fri, 17 Jan 2020 15:44:39 +0000
+Received: from mailout.easymail.ca ([64.68.200.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1isR0J-0000NC-LM; Fri, 17 Jan 2020 12:45:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7BB2620730;
- Fri, 17 Jan 2020 12:45:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579265135;
- bh=52weG7mBhiLrAZ4hQCT4ua9dMLjf94HUuSpVb7mHV88=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=kzusg6VG5yderSNBUkZ/BHF1JljB4S4kBxcgq0DEjVZmhYx+eN43nAsl4J0jWqSoW
- fDuxyLxFC++iv8beFTJZTWvEEPE1i6e2c+RIrdyLr1nyPly3D01T+QhiczsWgDKsfj
- lNq95wnJg3KeYiJKK4TL7GZh/RaItUa8HwkA+VAA=
-Date: Fri, 17 Jan 2020 12:45:30 +0000
-From: Will Deacon <will@kernel.org>
-To: AKASHI Takahiro <takahiro.akashi@linaro.org>,
- Pavel Tatashin <pasha.tatashin@soleen.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, robh+dt@kernel.org,
- frowand.list@gmail.com, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Subject: Re: [PATCH v4 2/2] arm64: kexec_file: add crash dump support
-Message-ID: <20200117124529.GD8199@willie-the-truck>
-References: <20191216021247.24950-3-takahiro.akashi@linaro.org>
- <20200108174839.GB21242@willie-the-truck>
- <20200109004654.GA28530@linaro.org>
- <20200109083254.GA7280@willie-the-truck>
- <20200110160549.GA25437@willie-the-truck>
- <CA+CK2bAy-vfoz3kgUjZB74Hrobgu-a8H4pv6RbA_tbq++NWz5g@mail.gmail.com>
- <20200113112105.GB2337@willie-the-truck>
- <20200114053825.GC28530@linaro.org>
- <20200116180857.GA22420@willie-the-truck>
- <20200117063832.GQ28530@linaro.org>
+ id 1isTnX-0004rg-4y
+ for kexec@lists.infradead.org; Fri, 17 Jan 2020 15:44:37 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mailout.easymail.ca (Postfix) with ESMTP id D0D1EA0FE0;
+ Fri, 17 Jan 2020 15:44:32 +0000 (UTC)
+X-Virus-Scanned: Debian amavisd-new at emo05-pco.easydns.vpn
+Received: from mailout.easymail.ca ([127.0.0.1])
+ by localhost (emo05-pco.easydns.vpn [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id mApu5MmsP17a; Fri, 17 Jan 2020 15:44:32 +0000 (UTC)
+Received: from mail.gonehiking.org (c-24-9-64-241.hsd1.co.comcast.net
+ [24.9.64.241])
+ by mailout.easymail.ca (Postfix) with ESMTPA id 55C98A0E2B;
+ Fri, 17 Jan 2020 15:44:19 +0000 (UTC)
+Received: from [192.168.1.4] (rhapsody.internal [192.168.1.4])
+ by mail.gonehiking.org (Postfix) with ESMTP id 346C83F02E;
+ Fri, 17 Jan 2020 08:44:19 -0700 (MST)
+Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
+ kdump kernel
+To: Dave Young <dyoung@redhat.com>
+References: <20200110230003.GB1875851@anatevka.americas.hpqcorp.net>
+ <d2715683-f171-a825-3c0b-678b6c5c1a79@gonehiking.org>
+ <20200111005041.GB19291@MiWiFi-R3L-srv>
+ <dc46c904-1652-09b3-f351-6b3a3e761d74@gonehiking.org>
+ <CACPcB9c0-nRjM3DSN8wzZBTPsJKWjZ9d_aNTq5zUj4k4egb32Q@mail.gmail.com>
+ <CABeXuvqquCU+1G=5onk9owASorhpcYWeWBge9U35BrorABcsuw@mail.gmail.com>
+ <CACPcB9cQY9Vu3wG-QYZS6W6T_PZxnJ1ABNUUAF_qvk-VSxbpTA@mail.gmail.com>
+ <b2360db7-66f5-421d-8fe0-150f08aa2f39@gonehiking.org>
+ <CACPcB9epDPcowhnSJuEHQ8miCBX1oKjFx4Wdn4aYPe2_pueA5A@mail.gmail.com>
+ <6b56ce15-5a5a-97b7-ded1-1fd88fec26eb@gonehiking.org>
+ <20200117032413.GA16906@dhcp-128-65.nay.redhat.com>
+From: Khalid Aziz <khalid@gonehiking.org>
+Autocrypt: addr=khalid@gonehiking.org; prefer-encrypt=mutual; keydata=
+ mQINBFA5V58BEADa1EDo4fqJ3PMxVmv0ZkyezncGLKX6N7Dy16P6J0XlysqHZANmLR98yUk4
+ 1rpAY/Sj/+dhHy4AeMWT/E+f/5vZeUc4PXN2xqOlkpANPuFjQ/0I1KI2csPdD0ZHMhsXRKeN
+ v32eOBivxyV0ZHUzO6wLie/VZHeem2r35mRrpOBsMLVvcQpmlkIByStXGpV4uiBgUfwE9zgo
+ OSZ6m3sQnbqE7oSGJaFdqhusrtWesH5QK5gVmsQoIrkOt3Al5MvwnTPKNX5++Hbi+SaavCrO
+ DBoJolWd5R+H8aRpBh5B5R2XbIS8ELGJZfqV+bb1BRKeo0kvCi7G6G4X//YNsgLv7Xl0+Aiw
+ Iu/ybxI1d4AtBE9yZlyG21q4LnO93lCMJz/XqpcyG7DtrWTVfAFaF5Xl1GT+BKPEJcI2NnYn
+ GIXydyh7glBjI8GAZA/8aJ+Y3OCQtVxEub5gyx/6oKcM12lpbztVFnB8+S/+WLbHLxm/t8l+
+ Rg+Y4jCNm3zB60Vzlz8sj1NQbjqZYBtBbmpy7DzYTAbE3P7P+pmvWC2AevljxepR42hToIY0
+ sxPAX00K+UzTUwXb2Fxvw37ibC5wk3t7d/IC0OLV+X29vyhmuwZ0K1+oKeI34ESlyU9Nk7sy
+ c1WJmk71XIoxJhObOiXmZIvWaOJkUM2yZ2onXtDM45YZ8kyYTwARAQABtCNLaGFsaWQgQXpp
+ eiA8a2hhbGlkQGdvbmVoaWtpbmcub3JnPokCOgQTAQgAJAIbAwULCQgHAwUVCgkICwUWAgMB
+ AAIeAQIXgAUCUDlYcgIZAQAKCRDNWKGxftAz+mCdD/4s/LpQAYcoZ7TwwQnZFNHNZmVQ2+li
+ 3sht1MnFNndcCzVXHSWd/fh00z2du3ccPl51fXU4lHbiG3ZyrjX2Umx48C20Xg8gbmdUBzq4
+ 9+s12COrgwgsLyWZAXzCMWYXOn9ijPHeSQSq1XYj8p2w4oVjMa/QfGueKiJ5a14yhCwye2AM
+ f5o8uDLf+UNPgJIYAGJ46fT6k5OzXGVIgIGmMZCbYPhhSAvLKBfLaIFd5Bu6sPjp0tJDXJd8
+ pG831Kalbqxk7e08FZ76opzWF9x/ZjLPfTtr4xiVvx+f9g/5E83/A5SvgKyYHdb3Nevz0nvn
+ MqQIVfZFPUAQfGxdWgRsFCudl6i9wEGYTcOGe00t7JPbYolLlvdn+tA+BCE5jW+4cFg3HmIf
+ YFchQtp+AGxDXG3lwJcNwk0/x+Py3vwlZIVXbdxXqYc7raaO/+us8GSlnsO+hzC3TQE2E/Hy
+ n45FDXgl51rV6euNcDRFUWGE0d/25oKBXGNHm+l/MRvV8mAdg3iTiy2+tAKMYmg0PykiNsjD
+ b3P5sMtqeDxr3epMO+dO6+GYzZsWU2YplWGGzEKI8sn1CrPsJzcMJDoWUv6v3YL+YKnwSyl1
+ Q1Dlo+K9FeALqBE5FTDlwWPh2SSIlRtHEf8EynUqLSCjOtRhykmqAn+mzIQk+hIy6a0to9iX
+ uLRdVbkCDQRQOVefARAAsdGTEi98RDUGFrxK5ai2R2t9XukLLRbRmwyYYx7sc7eYp7W4zbnI
+ W6J+hKv3aQsk0C0Em4QCHf9vXOH7dGrgkfpvG6aQlTMRWnmiVY99V9jTZGwK619fpmFXgdAt
+ WFPMeNKVGkYzyMMjGQ4YbfDcy04BSH2fEok0jx7Jjjm0U+LtSJL8fU4tWhlkKHtO1oQ9Y9HH
+ Uie/D/90TYm1nh7TBlEn0I347zoFHw1YwRO13xcTCh4SL6XaQuggofvlim4rhwSN/I19wK3i
+ YwAm3BTBzvJGXbauW0HiLygOvrvXiuUbyugMksKFI9DMPRbDiVgCqe0lpUVW3/0ynpFwFKeR
+ FyDouBc2gOx8UTbcFRceOEew9eNMhzKJ2cvIDqXqIIvwEBrA+o92VkFmRG78PleBr0E8WH2/
+ /H/MI3yrHD4F4vTRiPwpJ1sO/JUKjOdfZonDF6Hu/Beb0U5coW6u7ENKBmaQ/nO1pHrsqZp+
+ 2ErG02yOHF5wDWxxgbd4jgcNTKJiY9F1cdKP+NbWW/rnJgem8qYI3a4VkIkFT5BE2eYLvZlR
+ cIzWc/ve/RoQh6jzXD0T08whoajZ1Y3yFQ8oyLSFt8ybxF0b5XryL2RVeHQTkE8NKwoGVYTn
+ ER+o7x2sUGbIkjHrE4Gq2cooEl9lMv6I5TEkvP1E5hiZFJWYYnrXa/cAEQEAAYkCHwQYAQgA
+ CQUCUDlXnwIbDAAKCRDNWKGxftAz+reUEACQ+rz2AlVZZcUdMxWoiHqJTb5JnaF7RBIBt6Ia
+ LB9triebZ7GGW+dVPnLW0ZR1X3gTaswo0pSFU9ofHkG2WKoYM8FbzSR031k2NNk/CR0lw5Bh
+ whAUZ0w2jgF4Lr+u8u6zU7Qc2dKEIa5rpINPYDYrJpRrRvNne7sj5ZoWNp5ctl8NBory6s3b
+ bXvQ8zlMxx42oF4ouCcWtrm0mg3Zk3SQQSVn/MIGCafk8HdwtYsHpGmNEVn0hJKvUP6lAGGS
+ uDDmwP+Q+ThOq6b6uIDPKZzYSaa9TmL4YIUY8OTjONJ0FLOQl7DsCVY9UIHF61AKOSrdgCJm
+ N3d5lXevKWeYa+v6U7QXxM53e1L+6h1CSABlICA09WJP0Fy7ZOTvVjlJ3ApO0Oqsi8iArScp
+ fbUuQYfPdk/QjyIzqvzklDfeH95HXLYEq8g+u7nf9jzRgff5230YW7BW0Xa94FPLXyHSc85T
+ E1CNnmSCtgX15U67Grz03Hp9O29Dlg2XFGr9rK46Caph3seP5dBFjvPXIEC2lmyRDFPmw4yw
+ KQczTkg+QRkC4j/CEFXw0EkwR8tDAPW/NVnWr/KSnR/qzdA4RRuevLSK0SYSouLQr4IoxAuj
+ nniu8LClUU5YxbF57rmw5bPlMrBNhO5arD8/b/XxLx/4jGQrcYM+VrMKALwKvPfj20mB6A==
+Message-ID: <f7c5d044-b821-2edd-7b24-ca36056b61bb@gonehiking.org>
+Date: Fri, 17 Jan 2020 08:44:19 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200117063832.GQ28530@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200117032413.GA16906@dhcp-128-65.nay.redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200117_044535_745534_D0971E35 
-X-CRM114-Status: GOOD (  29.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200117_074435_312215_4EDFE124 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [64.68.200.34 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,109 +124,117 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: Kairui Song <kasong@redhat.com>, Baoquan He <bhe@redhat.com>,
+ linux-pci@vger.kernel.org, kexec@lists.infradead.org,
+ Jerry Hoemann <Jerry.Hoemann@hpe.com>, Randy Wright <rwright@hpe.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Deepa Dinamani <deepa.kernel@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Jan 17, 2020 at 03:38:33PM +0900, AKASHI Takahiro wrote:
-> On Thu, Jan 16, 2020 at 06:08:58PM +0000, Will Deacon wrote:
-> > On Tue, Jan 14, 2020 at 02:38:26PM +0900, AKASHI Takahiro wrote:
-> > > On Mon, Jan 13, 2020 at 11:21:06AM +0000, Will Deacon wrote:
-> > > > On Fri, Jan 10, 2020 at 11:19:16AM -0500, Pavel Tatashin wrote:
-> > > > > On Fri, Jan 10, 2020 at 11:05 AM Will Deacon <will@kernel.org> wrote:
-> > > > > > On Thu, Jan 09, 2020 at 08:32:54AM +0000, Will Deacon wrote:
-> > > > > > > On Thu, Jan 09, 2020 at 09:46:55AM +0900, AKASHI Takahiro wrote:
-> > > > > > > > On Wed, Jan 08, 2020 at 05:48:39PM +0000, Will Deacon wrote:
-> > > > > > > > > On Mon, Dec 16, 2019 at 11:12:47AM +0900, AKASHI Takahiro wrote:
-> > > > > > > > > > diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > index 12a561a54128..d24b527e8c00 100644
-> > > > > > > > > > --- a/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > +++ b/arch/arm64/include/asm/kexec.h
-> > > > > > > > > > @@ -96,6 +96,10 @@ static inline void crash_post_resume(void) {}
-> > > > > > > > > >  struct kimage_arch {
-> > > > > > > > > >         void *dtb;
-> > > > > > > > > >         unsigned long dtb_mem;
-> > > > > > > > > > +       /* Core ELF header buffer */
-> > > > > > > > > > +       void *elf_headers;
-> > > > > > > > > > +       unsigned long elf_headers_mem;
-> > > > > > > > > > +       unsigned long elf_headers_sz;
-> > > > > > > > > >  };
-> > > > > > > > >
-> > > > > > > > > This conflicts with the cleanup work from Pavel. Please can you check my
-> > > > > > > > > resolution? [1]
-> > > > > > > >
-> > > > > > > > I don't know why we need to change a type of dtb_mem,
-> > > > > > > > otherwise it looks good.
-> > > > > > > >
-> > > > > > > > (I also assume that you notice that kimage_arch is of no use for kexec.)
-> > > > > > >
-> > > > > > > Yes, that's why I'd like the resolution checked. If you reckon it's cleaner
-> > > > > > > to drop Pavel's patch altogether in light of your changes, we can do that
-> > > > > > > instead.
-> > > > > > >
-> > > > > > > Thoughts?
-> > > > > >
-> > > > > > Well, I've reverted the cleanup patch so please shout if you'd prefer
-> > > > > > something else.
-> > > > > 
-> > > > > As I understand, the only concern was the type change for dtb_mem.
-> > > > > This was one of the review comments for my patch
-> > > > > https://lore.kernel.org/lkml/20191204155938.2279686-21-pasha.tatashin@soleen.com/
-> > > > > 
-> > > > > (I believe it was from Marc Zyngier), I add a number of new fields,
-> > > > > and they all should be phys_addr_t, this is why I change dtb_mem to
-> > > > > phys_addr_t to be consistent.
-> > > > 
-> > > > Sure, but I've only queued the first part of your series and that cleanup
-> > > > patch doesn't make a lot of sense when applied against Akashi's work. I'm
-> > > > happy to take stuff on top if you both agree to it, but having half of the
-> > > > struct use unsigned long and the other half use phys_addr_t is messy.
-> > > 
-> > > Logically, whether dtb_mem is a "unsigned long" or phys_addr_t doesn't
-> > > matter unless the kernel is compiled under LLP64.
-> > > As far as the existing kexec code, either generic or arm64-specific,
-> > > is concerned, however, "unsigned long is widely used as a physical address
-> > > (For example, see kexec_buf definition) over the code.
-> > > 
-> > > (Oops, reboot_code_buffer_phys is a phys_addr_t :)
-> > > 
-> > > So as long as my kexec_file (and associated kdump) patch comes first
-> > > before Pavel's, I'd like to keep using "unsigned long".
-> > > Then, you can change "unsigned long" to phys_addr_t in your patch
-> > > for whatever reason it is.
-> > > 
-> > > Please note that, if you want to do that, it would be better to modify
-> > > not only kimage_arch but also all the occurrences of "unsigned long"
-> > > to phys_addr_t for maintaining the integrity.
-> > > 
-> > > In addition, in my kexec_file kdump code, I still believe that
-> > > "#ifdef CONFIG_KEXEC_FILE" should stay before the definition of
-> > > kimage_arch as kimage_arch is of no use for normal kexec code.
-> > > 
-> > > Again,
-> > > "#ifdef" statement may be moved forward once additional fields be
-> > > added later by Pavel's patch, say, "[PATCH v8 15/25] arm64: kexec:
-> > > move relocation function setup" for any reason.
-> > > 
-> > > I believe that this way gives us a logical and consistent view of
-> > > history of changes.
-> > > Make sense?
-> > 
-> > This is a bit much to stick in a merge commit, so I'll stick with the revert
-> > for now and you can send patches on top if you want it changed.
+On 1/16/20 8:24 PM, Dave Young wrote:
+> On 01/15/20 at 02:17pm, Khalid Aziz wrote:
+>> On 1/15/20 11:05 AM, Kairui Song wrote:
+>>> On Thu, Jan 16, 2020 at 1:31 AM Khalid Aziz <khalid@gonehiking.org> wrote:
+>>>>
+>>>> On 1/13/20 10:07 AM, Kairui Song wrote:
+>>>>> On Sun, Jan 12, 2020 at 2:33 AM Deepa Dinamani <deepa.kernel@gmail.com> wrote:
+>>>>>>
+>>>>>>> Hi, there are some previous works about this issue, reset PCI devices
+>>>>>>> in kdump kernel to stop ongoing DMA:
+>>>>>>>
+>>>>>>> [v7,0/5] Reset PCIe devices to address DMA problem on kdump with iommu
+>>>>>>> https://lore.kernel.org/patchwork/cover/343767/
+>>>>>>>
+>>>>>>> [v2] PCI: Reset PCIe devices to stop ongoing DMA
+>>>>>>> https://lore.kernel.org/patchwork/patch/379191/
+>>>>>>>
+>>>>>>> And didn't get merged, that patch are trying to fix some DMAR error
+>>>>>>> problem, but resetting devices is a bit too destructive, and the
+>>>>>>> problem is later fixed in IOMMU side. And in most case the DMA seems
+>>>>>>> harmless, as they targets first kernel's memory and kdump kernel only
+>>>>>>> live in crash memory.
+>>>>>>
+>>>>>> I was going to ask the same. If the kdump kernel had IOMMU on, would
+>>>>>> that still be a problem?
+>>>>>
+>>>>> It will still fail, doing DMA is not a problem, it only go wrong when
+>>>>> a device's upstream bridge is mistakenly shutdown before the device
+>>>>> shutdown.
+>>>>>
+>>>>>>
+>>>>>>> Also, by the time kdump kernel is able to scan and reset devices,
+>>>>>>> there are already a very large time window where things could go
+>>>>>>> wrong.
+>>>>>>>
+>>>>>>> The currently problem observed only happens upon kdump kernel
+>>>>>>> shutdown, as the upper bridge is disabled before the device is
+>>>>>>> disabledm so DMA will raise error. It's more like a problem of wrong
+>>>>>>> device shutting down order.
+>>>>>>
+>>>>>> The way it was described earlier "During this time, the SUT sometimes
+>>>>>> gets a PCI error that raises an NMI." suggests that it isn't really
+>>>>>> restricted to kexec/kdump.
+>>>>>> Any attached device without an active driver might attempt spurious or
+>>>>>> malicious DMA and trigger the same during normal operation.
+>>>>>> Do you have available some more reporting of what happens during the
+>>>>>> PCIe error handling?
+>>>>>
+>>>>> Let me add more info about this:
+>>>>>
+>>>>> On the machine where I can reproduce this issue, the first kernel
+>>>>> always runs fine, and kdump kernel works fine during dumping the
+>>>>> vmcore, even if I keep the kdump kernel running for hours, nothing
+>>>>> goes wrong. If there are DMA during normal operation that will cause
+>>>>> problem, this should have exposed it.
+>>>>>
+>>>>
+>>>> This is the part that is puzzling me. Error shows up only when kdump
+>>>> kernel is being shut down. kdump kernel can run for hours without this
+>>>> issue. What is the operation from downstream device that is resulting in
+>>>> uncorrectable error - is it indeed a DMA request? Why does that
+>>>> operation from downstream device not happen until shutdown?
+>>>>
+>>>> I just want to make sure we fix the right problem in the right way.
+>>>>
+>>>
+>>> Actually the device could keep sending request with no problem during
+>>> kdump kernel running. Eg. keep sending DMA, and all DMA targets first
+>>> kernel's system memory, so kdump runs fine as long as nothing touch
+>>> the reserved crash memory. And the error is reported by the port, when
+>>> shutdown it has bus master bit, and downstream request will cause
+>>> error.
+>>>
+>>
+>> Problem really is there are active devices while kdump kernel is
+>> running. You did say earlier - "And in most case the DMA seems
+>> harmless, as they targets first kernel's memory and kdump kernel only
+>> live in crash memory.". Even if this holds today, it is going to break
+>> one of these days. There is the "reset_devices" option but that does not
+>> work if driver is not loaded by kdump kernel. Can we try to shut down
+>> devices in machine_crash_shutdown() before we start kdump kernel?
 > 
-> Are you asking me or Pavel? And on top of which branch?
+> It is not a good idea :)  We do not add extra logic after a panic
+> because the kernel is not stable and we want a correct vmcore.
+> 
 
-I'm not asking anything ;p
+I agree any extra code in panic path opens up door to more trouble. For
+kdump kernel if hardware is not in a good shape when it boots up, we are
+still in no better place. There may be some room to do minimal and
+absolutely essential hardware shutdown in panic path to ensure kdump
+kernel can work reliably, but such code has to be approached very
+carefully. For this specific problem, it seems to stems from not loading
+the same drivers in kdump kernel that were running in previous kernel.
+Recommendation for situations like this just might be that one must load
+all the same driver and use "reset_devices" option if they want to
+ensure stability for kdump kernel. I can see reluctance to load any more
+drivers than absolutely needed in kdump kernel, but not doing that has
+side-effects as we are seeing in this case.
 
-But by "you" I mean both of you (the joys of ambiguous English). In other
-words, I've reverted the patch [1], but I'm happy to take other patches on
-top providing that you both agree with each other on what you want to do.
-
-Will
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/kexec/cleanup&id=1595fe299eb5a664c754eaf48bc178c0d664e1cf
+--
+Khalid
 
 _______________________________________________
 kexec mailing list
