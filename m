@@ -2,57 +2,98 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 466EA142439
-	for <lists+kexec@lfdr.de>; Mon, 20 Jan 2020 08:29:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96CD8142596
+	for <lists+kexec@lfdr.de>; Mon, 20 Jan 2020 09:33:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KR6XwBtUoc6mda+am3W+lUx6R2/3fbeSHlAqeLCXWro=; b=g9Nvmtqo+iSJeV
-	lJ6LNsPQRmYv+hXiiX150nE+OXZUQWhao6aJKthN8e29t3fj40zqMqGIYEnBLPGx7BdoWVq/ZPbQq
-	MJir5roUHikyrBIcPi2r+dm4A+JiuyK/erH1kwwx7I4bsigdg5Gsh3nf6GZKR4xy9RLcxZwn/qK66
-	DTXefVXYz23Fc4ol1SmB3HVohHg4X1fqzmv5fdTtGZk/A6zW028zXP3kfscmYZ7rAOAd3C3nFKE0H
-	gOYvZk60v4ZVAvObl3fjt6en7erSZjtiCHYQwsJxWActTlB1nEBRTRWQJIr5HFqinEwhfgTua9XZk
-	vIzHi1emz0rBHGfpOaGw==;
+	List-Owner; bh=ajk1Fbb0iq54iH9aJAT2cw3zSTZpoMz9x+btlYlPe74=; b=bVpe3ujHXAjeMr
+	+gufYFqdz1AhxTqxNBA1vmZTWavyKFtWrMtcoATxBfJC5oEJQTWC+VmsdLWX/gvs31TpBa8SAahyY
+	xGIVZPsGguxXpPeeK7x2UOuXZ/RGkg2w+tMkRw/tIzlYtW2bidB1GWXBBcQmg6//OpYyeIO83VOyZ
+	wFi3ClJ4AHM875uQD/iQ9y6aSCKUwf2DVb9ffcV0aERQatpr4P1gWU374o8e8c8DxAlPV35iAr1Y2
+	i70m6kmgcU2RPCEOEIkM1hbB3foSN6+nHPzqkjK4UEUSXoPSd7M+ptBzPcx7B0lXhzWXuFRLSw7vq
+	gPaCYxrZRwXnnax6SK9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itRVO-0005fM-6R; Mon, 20 Jan 2020 07:29:50 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1itSUo-0004FF-BL; Mon, 20 Jan 2020 08:33:18 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itRVL-0005eO-G8
- for kexec@lists.infradead.org; Mon, 20 Jan 2020 07:29:49 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 48F2AACE3;
- Mon, 20 Jan 2020 07:29:40 +0000 (UTC)
-Date: Mon, 20 Jan 2020 08:29:39 +0100
-From: Michal Hocko <mhocko@suse.com>
-To: Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv2] mm/sparse: reset section's mem_map when fully
- deactivated
-Message-ID: <20200120072939.GD18451@dhcp22.suse.cz>
-References: <1579487594-28889-1-git-send-email-kernelfans@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1579487594-28889-1-git-send-email-kernelfans@gmail.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+ id 1itSUg-0004EU-Im
+ for kexec@lists.infradead.org; Mon, 20 Jan 2020 08:33:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1579509187;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=bvWGCWXQCwIfrz9DKetpRNi4ZHptn9BXNWly0W4TUko=;
+ b=Gx1Ox1lRJGBBvBVF/5lMPzj+uHY4gBQWatezW5xZ5eh+rHYMKfYTHQ85f+Qwd5MMF3C61M
+ cRsybhSy+n3CUS62/vBx9jQ0xxRAw2ejzQo7AJTGheX9d1Hq3XbA8Vj1gWnSETATEpzakB
+ 3oKA5oINHNX/2eausLbjeaO4KHDtRag=
+Received: from mail-wr1-f69.google.com (mail-wr1-f69.google.com
+ [209.85.221.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-438-PjYazEcfMMSOM5AyeEknyw-1; Mon, 20 Jan 2020 03:33:06 -0500
+Received: by mail-wr1-f69.google.com with SMTP id c17so13755159wrp.10
+ for <kexec@lists.infradead.org>; Mon, 20 Jan 2020 00:33:06 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=unZIc68IrXnEk9TF47avrISDGn3vtwyZboFdMrB6Aus=;
+ b=Qmnm6jr+1lG1l57oXmtYS3VQCe+k0bDwYwdT39/DEqpGlKqwtPiUo3MCyxbn/fqAum
+ fiYJF/YlAmPBlUczauf671VY+nmDnBd6C3F48ADPt1t+/FctwmcHH6NagCj349r7qh+w
+ v3fzeYxnE19tOuAAFfhLsF1lBuLkbXmDj1l3eFuCfh8EG6tMjIsf4tCFexbLNYEO9N+1
+ EKtxL/sLazKSybDcrlCXVZERU67pZI15ONel3BfA0X+6D29Ua6/HlAa1jSl4XP4F3/Sh
+ o6LtjhrqQ03ut8v4wADkm3Sq/4mzu2wK7yuVAGRnIsXxnbhSrScv89ZmDYADS+8xlbVI
+ x5Iw==
+X-Gm-Message-State: APjAAAVjj0r7rsE9CxuqekULyuUqL9P3pj2B/T38yqp5kTT/HTniIwja
+ tuKIAmgYkzgODWt+hM4HPLC/yYKLmjudDv5vESPGlGhJ08ZAixI1QuymBVrF5vg0L4pIUBOvV3L
+ zBPj2MWA92nC0ySd09vq+
+X-Received: by 2002:adf:f3cd:: with SMTP id g13mr17399312wrp.54.1579509185184; 
+ Mon, 20 Jan 2020 00:33:05 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwFPNgbXIQznYD/RWpIC2adRlUSPIcnkRQLU+MlMYtojA5AfMBfOBhuR2IFjWvxlNDyZodL0g==
+X-Received: by 2002:adf:f3cd:: with SMTP id g13mr17399293wrp.54.1579509184994; 
+ Mon, 20 Jan 2020 00:33:04 -0800 (PST)
+Received: from [192.168.3.122] (p5B0C6A98.dip0.t-ipconnect.de. [91.12.106.152])
+ by smtp.gmail.com with ESMTPSA id 5sm47102508wrh.5.2020.01.20.00.33.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 20 Jan 2020 00:33:04 -0800 (PST)
+From: David Hildenbrand <david@redhat.com>
+Mime-Version: 1.0 (1.0)
+Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
+Date: Mon, 20 Jan 2020 09:33:02 +0100
+Message-Id: <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
+References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
+In-Reply-To: <1579487124-28426-1-git-send-email-piliu@redhat.com>
+To: Pingfan Liu <piliu@redhat.com>
+X-Mailer: iPhone Mail (17C54)
+X-MC-Unique: PjYazEcfMMSOM5AyeEknyw-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200119_232947_686674_6959A11E 
-X-CRM114-Status: GOOD (  20.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200120_003310_690723_0484D7A0 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,80 +107,40 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>, Baoquan He <bhe@redhat.com>,
  David Hildenbrand <david@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Qian Cai <cai@lca.pw>,
+ Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
  Andrew Morton <akpm@linux-foundation.org>,
  Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon 20-01-20 10:33:14, Pingfan Liu wrote:
-> After commit ba72b4c8cf60 ("mm/sparsemem: support sub-section hotplug"),
-> when a mem section is fully deactivated, section_mem_map still records the
-> section's start pfn, which is not used any more and will be reassigned
-> during re-added.
-> 
-> In analogy with alloc/free pattern, it is better to clear all fields of
-> section_mem_map.
-> 
-> Beside this, it breaks the user space tool "makedumpfile" [1], which makes
-> assumption that a hot-removed section has mem_map as NULL, instead of
-> checking directly against SECTION_MARKED_PRESENT bit. (makedumpfile will be
-> better to change the assumption, and need a patch)
-> 
-> The bug can be reproduced on IBM POWERVM by "drmgr -c mem -r -q 5" ,
-> trigger a crash, and save vmcore by makedumpfile
-
-While makedumpfile lives very closely to the kernel and occasional
-breakage is to be expected I still believe that Fixes: ba72b4c8cf60
-is due.
-
-> [1]: makedumpfile, commit e73016540293 ("[v1.6.7] Update version")
-> 
-> Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-> To: linux-mm@kvack.org
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: David Hildenbrand <david@redhat.com>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Oscar Salvador <osalvador@suse.de>
-> Cc: Michal Hocko <mhocko@kernel.org>
-> Cc: Baoquan He <bhe@redhat.com>
-> Cc: Qian Cai <cai@lca.pw>
-> Cc: kexec@lists.infradead.org
-> Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
-
-Acked-by: Michal Hocko <mhocko@suse.com>
-
-> ---
-> v1 -> v2:
->  make an explicit convertion from NULL to ulong
->  improve commit log
->  
->  mm/sparse.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/mm/sparse.c b/mm/sparse.c
-> index 3822ecb..3918fc3 100644
-> --- a/mm/sparse.c
-> +++ b/mm/sparse.c
-> @@ -789,7 +789,7 @@ static void section_deactivate(unsigned long pfn, unsigned long nr_pages,
->  			ms->usage = NULL;
->  		}
->  		memmap = sparse_decode_mem_map(ms->section_mem_map, section_nr);
-> -		ms->section_mem_map = sparse_encode_mem_map(NULL, section_nr);
-> +		ms->section_mem_map = (unsigned long)NULL;
->  	}
->  
->  	if (section_is_early && memmap)
-> -- 
-> 2.7.5
-
--- 
-Michal Hocko
-SUSE Labs
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+Cgo+IEFtIDIwLjAxLjIwMjAgdW0gMDM6MjUgc2NocmllYiBQaW5nZmFuIExpdSA8cGlsaXVAcmVk
+aGF0LmNvbT46Cj4gCj4g77u/QWZ0ZXIga2VybmVsIGNvbW1pdCBiYTcyYjRjOGNmNjAgKCJtbS9z
+cGFyc2VtZW06IHN1cHBvcnQgc3ViLXNlY3Rpb24KPiBob3RwbHVnIiksIHdoZW4gaG90LXJlbW92
+ZWQsIHNlY3Rpb25fbWVtX21hcCBpcyBzdGlsbCBlbmNvZGVkIHdpdGggc2VjdGlvbgo+IHN0YXJ0
+IHBmbiwgbm90IE5VTEwuIFRoaXMgYnJlYWsgdGhlIGN1cnJlbnQgbWFrZWR1bXBmaWxlLgo+IAo+
+IFdoYXRldmVyIHNlY3Rpb25fbWVtX21hcCBjb2RpbmcgaW5mbyBhZnRlciBob3QtcmVtb3ZlZCwg
+aXQgaXMgcmVsaWFibGUKPiBqdXN0IHRvIHdvcmsgb24gU0VDVElPTl9NQVJLRURfUFJFU0VOVCBi
+aXQuIEZpeGluZyBtYWtlZHVtcGZpbGUgYnkgdGhpcwo+IHdheS4KPiAKPiBTaWduZWQtb2ZmLWJ5
+OiBQaW5nZmFuIExpdSA8cGlsaXVAcmVkaGF0LmNvbT4KPiBUbzoga2V4ZWNAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwo+IENjOiBLYXp1aGl0byBIYWdpbyA8ay1oYWdpb0BhYi5qcC5uZWMuY29tPgo+IENj
+OiBCYW9xdWFuIEhlIDxiaGVAcmVkaGF0LmNvbT4KPiBDYzogRGF2aWQgSGlsZGVuYnJhbmQgPGRh
+dmlkQHJlZGhhdC5jb20+Cj4gQ2M6IEFuZHJldyBNb3J0b24gPGFrcG1AbGludXgtZm91bmRhdGlv
+bi5vcmc+Cj4gQ2M6IERhbiBXaWxsaWFtcyA8ZGFuLmoud2lsbGlhbXNAaW50ZWwuY29tPgo+IENj
+OiBPc2NhciBTYWx2YWRvciA8b3NhbHZhZG9yQHN1c2UuZGU+Cj4gQ2M6IE1pY2hhbCBIb2NrbyA8
+bWhvY2tvQGtlcm5lbC5vcmc+Cj4gQ2M6IFFpYW4gQ2FpIDxjYWlAbGNhLnB3Pgo+IC0tLQo+IG1h
+a2VkdW1wZmlsZS5jIHwgNiArLS0tLS0KPiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKyks
+IDUgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL21ha2VkdW1wZmlsZS5jIGIvbWFrZWR1
+bXBmaWxlLmMKPiBpbmRleCBlMjkwZmJkLi5hYjQwYTU4IDEwMDY0NAo+IC0tLSBhL21ha2VkdW1w
+ZmlsZS5jCj4gKysrIGIvbWFrZWR1bXBmaWxlLmMKPiBAQCAtMzQwNiw4ICszNDA2LDYgQEAgc2Vj
+dGlvbl9tZW1fbWFwX2FkZHIodW5zaWduZWQgbG9uZyBhZGRyLCB1bnNpZ25lZCBsb25nICptYXBf
+bWFzaykKPiAgICBtYXAgPSBVTE9ORyhtZW1fc2VjdGlvbiArIE9GRlNFVChtZW1fc2VjdGlvbi5z
+ZWN0aW9uX21lbV9tYXApKTsKPiAgICBtYXNrID0gU0VDVElPTl9NQVBfTUFTSzsKPiAgICAqbWFw
+X21hc2sgPSBtYXAgJiB+bWFzazsKPiAtICAgIGlmIChtYXAgPT0gMHgwKQo+IC0gICAgICAgICpt
+YXBfbWFzayB8PSBTRUNUSU9OX01BUktFRF9QUkVTRU5UOwoKV2h5IHdhcyB0aGF0IGFkZGVkIGlu
+IHRoZSBmaXJzdCBwbGFjZT8gVGhpcyBsb29rcyBsaWtlIGRvbWUgY29tcGF0IGhhbmRsaW5nIHRv
+IG1lLiBBcmUgd2Ugc3VyZSB3ZSBjYW4gcmVtb3ZlIGl0PwoKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8va2V4ZWMK
