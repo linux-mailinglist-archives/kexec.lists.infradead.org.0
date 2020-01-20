@@ -2,87 +2,102 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A168142E96
-	for <lists+kexec@lfdr.de>; Mon, 20 Jan 2020 16:15:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6C41142F3A
+	for <lists+kexec@lfdr.de>; Mon, 20 Jan 2020 17:06:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n1IHnGz2wZqCXJbkWB3mQctY2bVc9uA6deyIVJoGdo0=; b=DeGDh3CA6R7fF3
-	WWtYR2zDinsONT6IZFyI0xJffc/vBrNrHzACHl3kLvoMZQ7M75kI9eqBtlhKAhxfDiGVr0zZup2Ed
-	PSr102+j+5HRwLleaCiyzq3uQWN7NYJy6zRwB5t17HeB7qz/o0TQi/JKw53K30Pm17eayCqi8Fudx
-	I176suGkQj3d4v6EBtS1xFAKBXmjVls77+urL6IfnRgAEaYFrg2Folk7AsulBHln3I+08qcoiD63y
-	SUBtxMJoVzv/a2nDYdpj4MYD1j9Ne6jQ2UPl61cm4T40+RVzoiZpv/i5R/XWvb+/GzqP/hcfkpMWQ
-	eHU3/t6iVeoO4M4WVlLQ==;
+	List-Owner; bh=edX4v45IxPRXDUCSMGTzUQsSWSNeRuXGvzUl0NwZY/M=; b=MOqXTN1QmWObot
+	dIsR8Zx9ZBriYGzRVZERzw8D1ZD8UYAkYTz3W5NGYhS04kuh0VHSClzWAC4wLElZ4lyJme8S945F9
+	tOy8n/Rjj5j2K2O+7GwCs98IWdCpglz9CntClFx0SiM4TK21JB9myJYrd+XSIzB4QyLbSCF/aIBvK
+	8g9CEtN+0Fy2XXSvs2COZVtNlgEqE66F9HIIlv0+wLMw7TT0tJw1dpAYCodEKtmWxeOOKFGqWiDIN
+	8CknxVcaUNXgch5ZpqHYXEYS/5MDVd6+BOALl7x1QO5YJJkaRJRL83bRqgrToz0jNTh4oPHNq6MJy
+	wVvpOoYd/VFe9qr0SHCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1itYls-0000sF-As; Mon, 20 Jan 2020 15:15:20 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1itZZK-0002t5-GR; Mon, 20 Jan 2020 16:06:26 +0000
+Received: from out03.mta.xmission.com ([166.70.13.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1itYlk-0000qu-2g
- for kexec@lists.infradead.org; Mon, 20 Jan 2020 15:15:18 +0000
-Received: by mail-wm1-x344.google.com with SMTP id w5so120424wmi.1
- for <kexec@lists.infradead.org>; Mon, 20 Jan 2020 07:15:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aRbyydfpzJdxY89pJ4IJKGk5YfDIexIm5y05o2xxsVY=;
- b=jdf4Wi5zBBPuIxZznRhyPkdNwyaYJ5l+YSU2f4SoZdVlbq7q2lCF0r0JfiAPASElHd
- i/ahqW/vzER5rUfXMl3yPHwGthok5qDLhui3yJ2HsYeAD8qllM6Wu6MGqwD3Yet33NZ9
- ne61peF83fFgVxLBuSloXC3KHRDqMeIDmHLIAdlQOPVYfimTwhburtMMFVFXYuoqS+wG
- HdH1NF7W4MFgyEahtSuSBhohErlD7enfjGh+cF2mTcUhW2BRnxq78WInRHQTc+JM/5ln
- 8DdKFd4HhpoXcQyP1fNmGrEKio3jL/4py8s07GrVi2LdW3WdOZx66aiRabpgNTf8dZxj
- FeMQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=aRbyydfpzJdxY89pJ4IJKGk5YfDIexIm5y05o2xxsVY=;
- b=h96epIsq8HJk3r1q3Bbw5Lcq29d5XWjA7Ir0M92aQ/PtaA2qF634PdNDhBjmq4ZH4E
- ybOrDJMqUARdOkDpfmcEOqp31tm3bou6SsvwRJCIKcysZ4XxQsEcx1pALZI9DczqsQrR
- 97nlr+T5vfto4oS8cKOHaczL4p+xhhDDBowEruZDPYAIQZcFKezF9iWMjF9d0U5383qH
- FWqNJIIW7xY6xN77GtTbOEF5RwzQOuRcD+xvH5bBCktSiyEpWgXd2kbzFAoyGUZ1a5Bq
- 1+WYTo1DQZl2jUBwtmr/VdiA4avl2i6EPj3g+ZQAVm6JbYGQxZvs8fNZYyxtL40HwrE2
- ZrFg==
-X-Gm-Message-State: APjAAAXXGUjFBkl06o6QvIN1eNjar7o6xdhtRpCXYKL0KXr73z0Oj89m
- oPxbI1k3X36ibvgpG41XGumpBltS/jp85vHQnYA=
-X-Google-Smtp-Source: APXvYqwvcXoWZ6ivDE41S3/pWBvBXrtuPJcPcKddEYnlz6z3jnMd3Z3YcarEv3RFjZaUOAIdwZfRIrxUTbmq6lfxt7w=
-X-Received: by 2002:a05:600c:24d1:: with SMTP id
- 17mr19310874wmu.188.1579533309890; 
- Mon, 20 Jan 2020 07:15:09 -0800 (PST)
+ id 1itZZD-0002pR-ES
+ for kexec@lists.infradead.org; Mon, 20 Jan 2020 16:06:24 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out03.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1itZYa-00015n-O0; Mon, 20 Jan 2020 09:05:40 -0700
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1itZYV-0005Jn-BB; Mon, 20 Jan 2020 09:05:40 -0700
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+References: <20161202195416.58953-1-andriy.shevchenko@linux.intel.com>
+ <20161202195416.58953-3-andriy.shevchenko@linux.intel.com>
+ <20161215122856.7d24b7a8@endymion>
+ <20161216023213.GA4505@dhcp-128-65.nay.redhat.com>
+ <1481890738.9552.70.camel@linux.intel.com>
+ <20161216143330.69e9c8ee@endymion>
+ <20161217105721.GB6922@dhcp-128-65.nay.redhat.com>
+ <20200120121927.GJ32742@smile.fi.intel.com>
+Date: Mon, 20 Jan 2020 10:04:04 -0600
+In-Reply-To: <20200120121927.GJ32742@smile.fi.intel.com> (Andy Shevchenko's
+ message of "Mon, 20 Jan 2020 14:19:27 +0200")
+Message-ID: <87a76i9ksr.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-References: <CAJ2QiJ+MVVztHONagmYc2-BzbtdGQhABRKO7h4+kOE9cCK=CxA@mail.gmail.com>
- <20200110002638.GA50413@google.com>
- <CAJ2QiJL+eTTX2DjmCFLbCfe1oaGS3Y5Dy0NfBxfpHT2YPGwOSQ@mail.gmail.com>
-In-Reply-To: <CAJ2QiJL+eTTX2DjmCFLbCfe1oaGS3Y5Dy0NfBxfpHT2YPGwOSQ@mail.gmail.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Mon, 20 Jan 2020 20:44:33 +0530
-Message-ID: <CAJ2QiJJfVk_wb3Zk50+xWK4wKPBU7C-80RX4SJJRN5GX=36Rdg@mail.gmail.com>
-Subject: Re: kexec -e not working: root disk not able to detect
-To: Bjorn Helgaas <helgaas@kernel.org>
+X-XM-SPF: eid=1itZYV-0005Jn-BB; ; ; mid=<87a76i9ksr.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/gB42Om93MVQYunpLwTKkpM5H9wK/PFUg=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.5 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,T_TooManySym_01,
+ T_TooManySym_02,XMSubLong autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4818] *  0.7 XMSubLong Long Subject
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa06 1397; Body=1 Fuz1=1 Fuz2=1]
+ *  0.0 T_TooManySym_01 4+ unique symbols in subject
+ *  0.0 T_TooManySym_02 5+ unique symbols in subject
+X-Spam-DCC: XMission; sa06 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ;Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 4396 ms - load_scoreonly_sql: 0.07 (0.0%),
+ signal_user_changed: 2.7 (0.1%), b_tie_ro: 1.71 (0.0%), parse: 1.42
+ (0.0%), extract_message_metadata: 13 (0.3%), get_uri_detail_list: 2.3
+ (0.1%), tests_pri_-1000: 12 (0.3%), tests_pri_-950: 1.33 (0.0%),
+ tests_pri_-900: 1.11 (0.0%), tests_pri_-90: 34 (0.8%), check_bayes: 32
+ (0.7%), b_tokenize: 9 (0.2%), b_tok_get_all: 11 (0.3%), b_comp_prob:
+ 3.6 (0.1%), b_tok_touch_all: 4.1 (0.1%), b_finish: 0.67 (0.0%),
+ tests_pri_0: 604 (13.7%), check_dkim_signature: 0.83 (0.0%),
+ check_dkim_adsp: 24 (0.5%), poll_dns_idle: 3732 (84.9%), tests_pri_10:
+ 3.1 (0.1%), tests_pri_500: 3720 (84.6%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH v1 2/2] firmware: dmi_scan: Pass dmi_entry_point to
+ kexec'ed kernel
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200120_071512_125170_FB6097A8 
-X-CRM114-Status: GOOD (  26.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200120_080619_491157_4FFF0B61 
+X-CRM114-Status: GOOD (  21.86  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,187 +109,93 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- linux-pci@vger.kernel.org, kexec mailing list <kexec@lists.infradead.org>,
- linux-ide@vger.kernel.org, Kamlakant Patel <kamlakantp@marvell.com>
+Cc: linux-efi@vger.kernel.org, ard.biesheuvel@linaro.org,
+ matt@codeblueprint.co.uk, Mika Westerberg <mika.westerberg@linux.intel.com>,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Dave Young <dyoung@redhat.com>, Jean Delvare <jdelvare@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Jan 13, 2020 at 10:28 AM Prabhakar Kushwaha
-<prabhakar.pkin@gmail.com> wrote:
+Andy Shevchenko <andriy.shevchenko@linux.intel.com> writes:
+
+> On Sat, Dec 17, 2016 at 06:57:21PM +0800, Dave Young wrote:
+>> Ccing efi people.
+>> 
+>> On 12/16/16 at 02:33pm, Jean Delvare wrote:
+>> > On Fri, 16 Dec 2016 14:18:58 +0200, Andy Shevchenko wrote:
+>> > > On Fri, 2016-12-16 at 10:32 +0800, Dave Young wrote:
+>> > > > On 12/15/16 at 12:28pm, Jean Delvare wrote:
+>> > > > > I am no kexec expert but this confuses me. Shouldn't the second
+>> > > > > kernel have access to the EFI systab as the first kernel does? It
+>> > > > > includes many more pointers than just ACPI and DMI tables, and it
+>> > > > > would seem inconvenient to have to pass all these addresses
+>> > > > > individually explicitly.
+>> > > > 
+>> > > > Yes, in modern linux kernel, kexec has the support for EFI, I think it
+>> > > > should work naturally at least in x86_64.
+>> > > 
+>> > > Thanks for this good news!
+>> > > 
+>> > > Unfortunately Intel Galileo is 32-bit platform.
+>> > 
+>> > If it was done for X86_64 then maybe it can be generalized to X86?
+>> 
+>> For X86_64, we have a new way for efi runtime memmory mapping, in i386
+>> code it still use old ioremap way. It is impossible to use same way as
+>> the X86_64 since the virtual address space is limited.
+>> 
+>> But maybe for 32bit, kexec kernel can run in physical mode, but I'm not
+>> sure, I would suggest Andy to do a test first with efi=noruntime for
+>> kexec 2nd kernel.
 >
-> [Re sending keeping mailing list and others in CC]
+> Guys, it was quite a long no hear from you. As I told you the proposed work
+> around didn't help. Today I found that Microsoft Surface 3 also affected
+> by this.
 >
-> On Fri, Jan 10, 2020 at 5:56 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> >
-> > [+cc Jens, ahci.c maintainer]
-> >
-> > On Mon, Jan 06, 2020 at 05:24:44PM +0530, Prabhakar Kushwaha wrote:
-> > > Hi All,
-> > >
-> > > I am trying kexec -e with latest kernel i.e. Linux-5.5.0-rc4.  Here
-> > > second kernel is not able to detect/mount hard-disk having root file
-> > > system (INTEL SSDSC2BB240G7).
-> > >
-> > > [  279.690575] ata1: softreset failed (1st FIS failed)
-> > > [  279.695446] ata1: limiting SATA link speed to 3.0 Gbps
-> > > [  280.910020] ata1: SATA link down (SStatus 0 SControl 320)
-> > > [  282.626018] ata1: SATA link down (SStatus 0 SControl 300)
-> > > [  282.631409] ata1: link online but 1 devices misclassified, retrying
-> > > [  282.637665] ata1: reset failed (errno=-11), retrying in 9 secs
-> > > [  298.294546] ata1: failed to reset engine (errno=-5)
-> > > [  302.042967] ata1: softreset failed (1st FIS failed)
-> > > [  308.798609] ata1: failed to reset engine (errno=-5)
-> > > [  337.546605] ata1: softreset failed (1st FIS failed)
-> > > [  337.551475] ata1: limiting SATA link speed to 3.0 Gbps
-> > > [  338.766022] ata1: SATA link down (SStatus 0 SControl 320)
-> > > [  339.270943] ata1: EH pending after 5 tries, giving up
-> > >
-> > > I found following two workaround for this issue.
-> > > A) Define ".shutdown" in driver/ata/ahci.c.
-> > >
-> > > reboot --> kernel_kexec() --> kernel_restart_prepare() -->
-> > > device_shutdown() --> pci_device_shutdown() --> ahci_shutdown_one()
-> > > --> new function
-> > >
-> > > diff --git a/drivers/ata/ahci.c b/drivers/ata/ahci.c
-> > > index 4bfd1b14b390..50a101002885 100644
-> > > --- a/drivers/ata/ahci.c
-> > > +++ b/drivers/ata/ahci.c
-> > > @@ -81,6 +81,7 @@ enum board_ids {
-> > >
-> > >  static int ahci_init_one(struct pci_dev *pdev, const struct
-> > > pci_device_id *ent);
-> > >  static void ahci_remove_one(struct pci_dev *dev);
-> > >  +static void ahci_shutdown_one(struct pci_dev *dev);
-> > >  static int ahci_vt8251_hardreset(struct ata_link *link, unsigned int *class,
-> > >                                   unsigned long deadline);
-> > >   static int ahci_avn_hardreset(struct ata_link *link, unsigned int *class,
-> > >  @@ -606,6 +607,7 @@ static struct pci_driver ahci_pci_driver = {
-> > >          .id_table               = ahci_pci_tbl,
-> > >          .probe                  = ahci_init_one,
-> > >          .remove                 = ahci_remove_one,
-> > >  +       .shutdown               = ahci_shutdown_one,
-> > >          .driver = {
-> > >                  .pm             = &ahci_pci_pm_ops,
-> > >          },
-> > >
-> > >  +static void ahci_shutdown_one(struct pci_dev *pdev)
-> > >  +{
-> > >  +       pm_runtime_get_noresume(&pdev->dev);
-> > >  +       ata_pci_remove_one(pdev);
-> > >  +}
-> > >  +
-> > > Note: After defining shutdown, error related to file-system write
-> > > seen. Looks like even after device_shutdown, file system related
-> > > transaction goes to disk.
-> > >
-> > > B)) Commenting of pci_clear_master() from pci_device_shutdown()
-> > > reboot --> kernel_kexec() --> kernel_restart_prepare() -->
-> > > device_shutdown() --> pci_device_shutdown()
-> > >
-> > > diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
-> > > index 0454ca0e4e3f..ddffaa9321bb 100644
-> > > --- a/drivers/pci/pci-driver.c
-> > > +++ b/drivers/pci/pci-driver.c
-> > > @@ -481,8 +481,10 @@ static void pci_device_shutdown(struct device *dev)
-> > >         /*
-> > >          * If this is a kexec reboot, turn off Bus Master bit on the
-> > > @@ -491,8 +493,16 @@ static void pci_device_shutdown(struct device *dev)
-> > >          * If it is not a kexec reboot, firmware will hit the PCI
-> > >          * devices with big hammer and stop their DMA any way.
-> > >          */
-> > >
-> > >  - if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
-> > >  -                pci_clear_master(pci_dev);
-> >
-> > I doubt we would remove this without a much clearer justification.
-> >
-> > > Here pci_dev current_state. It is "0" i.e. D0.
-> > >
-> > > From A and B. Looks like even after pci_clear_master(), Some DMA
-> > > transactions going on PCIe device  causing device in unstable.
-> > > Not sure if this is the reason and how to solve this problem.
-> >
-> > Is it possible the ahci driver depends on receiving the device with
-> > bus mastering already enabled?  I would guess that would be the common
-> > case in a non-kexec boot -- the BIOS probably hands off the device
-> > with bus mastering enabled.
-> >
->
-> Above code clearing Bus Master. May be it try to make sure that next
-> kernel get PCIe in same state in which BIOS could have provided.
-> Not sure why this is causing issue in our case. Need to debug more.
->
+> Can we apply these patches for now until you will find better
+> solution?
 
-I added more prints and added stack dump in ata_scsi_queuecmd().
-I found that lots of  syscall __arm64_sys_fsync() happens for file
-system sync during kexec -e. These calls happens even after clearing
-PCIe Bus Master i.e. "M" bit.
-This should not happen as it may unstable SATA. I believe this is the
-reason second kernel is not able to detect SATA hard-disk.
-Note: This behavior is random, sometime working code start showing
-this error.  Also different Linux tags(5.5-RC4, 5.5-RC6, 5.5-RC7) have
-different behavior on our platform (ARM64 Thunder X2).
+Not a chance.  The patches don't apply to any kernel in the git history.
 
-Once PCIe Bust Master i.e. "M" bit is cleared,
-a) either file system sysnc should not happen
-b) or no transaction should go on SATA.
+Which may be part of your problem.  You are or at least were running
+with code that has not been merged upstream.
 
-Please suggest how to avoid "a". once "M" bit cleared.
+> P.S. I may resend them rebased on recent vanilla.
 
-for "b",  should setting port flag as ATA_PFLAG_FROZEN be enough in
-driver/ata/ahci.c?
-ap->pflags |= ATA_PFLAG_FROZEN;
+Second.  I looked at your test results and they don't directly make
+sense.  dmidecode bypasses the kernel completely or it did last time
+I looked so I don't know why you would be using that to test if
+something in the kernel is working.
 
-Please suggest..
+However dmidecode failing suggests that the actual problem is something
+in the first kernel is stomping the dmi tables.
 
---pk
+Adding a command line option won't fix stomped tables.
 
-[  126.025134] ata_scsi_queuecmd 4393: dump
-[  126.029052] CPU: 42 PID: 3144 Comm: journal-offline Not tainted
-5.5.0-rc6+ #110
-[  126.036346] Hardware name: Cavium Inc. Saber/Saber, BIOS
-TX2-FW-Release-7.4-build_05 08/24/2019
-[  126.045029] Call trace:
-[  126.047463]  dump_backtrace+0x0/0x1f8
-[  126.051112]  show_stack+0x24/0x30
-[  126.054414]  dump_stack+0xbc/0x104
-[  126.057802]  ata_scsi_queuecmd+0x30c/0x338
-[  126.061886]  scsi_queue_rq+0x80c/0xb70
-[  126.065623]  blk_mq_dispatch_rq_list+0xac/0x688
-[  126.070140]  blk_mq_do_dispatch_sched+0x6c/0x110
-[  126.074744]  blk_mq_sched_dispatch_requests+0x130/0x220
-[  126.079956]  __blk_mq_run_hw_queue+0x98/0x160
-[  126.084300]  __blk_mq_delay_run_hw_queue+0x188/0x1c8
-[  126.089250]  blk_mq_run_hw_queue+0x5c/0x110
-[  126.093421]  blk_mq_sched_insert_requests+0x90/0x168
-[  126.098372]  blk_mq_flush_plug_list+0x1ac/0x308
-[  126.102889]  blk_flush_plug_list+0xdc/0x110
-[  126.107059]  blk_finish_plug+0x3c/0x228
-[  126.110883]  ext4_writepages+0x460/0xbd8
-[  126.114793]  do_writepages+0x5c/0x108
-[  126.118442]  __filemap_fdatawrite_range+0x128/0x180
-[  126.123306]  file_write_and_wait_range+0x94/0xf8
-[  126.127910]  ext4_sync_file+0x11c/0x460
-[  126.131732]  vfs_fsync_range+0x4c/0x88
-[  126.135468]  do_fsync+0x48/0x78
-[  126.138596]  __arm64_sys_fsync+0x24/0x38
-[  126.142506]  el0_svc_common.constprop.2+0x78/0x168
-[  126.147283]  el0_svc_handler+0x34/0xa0
-[  126.151019]  el0_sync_handler+0xe4/0x188
-[  126.154928]  el0_sync+0x164/0x180
-[  126.158241] :__ata_scsi_queuecmd 4321
-[  126.161893] ata_scsi_translate 1999
-[  126.165368] ten-byte command
-[  126.168236] ahci_pmp_qc_defer 1678
-[  126.171624] ahci_qc_prep 1696
-[  126.174577] ahci_fill_sg 1655
-[  126.177532] ahci_qc_issue 2058
-[  126.180572] EXIT
+So what I would suggest is:
+a) Verify that dmidecode works before kexec.
+b) Test to see if dmidecode works after kexec.
+c) Once (a) shows that dmidecode works and (b) shows that dmidecode
+   fails figure out what is stomping your dmi tables during or before
+   kexec and that is what should get fixed.
+
+Now using a non-efi method of dmi detection relies on the
+tables being between 0xF0000 and 0x10000. AKA the last 64K
+of the first 1MiB of memory.  You might check to see if your
+dmi tables are in that address range.
+
+Otherwise I suspect the good solution is to give efi it's own page
+tables in the kernel and switch to it whenever efi functions are called.
+
+But on 32bit the Linux kernel has historically been just fine directly
+accessing the hardware, and ignoring efi and all of the other BIOS's.
+So if that doesn't work on Intel Galileo that is probably a firmware
+problem.
+
+Eric
+
 
 _______________________________________________
 kexec mailing list
