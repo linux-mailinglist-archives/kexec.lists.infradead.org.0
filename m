@@ -2,80 +2,111 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDF314C5EE
-	for <lists+kexec@lfdr.de>; Wed, 29 Jan 2020 06:38:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2269814CE63
+	for <lists+kexec@lfdr.de>; Wed, 29 Jan 2020 17:28:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QaCSdB/5oynxOGRa8XdGNBJom7Ezxw8j6px+w5xp86s=; b=tNdh/5uoZMH/U9
-	mDcjwBbnguBptWiB2D/e37q92hdggDjG0L1+2C15jL+MPqFctL+mM7ThZB3pm7CYpnZexhKcEaZM6
-	M9PQtVRBWcD2bBsGSTbCiydlkkXzgjYcNnSH91n+yFHWUursFwR6aqOe/VDOKDoqqlXMm9oTj1xbC
-	v+10/pOM5uech9SBkD0AXbOXbH5l5uHsXD23B+TcZQmDpysg1mKfB5EkpKGJEMbzYE/M8U+q5T1In
-	N+E88CZ235wqK/fAM40b8fmWHs9yABO62tL6XrV6cRF7I1BiGZTavxdH/wUjcG/xP+IWiQJZph8z7
-	rOWn3kJEVVlxLvdk8RzQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5m55qpZsbOQNAffGsfLadhCORTuERdYtF9bjkEKqIMc=; b=EFALx1yjUNKnIh
+	7ijR5WvdZl9+8ZdUZLBVvzUaLO/wEFhd6AsLBbFEKUNEdy07aEfuzxQ7n7JsUypmUe+fpimZ6CFak
+	meQIgppiy2CYltm15HXzEN4I9KdMbzvZkKywD6XCpgwm1H7rA8HN7cnV+trSIEV6kkCf1jL0ESUHe
+	aFPx8C6HKL0rKdIFZdSmTSpR4rgmBTdH8Uta52I41AOj786j/ejDQ0iRhfFkPgyI5X0ANbWMkG4NB
+	LyqwRFuTyRlNwSpuQwpj5q5jJyymO5aoZjtnB9jHaHydMPayIXUmIDToe8HIjQGNc9XPmVch53pj9
+	RFs6lvziCtbSFIvCOIlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwg3x-0002fG-H0; Wed, 29 Jan 2020 05:38:53 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iwqCC-0001Yb-Do; Wed, 29 Jan 2020 16:28:04 +0000
+Received: from mail-eopbgr1300089.outbound.protection.outlook.com
+ ([40.107.130.89] helo=APC01-HK2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwg3t-0002eo-NU
- for kexec@lists.infradead.org; Wed, 29 Jan 2020 05:38:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580276328;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=UC/+lN6dtncEsRvCnas6OwOXUpjmS3al1vyD0i1elEQ=;
- b=fSlX72K3Khe+bJ/9k9P4sjPDXryg/f0RcfRUXvRYZJRnkx4ENFoz+MvgGsAPawRE5gbDK8
- W91tME39BERT1BxYU6/dRgKPkaHmxDeKQfjYl5+nFzbQh0BhErlzJBlRJmfqfHzvz00Hfs
- nccM86jv6Sl/bBGyABCb8TG47cP/YLU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-323-jWJA3SfRMXaZwZUUMKdm2Q-1; Wed, 29 Jan 2020 00:38:45 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 313EC477;
- Wed, 29 Jan 2020 05:38:44 +0000 (UTC)
-Received: from kasong-rh-laptop.redhat.com (ovpn-12-91.pek2.redhat.com
- [10.72.12.91])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 59BBC5C28C;
- Wed, 29 Jan 2020 05:38:42 +0000 (UTC)
-From: Kairui Song <kasong@redhat.com>
-To: kexec@lists.infradead.org
-Subject: [PATCH] kexec-tools: Remove duplicated variable declarations
-Date: Wed, 29 Jan 2020 13:38:19 +0800
-Message-Id: <20200129053819.622511-1-kasong@redhat.com>
+ id 1iwqC5-0001Y8-C9
+ for kexec@lists.infradead.org; Wed, 29 Jan 2020 16:27:59 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YI2uzdFfl4rX1/mjr9zv1L9mfA+9yeJWf4AslMDwV3rGugAEE5dmE2JzKhu7RC6iUfEnR8BW4xLkeMp8e9V4eywKFzEAGzA4zTn6dncSFFj+2CkxgFzM39bHqpbA0TNzoYYEZ31iQ/Ru/6kTzLZukYfueiICR9fv93V84zl4ABU9CKeqVKPiGvFk7OWVDWeYaZpMXGayD8jExvIIf04op3/GSNT9vuewYFjX0Ytc4flf8kZ0QW1bE7IJdCrscVT6UQb33eSSz5dS0fR8lVE/mf8yahUcLyfFI4P3ovonMflRiRsVWyuoBvavAkQMCOk6ulsBNqF+MAiwzDHJYNojAA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IkyUDQ9nGAj7uqI3Zrxp3BRc3QJShruLnSjw3l3RHUU=;
+ b=L3g6imUDWf/6Zbx5q5DYOFmT6akqOw7tjmzs3J4JJ4Z0hCvQYl2JMchJzSUKGhu5tXmd6Z4m+hsG/8EpektTevLYnSvV0Jvk8nf6JS/oRs3sGetjhFGuC/3HKXwujT5Ob+u6rcBqOeqRLUi3YZLUX5igsIEeZ/EKX6IgNR01UkYEaPShg40O1wUF7RcP5qt2ieoJm5++Cy5RIYtJPTWBjwj0QZ+i23osyBHBo8SyccHHJ5tx9cyymg4DWWUYhHItXYwavzS3L44bk1KRFVmqKvUgv1Sajkyi9XPbv5bDBvaSvp4hAhaMZGz37g2izuRPB/YAr3HspLLsTxH25Y0XpA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=IkyUDQ9nGAj7uqI3Zrxp3BRc3QJShruLnSjw3l3RHUU=;
+ b=roF0eLmUSIMBc8TODqp/ErYo1tIesYpRKSqnqgO/NnHOymw0gmIaXiclsi46Yt11pFYNEdqp+2OlYFhzWktbDSS3UTRPsN9O9dMzteyqDAx8I4QMLFrn2zLJh3oZCV973VVUfePiAYyjyE33lMe/gmsyOwQFDg5NuRUXWZ5FumQ=
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
+ TY2PR01MB3596.jpnprd01.prod.outlook.com (20.178.132.86) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2665.23; Wed, 29 Jan 2020 16:27:54 +0000
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89%4]) with mapi id 15.20.2665.027; Wed, 29 Jan 2020
+ 16:27:53 +0000
+From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
+ <k-hagio-ab@nec.com>
+To: Kairui Song <kasong@redhat.com>, "kexec@lists.infradead.org"
+ <kexec@lists.infradead.org>
+Subject: RE: [PATCH] makedumpfile: Remove duplicated variable declarations
+Thread-Topic: [PATCH] makedumpfile: Remove duplicated variable declarations
+Thread-Index: AQHV1mZFcRgkIKmMAkGTC+oXT+fVI6gByH1g
+Date: Wed, 29 Jan 2020 16:27:53 +0000
+Message-ID: <TY2PR01MB5210BABA5B9D2F0ED7CD5ACADD050@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+References: <20200129053713.622072-1-kasong@redhat.com>
+In-Reply-To: <20200129053713.622072-1-kasong@redhat.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [66.187.232.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 97fa290c-6442-4b61-fd07-08d7a4d83116
+x-ms-traffictypediagnostic: TY2PR01MB3596:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TY2PR01MB3596C33C41A9D30A198121CADD050@TY2PR01MB3596.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 02973C87BC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(39860400002)(346002)(376002)(396003)(366004)(199004)(189003)(186003)(110136005)(52536014)(316002)(33656002)(71200400001)(26005)(5660300002)(8676002)(8936002)(7696005)(6506007)(76116006)(81166006)(2906002)(85182001)(81156014)(66556008)(9686003)(478600001)(66446008)(66946007)(86362001)(66476007)(64756008)(55016002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:TY2PR01MB3596;
+ H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: s2yR+UzL+ZRy7VgxioDa3CRF3qhsaaVzOKkfl2kFuiaYOokvSvSaFcrsi5SlqZIM35sO0xeTpjHScN1MSjuQQngZUTtZmoz/lR0PFI8lSuV4OcMPHC7+z8xZF8wM2PT1YhoDskAZQv6oy4meqw8AJ0NxjC3mrm/Ug859nOmIge4+OGKeh76DjBNyV/+qXENDPoseOPxM7YVVF/xBungAk1lGgWJ5+fkfshiTPdUqpWoZTgARYjbFX6J0PS/9fDmDdQvwW7zgVQ5/2wKMXaUZwTpmSRWmM4lq+imnKFqrmZedp9iGbA2riv5z2S+O8+RGD2LvELvDFmqM568kFuqZKu6WgGXuUn8OySR5KZuFBxyT4rM0puVMWtDqqMLa8C2u+Q2sWG0z7WOMt6IRJgLKy0z84wsER5UXWUyGNHdWRCnF7l2Fhei/K4FQCGnkW+LW
+x-ms-exchange-antispam-messagedata: bFJIhbDz14DoKJBXdkkHAIPiJ2UE48y1gCArk8OqYEcs0URAAdj/KK78Y42syT1416lrNj6aiXPwO9My2gnfYRV8rvmbze5ep4qZtnsI3/ouICy4MKFy/ZyR6pdFfjt7kIuw6kRMTvnbvRuqf26YqA==
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: jWJA3SfRMXaZwZUUMKdm2Q-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 97fa290c-6442-4b61-fd07-08d7a4d83116
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Jan 2020 16:27:53.9266 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: p+O4Vw7v/+JsG2SEqmwPgVnQFCT4ewxMQVN9h80tglFDoDDjVKDAFc2H8ZfASlbd19U/2cMrwF2Xbya1ZQb9dw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB3596
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_213849_845439_E468C78A 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200129_082757_472531_555D0C85 
+X-CRM114-Status: GOOD (  11.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [40.107.130.89 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,104 +118,142 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Simon Horman <horms@verge.net.au>, Kairui Song <kasong@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-When building kexec-tools for Fedora 32, following error is observed:
+Hi Kairui,
 
-/usr/bin/ld: kexec/arch/x86_64/kexec-bzImage64.o:(.bss+0x0): multiple definition of `bzImage_support_efi_boot';
-kexec/arch/i386/kexec-bzImage.o:(.bss+0x0): first defined here
+Thank you for the patch.
 
-/builddir/build/BUILD/kexec-tools-2.0.20/kexec/arch/arm/../../fs2dt.h:33: multiple definition of `my_debug';
-kexec/fs2dt.o:/builddir/build/BUILD/kexec-tools-2.0.20/kexec/fs2dt.h:33: first defined here
+> -----Original Message-----
+> When building on Fedora 32, following error is observed:
+> 
+> /usr/bin/ld:
+> erase_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:2010:
+> multiple definition of `crash_reserved_mem_nr';
+> elf_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:2010: first
+> defined here
+> /usr/bin/ld:
+> erase_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:2009:
+> multiple definition of `crash_reserved_mem';
+> elf_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:2009: first
+> defined here
+> /usr/bin/ld:
+> erase_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:1278:
+> multiple definition of `parallel_info_t';
+> elf_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:1278: first
+> defined here
+> /usr/bin/ld:
+> erase_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:1265:
+> multiple definition of `splitting_info_t';
+> elf_info.o:/builddir/build/BUILD/kexec-tools-2.0.20/makedumpfile-1.6.7/makedumpfile.h:1265: first
+> defined here
+> 
+> And apparently, these variables are wrongly declared multiple times. So
+> remove duplicated declaration.
+> 
+> Signed-off-by: Kairui Song <kasong@redhat.com>
+> ---
+>  makedumpfile.c |  2 ++
+>  makedumpfile.h | 10 ++++++----
+>  2 files changed, 8 insertions(+), 4 deletions(-)
+> 
+> diff --git a/makedumpfile.c b/makedumpfile.c
+> index e290fbd..9aad77b 100644
+> --- a/makedumpfile.c
+> +++ b/makedumpfile.c
+> @@ -34,6 +34,8 @@ struct array_table	array_table;
+>  struct number_table	number_table;
+>  struct srcfile_table	srcfile_table;
+>  struct save_control	sc;
+> +struct parallel_info	parallel_info_t;
+> +struct splitting_info	splitting_info_t;
+> 
+>  struct vm_table		vt = { 0 };
+>  struct DumpInfo		*info = NULL;
+> diff --git a/makedumpfile.h b/makedumpfile.h
+> index 68d9691..614764c 100644
+> --- a/makedumpfile.h
+> +++ b/makedumpfile.h
+> @@ -1262,7 +1262,8 @@ struct splitting_info {
+>  	mdf_pfn_t		end_pfn;
+>  	off_t			offset_eraseinfo;
+>  	unsigned long		size_eraseinfo;
+> -} splitting_info_t;
+> +};
+> +extern struct splitting_info splitting_info_t;
 
-/builddir/build/BUILD/kexec-tools-2.0.20/kexec/arch/arm64/kexec-arm64.h:68: multiple definition of `arm64_mem';
-kexec/fs2dt.o:/builddir/build/BUILD/kexec-tools-2.0.20/././kexec/arch/arm64/kexec-arm64.h:68: first defined here
+Interestingly, it seems that the splitting_info_t and parallel_info_t should
+have been typedef'd because of their names ending with _t and not being used
+as variable.  (We use info->splitting_info and info->parallel_info.)
 
-/builddir/build/BUILD/kexec-tools-2.0.20/kexec/arch/arm64/kexec-arm64.h:54: multiple definition of `initrd_size';
-kexec/fs2dt.o:/builddir/build/BUILD/kexec-tools-2.0.20/././kexec/arch/arm64/kexec-arm64.h:54: first defined here
+So, is the following patch OK? then I can modify your patch.
 
-/builddir/build/BUILD/kexec-tools-2.0.20/kexec/arch/arm64/kexec-arm64.h:53: multiple definition of `initrd_base';
-kexec/fs2dt.o:/builddir/build/BUILD/kexec-tools-2.0.20/././kexec/arch/arm64/kexec-arm64.h:53: first defined here
-
-And apparently, these variables are wrongly declared multiple times. So
-remove duplicated declaration.
-
-Signed-off-by: Kairui Song <kasong@redhat.com>
----
- kexec/arch/arm64/kexec-arm64.h      | 6 +++---
- kexec/arch/ppc64/kexec-elf-ppc64.c  | 2 --
- kexec/arch/x86_64/kexec-bzImage64.c | 1 -
- kexec/fs2dt.h                       | 2 +-
- 4 files changed, 4 insertions(+), 7 deletions(-)
-
-diff --git a/kexec/arch/arm64/kexec-arm64.h b/kexec/arch/arm64/kexec-arm64.h
-index 628de79..ed447ac 100644
---- a/kexec/arch/arm64/kexec-arm64.h
-+++ b/kexec/arch/arm64/kexec-arm64.h
-@@ -50,8 +50,8 @@ int zImage_arm64_load(int argc, char **argv, const char *kernel_buf,
- void zImage_arm64_usage(void);
- 
- 
--off_t initrd_base;
--off_t initrd_size;
-+extern off_t initrd_base;
-+extern off_t initrd_size;
- 
- /**
-  * struct arm64_mem - Memory layout info.
-@@ -65,7 +65,7 @@ struct arm64_mem {
+--- a/makedumpfile.h
++++ b/makedumpfile.h
+@@ -1255,7 +1255,7 @@ struct makedumpfile_data_header {
+ 	int64_t	buf_size;
  };
  
- #define arm64_mem_ngv UINT64_MAX
--struct arm64_mem arm64_mem;
-+extern struct arm64_mem arm64_mem;
+-struct splitting_info {
++typedef struct splitting_info {
+ 	char			*name_dumpfile;
+ 	int 			fd_bitmap;
+ 	mdf_pfn_t		start_pfn;
+@@ -1264,7 +1264,7 @@ struct splitting_info {
+ 	unsigned long		size_eraseinfo;
+ } splitting_info_t;
  
- uint64_t get_phys_offset(void);
- uint64_t get_vp_offset(void);
-diff --git a/kexec/arch/ppc64/kexec-elf-ppc64.c b/kexec/arch/ppc64/kexec-elf-ppc64.c
-index 3510b70..695b8b0 100644
---- a/kexec/arch/ppc64/kexec-elf-ppc64.c
-+++ b/kexec/arch/ppc64/kexec-elf-ppc64.c
-@@ -44,8 +44,6 @@
- uint64_t initrd_base, initrd_size;
- unsigned char reuse_initrd = 0;
- const char *ramdisk;
--/* Used for enabling printing message from purgatory code */
--int my_debug = 0;
+-struct parallel_info {
++typedef struct parallel_info {
+ 	int			fd_memory;
+ 	int 			fd_bitmap_memory;
+ 	int			fd_bitmap;
+@@ -2006,8 +2006,8 @@ struct memory_range {
+ };
  
- int elf_ppc64_probe(const char *buf, off_t len)
- {
-diff --git a/kexec/arch/x86_64/kexec-bzImage64.c b/kexec/arch/x86_64/kexec-bzImage64.c
-index 8edb3e4..ba8dc48 100644
---- a/kexec/arch/x86_64/kexec-bzImage64.c
-+++ b/kexec/arch/x86_64/kexec-bzImage64.c
-@@ -42,7 +42,6 @@
- #include <arch/options.h>
+ #define CRASH_RESERVED_MEM_NR   8
+-struct memory_range crash_reserved_mem[CRASH_RESERVED_MEM_NR];
+-int crash_reserved_mem_nr;
++extern struct memory_range crash_reserved_mem[CRASH_RESERVED_MEM_NR];
++extern int crash_reserved_mem_nr;
  
- static const int probe_debug = 0;
--int bzImage_support_efi_boot;
- 
- int bzImage64_probe(const char *buf, off_t len)
- {
-diff --git a/kexec/fs2dt.h b/kexec/fs2dt.h
-index 7633273..fe24931 100644
---- a/kexec/fs2dt.h
-+++ b/kexec/fs2dt.h
-@@ -30,7 +30,7 @@ extern struct bootblock bb[1];
- 
- /* Used for enabling printing message from purgatory code
-  * Only has implemented for PPC64 */
--int my_debug;
-+extern int my_debug;
- extern int dt_no_old_root;
- 
- void reserve(unsigned long long where, unsigned long long length);
--- 
-2.24.1
+ unsigned long read_vmcoreinfo_symbol(char *str_symbol);
+ int readmem(int type_addr, unsigned long long addr, void *bufptr, size_t size);
+
+
+Thanks,
+Kazu
+
+> 
+>  struct parallel_info {
+>  	int			fd_memory;
+> @@ -1275,7 +1276,8 @@ struct parallel_info {
+>  #ifdef USELZO
+>  	lzo_bytep		wrkmem;
+>  #endif
+> -} parallel_info_t;
+> +};
+> +extern struct parallel_info parallel_info_t;
+> 
+>  struct ppc64_vmemmap {
+>  	unsigned long		phys;
+> @@ -2006,8 +2008,8 @@ struct memory_range {
+>  };
+> 
+>  #define CRASH_RESERVED_MEM_NR   8
+> -struct memory_range crash_reserved_mem[CRASH_RESERVED_MEM_NR];
+> -int crash_reserved_mem_nr;
+> +extern struct memory_range crash_reserved_mem[CRASH_RESERVED_MEM_NR];
+> +extern int crash_reserved_mem_nr;
+> 
+>  unsigned long read_vmcoreinfo_symbol(char *str_symbol);
+>  int readmem(int type_addr, unsigned long long addr, void *bufptr, size_t size);
+> --
+> 2.24.1
+
 
 
 _______________________________________________
