@@ -2,63 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D7E114C10A
-	for <lists+kexec@lfdr.de>; Tue, 28 Jan 2020 20:33:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9284514C50C
+	for <lists+kexec@lfdr.de>; Wed, 29 Jan 2020 04:53:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1vHv6g9UkzK5p0iJ1VWwQpU3evBh2SikCFf+ZzlS+3E=; b=nOB10ZEn8i7BHj
-	4a0BEVUFbWQnFONKPF7JGZ9sNzdke7Jq+KrAAA8r2rVqQH2JRjmAHp/zBjd+5TxxKFH8KXWFeju0R
-	WHGlyPegB/1l7PrSEec7mCC56417V4oacBQ19Mv6JUmeSqFoKvSdewB0zx6+eX+J6iqzZPB/Lu54s
-	eLLAswnu9hCfL1I8m4k8hxyGAIbJyn2fCkrm11FHTwn5VMccldE2qKdDZQv5yxs1Us5aW8MLj88gA
-	znEneRNJtJDizgUdHmsdoV/Tn4YIVx1BXX9vXRMtn2tXpgcxK7glgfYMXIIKR79sTGtj0mUg2m9w9
-	Xqr0+jyRTOhO00xCE+2A==;
+	List-Owner; bh=9sev8WuAlZyOC/8AB4wnEhjF7myXfgvQ+TzRfkBvjtw=; b=aCuc13ljGpfBVY
+	zcSJyHuMVNPZgwuB8y6tpfuMRFbhk9UQ3p+yFn7gCXzSwOJ3rlXEU6gRCYXeiohSOrdncWnIiWwl5
+	yk9SkNJ76W5x+vAvqfEvLyNP5eCeS0ft3bu9nwY/T5xfRSdDX4pfKodHBRWvUrka/YjPyyQntXWaG
+	AJHGVDolDz+vHB22Ntmdvv7G7BNgyx8Hyon+ZGrAZXCaQZy0olPBb+FG6vRQqnNVQIWrad+0zMi50
+	qNqzLCjB9TMuETDFmuvsLZ+wWfhbpup/Gp1PsSYbsU9mbrMRVbi/JqOlP51fg4YkTe9MDSanBBPpJ
+	2NT8iK2bd54nRljCxzBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwWby-0002XZ-FO; Tue, 28 Jan 2020 19:33:22 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1iwePr-0003r4-GA; Wed, 29 Jan 2020 03:53:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwWbv-0002Wq-2k
- for kexec@lists.infradead.org; Tue, 28 Jan 2020 19:33:20 +0000
-Received: from 179-242-183-86.3g.claro.net.br ([179.242.183.86] helo=calabresa)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <cascardo@canonical.com>)
- id 1iwWbm-00014i-7Q; Tue, 28 Jan 2020 19:33:11 +0000
-Date: Tue, 28 Jan 2020 16:33:02 -0300
-From: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
-To: HAGIO =?utf-8?B?S0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?= <k-hagio-ab@nec.com>
-Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
-Message-ID: <20200128193302.GC4080@calabresa>
-References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
- <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
- <20200120085919.GB16539@MiWiFi-R3L-srv>
- <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
- <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
- <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
- <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ id 1iwePo-0003qg-JT
+ for kexec@lists.infradead.org; Wed, 29 Jan 2020 03:53:22 +0000
+Received: from rorschach.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B459207FF;
+ Wed, 29 Jan 2020 03:53:18 +0000 (UTC)
+Date: Tue, 28 Jan 2020 22:53:16 -0500
+From: Steven Rostedt <rostedt@goodmis.org>
+To: John Ogness <john.ogness@linutronix.de>
+Subject: Re: [PATCH 1/2] printk: add lockless buffer
+Message-ID: <20200128225316.0a735187@rorschach.local.home>
+In-Reply-To: <20200128161948.8524-2-john.ogness@linutronix.de>
+References: <20200128161948.8524-1-john.ogness@linutronix.de>
+ <20200128161948.8524-2-john.ogness@linutronix.de>
+X-Mailer: Claws Mail 3.17.4git76 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_113319_258334_21C19389 
-X-CRM114-Status: GOOD (  23.42  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200128_195320_691519_742AD951 
+X-CRM114-Status: GOOD (  19.81  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,69 +64,128 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: piliu <piliu@redhat.com>, Baoquan He <bhe@redhat.com>,
- David Hildenbrand <david@redhat.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
- Andrew Morton <akpm@linux-foundation.org>,
- Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBKYW4gMjgsIDIwMjAgYXQgMDU6MDM6MTJQTSArMDAwMCwgSEFHSU8gS0FaVUhJVE8o
-6JCp5bC+IOS4gOS7gSkgd3JvdGU6Cj4gSGkgQ2FzY2FyZG8sCj4gCj4gPiAtLS0tLU9yaWdpbmFs
-IE1lc3NhZ2UtLS0tLQo+ID4gT24gTW9uLCBKYW4gMjcsIDIwMjAgYXQgMDI6MDQ6NTRQTSAtMDMw
-MCwgVGhhZGV1IExpbWEgZGUgU291emEgQ2FzY2FyZG8gd3JvdGU6Cj4gPiA+IFNvcnJ5IGZvciB0
-YWtpbmcgdG9vIGxvbmcgdG8gcmVzcG9uZCwgYXMgSSB3YXMgb24gdmFjYXRpb24uCj4gPiA+Cj4g
-PiA+IFRoZSBrZXJuZWxzIHRoYXQgaGFkIGNvbW1pdCA4M2UzYzQ4NzI5ZDksIGJ1dCBub3QgY29t
-bWl0IGEwYjEyODAzNjhkMSwgYXJlCj4gPiA+IG5vdCBzdXBwb3J0ZWQgYW55bW9yZS4gSW4gYSB3
-YXkgdGhhdCBpdCdzIGV2ZW4gaGFyZCBmb3IgbWUgdG8gdGVzdCB0aGVtLgo+ID4gPgo+ID4gPiBI
-b3dldmVyLCBJIG1hbmFnZWQgdG8gdGVzdCBpdCwgYW5kIHRob3NlIHR3byBsaW5lcyBhcmUgZGVm
-aW5pdGl2ZWx5IG5lZWRlZAo+ID4gPiB0byBkdW1wIGEgVk0gcnVubmluZyBzdWNoIGEga2VybmVs
-LiBJcyByZW1vdmluZyB0aGVtIHJlYWxseSBuZWVkZWQgdG8gZml4Cj4gPiA+IHRoaXMgaXNzdWU/
-Cj4gPiA+Cj4gPiA+IE90aGVyd2lzZSwgSSB3b3VsZCByYXRoZXIga2VlcCB0aGVtLgo+ID4gPgo+
-ID4gPiBUaGFua3MuCj4gPiA+IENhc2NhcmRvLgo+ID4gCj4gPiBCeSB0aGUgd2F5LCBJIHdhcyB0
-b28gZmFzdCBpbiBzZW5kaW5nIHRoaXMuIFdlIHJlYWxseSBuZWVkIHRvIGtlZXAgdGhvc2UgbGlu
-ZXMKPiA+IGFzIG1ha2VkdW1wZmlsZSB3aWxsIGZhaWwgdG8gZHVtcCBhIDQuNCBrZXJuZWwgd2l0
-aCB0aGlzIHBhdGNoIGFzIGlzLgo+IAo+IElzIHRoYXQgVWJ1bnR1IDQuNCBrZXJuZWwgd2hpY2gg
-aGFzIDgzZTNjNDg3MjlkOSBhbmQgbm90IGEwYjEyODAzNjhkMT8KPiBDb3VsZCB5b3UgZWxhYm9y
-YXRlIG9uIGhvdyBpdCBmYWlscz8KCk5vLCBpdCBkb2Vzbid0IGhhdmUgZWl0aGVyLCBzbyBteSBn
-dWVzcyBpcyBpdCB3b3VsZCBmYWlsIG9uIHVwc3RyZWFtIDQuNCBhcwp3ZWxsLCBzbyBhbnl0aGlu
-ZyB0aGF0IGRvZXNuJ3QgaGF2ZSA4M2UzYzQ4NzI5ZDkuCgpUaGF0J3Mgd2hhdCBJIGdldCBvbiB0
-aGF0IDQuNCBrZXJuZWwgKDQuNC4wLTE3MS1nZW5lcmljKToKCiMgLi9tYWtlZHVtcGZpbGUgL3By
-b2Mvdm1jb3JlIC4uL2R1bXAKZ2V0X21lbV9zZWN0aW9uOiBDb3VsZCBub3QgdmFsaWRhdGUgbWVt
-X3NlY3Rpb24uCmdldF9tbV9zcGFyc2VtZW06IENhbid0IGdldCB0aGUgYWRkcmVzcyBvZiBtZW1f
-c2VjdGlvbi4KCm1ha2VkdW1wZmlsZSBGYWlsZWQuCiMKClNvLCBub3csIEkgaGF2ZSBhIGJldHRl
-ciBncmFzcCBvZiB0aGUgd2hvbGUgbG9naWMsIGFuZCB1bmRlcnN0YW5kIHdoeSBpdCBmYWlscwp3
-aXRoIHRoaXMgcGF0Y2guCgpTbywgd2UgbmVlZCB0byBlaXRoZXIgaW50ZXJwcmV0IHRoZSBtZW1f
-c2VjdGlvbiBhcyBhIHBvaW50ZXIgdG8gdGhlIGFycmF5IG9mIGEKcG9pbnRlciB0byB0aGUgcG9p
-bnRlciB0byB0aGUgYXJyYXkuIFRoZSBvbmx5IGNhc2UgdGhlIHNlY29uZCBvcHRpb24gaXMgdmFs
-aWQKaXMgd2hlbiBzcGFyc2VfZXh0cmVtZSBpcyBvbiwgc28gd2UgZG9uJ3QgZXZlbiBuZWVkIHRv
-IGNoZWNrIHRoZSBzZWNvbmQgY2FzZQp3aGVuIGl0J3Mgb2ZmLgoKVGhlbiwgd2UgY2hlY2sgdGhh
-dCBpbnRlcnByZXRpbmcgaXQgZWl0aGVyIHdheSBpcyB2YWxpZC4gSWYgaXQncyB2YWxpZCBpbiBi
-b3RoCmludGVycHJldGF0aW9ucywgd2UgY2FuJ3QgZGVjaWRlIHdoaWNoIHRvIHVzZSwgYW5kIHdp
-bGwgZmFpbC4gU28gZmFyLCB3ZQpoYXZlbid0IHNlZW4gYW55IGNhc2UgaW4gdGhlIGZpZWxkIHdo
-ZXJlIHRoYXQgd291bGQgYWNjaWRlbnRhbGx5IGhhcHBlbi4gQnV0IGluCmNhc2UgaXQgZG9lcywg
-d2Ugc2hvdWxkIHJhdGhlciBmYWlsIHRvIGR1bXAgYW5kIGZhbGxiYWNrIHRvIGNvcHlpbmcsIHRo
-YW4KY3JlYXRpbmcgYSBib2d1cyBjb21wcmVzc2VkIGR1bXAuCgpXaGVuIHRoaXMgcGF0Y2ggaXMg
-YXBwbGllZCwgYSBrZXJuZWwgd2hpY2ggZG9lcyBub3QgaGF2ZSA4M2UzYzQ4NzI5ZDksIGFuZAp0
-aHVzLCBoYXMgbWVtX3NlY3Rpb24gYXMgYSBkaXJlY3QgcG9pbnRlciB0byB0aGUgYXJyYXksIGl0
-IHNvIGhhcHBlbnMgdGhhdCB3ZQpkb24ndCBkZXRlY3QgdGhlIHBvaW50ZXIgdG8gcG9pbnRlciB0
-byB0aGUgYXJyYXkgY2FzZSBhcyBpbnZhbGlkLCB0aHVzIGZhaWxpbmcKdG8gZHVtcC4KClRoZSB3
-YXkgd2UgdmFsaWRhdGUgaXMgdGhhdCB0aGUgbWVtX21hcHMgc2hvdWxkIGVpdGhlciBoYXZlIHRo
-ZSBQUkVTRU5UIGJpdCBvcgpiZSBOVUxMLiBOb3csIHRoYXQgYXNzdW1wdGlvbiBtYXkgYmUgaW52
-YWxpZCwgYW5kIHdlIHdvdWxkIG5lZWQgdG8gZG8gdGhlCnZhbGlkYXRpb24gc29tZSBvdGhlciB3
-YXkuIEkgY2FuIHRlc3QgdGhlIGNhc2VzIHdoZXJlIHRoYXQgYXNzdW1wdGlvbiBpcwppbnZhbGlk
-IGluIGEgNC40IGtlcm5lbCBhbmQgc2VlIGhvdyB0byBmaXggdGhpcyBpbiBhIHNhdGlzZmFjdG9y
-eSB3YXkuCgpHb2luZyB0aHJvdWdoIHRoZSBjb2RlIG9uY2UgYWdhaW4sIEkgZG9uJ3Qgc2VlIGhv
-dyB0aGUgc2Vjb25kIHNlY3Rpb24gb2YgdGhlCnBhdGNoIHdvdWxkIGJlIGNvcnJlY3QgYnkgaXRz
-ZWxmIHRvby4gSSB3aWxsIHRoaW5rIGl0IHRocm91Z2ggYSBsaXR0bGUgbW9yZSBhbmQKc2VlIGlm
-IEkgY2FuIGNvbWUgdXAgd2l0aCBhIHNvbHV0aW9uLgoKUmVnYXJkcy4KQ2FzY2FyZG8uCgo+IAo+
-IEknbSB0aGlua2luZyB0aGF0IFBpbmdmYW4ncyB0aG91Z2h0IG1heSBoZWxwOgo+ID4+IEkgdGhp
-bmsgaXQgY291bGQgYmUgaWYvZWxzZSwgbm8gbmVlZCB0byBjYWxsIHR3aWNlLgo+IAo+IFRoYW5r
-cywKPiBLYXp1Cj4gCj4gPiAKPiA+IENhc2NhcmRvLgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9r
-ZXhlYwo=
+On Tue, 28 Jan 2020 17:25:47 +0106
+John Ogness <john.ogness@linutronix.de> wrote:
+
+> diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
+> new file mode 100644
+> index 000000000000..796257f226ee
+> --- /dev/null
+> +++ b/kernel/printk/printk_ringbuffer.c
+> @@ -0,0 +1,1370 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +
+> +#include <linux/kernel.h>
+> +#include <linux/irqflags.h>
+> +#include <linux/string.h>
+> +#include <linux/errno.h>
+> +#include <linux/bug.h>
+> +#include "printk_ringbuffer.h"
+> +
+> +/**
+> + * DOC: printk_ringbuffer overview
+> + *
+> + * Data Structure
+> + * --------------
+> + * The printk_ringbuffer is made up of 3 internal ringbuffers::
+> + *
+> + *   * desc_ring:      A ring of descriptors. A descriptor contains all record
+> + *                     meta data (sequence number, timestamp, loglevel, etc.)
+> + *                     as well as internal state information about the record
+> + *                     and logical positions specifying where in the other
+> + *                     ringbuffers the text and dictionary strings are
+> + *                     located.
+> + *
+> + *   * text_data_ring: A ring of data blocks. A data block consists of an
+> + *                     unsigned long integer (ID) that maps to a desc_ring
+> + *                     index followed by the text string of the record.
+> + *
+> + *   * dict_data_ring: A ring of data blocks. A data block consists of an
+> + *                     unsigned long integer (ID) that maps to a desc_ring
+> + *                     index followed by the dictionary string of the record.
+> + *
+> + * Implementation
+> + * --------------
+> + *
+> + * ABA Issues
+> + * ~~~~~~~~~~
+> + * To help avoid ABA issues, descriptors are referenced by IDs (index values
+> + * with tagged states) and data blocks are referenced by logical positions
+> + * (index values with tagged states). However, on 32-bit systems the number
+> + * of tagged states is relatively small such that an ABA incident is (at
+> + * least theoretically) possible. For example, if 4 million maximally sized
+
+4 million? I'm guessing that maximally sized printk messages are 1k?
+
+Perhaps say that, otherwise one might think this is a mistake. "4
+million maximally sized (1k) printk messages"
+
+> + * printk messages were to occur in NMI context on a 32-bit system, the
+> + * interrupted task would not be able to recognize that the 32-bit integer
+> + * wrapped and thus represents a different data block than the one the
+> + * interrupted task expects.
+> + *
+> + * To help combat this possibility, additional state checking is performed
+> + * (such as using cmpxchg() even though set() would suffice). These extra
+> + * checks will hopefully catch any ABA issue that a 32-bit system might
+> + * experience.
+> + *
+[..]
+
+> + * Usage
+> + * -----
+> + * Here are some simple examples demonstrating writers and readers. For the
+> + * examples a global ringbuffer (test_rb) is available (which is not the
+> + * actual ringbuffer used by printk)::
+> + *
+> + *	DECLARE_PRINTKRB(test_rb, 15, 5, 3);
+> + *
+> + * This ringbuffer allows up to 32768 records (2 ^ 15) and has a size of
+> + * 1 MiB (2 ^ 20) for text data and 256 KiB (2 ^ 18) for dictionary data.
+
+ (2 ^ (15 + 5)) ... (2 ^ (15 + 3)) ?
+
+I'll play around more with this this week. But so far it looks good.
+
+-- Steve
+
+> + *
+> + * Sample writer code::
+> + *
+> + *	struct prb_reserved_entry e;
+> + *	struct printk_record r;
+> + *
+> + *	// specify how much to allocate
+> + *	r.text_buf_size = strlen(textstr) + 1;
+> + *	r.dict_buf_size = strlen(dictstr) + 1;
+> + *
+> + *	if (prb_reserve(&e, &test_rb, &r)) {
+> + *		snprintf(r.text_buf, r.text_buf_size, "%s", textstr);
+> + *
+> + *		// dictionary allocation may have failed
+> + *		if (r.dict_buf)
+> + *			snprintf(r.dict_buf, r.dict_buf_size, "%s", dictstr);
+> + *
+> + *		r.info->ts_nsec = local_clock();
+> + *
+> + *		prb_commit(&e);
+> + *	}
+> + *
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
