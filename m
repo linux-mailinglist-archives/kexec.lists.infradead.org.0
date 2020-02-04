@@ -2,37 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A8E01518F4
-	for <lists+kexec@lfdr.de>; Tue,  4 Feb 2020 11:40:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94B1F1521D0
+	for <lists+kexec@lfdr.de>; Tue,  4 Feb 2020 22:18:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CjpPskG5TtJTS4dpfh+XKKEcVj9OF3neCUdiGvHQK0Y=; b=C3o4x+Pe67S3V3
-	Ym0R3D+lGl9pDSsuOKt7iMUfU597JwRYLG5iaOUyH8EZToC/H1YLQtqTrOgz1t071eqFn7nwu/8Ju
-	QGg+L4fPDMBJEpIhQbGoJ+Dxu/0EGsolp18HFhfipHgQthigZPPFui8b2SBCCzrY0cuLBI3RYVFoH
-	urTmq6duPzYtePneEaNN5hFa3bQqwM9sDrvOLLIQIjSokdumv//6yJe0lL4W5NuhJaSMoPhB1Oavm
-	XLe5kvFxX0jqiiI4pCnvFOwIkgEVTPBbV0OH2dLgpDRMk+N6eNmTIQmyfbwE9SucaFx45RXre1iaY
-	8XHHNu35ZX0sjaRtBMwQ==;
+	List-Owner; bh=Cg7oZbnFI0Ca06pV4Ifr5xhvtLnBGnWhSBxOFJoer3Y=; b=t+VvfcswjWolKS
+	tCO1FnXg4wd2b7uYpxezi/Ar8fyLCHdq0K7P7PZVc9BEMQYcXNO9uuX3IuWJsOdD3JynHHfNo6akn
+	y30mMd+FHZaccKUcTuoHV70oxEI1+BO5VUeWO0YE4R1bO7V7FijP/a+0MgqXg2XGrtliWCEpvXPrX
+	U2BLTYVQ7dlPP2XUL+VZs+nCa7xXYCXxJ2WJFGRgsDQO72NF3agJNwga+Iz6G4vYXVU1Pb7ROECv7
+	0kt1L8hQvd0C2r09jsA+VWIr31ZBdvquDwlTrk9MPPbeoH+1KV12FKp+D1TWY7WxbYBDwwc68arM5
+	3Bp2m1/6ZUKo5vGu5QKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyvcs-00045S-KU; Tue, 04 Feb 2020 10:40:14 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1iz5ab-0004Cv-46; Tue, 04 Feb 2020 21:18:33 +0000
+Received: from mail-eopbgr1310041.outbound.protection.outlook.com
+ ([40.107.131.41] helo=APC01-SG2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyvco-0003nX-TA
- for kexec@lists.infradead.org; Tue, 04 Feb 2020 10:40:13 +0000
-Received: from 189-68-179-241.dsl.telesp.net.br ([189.68.179.241]
- helo=calabresa) by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <cascardo@canonical.com>)
- id 1iyvcf-0002fx-D4; Tue, 04 Feb 2020 10:40:01 +0000
-Date: Tue, 4 Feb 2020 07:39:54 -0300
-From: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
-To: piliu <piliu@redhat.com>
-Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
-Message-ID: <20200204103954.GH40679@calabresa>
+ id 1iz5aU-0004CR-6l
+ for kexec@lists.infradead.org; Tue, 04 Feb 2020 21:18:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=huAMXPPn7x3jF1Baj62UFjyxujMLZbTvUIm2bWFDyvk47LDAFUm1yeTL8hLBqhRqa5+2vcH3Y5A2D7DJrVX54LNp6EXpqD6Hda+2wchi7SHCrdsA7/b7QNxF5xRJoU8TQDXA93UpeRxax33aXBHQpyW8vkVLyjyzFFrvHitc8a21ytGjamBBx+tdV2VJgBqme4Iam93XwPTbXcafA2VOlpl66eWpIhQNRxBat8CBSXN6V5bxcignRRdC+zrfcdacNjvduFFvR3ZmFs2afgjOvzmkdMjM323NRM3ySA62Qqy98oD4lGR45VWmIEMvW5/Utj4Mm+f0iGxqeNAb2P6b5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VDP4G4d9+0+LgYqsc7nqC5nNqtZIDOjHDU0NLlxTC2k=;
+ b=U+XQ2DzLIdksXgwbu+u1xoZBY6tjmC4wqeJSEKDgWuuLTOGZ+qvpecm8XVinVZO776EqHXnP9tlAMQod7qxdnTuxwxFgIXOAD+Ij5tW8Vlp5GRV/DI+gLBl5+jzi7AdgXv1Z3nFkDzu4IwqmkKvQXE5mP9uAarNJ5znzWmoSeAsnbZ0P2pQDJK6a4hLf2Y5qSnxP1UUUuUS48y7VBp+d8D+ZNFLId9eBpupVHjCcCMWwCDPgkbPexLxYmPx/nfJYqFn7oowag2Vrcu1WRUzIKbCaLP0c5S5V/Ysck1JUyg7+Ml55gIhZqtalf81L7LWtCTRejgcMf8+dGFvAjD8pVw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=VDP4G4d9+0+LgYqsc7nqC5nNqtZIDOjHDU0NLlxTC2k=;
+ b=srzAylxSe5VGrMtsd1CfaGdlgd4TXgpz4PTdLLZWAXo1U1OwtYmjz1CtSMG2TzHxrIEPnGjRkLO4puf+1yoaEc5OWK3zvDLsMq5Xc+Ly/QN5fwDspbwNL9eyFGDVG0lH7szCQAXgt+f9VdJgY4FzcdJUUxUJAl+Nkf84dhHmlqE=
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
+ TY2PR01MB2396.jpnprd01.prod.outlook.com (20.177.98.9) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2686.32; Tue, 4 Feb 2020 21:18:14 +0000
+Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
+ ([fe80::99e3:8a09:840f:9b89%4]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
+ 21:18:13 +0000
+From: =?utf-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+To: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>, piliu
+ <piliu@redhat.com>
+Subject: RE: [PATCH] makedumpfile: cope with not-present mem section
+Thread-Topic: [PATCH] makedumpfile: cope with not-present mem section
+Thread-Index: AQHVzzjxMLXncz5rgU2tzBmjVtM4QafzOgIAgAAHWICAABBDgIAFJqZQgAZRDICAABE7gIABbiuwgAA8WwCACiPygIAAR2sAgABpuDA=
+Date: Tue, 4 Feb 2020 21:18:13 +0000
+Message-ID: <TY2PR01MB52108AD0131515408592E08CDD030@TY2PR01MB5210.jpnprd01.prod.outlook.com>
 References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
  <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
  <20200120085919.GB16539@MiWiFi-R3L-srv>
@@ -42,25 +65,57 @@ References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
  <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
  <20200128193302.GC4080@calabresa>
  <5cd8e190-8be6-41cd-c43a-c38043c14b3f@redhat.com>
+ <20200204103954.GH40679@calabresa>
+In-Reply-To: <20200204103954.GH40679@calabresa>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [66.187.233.206]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 35214390-dccd-45b0-fdef-08d7a9b7beb6
+x-ms-traffictypediagnostic: TY2PR01MB2396:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TY2PR01MB239651F3C630A5A8716AAECFDD030@TY2PR01MB2396.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 03030B9493
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(136003)(396003)(376002)(366004)(199004)(189003)(76116006)(66946007)(71200400001)(66556008)(66446008)(66476007)(54906003)(110136005)(52536014)(8936002)(81166006)(81156014)(86362001)(64756008)(5660300002)(8676002)(7416002)(26005)(186003)(53546011)(9686003)(55016002)(316002)(6506007)(85182001)(33656002)(7696005)(2906002)(4326008)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:TY2PR01MB2396;
+ H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: AcQOOeENAmRYoDBzLWO4AP8VactLsp+yhru9WjnV0jkSVO4/rB6e1lJsZUJOoygB4fXnmE+Hd8QvLXZvAapDQIOX+izMZLix+04TWjcxV4hAFh4zyv21HlYQIuIzxZWgkc/mtnxllCZ5W86acs0XX/BMkIvZz8xyYVcXF2le07v3cOVjWcjyw7WTN9SqJb3BFZENeGo1VkwT2PXbRcm7rZKJvt8TT5e8se0o11epD3lNaUVD2PbOP/kQJUlxWSbWWa+Q2BbEykpebln/mcu7spDgxb1/ST34xko0GhxzVVu03zb7KopUMZ66VT2iYB1JJWGSzpY28u8ALlh6+6mNoM0S6DGUftxCah3w9P9XVdkJGXvrc/eIGlIS1VDSLh9ugks6LYquJN2Ug+/4n0DFNnf7QTgjgQKZJNUpakPHt558T9D223e6uZZZxNZH7wls
+x-ms-exchange-antispam-messagedata: +b2YsTU0Tmnwx+ucTLRO/EGITXT9wCsSai52e/7XqLYQtwjQosM+bI/VsUF91AJ/BCknpS9D0vD8aQE7zEGDQxNdEtXUOcJe+rVqYRa5W+QGz2L2L79gWT9dyUHlQQX8G3Pwn59hZNT8xQk5CY2Jaw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5cd8e190-8be6-41cd-c43a-c38043c14b3f@redhat.com>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 35214390-dccd-45b0-fdef-08d7a9b7beb6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Feb 2020 21:18:13.8788 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: st9gUDg9NlC3CnyGxVXZhKcGu7fgwhQHov/6CT7UHCuE7IcQW8nsUfFLMfUd/bQbgFV0OY2Je+cA4k/BtrmLyA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB2396
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_024011_105273_FE6B7788 
-X-CRM114-Status: GOOD (  34.99  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200204_131826_311052_642E773B 
+X-CRM114-Status: GOOD (  40.56  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.131.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,98 +129,168 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
  "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- HAGIO =?utf-8?B?S0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?= <k-hagio-ab@nec.com>,
  Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
  Andrew Morton <akpm@linux-foundation.org>,
  Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBGZWIgMDQsIDIwMjAgYXQgMDI6MjQ6MTdQTSArMDgwMCwgcGlsaXUgd3JvdGU6Cj4g
-SGksCj4gCj4gU29ycnkgdG8gcmVwbHkgbGF0ZSBkdWUgdG8gYSBsb25nIGZlc3RpdmFsLgo+IAo+
-IEkgaGF2ZSB0ZXN0ZWQgdGhpcyBwYXRjaCBhZ2FpbnN0IHY0LjE1IGFuZCBsYXRlc3Qga2VybmVs
-IHdpdGggc21hbGwKPiBtb2RpZmljYXRpb24gdG8gbWVldCB0aGUgc2l0dWF0aW9uIHdlIGRpc2N1
-c3NlZCBoZXJlLiBCb3RoIHdvcmsgZmluZS4KPiAKPiBUaGUgYmVsb3cgaXMgdGhlIG1vZGlmaWNh
-dGlvbiBvZiB0d28ga2VybmVsCj4gCj4gdGVzdDEuIGxhdGVzdCBrZXJuZWwgd2l0aCB0d28gZXh0
-cmEgbW9kaWZpY2F0aW9uIHRvIGV4cG9zZSB0aGUgcHJvYmxlbQo+IC0xLjEgcmV2ZXJ0cyBjb21t
-aXQgMWY1MDM0NDNlN2RmOGRjODM2NjYwOGI0ZDgxMGNlMmQ2NjY5ODI3Ywo+IChtbS9zcGFyc2Uu
-YzogcmVzZXQgc2VjdGlvbidzIG1lbV9tYXAgd2hlbiBmdWxseSBkZWFjdGl2YXRlZCksIHRoaXMK
-PiBjb21taXQgd29yayBhcm91bmQgdGhpcyBidWcKPiAtMS4yLiByZXZlcnRzIGNvbW1pdCBhMGIx
-MjgwMzY4ZDFlOTFhYjcyZjg0OWVmMDk1YjRmMDdhMzliYmYxICgia2R1bXA6Cj4gd3JpdGUgY29y
-cmVjdCBhZGRyZXNzIG9mIG1lbV9zZWN0aW9uIGludG8gdm1jb3JlaW5mbyIpLiBUaGlzIHdpbGwg
-Y3JlYXRlCj4gYSBidWdneSBzaXR1YXRpb24gYXMgd2UgZGlzY3Vzc2VkIGhlcmUuCj4gLTEuMy4g
-Zml4IGJ1aWxkaW5nIGJ1ZyBkdWUgdG8gcmV2ZXJ0Cj4gYTBiMTI4MDM2OGQxZTkxYWI3MmY4NDll
-ZjA5NWI0ZjA3YTM5YmJmMQo+IAo+IHRlc3QyLiB2NC4xNSwgd2hpY2ggaW5jbHVkZSBib3RoIGNv
-bW1pdCA4M2UzYzQ4NzI5ZDkgYW5kIGEwYjEyODAzNjhkMS4KPiAtMi4xLiByZXZlcnQgY29tbWl0
-IGEwYjEyODAzNjhkMWU5MWFiNzJmODQ5ZWYwOTViNGYwN2EzOWJiZjEgKCJrZHVtcDoKPiB3cml0
-ZSBjb3JyZWN0IGFkZHJlc3Mgb2YgbWVtX3NlY3Rpb24gaW50byB2bWNvcmVpbmZvIikKPiAKPiBT
-byBJIGNhbiBub3Qgc2VlIGFueSBwcm9ibGVtIHdpdGggbXkgcGF0Y2guCj4gTWF5YmUgSSBtaXN1
-bmRlcnN0YW5kIHRoZSBkaXNjdXNzaW9uLCBidXQgSSBjYW4gbm90IHNlZSBteSBvcmlnaW5hbAo+
-IHBhdGNoIHdpbGwgYnJlYWsgdGhlIGtlcm5lbCB3aGljaCBoYXZlIDgzZTNjNDg3MjlkOSBidXQg
-bm90IGEwYjEyODAzNjhkMS4KPiAKPiBUaGFua3MsCj4gUGluZ2Zhbgo+IAoKWW91IGFsc28gbmVl
-ZCB0byB0ZXN0IHRoZSBjYXNlIHdoZXJlIDgzZTNjNDg3MjlkOSBpcyBub3QgcHJlc2VudCBhdCBh
-bGwuIENhbgp5b3UgdGVzdCBvbiBhIDQuNCBrZXJuZWwsIGZvciBleGFtcGxlPyBBcyBmYXIgYXMg
-SSB1bmRlcnN0YW5kLCBhIHZhbmlsbGEgNC40Cmtlcm5lbCB3b3VsZCBub3QgYmUgZHVtcGFibGUg
-d2l0aCB5b3VyIHBhdGNoLgoKVGhhbmtzLgpDYXNjYXJkby4KCj4gT24gMDEvMjkvMjAyMCAwMzoz
-MyBBTSwgVGhhZGV1IExpbWEgZGUgU291emEgQ2FzY2FyZG8gd3JvdGU6Cj4gPiBPbiBUdWUsIEph
-biAyOCwgMjAyMCBhdCAwNTowMzoxMlBNICswMDAwLCBIQUdJTyBLQVpVSElUTyjokKnlsL4g5LiA
-5LuBKSB3cm90ZToKPiA+PiBIaSBDYXNjYXJkbywKPiA+Pgo+ID4+PiAtLS0tLU9yaWdpbmFsIE1l
-c3NhZ2UtLS0tLQo+ID4+PiBPbiBNb24sIEphbiAyNywgMjAyMCBhdCAwMjowNDo1NFBNIC0wMzAw
-LCBUaGFkZXUgTGltYSBkZSBTb3V6YSBDYXNjYXJkbyB3cm90ZToKPiA+Pj4+IFNvcnJ5IGZvciB0
-YWtpbmcgdG9vIGxvbmcgdG8gcmVzcG9uZCwgYXMgSSB3YXMgb24gdmFjYXRpb24uCj4gPj4+Pgo+
-ID4+Pj4gVGhlIGtlcm5lbHMgdGhhdCBoYWQgY29tbWl0IDgzZTNjNDg3MjlkOSwgYnV0IG5vdCBj
-b21taXQgYTBiMTI4MDM2OGQxLCBhcmUKPiA+Pj4+IG5vdCBzdXBwb3J0ZWQgYW55bW9yZS4gSW4g
-YSB3YXkgdGhhdCBpdCdzIGV2ZW4gaGFyZCBmb3IgbWUgdG8gdGVzdCB0aGVtLgo+ID4+Pj4KPiA+
-Pj4+IEhvd2V2ZXIsIEkgbWFuYWdlZCB0byB0ZXN0IGl0LCBhbmQgdGhvc2UgdHdvIGxpbmVzIGFy
-ZSBkZWZpbml0aXZlbHkgbmVlZGVkCj4gPj4+PiB0byBkdW1wIGEgVk0gcnVubmluZyBzdWNoIGEg
-a2VybmVsLiBJcyByZW1vdmluZyB0aGVtIHJlYWxseSBuZWVkZWQgdG8gZml4Cj4gPj4+PiB0aGlz
-IGlzc3VlPwo+ID4+Pj4KPiA+Pj4+IE90aGVyd2lzZSwgSSB3b3VsZCByYXRoZXIga2VlcCB0aGVt
-Lgo+ID4+Pj4KPiA+Pj4+IFRoYW5rcy4KPiA+Pj4+IENhc2NhcmRvLgo+ID4+Pgo+ID4+PiBCeSB0
-aGUgd2F5LCBJIHdhcyB0b28gZmFzdCBpbiBzZW5kaW5nIHRoaXMuIFdlIHJlYWxseSBuZWVkIHRv
-IGtlZXAgdGhvc2UgbGluZXMKPiA+Pj4gYXMgbWFrZWR1bXBmaWxlIHdpbGwgZmFpbCB0byBkdW1w
-IGEgNC40IGtlcm5lbCB3aXRoIHRoaXMgcGF0Y2ggYXMgaXMuCj4gPj4KPiA+PiBJcyB0aGF0IFVi
-dW50dSA0LjQga2VybmVsIHdoaWNoIGhhcyA4M2UzYzQ4NzI5ZDkgYW5kIG5vdCBhMGIxMjgwMzY4
-ZDE/Cj4gPj4gQ291bGQgeW91IGVsYWJvcmF0ZSBvbiBob3cgaXQgZmFpbHM/Cj4gPiAKPiA+IE5v
-LCBpdCBkb2Vzbid0IGhhdmUgZWl0aGVyLCBzbyBteSBndWVzcyBpcyBpdCB3b3VsZCBmYWlsIG9u
-IHVwc3RyZWFtIDQuNCBhcwo+ID4gd2VsbCwgc28gYW55dGhpbmcgdGhhdCBkb2Vzbid0IGhhdmUg
-ODNlM2M0ODcyOWQ5Lgo+ID4gCj4gPiBUaGF0J3Mgd2hhdCBJIGdldCBvbiB0aGF0IDQuNCBrZXJu
-ZWwgKDQuNC4wLTE3MS1nZW5lcmljKToKPiA+IAo+ID4gIyAuL21ha2VkdW1wZmlsZSAvcHJvYy92
-bWNvcmUgLi4vZHVtcAo+ID4gZ2V0X21lbV9zZWN0aW9uOiBDb3VsZCBub3QgdmFsaWRhdGUgbWVt
-X3NlY3Rpb24uCj4gPiBnZXRfbW1fc3BhcnNlbWVtOiBDYW4ndCBnZXQgdGhlIGFkZHJlc3Mgb2Yg
-bWVtX3NlY3Rpb24uCj4gPiAKPiA+IG1ha2VkdW1wZmlsZSBGYWlsZWQuCj4gPiAjCj4gPiAKPiA+
-IFNvLCBub3csIEkgaGF2ZSBhIGJldHRlciBncmFzcCBvZiB0aGUgd2hvbGUgbG9naWMsIGFuZCB1
-bmRlcnN0YW5kIHdoeSBpdCBmYWlscwo+ID4gd2l0aCB0aGlzIHBhdGNoLgo+ID4gCj4gPiBTbywg
-d2UgbmVlZCB0byBlaXRoZXIgaW50ZXJwcmV0IHRoZSBtZW1fc2VjdGlvbiBhcyBhIHBvaW50ZXIg
-dG8gdGhlIGFycmF5IG9mIGEKPiA+IHBvaW50ZXIgdG8gdGhlIHBvaW50ZXIgdG8gdGhlIGFycmF5
-LiBUaGUgb25seSBjYXNlIHRoZSBzZWNvbmQgb3B0aW9uIGlzIHZhbGlkCj4gPiBpcyB3aGVuIHNw
-YXJzZV9leHRyZW1lIGlzIG9uLCBzbyB3ZSBkb24ndCBldmVuIG5lZWQgdG8gY2hlY2sgdGhlIHNl
-Y29uZCBjYXNlCj4gPiB3aGVuIGl0J3Mgb2ZmLgo+ID4gCj4gPiBUaGVuLCB3ZSBjaGVjayB0aGF0
-IGludGVycHJldGluZyBpdCBlaXRoZXIgd2F5IGlzIHZhbGlkLiBJZiBpdCdzIHZhbGlkIGluIGJv
-dGgKPiA+IGludGVycHJldGF0aW9ucywgd2UgY2FuJ3QgZGVjaWRlIHdoaWNoIHRvIHVzZSwgYW5k
-IHdpbGwgZmFpbC4gU28gZmFyLCB3ZQo+ID4gaGF2ZW4ndCBzZWVuIGFueSBjYXNlIGluIHRoZSBm
-aWVsZCB3aGVyZSB0aGF0IHdvdWxkIGFjY2lkZW50YWxseSBoYXBwZW4uIEJ1dCBpbgo+ID4gY2Fz
-ZSBpdCBkb2VzLCB3ZSBzaG91bGQgcmF0aGVyIGZhaWwgdG8gZHVtcCBhbmQgZmFsbGJhY2sgdG8g
-Y29weWluZywgdGhhbgo+ID4gY3JlYXRpbmcgYSBib2d1cyBjb21wcmVzc2VkIGR1bXAuCj4gPiAK
-PiA+IFdoZW4gdGhpcyBwYXRjaCBpcyBhcHBsaWVkLCBhIGtlcm5lbCB3aGljaCBkb2VzIG5vdCBo
-YXZlIDgzZTNjNDg3MjlkOSwgYW5kCj4gPiB0aHVzLCBoYXMgbWVtX3NlY3Rpb24gYXMgYSBkaXJl
-Y3QgcG9pbnRlciB0byB0aGUgYXJyYXksIGl0IHNvIGhhcHBlbnMgdGhhdCB3ZQo+ID4gZG9uJ3Qg
-ZGV0ZWN0IHRoZSBwb2ludGVyIHRvIHBvaW50ZXIgdG8gdGhlIGFycmF5IGNhc2UgYXMgaW52YWxp
-ZCwgdGh1cyBmYWlsaW5nCj4gPiB0byBkdW1wLgo+ID4gCj4gPiBUaGUgd2F5IHdlIHZhbGlkYXRl
-IGlzIHRoYXQgdGhlIG1lbV9tYXBzIHNob3VsZCBlaXRoZXIgaGF2ZSB0aGUgUFJFU0VOVCBiaXQg
-b3IKPiA+IGJlIE5VTEwuIE5vdywgdGhhdCBhc3N1bXB0aW9uIG1heSBiZSBpbnZhbGlkLCBhbmQg
-d2Ugd291bGQgbmVlZCB0byBkbyB0aGUKPiA+IHZhbGlkYXRpb24gc29tZSBvdGhlciB3YXkuIEkg
-Y2FuIHRlc3QgdGhlIGNhc2VzIHdoZXJlIHRoYXQgYXNzdW1wdGlvbiBpcwo+ID4gaW52YWxpZCBp
-biBhIDQuNCBrZXJuZWwgYW5kIHNlZSBob3cgdG8gZml4IHRoaXMgaW4gYSBzYXRpc2ZhY3Rvcnkg
-d2F5Lgo+ID4gCj4gPiBHb2luZyB0aHJvdWdoIHRoZSBjb2RlIG9uY2UgYWdhaW4sIEkgZG9uJ3Qg
-c2VlIGhvdyB0aGUgc2Vjb25kIHNlY3Rpb24gb2YgdGhlCj4gPiBwYXRjaCB3b3VsZCBiZSBjb3Jy
-ZWN0IGJ5IGl0c2VsZiB0b28uIEkgd2lsbCB0aGluayBpdCB0aHJvdWdoIGEgbGl0dGxlIG1vcmUg
-YW5kCj4gPiBzZWUgaWYgSSBjYW4gY29tZSB1cCB3aXRoIGEgc29sdXRpb24uCj4gPiAKPiA+IFJl
-Z2FyZHMuCj4gPiBDYXNjYXJkby4KPiA+IAo+ID4+Cj4gPj4gSSdtIHRoaW5raW5nIHRoYXQgUGlu
-Z2ZhbidzIHRob3VnaHQgbWF5IGhlbHA6Cj4gPj4+PiBJIHRoaW5rIGl0IGNvdWxkIGJlIGlmL2Vs
-c2UsIG5vIG5lZWQgdG8gY2FsbCB0d2ljZS4KPiA+Pgo+ID4+IFRoYW5rcywKPiA+PiBLYXp1Cj4g
-Pj4KPiA+Pj4KPiA+Pj4gQ2FzY2FyZG8uCj4gPiAKPiAKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-a2V4ZWMK
+> -----Original Message-----
+> On Tue, Feb 04, 2020 at 02:24:17PM +0800, piliu wrote:
+> > Hi,
+> >
+> > Sorry to reply late due to a long festival.
+> >
+> > I have tested this patch against v4.15 and latest kernel with small
+> > modification to meet the situation we discussed here. Both work fine.
+> >
+> > The below is the modification of two kernel
+> >
+> > test1. latest kernel with two extra modification to expose the problem
+> > -1.1 reverts commit 1f503443e7df8dc8366608b4d810ce2d6669827c
+> > (mm/sparse.c: reset section's mem_map when fully deactivated), this
+> > commit work around this bug
+> > -1.2. reverts commit a0b1280368d1e91ab72f849ef095b4f07a39bbf1 ("kdump:
+> > write correct address of mem_section into vmcoreinfo"). This will create
+> > a buggy situation as we discussed here.
+> > -1.3. fix building bug due to revert
+> > a0b1280368d1e91ab72f849ef095b4f07a39bbf1
+> >
+> > test2. v4.15, which include both commit 83e3c48729d9 and a0b1280368d1.
+> > -2.1. revert commit a0b1280368d1e91ab72f849ef095b4f07a39bbf1 ("kdump:
+> > write correct address of mem_section into vmcoreinfo")
+> >
+> > So I can not see any problem with my patch.
+> > Maybe I misunderstand the discussion, but I can not see my original
+> > patch will break the kernel which have 83e3c48729d9 but not a0b1280368d1.
+> >
+> > Thanks,
+> > Pingfan
+> >
+> 
+> You also need to test the case where 83e3c48729d9 is not present at all. Can
+> you test on a 4.4 kernel, for example? As far as I understand, a vanilla 4.4
+> kernel would not be dumpable with your patch.
+
+As far as I've tested this patch with SPARSEMEM_EXTREME vmcores below, it's OK:
+  - 51 vmcores of vanilla kernels (each from 2.6.36 through 5.5) on hand
+  - one more vanilla 4.4.0 kernel with a different config from the above
+
+So apparently not all vanilla 4.4 kernels are affected by the patch.
+
+> 
+> Thanks.
+> Cascardo.
+> 
+> > On 01/29/2020 03:33 AM, Thadeu Lima de Souza Cascardo wrote:
+> > > On Tue, Jan 28, 2020 at 05:03:12PM +0000, HAGIO KAZUHITO wrote:
+> > >> Hi Cascardo,
+> > >>
+> > >>> -----Original Message-----
+> > >>> On Mon, Jan 27, 2020 at 02:04:54PM -0300, Thadeu Lima de Souza Cascardo wrote:
+> > >>>> Sorry for taking too long to respond, as I was on vacation.
+> > >>>>
+> > >>>> The kernels that had commit 83e3c48729d9, but not commit a0b1280368d1, are
+> > >>>> not supported anymore. In a way that it's even hard for me to test them.
+> > >>>>
+> > >>>> However, I managed to test it, and those two lines are definitively needed
+> > >>>> to dump a VM running such a kernel. Is removing them really needed to fix
+> > >>>> this issue?
+> > >>>>
+> > >>>> Otherwise, I would rather keep them.
+> > >>>>
+> > >>>> Thanks.
+> > >>>> Cascardo.
+> > >>>
+> > >>> By the way, I was too fast in sending this. We really need to keep those lines
+> > >>> as makedumpfile will fail to dump a 4.4 kernel with this patch as is.
+> > >>
+> > >> Is that Ubuntu 4.4 kernel which has 83e3c48729d9 and not a0b1280368d1?
+> > >> Could you elaborate on how it fails?
+> > >
+> > > No, it doesn't have either, so my guess is it would fail on upstream 4.4 as
+> > > well, so anything that doesn't have 83e3c48729d9.
+> > >
+> > > That's what I get on that 4.4 kernel (4.4.0-171-generic):
+> > >
+> > > # ./makedumpfile /proc/vmcore ../dump
+> > > get_mem_section: Could not validate mem_section.
+> > > get_mm_sparsemem: Can't get the address of mem_section.
+> > >
+> > > makedumpfile Failed.
+> > > #
+
+Thanks for the infomation.
+I guess that your 4.4 kernel and machine get a false-positive result (TRUE)
+from the second validate_mem_section() with this patch, right?
+
+If we don't have a way to exactly determine whether a mem_section is real
+or not, we might have to accept some tradeoff here.  For example, a workaround
+which I think of is something like this:
+
+ret = validate_mem_section(SYMBOL(mem_section));
+if (!ret && is_sparsemem_extreme()) {
+  ...
+  ret = validate_mem_section(mem_section_ptr);
+  if (!ret)
+    ERRMSG("Could not determine the valid mem_section.\n");
+}
+
+with Pingfan's patch.  This will work for the false-positive fail you hit (if so),
+but may affect some downstream kernels which have 83e3c48729d9 and do not
+have a0b1280368d1.  But at least there is no upstream kernel like that.
+
+Any other solution?
+
+Thanks,
+Kazu
+
+> > >
+> > > So, now, I have a better grasp of the whole logic, and understand why it fails
+> > > with this patch.
+> > >
+> > > So, we need to either interpret the mem_section as a pointer to the array of a
+> > > pointer to the pointer to the array. The only case the second option is valid
+> > > is when sparse_extreme is on, so we don't even need to check the second case
+> > > when it's off.
+> > >
+> > > Then, we check that interpreting it either way is valid. If it's valid in both
+> > > interpretations, we can't decide which to use, and will fail. So far, we
+> > > haven't seen any case in the field where that would accidentally happen. But in
+> > > case it does, we should rather fail to dump and fallback to copying, than
+> > > creating a bogus compressed dump.
+> > >
+> > > When this patch is applied, a kernel which does not have 83e3c48729d9, and
+> > > thus, has mem_section as a direct pointer to the array, it so happens that we
+> > > don't detect the pointer to pointer to the array case as invalid, thus failing
+> > > to dump.
+> > >
+> > > The way we validate is that the mem_maps should either have the PRESENT bit or
+> > > be NULL. Now, that assumption may be invalid, and we would need to do the
+> > > validation some other way. I can test the cases where that assumption is
+> > > invalid in a 4.4 kernel and see how to fix this in a satisfactory way.
+> > >
+> > > Going through the code once again, I don't see how the second section of the
+> > > patch would be correct by itself too. I will think it through a little more and
+> > > see if I can come up with a solution.
+> > >
+> > > Regards.
+> > > Cascardo.
+> > >
+> > >>
+> > >> I'm thinking that Pingfan's thought may help:
+> > >>>> I think it could be if/else, no need to call twice.
+> > >>
+> > >> Thanks,
+> > >> Kazu
+> > >>
+> > >>>
+> > >>> Cascardo.
+> > >
+> >
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
