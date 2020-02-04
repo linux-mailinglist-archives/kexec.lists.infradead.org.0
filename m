@@ -2,96 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64997150E03
-	for <lists+kexec@lfdr.de>; Mon,  3 Feb 2020 17:49:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96F811515E5
+	for <lists+kexec@lfdr.de>; Tue,  4 Feb 2020 07:24:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9Fuka85KiCDJ19DCkco/V4pbTPwzSmn8ooEoDdDcZhE=; b=mJWZ0qfibMOFWtO8k0m5cI7tzy
-	nTH4D93CQmXtUm95hIlHFWik27ReCr+cIibuq+V6MXscyVnIHo7qKszj0Z0m/cok3RoZh025KaXlC
-	i+k/ZYm6++oe85AM8XdV4v/dOxCmBJm+VclgYWDeqm1xO9n8BCKM7gfOjCp9ewUMXWrOIEHVYutut
-	l79TSHjIo6PUYRrzj5hX3t83cUC+t9+w25OUTbNQRbq/3jE/wwV3fS6OVNvPQ8SMDWixDhCjTzI6d
-	1f6yvSavMHq4uTGVgBaMfmMNe4YNPLPaXB6RlNuiSCSHi5LnrZQ343dsaROOBPObVEoTHEjo9bqcT
-	vDygSpZA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hm4DsRSqXh2Ibru6SEJ62Qt2whZjkpfKau+o9GzhMvw=; b=j/Oy/dNOgzx/r/
+	FSlE611yYeVpE/t3B1Rm+f7l57R0PGTTx1VhdYki56CpFvTwhcV3YwHXyJKK52JA6iQdrC7n08Nt+
+	ajskmP2Vfm+GxDOXkMG9VGEBkADFeCauGAyisNmW5H3FUbMGN+sHUtaPjG9Bh266XyEK3IlBt1E4E
+	RB9TSYHxA+mvH6CMMOBlzeIze/dzL+Bm6KfkjjQyyloydXqXIrLSRensvmy3MOuT6HlEvOv/j8sKC
+	UmsM/ph75nw1WrxD5QkQwOis1EsyHGO5xBoz8BnB0ZYmfnUK2yS9nNciS8I50UV9O6gy6ALPeFssk
+	0jDneaRHONH4tlajulcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyeut-0000GA-Lw; Mon, 03 Feb 2020 16:49:43 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1iyrdc-000574-Mx; Tue, 04 Feb 2020 06:24:44 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyeul-0000Ey-UE
- for kexec@lists.infradead.org; Mon, 03 Feb 2020 16:49:38 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 013GmCFT109247
- for <kexec@lists.infradead.org>; Mon, 3 Feb 2020 16:49:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date :
- content-transfer-encoding : message-id : references : to;
- s=corp-2019-08-05; bh=Uf/vMC65ccqRyZdSZniW9ovw3/v0Ol/Mveox3XaDmZs=;
- b=dC1wBsr1fhZaiy7o1AT9ZzNpkuvO8h3z5xP3NVdyXWdi2H3ORvF1yH7j5fFtB7giKllg
- lvx6kACfxrRuO78hCyB5FCgXUO509caBLmQ21Iy3j3YBJL+r/MxqnJWnUcTykb5BmepQ
- 9x57VDmA6UfPEC60px75Jp/khMEW1SdUnuY4cpGR7Ujh6YOUfJQ967qH/smzcvV7TRYt
- csT3xHelr7nBgkk6YTzBrpClUoJjKXMgXfgTpSTXmveQvlZp4SExCDCB22ebozpOT3Gh
- VWvS3bphVzKP2teL7apNfolPQHQtnWOCVZYulHXPa+1pFkZ0LiMOQzwgoMh4s/vsJ0XY AQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 2xw19q90ss-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
- for <kexec@lists.infradead.org>; Mon, 03 Feb 2020 16:49:31 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 013GnU3P104746
- for <kexec@lists.infradead.org>; Mon, 3 Feb 2020 16:49:30 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2xwkg96j0s-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
- for <kexec@lists.infradead.org>; Mon, 03 Feb 2020 16:49:29 +0000
-Received: from abhmp0006.oracle.com (abhmp0006.oracle.com [141.146.116.12])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 013GmMKt024010
- for <kexec@lists.infradead.org>; Mon, 3 Feb 2020 16:48:22 GMT
-Received: from dhcp-10-154-162-26.vpn.oracle.com (/10.154.162.26)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 03 Feb 2020 08:48:22 -0800
-Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
-Subject: Re: [PATCH v6 0/4] support reserving crashkernel above 4G on arm64
- kdump
-From: John Donnelly <john.p.donnelly@oracle.com>
-In-Reply-To: <8ec4943b-5a6d-2291-3adf-099d7a9c943d@Oracle.com>
-Date: Mon, 3 Feb 2020 10:48:21 -0600
-Message-Id: <E7504B68-61E5-4CEB-A0FF-0B0EBB7DAB5B@oracle.com>
-References: <20190830071200.56169-1-chenzhou10@huawei.com>
- <2a97b296-59e7-0a26-84fa-e2ddcd7987b6@huawei.com>
- <8ec4943b-5a6d-2291-3adf-099d7a9c943d@Oracle.com>
-To: kexec mailing list <kexec@lists.infradead.org>
-X-Mailer: Apple Mail (2.3445.9.1)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9520
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2002030125
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9520
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2002030125
+ id 1iyrdY-00055q-Fn
+ for kexec@lists.infradead.org; Tue, 04 Feb 2020 06:24:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580797477;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=GasOFGT2oNTMAbM/zE4hpC8TIRsE2UiAgMKzvPaFCjM=;
+ b=b6lN3IXJXfM6600XhmHUQ3zNt6NyXQ2xk/QV6bSkfw0kj3f8z4QNItChaykaSoVYZBMr54
+ sExDyrhBAtrRhS+ozjuE3lMokX8ePooMZXmyvvemnd6I619QhTKhUxXn9wudAftCUpwZvQ
+ 7jivzp3xsOxHY8ma47glLpDr4RMjNHA=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-355-dDeEbcwSM4ufC8wid0469g-1; Tue, 04 Feb 2020 01:24:33 -0500
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8D4468014CC;
+ Tue,  4 Feb 2020 06:24:31 +0000 (UTC)
+Received: from [10.72.8.20] (ovpn-8-20.pek2.redhat.com [10.72.8.20])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 96B588068E;
+ Tue,  4 Feb 2020 06:24:23 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
+To: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>,
+ =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?= <k-hagio-ab@nec.com>
+References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
+ <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
+ <20200120085919.GB16539@MiWiFi-R3L-srv>
+ <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
+ <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
+ <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200128193302.GC4080@calabresa>
+From: piliu <piliu@redhat.com>
+X-Enigmail-Draft-Status: N1110
+Message-ID: <5cd8e190-8be6-41cd-c43a-c38043c14b3f@redhat.com>
+Date: Tue, 4 Feb 2020 14:24:17 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
+MIME-Version: 1.0
+In-Reply-To: <20200128193302.GC4080@calabresa>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-MC-Unique: dDeEbcwSM4ufC8wid0469g-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_084936_071599_40F41B84 
-X-CRM114-Status: GOOD (  22.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200203_222440_604063_05B622E0 
+X-CRM114-Status: GOOD (  30.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -100,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -114,172 +100,90 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-
-> On Dec 18, 2019, at 10:21 AM, John Donnelly <john.p.donnelly@oracle.com> wrote:
-> 
-> On 12/17/19 8:07 PM, Chen Zhou wrote:
-> 
-> Hi
-> See inline below
-> 
->> Hi all,
->> Friendly ping...
->> On 2019/8/30 15:11, Chen Zhou wrote:
->>> I am busy with other things, so it was a long time before this version was
->>> released.
->>> 
->>> This patch series enable reserving crashkernel above 4G in arm64.
->>> 
->>> There are following issues in arm64 kdump:
->>> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
->>> when there is no enough low memory.
->>> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
->>> in this case, if swiotlb or DMA buffers are requierd, crash dump kernel
->>> will boot failure because there is no low memory available for allocation.
->>> 
->>> To solve these issues, introduce crashkernel=X,low to reserve specified
->>> size low memory.
->>> Crashkernel=X tries to reserve memory for the crash dump kernel under
->>> 4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
->>> size low memory for crash kdump kernel devices firstly and then reserve
->>> memory above 4G.
->>> 
->>> When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
->>> is specified simultaneously, kernel should reserve specified size low memory
->>> for crash dump kernel devices. So there may be two crash kernel regions, one
->>> is below 4G, the other is above 4G.
->>> In order to distinct from the high region and make no effect to the use of
->>> kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
->>> "linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
-> 
-> 
-> 
-> 
-> Hi ,
-> 
-> I have  found that 5.4 Arm kernels can safely use 768M crashkernel size for " standard" crash dumps that write a minimal vmcore to local storage. While "standard"  may vary,  I say that is default out of box delivery.
-> 
-> If you a introduce more elaborate setup that use networking and NFS, a larger crashkernel is needed, and since 1024MB size is not available,  I found using the 1st available range  above 4GB on node-0 works:
-> 
-> 
-> 
-> Set the crash dump to be in the   1st 35G region on node-0  after 4G :
-> .
-> [    0.000000] Movable zone start for each node
-> [    0.000000] Early memory node ranges
-> [    0.000000]   node   0: [mem 0x0000000090000000-0x0000000091ffffff]
-> [    0.000000]   node   0: [mem 0x0000000092000000-0x00000000928bffff]
-> [    0.000000]   node   0: [mem 0x00000000928c0000-0x00000000fff9ffff]
-> [    0.000000]   node   0: [mem 0x00000000fffa0000-0x00000000ffffffff]
-> [    0.000000]   node   0: [mem 0x0000000880000000-0x0000000fffffffff]
-> [    0.000000]   node   0: [mem 0x0000008800000000-0x000000bff702ffff].
-> 
-> 0x0000008800000000 is the  1st  region @35G
-> 
-> 
-> crashkernel=2048M@35G
-> 
-> 
-> yields :
-> 
-> 
-> 
-> [    0.000000] crashkernel reserved: 0x00000008c0000000- 0x0000000940000000  @ (2048 MB)
-> 
-> Now we have very large Arm server class systems with GB of memory so 2GB crashkernel is not much of an impact
-> 
-> No modifications are needed.
-> 
-> I submitted a RFC awhile back to add crashkernel=auto upstream that hasn't been reviewed yet that could be used to set various Arm crash sizes like x86 does.
-> 
-> 
-> 
->>> 
->>> Besides, we need to modify kexec-tools:
->>> arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
->>> 
->>> The previous changes and discussions can be retrieved from:
->>> 
->>> Changes since [v5]
->>> - Move reserve_crashkernel_low() into kernel/crash_core.c.
->>> - Delete crashkernel=X,high.
->>> - Modify crashkernel=X,low.
->>> If crashkernel=X,low is specified simultaneously, reserve spcified size low
->>> memory for crash kdump kernel devices firstly and then reserve memory above 4G.
->>> In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
->>> pass to crash dump kernel by DT property "linux,low-memory-range".
->>> - Update Documentation/admin-guide/kdump/kdump.rst.
->>> 
->>> Changes since [v4]
->>> - Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
->>> 
->>> Changes since [v3]
->>> - Add memblock_cap_memory_ranges back for multiple ranges.
->>> - Fix some compiling warnings.
->>> 
->>> Changes since [v2]
->>> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
->>> two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
->>> patch.
->>> 
->>> Changes since [v1]:
->>> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
->>> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
->>> in fdt_enforce_memory_region().
->>> There are at most two crash kernel regions, for two crash kernel regions
->>> case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
->>> and then remove the memory range in the middle.
->>> 
->>> [1]: https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_pipermail_kexec_2019-2DAugust_023569.html&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=9tn9kUBabiuYhVtXauANSDGaISnCnHLYcAUQgsPBFxs&e=
->>> [v1]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_2_1174&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=F-lM7II2cuMF_sK3b6-QhSbWM3X-pI_WZEs0sZitS7A&e=
->>> [v2]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_9_86&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=5Y-S6sqMTklHkOQsNtjTX3C7pV05BjKLGhJVfMHEvDs&e=
->>> [v3]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_9_306&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=cWn4zSRQupaZ3jjz4eDvD-pNkoLyL_hsZoRx4yJoD0c&e=
->>> [v4]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_4_15_273&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=Nslk4RJKIyIuT0IoQoolXNjupEDXplPhQQwnTSoXNWE&e=
->>> [v5]: https://urldefense.proofpoint.com/v2/url?u=https-3A__lkml.org_lkml_2019_5_6_1360&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=HJVAM6sCxV2DnNg5d4pw8WPqtkmQnKvztEmkSIgtQ5M&e=
->>> 
->>> Chen Zhou (4):
->>>   x86: kdump: move reserve_crashkernel_low() into crash_core.c
->>>   arm64: kdump: reserve crashkenel above 4G for crash dump kernel
->>>   arm64: kdump: add memory for devices by DT property, low-memory-range
->>>   kdump: update Documentation about crashkernel on arm64
->>> 
->>>  Documentation/admin-guide/kdump/kdump.rst       | 13 ++++-
->>>  Documentation/admin-guide/kernel-parameters.txt | 12 ++++-
->>>  arch/arm64/include/asm/kexec.h                  |  3 ++
->>>  arch/arm64/kernel/setup.c                       |  8 ++-
->>>  arch/arm64/mm/init.c                            | 61 +++++++++++++++++++++--
->>>  arch/x86/include/asm/kexec.h                    |  3 ++
->>>  arch/x86/kernel/setup.c                         | 65 +++----------------------
->>>  include/linux/crash_core.h                      |  4 ++
->>>  include/linux/kexec.h                           |  1 -
->>>  kernel/crash_core.c                             | 65 +++++++++++++++++++++++++
->>>  10 files changed, 168 insertions(+), 67 deletions(-)
->>> 
->> _______________________________________________
->> kexec mailing list
->> kexec@lists.infradead.org
->> https://urldefense.proofpoint.com/v2/url?u=http-3A__lists.infradead.org_mailman_listinfo_kexec&d=DwICAg&c=RoP1YumCXCgaWHvlZYR8PZh8Bv7qIrMUB65eapI_JnE&r=t2fPg9D87F7D8jm0_3CG9yoiIKdRg4qc_thBw4bzMhc&m=ZAC6UYbT-3qLR3Dvevd09m6neWWzGWSphuvXXlXow68&s=XMcFx61B_QPg-FUfG_-t88DKCnGm4grqu6zRguiHYrU&e=
-> 
-> 
-
-
-
-  Hi ,
-
-
-Have these changes been promoted to an upstream release ?
-
-
-
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+SGksCgpTb3JyeSB0byByZXBseSBsYXRlIGR1ZSB0byBhIGxvbmcgZmVzdGl2YWwuCgpJIGhhdmUg
+dGVzdGVkIHRoaXMgcGF0Y2ggYWdhaW5zdCB2NC4xNSBhbmQgbGF0ZXN0IGtlcm5lbCB3aXRoIHNt
+YWxsCm1vZGlmaWNhdGlvbiB0byBtZWV0IHRoZSBzaXR1YXRpb24gd2UgZGlzY3Vzc2VkIGhlcmUu
+IEJvdGggd29yayBmaW5lLgoKVGhlIGJlbG93IGlzIHRoZSBtb2RpZmljYXRpb24gb2YgdHdvIGtl
+cm5lbAoKdGVzdDEuIGxhdGVzdCBrZXJuZWwgd2l0aCB0d28gZXh0cmEgbW9kaWZpY2F0aW9uIHRv
+IGV4cG9zZSB0aGUgcHJvYmxlbQotMS4xIHJldmVydHMgY29tbWl0IDFmNTAzNDQzZTdkZjhkYzgz
+NjY2MDhiNGQ4MTBjZTJkNjY2OTgyN2MKKG1tL3NwYXJzZS5jOiByZXNldCBzZWN0aW9uJ3MgbWVt
+X21hcCB3aGVuIGZ1bGx5IGRlYWN0aXZhdGVkKSwgdGhpcwpjb21taXQgd29yayBhcm91bmQgdGhp
+cyBidWcKLTEuMi4gcmV2ZXJ0cyBjb21taXQgYTBiMTI4MDM2OGQxZTkxYWI3MmY4NDllZjA5NWI0
+ZjA3YTM5YmJmMSAoImtkdW1wOgp3cml0ZSBjb3JyZWN0IGFkZHJlc3Mgb2YgbWVtX3NlY3Rpb24g
+aW50byB2bWNvcmVpbmZvIikuIFRoaXMgd2lsbCBjcmVhdGUKYSBidWdneSBzaXR1YXRpb24gYXMg
+d2UgZGlzY3Vzc2VkIGhlcmUuCi0xLjMuIGZpeCBidWlsZGluZyBidWcgZHVlIHRvIHJldmVydAph
+MGIxMjgwMzY4ZDFlOTFhYjcyZjg0OWVmMDk1YjRmMDdhMzliYmYxCgp0ZXN0Mi4gdjQuMTUsIHdo
+aWNoIGluY2x1ZGUgYm90aCBjb21taXQgODNlM2M0ODcyOWQ5IGFuZCBhMGIxMjgwMzY4ZDEuCi0y
+LjEuIHJldmVydCBjb21taXQgYTBiMTI4MDM2OGQxZTkxYWI3MmY4NDllZjA5NWI0ZjA3YTM5YmJm
+MSAoImtkdW1wOgp3cml0ZSBjb3JyZWN0IGFkZHJlc3Mgb2YgbWVtX3NlY3Rpb24gaW50byB2bWNv
+cmVpbmZvIikKClNvIEkgY2FuIG5vdCBzZWUgYW55IHByb2JsZW0gd2l0aCBteSBwYXRjaC4KTWF5
+YmUgSSBtaXN1bmRlcnN0YW5kIHRoZSBkaXNjdXNzaW9uLCBidXQgSSBjYW4gbm90IHNlZSBteSBv
+cmlnaW5hbApwYXRjaCB3aWxsIGJyZWFrIHRoZSBrZXJuZWwgd2hpY2ggaGF2ZSA4M2UzYzQ4NzI5
+ZDkgYnV0IG5vdCBhMGIxMjgwMzY4ZDEuCgpUaGFua3MsClBpbmdmYW4KCk9uIDAxLzI5LzIwMjAg
+MDM6MzMgQU0sIFRoYWRldSBMaW1hIGRlIFNvdXphIENhc2NhcmRvIHdyb3RlOgo+IE9uIFR1ZSwg
+SmFuIDI4LCAyMDIwIGF0IDA1OjAzOjEyUE0gKzAwMDAsIEhBR0lPIEtBWlVISVRPKOiQqeWwviDk
+uIDku4EpIHdyb3RlOgo+PiBIaSBDYXNjYXJkbywKPj4KPj4+IC0tLS0tT3JpZ2luYWwgTWVzc2Fn
+ZS0tLS0tCj4+PiBPbiBNb24sIEphbiAyNywgMjAyMCBhdCAwMjowNDo1NFBNIC0wMzAwLCBUaGFk
+ZXUgTGltYSBkZSBTb3V6YSBDYXNjYXJkbyB3cm90ZToKPj4+PiBTb3JyeSBmb3IgdGFraW5nIHRv
+byBsb25nIHRvIHJlc3BvbmQsIGFzIEkgd2FzIG9uIHZhY2F0aW9uLgo+Pj4+Cj4+Pj4gVGhlIGtl
+cm5lbHMgdGhhdCBoYWQgY29tbWl0IDgzZTNjNDg3MjlkOSwgYnV0IG5vdCBjb21taXQgYTBiMTI4
+MDM2OGQxLCBhcmUKPj4+PiBub3Qgc3VwcG9ydGVkIGFueW1vcmUuIEluIGEgd2F5IHRoYXQgaXQn
+cyBldmVuIGhhcmQgZm9yIG1lIHRvIHRlc3QgdGhlbS4KPj4+Pgo+Pj4+IEhvd2V2ZXIsIEkgbWFu
+YWdlZCB0byB0ZXN0IGl0LCBhbmQgdGhvc2UgdHdvIGxpbmVzIGFyZSBkZWZpbml0aXZlbHkgbmVl
+ZGVkCj4+Pj4gdG8gZHVtcCBhIFZNIHJ1bm5pbmcgc3VjaCBhIGtlcm5lbC4gSXMgcmVtb3Zpbmcg
+dGhlbSByZWFsbHkgbmVlZGVkIHRvIGZpeAo+Pj4+IHRoaXMgaXNzdWU/Cj4+Pj4KPj4+PiBPdGhl
+cndpc2UsIEkgd291bGQgcmF0aGVyIGtlZXAgdGhlbS4KPj4+Pgo+Pj4+IFRoYW5rcy4KPj4+PiBD
+YXNjYXJkby4KPj4+Cj4+PiBCeSB0aGUgd2F5LCBJIHdhcyB0b28gZmFzdCBpbiBzZW5kaW5nIHRo
+aXMuIFdlIHJlYWxseSBuZWVkIHRvIGtlZXAgdGhvc2UgbGluZXMKPj4+IGFzIG1ha2VkdW1wZmls
+ZSB3aWxsIGZhaWwgdG8gZHVtcCBhIDQuNCBrZXJuZWwgd2l0aCB0aGlzIHBhdGNoIGFzIGlzLgo+
+Pgo+PiBJcyB0aGF0IFVidW50dSA0LjQga2VybmVsIHdoaWNoIGhhcyA4M2UzYzQ4NzI5ZDkgYW5k
+IG5vdCBhMGIxMjgwMzY4ZDE/Cj4+IENvdWxkIHlvdSBlbGFib3JhdGUgb24gaG93IGl0IGZhaWxz
+Pwo+IAo+IE5vLCBpdCBkb2Vzbid0IGhhdmUgZWl0aGVyLCBzbyBteSBndWVzcyBpcyBpdCB3b3Vs
+ZCBmYWlsIG9uIHVwc3RyZWFtIDQuNCBhcwo+IHdlbGwsIHNvIGFueXRoaW5nIHRoYXQgZG9lc24n
+dCBoYXZlIDgzZTNjNDg3MjlkOS4KPiAKPiBUaGF0J3Mgd2hhdCBJIGdldCBvbiB0aGF0IDQuNCBr
+ZXJuZWwgKDQuNC4wLTE3MS1nZW5lcmljKToKPiAKPiAjIC4vbWFrZWR1bXBmaWxlIC9wcm9jL3Zt
+Y29yZSAuLi9kdW1wCj4gZ2V0X21lbV9zZWN0aW9uOiBDb3VsZCBub3QgdmFsaWRhdGUgbWVtX3Nl
+Y3Rpb24uCj4gZ2V0X21tX3NwYXJzZW1lbTogQ2FuJ3QgZ2V0IHRoZSBhZGRyZXNzIG9mIG1lbV9z
+ZWN0aW9uLgo+IAo+IG1ha2VkdW1wZmlsZSBGYWlsZWQuCj4gIwo+IAo+IFNvLCBub3csIEkgaGF2
+ZSBhIGJldHRlciBncmFzcCBvZiB0aGUgd2hvbGUgbG9naWMsIGFuZCB1bmRlcnN0YW5kIHdoeSBp
+dCBmYWlscwo+IHdpdGggdGhpcyBwYXRjaC4KPiAKPiBTbywgd2UgbmVlZCB0byBlaXRoZXIgaW50
+ZXJwcmV0IHRoZSBtZW1fc2VjdGlvbiBhcyBhIHBvaW50ZXIgdG8gdGhlIGFycmF5IG9mIGEKPiBw
+b2ludGVyIHRvIHRoZSBwb2ludGVyIHRvIHRoZSBhcnJheS4gVGhlIG9ubHkgY2FzZSB0aGUgc2Vj
+b25kIG9wdGlvbiBpcyB2YWxpZAo+IGlzIHdoZW4gc3BhcnNlX2V4dHJlbWUgaXMgb24sIHNvIHdl
+IGRvbid0IGV2ZW4gbmVlZCB0byBjaGVjayB0aGUgc2Vjb25kIGNhc2UKPiB3aGVuIGl0J3Mgb2Zm
+Lgo+IAo+IFRoZW4sIHdlIGNoZWNrIHRoYXQgaW50ZXJwcmV0aW5nIGl0IGVpdGhlciB3YXkgaXMg
+dmFsaWQuIElmIGl0J3MgdmFsaWQgaW4gYm90aAo+IGludGVycHJldGF0aW9ucywgd2UgY2FuJ3Qg
+ZGVjaWRlIHdoaWNoIHRvIHVzZSwgYW5kIHdpbGwgZmFpbC4gU28gZmFyLCB3ZQo+IGhhdmVuJ3Qg
+c2VlbiBhbnkgY2FzZSBpbiB0aGUgZmllbGQgd2hlcmUgdGhhdCB3b3VsZCBhY2NpZGVudGFsbHkg
+aGFwcGVuLiBCdXQgaW4KPiBjYXNlIGl0IGRvZXMsIHdlIHNob3VsZCByYXRoZXIgZmFpbCB0byBk
+dW1wIGFuZCBmYWxsYmFjayB0byBjb3B5aW5nLCB0aGFuCj4gY3JlYXRpbmcgYSBib2d1cyBjb21w
+cmVzc2VkIGR1bXAuCj4gCj4gV2hlbiB0aGlzIHBhdGNoIGlzIGFwcGxpZWQsIGEga2VybmVsIHdo
+aWNoIGRvZXMgbm90IGhhdmUgODNlM2M0ODcyOWQ5LCBhbmQKPiB0aHVzLCBoYXMgbWVtX3NlY3Rp
+b24gYXMgYSBkaXJlY3QgcG9pbnRlciB0byB0aGUgYXJyYXksIGl0IHNvIGhhcHBlbnMgdGhhdCB3
+ZQo+IGRvbid0IGRldGVjdCB0aGUgcG9pbnRlciB0byBwb2ludGVyIHRvIHRoZSBhcnJheSBjYXNl
+IGFzIGludmFsaWQsIHRodXMgZmFpbGluZwo+IHRvIGR1bXAuCj4gCj4gVGhlIHdheSB3ZSB2YWxp
+ZGF0ZSBpcyB0aGF0IHRoZSBtZW1fbWFwcyBzaG91bGQgZWl0aGVyIGhhdmUgdGhlIFBSRVNFTlQg
+Yml0IG9yCj4gYmUgTlVMTC4gTm93LCB0aGF0IGFzc3VtcHRpb24gbWF5IGJlIGludmFsaWQsIGFu
+ZCB3ZSB3b3VsZCBuZWVkIHRvIGRvIHRoZQo+IHZhbGlkYXRpb24gc29tZSBvdGhlciB3YXkuIEkg
+Y2FuIHRlc3QgdGhlIGNhc2VzIHdoZXJlIHRoYXQgYXNzdW1wdGlvbiBpcwo+IGludmFsaWQgaW4g
+YSA0LjQga2VybmVsIGFuZCBzZWUgaG93IHRvIGZpeCB0aGlzIGluIGEgc2F0aXNmYWN0b3J5IHdh
+eS4KPiAKPiBHb2luZyB0aHJvdWdoIHRoZSBjb2RlIG9uY2UgYWdhaW4sIEkgZG9uJ3Qgc2VlIGhv
+dyB0aGUgc2Vjb25kIHNlY3Rpb24gb2YgdGhlCj4gcGF0Y2ggd291bGQgYmUgY29ycmVjdCBieSBp
+dHNlbGYgdG9vLiBJIHdpbGwgdGhpbmsgaXQgdGhyb3VnaCBhIGxpdHRsZSBtb3JlIGFuZAo+IHNl
+ZSBpZiBJIGNhbiBjb21lIHVwIHdpdGggYSBzb2x1dGlvbi4KPiAKPiBSZWdhcmRzLgo+IENhc2Nh
+cmRvLgo+IAo+Pgo+PiBJJ20gdGhpbmtpbmcgdGhhdCBQaW5nZmFuJ3MgdGhvdWdodCBtYXkgaGVs
+cDoKPj4+PiBJIHRoaW5rIGl0IGNvdWxkIGJlIGlmL2Vsc2UsIG5vIG5lZWQgdG8gY2FsbCB0d2lj
+ZS4KPj4KPj4gVGhhbmtzLAo+PiBLYXp1Cj4+Cj4+Pgo+Pj4gQ2FzY2FyZG8uCj4gCgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBs
+aXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
+bWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
