@@ -2,85 +2,74 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E1D015265E
-	for <lists+kexec@lfdr.de>; Wed,  5 Feb 2020 07:36:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9397D152709
+	for <lists+kexec@lfdr.de>; Wed,  5 Feb 2020 08:32:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BRtCqXTXhgafMSIZzQGzPiWwantFLaYwS7QBjsTbGgc=; b=YGqI16xSfzz0fl
-	ETYHwx5uscOgwKzqtHnOry4Mx7jf7nCw2Z9SEkBgRiCOCc9OZycZiO5ic20M4JzOi48LdOkFC16Rj
-	QCt7PVJReUhM3wD4TMN13r+XwsPWHYIe/B5Hsc985vbR0r0qEWG8/+GEFdu4OD2kTy0HX3XsqskhB
-	MvUdQhTACC2CHaMGywGFXed1W0OTsnnlTWwIoacmLpZ+vlx5dTb56e8H8ubvanCbsoMTYEMQkxTr2
-	jlJppRQzE/OPcqsfWSwRMVIw4jeiEdaVtFk7A0yCGNqP2hK0B62d3qiyH/febifWZgtzhCGvOa9oR
-	Xt3gCN+zbucZ2LNnLAhA==;
+	List-Owner; bh=tzLGdAuHel61v93LCzehwe0ig8t3x0RToDQDUGjJouU=; b=SXza2bKOM8jNaz
+	QXjsWp1ENisUmGSmcFnjuk75V/jd+THvGA00MBZe1HKnZtnyTB/iB1zyt0sdpwF/jKSEoOmsFohnR
+	KkI8GZBWo95tb3XlvLWRqg8Kil4Ck5S+VuFje58e9FMqUF8nK8ShAOh2SDdBL2w6CifcTn8L3LqaY
+	JgWoP9YlDl8voKF2qwpmHIaGTcqSWUbN75VDPZtXNWPsLyfZWIN9lyP+C+6Pg/1Svp2ua++Z5mL6i
+	QVKVfVH+NJ9Z+ayjVV+xU3VkqIIajYEOK6/w404xij9uqTsya+RqOSXpXtStIqAWIXOqMbjEh7LOX
+	4khHra90NVCjS8QW+tMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izEIo-0006P2-C0; Wed, 05 Feb 2020 06:36:46 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1izFAF-0008Vr-8b; Wed, 05 Feb 2020 07:31:59 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izEIl-0006Oj-QS
- for kexec@lists.infradead.org; Wed, 05 Feb 2020 06:36:45 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id r67so543810pjb.0
- for <kexec@lists.infradead.org>; Tue, 04 Feb 2020 22:36:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=NR5HHqY14nVKiwN1pnGOCIaNnlF4MJl1CZSdtbVmuTk=;
- b=aSEFDeWldjG7yFrvO1YqEPyjmp+WjO9Y1I/fRf1tF8L1//bP8rbNOx542hjgvyowZI
- CJTeFWOLyxLIV/k2cRV3Ln7wCL8kXkqHoejpHlrAqfMzhbdfxbqBUePxgYmOLeZsf6q4
- U5Rd7t7jot8QcZ/9SsBgDC10uZfEvwz4eriiIXuosVy0Fi4Ljqhr0oNfjTlVKkEB8JXX
- MOjIgJqmNAGXdmg0AYR+Biamoehpfz8JYeEe32HFRsCl/uBWLxNq5NQKW0ki9YjnwYIx
- sYuObbHtIaewfpxSU3hzyyPtKPFWMZYihtWHZHRAXrAAKM6+yvROtDfzEM1CWZL+sa1h
- Rpfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NR5HHqY14nVKiwN1pnGOCIaNnlF4MJl1CZSdtbVmuTk=;
- b=W4cKG0w3xFoVAdzorS6BmqhNUFu/oWIcOKmeRlNQhMLmcP6aVr2j3H1L0BOQnu4hYr
- Ggo2m0G/xAJs851wRrdd3U2LNnB50+pUnfuFUH+vEvZMis+b++DlOHjop9SyUzuPxjBe
- Cs6QcUBFDjzY/uigQIwqrVAFfYYAutIxTGrKbdxCOs5jF9ZT5kVADe8xPtmO13atzK5S
- Kp6IMeUNTQrfAxjsvthFCjsFc6FofQ6fOlA1ic4CYcpSSGuGzSjNWaYePN1n8HQuSW+V
- HMNUUbcXEOtmeJe156eaznExjZN3udTj0KmuzZz4/62yjozg1Kr6pIUsgT7amx7wOPqn
- 5PKQ==
-X-Gm-Message-State: APjAAAUuHJFXh2rdt41JxNAX9SaASqMJ6LeOrOyIIXGO4ftYTLQsMCoL
- L4xcSKfuJWg4ilUdSxp+V8Q=
-X-Google-Smtp-Source: APXvYqx+puy+6sb4HFx3KAsl7TfpxjwMo113X6yG3BHkUMt1zGTj2Zqfz0NX9sVKRKwlTQJsjYsYcg==
-X-Received: by 2002:a17:90a:6:: with SMTP id 6mr3971648pja.71.1580884602719;
- Tue, 04 Feb 2020 22:36:42 -0800 (PST)
-Received: from localhost ([2401:fa00:8f:203:5bbb:c872:f2b1:f53b])
- by smtp.gmail.com with ESMTPSA id 196sm27200499pfy.86.2020.02.04.22.36.41
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 22:36:41 -0800 (PST)
-Date: Wed, 5 Feb 2020 15:36:40 +0900
-From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-To: lijiang <lijiang@redhat.com>, John Ogness <john.ogness@linutronix.de>
-Subject: Re: [PATCH 0/2] printk: replace ringbuffer
-Message-ID: <20200205063640.GJ41358@google.com>
-References: <20200128161948.8524-1-john.ogness@linutronix.de>
- <dc4ca9b5-d2a2-03af-c186-204a3aad2399@redhat.com>
- <20200205044848.GH41358@google.com>
- <20200205050204.GI41358@google.com>
- <88827ae2-7af5-347b-29fb-cffb94350f8f@redhat.com>
+ id 1izFAA-0008UB-8n
+ for kexec@lists.infradead.org; Wed, 05 Feb 2020 07:31:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580887912;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=p+vHVfvg9RS9GtRD1GA/N0DOI6G5HQHabXxVzxzzhJ8=;
+ b=VfC1q3XX1yRSgkZzCBW/mGX/RdxI0sc6vxg7N4Ovad/ZSt6A3mKoNgUpSfPuB25dbqKvlG
+ DNN+n27nDbyZWG0AjiDndL7mNfhN9BabjgfSBV662AaYo4HKSNyq9J9ko1rp5TXF6ktR0z
+ XZ1xOOlymdPPPQDRRrT85Eo9TmiaxAk=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-424-VdY2oLuUMzuHW3iPGAZQ4g-1; Wed, 05 Feb 2020 02:31:51 -0500
+X-MC-Unique: VdY2oLuUMzuHW3iPGAZQ4g-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 31C2C189F760;
+ Wed,  5 Feb 2020 07:31:50 +0000 (UTC)
+Received: from localhost (ovpn-12-97.pek2.redhat.com [10.72.12.97])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 4457E5C1B2;
+ Wed,  5 Feb 2020 07:31:47 +0000 (UTC)
+Date: Wed, 5 Feb 2020 15:31:44 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Airlie <airlied@redhat.com>, Lyude Paul <lyude@redhat.com>
+Subject: Re: mgag200 fails kdump kernel booting
+Message-ID: <20200205073144.GA8965@MiWiFi-R3L-srv>
+References: <20190626081522.GX24419@MiWiFi-R3L-srv>
+ <20190626082907.GY24419@MiWiFi-R3L-srv>
+ <CAMwc25oeskFG4bbrb3rwotqi1a5z4wYsGW=Qs_XJmhX_vAdNfQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <88827ae2-7af5-347b-29fb-cffb94350f8f@redhat.com>
+In-Reply-To: <CAMwc25oeskFG4bbrb3rwotqi1a5z4wYsGW=Qs_XJmhX_vAdNfQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_223643_858985_12A7D17B 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200204_233154_394653_C08624AC 
+X-CRM114-Status: GOOD (  25.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [sergey.senozhatsky.work[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,42 +90,91 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: dyoung@redhat.com, x86@kernel.org, kexec@lists.infradead.org,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On (20/02/05 13:38), lijiang wrote:
-> > On (20/02/05 13:48), Sergey Senozhatsky wrote:
-> >> On (20/02/05 12:25), lijiang wrote:
+Hi Dave, Lyude,
 
-[..]
-
-> >>
-> >> So there is a General protection fault. That's the type of a problem that
-> >> kills the boot for me as well (different backtrace, tho).
-> > 
-> > Do you have CONFIG_RELOCATABLE and CONFIG_RANDOMIZE_BASE (KASLR) enabled?
-> > 
+On 07/02/19 at 06:51am, David Airlie wrote:
+> On Wed, Jun 26, 2019 at 6:29 PM Baoquan He <bhe@redhat.com> wrote:
+> >
+> > On 06/26/19 at 04:15pm, Baoquan He wrote:
+> > > Hi Dave,
+> > >
+> > > We met an kdump kernel boot failure on a lenovo system. Kdump kernel
+> > > failed to boot, but just reset to firmware to reboot system. And nothing
+> > > is printed out.
+> > >
+> > > The machine is a big server, with 6T memory and many cpu, its graphic
+> > > driver module is mgag200.
+> > >
+> > > When added 'earlyprintk=ttyS0' into kernel command line, it printed
+> > > out only one line to console during kdump kernel booting:
+> > >      KASLR disabled: 'nokaslr' on cmdline.
+> > >
+> > > Then reset to firmware to reboot system.
+> > >
+> > > By further code debugging, the failure happened in
+> > > arch/x86/boot/compressed/misc.c, during kernel decompressing stage. It's
+> > > triggered by the vga printing. As you can see, in __putstr() of
+> > > arch/x86/boot/compressed/misc.c, the code checks if earlyprintk= is
+> > > specified, and print out to the target. And no matter if earlyprintk= is
+> > > added or not, it will print to VGA. And printing to VGA caused it to
+> > > reset to firmware. That's why we see nothing when didn't specify
+> > > earlyprintk=, but see only one line of printing about the 'KASLR
+> > > disabled'.
+> >
+> > Here I mean:
+> > That's why we see nothing when didn't specify earlyprintk=, but see only
+> > one line of printing about the 'KASLR disabled' message when
+> > earlyprintk=ttyS0 added.
 > 
-> Yes. These two options are enabled.
+> Just to clarify, the original kernel is booted with mgag200 turned
+> off, then kexec works, but if the original kernel loads mgag200, the
+> kexec kernels resets hard when the VGA is used to write stuff out.
 > 
-> CONFIG_RELOCATABLE=y
-> CONFIG_RANDOMIZE_BASE=y
+> This *might* be fixable in the controlled kexec case, but having an
+> mgag200 shutdown path that tries to put the gpu back into a state
+> where VGA doesn't die, but for the uncontrolled kexec it'll still be a
+> problem, since once the gpu is up and running and VGA is disabled, it
+> doesn't expect to see anymore VGA transactions.
 
-So KASLR kills the boot for me. So does KASAN.
+Now we have got other two bug reports on different systems, finally
+figured out it's the same issue as this after debugging. And adding
+'nomodeset' can work around it.
 
-John, do you see any of these problems on your test machine?
+With the help from our QA, tried to get more systems with mgag200,
+seems not all of them have this issue, some of them with mgag200 can
+jump to kdump well after panic.
 
-	-ss
+Any suggestion about how to proceed? I can experiment. Or if you would
+like to have a look when convenient, I can get one system to you to
+check. Or, can we just use 'nomodeset' as work around and hold this
+issue for the time being?
+
+Appreciate if any suggestion or idea.
+
+> 
+> Dave.
+> >
+> > >
+> > > To confirm it's caused by VGA printing, I blacklist the mgag200 by
+> > > writting it into /etc/modprobe.d/blacklist.conf. The kdump kernel can
+> > > boot up successfully. And add 'nomodeset' can also make it work. So it's
+> > > for sure mgag driver or related code have something wrong when booting
+> > > code tries to re-init it.
+> > >
+> > > This is the only case we ever see, tend to pursuit fix in mgag200 driver
+> > > side. Any idea or suggestion? We have two machines to be able to
+> > > reproduce it stablly.
+> > >
+> > > Thanks
+> > > Baoquan
+
 
 _______________________________________________
 kexec mailing list
