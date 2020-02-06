@@ -2,86 +2,87 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 045FC153DAD
-	for <lists+kexec@lfdr.de>; Thu,  6 Feb 2020 04:47:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E3AC153EC8
+	for <lists+kexec@lfdr.de>; Thu,  6 Feb 2020 07:31:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfFMasAlBS8Y1Z0Fq29rk9HjYWeZ2T2bNqNmTazYrQk=; b=g15fl8ts002Evh
-	0htH4D6AdaCyPYD+avTCEWjYOfEGtF2YfH82tcDuaKHV8iKjznqcl+s6oWO23ZutcRKmpyzug3TG1
-	5AH1rKM0Tzu80sfTKokey8Om5JpGuE/1vmKyMR/QL0ZQttJPBEjxTZAS9GDeksj9wcpEDnbisG/8H
-	SVTWFGQ5FkdcRvTXNy/aQQUqL0kYakU+WnbVHwnEsARVhILcGRJXW96NZ/r0P/65PPuTaOi1CrlCY
-	61sDVcY4qxaMK3pfQVncQzWCR3QzHUwHZjZ0n4+jvwNwGezOa5J7Rn+vjUMkH2hFvkm96jtQ9BUdU
-	pL3mFbMQ0xBIdpcELZ5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dRCGAUV+JAXrDFZcvFAxLbrULNB3xjGJMdD4CCE5nVU=; b=d3pM+Tj5wvnXKO
+	09YDPmuG5/8mYgrQFFgVoJQS9KaPxz8W/0VPIVnHWCAXTQbOsnCW6Qs9nBaX1UATrHfH3HwRiAyZC
+	PV/87479EUs078gpripuVdYAvNFhS/gRvS58UwPIYVv3/o7JxF3FMaT/pDUpzepbuO9iNefx11eWS
+	26W1fxTjIi6sYO2TueFFeeJJCBdNZ/JQNzANPLj3vvGiVOCilcwTUOKRqsIyI2GxGHwOIwaJK/mXH
+	ZhsMvSTpIdKYgWNpaC+Dq0qE3d0DTTwQvtQxdcxCnTs59lSpaz902ZriBAlIzyPDJ7bRxC97cytwI
+	e9zkKHhsjfQ8qQklgD9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izY85-000552-4o; Thu, 06 Feb 2020 03:47:01 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1izah5-0003El-0P; Thu, 06 Feb 2020 06:31:19 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izY7x-0004vH-LB
- for kexec@lists.infradead.org; Thu, 06 Feb 2020 03:46:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580960808;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=NgRQGg/DT7GP/3/yYCw/yYzfzxFj3d3Wjjf4h/CcseU=;
- b=dU4j8lCa/h1m0O2vPxDMr4K7odG8qYiWXhf0ex1awOv80RR492VDP1IQS1VueZoGk9jiAk
- YL/9bU5oWnyG3OGUZO9vcaHDF764lsgU7EMJj0BO/EKh/rjjcQ215zUL+oFBs9RJPVdZAo
- lkzE0GUgx2XJKJHvHV60F8fjPU9sLSU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-34-xE0XEefzOBWwtNjyGqA33A-1; Wed, 05 Feb 2020 22:46:44 -0500
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DB3EC8010F9;
- Thu,  6 Feb 2020 03:46:42 +0000 (UTC)
-Received: from [10.72.8.20] (ovpn-8-20.pek2.redhat.com [10.72.8.20])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 7C3DC5C1B2;
- Thu,  6 Feb 2020 03:46:35 +0000 (UTC)
-Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
-To: =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
- <k-hagio-ab@nec.com>, Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
-References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
- <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
- <20200120085919.GB16539@MiWiFi-R3L-srv>
- <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
- <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
- <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
- <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
- <20200128193302.GC4080@calabresa>
- <5cd8e190-8be6-41cd-c43a-c38043c14b3f@redhat.com>
- <20200204103954.GH40679@calabresa>
- <TY2PR01MB52108AD0131515408592E08CDD030@TY2PR01MB5210.jpnprd01.prod.outlook.com>
-From: piliu <piliu@redhat.com>
-X-Enigmail-Draft-Status: N1110
-Message-ID: <cca47a31-6e05-2812-65a1-832621992553@redhat.com>
-Date: Thu, 6 Feb 2020 11:46:31 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ id 1izah2-0003E9-L5
+ for kexec@lists.infradead.org; Thu, 06 Feb 2020 06:31:18 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id j17so2071005pjz.3
+ for <kexec@lists.infradead.org>; Wed, 05 Feb 2020 22:31:14 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=EiT7U6hb4n9/ss5eLUuNHb8HbJPdrNLlNFry2pPtbL8=;
+ b=cjPVEqQ8bIU4+SzkdcJ7r1Hismp60wHdUsPx0PSGD1yrI1kkCfr9ExmhcZmNl51yom
+ qvyh5lNMSE1OyfMu2MIy2fOGLvCDAQNGxWKiY62A7uy2XaX7t1LYe22XoPPehCaLERFA
+ FZ6s+LnHoB/yssJ/Dt/onvF9MgQM+mOGUX7+FDu/Gd8oCjfXepl4o4N8SXiCD6CDCPAt
+ p3PkrdvixpY6I8Kr/BGmjNuzHVAoukZlNTH9Nz4wca+9clFk3rsjE+dprySUbZTx1KbY
+ 7hbv/52fy+ILZSGupGLCwpCh2gMQRoxSKjR2m4NZkxwBi7evZ2qUmBjD71JkfBZsWo2e
+ O8PA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=EiT7U6hb4n9/ss5eLUuNHb8HbJPdrNLlNFry2pPtbL8=;
+ b=aC4aZKH2WbOByCMTL0Z/8OO+78IbebvhKDbE1K4c35JpqyA8H6XU+Pc7hEzoLnGa9w
+ JSieouqYuL8pSJK2Jsg/rizhYIlXpti0qqaUmE8lx4aes4E1IU115GxLjdZvTl7iUocs
+ gicr9ajEnVSZaTTTfVhwsuw4kuoDYvjSyuUbAQI84kEZeguPHLRn5KjLKSffoxQDAJSF
+ nsbsbPa4uXy5UbUBKqJ3iPTjLZ0iQq4hgqaXwDu+vjwwNJe69Qm0J+i7cK6nS4HFUQZ7
+ 8MnK3+AcaBSp/IqcssIWST4EzYEFhc+W/MHeIj79lGGLTT8dcMuFR1S9P5EAFE/I4Kx+
+ 4ukA==
+X-Gm-Message-State: APjAAAVpS5ZLwKGgbDiUEMoo8Sns946ZCCJjB5Ps0CWGP7G8Xvfrx1uv
+ Wf3ioQkgjUQdoHG/qV7fmbs=
+X-Google-Smtp-Source: APXvYqypyETPNrR3JYXaNRt6EUsTEo/7X5zBbdeACiCaI8LBBQGoPGSg21OcckRO75gVWQWFVeJBpg==
+X-Received: by 2002:a17:90a:1f8d:: with SMTP id
+ x13mr2502314pja.27.1580970674468; 
+ Wed, 05 Feb 2020 22:31:14 -0800 (PST)
+Received: from localhost ([2401:fa00:8f:203:5bbb:c872:f2b1:f53b])
+ by smtp.gmail.com with ESMTPSA id d26sm1798137pgv.66.2020.02.05.22.31.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 05 Feb 2020 22:31:13 -0800 (PST)
+Date: Thu, 6 Feb 2020 15:31:10 +0900
+From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+To: John Ogness <john.ogness@linutronix.de>
+Subject: Re: [PATCH 0/2] printk: replace ringbuffer
+Message-ID: <20200206063110.GM41358@google.com>
+References: <20200128161948.8524-1-john.ogness@linutronix.de>
+ <dc4ca9b5-d2a2-03af-c186-204a3aad2399@redhat.com>
+ <20200205044848.GH41358@google.com>
+ <20200205050204.GI41358@google.com>
+ <88827ae2-7af5-347b-29fb-cffb94350f8f@redhat.com>
+ <20200205063640.GJ41358@google.com> <877e11h0ir.fsf@linutronix.de>
+ <20200205110522.GA456@jagdpanzerIV.localdomain>
+ <87wo919grz.fsf@linutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <TY2PR01MB52108AD0131515408592E08CDD030@TY2PR01MB5210.jpnprd01.prod.outlook.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-MC-Unique: xE0XEefzOBWwtNjyGqA33A-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <87wo919grz.fsf@linutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_194654_030794_DE243CC3 
-X-CRM114-Status: GOOD (  19.02  )
+X-CRM114-CacheID: sfid-20200205_223116_717313_A2B8E2D6 
+X-CRM114-Status: GOOD (  18.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sergey.senozhatsky.work[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,62 +103,69 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
- Andrew Morton <akpm@linux-foundation.org>,
- Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>, lijiang <lijiang@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-CgpPbiAwMi8wNS8yMDIwIDA1OjE4IEFNLCBIQUdJTyBLQVpVSElUTyjokKnlsL7jgIDkuIDku4Ep
-IHdyb3RlOgo+PiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+PiBPbiBUdWUsIEZlYiAwNCwg
-MjAyMCBhdCAwMjoyNDoxN1BNICswODAwLCBwaWxpdSB3cm90ZToKPj4+IEhpLAo+Pj4KPj4+IFNv
-cnJ5IHRvIHJlcGx5IGxhdGUgZHVlIHRvIGEgbG9uZyBmZXN0aXZhbC4KPj4+Cj4+PiBJIGhhdmUg
-dGVzdGVkIHRoaXMgcGF0Y2ggYWdhaW5zdCB2NC4xNSBhbmQgbGF0ZXN0IGtlcm5lbCB3aXRoIHNt
-YWxsCj4+PiBtb2RpZmljYXRpb24gdG8gbWVldCB0aGUgc2l0dWF0aW9uIHdlIGRpc2N1c3NlZCBo
-ZXJlLiBCb3RoIHdvcmsgZmluZS4KPj4+Cj4+PiBUaGUgYmVsb3cgaXMgdGhlIG1vZGlmaWNhdGlv
-biBvZiB0d28ga2VybmVsCj4+Pgo+Pj4gdGVzdDEuIGxhdGVzdCBrZXJuZWwgd2l0aCB0d28gZXh0
-cmEgbW9kaWZpY2F0aW9uIHRvIGV4cG9zZSB0aGUgcHJvYmxlbQo+Pj4gLTEuMSByZXZlcnRzIGNv
-bW1pdCAxZjUwMzQ0M2U3ZGY4ZGM4MzY2NjA4YjRkODEwY2UyZDY2Njk4MjdjCj4+PiAobW0vc3Bh
-cnNlLmM6IHJlc2V0IHNlY3Rpb24ncyBtZW1fbWFwIHdoZW4gZnVsbHkgZGVhY3RpdmF0ZWQpLCB0
-aGlzCj4+PiBjb21taXQgd29yayBhcm91bmQgdGhpcyBidWcKPj4+IC0xLjIuIHJldmVydHMgY29t
-bWl0IGEwYjEyODAzNjhkMWU5MWFiNzJmODQ5ZWYwOTViNGYwN2EzOWJiZjEgKCJrZHVtcDoKPj4+
-IHdyaXRlIGNvcnJlY3QgYWRkcmVzcyBvZiBtZW1fc2VjdGlvbiBpbnRvIHZtY29yZWluZm8iKS4g
-VGhpcyB3aWxsIGNyZWF0ZQo+Pj4gYSBidWdneSBzaXR1YXRpb24gYXMgd2UgZGlzY3Vzc2VkIGhl
-cmUuCj4+PiAtMS4zLiBmaXggYnVpbGRpbmcgYnVnIGR1ZSB0byByZXZlcnQKPj4+IGEwYjEyODAz
-NjhkMWU5MWFiNzJmODQ5ZWYwOTViNGYwN2EzOWJiZjEKPj4+Cj4+PiB0ZXN0Mi4gdjQuMTUsIHdo
-aWNoIGluY2x1ZGUgYm90aCBjb21taXQgODNlM2M0ODcyOWQ5IGFuZCBhMGIxMjgwMzY4ZDEuCj4+
-PiAtMi4xLiByZXZlcnQgY29tbWl0IGEwYjEyODAzNjhkMWU5MWFiNzJmODQ5ZWYwOTViNGYwN2Ez
-OWJiZjEgKCJrZHVtcDoKPj4+IHdyaXRlIGNvcnJlY3QgYWRkcmVzcyBvZiBtZW1fc2VjdGlvbiBp
-bnRvIHZtY29yZWluZm8iKQo+Pj4KPj4+IFNvIEkgY2FuIG5vdCBzZWUgYW55IHByb2JsZW0gd2l0
-aCBteSBwYXRjaC4KPj4+IE1heWJlIEkgbWlzdW5kZXJzdGFuZCB0aGUgZGlzY3Vzc2lvbiwgYnV0
-IEkgY2FuIG5vdCBzZWUgbXkgb3JpZ2luYWwKPj4+IHBhdGNoIHdpbGwgYnJlYWsgdGhlIGtlcm5l
-bCB3aGljaCBoYXZlIDgzZTNjNDg3MjlkOSBidXQgbm90IGEwYjEyODAzNjhkMS4KPj4+Cj4+PiBU
-aGFua3MsCj4+PiBQaW5nZmFuCj4+Pgo+Pgo+PiBZb3UgYWxzbyBuZWVkIHRvIHRlc3QgdGhlIGNh
-c2Ugd2hlcmUgODNlM2M0ODcyOWQ5IGlzIG5vdCBwcmVzZW50IGF0IGFsbC4gQ2FuCj4+IHlvdSB0
-ZXN0IG9uIGEgNC40IGtlcm5lbCwgZm9yIGV4YW1wbGU/IEFzIGZhciBhcyBJIHVuZGVyc3RhbmQs
-IGEgdmFuaWxsYSA0LjQKPj4ga2VybmVsIHdvdWxkIG5vdCBiZSBkdW1wYWJsZSB3aXRoIHlvdXIg
-cGF0Y2guCj4gCj4gQXMgZmFyIGFzIEkndmUgdGVzdGVkIHRoaXMgcGF0Y2ggd2l0aCBTUEFSU0VN
-RU1fRVhUUkVNRSB2bWNvcmVzIGJlbG93LCBpdCdzIE9LOgo+ICAgLSA1MSB2bWNvcmVzIG9mIHZh
-bmlsbGEga2VybmVscyAoZWFjaCBmcm9tIDIuNi4zNiB0aHJvdWdoIDUuNSkgb24gaGFuZAo+ICAg
-LSBvbmUgbW9yZSB2YW5pbGxhIDQuNC4wIGtlcm5lbCB3aXRoIGEgZGlmZmVyZW50IGNvbmZpZyBm
-cm9tIHRoZSBhYm92ZQo+IAo+IFNvIGFwcGFyZW50bHkgbm90IGFsbCB2YW5pbGxhIDQuNCBrZXJu
-ZWxzIGFyZSBhZmZlY3RlZCBieSB0aGUgcGF0Y2guCj4gClNvcnJ5LCBkdWUgdG8gdG91Y2ggaGFy
-ZHdhcmUgcmVzb3VyY2UgaW4gb3VyIGxhYiwgSSBjYW4gbm90IGhhdmUgYSB0ZXN0Cm9uIHY0LjQg
-b24gYSBzeXN0ZW0gd2l0aCBob3RwbHVnIG1lbW9yeSB5ZXQuIEkgc3RpbGwgdHJ5IHRvIGZpbmQg
-c29tZQpyZXNvdXJjZS4KCkJ1dCBmcm9tIHRoZSBsb2dpYyBvZiB0aGlzIHBhdGNoLCBpdCBqdXN0
-IGRvZXMgdGhlIGZvbGxvd2luZyBjaGFuZ2VzOgotMS4gQWZ0ZXIgbWVtb3J5IGhvdC1yZW1vdmVk
-LCBlaXRoZXIgbWVtX3NlY3Rpb24uc2VjdGlvbl9tZW1fbWFwID0gTlVMTApvciBtZW1fc2VjdGlv
-bi5zZWN0aW9uX21lbV9tYXAgd2l0aG91dCBTRUNUSU9OX01BUktFRF9QUkVTRU5ULCB3ZSB3aWxs
-CmhhdmUgbWVtX21hcHNbc2VjdGlvbl9ucl0gPSBtZW1fbWFwID0gTk9UX01FTU1BUF9BRERSLCBz
-byBsYXRlciBpdCB3aWxsCmJlIHNraXBwZWQuCi0yLiBJZiBub3QgcG9wdWxhdGVkLCBtZW1fc2Vj
-dGlvbi5zZWN0aW9uX21lbV9tYXAgPSBOVUxMLiBJdCBjYW4gZm9sbG93CnRoZSBzYW1lIGhhbmRs
-aW5nIG9mIGhvdC1yZW1vdmVkLCBhbmQgYmUgc2tpcHBlZCBkdXJpbmcgcGFyc2luZy4KCkFuZCBp
-biB2NC40IHNwYXJzZV9yZW1vdmVfb25lX3NlY3Rpb24oKSBqdXN0IGFzc2lnbnMgbXMtPnNlY3Rp
-b25fbWVtX21hcAo9IDAsIHdoaWNoIGNhbiBub3QgYmUgdmlvbGF0ZWQgYnkgdGhlIGFib3ZlIGNo
-YW5nZXMuCgpUaGFua3MsClBpbmdmYW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
+On (20/02/05 16:48), John Ogness wrote:
+> On 2020-02-05, Sergey Senozhatsky <sergey.senozhatsky@gmail.com> wrote:
+> > 3BUG: KASAN: wild-memory-access in copy_data+0x129/0x220>
+> > 3Write of size 4 at addr 5a5a5a5a5a5a5a5a by task cat/474>
+> 
+> The problem was due to an uninitialized pointer.
+> 
+> Very recently the ringbuffer API was expanded so that it could
+> optionally count lines in a record. This made it possible for me to
+> implement record_print_text_inline(), which can do all the kmsg_dump
+> multi-line madness without requiring a temporary buffer. Rather than
+> passing an extra argument around for the optional line count, I added
+> the text_line_count pointer to the printk_record struct. And since line
+> counting is rarely needed, it is only performed if text_line_count is
+> non-NULL.
+> 
+> I oversaw that devkmsg_open() setup a printk_record and so I did not see
+> to add the extra NULL initialization of text_line_count. There should be
+> be an initializer function/macro to avoid this danger.
+> 
+> John Ogness
+> 
+> The quick fixup:
+> 
+> diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
+> index d0d24ee1d1f4..5ad67ff60cd9 100644
+> --- a/kernel/printk/printk.c
+> +++ b/kernel/printk/printk.c
+> @@ -883,6 +883,7 @@ static int devkmsg_open(struct inode *inode, struct file *file)
+>  	user->record.text_buf_size = sizeof(user->text_buf);
+>  	user->record.dict_buf = &user->dict_buf[0];
+>  	user->record.dict_buf_size = sizeof(user->dict_buf);
+> +	user->record.text_line_count = NULL;
+>  
+>  	logbuf_lock_irq();
+>  	user->seq = prb_first_seq(prb);
+
+Yes. That should do. It seems that /dev/kmsg reads/writes happen very early in
+my system and all the backtraces I saw were from completely unrelated paths -
+either a NULL deref at sys_clone()->do_fork()->copy_creds()->prepare_creads(),
+or general protection fault in sys_keyctl()->join_session_keyring()->prepare_creds(),
+or some weird crashes in ext4. And so on.
+
+I see some more unexplainable lockups on one on my test boards, but I
+can't provide more details at this time. Might not be related to the
+patch set. Need to investigate further.
+
+	-ss
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
