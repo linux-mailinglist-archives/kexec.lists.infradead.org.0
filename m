@@ -2,62 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB375155328
-	for <lists+kexec@lfdr.de>; Fri,  7 Feb 2020 08:44:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D61B2155428
+	for <lists+kexec@lfdr.de>; Fri,  7 Feb 2020 10:00:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A4YUH0Q/gyC41iBBOvFBvMBiyiQFnnz2FqZEYgMY/T0=; b=jttob7Zcb9fYrJ
-	wqds+nZhzJTaWLgl80ba2HNoa5Jr+FiGaRG/B91+glV23JD8r0i2CcfBJx92FK/oqbNiE11adUaYy
-	Uo1W0zlYUDN66A52liWIvuASbP4EODabR1bxEXAxpL+asgsoAhZHx8tt70KT5gm0mHU2Jw6FBeVfx
-	WwZdDgkj+j6nKRRnnAvIDOIwP7FxBBdwkY9SRwhVFT26adtCPXSj2Jj5jTvl+j7ZlEvFEcNnsnb1l
-	ND9WK21YdQQiRnenJfHzfdpBMvuiD3yuftiZQXM782r4h7e/lZDF7VeHst1QOu1a8cB8Cjaz5fz9A
-	fKS6EAqDaUSdceXA7gUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wDLtZccVxywn1YB0ckPyPrCFIf0vAQR17xoXH0Ol1xw=; b=o79OiCz/yGkEZ/
+	iQx/5O9tjIvf80nDnUI0nqjJjzsiwrQk7NEN9BPLK5wqQicDGpZjN9IOeVVjDIxL4xloSt/qiJjEO
+	ByrCSsZSYyIPAO6N3WhoByz3xydQ80XUyLt9tex3KQcIgX9V9jaEbqY4HiI5kXmjs6UWhQCn++6su
+	4PKjTndH60jp7TOi+psDZXplxEATql2AZqNvR7llllTadNTESX+BbIXEKmiU/zXD5Q5CNTZk+tWLd
+	YVo8T20g1Xbtw0uhMvacIrzCmhUZ5g2jghgAjhBbe21lAZqKJLVZjAr7qswcxQ7+9RfZWdzslmqQY
+	CSlN/xUqizA2hOiiQaRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izyIt-0003e2-KD; Fri, 07 Feb 2020 07:43:55 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1izzVR-0005Qu-Dv; Fri, 07 Feb 2020 09:00:57 +0000
+Received: from smtp-fw-9101.amazon.com ([207.171.184.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izyIn-0003dF-LY
- for kexec@lists.infradead.org; Fri, 07 Feb 2020 07:43:50 +0000
-Received: from localhost ([127.0.0.1] helo=vostro.local)
- by Galois.linutronix.de with esmtp (Exim 4.80)
- (envelope-from <john.ogness@linutronix.de>)
- id 1izyIf-00071r-RG; Fri, 07 Feb 2020 08:43:41 +0100
-From: John Ogness <john.ogness@linutronix.de>
-To: Steven Rostedt <rostedt@goodmis.org>
-Subject: Re: [PATCH 0/2] printk: replace ringbuffer
-References: <20200128161948.8524-1-john.ogness@linutronix.de>
- <dc4ca9b5-d2a2-03af-c186-204a3aad2399@redhat.com>
- <20200205044848.GH41358@google.com>
- <20200205050204.GI41358@google.com>
- <88827ae2-7af5-347b-29fb-cffb94350f8f@redhat.com>
- <20200205063640.GJ41358@google.com> <877e11h0ir.fsf@linutronix.de>
- <20200205110522.GA456@jagdpanzerIV.localdomain>
- <87wo919grz.fsf@linutronix.de>
- <20200206204012.0cbfc941@oasis.local.home>
-Date: Fri, 07 Feb 2020 08:43:39 +0100
-In-Reply-To: <20200206204012.0cbfc941@oasis.local.home> (Steven Rostedt's
- message of "Thu, 6 Feb 2020 20:40:12 -0500")
-Message-ID: <87k14yx2ok.fsf@linutronix.de>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.4 (gnu/linux)
+ id 1izzVN-0005OI-Lt
+ for kexec@lists.infradead.org; Fri, 07 Feb 2020 09:00:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.de; i=@amazon.de; q=dns/txt; s=amazon201209;
+ t=1581066053; x=1612602053;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=HRRAJIMUSJScPJ0z+87ep53VPMm3orjVKWifK2gyUFw=;
+ b=sddsYVN2zF10EA30oznu7YjIuiRk1j1mmv6MXXk6H5W0uLyJ4BhFP2tt
+ m6B0eE3iymZEXfWGQwc+FqpNdo0ux3vKcQLTrc4m3bwWsAFFkGSB1G6hn
+ cj/r4rOBeTuPgYCQcyKI0sMHclKGB0iMJG9q6vDzVkWxUMCT2XizY58lO 8=;
+IronPort-SDR: grJYtEAkEEiC+LVmsfPukq2tu6yXY54bXSQ664gidQ0ceiRseiHvO6wU0B07C0fXL7ehyRdSOp
+ Bt7iQRNyOZjA==
+X-IronPort-AV: E=Sophos;i="5.70,412,1574121600"; d="scan'208";a="15238053"
+Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
+ email-inbound-relay-1a-67b371d8.us-east-1.amazon.com) ([10.47.23.38])
+ by smtp-border-fw-out-9101.sea19.amazon.com with ESMTP;
+ 07 Feb 2020 09:00:38 +0000
+Received: from EX13MTAUEE002.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
+ by email-inbound-relay-1a-67b371d8.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 2EE86A249F
+ for <kexec@lists.infradead.org>; Fri,  7 Feb 2020 09:00:37 +0000 (UTC)
+Received: from EX13D08UEE004.ant.amazon.com (10.43.62.182) by
+ EX13MTAUEE002.ant.amazon.com (10.43.62.24) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Fri, 7 Feb 2020 09:00:37 +0000
+Received: from EX13MTAUEA001.ant.amazon.com (10.43.61.82) by
+ EX13D08UEE004.ant.amazon.com (10.43.62.182) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Fri, 7 Feb 2020 09:00:37 +0000
+Received: from u908889d5e8f057.ant.amazon.com (10.28.86.33) by
+ mail-relay.amazon.com (10.43.61.243) with Microsoft SMTP Server id
+ 15.0.1367.3 via Frontend Transport; Fri, 7 Feb 2020 09:00:36 +0000
+From: Varad Gautam <vrd@amazon.de>
+To: <kexec@lists.infradead.org>
+Subject: [PATCH 1/3] kexec-xen: Introduce xen_get_kexec_range to wrap
+ xc_kexec_get_range
+Date: Fri, 7 Feb 2020 10:00:31 +0100
+Message-ID: <1581066033-25120-1-git-send-email-vrd@amazon.de>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_234349_843434_25D37B79 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200207_010053_767795_A7CD48B3 
+X-CRM114-Status: GOOD (  12.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,51 +91,164 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, lijiang <lijiang@redhat.com>
+Cc: Varad Gautam <vrd@amazon.de>, David Woodhouse <dwmw@amazon.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 2020-02-07, Steven Rostedt <rostedt@goodmis.org> wrote:
->> The quick fixup:
->> 
->> diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
->> index d0d24ee1d1f4..5ad67ff60cd9 100644
->> --- a/kernel/printk/printk.c
->> +++ b/kernel/printk/printk.c
->> @@ -883,6 +883,7 @@ static int devkmsg_open(struct inode *inode, struct file *file)
->>  	user->record.text_buf_size = sizeof(user->text_buf);
->>  	user->record.dict_buf = &user->dict_buf[0];
->>  	user->record.dict_buf_size = sizeof(user->dict_buf);
->> +	user->record.text_line_count = NULL;
->>  
->>  	logbuf_lock_irq();
->>  	user->seq = prb_first_seq(prb);
->
-> FYI, I used your patch set to test out Konstantin's new get-lore-mbox
-> script, and then applied them. It locked up on boot up as well, and
-> applying this appears to fix it.
+And convert all callers of xc_kexec_get_range to use this. This allows reusing
+sanity checks for other KEXEC_RANGEs that get added in the future.
 
-Yes, this is a horrible bug. In preparation for my v2 I implemented:
+Signed-off-by: Varad Gautam <vrd@amazon.de>
+CC: David Woodhouse <dwmw@amazon.co.uk>
+---
+ kexec/crashdump-xen.c | 38 +++++---------------------------------
+ kexec/kexec-xen.c     | 32 ++++++++++++++++++++++++++++++++
+ kexec/kexec-xen.h     |  3 +++
+ 3 files changed, 40 insertions(+), 33 deletions(-)
 
-    prb_rec_init_rd()
-    prb_rec_init_wr()
+diff --git a/kexec/crashdump-xen.c b/kexec/crashdump-xen.c
+index 2d6b2f9..3f59a0d 100644
+--- a/kexec/crashdump-xen.c
++++ b/kexec/crashdump-xen.c
+@@ -162,21 +162,15 @@ unsigned long xen_architecture(struct crash_elf_info *elf_info)
+ #ifdef HAVE_LIBXENCTRL
+ int get_xen_vmcoreinfo(uint64_t *addr, uint64_t *len)
+ {
+-	xc_interface *xc;
++	uint64_t end;
+ 	int ret = 0;
+ 
+-	xc = xc_interface_open(NULL, NULL, 0);
+-	if (!xc) {
+-	        fprintf(stderr, "failed to open xen control interface.\n");
++	ret = xen_get_kexec_range(KEXEC_RANGE_MA_VMCOREINFO, addr, &end);
++	if (ret < 0)
+ 	        return -1;
+-	}
+-
+-	ret = xc_kexec_get_range(xc, KEXEC_RANGE_MA_VMCOREINFO, 0, len, addr);
+ 
+-	xc_interface_close(xc);
++	*len = end - *addr + 1;
+ 
+-	if (ret < 0)
+-	        return -1;
+ 	return 0;
+ }
+ 
+@@ -252,29 +246,7 @@ int xen_get_note(int cpu, uint64_t *addr, uint64_t *len)
+ #ifdef HAVE_LIBXENCTRL
+ int xen_get_crashkernel_region(uint64_t *start, uint64_t *end)
+ {
+-	uint64_t size;
+-	xc_interface *xc;
+-	int rc = -1;
+-
+-	xc = xc_interface_open(NULL, NULL, 0);
+-	if (!xc) {
+-		fprintf(stderr, "failed to open xen control interface.\n");
+-		goto out;
+-	}
+-
+-	rc = xc_kexec_get_range(xc, KEXEC_RANGE_MA_CRASH, 0, &size, start);
+-	if (rc < 0) {
+-		fprintf(stderr, "failed to get crash region from hypervisor.\n");
+-		goto out_close;
+-	}
+-
+-	*end = *start + size - 1;
+-
+-out_close:
+-	xc_interface_close(xc);
+-
+-out:
+-	return rc;
++	return xen_get_kexec_range(KEXEC_RANGE_MA_CRASH, start, end);
+ }
+ #else
+ int xen_get_crashkernel_region(uint64_t *start, uint64_t *end)
+diff --git a/kexec/kexec-xen.c b/kexec/kexec-xen.c
+index c326955..afcfc5b 100644
+--- a/kexec/kexec-xen.c
++++ b/kexec/kexec-xen.c
+@@ -64,6 +64,33 @@ int __xc_interface_close(xc_interface *xch)
+ }
+ #endif /* CONFIG_LIBXENCTRL_DL */
+ 
++int xen_get_kexec_range(int range, uint64_t *start, uint64_t *end)
++{
++	uint64_t size;
++	xc_interface *xc;
++	int rc = -1;
++
++	xc = xc_interface_open(NULL, NULL, 0);
++	if (!xc) {
++		fprintf(stderr, "failed to open xen control interface.\n");
++		goto out;
++	}
++
++	rc = xc_kexec_get_range(xc, range, 0, &size, start);
++	if (rc < 0) {
++		fprintf(stderr, "failed to get range=%d from hypervisor.\n", range);
++		goto out_close;
++	}
++
++	*end = *start + size - 1;
++
++out_close:
++	xc_interface_close(xc);
++
++out:
++	return rc;
++}
++
+ #define IDENTMAP_1MiB (1024 * 1024)
+ 
+ int xen_kexec_load(struct kexec_info *info)
+@@ -226,6 +253,11 @@ void xen_kexec_exec(void)
+ 
+ #else /* ! HAVE_LIBXENCTRL */
+ 
++int xen_get_kexec_range(int range, uint64_t *start, uint64_t *end)
++{
++	return -1;
++}
++
+ int xen_kexec_load(struct kexec_info *UNUSED(info))
+ {
+ 	return -1;
+diff --git a/kexec/kexec-xen.h b/kexec/kexec-xen.h
+index ae67393..603ac94 100644
+--- a/kexec/kexec-xen.h
++++ b/kexec/kexec-xen.h
+@@ -63,6 +63,9 @@ extern int __xc_interface_close(xc_interface *xch);
+ 	__xc_call(void *, xc_hypercall_buffer_array_destroy, args)
+ 
+ #endif /* CONFIG_LIBXENCTRL_DL */
++
++int xen_get_kexec_range(int range, uint64_t *start, uint64_t *end);
++
+ #endif /* HAVE_LIBXENCTRL */
+ 
+ #endif /* KEXEC_XEN_H */
+-- 
+2.7.4
 
-as static inline functions to initialize the records. There is a reader
-and writer variant because they initialize the records differently:
-readers provide buffers, writers request buffers. This eliminates the
-manual twiddling with the record struct and ensures that the struct is
-always properly initialized.
 
-John Ogness
+
+
+Amazon Development Center Germany GmbH
+Krausenstr. 38
+10117 Berlin
+Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
+Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+Sitz: Berlin
+Ust-ID: DE 289 237 879
+
+
+
 
 _______________________________________________
 kexec mailing list
