@@ -2,90 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38525158879
-	for <lists+kexec@lfdr.de>; Tue, 11 Feb 2020 04:02:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F2A9159FC9
+	for <lists+kexec@lfdr.de>; Wed, 12 Feb 2020 05:12:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=7mVxy6U9JMIbZoG0eL88G2be9keL0sQBR1o8LnMdSkA=; b=OYXKts51QckTVtHyFiUEKs3ey8
-	M4NAHwiAo+6KTE35Jn5kkDXFOacE6Q1z19Ckh/QbTyaqTuhJJ4umhSzSXOF9wsMqKBwIzW4HrDPSt
-	VHQDHIuksNmkTiwboXw91qqSVBmDwEu5BPs96URrWlKKhaUjaJrMYGSkfjaTca7hvk/LutHSxxXDN
-	fHN5dDJs8G2+WIuwh6nO+NMTBfBvGDeEdwqStbQRdSdtL/H8GH0nLM2BJXZ7HmjIbXybCVqQwKg4C
-	KQbGni0/Hm+xyRPJNNwDff4pLK2YtXkaE3j3/8B5nCIfRJgMWNS/+oeaRGndlw/NqvoAsXjykQY7v
-	E07ZBI2Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4G72v0BKmMSqJChLQM2Xi0e8SrjliNHd9ai8x5HDCoY=; b=sqFekjPwM0zkh5
+	CpfQB8OLcYQxEsnb4Ul7cS3Js5aa85epohN9SwJF5hABNjGbh2nnJrRWetl72VAPp6kp/bkdczMTg
+	mx5Y+Go/aASb+ue0dwTxBgBEEqi8SBcfQLsBLQebOd4rxMtHi6CQQbicFDJ4p1+hjiNdJy6FZvDip
+	NcxrEOJIJHOWG6yZMvNn7m1Xmi8s1set6KJjP9AR3TjtUy+h53Gk8ovwbDgNFNM6TJYg9rHDpV0NU
+	sHi7p8MV3OtWbCO/HTaBcy6mn1cNylSDg1kX1XvnpbOhxbtSu1dX6vWvredquRZUeYB2RDRBEUljB
+	muHNqeHnAXFcOeZgnVww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Lor-0002bP-HQ; Tue, 11 Feb 2020 03:02:37 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1j1jNl-0004Qo-A4; Wed, 12 Feb 2020 04:12:13 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Lon-0002aL-BB
- for kexec@lists.infradead.org; Tue, 11 Feb 2020 03:02:34 +0000
-Received: by mail-pf1-x441.google.com with SMTP id j9so4700357pfa.8
- for <kexec@lists.infradead.org>; Mon, 10 Feb 2020 19:02:33 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=2Q+JO1fZOB0lKMDmVqxu6245Sva9CNNJOFjkmxWxmRY=;
- b=n6WDDUbCZ445V6OlluOnoSLEEQkCmfwepuCQ47yQmkNN+P+DvNQEXt1XA8Fa0xDVxG
- mNfulLp6vdth5/tUuLjyd+up5PHLO215agDTis/MYB9cYfY2ztaV6EHQzob/Rxb/FsdG
- zciYTskeUThlr0vnzYlhmfKZ3TRI8WN5MtSFRPD0wmtgCuMRz5qc3DwT0GXBY907X6tG
- V28vSDO3lmIvAh9EisV4zfZ5rkQtIdQIliG0uMmKOfl5YCeV1U3sZ2e/jDsPMR2EZ1Nb
- BfBQjpkr1xFlkfOguEdsGS8KbeLqBwyfSj0dKDtFzMtof5CD6KFGTjjzEXnEmhBAMQK1
- oBkg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=2Q+JO1fZOB0lKMDmVqxu6245Sva9CNNJOFjkmxWxmRY=;
- b=jEYho50NdV2h8EeRkppynfHLMQV8h21SzX4ZqIGt/9YQlA48exKZsZTLLjmhWgh9Os
- m4TL4+72uvyM9mxSVOE6wxd913jTTzbe03jkrVRSDlZGXwODEwCkqX5d0v2nursMo1Xr
- 7X7KXvBZnYhyzC12t3f+rEjGz9ACDMqa+ga0dJO45HR32gZtEoHVEiIAxOF2W1AzUEH7
- 0+8/pm67AChksLVvUHM6yiH8OFsHRri79dK3G88NmmjgurDuBDhJUtIMDwJQhAmkdYu8
- oNWN8Dt69ry0XQzo+ap6wrK1cyehr13LUnFL5OnAl74sG50KYVovSB/FBPhfR6JZvBmj
- HXsA==
-X-Gm-Message-State: APjAAAU6xMGleBmN7Lg8jsOrGHad7/lR8z9oEdsknJrajAcMPbFiXzyW
- GcsXI18WBM82TIGIacrjWw==
-X-Google-Smtp-Source: APXvYqy4Y7dOg/D/Saba9q/P/Moy2/OqlmtLwEJRrgaM4SaEusdJIFoNRkNHSiNU1bZ5A/UCL7I99A==
-X-Received: by 2002:a63:ba03:: with SMTP id k3mr4967289pgf.52.1581390151579;
- Mon, 10 Feb 2020 19:02:31 -0800 (PST)
-Received: from mylaptop.redhat.com ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id m71sm1290633pje.0.2020.02.10.19.02.28
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Feb 2020 19:02:31 -0800 (PST)
-From: Pingfan Liu <kernelfans@gmail.com>
-To: linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH 2/2] powerpc/pseries: update device tree before ejecting
- hotplug uevents
-Date: Tue, 11 Feb 2020 10:59:42 +0800
-Message-Id: <1581389982-5701-2-git-send-email-kernelfans@gmail.com>
-X-Mailer: git-send-email 2.7.5
-In-Reply-To: <1581389982-5701-1-git-send-email-kernelfans@gmail.com>
-References: <1581389982-5701-1-git-send-email-kernelfans@gmail.com>
+ id 1j1jNd-0004Jf-08
+ for kexec@lists.infradead.org; Wed, 12 Feb 2020 04:12:07 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581480720;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=cyOBn1Bc4gTrmbHf4X4OguWHw58yiKAtK4j2RaA+ma0=;
+ b=SCnbwJS4cPSvUrYmyQba6mNr8yQISt9fR8djn/PxR4fhaglmvtdRlzgMVo1DvuxphiDICT
+ BpGPq0BkY5ROgOdMl/sX63TEWPB1LodhncmiKSsNZAln+Rji0pV3z33qaZYb31u2F4rZtW
+ 9EhipFbLHl7Q79RU0UNiy399oJmCfsM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-331-StZJKM0UPmSB1RNdt3G7Pw-1; Tue, 11 Feb 2020 23:11:56 -0500
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 39D458017CC;
+ Wed, 12 Feb 2020 04:11:54 +0000 (UTC)
+Received: from [10.72.8.20] (ovpn-8-20.pek2.redhat.com [10.72.8.20])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 164145DA7B;
+ Wed, 12 Feb 2020 04:11:45 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
+To: =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>, Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
+References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
+ <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
+ <20200120085919.GB16539@MiWiFi-R3L-srv>
+ <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
+ <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
+ <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200128193302.GC4080@calabresa>
+ <5cd8e190-8be6-41cd-c43a-c38043c14b3f@redhat.com>
+ <20200204103954.GH40679@calabresa>
+ <TY2PR01MB52108AD0131515408592E08CDD030@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <cca47a31-6e05-2812-65a1-832621992553@redhat.com>
+From: piliu <piliu@redhat.com>
+Message-ID: <0b743d83-d874-a093-82d1-e6d3d8bc47e0@redhat.com>
+Date: Wed, 12 Feb 2020 12:11:42 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
+MIME-Version: 1.0
+In-Reply-To: <cca47a31-6e05-2812-65a1-832621992553@redhat.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+X-MC-Unique: StZJKM0UPmSB1RNdt3G7Pw-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_190233_382478_3FEF9750 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20200211_201205_180128_D7973BB3 
+X-CRM114-Status: GOOD (  20.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [kernelfans[at]gmail.com]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,116 +103,67 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Ellerman <mpe@ellerman.id.au>, kexec@lists.infradead.org,
- Pingfan Liu <kernelfans@gmail.com>, Paul Mackerras <paulus@samba.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Hari Bathini <hbathini@linux.ibm.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-A bug is observed on pseries by taking the following steps on rhel:
--1. drmgr -c mem -r -q 5
--2. echo c > /proc/sysrq-trigger
-
-And then, the failure looks like:
-kdump: saving to /sysroot//var/crash/127.0.0.1-2020-01-16-02:06:14/
-kdump: saving vmcore-dmesg.txt
-kdump: saving vmcore-dmesg.txt complete
-kdump: saving vmcore
- Checking for memory holes                         : [  0.0 %] /                   Checking for memory holes                         : [100.0 %] |                   Excluding unnecessary pages                       : [100.0 %] \                   Copying data                                      : [  0.3 %] -          eta: 38s[   44.337636] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-[   44.337663] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-[   44.337677] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-[   44.337692] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-[   44.337708] makedumpfile[469]: unhandled signal 7 at 00007fffba400000 nip 00007fffbbc4d7fc lr 000000011356ca3c code 2
-[   44.338548] Core dump to |/bin/false pipe failed
-/lib/kdump-lib-initramfs.sh: line 98:   469 Bus error               $CORE_COLLECTOR /proc/vmcore $_mp/$KDUMP_PATH/$HOST_IP-$DATEDIR/vmcore-incomplete
-kdump: saving vmcore failed
-
-* Root cause *
-  After analyzing, it turns out that in the current implementation,
-when hot-removing lmb, the KOBJ_REMOVE event ejects before the dt updating as
-the code __remove_memory() comes before drmem_update_dt().
-
-From a viewpoint of listener and publisher, the publisher notifies the
-listener before data is ready.  This introduces a problem where udev
-launches kexec-tools (due to KOBJ_REMOVE) and loads a stale dt before
-updating. And in capture kernel, makedumpfile will access the memory based
-on the stale dt info, and hit a SIGBUS error due to an un-existed lmb.
-
-* Fix *
-  In order to fix this issue, update dt before __remove_memory(), and
-accordingly the same rule in hot-add path.
-
-This will introduce extra dt updating payload for each involved lmb when hotplug.
-But it should be fine since drmem_update_dt() is memory based operation and
-hotplug is not a hot path.
-
-Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Hari Bathini <hbathini@linux.ibm.com>
-To: linuxppc-dev@lists.ozlabs.org
-Cc: kexec@lists.infradead.org
----
- arch/powerpc/platforms/pseries/hotplug-memory.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-diff --git a/arch/powerpc/platforms/pseries/hotplug-memory.c b/arch/powerpc/platforms/pseries/hotplug-memory.c
-index a3a9353..1f623c3 100644
---- a/arch/powerpc/platforms/pseries/hotplug-memory.c
-+++ b/arch/powerpc/platforms/pseries/hotplug-memory.c
-@@ -392,6 +392,9 @@ static int dlpar_remove_lmb(struct drmem_lmb *lmb)
- 	invalidate_lmb_associativity_index(lmb);
- 	lmb_clear_nid(lmb);
- 	lmb->flags &= ~DRCONF_MEM_ASSIGNED;
-+	rtas_hp_event = true;
-+	drmem_update_dt();
-+	rtas_hp_event = false;
- 
- 	__remove_memory(nid, base_addr, block_sz);
- 
-@@ -665,6 +668,9 @@ static int dlpar_add_lmb(struct drmem_lmb *lmb)
- 
- 	lmb_set_nid(lmb);
- 	lmb->flags |= DRCONF_MEM_ASSIGNED;
-+	rtas_hp_event = true;
-+	drmem_update_dt();
-+	rtas_hp_event = false;
- 
- 	block_sz = memory_block_size_bytes();
- 
-@@ -683,6 +689,9 @@ static int dlpar_add_lmb(struct drmem_lmb *lmb)
- 		invalidate_lmb_associativity_index(lmb);
- 		lmb_clear_nid(lmb);
- 		lmb->flags &= ~DRCONF_MEM_ASSIGNED;
-+		rtas_hp_event = true;
-+		drmem_update_dt();
-+		rtas_hp_event = false;
- 
- 		__remove_memory(nid, base_addr, block_sz);
- 	}
-@@ -939,12 +948,6 @@ int dlpar_memory(struct pseries_hp_errorlog *hp_elog)
- 		break;
- 	}
- 
--	if (!rc) {
--		rtas_hp_event = true;
--		rc = drmem_update_dt();
--		rtas_hp_event = false;
--	}
--
- 	unlock_device_hotplug();
- 	return rc;
- }
--- 
-2.7.5
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+CgpPbiAwMi8wNi8yMDIwIDExOjQ2IEFNLCBwaWxpdSB3cm90ZToKPiAKPiAKPiBPbiAwMi8wNS8y
+MDIwIDA1OjE4IEFNLCBIQUdJTyBLQVpVSElUTyjokKnlsL7jgIDkuIDku4EpIHdyb3RlOgo+Pj4g
+LS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPj4+IE9uIFR1ZSwgRmViIDA0LCAyMDIwIGF0IDAy
+OjI0OjE3UE0gKzA4MDAsIHBpbGl1IHdyb3RlOgo+Pj4+IEhpLAo+Pj4+Cj4+Pj4gU29ycnkgdG8g
+cmVwbHkgbGF0ZSBkdWUgdG8gYSBsb25nIGZlc3RpdmFsLgo+Pj4+Cj4+Pj4gSSBoYXZlIHRlc3Rl
+ZCB0aGlzIHBhdGNoIGFnYWluc3QgdjQuMTUgYW5kIGxhdGVzdCBrZXJuZWwgd2l0aCBzbWFsbAo+
+Pj4+IG1vZGlmaWNhdGlvbiB0byBtZWV0IHRoZSBzaXR1YXRpb24gd2UgZGlzY3Vzc2VkIGhlcmUu
+IEJvdGggd29yayBmaW5lLgo+Pj4+Cj4+Pj4gVGhlIGJlbG93IGlzIHRoZSBtb2RpZmljYXRpb24g
+b2YgdHdvIGtlcm5lbAo+Pj4+Cj4+Pj4gdGVzdDEuIGxhdGVzdCBrZXJuZWwgd2l0aCB0d28gZXh0
+cmEgbW9kaWZpY2F0aW9uIHRvIGV4cG9zZSB0aGUgcHJvYmxlbQo+Pj4+IC0xLjEgcmV2ZXJ0cyBj
+b21taXQgMWY1MDM0NDNlN2RmOGRjODM2NjYwOGI0ZDgxMGNlMmQ2NjY5ODI3Ywo+Pj4+IChtbS9z
+cGFyc2UuYzogcmVzZXQgc2VjdGlvbidzIG1lbV9tYXAgd2hlbiBmdWxseSBkZWFjdGl2YXRlZCks
+IHRoaXMKPj4+PiBjb21taXQgd29yayBhcm91bmQgdGhpcyBidWcKPj4+PiAtMS4yLiByZXZlcnRz
+IGNvbW1pdCBhMGIxMjgwMzY4ZDFlOTFhYjcyZjg0OWVmMDk1YjRmMDdhMzliYmYxICgia2R1bXA6
+Cj4+Pj4gd3JpdGUgY29ycmVjdCBhZGRyZXNzIG9mIG1lbV9zZWN0aW9uIGludG8gdm1jb3JlaW5m
+byIpLiBUaGlzIHdpbGwgY3JlYXRlCj4+Pj4gYSBidWdneSBzaXR1YXRpb24gYXMgd2UgZGlzY3Vz
+c2VkIGhlcmUuCj4+Pj4gLTEuMy4gZml4IGJ1aWxkaW5nIGJ1ZyBkdWUgdG8gcmV2ZXJ0Cj4+Pj4g
+YTBiMTI4MDM2OGQxZTkxYWI3MmY4NDllZjA5NWI0ZjA3YTM5YmJmMQo+Pj4+Cj4+Pj4gdGVzdDIu
+IHY0LjE1LCB3aGljaCBpbmNsdWRlIGJvdGggY29tbWl0IDgzZTNjNDg3MjlkOSBhbmQgYTBiMTI4
+MDM2OGQxLgo+Pj4+IC0yLjEuIHJldmVydCBjb21taXQgYTBiMTI4MDM2OGQxZTkxYWI3MmY4NDll
+ZjA5NWI0ZjA3YTM5YmJmMSAoImtkdW1wOgo+Pj4+IHdyaXRlIGNvcnJlY3QgYWRkcmVzcyBvZiBt
+ZW1fc2VjdGlvbiBpbnRvIHZtY29yZWluZm8iKQo+Pj4+Cj4+Pj4gU28gSSBjYW4gbm90IHNlZSBh
+bnkgcHJvYmxlbSB3aXRoIG15IHBhdGNoLgo+Pj4+IE1heWJlIEkgbWlzdW5kZXJzdGFuZCB0aGUg
+ZGlzY3Vzc2lvbiwgYnV0IEkgY2FuIG5vdCBzZWUgbXkgb3JpZ2luYWwKPj4+PiBwYXRjaCB3aWxs
+IGJyZWFrIHRoZSBrZXJuZWwgd2hpY2ggaGF2ZSA4M2UzYzQ4NzI5ZDkgYnV0IG5vdCBhMGIxMjgw
+MzY4ZDEuCj4+Pj4KPj4+PiBUaGFua3MsCj4+Pj4gUGluZ2Zhbgo+Pj4+Cj4+Pgo+Pj4gWW91IGFs
+c28gbmVlZCB0byB0ZXN0IHRoZSBjYXNlIHdoZXJlIDgzZTNjNDg3MjlkOSBpcyBub3QgcHJlc2Vu
+dCBhdCBhbGwuIENhbgo+Pj4geW91IHRlc3Qgb24gYSA0LjQga2VybmVsLCBmb3IgZXhhbXBsZT8g
+QXMgZmFyIGFzIEkgdW5kZXJzdGFuZCwgYSB2YW5pbGxhIDQuNAo+Pj4ga2VybmVsIHdvdWxkIG5v
+dCBiZSBkdW1wYWJsZSB3aXRoIHlvdXIgcGF0Y2guCj4+Cj4+IEFzIGZhciBhcyBJJ3ZlIHRlc3Rl
+ZCB0aGlzIHBhdGNoIHdpdGggU1BBUlNFTUVNX0VYVFJFTUUgdm1jb3JlcyBiZWxvdywgaXQncyBP
+SzoKPj4gICAtIDUxIHZtY29yZXMgb2YgdmFuaWxsYSBrZXJuZWxzIChlYWNoIGZyb20gMi42LjM2
+IHRocm91Z2ggNS41KSBvbiBoYW5kCj4+ICAgLSBvbmUgbW9yZSB2YW5pbGxhIDQuNC4wIGtlcm5l
+bCB3aXRoIGEgZGlmZmVyZW50IGNvbmZpZyBmcm9tIHRoZSBhYm92ZQo+Pgo+PiBTbyBhcHBhcmVu
+dGx5IG5vdCBhbGwgdmFuaWxsYSA0LjQga2VybmVscyBhcmUgYWZmZWN0ZWQgYnkgdGhlIHBhdGNo
+Lgo+Pgo+IFNvcnJ5LCBkdWUgdG8gdG91Y2ggaGFyZHdhcmUgcmVzb3VyY2UgaW4gb3VyIGxhYiwg
+SSBjYW4gbm90IGhhdmUgYSB0ZXN0Cj4gb24gdjQuNCBvbiBhIHN5c3RlbSB3aXRoIGhvdHBsdWcg
+bWVtb3J5IHlldC4gSSBzdGlsbCB0cnkgdG8gZmluZCBzb21lCj4gcmVzb3VyY2UuCj4gCj4gQnV0
+IGZyb20gdGhlIGxvZ2ljIG9mIHRoaXMgcGF0Y2gsIGl0IGp1c3QgZG9lcyB0aGUgZm9sbG93aW5n
+IGNoYW5nZXM6Cj4gLTEuIEFmdGVyIG1lbW9yeSBob3QtcmVtb3ZlZCwgZWl0aGVyIG1lbV9zZWN0
+aW9uLnNlY3Rpb25fbWVtX21hcCA9IE5VTEwKPiBvciBtZW1fc2VjdGlvbi5zZWN0aW9uX21lbV9t
+YXAgd2l0aG91dCBTRUNUSU9OX01BUktFRF9QUkVTRU5ULCB3ZSB3aWxsCj4gaGF2ZSBtZW1fbWFw
+c1tzZWN0aW9uX25yXSA9IG1lbV9tYXAgPSBOT1RfTUVNTUFQX0FERFIsIHNvIGxhdGVyIGl0IHdp
+bGwKPiBiZSBza2lwcGVkLgo+IC0yLiBJZiBub3QgcG9wdWxhdGVkLCBtZW1fc2VjdGlvbi5zZWN0
+aW9uX21lbV9tYXAgPSBOVUxMLiBJdCBjYW4gZm9sbG93Cj4gdGhlIHNhbWUgaGFuZGxpbmcgb2Yg
+aG90LXJlbW92ZWQsIGFuZCBiZSBza2lwcGVkIGR1cmluZyBwYXJzaW5nLgo+IAo+IEFuZCBpbiB2
+NC40IHNwYXJzZV9yZW1vdmVfb25lX3NlY3Rpb24oKSBqdXN0IGFzc2lnbnMgbXMtPnNlY3Rpb25f
+bWVtX21hcAo+ID0gMCwgd2hpY2ggY2FuIG5vdCBiZSB2aW9sYXRlZCBieSB0aGUgYWJvdmUgY2hh
+bmdlcy4KTGFzdCBuaWdodCwgSSBnb3QgYSBtYWNoaW5lIHRvIHRlc3QgdGhpcyBzY2VuZS4gQWZ0
+ZXIgYXBwbHlpbmcgbXkgcGF0Y2gKbWFrZWR1bXBmaWxlIGNhbiBzdGlsbCB3b3JrIHdpdGggdjQu
+NCBrZXJuZWwuCgpUaGFua3MsClBpbmdmYW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVj
+Cg==
