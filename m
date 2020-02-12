@@ -2,96 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87B915A9F3
-	for <lists+kexec@lfdr.de>; Wed, 12 Feb 2020 14:21:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4666D15B147
+	for <lists+kexec@lfdr.de>; Wed, 12 Feb 2020 20:47:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kW+QO33oE0yOKF7sexErYlbOFgTzJkNUgxDUmAY4oFQ=; b=UdDhux0ath8JfHTltBhnNpLbb
-	D0rKTqD/kQzpTGMHzjHv6i+j+l1fnpj8FMW4RyEplFBJC1acON73Jm0/vX06G89aM7aku/gOEPiN6
-	E7cJb7vXI4XjR54S6dnKVP7FDzjNdmPZenMHKgL6n3g4l5goOXSXpQ0fCXqgSOQiDBaDwos5xfp9Q
-	POROYMmslyP7WZjspFPkettzOqjM+F5lqsmxNr4L07mL0mYnZr0tG6uMpuIdSJJdf0sfFBWqlLluO
-	TDDEIjIKHpsfwbgJiotKHPRp9Ej/dCbemVaBmfTyEyIes3Lp2XCmDCEdG1nZhIMLhZDlhpCPbtlNw
-	ELkySAbNg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JdrGNXhqIuCYwWLcTcGMTpsSpFbTMl3N7JejDgmCxaI=; b=BiMPCd3iNt+W6h
+	JRdIhh8r/Qgl6/w04+7SN4ztXcxpp+hEMx2YvXg9o6r8zD6WFEPemzXhZg7XFTqa0Wir2Irn6jUzt
+	dJ3xIWDfl92VkpQCC73+Dh7zVX8Av0oqlX0CzfDJT7M5fTpfvgCikQEDjpv5qUEGd4iXap/hyWC3+
+	BAWVhwfMi466tQPk8y8S6pwoOfCP1C/A3PlL82yK6keZBXF5pzr4edMFqtTK/ZbvzpsusYPDQGRSV
+	HuP6QEnQ45QLC/8u4l4nd7peHJN0/1hhr1fyHUVVtTlE1jfpfips1MOWYE7XZr7Bv1f8EWfPLboCJ
+	N4Y3nYeLyOVAASewLgMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1rwu-0007WX-3T; Wed, 12 Feb 2020 13:21:04 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1j1xyW-00013e-TP; Wed, 12 Feb 2020 19:47:08 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1rwq-0007W4-D5
- for kexec@lists.infradead.org; Wed, 12 Feb 2020 13:21:02 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01CDJ6U6129724;
- Wed, 12 Feb 2020 13:20:44 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=g/7BY0GagzMCKW2WwJ6N4Tlm7FZgzwSjU/MilAO8Drc=;
- b=QHeRypkDWGrTwyM5/m5pqiP42eTxbEPd/Qlbebz0cmNVypFwJwHrsoPR9zgvl75imCcQ
- XPJoFzpWNFESP1FQVnXq92qJMY+9Bt+qpFjcWNQ8dYh3jVbJPVRDNH5jQXyZybG+IJrd
- 16xDQLjLMhcPxOzcByXei5Pltzi28JFSAtQpenNngz6D4jZHwcKpe/y0i+2z9YvCu6iM
- xfrH/o8DHid0t0ISmyVNbKnKDZ8s/99r7CU0MqXu414ZbsHx98/DpquOnbGKzv7CjJxH
- 6P6VeDymbkbt/Rj6NGVmSP7HnhvtURcB7CGFHBSD4+SuaoQCUYD9lAQ/j0k3ktxj5byr sg== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2y2p3sj4ry-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 12 Feb 2020 13:20:44 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01CDICPb112868;
- Wed, 12 Feb 2020 13:20:43 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 2y26hwxs2w-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 12 Feb 2020 13:20:43 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 01CDKfDq011545;
- Wed, 12 Feb 2020 13:20:41 GMT
-Received: from [192.168.1.126] (/47.220.71.223)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 12 Feb 2020 05:20:41 -0800
-Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
- kdump
-To: kexec@lists.infradead.org
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
-From: John Donnelly <John.P.Donnelly@Oracle.com>
-Message-ID: <52102118-9b61-5978-3213-062e9c758dcf@Oracle.com>
-Date: Wed, 12 Feb 2020 07:20:41 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1xyT-000126-18
+ for kexec@lists.infradead.org; Wed, 12 Feb 2020 19:47:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581536822;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=yCnE9QmCOCTZqpbu8778KLidpm4AxD5HKCFf0cQlmYk=;
+ b=ggB6nAaHMg1GdPHiioVzgU1vHOdWMoOQshUdAoQ83jOiiarmGHp4On4L7asJLvYpo/MW69
+ caMKZ5KWJ7Go4YopZRDaFEHY/ggSps4qlk4RNUL5I2zUUaHrAeYiIoX9gD+os1/Pd94+bE
+ +1lO2wABpzEImLHeuP+aKxPBnxcnKIY=
+Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com
+ [209.85.160.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-340-ukR3UMfyNnGTustlweZQZg-1; Wed, 12 Feb 2020 14:46:56 -0500
+Received: by mail-qt1-f200.google.com with SMTP id n4so2017939qtv.5
+ for <kexec@lists.infradead.org>; Wed, 12 Feb 2020 11:46:56 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=LTuZQcJuCy9b73elI3peDGYhgJZCO43O/UBp6dk1FH4=;
+ b=BAd2uhEQPFZitAsjgCARDkriTGtktfK9HW2jRWDOXBKoVvgVKHCdKGYyQqoLjoD+dO
+ 3MmqOMrw7StRd4DAcYxJf4D2Tc+fVOqtlyEWUvN/p55J6veTB8stBVaChT6CN8YTfKwV
+ bA3zUy4U/D0zt76qfO+DRLobe7Mbre+VbX9bnYnMr2wkaMLRvkCEhs9jbyyGusRaSLdM
+ wPx9ur/0RWe7xxTJcs1hJPI28MHuysPulFITvGUX+CRN18d05thQLGg6E+fa6keg9TGj
+ legYTbZHE0farqNE9ShvtXl87hUx2+r/xuHR2Qq+aUplDdvIWWqobUGmDxenRjHhB0yp
+ rcUQ==
+X-Gm-Message-State: APjAAAX7WVBGXmBC48iTBJfPPFZ2NWzk2hCrrPiJEyV2qDVjKY4Iaqx8
+ PQhJkPKMXGoWzoKhbhGZiG0YVZhS7PTAJ50FvmFdg2LnRMih2PfStMEVYl1dQeyrJwol8craui4
+ 9o2sFmtpEABPBw1eRIk/BtlXyqc4zbOKojYO0
+X-Received: by 2002:a37:989:: with SMTP id 131mr12053710qkj.424.1581536815450; 
+ Wed, 12 Feb 2020 11:46:55 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzIylbNv+Mor0IwYEXrbRq73VMDHUOVp/JFc7ebLwaoInXbpABig8QLbc6kg5+hZNS/51BvqvhtR87Xm/AVT/I=
+X-Received: by 2002:a37:989:: with SMTP id 131mr12053695qkj.424.1581536815149; 
+ Wed, 12 Feb 2020 11:46:55 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20191223152349.180172-1-chenzhou10@huawei.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9528
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- phishscore=0
- bulkscore=0 adultscore=0 malwarescore=0 suspectscore=3 mlxscore=0
- spamscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002120105
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9528
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- mlxscore=0 malwarescore=0
- suspectscore=3 mlxlogscore=999 priorityscore=1501 clxscore=1015
- impostorscore=0 lowpriorityscore=0 phishscore=0 adultscore=0 bulkscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
- definitions=main-2002120105
+References: <20200212125658.9654-1-lijiang@redhat.com>
+In-Reply-To: <20200212125658.9654-1-lijiang@redhat.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Thu, 13 Feb 2020 01:16:42 +0530
+Message-ID: <CACi5LpPMGut9KLh6_VzoF-o8q9_O11dasXU1YcVKmxiAj=EdBA@mail.gmail.com>
+Subject: Re: [PATCH] kexec: support parsing the string "Reserved" to get the
+ correct e820 reserved region
+To: Lianbo Jiang <lijiang@redhat.com>
+X-MC-Unique: ukR3UMfyNnGTustlweZQZg-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_052100_531705_4E0CF7D3 
-X-CRM114-Status: GOOD (  24.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200212_114705_150371_34EBACD8 
+X-CRM114-Status: GOOD (  19.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -111,123 +101,86 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
+Cc: Dave Young <dyoung@redhat.com>, Simon Horman <horms@verge.net.au>,
+ kexec mailing list <kexec@lists.infradead.org>, Baoquan He <bhe@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 12/23/19 9:23 AM, Chen Zhou wrote:
-> This patch series enable reserving crashkernel above 4G in arm64.
-> 
-> There are following issues in arm64 kdump:
-> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
-> when there is no enough low memory.
-> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
-> in this case, if swiotlb or DMA buffers are required, crash dump kernel
-> will boot failure because there is no low memory available for allocation.
-> 
-> To solve these issues, introduce crashkernel=X,low to reserve specified
-> size low memory.
-> Crashkernel=X tries to reserve memory for the crash dump kernel under
-> 4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
-> size low memory for crash kdump kernel devices firstly and then reserve
-> memory above 4G.
-> 
+Hi Lianbo,
 
+Thanks for the patch.
 
-Hi Chen,
+On Wed, Feb 12, 2020 at 6:27 PM Lianbo Jiang <lijiang@redhat.com> wrote:
+>
+> When loading kernel and initramfs for kexec, kexec-tools could get the
+> e820 reserved region from "/proc/iomem" in order to rebuild the e820
+> ranges for kexec kernel, but there may be the string "Reserved" in the
+> "/proc/iomem", which caused the failure of parsing. For example:
+>
+>  #cat /proc/iomem|grep -i reserved
+> 00000000-00000fff : Reserved
+> 7f338000-7f34dfff : Reserved
+> 7f3cd000-8fffffff : Reserved
+> f17f0000-f17f1fff : Reserved
+> fe000000-ffffffff : Reserved
+>
+> Currently, kexec-tools can not handle the above case because the memcmp()
+> is case sensitive when comparing the string.
+>
+> So, let's fix this corner and make sure that the string "reserved" and
+> "Reserved" in the "/proc/iomem" are both parsed appropriately.
+>
+> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+> ---
+> Note:
+> Please follow up this commit below about kdump fix.
+> 1ac3e4a57000 ("kdump: fix an error that can not parse the e820 reserved region")
+>
+>  kexec/arch/i386/kexec-x86-common.c | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/kexec/arch/i386/kexec-x86-common.c b/kexec/arch/i386/kexec-x86-common.c
+> index 61ea19380ab2..86bcc8c0677e 100644
+> --- a/kexec/arch/i386/kexec-x86-common.c
+> +++ b/kexec/arch/i386/kexec-x86-common.c
+> @@ -93,6 +93,9 @@ static int get_memory_ranges_proc_iomem(struct memory_range **range, int *ranges
+>                 else if (memcmp(str, "reserved\n", 9) == 0) {
+>                         type = RANGE_RESERVED;
+>                 }
+> +               else if (memcmp(str, "Reserved\n", 9) == 0) {
+> +                       type = RANGE_RESERVED;
+> +               }
 
+Instead of introducing another 'else-if' case here, can we use
+strncasecmp() instead.
 
-I've applied your V7 patches to 5.4.17 test kernel and I am still seeing
-failures when I use a kdump kernel .
+It  compares the two input strings (say s1 and s2), ignoring the case
+of the characters. Also it only compares the first n bytes of s1 (so
+the format is the same as memcmp).
 
+In this way, we can be sure to future-proof the kexec-tools code check
+from future notation of the "Reserved" field in terms of the case used
+to denote the "Reserved" string.
 
-On the kernel boot I see:
+What's your view on the same?
 
-  Reserving 250MB of low memory at 3618MB for crashkernel (System low 
-RAM: 2029MB)
-  crashkernel reserved: 0x00000008c0000000 - 0x0000000940000000 (2048 MB)
+Regards,
+Bhupesh
 
-# cat /proc/iomem  | grep -i cras
-   e2200000-f1bfffff : Crash kernel (low)
-   8c0000000-93fffffff : Crash kernel
-
-
-When kdump kernel is started I see what appears to be DMA initialized :
-
-NUMA: NODE_DATA(1) on node 0
-Zone ranges:
-DMA32    [mem 0x00000000802f0000-0x00000000ffffffff]
-Normal   [mem 0x0000000100000000-0x000000093fffffff]
-
-But the sas driver still fails :
-
-
-[   12.092769] CPU: 0 PID: 149 Comm: kworker/0:13 Not tainted 
-5.4.17-4-uek6m_ol8-jpdonnel+ #2
-[   12.101019] Hardware name: To be filled by O.E.M. Saber/Saber, BIOS 
-0ACKL028 09/09/2019
-[   12.109019] Workqueue: events work_for_cpu_fn
-[   12.113363] Call trace:
-[   12.115803]  dump_backtrace+0x0/0x19c
-[   12.119453]  show_stack+0x24/0x2c
-[   12.122769]  dump_stack+0xcc/0xf8
-[   12.126078]  warn_alloc+0x108/0x11c
-[   12.129554]  __alloc_pages_slowpath+0x8fc/0xa10
-[   12.134071]  __alloc_pages_nodemask+0x2ec/0x334
-[   12.138597]  __dma_direct_alloc_pages+0x19c/0x238
-[   12.143288]  dma_direct_alloc_pages+0x48/0xf8
-[   12.147632]  dma_direct_alloc+0x4c/0x6c
-[   12.151455]  dma_alloc_attrs+0x88/0xf4
-[   12.155196]  dma_pool_alloc+0x11c/0x2ec
-[   12.159053]  _base_allocate_memory_pools+0x2ec/0x1078 [mpt3sas]
-[   12.164978]  mpt3sas_base_attach+0x444/0x748 [mpt3sas]
-[   12.170121]  _scsih_probe+0x554/0x848 [mpt3sas]
-[   12.174648]  local_pci_probe+0x4c/0x98
-
-And the kdump fails to find local storage:
-
-
-  mpt3sas_cm0: reply_post_free pool: dma_pool_alloc failed
-  mpt3sas_cm0: failure at 
-../drivers/scsi/mpt3sas/mpt3sas_scsih.c:10626/_scsih_probe()!
-
-
-
-
-> When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
-> is specified simultaneously, kernel should reserve specified size low memory
-> for crash dump kernel devices. So there may be two crash kernel regions, one
-> is below 4G, the other is above 4G.
-
-   Can we consider a different name for "low" -  Like "dma" .. That is 
-what it is intended for :
-
-Ie: So it shows up as ;
-
-# cat /proc/iomem  | grep -i cras
-   e2200000-f1bfffff : Crash kernel (dma)
-   8c0000000-93fffffff : Crash kernel
-
-
-
-> In order to distinct from the high region and make no effect to the use of
-> kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
-> "linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
-> 
-> Besides, we need to modify kexec-tools:
-> arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
-
-
-Can you explain what needs done to kexec tools  in more detail ?
-
-I'd like to understand why the Arm kdump boot images are so large ( 
-1024M+ ) as compared to x86 that can take a vmcore using a 512M kdump 
-image .
-
-
-
-======= <clipped>=======
+>                 else if (memcmp(str, "ACPI Tables\n", 12) == 0) {
+>                         type = RANGE_ACPI;
+>                 }
+> --
+> 2.17.1
+>
+>
+> _______________________________________________
+> kexec mailing list
+> kexec@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/kexec
+>
 
 
 _______________________________________________
