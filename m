@@ -2,75 +2,87 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A07115DFBA
-	for <lists+kexec@lfdr.de>; Fri, 14 Feb 2020 17:10:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0972015FC8C
+	for <lists+kexec@lfdr.de>; Sat, 15 Feb 2020 05:16:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M4TAHwFjU9S9KDpyTTL7z2nK4g556NwYe6eqDdxXFiQ=; b=mKVkW367WGU5y5
-	+pk8Y/bpe9czZ3DGD/JqeucR/bR10F+Ho1czb0r6Prwih2QOjN3K9aaCGNJeERaeLZqKGER8FK/h+
-	2aGFej2ZxAsN/H7voET7OwoVB5I7xi+WnY5ElaGNKuPrWFV0S8Ent3vDzNJ3G7PyV9Y8xGDcafLUn
-	ovY8Yu+ejDOrLFuISQGN1X9f5tsIBVKcXVwmUkzhJyOOLl1BTpOigGgQBn20xmhDtr5Se5NXO/tmW
-	Y81pHsY1BTkrXv8JjByEnpa87fCYMknX08FPW3KwGtGRIV1VBLdhCv7iLHWTapte57yHOZoHdW8KH
-	Yo6ZRRX0TeMJPcB8p4GQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GZAKCKL71vZzABcbgTHG86PCRGVETwX/3YIwuxxHMBM=; b=rIaZLgENql7Rka
+	+GJ9T4tHK/4RVkAjV5g1PpFMZDK3eQa42eT9v3V6+RLR8+DY3j2dPt2pf6wSXys6FZ26/wRilUc9K
+	0IRnDzYLP2wqNNPi5pWiT3tZ4CBFabLm2QEZUCE7IJ2dV7WSCnwtFOXr5a8zI5hG+buEQTEF/p9vc
+	hKyZaIsM1R4du6s/Ce5055fVM2mpjWI7Y0tYjS1DMqmRM8UxNnx0c5AgBavuEwsUPOAfdi6xk1Mh5
+	M8F8mEBQ0XuoM87h6Mq7oPQcSvggXJv/z2BYNY/qArBFZOtxEIXB4QljTsmiFKepNTUsI7anHYFoC
+	rRz+1nAqDkc2Shq7WQFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dYH-0002yL-Fe; Fri, 14 Feb 2020 16:10:49 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1j2os7-0002Xk-A0; Sat, 15 Feb 2020 04:16:03 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dKj-0001z9-OK
- for kexec@bombadil.infradead.org; Fri, 14 Feb 2020 15:56:50 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=pWNtz2RF6wzvB+dJOcj68QMEKqICDLAkjrk4cIpvj/4=; b=t22gJpSCmkKfLuwxwmw6KYwWC1
- EdESmVlr/4WDLiUP6DajaW0KKXzUNCOnyKVi8lYfrQtlW9RkFKF/oxjApNg0qTWqqTmYoabCmI8c4
- 7vdbYxlwWaROkemeqyjQHdxyKs7gql6Kv6uiKs4JaVX0gYq/KN/m5PhX+BlmJK8ZFZNyv3EOpfgcZ
- Yu9+A5d6srNnl3uCodhutEh3bUoW5nIhYm6dgdHdRSnGkBC5K4YMjgdFCsU+GBehLpRToAsp8KEb7
- CVYcWbqcuhxMCE+ZL1fKaf2SR3SCfXzmIKbUdnVeoRcIfEMFOwoohpzfxpFOZmNDz3ZUrVrq1B0vy
- Iqhmq0zw==;
-Received: from mx2.suse.de ([195.135.220.15])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dKg-0006As-CR
- for kexec@lists.infradead.org; Fri, 14 Feb 2020 15:56:47 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 96C03ADF1;
- Fri, 14 Feb 2020 15:56:40 +0000 (UTC)
-Date: Fri, 14 Feb 2020 16:56:39 +0100
-From: Petr Mladek <pmladek@suse.com>
+ id 1j2os3-0002Pb-FK
+ for kexec@lists.infradead.org; Sat, 15 Feb 2020 04:16:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581740148;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=4v4KhDOUgaH2uZWdr53oizMCM+xuhnQJDym0U6qJWwY=;
+ b=BXMVxkc2R8TTo5p9Wmr69ShdH6W8Pf/4D2YgeAn51bfbsUloRAqb6mxpj6LEHCEb8x3p5Y
+ VDd3zllIKVE+sVGu15yVsmj4G4qochElR4jB/lZ772UKLR6y1NilRrF1I65YuRl6JJRoyL
+ 0v+stKI8q+xu0+HgjBMBc/7RWXtoalk=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-409-Yt1oiaODPbya0oZ7OY3DAQ-1; Fri, 14 Feb 2020 23:15:46 -0500
+X-MC-Unique: Yt1oiaODPbya0oZ7OY3DAQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B64A86124F;
+ Sat, 15 Feb 2020 04:15:43 +0000 (UTC)
+Received: from localhost.localdomain (ovpn-12-202.pek2.redhat.com
+ [10.72.12.202])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 4097E5C1D8;
+ Sat, 15 Feb 2020 04:15:36 +0000 (UTC)
+Subject: Re: [PATCH 2/2] printk: use the lockless ringbuffer
 To: John Ogness <john.ogness@linutronix.de>
-Subject: Re: [PATCH 0/2] printk: replace ringbuffer
-Message-ID: <20200214155639.m5yp3rd2t3vdzfj7@pathway.suse.cz>
 References: <20200128161948.8524-1-john.ogness@linutronix.de>
- <dc4ca9b5-d2a2-03af-c186-204a3aad2399@redhat.com>
- <20200205044848.GH41358@google.com>
- <20200205050204.GI41358@google.com>
- <88827ae2-7af5-347b-29fb-cffb94350f8f@redhat.com>
- <20200205063640.GJ41358@google.com> <877e11h0ir.fsf@linutronix.de>
- <20200205110522.GA456@jagdpanzerIV.localdomain>
- <87wo919grz.fsf@linutronix.de>
+ <20200128161948.8524-3-john.ogness@linutronix.de>
+ <ccbe1383-a4a4-41f8-3330-972f03c97429@redhat.com>
+ <87zhdle0s5.fsf@linutronix.de>
+From: lijiang <lijiang@redhat.com>
+Message-ID: <fade55ad-cefd-898b-6062-6fe45f17b94a@redhat.com>
+Date: Sat, 15 Feb 2020 12:15:34 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87wo919grz.fsf@linutronix.de>
-User-Agent: NeoMutt/20170912 (1.9.0)
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-2.3 points)
+In-Reply-To: <87zhdle0s5.fsf@linutronix.de>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200214_201559_592918_35ACE97A 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,459 +94,44 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
+Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
  Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
  Peter Zijlstra <peterz@infradead.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
  Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
  Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>, lijiang <lijiang@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Linus Torvalds <torvalds@linux-foundation.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed 2020-02-05 16:48:32, John Ogness wrote:
-> On 2020-02-05, Sergey Senozhatsky <sergey.senozhatsky@gmail.com> wrote:
-> > 3BUG: KASAN: wild-memory-access in copy_data+0x129/0x220>
-> > 3Write of size 4 at addr 5a5a5a5a5a5a5a5a by task cat/474>
-> 
-> The problem was due to an uninitialized pointer.
-> 
-> Very recently the ringbuffer API was expanded so that it could
-> optionally count lines in a record. This made it possible for me to
-> implement record_print_text_inline(), which can do all the kmsg_dump
-> multi-line madness without requiring a temporary buffer. Rather than
-> passing an extra argument around for the optional line count, I added
-> the text_line_count pointer to the printk_record struct. And since line
-> counting is rarely needed, it is only performed if text_line_count is
-> non-NULL.
-> 
-> I oversaw that devkmsg_open() setup a printk_record and so I did not see
-> to add the extra NULL initialization of text_line_count. There should be
-> be an initializer function/macro to avoid this danger.
-> 
-> John Ogness
-> 
-> The quick fixup:
-> 
-> diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
-> index d0d24ee1d1f4..5ad67ff60cd9 100644
-> --- a/kernel/printk/printk.c
-> +++ b/kernel/printk/printk.c
-> @@ -883,6 +883,7 @@ static int devkmsg_open(struct inode *inode, struct file *file)
->  	user->record.text_buf_size = sizeof(user->text_buf);
->  	user->record.dict_buf = &user->dict_buf[0];
->  	user->record.dict_buf_size = sizeof(user->dict_buf);
-> +	user->record.text_line_count = NULL;
-
-The NULL pointer hidden in the structure also complicates the code
-reading. It is less obvious when the same function is called
-only to get the size/count and when real data.
-
-I played with it and created extra function to get this information.
-
-In addition, I had problems to follow the code in
-record_print_text_inline(). So I tried to reuse the new function
-and the existing record_printk_text() there.
-
-Please, find below a patch that I ended with. I booted a system
-with this patch. But I guess that I actually did not use the
-record_print_text_inline(). So, it might be buggy.
-
-Anyway, I wonder what you think about it:
-
-From 383e608f41a2f44898e4cd0751c5ccc18c82f71e Mon Sep 17 00:00:00 2001
-From: Petr Mladek <pmladek@suse.com>
-Date: Fri, 14 Feb 2020 16:14:18 +0100
-Subject: [PATCH] printk: Alternative approach for inline dumping
-
-line_count in struct printk_record looks a bit error prone. It causes
-a system crash when people forget to initialize it. It seems better
-to read this information via a separate API, for example,
-prg_read_valid_info().
-
-record_print_text_inline() is really complicated[*]. It is yet
-another variant of the tricky logic used in record_print_text().
-It would be great to actually reuse the existing function.
-
-[*] I know that you created it on my request.
-
-Signed-off-by: Petr Mladek <pmladek@suse.com>
----
- kernel/printk/printk.c            | 134 +++++++++++++-------------------------
- kernel/printk/printk_ringbuffer.c |  55 +++++++++-------
- kernel/printk/printk_ringbuffer.h |   7 +-
- 3 files changed, 84 insertions(+), 112 deletions(-)
-
-diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
-index 5ad67ff60cd9..6b7d6716b178 100644
---- a/kernel/printk/printk.c
-+++ b/kernel/printk/printk.c
-@@ -883,7 +883,6 @@ static int devkmsg_open(struct inode *inode, struct file *file)
- 	user->record.text_buf_size = sizeof(user->text_buf);
- 	user->record.dict_buf = &user->dict_buf[0];
- 	user->record.dict_buf_size = sizeof(user->dict_buf);
--	user->record.text_line_count = NULL;
- 
- 	logbuf_lock_irq();
- 	user->seq = prb_first_seq(prb);
-@@ -1283,87 +1282,50 @@ static size_t record_print_text(const struct printk_record *r, bool syslog,
- 	return len;
- }
- 
--static size_t record_print_text_inline(struct printk_record *r, bool syslog,
--				       bool time)
-+static size_t
-+get_record_text_size(struct printk_info *info, unsigned int line_count,
-+			   bool syslog, bool time)
- {
--	size_t text_len = r->info->text_len;
--	size_t buf_size = r->text_buf_size;
--	char *text = r->text_buf;
--	char prefix[PREFIX_MAX];
--	bool truncated = false;
- 	size_t prefix_len;
--	size_t len = 0;
- 
--	prefix_len = info_print_prefix(r->info, syslog, time, prefix);
--
--	if (!text) {
--		/* SYSLOG_ACTION_* buffer size only calculation */
--		unsigned int line_count = 1;
--
--		if (r->text_line_count)
--			line_count = *(r->text_line_count);
--		/*
--		 * Each line will be preceded with a prefix. The intermediate
--		 * newlines are already within the text, but a final trailing
--		 * newline will be added.
--		 */
--		return ((prefix_len * line_count) + r->info->text_len + 1);
--	}
-+	prefix_len = info_print_prefix(info, syslog, time, NULL);
- 
- 	/*
--	 * Add the prefix for each line by shifting the rest of the text to
--	 * make room for the prefix. If the buffer is not large enough for all
--	 * the prefixes, then drop the trailing text and report the largest
--	 * length that includes full lines with their prefixes.
-+	 * Each line will be preceded with a prefix. The intermediate
-+	 * newlines are already within the text, but a final trailing
-+	 * newline will be added.
- 	 */
--	while (text_len) {
--		size_t line_len;
--		char *next;
--
--		next = memchr(text, '\n', text_len);
--		if (next) {
--			line_len = next - text;
--		} else {
--			/*
--			 * If the text has been truncated, assume this line
--			 * was truncated and do not include this text.
--			 */
--			if (truncated)
--				break;
--			line_len = text_len;
--		}
-+	return ((prefix_len * line_count) + info->text_len + 1);
-+}
- 
--		/*
--		 * Is there enough buffer available to shift this line
--		 * (and add a newline at the end)?
--		 */
--		if (len + prefix_len + line_len >= buf_size)
--			break;
-+static size_t record_print_text_inline(struct printk_record *r, bool syslog,
-+				       bool time)
-+{
-+	size_t text_len = r->info->text_len;
-+	size_t text_buf_size = r->text_buf_size;
-+	struct printk_info *info = r->info;
-+	size_t record_len;
-+	char *text = r->text_buf;
-+	char *text_moved;
-+	unsigned int line_count;
-+	size_t len = 0;
- 
--		/*
--		 * Is there enough buffer available to shift all remaining
--		 * text (and add a newline at the end)?
--		 */
--		if (len + prefix_len + text_len >= buf_size) {
--			text_len = (buf_size - len) - prefix_len;
--			truncated = true;
--		}
-+	if (!text)
-+		return 0;
- 
--		memmove(text + prefix_len, text, text_len);
--		memcpy(text, prefix, prefix_len);
-+	line_count = prb_count_lines(text, text_len);
-+	record_len = get_record_text_size(info, line_count, syslog, time);
- 
--		text += prefix_len + line_len;
--		text_len -= line_len;
-+	if (text_buf_size < record_len)
-+		return 0;
- 
--		if (text_len) {
--			text_len--;
--			text++;
--		} else {
--			*text = '\n';
--		}
-+	/* Make space for timestamps */
-+	text_moved = text + (record_len - text_len);
-+	memmove(text_moved, text, text_len);
- 
--		len += prefix_len + line_len + 1;
--	}
-+	r->text_buf = text_moved;
-+	len = record_print_text(r, syslog, time, text, text_buf_size);
-+	r->text_buf = text;
- 
- 	return len;
- }
-@@ -3167,13 +3129,15 @@ bool kmsg_dump_get_line_nolock(struct kmsg_dumper *dumper, bool syslog,
- 		goto out;
- 
- 	/* Count text lines instead of reading text? */
--	if (!line)
--		r.text_line_count = &line_count;
--
--	if (!prb_read_valid(prb, dumper->cur_seq, &r))
--		goto out;
--
--	l = record_print_text_inline(&r, syslog, printk_time);
-+	if (!line) {
-+		if (!prb_read_valid_info(prb, dumper->cur_seq, &info, &line_count))
-+			goto out;
-+		l = get_record_text_size(&info, line_count, syslog, printk_time);
-+	} else {
-+		if (!prb_read_valid(prb, dumper->cur_seq, &r))
-+			goto out;
-+		l = record_print_text_inline(&r, syslog, printk_time);
-+	}
- 
- 	dumper->cur_seq = r.info->seq + 1;
- 	ret = true;
-@@ -3241,7 +3205,8 @@ bool kmsg_dump_get_buffer(struct kmsg_dumper *dumper, bool syslog,
- 	/* initially, only count text lines */
- 	struct printk_record r = {
- 		.info = &info,
--		.text_line_count = &line_count,
-+		.text_buf = buf,
-+		.text_buf_size = size,
- 	};
- 	unsigned long flags;
- 	u64 seq;
-@@ -3267,30 +3232,25 @@ bool kmsg_dump_get_buffer(struct kmsg_dumper *dumper, bool syslog,
- 
- 	/* calculate length of entire buffer */
- 	seq = dumper->cur_seq;
--	while (prb_read_valid(prb, seq, &r)) {
-+	while (prb_read_valid_info(prb, seq, &info, &line_count)) {
- 		if (r.info->seq >= dumper->next_seq)
- 			break;
--		l += record_print_text_inline(&r, true, time);
-+		l += get_record_text_size(&info, line_count, true, time);
- 		seq = r.info->seq + 1;
- 	}
- 
- 	/* move first record forward until length fits into the buffer */
- 	seq = dumper->cur_seq;
--	while (l >= size && prb_read_valid(prb, seq, &r)) {
-+	while (l >= size && prb_read_valid_info(prb, seq, &info, &line_count)) {
- 		if (r.info->seq >= dumper->next_seq)
- 			break;
--		l -= record_print_text_inline(&r, true, time);
-+		l -= get_record_text_size(&info, line_count, true, time);
- 		seq = r.info->seq + 1;
- 	}
- 
- 	/* last message in next interation */
- 	next_seq = seq;
- 
--	/* actually read data into the buffer now */
--	r.text_buf = buf;
--	r.text_buf_size = size;
--	r.text_line_count = NULL;
--
- 	l = 0;
- 	while (prb_read_valid(prb, seq, &r)) {
- 		if (r.info->seq >= dumper->next_seq)
-diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
-index 796257f226ee..69976a49f828 100644
---- a/kernel/printk/printk_ringbuffer.c
-+++ b/kernel/printk/printk_ringbuffer.c
-@@ -893,7 +893,6 @@ bool prb_reserve(struct prb_reserved_entry *e, struct printk_ringbuffer *rb,
- 		r->dict_buf_size = 0;
- 
- 	r->info = &d->info;
--	r->text_line_count = NULL;
- 
- 	/* Set default values for the sizes. */
- 	d->info.text_len = r->text_buf_size;
-@@ -1002,6 +1001,21 @@ static char *get_data(struct prb_data_ring *data_ring,
- 	return &db->data[0];
- }
- 
-+unsigned long prb_count_lines(char *text, unsigned int text_size)
-+{
-+	unsigned int line_count;
-+	char *next;
-+
-+	line_count = 1;
-+	while ((next = memchr(text, '\n', text_size)) != NULL) {
-+		text_size -= (next - text);
-+		text = next;
-+		line_count++;
-+	}
-+
-+	return line_count;
-+}
-+
- /*
-  * Given @blk_lpos, copy an expected @len of data into the provided buffer.
-  * If @line_count is provided, count the number of lines in the data.
-@@ -1034,21 +1048,8 @@ static bool copy_data(struct prb_data_ring *data_ring,
- 	}
- 
- 	/* Caller interested in the line count? */
--	if (line_count) {
--		unsigned long next_size = data_size;
--		char *next = data;
--
--		*line_count = 0;
--
--		while (next_size) {
--			(*line_count)++;
--			next = memchr(next, '\n', next_size);
--			if (!next)
--				break;
--			next++;
--			next_size = data_size - (next - data);
--		}
--	}
-+	if (line_count)
-+		*line_count = prb_count_lines(data, data_size);
- 
- 	/* Caller interested in the data content? */
- 	if (!buf || !buf_size)
-@@ -1094,7 +1095,7 @@ static int desc_read_committed(struct prb_desc_ring *desc_ring,
-  * See desc_read_committed() for error return values.
-  */
- static int prb_read(struct printk_ringbuffer *rb, u64 seq,
--		    struct printk_record *r)
-+		    struct printk_record *r, unsigned int *line_count)
- {
- 	struct prb_desc_ring *desc_ring = &rb->desc_ring;
- 	struct prb_desc *rdesc = to_desc(desc_ring, seq);
-@@ -1121,7 +1122,7 @@ static int prb_read(struct printk_ringbuffer *rb, u64 seq,
- 	/* Copy text data. If it fails, this is a data-less descriptor. */
- 	if (!copy_data(&rb->text_data_ring, &desc.text_blk_lpos,
- 		       desc.info.text_len, r->text_buf, r->text_buf_size,
--		       r->text_line_count)) {
-+		       line_count)) {
- 		return -ENOENT;
- 	}
- 
-@@ -1212,12 +1213,12 @@ EXPORT_SYMBOL(prb_first_seq);
-  * See the description of prb_read_valid() for details.
-  */
- bool _prb_read_valid(struct printk_ringbuffer *rb, u64 *seq,
--		     struct printk_record *r)
-+		     struct printk_record *r, unsigned int *line_count)
- {
- 	u64 tail_seq;
- 	int err;
- 
--	while ((err = prb_read(rb, *seq, r))) {
-+	while ((err = prb_read(rb, *seq, r, line_count))) {
- 		tail_seq = prb_first_seq(rb);
- 
- 		if (*seq < tail_seq) {
-@@ -1264,10 +1265,20 @@ bool _prb_read_valid(struct printk_ringbuffer *rb, u64 *seq,
- bool prb_read_valid(struct printk_ringbuffer *rb, u64 seq,
- 		    struct printk_record *r)
- {
--	return _prb_read_valid(rb, &seq, r);
-+	return _prb_read_valid(rb, &seq, r, NULL);
- }
- EXPORT_SYMBOL(prb_read_valid);
- 
-+bool prb_read_valid_info(struct printk_ringbuffer *rb, u64 seq,
-+			 struct printk_info *info, unsigned int *line_count)
-+{
-+	struct printk_record r = {
-+		.info = info,
-+	};
-+
-+	return _prb_read_valid(rb, &seq, &r, line_count);
-+}
-+
- /**
-  * prb_next_seq() - Get the sequence number after the last available record.
-  *
-@@ -1287,7 +1298,7 @@ u64 prb_next_seq(struct printk_ringbuffer *rb)
- 
- 	do {
- 		/* Search forward from the oldest descriptor. */
--		if (!_prb_read_valid(rb, &seq, NULL))
-+		if (!_prb_read_valid(rb, &seq, NULL, NULL))
- 			return seq;
- 		seq++;
- 	} while (seq);
-diff --git a/kernel/printk/printk_ringbuffer.h b/kernel/printk/printk_ringbuffer.h
-index 4dc428427e7f..005b000fdb5b 100644
---- a/kernel/printk/printk_ringbuffer.h
-+++ b/kernel/printk/printk_ringbuffer.h
-@@ -28,8 +28,6 @@ struct printk_info {
-  * the reader provides the @info, @text_buf, @dict_buf buffers. On success,
-  * the struct pointed to by @info will be filled and the char arrays pointed
-  * to by @text_buf and @dict_buf will be filled with text and dict data.
-- * If @text_line_count is provided, the number of lines in @text_buf will
-- * be counted.
-  */
- struct printk_record {
- 	struct printk_info	*info;
-@@ -37,7 +35,6 @@ struct printk_record {
- 	char			*dict_buf;
- 	unsigned int		text_buf_size;
- 	unsigned int		dict_buf_size;
--	unsigned int		*text_line_count;
- };
- 
- /* Specifies the position/span of a data block. */
-@@ -288,6 +285,8 @@ struct printk_record name = {				\
- 	.dict_buf_size	= buf_size,			\
- }
- 
-+unsigned long prb_count_lines(char *text, unsigned int text_size);
-+
- /* Writer Interface */
- 
- bool prb_reserve(struct prb_reserved_entry *e, struct printk_ringbuffer *rb,
-@@ -304,6 +303,8 @@ unsigned int prb_record_text_space(struct prb_reserved_entry *e);
- 
- bool prb_read_valid(struct printk_ringbuffer *rb, u64 seq,
- 		    struct printk_record *r);
-+bool prb_read_valid_info(struct printk_ringbuffer *rb, u64 seq,
-+			 struct printk_info *info, unsigned int *line_count);
- 
- u64 prb_first_seq(struct printk_ringbuffer *rb);
- u64 prb_next_seq(struct printk_ringbuffer *rb);
--- 
-2.16.4
-
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+5ZyoIDIwMjDlubQwMuaciDE05pelIDIxOjUwLCBKb2huIE9nbmVzcyDlhpnpgZM6Cj4gSGkgTGlh
+bmJvLAo+IAo+IE9uIDIwMjAtMDItMTQsIGxpamlhbmcgPGxpamlhbmdAcmVkaGF0LmNvbT4gd3Jv
+dGU6Cj4+PiBkaWZmIC0tZ2l0IGEva2VybmVsL3ByaW50ay9wcmludGsuYyBiL2tlcm5lbC9wcmlu
+dGsvcHJpbnRrLmMKPj4+IGluZGV4IDFlZjZmNzVkOTJmMS4uZDBkMjRlZTFkMWY0IDEwMDY0NAo+
+Pj4gLS0tIGEva2VybmVsL3ByaW50ay9wcmludGsuYwo+Pj4gKysrIGIva2VybmVsL3ByaW50ay9w
+cmludGsuYwo+Pj4gQEAgLTEwNjIsMjEgKzkyOCwxNiBAQCB2b2lkIGxvZ19idWZfdm1jb3JlaW5m
+b19zZXR1cCh2b2lkKQo+Pj4gIHsKPj4+ICAJVk1DT1JFSU5GT19TWU1CT0wobG9nX2J1Zik7Cj4+
+PiAgCVZNQ09SRUlORk9fU1lNQk9MKGxvZ19idWZfbGVuKTsKPj4KPj4gSSBub3RpY2UgdGhhdCB0
+aGUgInByYiIocHJpbnRrIHRiIHN0YXRpYykgc3ltYm9sIGlzIG5vdCBleHBvcnRlZCBpbnRvCj4+
+IHZtY29yZWluZm8gYXMgZm9sbG93czoKPj4KPj4gKwlWTUNPUkVJTkZPX1NZTUJPTChwcmIpOwo+
+Pgo+PiBTaG91bGQgdGhlICJwcmIiKHByaW50ayB0YiBzdGF0aWMpIHN5bWJvbCBiZSBleHBvcnRl
+ZCBpbnRvIHZtY29yZWluZm8/Cj4+IE90aGVyd2lzZSwgZG8geW91IGhhcHBlbiB0byBrbm93IGhv
+dyB0byB3YWxrIHRocm91Z2ggdGhlIGxvZ19idWYgYW5kCj4+IGdldCBhbGwga2VybmVsIGxvZ3Mg
+ZnJvbSB2bWNvcmU/Cj4gCj4gWW91IGFyZSBjb3JyZWN0LiBUaGlzIHdpbGwgbmVlZCB0byBiZSBl
+eHBvcnRlZCBhcyB3ZWxsIHNvIHRoYXQgdGhlCj4gZGVzY3JpcHRvcnMgY2FuIGJlIGFjY2Vzc2Vk
+LiAobG9nX2J1ZiBpcyBvbmx5IHRoZSBwdXJlIGh1bWFuLXJlYWRhYmxlCgpSZWFsbHkgYWdyZWUs
+IGFuZCBJIGd1ZXNzIHRoYXQgdGhlcmUgbWF5IGJlIG1vcmUgc3RydWN0dXJlcyBhbmQgdGhlaXIg
+b2Zmc2V0cwp0byBiZSBleHBvcnRlZCwgZm9yIGV4YW1wbGU6IHN0cnVjdCBwcmJfZGVzY19yaW5n
+LCBzdHJ1Y3QgcHJiX2RhdGFfcmluZywgYW5kCnN0cnVjdCBwcmJfZGVzYywgZXRjLgoKVGhpcyBt
+YWtlcyBzdXJlIHRoYXQgdG9vbHMoc3VjaCBhcyBtYWtlZHVtcGZpbGUgYW5kIGNyYXNoKSBjYW4g
+YXBwcm9wcmlhdGVseQphY2Nlc3MgdGhlbS4gCgo+IHRleHQuKSBJIGFtIGN1cnJlbnRseSBoYWNr
+aW5nIHRoZSBjcmFzaCB0b29sIHRvIHNlZSBleGFjdGx5IHdoYXQgbmVlZHMKPiB0byBiZSBtYWRl
+IGF2YWlsYWJsZSBpbiBvcmRlciB0byBhY2Nlc3MgYWxsIHRoZSBkYXRhIG9mIHRoZSByaW5nYnVm
+ZmVyLgo+IApJdCBtYWtlcyBzZW5zZSBhbmQgYXZvaWRzIGV4cG9ydGluZyB1bm5lY2Vzc2FyeSBz
+eW1ib2xzIGFuZCBvZmZzZXRzLgoKVGhhbmtzLgpMaWFuYm8KCgo+IEpvaG4gT2duZXNzCj4gCgoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFp
+bGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
