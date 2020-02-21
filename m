@@ -2,63 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B471678F1
-	for <lists+kexec@lfdr.de>; Fri, 21 Feb 2020 10:06:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E859E167CD3
+	for <lists+kexec@lfdr.de>; Fri, 21 Feb 2020 12:54:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ADbT7+gykoyN8CXoW5UEmwLia2uZ+1Ekj9uqM1cELXU=; b=lpLdyNGRTdUo0i9nX7+BlvZlU
-	bk33/20G7OKlCJ5i/t1HlPd5gi6fsFPhjosqtOZwLukfznvWqOv41d4AaZwYrkRPsCXyTUmUS1TiL
-	nsgTIuCyQ41KgAmOLfmQm3S6dYE8/ogJ6iUKxzLXU4y67f2fy4L2TBe5TLS5S76KCcBrWweN86PqT
-	unKnBaNYuBAuJk+mqFGIQ4A7S+mxE01fb+gTZMouSdsI0oXkPyJngb6iJQ3t8f5B5NsLq9JEoFMbQ
-	fWr6GRMqefpljn4uIJCfVU3QNLj7G/wKo+o2dq6kQ3OtK61c8ROELumD8Rs3XjOHTq32q86vEdFdS
-	SSgRqz/yQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rJqg9b9DiWtUEY72jdwtI55xa0WuuOnvMXSTjnOd7a8=; b=s49voDaaoPvorR
+	Hn6oeya5K4ftrmScGwP2moG5H/h0an0rOObD97CWRHidcG5xXFVzB8df12uXnWIreghQXZayl8Q1n
+	hSLV/Cs45rwDGdt1xI2ex2MdYOW6QlWFv2Nl+IAhHsLgS9HkgAaRDccnGubnHItoR19NXwgnfwpDc
+	VQ/sikxDHfchNJd9VnwMGJeOhajTeCmPV1ekZOHTPqxf+EpBW0sAng7eAnr0X3+I690TC59Mm0+5/
+	4yZ9r8OPXBQAL877NTRRrYiW0OawsSgKHgo2usTO+oB9ctJxIOfBNM4L6zrls0l6E7rw5rexpJ/9w
+	y/kyyvgmu/bpryz+uuzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j54GG-00065r-IY; Fri, 21 Feb 2020 09:06:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j54GD-00064L-9A; Fri, 21 Feb 2020 09:06:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2835A31B;
- Fri, 21 Feb 2020 01:06:09 -0800 (PST)
-Received: from [10.162.16.116] (a075563-lin.blr.arm.com [10.162.16.116])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 233B23F68F;
- Fri, 21 Feb 2020 01:06:04 -0800 (PST)
-Subject: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ in
- vmcoreinfo
-To: Bhupesh Sharma <bhsharma@redhat.com>, Dave Anderson
- <anderson@redhat.com>, James Morse <james.morse@arm.com>
-References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
- <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
- <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
- <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
- <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
- <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
-Date: Fri, 21 Feb 2020 14:36:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1j56t2-0004M7-Fl; Fri, 21 Feb 2020 11:54:28 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j56su-0004LT-AD
+ for kexec@lists.infradead.org; Fri, 21 Feb 2020 11:54:22 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id DC046ACF2;
+ Fri, 21 Feb 2020 11:54:16 +0000 (UTC)
+Date: Fri, 21 Feb 2020 12:54:16 +0100
+From: Petr Mladek <pmladek@suse.com>
+To: John Ogness <john.ogness@linutronix.de>
+Subject: more barriers: Re: [PATCH 1/2] printk: add lockless buffer
+Message-ID: <20200221115416.wo6ovakxt2c7hgkc@pathway.suse.cz>
+References: <20200128161948.8524-1-john.ogness@linutronix.de>
+ <20200128161948.8524-2-john.ogness@linutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200128161948.8524-2-john.ogness@linutronix.de>
+User-Agent: NeoMutt/20170912 (1.9.0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200221_010613_410218_64E99157 
-X-CRM114-Status: GOOD (  29.27  )
+X-CRM114-CacheID: sfid-20200221_035420_646943_6A4956A3 
+X-CRM114-Status: GOOD (  39.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,107 +64,521 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Andrea Parri <parri.andrea@gmail.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-SGkgQmh1cGVzaCwKCk9uIDEvMTMvMjAgNTo0NCBQTSwgQmh1cGVzaCBTaGFybWEgd3JvdGU6Cj4g
-SGkgSmFtZXMsCj4gCj4gT24gMDEvMTEvMjAyMCAxMjozMCBBTSwgRGF2ZSBBbmRlcnNvbiB3cm90
-ZToKPj4KPj4gLS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLQo+Pj4gSGkgQmh1cGVzaCwKPj4+
-Cj4+PiBPbiAyNS8xMi8yMDE5IDE5OjAxLCBCaHVwZXNoIFNoYXJtYSB3cm90ZToKPj4+PiBPbiAx
-Mi8xMi8yMDE5IDA0OjAyIFBNLCBKYW1lcyBNb3JzZSB3cm90ZToKPj4+Pj4gT24gMjkvMTEvMjAx
-OSAxOTo1OSwgQmh1cGVzaCBTaGFybWEgd3JvdGU6Cj4+Pj4+PiB2YWJpdHNfYWN0dWFsIHZhcmlh
-YmxlIG9uIGFybTY0IGluZGljYXRlcyB0aGUgYWN0dWFsIFZBIHNwYWNlIHNpemUsCj4+Pj4+PiBh
-bmQgYWxsb3dzIGEgc2luZ2xlIGJpbmFyeSB0byBzdXBwb3J0IGJvdGggNDgtYml0IGFuZCA1Mi1i
-aXQgVkEKPj4+Pj4+IHNwYWNlcy4KPj4+Pj4+Cj4+Pj4+PiBJZiB0aGUgQVJNdjguMi1MVkEgb3B0
-aW9uYWwgZmVhdHVyZSBpcyBwcmVzZW50LCBhbmQgd2UgYXJlIHJ1bm5pbmcKPj4+Pj4+IHdpdGgg
-YSA2NEtCIHBhZ2Ugc2l6ZTsgdGhlbiBpdCBpcyBwb3NzaWJsZSB0byB1c2UgNTItYml0cyBvZiBh
-ZGRyZXNzCj4+Pj4+PiBzcGFjZSBmb3IgYm90aCB1c2Vyc3BhY2UgYW5kIGtlcm5lbCBhZGRyZXNz
-ZXMuIEhvd2V2ZXIsIGFueSBrZXJuZWwKPj4+Pj4+IGJpbmFyeSB0aGF0IHN1cHBvcnRzIDUyLWJp
-dCBtdXN0IGFsc28gYmUgYWJsZSB0byBmYWxsIGJhY2sgdG8gNDgtYml0Cj4+Pj4+PiBhdCBlYXJs
-eSBib290IHRpbWUgaWYgdGhlIGhhcmR3YXJlIGZlYXR1cmUgaXMgbm90IHByZXNlbnQuCj4+Pj4+
-Pgo+Pj4+Pj4gU2luY2UgVENSX0VMMS5UMVNaIGluZGljYXRlcyB0aGUgc2l6ZSBvZmZzZXQgb2Yg
-dGhlIG1lbW9yeSByZWdpb24KPj4+Pj4+IGFkZHJlc3NlZCBieSBUVEJSMV9FTDEgKGFuZCBoZW5j
-ZSBjYW4gYmUgdXNlZCBmb3IgZGV0ZXJtaW5pbmcgdGhlCj4+Pj4+PiB2YWJpdHNfYWN0dWFsIHZh
-bHVlKSBpdCBtYWtlcyBtb3JlIHNlbnNlIHRvIGV4cG9ydCB0aGUgc2FtZSBpbgo+Pj4+Pj4gdm1j
-b3JlaW5mbyByYXRoZXIgdGhhbiB2YWJpdHNfYWN0dWFsIHZhcmlhYmxlLCBhcyB0aGUgbmFtZSBv
-ZiB0aGUKPj4+Pj4+IHZhcmlhYmxlIGNhbiBjaGFuZ2UgaW4gZnV0dXJlIGtlcm5lbCB2ZXJzaW9u
-cywgYnV0IHRoZSBhcmNoaXRlY3R1cmFsCj4+Pj4+PiBjb25zdHJ1Y3RzIGxpa2UgVENSX0VMMS5U
-MVNaIGNhbiBiZSB1c2VkIGJldHRlciB0byBpbmRpY2F0ZSBpbnRlbmRlZAo+Pj4+Pj4gc3BlY2lm
-aWMgZmllbGRzIHRvIHVzZXItc3BhY2UuCj4+Pj4+Pgo+Pj4+Pj4gVXNlci1zcGFjZSB1dGlsaXRp
-ZXMgbGlrZSBtYWtlZHVtcGZpbGUgYW5kIGNyYXNoLXV0aWxpdHksIG5lZWQgdG8KPj4+Pj4+IHJl
-YWQvd3JpdGUgdGhpcyB2YWx1ZSBmcm9tL3RvIHZtY29yZWluZm8KPj4+Pj4KPj4+Pj4gKHdyaXRl
-PykKPj4+Pgo+Pj4+IFllcywgYWxzbyB3cml0ZSBzbyB0aGF0IHRoZSB2bWNvcmVpbmZvIGZyb20g
-YW4gKGNyYXNoaW5nKSBhcm02NCAKPj4+PiBzeXN0ZW0gY2FuCj4+Pj4gYmUgdXNlZCBmb3IKPj4+
-PiBhbmFseXNpcyBvZiB0aGUgcm9vdC1jYXVzZSBvZiBwYW5pYy9jcmFzaCBvbiBzYXkgYW4geDg2
-XzY0IGhvc3QgdXNpbmcKPj4+PiB1dGlsaXRpZXMgbGlrZQo+Pj4+IGNyYXNoLXV0aWxpdHkvZ2Ri
-Lgo+Pj4KPj4+IEkgcmVhZCB0aGlzIGFzIGFzICJVc2VyLXNwYWNlIFsuLi5dIG5lZWRzIHRvIHdy
-aXRlIHRvIHZtY29yZWluZm8iLgo+IAo+IFRoYXQncyBjb3JyZWN0LiBCdXQgZm9yIHdyaXRpbmcg
-dG8gdm1jb3JlIGR1bXAgaW4gdGhlIGtkdW1wIGtlcm5lbCwgd2UgCj4gbmVlZCB0byByZWFkIHRo
-ZSBzeW1ib2xzIGZyb20gdGhlIHZtY29yZWluZm8gaW4gdGhlIHByaW1hcnkga2VybmVsLgo+IAo+
-Pj4+Pj4gZm9yIGRldGVybWluaW5nIGlmIGEgdmlydHVhbCBhZGRyZXNzIGxpZXMgaW4gdGhlIGxp
-bmVhciBtYXAgcmFuZ2UuCj4+Pj4+Cj4+Pj4+IEkgdGhpbmsgdGhpcyBpcyBhIGZyYWdpbGUgZXhh
-bXBsZS4gVGhlIGRlYnVnZ2VyIHNob3VsZG4ndCBuZWVkIHRvIGtub3cKPj4+Pj4gdGhpcy4KPj4+
-Pgo+Pj4+IFdlbGwgdGhhdCB0aGUgY3VycmVudCB1c2VyLXNwYWNlIHV0aWxpdHkgZGVzaWduLCBz
-byBJIGFtIG5vdCBzdXJlIHdlIAo+Pj4+IGNhbgo+Pj4+IHR3ZWFrIHRoYXQgdG9vIG11Y2guCj4+
-Pj4KPj4+Pj4+IFRoZSB1c2VyLXNwYWNlIGNvbXB1dGF0aW9uIGZvciBkZXRlcm1pbmluZyB3aGV0
-aGVyIGFuIGFkZHJlc3MgbGllcyBpbgo+Pj4+Pj4gdGhlIGxpbmVhciBtYXAgcmFuZ2UgaXMgdGhl
-IHNhbWUgYXMgd2UgaGF2ZSBpbiBrZXJuZWwtc3BhY2U6Cj4+Pj4+Pgo+Pj4+Pj4gwqDCoMKgICNk
-ZWZpbmUgX19pc19sbV9hZGRyZXNzKGFkZHIpwqDCoMKgICghKCgodTY0KWFkZHIpICYgCj4+Pj4+
-PiBCSVQodmFiaXRzX2FjdHVhbCAtCj4+Pj4+PiDCoMKgwqAgMSkpKQo+Pj4+Pgo+Pj4+PiBUaGlz
-IHdhcyBjaGFuZ2VkIHdpdGggMTRjMTI3Yzk1N2MxICgiYXJtNjQ6IG1tOiBGbGlwIGtlcm5lbCBW
-QSAKPj4+Pj4gc3BhY2UiKS4gSWYKPj4+Pj4gdXNlci1zcGFjZQo+Pj4+PiB0b29scyByZWx5IG9u
-ICdrbm93aW5nJyB0aGUga2VybmVsIG1lbW9yeSBsYXlvdXQsIHRoZXkgbXVzdCBoYXZlIHRvCj4+
-Pj4+IGNvbnN0YW50bHkgYmUgZml4ZWQKPj4+Pj4gYW5kIHVwZGF0ZWQuIFRoaXMgaXMgYSBwb29y
-IGFyZ3VtZW50IGZvciBhZGRpbmcgdGhpcyB0byBzb21ldGhpbmcgdGhhdAo+Pj4+PiBlbmRzIHVw
-IGFzIEFCSS4KPj4+Pgo+Pj4+IFNlZSBhYm92ZS4gVGhlIHVzZXItc3BhY2UgaGFzIHRvIHJlbHkg
-b24gc29tZSBBQkkvZ3VhcmFudGVlZAo+Pj4+IGhhcmR3YXJlLXN5bWJvbHMgd2hpY2ggY2FuIGJl
-Cj4+Pj4gdXNlZCBmb3IgJ2RldGVybWluaW5nJyB0aGUga2VybmVsIG1lbW9yeSBsYXlvdXQuCj4+
-Pgo+Pj4gSSBkaXNhZ3JlZS4gRXZlcnl0aGluZyBhbmQgYW55dGhpbmcgaW4gdGhlIGtlcm5lbCB3
-aWxsIGNoYW5nZS4gVGhlIAo+Pj4gQUJJIHJ1bGVzIGFwcGx5IHRvCj4+PiBzdHVmZiBleHBvc2Vk
-IHZpYSBzeXNjYWxscyBhbmQga2VybmVsIGZpbGVzeXN0ZW1zLiBJdCBkb2VzIG5vdCBhcHBseSAK
-Pj4+IHRvIGtlcm5lbCBpbnRlcm5hbHMsCj4+PiBsaWtlIHRoZSBtZW1vcnkgbGF5b3V0IHdlIHVz
-ZWQgeWVzdGVyZGF5LiAxNGMxMjdjOTU3YzEgaXMgYSBjYXNlIGluIAo+Pj4gcG9pbnQuCj4+Pgo+
-Pj4gQSBkZWJ1Z2dlciB0cnlpbmcgdG8gcmVseSBvbiB0aGlzIHNvcnQgb2YgdGhpbmcgd291bGQg
-aGF2ZSB0byBwbGF5IAo+Pj4gY2F0Y2h1cCB3aGVuZXZlciBpdAo+Pj4gY2hhbmdlcy4KPj4KPj4g
-RXhhY3RseS7CoCBUaGF0J3MgdGhlIHdob2xlIHBvaW50Lgo+Pgo+PiBUaGUgY3Jhc2ggdXRpbGl0
-eSBhbmQgbWFrZWR1bXBmaWxlIGFyZSBub3QgaW4gdGhlIHNhbWUgbGVhZ3VlIGFzIG90aGVyIAo+
-PiB1c2VyLXNwYWNlIHRvb2xzLgo+PiBUaGV5IGhhdmUgYWx3YXlzIGhhZCB0byAicGxheSBjYXRj
-aHVwIiBwcmVjaXNlbHkgYmVjYXVzZSB0aGV5IGRlcGVuZCAKPj4gdXBvbiBrZXJuZWwgaW50ZXJu
-YWxzLAo+PiB3aGljaCBjb25zdGFudGx5IGNoYW5nZS4KPiAKPiBJIGFncmVlIHdpdGggeW91IGFu
-ZCBEYXZlQSBoZXJlLiBTb2Z0d2FyZSB1c2VyLXNwYWNlIGRlYnVnZ2VycyBhcmUgCj4gZGVwZW5k
-ZW50IG9uIGtlcm5lbCBpbnRlcm5hbHMgKHdoaWNoIGNhbiBjaGFuZ2UgZnJvbSB0aW1lLXRvLXRp
-bWUpIGFuZCAKPiB3aWxsIGhhdmUgdG8gcGxheSBjYXRjaC11cCAod2hpY2ggaGFzIGJlZW4gdGhl
-IGNhc2Ugc2luY2UgdGhlIHZlcnkgc3RhcnQpLgo+IAo+IFVuZm9ydHVuYXRlbHkgd2UgZG9uJ3Qg
-aGF2ZSBhbnkgY2xlYXIgQUJJIGZvciBzb2Z0d2FyZSBkZWJ1Z2dpbmcgdG9vbHMgLSAKPiBtYXkg
-YmUgc29tZXRoaW5nIHRvIGxvb2sgZm9yIGluIGZ1dHVyZS4KPiAKPiBBIGNhc2UgaW4gcG9pbnQg
-aXMgZ2RiL2tnZGIsIHdoaWNoIHN0aWxsIG5lZWRzIHRvIHJ1biB3aXRoIEtBU0xSIAo+IHR1cm5l
-ZC1vZmYgKG5va2FzbHIpIGZvciBkZWJ1Z2dpbmcsIGFzIGl0IGNvbmZ1c2VzIGdkYiB3aGljaCBy
-ZXNvbHZlIAo+IGtlcm5lbCBzeW1ib2wgYWRkcmVzcyBmcm9tIHN5bWJvbCB0YWJsZSBvZiB2bWxp
-bnV4LiBCdXQgd2UgY2FuIAo+IHdvcmstYXJvdW5kIHRoZSBzYW1lIGluIG1ha2VkdW1wZmlsZS9j
-cmFzaCBieSByZWFkaW5nIHRoZSAna2FzbHJfb2Zmc2V0JyAKPiB2YWx1ZS4gQW5kIEkgaGF2ZSBz
-ZXZlcmFsIHVzZXJzIHRlbGxpbmcgbWUgbm93IHRoZXkgY2Fubm90IHVzZSBnZGIgb24gCj4gS0FT
-TFIgZW5hYmxlZCBrZXJuZWwgdG8gZGVidWcgcGFuaWNzLCBidXQgY2FuIG1ha2VkdW1wZmlsZSAr
-IGNyYXNoIAo+IGNvbWJpbmF0aW9uIHRvIGFjaGlldmUgdGhlIHNhbWUuCj4gCj4gU28sIHdlIHNo
-b3VsZCBiZSBsb29raW5nIHRvIGZpeCB0aGVzZSB1dGlsaXRpZXMgd2hpY2ggYXJlIGJyb2tlbiBz
-aW5jZSAKPiB0aGUgNTItYml0IGNoYW5nZXMgZm9yIGFybTY0LiBBY2NvcmRpbmdseSwgSSB3aWxs
-IHRyeSB0byBzZW5kIHRoZSB2Ngo+IHNvb24gd2hpbGUgaW5jb3Jwb3JhdGluZyB0aGUgY29tbWVu
-dHMgcG9zdGVkIG9uIHRoZSB2NS4KCkFueSB1cGRhdGUgb24gdGhlIG5leHQgdjYgdmVyc2lvbi4g
-U2luY2UgdGhpcyBwYXRjaCBzZXJpZXMgaXMgZml4aW5nIHRoZSAKY3VycmVudCBicm9rZW4ga2R1
-bXAgc28gbmVlZCB0aGlzIHNlcmllcyB0byBhZGQgc29tZSBtb3JlIGZpZWxkcyBpbiAKdm1jb3Jl
-aW5mbyBmb3IgUG9pbnRlciBBdXRoZW50aWNhdGlvbiB3b3JrLgoKVGhhbmtzLApBbWl0IERhbmll
-bAo+IAo+IFRoYW5rcywKPiBCaHVwZXNoCj4gCj4gCj4gCj4gCj4gCj4gX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGlu
-ZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
+Hi,
+
+the new full barrier in desc_reserve() made me to think more about
+the existing ones.
+
+If I get it correctly, the used cmpxchg_relaxed() variants does
+not provide full barriers. They are just able to prevent parallel
+manipulation of the modified variable.
+
+Because of this, I think that we need some more barriers to synchronize
+reads and writes of the tail/head values of the three ring buffers.
+See below for more details.
+
+It is possible that some of the barriers are superfluous because
+some read barriers are hidden in desc_read(). But I think that
+barriers are sometimes needed even before the first read or
+after the last read in desc_read().
+
+
+On Tue 2020-01-28 17:25:47, John Ogness wrote:
+> Introduce a multi-reader multi-writer lockless ringbuffer for storing
+> the kernel log messages. Readers and writers may use their API from
+> any context (including scheduler and NMI). This ringbuffer will make
+> it possible to decouple printk() callers from any context, locking,
+> or console constraints. It also makes it possible for readers to have
+> full access to the ringbuffer contents at any time and context (for
+> example from any panic situation).
+> 
+> diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
+> new file mode 100644
+> index 000000000000..796257f226ee
+> --- /dev/null
+> +++ b/kernel/printk/printk_ringbuffer.c
+> +/*
+> + * Take a given descriptor out of the committed state by attempting
+> + * the transition from committed to reusable. Either this task or some
+> + * other task will have been successful.
+> + */
+> +static void desc_make_reusable(struct prb_desc_ring *desc_ring,
+> +			       unsigned long id)
+> +{
+> +	struct prb_desc *desc = to_desc(desc_ring, id);
+> +	atomic_long_t *state_var = &desc->state_var;
+> +	unsigned long val_committed = id | DESC_COMMITTED_MASK;
+> +	unsigned long val_reusable = val_committed | DESC_REUSE_MASK;
+> +
+> +	atomic_long_cmpxchg_relaxed(state_var, val_committed,
+> val_reusable);
+
+IMHO, we should add smp_wmb() here to make sure that the reusable
+state is written before we shuffle the desc_ring->tail_id/head_id.
+
+It would pair with the read part of smp_mb() in desc_reserve()
+before the extra check if the descriptor is really in reusable state.
+
+
+> +}
+> +
+> +/*
+> + * For a given data ring (text or dict) and its current tail lpos:
+> + * for each data block up until @lpos, make the associated descriptor
+> + * reusable.
+> + *
+> + * If there is any problem making the associated descriptor reusable,
+> + * either the descriptor has not yet been committed or another writer
+> + * task has already pushed the tail lpos past the problematic data
+> + * block. Regardless, on error the caller can re-load the tail lpos
+> + * to determine the situation.
+> + */
+> +static bool data_make_reusable(struct printk_ringbuffer *rb,
+> +			       struct prb_data_ring *data_ring,
+> +			       unsigned long tail_lpos, unsigned long lpos,
+> +			       unsigned long *lpos_out)
+> +{
+> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
+> +	struct prb_data_blk_lpos *blk_lpos;
+> +	struct prb_data_block *blk;
+> +	enum desc_state d_state;
+> +	struct prb_desc desc;
+> +	unsigned long id;
+> +
+> +	/*
+> +	 * Using the provided @data_ring, point @blk_lpos to the correct
+> +	 * blk_lpos within the local copy of the descriptor.
+> +	 */
+> +	if (data_ring == &rb->text_data_ring)
+> +		blk_lpos = &desc.text_blk_lpos;
+> +	else
+> +		blk_lpos = &desc.dict_blk_lpos;
+> +
+> +	/* Loop until @tail_lpos has advanced to or beyond @lpos. */
+> +	while ((lpos - tail_lpos) - 1 < DATA_SIZE(data_ring)) {
+> +		blk = to_block(data_ring, tail_lpos);
+
+IMHO, we need smp_rmb() here to make sure that we read blk->id
+that we written after pushing the tail_lpos.
+
+It would pair with the write barrier in data_alloc() before
+before writing blk->id. It is there after updating head_lpos.
+But head_lpos could be updated only after updating tail_lpos.
+See the comment in data_alloc() below.
+
+> +		id = READ_ONCE(blk->id);
+
+
+> +
+> +		d_state = desc_read(desc_ring, id,
+> +				    &desc); /* LMM(data_make_reusable:A) */
+> +
+> +		switch (d_state) {
+> +		case desc_miss:
+> +			return false;
+> +		case desc_reserved:
+> +			return false;
+> +		case desc_committed:
+> +			/*
+> +			 * This data block is invalid if the descriptor
+> +			 * does not point back to it.
+> +			 */
+> +			if (blk_lpos->begin != tail_lpos)
+> +				return false;
+> +			desc_make_reusable(desc_ring, id);
+> +			break;
+> +		case desc_reusable:
+> +			/*
+> +			 * This data block is invalid if the descriptor
+> +			 * does not point back to it.
+> +			 */
+> +			if (blk_lpos->begin != tail_lpos)
+> +				return false;
+> +			break;
+> +		}
+> +
+> +		/* Advance @tail_lpos to the next data block. */
+> +		tail_lpos = blk_lpos->next;
+> +	}
+> +
+> +	*lpos_out = tail_lpos;
+> +
+> +	return true;
+> +}
+> +
+> +/*
+> + * Advance the data ring tail to at least @lpos. This function puts all
+> + * descriptors into the reusable state if the tail will be pushed beyond
+> + * their associated data block.
+> + */
+> +static bool data_push_tail(struct printk_ringbuffer *rb,
+> +			   struct prb_data_ring *data_ring,
+> +			   unsigned long lpos)
+> +{
+> +	unsigned long tail_lpos;
+> +	unsigned long next_lpos;
+> +
+> +	/* If @lpos is not valid, there is nothing to do. */
+> +	if (lpos == INVALID_LPOS)
+> +		return true;
+> +
+> +	tail_lpos = atomic_long_read(&data_ring->tail_lpos);
+> +
+> +	do {
+> +		/* If @lpos is no longer valid, there is nothing to do. */
+> +		if (lpos - tail_lpos >= DATA_SIZE(data_ring))
+> +			break;
+> +
+> +		/*
+> +		 * Make all descriptors reusable that are associated with
+> +		 * data blocks before @lpos.
+> +		 */
+> +		if (!data_make_reusable(rb, data_ring, tail_lpos, lpos,
+> +					&next_lpos)) {
+> +			/*
+> +			 * data_make_reusable() performed state loads. Make
+> +			 * sure they are loaded before reloading the tail lpos
+> +			 * in order to see a new tail in the case that the
+> +			 * descriptor has been recycled. This pairs with
+> +			 * desc_reserve:A.
+> +			 */
+> +			smp_rmb(); /* LMM(data_push_tail:A) */
+> +
+> +			/*
+> +			 * Reload the tail lpos.
+> +			 *
+> +			 * Memory barrier involvement:
+> +			 *
+> +			 * No possibility of missing a recycled descriptor.
+> +			 * If data_make_reusable:A reads from desc_reserve:B,
+> +			 * then data_push_tail:B reads from desc_push_tail:A.
+> +			 *
+> +			 * Relies on:
+> +			 *
+> +			 * MB from desc_push_tail:A to desc_reserve:B
+> +			 *    matching
+> +			 * RMB from data_make_reusable:A to data_push_tail:B
+> +			 */
+> +			next_lpos = atomic_long_read(&data_ring->tail_lpos
+> +						); /* LMM(data_push_tail:B) */
+> +			if (next_lpos == tail_lpos)
+> +				return false;
+> +
+> +			/* Another task pushed the tail. Try again. */
+> +			tail_lpos = next_lpos;
+> +		}
+> +	} while (!atomic_long_try_cmpxchg_relaxed(&data_ring->tail_lpos,
+> +			&tail_lpos, next_lpos)); /* can be relaxed? */
+
+IMHO, we need smp_wmb() here so that others see the updated
+data_ring->tail_lpos before this thread allocates the space
+by pushing head_pos.
+
+It would be paired with a read barrier in data_alloc() between
+reading head_lpos and tail_lpos, see below.
+
+> +
+> +	return true;
+> +}
+> +
+> +/*
+> + * Advance the desc ring tail. This function advances the tail by one
+> + * descriptor, thus invalidating the oldest descriptor. Before advancing
+> + * the tail, the tail descriptor is made reusable and all data blocks up to
+> + * and including the descriptor's data block are invalidated (i.e. the data
+> + * ring tail is pushed past the data block of the descriptor being made
+> + * reusable).
+> + */
+> +static bool desc_push_tail(struct printk_ringbuffer *rb,
+> +			   unsigned long tail_id)
+> +{
+> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
+> +	enum desc_state d_state;
+> +	struct prb_desc desc;
+> +
+> +	d_state = desc_read(desc_ring, tail_id, &desc);
+> +
+> +	switch (d_state) {
+> +	case desc_miss:
+> +		/*
+> +		 * If the ID is exactly 1 wrap behind the expected, it is
+> +		 * in the process of being reserved by another writer and
+> +		 * must be considered reserved.
+> +		 */
+> +		if (DESC_ID(atomic_long_read(&desc.state_var)) ==
+> +		    DESC_ID_PREV_WRAP(desc_ring, tail_id)) {
+> +			return false;
+> +		}
+> +		return true;
+> +	case desc_reserved:
+> +		return false;
+> +	case desc_committed:
+> +		desc_make_reusable(desc_ring, tail_id);
+> +		break;
+> +	case desc_reusable:
+> +		break;
+> +	}
+> +
+> +	/*
+> +	 * Data blocks must be invalidated before their associated
+> +	 * descriptor can be made available for recycling. Invalidating
+> +	 * them later is not possible because there is no way to trust
+> +	 * data blocks once their associated descriptor is gone.
+> +	 */
+> +
+> +	if (!data_push_tail(rb, &rb->text_data_ring, desc.text_blk_lpos.next))
+> +		return false;
+> +	if (!data_push_tail(rb, &rb->dict_data_ring, desc.dict_blk_lpos.next))
+> +		return false;
+> +
+> +	/* The data ring tail(s) were pushed: LMM(desc_push_tail:A) */
+> +
+> +	/*
+> +	 * Check the next descriptor after @tail_id before pushing the tail to
+> +	 * it because the tail must always be in a committed or reusable
+> +	 * state. The implementation of prb_first_seq() relies on this.
+> +	 *
+> +	 * A successful read implies that the next descriptor is less than or
+> +	 * equal to @head_id so there is no risk of pushing the tail past the
+> +	 * head.
+> +	 */
+> +	d_state = desc_read(desc_ring, DESC_ID(tail_id + 1),
+> +			    &desc); /* LMM(desc_push_tail:B) */
+> +	if (d_state == desc_committed || d_state == desc_reusable) {
+> +		atomic_long_cmpxchg_relaxed(&desc_ring->tail_id, tail_id,
+> +			DESC_ID(tail_id + 1)); /* LMM(desc_push_tail:C) */
+
+IMHO, we need smp_wmb() here so that everyone see updated
+desc_ring->tail_id before we push the head as well.
+
+It would pair with read barrier in desc_reserve() between reading
+tail_id and head_id.
+
+> +	} else {
+> +		/*
+> +		 * Guarantee the last state load from desc_read() is before
+> +		 * reloading @tail_id in order to see a new tail in the case
+> +		 * that the descriptor has been recycled. This pairs with
+> +		 * desc_reserve:A.
+> +		 */
+> +		smp_rmb(); /* LMM(desc_push_tail:D) */
+> +
+> +		/*
+> +		 * Re-check the tail ID. The descriptor following @tail_id is
+> +		 * not in an allowed tail state. But if the tail has since
+> +		 * been moved by another task, then it does not matter.
+> +		 *
+> +		 * Memory barrier involvement:
+> +		 *
+> +		 * No possibility of missing a pushed tail.
+> +		 * If desc_push_tail:B reads from desc_reserve:B, then
+> +		 * desc_push_tail:E reads from desc_push_tail:C.
+> +		 *
+> +		 * Relies on:
+> +		 *
+> +		 * MB from desc_push_tail:C to desc_reserve:B
+> +		 *    matching
+> +		 * RMB from desc_push_tail:B to desc_push_tail:E
+> +		 */
+> +		if (atomic_long_read(&desc_ring->tail_id) ==
+> +					tail_id) { /* LMM(desc_push_tail:E) */
+> +			return false;
+> +		}
+> +	}
+> +
+> +	return true;
+> +}
+> +
+> +/* Reserve a new descriptor, invalidating the oldest if necessary. */
+> +static bool desc_reserve(struct printk_ringbuffer *rb, unsigned long *id_out)
+> +{
+> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
+> +	unsigned long prev_state_val;
+> +	unsigned long id_prev_wrap;
+> +	struct prb_desc *desc;
+> +	unsigned long head_id;
+> +	unsigned long id;
+> +
+> +	head_id = atomic_long_read(&desc_ring->head_id);
+> +
+> +	do {
+> +		desc = to_desc(desc_ring, head_id);
+> +
+> +		id = DESC_ID(head_id + 1);
+> +		id_prev_wrap = DESC_ID_PREV_WRAP(desc_ring, id);
+
+IMHO, we need smp_rmb() here to to guarantee reading head_id before
+desc_ring->tail_id.
+
+It would pair with write barrier in desc_push_tail() after updating
+tail_id, see above.
+
+> +
+> +		if (id_prev_wrap == atomic_long_read(&desc_ring->tail_id)) {
+> +			/*
+> +			 * Make space for the new descriptor by
+> +			 * advancing the tail.
+> +			 */
+> +			if (!desc_push_tail(rb, id_prev_wrap))
+> +				return false;
+> +		}
+> +	} while (!atomic_long_try_cmpxchg_relaxed(&desc_ring->head_id,
+> +						  &head_id, id));
+> +
+> +	/*
+> +	 * Guarantee any data ring tail changes are stored before recycling
+> +	 * the descriptor. A full memory barrier is needed since another
+> +	 * task may have pushed the data ring tails. This pairs with
+> +	 * data_push_tail:A.
+> +	 *
+> +	 * Guarantee a new tail ID is stored before recycling the descriptor.
+> +	 * A full memory barrier is needed since another task may have pushed
+> +	 * the tail ID. This pairs with desc_push_tail:D and prb_first_seq:C.
+> +	 */
+> +	smp_mb(); /* LMM(desc_reserve:A) */
+
+I am a bit confused by the full barrier here. The description is not
+clear. All the three tags (data_push_tail:A, desc_push_tail:D and
+prb_first_seq:C) refers read barriers. This would suggest that write
+barrier would be enough here.
+
+OK, this barrier is between writing desc_ring->head_id and
+reading/writing desc->state_var.
+
+A write barrier here would require a code that reads
+desc->state_var before reading head_id, tail_id of desc
+or data rings when they check if the descriptor was
+reused before. It seems that all the mentioned paring
+read barriers are correct. So the above description of
+the write barrier part looks correct.
+
+Now, the question is why the read barrier would be needed
+here. The only reason might be the check of the desc->state_var.
+The pairing write barrier should allow reusing of the descriptor.
+For this, we might need to add a write barrier either into
+prb_commit() or desc_make_reusable() after updating
+the state variable.
+
+We check here if the descriptor is really reusable. So it should
+be enough to add write barrier into desc_make_reusable().
+
+
+> +
+> +	desc = to_desc(desc_ring, id);
+> +
+> +	/* If the descriptor has been recycled, verify the old state val. */
+> +	prev_state_val = atomic_long_read(&desc->state_var);
+> +	if (prev_state_val && prev_state_val != (id_prev_wrap |
+> +						 DESC_COMMITTED_MASK |
+> +						 DESC_REUSE_MASK)) {
+> +		WARN_ON_ONCE(1);
+> +		return false;
+> +	}
+> +
+> +	/* Assign the descriptor a new ID and set its state to reserved. */
+> +	if (!atomic_long_try_cmpxchg_relaxed(&desc->state_var,
+> +			&prev_state_val, id | 0)) { /* LMM(desc_reserve:B) */
+> +		WARN_ON_ONCE(1);
+> +		return false;
+> +	}
+> +
+> +	/*
+> +	 * Guarantee the new descriptor ID and state is stored before making
+> +	 * any other changes. This pairs with desc_read:D.
+> +	 */
+> +	smp_wmb(); /* LMM(desc_reserve:C) */
+> +
+> +	/* Now data in @desc can be modified: LMM(desc_reserve:D) */
+> +
+> +	*id_out = id;
+> +	return true;
+> +}
+> +
+> +/*
+> + * Allocate a new data block, invalidating the oldest data block(s)
+> + * if necessary. This function also associates the data block with
+> + * a specified descriptor.
+> + */
+> +static char *data_alloc(struct printk_ringbuffer *rb,
+> +			struct prb_data_ring *data_ring, unsigned long size,
+> +			struct prb_data_blk_lpos *blk_lpos, unsigned long id)
+> +{
+> +	struct prb_data_block *blk;
+> +	unsigned long begin_lpos;
+> +	unsigned long next_lpos;
+> +
+> +	if (!data_ring->data || size == 0) {
+> +		/* Specify a data-less block. */
+> +		blk_lpos->begin = INVALID_LPOS;
+> +		blk_lpos->next = INVALID_LPOS;
+> +		return NULL;
+> +	}
+> +
+> +	size = to_blk_size(size);
+> +
+> +	begin_lpos = atomic_long_read(&data_ring->head_lpos);
+> +
+> +	do {
+> +		next_lpos = get_next_lpos(data_ring, begin_lpos, size);
+> +
+
+IMHO, we need smp_rmb() here to read begin_lpos before we read
+tail_lpos in data_push_tail()
+
+It would pair with a write barrier in data_push_tail() after
+updating data_ring->tail_lpos.
+
+> +		if (!data_push_tail(rb, data_ring,
+> +				    next_lpos - DATA_SIZE(data_ring))) {
+> +			/* Failed to allocate, specify a data-less block. */
+> +			blk_lpos->begin = INVALID_LPOS;
+> +			blk_lpos->next = INVALID_LPOS;
+> +			return NULL;
+> +		}
+> +	} while (!atomic_long_try_cmpxchg_relaxed(&data_ring->head_lpos,
+> +						  &begin_lpos, next_lpos));
+> +
+
+IMHO, we need smp_wmb() here to guarantee that others see the updated
+data_ring->head_lpos before we write anything into the data buffer.
+
+It would pair with a read barrier in data_make_reusable
+between reading tail_lpos and blk->id in data_make_reusable().
+
+
+> +	blk = to_block(data_ring, begin_lpos);
+> +	blk->id = id;
+> +
+> +	if (DATA_WRAPS(data_ring, begin_lpos) !=
+> +	    DATA_WRAPS(data_ring, next_lpos)) {
+> +		/* Wrapping data blocks store their data at the beginning. */
+> +		blk = to_block(data_ring, 0);
+> +		blk->id = id;
+> +	}
+> +
+> +	blk_lpos->begin = begin_lpos;
+> +	blk_lpos->next = next_lpos;
+> +
+> +	return &blk->data[0];
+> +}
+
+Best Regards,
+Petr
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
