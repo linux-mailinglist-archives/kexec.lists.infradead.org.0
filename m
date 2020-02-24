@@ -2,98 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCD5B16A9FE
-	for <lists+kexec@lfdr.de>; Mon, 24 Feb 2020 16:25:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBD7416AD79
+	for <lists+kexec@lfdr.de>; Mon, 24 Feb 2020 18:30:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8rAFeVw8nsc+P7fysMfMMePO84VlvthitXLt5kuepEE=; b=a3tjEQQRfqSrrh
-	zvbl7UpldbQr7VyypydB1USMXD3YXv4Z9DI+R5GDIdn+wcgN10dvNzJ1tVDKRFDztzbE5oJS7jS43
-	wiz8M0LrlmbujmzbgelOH/HKiFH19R82csW6nzZirKbMawU3CpzMX0dEP5jv7hLArzYe1DMHWlV9i
-	pjsCL9Wsh/HkJfOc14u74tBiSl+IsZQ4StZ84vKBSP1BgltphoIrNxh1ioUm5F6zyDeSfXPQjOeaL
-	gngnu0FCdzRAC4oo8uUj83Hc8Ddoak1XinLgjm2M0Ymj9HREW1pP+QgUVuNlV0P2DyDiqKkBvhspX
-	v13s5Gqcz/6qGzZzsIJA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2WpZA3aj1hYQzcqFS35xrIdUdD0XvHfO3BY8Rxw9cLg=; b=MiOJbkjZ6FmXOe
+	ApXccuTG0WUH9zSBEGNoRyPkxcb+xT8wxVl2NkWCjE6eVePCJ008S2DGPlpd69YCbh7PY0drsDLFT
+	i/kL7QRA6o7550Nia5KC9Kb+4JJJeQV8xD7WZdLDs7eXSr28hEiVlpOmym8Yg40+vsSfPegZELByU
+	LKWQBcpErolhmJ438wBMLKQ35B1nN5FTEIpslceR5k7TDS3GvMqFs51C8RUHs9EsgMNGqkP3GIGxk
+	RfHryI5x5EjDAoSBotF9hL/wK5+zJ6vT42IDPuz9deQZP1U7JLLzLkspyc9WpsUuj3jHaMEbp0B2O
+	/IlIV8LtK58YwZOE9/jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j6Fc9-0007kD-Ph; Mon, 24 Feb 2020 15:25:45 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1j6HZE-00043X-Ir; Mon, 24 Feb 2020 17:30:52 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j6Fc5-0007jD-SP; Mon, 24 Feb 2020 15:25:43 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01OFIwwK031537;
- Mon, 24 Feb 2020 15:25:21 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2020-01-29; bh=fx8T9PWqiKhA8Xj+J1BpIcgR6man23w92s+Rx+tkFg4=;
- b=zzE+6LMZmRR77C0iy5mnsXvBSQx1M9JdXOad7AMTC+576RwvCtLMgjQdeiZG1xVDhbj0
- US+FhHA/ZxqOhzORTO0F8Ormxzk/qOxX32aPbIYPeTGZav9tLh734lUPlI0Wi3E0maXW
- EYwFzhxToa/cKBhGjVSfFymR6ZlduHRrGor3+5OX2rL09mQmzU7regW+36MaS5++zaMz
- vzLPGf75u1IcR9jOP7YuHLKxN9NPMAvZuBxHf3zMjGCy0s6+GtORfOdXXxF8RDo31SeL
- 53MVo5rGGvEFRpzZoBzmoJwUrNUgKYJwt8cQL0V9vM7KRiF3GaPm01MQgv+tuSy0gIxg KQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 2yavxrfykw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 24 Feb 2020 15:25:20 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01OFIOgP041025;
- Mon, 24 Feb 2020 15:25:20 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 2ybe11frf5-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 24 Feb 2020 15:25:20 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 01OFPDcv023765;
- Mon, 24 Feb 2020 15:25:13 GMT
-Received: from [10.39.217.189] (/10.39.217.189)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 24 Feb 2020 07:25:13 -0800
-Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
-Subject: Re: [PATCH v7 1/4] x86: kdump: move reserve_crashkernel_low() into
- crash_core.c
-From: John Donnelly <john.p.donnelly@oracle.com>
-In-Reply-To: <08C19FFB-C6FC-4BB7-A1C2-67CE6B99D2AB@oracle.com>
-Date: Mon, 24 Feb 2020 09:25:09 -0600
-Message-Id: <73F5F438-0B79-418D-8AA7-B1164D10AA24@oracle.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-2-chenzhou10@huawei.com>
- <20191227055458.GA14893@dhcp-128-65.nay.redhat.com>
- <09d42854-461b-e85c-ba3f-0e1173dc95b5@huawei.com>
- <20191228093227.GA19720@dhcp-128-65.nay.redhat.com>
- <77c971a4-608f-ee35-40cb-77186a2ddbd1@arm.com>
- <08C19FFB-C6FC-4BB7-A1C2-67CE6B99D2AB@oracle.com>
-To: James Morse <james.morse@arm.com>
-X-Mailer: Apple Mail (2.3445.9.1)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
- spamscore=0
- suspectscore=0 malwarescore=0 phishscore=0 bulkscore=0 mlxscore=0
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002240125
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9541
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 impostorscore=0
- lowpriorityscore=0
- spamscore=0 clxscore=1011 suspectscore=0 bulkscore=0 mlxlogscore=999
- malwarescore=0 phishscore=0 adultscore=0 priorityscore=1501 mlxscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
- definitions=main-2002240125
+ id 1j6HZA-00040x-EI
+ for kexec@lists.infradead.org; Mon, 24 Feb 2020 17:30:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582565445;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=FHtSr2FoffKbcmA3UQGCSx6F1iasDABu6m23H9uFA3U=;
+ b=gphnrUYaLgvaYJpdqkA4upQfKf9AIrjwwYr70MIf5Gb0O8c8l1XxqzBm7l6AIEKhTyC7yZ
+ U/Yz07RQcPA20w7FkkeiDnYV8NqrWPxNFzBUp3a4U7WYncJqM3LviJz2IabhzK1+bkg9n1
+ ruZNDGCB18Tps0GCn+0qdH9RcqXs+SA=
+Received: from mail-io1-f72.google.com (mail-io1-f72.google.com
+ [209.85.166.72]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-348-rvnWw2k0PJmDnYKyGQsBjw-1; Mon, 24 Feb 2020 12:30:43 -0500
+X-MC-Unique: rvnWw2k0PJmDnYKyGQsBjw-1
+Received: by mail-io1-f72.google.com with SMTP id i8so16268313ioi.0
+ for <kexec@lists.infradead.org>; Mon, 24 Feb 2020 09:30:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jBUQXvyIT0NRGeVlKfYzxCNd6VTs5c/rTotbnjQlyHg=;
+ b=OsJWpBcARfVt8OjOsiCsf6c3Cd6wqbsI/UvvJf3DPlgxF0M0cEGqamGZp2wlF+ljHp
+ VHSQFIs74Zkha8L+A5a2SV3/PwbFnLZEV764SrRvfUokDnOHXK668jr7AellzwAVIZC9
+ qYN3RdxCBBxBwyetio1SsKOXnzakjaagPBz3B6wnMQCJvoTXX/gsUo2+pIfdgsnKa+Hp
+ 1jQanXE6M9moLPJb6KHU044QVQKF/56umE+L4hiMO7DIqqRoAmI0DqMz6m44z7yS5ILo
+ +Xgx60BaDj8y7JrlICGN32wUzQFAkShYjPyoFO4zMDKf5ROQIjv6P/eHgCSPPdRZm35q
+ NV1Q==
+X-Gm-Message-State: APjAAAU8MEDETeeaBwwaAZRmgqlKU/JNH3GoFh/PqkoonyEBXhu8UeM5
+ zdZzmnw6bB8vSTczc+WVzohflhlBHFSKuvSrwYYDq9XGsP2WDbwilryMi4SNJt0h5cBdIhXtsDr
+ I/UMmCS27/Zje/jURzZUCUina6l9Ag74bu+aD
+X-Received: by 2002:a92:3a95:: with SMTP id i21mr62650039ilf.249.1582565442532; 
+ Mon, 24 Feb 2020 09:30:42 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyqzh9CyJ1U9k2mrY0h0+BdZxlgI3BRos8HplHL7d4dWc2+DjxZb0RyDzWWanrk9NL3aDvaxkGg8UaqFzTR+WU=
+X-Received: by 2002:a92:3a95:: with SMTP id i21mr62649926ilf.249.1582565441513; 
+ Mon, 24 Feb 2020 09:30:41 -0800 (PST)
+MIME-Version: 1.0
+References: <20191225192118.283637-1-kasong@redhat.com>
+ <20200222165631.GA213225@google.com>
+In-Reply-To: <20200222165631.GA213225@google.com>
+From: Kairui Song <kasong@redhat.com>
+Date: Tue, 25 Feb 2020 01:30:30 +0800
+Message-ID: <CACPcB9dv1YPhRmyWvtdt2U4g=XXU7dK4bV4HB1dvCVMTpPFdzA@mail.gmail.com>
+Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
+ kdump kernel
+To: Bjorn Helgaas <helgaas@kernel.org>, Khalid Aziz <khalid@gonehiking.org>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200224_072541_962274_8B37AB86 
-X-CRM114-Status: GOOD (  28.84  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200224_093048_556336_13201152 
+X-CRM114-Status: GOOD (  35.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -114,158 +102,174 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, linux-doc@vger.kernel.org,
- Chen Zhou <chenzhou10@huawei.com>, catalin.marinas@arm.com,
- bhsharma@redhat.com, xiexiuqi@huawei.com, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Dave Young <dyoung@redhat.com>,
- horms@verge.net.au, tglx@linutronix.de, will@kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Myron Stowe <myron.stowe@redhat.com>, Baoquan He <bhe@redhat.com>,
+ linux-pci@vger.kernel.org, kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Randy Wright <rwright@hpe.com>, Jerry Hoemann <jerry.hoemann@hpe.com>,
+ Deepa Dinamani <deepa.kernel@gmail.com>, Dave Young <dyoung@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIEphbiAxNiwgMjAyMCwgYXQgOTo0NyBBTSwgSm9obiBEb25uZWxseSA8am9obi5wLmRv
-bm5lbGx5QG9yYWNsZS5jb20+IHdyb3RlOgo+IAo+IAo+IAo+PiBPbiBKYW4gMTYsIDIwMjAsIGF0
-IDk6MTcgQU0sIEphbWVzIE1vcnNlIDxqYW1lcy5tb3JzZUBhcm0uY29tPiB3cm90ZToKPj4gCj4+
-IEhpIGd1eXMsCj4+IAo+PiBPbiAyOC8xMi8yMDE5IDA5OjMyLCBEYXZlIFlvdW5nIHdyb3RlOgo+
-Pj4gT24gMTIvMjcvMTkgYXQgMDc6MDRwbSwgQ2hlbiBaaG91IHdyb3RlOgo+Pj4+IE9uIDIwMTkv
-MTIvMjcgMTM6NTQsIERhdmUgWW91bmcgd3JvdGU6Cj4+Pj4+IE9uIDEyLzIzLzE5IGF0IDExOjIz
-cG0sIENoZW4gWmhvdSB3cm90ZToKPj4+Pj4+IEluIHByZXBhcmF0aW9uIGZvciBzdXBwb3J0aW5n
-IHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93IGluIGFybTY0IGFzCj4+Pj4+PiB4ODZfNjQgZG9lcywg
-bW92ZSByZXNlcnZlX2NyYXNoa2VybmVsX2xvdygpIGludG8ga2VybmVsL2NyYXNoX2NvcmUuYy4K
-Pj4+Pj4+IAo+Pj4+Pj4gTm90ZSwgaW4gYXJtNjQsIHdlIHJlc2VydmUgbG93IG1lbW9yeSBpZiBh
-bmQgb25seSBpZiBjcmFzaGtlcm5lbD1YLGxvdwo+Pj4+Pj4gaXMgc3BlY2lmaWVkLiBEaWZmZXJl
-bnQgd2l0aCB4ODZfNjQsIGRvbid0IHNldCBsb3cgbWVtb3J5IGF1dG9tYXRpY2FsbHkuCj4+Pj4+
-IAo+Pj4+PiBEbyB5b3UgaGF2ZSBhbnkgcmVhc29uIGZvciB0aGUgZGlmZmVyZW5jZT8gIEknZCBl
-eHBlY3Qgd2UgaGF2ZSBzYW1lCj4+Pj4+IGxvZ2ljIGlmIHBvc3NpYmxlIGFuZCByZW1vdmUgc29t
-ZSBvZiB0aGUgaWZkZWZzLgo+Pj4+IAo+Pj4+IEluIHg4Nl82NCwgaWYgd2UgcmVzZXJ2ZSBjcmFz
-aGtlcm5lbCBhYm92ZSA0RywgdGhlbiB3ZSBjYWxsIHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93KCkK
-Pj4+PiB0byByZXNlcnZlIGxvdyBtZW1vcnkuCj4+Pj4gCj4+Pj4gSW4gYXJtNjQsIHRvIHNpbXBs
-aWZ5LCB3ZSBjYWxsIHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93KCkgYXQgdGhlIGJlZ2lubmluZyBv
-ZiByZXNlcnZlX2NyYXNoa2VybmVsKCkKPj4+PiBhbmQgdGhlbiByZWxheCB0aGUgYXJtNjRfZG1h
-MzJfcGh5c19saW1pdCBpZiByZXNlcnZlX2NyYXNoa2VybmVsX2xvdygpIGFsbG9jYXRlZCBzb21l
-dGhpbmcuCj4+Pj4gSW4gdGhpcyBjYXNlLCBpZiByZXNlcnZlIGNyYXNoa2VybmVsIGJlbG93IDRH
-IHRoZXJlIHdpbGwgYmUgMjU2TSBsb3cgbWVtb3J5IHNldCBhdXRvbWF0aWNhbGx5Cj4+Pj4gYW5k
-IHRoaXMgbmVlZHMgZXh0cmEgY29uc2lkZXJhdGlvbnMuCj4+IAo+Pj4gU29ycnkgdGhhdCBJIGRp
-ZCBub3QgcmVhZCB0aGUgb2xkIHRocmVhZCBkZXRhaWxzIGFuZCB0aG91Z2h0IHRoYXQgaXMKPj4+
-IGFyY2ggZGVwZW5kZW50LiAgQnV0IHJldGhpbmsgYWJvdXQgdGhhdCwgaXQgd291bGQgYmUgYmV0
-dGVyIHRoYXQgd2UgY2FuCj4+PiBoYXZlIHNhbWUgc2VtYW50aWMgYWJvdXQgY3Jhc2hrZXJuZWwg
-cGFyYW1ldGVycyBhY3Jvc3MgYXJjaGVzLiAgSWYgd2UKPj4+IG1ha2UgdGhlbSBkaWZmZXJlbnQg
-dGhlbiBpdCBjYXVzZXMgY29uZnVzaW9uLCBlc3BlY2lhbGx5IGZvcgo+Pj4gZGlzdHJpYnV0aW9u
-cy4KPj4gCj4+IFN1cmVseSBkaXN0cm9zIGFsc28gd2FudCBvbmUgY3Jhc2hrZXJuZWwqIHN0cmlu
-ZyB0aGV5IGNhbiB1c2Ugb24gYWxsIHBsYXRmb3JtcyB3aXRob3V0Cj4+IGhhdmluZyB0byBkZXRl
-Y3QgdGhlIGtlcm5lbCB2ZXJzaW9uLCBwbGF0Zm9ybSBvciBjaGFuZ2VhYmxlIG1lbW9yeSBsYXlv
-dXQuLi4KPj4gCj4+IAo+Pj4gT1RPSCwgSSB0aG91Z2h0IGlmIHdlIHJlc2VydmUgaGlnaCBtZW1v
-cnkgdGhlbiB0aGUgbG93IG1lbW9yeSBzaG91bGQgYmUKPj4+IG5lZWRlZC4gIFRoZXJlIG1pZ2h0
-IGJlIHNvbWUgZXhjZXB0aW9ucywgYnV0IEkgZG8gbm90IGtub3cgdGhlIGV4YWN0Cj4+PiBvbmUs
-Cj4+IAo+Pj4gY2FuIHdlIG1ha2UgdGhlIGJlaGF2aW9yIHNhbWUsIGFuZCBzcGVjaWFsIGNhc2Ug
-dGhvc2Ugc3lzdGVtcyB3aGljaAo+Pj4gZG8gbm90IG5lZWQgbG93IG1lbW9yeSByZXNlcnZhdGlv
-bi4KPj4gCj4+IEl0cyB0cmlja3kgdG8gd29yayBvdXQgd2hpY2ggc3lzdGVtcyBhcmUgdGhlICdu
-b3JtYWwnIG9uZXMuCj4+IAo+PiBXZSBkb24ndCBoYXZlIGEgZml4ZWQgbWVtb3J5IGxheW91dCBm
-b3IgYXJtNjQuIFNvbWUgc3lzdGVtcyBoYXZlIG5vIG1lbW9yeSBiZWxvdyA0Ry4KPj4gT3RoZXJz
-IGhhdmUgbm8gbWVtb3J5IGFib3ZlIDRHLgo+PiAKPj4gQ2hlbiBaaG91J3MgbWFjaGluZSBoYXMg
-c29tZSBtZW1vcnkgYmVsb3cgNEcsIGJ1dCBpdHMgdG9vIHByZWNpb3VzIHRvIHJlc2VydmUgYSBs
-YXJnZQo+PiBjaHVuayBmb3Iga2R1bXAuIFdpdGhvdXQgYW55IG1lbW9yeSBiZWxvdyA0RyBzb21l
-IG9mIHRoZSBkcml2ZXJzIHdvbid0IHdvcmsuCj4+IAo+PiBJIGRvbid0IHNlZSB3aGF0IGRpc3Ry
-b3MgY2FuIHNldCBhcyB0aGVpciBkZWZhdWx0IGZvciBhbGwgcGxhdGZvcm1zIGlmIGhpZ2gvbG93
-IGFyZQo+PiBtdXR1YWxseSBleGNsdXNpdmUgd2l0aCB0aGUgJ2NyYXNoa2VybmVsPScgaW4gdXNl
-IHRvZGF5LiBIb3cgZGlkIHg4NiBuYXZpZ2F0ZSB0aGlzLCAuLi4gb3IKPj4gd2FzIGl0IHNvIGxv
-bmcgYWdvPwo+PiAKPj4gTm8gb25lIGVsc2UgaGFzIHJlcG9ydGVkIGEgcHJvYmxlbSB3aXRoIHRo
-ZSBleGlzdGluZyBwbGFjZW1lbnQgbG9naWMsIGhlbmNlIHRyZWF0aW5nIHRoaXMKPj4gJ2xvdycg
-dGhpbmcgYXMgdGhlICdpbiBhZGRpdGlvbicgc3BlY2lhbCBjYXNlLgo+IAo+IAo+IEhpLAo+IAo+
-IEkgYW0gc2VlaW5nIHNpbWlsYXIgIEFybSBjcmFzaCBkdW1wIGlzc3VlcyAgb24gIDUuNCBrZXJu
-ZWxzICB3aGVyZSB3ZSBuZWVkICByYXRoZXIgbGFyZ2UgYW1vdW50IG9mIGNyYXNoa2VybmVsIG1l
-bW9yeSByZXNlcnZlZCB0aGF0IGlzIG5vdCBhdmFpbGFibGUgYmVsb3cgNEdCICggVGhlIG1heGlt
-dW0gcmVzZXJ2ZWQgc2l6ZSBhcHBlYXJzIHRvIGJlIGFyb3VuZCA3NjhNICkgLiBXaGVuIEkgcGlj
-ayBtZW1vcnkgcmFuZ2UgaGlnaGVyIHRoYW4gNEdCICwgSSBzZWUgIGFkYXB0ZXJzIHRoYXQgZmFp
-bCB0byBpbml0aWFsaXplIDoKPiAKPiAKPiBUaGVyZSBpcyBubyBsb3ctbWVtb3J5ICA8NEcgIG1l
-bW9yeSBmb3IgRE1BIDsgICAgIAo+IAo+IFsgICAxMS41MDY3OTJdIGt3b3JrZXIvMDoxNDogcGFn
-ZSBhbGxvY2F0aW9uIGZhaWx1cmU6IG9yZGVyOjAsIAo+IG1vZGU6MHgxMDQoR0ZQX0RNQTMyfF9f
-R0ZQX1pFUk8pLCBub2RlbWFzaz0obnVsbCksY3B1c2V0PS8sbWVtc19hbGxvd2VkPTAgCj4gWyAg
-IDExLjUxODc5M10gQ1BVOiAwIFBJRDogMTUwIENvbW06IGt3b3JrZXIvMDoxNCBOb3QgdGFpbnRl
-ZCAKPiA1LjQuMC0xOTQ4LjMuZWw4dWVrLmFhcmNoNjQgIzEgCj4gWyAgIDExLjUyNjk1NV0gSGFy
-ZHdhcmUgbmFtZTogVG8gYmUgZmlsbGVkIGJ5IE8uRS5NLiBTYWJlci9TYWJlciwgQklPUyAKPiAw
-QUNLTDAyNSAwMS8xOC8yMDE5IAo+IFsgICAxMS41MzQ5NDhdIFdvcmtxdWV1ZTogZXZlbnRzIHdv
-cmtfZm9yX2NwdV9mbiAKPiBbICAgMTEuNTM5MjkxXSBDYWxsIHRyYWNlOiAKPiBbICAgMTEuNTQx
-NzI3XSAgZHVtcF9iYWNrdHJhY2UrMHgwLzB4MThjIAo+IFsgICAxMS41NDUzNzZdICBzaG93X3N0
-YWNrKzB4MjQvMHgzMCAKPiBbICAgMTEuNTQ4Njc5XSAgZHVtcF9zdGFjaysweGJjLzB4ZTAgCj4g
-WyAgIDExLjU1MTk4Ml0gIHdhcm5fYWxsb2MrMHhmMC8weDE1YyAKPiBbICAgMTEuNTU1MzcwXSAg
-X19hbGxvY19wYWdlc19zbG93cGF0aCsweGI0Yy8weGI4NCAKPiBbICAgMTEuNTU5ODg3XSAgX19h
-bGxvY19wYWdlc19ub2RlbWFzaysweDJkMC8weDMzMCAKPiBbICAgMTEuNTY0NDA1XSAgYWxsb2Nf
-cGFnZXNfY3VycmVudCsweDhjLzB4ZjggCj4gWyAgIDExLjU2ODQ5Nl0gIHR0bV9ib19kZXZpY2Vf
-aW5pdCsweDE4OC8weDIyMCBbdHRtXSAKPiBbICAgMTEuNTczMTg3XSAgZHJtX3ZyYW1fbW1faW5p
-dCsweDU4LzB4ODAgW2RybV92cmFtX2hlbHBlcl0gCj4gWyAgIDExLjU3ODU3Ml0gIGRybV92cmFt
-X2hlbHBlcl9hbGxvY19tbSsweDY0LzB4YjAgW2RybV92cmFtX2hlbHBlcl0gCj4gWyAgIDExLjU4
-NDY1NV0gIGFzdF9tbV9pbml0KzB4MzgvMHg4MCBbYXN0XSAKPiBbICAgMTEuNTg4NTY2XSAgYXN0
-X2RyaXZlcl9sb2FkKzB4NDc0LzB4YTcwIFthc3RdIAo+IFsgICAxMS41OTMwMjldICBkcm1fZGV2
-X3JlZ2lzdGVyKzB4MTQ0LzB4MWM4IFtkcm1dIAo+IFsgICAxMS41OTc1NzNdICBkcm1fZ2V0X3Bj
-aV9kZXYrMHhhNC8weDE2OCBbZHJtXSAKPiBbICAgMTEuNjAxOTE5XSAgYXN0X3BjaV9wcm9iZSsw
-eDhjLzB4OWMgW2FzdF0gCj4gWyAgIDExLjYwNjAwNF0gIGxvY2FsX3BjaV9wcm9iZSsweDQ0LzB4
-OTggCj4gWyAgIDExLjYwOTczOV0gIHdvcmtfZm9yX2NwdV9mbisweDIwLzB4MzAgCj4gWyAgIDEx
-LjYxMzQ3NF0gIHByb2Nlc3Nfb25lX3dvcmsrMHgxYzQvMHg0MWMgCj4gWyAgIDExLjYxNzQ3MF0g
-IHdvcmtlcl90aHJlYWQrMHgxNTAvMHg0YjAgCj4gWyAgIDExLjYyMTIwNl0gIGt0aHJlYWQrMHgx
-MTAvMHgxMTQgCj4gWyAgIDExLjYyNDQyMl0gIHJldF9mcm9tX2ZvcmsrMHgxMC8weDE4IAo+IAo+
-IFRoaXMgZmFpbHVyZSBpcyByZWxhdGVkIHRvIGEgZ3JhcGhpY3MgYWRhcHRlci4gCj4gCj4gVGhl
-IG1vcmUgY29tcGxleCBrZHVtcCBjb25maWd1cmF0aW9ucyB0aGF0IHVzZSBuZXR3b3JraW5nIHN0
-YWNrIHRvIE5GUyBtb3VudCBhIGZpbGVzeXN0ZW0gdG8gZHVtcCB0byAsIG9yIHVzZSBzc2ggdG8g
-Y29weSB0byBhbm90aGVyIG1hY2hpbmUsICByZXF1aXJlIG1vcmUgY3Jhc2hrZXJuZWwgbWVtb3J5
-IHJlc2VydmF0aW9ucyB0aGFuIHBlcmhhcHMgdGhlIOKAnGRlZmF1bHQq4oCdIHNldHRpbmdzIG9m
-ICBhIG1pbmltYWwga2R1bXAgdGhhdCBjcmVhdGVzIGEgbWluaW1hbCAgdm1jb3JlIHRvIGxvY2Fs
-IHN0b3JhZ2UgaW4gIC92YXIvY3Jhc2guIElmIGNyYXNoa2VybmVsIGlzIHRvbyBzbWFsbCBJIGdl
-dCBPdXQgb2YgTWVtb3J5IGlzc3VlcyBhbmQgdGhlIGVudGlyZSB2bWNvcmUgIHByb2Nlc3MgZmFp
-bHMuIAo+IAo+ICggKmRlZmF1bHQga2R1bXAgc2V0dGluZyBJIGFzc3VtZSBhcmUgYSBtaW5pbWFs
-IHZtY29yZSB0byAvdmFyL2NyYXNoIHVzaW5nIHByaW1hcnkgYm9vdCBkZXZpY2Ugd2hlcmUgL3Jv
-b3QgaXMgbG9jYXRlZCAgKSAKPiAKSGkgQ2hlbiwKCgpJIHdhcyBhYmxlIHRvIHVuaXQgdGVzdCB0
-aGVzZSBzZXJpZXMgb2Yga2VybmVsICBwYXRjaGVzICBhcHBsaWVkIHRvIGEgNS40LjE3IHRlc3Qg
-a2VybmVsICBhbG9uZyB3aXRoIHRoZSBrZXhlYyBDTEkgIGNoYW5nZSA6CgowMDAxLWFybTY0LWtk
-dW1wLWFkZC1hbm90aGVyLURULXByb3BlcnR5LXRvLWNyYXNoLWR1bXAta2UucGF0Y2gKCkFwcGxp
-ZWQgdG8gOgoKa2V4ZWMtdG9vbHMtMi4wLjE5LTEyLjAuNC5lbDguc3JjLnJwbQoKQW5kIG9idGFp
-bmVkIGEgdm1jb3JlIHVzaW5nIHRoaXMgY21kbGluZSA6CgpCT09UX0lNQUdFPShoZDYsZ3B0Mikv
-dm1saW51ei01LjQuMTctNC11ZWs2bV9vbDgtanBkb25uZWwrIHJvb3Q9L2Rldi9tYXBwZXIvb2ww
-MS1yb290IHJvIGNyYXNoa2VybmVsPTIwNDhNQDM1RyBjcmFzaGtlcm5lbD0yNTBNLGxvdyByZC5s
-dm0ubHY9b2wwMS9yb290IHJkLmx2bS5sdj1vbDAxL3N3YXAgY29uc29sZT10dHlTNCBsb2dsZXZl
-bD03CgpDYW4geW91IGFkZCA6CgpUZXN0ZWQtYnk6IEpvaG4gRG9ubmVsbHkgPEpvaG4ucC5kb25u
-ZWxseUBvcmFjbGUuY29tPgoKCkhvdyBjYW4gd2UgIGdldCB0aGVzZSBjaGFuZ2VzIGluY2x1ZGVk
-IGludG8gYW4gcmMga2VybmVsIHJlbGVhc2UgID8KClRoYW5rcywKCkpvaG4uCgoKPiAKPiAKPiAK
-Pj4gCj4+IAo+Pj4+IHByZXZpb3VzIGRpc2N1c3NlczoKPj4+PiAJaHR0cHM6Ly91cmxkZWZlbnNl
-LnByb29mcG9pbnQuY29tL3YyL3VybD91PWh0dHBzLTNBX19sa21sLm9yZ19sa21sXzIwMTlfNl81
-XzY3MCZkPUR3SUNBZyZjPVJvUDFZdW1DWENnYVdIdmxaWVI4UFpoOEJ2N3FJck1VQjY1ZWFwSV9K
-bkUmcj10MmZQZzlEODdGN0Q4am0wXzNDRzl5b2lJS2RSZzRxY190aEJ3NGJ6TWhjJm09ak9BdTFE
-VERwb2hzV3N6YWxmVENZeDQ2ZUdGMTlUU1dWTGNoTjV5QlBnayZzPWdTOUJMT2ttajc4bFA1TDdT
-UDZfVkxId3ZQMjQ5dVdLYUUyUjdON3N4Z00mZT0gCj4+Pj4gCWh0dHBzOi8vdXJsZGVmZW5zZS5w
-cm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9fbGttbC5vcmdfbGttbF8yMDE5XzZfMTNf
-MjI5JmQ9RHdJQ0FnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQWmg4QnY3cUlyTVVCNjVlYXBJX0pu
-RSZyPXQyZlBnOUQ4N0Y3RDhqbTBfM0NHOXlvaUlLZFJnNHFjX3RoQnc0YnpNaGMmbT1qT0F1MURU
-RHBvaHNXc3phbGZUQ1l4NDZlR0YxOVRTV1ZMY2hONXlCUGdrJnM9VTFOaXMyOW4zQTdYU0J6RUQ1
-M2ZpRTRNREF2NU5seFlwMVVvcnZ2Qk9PdyZlPSAKPj4+IAo+Pj4gQW5vdGhlciBjb25jZXJuIGZy
-b20gSmFtZXM6Cj4+PiAiCj4+PiBXaXRoIGJvdGggY3Jhc2hrX2xvd19yZXMgYW5kIGNyYXNoa19y
-ZXMsIHdlIGVuZCB1cCB3aXRoIHR3byBlbnRyaWVzIGluIC9wcm9jL2lvbWVtIGNhbGxlZAo+Pj4g
-IkNyYXNoIGtlcm5lbCIuIEJlY2F1c2UgaXRzIHNvcnRlZCBieSBhZGRyZXNzLCBhbmQga2V4ZWMt
-dG9vbHMgc3RvcHMgc2VhcmNoaW5nIHdoZW4gaXQKPj4+IGZpbmQgIkNyYXNoIGtlcm5lbCIsIHlv
-dSBhcmUgYWx3YXlzIGdvaW5nIHRvIGdldCB0aGUga2VybmVsIHBsYWNlZCBpbiB0aGUgbG93ZXIg
-cG9ydGlvbi4KPj4+ICIKPj4+IAo+Pj4gVGhlIGtleGVjLXRvb2xzIGNvZGUgaXMgaXRlcmF0aW5n
-IGFsbCAiQ3Jhc2gga2VybmVsIiByYW5nZXMgYW5kIGFkZCB0aGVtCj4+PiBpbiBhbiBhcnJheS4g
-IEluIFg4NiBjb2RlLCBpdCB1c2VzIHRoZSBoaWdoZXIgcmFuZ2UgdG8gbG9jYXRlIG1lbW9yeS4K
-Pj4gCj4+IFRoZW4gbXkgaHVycmllZCByZWFkaW5nIG9mIHdoYXQgdGhlIHVzZXItc3BhY2UgY29k
-ZSBkb2VzIHdhcyB3cm9uZyEKPj4gCj4+IElmIGtleGVjLXRvb2xzIHBsYWNlcyB0aGUga2VybmVs
-IGluIHRoZSBsb3cgcmVnaW9uLCB0aGVyZSBtYXkgbm90IGJlIGVub3VnaCBtZW1vcnkgbGVmdAo+
-PiBmb3Igd2hhdGV2ZXIgcHVycG9zZSBpdCB3YXMgcmVzZXJ2ZWQgZm9yLiBUaGlzIHdhcyB0aGUg
-bW90aXZhdGlvbiBmb3IgZ2l2aW5nIGl0IGEKPj4gZGlmZmVyZW50IG5hbWUuCj4+IAo+PiAKPj4g
-VGhhbmtzLAo+PiAKPj4gSmFtZXMKPj4gCj4+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCj4+IGtleGVjIG1haWxpbmcgbGlzdAo+PiBrZXhlY0BsaXN0cy5p
-bmZyYWRlYWQub3JnCj4+IGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/
-dT1odHRwLTNBX19saXN0cy5pbmZyYWRlYWQub3JnX21haWxtYW5fbGlzdGluZm9fa2V4ZWMmZD1E
-d0lDQWcmYz1Sb1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElfSm5FJnI9dDJm
-UGc5RDg3RjdEOGptMF8zQ0c5eW9pSUtkUmc0cWNfdGhCdzRiek1oYyZtPWpPQXUxRFREcG9oc1dz
-emFsZlRDWXg0NmVHRjE5VFNXVkxjaE41eUJQZ2smcz1icXAwMmlRRFBfRXotWHZMSXZqLUlQSHFi
-Ylp3TVBsRGdtRWNHOHZoWEZFJmU9IAo+IAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4ga2V4ZWNAbGlzdHMu
-aW5mcmFkZWFkLm9yZwo+IGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/
-dT1odHRwLTNBX19saXN0cy5pbmZyYWRlYWQub3JnX21haWxtYW5fbGlzdGluZm9fa2V4ZWMmZD1E
-d0lHYVEmYz1Sb1AxWXVtQ1hDZ2FXSHZsWllSOFBaaDhCdjdxSXJNVUI2NWVhcElfSm5FJnI9dDJm
-UGc5RDg3RjdEOGptMF8zQ0c5eW9pSUtkUmc0cWNfdGhCdzRiek1oYyZtPXdobTlfQk9yZ0FqSnZC
-bjBFeV9ickhoRmcyWU1VX1AwSEYwMmRoZ2Rnd1Umcz12TGFyX201SmJpY1l3d3VvNk44NFppQkRH
-WlVQTThiQkxTUExRQnRQWk5ZJmU9IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+Hi,
+
+Thanks for the reply, I don't have any better idea than this RFC patch
+yet. The patch is hold as previous discussion suggests this just work
+around the problem, the real fix should be let crash kernel load every
+required kernel module and reset whichever hardware that is not in a
+good status. However, user may struggle to find out which driver is
+actually needed, and it's not practical to load all drivers in kdump
+kernel. (actually kdump have been trying to load as less driver as
+possible to save memory).
+
+So as Dave Y suggested in another reply, will it better to apply this
+quirk with a kernel param controlling it? If such problem happens, the
+option could be turned on as a fix.
+
+
+On Sun, Feb 23, 2020 at 12:59 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> [+cc Khalid, Deepa, Randy, Dave, Myron]
+>
+> On Thu, Dec 26, 2019 at 03:21:18AM +0800, Kairui Song wrote:
+> > There are reports about kdump hang upon reboot on some HPE machines,
+> > kernel hanged when trying to shutdown a PCIe port, an uncorrectable
+> > error occurred and crashed the system.
+>
+> Did we ever make progress on this?  This definitely sounds like a
+> problem that needs to be fixed, but I don't see a resolution here.
+>
+> > On the machine I can reproduce this issue, part of the topology
+> > looks like this:
+> >
+> > [0000:00]-+-00.0  Intel Corporation Xeon E7 v3/Xeon E5 v3/Core i7 DMI2
+> >           +-01.0-[02]--
+> >           +-01.1-[05]--
+> >           +-02.0-[06]--+-00.0  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.1  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.2  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.3  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.4  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.5  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            +-00.6  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           |            \-00.7  Emulex Corporation OneConnect NIC (Skyhawk)
+> >           +-02.1-[0f]--
+> >           +-02.2-[07]----00.0  Hewlett-Packard Company Smart Array Gen9 Controllers
+> >
+> > When shuting down PCIe port 0000:00:02.2 or 0000:00:02.0, the machine
+> > will hang, depend on which device is reinitialized in kdump kernel.
+> >
+> > If force remove unused device then trigger kdump, the problem will never
+> > happen:
+> >
+> >     echo 1 > /sys/bus/pci/devices/0000\:00\:02.2/0000\:07\:00.0/remove
+> >     echo c > /proc/sysrq-trigger
+> >
+> >     ... Kdump save vmcore through network, the NIC get reinitialized and
+> >     hpsa is untouched. Then reboot with no problem. (If hpsa is used
+> >     instead, shutdown the NIC in first kernel will help)
+> >
+> > The cause is that some devices are enabled by the first kernel, but it
+> > don't have the chance to shutdown the device, and kdump kernel is not
+> > aware of it, unless it reinitialize the device.
+> >
+> > Upon reboot, kdump kernel will skip downstream device shutdown and
+> > clears its bridge's master bit directly. The downstream device could
+> > error out as it can still send requests but upstream refuses it.
+> >
+> > So for kdump, let kernel read the correct hardware power state on boot,
+> > and always clear the bus master bit of PCI device upon shutdown if the
+> > device is on. PCIe port driver will always shutdown all downstream
+> > devices first, so this should ensure all downstream devices have bus
+> > master bit off before clearing the bridge's bus master bit.
+> >
+> > Signed-off-by: Kairui Song <kasong@redhat.com>
+> > ---
+> >  drivers/pci/pci-driver.c | 11 ++++++++---
+> >  drivers/pci/quirks.c     | 20 ++++++++++++++++++++
+> >  2 files changed, 28 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
+> > index 0454ca0e4e3f..84a7fd643b4d 100644
+> > --- a/drivers/pci/pci-driver.c
+> > +++ b/drivers/pci/pci-driver.c
+> > @@ -18,6 +18,7 @@
+> >  #include <linux/kexec.h>
+> >  #include <linux/of_device.h>
+> >  #include <linux/acpi.h>
+> > +#include <linux/crash_dump.h>
+> >  #include "pci.h"
+> >  #include "pcie/portdrv.h"
+> >
+> > @@ -488,10 +489,14 @@ static void pci_device_shutdown(struct device *dev)
+> >        * If this is a kexec reboot, turn off Bus Master bit on the
+> >        * device to tell it to not continue to do DMA. Don't touch
+> >        * devices in D3cold or unknown states.
+> > -      * If it is not a kexec reboot, firmware will hit the PCI
+> > -      * devices with big hammer and stop their DMA any way.
+> > +      * If this is kdump kernel, also turn off Bus Master, the device
+> > +      * could be activated by previous crashed kernel and may block
+> > +      * it's upstream from shutting down.
+> > +      * Else, firmware will hit the PCI devices with big hammer
+> > +      * and stop their DMA any way.
+> >        */
+> > -     if (kexec_in_progress && (pci_dev->current_state <= PCI_D3hot))
+> > +     if ((kexec_in_progress || is_kdump_kernel()) &&
+> > +                     pci_dev->current_state <= PCI_D3hot)
+> >               pci_clear_master(pci_dev);
+> >  }
+> >
+> > diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+> > index 4937a088d7d8..c65d11ab3939 100644
+> > --- a/drivers/pci/quirks.c
+> > +++ b/drivers/pci/quirks.c
+> > @@ -28,6 +28,7 @@
+> >  #include <linux/platform_data/x86/apple.h>
+> >  #include <linux/pm_runtime.h>
+> >  #include <linux/switchtec.h>
+> > +#include <linux/crash_dump.h>
+> >  #include <asm/dma.h> /* isa_dma_bridge_buggy */
+> >  #include "pci.h"
+> >
+> > @@ -192,6 +193,25 @@ static int __init pci_apply_final_quirks(void)
+> >  }
+> >  fs_initcall_sync(pci_apply_final_quirks);
+> >
+> > +/*
+> > + * Read the device state even if it's not enabled. The device could be
+> > + * activated by previous crashed kernel, this will read and correct the
+> > + * cached state.
+> > + */
+> > +static void quirk_read_pm_state_in_kdump(struct pci_dev *dev)
+> > +{
+> > +     u16 pmcsr;
+> > +
+> > +     if (!is_kdump_kernel())
+> > +             return;
+> > +
+> > +     if (dev->pm_cap) {
+> > +             pci_read_config_word(dev, dev->pm_cap + PCI_PM_CTRL, &pmcsr);
+> > +             dev->current_state = (pmcsr & PCI_PM_CTRL_STATE_MASK);
+> > +     }
+> > +}
+> > +DECLARE_PCI_FIXUP_FINAL(PCI_ANY_ID, PCI_ANY_ID, quirk_read_pm_state_in_kdump);
+> > +
+> >  /*
+> >   * Decoding should be disabled for a PCI device during BAR sizing to avoid
+> >   * conflict. But doing so may cause problems on host bridge and perhaps other
+> > --
+> > 2.24.1
+> >
+>
+
+
+--
+Best Regards,
+Kairui Song
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
