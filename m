@@ -2,75 +2,73 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31CDC169EC1
-	for <lists+kexec@lfdr.de>; Mon, 24 Feb 2020 07:48:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 242C5169EF6
+	for <lists+kexec@lfdr.de>; Mon, 24 Feb 2020 08:14:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JbRsluO9oHWu0A7Ynya2g8EL3KqjomwILSysOCcJYH0=; b=gB6KCA8FOu42rd
-	YOYOLifTS87jbQCpEAApBpU445FLHZVDe6hgYJp2z1XTK2FQkmtG2tZgBjdv6vgBpiMGaS/+SxJlv
-	Z99lWBfW1sZF0Exblsq2Ukd7SI6wUCih+BGXgrwK4NiJh8SuZo41yAyWGSbiWGJFMVRt6vK59uh/5
-	BwBaGBkTV9utSuXa3T3T1FF96S/rXz0A5nZwV6zeIEKJGU3sKIwJuw6qCatR5CXy3kkfycL+F99OX
-	wZrzEF692195SFPGKwekoDKEGNydzhZAGB+nnDIpuX0by3fWKu/oKdaNu4c88GG7mxblHoxw0jpsJ
-	qspM6r9HjERkDEgb19qA==;
+	List-Owner; bh=T9AzsVFZAkgHy9ECHmSehRxDvh/mqLJbV2gJx8loSUw=; b=DZZYW0+K3P17mA
+	lzD3MI78ifjv5oUmZQw9VDyIDrekMzT8JQd1Fyx3LlGn3PerWcw3++k7/2F4gdzVpwrn3MQ8wD58h
+	aQDHoPxM2aLeZNekkMK8FM+R2cQLeijAuwXro8Zb8rmO4PXrPcVX5yGv5ELd8sSLyhhCkynxGmqae
+	7RnwwlyqSurPeY5Zo8bSVOoqVEjNbqoYMXgE7ot6OB1kmAWl4PIvTQb13uD1L7yJhVZq4sRHmeK59
+	0AuSmS0F/LS0j/uOBdVyMKKQ2njy68VqbWjsYR54qBxXCOjYDSy1bdnhQlUXBECO6Q7piXrr28gCm
+	10a0YzZ++yq7rrydd2Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j67XW-0004AI-2Z; Mon, 24 Feb 2020 06:48:26 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j67wr-0004FU-FN; Mon, 24 Feb 2020 07:14:37 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j67XL-0003xn-Ee
- for kexec@lists.infradead.org; Mon, 24 Feb 2020 06:48:16 +0000
+ id 1j67wn-0004Ea-Tj
+ for kexec@lists.infradead.org; Mon, 24 Feb 2020 07:14:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582526893;
+ s=mimecast20190719; t=1582528472;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=4MNXC7XzC3cwUmQN/BZIgFto58k1RyylRjckYO05HmI=;
- b=cfNo3vaoken7fRxhqlHBFHtecHC/+yfCO9pqFpuMvYwMuoqwh9e4IXy3OI0Y/Pc07u5bGL
- Dhm/gKUamBmTM0sXeDSub/O5dhXpNN3iC89CnxbIXOzaBU19zl0/H401Go5slaOeEdYggW
- pokUyZ8S6HvErS9upsTnQggB2rbFePs=
+ bh=shbhF5QPWUZF4FXtBT/Y7FxOTeIlf15w2VQZ89Q+vRY=;
+ b=X7+R4mQl29AVktFk7qWOTHB9PEtbr0Fy5pej/WltTS3GwhvM0h55Y2fuwZ2Z9muh4QAFF3
+ Hpw0oC8x/07WPJKTpJt2An4moq8QK4wPTTdVA8J7eceNq+p2XileTGt2GP3T22aPxkrici
+ kaDYHWyKfTT0DyJlEwdfImmTUzqKBYQ=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-403-BMAtBAnMMiOoBUz9jAUjDw-1; Mon, 24 Feb 2020 01:48:11 -0500
-X-MC-Unique: BMAtBAnMMiOoBUz9jAUjDw-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-101-OTADVYNTP1KgIKmAqwLMEg-1; Mon, 24 Feb 2020 02:14:28 -0500
+X-MC-Unique: OTADVYNTP1KgIKmAqwLMEg-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 524AC185735D;
- Mon, 24 Feb 2020 06:48:10 +0000 (UTC)
-Received: from localhost (ovpn-12-84.pek2.redhat.com [10.72.12.84])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 00C5B58;
- Mon, 24 Feb 2020 06:48:06 +0000 (UTC)
-Date: Mon, 24 Feb 2020 14:48:04 +0800
-From: Baoquan He <bhe@redhat.com>
-To: Lianbo Jiang <lijiang@redhat.com>
-Subject: Re: [PATCH v2] kexec: support parsing the string "Reserved" to get
- the correct e820 reserved region
-Message-ID: <20200224064804.GC24216@MiWiFi-R3L-srv>
-References: <20200224063655.9890-1-lijiang@redhat.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DC3CE185734F;
+ Mon, 24 Feb 2020 07:14:26 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-13-44.pek2.redhat.com
+ [10.72.13.44])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 336B15C105;
+ Mon, 24 Feb 2020 07:14:23 +0000 (UTC)
+Date: Mon, 24 Feb 2020 15:14:19 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>
+Subject: Re: [PATCH] x86/kexec: do not reserve kexec setup_data in kexec e820
+ table
+Message-ID: <20200224071419.GA18237@dhcp-128-65.nay.redhat.com>
+References: <20200212110424.GA2938@dhcp-128-65.nay.redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200224063655.9890-1-lijiang@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <20200212110424.GA2938@dhcp-128-65.nay.redhat.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200223_224815_563586_3566F6C4 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20200223_231434_034802_59C95678 
+X-CRM114-Status: GOOD (  14.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,67 +90,52 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: dyoung@redhat.com, bhsharma@redhat.com, horms@verge.net.au,
- kexec@lists.infradead.org
+Cc: x86@kernel.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 02/24/20 at 02:36pm, Lianbo Jiang wrote:
-> When loading kernel and initramfs for kexec, kexec-tools could get the
-> e820 reserved region from "/proc/iomem" in order to rebuild the e820
-> ranges for kexec kernel, but there may be the string "Reserved" in the
-> "/proc/iomem", which caused the failure of parsing. For example:
+On 02/12/20 at 07:04pm, Dave Young wrote:
+> The e820 table for kexec kernel always takes setup_data as reserved.
+> It is reasonable for the setup_data passed by the 1st kernel boot loader,
+> for example SETUP_PCI etc.  But SETUP_EFI is used by kexec itself to
+> enable EFI in 2nd kernel, also kexec setups it every time. Thus it
+> is pointless to reserve kexec prepared setup_data.
 > 
->  #cat /proc/iomem|grep -i reserved
-> 00000000-00000fff : Reserved
-> 7f338000-7f34dfff : Reserved
-> 7f3cd000-8fffffff : Reserved
-> f17f0000-f17f1fff : Reserved
-> fe000000-ffffffff : Reserved
-
-This looks good to me. However, is it investigated why there are two
-different names for reserved e820 regions? Can we unify them with one
-name in kernel, 'Reserved' or 'reserved'?
-
-
+> 1st physical boot: no SETUP_EFI
+> kexec load new kernel and prepare a SETUP_EFI setup_data, then reboot
+>  -> 2nd kernel sees SETUP_EFI, reserves in both e820 and kexec e820
+>     another kexec load prepare a new SETUP_EFI, then reboot
+>     -> 3rd kernel has two SETUP_EFI ranges reserved
+>        -> and so on..
 > 
-> Currently, kexec-tools can not handle the above case because the memcmp()
-> is case sensitive when comparing the string.
+> Thus skip SETUP_EFI while reserving setup_data for kexec kernel.
 > 
-> So, let's fix this corner and make sure that the string "reserved" and
-> "Reserved" in the "/proc/iomem" are both parsed appropriately.
-> 
-> Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+> Signed-off-by: Dave Young <dyoung@redhat.com>
 > ---
-> Note:
-> Please follow up this commit below about kdump fix.
-> 1ac3e4a57000 ("kdump: fix an error that can not parse the e820 reserved region")
+>  arch/x86/kernel/e820.c |    4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> Changes since v1:
-> [1] use strncasecmp() instead of introducing another 'else-if'(
-> suggested by Bhupesh)
-> 
->  kexec/arch/i386/kexec-x86-common.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/kexec/arch/i386/kexec-x86-common.c b/kexec/arch/i386/kexec-x86-common.c
-> index 61ea19380ab2..9303704a0714 100644
-> --- a/kexec/arch/i386/kexec-x86-common.c
-> +++ b/kexec/arch/i386/kexec-x86-common.c
-> @@ -90,7 +90,7 @@ static int get_memory_ranges_proc_iomem(struct memory_range **range, int *ranges
->  		if (memcmp(str, "System RAM\n", 11) == 0) {
->  			type = RANGE_RAM;
->  		}
-> -		else if (memcmp(str, "reserved\n", 9) == 0) {
-> +		else if (strncasecmp(str, "reserved\n", 9) == 0) {
->  			type = RANGE_RESERVED;
->  		}
->  		else if (memcmp(str, "ACPI Tables\n", 12) == 0) {
-> -- 
-> 2.17.1
-> 
+> --- linux-x86.orig/arch/x86/kernel/e820.c
+> +++ linux-x86/arch/x86/kernel/e820.c
+> @@ -999,7 +999,9 @@ void __init e820__reserve_setup_data(voi
+>  	while (pa_data) {
+>  		data = early_memremap(pa_data, sizeof(*data));
+>  		e820__range_update(pa_data, sizeof(*data)+data->len, E820_TYPE_RAM, E820_TYPE_RESERVED_KERN);
+> -		e820__range_update_kexec(pa_data, sizeof(*data)+data->len, E820_TYPE_RAM, E820_TYPE_RESERVED_KERN);
+> +		/* Skip kexec passed setup_data */
+> +		if (data->type != SETUP_EFI)
+> +			e820__range_update_kexec(pa_data, sizeof(*data)+data->len, E820_TYPE_RAM, E820_TYPE_RESERVED_KERN);
+>  
+>  		if (data->type == SETUP_INDIRECT &&
+>  		    ((struct setup_indirect *)data->data)->type != SETUP_INDIRECT) {
+
+Ping, can someone review this? It caused fragmented memory in kexec
+kernel also waste memory.
+
+Thanks
+Dave
 
 
 _______________________________________________
