@@ -2,76 +2,74 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C44811733F8
-	for <lists+kexec@lfdr.de>; Fri, 28 Feb 2020 10:28:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7147B173466
+	for <lists+kexec@lfdr.de>; Fri, 28 Feb 2020 10:44:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A15/ZDAL8S99ijbyv4utOufuSYY+uLGOltMYFxUN+T0=; b=mmlxEFtPyrkSW8
-	pTEq//X7YfaZEnHjH/modazvq/uEqV54vpy3ANqahbDZlQ2kqcUaTm7Tm6eBwkXZI8PlCb32ajnvo
-	XEcmfw11MbU6g9lT+QojS6/1VnE1op8QL4DbWGzlHs4NE+FlzxaekjHaKyFbY9NHV7Uso0EkNw4sv
-	tGGa0kcjNmGw0xYcvzVGCrdti9DLp5Xo3fR1HcnVgToC5lfbBXFBj9avdZaCbbaqKH0HUirJF9DK2
-	7rDByXlZ5MiBX//eBzIzLnaWbtXCD0r08EbY5tZEJa0r5kFZQJUJ7y6aI42C5gXPq+RxM3TrrhCIU
-	luyCgGsKFOXwTfp52Sfw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=NwG7tr8uUEvBf6eRFmUT9o5sLtKN/N4jKHUX0xKZXVc=; b=GtB
+	VfrShI9Fa7OFfUrJpPgpgC4xdHNmUrlOToq6ktOImZDHfCGj6685ic3mWgN/HPsXq4Kr2lTsl0opn
+	eSRzz/2diF5Jp5PnYpz8bCwVuacgwo3KYdQE6yIF3cbYGgRMi/PSRtExYbkR3gnFYPQBoNVPuHhOD
+	RUsXgLSm9JHEDrVkZXjCOGCD904Ah6GmPgTDgTGAjGQOhsRYoXsqjme3/K/jEPGVFpTla2lPGAhxc
+	jcRbCjmxPc4hf7WKLauLpx9v2hulacxLd2z+Oyf92hrz1r2c/AGntD1Pd3/SRgjvaGuDFtBQ8yZ9a
+	+5pEJBc4QPP+GYDZl7lNiAhbnXL0L+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j7bwA-00052q-Iy; Fri, 28 Feb 2020 09:28:02 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1j7cBc-0003jB-Oo; Fri, 28 Feb 2020 09:44:00 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j7bw6-00051l-Ms
- for kexec@lists.infradead.org; Fri, 28 Feb 2020 09:28:00 +0000
-Received: by mail-il1-x141.google.com with SMTP id f5so2157726ilq.5
- for <kexec@lists.infradead.org>; Fri, 28 Feb 2020 01:27:58 -0800 (PST)
+ id 1j7cBZ-0003iK-GA
+ for kexec@lists.infradead.org; Fri, 28 Feb 2020 09:43:58 +0000
+Received: by mail-pl1-x643.google.com with SMTP id p11so1027933plq.10
+ for <kexec@lists.infradead.org>; Fri, 28 Feb 2020 01:43:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Ms6O6aoqXDyCXwxH9N7N5sV8U4w89NRWQpK0LExlfEM=;
- b=FXccaMWnSaG0jMg7H6HCkdbL8p8OOQxMa8SDBhDGVc29je9S4xDCp1C4ZRLKg1d1tl
- 6QmP632uEYwDPb09LYXW8k1MCfHcp9ICIcGF7m3HTNTZeDPpsjtwsaAngsO2s4xMFOpe
- d7ou9XgGt1XvXI9XgXeLSwrCFFmXAyKEXTpB54rI2Q0eXn9uUBYHmgpUnGIzFYN40nxD
- SrkpOBVTziW6pXZreHrM5yLP5sgzYsnCjrsI/X7SMIM8deL6GYlNBB8cWf1PtXo3rLzj
- clJPEgmSkSHdCfvLL3Q9YfwHMc6e3CJsoe4LI7Obu0ZHgrIGARHsPqnnYSVpzC7V56H6
- KV6A==
+ h=from:to:cc:subject:date:message-id;
+ bh=asx2YqYw5XNouMKJdq5b+N+FaYty16Vucm/GxcDSciY=;
+ b=h3aGnd/yeZ0aS+2K8apgjs0ySyOS1EAbHeE9IAv7BfhMDnIcVFy0MXBBGD/L+vpxrt
+ FImHbVDuADBXcfWb3czDfCOHzeyDOrdYeP0xlClEI3Az2ehxYekCk1Q2uYxq8ZbO9lv7
+ GtYtJ4onXUn/duxRiKRQVpyKzbhfhUCuPyvuaQhBVg58ivhglEkWjJObnIkbXCB7jRC/
+ dsAjrrmgeLreW0OZFsc3EqBGbJFJDb0N3cdx816tdND96zCaLuuLFi/sCuk32OxVsX10
+ 8/UQ73jNNZE2AFIRKrDZV4vTqwVyn1rTAK3FcZDZVGQ+9XDJzrbyL/hHwlu7zeLLxAIZ
+ Po6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Ms6O6aoqXDyCXwxH9N7N5sV8U4w89NRWQpK0LExlfEM=;
- b=T72cwG0ptPshz0DChPGuQbj9cl2ZiNcBM2mPdR5W9lrKZ1MYGzGsuQPeOGAbHkpUJq
- AvLN36oNsVWzP9kcNIkzSmnv1Lj3u7ejGrWhf4FWdqh9RYwPDAg00euSMSXe2idVaqb+
- XlpZuY/wM+dw0+LVnRtyBYmNKRB3jPpJ6kemOcl9Z8hUMUfBDrqa4jzF8r+rsMKUq0vd
- VKY/r2rFxxmWaIum/EsMqzVaBXtLJaRllFyL4bpPsd8kSKAQWdz1liBEFDb9qvuwtbo4
- D7bOCM08sYeWDc0VV4rFnk8Zo3r0Gn05ckrbolaafZNe2ZSuL4sBEN1gD4Kn3t9WN/iR
- XT4A==
-X-Gm-Message-State: APjAAAXDm6/M3roN7Oc0/IjMSwUG9VjSomg3KfJGLP19jva3N2vYzxR+
- btZqLj4Vjnr+Ka38WstosgzuzeWQbhB/4TxKrA==
-X-Google-Smtp-Source: APXvYqyeqpzMT3XGLG6oh8NWwZD6oYsyPecjkgVdVHIkrYBvKU+3D2RpCgNbOpDRNL/DWPUIGvcOkKJEkDKzGNeHCRI=
-X-Received: by 2002:a92:d090:: with SMTP id h16mr3732548ilh.78.1582882077652; 
- Fri, 28 Feb 2020 01:27:57 -0800 (PST)
-MIME-Version: 1.0
-References: <1582869192-9284-1-git-send-email-kernelfans@gmail.com>
- <1582869192-9284-3-git-send-email-kernelfans@gmail.com>
- <2a1906b0-6c53-4ff5-78ea-3254f8224fe4@c-s.fr>
-In-Reply-To: <2a1906b0-6c53-4ff5-78ea-3254f8224fe4@c-s.fr>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=asx2YqYw5XNouMKJdq5b+N+FaYty16Vucm/GxcDSciY=;
+ b=rr44NVYp/GFogpn4s13Q/+pvU/TXnIvMYJ7Hy6mZj7Imu9bgYu/lRRy041zBsiFQbC
+ h51z9B79iweGFVGnskBawks8b+I7ZyMEejVPEvwA2cBFCzpzktxqOlDq8stdpFHFw7Go
+ Ck6yJbisQ5TweWxfh3DAVgXyNcjqGAo28P5398a8d/JuwdkF79qM0x8+RmRuJxmIazMn
+ j2VL3aVfMKX/BsF41SgJ1wBbmammtTe0JEm6102AmamKHj1GJJsMMrz9APZoLRVNOKtb
+ Jo9iuJHcH/DbWLnmRujxMBTn8+BRiBFE9qqwUYPbtutaVTzDQi+yQ2J/5rpBlfErOjWn
+ bATg==
+X-Gm-Message-State: APjAAAV21TTa/szYUR1ZMk0RN53Jg61PYxaVgD+gwOhKorBKgacWcGkh
+ 358MAR4W9MDqnUbPrpDvxg==
+X-Google-Smtp-Source: APXvYqx8ON2N5GymWkNxSg+KaUCP5NWnfolIR+I0ipDvVW+yhmgHVWLZ3XcKL2ChoQXSU7YBKypadw==
+X-Received: by 2002:a17:90a:23e5:: with SMTP id
+ g92mr3977541pje.14.1582883036901; 
+ Fri, 28 Feb 2020 01:43:56 -0800 (PST)
+Received: from mylaptop.redhat.com ([209.132.188.80])
+ by smtp.gmail.com with ESMTPSA id j4sm10426460pfh.152.2020.02.28.01.43.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 28 Feb 2020 01:43:56 -0800 (PST)
 From: Pingfan Liu <kernelfans@gmail.com>
-Date: Fri, 28 Feb 2020 17:27:46 +0800
-Message-ID: <CAFgQCTs+zoFOzg5v1dbocSjm3--BMASLSAqSicQdPE6GUy6oGg@mail.gmail.com>
-Subject: Re: [PATCH 3/3] pseries/scm: buffer pmem's bound addr in dt for kexec
- kernel
-To: Christophe Leroy <christophe.leroy@c-s.fr>
+To: linuxppc-dev@lists.ozlabs.org
+Subject: [PATCHv2 1/2] powerpc/of: split out new_property() for reusing
+Date: Fri, 28 Feb 2020 17:41:34 +0800
+Message-Id: <1582882895-3142-1-git-send-email-kernelfans@gmail.com>
+X-Mailer: git-send-email 2.7.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200228_012758_778340_3780D417 
-X-CRM114-Status: GOOD (  22.18  )
+X-CRM114-CacheID: sfid-20200228_014357_563423_2CF44869 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -95,83 +93,138 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- Kexec Mailing List <kexec@lists.infradead.org>,
- Oliver O'Halloran <oohall@gmail.com>, Paul Mackerras <paulus@samba.org>,
- Dan Williams <dan.j.williams@intel.com>, linuxppc-dev@lists.ozlabs.org,
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
+ Andrew Donnellan <ajd@linux.ibm.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, kexec@lists.infradead.org,
+ Pingfan Liu <kernelfans@gmail.com>, Paul Mackerras <paulus@samba.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
+ Oliver O'Halloran <oohall@gmail.com>, Dan Williams <dan.j.williams@intel.com>,
  Hari Bathini <hbathini@linux.ibm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBGZWIgMjgsIDIwMjAgYXQgMjo1MiBQTSBDaHJpc3RvcGhlIExlcm95CjxjaHJpc3Rv
-cGhlLmxlcm95QGMtcy5mcj4gd3JvdGU6Cj4KPgo+Cj4gTGUgMjgvMDIvMjAyMCDDoCAwNjo1Mywg
-UGluZ2ZhbiBMaXUgYSDDqWNyaXQgOgo+ID4gQXQgcHJlc2VudCwgcGxwYXJfaGNhbGwoSF9TQ01f
-QklORF9NRU0sIC4uLikgdGFrZXMgYSB2ZXJ5IGxvbmcgdGltZSwgc28KPiA+IGlmIGR1bXBpbmcg
-dG8gZnNkYXgsIGl0IHdpbGwgdGFrZSBhIHZlcnkgbG9uZyB0aW1lLgo+ID4KPiA+IFRha2UgYSBj
-bG9zZXIgbG9vaywgZHVyaW5nIHRoZSBwYXByX3NjbSBpbml0aWFsaXphdGlvbiwgdGhlIG9ubHkK
-PiA+IGNvbmZpZ3VyYXRpb24gaXMgdGhyb3VnaCBkcmNfcG1lbV9iaW5kKCktPiBwbHBhcl9oY2Fs
-bChIX1NDTV9CSU5EX01FTSwKPiA+IC4uLiksIHdoaWNoIGhlbHBzIHRvIHNldCB1cCB0aGUgYm91
-bmQgYWRkcmVzcy4KPiA+Cj4gPiBPbiBwc2VyaWVzLCBmb3Iga2V4ZWMgLWwvLXAga2VybmVsLCB0
-aGVyZSBpcyBubyByZXNldCBvZiBoYXJkd2FyZSwgYW5kIHRoaXMKPiA+IHN0ZXAgY2FuIGJlIHN0
-ZXBwZWQgYXJvdW5kIHRvIHNhdmUgdGltZXMuICBTbyB0aGUgcG1lbSBib3VuZCBhZGRyZXNzIGNh
-biBiZQo+ID4gcGFzc2VkIHRvIHRoZSAybmQga2VybmVsIHRocm91Z2ggYSBkeW5hbWljIGFkZGVk
-IHByb3BlcnR5ICJib3VuZC1hZGRyIiBpbgo+ID4gZHQgbm9kZSAnaWJtLHBtZW1vcnknLgo+ID4K
-PiA+IFNpZ25lZC1vZmYtYnk6IFBpbmdmYW4gTGl1IDxrZXJuZWxmYW5zQGdtYWlsLmNvbT4KPiA+
-IFRvOiBsaW51eHBwYy1kZXZAbGlzdHMub3psYWJzLm9yZwo+ID4gQ2M6IEJlbmphbWluIEhlcnJl
-bnNjaG1pZHQgPGJlbmhAa2VybmVsLmNyYXNoaW5nLm9yZz4KPiA+IENjOiBQYXVsIE1hY2tlcnJh
-cyA8cGF1bHVzQHNhbWJhLm9yZz4KPiA+IENjOiBNaWNoYWVsIEVsbGVybWFuIDxtcGVAZWxsZXJt
-YW4uaWQuYXU+Cj4gPiBDYzogSGFyaSBCYXRoaW5pIDxoYmF0aGluaUBsaW51eC5pYm0uY29tPgo+
-ID4gQ2M6IEFuZWVzaCBLdW1hciBLLlYgPGFuZWVzaC5rdW1hckBsaW51eC5pYm0uY29tPgo+ID4g
-Q2M6IE9saXZlciBPJ0hhbGxvcmFuIDxvb2hhbGxAZ21haWwuY29tPgo+ID4gQ2M6IERhbiBXaWxs
-aWFtcyA8ZGFuLmoud2lsbGlhbXNAaW50ZWwuY29tPgo+ID4gQ2M6IGtleGVjQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKPiA+IC0tLQo+ID4gbm90ZTogSSBjYW4gbm90IGZpbmQgc3VjaCBhIHBzZXJpZXMg
-bWFjaGluZSwgYW5kIG5vdCBmaW5pc2ggaXQgeWV0Lgo+ID4gLS0tCj4gPiAgIGFyY2gvcG93ZXJw
-Yy9wbGF0Zm9ybXMvcHNlcmllcy9wYXByX3NjbS5jIHwgMzIgKysrKysrKysrKysrKysrKysrKysr
-LS0tLS0tLS0tLQo+ID4gICAxIGZpbGUgY2hhbmdlZCwgMjIgaW5zZXJ0aW9ucygrKSwgMTAgZGVs
-ZXRpb25zKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2FyY2gvcG93ZXJwYy9wbGF0Zm9ybXMvcHNl
-cmllcy9wYXByX3NjbS5jIGIvYXJjaC9wb3dlcnBjL3BsYXRmb3Jtcy9wc2VyaWVzL3BhcHJfc2Nt
-LmMKPiA+IGluZGV4IGMyZWYzMjAuLjU1NWU3NDYgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL3Bvd2Vy
-cGMvcGxhdGZvcm1zL3BzZXJpZXMvcGFwcl9zY20uYwo+ID4gKysrIGIvYXJjaC9wb3dlcnBjL3Bs
-YXRmb3Jtcy9wc2VyaWVzL3BhcHJfc2NtLmMKPiA+IEBAIC0zODIsNyArMzgyLDcgQEAgc3RhdGlj
-IGludCBwYXByX3NjbV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gICB7
-Cj4gPiAgICAgICBzdHJ1Y3QgZGV2aWNlX25vZGUgKmRuID0gcGRldi0+ZGV2Lm9mX25vZGU7Cj4g
-PiAgICAgICB1MzIgZHJjX2luZGV4LCBtZXRhZGF0YV9zaXplOwo+ID4gLSAgICAgdTY0IGJsb2Nr
-cywgYmxvY2tfc2l6ZTsKPiA+ICsgICAgIHU2NCBibG9ja3MsIGJsb2NrX3NpemUsIGJvdW5kX2Fk
-ZHIgPSAwOwo+ID4gICAgICAgc3RydWN0IHBhcHJfc2NtX3ByaXYgKnA7Cj4gPiAgICAgICBjb25z
-dCBjaGFyICp1dWlkX3N0cjsKPiA+ICAgICAgIHU2NCB1dWlkWzJdOwo+ID4gQEAgLTQzOSwxNyAr
-NDM5LDI5IEBAIHN0YXRpYyBpbnQgcGFwcl9zY21fcHJvYmUoc3RydWN0IHBsYXRmb3JtX2Rldmlj
-ZSAqcGRldikKPiA+ICAgICAgIHAtPm1ldGFkYXRhX3NpemUgPSBtZXRhZGF0YV9zaXplOwo+ID4g
-ICAgICAgcC0+cGRldiA9IHBkZXY7Cj4gPgo+ID4gLSAgICAgLyogcmVxdWVzdCB0aGUgaHlwZXJ2
-aXNvciB0byBiaW5kIHRoaXMgcmVnaW9uIHRvIHNvbWV3aGVyZSBpbiBtZW1vcnkgKi8KPiA+IC0g
-ICAgIHJjID0gZHJjX3BtZW1fYmluZChwKTsKPiA+ICsgICAgIG9mX3Byb3BlcnR5X3JlYWRfdTY0
-KGRuLCAiYm91bmQtYWRkciIsICZib3VuZF9hZGRyKTsKPiA+ICsgICAgIGlmIChib3VuZF9hZGRy
-KQo+ID4gKyAgICAgICAgICAgICBwLT5ib3VuZF9hZGRyID0gYm91bmRfYWRkcjsKPiA+ICsgICAg
-IGVsc2Ugewo+Cj4gQWxsIGxlZ3Mgb2YgYW4gaWYvZWxzZSBtdXN0IGhhdmUgeyB9IHdoZW4gb25l
-IGxlZyBuZWVkIHRoZW0sIHNlZSBjb2R5aW5nCj4gc3R5bGUuCk9LLAo+Cj4gPiArICAgICAgICAg
-ICAgIHN0cnVjdCBwcm9wZXJ0eSAqcHJvcGVydHk7Cj4gPiArICAgICAgICAgICAgIHU2NCBiaWc7
-Cj4gPgo+ID4gLSAgICAgLyogSWYgcGh5cCBzYXlzIGRyYyBtZW1vcnkgc3RpbGwgYm91bmQgdGhl
-biBmb3JjZSB1bmJvdW5kIGFuZCByZXRyeSAqLwo+ID4gLSAgICAgaWYgKHJjID09IEhfT1ZFUkxB
-UCkKPiA+IC0gICAgICAgICAgICAgcmMgPSBkcmNfcG1lbV9xdWVyeV9uX2JpbmQocCk7Cj4gPiAr
-ICAgICAgICAgICAgIC8qIHJlcXVlc3QgdGhlIGh5cGVydmlzb3IgdG8gYmluZCB0aGlzIHJlZ2lv
-biB0byBzb21ld2hlcmUgaW4gbWVtb3J5ICovCj4gPiArICAgICAgICAgICAgIHJjID0gZHJjX3Bt
-ZW1fYmluZChwKTsKPiA+Cj4gPiAtICAgICBpZiAocmMgIT0gSF9TVUNDRVNTKSB7Cj4gPiAtICAg
-ICAgICAgICAgIGRldl9lcnIoJnAtPnBkZXYtPmRldiwgImJpbmQgZXJyOiAlZFxuIiwgcmMpOwo+
-ID4gLSAgICAgICAgICAgICByYyA9IC1FTlhJTzsKPiA+IC0gICAgICAgICAgICAgZ290byBlcnI7
-Cj4gPiArICAgICAgICAgICAgIC8qIElmIHBoeXAgc2F5cyBkcmMgbWVtb3J5IHN0aWxsIGJvdW5k
-IHRoZW4gZm9yY2UgdW5ib3VuZCBhbmQgcmV0cnkgKi8KPiA+ICsgICAgICAgICAgICAgaWYgKHJj
-ID09IEhfT1ZFUkxBUCkKPiA+ICsgICAgICAgICAgICAgICAgICAgICByYyA9IGRyY19wbWVtX3F1
-ZXJ5X25fYmluZChwKTsKPiA+ICsKPiA+ICsgICAgICAgICAgICAgaWYgKHJjICE9IEhfU1VDQ0VT
-Uykgewo+ID4gKyAgICAgICAgICAgICAgICAgICAgIGRldl9lcnIoJnAtPnBkZXYtPmRldiwgImJp
-bmQgZXJyOiAlZFxuIiwgcmMpOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgIHJjID0gLUVOWElP
-Owo+ID4gKyAgICAgICAgICAgICAgICAgICAgIGdvdG8gZXJyOwo+ID4gKyAgICAgICAgICAgICB9
-Cj4gPiArICAgICAgICAgICAgIGJpZyA9IGNwdV90b19iZTY0KHAtPmJvdW5kX2FkZHIpOwo+ID4g
-KyAgICAgICAgICAgICBwcm9wZXJ0eSA9IG5ld19wcm9wZXJ0eSgiYm91bmQtYWRkciIsIHNpemVv
-Zih1NjQpLCAmYmlnLAo+ID4gKyAgICAgICAgICAgICAgICAgICAgIE5VTEwpOwo+Cj4gV2h5IHBs
-aXR0aW5nIHRoaXMgbGluZSBpbiB0d28gcGFydHMgPyBZb3UgaGF2ZSBsaW5lcyBmYXIgbG9uZ2Vy
-IGFib3ZlLgo+IEluIHBvd2VycGMgd2UgYWxsb3cgbGluZXMgOTAgY2hhcnMgbG9uZy4KT0ssIGdv
-b2QgdG8ga25vdyBpdC4KClRoYW5rcywKUGluZ2ZhbgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9r
-ZXhlYwo=
+Splitting out new_property() for coming reusing and moving it to
+of_helpers.c.
+
+Also do some coding style cleanup.
+
+Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
+To: linuxppc-dev@lists.ozlabs.org
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+Cc: Paul Mackerras <paulus@samba.org>
+Cc: Michael Ellerman <mpe@ellerman.id.au>
+Cc: Hari Bathini <hbathini@linux.ibm.com>
+Cc: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
+Cc: Oliver O'Halloran <oohall@gmail.com>
+Cc: Dan Williams <dan.j.williams@intel.com>
+Cc: Andrew Donnellan <ajd@linux.ibm.com>
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>
+Cc: kexec@lists.infradead.org
+---
+ arch/powerpc/platforms/pseries/of_helpers.c | 28 ++++++++++++++++++++++++++++
+ arch/powerpc/platforms/pseries/of_helpers.h |  3 +++
+ arch/powerpc/platforms/pseries/reconfig.c   | 26 --------------------------
+ 3 files changed, 31 insertions(+), 26 deletions(-)
+
+diff --git a/arch/powerpc/platforms/pseries/of_helpers.c b/arch/powerpc/platforms/pseries/of_helpers.c
+index 66dfd82..1022e0f 100644
+--- a/arch/powerpc/platforms/pseries/of_helpers.c
++++ b/arch/powerpc/platforms/pseries/of_helpers.c
+@@ -7,6 +7,34 @@
+ 
+ #include "of_helpers.h"
+ 
++struct property *new_property(const char *name, const int length,
++		const unsigned char *value, struct property *last)
++{
++	struct property *new = kzalloc(sizeof(*new), GFP_KERNEL);
++
++	if (!new)
++		return NULL;
++
++	new->name = kstrdup(name, GFP_KERNEL);
++	if (!new->name)
++		goto cleanup;
++	new->value = kmalloc(length + 1, GFP_KERNEL);
++	if (!new->value)
++		goto cleanup;
++
++	memcpy(new->value, value, length);
++	*(((char *)new->value) + length) = 0;
++	new->length = length;
++	new->next = last;
++	return new;
++
++cleanup:
++	kfree(new->name);
++	kfree(new->value);
++	kfree(new);
++	return NULL;
++}
++
+ /**
+  * pseries_of_derive_parent - basically like dirname(1)
+  * @path:  the full_name of a node to be added to the tree
+diff --git a/arch/powerpc/platforms/pseries/of_helpers.h b/arch/powerpc/platforms/pseries/of_helpers.h
+index decad65..34add82 100644
+--- a/arch/powerpc/platforms/pseries/of_helpers.h
++++ b/arch/powerpc/platforms/pseries/of_helpers.h
+@@ -4,6 +4,9 @@
+ 
+ #include <linux/of.h>
+ 
++struct property *new_property(const char *name, const int length,
++		const unsigned char *value, struct property *last);
++
+ struct device_node *pseries_of_derive_parent(const char *path);
+ 
+ #endif /* _PSERIES_OF_HELPERS_H */
+diff --git a/arch/powerpc/platforms/pseries/reconfig.c b/arch/powerpc/platforms/pseries/reconfig.c
+index 7f7369f..8e5a2ba 100644
+--- a/arch/powerpc/platforms/pseries/reconfig.c
++++ b/arch/powerpc/platforms/pseries/reconfig.c
+@@ -165,32 +165,6 @@ static char * parse_next_property(char *buf, char *end, char **name, int *length
+ 	return tmp;
+ }
+ 
+-static struct property *new_property(const char *name, const int length,
+-				     const unsigned char *value, struct property *last)
+-{
+-	struct property *new = kzalloc(sizeof(*new), GFP_KERNEL);
+-
+-	if (!new)
+-		return NULL;
+-
+-	if (!(new->name = kstrdup(name, GFP_KERNEL)))
+-		goto cleanup;
+-	if (!(new->value = kmalloc(length + 1, GFP_KERNEL)))
+-		goto cleanup;
+-
+-	memcpy(new->value, value, length);
+-	*(((char *)new->value) + length) = 0;
+-	new->length = length;
+-	new->next = last;
+-	return new;
+-
+-cleanup:
+-	kfree(new->name);
+-	kfree(new->value);
+-	kfree(new);
+-	return NULL;
+-}
+-
+ static int do_add_node(char *buf, size_t bufsize)
+ {
+ 	char *path, *end, *name;
+-- 
+2.7.5
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
