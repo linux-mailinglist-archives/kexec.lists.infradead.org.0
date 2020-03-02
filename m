@@ -2,99 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9182175534
-	for <lists+kexec@lfdr.de>; Mon,  2 Mar 2020 09:07:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E349B17553C
+	for <lists+kexec@lfdr.de>; Mon,  2 Mar 2020 09:09:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:In-Reply-To:MIME-Version:
-	Date:From:References:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ejdwaE/KnvXvsUahHRX+P+hbyMIQFz4G2r0urUnJjXY=; b=GTlvwNeYDtR/ki
-	8KdDEvnUywIQhTsqsdtuHtuhI5/i1PXN7ecczQMuQ8kjGqHbWjeuQk/tM0Hd3ZyQgznwIXihHR2c1
-	UTUJ4k52gSJevb7TrizPxojW2wkQELIgAJ5cH1qk75SFERng4Og12Fd0I47s+yAaJEEphfu3Ra+cL
-	ze+zx//UVctRV3p94eUtR3CNPDwKmV5rmW1h/J8nRi29jBxtoOdxg+M9kTj8DYRs+Ve81Ilh8kqrb
-	eebwad0jILnEMzpNs6lDYhVVj+Q+7Ik67lL9ol7CC0kQtjbm8iYyXBWZulU4xVT5/fWkIbdMSndo2
-	Dtw0TnY7D+NjZ+uzHwVw==;
+	List-Owner; bh=3mZg049V7LTODs/mJKYJmeevwW3pI9zg84Llp/GgaLo=; b=i6QII4V4dspt0T
+	FDfCByNgKTgztgAZo1fOef32FCeBDZ2DOdLwxBQQCncCvdVNh95ydnxZIs4XzTOHUXTHgkfu3CcMP
+	tIeYEzwjwYbZGAQdNajSUdr138oA8eyKsNIW7Xl1OiazvMGAKZbJyD46D0HTxTSqvTuBQxQ9qLfi3
+	h3Z6zCr+v/thPeogj/uaFzTIxDPuAA8Fhrq4cRLNXSqHGxrZUUEFoGLwhy33dZWHpzdZUfdeVpvg1
+	C2w63CS/rLEzRgA9QtG0QqFvc9wter+perfriVfj6nbH/zK3fCF+7rI38pMsosBBuNiG9nUsO7NUD
+	sWRM+Ayvtr2Dz5o+sKWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8g6l-000308-VK; Mon, 02 Mar 2020 08:07:23 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1j8g9B-0003Qa-L3; Mon, 02 Mar 2020 08:09:53 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8g6i-0002x2-6l
- for kexec@lists.infradead.org; Mon, 02 Mar 2020 08:07:22 +0000
-Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 02284KmD066373
- for <kexec@lists.infradead.org>; Mon, 2 Mar 2020 03:07:17 -0500
-Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2yfmyqdk7e-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <kexec@lists.infradead.org>; Mon, 02 Mar 2020 03:07:16 -0500
-Received: from localhost
- by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <kexec@lists.infradead.org> from <hbathini@linux.ibm.com>;
- Mon, 2 Mar 2020 08:07:15 -0000
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Mon, 2 Mar 2020 08:07:13 -0000
-Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
- [9.149.105.61])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 02287CQF58196036
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 2 Mar 2020 08:07:12 GMT
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 04B5B11C054;
- Mon,  2 Mar 2020 08:07:12 +0000 (GMT)
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id D842211C050;
- Mon,  2 Mar 2020 08:07:09 +0000 (GMT)
-Received: from [9.85.85.34] (unknown [9.85.85.34])
- by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Mon,  2 Mar 2020 08:07:09 +0000 (GMT)
-Subject: Re: [PATCH 2/2] powerpc/pseries: update device tree before ejecting
- hotplug uevents
-To: Pingfan Liu <kernelfans@gmail.com>, linuxppc-dev@lists.ozlabs.org
-References: <1581389982-5701-1-git-send-email-kernelfans@gmail.com>
- <1581389982-5701-2-git-send-email-kernelfans@gmail.com>
-From: Hari Bathini <hbathini@linux.ibm.com>
-Date: Mon, 2 Mar 2020 13:37:07 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j8g98-0003Q1-Ee
+ for kexec@lists.infradead.org; Mon, 02 Mar 2020 08:09:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583136587;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=TxEx5X5RszRAhO584uMFiKrBOlXU3fDWwWCHuWKeiKA=;
+ b=gcup0epZb8Kdn+87MPuzDEajm0BMtzPxxqZK7NeBOEoFpU2LEowd8SJO46Iwxvzz8fINyy
+ q0H0hhh9gpVQw/FHIoGYvKAtohVHsDTubqpQecvPbM7EPlPAOmfynoaMlF1rzHERLRJP7A
+ VjvGY7xcv2aFluRAuHEKAkIG+1NjSZM=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-494-2uyiMPPZN-uOaxlsDFiMRw-1; Mon, 02 Mar 2020 03:09:43 -0500
+X-MC-Unique: 2uyiMPPZN-uOaxlsDFiMRw-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E2002100550E;
+ Mon,  2 Mar 2020 08:09:41 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-158.pek2.redhat.com
+ [10.72.12.158])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id D584B385;
+ Mon,  2 Mar 2020 08:09:38 +0000 (UTC)
+Date: Mon, 2 Mar 2020 16:09:35 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
+Message-ID: <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
+References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
+ <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <1581389982-5701-2-git-send-email-kernelfans@gmail.com>
-Content-Language: en-US
-X-TM-AS-GCONF: 00
-x-cbid: 20030208-0020-0000-0000-000003AF6A25
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20030208-0021-0000-0000-0000220793E5
-Message-Id: <aaacb114-8155-6761-305a-db728640c125@linux.ibm.com>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-02_02:2020-02-28,
- 2020-03-02 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 clxscore=1011
- priorityscore=1501 mlxlogscore=999 malwarescore=0 impostorscore=0
- suspectscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 adultscore=0
- phishscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2003020062
+In-Reply-To: <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_000720_379388_2CBCF225 
-X-CRM114-Status: GOOD (  25.48  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200302_000950_568129_2C38199D 
+X-CRM114-Status: GOOD (  14.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,65 +92,43 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Mackerras <paulus@samba.org>, kexec@lists.infradead.org
+Cc: gshan@redhat.com, Baoquan He <bhe@redhat.com>,
+ "Guilherme G. Piccoli" <gpiccoli@canonical.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Vivek Goyal <vgoyal@redhat.com>, Gavin Guo <gavin.guo@canonical.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+On 03/02/20 at 12:20am, Bhupesh Sharma wrote:
+> Hi Guilherme,
+> 
+> On Sat, Feb 29, 2020 at 10:37 PM Guilherme G. Piccoli
+> <gpiccoli@canonical.com> wrote:
+> >
+> > Hi Bhupesh and Dave (and everybody CC'ed here), I'm Guilherme Piccoli
+> > and I'm working in the same issue observed in RH bugzilla 1758323 [0] -
+> > or at least, it seems to be the the same heh
+> 
+> Ok.
+> 
+> > The reported issue in my case was that the 2nd kexec fails on Nitro
+> > instanced, and indeed it's reproducible. More than this, it shows as an
+> > initrd corruption. I've found 2 workarounds, using the "new" kexec
+> > syscall (by doing kexec -s -l) and keep the initrd memory "un-freed",
+> > using the kernel parameter "retain_initrd".
+> 
+> I have a couple of questions:
+> - How do you conclude that you see an initrd corruption across kexec?
+> Do you print the initial hex contents of initrd across kexec?
 
+I'm also interested if any of you can dump the initrd memory in kernel
+printk log, and then save to somewhere to compare with the original
+initrd content.
 
-On 11/02/20 8:29 AM, Pingfan Liu wrote:
-> A bug is observed on pseries by taking the following steps on rhel:
-> -1. drmgr -c mem -r -q 5
-> -2. echo c > /proc/sysrq-trigger
-> 
-> And then, the failure looks like:
-> kdump: saving to /sysroot//var/crash/127.0.0.1-2020-01-16-02:06:14/
-> kdump: saving vmcore-dmesg.txt
-> kdump: saving vmcore-dmesg.txt complete
-> kdump: saving vmcore
->  Checking for memory holes                         : [  0.0 %] /                   Checking for memory holes                         : [100.0 %] |                   Excluding unnecessary pages                       : [100.0 %] \                   Copying data                                      : [  0.3 %] -          eta: 38s[   44.337636] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-> [   44.337663] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-> [   44.337677] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-> [   44.337692] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-> [   44.337708] makedumpfile[469]: unhandled signal 7 at 00007fffba400000 nip 00007fffbbc4d7fc lr 000000011356ca3c code 2
-> [   44.338548] Core dump to |/bin/false pipe failed
-> /lib/kdump-lib-initramfs.sh: line 98:   469 Bus error               $CORE_COLLECTOR /proc/vmcore $_mp/$KDUMP_PATH/$HOST_IP-$DATEDIR/vmcore-incomplete
-> kdump: saving vmcore failed
-> 
-> * Root cause *
->   After analyzing, it turns out that in the current implementation,
-> when hot-removing lmb, the KOBJ_REMOVE event ejects before the dt updating as
-> the code __remove_memory() comes before drmem_update_dt().
-> 
-> From a viewpoint of listener and publisher, the publisher notifies the
-> listener before data is ready.  This introduces a problem where udev
-> launches kexec-tools (due to KOBJ_REMOVE) and loads a stale dt before
-> updating. And in capture kernel, makedumpfile will access the memory based
-> on the stale dt info, and hit a SIGBUS error due to an un-existed lmb.
-> 
-> * Fix *
->   In order to fix this issue, update dt before __remove_memory(), and
-> accordingly the same rule in hot-add path.
-> 
-> This will introduce extra dt updating payload for each involved lmb when hotplug.
-> But it should be fine since drmem_update_dt() is memory based operation and
-> hotplug is not a hot path.
-> 
-> Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Hari Bathini <hbathini@linux.ibm.com>
-> To: linuxppc-dev@lists.ozlabs.org
-> Cc: kexec@lists.infradead.org
-
-KDump fails to capture vmcore as we end up looking at a stale elfcore hdr
-with udev event happening before DT update. Resolved with these patches.
-For the series:
-
-Tested-by: Hari Bathini <hbathini@linux.ibm.com>
+Thanks
+Dave
 
 
 _______________________________________________
