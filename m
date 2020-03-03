@@ -2,57 +2,89 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 075C8175BFB
-	for <lists+kexec@lfdr.de>; Mon,  2 Mar 2020 14:43:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9AB2176DB8
+	for <lists+kexec@lfdr.de>; Tue,  3 Mar 2020 04:57:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zpDapGfColdaw3EMkloPIb2wuEircp3BHyNMDUAMfJA=; b=dClYgjcIvXCisz
-	RuqsyIMPbaJh8ELvoq0Px9s4f0cO7zwO6/zcmWCspS8+pSbb5m/nCTBTSLjs4aVMDwug31BpGaWHk
-	or/sLBW7HYg6895Qf88pURbvA3l0UqglOayCEpG+OowF/BbGLRiaPDEn+SjxQKKLvTyopAEnvHmCe
-	yRp08gC6Fr6Yvq05m/edw5dlm0fzCqvje4GciCoEzjgraip9I0KFjKgM/Wb0fpdYftmYIYjH8iW5P
-	RsJYRuxIFhb8mrf9oKMT5f1BF61JEcgYQse/px34VHOw3mFs/dfq1dbiurO1z18mjB8zH1y4wD1Uk
-	cH+ZfUE/F/mdOVOpIC9Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bmqspEnapACnH+UOhjrnQGAzeFwdgY5+jleTdwRTOSY=; b=CxI9Zj12rmJb/t
+	Jc/RiXjfcy3z7u+Y4fEBbDsxxqTQzqHNynrf30uKZVLoZdv+vTUincBCiC507kAZMi3uXsyqPIp1A
+	pBLCP4JsJROfnmserGNUo/wWMOn+57oddE/o+p8R1HG9bsExx+suMAyyGZUyBoHgD0FpvAeIqJxd2
+	d+kokmwM5XrIid0JM9OqP4cSA0NQ7/f1FrdocUmZfp0WudbnB138jksyJHpwyqc0NokahRKsuJoGv
+	t4wQLK+mU7Yox095/DhD0UYWUy7nVkscBaDcUJW7Hhv5w+mFd6hhl9IDIsfq37ouoCq2a6BO64z8e
+	ZTDM32in91wE49/lcNkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j8lML-0004ph-Mz; Mon, 02 Mar 2020 13:43:49 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1j8yg2-0007xt-LM; Tue, 03 Mar 2020 03:57:02 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j8lMJ-0004p0-Fm
- for kexec@lists.infradead.org; Mon, 02 Mar 2020 13:43:48 +0000
-Received: from localhost ([127.0.0.1] helo=vostro.local)
- by Galois.linutronix.de with esmtp (Exim 4.80)
- (envelope-from <john.ogness@linutronix.de>)
- id 1j8lMF-0001qQ-E2; Mon, 02 Mar 2020 14:43:43 +0100
-From: John Ogness <john.ogness@linutronix.de>
-To: Petr Mladek <pmladek@suse.com>
-Subject: Re: misc nits Re: [PATCH 1/2] printk: add lockless buffer
-References: <20200128161948.8524-1-john.ogness@linutronix.de>
- <20200128161948.8524-2-john.ogness@linutronix.de>
- <20200221120557.lxpeoy6xuuqxzu5w@pathway.suse.cz>
- <87r1ybujm5.fsf@linutronix.de>
- <20200302123249.6khdqpneu7t6l35s@pathway.suse.cz>
-Date: Mon, 02 Mar 2020 14:43:41 +0100
-In-Reply-To: <20200302123249.6khdqpneu7t6l35s@pathway.suse.cz> (Petr Mladek's
- message of "Mon, 2 Mar 2020 13:32:49 +0100")
-Message-ID: <87a74yrhwy.fsf@linutronix.de>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/23.4 (gnu/linux)
+ id 1j8yfw-0007xS-5l
+ for kexec@lists.infradead.org; Tue, 03 Mar 2020 03:56:57 +0000
+Received: by mail-qk1-x741.google.com with SMTP id e16so2097979qkl.6
+ for <kexec@lists.infradead.org>; Mon, 02 Mar 2020 19:56:55 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=0wjl77fFJFFUS5kkoKjQSRiGt56VoJs72hNCnR0DGGk=;
+ b=KdUDZblC/PIz3Qsb1nx0QkkrVhv+zfukPaRd99dexNCUY78atoUASqiYmbvM7GOyLm
+ u+tIDEeWD8FsyZc+2k8DicGUXcV9Qixhu/OyFpbXabuDuvipLdAv9WYFwZHql3ubxXtp
+ M6kiUHHXyJzJIIl/M0gIWhFbk+c7BuBJ0/KjZ6lyz+LM/3vq7TCDTNJKh6yPx0lxhqIp
+ H2hLKAE+3JWykZHgxrQ09c9b0kxVliya+CuorAOByhczd5mMVhqjE8ibD11xm64GoO+s
+ O65nbRkOQ50d6RM5w2ZNE05imBBLCKIIC751Gkc4p1zeBxy7K51O+rV/sioMc0dz8ndJ
+ NwKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=0wjl77fFJFFUS5kkoKjQSRiGt56VoJs72hNCnR0DGGk=;
+ b=GK5XNX/O46sGRbnTfOmGfhGfmztDwOjbV24G5vFdig/h+2n7yQlm1uLMcluTI1813A
+ AwXDs/5ZMaQKlrqKBzm+uC9ix/84POTKP5EjZ1O46n43qEPa3EQ7uZsmRp1frWT1vWvg
+ KxJdyN/5PETa29vRDl7SPpGZvpCVOdIXHVJD76eYTuTkuu1bn18EL/x++rA5W9FXjJp2
+ bXF9cAD9nRn8w5gDMRAwuDYt5R7sFdckB2eZuw+9ImRzg7hO69eer/uCuYZVQTsL+hvc
+ JlV0v8LveIRPQ7b9f/W3pmHKvMxlAE9WkUHYRdhx3sXvYKJa5y8bO4jj48PidUznAHbW
+ EsRQ==
+X-Gm-Message-State: ANhLgQ0gRiAcYjmweGsBSOX8OrWdxLuoX8ZPn0hdVM4Oz5633a85qZX/
+ 0vPPjRDAyxDF5YmV88d54+BgvesIZ6AC2g==
+X-Google-Smtp-Source: ADFU+vs/jN/0qIOhMwj4KlyOvbrAuS2kokVJWoHY+TCrwz9jX1uwzXkGkdbSoMHyAJ7Scpk7c+qeUA==
+X-Received: by 2002:a37:688f:: with SMTP id d137mr2301760qkc.54.1583207814348; 
+ Mon, 02 Mar 2020 19:56:54 -0800 (PST)
+Received: from kexec.lxd ([177.89.9.179])
+ by smtp.gmail.com with ESMTPSA id z6sm11243855qka.34.2020.03.02.19.56.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 02 Mar 2020 19:56:53 -0800 (PST)
+Date: Tue, 3 Mar 2020 03:56:49 +0000
+From: "Leonidas S. Barbosa" <kirotawa@gmail.com>
+To: kexec@lists.infradead.org
+Subject: [PATCH] Removing condition that will never be met after calls
+ xmalloc and xrealloc
+Message-ID: <20200303035649.GA726@kexec.lxd>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200302_054347_667126_751D3AC8 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200302_195656_243274_FA5B83F3 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [kirotawa[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,94 +96,77 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: horms@verge.net.au
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 2020-03-02, Petr Mladek <pmladek@suse.com> wrote:
->>>> diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
->>>> new file mode 100644
->>>> index 000000000000..796257f226ee
->>>> --- /dev/null
->>>> +++ b/kernel/printk/printk_ringbuffer.c
->>>> +/*
->>>> + * Read the record @id and verify that it is committed and has the sequence
->>>> + * number @seq. On success, 0 is returned.
->>>> + *
->>>> + * Error return values:
->>>> + * -EINVAL: A committed record @seq does not exist.
->>>> + * -ENOENT: The record @seq exists, but its data is not available. This is a
->>>> + *          valid record, so readers should continue with the next seq.
->>>> + */
->>>> +static int desc_read_committed(struct prb_desc_ring *desc_ring,
->>>> +			       unsigned long id, u64 seq,
->>>> +			       struct prb_desc *desc)
->>>> +{
->
-> OK, what about having desc_read_by_seq() instead?
+Hi,
 
-Well, it isn't actually "reading by seq". @seq is there for additional
-verification. Yes, prb_read() is deriving @id from @seq. But it only
-does this once and uses that value for both calls.
+Looking in the kexec-tools code I found these conditions that
+seems will never be met. Not sure if that was intentional for explicitity,
+if it was the case, please disconsider this patch.
 
-> Also there is a bug in current desc_read_commited().
-> desc->info.seq might contain a garbage when d_state is desc_miss
-> or desc_reserved.
 
-It is not a bug. In both of those cases, -EINVAL is the correct return
-value.
 
-> I would change it to:
->
-> static enum desc_state
-> desc_read_by_seq(struct prb_desc_ring *desc_ring,
-> 		 u64 seq, struct prb_desc *desc)
-> {
-> 	struct prb_desc *rdesc = to_desc(desc_ring, seq);
-> 	atomic_long_t *state_var = &rdesc->state_var;
-> 	id = DESC_ID(atomic_long_read(state_var));
 
-I think it is error-prone to re-read @state_var here. It is lockless
-shared data. desc_read_committed() is called twice in prb_read() and it
-is expected that both calls are using the same @id.
+xmalloc and xrealloc when fails calls die() that calls exit(1).
+Checks for if(!memory) after they are called will never be met that
+condition, since the process will be exited after an allocation fail.
 
-> 	enum desc_state d_state;
->
-> 	d_state = desc_read(desc_ring, id, desc);
-> 	if (d_state == desc_miss ||
-> 	    d_state == desc_reserved ||
-> 	    desc->info.seq != seq)
-> 		return -EINVAL;
->
-> 	if (d_state == desc_reusable)
-> 		return -ENOENT;
+Signed-off-by: Leonidas S. Barbosa <kirotawa@gmail.com>
+---
+ kexec/arch/arm/kexec-zImage-arm.c | 12 ------------
+ 1 file changed, 12 deletions(-)
 
-I can use this refactoring.
+diff --git a/kexec/arch/arm/kexec-zImage-arm.c b/kexec/arch/arm/kexec-zImage-arm.c
+index f9d452f..9845925 100644
+--- a/kexec/arch/arm/kexec-zImage-arm.c
++++ b/kexec/arch/arm/kexec-zImage-arm.c
+@@ -228,11 +228,6 @@ int atag_arm_load(struct kexec_info *info, unsigned long base,
+ 	struct tag *params;
+ 	
+ 	buf = xmalloc(getpagesize());
+-	if (!buf) {
+-		fprintf(stderr, "Compiling ATAGs: out of memory\n");
+-		return -1;
+-	}
+-
+ 	memset(buf, 0xff, getpagesize());
+ 	params = (struct tag *)buf;
+ 
+@@ -315,8 +310,6 @@ static int setup_dtb_prop(char **bufp, off_t *sizep, int parentoffset,
+ 		dtb_size += fdt_node_len(node_name);
+ 		fdt_set_totalsize(dtb_buf, dtb_size);
+ 		dtb_buf = xrealloc(dtb_buf, dtb_size);
+-		if (dtb_buf == NULL)
+-			die("xrealloc failed\n");
+ 		off = fdt_add_subnode(dtb_buf, parentoffset, node_name);
+ 	}
+ 
+@@ -340,8 +333,6 @@ static int setup_dtb_prop(char **bufp, off_t *sizep, int parentoffset,
+ 	if (fdt_totalsize(dtb_buf) < dtb_size) {
+ 		fdt_set_totalsize(dtb_buf, dtb_size);
+ 		dtb_buf = xrealloc(dtb_buf, dtb_size);
+-		if (dtb_buf == NULL)
+-			die("xrealloc failed\n");
+ 	}
+ 
+ 	if (fdt_setprop(dtb_buf, off, prop_name,
+@@ -616,9 +607,6 @@ int zImage_arm_load(int argc, char **argv, const char *buf, off_t len,
+ 		uint64_t start, end;
+ 
+ 		modified_cmdline = xmalloc(COMMAND_LINE_SIZE);
+-		if (!modified_cmdline)
+-			return -1;
+-
+ 		memset(modified_cmdline, '\0', COMMAND_LINE_SIZE);
+ 
+ 		if (command_line) {
+-- 
+2.17.1
 
->
-> 	if (d_state != desc_committed)
-> 		return -EINVAL;
-
-I suppose you meant to remove this check and leave in the @blk_lpos
-check instead. If we're trying to minimize lines of code, the @blk_lpos
-check could be combined with the "== desc_reusable" check as well.
-
->
-> 	return 0;
-> }
-
-Thanks.
-
-John Ogness
 
 _______________________________________________
 kexec mailing list
