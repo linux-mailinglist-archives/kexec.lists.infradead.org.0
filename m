@@ -2,91 +2,61 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1B7178CCF
-	for <lists+kexec@lfdr.de>; Wed,  4 Mar 2020 09:50:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C36B6178D9F
+	for <lists+kexec@lfdr.de>; Wed,  4 Mar 2020 10:40:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=HwuShstWGnU8uhCHGPNYViZ913Z/o9ZdPC7osxh0yx4=; b=P9O90HSbKIoz/+ek4FDPcSpJRI
-	hQRUW6/WhR0UJ6OzuIi1ITcBQ/+Og3bxsRc+MH4Tk9TS6QXZDeMmGoWVY1rBAYnYSGCWwXAP6djaJ
-	D9yd7Xl79ruFUektYP4IFeHBPDtyh71D8yUYZnKg3Jae3R+eBYSrV/zrZGEncofSuKqTo1nTMNNIJ
-	HKA060nYDeOaafAAAp6c8kPzQ79wfJrHijozARgaXExgh+YETSVIs71Ir5GFZv7yasnNlOhLTDjpi
-	6exhQIpilWvclBDAtNM5JD3Rw5JT/wrlugeQAAyaetRATbajxs3DWjHLL2XclPtpqjHDviXLXyRWF
-	hF/MXr0A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xX2nSOfJwkUiD+OZyq9hj60VUFfguapfPE1kuswNjIw=; b=TeyUp3UdnaHu4f
+	aJR4SgCVoqPm4V981Rw6oDUZNVdpjLTRL8Gu2nQoaJQGfsD8DOBKO00dFejYSg4DPz7TCRJ2PrfTr
+	dsrWg+qj3Lzn4wtmamQQwofKjV2/zJ46lNhCaVpITKm5qRH0rjaG0IP4JxQ6lqLoz5SQftywyJbpK
+	kVkzjMoSYYk4ZSEX9Vn4qF1tEUNbDLC3Qa5ySe0t6QqXKqG1/7unF3TXpOZAnUOrtsymefh6nE4sg
+	26LCs95LzIy/KpAQRRRJhoSNMo9CaUzeOz9Xvmd2OlI1TS3i+aOWfoYsvhisqR1nQ6GzfOtTem8r7
+	ZKzVePJ8NBGb8ytFZaxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Pja-0004jZ-Jx; Wed, 04 Mar 2020 08:50:30 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j9QVq-0001K7-Nb; Wed, 04 Mar 2020 09:40:22 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9PjX-0004iO-OC
- for kexec@lists.infradead.org; Wed, 04 Mar 2020 08:50:29 +0000
-Received: by mail-pg1-x544.google.com with SMTP id h8so659130pgs.9
- for <kexec@lists.infradead.org>; Wed, 04 Mar 2020 00:50:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=TiIql+hW6vhy0nku7tSxH1zd1ke9Ma9eE04Z6saZ0pI=;
- b=Bs+piawutlma6+60B2UgAJv10zwf7Erndy8kh5SNp+Gf7/k9vbgZ/T94ITGhbxCZip
- vytj8bE59j/lzS8CxKPckuGDcJo0VDvDuQrLCkX3IEQclOuPfHByyeqontuS222iowv0
- TK+ewVwE8m1+dn1G+npFk169BQ5+UR2OxvbFVoA4GVUc4kpDeZpCgVRcaP6ISN6BS/5w
- Wty0RppaocpgFv6woqCYIVNo8u0rVVDUm9WkXNWivt/HlLTYq1mGVg3bpJhgTcn69G5C
- Cc8Bd/5vECbIh3vpcRLxttQToYsdKA0q7WxDG3Gz4PI1zwgWdS6gGeJS2DJTX92tPKMN
- OW3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=TiIql+hW6vhy0nku7tSxH1zd1ke9Ma9eE04Z6saZ0pI=;
- b=c60h9lumfv+JtVF2eg8Bdx4LB85ThuiChExYxZCXCE1fdIqZDpcLXtfhU6gy/OSocb
- vCOnhwkmgIg5TS4UiiYJvuIV0VASPHwC1MOQ7DZVA7ReGP2AuKAFWE3Fk/B5yOzxpOg9
- g1QOwekkLFF9ZgKjsRarfWKLui1QRzzzvxdfMB/yzMgNX3OpyUlxhMXkPrJ/OhJFPmK5
- gqXd8XEN8oAgJIJ9zILxhevimyrwDIACAfzWehGBIJDFv9KiyueTHHS4M5AZAoJ7fWKO
- wUfWvrtVc7g3Rg4Ybl//Mxwl7D9iJpI6RX2MTxIN/txwcF147hjQeyJZgnRhxefr39fh
- 7xdA==
-X-Gm-Message-State: ANhLgQ1Xsvh9YpXr++CViJU3aq4NGzyaWTfPvngCl+Rjf1zEx7vGpO76
- nfXYcz5E1zffhT4uuDKxnw==
-X-Google-Smtp-Source: ADFU+vth/c3FMVXP227g9RnMbHBW7Dm4LTTbiytp5WE1VmF47AAiylu4k1WqHrEUK9kBj5dgmHDpWA==
-X-Received: by 2002:a62:6807:: with SMTP id d7mr2043056pfc.230.1583311827109; 
- Wed, 04 Mar 2020 00:50:27 -0800 (PST)
-Received: from mylaptop.redhat.com ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id v123sm463085pfb.85.2020.03.04.00.50.20
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Mar 2020 00:50:26 -0800 (PST)
-From: Pingfan Liu <kernelfans@gmail.com>
-To: linuxppc-dev@lists.ozlabs.org
-Subject: [PATCHv3 2/2] pseries/scm: buffer pmem's bound addr in dt for kexec
- kernel
-Date: Wed,  4 Mar 2020 16:47:30 +0800
-Message-Id: <1583311651-29310-3-git-send-email-kernelfans@gmail.com>
-X-Mailer: git-send-email 2.7.5
-In-Reply-To: <1583311651-29310-1-git-send-email-kernelfans@gmail.com>
-References: <1582882895-3142-1-git-send-email-kernelfans@gmail.com>
- <1583311651-29310-1-git-send-email-kernelfans@gmail.com>
+ id 1j9QVm-0001IK-VA
+ for kexec@lists.infradead.org; Wed, 04 Mar 2020 09:40:20 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id C35F3ADBB;
+ Wed,  4 Mar 2020 09:40:14 +0000 (UTC)
+Date: Wed, 4 Mar 2020 10:40:14 +0100
+From: Petr Mladek <pmladek@suse.com>
+To: John Ogness <john.ogness@linutronix.de>
+Subject: Re: misc nits Re: [PATCH 1/2] printk: add lockless buffer
+Message-ID: <20200304094014.dua4ydwat5l6lvfs@pathway.suse.cz>
+References: <20200128161948.8524-1-john.ogness@linutronix.de>
+ <20200128161948.8524-2-john.ogness@linutronix.de>
+ <20200221120557.lxpeoy6xuuqxzu5w@pathway.suse.cz>
+ <87r1ybujm5.fsf@linutronix.de>
+ <20200302123249.6khdqpneu7t6l35s@pathway.suse.cz>
+ <87a74yrhwy.fsf@linutronix.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <87a74yrhwy.fsf@linutronix.de>
+User-Agent: NeoMutt/20170912 (1.9.0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_005027_786037_8B1007A8 
-X-CRM114-Status: GOOD (  18.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200304_014019_152059_247BCA60 
+X-CRM114-Status: GOOD (  19.05  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [kernelfans[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,142 +68,87 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>,
- Andrew Donnellan <ajd@linux.ibm.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, kexec@lists.infradead.org,
- Pingfan Liu <kernelfans@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- Oliver O'Halloran <oohall@gmail.com>, Dan Williams <dan.j.williams@intel.com>,
- Frank Rowand <frowand.list@gmail.com>, Hari Bathini <hbathini@linux.ibm.com>
-MIME-Version: 1.0
+Cc: Andrea Parri <parri.andrea@gmail.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-At present, plpar_hcall(H_SCM_BIND_MEM, ...) takes a very long time, so
-if dumping to fsdax, it will take a very long time.
+On Mon 2020-03-02 14:43:41, John Ogness wrote:
+> On 2020-03-02, Petr Mladek <pmladek@suse.com> wrote:
+> >>>> diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
+> >>>> new file mode 100644
+> >>>> index 000000000000..796257f226ee
+> >>>> --- /dev/null
+> >>>> +++ b/kernel/printk/printk_ringbuffer.c
+> >>>> +/*
+> >>>> + * Read the record @id and verify that it is committed and has the sequence
+> >>>> + * number @seq. On success, 0 is returned.
+> >>>> + *
+> >>>> + * Error return values:
+> >>>> + * -EINVAL: A committed record @seq does not exist.
+> >>>> + * -ENOENT: The record @seq exists, but its data is not available. This is a
+> >>>> + *          valid record, so readers should continue with the next seq.
+> >>>> + */
+> >>>> +static int desc_read_committed(struct prb_desc_ring *desc_ring,
+> >>>> +			       unsigned long id, u64 seq,
+> >>>> +			       struct prb_desc *desc)
+> >>>> +{
+> >
+> > static enum desc_state
+> > desc_read_by_seq(struct prb_desc_ring *desc_ring,
+> > 		 u64 seq, struct prb_desc *desc)
+> > {
+> > 	struct prb_desc *rdesc = to_desc(desc_ring, seq);
+> > 	atomic_long_t *state_var = &rdesc->state_var;
+> > 	id = DESC_ID(atomic_long_read(state_var));
+> 
+> I think it is error-prone to re-read @state_var here. It is lockless
+> shared data. desc_read_committed() is called twice in prb_read() and it
+> is expected that both calls are using the same @id.
+> 
+> > 	enum desc_state d_state;
+> >
+> > 	d_state = desc_read(desc_ring, id, desc);
+> > 	if (d_state == desc_miss ||
+> > 	    d_state == desc_reserved ||
+> > 	    desc->info.seq != seq)
+> > 		return -EINVAL;
+> >
+> > 	if (d_state == desc_reusable)
+> > 		return -ENOENT;
+> 
+> I can use this refactoring.
+> 
+> >
+> > 	if (d_state != desc_committed)
+> > 		return -EINVAL;
+> 
+> I suppose you meant to remove this check and leave in the @blk_lpos
+> check instead. If we're trying to minimize lines of code, the @blk_lpos
+> check could be combined with the "== desc_reusable" check as well.
 
-Take a closer look, during the papr_scm initialization, the only
-configuration is through drc_pmem_bind()-> plpar_hcall(H_SCM_BIND_MEM,
-...), which helps to set up the bound address.
+I am an idiot. I missed that the check "d_state != desc_committed"
+will return -EINVAL also when desc_miss or desc_reserved.
 
-On pseries, for kexec -l/-p kernel, there is no reset of hardware, and this
-step can be stepped around to save times.  So the pmem bound address can be
-passed to the 2nd kernel through a dynamic added property "bound-addr" in
-dt node 'ibm,pmemory'.
+I was too concentrated by the fact that desc->info.seq was checked
+first even though it might contain garbage.
 
-Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-To: linuxppc-dev@lists.ozlabs.org
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Hari Bathini <hbathini@linux.ibm.com>
-Cc: Aneesh Kumar K.V <aneesh.kumar@linux.ibm.com>
-Cc: Oliver O'Halloran <oohall@gmail.com>
-Cc: Dan Williams <dan.j.williams@intel.com>
-Cc: Andrew Donnellan <ajd@linux.ibm.com>
-Cc: Christophe Leroy <christophe.leroy@c-s.fr>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: Frank Rowand <frowand.list@gmail.com>
-Cc: kexec@lists.infradead.org
----
-note: This patch has not been tested since I can not get such a pseries with pmem.
-      Please kindly to give some suggestion, thanks.
----
- arch/powerpc/platforms/pseries/of_helpers.c |  1 +
- arch/powerpc/platforms/pseries/papr_scm.c   | 33 ++++++++++++++++++++---------
- drivers/of/base.c                           |  1 +
- 3 files changed, 25 insertions(+), 10 deletions(-)
+Also it did not help me much the note about blk_lpos. I did not
+see how it was related to this code.
 
-diff --git a/arch/powerpc/platforms/pseries/of_helpers.c b/arch/powerpc/platforms/pseries/of_helpers.c
-index 1022e0f..2c7bab4 100644
---- a/arch/powerpc/platforms/pseries/of_helpers.c
-+++ b/arch/powerpc/platforms/pseries/of_helpers.c
-@@ -34,6 +34,7 @@ struct property *new_property(const char *name, const int length,
- 	kfree(new);
- 	return NULL;
- }
-+EXPORT_SYMBOL(new_property);
- 
- /**
-  * pseries_of_derive_parent - basically like dirname(1)
-diff --git a/arch/powerpc/platforms/pseries/papr_scm.c b/arch/powerpc/platforms/pseries/papr_scm.c
-index 0b4467e..54ae903 100644
---- a/arch/powerpc/platforms/pseries/papr_scm.c
-+++ b/arch/powerpc/platforms/pseries/papr_scm.c
-@@ -14,6 +14,7 @@
- #include <linux/delay.h>
- 
- #include <asm/plpar_wrappers.h>
-+#include "of_helpers.h"
- 
- #define BIND_ANY_ADDR (~0ul)
- 
-@@ -383,7 +384,7 @@ static int papr_scm_probe(struct platform_device *pdev)
- {
- 	struct device_node *dn = pdev->dev.of_node;
- 	u32 drc_index, metadata_size;
--	u64 blocks, block_size;
-+	u64 blocks, block_size, bound_addr = 0;
- 	struct papr_scm_priv *p;
- 	const char *uuid_str;
- 	u64 uuid[2];
-@@ -440,17 +441,29 @@ static int papr_scm_probe(struct platform_device *pdev)
- 	p->metadata_size = metadata_size;
- 	p->pdev = pdev;
- 
--	/* request the hypervisor to bind this region to somewhere in memory */
--	rc = drc_pmem_bind(p);
-+	of_property_read_u64(dn, "bound-addr", &bound_addr);
-+	if (bound_addr) {
-+		p->bound_addr = bound_addr;
-+	} else {
-+		struct property *property;
-+		u64 big;
- 
--	/* If phyp says drc memory still bound then force unbound and retry */
--	if (rc == H_OVERLAP)
--		rc = drc_pmem_query_n_bind(p);
-+		/* request the hypervisor to bind this region to somewhere in memory */
-+		rc = drc_pmem_bind(p);
- 
--	if (rc != H_SUCCESS) {
--		dev_err(&p->pdev->dev, "bind err: %d\n", rc);
--		rc = -ENXIO;
--		goto err;
-+		/* If phyp says drc memory still bound then force unbound and retry */
-+		if (rc == H_OVERLAP)
-+			rc = drc_pmem_query_n_bind(p);
-+
-+		if (rc != H_SUCCESS) {
-+			dev_err(&p->pdev->dev, "bind err: %d\n", rc);
-+			rc = -ENXIO;
-+			goto err;
-+		}
-+		big = cpu_to_be64(p->bound_addr);
-+		property = new_property("bound-addr", sizeof(u64), (const unsigned char *)&big,
-+			NULL);
-+		of_add_property(dn, property);
- 	}
- 
- 	/* setup the resource for the newly bound range */
-diff --git a/drivers/of/base.c b/drivers/of/base.c
-index ae03b12..602d2a9 100644
---- a/drivers/of/base.c
-+++ b/drivers/of/base.c
-@@ -1817,6 +1817,7 @@ int of_add_property(struct device_node *np, struct property *prop)
- 
- 	return rc;
- }
-+EXPORT_SYMBOL_GPL(of_add_property);
- 
- int __of_remove_property(struct device_node *np, struct property *prop)
- {
--- 
-2.7.5
+To sum up. The original code worked fine. But I would prefer my variant
+that has more lines but it is somehow cleaner.
 
+Best Regards,
+Petr
 
 _______________________________________________
 kexec mailing list
