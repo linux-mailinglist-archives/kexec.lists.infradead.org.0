@@ -2,59 +2,97 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F2711792F5
-	for <lists+kexec@lfdr.de>; Wed,  4 Mar 2020 16:08:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A309E17981D
+	for <lists+kexec@lfdr.de>; Wed,  4 Mar 2020 19:40:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qkkYT/gsPzT0MYF+o8VQdyx6ghx0zY5J5KQzRvMciJI=; b=I+nr9N1mv0BlDF
-	sYaVqJRHhh3BX9niLUi9tJ7+BOnvt9lwe3cnOsz2YyASY9iVUGx/6lk9dtQQhLbSgiOJfc9y/hGqf
-	bV+/cW4gR4KAm/bLFr3vDuns+zv+5R/b6BVLhPASq7Jq9+eIIQeNFAhR0m+KdvJkyCIemqvGtiN5s
-	ilg8CrgBQdDTvoKtSIV8hX61KkTJczIMeXk/k2VPE9dLSY0UaZon4PkBpA5xOnMI4skrcMGaSRQb6
-	RMbbZMm7r218/sVMXpNEknqCP3NiZfpTs9OE7MKeLsQe4TRqx5F436TpHWC7RgGOOya3QFbMdOZ8V
-	zqupkD+KLQn3C35dNNKw==;
+	List-Owner; bh=OJp60GDYGX2CfaH+b8lbHkOzDFiYBNEYV3QzAUe0XMw=; b=RgJdeq9lla4Opq
+	ciPblXWW4P6+WoST5/YxDgiHLd5RVUSw4+j4xtyH6c/PXqpCAHADDLa5rZcDJGutyI+MwLYVOh/bP
+	og7G4jF88r7t3GPFnfK9PzIcUMwk8waaDgbGkfztqsK5PHyDErfDIKyfBNMGWDLpUO/C7UTzuewno
+	lPuYN9kkIRwTBcgrjtu6CbWC/fnpQ+TA2+6ThZ5ffqUYLKcEjRxIAd1v/V6qL8Pa3xuGUOPB+0kqm
+	IXRl6nIV1TPLc3IvlsvQ7BwNVFqp16254yqhxs3ucH6THrw1jH7Klz+6dwztc3dAJtwuJ4DTuF2B7
+	JmKYOlIUyBIrGMwj2PhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9Vd8-0007ov-Qf; Wed, 04 Mar 2020 15:08:14 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j9YwC-0003G8-9S; Wed, 04 Mar 2020 18:40:08 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9Vd4-0007oS-7b
- for kexec@lists.infradead.org; Wed, 04 Mar 2020 15:08:13 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id CD249AF8C;
- Wed,  4 Mar 2020 15:08:05 +0000 (UTC)
-Date: Wed, 4 Mar 2020 16:08:05 +0100
-From: Petr Mladek <pmladek@suse.com>
-To: John Ogness <john.ogness@linutronix.de>
-Subject: Re: more barriers: Re: [PATCH 1/2] printk: add lockless buffer
-Message-ID: <20200304150805.yzda34paahstageq@pathway.suse.cz>
-References: <20200128161948.8524-1-john.ogness@linutronix.de>
- <20200128161948.8524-2-john.ogness@linutronix.de>
- <20200221115416.wo6ovakxt2c7hgkc@pathway.suse.cz>
- <87h7zcjkxy.fsf@linutronix.de>
+ id 1j9Yw7-0002XW-6i
+ for kexec@lists.infradead.org; Wed, 04 Mar 2020 18:40:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583347200;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=uuSNVy8hpsbKlTHAETnkgvtNNUU4K5+s3PC+VVRjg8M=;
+ b=d8mNEXSbhEhLiCDa9wmnypMALSyttQLL7HyUecGsbWuMAo2S2GbP/UGKNf1Hv8puEkJcWz
+ 5KEEJloesDfbde9diIAS3mYtTQ6j4Z/e7DZo96aw7jVqfnxuAazUCrPXNASX3qHs/65kXH
+ dF5EVZUMalqv9yO17T7cmIrIHycB2zE=
+Received: from mail-ed1-f69.google.com (mail-ed1-f69.google.com
+ [209.85.208.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-185-7JQMRjq3MfKUkQlmHivEDw-1; Wed, 04 Mar 2020 13:39:58 -0500
+X-MC-Unique: 7JQMRjq3MfKUkQlmHivEDw-1
+Received: by mail-ed1-f69.google.com with SMTP id d12so2248979edq.16
+ for <kexec@lists.infradead.org>; Wed, 04 Mar 2020 10:39:58 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZmnJHa5KlWXTMfbJflMqdNxD1WQv07ftMVGlneG8eLE=;
+ b=jHUl2z392gC4ZbZ5swTJn4zBqnn9v8EKG4Z/xJkgNmAjp4twnibIdBtP8cJI/SYKfh
+ 8qCDrShl8cuDtT2KD1RRE01Xzc9YDl1k8UuRtWBHf36m0i8YtXpDd7W+hL7Q1TzX/Pe5
+ 7P3rBszrHGZdhIE39OHcM5MZSeTWDO8Mavp7XDhD/hBtb3RRMgk3mptgUWvIvFDaiU+4
+ AxtpYW+vSLVYAGX/o1LX7RMIL0dfJY/+Q6NwByJvvSg/8Pu46kivxt/RphPZFplLyvPm
+ 9UFVeqk55pewR2v1ZkD9bADnw9R1IiAX0Om5sl+BTSULe6w3ViwHKAmGtivT148eenE3
+ 3D5Q==
+X-Gm-Message-State: ANhLgQ02oWYSwkUocNjCEvVVeHGsV+D+qZDoCXXiMIXI/nTyfSu1yt6A
+ z0y2RgAzMjLj+80JnUGdBhJFhNFfjcvfBi9ddI8uo19Fz+YLMSyPFgD8CBPI/lLNTIAjaog0l/L
+ Xl8rp/phphlPPztdq5p5su47QGfC+Ss3/b1J+
+X-Received: by 2002:a17:906:f90b:: with SMTP id
+ lc11mr3549161ejb.169.1583347194671; 
+ Wed, 04 Mar 2020 10:39:54 -0800 (PST)
+X-Google-Smtp-Source: ADFU+vs4tOb29bPjaEhe0AAJJMeoruWmnCVIgJa3JO1FNW5sL+ZwhyUM/dvWLqEI7E6VPXwExbYY7Z7R1b4dBCteQPI=
+X-Received: by 2002:a17:906:f90b:: with SMTP id
+ lc11mr3549143ejb.169.1583347194361; 
+ Wed, 04 Mar 2020 10:39:54 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87h7zcjkxy.fsf@linutronix.de>
-User-Agent: NeoMutt/20170912 (1.9.0)
+References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
+ <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
+ <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
+In-Reply-To: <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Thu, 5 Mar 2020 00:09:42 +0530
+Message-ID: <CACi5LpNJVw_POqvmUD2fHWJkS=3bK4PzWCD_9Hs_K90aQ4gczw@mail.gmail.com>
+Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
+To: Dave Young <dyoung@redhat.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_070810_570100_846EAC54 
-X-CRM114-Status: GOOD (  47.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200304_104003_346964_73753EC3 
+X-CRM114-Status: GOOD (  21.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,807 +104,111 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Guowen Shan <gshan@redhat.com>, Baoquan He <bhe@redhat.com>,
+ "Guilherme G. Piccoli" <gpiccoli@canonical.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Vivek Goyal <vgoyal@redhat.com>, Gavin Guo <gavin.guo@canonical.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu 2020-02-27 13:04:09, John Ogness wrote:
-> On 2020-02-21, Petr Mladek <pmladek@suse.com> wrote:
-> > If I get it correctly, the used cmpxchg_relaxed() variants does not
-> > provide full barriers. They are just able to prevent parallel
-> > manipulation of the modified variable.
-> 
-> Correct.
-> 
-> I purposely avoided the full barriers of a successful cmpxchg() so that
-> we could clearly specify what we needed and why. As Andrea pointed out
-> [0], we need to understand if/when we require those memory barriers.
-> 
-> Once we've identified these, we may want to fold some of those barriers
-> back in, going from cmpxchg_relaxed() back to cmpxchg(). In particular
-> when we see patterns like:
-> 
->     do {
->         ....
->     } while (!try_cmpxchg_relaxed());
->     smp_mb();
-> 
-> or possibly:
-> 
->     smp_mb();
->     cmpxchg_relaxed(); /* no return value check */
+Hi,
 
-It seems that we need more barriers than I expected. If we are able to
-get rid of them by using cmpxchg() instead of cmpxchg_relaxed() then
-it might be quite some simplification.
-
-I have to admit that my understanding of barriers is more incomplete
-than I have hooped for. I am less and less convinced that my ack is
-enough to merge this patch. It would be great when PeterZ or another
-expert on barriers might give it a cycle (or maybe wait for the next
-version of this patch?).
-
-Alternative solution is to do quite some testing and push it into
-linux-next to give it even more testing. It seems that the main
-danger is that some messages might get lost. But it should
-not crash. Well, I would feel much more comfortable if I wasn't
-the only reviewer.
-
-> > On Tue 2020-01-28 17:25:47, John Ogness wrote:
-> >> diff --git a/kernel/printk/printk_ringbuffer.c b/kernel/printk/printk_ringbuffer.c
-> >> new file mode 100644
-> >> index 000000000000..796257f226ee
-> >> --- /dev/null
-> >> +++ b/kernel/printk/printk_ringbuffer.c
-> >> +/*
-> >> + * Take a given descriptor out of the committed state by attempting
-> >> + * the transition from committed to reusable. Either this task or some
-> >> + * other task will have been successful.
-> >> + */
-> >> +static void desc_make_reusable(struct prb_desc_ring *desc_ring,
-> >> +			       unsigned long id)
-> >> +{
-> >> +	struct prb_desc *desc = to_desc(desc_ring, id);
-> >> +	atomic_long_t *state_var = &desc->state_var;
-> >> +	unsigned long val_committed = id | DESC_COMMITTED_MASK;
-> >> +	unsigned long val_reusable = val_committed | DESC_REUSE_MASK;
-> >> +
-> >> +	atomic_long_cmpxchg_relaxed(state_var, val_committed,
-> >> val_reusable);
+On Mon, Mar 2, 2020 at 1:39 PM Dave Young <dyoung@redhat.com> wrote:
+>
+> On 03/02/20 at 12:20am, Bhupesh Sharma wrote:
+> > Hi Guilherme,
 > >
-> > IMHO, we should add smp_wmb() here to make sure that the reusable
-> > state is written before we shuffle the desc_ring->tail_id/head_id.
+> > On Sat, Feb 29, 2020 at 10:37 PM Guilherme G. Piccoli
+> > <gpiccoli@canonical.com> wrote:
+> > >
+> > > Hi Bhupesh and Dave (and everybody CC'ed here), I'm Guilherme Piccoli
+> > > and I'm working in the same issue observed in RH bugzilla 1758323 [0] -
+> > > or at least, it seems to be the the same heh
 > >
-> > It would pair with the read part of smp_mb() in desc_reserve()
-> > before the extra check if the descriptor is really in reusable state.
-> 
-> Yes. Now that we added the extra state checking in desc_reserve(), this
-> ordering has become important.
-> 
-> However, for this case I would prefer to instead place a full memory
-> barrier immediately before @tail_id is incremented (in
-> desc_push_tail()). The tail-incrementing-task must have seen the
-> reusable state (even if it is not the one that set it) and an
-> incremented @tail_id must be visible to the task recycling a descriptor.
-
-Ah, the below mentioned litmus tests for the full barrier in
-desc_reserve() opened my eyes to see why full barrier is sometimes
-needed instead of the write barrier.
-
-I agree that this is exactly the place when the full barrier will be
-needed. This write can happen on any CPU and the write
-depending on this value might be done on another CPU.
-
-Also I agree that desc_push_tail() looks like the right place
-for the full barrier because some actions there are done only
-when the descriptor is invalidated.
-
-I just wonder if it should be even before data_push_tail()
-calls. It will make sure that everyone sees the reusable state
-before we move the data_ring borders.
-
-Also I wonder whether we need even more full barriers in the code.
-There are many more dependent actions that can be done on different
-CPUs in parallel.
-
-> >> +}
-> >> +
-> >> +/*
-> >> + * For a given data ring (text or dict) and its current tail lpos:
-> >> + * for each data block up until @lpos, make the associated descriptor
-> >> + * reusable.
-> >> + *
-> >> + * If there is any problem making the associated descriptor reusable,
-> >> + * either the descriptor has not yet been committed or another writer
-> >> + * task has already pushed the tail lpos past the problematic data
-> >> + * block. Regardless, on error the caller can re-load the tail lpos
-> >> + * to determine the situation.
-> >> + */
-> >> +static bool data_make_reusable(struct printk_ringbuffer *rb,
-> >> +			       struct prb_data_ring *data_ring,
-> >> +			       unsigned long tail_lpos, unsigned long lpos,
-> >> +			       unsigned long *lpos_out)
-> >> +{
-> >> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
-> >> +	struct prb_data_blk_lpos *blk_lpos;
-> >> +	struct prb_data_block *blk;
-> >> +	enum desc_state d_state;
-> >> +	struct prb_desc desc;
-> >> +	unsigned long id;
-> >> +
-> >> +	/*
-> >> +	 * Using the provided @data_ring, point @blk_lpos to the correct
-> >> +	 * blk_lpos within the local copy of the descriptor.
-> >> +	 */
-> >> +	if (data_ring == &rb->text_data_ring)
-> >> +		blk_lpos = &desc.text_blk_lpos;
-> >> +	else
-> >> +		blk_lpos = &desc.dict_blk_lpos;
-> >> +
-> >> +	/* Loop until @tail_lpos has advanced to or beyond @lpos. */
-> >> +	while ((lpos - tail_lpos) - 1 < DATA_SIZE(data_ring)) {
-> >> +		blk = to_block(data_ring, tail_lpos);
+> > Ok.
 > >
-> > IMHO, we need smp_rmb() here to make sure that we read blk->id
-> > that we written after pushing the tail_lpos.
+> > > The reported issue in my case was that the 2nd kexec fails on Nitro
+> > > instanced, and indeed it's reproducible. More than this, it shows as an
+> > > initrd corruption. I've found 2 workarounds, using the "new" kexec
+> > > syscall (by doing kexec -s -l) and keep the initrd memory "un-freed",
+> > > using the kernel parameter "retain_initrd".
 > >
-> > It would pair with the write barrier in data_alloc() before
-> > before writing blk->id. It is there after updating head_lpos.
-> > But head_lpos could be updated only after updating tail_lpos.
-> > See the comment in data_alloc() below.
-> 
-> I do not understand. @blk->id has a data dependency on the provided
-> @tail_lpos. A random @tail_lpos value could be passed to this function
-> and it will only make a descriptor state change if the associated
-> descriptor is in the committed state and points back to that @tail_lpos
-> value. That is always legal.
-> 
-> If the old @blk->id value is read (just before data_alloc() writes it),
-> then the following desc_read() will return with desc_miss. That is
-> correct. If the new @blk->id value is read (just after data_alloc()
-> writes it), desc_read() will return with desc_reserved. This is also
-> correct. Why would this code care about @head_lpos or @tail_lpos
-> ordering to @blk->id? Please explain.
+> > I have a couple of questions:
+> > - How do you conclude that you see an initrd corruption across kexec?
+> > Do you print the initial hex contents of initrd across kexec?
+>
+> I'm also interested if any of you can dump the initrd memory in kernel
+> printk log, and then save to somewhere to compare with the original
+> initrd content.
 
-OK, my proposal does not make much sense. You know, I felt that there
-should be smp_wmb() after each atomic_long_try_cmpxchg_relaxed() to
-synchronize changes in the other variables.
+I did several overnight tests on the aws machine and can confirm kexec
+reboot failure issue (multiple tries) can be seen even with
+'retain_initrd' in the kernel bootargs or by using kexec_file_load
+('kexec -s -l') instead of plain kexec_load ('kexec -l').
 
-I added smp_wmb() after the cmpxchg() in data_alloc() and then looked
-where might be the related smp_rmb(). This looked promissing because
-it was the only location where we read blk->id ;-)
+- Here are my observations:
 
-But it does not make sense. The smp_wmb() in data_alloc() was before
-writing blk->id. So the corresponding smp_rmb() should be after
-reading blk->id.
+1. Adding 'retain_initrd' to the bootargs, helps delay the kexec
+reboot failure (when successive kexec reboots are executed), but the
+(possible ?) initrd corruption is still seen (as per the panic logs
+from the kexec kernel).
 
-> >> +		id = READ_ONCE(blk->id);
+2. I printed the first 4M of initrd file via kernel code (both in the
+primary and kexec kernel, see
+<https://bugzilla.redhat.com/attachment.cgi?id=1667523> and
+<https://bugzilla.redhat.com/attachment.cgi?id=1667521>) and
+interestingly the first 4M contents are _exactly_ similar for primary
+and kexec kernel, even though we see a (possible ?) initrd corruption.
+See logs below from kexec kernel in case of panic:
 
-This brings the question whether the smp_rmb() would make sense here
-to make sure that desc_read() see the descriptor state that allowed
-allocating this space.
+[    4.229170] Call Trace:
+[    4.234379]  dump_stack+0x5c/0x80
+[    4.239840]  panic+0xe7/0x2a9
+[    4.245291]  do_exit.cold.22+0x59/0x81
+[    4.251025]  do_group_exit+0x3a/0xa0
+[    4.256784]  __x64_sys_exit_group+0x14/0x20
+[    4.262905]  do_syscall_64+0x5b/0x1a0
+[    4.268537]  entry_SYSCALL_64_after_hwframe+0x65/0xca
+[    4.275784] RIP: 0033:0x7ff749106e2e
+[    4.281469] Code: Bad RIP value.
+[    4.286981] RSP: 002b:00007fffb6d707f8 EFLAGS: 00000206 ORIG_RAX:
+00000000000000e7
+[    4.298381] RAX: ffffffffffffffda RBX: 00007ff74910f528 RCX: 00007ff749106e2e
+[    4.305616] RDX: 000000000000007f RSI: 000000000000003c RDI: 000000000000007f
+[    4.313064] RBP: 00007ff749306000 R08: 00000000000000e7 R09: 00007fffb6d70708
+[    4.320369] R10: 0000000000000000 R11: 0000000000000206 R12: 0000000000000000
+[    4.327671] R13: 0000000000000022 R14: 00007ff749306148 R15: 00007ff749306030
+[    4.335396] Kernel Offset: 0x2a400000 from 0xffffffff81000000
+(relocation range: 0xffffffff80000000-0xffffffffbfffffff)
+[    4.348002] ---[ end Kernel panic - not syncing: Attempted to kill
+init! exitcode=0x00007f00
+[    4.348002]  ]---
+        2020-03-03T09:01:27+00:00
 
-It would pair with smp_wmb() in desc_reserve() right after
-setting desc->state_var to the newly reserved descriptor id.
-It is the barrier that will allow to modify the reserved space,
-including writing the reserved id into the later reserved blk->id.
+3. So the root-cause seems to be something else. I will do some more
+debugging to evaluate the same.
 
-Note that desc_read() does not have smp_rmb() before the first
-read of the state_var. It might theoretically see an outdated
-value.
+4. I added two scripts (via
+<https://bugzilla.redhat.com/attachment.cgi?id=1667561> and
+<https://bugzilla.redhat.com/attachment.cgi?id=1667560>) which provide
+an automated reproducer.
 
-> >> +
-> >> +		d_state = desc_read(desc_ring, id,
-> >> +				    &desc); /* LMM(data_make_reusable:A) */
-> >> +
-> >> +		switch (d_state) {
-> >> +		case desc_miss:
-> >> +			return false;
-> >> +		case desc_reserved:
-> >> +			return false;
-> >> +		case desc_committed:
-> >> +			/*
-> >> +			 * This data block is invalid if the descriptor
-> >> +			 * does not point back to it.
-> >> +			 */
-> >> +			if (blk_lpos->begin != tail_lpos)
-> >> +				return false;
-> >> +			desc_make_reusable(desc_ring, id);
-> >> +			break;
-> >> +		case desc_reusable:
-> >> +			/*
-> >> +			 * This data block is invalid if the descriptor
-> >> +			 * does not point back to it.
-> >> +			 */
-> >> +			if (blk_lpos->begin != tail_lpos)
-> >> +				return false;
-> >> +			break;
-> >> +		}
-> >> +
-> >> +		/* Advance @tail_lpos to the next data block. */
-> >> +		tail_lpos = blk_lpos->next;
-> >> +	}
-> >> +
-> >> +	*lpos_out = tail_lpos;
-> >> +
-> >> +	return true;
-> >> +}
-> >> +
-> >> +/*
-> >> + * Advance the data ring tail to at least @lpos. This function puts all
-> >> + * descriptors into the reusable state if the tail will be pushed beyond
-> >> + * their associated data block.
-> >> + */
-> >> +static bool data_push_tail(struct printk_ringbuffer *rb,
-> >> +			   struct prb_data_ring *data_ring,
-> >> +			   unsigned long lpos)
-> >> +{
-> >> +	unsigned long tail_lpos;
-> >> +	unsigned long next_lpos;
-> >> +
-> >> +	/* If @lpos is not valid, there is nothing to do. */
-> >> +	if (lpos == INVALID_LPOS)
-> >> +		return true;
-> >> +
-> >> +	tail_lpos = atomic_long_read(&data_ring->tail_lpos);
-> >> +
-> >> +	do {
-> >> +		/* If @lpos is no longer valid, there is nothing to do. */
-> >> +		if (lpos - tail_lpos >= DATA_SIZE(data_ring))
-> >> +			break;
-> >> +
-> >> +		/*
-> >> +		 * Make all descriptors reusable that are associated with
-> >> +		 * data blocks before @lpos.
-> >> +		 */
-> >> +		if (!data_make_reusable(rb, data_ring, tail_lpos, lpos,
-> >> +					&next_lpos)) {
-> >> +			/*
-> >> +			 * data_make_reusable() performed state loads. Make
-> >> +			 * sure they are loaded before reloading the tail lpos
-> >> +			 * in order to see a new tail in the case that the
-> >> +			 * descriptor has been recycled. This pairs with
-> >> +			 * desc_reserve:A.
-> >> +			 */
-> >> +			smp_rmb(); /* LMM(data_push_tail:A) */
-> >> +
-> >> +			/*
-> >> +			 * Reload the tail lpos.
-> >> +			 *
-> >> +			 * Memory barrier involvement:
-> >> +			 *
-> >> +			 * No possibility of missing a recycled descriptor.
-> >> +			 * If data_make_reusable:A reads from desc_reserve:B,
-> >> +			 * then data_push_tail:B reads from desc_push_tail:A.
-> >> +			 *
-> >> +			 * Relies on:
-> >> +			 *
-> >> +			 * MB from desc_push_tail:A to desc_reserve:B
-> >> +			 *    matching
-> >> +			 * RMB from data_make_reusable:A to data_push_tail:B
-> >> +			 */
-> >> +			next_lpos = atomic_long_read(&data_ring->tail_lpos
-> >> +						); /* LMM(data_push_tail:B) */
-> >> +			if (next_lpos == tail_lpos)
-> >> +				return false;
-> >> +
-> >> +			/* Another task pushed the tail. Try again. */
-> >> +			tail_lpos = next_lpos;
-> >> +		}
-> >> +	} while (!atomic_long_try_cmpxchg_relaxed(&data_ring->tail_lpos,
-> >> +			&tail_lpos, next_lpos)); /* can be relaxed? */
-> >
-> > IMHO, we need smp_wmb() here so that others see the updated
-> > data_ring->tail_lpos before this thread allocates the space
-> > by pushing head_pos.
-> >
-> > It would be paired with a read barrier in data_alloc() between
-> > reading head_lpos and tail_lpos, see below.
-> 
-> data_push_tail() is the only function that concerns itself with
-> @tail_lpos. Its cmpxchg-loop will prevent any unintended consequences.
-> And it uses the memory barrier pair data_push_tail:A/desc_reserve:A to
-> make sure that @tail_lpos reloads will successfully identify a changed
-> @tail_lpos due to descriptor recycling (which is the only reason that
-> @tail_lpos changes).
-> 
-> Why is it a problem if the movement of @head_lpos is seen before the
-> movement of @tail_lpos? Please explain.
+This reproducer can be run on the Host machine and launches repeated
+kexec reboots on the aws machine.
 
-This was again motivated by the idea that cmpxchg_relaxed() is week
-and it should be more safe to synchronize other variables.
+Normally approx. 5-12 runs of the master script (i.e. kexec reboots)
+can lead to a panic in the kexec kernel which indicates a (possible ?)
+initrd corruption.
 
-OK, "tail_pos" and "head_pos" are closely related. The question is
-how they are synchronized.
+@Guilherme: Can you please help verify the observations on your setup
+(both amazon and upstream kernel) using the automated test script?
+Thanks.
 
-Hmm, there is the read barrier in LMM(data_push_tail:A) that probably
-solves many problems. But what about the following scenario:
+Regards,
+Bhupesh
 
-CPU0				  CPU1
-
-data_alloc()
-  begin_lpos = dr->head_lpos
-				  data+alloc()
-				    begin_lpos = dr->head_lpos
-				    data_push_tail()
-				      lpos = dr->tail_lpos
-				      id = blk->id
-				      date_make_reusable()
-				      next_lpos = ...
-				      cmpxchg(dr->tail_lpos, next_lpos)
-				    cmpxchg(dr->head_lpos)
-
-				    blk->id = id;
-
-  data_push_tail()
-    lpos = dr->tail_lpos
-    # read old tail_lpos because of missing smp_rmb() amd wmb()
-    id = blk->id
-    # read new id because the CPU see its new state
-    data_make_reusable()
-    # fail because id points to the newly allocated block that
-    # is still in reserved state [*]
-    smp_rmb()
-    next_lpos = dr->tail_lpos
-    # reading still outdated tail_lpos because there is no smp_wmb()
-    # between updating tail_lpos and head_lpos
-
-BANG:
-
-    data_push_tail() would wrongly return false
-    => data_alloc() would fail
-
-This won't happen if there was the proposed smp_wmb() at this
-location.
-
-
-[*] Another problem would be when data_make_reusable() see the new
-    data already in the commited state. It would make fresh new
-    data reusable.
-
-    I mean the following:
-
-CPU0				CPU1
-
-data_alloc()
-  begin_lpos = dr->head_lpos
-  data_push_tail()
-    lpos = dr->tail_lpos
-				prb_reserve()
-				  # reserve the location of current
-				  # dr->tail_lpos
-				prb_commit()
-
-    id = blk->id
-    # read id for the freshly written data on CPU1
-    # and happily make them reusable
-    data_make_reusable()
-
-
-=> We should add a check into data_make_reusable() that
-   we are invalidating really the descriptor pointing to
-   the given lpos and not a freshly reused one!
-
-
-> >> +
-> >> +	return true;
-> >> +}
-> >> +
-> >> +/*
-> >> + * Advance the desc ring tail. This function advances the tail by one
-> >> + * descriptor, thus invalidating the oldest descriptor. Before advancing
-> >> + * the tail, the tail descriptor is made reusable and all data blocks up to
-> >> + * and including the descriptor's data block are invalidated (i.e. the data
-> >> + * ring tail is pushed past the data block of the descriptor being made
-> >> + * reusable).
-> >> + */
-> >> +static bool desc_push_tail(struct printk_ringbuffer *rb,
-> >> +			   unsigned long tail_id)
-> >> +{
-> >> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
-> >> +	enum desc_state d_state;
-> >> +	struct prb_desc desc;
-> >> +
-> >> +	d_state = desc_read(desc_ring, tail_id, &desc);
-> >> +
-> >> +	switch (d_state) {
-> >> +	case desc_miss:
-> >> +		/*
-> >> +		 * If the ID is exactly 1 wrap behind the expected, it is
-> >> +		 * in the process of being reserved by another writer and
-> >> +		 * must be considered reserved.
-> >> +		 */
-> >> +		if (DESC_ID(atomic_long_read(&desc.state_var)) ==
-> >> +		    DESC_ID_PREV_WRAP(desc_ring, tail_id)) {
-> >> +			return false;
-> >> +		}
-> >> +		return true;
-> >> +	case desc_reserved:
-> >> +		return false;
-> >> +	case desc_committed:
-> >> +		desc_make_reusable(desc_ring, tail_id);
-> >> +		break;
-> >> +	case desc_reusable:
-> >> +		break;
-> >> +	}
-> >> +
-> >> +	/*
-> >> +	 * Data blocks must be invalidated before their associated
-> >> +	 * descriptor can be made available for recycling. Invalidating
-> >> +	 * them later is not possible because there is no way to trust
-> >> +	 * data blocks once their associated descriptor is gone.
-> >> +	 */
-> >> +
-> >> +	if (!data_push_tail(rb, &rb->text_data_ring, desc.text_blk_lpos.next))
-> >> +		return false;
-> >> +	if (!data_push_tail(rb, &rb->dict_data_ring, desc.dict_blk_lpos.next))
-> >> +		return false;
-> >> +
-> >> +	/* The data ring tail(s) were pushed: LMM(desc_push_tail:A) */
-> >> +
-> >> +	/*
-> >> +	 * Check the next descriptor after @tail_id before pushing the tail to
-> >> +	 * it because the tail must always be in a committed or reusable
-> >> +	 * state. The implementation of prb_first_seq() relies on this.
-> >> +	 *
-> >> +	 * A successful read implies that the next descriptor is less than or
-> >> +	 * equal to @head_id so there is no risk of pushing the tail past the
-> >> +	 * head.
-> >> +	 */
-> >> +	d_state = desc_read(desc_ring, DESC_ID(tail_id + 1),
-> >> +			    &desc); /* LMM(desc_push_tail:B) */
-> >> +	if (d_state == desc_committed || d_state == desc_reusable) {
-> >> +		atomic_long_cmpxchg_relaxed(&desc_ring->tail_id, tail_id,
-> >> +			DESC_ID(tail_id + 1)); /* LMM(desc_push_tail:C) */
-> >
-> > IMHO, we need smp_wmb() here so that everyone see updated
-> > desc_ring->tail_id before we push the head as well.
-> >
-> > It would pair with read barrier in desc_reserve() between reading
-> > tail_id and head_id.
-> 
-> Good catch! This secures probably the most critical point in your
-> design: when desc_reserve() recognizes that it needs to push the
-> descriptor tail.
-
-Sigh, I moved into another mode. I wonder whether we need more
-full smp_mb() barriers.
-
-The tail might be pushed by one CPU and the head moved on another CPU.
-Do we need smp_mb() before moving head instead?
-
-> >> +	} else {
-> >> +		/*
-> >> +		 * Guarantee the last state load from desc_read() is before
-> >> +		 * reloading @tail_id in order to see a new tail in the case
-> >> +		 * that the descriptor has been recycled. This pairs with
-> >> +		 * desc_reserve:A.
-> >> +		 */
-> >> +		smp_rmb(); /* LMM(desc_push_tail:D) */
-> >> +
-> >> +		/*
-> >> +		 * Re-check the tail ID. The descriptor following @tail_id is
-> >> +		 * not in an allowed tail state. But if the tail has since
-> >> +		 * been moved by another task, then it does not matter.
-> >> +		 *
-> >> +		 * Memory barrier involvement:
-> >> +		 *
-> >> +		 * No possibility of missing a pushed tail.
-> >> +		 * If desc_push_tail:B reads from desc_reserve:B, then
-> >> +		 * desc_push_tail:E reads from desc_push_tail:C.
-> >> +		 *
-> >> +		 * Relies on:
-> >> +		 *
-> >> +		 * MB from desc_push_tail:C to desc_reserve:B
-> >> +		 *    matching
-> >> +		 * RMB from desc_push_tail:B to desc_push_tail:E
-> >> +		 */
-> >> +		if (atomic_long_read(&desc_ring->tail_id) ==
-> >> +					tail_id) { /* LMM(desc_push_tail:E) */
-> >> +			return false;
-> >> +		}
-> >> +	}
-> >> +
-> >> +	return true;
-> >> +}
-> >> +
-> >> +/* Reserve a new descriptor, invalidating the oldest if necessary. */
-> >> +static bool desc_reserve(struct printk_ringbuffer *rb, unsigned long *id_out)
-> >> +{
-> >> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
-> >> +	unsigned long prev_state_val;
-> >> +	unsigned long id_prev_wrap;
-> >> +	struct prb_desc *desc;
-> >> +	unsigned long head_id;
-> >> +	unsigned long id;
-> >> +
-> >> +	head_id = atomic_long_read(&desc_ring->head_id);
-> >> +
-> >> +	do {
-> >> +		desc = to_desc(desc_ring, head_id);
-> >> +
-> >> +		id = DESC_ID(head_id + 1);
-> >> +		id_prev_wrap = DESC_ID_PREV_WRAP(desc_ring, id);
-> >
-> > IMHO, we need smp_rmb() here to to guarantee reading head_id before
-> > desc_ring->tail_id.
-> >
-> > It would pair with write barrier in desc_push_tail() after updating
-> > tail_id, see above.
-> 
-> Ack. Critical.
-> 
-> >> +
-> >> +		if (id_prev_wrap == atomic_long_read(&desc_ring->tail_id)) {
-> >> +			/*
-> >> +			 * Make space for the new descriptor by
-> >> +			 * advancing the tail.
-> >> +			 */
-> >> +			if (!desc_push_tail(rb, id_prev_wrap))
-> >> +				return false;
-> >> +		}
-
-So, I wonder whether we actually need smp_mb() already here.
-It would make sure that all CPUs see the updated tail_id before
-head_id is updated. They both might be updated on different CPUs.
-
-> >> +	} while (!atomic_long_try_cmpxchg_relaxed(&desc_ring->head_id,
-> >> +						  &head_id, id));
-> >> +
-> >> +	/*
-> >> +	 * Guarantee any data ring tail changes are stored before recycling
-> >> +	 * the descriptor. A full memory barrier is needed since another
-> >> +	 * task may have pushed the data ring tails. This pairs with
-> >> +	 * data_push_tail:A.
-> >> +	 *
-> >> +	 * Guarantee a new tail ID is stored before recycling the descriptor.
-> >> +	 * A full memory barrier is needed since another task may have pushed
-> >> +	 * the tail ID. This pairs with desc_push_tail:D and prb_first_seq:C.
-> >> +	 */
-> >> +	smp_mb(); /* LMM(desc_reserve:A) */
-> >
-> > I am a bit confused by the full barrier here. The description is not
-> > clear. All the three tags (data_push_tail:A, desc_push_tail:D and
-> > prb_first_seq:C) refers read barriers. This would suggest that write
-> > barrier would be enough here.
-> 
-> The above comment section states twice why a full memory barrier is
-> needed: those writes may not have come from this task. We are not only
-> ordering the visible writes that this task performed, we are also
-> ordering the visible writes that this task has observed. Here is a
-> litmus test demonstrating this:
-> 
-> C full-mb-test
-> 
-> {}
-> 
-> P0(int *x, int *y)
-> {
-> 	WRITE_ONCE(*x, 1);
-> }
-> 
-> P1(int *x, int *y)
-> {
-> 	int tmp_x;
-> 
-> 	tmp_x = READ_ONCE(*x);
-> 	if (tmp_x) {
-> 		smp_mb();
-> 		WRITE_ONCE(*y, 1);
-> 	}
-> }
-> 
-> P2(int *x, int *y)
-> {
-> 	int tmp_x;
-> 	int tmp_y;
-> 
-> 	tmp_y = READ_ONCE(*y);
-> 	smp_rmb();
-> 	tmp_x = READ_ONCE(*x);
-> }
-> 
-> exists (2:tmp_x=0 /\ 2:tmp_y=1)
-
-Thanks a lot for this Litmus test. I have read several articles about
-barrier and the memory model. But I forgot everything that I did not
-use in practice.
-
-I still have to shake my head about it.
-
-Now, I came up with the idea that the full smp_mb() barrier should be
-earlier (before head_id update). Then smp_wmb() might be enough here.
-It would synchronize write to desc_ring->head_id and
-desc->state_var. They both happen on the same CPU
-by design.
-
-Well, the full barrier smp_mb() might actually still be needed here
-because of the paranoid prev_state_val check. It is a read and checks
-against potential races with another CPUs.
-
-
-> As mentioned above, I would put the smp_mb() before updating the
-> @tail_id. That would pair with this smp_mb() and avoid the false
-> positive on the @state_var check.
-
-I am not comletely sure what you mean. Feel free to use your best
-judgement in the next version of the patch. It seems that few more
-barriers are needed and it is getting complicated to discuss
-changes based on other changes wihtout seeing the code ;-)
-
-> >> +
-> >> +	desc = to_desc(desc_ring, id);
-> >> +
-> >> +	/* If the descriptor has been recycled, verify the old state val. */
-> >> +	prev_state_val = atomic_long_read(&desc->state_var);
-> >> +	if (prev_state_val && prev_state_val != (id_prev_wrap |
-> >> +						 DESC_COMMITTED_MASK |
-> >> +						 DESC_REUSE_MASK)) {
-> >> +		WARN_ON_ONCE(1);
-> >> +		return false;
-> >> +	}
-> >> +
-> >> +	/* Assign the descriptor a new ID and set its state to reserved. */
-> >> +	if (!atomic_long_try_cmpxchg_relaxed(&desc->state_var,
-> >> +			&prev_state_val, id | 0)) { /* LMM(desc_reserve:B) */
-> >> +		WARN_ON_ONCE(1);
-> >> +		return false;
-> >> +	}
-> >> +
-> >> +	/*
-> >> +	 * Guarantee the new descriptor ID and state is stored before making
-> >> +	 * any other changes. This pairs with desc_read:D.
-> >> +	 */
-> >> +	smp_wmb(); /* LMM(desc_reserve:C) */
-> >> +
-> >> +	/* Now data in @desc can be modified: LMM(desc_reserve:D) */
-> >> +
-> >> +	*id_out = id;
-> >> +	return true;
-> >> +}
-> >> +
-> >> +/*
-> >> + * Allocate a new data block, invalidating the oldest data block(s)
-> >> + * if necessary. This function also associates the data block with
-> >> + * a specified descriptor.
-> >> + */
-> >> +static char *data_alloc(struct printk_ringbuffer *rb,
-> >> +			struct prb_data_ring *data_ring, unsigned long size,
-> >> +			struct prb_data_blk_lpos *blk_lpos, unsigned long id)
-> >> +{
-> >> +	struct prb_data_block *blk;
-> >> +	unsigned long begin_lpos;
-> >> +	unsigned long next_lpos;
-> >> +
-> >> +	if (!data_ring->data || size == 0) {
-> >> +		/* Specify a data-less block. */
-> >> +		blk_lpos->begin = INVALID_LPOS;
-> >> +		blk_lpos->next = INVALID_LPOS;
-> >> +		return NULL;
-> >> +	}
-> >> +
-> >> +	size = to_blk_size(size);
-> >> +
-> >> +	begin_lpos = atomic_long_read(&data_ring->head_lpos);
-> >> +
-> >> +	do {
-> >> +		next_lpos = get_next_lpos(data_ring, begin_lpos, size);
-> >> +
-> >
-> > IMHO, we need smp_rmb() here to read begin_lpos before we read
-> > tail_lpos in data_push_tail()
-> >
-> > It would pair with a write barrier in data_push_tail() after
-> > updating data_ring->tail_lpos.
-> 
-> Please explain why this pair is necessary. What is the scenario that
-> needs to be avoided?
-
-What about this:
-
-CPU0				  CPU1
-
-data_alloc()
-
-  begin_lpos = dr->head_lpos
-				  data+alloc() (long message)
-				    begin_lpos = dr->head_lpos
-				    data_push_tail()
-				      lpos = dr->tail_lpos
-				      id = blk->id
-				      date_make_reusable()
-				      next_lpos = ...
-				      cmpxchg(dr->tail_lpos, next_lpos)
-				    cmpxchg(dr->head_lpos)
-
-  begin_lpos = dr->head_lpos
-    # reading new head
-    data_push_tail()
-      lpos = dr->tail_lpos
-      # read old tail_lpos because of missing smp_rmb() amd wmb()
-      data_make_reusable()
-      # success because already done;
-      cmpxchg(dr->tail_lpos, next_lpos)
-      # fail because it sees the updated tail_lpos
-
-OK, we repeat the cycle with the righ tail_lpos. So the only problem
-is the extra cycle that might be prevented by the barrier.
-
-Well, I still feel that the code will be much cleaner and rebust when
-we do not rely on these things. In the current state, we rely on the
-fact that data_make_reusable() is rebust enough to do not touch
-outdated/reused descriptor.
-
-Anyway, there is well defined order in which tail/head pos are read and
-written. And it is just a call for problems when we do not synchronize
-the reads and writers by barriers.
-
-
-> >> +		if (!data_push_tail(rb, data_ring,
-> >> +				    next_lpos - DATA_SIZE(data_ring))) {
-> >> +			/* Failed to allocate, specify a data-less block. */
-> >> +			blk_lpos->begin = INVALID_LPOS;
-> >> +			blk_lpos->next = INVALID_LPOS;
-> >> +			return NULL;
-> >> +		}
-> >> +	} while (!atomic_long_try_cmpxchg_relaxed(&data_ring->head_lpos,
-> >> +						  &begin_lpos, next_lpos));
-> >> +
-> >
-> > IMHO, we need smp_wmb() here to guarantee that others see the updated
-> > data_ring->head_lpos before we write anything into the data buffer.
-> >
-> > It would pair with a read barrier in data_make_reusable
-> > between reading tail_lpos and blk->id in data_make_reusable().
-> 
-> Please explain why this pair is necessary. What is the scenario that
-> needs to be avoided?
-
-Uff, I would need to take a day off before I think about this.
-But I want to send this mail today, see below.
-
-So I will just write a question. This code looks very similar to
-desc_reserve(). We are pushing tail/head and writing into to
-allocated space. Why do we need less barriers here?
-
-> >> +	blk = to_block(data_ring, begin_lpos);
-> >> +	blk->id = id;
-> >> +
-> >> +	if (DATA_WRAPS(data_ring, begin_lpos) !=
-> >> +	    DATA_WRAPS(data_ring, next_lpos)) {
-> >> +		/* Wrapping data blocks store their data at the beginning. */
-> >> +		blk = to_block(data_ring, 0);
-> >> +		blk->id = id;
-> >> +	}
-> >> +
-> >> +	blk_lpos->begin = begin_lpos;
-> >> +	blk_lpos->next = next_lpos;
-> >> +
-> >> +	return &blk->data[0];
-> >> +}
-
-I hope that the mail makes some sense. I feel that I still do not
-understand it enough. I am not sure if it would be better to
-discuss the things more, or see an updated version, or get
-opinion from another person.
-
-Anyway, I am not sure how responsible I would be during
-the following days. My both hands are aching (Carpal tunnel
-syndrome or so) and it is getting worse. I have to visit
-a doctor. I hope that I will be able to work with some
-bandage but...
-
-Best Regards,
-Petr
 
 _______________________________________________
 kexec mailing list
