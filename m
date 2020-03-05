@@ -2,55 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20AEF179C71
-	for <lists+kexec@lfdr.de>; Thu,  5 Mar 2020 00:27:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5E1E179E6E
+	for <lists+kexec@lfdr.de>; Thu,  5 Mar 2020 04:53:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qUP95rYbrtUPbMsMnQOd9GYT5v8LaH6Apk1JqKJQkOM=; b=RtX
-	oVOTqbAnAVcKvl1zwttGKptLg79+uEVaKGAqbmvErvE+NHR9HqvrSwzX56XnDTE4mNv98JWYycQy4
-	U8P7qOlP5K/XUwIKxvsRWkVc3C+Vdm+8DyFGC2eO7hVTCEwiK3a9yUakQs3XAjPyxwmTHuoDjcQWs
-	1z028D/SV83NGEAkS9mPC3MhAWzWPAIWIVVgyekWNPSFXR2+EuiGLq2wboC1CACE1kOsgqG2pJNFW
-	Y8ygKKl86WHbs7ML3C9tbjed6RvuiAfJ5waBkHT+SljoIjq+78v8/8e387hUSzH4LLJt1FiD25koQ
-	8x9fzxgiUvgMVp2pR7/raJ3DFP41M5w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oVTWdMVjgKaWXEmbH9SIuYvwiH6co1y6qtyZWzVV6bE=; b=gd4tXIsC7VNoCC
+	T6c4SQIjWDOrae1r9AvxeWpRpUnYm4wtocvtFrworaeqF9qrPvPtFiycaFN5D0wF/z5kD4spj/f6/
+	ixzoVLJdvXvb3AcfPCk6/zRTJuZQlKQioHzdrvPzvGbkQ7gP29/RNahjjZ+1WVlUBb1CAJ3juu1QU
+	M2TJHhQIIiFR+k+hRrEYrauezE5wR/47McdBtBRhl6Txoa6TjGyzQGf4Ln8tDwXGyIrRCi7vuoSE1
+	mtTWwGIQfd2/GiRmZNm+M77R6kSwDr7zdUg5vmfZrIVEcmIZuY9dlv25vD1YorpGx9Yr87TrHOG7B
+	RGGU5I/JR+LNEmwExVHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9dQF-0002j1-Gg; Wed, 04 Mar 2020 23:27:27 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1j9hZz-0005Go-Db; Thu, 05 Mar 2020 03:53:47 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9dQC-0002ib-Ci
- for kexec@lists.infradead.org; Wed, 04 Mar 2020 23:27:25 +0000
-Received: from 1.general.cascardo.us.vpn ([10.172.70.58]
- helo=mussarela.acentic.lan) by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <cascardo@canonical.com>)
- id 1j9dQ5-0001jn-KO; Wed, 04 Mar 2020 23:27:18 +0000
-From: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
-To: kexec@lists.infradead.org
-Subject: [PATCH] crashdump-ppc64: crashkernel-base and crashkernel-size are
- big-endian
-Date: Wed,  4 Mar 2020 20:27:11 -0300
-Message-Id: <20200304232711.30464-1-cascardo@canonical.com>
-X-Mailer: git-send-email 2.17.1
+ id 1j9hZw-0005Fv-G1
+ for kexec@lists.infradead.org; Thu, 05 Mar 2020 03:53:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1583380421;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=7dRwSfMa7qKrmqL7MdtHbIwI2LezXgxKe/a4kDF36F0=;
+ b=F1j0nU9VP/drViKCL2u9R9fnfReF6iknYncAHGha7nxmvqUxMz0rONxtnvk/CoiQsxDyWZ
+ K/zkeQVclu5KDR8GujCrd9U1TsT0Qegan0S5ReKX7nRb7Xx4gu6IUjfabtZ/ZhQrwz0GLa
+ jpAruDCzrnQc1HL6a8FllXomqY1GAAU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-388-xvX7mDflP-2_S1QXHKaujw-1; Wed, 04 Mar 2020 22:53:39 -0500
+X-MC-Unique: xvX7mDflP-2_S1QXHKaujw-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D4AC018A5505;
+ Thu,  5 Mar 2020 03:53:37 +0000 (UTC)
+Received: from localhost (ovpn-12-116.pek2.redhat.com [10.72.12.116])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 9F54E5C219;
+ Thu,  5 Mar 2020 03:53:31 +0000 (UTC)
+Date: Thu, 5 Mar 2020 11:53:29 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Deepa Dinamani <deepa.kernel@gmail.com>
+Subject: Re: [RFC PATCH] PCI, kdump: Clear bus master bit upon shutdown in
+ kdump kernel
+Message-ID: <20200305035329.GD4433@MiWiFi-R3L-srv>
+References: <20191225192118.283637-1-kasong@redhat.com>
+ <20200222165631.GA213225@google.com>
+ <CACPcB9dv1YPhRmyWvtdt2U4g=XXU7dK4bV4HB1dvCVMTpPFdzA@mail.gmail.com>
+ <CABeXuvqm1iUGt1GWC9eujuoaACdPiZ2X=3LjKJ5JXKZcXD_z_g@mail.gmail.com>
+ <CABeXuvonZpwWfcUef4PeihTJkgH2ZC_RCKuLR3rH3Re4hx36Aw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CABeXuvonZpwWfcUef4PeihTJkgH2ZC_RCKuLR3rH3Re4hx36Aw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200304_152724_612295_0FF407F2 
-X-CRM114-Status: UNSURE (   6.96  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200304_195344_622386_805F22BA 
+X-CRM114-Status: GOOD (  14.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,51 +93,62 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au, hbathini@linux.ibm.com
-MIME-Version: 1.0
+Cc: jroedel@suse.de, Kairui Song <kasong@redhat.com>,
+ Myron Stowe <myron.stowe@redhat.com>, linux-pci@vger.kernel.org,
+ kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Randy Wright <rwright@hpe.com>, Jerry Hoemann <jerry.hoemann@hpe.com>,
+ Bjorn Helgaas <helgaas@kernel.org>, Dave Young <dyoung@redhat.com>,
+ Khalid Aziz <khalid@gonehiking.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-When reading the device-tree exported crashkernel-base and
-crashkernel-size, their values should be converted from big-endian to the
-CPU byte order.
++Joerg to CC.
 
-These is the output of running kexec --print-ckr-size on a little-endian
-ppc64 box.
+On 03/03/20 at 01:01pm, Deepa Dinamani wrote:
+> I looked at this some more. Looks like we do not clear irqs when we do
+> a kexec reboot. And, the bootup code maintains the same table for the
+> kexec-ed kernel. I'm looking at the following code in
 
-$ kexec --print-ckr-size
-137438953472
-$ kexec --print-ckr-size
-536870912
+I guess you are talking about kdump reboot here, right? Kexec and kdump
+boot take the similar mechanism, but differ a little.
 
-Signed-off-by: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>
----
- kexec/arch/ppc64/crashdump-ppc64.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> intel_irq_remapping.c:
+> 
+>         if (ir_pre_enabled(iommu)) {
+>                 if (!is_kdump_kernel()) {
+>                         pr_warn("IRQ remapping was enabled on %s but
+> we are not in kdump mode\n",
+>                                 iommu->name);
+>                         clear_ir_pre_enabled(iommu);
+>                         iommu_disable_irq_remapping(iommu);
+>                 } else if (iommu_load_old_irte(iommu))
 
-diff --git a/kexec/arch/ppc64/crashdump-ppc64.c b/kexec/arch/ppc64/crashdump-ppc64.c
-index 50e3853dbdcf..b2787d5135bd 100644
---- a/kexec/arch/ppc64/crashdump-ppc64.c
-+++ b/kexec/arch/ppc64/crashdump-ppc64.c
-@@ -612,12 +612,12 @@ int get_crash_kernel_load_range(uint64_t *start, uint64_t *end)
- 	unsigned long long value;
- 
- 	if (!get_devtree_value(DEVTREE_CRASHKERNEL_BASE, &value))
--		*start = value;
-+		*start = be64_to_cpu(value);
- 	else
- 		return -1;
- 
- 	if (!get_devtree_value(DEVTREE_CRASHKERNEL_SIZE, &value))
--		*end = *start + value - 1;
-+		*end = *start + be64_to_cpu(value) - 1;
- 	else
- 		return -1;
- 
--- 
-2.17.1
+Here, it's for kdump kernel to copy old ir table from 1st kernel.
+
+>                         pr_err("Failed to copy IR table for %s from
+> previous kernel\n",
+>                                iommu->name);
+>                 else
+>                         pr_info("Copied IR table for %s from previous kernel\n",
+>                                 iommu->name);
+>         }
+> 
+> Would cleaning the interrupts(like in the non kdump path above) just
+> before shutdown help here? This should clear the interrupts enabled
+> for all the devices in the current kernel. So when kdump kernel
+> starts, it starts clean. This should probably help block out the
+> interrupts from a device that does not have a driver.
+
+I think stopping those devices out of control from continue sending
+interrupts is a good idea. While not sure if only clearing the interrupt 
+will be enough. Those devices which will be initialized by their driver
+will brake, but devices which drivers are not loaded into kdump kernel
+may continue acting. Even though interrupts are cleaning at this time,
+the on-flight DMA could continue triggerring interrupt since the ir
+table and iopage table are rebuilt.
 
 
 _______________________________________________
