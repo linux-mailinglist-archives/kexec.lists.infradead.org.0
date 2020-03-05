@@ -2,86 +2,101 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC49317A2EF
-	for <lists+kexec@lfdr.de>; Thu,  5 Mar 2020 11:14:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7503117A372
+	for <lists+kexec@lfdr.de>; Thu,  5 Mar 2020 11:52:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9HVY9CR8yPkh3MGwjA6MyoVtmHYtwg68drKeXV7oFBo=; b=Q6j9y67w47hQwW
-	V1vmVABx5kQAewucgsi33YDj9DNaR4/kwmsvx6hTJiPwwLhG4DFW9zaIQlsSX5BDgGnHG+faf/zw1
-	EavIz4xmzxW6/9Z03VKJ5IhBwnMH/iWSMYOxUb/dbCr+pxcjEkshdrBrUtmZ8LASkivgagkwSkBXP
-	XUcjtFn9s/lbuxBVCiEwp3yCCwf3t2cPqZNdTxskp1HfN3AOjzMq/v0yjzF5RO/q9PmmDPP6Rkfpz
-	yLhUbWI5n41YJRe3+Ksh0vMkqPwniI65Z6B2ooCCH1ec3SY+UOxQKDb6QmyZMgBbq4BDFAYeM9M1s
-	viWOXogv42FsqhJiRDvw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:Message-ID:From:
+	Date:Reply-To:To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IyAL8tauX5khA4PiIR436QFJEZKY+Wo6oWw4IsY8hFU=; b=tjnvKX378EtLe6
+	lu8CwcbH/1eIlz+CMBrHPtQrCC2J6fFFwZ/cZBhmITU/P81lPeRhkOZJKWlIntgBwdnnvZaZGoAJq
+	jCNYy859cKh14X1YBvmJcaZPrMbXeF6xtxDnHr2qv7FwrTezVcf6BEyNwqIkUm88oDzscZBdTkb44
+	to/M5zyr+lhAmb0AYQsLdBeuOdgW4M0Vx/hZ3460VMWQh9hh6fni8193J21i+2jBhO/PRMAR83Rlq
+	9tS6uXiyo7Dfl3mCrO8UExDM7YuHPJz46GUja9k8D9mjbdCuI7AJyn3ZNHPD+aEEn1+iQYeFDA4C+
+	Sr+32fCk7AYVdlbRhwfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j9nWM-0001Ex-8w; Thu, 05 Mar 2020 10:14:26 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1j9o7a-0006M4-DW; Thu, 05 Mar 2020 10:52:54 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j9nWG-0001Du-8J; Thu, 05 Mar 2020 10:14:21 +0000
-Received: by mail-wm1-x341.google.com with SMTP id a141so5037051wme.2;
- Thu, 05 Mar 2020 02:14:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ouu4WXxCaevxlmC9Uhz7tTOBhGUlnzRHTVeHp1aOhiI=;
- b=TaYxDEiehx09bbma3RrgW09W2c0LlA1BkOiJvjGkNPusdexeODgG4SuNhkwsrMwY0o
- 4007WMrc/4m39OYw4UUkMcQLVpGdZn4c9jBY2o6By1cbNmG1Z9uVdbmAgVrsqfMxqqmW
- ZMkjrkmS0MwfFDQzyVrGWV3v1HB6q0WnW8LVg+iUXsC7ck7Y1I7myp0Ygg3nNArFQbSn
- v5nJAENj2gi81V077ki2FvmLt82EfVsLTSytj7KqD5d5XejoEzpIyQUFH/QofGhvwzeb
- usDNXUIu2OCq9K9SjznaVah+2+9KoN6CsvNnqeIep32vZvTKQtG2UG4e0mnYpBw9+Yxl
- 2Giw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ouu4WXxCaevxlmC9Uhz7tTOBhGUlnzRHTVeHp1aOhiI=;
- b=nEdDrLxRpbcrykEnQu6ULi5yUMPFz6wLzjmgiU4Th5bZxOFcS2GiW9gcJxldPEhFbY
- uAYWyA9hYXnFeV+s5HE+rF6rz09GpuIP7MhOAVmSKT4kW5ZgYeKtc3uBxnbqU3kNKO/u
- /kNwWuqfKQpD0CR3CH45E5kLV25CCrsOTf6N8xVW5nBHZ+i8EJ1Ca3e4gsJjrFd7nRP8
- jK8jy4IEVz20Pz27MmCfU0FZYR74X/EuQ+T5yvvhcLsflCg2nyiUwEjccXOaJgwYLjAk
- 5uZZ8pLJuqASJdC5c3Bz8fgUf9oqhOsOcOBd2eyFV1BRBiGQZwZTvbqc7//EziIIylR/
- DBkg==
-X-Gm-Message-State: ANhLgQ2rUcu1iawkXxYGfunKoAxDfbtTYozodP5qbozPhNW5lNviSA+b
- BubamcU+t2LTU9DBseyPcyScfPQhAhJtIatbtL4=
-X-Google-Smtp-Source: ADFU+vtRnF/dXxex4bMtm9lMXct71zx/beWq0f7tsbHICcoY3Vly/IH9SaaT79t48a+UTI0DbFZr1itud86S+ZPQomM=
-X-Received: by 2002:a05:600c:4108:: with SMTP id
- j8mr8669423wmi.188.1583403257961; 
- Thu, 05 Mar 2020 02:14:17 -0800 (PST)
+ id 1j9o7Y-0006Lm-Ca
+ for kexec@bombadil.infradead.org; Thu, 05 Mar 2020 10:52:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:Subject:Message-ID:From:Date:Sender:Reply-To:To:Cc:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=RC75T5p3JPNk7JUNB+lH0UfaFQO1Ac584gPL3SIL6h8=; b=DsvwirUqGfpI58mGAXtbigg8Cn
+ zY4kRLOBMf0XAX6C7xcJ2EtiIp+UjeoyonL6QoRRtsSXszcCPyScssG7lQ1hz/D1AFgQV3fQVY0Hw
+ ObC5teQEhwRDUaJ86jtQVM7vyhcGFxeFu/OybDZQOT6V0o5AXioAufJEBXpNrqNPfxFKoVc34kuIi
+ VPdTQlWCU+woblG2PiIWm8PS0oX4hixL9PhfP7aJY7Y98d+kURs/q3i63SaB7cJOqN9Ej5dzjBEo+
+ fcpslABm3zoClU9lYwzlKZH+CMuFdr0tmYBt7z78Nzx43pqwrwQwj1W3lQLarepRsrZ3wAgGKil6c
+ 5EOJHkEw==;
+Received: from ulan.pagasa.dost.gov.ph ([202.90.128.205]
+ helo=mailgw.pagasa.dost.gov.ph)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j9o7T-0006Lu-BI
+ for kexec@lists.infradead.org; Thu, 05 Mar 2020 10:52:51 +0000
+Received: from webmail.pagasa.dost.int ([10.10.11.8])
+ by mailgw.pagasa.dost.gov.ph  with ESMTP id 025AnjMw006560-025AnjN0006560
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 5 Mar 2020 18:49:45 +0800
+Received: from localhost (localhost [127.0.0.1])
+ by webmail.pagasa.dost.int (Postfix) with ESMTP id 848F02981B86;
+ Thu,  5 Mar 2020 18:43:19 +0800 (PST)
+Received: from webmail.pagasa.dost.int ([127.0.0.1])
+ by localhost (webmail.pagasa.dost.int [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id iNu9OfE5kZcx; Thu,  5 Mar 2020 18:43:19 +0800 (PST)
+Received: from localhost (localhost [127.0.0.1])
+ by webmail.pagasa.dost.int (Postfix) with ESMTP id B90C52981B48;
+ Thu,  5 Mar 2020 18:43:18 +0800 (PST)
+DKIM-Filter: OpenDKIM Filter v2.10.3 webmail.pagasa.dost.int B90C52981B48
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pagasa.dost.gov.ph;
+ s=96B9A03E-48B0-11EA-A7E8-92F42F537CE2; t=1583404998;
+ bh=RC75T5p3JPNk7JUNB+lH0UfaFQO1Ac584gPL3SIL6h8=;
+ h=Date:From:Message-ID:MIME-Version;
+ b=i5UkMgZtH7SoKrrmZeG4L0eYT9Ug1Lq/bsiVStJoSXr9sVUdg434XRsbw+cx1Iizr
+ YEG/mPu6YrOIei4y0YFYSH8oYrwbTYQd5vA7crwOWe6UtaVxMFmavIEzKtliYwPIWT
+ bxhUQmkiODaGyYj6DrEuyd222kx40iyCc6C9ITKo=
+X-Virus-Scanned: amavisd-new at pagasa.dost.int
+Received: from webmail.pagasa.dost.int ([127.0.0.1])
+ by localhost (webmail.pagasa.dost.int [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id cE0cByusd-ew; Thu,  5 Mar 2020 18:43:18 +0800 (PST)
+Received: from webmail.pagasa.dost.int (webmail.pagasa.dost.int [10.11.1.8])
+ by webmail.pagasa.dost.int (Postfix) with ESMTP id 3DBEB2981B10;
+ Thu,  5 Mar 2020 18:43:17 +0800 (PST)
+Date: Thu, 5 Mar 2020 18:43:17 +0800 (PST)
+From: "Juanito S. Galang" <juanito.galang@pagasa.dost.gov.ph>
+Message-ID: <1907161523.3574945.1583404997226.JavaMail.zimbra@pagasa.dost.gov.ph>
+Subject: 
 MIME-Version: 1.0
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-3-chenzhou10@huawei.com>
-In-Reply-To: <20191223152349.180172-3-chenzhou10@huawei.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Thu, 5 Mar 2020 15:43:40 +0530
-Message-ID: <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
-Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
- crash dump kernel
-To: Chen Zhou <chenzhou10@huawei.com>
+X-Mailer: Zimbra 8.8.15_GA_3899 (ZimbraWebClient - GC79 (Win)/8.8.15_GA_3895)
+Thread-Index: SZ7MY2jMKs/qcT/kYa55SVDyLt9UwA==
+Thread-Topic: 
+X-FEAS-DKIM: Valid
+Authentication-Results: mailgw.pagasa.dost.gov.ph;
+ dkim=pass header.i=@pagasa.dost.gov.ph
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200305_021420_297914_6A1CA1DB 
-X-CRM114-Status: GOOD (  20.13  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200305_105248_642721_3D5CBAD4 
+X-CRM114-Status: UNSURE (  -0.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.0 (-)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-1.0 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
+ 1.0 MISSING_HEADERS        Missing To: header
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 LOTS_OF_MONEY          Huge... sums of money
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,139 +108,36 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>, xiexiuqi@huawei.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mingo@redhat.com,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- dyoung@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
->
-> Crashkernel=X tries to reserve memory for the crash dump kernel under
-> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
-> size low memory for crash kdump kernel devices firstly and then reserve
-> memory above 4G.
->
-> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> ---
->  arch/arm64/kernel/setup.c |  8 +++++++-
->  arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
->  2 files changed, 36 insertions(+), 3 deletions(-)
->
-> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> index 56f6645..04d1c87 100644
-> --- a/arch/arm64/kernel/setup.c
-> +++ b/arch/arm64/kernel/setup.c
-> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
->                     kernel_data.end <= res->end)
->                         request_resource(res, &kernel_data);
->  #ifdef CONFIG_KEXEC_CORE
-> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
-> +               /*
-> +                * Userspace will find "Crash kernel" region in /proc/iomem.
-> +                * Note: the low region is renamed as Crash kernel (low).
-> +                */
-> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
-> +                               crashk_low_res.end <= res->end)
-> +                       request_resource(res, &crashk_low_res);
->                 if (crashk_res.end && crashk_res.start >= res->start &&
->                     crashk_res.end <= res->end)
->                         request_resource(res, &crashk_res);
-> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> index b65dffd..0d7afd5 100644
-> --- a/arch/arm64/mm/init.c
-> +++ b/arch/arm64/mm/init.c
-> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
->  {
->         unsigned long long crash_base, crash_size;
->         int ret;
-> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
->
->         ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
->                                 &crash_size, &crash_base);
-> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
->         if (ret || !crash_size)
->                 return;
->
-> +       ret = reserve_crashkernel_low();
-> +       if (!ret && crashk_low_res.end) {
-> +               /*
-> +                * If crashkernel=X,low specified, there may be two regions,
-> +                * we need to make some changes as follows:
-> +                *
-> +                * 1. rename the low region as "Crash kernel (low)"
-> +                * In order to distinct from the high region and make no effect
-> +                * to the use of existing kexec-tools, rename the low region as
-> +                * "Crash kernel (low)".
-> +                *
-> +                * 2. change the upper bound for crash memory
-> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
-> +                *
-> +                * 3. mark the low region as "nomap"
-> +                * The low region is intended to be used for crash dump kernel
-> +                * devices, just mark the low region as "nomap" simply.
-> +                */
-> +               const char *rename = "Crash kernel (low)";
-> +
-> +               crashk_low_res.name = rename;
-> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
-> +               memblock_mark_nomap(crashk_low_res.start,
-> +                                   resource_size(&crashk_low_res));
-> +       }
-> +
->         crash_size = PAGE_ALIGN(crash_size);
->
->         if (crash_base == 0) {
->                 /* Current arm64 boot protocol requires 2MB alignment */
-> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
-> -                               crash_size, SZ_2M);
-> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
-> +                               SZ_2M);
->                 if (crash_base == 0) {
->                         pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
->                                 crash_size);
-> --
-
-I tested this patch series on ARM64-ThunderX2 with no issue with
-bootargs crashkenel=X@Y crashkernel=250M,low
-
-$ dmesg | grep crash
-[    0.000000] crashkernel reserved: 0x0000000b81200000 -
-0x0000000c81200000 (4096 MB)
-[    0.000000] Kernel command line:
-BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
-crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
-[   29.310209]     crashkernel=250M,low
-
-$  kexec -p -i /boot/vmlinuz-`uname -r`
---initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
-$ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
-
-But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
-Kernel is not able to allocate memory.
-[    0.000000] cannot allocate crashkernel (size:0x100000000)
-[    0.000000] Kernel command line:
-BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
-crashkernel=250M,low nowatchdog
-[   29.332081]     crashkernel=250M,low
-
-does crashkernel=X@Y mandatory to get allocated beyond 4G?
-am I missing something?
-
---pk
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+CgpIZXJ6bGljaGVuIEdsw7xja3d1bnNjaCBMaWViZXIgQmVnw7xuc3RpZ3RlcixTaWUgZXJoYWx0
+ZW4gZGllc2UgRS1NYWlsIHZvbiBkZXIgUm9iZXJ0IEJhaWxleSBGb3VuZGF0aW9uLiBJY2ggYmlu
+IGVpbiBwZW5zaW9uaWVydGVyIFJlZ2llcnVuZ3Nhbmdlc3RlbGx0ZXIgYXVzIEhhcmxlbSB1bmQg
+ZWluIEdld2lubmVyIGRlcyBQb3dlcmJhbGwgTG90dGVyeSBKYWNrcG90IGltIFdlcnQgdm9uIDM0
+Myw4IE1pbGxpb25lbiBVUy1Eb2xsYXIuIEljaCBiaW4gZGVyIGdyw7bDn3RlIEphY2twb3QtR2V3
+aW5uZXIgaW4gZGVyIEdlc2NoaWNodGUgZGVyIE5ldyBZb3JrZXIgTG90dGVyaWUgaW0gVVMtQnVu
+ZGVzc3RhYXQgQW1lcmlrYS4gSWNoIGhhYmUgZGllc2UgTG90dGVyaWUgYW0gMjcuIE9rdG9iZXIg
+MjAxOCBnZXdvbm5lbiB1bmQgbcO2Y2h0ZSBTaWUgZGFyw7xiZXIgaW5mb3JtaWVyZW4sIGRhc3Mg
+R29vZ2xlIGluIFp1c2FtbWVuYXJiZWl0IG1pdCBNaWNyb3NvZnQgSWhyZSAiRS1NYWlsLUFkcmVz
+c2UiIGF1ZiBtZWluZSBCaXR0ZSwgZWluZW4gU3BlbmRlbmJldHJhZyB2b24gMy4wMDAuMDAwLDAw
+IE1pbGxpb25lbiBFdXJvIHp1IGVyaGFsdGVuLCDDvGJlcm1pdHRlbHQgaGF0LiBJY2ggc3BlbmRl
+IGRpZXNlIDMgTWlsbGlvbmVuIEV1cm8gYW4gU2llLCB1bSBkZW4gV29obHTDpHRpZ2tlaXRzaGVp
+bWVuIHVuZCBhcm1lbiBNZW5zY2hlbiBpbiBJaHJlciBHZW1laW5kZSB6dSBoZWxmZW4sIGRhbWl0
+IHdpciBkaWUgV2VsdCBmw7xyIGFsbGUgdmVyYmVzc2VybiBrw7ZubmVuLldlaXRlcmUgSW5mb3Jt
+YXRpb25lbiBmaW5kZW4gU2llIGF1ZiBkZXIgZm9sZ2VuZGVuIFdlYnNpdGUsIGRhbWl0IFNpZSBu
+aWNodCBza2VwdGlzY2ggc2luZApEaWVzZSBTcGVuZGUgdm9uIDMgTWlvLiBFVVIuaHR0cHM6Ly9u
+eXBvc3QuY29tLzIwMTgvMTEvMTQvbWVldC10aGUtd2lubmVyLW9mLXRoZS1iaWdnZXN0LWxvdHRl
+cnktamFja3BvdC1pbi1uZXcteW9yay1oaXN0b3J5L1NpZSBrw7ZubmVuIGF1Y2ggbWVpbiBZb3VU
+dWJlIGbDvHIgbWVociBCZXN0w6R0aWd1bmcgYXVmcGFzc2VuOgpodHRwczovL3d3dy55b3V0dWJl
+LmNvbS93YXRjaD92PUg1dlQxOFlzYXZjCkJpdHRlIGJlYWNodGVuIFNpZSwgZGFzcyBhbGxlIEFu
+dHdvcnRlbiBhbiAocm9iZXJ0ZG9uYXRpb243QGdtYWlsLmNvbcKgICkgZ2VzZW5kZXQgd2VyZGVu
+LCBkYW1pdCB3aXIgZGFzIGvDtm5uZW4KRmFocmVuIFNpZSBmb3J0LCB1bSBkYXMgZ2VzcGVuZGV0
+ZSBHZWxkIGFuIFNpZSB6dSDDvGJlcndlaXNlbi5FLU1haWw6IHJvYmVydGRvbmF0aW9uN0BnbWFp
+bC5jb21GcmV1bmRsaWNoZSBHcsO8w59lLApSb2JlcnQgQmFpbGV5CiogKiAqICogKiAqICogKiAq
+ICogKiAqICogKiAqICoKUG93ZXJiYWxsIEphY2twb3QgR2V3aW5uZXIKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhl
+Y0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8va2V4ZWMK
