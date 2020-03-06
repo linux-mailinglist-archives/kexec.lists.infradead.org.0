@@ -2,116 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C9A017C4ED
-	for <lists+kexec@lfdr.de>; Fri,  6 Mar 2020 18:53:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9282D17C6AB
+	for <lists+kexec@lfdr.de>; Fri,  6 Mar 2020 21:00:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8KheBUQo5/RWe7ZQZdX0eXvZxByHZH3g8gaG/JpFWoE=; b=bQEB8agG21/rV+
-	wk3gZBanXU6ojNZmVJgbEo9BhEvz7pmhY36Os9mh/jfaLOFwH9h58bwYuOqCBukfjIfTeFdgHK9ym
-	L0aSs+U4WSFM9PbUwXYYy0TyS24pD/GeNzDpZvV1ioWIGvPvGHjUINspLmpDXTPr5fUCScWmRv9rK
-	lwSnBWOBmsHEyD2osJywtrLkSvyK/XOWSaUZVoQ/3CCF+I+7T5nbQkQ6Df1BgWv5G1wcn99pWwGMp
-	0Tr97Etx4GuLzs/QmnHPtRTE91IiiiuG1RT6QRoFmwbJU9eWQDXXl+vtvSq57LxhAHjl53g0MAwAr
-	ZT7STxg637kaR04tNZKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WnQawn0FylVgyxsQBoq7AdvWgdRxRU50R+Cr/Hksn8w=; b=iZttPBMnI/hEWm
+	M5Aj3vKpllg09q0RcEHNQPJbDZeQkQszZ1Fbon/ntHekYJhdVCcBjZxAXysBgn4goEVykQh5vcl8G
+	uo6LqvH5JnXrgY3qkcWEuEM/dg3Cq9XJNcNWsajy3AMykFUkNIcbAUwgLW1SUpMa0qSt1m6hxR8fm
+	I1bYrv7EUOI/vSRlLPwvmFNihtXT5UganP9JsTi8ROLW61tVMnvN17wROT28bFppVOVGmPi/Vn+35
+	mjS7oBiiPOhLyVdRINV/c3chTWafIvLY4OmTMJ2yKeV5mvjjNw/0Kp+2s9+FI6KNoSC2Rvu0NBj4m
+	xvtE+mruLhnVgO06ly9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAH9j-000853-JX; Fri, 06 Mar 2020 17:53:03 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1jAJ8V-0002Bm-Uk; Fri, 06 Mar 2020 19:59:55 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAH9f-00084j-PM
- for kexec@lists.infradead.org; Fri, 06 Mar 2020 17:53:01 +0000
-Received: from mail-qk1-f200.google.com ([209.85.222.200])
- by youngberry.canonical.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <gpiccoli@canonical.com>) id 1jAH9d-0005te-UM
- for kexec@lists.infradead.org; Fri, 06 Mar 2020 17:52:58 +0000
-Received: by mail-qk1-f200.google.com with SMTP id e13so2001507qkm.23
- for <kexec@lists.infradead.org>; Fri, 06 Mar 2020 09:52:57 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=HGyDz3W2uu/GNXXJNdhvcreLHo1cTuw4ostVd5XjkXk=;
- b=XageK4XUxAs3H5UzN/kOuNc2LwlQCN3rQXSFaf+hAkvnUiraHaXBm8MWO77vWoIYSJ
- bsCjtndTm8iBAI0rVf14Rv0WgbF5J9cYnSTtwUp3UBnGaF1jJxtroGrPx/WJFwG8HX6q
- 3Bvnpz+bhgXbtCOdn1x1rEcWnXus61KlftQ1qnQ/3USB6RuHMUYc+z7z6XTU6xRRlLyy
- jQwgcq3L8uy6S6Z37AN21WItsJYpSDUt5dyw3vxGvd+XxzWlCbtTpOhOV3hSNUU2ddto
- UMTrFlPG8IOBZzhcMuBjG+oPxLJgpMgDAGyak9UnVanHRDqwZBPSLg0AbF7AylbX+4Ly
- DSJA==
-X-Gm-Message-State: ANhLgQ2WOsTLG9ow9FFagsuUSKVKA1EDiNrwZWxHHQuBEASbJCAPWPUI
- 4A6T/FuSrV8F1Z90WMNkltWpw4GSj+rRQVwp86sjMYepLckpKyT9WvkF3Peg7INXzv7k0SDSebc
- dSMirzl4HfvjNdalEGsHLsvg8YX1BCzuPJ9+qCg==
-X-Received: by 2002:ac8:6c6:: with SMTP id j6mr4064409qth.231.1583517177070;
- Fri, 06 Mar 2020 09:52:57 -0800 (PST)
-X-Google-Smtp-Source: ADFU+vt4pSoBxtvO4xLpvib8EqH338Le2mbIUhQ3A9R5BFS0yIEDgxoldiSDZaSoCRgZ4m5Uxh+ZDA==
-X-Received: by 2002:ac8:6c6:: with SMTP id j6mr4064393qth.231.1583517176761;
- Fri, 06 Mar 2020 09:52:56 -0800 (PST)
-Received: from [192.168.1.75] ([189.110.150.31])
- by smtp.gmail.com with ESMTPSA id u18sm3541161qtv.96.2020.03.06.09.52.53
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 06 Mar 2020 09:52:55 -0800 (PST)
-Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
-To: David Woodhouse <dwmw2@infradead.org>,
- kexec mailing list <kexec@lists.infradead.org>
-References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
- <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
- <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
- <CACi5LpNJVw_POqvmUD2fHWJkS=3bK4PzWCD_9Hs_K90aQ4gczw@mail.gmail.com>
- <7d76b7cf-8606-5fa6-e166-5de785bd3012@canonical.com>
- <5f338241-8842-18d0-21df-cfeb0826d725@canonical.com>
- <bec06a39472b31e0bb343dfb762ae827fb305f66.camel@infradead.org>
-From: "Guilherme G. Piccoli" <gpiccoli@canonical.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=gpiccoli@canonical.com; prefer-encrypt=mutual; keydata=
- mQENBFpVBxcBCADPNKmu2iNKLepiv8+Ssx7+fVR8lrL7cvakMNFPXsXk+f0Bgq9NazNKWJIn
- Qxpa1iEWTZcLS8ikjatHMECJJqWlt2YcjU5MGbH1mZh+bT3RxrJRhxONz5e5YILyNp7jX+Vh
- 30rhj3J0vdrlIhPS8/bAt5tvTb3ceWEic9mWZMsosPavsKVcLIO6iZFlzXVu2WJ9cov8eQM/
- irIgzvmFEcRyiQ4K+XUhuA0ccGwgvoJv4/GWVPJFHfMX9+dat0Ev8HQEbN/mko/bUS4Wprdv
- 7HR5tP9efSLucnsVzay0O6niZ61e5c97oUa9bdqHyApkCnGgKCpg7OZqLMM9Y3EcdMIJABEB
- AAG0LUd1aWxoZXJtZSBHLiBQaWNjb2xpIDxncGljY29saUBjYW5vbmljYWwuY29tPokBNwQT
- AQgAIQUCWmClvQIbAwULCQgHAgYVCAkKCwIEFgIDAQIeAQIXgAAKCRDOR5EF9K/7Gza3B/9d
- 5yczvEwvlh6ksYq+juyuElLvNwMFuyMPsvMfP38UslU8S3lf+ETukN1S8XVdeq9yscwtsRW/
- 4YoUwHinJGRovqy8gFlm3SAtjfdqysgJqUJwBmOtcsHkmvFXJmPPGVoH9rMCUr9s6VDPox8f
- q2W5M7XE9YpsfchS/0fMn+DenhQpV3W6pbLtuDvH/81GKrhxO8whSEkByZbbc+mqRhUSTdN3
- iMpRL0sULKPVYbVMbQEAnfJJ1LDkPqlTikAgt3peP7AaSpGs1e3pFzSEEW1VD2jIUmmDku0D
- LmTHRl4t9KpbU/H2/OPZkrm7809QovJGRAxjLLPcYOAP7DUeltveuQENBFpVBxcBCADbxD6J
- aNw/KgiSsbx5Sv8nNqO1ObTjhDR1wJw+02Bar9DGuFvx5/qs3ArSZkl8qX0X9Vhptk8rYnkn
- pfcrtPBYLoux8zmrGPA5vRgK2ItvSc0WN31YR/6nqnMfeC4CumFa/yLl26uzHJa5RYYQ47jg
- kZPehpc7IqEQ5IKy6cCKjgAkuvM1rDP1kWQ9noVhTUFr2SYVTT/WBHqUWorjhu57/OREo+Tl
- nxI1KrnmW0DbF52tYoHLt85dK10HQrV35OEFXuz0QPSNrYJT0CZHpUprkUxrupDgkM+2F5LI
- bIcaIQ4uDMWRyHpDbczQtmTke0x41AeIND3GUc+PQ4hWGp9XABEBAAGJAR8EGAEIAAkFAlpV
- BxcCGwwACgkQzkeRBfSv+xv1wwgAj39/45O3eHN5pK0XMyiRF4ihH9p1+8JVfBoSQw7AJ6oU
- 1Hoa+sZnlag/l2GTjC8dfEGNoZd3aRxqfkTrpu2TcfT6jIAsxGjnu+fUCoRNZzmjvRziw3T8
- egSPz+GbNXrTXB8g/nc9mqHPPprOiVHDSK8aGoBqkQAPZDjUtRwVx112wtaQwArT2+bDbb/Y
- Yh6gTrYoRYHo6FuQl5YsHop/fmTahpTx11IMjuh6IJQ+lvdpdfYJ6hmAZ9kiVszDF6pGFVkY
- kHWtnE2Aa5qkxnA2HoFpqFifNWn5TyvJFpyqwVhVI8XYtXyVHub/WbXLWQwSJA4OHmqU8gDl
- X18zwLgdiQ==
-Message-ID: <e21d3f34-afc3-8f3b-9f40-574aa5c00495@canonical.com>
-Date: Fri, 6 Mar 2020 14:52:51 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jAJ8S-0002BI-3t
+ for kexec@lists.infradead.org; Fri, 06 Mar 2020 19:59:54 +0000
+Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 026JxK6Q063449; Fri, 6 Mar 2020 14:59:43 -0500
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2yj4q4544m-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 06 Mar 2020 14:59:43 -0500
+Received: from m0098410.ppops.net (m0098410.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 026JxMj1063691;
+ Fri, 6 Mar 2020 14:59:43 -0500
+Received: from ppma03dal.us.ibm.com (b.bd.3ea9.ip4.static.sl-reverse.com
+ [169.62.189.11])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 2yj4q4544b-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 06 Mar 2020 14:59:43 -0500
+Received: from pps.filterd (ppma03dal.us.ibm.com [127.0.0.1])
+ by ppma03dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 026Jsn4U009647;
+ Fri, 6 Mar 2020 19:59:42 GMT
+Received: from b01cxnp22034.gho.pok.ibm.com (b01cxnp22034.gho.pok.ibm.com
+ [9.57.198.24]) by ppma03dal.us.ibm.com with ESMTP id 2yffk8bdka-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 06 Mar 2020 19:59:42 +0000
+Received: from b01ledav002.gho.pok.ibm.com (b01ledav002.gho.pok.ibm.com
+ [9.57.199.107])
+ by b01cxnp22034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 026Jxfp553739972
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 6 Mar 2020 19:59:41 GMT
+Received: from b01ledav002.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 743A5124052;
+ Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
+Received: from b01ledav002.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 50054124053;
+ Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
+Received: from localhost (unknown [9.41.179.160])
+ by b01ledav002.gho.pok.ibm.com (Postfix) with ESMTP;
+ Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
+From: Nathan Lynch <nathanl@linux.ibm.com>
+To: Pingfan Liu <kernelfans@gmail.com>
+Subject: Re: [PATCHv3 1/2] powerpc/of: split out new_property() for reusing
+In-Reply-To: <1583311651-29310-2-git-send-email-kernelfans@gmail.com>
+References: <1582882895-3142-1-git-send-email-kernelfans@gmail.com>
+ <1583311651-29310-1-git-send-email-kernelfans@gmail.com>
+ <1583311651-29310-2-git-send-email-kernelfans@gmail.com>
+Date: Fri, 06 Mar 2020 13:59:40 -0600
+Message-ID: <87eeu5jlub.fsf@linux.ibm.com>
 MIME-Version: 1.0
-In-Reply-To: <bec06a39472b31e0bb343dfb762ae827fb305f66.camel@infradead.org>
-Content-Language: en-US
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-03-06_07:2020-03-06,
+ 2020-03-06 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ impostorscore=0
+ suspectscore=1 adultscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0
+ phishscore=0 malwarescore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
+ clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003060121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_095259_961998_CC1BC3A9 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200306_115952_164500_A44F74D2 
+X-CRM114-Status: GOOD (  11.55  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,32 +103,80 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: pedro.principeza@canonical.com, Baoquan He <bhe@redhat.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Gavin Guo <gavin.guo@canonical.com>,
- Guowen Shan <gshan@redhat.com>, Dave Young <dyoung@redhat.com>,
- Vivek Goyal <vgoyal@redhat.com>
+Cc: Andrew Donnellan <ajd@linux.ibm.com>,
+ "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>, kexec@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, Pingfan Liu <kernelfans@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, Paul Mackerras <paulus@samba.org>,
+ Oliver O'Halloran <oohall@gmail.com>, Dan Williams <dan.j.williams@intel.com>,
+ Frank Rowand <frowand.list@gmail.com>, Hari Bathini <hbathini@linux.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 06/03/2020 10:18, David Woodhouse wrote:
-> Can you give me the instance ID and specific times, please?
-> 
+Hi,
 
-Sure David, thanks for jumping in! The instance id is
-i-04c92cf5be3064347; the time range for the good test (based on
-kernel.log) was from "Mar 4 20:15:19 UTC" to approximately "Mar 4
-21:08:05 UTC"; after that, I stopped/restarted the instance and the bad
-testing ran from "Mar 5 19:49:54 UTC" to approximately "Mar 5 19:52:24 UTC".
+Pingfan Liu <kernelfans@gmail.com> writes:
+> Splitting out new_property() for coming reusing and moving it to
+> of_helpers.c.
 
-I made a mistake by saying the tests were minutes apart - as we can see,
-it was almost a day between them, apologies.
+[...]
 
-Cheers,
+> +struct property *new_property(const char *name, const int length,
+> +		const unsigned char *value, struct property *last)
+> +{
+> +	struct property *new = kzalloc(sizeof(*new), GFP_KERNEL);
+> +
+> +	if (!new)
+> +		return NULL;
+> +
+> +	new->name = kstrdup(name, GFP_KERNEL);
+> +	if (!new->name)
+> +		goto cleanup;
+> +	new->value = kmalloc(length + 1, GFP_KERNEL);
+> +	if (!new->value)
+> +		goto cleanup;
+> +
+> +	memcpy(new->value, value, length);
+> +	*(((char *)new->value) + length) = 0;
+> +	new->length = length;
+> +	new->next = last;
+> +	return new;
+> +
+> +cleanup:
+> +	kfree(new->name);
+> +	kfree(new->value);
+> +	kfree(new);
+> +	return NULL;
+> +}
 
+This function in its current form isn't suitable for more general use:
 
-Guilherme
+* It appears to be tailored to string properties - note the char * value
+  parameter, the length + 1 allocation and nul termination.
+
+* Most code shouldn't need the 'last' argument. The code where this
+  currently resides builds a list of properties and attaches it to a new
+  node, bypassing of_add_property().
+
+Let's look at the call site you add in your next patch:
+
++		big = cpu_to_be64(p->bound_addr);
++		property = new_property("bound-addr", sizeof(u64), (const unsigned char *)&big,
++			NULL);
++		of_add_property(dn, property);
+
+So you have to use a cast, and this is going to allocate (sizeof(u64) + 1)
+for the value, is that what you want?
+
+I think you should leave that legacy pseries reconfig code undisturbed
+(frankly that stuff should get deprecated and removed) and if you want a
+generic helper it should look more like:
+
+struct property *of_property_new(const char *name, size_t length,
+                                 const void *value, gfp_t allocflags)
+
+__of_prop_dup() looks like a good model/guide here.
 
 _______________________________________________
 kexec mailing list
