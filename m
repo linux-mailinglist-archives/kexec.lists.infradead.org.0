@@ -2,59 +2,106 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 152B417CDBC
-	for <lists+kexec@lfdr.de>; Sat,  7 Mar 2020 12:07:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D637717CF9D
+	for <lists+kexec@lfdr.de>; Sat,  7 Mar 2020 19:44:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NayVKOP/MMTp+cv0/b+UuZWc7Q5RRQuZXxvTT4oeq1g=; b=PpiksWixONjliM
-	QUiWIt6Mgk3DpCJZw2qeoJwbfPvNgrrPk/ev8XP+sn+wNaS2BksMIqpvjTG1cx/hqDEmoHlbf97/O
-	Qt92BsfMv2odCJAAjzKqduRb7ZUBySKOk/Y8IYxBO10nlnuMlv0APPgDsu6dkhhbcjg0yoaeZ25yq
-	6O+87gnvEhdD2ncA1EoYJGfxqou7HiR6WZnAOFg1NtrKofYwdSvWyN18RCFKpyFRyWf1i+cDNoksa
-	JxYoPwZmxzlwPtJNqcNyeWSoA1B3bjyYnZGgKfV3Q4O0xKvIMgowyxRD1LDZk7fcxOaj2y3pbPCX8
-	V7FF7X6s3N/TyygHVPdw==;
+	List-Owner; bh=1eBFiGndkRjUAsp3XuJGVRWxOOQzE0ClEUDbmuH95Go=; b=F4t2VwMFhf9U4P
+	o8JrS9qVgpR9fEVGNovqeXlV1pXQJBdrqTV9mwEH333wNmL2/wYdQcn5HlVUxwMQ+giKGH1H+lM4X
+	iizPM7ccK/L/OQiQQv4kknK0Hxmc/FrQirEu4xkw8alNCNxGN1DOcLTa03RsSh1BbL7s4Bi3vItNj
+	TW58VmQkfGzjt/L+J00ppkE4CsdEMOg7pFBhydcgKkF4CUyCRaVLo+eUNxaEK+fcEoGj3gFuA4mH1
+	DsCjqrFRrmSSdoVc40sXCIuScJPGV1U2Rl+6GyMYWO5SKJQVl1kS2mt33QMDda7ntpGCBfmOXe6N5
+	KpdZ4++znE03CQhKRveg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAXIN-0001TV-OG; Sat, 07 Mar 2020 11:07:03 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jAeQf-00065r-Fd; Sat, 07 Mar 2020 18:44:05 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAXIK-0001Si-2W; Sat, 07 Mar 2020 11:07:02 +0000
-Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 1335413F9D459FCCC85D;
- Sat,  7 Mar 2020 19:06:38 +0800 (CST)
-Received: from [127.0.0.1] (10.177.131.64) by DGGEMS414-HUB.china.huawei.com
- (10.3.19.214) with Microsoft SMTP Server id 14.3.487.0; Sat, 7 Mar 2020
- 19:06:29 +0800
+ id 1jAeQY-00065N-I3; Sat, 07 Mar 2020 18:44:00 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 027IYRJ1148148;
+ Sat, 7 Mar 2020 18:43:25 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2020-01-29; bh=x0rdGTG4PgqzGEHHwl4BQb+eQt+cgv+7FrZuLnwZOc4=;
+ b=aqul3OUz7zAvhP3G6oSUZbNY1p7L9NLj8jWjr8Z4fTZygjG1s7UfVlqpM/Vie6NxY32U
+ XXIwiilKzqnqRpf9+rV2XYMY5FxzVCHSBtod4uKRJHGk0IgfTpE6RnnWL2GoZeB5V74Q
+ HFoQUc7Su+fMv2HvAiLii5rdOzT3+kEazNK1xCgcdu9CBUOaCODeYKWlcMu3tKv7Ku3V
+ rJ5x6hT7avtBnRydBTwY1nlz0lCQWJXHipC/pNRl9ioIDgBIfopr2niZ/+Wvg2oM6nyX
+ RLqTzeI2VNpBbgyWCG/6/+YK8MJ+9j85ptdMZE/xeNU/aSXUk8cqkH1mN7lKCSX/vDs2 3A== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by userp2130.oracle.com with ESMTP id 2ym31u1h74-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 07 Mar 2020 18:43:25 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 027IhOgQ109522;
+ Sat, 7 Mar 2020 18:43:24 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3030.oracle.com with ESMTP id 2ym1nerqx7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 07 Mar 2020 18:43:24 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 027Ih9Tk031374;
+ Sat, 7 Mar 2020 18:43:09 GMT
+Received: from dhcp-10-154-175-234.vpn.oracle.com (/10.154.175.234)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Sat, 07 Mar 2020 10:43:09 -0800
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
 Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
  crash dump kernel
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+From: John Donnelly <john.p.donnelly@oracle.com>
+In-Reply-To: <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
+Date: Sat, 7 Mar 2020 12:43:07 -0600
+Message-Id: <B6820665-123F-422A-8E49-BB2A48D02CA7@oracle.com>
 References: <20191223152349.180172-1-chenzhou10@huawei.com>
  <20191223152349.180172-3-chenzhou10@huawei.com>
  <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
-From: Chen Zhou <chenzhou10@huawei.com>
-Message-ID: <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
-Date: Sat, 7 Mar 2020 19:06:27 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
-MIME-Version: 1.0
-In-Reply-To: <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
-X-Originating-IP: [10.177.131.64]
-X-CFilter-Loop: Reflected
+ <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
+To: Chen Zhou <chenzhou10@huawei.com>
+X-Mailer: Apple Mail (2.3445.9.1)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9553
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ phishscore=0
+ suspectscore=0 bulkscore=0 adultscore=0 mlxscore=0 spamscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003070136
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9553
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ lowpriorityscore=0
+ spamscore=0 priorityscore=1501 impostorscore=0 bulkscore=0 suspectscore=0
+ phishscore=0 mlxlogscore=999 mlxscore=0 malwarescore=0 clxscore=1011
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003070135
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200307_030700_287321_93060186 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200307_104358_641351_CEBC31AB 
+X-CRM114-Status: GOOD (  23.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,156 +113,135 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>, xiexiuqi@huawei.com,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ xiexiuqi@huawei.com, Catalin Marinas <catalin.marinas@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>,
  Linux Doc Mailing List <linux-doc@vger.kernel.org>,
  kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mingo@redhat.com,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- dyoung@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dyoung@redhat.com,
+ horms@verge.net.au, James Morse <james.morse@arm.com>,
+ Prabhakar Kushwaha <prabhakar.pkin@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ mingo@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-
-On 2020/3/5 18:13, Prabhakar Kushwaha wrote:
-> On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
->>
->> Crashkernel=X tries to reserve memory for the crash dump kernel under
->> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
->> size low memory for crash kdump kernel devices firstly and then reserve
->> memory above 4G.
->>
->> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
->> ---
->>  arch/arm64/kernel/setup.c |  8 +++++++-
->>  arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
->>  2 files changed, 36 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
->> index 56f6645..04d1c87 100644
->> --- a/arch/arm64/kernel/setup.c
->> +++ b/arch/arm64/kernel/setup.c
->> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
->>                     kernel_data.end <= res->end)
->>                         request_resource(res, &kernel_data);
->>  #ifdef CONFIG_KEXEC_CORE
->> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
->> +               /*
->> +                * Userspace will find "Crash kernel" region in /proc/iomem.
->> +                * Note: the low region is renamed as Crash kernel (low).
->> +                */
->> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
->> +                               crashk_low_res.end <= res->end)
->> +                       request_resource(res, &crashk_low_res);
->>                 if (crashk_res.end && crashk_res.start >= res->start &&
->>                     crashk_res.end <= res->end)
->>                         request_resource(res, &crashk_res);
->> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
->> index b65dffd..0d7afd5 100644
->> --- a/arch/arm64/mm/init.c
->> +++ b/arch/arm64/mm/init.c
->> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
->>  {
->>         unsigned long long crash_base, crash_size;
->>         int ret;
->> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
->>
->>         ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
->>                                 &crash_size, &crash_base);
->> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
->>         if (ret || !crash_size)
->>                 return;
->>
->> +       ret = reserve_crashkernel_low();
->> +       if (!ret && crashk_low_res.end) {
->> +               /*
->> +                * If crashkernel=X,low specified, there may be two regions,
->> +                * we need to make some changes as follows:
->> +                *
->> +                * 1. rename the low region as "Crash kernel (low)"
->> +                * In order to distinct from the high region and make no effect
->> +                * to the use of existing kexec-tools, rename the low region as
->> +                * "Crash kernel (low)".
->> +                *
->> +                * 2. change the upper bound for crash memory
->> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
->> +                *
->> +                * 3. mark the low region as "nomap"
->> +                * The low region is intended to be used for crash dump kernel
->> +                * devices, just mark the low region as "nomap" simply.
->> +                */
->> +               const char *rename = "Crash kernel (low)";
->> +
->> +               crashk_low_res.name = rename;
->> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
->> +               memblock_mark_nomap(crashk_low_res.start,
->> +                                   resource_size(&crashk_low_res));
->> +       }
->> +
->>         crash_size = PAGE_ALIGN(crash_size);
->>
->>         if (crash_base == 0) {
->>                 /* Current arm64 boot protocol requires 2MB alignment */
->> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
->> -                               crash_size, SZ_2M);
->> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
->> +                               SZ_2M);
->>                 if (crash_base == 0) {
->>                         pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
->>                                 crash_size);
->> --
-> 
-> I tested this patch series on ARM64-ThunderX2 with no issue with
-> bootargs crashkenel=X@Y crashkernel=250M,low
-> 
-> $ dmesg | grep crash
-> [    0.000000] crashkernel reserved: 0x0000000b81200000 -
-> 0x0000000c81200000 (4096 MB)
-> [    0.000000] Kernel command line:
-> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
-> crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
-> [   29.310209]     crashkernel=250M,low
-> 
-> $  kexec -p -i /boot/vmlinuz-`uname -r`
-> --initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
-> $ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
-> 
-> But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
-> Kernel is not able to allocate memory.
-> [    0.000000] cannot allocate crashkernel (size:0x100000000)
-> [    0.000000] Kernel command line:
-> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
-> crashkernel=250M,low nowatchdog
-> [   29.332081]     crashkernel=250M,low
-> 
-> does crashkernel=X@Y mandatory to get allocated beyond 4G?
-> am I missing something?
-
-I can't reproduce the problem in my environment, can you test with other size,
-such as "crashkernel=1G crashkernel=250M,low", see if there is the same issue.
-
-Besides, crashkernel=X@Y isn't mandatory to get allocated beyond 4G,
-can you show the whole file /proc/iomem.
-
-Thanks,
-Chen Zhou
-
-> 
-> --pk
-> 
-> .
-> 
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+Cgo+IE9uIE1hciA3LCAyMDIwLCBhdCA1OjA2IEFNLCBDaGVuIFpob3UgPGNoZW56aG91MTBAaHVh
+d2VpLmNvbT4gd3JvdGU6Cj4gCj4gCj4gCj4gT24gMjAyMC8zLzUgMTg6MTMsIFByYWJoYWthciBL
+dXNod2FoYSB3cm90ZToKPj4gT24gTW9uLCBEZWMgMjMsIDIwMTkgYXQgODo1NyBQTSBDaGVuIFpo
+b3UgPGNoZW56aG91MTBAaHVhd2VpLmNvbT4gd3JvdGU6Cj4+PiAKPj4+IENyYXNoa2VybmVsPVgg
+dHJpZXMgdG8gcmVzZXJ2ZSBtZW1vcnkgZm9yIHRoZSBjcmFzaCBkdW1wIGtlcm5lbCB1bmRlcgo+
+Pj4gNEcuIElmIGNyYXNoa2VybmVsPVgsbG93IGlzIHNwZWNpZmllZCBzaW11bHRhbmVvdXNseSwg
+cmVzZXJ2ZSBzcGNpZmllZAo+Pj4gc2l6ZSBsb3cgbWVtb3J5IGZvciBjcmFzaCBrZHVtcCBrZXJu
+ZWwgZGV2aWNlcyBmaXJzdGx5IGFuZCB0aGVuIHJlc2VydmUKPj4+IG1lbW9yeSBhYm92ZSA0Ry4K
+Pj4+IAo+Pj4gU2lnbmVkLW9mZi1ieTogQ2hlbiBaaG91IDxjaGVuemhvdTEwQGh1YXdlaS5jb20+
+Cj4+PiAtLS0KPj4+IGFyY2gvYXJtNjQva2VybmVsL3NldHVwLmMgfCAgOCArKysrKysrLQo+Pj4g
+YXJjaC9hcm02NC9tbS9pbml0LmMgICAgICB8IDMxICsrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrLS0KPj4+IDIgZmlsZXMgY2hhbmdlZCwgMzYgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMo
+LSkKPj4+IAo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva2VybmVsL3NldHVwLmMgYi9hcmNo
+L2FybTY0L2tlcm5lbC9zZXR1cC5jCj4+PiBpbmRleCA1NmY2NjQ1Li4wNGQxYzg3IDEwMDY0NAo+
+Pj4gLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwvc2V0dXAuYwo+Pj4gKysrIGIvYXJjaC9hcm02NC9r
+ZXJuZWwvc2V0dXAuYwo+Pj4gQEAgLTIzOCw3ICsyMzgsMTMgQEAgc3RhdGljIHZvaWQgX19pbml0
+IHJlcXVlc3Rfc3RhbmRhcmRfcmVzb3VyY2VzKHZvaWQpCj4+PiAgICAgICAgICAgICAgICAgICAg
+a2VybmVsX2RhdGEuZW5kIDw9IHJlcy0+ZW5kKQo+Pj4gICAgICAgICAgICAgICAgICAgICAgICBy
+ZXF1ZXN0X3Jlc291cmNlKHJlcywgJmtlcm5lbF9kYXRhKTsKPj4+ICNpZmRlZiBDT05GSUdfS0VY
+RUNfQ09SRQo+Pj4gLSAgICAgICAgICAgICAgIC8qIFVzZXJzcGFjZSB3aWxsIGZpbmQgIkNyYXNo
+IGtlcm5lbCIgcmVnaW9uIGluIC9wcm9jL2lvbWVtLiAqLwo+Pj4gKyAgICAgICAgICAgICAgIC8q
+Cj4+PiArICAgICAgICAgICAgICAgICogVXNlcnNwYWNlIHdpbGwgZmluZCAiQ3Jhc2gga2VybmVs
+IiByZWdpb24gaW4gL3Byb2MvaW9tZW0uCj4+PiArICAgICAgICAgICAgICAgICogTm90ZTogdGhl
+IGxvdyByZWdpb24gaXMgcmVuYW1lZCBhcyBDcmFzaCBrZXJuZWwgKGxvdykuCj4+PiArICAgICAg
+ICAgICAgICAgICovCj4+PiArICAgICAgICAgICAgICAgaWYgKGNyYXNoa19sb3dfcmVzLmVuZCAm
+JiBjcmFzaGtfbG93X3Jlcy5zdGFydCA+PSByZXMtPnN0YXJ0ICYmCj4+PiArICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIGNyYXNoa19sb3dfcmVzLmVuZCA8PSByZXMtPmVuZCkKPj4+ICsg
+ICAgICAgICAgICAgICAgICAgICAgIHJlcXVlc3RfcmVzb3VyY2UocmVzLCAmY3Jhc2hrX2xvd19y
+ZXMpOwo+Pj4gICAgICAgICAgICAgICAgaWYgKGNyYXNoa19yZXMuZW5kICYmIGNyYXNoa19yZXMu
+c3RhcnQgPj0gcmVzLT5zdGFydCAmJgo+Pj4gICAgICAgICAgICAgICAgICAgIGNyYXNoa19yZXMu
+ZW5kIDw9IHJlcy0+ZW5kKQo+Pj4gICAgICAgICAgICAgICAgICAgICAgICByZXF1ZXN0X3Jlc291
+cmNlKHJlcywgJmNyYXNoa19yZXMpOwo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvbW0vaW5p
+dC5jIGIvYXJjaC9hcm02NC9tbS9pbml0LmMKPj4+IGluZGV4IGI2NWRmZmQuLjBkN2FmZDUgMTAw
+NjQ0Cj4+PiAtLS0gYS9hcmNoL2FybTY0L21tL2luaXQuYwo+Pj4gKysrIGIvYXJjaC9hcm02NC9t
+bS9pbml0LmMKPj4+IEBAIC04MCw2ICs4MCw3IEBAIHN0YXRpYyB2b2lkIF9faW5pdCByZXNlcnZl
+X2NyYXNoa2VybmVsKHZvaWQpCj4+PiB7Cj4+PiAgICAgICAgdW5zaWduZWQgbG9uZyBsb25nIGNy
+YXNoX2Jhc2UsIGNyYXNoX3NpemU7Cj4+PiAgICAgICAgaW50IHJldDsKPj4+ICsgICAgICAgcGh5
+c19hZGRyX3QgY3Jhc2hfbWF4ID0gYXJtNjRfZG1hMzJfcGh5c19saW1pdDsKPj4+IAo+Pj4gICAg
+ICAgIHJldCA9IHBhcnNlX2NyYXNoa2VybmVsKGJvb3RfY29tbWFuZF9saW5lLCBtZW1ibG9ja19w
+aHlzX21lbV9zaXplKCksCj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgJmNyYXNo
+X3NpemUsICZjcmFzaF9iYXNlKTsKPj4+IEBAIC04NywxMiArODgsMzggQEAgc3RhdGljIHZvaWQg
+X19pbml0IHJlc2VydmVfY3Jhc2hrZXJuZWwodm9pZCkKPj4+ICAgICAgICBpZiAocmV0IHx8ICFj
+cmFzaF9zaXplKQo+Pj4gICAgICAgICAgICAgICAgcmV0dXJuOwo+Pj4gCj4+PiArICAgICAgIHJl
+dCA9IHJlc2VydmVfY3Jhc2hrZXJuZWxfbG93KCk7Cj4+PiArICAgICAgIGlmICghcmV0ICYmIGNy
+YXNoa19sb3dfcmVzLmVuZCkgewo+Pj4gKyAgICAgICAgICAgICAgIC8qCj4+PiArICAgICAgICAg
+ICAgICAgICogSWYgY3Jhc2hrZXJuZWw9WCxsb3cgc3BlY2lmaWVkLCB0aGVyZSBtYXkgYmUgdHdv
+IHJlZ2lvbnMsCj4+PiArICAgICAgICAgICAgICAgICogd2UgbmVlZCB0byBtYWtlIHNvbWUgY2hh
+bmdlcyBhcyBmb2xsb3dzOgo+Pj4gKyAgICAgICAgICAgICAgICAqCj4+PiArICAgICAgICAgICAg
+ICAgICogMS4gcmVuYW1lIHRoZSBsb3cgcmVnaW9uIGFzICJDcmFzaCBrZXJuZWwgKGxvdykiCj4+
+PiArICAgICAgICAgICAgICAgICogSW4gb3JkZXIgdG8gZGlzdGluY3QgZnJvbSB0aGUgaGlnaCBy
+ZWdpb24gYW5kIG1ha2Ugbm8gZWZmZWN0Cj4+PiArICAgICAgICAgICAgICAgICogdG8gdGhlIHVz
+ZSBvZiBleGlzdGluZyBrZXhlYy10b29scywgcmVuYW1lIHRoZSBsb3cgcmVnaW9uIGFzCj4+PiAr
+ICAgICAgICAgICAgICAgICogIkNyYXNoIGtlcm5lbCAobG93KSIuCj4+PiArICAgICAgICAgICAg
+ICAgICoKPj4+ICsgICAgICAgICAgICAgICAgKiAyLiBjaGFuZ2UgdGhlIHVwcGVyIGJvdW5kIGZv
+ciBjcmFzaCBtZW1vcnkKPj4+ICsgICAgICAgICAgICAgICAgKiBTZXQgTUVNQkxPQ0tfQUxMT0Nf
+QUNDRVNTSUJMRSB1cHBlciBib3VuZCBmb3IgY3Jhc2ggbWVtb3J5Lgo+Pj4gKyAgICAgICAgICAg
+ICAgICAqCj4+PiArICAgICAgICAgICAgICAgICogMy4gbWFyayB0aGUgbG93IHJlZ2lvbiBhcyAi
+bm9tYXAiCj4+PiArICAgICAgICAgICAgICAgICogVGhlIGxvdyByZWdpb24gaXMgaW50ZW5kZWQg
+dG8gYmUgdXNlZCBmb3IgY3Jhc2ggZHVtcCBrZXJuZWwKPj4+ICsgICAgICAgICAgICAgICAgKiBk
+ZXZpY2VzLCBqdXN0IG1hcmsgdGhlIGxvdyByZWdpb24gYXMgIm5vbWFwIiBzaW1wbHkuCj4+PiAr
+ICAgICAgICAgICAgICAgICovCj4+PiArICAgICAgICAgICAgICAgY29uc3QgY2hhciAqcmVuYW1l
+ID0gIkNyYXNoIGtlcm5lbCAobG93KSI7Cj4+PiArCj4+PiArICAgICAgICAgICAgICAgY3Jhc2hr
+X2xvd19yZXMubmFtZSA9IHJlbmFtZTsKPj4+ICsgICAgICAgICAgICAgICBjcmFzaF9tYXggPSBN
+RU1CTE9DS19BTExPQ19BQ0NFU1NJQkxFOwo+Pj4gKyAgICAgICAgICAgICAgIG1lbWJsb2NrX21h
+cmtfbm9tYXAoY3Jhc2hrX2xvd19yZXMuc3RhcnQsCj4+PiArICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICByZXNvdXJjZV9zaXplKCZjcmFzaGtfbG93X3JlcykpOwo+Pj4gKyAgICAg
+ICB9Cj4+PiArCj4+PiAgICAgICAgY3Jhc2hfc2l6ZSA9IFBBR0VfQUxJR04oY3Jhc2hfc2l6ZSk7
+Cj4+PiAKPj4+ICAgICAgICBpZiAoY3Jhc2hfYmFzZSA9PSAwKSB7Cj4+PiAgICAgICAgICAgICAg
+ICAvKiBDdXJyZW50IGFybTY0IGJvb3QgcHJvdG9jb2wgcmVxdWlyZXMgMk1CIGFsaWdubWVudCAq
+Lwo+Pj4gLSAgICAgICAgICAgICAgIGNyYXNoX2Jhc2UgPSBtZW1ibG9ja19maW5kX2luX3Jhbmdl
+KDAsIGFybTY0X2RtYTMyX3BoeXNfbGltaXQsCj4+PiAtICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgIGNyYXNoX3NpemUsIFNaXzJNKTsKPj4+ICsgICAgICAgICAgICAgICBjcmFzaF9iYXNl
+ID0gbWVtYmxvY2tfZmluZF9pbl9yYW5nZSgwLCBjcmFzaF9tYXgsIGNyYXNoX3NpemUsCj4+PiAr
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNaXzJNKTsKPj4+ICAgICAgICAgICAgICAg
+IGlmIChjcmFzaF9iYXNlID09IDApIHsKPj4+ICAgICAgICAgICAgICAgICAgICAgICAgcHJfd2Fy
+bigiY2Fubm90IGFsbG9jYXRlIGNyYXNoa2VybmVsIChzaXplOjB4JWxseClcbiIsCj4+PiAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgY3Jhc2hfc2l6ZSk7Cj4+PiAtLQo+PiAKPj4gSSB0
+ZXN0ZWQgdGhpcyBwYXRjaCBzZXJpZXMgb24gQVJNNjQtVGh1bmRlclgyIHdpdGggbm8gaXNzdWUg
+d2l0aAo+PiBib290YXJncyBjcmFzaGtlbmVsPVhAWSBjcmFzaGtlcm5lbD0yNTBNLGxvdwo+PiAK
+Pj4gJCBkbWVzZyB8IGdyZXAgY3Jhc2gKPj4gWyAgICAwLjAwMDAwMF0gY3Jhc2hrZXJuZWwgcmVz
+ZXJ2ZWQ6IDB4MDAwMDAwMGI4MTIwMDAwMCAtCj4+IDB4MDAwMDAwMGM4MTIwMDAwMCAoNDA5NiBN
+QikKPj4gWyAgICAwLjAwMDAwMF0gS2VybmVsIGNvbW1hbmQgbGluZToKPj4gQk9PVF9JTUFHRT0v
+Ym9vdC92bWxpbnV6LTUuNi4wLXJjNCsKPj4gcm9vdD1VVUlEPTg2NmI4ZGYzLTE0ZjQtNGUxMS05
+NWExLTc0YTkwZWU5YjY5NCBybwo+PiBjcmFzaGtlcm5lbD00R0AweGI4MTIwMDAwMCBjcmFzaGtl
+cm5lbD0yNTBNLGxvdyBub3dhdGNoZG9nIGVhcmx5Y29uCj4+IFsgICAyOS4zMTAyMDldICAgICBj
+cmFzaGtlcm5lbD0yNTBNLGxvdwo+PiAKPj4gJCAga2V4ZWMgLXAgLWkgL2Jvb3Qvdm1saW51ei1g
+dW5hbWUgLXJgCj4+IC0taW5pdHJkPS9ib290L2luaXRyZC5pbWctYHVuYW1lIC1yYCAtLXJldXNl
+LWNtZGxpbmUKPj4gJCBlY2hvIDEgPiAvcHJvYy9zeXMva2VybmVsL3N5c3JxIDsgZWNobyBjID4g
+L3Byb2Mvc3lzcnEtdHJpZ2dlcgo+PiAKPj4gQnV0IHdoZW4gaSB0cmllZCB3aXRoIGNyYXNoa2Vy
+bmVsPTRHIGNyYXNoa2VybmVsPTI1ME0sbG93IGFzIGJvb3RhcmdzLgo+PiBLZXJuZWwgaXMgbm90
+IGFibGUgdG8gYWxsb2NhdGUgbWVtb3J5Lgo+PiBbICAgIDAuMDAwMDAwXSBjYW5ub3QgYWxsb2Nh
+dGUgY3Jhc2hrZXJuZWwgKHNpemU6MHgxMDAwMDAwMDApCj4+IFsgICAgMC4wMDAwMDBdIEtlcm5l
+bCBjb21tYW5kIGxpbmU6Cj4+IEJPT1RfSU1BR0U9L2Jvb3Qvdm1saW51ei01LjYuMC1yYzQrCj4+
+IHJvb3Q9VVVJRD04NjZiOGRmMy0xNGY0LTRlMTEtOTVhMS03NGE5MGVlOWI2OTQgcm8gY3Jhc2hr
+ZXJuZWw9NEcKPj4gY3Jhc2hrZXJuZWw9MjUwTSxsb3cgbm93YXRjaGRvZwo+PiBbICAgMjkuMzMy
+MDgxXSAgICAgY3Jhc2hrZXJuZWw9MjUwTSxsb3cKPj4gCj4+IGRvZXMgY3Jhc2hrZXJuZWw9WEBZ
+IG1hbmRhdG9yeSB0byBnZXQgYWxsb2NhdGVkIGJleW9uZCA0Rz8KPj4gYW0gSSBtaXNzaW5nIHNv
+bWV0aGluZz8KPiAKCiAgIGNyYXNoa2VybmVsPTRHCgogICBZb3UgbmVlZCB0byBsb29rIGF0IHRo
+ZSBtZW1vcnkgbWFwIG9uIG5vZGUgMCAgZnJvbSBkbWVzZyAgICAgKCBvciAvcHJvYy9pb21lbSAp
+IHRvIGRldGVybWluZSBpZiB0aGVyZSBpcyBhbnkgbWVtb3J5IGluIHRoYXQgcmFuZ2UgIC0gMHgx
+MDAwMDAwMDAgPT0gMXN0IGJ5dGUgYWJvdmUgNEcgLgoKT24gdGhlIEFybSBzZXJ2ZXIgY2xhc3Mg
+bWFjaGluZXMgIEnigJl2ZSBzZWVuIHRoZSAxc3QgdXNhYmxlIG1lbW9yeSByYW5nZSBhYm92ZSA0
+RyBpcyAzMkcgYXJlYS4gSXQgaXMgcGxhdGZvcm0gZGVwZW5kZW50IHdoZXJlIHRoZSAxc3QgcmFu
+Z2UgaXMuIAoKPiBJIGNhbid0IHJlcHJvZHVjZSB0aGUgcHJvYmxlbSBpbiBteSBlbnZpcm9ubWVu
+dCwgY2FuIHlvdSB0ZXN0IHdpdGggb3RoZXIgc2l6ZSwKPiBzdWNoIGFzICJjcmFzaGtlcm5lbD0x
+RyBjcmFzaGtlcm5lbD0yNTBNLGxvdyIsIHNlZSBpZiB0aGVyZSBpcyB0aGUgc2FtZSBpc3N1ZS4K
+PiAKPiBCZXNpZGVzLCBjcmFzaGtlcm5lbD1YQFkgaXNuJ3QgbWFuZGF0b3J5IHRvIGdldCBhbGxv
+Y2F0ZWQgYmV5b25kIDRHLAo+IGNhbiB5b3Ugc2hvdyB0aGUgd2hvbGUgZmlsZSAvcHJvYy9pb21l
+bS4KPiAKPiBUaGFua3MsCj4gQ2hlbiBaaG91Cj4gCj4+IAo+PiAtLXBrCj4+IAo+PiAuCj4+IAo+
+IAo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4g
+a2V4ZWMgbWFpbGluZyBsaXN0Cj4ga2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHBzOi8v
+dXJsZGVmZW5zZS5jb20vdjMvX19odHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
+c3RpbmZvL2tleGVjX187ISFHcWl2UFZhN0JyaW8hT0RtQVduZzRGOEgzOVBqdkEtOHEtWTl5T0NR
+TjhwbFBNOTVYZUpzclhMTXdia0ZDWjVyM05QQnIwZHVZMFJrdV9NQ2UkCgoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0Cmtl
+eGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9rZXhlYwo=
