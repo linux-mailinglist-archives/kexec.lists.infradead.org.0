@@ -2,95 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9282D17C6AB
-	for <lists+kexec@lfdr.de>; Fri,  6 Mar 2020 21:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 152B417CDBC
+	for <lists+kexec@lfdr.de>; Sat,  7 Mar 2020 12:07:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WnQawn0FylVgyxsQBoq7AdvWgdRxRU50R+Cr/Hksn8w=; b=iZttPBMnI/hEWm
-	M5Aj3vKpllg09q0RcEHNQPJbDZeQkQszZ1Fbon/ntHekYJhdVCcBjZxAXysBgn4goEVykQh5vcl8G
-	uo6LqvH5JnXrgY3qkcWEuEM/dg3Cq9XJNcNWsajy3AMykFUkNIcbAUwgLW1SUpMa0qSt1m6hxR8fm
-	I1bYrv7EUOI/vSRlLPwvmFNihtXT5UganP9JsTi8ROLW61tVMnvN17wROT28bFppVOVGmPi/Vn+35
-	mjS7oBiiPOhLyVdRINV/c3chTWafIvLY4OmTMJ2yKeV5mvjjNw/0Kp+2s9+FI6KNoSC2Rvu0NBj4m
-	xvtE+mruLhnVgO06ly9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NayVKOP/MMTp+cv0/b+UuZWc7Q5RRQuZXxvTT4oeq1g=; b=PpiksWixONjliM
+	QUiWIt6Mgk3DpCJZw2qeoJwbfPvNgrrPk/ev8XP+sn+wNaS2BksMIqpvjTG1cx/hqDEmoHlbf97/O
+	Qt92BsfMv2odCJAAjzKqduRb7ZUBySKOk/Y8IYxBO10nlnuMlv0APPgDsu6dkhhbcjg0yoaeZ25yq
+	6O+87gnvEhdD2ncA1EoYJGfxqou7HiR6WZnAOFg1NtrKofYwdSvWyN18RCFKpyFRyWf1i+cDNoksa
+	JxYoPwZmxzlwPtJNqcNyeWSoA1B3bjyYnZGgKfV3Q4O0xKvIMgowyxRD1LDZk7fcxOaj2y3pbPCX8
+	V7FF7X6s3N/TyygHVPdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jAJ8V-0002Bm-Uk; Fri, 06 Mar 2020 19:59:55 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jAXIN-0001TV-OG; Sat, 07 Mar 2020 11:07:03 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jAJ8S-0002BI-3t
- for kexec@lists.infradead.org; Fri, 06 Mar 2020 19:59:54 +0000
-Received: from pps.filterd (m0098410.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 026JxK6Q063449; Fri, 6 Mar 2020 14:59:43 -0500
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2yj4q4544m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Mar 2020 14:59:43 -0500
-Received: from m0098410.ppops.net (m0098410.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 026JxMj1063691;
- Fri, 6 Mar 2020 14:59:43 -0500
-Received: from ppma03dal.us.ibm.com (b.bd.3ea9.ip4.static.sl-reverse.com
- [169.62.189.11])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2yj4q4544b-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Mar 2020 14:59:43 -0500
-Received: from pps.filterd (ppma03dal.us.ibm.com [127.0.0.1])
- by ppma03dal.us.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 026Jsn4U009647;
- Fri, 6 Mar 2020 19:59:42 GMT
-Received: from b01cxnp22034.gho.pok.ibm.com (b01cxnp22034.gho.pok.ibm.com
- [9.57.198.24]) by ppma03dal.us.ibm.com with ESMTP id 2yffk8bdka-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Mar 2020 19:59:42 +0000
-Received: from b01ledav002.gho.pok.ibm.com (b01ledav002.gho.pok.ibm.com
- [9.57.199.107])
- by b01cxnp22034.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 026Jxfp553739972
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 6 Mar 2020 19:59:41 GMT
-Received: from b01ledav002.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 743A5124052;
- Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
-Received: from b01ledav002.gho.pok.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 50054124053;
- Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
-Received: from localhost (unknown [9.41.179.160])
- by b01ledav002.gho.pok.ibm.com (Postfix) with ESMTP;
- Fri,  6 Mar 2020 19:59:41 +0000 (GMT)
-From: Nathan Lynch <nathanl@linux.ibm.com>
-To: Pingfan Liu <kernelfans@gmail.com>
-Subject: Re: [PATCHv3 1/2] powerpc/of: split out new_property() for reusing
-In-Reply-To: <1583311651-29310-2-git-send-email-kernelfans@gmail.com>
-References: <1582882895-3142-1-git-send-email-kernelfans@gmail.com>
- <1583311651-29310-1-git-send-email-kernelfans@gmail.com>
- <1583311651-29310-2-git-send-email-kernelfans@gmail.com>
-Date: Fri, 06 Mar 2020 13:59:40 -0600
-Message-ID: <87eeu5jlub.fsf@linux.ibm.com>
+ id 1jAXIK-0001Si-2W; Sat, 07 Mar 2020 11:07:02 +0000
+Received: from DGGEMS414-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 1335413F9D459FCCC85D;
+ Sat,  7 Mar 2020 19:06:38 +0800 (CST)
+Received: from [127.0.0.1] (10.177.131.64) by DGGEMS414-HUB.china.huawei.com
+ (10.3.19.214) with Microsoft SMTP Server id 14.3.487.0; Sat, 7 Mar 2020
+ 19:06:29 +0800
+Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
+ crash dump kernel
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <20191223152349.180172-3-chenzhou10@huawei.com>
+ <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
+From: Chen Zhou <chenzhou10@huawei.com>
+Message-ID: <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
+Date: Sat, 7 Mar 2020 19:06:27 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-03-06_07:2020-03-06,
- 2020-03-06 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0
- suspectscore=1 adultscore=0 bulkscore=0 mlxscore=0 lowpriorityscore=0
- phishscore=0 malwarescore=0 priorityscore=1501 spamscore=0 mlxlogscore=999
- clxscore=1011 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2003060121
+In-Reply-To: <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
+X-Originating-IP: [10.177.131.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200306_115952_164500_A44F74D2 
-X-CRM114-Status: GOOD (  11.55  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200307_030700_287321_93060186 
+X-CRM114-Status: GOOD (  18.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -103,80 +66,154 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Donnellan <ajd@linux.ibm.com>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>, kexec@lists.infradead.org,
- linuxppc-dev@lists.ozlabs.org, Pingfan Liu <kernelfans@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Paul Mackerras <paulus@samba.org>,
- Oliver O'Halloran <oohall@gmail.com>, Dan Williams <dan.j.williams@intel.com>,
- Frank Rowand <frowand.list@gmail.com>, Hari Bathini <hbathini@linux.ibm.com>
+Cc: horms@verge.net.au,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Will Deacon <will@kernel.org>, xiexiuqi@huawei.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mingo@redhat.com,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ dyoung@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi,
 
-Pingfan Liu <kernelfans@gmail.com> writes:
-> Splitting out new_property() for coming reusing and moving it to
-> of_helpers.c.
 
-[...]
+On 2020/3/5 18:13, Prabhakar Kushwaha wrote:
+> On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
+>>
+>> Crashkernel=X tries to reserve memory for the crash dump kernel under
+>> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
+>> size low memory for crash kdump kernel devices firstly and then reserve
+>> memory above 4G.
+>>
+>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+>> ---
+>>  arch/arm64/kernel/setup.c |  8 +++++++-
+>>  arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
+>>  2 files changed, 36 insertions(+), 3 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+>> index 56f6645..04d1c87 100644
+>> --- a/arch/arm64/kernel/setup.c
+>> +++ b/arch/arm64/kernel/setup.c
+>> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
+>>                     kernel_data.end <= res->end)
+>>                         request_resource(res, &kernel_data);
+>>  #ifdef CONFIG_KEXEC_CORE
+>> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
+>> +               /*
+>> +                * Userspace will find "Crash kernel" region in /proc/iomem.
+>> +                * Note: the low region is renamed as Crash kernel (low).
+>> +                */
+>> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
+>> +                               crashk_low_res.end <= res->end)
+>> +                       request_resource(res, &crashk_low_res);
+>>                 if (crashk_res.end && crashk_res.start >= res->start &&
+>>                     crashk_res.end <= res->end)
+>>                         request_resource(res, &crashk_res);
+>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+>> index b65dffd..0d7afd5 100644
+>> --- a/arch/arm64/mm/init.c
+>> +++ b/arch/arm64/mm/init.c
+>> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
+>>  {
+>>         unsigned long long crash_base, crash_size;
+>>         int ret;
+>> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
+>>
+>>         ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
+>>                                 &crash_size, &crash_base);
+>> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
+>>         if (ret || !crash_size)
+>>                 return;
+>>
+>> +       ret = reserve_crashkernel_low();
+>> +       if (!ret && crashk_low_res.end) {
+>> +               /*
+>> +                * If crashkernel=X,low specified, there may be two regions,
+>> +                * we need to make some changes as follows:
+>> +                *
+>> +                * 1. rename the low region as "Crash kernel (low)"
+>> +                * In order to distinct from the high region and make no effect
+>> +                * to the use of existing kexec-tools, rename the low region as
+>> +                * "Crash kernel (low)".
+>> +                *
+>> +                * 2. change the upper bound for crash memory
+>> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
+>> +                *
+>> +                * 3. mark the low region as "nomap"
+>> +                * The low region is intended to be used for crash dump kernel
+>> +                * devices, just mark the low region as "nomap" simply.
+>> +                */
+>> +               const char *rename = "Crash kernel (low)";
+>> +
+>> +               crashk_low_res.name = rename;
+>> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
+>> +               memblock_mark_nomap(crashk_low_res.start,
+>> +                                   resource_size(&crashk_low_res));
+>> +       }
+>> +
+>>         crash_size = PAGE_ALIGN(crash_size);
+>>
+>>         if (crash_base == 0) {
+>>                 /* Current arm64 boot protocol requires 2MB alignment */
+>> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
+>> -                               crash_size, SZ_2M);
+>> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
+>> +                               SZ_2M);
+>>                 if (crash_base == 0) {
+>>                         pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
+>>                                 crash_size);
+>> --
+> 
+> I tested this patch series on ARM64-ThunderX2 with no issue with
+> bootargs crashkenel=X@Y crashkernel=250M,low
+> 
+> $ dmesg | grep crash
+> [    0.000000] crashkernel reserved: 0x0000000b81200000 -
+> 0x0000000c81200000 (4096 MB)
+> [    0.000000] Kernel command line:
+> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
+> crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
+> [   29.310209]     crashkernel=250M,low
+> 
+> $  kexec -p -i /boot/vmlinuz-`uname -r`
+> --initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
+> $ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
+> 
+> But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
+> Kernel is not able to allocate memory.
+> [    0.000000] cannot allocate crashkernel (size:0x100000000)
+> [    0.000000] Kernel command line:
+> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
+> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
+> crashkernel=250M,low nowatchdog
+> [   29.332081]     crashkernel=250M,low
+> 
+> does crashkernel=X@Y mandatory to get allocated beyond 4G?
+> am I missing something?
 
-> +struct property *new_property(const char *name, const int length,
-> +		const unsigned char *value, struct property *last)
-> +{
-> +	struct property *new = kzalloc(sizeof(*new), GFP_KERNEL);
-> +
-> +	if (!new)
-> +		return NULL;
-> +
-> +	new->name = kstrdup(name, GFP_KERNEL);
-> +	if (!new->name)
-> +		goto cleanup;
-> +	new->value = kmalloc(length + 1, GFP_KERNEL);
-> +	if (!new->value)
-> +		goto cleanup;
-> +
-> +	memcpy(new->value, value, length);
-> +	*(((char *)new->value) + length) = 0;
-> +	new->length = length;
-> +	new->next = last;
-> +	return new;
-> +
-> +cleanup:
-> +	kfree(new->name);
-> +	kfree(new->value);
-> +	kfree(new);
-> +	return NULL;
-> +}
+I can't reproduce the problem in my environment, can you test with other size,
+such as "crashkernel=1G crashkernel=250M,low", see if there is the same issue.
 
-This function in its current form isn't suitable for more general use:
+Besides, crashkernel=X@Y isn't mandatory to get allocated beyond 4G,
+can you show the whole file /proc/iomem.
 
-* It appears to be tailored to string properties - note the char * value
-  parameter, the length + 1 allocation and nul termination.
+Thanks,
+Chen Zhou
 
-* Most code shouldn't need the 'last' argument. The code where this
-  currently resides builds a list of properties and attaches it to a new
-  node, bypassing of_add_property().
+> 
+> --pk
+> 
+> .
+> 
 
-Let's look at the call site you add in your next patch:
-
-+		big = cpu_to_be64(p->bound_addr);
-+		property = new_property("bound-addr", sizeof(u64), (const unsigned char *)&big,
-+			NULL);
-+		of_add_property(dn, property);
-
-So you have to use a cast, and this is going to allocate (sizeof(u64) + 1)
-for the value, is that what you want?
-
-I think you should leave that legacy pseries reconfig code undisturbed
-(frankly that stuff should get deprecated and removed) and if you want a
-generic helper it should look more like:
-
-struct property *of_property_new(const char *name, size_t length,
-                                 const void *value, gfp_t allocflags)
-
-__of_prop_dup() looks like a good model/guide here.
 
 _______________________________________________
 kexec mailing list
