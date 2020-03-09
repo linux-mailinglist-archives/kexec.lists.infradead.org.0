@@ -2,113 +2,100 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B90617E530
-	for <lists+kexec@lfdr.de>; Mon,  9 Mar 2020 17:59:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1707F17E55A
+	for <lists+kexec@lfdr.de>; Mon,  9 Mar 2020 18:08:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3FXUI5WyKPN5/MsoIBF9nupBnqAHBRa4L9bzAH3xOi4=; b=h3sL2lYnZDyF8t
-	KE9l/QE64j8tFkPP8Nb3erWRMKh/Tk8RvacxlqHGEj4tha1YK9s7aXivV7vnloFFUYDYQru4GMk75
-	NJOjIvnDL/KvZOHKC/r8y7EcDo9ppjvbpgyFMRfBpzXRAsVHz7SqyEhPuC6g+IJCWRFMQrmWkx8i0
-	H0I5Ce/He3QYMKZNQPvBSz7OxcY6hi7iSj+BFdPyidd4x0cfb9r3tRqZ9o0ghyJj1YHEcTjNmQnJj
-	DPBZX4GEgw8tozt309bfoCAE/FhBaCzWJhOBtOU94mQV7K2cidTHMVgongbiWHo6NCGxkACiluvOj
-	WUQUi9eYt8P7ckvcrFmg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Message-Id:Subject:Date:Mime-Version
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zYu3hAEnEu/ygkOWImUZLYl+BSgfd4c7X5VOEc2vZNo=; b=cC7qB15O0doFoa
+	ZidL1eEfGmiWkvGx3n/8WjXzGVyauyyI8Fhlwdxfl42onjsLw2NE8Fa5Bd65PmCr7QWRDK8hsrrt+
+	EAlMX4SGk1rdMnhyIl/G1gqHydyQLbZ4Yy0ypTSnlDsmc3v+61fx+sKBZlPHkTMfqigQSJkHtSHjh
+	6ifyu721aSuorRaFugQH2pFtTvAZAGvXKnpfIK+XjPbLI/kx/Y/nVsugY2WErRfWX8MEhB/8z09xT
+	tcyC9410zN/kQ+TaevUDnJ8ODBlaE/KGGvcAAV5uK6taHT6yqHeOzOPdvWxre1vKh3KGkeEun7ivM
+	yrVrrixYY/fg6JmtqG/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBLk4-0002mf-Oc; Mon, 09 Mar 2020 16:59:00 +0000
-Received: from mail-eopbgr1300052.outbound.protection.outlook.com
- ([40.107.130.52] helo=APC01-HK2-obe.outbound.protection.outlook.com)
+	id 1jBLsu-0007Bd-9j; Mon, 09 Mar 2020 17:08:08 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBLk0-0002lU-Hz
- for kexec@lists.infradead.org; Mon, 09 Mar 2020 16:58:58 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YSWK8jcgGU4/OHyVEXdiSUYe3CQDsgFFeEL8s9IflA6iuras8rg5e0uXvjKRO6fUncYpt3w/ZO+rDmcorP2muX5X8XSCHd3qB2qHFlCXfQrTvM2GUH/kB8C6QlnESxq8R4erQplk1VIfNeN2FoKOejp4ow3DxQ124x8FzCbcEelnxkH4okQm74EmWr+rsiB/HAsik0Vv36zsCCkusvy8xVm81N54g8n4VIgaEikh3iSsRggoXFOkhZ52xxz5RdTe3YvOXPrP0KwmYObXhbGXHumQI1fZNecvNRFlDRQq3hKoQakBLQDE5tOk8/pEAFBVbNDor6K67TEV5Omvhgqzcw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7KXptR8FkcxD1a7Pym93sv1bN9CHCWXclwi7teum46A=;
- b=ZcWlZpA3K7LA1yPiYZJaWbbJhtFAUu4C0KDMDsIyjExoSFNjEx27KdXRoaQmdvU0JDor2qVmv0TVxrGwBTZ6ejGifmXY74LJSDUsKj0GrihKeVd5ikSVnGE1g6a+aWVn7LrMXo32Km8TQoOVtBJ3eWbajN+IueCaSZNBhQjPc+iUf07OUxSJBVMJmCsz7LaGDeazPwCvONDMrUCE+4QPauwM8AOZSpL2dcBLFZhQ+YVpsgIV73HAHTJHtQRovKERVSGXSS+jI/c82jvB4THXOq1e6SbRLgqEpTwd+N7KH2GUf5Q/jgDo+WeuBUZJYBUWnxRH3n7WeOrjVQyj9qgXdA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
- header.d=nec.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7KXptR8FkcxD1a7Pym93sv1bN9CHCWXclwi7teum46A=;
- b=A+JJd/VRaaGfHr2FS0yuaeSvPDThWef9tB05efDWuYiFnKdzK+wEhDN3xXH81VY7JRWhdv0E8WXpI/I+Fl9EGVycfSNOexfc5c2AVpVIdLj+0e8SQod0KPglpCGkQwUFI2j5GmxeXpuzoopr+OCokLFuY766zouDskgcw/27YS0=
-Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com (20.179.171.214) by
- TY2PR01MB2924.jpnprd01.prod.outlook.com (20.177.98.81) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2772.15; Mon, 9 Mar 2020 16:58:48 +0000
-Received: from TY2PR01MB5210.jpnprd01.prod.outlook.com
- ([fe80::fc05:2d27:4484:40c9]) by TY2PR01MB5210.jpnprd01.prod.outlook.com
- ([fe80::fc05:2d27:4484:40c9%5]) with mapi id 15.20.2793.013; Mon, 9 Mar 2020
- 16:58:48 +0000
-From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
- <k-hagio-ab@nec.com>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>, kexec mailing list
- <kexec@lists.infradead.org>, Bhupesh Sharma <bhsharma@redhat.com>, Ganapatrao
- Prabhakerrao Kulkarni <gkulkarni@marvell.com>, Kamlakant Patel
- <kamlakantp@marvell.com>, Prabhakar Kushwaha <pkushwaha@marvell.com>
-Subject: RE: makedumpfile: undefined reference for lzma function during build
-Thread-Topic: makedumpfile: undefined reference for lzma function during build
-Thread-Index: AQHV9hv+e9fSbsU2f0qg44IUXLB3GahAb0lA
-Date: Mon, 9 Mar 2020 16:58:48 +0000
-Message-ID: <TY2PR01MB52101D28462041E10151C4C3DDFE0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
-References: <CAJ2QiJKqZbi7V9nd+=NFUnKBhTBqqbm=-pkuLQ0P3s=1hLgOmQ@mail.gmail.com>
-In-Reply-To: <CAJ2QiJKqZbi7V9nd+=NFUnKBhTBqqbm=-pkuLQ0P3s=1hLgOmQ@mail.gmail.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=k-hagio-ab@nec.com; 
-x-originating-ip: [66.187.233.206]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: f099c17b-c027-4203-ffa7-08d7c44b22ca
-x-ms-traffictypediagnostic: TY2PR01MB2924:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <TY2PR01MB2924424949D61DB361E94E28DDFE0@TY2PR01MB2924.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3276;
-x-forefront-prvs: 0337AFFE9A
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(396003)(39860400002)(136003)(346002)(376002)(199004)(189003)(110136005)(52536014)(64756008)(71200400001)(66446008)(33656002)(66556008)(76116006)(81156014)(966005)(66476007)(186003)(478600001)(66946007)(85182001)(2906002)(81166006)(26005)(5660300002)(8676002)(86362001)(55016002)(316002)(6506007)(9686003)(7696005)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:TY2PR01MB2924;
- H:TY2PR01MB5210.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nec.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: +zeb53bqmF6O7rFZjDX3FDR7wk55klWkwCTq0tp3JNxvmXUR6mPxNfm4OOHXF2hcPxjyplFV6swmEnZGF6Ci0LIXgflOf/AMk+SD9PR9pF8j0NKD3IrkjtG4SOjspbFUOsCtyMjcaFXwNxgxD1BQPJo8fOP2QplwvslO8goLwelGSLTsO+AcQPzUTM4LodF6y/vlPtr226H/21JGXbRXYfGLC01s015dJmQahWlEy7I8VUnrr0q2hPsPIbcnqXn3kfDR9pFmCHViaYiRqskQ+40skCIEIxFb7lRilDUoh5hjW3lmaNb7DbdYgKum2NMxifMgxF+MFvHxgjXaIxGKnB4krj8KYefzepNBNZnAMp0Hxipr0ZkEDZVGQhYwEllPCXp8yHJyo6uI5xTm1cMN+u9bgqGYQhX8pWpKO/x/+DeuUiBMquT/QcKsh+rEp4jkJlZkAv/WaUxRPK/X30JB59WNYMFE8bVVDCW+lCkutC1tGmMMHFWiMUGN6M4li3PwhATIBExIgc+6l7yHX2776g==
-x-ms-exchange-antispam-messagedata: k5k8e+Ia4HJgJg8sLAsjQ/392jGdC3rVHA4isDKL+m9/XeYEys6rFmRUKRUsAozR7GSpcCDlrQUgwI03pCQjZmO3NyPBiHYBOmlMT31vsLNPOrRLi4g6OGH20KGmcxlTvDs+UfVYzzI8Dw3vILcA3Q==
-MIME-Version: 1.0
-X-OriginatorOrg: nec.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f099c17b-c027-4203-ffa7-08d7c44b22ca
-X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Mar 2020 16:58:48.0355 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: YxMr4YT/RXzqmN+OGmXQ2biwNCkzV/bYEIhFIFv/q2KKHhth9K5Cge1j0v29Hc7Eh6Zjd/AOK4OFtBR8LXiJ7w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB2924
+ id 1jBLsq-00076W-5u
+ for kexec@lists.infradead.org; Mon, 09 Mar 2020 17:08:05 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 029GxGoj091478
+ for <kexec@lists.infradead.org>; Mon, 9 Mar 2020 17:08:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : content-type :
+ content-transfer-encoding : mime-version : date : subject : message-id :
+ to; s=corp-2020-01-29; bh=v/2nuUqDs97h5Op4px5lfo0CwQ4takHRN4tCTsJKfac=;
+ b=MfoLu9pyAdCiiGS4+R/tMxMWr1d7bx0U2ViDKYWPTM3SMMP7tx4uUkEoiXXlbeCzWzFf
+ puopit/MPH62TqjYB0yGPuZ6RAxnvpmAsNvKIzyipgao0fV5NMMnAx/Ez7crtztkUTi8
+ 6pjyyvR0AChn//XG+dcgkA6HLprR0hLPgFveNdWVwX34si4CQwyj+SXfhddtTWUW/f8z
+ s0MT+BnLp5/LJ6rVhgViJDr+Uqod+c1H3iELI4IkkdTQaCRb9XITmFxnJi8hLI1pPXE5
+ c0zdl/T6JyqWZmbhFHNM/bFliCmo19Rqd6l6H3z4gROZQJ+VdlHf5vFxGfXYJI1xqUTo Bg== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 2ym48sr7cp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
+ for <kexec@lists.infradead.org>; Mon, 09 Mar 2020 17:08:01 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 029H139T041606
+ for <kexec@lists.infradead.org>; Mon, 9 Mar 2020 17:08:00 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 2ymnb0dbdv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
+ for <kexec@lists.infradead.org>; Mon, 09 Mar 2020 17:08:00 +0000
+Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 029H7wRk009140
+ for <kexec@lists.infradead.org>; Mon, 9 Mar 2020 17:08:00 GMT
+Received: from dhcp-10-154-174-145.vpn.oracle.com (/10.154.174.145)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 09 Mar 2020 10:07:58 -0700
+From: John Donnelly <john.p.donnelly@oracle.com>
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+Date: Mon, 9 Mar 2020 12:07:56 -0500
+Subject: QUESTION :  dracut debugging for kdump 
+Message-Id: <4F31C9D2-6F43-403A-ACC8-7209A33D6684@oracle.com>
+To: kexec mailing list <kexec@lists.infradead.org>
+X-Mailer: Apple Mail (2.3445.9.1)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9555
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ mlxscore=0 mlxlogscore=999
+ spamscore=0 suspectscore=3 adultscore=0 malwarescore=0 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003090109
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9555
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
+ impostorscore=0
+ mlxlogscore=999 suspectscore=3 priorityscore=1501 lowpriorityscore=0
+ phishscore=0 adultscore=0 spamscore=0 mlxscore=0 clxscore=1015
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2003090109
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200309_095856_660254_29295EE8 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200309_100804_358715_9C8102FA 
+X-CRM114-Status: GOOD (  10.39  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.130.52 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,106 +112,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+Hi kexec/kdump  team.
 
-Thank you for reporting this.
+I am not sure if this is the appropriate dlist to ask .  If not ,  I apologize .
 
------Original Message-----
-> Hi All,
-> 
-> While building makedumpfile for AARM64 Thunder X2, I am getting this error
-> 
-> cc  -g -O2 -Wall -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
-> -D_LARGEFILE64_SOURCE -DVERSION='"1.6.7"' -DRELEASE_DATE='"16 Jan
-> 2020"' -D__aarch64__   print_info.o dwarf_info.o elf_info.o
-> erase_info.o sadump_info.o cache.o tools.o arch/arm.o arch/arm64.o
-> arch/x86.o arch/x86_64.o arch/ia64.o arch/ppc64.o arch/s390x.o
-> arch/ppc.o arch/sparc64.o -rdynamic -o makedumpfile makedumpfile.c
-> -lpthread -static -ldw -lbz2 -ldl -lelf -lz  -lebl
-> erase_info.o: In function `process_eppic_file':
-> /home/prabhakar/MERGE/OPENSRC/APPL/makedumpfile-code/erase_info.c:2202:
-> warning: Using 'dlopen' in statically linked applications requires at
-> runtime the shared libraries from the glibc version used for linking
-> //usr/local/lib/libdw.a(lzma.o): In function `__libdw_unlzma':
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:233:
-> undefined reference to `lzma_auto_decoder'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:248:
-> undefined reference to `lzma_end'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:267:
-> undefined reference to `lzma_code'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
-> undefined reference to `lzma_end'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:236:
-> undefined reference to `lzma_end'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
-> undefined reference to `lzma_end'
-> /home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
-> undefined reference to `lzma_end'
-> collect2: error: ld returned 1 exit status
-> Makefile:100: recipe for target 'makedumpfile' failed
-> 
-> Source code: https://git.code.sf.net/p/makedumpfile/code
-> Top commit e7301654029330bbf49693002fa72223f9b3fb36 (HEAD -> master,
-> tag: Released-1-6-7, origin/master, origin/HEAD)
-> Author: Kazuhito Hagio <k-hagio-ab@nec.com>
-> Date:   Wed Jan 15 13:09:56 2020 -0500
-> 
->     [v1.6.7] Update version
-> 
->     Update makedumpfile to version 1.6.7.
-> 
->     Signed-off-by: Kazuhito Hagio <k-hagio-ab@nec.com>
-> 
-> 
-> I googled and found
-> http://lists.infradead.org/pipermail/kexec/2017-May/018760.html i.e.
-> diff --git a/Makefile b/Makefile
-> index 388faf7..810a7a0 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -50,7 +50,7 @@ OBJ_PART=$(patsubst %.c,%.o,$(SRC_PART))
->  SRC_ARCH = arch/arm.c arch/arm64.c arch/x86.c arch/x86_64.c
-> arch/ia64.c arch/ppc64.c arch/s390x.c arch/ppc.c arch/sparc64.c
->  OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
-> 
-> -LIBS = -ldw -lbz2 -ldl -lelf -lz
-> +LIBS = -ldw -lbz2 -ldl -lelf -lz -llzma
->  ifneq ($(LINKTYPE), dynamic)
->  LIBS := -static $(LIBS)
->  endif
-> 
-> After adding this change, no more build error.This change was required
-> for spac64. So do we need similar changes for AARM64 platform also.
 
-I confirmed that it also occurred on x86_64 without LINKTYPE=dynamic.
-The -ldw with -static option seems to require -llzma, and makedumpfile
-doesn't use liblzma directly, so I will merge this:
+I am having difficulties mounting a iSCSI target under kdump . 
 
-diff --git a/Makefile b/Makefile
-index 868eea6..ebef867 100644
---- a/Makefile
-+++ b/Makefile
-@@ -52,7 +52,7 @@ OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
+The target is discovered , 
 
- LIBS = -ldw -lbz2 -ldl -lelf -lz
- ifneq ($(LINKTYPE), dynamic)
--LIBS := -static $(LIBS)
-+LIBS := -static $(LIBS) -llzma
- endif
+[ 154.118729] sd 2:0:0:0: [sda] Attached SCSI disk
+[ OK ] Found device ZFS_Storage_7350 4.
+Starting File System Check on /dev/...a-5ef4-4838-b5e7-dff852dfc673...
+[ OK ] Started File System Check on /dev/d...46a-5ef4-4838-b5e7-dff852dfc673.
+[ 275.766578] dracut-initqueue[420]: Warning: dracut-initqueue timeout - startinging 
 
- ifeq ($(USELZO), on)
 
+The fsck step never finishes, and dracut timeout eventually drops into the rescue shell.
+
+
+I can see it is attempting to fsck root from the UUID :
+
+
+# blkid | grep b5
+/dev/sda4: UUID="fb01846a-5ef4-4838-b5e7-dff852dfc673" TYPE="xfs" PARTUUID="f8831f2d-b2c6-4b27-97db-0513e4d3fe42"
+3:02
+" /dev/sda4 30G 3.5G 27G 12% /
+
+
+And I mount root manually and look around. 
+
+# kdump:/# mkdir /mnt
+# kdump:/# mount /dev/sda4 /mnt
+[ 542.856035] SGI XFS with ACLs, security attributes, realtime, scrub, repair, no debug enabled
+[ 542.885016] XFS (sda4): Mounting V4 Filesystem
+[ 542.938507] XFS (sda4): Starting recovery (logdev: internal)
+[ 542.994720] XFS (sda4): Ending recovery (logdev: internal)
+[ 543.018918] xfs filesystem being mounted at /mnt supports timestamps until 2038 (0x7fffffff)
+kdump:/#
+kdump:/#
+kdump:/# chroot /mnt/ /usr/bin/bash
+bash-4.2#
+
+   Now my iSCSI  target is mounted as /mnt 
+
+
+Is there a way start dracut so it stops BEFORE the fsck step  ?  Not after it fails ?
 
 Thanks,
-Kazu
 
-> 
-> --pk
-> 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
+JD
+
+
+
+
+
+
+
+
+
+
+
 
 _______________________________________________
 kexec mailing list
