@@ -2,88 +2,86 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E9E717D8B1
-	for <lists+kexec@lfdr.de>; Mon,  9 Mar 2020 06:00:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D22B517E236
+	for <lists+kexec@lfdr.de>; Mon,  9 Mar 2020 15:06:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7grbkCf6zh3gvpgcBrhwvjyuWn/0aAWee8J/nC/zLnA=; b=NtdHuuxXlQDONt
-	VNiz4bk5PHZMWgybnUgxJLCdmxCGvkfWd/KEFHahT9t+FRfooUqsTBYbUEEq/cxLFEiXS7wsoqGxp
-	pA1/k2vKgzVE2oNgYpfMlPnJ/FazmN7Z84JXaBPaa5l6MHG6E2Gi8zN1DsZDGmb9uolaKFQJN8Rsx
-	7Sbk1Cm+NtMPoJa30qdkK+nGAO5ei+/RWo/c68Da08wtYovi+XV83UARnNAqlpMbKADEvUGaRYuoj
-	1ta0ftmd428z8LuiZsGtAtrD0Pn3tOXBJLIG0bbXF8KpSbaJR3R3tGk2H0MyKduvvbdofHE9HOSwY
-	R5a170ah0lQZ2W/qhtbg==;
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ASIai69DtU6wbVVLG66dCLYkUKob9OR+JrmQ2bDsD04=; b=TdH
+	cW+7zOIdQwf8N16UA+OfBZxpm9LJn7rqLWC7Jd4eV2KnYt1lGhW/zIQWD+Bzy7RcghD1aY850ySHO
+	SvAbUhHR5KS/rqBHjnPCmxBe+GLyfxAsebL0dcyZqFnIfRBAXFzguKl1onO+WdKIIto/lYYwhHpoG
+	Zg2gNl6lc4uXe6KgKnlolTRfG63+Dv96YOpi9kqr6DmoYqSyJqsg0Y/RNgB3l4f089i1moeoSdORT
+	RKs+axQ/+l/5jpCkNhrNqlMm8ATL9yVjGOHOW8Lb+bGBODjD6aY25bjsG96CLBZDNdl6cLxoL2kZx
+	MyHhLucbyyHdbTLjmCW3Q3wdYeOclTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBAWV-0007yK-4M; Mon, 09 Mar 2020 05:00:15 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jBJ3H-0006Fh-Gf; Mon, 09 Mar 2020 14:06:39 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBAWR-0006lC-BH; Mon, 09 Mar 2020 05:00:13 +0000
-Received: by mail-wr1-x442.google.com with SMTP id a25so5548266wrd.0;
- Sun, 08 Mar 2020 22:00:02 -0700 (PDT)
+ id 1jBJ3E-0006FQ-Bm
+ for kexec@lists.infradead.org; Mon, 09 Mar 2020 14:06:37 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p9so10068936wmc.2
+ for <kexec@lists.infradead.org>; Mon, 09 Mar 2020 07:06:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3dpX2KhwKg1TlQyopmC0OmAXJmtNkR0WTuTbj7qyTUg=;
- b=tJR0ihmVaUbtZcUJtSlI0Gbbfy3jT0P9w0/qvPLEf0/I4QwL/UiGSlP0R3kZuFmcNH
- KzI77ZyCczAbKsYuhEkAoQrxDzvJGqv9PRYSl1W31sHB782IAOOL/O41bTBwRGSBzF2z
- mxZn9Zmm7Kho7lCbWTRiVM+RsPRXG6DnZzZUoU0IMZ5SXpRK5P4xA8s4yXOdwNJQFP69
- Dbh58UIcLGdgA8522mRP07vvWAm8qJGhBuijY2ijEGTf2KAzIN/6J5LJikxn5AOM4uN8
- HOrFDzw2SBQReaBE3zESoH4E249nDxLIkrQ4+ob+/uRjVKnYUG9W5U861v1dh1YnozFl
- +Kxg==
+ h=mime-version:from:date:message-id:subject:to;
+ bh=x5ZnTS8m8hZCrfqyiKuoMHZwMKjrXchD26jTf0vXaLA=;
+ b=LnfmKJBWYjMgOJa9T4fOM/0Y2bbJeJ5LMp1PUltlGc+EsKAsOF8rjliDL5s2yKSZ0h
+ XefbCU5zKmcLRx2YxMmURDLl8kaxf5c4BevuSN8wQgJunY/FU4DpcvY4cTAP7uTd61qG
+ 1PNJps3RfcZ8/jBW4CY0ciMKofVhcCp645Lbc8bUSTi5ioNswAeXQT+0K5uYZ2RkJtLA
+ lmB+O02LbPG+s6EHQx/7oQg1tXSHdsrC5OaEL59hMf0nbHdlZ/eJvreGHIEMKtX2WJeT
+ WkpDdzQdR99b2gj8Hua7xbtgACf90hWCpHK168ntaUcJJkTKjxbcnBpLuYjpX3h+epx7
+ K5Vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3dpX2KhwKg1TlQyopmC0OmAXJmtNkR0WTuTbj7qyTUg=;
- b=keFnWplen8RwtNduF8ASK6xC7T5kTJfS7kM+DZrFFdF+kIHC0kZptHAtnO/q8u4alS
- gPz7ZHgaKQkKaVltFTWDGcFcYavhi/+5wepg+2yB/O8UeoqLnEFU5efdcnfeml1ZhpGD
- cLc06T1ZBeMcHUgH2yMzi4LW5Oa9fo5gP0Q9YECG/CKcnVtX9l2tbHADW0q2+GX7vzeL
- HkQXGkeXcIWLXuSHWv+1ifMZBlDeLqXd9CN6x1/1TTiCbJ4bQY05HPRTz02ZHG61XDIN
- GBvrMlJT8gvTSlcrZsXHo2a2haQ7I0cudJkDEwymDW5fM83p9KhfOSUmmc0xGCgCvt4T
- iU6w==
-X-Gm-Message-State: ANhLgQ3nAjlR6Av/cxJoIAlQeBBwIV9ftdrxQq2XlHce2WFtnFZteSZn
- 8HM1g43IvK5yyRrk7NQ+pQuRRz1ZpsBYkKcNuEA=
-X-Google-Smtp-Source: ADFU+vs4jA7FbtP2JBdXRB6VrQz2Pvm8vISNM7DFJxynTqZVRcoD0MBM/ZTZl2pRSvFvMvuL059ljdCPBAUzFymGDyE=
-X-Received: by 2002:a5d:560d:: with SMTP id l13mr1777886wrv.232.1583730001205; 
- Sun, 08 Mar 2020 22:00:01 -0700 (PDT)
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=x5ZnTS8m8hZCrfqyiKuoMHZwMKjrXchD26jTf0vXaLA=;
+ b=nigW40HP1NP+ixG8zRk8/o2eHriQd/txaK3YMOd3BCFpx8WDD5PwBl9nWViaDzNCCC
+ Ktis8PI5qYc/jAa/CKM9MusRDc/d1PPAqazEyR58H4LDzT0gDNj+X+wxxqDQuWDV8lvX
+ 0TeFv5m3jpZnxmCmaDWDPuCgnZhIlF/eGPqMjLCmII30fzyralJOgGF0yvNGZSZVNQaS
+ pAg9+Sh9KVWZVv8/U4pPFvhDTSJx0m46H6XPh+P23KhcS82wGzpxsV0MP9h49F3zw92B
+ qE1UC/V4FGxfpR+12BbCk76xWCg+gamgUyDLB2XVhcYBxYuCEA2rFNhEnLdNX7Q98WZV
+ wYPw==
+X-Gm-Message-State: ANhLgQ0VXq5kYe85jQz/sMBw70A3XHi8Z7umVK0QYZd4LxtHu29uBFJK
+ Mstr0pjn1RBpxbLEIXQ7L62kVHbUlW0nzr/Y3rpviNlZ
+X-Google-Smtp-Source: ADFU+vu9zmbNMQG4u2scJV6aPycMSn7IBgO6kSqVvMTQSs9Dk0Z+QqMtmU6uA/SgIzMjFLBQUAzME77PzYFAlVrerbs=
+X-Received: by 2002:a1c:2701:: with SMTP id n1mr20433292wmn.180.1583762794072; 
+ Mon, 09 Mar 2020 07:06:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <20191223152349.180172-3-chenzhou10@huawei.com>
- <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
- <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
- <B6820665-123F-422A-8E49-BB2A48D02CA7@oracle.com>
-In-Reply-To: <B6820665-123F-422A-8E49-BB2A48D02CA7@oracle.com>
 From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Mon, 9 Mar 2020 10:29:22 +0530
-Message-ID: <CAJ2QiJ+x5ne1r4h4V=Ng6wVo0ro+4E_RKAXUuzyc=y-+4aL1WQ@mail.gmail.com>
-Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
- crash dump kernel
-To: John Donnelly <john.p.donnelly@oracle.com>
+Date: Mon, 9 Mar 2020 19:35:56 +0530
+Message-ID: <CAJ2QiJKqZbi7V9nd+=NFUnKBhTBqqbm=-pkuLQ0P3s=1hLgOmQ@mail.gmail.com>
+Subject: makedumpfile: undefined reference for lzma function during build
+To: kexec mailing list <kexec@lists.infradead.org>,
+ Bhupesh Sharma <bhsharma@redhat.com>, 
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Kamlakant Patel <kamlakantp@marvell.com>, 
+ Prabhakar Kushwaha <pkushwaha@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200308_220011_397221_73396880 
-X-CRM114-Status: GOOD (  23.11  )
+X-CRM114-CacheID: sfid-20200309_070636_405442_A8862DF6 
+X-CRM114-Status: UNSURE (   6.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [prabhakar.pkin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,388 +93,76 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- xiexiuqi@huawei.com, Chen Zhou <chenzhou10@huawei.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dyoung@redhat.com,
- horms@verge.net.au, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- mingo@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-. Hi John,
+Hi All,
 
-On Sun, Mar 8, 2020 at 12:13 AM John Donnelly
-<john.p.donnelly@oracle.com> wrote:
->
->
->
-> > On Mar 7, 2020, at 5:06 AM, Chen Zhou <chenzhou10@huawei.com> wrote:
-> >
-> >
-> >
-> > On 2020/3/5 18:13, Prabhakar Kushwaha wrote:
-> >> On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
-> >>>
-> >>> Crashkernel=X tries to reserve memory for the crash dump kernel under
-> >>> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
-> >>> size low memory for crash kdump kernel devices firstly and then reserve
-> >>> memory above 4G.
-> >>>
-> >>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-> >>> ---
-> >>> arch/arm64/kernel/setup.c |  8 +++++++-
-> >>> arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
-> >>> 2 files changed, 36 insertions(+), 3 deletions(-)
-> >>>
-> >>> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
-> >>> index 56f6645..04d1c87 100644
-> >>> --- a/arch/arm64/kernel/setup.c
-> >>> +++ b/arch/arm64/kernel/setup.c
-> >>> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
-> >>>                    kernel_data.end <= res->end)
-> >>>                        request_resource(res, &kernel_data);
-> >>> #ifdef CONFIG_KEXEC_CORE
-> >>> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
-> >>> +               /*
-> >>> +                * Userspace will find "Crash kernel" region in /proc/iomem.
-> >>> +                * Note: the low region is renamed as Crash kernel (low).
-> >>> +                */
-> >>> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
-> >>> +                               crashk_low_res.end <= res->end)
-> >>> +                       request_resource(res, &crashk_low_res);
-> >>>                if (crashk_res.end && crashk_res.start >= res->start &&
-> >>>                    crashk_res.end <= res->end)
-> >>>                        request_resource(res, &crashk_res);
-> >>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> >>> index b65dffd..0d7afd5 100644
-> >>> --- a/arch/arm64/mm/init.c
-> >>> +++ b/arch/arm64/mm/init.c
-> >>> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
-> >>> {
-> >>>        unsigned long long crash_base, crash_size;
-> >>>        int ret;
-> >>> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
-> >>>
-> >>>        ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
-> >>>                                &crash_size, &crash_base);
-> >>> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
-> >>>        if (ret || !crash_size)
-> >>>                return;
-> >>>
-> >>> +       ret = reserve_crashkernel_low();
-> >>> +       if (!ret && crashk_low_res.end) {
-> >>> +               /*
-> >>> +                * If crashkernel=X,low specified, there may be two regions,
-> >>> +                * we need to make some changes as follows:
-> >>> +                *
-> >>> +                * 1. rename the low region as "Crash kernel (low)"
-> >>> +                * In order to distinct from the high region and make no effect
-> >>> +                * to the use of existing kexec-tools, rename the low region as
-> >>> +                * "Crash kernel (low)".
-> >>> +                *
-> >>> +                * 2. change the upper bound for crash memory
-> >>> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
-> >>> +                *
-> >>> +                * 3. mark the low region as "nomap"
-> >>> +                * The low region is intended to be used for crash dump kernel
-> >>> +                * devices, just mark the low region as "nomap" simply.
-> >>> +                */
-> >>> +               const char *rename = "Crash kernel (low)";
-> >>> +
-> >>> +               crashk_low_res.name = rename;
-> >>> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
-> >>> +               memblock_mark_nomap(crashk_low_res.start,
-> >>> +                                   resource_size(&crashk_low_res));
-> >>> +       }
-> >>> +
-> >>>        crash_size = PAGE_ALIGN(crash_size);
-> >>>
-> >>>        if (crash_base == 0) {
-> >>>                /* Current arm64 boot protocol requires 2MB alignment */
-> >>> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
-> >>> -                               crash_size, SZ_2M);
-> >>> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
-> >>> +                               SZ_2M);
-> >>>                if (crash_base == 0) {
-> >>>                        pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
-> >>>                                crash_size);
-> >>> --
-> >>
-> >> I tested this patch series on ARM64-ThunderX2 with no issue with
-> >> bootargs crashkenel=X@Y crashkernel=250M,low
-> >>
-> >> $ dmesg | grep crash
-> >> [    0.000000] crashkernel reserved: 0x0000000b81200000 -
-> >> 0x0000000c81200000 (4096 MB)
-> >> [    0.000000] Kernel command line:
-> >> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-> >> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
-> >> crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
-> >> [   29.310209]     crashkernel=250M,low
-> >>
-> >> $  kexec -p -i /boot/vmlinuz-`uname -r`
-> >> --initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
-> >> $ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
-> >>
-> >> But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
-> >> Kernel is not able to allocate memory.
-> >> [    0.000000] cannot allocate crashkernel (size:0x100000000)
-> >> [    0.000000] Kernel command line:
-> >> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
-> >> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
-> >> crashkernel=250M,low nowatchdog
-> >> [   29.332081]     crashkernel=250M,low
-> >>
-> >> does crashkernel=X@Y mandatory to get allocated beyond 4G?
-> >> am I missing something?
-> >
->
->    crashkernel=4G
->
->    You need to look at the memory map on node 0  from dmesg     ( or /proc/iomem ) to determine if there is any memory in that range  - 0x100000000 == 1st byte above 4G .
->
+While building makedumpfile for AARM64 Thunder X2, I am getting this error
 
-i believe i have enough free memory. Please find log below
+cc  -g -O2 -Wall -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
+-D_LARGEFILE64_SOURCE -DVERSION='"1.6.7"' -DRELEASE_DATE='"16 Jan
+2020"' -D__aarch64__   print_info.o dwarf_info.o elf_info.o
+erase_info.o sadump_info.o cache.o tools.o arch/arm.o arch/arm64.o
+arch/x86.o arch/x86_64.o arch/ia64.o arch/ppc64.o arch/s390x.o
+arch/ppc.o arch/sparc64.o -rdynamic -o makedumpfile makedumpfile.c
+-lpthread -static -ldw -lbz2 -ldl -lelf -lz  -lebl
+erase_info.o: In function `process_eppic_file':
+/home/prabhakar/MERGE/OPENSRC/APPL/makedumpfile-code/erase_info.c:2202:
+warning: Using 'dlopen' in statically linked applications requires at
+runtime the shared libraries from the glibc version used for linking
+//usr/local/lib/libdw.a(lzma.o): In function `__libdw_unlzma':
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:233:
+undefined reference to `lzma_auto_decoder'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:248:
+undefined reference to `lzma_end'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:267:
+undefined reference to `lzma_code'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
+undefined reference to `lzma_end'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:236:
+undefined reference to `lzma_end'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
+undefined reference to `lzma_end'
+/home/prabhakar/MERGE/OPENSRC/APPL/elfutils-0.177/libdwfl/gzip.c:277:
+undefined reference to `lzma_end'
+collect2: error: ld returned 1 exit status
+Makefile:100: recipe for target 'makedumpfile' failed
 
-$ dmesg | grep "node 0"
-[    0.000000] Initmem setup node 0 [mem 0x00000000802f0000-0x0000009ffcffffff]
-[    0.000000] On node 0 totalpages: 33537296
-[   12.335714] pci_bus 0000:00: on NUMA node 0
-$
+Source code: https://git.code.sf.net/p/makedumpfile/code
+Top commit e7301654029330bbf49693002fa72223f9b3fb36 (HEAD -> master,
+tag: Released-1-6-7, origin/master, origin/HEAD)
+Author: Kazuhito Hagio <k-hagio-ab@nec.com>
+Date:   Wed Jan 15 13:09:56 2020 -0500
 
-I am passing 4G@0xb81200000 in working scenario, here 0xb81200000 is
-well within node 0 range.
+    [v1.6.7] Update version
 
-Logs of iomem is below:
+    Update makedumpfile to version 1.6.7.
 
-$ cat /proc/iomem
-00000000-00000000 : PCI ECAM
-00000000-00000000 : PCI ECAM
-00000000-00000000 : PCI Bus 0000:00
-  00000000-00000000 : PCI Bus 0000:0f
-    00000000-00000000 : PCI Bus 0000:10
-      00000000-00000000 : 0000:10:00.0
-      00000000-00000000 : 0000:10:00.0
-  00000000-00000000 : PCI Bus 0000:01
-    00000000-00000000 : 0000:01:00.0
-    00000000-00000000 : 0000:01:00.1
-  00000000-00000000 : PCI Bus 0000:05
-    00000000-00000000 : 0000:05:00.0
-    00000000-00000000 : 0000:05:00.1
-  00000000-00000000 : PCI Bus 0000:09
-    00000000-00000000 : 0000:09:00.0
-    00000000-00000000 : 0000:09:00.1
-  00000000-00000000 : 0000:00:10.0
-    00000000-00000000 : ahci
-  00000000-00000000 : 0000:00:10.1
-    00000000-00000000 : ahci
-00000000-00000000 : PCI Bus 0000:80
-  00000000-00000000 : PCI Bus 0000:83
-    00000000-00000000 : 0000:83:00.0
-    00000000-00000000 : 0000:83:00.0
-      00000000-00000000 : nvme
-  00000000-00000000 : PCI Bus 0000:89
-    00000000-00000000 : 0000:89:00.0
-      00000000-00000000 : e1000e
-    00000000-00000000 : 0000:89:00.0
-    00000000-00000000 : 0000:89:00.0
-      00000000-00000000 : e1000e
-    00000000-00000000 : 0000:89:00.0
-      00000000-00000000 : e1000e
-  00000000-00000000 : PCI Bus 0000:8d
-    00000000-00000000 : 0000:8d:00.0
-    00000000-00000000 : 0000:8d:00.0
-      00000000-00000000 : mpt3sas
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : Kernel code
-  00000000-00000000 : reserved
-  00000000-00000000 : Kernel data
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-00000000-00000000 : CAV901C:00
-00000000-00000000 : CAV901D:00
-  00000000-00000000 : CAV901C:00
-00000000-00000000 : CAV901E:00
-  00000000-00000000 : CAV901C:00
-00000000-00000000 : CAV901F:00
-  00000000-00000000 : CAV901C:00
-00000000-00000000 : CAV9006:00
-  00000000-00000000 : CAV9006:00
-00000000-00000000 : ARMH0011:00
-  00000000-00000000 : ARMH0011:00
-00000000-00000000 : arm-smmu-v3.0.auto
-  00000000-00000000 : arm-smmu-v3.0.auto
-00000000-00000000 : arm-smmu-v3.1.auto
-  00000000-00000000 : arm-smmu-v3.1.auto
-00000000-00000000 : arm-smmu-v3.2.auto
-  00000000-00000000 : arm-smmu-v3.2.auto
-00000000-00000000 : CAV901C:01
-00000000-00000000 : CAV901D:01
-  00000000-00000000 : CAV901C:01
-00000000-00000000 : CAV901E:01
-  00000000-00000000 : CAV901C:01
-00000000-00000000 : CAV901F:01
-  00000000-00000000 : CAV901C:01
-00000000-00000000 : CAV9007:06
-  00000000-00000000 : CAV9007:06
-00000000-00000000 : arm-smmu-v3.3.auto
-  00000000-00000000 : arm-smmu-v3.3.auto
-00000000-00000000 : arm-smmu-v3.4.auto
-  00000000-00000000 : arm-smmu-v3.4.auto
-00000000-00000000 : arm-smmu-v3.5.auto
-  00000000-00000000 : arm-smmu-v3.5.auto
-00000000-00000000 : System RAM
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-00000000-00000000 : System RAM
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-  00000000-00000000 : reserved
-00000000-00000000 : PCI Bus 0000:00
-  00000000-00000000 : PCI Bus 0000:01
-    00000000-00000000 : 0000:01:00.0
-    00000000-00000000 : 0000:01:00.1
-    00000000-00000000 : 0000:01:00.0
-    00000000-00000000 : 0000:01:00.1
-    00000000-00000000 : 0000:01:00.0
-    00000000-00000000 : 0000:01:00.1
-  00000000-00000000 : PCI Bus 0000:05
-    00000000-00000000 : 0000:05:00.0
-      00000000-00000000 : bnx2x
-    00000000-00000000 : 0000:05:00.1
-      00000000-00000000 : bnx2x
-    00000000-00000000 : 0000:05:00.0
-      00000000-00000000 : bnx2x
-    00000000-00000000 : 0000:05:00.0
-      00000000-00000000 : bnx2x
-    00000000-00000000 : 0000:05:00.1
-      00000000-00000000 : bnx2x
-    00000000-00000000 : 0000:05:00.1
-      00000000-00000000 : bnx2x
-  00000000-00000000 : PCI Bus 0000:09
-    00000000-00000000 : 0000:09:00.0
-      00000000-00000000 : i40e
-    00000000-00000000 : 0000:09:00.1
-      00000000-00000000 : i40e
-    00000000-00000000 : 0000:09:00.0
-    00000000-00000000 : 0000:09:00.1
-    00000000-00000000 : 0000:09:00.0
-      00000000-00000000 : i40e
-    00000000-00000000 : 0000:09:00.1
-      00000000-00000000 : i40e
-    00000000-00000000 : 0000:09:00.0
-    00000000-00000000 : 0000:09:00.1
-  00000000-00000000 : 0000:00:0f.0
-    00000000-00000000 : xhci-hcd
-  00000000-00000000 : 0000:00:0f.0
-  00000000-00000000 : 0000:00:0f.1
-    00000000-00000000 : xhci-hcd
-  00000000-00000000 : 0000:00:0f.1
-  00000000-00000000 : 0000:00:10.0
-    00000000-00000000 : ahci
-  00000000-00000000 : 0000:00:10.1
-    00000000-00000000 : ahci
-00000000-00000000 : PCI Bus 0000:80
+    Signed-off-by: Kazuhito Hagio <k-hagio-ab@nec.com>
+
+
+I googled and found
+http://lists.infradead.org/pipermail/kexec/2017-May/018760.html i.e.
+diff --git a/Makefile b/Makefile
+index 388faf7..810a7a0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -50,7 +50,7 @@ OBJ_PART=$(patsubst %.c,%.o,$(SRC_PART))
+ SRC_ARCH = arch/arm.c arch/arm64.c arch/x86.c arch/x86_64.c
+arch/ia64.c arch/ppc64.c arch/s390x.c arch/ppc.c arch/sparc64.c
+ OBJ_ARCH=$(patsubst %.c,%.o,$(SRC_ARCH))
+
+-LIBS = -ldw -lbz2 -ldl -lelf -lz
++LIBS = -ldw -lbz2 -ldl -lelf -lz -llzma
+ ifneq ($(LINKTYPE), dynamic)
+ LIBS := -static $(LIBS)
+ endif
+
+After adding this change, no more build error.This change was required
+for spac64. So do we need similar changes for AARM64 platform also.
 
 --pk
 
