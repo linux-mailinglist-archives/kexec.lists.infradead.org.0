@@ -2,92 +2,102 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D78D180468
-	for <lists+kexec@lfdr.de>; Tue, 10 Mar 2020 18:09:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7C0B1804E7
+	for <lists+kexec@lfdr.de>; Tue, 10 Mar 2020 18:34:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6PnaPY5f9nqfXwra0fKPQu+iSML4OIG5ZOqHAJbgUv0=; b=LZxjkfA8z/Ag0H
-	bU4MiBO9U9XNuO52p/lwAPrmklaqbGAN2M1+RavavDaLbcvIYJmpVGVrJwZkWx+bbGW2479nwI39x
-	HsXQmsK4u/S8s3jGKC5GwZwIohakVMO0HE/JEBTaLL96vsdBnus+mDI/Htie2qBurG5RPh4AwCo0g
-	BEZRhc+OJExOqdMgZtcZBWB4IEsAW5Gmo20fo69doxd0TPUwaTlcoVRhQs5P34qpfO4Mai/y5FhbR
-	5AiqSL7rxvTAk4qUk0VNAPzLG6UHbAsq7tbU4rn0ULkekP8+f/lkThWcUhV2Rqy9hQScqqDUf+98g
-	fHXXsDRBlb2w/hEXgQnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Wwvl5h8cvjfy9oPeZ+cV3OlzJ59E7PnltkgbarCPiyc=; b=HLJGhdBHla/LIFByVCcr3XScy
+	7eNdQHoZo4w/5XpRtQzrDWQX4snOyCvcE7yRjtyU5kvyDPEa1ojZw0CBQ+xO6PTbF2IHtNAuZAKFo
+	VB1teuYv0rK/PypRYROiCNKaV6Oi3QpxW8yjNsPnJMiF/Igy46EpivYxsWTakbIBhlfTEWUf9hCLy
+	TgDep1YSlcUbr+U64INWFeyj64STTyx1RH8ClX/0l4OeR1+4f+NDjqobpO2eLSQ+SLnERizQA1kNb
+	cxdWxDI2X7Ub0A0Gh09T7e2/tOgzsYYcsD3SSlAjTf3bZBlrOJ5Vev+Q12WZkKqNPaPstFQL5Kv9Z
+	huQ50HdIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jBiNt-0008Co-La; Tue, 10 Mar 2020 17:09:37 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jBimJ-0002LV-9R; Tue, 10 Mar 2020 17:34:51 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jBiNc-00081r-Rh; Tue, 10 Mar 2020 17:09:23 +0000
-Received: by mail-pl1-x641.google.com with SMTP id g12so5693006plo.3;
- Tue, 10 Mar 2020 10:09:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2YOvBMUVAAEVmVcvV/m8MW0vSm82Svf/arbSIWKa3Rg=;
- b=bBAkE6H67vSLZ4yv2bTMS6GouxkSXhtCUyVsrOkOIImqcLftxwjL+MpfwIU/tTiEHp
- oRi/TXrleNq9zmf6SZyvl9tHWK+kjbg23hi1KCq+RxbQPeyeyza1l42mtHUltf44jr54
- shnyhiIEzEcUbQPP9JeLiyYrbFAMK6p+7kygbRB8oyNWdsyFQWEWEP4IDP+DPlpX1fV/
- l1gT40Sm193UroHEdPwfzRLeAjIf1mr6hEj0yPjvFDVVV4QImlK61rDDkEIrecan6X1f
- gGlxQv4qBLXEHNnUV0BVJSC0B4FLg4IGkIPJxKAqgAdjIpGCqLAtLi6TQZeoPZ9KSgno
- 7Baw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=2YOvBMUVAAEVmVcvV/m8MW0vSm82Svf/arbSIWKa3Rg=;
- b=d0L/BvdUEyab5P+Rb6QaPJu9Vth8An29v+4xKOR7x+MwS44XrcyZ8XmIxJHJDkW+v9
- sudE4gJs1qISPEpbbuLt9MBpkeeSwMr2aSOMRjDJi1si84e2FneXxAOZgoBZBtyUPBro
- iaFt8w+a83xcpEmfTIejrHJ0cfn643Y+ERLB/7WY6ukGxejJ0bla/CT9NWobYr/ksKj0
- 9eXAjCD6NLH+oXBdleal0ZSjgL5P/vIeqgsVOT99oIJCQr8BB7sdfCVdE/8nQVH4vpWS
- T2h6muanZnKma2O2QPh69i3ihHvGO+57Gvx5Qq3srhWPuSw2tT2+xzqsrX7USz1yfkrn
- 9SgA==
-X-Gm-Message-State: ANhLgQ3WNS9hwyXq5dGx9ndxs7eWelt3j3+ryxUZoLUb5AOdwneWY5+W
- L7qQ8w8mPSRKjIQ1ExDQzS8=
-X-Google-Smtp-Source: ADFU+vvg4H/BWuwZXLKDoKIF/0NNdR74kM2AYERvFJmR9vCn48A8Zb87wL4O6lQ9LlnIiKcJeEc0sg==
-X-Received: by 2002:a17:90a:dac6:: with SMTP id
- g6mr2781511pjx.30.1583860160012; 
- Tue, 10 Mar 2020 10:09:20 -0700 (PDT)
-Received: from [192.168.1.5] ([122.171.26.90])
- by smtp.gmail.com with ESMTPSA id x9sm17597877pfa.188.2020.03.10.10.09.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 10 Mar 2020 10:09:19 -0700 (PDT)
+ id 1jBimF-0002KY-5m
+ for kexec@lists.infradead.org; Tue, 10 Mar 2020 17:34:49 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02AHXP1e196457
+ for <kexec@lists.infradead.org>; Tue, 10 Mar 2020 17:34:43 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=+8xma0oh4TAVMzXUvpATijsi8cj/z9Zcfkjm2fglRXc=;
+ b=vidlkKkAd0cOpujsUPvMzVyumKCmcmsWNobKUls+Pb4sCbZ/mljB9c9lUIgHeJFyr9e/
+ vajo6Y7gtL2uggZ0wyySj4xnf/JWVvme8x9G7iyySE1dU+xDgkL4tGQWgN57FP3H8ZKr
+ /MbG+LrsmSC0ZdzvZCSKy4uuS4BKVAO1/JqsoDZxdRjAVMKiZOWPjqNnpD9hbhUilRRs
+ BP6EGMJayGIZVHPaIEk1lCacS1X+dK/jNCjQmQ31ImzHuugaxaz5yaughGlGSxOGWuOk
+ hNDxdI0tKnQ09rgPdFor/v+qI9mCLjoJlKGLBA080ELd8j9Z7QefwIiiCSSuwgyyh5bN zA== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2ym31uf1yb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
+ for <kexec@lists.infradead.org>; Tue, 10 Mar 2020 17:34:42 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02AHYLse190372
+ for <kexec@lists.infradead.org>; Tue, 10 Mar 2020 17:34:42 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2yp8rk63kd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK)
+ for <kexec@lists.infradead.org>; Tue, 10 Mar 2020 17:34:42 +0000
+Received: from abhmp0007.oracle.com (abhmp0007.oracle.com [141.146.116.13])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02AHYajl028848
+ for <kexec@lists.infradead.org>; Tue, 10 Mar 2020 17:34:41 GMT
+Received: from [192.168.1.126] (/47.220.71.223)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 10 Mar 2020 10:34:35 -0700
 Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
  crash dump kernel
-To: chenzhou <chenzhou10@huawei.com>
+To: kexec@lists.infradead.org
 References: <20191223152349.180172-1-chenzhou10@huawei.com>
  <20191223152349.180172-3-chenzhou10@huawei.com>
  <CAJ2QiJ+SQ1orriXJWyhKDcDL9s4Vh5+HQHhWFOKPVmijGpMGvw@mail.gmail.com>
  <0c00f14a-15ca-44db-7f82-00f15ddd3c88@huawei.com>
  <CAJ2QiJL5Zj3Z=jrLVVn_n3vwNnTVtUZZMSkEaiVNLTA-ZmOe-Q@mail.gmail.com>
  <f95f2761-f4c9-58b6-485c-2da6c8cc6811@gmail.com>
- <cdf7dea4-732e-4d9d-932c-9435b0ed7b9b@huawei.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Message-ID: <3bfc5799-1fc4-d5e3-cf32-24ed9fb02b1b@gmail.com>
-Date: Tue, 10 Mar 2020 22:38:48 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ <8a4e3fca-ef77-eb1b-0ec6-a158b7fe5c0c@Oracle.com>
+ <cf36f21a-6434-06ab-5b6c-e16cb526896d@gmail.com>
+From: John Donnelly <John.P.Donnelly@Oracle.com>
+Message-ID: <d0bc6ba2-74c8-c083-097f-e1e5765ddca0@Oracle.com>
+Date: Tue, 10 Mar 2020 12:34:34 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <cdf7dea4-732e-4d9d-932c-9435b0ed7b9b@huawei.com>
+In-Reply-To: <cf36f21a-6434-06ab-5b6c-e16cb526896d@gmail.com>
 Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9556
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ phishscore=0 mlxscore=0
+ spamscore=0 malwarescore=0 bulkscore=0 adultscore=0 suspectscore=4
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003100106
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9556
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ lowpriorityscore=0
+ spamscore=0 priorityscore=1501 impostorscore=0 bulkscore=0 suspectscore=4
+ phishscore=0 mlxlogscore=999 mlxscore=0 malwarescore=0 clxscore=1015
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2003100105
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200310_100920_901894_0CDC2180 
-X-CRM114-Status: GOOD (  19.01  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200310_103447_313650_E66AAEBE 
+X-CRM114-Status: GOOD (  20.65  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,6 +106,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,566 +118,459 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>, xiexiuqi@huawei.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mingo@redhat.com,
- James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- dyoung@redhat.com, linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 3/10/2020 7:00 AM, chenzhou wrote:
-> Hi,
-> 
-> On 2020/3/9 23:51, Prabhakar Kushwaha wrote:
->> On 3/9/2020 10:18 AM, Prabhakar Kushwaha wrote:
->>> Hi Chen,
->>>
->>> On Sat, Mar 7, 2020 at 4:36 PM Chen Zhou <chenzhou10@huawei.com> wrote:
->>>>
->>>>
->>>>
->>>> On 2020/3/5 18:13, Prabhakar Kushwaha wrote:
->>>>> On Mon, Dec 23, 2019 at 8:57 PM Chen Zhou <chenzhou10@huawei.com> wrote:
->>>>>>
->>>>>> Crashkernel=X tries to reserve memory for the crash dump kernel under
->>>>>> 4G. If crashkernel=X,low is specified simultaneously, reserve spcified
->>>>>> size low memory for crash kdump kernel devices firstly and then reserve
->>>>>> memory above 4G.
->>>>>>
->>>>>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
->>>>>> ---
->>>>>>  arch/arm64/kernel/setup.c |  8 +++++++-
->>>>>>  arch/arm64/mm/init.c      | 31 +++++++++++++++++++++++++++++--
->>>>>>  2 files changed, 36 insertions(+), 3 deletions(-)
->>>>>>
->>>>>> diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
->>>>>> index 56f6645..04d1c87 100644
->>>>>> --- a/arch/arm64/kernel/setup.c
->>>>>> +++ b/arch/arm64/kernel/setup.c
->>>>>> @@ -238,7 +238,13 @@ static void __init request_standard_resources(void)
->>>>>>                     kernel_data.end <= res->end)
->>>>>>                         request_resource(res, &kernel_data);
->>>>>>  #ifdef CONFIG_KEXEC_CORE
->>>>>> -               /* Userspace will find "Crash kernel" region in /proc/iomem. */
->>>>>> +               /*
->>>>>> +                * Userspace will find "Crash kernel" region in /proc/iomem.
->>>>>> +                * Note: the low region is renamed as Crash kernel (low).
->>>>>> +                */
->>>>>> +               if (crashk_low_res.end && crashk_low_res.start >= res->start &&
->>>>>> +                               crashk_low_res.end <= res->end)
->>>>>> +                       request_resource(res, &crashk_low_res);
->>>>>>                 if (crashk_res.end && crashk_res.start >= res->start &&
->>>>>>                     crashk_res.end <= res->end)
->>>>>>                         request_resource(res, &crashk_res);
->>>>>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
->>>>>> index b65dffd..0d7afd5 100644
->>>>>> --- a/arch/arm64/mm/init.c
->>>>>> +++ b/arch/arm64/mm/init.c
->>>>>> @@ -80,6 +80,7 @@ static void __init reserve_crashkernel(void)
->>>>>>  {
->>>>>>         unsigned long long crash_base, crash_size;
->>>>>>         int ret;
->>>>>> +       phys_addr_t crash_max = arm64_dma32_phys_limit;
->>>>>>
->>>>>>         ret = parse_crashkernel(boot_command_line, memblock_phys_mem_size(),
->>>>>>                                 &crash_size, &crash_base);
->>>>>> @@ -87,12 +88,38 @@ static void __init reserve_crashkernel(void)
->>>>>>         if (ret || !crash_size)
->>>>>>                 return;
->>>>>>
->>>>>> +       ret = reserve_crashkernel_low();
->>>>>> +       if (!ret && crashk_low_res.end) {
->>>>>> +               /*
->>>>>> +                * If crashkernel=X,low specified, there may be two regions,
->>>>>> +                * we need to make some changes as follows:
->>>>>> +                *
->>>>>> +                * 1. rename the low region as "Crash kernel (low)"
->>>>>> +                * In order to distinct from the high region and make no effect
->>>>>> +                * to the use of existing kexec-tools, rename the low region as
->>>>>> +                * "Crash kernel (low)".
->>>>>> +                *
->>>>>> +                * 2. change the upper bound for crash memory
->>>>>> +                * Set MEMBLOCK_ALLOC_ACCESSIBLE upper bound for crash memory.
->>>>>> +                *
->>>>>> +                * 3. mark the low region as "nomap"
->>>>>> +                * The low region is intended to be used for crash dump kernel
->>>>>> +                * devices, just mark the low region as "nomap" simply.
->>>>>> +                */
->>>>>> +               const char *rename = "Crash kernel (low)";
->>>>>> +
->>>>>> +               crashk_low_res.name = rename;
->>>>>> +               crash_max = MEMBLOCK_ALLOC_ACCESSIBLE;
->>>>>> +               memblock_mark_nomap(crashk_low_res.start,
->>>>>> +                                   resource_size(&crashk_low_res));
->>>>>> +       }
->>>>>> +
->>>>>>         crash_size = PAGE_ALIGN(crash_size);
->>>>>>
->>>>>>         if (crash_base == 0) {
->>>>>>                 /* Current arm64 boot protocol requires 2MB alignment */
->>>>>> -               crash_base = memblock_find_in_range(0, arm64_dma32_phys_limit,
->>>>>> -                               crash_size, SZ_2M);
->>>>>> +               crash_base = memblock_find_in_range(0, crash_max, crash_size,
->>>>>> +                               SZ_2M);
->>>>>>                 if (crash_base == 0) {
->>>>>>                         pr_warn("cannot allocate crashkernel (size:0x%llx)\n",
->>>>>>                                 crash_size);
->>>>>> --
->>>>>
->>>>> I tested this patch series on ARM64-ThunderX2 with no issue with
->>>>> bootargs crashkenel=X@Y crashkernel=250M,low
->>>>>
->>>>> $ dmesg | grep crash
->>>>> [    0.000000] crashkernel reserved: 0x0000000b81200000 -
->>>>> 0x0000000c81200000 (4096 MB)
->>>>> [    0.000000] Kernel command line:
->>>>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
->>>>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro
->>>>> crashkernel=4G@0xb81200000 crashkernel=250M,low nowatchdog earlycon
->>>>> [   29.310209]     crashkernel=250M,low
->>>>>
->>>>> $  kexec -p -i /boot/vmlinuz-`uname -r`
->>>>> --initrd=/boot/initrd.img-`uname -r` --reuse-cmdline
->>>>> $ echo 1 > /proc/sys/kernel/sysrq ; echo c > /proc/sysrq-trigger
->>>>>
->>>>> But when i tried with crashkernel=4G crashkernel=250M,low as bootargs.
->>>>> Kernel is not able to allocate memory.
->>>>> [    0.000000] cannot allocate crashkernel (size:0x100000000)
->>>>> [    0.000000] Kernel command line:
->>>>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
->>>>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro crashkernel=4G
->>>>> crashkernel=250M,low nowatchdog
->>>>> [   29.332081]     crashkernel=250M,low
->>>>>
->>>>> does crashkernel=X@Y mandatory to get allocated beyond 4G?
->>>>> am I missing something?
->>>>
->>>> I can't reproduce the problem in my environment, can you test with other size,
->>>> such as "crashkernel=1G crashkernel=250M,low", see if there is the same issue.
->>>>
->>> I tried 1G also. Same error, please find the logs
->>>
->>> $ dmesg | grep crash
->>> [    0.000000] cannot allocate crashkernel (size:0x40000000)
->>> [    0.000000] Kernel command line:
->>> BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
->>> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro nowatchdog earlycon
->>> crashkernel=1G crashkernel=250M,low
->>> [   29.326916]     crashkernel=250M,low
->>>
->>>
->>>> Besides, crashkernel=X@Y isn't mandatory to get allocated beyond 4G,
->>>
->>> this was my understanding also.
->>>
->>>> can you show the whole file /proc/iomem.
->>>>
->>>
->>> $ cat /proc/iomem
->>> 00000000-00000000 : PCI ECAM
->>> 00000000-00000000 : PCI ECAM
->>> 00000000-00000000 : PCI Bus 0000:00
->>>   00000000-00000000 : PCI Bus 0000:0f
->>>     00000000-00000000 : PCI Bus 0000:10
->>>       00000000-00000000 : 0000:10:00.0
->>>       00000000-00000000 : 0000:10:00.0
->>>   00000000-00000000 : PCI Bus 0000:01
->>>     00000000-00000000 : 0000:01:00.0
->>>     00000000-00000000 : 0000:01:00.1
->>>   00000000-00000000 : PCI Bus 0000:05
->>>     00000000-00000000 : 0000:05:00.0
->>>     00000000-00000000 : 0000:05:00.1
->>>   00000000-00000000 : PCI Bus 0000:09
->>>     00000000-00000000 : 0000:09:00.0
->>>     00000000-00000000 : 0000:09:00.1
->>>   00000000-00000000 : 0000:00:10.0
->>>     00000000-00000000 : ahci
->>>   00000000-00000000 : 0000:00:10.1
->>>     00000000-00000000 : ahci
->>> 00000000-00000000 : PCI Bus 0000:80
->>>   00000000-00000000 : PCI Bus 0000:83
->>>     00000000-00000000 : 0000:83:00.0
->>>     00000000-00000000 : 0000:83:00.0
->>>       00000000-00000000 : nvme
->>>   00000000-00000000 : PCI Bus 0000:89
->>>     00000000-00000000 : 0000:89:00.0
->>>       00000000-00000000 : e1000e
->>>     00000000-00000000 : 0000:89:00.0
->>>     00000000-00000000 : 0000:89:00.0
->>>       00000000-00000000 : e1000e
->>>     00000000-00000000 : 0000:89:00.0
->>>       00000000-00000000 : e1000e
->>>   00000000-00000000 : PCI Bus 0000:8d
->>>     00000000-00000000 : 0000:8d:00.0
->>>     00000000-00000000 : 0000:8d:00.0
->>>       00000000-00000000 : mpt3sas
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : Kernel code
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : Kernel data
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : CAV901C:00
->>> 00000000-00000000 : CAV901D:00
->>>   00000000-00000000 : CAV901C:00
->>> 00000000-00000000 : CAV901E:00
->>>   00000000-00000000 : CAV901C:00
->>> 00000000-00000000 : CAV901F:00
->>>   00000000-00000000 : CAV901C:00
->>> 00000000-00000000 : CAV9006:00
->>>   00000000-00000000 : CAV9006:00
->>> 00000000-00000000 : ARMH0011:00
->>>   00000000-00000000 : ARMH0011:00
->>> 00000000-00000000 : arm-smmu-v3.0.auto
->>>   00000000-00000000 : arm-smmu-v3.0.auto
->>> 00000000-00000000 : arm-smmu-v3.1.auto
->>>   00000000-00000000 : arm-smmu-v3.1.auto
->>> 00000000-00000000 : arm-smmu-v3.2.auto
->>>   00000000-00000000 : arm-smmu-v3.2.auto
->>> 00000000-00000000 : CAV901C:01
->>> 00000000-00000000 : CAV901D:01
->>>   00000000-00000000 : CAV901C:01
->>> 00000000-00000000 : CAV901E:01
->>>   00000000-00000000 : CAV901C:01
->>> 00000000-00000000 : CAV901F:01
->>>   00000000-00000000 : CAV901C:01
->>> 00000000-00000000 : CAV9007:06
->>>   00000000-00000000 : CAV9007:06
->>> 00000000-00000000 : arm-smmu-v3.3.auto
->>>   00000000-00000000 : arm-smmu-v3.3.auto
->>> 00000000-00000000 : arm-smmu-v3.4.auto
->>>   00000000-00000000 : arm-smmu-v3.4.auto
->>> 00000000-00000000 : arm-smmu-v3.5.auto
->>>   00000000-00000000 : arm-smmu-v3.5.auto
->>> 00000000-00000000 : System RAM
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : System RAM
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>>   00000000-00000000 : reserved
->>> 00000000-00000000 : PCI Bus 0000:00
->>>   00000000-00000000 : PCI Bus 0000:01
->>>     00000000-00000000 : 0000:01:00.0
->>>     00000000-00000000 : 0000:01:00.1
->>>     00000000-00000000 : 0000:01:00.0
->>>     00000000-00000000 : 0000:01:00.1
->>>     00000000-00000000 : 0000:01:00.0
->>>     00000000-00000000 : 0000:01:00.1
->>>   00000000-00000000 : PCI Bus 0000:05
->>>     00000000-00000000 : 0000:05:00.0
->>>       00000000-00000000 : bnx2x
->>>     00000000-00000000 : 0000:05:00.1
->>>       00000000-00000000 : bnx2x
->>>     00000000-00000000 : 0000:05:00.0
->>>       00000000-00000000 : bnx2x
->>>     00000000-00000000 : 0000:05:00.0
->>>       00000000-00000000 : bnx2x
->>>     00000000-00000000 : 0000:05:00.1
->>>       00000000-00000000 : bnx2x
->>>     00000000-00000000 : 0000:05:00.1
->>>       00000000-00000000 : bnx2x
->>>   00000000-00000000 : PCI Bus 0000:09
->>>     00000000-00000000 : 0000:09:00.0
->>>       00000000-00000000 : i40e
->>>     00000000-00000000 : 0000:09:00.1
->>>       00000000-00000000 : i40e
->>>     00000000-00000000 : 0000:09:00.0
->>>     00000000-00000000 : 0000:09:00.1
->>>     00000000-00000000 : 0000:09:00.0
->>>       00000000-00000000 : i40e
->>>     00000000-00000000 : 0000:09:00.1
->>>       00000000-00000000 : i40e
->>>     00000000-00000000 : 0000:09:00.0
->>>     00000000-00000000 : 0000:09:00.1
->>>   00000000-00000000 : 0000:00:0f.0
->>>     00000000-00000000 : xhci-hcd
->>>   00000000-00000000 : 0000:00:0f.0
->>>   00000000-00000000 : 0000:00:0f.1
->>>     00000000-00000000 : xhci-hcd
->>>   00000000-00000000 : 0000:00:0f.1
->>>   00000000-00000000 : 0000:00:10.0
->>>     00000000-00000000 : ahci
->>>   00000000-00000000 : 0000:00:10.1
->>>     00000000-00000000 : ahci
->>> 00000000-00000000 : PCI Bus 0000:80
->>>
->>
->> resending with correct logs (after login as root)
->>
->> $ cat /proc/iomem
->> 30000000-37ffffff : PCI ECAM
->> 38000000-3fffffff : PCI ECAM
->> 40000000-5fffffff : PCI Bus 0000:00
->>   40000000-417fffff : PCI Bus 0000:0f
->>     40000000-417fffff : PCI Bus 0000:10
->>       40000000-40ffffff : 0000:10:00.0
->>       41000000-4101ffff : 0000:10:00.0
->>   41800000-418fffff : PCI Bus 0000:01
->>     41800000-4183ffff : 0000:01:00.0
->>     41840000-4187ffff : 0000:01:00.1
->>   41900000-419fffff : PCI Bus 0000:05
->>     41900000-4197ffff : 0000:05:00.0
->>     41980000-419fffff : 0000:05:00.1
->>   41a00000-41afffff : PCI Bus 0000:09
->>     41a00000-41a7ffff : 0000:09:00.0
->>     41a80000-41afffff : 0000:09:00.1
->>   41b00000-41b0ffff : 0000:00:10.0
->>     41b00000-41b0ffff : ahci
->>   41b10000-41b1ffff : 0000:00:10.1
->>     41b10000-41b1ffff : ahci
->> 60000000-7fffffff : PCI Bus 0000:80
->>   60000000-600fffff : PCI Bus 0000:83
->>     60000000-6001ffff : 0000:83:00.0
->>     60020000-60023fff : 0000:83:00.0
->>       60020000-60023fff : nvme
->>   60100000-601fffff : PCI Bus 0000:89
->>     60100000-6017ffff : 0000:89:00.0
->>       60100000-6017ffff : e1000e
->>     60180000-601bffff : 0000:89:00.0
->>     601c0000-601dffff : 0000:89:00.0
->>       601c0000-601dffff : e1000e
->>     601e0000-601e3fff : 0000:89:00.0
->>       601e0000-601e3fff : e1000e
->>   60200000-603fffff : PCI Bus 0000:8d
->>     60200000-602fffff : 0000:8d:00.0
->>     60300000-6030ffff : 0000:8d:00.0
->>       60300000-6030ffff : mpt3sas
->> 802f0000-8030ffff : reserved
->> e6247000-e6247fff : reserved
->> e6720000-e690ffff : reserved
->> e6a90000-e6a9ffff : reserved
->> e6ab0000-e721ffff : reserved
->> e7240000-e7240fff : reserved
->> fac00000-fafdffff : reserved
->> 400040400-40004041f : CAV901C:00
->> 400040480-400040567 : CAV901D:00
->>   400040480-400040567 : CAV901C:00
->> 400040600-40004073b : CAV901E:00
->>   400040600-40004073b : CAV901C:00
->> 400041400-40004177f : CAV901F:00
->>   400041400-40004177f : CAV901C:00
->> 402000100-402000fff : CAV9006:00
->>   402000100-402000fff : CAV9006:00
->> 402020000-40202ffff : ARMH0011:00
->>   402020000-40202ffff : ARMH0011:00
->> 402300000-40230ffff : arm-smmu-v3.0.auto
->>   402300000-40230ffff : arm-smmu-v3.0.auto
->> 402320000-40232ffff : arm-smmu-v3.1.auto
->>   402320000-40232ffff : arm-smmu-v3.1.auto
->> 402340000-40234ffff : arm-smmu-v3.2.auto
->>   402340000-40234ffff : arm-smmu-v3.2.auto
->> 440040400-44004041f : CAV901C:01
->> 440040480-440040567 : CAV901D:01
->>   440040480-440040567 : CAV901C:01
->> 440040600-44004073b : CAV901E:01
->>   440040600-44004073b : CAV901C:01
->> 440041400-44004177f : CAV901F:01
->>   440041400-44004177f : CAV901C:01
->> 4421a0000-4421affff : CAV9007:06
->>   4421a0000-4421affff : CAV9007:06
->> 442300000-44230ffff : arm-smmu-v3.3.auto
->>   442300000-44230ffff : arm-smmu-v3.3.auto
->> 442320000-44232ffff : arm-smmu-v3.4.auto
->>   442320000-44232ffff : arm-smmu-v3.4.auto
->> 442340000-44234ffff : arm-smmu-v3.5.auto
->>   442340000-44234ffff : arm-smmu-v3.5.auto
->> b81200000-c811fffff : System RAM
->>   b81280000-b8270ffff : Kernel code
->>   b82710000-b82dfffff : reserved
->>   b82e00000-b83168fff : Kernel data
->>   b83169000-baccd7fff : reserved
->>   c78a00000-c7fffffff : reserved
->>   c80129000-c801a9fff : reserved
->>   c801aa000-c809e9fff : reserved
->>   c809ec000-c809eefff : reserved
->>   c809ef000-c811fffff : reserved
->> 10000000000-13fffffffff : PCI Bus 0000:00
->>   10000000000-100013fffff : PCI Bus 0000:01
->>     10000000000-100007fffff : 0000:01:00.0
->>     10000800000-10000ffffff : 0000:01:00.1
->>     10001000000-1000101ffff : 0000:01:00.0
->>     10001020000-1000103ffff : 0000:01:00.1
->>     10001040000-1000104ffff : 0000:01:00.0
->>     10001050000-1000105ffff : 0000:01:00.1
->>   10001400000-100037fffff : PCI Bus 0000:05
->>     10001400000-1000140ffff : 0000:05:00.0
->>       10001400000-1000140ffff : bnx2x
->>     10001410000-1000141ffff : 0000:05:00.1
->>       10001410000-1000141ffff : bnx2x
->>     10001800000-10001ffffff : 0000:05:00.0
->>       10001800000-10001ffffff : bnx2x
->>     10002000000-100027fffff : 0000:05:00.0
->>       10002000000-100027fffff : bnx2x
->>     10002800000-10002ffffff : 0000:05:00.1
->>       10002800000-10002ffffff : bnx2x
->>     10003000000-100037fffff : 0000:05:00.1
->>       10003000000-100037fffff : bnx2x
->>   10003800000-100053fffff : PCI Bus 0000:09
->>     10003800000-10003ffffff : 0000:09:00.0
->>       10003800000-10003ffffff : i40e
->>     10004000000-100047fffff : 0000:09:00.1
->>       10004000000-100047fffff : i40e
->>     10004800000-10004bfffff : 0000:09:00.0
->>     10004c00000-10004ffffff : 0000:09:00.1
->>     10005000000-10005007fff : 0000:09:00.0
->>       10005000000-10005007fff : i40e
->>     10005008000-1000500ffff : 0000:09:00.1
->>       10005008000-1000500ffff : i40e
->>     10005010000-1000510ffff : 0000:09:00.0
->>     10005110000-1000520ffff : 0000:09:00.1
->>   10005400000-1000540ffff : 0000:00:0f.0
->>     10005400000-1000540ffff : xhci-hcd
->>   10005410000-1000541ffff : 0000:00:0f.0
->>   10005420000-1000542ffff : 0000:00:0f.1
->>     10005420000-1000542ffff : xhci-hcd
->>   10005430000-1000543ffff : 0000:00:0f.1
->>   10005440000-1000544ffff : 0000:00:10.0
->>     10005440000-1000544ffff : ahci
->>   10005450000-1000545ffff : 0000:00:10.1
->>     10005450000-1000545ffff : ahci
->> 14000000000-17fffffffff : PCI Bus 0000:80
->>
->>
->> failure with crashkernel=1G
->>
->> :~$ dmesg | grep crash
->> [    0.000000] cannot allocate crashkernel (size:0x40000000)
->> [    0.000000] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.6.0-rc4+
->> root=UUID=866b8df3-14f4-4e11-95a1-74a90ee9b694 ro nowatchdog earlycon
->> crashkernel=1G crashkernel=250M,low
->> [   29.326916]     crashkernel=250M,low
->>
-> 
-> I read these clearly, found that your all testcases failed including
-> "crashkernel=4G@0xb81200000 crashkernel=250M,low".
-> 
-
-I tested 3 scenarios
-1) crashkernel=4G@0xb81200000 crashkernel=250M,low  : Allocation Passed
-2) crashkernel=4G crashkernel=250M,low : Allocation failed
-3) crashkernel=2G crashkernel=250M,low : Allocation failed
-4) crashkernel=1G crashkernel=250M,low : Allocation failed
-
-
-> There is no "Crash kernel (low)" in all your tests, that is there is no enough
-> low memory, in these cases, parameters equal to 4G@0xb81200000, crashkernel=4G
-> and crashkernel=1G.
-> 
-> crashkernel=4G and crashkernel=1G all failed because there is no low memory.
-> 
-
-
-As per my understanding, this patch series allow to allocate memory
-above 4G range. So For crashkernel = 1G: if no memory found in low
-memory range, it will automatically be allocated from above 4G range.
-
-
---pk
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+T24gMy8xMC8yMCAxMjowNCBQTSwgUHJhYmhha2FyIEt1c2h3YWhhIHdyb3RlOgo+IE9uIDMvOS8y
+MDIwIDExOjUzIFBNLCBKb2huIERvbm5lbGx5IHdyb3RlOgo+PiBPbiAzLzkvMjAgMTA6NTEgQU0s
+IFByYWJoYWthciBLdXNod2FoYSB3cm90ZToKPj4+IE9uIDMvOS8yMDIwIDEwOjE4IEFNLCBQcmFi
+aGFrYXIgS3VzaHdhaGEgd3JvdGU6Cj4+Pj4gSGkgQ2hlbiwKPj4+Pgo+Pj4+IE9uIFNhdCwgTWFy
+IDcsIDIwMjAgYXQgNDozNiBQTSBDaGVuIFpob3UgPGNoZW56aG91MTBAaHVhd2VpLmNvbT4gd3Jv
+dGU6Cj4+Pj4+Cj4+Pj4+Cj4+Pj4+Cj4+Pj4+IE9uIDIwMjAvMy81IDE4OjEzLCBQcmFiaGFrYXIg
+S3VzaHdhaGEgd3JvdGU6Cj4+Pj4+PiBPbiBNb24sIERlYyAyMywgMjAxOSBhdCA4OjU3IFBNIENo
+ZW4gWmhvdSA8Y2hlbnpob3UxMEBodWF3ZWkuY29tPgo+Pj4+Pj4gd3JvdGU6Cj4+Pj4+Pj4KPj4+
+Pj4+PiBDcmFzaGtlcm5lbD1YIHRyaWVzIHRvIHJlc2VydmUgbWVtb3J5IGZvciB0aGUgY3Jhc2gg
+ZHVtcCBrZXJuZWwgdW5kZXIKPj4+Pj4+PiA0Ry4gSWYgY3Jhc2hrZXJuZWw9WCxsb3cgaXMgc3Bl
+Y2lmaWVkIHNpbXVsdGFuZW91c2x5LCByZXNlcnZlCj4+Pj4+Pj4gc3BjaWZpZWQKPj4+Pj4+PiBz
+aXplIGxvdyBtZW1vcnkgZm9yIGNyYXNoIGtkdW1wIGtlcm5lbCBkZXZpY2VzIGZpcnN0bHkgYW5k
+IHRoZW4KPj4+Pj4+PiByZXNlcnZlCj4+Pj4+Pj4gbWVtb3J5IGFib3ZlIDRHLgo+Pj4+Pj4+Cj4+
+Pj4+Pj4gU2lnbmVkLW9mZi1ieTogQ2hlbiBaaG91IDxjaGVuemhvdTEwQGh1YXdlaS5jb20+Cj4+
+Pj4+Pj4gLS0tCj4+Pj4+Pj4gIMKgIGFyY2gvYXJtNjQva2VybmVsL3NldHVwLmMgfMKgIDggKysr
+KysrKy0KPj4+Pj4+PiAgwqAgYXJjaC9hcm02NC9tbS9pbml0LmPCoMKgwqDCoMKgIHwgMzEgKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKystLQo+Pj4+Pj4+ICDCoCAyIGZpbGVzIGNoYW5nZWQs
+IDM2IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4+Pj4+Pj4KPj4+Pj4+PiBkaWZmIC0t
+Z2l0IGEvYXJjaC9hcm02NC9rZXJuZWwvc2V0dXAuYyBiL2FyY2gvYXJtNjQva2VybmVsL3NldHVw
+LmMKPj4+Pj4+PiBpbmRleCA1NmY2NjQ1Li4wNGQxYzg3IDEwMDY0NAo+Pj4+Pj4+IC0tLSBhL2Fy
+Y2gvYXJtNjQva2VybmVsL3NldHVwLmMKPj4+Pj4+PiArKysgYi9hcmNoL2FybTY0L2tlcm5lbC9z
+ZXR1cC5jCj4+Pj4+Pj4gQEAgLTIzOCw3ICsyMzgsMTMgQEAgc3RhdGljIHZvaWQgX19pbml0Cj4+
+Pj4+Pj4gcmVxdWVzdF9zdGFuZGFyZF9yZXNvdXJjZXModm9pZCkKPj4+Pj4+PiAgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBrZXJuZWxfZGF0YS5lbmQgPD0gcmVzLT5l
+bmQpCj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCByZXF1ZXN0X3Jlc291cmNlKHJlcywgJmtlcm5lbF9kYXRhKTsKPj4+Pj4+PiAgwqAgI2lm
+ZGVmIENPTkZJR19LRVhFQ19DT1JFCj4+Pj4+Pj4gLcKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgLyogVXNlcnNwYWNlIHdpbGwgZmluZCAiQ3Jhc2gga2VybmVsIiByZWdpb24gaW4KPj4+Pj4+
+PiAvcHJvYy9pb21lbS4gKi8KPj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAv
+Kgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKiBVc2Vyc3BhY2Ugd2ls
+bCBmaW5kICJDcmFzaCBrZXJuZWwiIHJlZ2lvbiBpbgo+Pj4+Pj4+IC9wcm9jL2lvbWVtLgo+Pj4+
+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKiBOb3RlOiB0aGUgbG93IHJlZ2lv
+biBpcyByZW5hbWVkIGFzIENyYXNoIGtlcm5lbAo+Pj4+Pj4+IChsb3cpLgo+Pj4+Pj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKi8KPj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBpZiAoY3Jhc2hrX2xvd19yZXMuZW5kICYmIGNyYXNoa19sb3dfcmVzLnN0YXJ0
+ID49Cj4+Pj4+Pj4gcmVzLT5zdGFydCAmJgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY3Jhc2hrX2xvd19yZXMuZW5k
+IDw9IHJlcy0+ZW5kKQo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCByZXF1ZXN0X3Jlc291cmNlKHJlcywgJmNyYXNoa19sb3dfcmVzKTsKPj4+Pj4+
+PiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGNyYXNoa19yZXMuZW5kICYm
+IGNyYXNoa19yZXMuc3RhcnQgPj0KPj4+Pj4+PiByZXMtPnN0YXJ0ICYmCj4+Pj4+Pj4gIMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY3Jhc2hrX3Jlcy5lbmQgPD0gcmVz
+LT5lbmQpCj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCByZXF1ZXN0X3Jlc291cmNlKHJlcywgJmNyYXNoa19yZXMpOwo+Pj4+Pj4+IGRpZmYg
+LS1naXQgYS9hcmNoL2FybTY0L21tL2luaXQuYyBiL2FyY2gvYXJtNjQvbW0vaW5pdC5jCj4+Pj4+
+Pj4gaW5kZXggYjY1ZGZmZC4uMGQ3YWZkNSAxMDA2NDQKPj4+Pj4+PiAtLS0gYS9hcmNoL2FybTY0
+L21tL2luaXQuYwo+Pj4+Pj4+ICsrKyBiL2FyY2gvYXJtNjQvbW0vaW5pdC5jCj4+Pj4+Pj4gQEAg
+LTgwLDYgKzgwLDcgQEAgc3RhdGljIHZvaWQgX19pbml0IHJlc2VydmVfY3Jhc2hrZXJuZWwodm9p
+ZCkKPj4+Pj4+PiAgwqAgewo+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgIHVuc2lnbmVkIGxvbmcg
+bG9uZyBjcmFzaF9iYXNlLCBjcmFzaF9zaXplOwo+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgIGlu
+dCByZXQ7Cj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoCBwaHlzX2FkZHJfdCBjcmFzaF9tYXggPSBhcm02
+NF9kbWEzMl9waHlzX2xpbWl0Owo+Pj4+Pj4+Cj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqAgcmV0
+ID0gcGFyc2VfY3Jhc2hrZXJuZWwoYm9vdF9jb21tYW5kX2xpbmUsCj4+Pj4+Pj4gbWVtYmxvY2tf
+cGh5c19tZW1fc2l6ZSgpLAo+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICZjcmFzaF9zaXplLCAmY3Jhc2hfYmFz
+ZSk7Cj4+Pj4+Pj4gQEAgLTg3LDEyICs4OCwzOCBAQCBzdGF0aWMgdm9pZCBfX2luaXQgcmVzZXJ2
+ZV9jcmFzaGtlcm5lbCh2b2lkKQo+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgIGlmIChyZXQgfHwg
+IWNyYXNoX3NpemUpCj4+Pj4+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJl
+dHVybjsKPj4+Pj4+Pgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqAgcmV0ID0gcmVzZXJ2ZV9jcmFzaGtl
+cm5lbF9sb3coKTsKPj4+Pj4+PiArwqDCoMKgwqDCoMKgIGlmICghcmV0ICYmIGNyYXNoa19sb3df
+cmVzLmVuZCkgewo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC8qCj4+Pj4+
+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIElmIGNyYXNoa2VybmVsPVgsbG93
+IHNwZWNpZmllZCwgdGhlcmUgbWF5IGJlCj4+Pj4+Pj4gdHdvIHJlZ2lvbnMsCj4+Pj4+Pj4gK8Kg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAqIHdlIG5lZWQgdG8gbWFrZSBzb21lIGNoYW5n
+ZXMgYXMgZm9sbG93czoKPj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICoK
+Pj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogMS4gcmVuYW1lIHRoZSBs
+b3cgcmVnaW9uIGFzICJDcmFzaCBrZXJuZWwgKGxvdykiCj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCAqIEluIG9yZGVyIHRvIGRpc3RpbmN0IGZyb20gdGhlIGhpZ2ggcmVn
+aW9uIGFuZAo+Pj4+Pj4+IG1ha2Ugbm8gZWZmZWN0Cj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAqIHRvIHRoZSB1c2Ugb2YgZXhpc3Rpbmcga2V4ZWMtdG9vbHMsIHJlbmFt
+ZSB0aGUKPj4+Pj4+PiBsb3cgcmVnaW9uIGFzCj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCAqICJDcmFzaCBrZXJuZWwgKGxvdykiLgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgKgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqAgKiAyLiBjaGFuZ2UgdGhlIHVwcGVyIGJvdW5kIGZvciBjcmFzaCBtZW1vcnkKPj4+Pj4+PiAr
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogU2V0IE1FTUJMT0NLX0FMTE9DX0FDQ0VT
+U0lCTEUgdXBwZXIgYm91bmQgZm9yCj4+Pj4+Pj4gY3Jhc2ggbWVtb3J5Lgo+Pj4+Pj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKgo+Pj4+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgKiAzLiBtYXJrIHRoZSBsb3cgcmVnaW9uIGFzICJub21hcCIKPj4+Pj4+PiAr
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICogVGhlIGxvdyByZWdpb24gaXMgaW50ZW5k
+ZWQgdG8gYmUgdXNlZCBmb3IgY3Jhc2gKPj4+Pj4+PiBkdW1wIGtlcm5lbAo+Pj4+Pj4+ICvCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgKiBkZXZpY2VzLCBqdXN0IG1hcmsgdGhlIGxvdyBy
+ZWdpb24gYXMgIm5vbWFwIgo+Pj4+Pj4+IHNpbXBseS4KPj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgICovCj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Y29uc3QgY2hhciAqcmVuYW1lID0gIkNyYXNoIGtlcm5lbCAobG93KSI7Cj4+Pj4+Pj4gKwo+Pj4+
+Pj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNyYXNoa19sb3dfcmVzLm5hbWUgPSBy
+ZW5hbWU7Cj4+Pj4+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgY3Jhc2hfbWF4ID0g
+TUVNQkxPQ0tfQUxMT0NfQUNDRVNTSUJMRTsKPj4+Pj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCBtZW1ibG9ja19tYXJrX25vbWFwKGNyYXNoa19sb3dfcmVzLnN0YXJ0LAo+Pj4+Pj4+
+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCByZXNvdXJjZV9zaXplKCZjcmFzaGtfbG93X3JlcykpOwo+Pj4+Pj4+ICvC
+oMKgwqDCoMKgwqAgfQo+Pj4+Pj4+ICsKPj4+Pj4+PiAgwqDCoMKgwqDCoMKgwqDCoCBjcmFzaF9z
+aXplID0gUEFHRV9BTElHTihjcmFzaF9zaXplKTsKPj4+Pj4+Pgo+Pj4+Pj4+ICDCoMKgwqDCoMKg
+wqDCoMKgIGlmIChjcmFzaF9iYXNlID09IDApIHsKPj4+Pj4+PiAgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqAgLyogQ3VycmVudCBhcm02NCBib290IHByb3RvY29sIHJlcXVpcmVzIDJN
+Qgo+Pj4+Pj4+IGFsaWdubWVudCAqLwo+Pj4+Pj4+IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgIGNyYXNoX2Jhc2UgPSBtZW1ibG9ja19maW5kX2luX3JhbmdlKDAsCj4+Pj4+Pj4gYXJtNjRf
+ZG1hMzJfcGh5c19saW1pdCwKPj4+Pj4+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIGNyYXNoX3NpemUsIFNaXzJNKTsKPj4+Pj4+
+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjcmFzaF9iYXNlID0gbWVtYmxvY2tfZmlu
+ZF9pbl9yYW5nZSgwLCBjcmFzaF9tYXgsCj4+Pj4+Pj4gY3Jhc2hfc2l6ZSwKPj4+Pj4+PiArwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+IFNaXzJNKTsKPj4+Pj4+PiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgaWYgKGNy
+YXNoX2Jhc2UgPT0gMCkgewo+Pj4+Pj4+ICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqAgcHJfd2FybigiY2Fubm90IGFsbG9jYXRlIGNyYXNoa2VybmVsCj4+
+Pj4+Pj4gKHNpemU6MHglbGx4KVxuIiwKPj4+Pj4+PiAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjcmFzaF9zaXplKTsKPj4+
+Pj4+PiAtLSAKPj4+Pj4+Cj4+Pj4+PiBJIHRlc3RlZCB0aGlzIHBhdGNoIHNlcmllcyBvbiBBUk02
+NC1UaHVuZGVyWDIgd2l0aCBubyBpc3N1ZSB3aXRoCj4+Pj4+PiBib290YXJncyBjcmFzaGtlbmVs
+PVhAWSBjcmFzaGtlcm5lbD0yNTBNLGxvdwo+Pj4+Pj4KPj4+Pj4+ICQgZG1lc2cgfCBncmVwIGNy
+YXNoCj4+Pj4+PiBbwqDCoMKgIDAuMDAwMDAwXSBjcmFzaGtlcm5lbCByZXNlcnZlZDogMHgwMDAw
+MDAwYjgxMjAwMDAwIC0KPj4+Pj4+IDB4MDAwMDAwMGM4MTIwMDAwMCAoNDA5NiBNQikKPj4+Pj4+
+IFvCoMKgwqAgMC4wMDAwMDBdIEtlcm5lbCBjb21tYW5kIGxpbmU6Cj4+Pj4+PiBCT09UX0lNQUdF
+PS9ib290L3ZtbGludXotNS42LjAtcmM0Kwo+Pj4+Pj4gcm9vdD1VVUlEPTg2NmI4ZGYzLTE0ZjQt
+NGUxMS05NWExLTc0YTkwZWU5YjY5NCBybwo+Pj4+Pj4gY3Jhc2hrZXJuZWw9NEdAMHhiODEyMDAw
+MDAgY3Jhc2hrZXJuZWw9MjUwTSxsb3cgbm93YXRjaGRvZyBlYXJseWNvbgo+Pj4+Pj4gW8KgwqAg
+MjkuMzEwMjA5XcKgwqDCoMKgIGNyYXNoa2VybmVsPTI1ME0sbG93Cj4+Pj4+Pgo+Pj4+Pj4gJMKg
+IGtleGVjIC1wIC1pIC9ib290L3ZtbGludXotYHVuYW1lIC1yYAo+Pj4+Pj4gLS1pbml0cmQ9L2Jv
+b3QvaW5pdHJkLmltZy1gdW5hbWUgLXJgIC0tcmV1c2UtY21kbGluZQo+Pj4+Pj4gJCBlY2hvIDEg
+PiAvcHJvYy9zeXMva2VybmVsL3N5c3JxIDsgZWNobyBjID4gL3Byb2Mvc3lzcnEtdHJpZ2dlcgo+
+Pj4+Pj4KPj4+Pj4+IEJ1dCB3aGVuIGkgdHJpZWQgd2l0aCBjcmFzaGtlcm5lbD00RyBjcmFzaGtl
+cm5lbD0yNTBNLGxvdyBhcyBib290YXJncy4KPj4+Pj4+IEtlcm5lbCBpcyBub3QgYWJsZSB0byBh
+bGxvY2F0ZSBtZW1vcnkuCj4+Pj4+PiBbwqDCoMKgIDAuMDAwMDAwXSBjYW5ub3QgYWxsb2NhdGUg
+Y3Jhc2hrZXJuZWwgKHNpemU6MHgxMDAwMDAwMDApCj4+Pj4+PiBbwqDCoMKgIDAuMDAwMDAwXSBL
+ZXJuZWwgY29tbWFuZCBsaW5lOgo+Pj4+Pj4gQk9PVF9JTUFHRT0vYm9vdC92bWxpbnV6LTUuNi4w
+LXJjNCsKPj4+Pj4+IHJvb3Q9VVVJRD04NjZiOGRmMy0xNGY0LTRlMTEtOTVhMS03NGE5MGVlOWI2
+OTQgcm8gY3Jhc2hrZXJuZWw9NEcKPj4+Pj4+IGNyYXNoa2VybmVsPTI1ME0sbG93IG5vd2F0Y2hk
+b2cKPj4+Pj4+IFvCoMKgIDI5LjMzMjA4MV3CoMKgwqDCoCBjcmFzaGtlcm5lbD0yNTBNLGxvdwo+
+Pj4+Pj4KPj4+Pj4+IGRvZXMgY3Jhc2hrZXJuZWw9WEBZIG1hbmRhdG9yeSB0byBnZXQgYWxsb2Nh
+dGVkIGJleW9uZCA0Rz8KPj4+Pj4+IGFtIEkgbWlzc2luZyBzb21ldGhpbmc/Cj4+Pj4+Cj4+Pj4+
+IEkgY2FuJ3QgcmVwcm9kdWNlIHRoZSBwcm9ibGVtIGluIG15IGVudmlyb25tZW50LCBjYW4geW91
+IHRlc3Qgd2l0aAo+Pj4+PiBvdGhlciBzaXplLAo+Pj4+PiBzdWNoIGFzICJjcmFzaGtlcm5lbD0x
+RyBjcmFzaGtlcm5lbD0yNTBNLGxvdyIsIHNlZSBpZiB0aGVyZSBpcyB0aGUKPj4+Pj4gc2FtZSBp
+c3N1ZS4KPj4+Pj4KPj4+PiBJIHRyaWVkIDFHIGFsc28uIFNhbWUgZXJyb3IsIHBsZWFzZSBmaW5k
+IHRoZSBsb2dzCj4+Pj4KPj4+PiAkIGRtZXNnIHwgZ3JlcCBjcmFzaAo+Pj4+IFvCoMKgwqAgMC4w
+MDAwMDBdIGNhbm5vdCBhbGxvY2F0ZSBjcmFzaGtlcm5lbCAoc2l6ZToweDQwMDAwMDAwKQo+Pj4+
+IFvCoMKgwqAgMC4wMDAwMDBdIEtlcm5lbCBjb21tYW5kIGxpbmU6Cj4+Pj4gQk9PVF9JTUFHRT0v
+Ym9vdC92bWxpbnV6LTUuNi4wLXJjNCsKPj4+PiByb290PVVVSUQ9ODY2YjhkZjMtMTRmNC00ZTEx
+LTk1YTEtNzRhOTBlZTliNjk0IHJvIG5vd2F0Y2hkb2cgZWFybHljb24KPj4+PiBjcmFzaGtlcm5l
+bD0xRyBjcmFzaGtlcm5lbD0yNTBNLGxvdwo+Pj4+IFvCoMKgIDI5LjMyNjkxNl3CoMKgwqDCoCBj
+cmFzaGtlcm5lbD0yNTBNLGxvdwo+Pj4+Cj4+Pj4KPj4+Pj4gQmVzaWRlcywgY3Jhc2hrZXJuZWw9
+WEBZIGlzbid0IG1hbmRhdG9yeSB0byBnZXQgYWxsb2NhdGVkIGJleW9uZCA0RywKPj4+Pgo+Pj4+
+IHRoaXMgd2FzIG15IHVuZGVyc3RhbmRpbmcgYWxzby4KPj4+Pgo+Pj4+PiBjYW4geW91IHNob3cg
+dGhlIHdob2xlIGZpbGUgL3Byb2MvaW9tZW0uCj4+Pj4+Cj4+Pj4KPj4+PiAkIGNhdCAvcHJvYy9p
+b21lbQo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogUENJIEVDQU0KPj4+PiAwMDAwMDAwMC0wMDAw
+MDAwMCA6IFBDSSBFQ0FNCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBQQ0kgQnVzIDAwMDA6MDAK
+Pj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IFBDSSBCdXMgMDAwMDowZgo+Pj4+ICDCoMKg
+wqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IFBDSSBCdXMgMDAwMDoxMAo+Pj4+ICDCoMKgwqDCoMKg
+wqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjEwOjAwLjAKPj4+PiAgwqDCoMKgwqDCoMKgIDAw
+MDAwMDAwLTAwMDAwMDAwIDogMDAwMDoxMDowMC4wCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiBQQ0kgQnVzIDAwMDA6MDEKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAw
+MDAwOjAxOjAwLjAKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjAxOjAw
+LjEKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IFBDSSBCdXMgMDAwMDowNQo+Pj4+ICDC
+oMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IDAwMDA6MDU6MDAuMAo+Pj4+ICDCoMKgwqDCoCAw
+MDAwMDAwMC0wMDAwMDAwMCA6IDAwMDA6MDU6MDAuMQo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAw
+MDAwIDogUENJIEJ1cyAwMDAwOjA5Cj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+MDAwMDowOTowMC4wCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowOTow
+MC4xCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjAwOjEwLjAKPj4+PiAgwqDC
+oMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhaGNpCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiAwMDAwOjAwOjEwLjEKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhaGNp
+Cj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBQQ0kgQnVzIDAwMDA6ODAKPj4+PiAgwqDCoCAwMDAw
+MDAwMC0wMDAwMDAwMCA6IFBDSSBCdXMgMDAwMDo4Mwo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0w
+MDAwMDAwMCA6IDAwMDA6ODM6MDAuMAo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6
+IDAwMDA6ODM6MDAuMAo+Pj4+ICDCoMKgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBudm1l
+Cj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBQQ0kgQnVzIDAwMDA6ODkKPj4+PiAgwqDC
+oMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjg5OjAwLjAKPj4+PiAgwqDCoMKgwqDCoMKg
+IDAwMDAwMDAwLTAwMDAwMDAwIDogZTEwMDBlCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAw
+MDAwIDogMDAwMDo4OTowMC4wCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAw
+MDo4OTowMC4wCj4+Pj4gIMKgwqDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IGUxMDAwZQo+
+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IDAwMDA6ODk6MDAuMAo+Pj4+ICDCoMKg
+wqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBlMTAwMGUKPj4+PiAgwqDCoCAwMDAwMDAwMC0w
+MDAwMDAwMCA6IFBDSSBCdXMgMDAwMDo4ZAo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAw
+MCA6IDAwMDA6OGQ6MDAuMAo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IDAwMDA6
+OGQ6MDAuMAo+Pj4+ICDCoMKgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBtcHQzc2FzCj4+
+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDog
+U3lzdGVtIFJBTQo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogS2VybmVsIGNvZGUKPj4+
+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAt
+MDAwMDAwMDAgOiBLZXJuZWwgZGF0YQo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVz
+ZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAg
+MDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAw
+IDogcmVzZXJ2ZWQKPj4+PiAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gMDAwMDAw
+MDAtMDAwMDAwMDAgOiBTeXN0ZW0gUkFNCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZl
+ZAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogU3lzdGVtIFJBTQo+Pj4+ICDCoMKgIDAwMDAwMDAw
+LTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+
+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBTeXN0ZW0gUkFNCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAw
+MDAwMDAgOiByZXNlcnZlZAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAw
+MDAwMDAwMC0wMDAwMDAwMCA6IFN5c3RlbSBSQU0KPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAw
+MCA6IHJlc2VydmVkCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+IDAwMDAw
+MDAwLTAwMDAwMDAwIDogU3lzdGVtIFJBTQo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+cmVzZXJ2ZWQKPj4+PiAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gMDAwMDAwMDAt
+MDAwMDAwMDAgOiBTeXN0ZW0gUkFNCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNl
+cnZlZAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogQ0FWOTAxQzowMAo+Pj4+IDAwMDAwMDAwLTAw
+MDAwMDAwIDogQ0FWOTAxRDowMAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogQ0FWOTAx
+QzowMAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogQ0FWOTAxRTowMAo+Pj4+ICDCoMKgIDAwMDAw
+MDAwLTAwMDAwMDAwIDogQ0FWOTAxQzowMAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogQ0FWOTAx
+RjowMAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogQ0FWOTAxQzowMAo+Pj4+IDAwMDAw
+MDAwLTAwMDAwMDAwIDogQ0FWOTAwNjowMAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+Q0FWOTAwNjowMAo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogQVJNSDAwMTE6MDAKPj4+PiAgwqDC
+oCAwMDAwMDAwMC0wMDAwMDAwMCA6IEFSTUgwMDExOjAwCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAg
+OiBhcm0tc21tdS12My4wLmF1dG8KPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IGFybS1z
+bW11LXYzLjAuYXV0bwo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogYXJtLXNtbXUtdjMuMS5hdXRv
+Cj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhcm0tc21tdS12My4xLmF1dG8KPj4+PiAw
+MDAwMDAwMC0wMDAwMDAwMCA6IGFybS1zbW11LXYzLjIuYXV0bwo+Pj4+ICDCoMKgIDAwMDAwMDAw
+LTAwMDAwMDAwIDogYXJtLXNtbXUtdjMuMi5hdXRvCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBD
+QVY5MDFDOjAxCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDFEOjAxCj4+Pj4gIMKgwqAg
+MDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDFDOjAxCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBD
+QVY5MDFFOjAxCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDFDOjAxCj4+Pj4g
+MDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDFGOjAxCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiBDQVY5MDFDOjAxCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDA3OjA2Cj4+Pj4g
+IMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBDQVY5MDA3OjA2Cj4+Pj4gMDAwMDAwMDAtMDAwMDAw
+MDAgOiBhcm0tc21tdS12My4zLmF1dG8KPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IGFy
+bS1zbW11LXYzLjMuYXV0bwo+Pj4+IDAwMDAwMDAwLTAwMDAwMDAwIDogYXJtLXNtbXUtdjMuNC5h
+dXRvCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhcm0tc21tdS12My40LmF1dG8KPj4+
+PiAwMDAwMDAwMC0wMDAwMDAwMCA6IGFybS1zbW11LXYzLjUuYXV0bwo+Pj4+ICDCoMKgIDAwMDAw
+MDAwLTAwMDAwMDAwIDogYXJtLXNtbXUtdjMuNS5hdXRvCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAg
+OiBTeXN0ZW0gUkFNCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBTeXN0ZW0gUkFNCj4+Pj4gIMKg
+wqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAw
+MDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+
+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAw
+LTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2Vy
+dmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAw
+MDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6
+IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDC
+oMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAw
+MDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+
+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAw
+MC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNl
+cnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAw
+MDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAg
+OiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAg
+wqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAw
+MDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQK
+Pj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAw
+MDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVz
+ZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAg
+MDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAw
+IDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4g
+IMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAw
+MDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVk
+Cj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAw
+MDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJl
+c2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKg
+IDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAw
+MCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+
+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0w
+MDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZl
+ZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAw
+MDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBy
+ZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDC
+oCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+
+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAt
+MDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2
+ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAw
+MDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+cmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+Pj4gIMKg
+wqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAw
+MDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVkCj4+
+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAw
+LTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2Vy
+dmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAw
+MDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6
+IHJlc2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDC
+oMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAw
+MDAwMCA6IHJlc2VydmVkCj4+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBTeXN0ZW0gUkFNCj4+Pj4g
+IMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAw
+MDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJlc2VydmVk
+Cj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKgIDAwMDAw
+MDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IHJl
+c2VydmVkCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiByZXNlcnZlZAo+Pj4+ICDCoMKg
+IDAwMDAwMDAwLTAwMDAwMDAwIDogcmVzZXJ2ZWQKPj4+PiAwMDAwMDAwMC0wMDAwMDAwMCA6IFBD
+SSBCdXMgMDAwMDowMAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogUENJIEJ1cyAwMDAw
+OjAxCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowMTowMC4wCj4+Pj4g
+IMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowMTowMC4xCj4+Pj4gIMKgwqDCoMKg
+IDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowMTowMC4wCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAw
+LTAwMDAwMDAwIDogMDAwMDowMTowMC4xCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAw
+IDogMDAwMDowMTowMC4wCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDow
+MTowMC4xCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBQQ0kgQnVzIDAwMDA6MDUKPj4+
+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjA1OjAwLjAKPj4+PiAgwqDCoMKg
+wqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogYm54MngKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAt
+MDAwMDAwMDAgOiAwMDAwOjA1OjAwLjEKPj4+PiAgwqDCoMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAw
+MDAwIDogYm54MngKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjA1OjAw
+LjAKPj4+PiAgwqDCoMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogYm54MngKPj4+PiAgwqDC
+oMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjA1OjAwLjAKPj4+PiAgwqDCoMKgwqDCoMKg
+IDAwMDAwMDAwLTAwMDAwMDAwIDogYm54MngKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiAwMDAwOjA1OjAwLjEKPj4+PiAgwqDCoMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+Ym54MngKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjA1OjAwLjEKPj4+
+PiAgwqDCoMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogYm54MngKPj4+PiAgwqDCoCAwMDAw
+MDAwMC0wMDAwMDAwMCA6IFBDSSBCdXMgMDAwMDowOQo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0w
+MDAwMDAwMCA6IDAwMDA6MDk6MDAuMAo+Pj4+ICDCoMKgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiBpNDBlCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowOTowMC4x
+Cj4+Pj4gIMKgwqDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IGk0MGUKPj4+PiAgwqDCoMKg
+wqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjA5OjAwLjAKPj4+PiAgwqDCoMKgwqAgMDAwMDAw
+MDAtMDAwMDAwMDAgOiAwMDAwOjA5OjAwLjEKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiAwMDAwOjA5OjAwLjAKPj4+PiAgwqDCoMKgwqDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDog
+aTQwZQo+Pj4+ICDCoMKgwqDCoCAwMDAwMDAwMC0wMDAwMDAwMCA6IDAwMDA6MDk6MDAuMQo+Pj4+
+ICDCoMKgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBpNDBlCj4+Pj4gIMKgwqDCoMKgIDAw
+MDAwMDAwLTAwMDAwMDAwIDogMDAwMDowOTowMC4wCj4+Pj4gIMKgwqDCoMKgIDAwMDAwMDAwLTAw
+MDAwMDAwIDogMDAwMDowOTowMC4xCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAw
+OjAwOjBmLjAKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiB4aGNpLWhjZAo+Pj4+
+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowMDowZi4wCj4+Pj4gIMKgwqAgMDAwMDAw
+MDAtMDAwMDAwMDAgOiAwMDAwOjAwOjBmLjEKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAw
+MDAgOiB4aGNpLWhjZAo+Pj4+ICDCoMKgIDAwMDAwMDAwLTAwMDAwMDAwIDogMDAwMDowMDowZi4x
+Cj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiAwMDAwOjAwOjEwLjAKPj4+PiAgwqDCoMKg
+wqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhaGNpCj4+Pj4gIMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAg
+OiAwMDAwOjAwOjEwLjEKPj4+PiAgwqDCoMKgwqAgMDAwMDAwMDAtMDAwMDAwMDAgOiBhaGNpCj4+
+Pj4gMDAwMDAwMDAtMDAwMDAwMDAgOiBQQ0kgQnVzIDAwMDA6ODAKPj4+Pgo+Pj4KPj4+IHJlc2Vu
+ZGluZyB3aXRoIGNvcnJlY3QgbG9ncyAoYWZ0ZXIgbG9naW4gYXMgcm9vdCkKPj4+Cj4+PiAkIGNh
+dCAvcHJvYy9pb21lbQo+Pj4gMzAwMDAwMDAtMzdmZmZmZmYgOiBQQ0kgRUNBTQo+Pj4gMzgwMDAw
+MDAtM2ZmZmZmZmYgOiBQQ0kgRUNBTQo+Pj4gNDAwMDAwMDAtNWZmZmZmZmYgOiBQQ0kgQnVzIDAw
+MDA6MDAKPj4+ICDCoMKgIDQwMDAwMDAwLTQxN2ZmZmZmIDogUENJIEJ1cyAwMDAwOjBmCj4+PiAg
+wqDCoMKgwqAgNDAwMDAwMDAtNDE3ZmZmZmYgOiBQQ0kgQnVzIDAwMDA6MTAKPj4+ICDCoMKgwqDC
+oMKgwqAgNDAwMDAwMDAtNDBmZmZmZmYgOiAwMDAwOjEwOjAwLjAKPj4+ICDCoMKgwqDCoMKgwqAg
+NDEwMDAwMDAtNDEwMWZmZmYgOiAwMDAwOjEwOjAwLjAKPj4+ICDCoMKgIDQxODAwMDAwLTQxOGZm
+ZmZmIDogUENJIEJ1cyAwMDAwOjAxCj4+PiAgwqDCoMKgwqAgNDE4MDAwMDAtNDE4M2ZmZmYgOiAw
+MDAwOjAxOjAwLjAKPj4+ICDCoMKgwqDCoCA0MTg0MDAwMC00MTg3ZmZmZiA6IDAwMDA6MDE6MDAu
+MQo+Pj4gIMKgwqAgNDE5MDAwMDAtNDE5ZmZmZmYgOiBQQ0kgQnVzIDAwMDA6MDUKPj4+ICDCoMKg
+wqDCoCA0MTkwMDAwMC00MTk3ZmZmZiA6IDAwMDA6MDU6MDAuMAo+Pj4gIMKgwqDCoMKgIDQxOTgw
+MDAwLTQxOWZmZmZmIDogMDAwMDowNTowMC4xCj4+PiAgwqDCoCA0MWEwMDAwMC00MWFmZmZmZiA6
+IFBDSSBCdXMgMDAwMDowOQo+Pj4gIMKgwqDCoMKgIDQxYTAwMDAwLTQxYTdmZmZmIDogMDAwMDow
+OTowMC4wCj4+PiAgwqDCoMKgwqAgNDFhODAwMDAtNDFhZmZmZmYgOiAwMDAwOjA5OjAwLjEKPj4+
+ICDCoMKgIDQxYjAwMDAwLTQxYjBmZmZmIDogMDAwMDowMDoxMC4wCj4+PiAgwqDCoMKgwqAgNDFi
+MDAwMDAtNDFiMGZmZmYgOiBhaGNpCj4+PiAgwqDCoCA0MWIxMDAwMC00MWIxZmZmZiA6IDAwMDA6
+MDA6MTAuMQo+Pj4gIMKgwqDCoMKgIDQxYjEwMDAwLTQxYjFmZmZmIDogYWhjaQo+Pj4gNjAwMDAw
+MDAtN2ZmZmZmZmYgOiBQQ0kgQnVzIDAwMDA6ODAKPj4+ICDCoMKgIDYwMDAwMDAwLTYwMGZmZmZm
+IDogUENJIEJ1cyAwMDAwOjgzCj4+PiAgwqDCoMKgwqAgNjAwMDAwMDAtNjAwMWZmZmYgOiAwMDAw
+OjgzOjAwLjAKPj4+ICDCoMKgwqDCoCA2MDAyMDAwMC02MDAyM2ZmZiA6IDAwMDA6ODM6MDAuMAo+
+Pj4gIMKgwqDCoMKgwqDCoCA2MDAyMDAwMC02MDAyM2ZmZiA6IG52bWUKPj4+ICDCoMKgIDYwMTAw
+MDAwLTYwMWZmZmZmIDogUENJIEJ1cyAwMDAwOjg5Cj4+PiAgwqDCoMKgwqAgNjAxMDAwMDAtNjAx
+N2ZmZmYgOiAwMDAwOjg5OjAwLjAKPj4+ICDCoMKgwqDCoMKgwqAgNjAxMDAwMDAtNjAxN2ZmZmYg
+OiBlMTAwMGUKPj4+ICDCoMKgwqDCoCA2MDE4MDAwMC02MDFiZmZmZiA6IDAwMDA6ODk6MDAuMAo+
+Pj4gIMKgwqDCoMKgIDYwMWMwMDAwLTYwMWRmZmZmIDogMDAwMDo4OTowMC4wCj4+PiAgwqDCoMKg
+wqDCoMKgIDYwMWMwMDAwLTYwMWRmZmZmIDogZTEwMDBlCj4+PiAgwqDCoMKgwqAgNjAxZTAwMDAt
+NjAxZTNmZmYgOiAwMDAwOjg5OjAwLjAKPj4+ICDCoMKgwqDCoMKgwqAgNjAxZTAwMDAtNjAxZTNm
+ZmYgOiBlMTAwMGUKPj4+ICDCoMKgIDYwMjAwMDAwLTYwM2ZmZmZmIDogUENJIEJ1cyAwMDAwOjhk
+Cj4+PiAgwqDCoMKgwqAgNjAyMDAwMDAtNjAyZmZmZmYgOiAwMDAwOjhkOjAwLjAKPj4+ICDCoMKg
+wqDCoCA2MDMwMDAwMC02MDMwZmZmZiA6IDAwMDA6OGQ6MDAuMAo+Pj4gIMKgwqDCoMKgwqDCoCA2
+MDMwMDAwMC02MDMwZmZmZiA6IG1wdDNzYXMKPj4+IDgwMmYwMDAwLTgwMzBmZmZmIDogcmVzZXJ2
+ZWQKPj4+IGU2MjQ3MDAwLWU2MjQ3ZmZmIDogcmVzZXJ2ZWQKPj4+IGU2NzIwMDAwLWU2OTBmZmZm
+IDogcmVzZXJ2ZWQKPj4+IGU2YTkwMDAwLWU2YTlmZmZmIDogcmVzZXJ2ZWQKPj4+IGU2YWIwMDAw
+LWU3MjFmZmZmIDogcmVzZXJ2ZWQKPj4+IGU3MjQwMDAwLWU3MjQwZmZmIDogcmVzZXJ2ZWQKPj4+
+IGZhYzAwMDAwLWZhZmRmZmZmIDogcmVzZXJ2ZWQKPj4+IDQwMDA0MDQwMC00MDAwNDA0MWYgOiBD
+QVY5MDFDOjAwCj4+PiA0MDAwNDA0ODAtNDAwMDQwNTY3IDogQ0FWOTAxRDowMAo+Pj4gIMKgwqAg
+NDAwMDQwNDgwLTQwMDA0MDU2NyA6IENBVjkwMUM6MDAKPj4+IDQwMDA0MDYwMC00MDAwNDA3M2Ig
+OiBDQVY5MDFFOjAwCj4+PiAgwqDCoCA0MDAwNDA2MDAtNDAwMDQwNzNiIDogQ0FWOTAxQzowMAo+
+Pj4gNDAwMDQxNDAwLTQwMDA0MTc3ZiA6IENBVjkwMUY6MDAKPj4+ICDCoMKgIDQwMDA0MTQwMC00
+MDAwNDE3N2YgOiBDQVY5MDFDOjAwCj4+PiA0MDIwMDAxMDAtNDAyMDAwZmZmIDogQ0FWOTAwNjow
+MAo+Pj4gIMKgwqAgNDAyMDAwMTAwLTQwMjAwMGZmZiA6IENBVjkwMDY6MDAKPj4+IDQwMjAyMDAw
+MC00MDIwMmZmZmYgOiBBUk1IMDAxMTowMAo+Pj4gIMKgwqAgNDAyMDIwMDAwLTQwMjAyZmZmZiA6
+IEFSTUgwMDExOjAwCj4+PiA0MDIzMDAwMDAtNDAyMzBmZmZmIDogYXJtLXNtbXUtdjMuMC5hdXRv
+Cj4+PiAgwqDCoCA0MDIzMDAwMDAtNDAyMzBmZmZmIDogYXJtLXNtbXUtdjMuMC5hdXRvCj4+PiA0
+MDIzMjAwMDAtNDAyMzJmZmZmIDogYXJtLXNtbXUtdjMuMS5hdXRvCj4+PiAgwqDCoCA0MDIzMjAw
+MDAtNDAyMzJmZmZmIDogYXJtLXNtbXUtdjMuMS5hdXRvCj4+PiA0MDIzNDAwMDAtNDAyMzRmZmZm
+IDogYXJtLXNtbXUtdjMuMi5hdXRvCj4+PiAgwqDCoCA0MDIzNDAwMDAtNDAyMzRmZmZmIDogYXJt
+LXNtbXUtdjMuMi5hdXRvCj4+PiA0NDAwNDA0MDAtNDQwMDQwNDFmIDogQ0FWOTAxQzowMQo+Pj4g
+NDQwMDQwNDgwLTQ0MDA0MDU2NyA6IENBVjkwMUQ6MDEKPj4+ICDCoMKgIDQ0MDA0MDQ4MC00NDAw
+NDA1NjcgOiBDQVY5MDFDOjAxCj4+PiA0NDAwNDA2MDAtNDQwMDQwNzNiIDogQ0FWOTAxRTowMQo+
+Pj4gIMKgwqAgNDQwMDQwNjAwLTQ0MDA0MDczYiA6IENBVjkwMUM6MDEKPj4+IDQ0MDA0MTQwMC00
+NDAwNDE3N2YgOiBDQVY5MDFGOjAxCj4+PiAgwqDCoCA0NDAwNDE0MDAtNDQwMDQxNzdmIDogQ0FW
+OTAxQzowMQo+Pj4gNDQyMWEwMDAwLTQ0MjFhZmZmZiA6IENBVjkwMDc6MDYKPj4+ICDCoMKgIDQ0
+MjFhMDAwMC00NDIxYWZmZmYgOiBDQVY5MDA3OjA2Cj4+PiA0NDIzMDAwMDAtNDQyMzBmZmZmIDog
+YXJtLXNtbXUtdjMuMy5hdXRvCj4+PiAgwqDCoCA0NDIzMDAwMDAtNDQyMzBmZmZmIDogYXJtLXNt
+bXUtdjMuMy5hdXRvCj4+PiA0NDIzMjAwMDAtNDQyMzJmZmZmIDogYXJtLXNtbXUtdjMuNC5hdXRv
+Cj4+PiAgwqDCoCA0NDIzMjAwMDAtNDQyMzJmZmZmIDogYXJtLXNtbXUtdjMuNC5hdXRvCj4+PiA0
+NDIzNDAwMDAtNDQyMzRmZmZmIDogYXJtLXNtbXUtdjMuNS5hdXRvCj4+PiAgwqDCoCA0NDIzNDAw
+MDAtNDQyMzRmZmZmIDogYXJtLXNtbXUtdjMuNS5hdXRvCj4+PiBiODEyMDAwMDAtYzgxMWZmZmZm
+IDogU3lzdGVtIFJBTQo+Pj4gIMKgwqAgYjgxMjgwMDAwLWI4MjcwZmZmZiA6IEtlcm5lbCBjb2Rl
+Cj4+PiAgwqDCoCBiODI3MTAwMDAtYjgyZGZmZmZmIDogcmVzZXJ2ZWQKPj4+ICDCoMKgIGI4MmUw
+MDAwMC1iODMxNjhmZmYgOiBLZXJuZWwgZGF0YQo+Pj4gIMKgwqAgYjgzMTY5MDAwLWJhY2NkN2Zm
+ZiA6IHJlc2VydmVkCj4+PiAgwqDCoCBjNzhhMDAwMDAtYzdmZmZmZmZmIDogcmVzZXJ2ZWQKPj4+
+ICDCoMKgIGM4MDEyOTAwMC1jODAxYTlmZmYgOiByZXNlcnZlZAo+Pj4gIMKgwqAgYzgwMWFhMDAw
+LWM4MDllOWZmZiA6IHJlc2VydmVkCj4+PiAgwqDCoCBjODA5ZWMwMDAtYzgwOWVlZmZmIDogcmVz
+ZXJ2ZWQKPj4+ICDCoMKgIGM4MDllZjAwMC1jODExZmZmZmYgOiByZXNlcnZlZAo+Pj4gMTAwMDAw
+MDAwMDAtMTNmZmZmZmZmZmYgOiBQQ0kgQnVzIDAwMDA6MDAKPj4+ICDCoMKgIDEwMDAwMDAwMDAw
+LTEwMDAxM2ZmZmZmIDogUENJIEJ1cyAwMDAwOjAxCj4+PiAgwqDCoMKgwqAgMTAwMDAwMDAwMDAt
+MTAwMDA3ZmZmZmYgOiAwMDAwOjAxOjAwLjAKPj4+ICDCoMKgwqDCoCAxMDAwMDgwMDAwMC0xMDAw
+MGZmZmZmZiA6IDAwMDA6MDE6MDAuMQo+Pj4gIMKgwqDCoMKgIDEwMDAxMDAwMDAwLTEwMDAxMDFm
+ZmZmIDogMDAwMDowMTowMC4wCj4+PiAgwqDCoMKgwqAgMTAwMDEwMjAwMDAtMTAwMDEwM2ZmZmYg
+OiAwMDAwOjAxOjAwLjEKPj4+ICDCoMKgwqDCoCAxMDAwMTA0MDAwMC0xMDAwMTA0ZmZmZiA6IDAw
+MDA6MDE6MDAuMAo+Pj4gIMKgwqDCoMKgIDEwMDAxMDUwMDAwLTEwMDAxMDVmZmZmIDogMDAwMDow
+MTowMC4xCj4+PiAgwqDCoCAxMDAwMTQwMDAwMC0xMDAwMzdmZmZmZiA6IFBDSSBCdXMgMDAwMDow
+NQo+Pj4gIMKgwqDCoMKgIDEwMDAxNDAwMDAwLTEwMDAxNDBmZmZmIDogMDAwMDowNTowMC4wCj4+
+PiAgwqDCoMKgwqDCoMKgIDEwMDAxNDAwMDAwLTEwMDAxNDBmZmZmIDogYm54MngKPj4+ICDCoMKg
+wqDCoCAxMDAwMTQxMDAwMC0xMDAwMTQxZmZmZiA6IDAwMDA6MDU6MDAuMQo+Pj4gIMKgwqDCoMKg
+wqDCoCAxMDAwMTQxMDAwMC0xMDAwMTQxZmZmZiA6IGJueDJ4Cj4+PiAgwqDCoMKgwqAgMTAwMDE4
+MDAwMDAtMTAwMDFmZmZmZmYgOiAwMDAwOjA1OjAwLjAKPj4+ICDCoMKgwqDCoMKgwqAgMTAwMDE4
+MDAwMDAtMTAwMDFmZmZmZmYgOiBibngyeAo+Pj4gIMKgwqDCoMKgIDEwMDAyMDAwMDAwLTEwMDAy
+N2ZmZmZmIDogMDAwMDowNTowMC4wCj4+PiAgwqDCoMKgwqDCoMKgIDEwMDAyMDAwMDAwLTEwMDAy
+N2ZmZmZmIDogYm54MngKPj4+ICDCoMKgwqDCoCAxMDAwMjgwMDAwMC0xMDAwMmZmZmZmZiA6IDAw
+MDA6MDU6MDAuMQo+Pj4gIMKgwqDCoMKgwqDCoCAxMDAwMjgwMDAwMC0xMDAwMmZmZmZmZiA6IGJu
+eDJ4Cj4+PiAgwqDCoMKgwqAgMTAwMDMwMDAwMDAtMTAwMDM3ZmZmZmYgOiAwMDAwOjA1OjAwLjEK
+Pj4+ICDCoMKgwqDCoMKgwqAgMTAwMDMwMDAwMDAtMTAwMDM3ZmZmZmYgOiBibngyeAo+Pj4gIMKg
+wqAgMTAwMDM4MDAwMDAtMTAwMDUzZmZmZmYgOiBQQ0kgQnVzIDAwMDA6MDkKPj4+ICDCoMKgwqDC
+oCAxMDAwMzgwMDAwMC0xMDAwM2ZmZmZmZiA6IDAwMDA6MDk6MDAuMAo+Pj4gIMKgwqDCoMKgwqDC
+oCAxMDAwMzgwMDAwMC0xMDAwM2ZmZmZmZiA6IGk0MGUKPj4+ICDCoMKgwqDCoCAxMDAwNDAwMDAw
+MC0xMDAwNDdmZmZmZiA6IDAwMDA6MDk6MDAuMQo+Pj4gIMKgwqDCoMKgwqDCoCAxMDAwNDAwMDAw
+MC0xMDAwNDdmZmZmZiA6IGk0MGUKPj4+ICDCoMKgwqDCoCAxMDAwNDgwMDAwMC0xMDAwNGJmZmZm
+ZiA6IDAwMDA6MDk6MDAuMAo+Pj4gIMKgwqDCoMKgIDEwMDA0YzAwMDAwLTEwMDA0ZmZmZmZmIDog
+MDAwMDowOTowMC4xCj4+PiAgwqDCoMKgwqAgMTAwMDUwMDAwMDAtMTAwMDUwMDdmZmYgOiAwMDAw
+OjA5OjAwLjAKPj4+ICDCoMKgwqDCoMKgwqAgMTAwMDUwMDAwMDAtMTAwMDUwMDdmZmYgOiBpNDBl
+Cj4+PiAgwqDCoMKgwqAgMTAwMDUwMDgwMDAtMTAwMDUwMGZmZmYgOiAwMDAwOjA5OjAwLjEKPj4+
+ICDCoMKgwqDCoMKgwqAgMTAwMDUwMDgwMDAtMTAwMDUwMGZmZmYgOiBpNDBlCj4+PiAgwqDCoMKg
+wqAgMTAwMDUwMTAwMDAtMTAwMDUxMGZmZmYgOiAwMDAwOjA5OjAwLjAKPj4+ICDCoMKgwqDCoCAx
+MDAwNTExMDAwMC0xMDAwNTIwZmZmZiA6IDAwMDA6MDk6MDAuMQo+Pj4gIMKgwqAgMTAwMDU0MDAw
+MDAtMTAwMDU0MGZmZmYgOiAwMDAwOjAwOjBmLjAKPj4+ICDCoMKgwqDCoCAxMDAwNTQwMDAwMC0x
+MDAwNTQwZmZmZiA6IHhoY2ktaGNkCj4+PiAgwqDCoCAxMDAwNTQxMDAwMC0xMDAwNTQxZmZmZiA6
+IDAwMDA6MDA6MGYuMAo+Pj4gIMKgwqAgMTAwMDU0MjAwMDAtMTAwMDU0MmZmZmYgOiAwMDAwOjAw
+OjBmLjEKPj4+ICDCoMKgwqDCoCAxMDAwNTQyMDAwMC0xMDAwNTQyZmZmZiA6IHhoY2ktaGNkCj4+
+PiAgwqDCoCAxMDAwNTQzMDAwMC0xMDAwNTQzZmZmZiA6IDAwMDA6MDA6MGYuMQo+Pj4gIMKgwqAg
+MTAwMDU0NDAwMDAtMTAwMDU0NGZmZmYgOiAwMDAwOjAwOjEwLjAKPj4+ICDCoMKgwqDCoCAxMDAw
+NTQ0MDAwMC0xMDAwNTQ0ZmZmZiA6IGFoY2kKPj4+ICDCoMKgIDEwMDA1NDUwMDAwLTEwMDA1NDVm
+ZmZmIDogMDAwMDowMDoxMC4xCj4+PiAgwqDCoMKgwqAgMTAwMDU0NTAwMDAtMTAwMDU0NWZmZmYg
+OiBhaGNpCj4+PiAxNDAwMDAwMDAwMC0xN2ZmZmZmZmZmZiA6IFBDSSBCdXMgMDAwMDo4MAo+Pj4K
+Pj4+Cj4+PiBmYWlsdXJlIHdpdGggY3Jhc2hrZXJuZWw9MUcKPj4+Cj4+PiA6fiQgZG1lc2cgfCBn
+cmVwIGNyYXNoCj4+PiBbwqDCoMKgIDAuMDAwMDAwXSBjYW5ub3QgYWxsb2NhdGUgY3Jhc2hrZXJu
+ZWwgKHNpemU6MHg0MDAwMDAwMCkKPj4+IFvCoMKgwqAgMC4wMDAwMDBdIEtlcm5lbCBjb21tYW5k
+IGxpbmU6IEJPT1RfSU1BR0U9L2Jvb3Qvdm1saW51ei01LjYuMC1yYzQrCj4+PiByb290PVVVSUQ9
+ODY2YjhkZjMtMTRmNC00ZTExLTk1YTEtNzRhOTBlZTliNjk0IHJvIG5vd2F0Y2hkb2cgZWFybHlj
+b24KPj4+IGNyYXNoa2VybmVsPTFHIGNyYXNoa2VybmVsPTI1ME0sbG93Cj4+PiBbwqDCoCAyOS4z
+MjY5MTZdwqDCoMKgwqAgY3Jhc2hrZXJuZWw9MjUwTSxsb3cKPj4KPj4gSGksCj4+Cj4+ICDCoCBN
+eSBtaXN0YWtlIC4gSSB0aG91Z2h0IHlvdSB3ZXJlIHRyeWluZyB0byBhbGxvY2F0ZSBjcmFzaGtl
+cm5lbMKgIEFUIDRHLgo+Pgo+PiAgwqAgVGhhdCB3b3VsZCBiZSA6Cj4+Cj4+ICDCoCBjcmFzaGtl
+cm5lbD0xMDI0TUA0Rwo+Pgo+Pgo+PiAgwqAgQnV0IHlvdSBhcmUgYWxzbyBhbGxvY2F0aW5nIGFu
+IGFkZGl0aW9uYWwgMjUwTSBsb3cgdG9vID8KPj4KPj4gIMKgIEluIHlvdXIgZXhhbXBsZQo+Pgo+
+PiAgwqDCoCBjcmFzaGtlcm5lbD0xRyAtIHRoYXQgaXMgYXNraW5nIGZvciAxMDI0TSBpbiBsb3cg
+bWVtb3J5Lgo+Pgo+PiBUaGF0IGxpa2VseSB3b24ndCB3b3JrwqAgLSBmcm9tIHlvdXIgb3duIG1l
+bW9yeSBtYXAgdGhlcmUgaXMgbm8gZnJlZQo+PiBzZWdtZW50IHRoYXQgc2l6ZSA6Cj4+Cj4+PiA4
+MDJmMDAwMC04MDMwZmZmZiA6IHJlc2VydmVkCj4+PiBlNjI0NzAwMC1lNjI0N2ZmZiA6IHJlc2Vy
+dmVkCj4+PiBlNjcyMDAwMC1lNjkwZmZmZiA6IHJlc2VydmVkCj4+PiBlNmE5MDAwMC1lNmE5ZmZm
+ZiA6IHJlc2VydmVkCj4+PiBlNmFiMDAwMC1lNzIxZmZmZiA6IHJlc2VydmVkCj4+PiBlNzI0MDAw
+MC1lNzI0MGZmZiA6IHJlc2VydmVkCj4+PiBmYWMwMDAwMC1mYWZkZmZmZiA6IHJlc2VydmVkCj4+
+Cj4+IFRoZSBtYXhpbXVtIHNpemUgSSd2ZSBiZWVuIGFibGUgdG8gdXNlIGlzIDgwME3CoCBpbiB0
+aGUgbG93IDRHQiByYW5nZQo+PiB1c2luZyBhIDUuNC4xNyBrZXJuZWwuCj4+Cj4gCj4gSSBhbSBj
+b25mdXNlZC4gSSB3YXMgZm9sbG93aW5nICJbUEFUQ0ggdjcgNC80XSBrZHVtcDogdXBkYXRlCj4g
+RG9jdW1lbnRhdGlvbiBhYm91dCBjcmFzaGtlcm5lbCBvbiBhcm02NCIKPiAKPiArICAgT24gYXJt
+NjQsIHVzZSAiY3Jhc2hrZXJuZWw9WVtAWF0iLiBOb3RlIHRoYXQgdGhlIHN0YXJ0IGFkZHJlc3Mg
+b2YKPiAgICAgIHRoZSBrZXJuZWwsIFggaWYgZXhwbGljaXRseSBzcGVjaWZpZWQsIG11c3QgYmUg
+YWxpZ25lZCB0byAyTWlCCj4gKDB4MjAwMDAwKS4KPiArICAgSWYgY3Jhc2hrZXJuZWw9Wixsb3cg
+aXMgc3BlY2lmaWVkIHNpbXVsdGFuZW91c2x5LCByZXNlcnZlIHNwY2lmaWVkIHNpemUKPiArICAg
+bG93IG1lbW9yeSBmb3IgY3Jhc2gga2R1bXAga2VybmVsIGRldmljZXMgZmlyc3RseSBhbmQgdGhl
+biByZXNlcnZlCj4gbWVtb3J5Cj4gKyAgIGFib3ZlIDRHLgo+IAo+IGhlcmUgaXMgbXkgdW5kZXJz
+dGFuZGluZywgaWYgaSBwYXNzIGNyYXNoa2VybmVsPTFHIGNyYXNoa2VybmVsPTI1ME0sbG93Cj4g
+aW4gYm9vdGFyZ3MuCj4gLSBMaW51eCB3aWxsIGFsbG9jYXRlIGZpcnN0IDI1ME0gaW4gbG93IG1l
+bW9yeSAoPCA0RyBtZW0gcmFuZ2UpCj4gLSBUaGFuIHJlc3QgODUwTSB3aWxsIGJlIGFsbG9jYXRl
+IGZyb20gYWJvdmUgNEcgbWVtb3J5Lgo+IAo+IFNvLCBwYXJhbWV0ZXJzIHBhc3NlZCBieSBtZSBp
+cyBjb3JyZWN0IGFuZCBtZW1vcnkgc2hvdWxkIGJlIGFsbG9jYXRlZC4KPiAKPiBwbGVhc2UgaGVs
+cCBtZSBpZiBteSB1bmRlcnN0YW5kaW5nIGlzIHdyb25nLgo+IAo+IC0tcGsKPiAKPiAKCkhpCgpI
+YXZlIHlvdSBidWlsdCBhIDUuNSBrZXJuZWwgd2l0aCB0aGVzZSB2NCBwYXRjaGVzIGFwcGxpZWQg
+ID8KClRoZXNlIGNoYW5nZXMgYXJlIG5vdCBpbiBhIHJlbGVhc2UgeWV0LgoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdApr
+ZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8va2V4ZWMK
