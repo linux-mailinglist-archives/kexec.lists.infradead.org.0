@@ -2,60 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FDF61826D6
-	for <lists+kexec@lfdr.de>; Thu, 12 Mar 2020 02:49:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17DB71826DD
+	for <lists+kexec@lfdr.de>; Thu, 12 Mar 2020 02:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/Y9SfnB7wphK2y2f0CpmoRJP0eqDgg3COObxIrn96w=; b=m4d/EaftEvCmD9
-	S2j84zmbsz1OYDLu57t85FVUJ72oU+IMp1SppwGxtdsz4g7Co2Qoa6niYUrHO/Te2HNJUaIyooUPm
-	0pMa6meNoEclRRJt1mY/GloA16ud48Ru+69ew0tjJSrpnS/a3XLOvSBBQyNXePeEe9MoYS529MQNG
-	5d5Q6e0VxLW6FxPd7OVWsMoq/eFGxw2a22sEE197vgEKRkpd8t6U7txIeGlue3JhlZrHi3FFxDKLE
-	Btny9ivLnmVqb3VoirCumsHtlhXdfxQekodncvf0omjbGXAOhgcQOB+Xdwxg2uC8zQn5QlXCZTgGx
-	0edQu/TqDRR0Ph2Cty8g==;
+	List-Owner; bh=/aiDoQAB3GW3QkdRSmOJXyQl3bsogWKrXFfLJvPVd9k=; b=FBvgG3Q3x0lx1Z
+	fkk9Gxidlm56PJ7LIl/N+2r0+u4mWJTUm9R1NgWruAJXpdXaPsw+jtDPTBUXCk2jquxMPRiweEw8Q
+	elTr61g1Ntsh/mWyPcLg37I6vtSPmqFRqYO1juL2kPULV30PjhsxdGqe5ebrbfKDTnU680KIuHFps
+	DI6Vi/t40AqidvfQULKxGbaSCO0EJKxv3WsFWxeHS2ui7PcW/QGLs6C7l5mfHuKX/PdaT4lEBnfhX
+	fLAbsU/B9DPdvo0IOO+FNZVpXi81/4Qecq3ZvntvwxDS4OhymHMz+q4YyXV4VL12oT/lCEJmOla2G
+	6dfKoUd6vkvkxvZYYmcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jCCyq-0007be-Dw; Thu, 12 Mar 2020 01:49:48 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jCD3o-0000iq-Mu; Thu, 12 Mar 2020 01:54:56 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jCCyi-0007bH-Qe
- for kexec@lists.infradead.org; Thu, 12 Mar 2020 01:49:43 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z5so2400081pfn.5
- for <kexec@lists.infradead.org>; Wed, 11 Mar 2020 18:49:40 -0700 (PDT)
+ id 1jCD3j-0000iC-GX
+ for kexec@lists.infradead.org; Thu, 12 Mar 2020 01:54:54 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id f15so1860306pjq.2
+ for <kexec@lists.infradead.org>; Wed, 11 Mar 2020 18:54:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
+ h=from:subject:to:cc:references:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+1p9V0Pnkls7eI5YFTgFUPWyPcbbamORBewti4VwSKE=;
- b=jhJWBu9baveDUkIm/F+AXNTJ4gmDke+g4/77ys44DMeSjWxosNQp/f3s9Lx49by/vt
- JfQxMm/L2JfJDZK6sSTVjS4ZiRmRud7vLvZmzdRwHYJtrhtizakGqjFMNS3azuX8SyCo
- /7y8fmO19E9IQOyfwJg58I0TLU05Nyt/F79pAT07roaq8lZbVnMvbSQnLYnGqkrYThxg
- 9BrxxMGX/rixghJBDNt4pfa0ZrN7ryvI5Q37pB79R7i2ZEXbRpeaIru3JFmGkDdmYfwU
- 1ilD6AKyZDljBSqYpz5ddhne/b8dwf4SNSxCyYLfNAOAYZVnYAsioE9nqxqu+Dt/B5SJ
- Yvtw==
+ bh=GsK37v4dofpbfzBPRd1lvsui5xWiFmTCsSF82XZ5dzo=;
+ b=LG3TJEP7hXEPKFrq2NzJj/xf0/ljRV79vUYhgwJhhbBFbHISLJrswgga4Zag1ebi1K
+ C8Tc13xsl9xd+wEZjzomsJ5ZIsFE2AAmMsbqJUPyVIAl0gMYb33SyxTVSd4qPLYq8RgF
+ Fy9M2it3jWoJ7x5ARIrWeyIDIAv2UB/jBicBbzdPejN+JsFxH2yWBr0F8jtI5ohdmwj1
+ oLyQfYcE90P0PCl9VH3AC2HGek+NPvpeugprfVQQRgJBqUEfuTNpweYXs5HX5YYi2Ejr
+ E6a221Mc3gUoS5keo0J2YYXe+bsBI7r2aND06KTjX0tCCXD+NrQmWig792kSp1gynrKo
+ WJGA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=+1p9V0Pnkls7eI5YFTgFUPWyPcbbamORBewti4VwSKE=;
- b=lVm9+qakfGzGjWCyv7tSCjMTN1CaL+/Tm6HhFm5jnO2jp2+vL8M1pL+E0Hon3Ehstb
- KxXxnEFHGE4CQbl2rkPO9s699Em+7fuAjFztzwch9B53y8qsXifhTgs1u36X9Pscb42u
- GhjgR33idDdF9GJqFWV+/CqPR35aDkaRdl0IsqogykTwljyTuSGWVSiiihAH0cr9HTiQ
- 4gubplwY/1RmrEc/qaZZUExQmW15t2hwQiGt5lbpOluYDltOlmoIu17iDrqeOY/IVLCr
- pRk6GgRiskCse8jGkvj5Nmlp1NdLeNW2NiaR/hwo0ELGn01i1JBCRFS4xerVKFyRT9Nn
- ggRg==
-X-Gm-Message-State: ANhLgQ0nQT06X4GpZSjGkMKiy27KUBkiRpL7MmtV7EjkFxdemU/7BvQ3
- BLILNLKVo154jrlCmhnu7sC7wDS2
-X-Google-Smtp-Source: ADFU+vv0t9CVlhlDwzKogM79GdvWQBqwU6pZAgpFPJJTNZVb+TdW0tQhwFdZ9YzcIhJbD5MnKktryQ==
-X-Received: by 2002:a63:fd0f:: with SMTP id d15mr5271118pgh.26.1583977779084; 
- Wed, 11 Mar 2020 18:49:39 -0700 (PDT)
+ bh=GsK37v4dofpbfzBPRd1lvsui5xWiFmTCsSF82XZ5dzo=;
+ b=mM5Z29w+dFSmtIdf54UzViWVn9DUGQnPq5H7celsO5+rW0Nmir0wsE8MZ9cAwb5sEe
+ 54Y2J0rXDSQKl6tsY4HMbZ66OZU/aku4dR+CFozyNAwRApFs854cs7aKY12vg5+3ZysM
+ ijiTatrcSFn4KtlxOzrL8nmVrm3M9DLWdNb9l9MZmmSFXfq+xYsrUadVTGpW5g/DnU9n
+ lULBjHv3oJYC6JCHxbkswX8iInsWLQFqFnuqOD5MRHN9jl9l42HSUK6TEQWfkG9zu/3h
+ EfOXNDHKQX1c8Z9R5WWJF2QbQbJaJiOhElRTQKc7Lnr5RPKdxZa5B6Isogdce4bkI1Rs
+ zCiw==
+X-Gm-Message-State: ANhLgQ3kJSiEKvcYOZTSi1zGId/W01/6eworTi9sB8r1zWpIYOuMGX0I
+ 3ZW4JWKG0Z3V0JQlInnRCnxYSFbA
+X-Google-Smtp-Source: ADFU+vs9gEvKHI1HdPr4F8ShllyZKB3WPb68E6kJtwWe5qniaajhRrlzCGXdGoNeqI/Q8VVCSXmYUQ==
+X-Received: by 2002:a17:90a:fa16:: with SMTP id
+ cm22mr1668014pjb.137.1583978090117; 
+ Wed, 11 Mar 2020 18:54:50 -0700 (PDT)
 Received: from [192.168.1.5] ([223.226.85.234])
- by smtp.gmail.com with ESMTPSA id k24sm18722104pfg.27.2020.03.11.18.49.36
+ by smtp.gmail.com with ESMTPSA id b133sm51616130pga.43.2020.03.11.18.54.45
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Mar 2020 18:49:38 -0700 (PDT)
+ Wed, 11 Mar 2020 18:54:49 -0700 (PDT)
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
 Subject: Re: [PATCH v7 2/4] arm64: kdump: reserve crashkenel above 4G for
  crash dump kernel
 To: John Donnelly <john.p.donnelly@oracle.com>
@@ -71,24 +73,23 @@ References: <20191223152349.180172-1-chenzhou10@huawei.com>
  <E60A9E2C-AC74-49A6-9D3E-BDD4EF58287F@oracle.com>
  <CAJ2QiJJgG5_mvPn6jxhnn24EG7ByuLLsmO3sr5OSKNTKQ_jQSA@mail.gmail.com>
  <3FAE086D-E5F8-4FF1-B2E4-8637B6CFDC4A@oracle.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Message-ID: <4a073491-f679-64a1-a486-cf9f514ca59e@gmail.com>
-Date: Thu, 12 Mar 2020 07:19:33 +0530
+Message-ID: <6f04e66b-5193-8c62-a917-10ab8b0c3579@gmail.com>
+Date: Thu, 12 Mar 2020 07:24:41 +0530
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
 In-Reply-To: <3FAE086D-E5F8-4FF1-B2E4-8637B6CFDC4A@oracle.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200311_184940_895058_680D9335 
-X-CRM114-Status: GOOD (  20.03  )
+X-CRM114-CacheID: sfid-20200311_185451_585174_42A7F0AF 
+X-CRM114-Status: GOOD (  19.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -782,10 +783,10 @@ f1a00000-f7dfffff : reserved
   be18000000-be97ffffff : reserved
   be98c00000-bf98bfffff : Crash kernel
 
-/proc/iomem also allocating space at 2 locations with tolal 4G + 100M.
+/proc/iomem also allocating space at 2 locations with tolal 4G
 
 
-What is the behavior on your platform.
+What is the actual behavior.  Also can you please share your log
 
 --pk
 
