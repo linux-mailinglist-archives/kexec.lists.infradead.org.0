@@ -2,55 +2,105 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0825D18B22C
-	for <lists+kexec@lfdr.de>; Thu, 19 Mar 2020 12:15:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1DDA18B860
+	for <lists+kexec@lfdr.de>; Thu, 19 Mar 2020 14:51:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=10X2iWb/J6Q6A+WPTrWKowdwstZM6/81EHGbPQbQAmo=; b=Yj3qhVW7krhujOnwNQTXuOCCT9
-	ZpF/VkuYRSeddEn7knbsH/Zq1xDOC1GiXU3pGuu5cPj3FJtCa7ZfBVUJpUcBvzB1aQl7GWTTs0ZFD
-	P6nH0t2RLnKVC7Ntdd8LgyxcepvpzqpTbmLxHeUwkvddEdD2g7mlFc62Uc1N1Gg4wnZ6x3/3mtBcK
-	FXyJZCtlxO58wHFREUCNhDbYWyXb9vfM0s85Bij7KaH3uCC4TVBgBVKajd2T489fIpUHJAq77+vYI
-	S+NVf4BJXdi3ACKIzg/awcJb149wWfNNvMW/DgANAB+wHKj0aAl3z7vtiD/6RCbJxNTpd1TRNqRSR
-	2JwxwelQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JmsgmcIwUd5M+mkfIAgo2fPRrqNQp8cH/IZOrU2IfZc=; b=kk7NypqfVh+DjwMTPwhF2pwwl
+	EvGwDQr2QmsK8uRgPaG/3OVPeG5JCN3IQBr/0e4259DfEB1/a93urs6Yhqz0JVABFaf/wOuUU3gVM
+	vvFkb3tGNm89ozoq2hYVaRMkwnmJUBw8mWBz5+jWzbDsJlThs6EhVzTxkH+9D9mxQxlcIIsOStITU
+	24WMDwxHXTFUmcYlxu7mKwvwxgbS9KaBWn1CAt1hwGbgv7UkWfiDpg2x12wu/v3H+7tquwomNK9YU
+	hJ0Wwh+YUWThnWGaKdtV22cZFsbMOoQQs5wYHJDcg23xHfWnIe4s6+BGjeIJjxaiXLT0VcJYCcRpy
+	Mc01CZqcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEt9E-0001OH-OB; Thu, 19 Mar 2020 11:15:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEt97-0001N5-Tg; Thu, 19 Mar 2020 11:15:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAD5B1045;
- Thu, 19 Mar 2020 04:15:26 -0700 (PDT)
-Received: from a075553-lin.blr.arm.com (unknown [10.162.16.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 96D6D3FA4D;
- Thu, 19 Mar 2020 00:39:36 -0700 (PDT)
-From: Amit Daniel Kachhap <amit.kachhap@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] Documentation/vmcoreinfo: Add documentation for
+	id 1jEvaC-0000Zj-3A; Thu, 19 Mar 2020 13:51:36 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jEva8-0000Z9-EG; Thu, 19 Mar 2020 13:51:33 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02JDgtZM174045;
+ Thu, 19 Mar 2020 13:51:21 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=eWXMKVtdGsYfSp2Ry0nG0/jtLiPQGoFuRS02zDj15tQ=;
+ b=EirR+/p4Rdmb9Ei0aSLzxHfRnXibD0FmfjNKVZ0k67S3QzSdmAZxs+l7fCWbNjHKF+B8
+ DHZlebdIoyP/ynFl7MefE6b0IzeQ90OFxE6DUG+NB908VZl9BwJxJn6EA5PZkG/iNkUg
+ zMq7/+m8JJU1tNqKtjfRYnM3y2cr1cbMW4N8IMST9xJYq8luQSpouy7ea4zbGQ7uzweC
+ qaxrBUGCEYTmhE+G71BcnntMd0rZwHeZGGvpunaawKsJxR1HSx7j/SrfTnYpaFQzuloG
+ c1sSaF5h1S3IJK5UrvqiIVTUA0JDlE/q2b6V63WudqzeQsy71hHL90MvCoj5vsdHNBcZ kA== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2yrpprgeek-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Mar 2020 13:51:21 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02JDoesY139259;
+ Thu, 19 Mar 2020 13:51:21 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by userp3020.oracle.com with ESMTP id 2ys90440s0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 19 Mar 2020 13:51:21 +0000
+Received: from abhmp0008.oracle.com (abhmp0008.oracle.com [141.146.116.14])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02JDpJmA011291;
+ Thu, 19 Mar 2020 13:51:19 GMT
+Received: from [192.168.1.140] (/47.220.71.223)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 19 Mar 2020 06:51:18 -0700
+Subject: Re: [PATCH 2/2] Documentation/vmcoreinfo: Add documentation for
  'KERNELPACMASK'
-Date: Thu, 19 Mar 2020 13:09:11 +0530
-Message-Id: <1584603551-23845-2-git-send-email-amit.kachhap@arm.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1584603551-23845-1-git-send-email-amit.kachhap@arm.com>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 References: <1584603551-23845-1-git-send-email-amit.kachhap@arm.com>
+ <1584603551-23845-2-git-send-email-amit.kachhap@arm.com>
+From: John Donnelly <John.P.Donnelly@Oracle.com>
+Message-ID: <5235269c-e3c7-efff-6083-a05a39699735@Oracle.com>
+Date: Thu, 19 Mar 2020 08:51:16 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
+MIME-Version: 1.0
+In-Reply-To: <1584603551-23845-2-git-send-email-amit.kachhap@arm.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ mlxlogscore=999 mlxscore=0
+ adultscore=0 bulkscore=0 malwarescore=0 spamscore=0 suspectscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003190061
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9564
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ bulkscore=0
+ suspectscore=0 lowpriorityscore=0 phishscore=0 adultscore=0 clxscore=1011
+ impostorscore=0 priorityscore=1501 spamscore=0 mlxlogscore=999 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003190061
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200319_041529_995522_7DF640F6 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200319_065132_564394_E10C0731 
+X-CRM114-Status: GOOD (  19.81  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +116,59 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
  Dave Anderson <anderson@redhat.com>,
  Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Add documentation for KERNELPACMASK variable being added to vmcoreinfo.
+On 3/19/20 2:39 AM, Amit Daniel Kachhap wrote:
+> Add documentation for KERNELPACMASK variable being added to vmcoreinfo.
+> 
+> It indicates the PAC bits mask information of signed kernel pointers if
+> ARMv8.3-A Pointer Authentication feature is present.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Dave Anderson <anderson@redhat.com>
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> ---
+>   Documentation/admin-guide/kdump/vmcoreinfo.rst | 6 ++++++
+>   1 file changed, 6 insertions(+)
+> 
+> diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> index 007a6b8..5cc3ee6 100644
+> --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> @@ -393,6 +393,12 @@ KERNELOFFSET
+>   The kernel randomization offset. Used to compute the page offset. If
+>   KASLR is disabled, this value is zero.
+>   
+> +KERNELPACMASK
+> +-------------
+> +
+> +Indicates the PAC bits mask information if Pointer Authentication is
+> +enabled and address authentication feature is present.
+> +
+>   arm
+>   ===
+>   
+> 
+> 
 
-It indicates the PAC bits mask information of signed kernel pointers if
-ARMv8.3-A Pointer Authentication feature is present.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Dave Anderson <anderson@redhat.com>
-Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
----
- Documentation/admin-guide/kdump/vmcoreinfo.rst | 6 ++++++
- 1 file changed, 6 insertions(+)
+Hi,
 
-diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-index 007a6b8..5cc3ee6 100644
---- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
-+++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
-@@ -393,6 +393,12 @@ KERNELOFFSET
- The kernel randomization offset. Used to compute the page offset. If
- KASLR is disabled, this value is zero.
- 
-+KERNELPACMASK
-+-------------
-+
-+Indicates the PAC bits mask information if Pointer Authentication is
-+enabled and address authentication feature is present.
-+
- arm
- ===
- 
+Does this require changes to the  makedumpfile or crash utilities ?
+
+
+
 -- 
-2.7.4
-
+Thank You,
+John
 
 _______________________________________________
 kexec mailing list
