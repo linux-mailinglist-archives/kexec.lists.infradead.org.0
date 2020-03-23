@@ -2,99 +2,134 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3336118EC8A
-	for <lists+kexec@lfdr.de>; Sun, 22 Mar 2020 22:17:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9035018F099
+	for <lists+kexec@lfdr.de>; Mon, 23 Mar 2020 09:05:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rRELAK9s2zQ3iRm3UHXiNFGySjZiu1HHTmhSFDUmcJ0=; b=t74JDiV5ROTr+5
-	QH99uzcytyI+g1G7hiNZ3tOXfhOCFWKNHLl7sm96Jivzvw5MGiYDrSw8YTLcXPG1UncnJh2uSPXah
-	o00SlhnUMmJjpboa0xe+BF9jm1mSysKImcx5BIigf2GcOdYhUVQJs7wg8EunLrceV4YPgTtewleXp
-	gEo2IdfzOR43KbXVaxrnNGjlumQ3aa//QCLnrU3at7OTQ+8F59SfrtTAD9bEV6I4eiHvpNXuww82g
-	f9VkLAHu4BPbGULCVXaaeQvM250djiNdcewYHCq3p4yI0JH6fN9NltBu4IpM162KUipouCrQdGdJr
-	c7+fh+zjxgiRbZxc39jg==;
+	In-Reply-To:List-Owner; bh=CqBCSmvFE101O9RTzE1bhSgOCJZE1gvS/fnZKI7iL6U=; b=YV
+	AfvLA74oythZZOJ57Q4Idqsoaf14sFlpbu85f5QO3KoyRtEBCfdLeWUPY+tm/cof99URMq2HIHKYI
+	yW3c9rD3BzJOzppqbd4EuBBTBwXTawXQE7Nqqv3nDeNF3uWG5+gqeH2hwuGwnqk6GUOhQVBNphOIf
+	7lQLU8IK/IAcfzDYXcHJ6hQkoM1yTMbVwr2WM0N6L6gBYAMsdm+bOsjwhQjgRr7NA62P1WqaOc10U
+	fkU9kjFwWdjXvAtdE8YQtio5kov/+KtM9rneCTB2zImWK4eNOttcJbtYS+MD+Lna97j0Teg9yRbv3
+	P46CbTaAa08TnTkDYA6zRgdpVwFCHwug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jG7y4-0006j2-Id; Sun, 22 Mar 2020 21:17:12 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jGI5F-0005mQ-RT; Mon, 23 Mar 2020 08:05:17 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jG7xx-0006iT-Mi
- for kexec@lists.infradead.org; Sun, 22 Mar 2020 21:17:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584911821;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=eHLmjOQ920byhtpHwEuCdzQUYFmEvLtBICbF7Rq1MAw=;
- b=d5W6RVvcLC/lmwZY8oifxv/wqoy3x2j8qZQYv40+xtAjDpsRBcshRahI8xz+Bym1MDEKWB
- zGhI1yH80+TffbHIvuF/1AMdsOqNQiQoYm9Rt2/NI8QWjYkoGZP4Qbh83OKq2u0wfVHSJV
- ypzxSKv9tPa+aL72P54xEQyzzJlq7oI=
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
- [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-344-2tHxJsV2M5qObKIWICOImw-1; Sun, 22 Mar 2020 17:16:57 -0400
-X-MC-Unique: 2tHxJsV2M5qObKIWICOImw-1
-Received: by mail-qk1-f199.google.com with SMTP id z17so10874486qki.18
- for <kexec@lists.infradead.org>; Sun, 22 Mar 2020 14:16:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DXIJoxHp4TvUHZ3JTwp4l4comq+ya9N17rsqEvy6kiE=;
- b=NChvtoIYo+1bnXapYmV+IqvZZIT9sXVoXnt+3SNC09OTgOoH0MextfQEH1u52B0MT1
- 5nGnR482dlUaQyoq7ljnK302LCluaAONKTDLitNVDNj4+ZMB57uhLeSpYpRwn8m9aYQb
- d71/h5hSp4IPvxBLL8Itx3q4sLJtOI0Uyu/2SWpDqTBZInx4Kb+3zCeaby5Vz6891R2r
- S//qiiI8ILZk/2WpYTl3/aiwZ/AiIE11nu2MzSHMcZXHcSbX7y1y30ewRh3uTXR4be+L
- vZB6uWYTL55qejsZ+NB+r+VGvYDq9fTPDgpYHvYDk0LYM8XI8NjlK7wHmu4ihHocOYlE
- XaYQ==
-X-Gm-Message-State: ANhLgQ1jz+Yl5KdNSt2kM9A0Lh76io+TApF1ojQlITe6xTcRyVh0EiZU
- Xgi2l5ZjffLCJBr+vn9r40XZwUALZG2dSEL8vzi0bRw3BXcKqsXDlN/4yYlsIr9e9Z2gnZDOqe9
- hIqxV6avFRk4dRllR1UCDRMYbt3cXa2lsVzPB
-X-Received: by 2002:a37:b305:: with SMTP id c5mr18180070qkf.213.1584911817145; 
- Sun, 22 Mar 2020 14:16:57 -0700 (PDT)
-X-Google-Smtp-Source: ADFU+vudOG0vjJn5qtN+RpBOLST8HoZNoVSEFlD84LmkWLl+x2tlfzhoVy81LqeE7vnML3XHmxMa2IfemUvwSJgxsLI=
-X-Received: by 2002:a37:b305:: with SMTP id c5mr18180054qkf.213.1584911816857; 
- Sun, 22 Mar 2020 14:16:56 -0700 (PDT)
-MIME-Version: 1.0
-References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
- <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
- <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
- <CACi5LpNJVw_POqvmUD2fHWJkS=3bK4PzWCD_9Hs_K90aQ4gczw@mail.gmail.com>
- <7d76b7cf-8606-5fa6-e166-5de785bd3012@canonical.com>
- <5f338241-8842-18d0-21df-cfeb0826d725@canonical.com>
- <bec06a39472b31e0bb343dfb762ae827fb305f66.camel@infradead.org>
- <e21d3f34-afc3-8f3b-9f40-574aa5c00495@canonical.com>
- <2080da6e-770b-a69e-59b2-0f23813188db@canonical.com>
-In-Reply-To: <2080da6e-770b-a69e-59b2-0f23813188db@canonical.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Mon, 23 Mar 2020 02:46:45 +0530
-Message-ID: <CACi5LpMkEnerJcL6r+-0__6OM8Dq_uFhtobFYJTEif6NX_guFg@mail.gmail.com>
-Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
-To: "Guilherme G. Piccoli" <gpiccoli@canonical.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+ id 1jGI5C-0005kz-9H
+ for kexec@lists.infradead.org; Mon, 23 Mar 2020 08:05:16 +0000
+Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20200323080511epoutp04dc5287504c67c81871b208a0cb4b94da~_4EZcQYfC1426014260epoutp04t
+ for <kexec@lists.infradead.org>; Mon, 23 Mar 2020 08:05:11 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20200323080511epoutp04dc5287504c67c81871b208a0cb4b94da~_4EZcQYfC1426014260epoutp04t
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1584950711;
+ bh=ykVbZIJ/4zPTvXN/17saU6Lgow62XEKLfWMfKVPs444=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=PYxYnDukUE/mhxHhKmnRyMEUH6wWDLu+MSMbpfVyh9bVNG/2VUUE6BxiiYlv8+QBJ
+ VCSjUsxSWs0y/f3Dl1MmJ2c/FiPWS/OpSN+iz5dUQ3tZkkeV8bgMcPI8t4SBVd7obB
+ ApyqIbqjuL0nhuScbrvV4ovNGVZJ+4OvjHLqiLtE=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTP id
+ 20200323080510epcas1p45d75c9ffd58750ec792de3c4e171ad9f~_4EYpd_oX1773617736epcas1p4u;
+ Mon, 23 Mar 2020 08:05:10 +0000 (GMT)
+Received: from epsmges1p2.samsung.com (unknown [182.195.40.163]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 48m6PJ4YhyzMqYkp; Mon, 23 Mar
+ 2020 08:05:08 +0000 (GMT)
+Received: from epcas1p2.samsung.com ( [182.195.41.46]) by
+ epsmges1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ DB.49.04140.4BD687E5; Mon, 23 Mar 2020 17:05:08 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20200323080507epcas1p44cdb9ecb70a7a7395b3acddeda3cfd89~_4EV8G1Lz1502515025epcas1p47;
+ Mon, 23 Mar 2020 08:05:07 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200323080507epsmtrp28c4b875b8eb660b709229a54f0557a32~_4EV7FeiX0358503585epsmtrp2z;
+ Mon, 23 Mar 2020 08:05:07 +0000 (GMT)
+X-AuditID: b6c32a36-fa3ff7000000102c-29-5e786db4b76d
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 36.15.04158.3BD687E5; Mon, 23 Mar 2020 17:05:07 +0900 (KST)
+Received: from jaewon-linux.10.32.193.11 (unknown [10.253.104.82]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200323080507epsmtip19cc9783e8c5f665b0e45a27cc3c34d3c~_4EVs_MxA0126101261epsmtip1M;
+ Mon, 23 Mar 2020 08:05:07 +0000 (GMT)
+From: Jaewon Kim <jaewon31.kim@samsung.com>
+To: gregkh@linuxfoundation.org, leon@kernel.org, vbabka@suse.cz,
+ adobriyan@gmail.com, akpm@linux-foundation.org, labbott@redhat.com,
+ sumit.semwal@linaro.org, minchan@kernel.org, ngupta@vflare.org,
+ sergey.senozhatsky.work@gmail.com, kasong@redhat.com, bhe@redhat.com
+Subject: [RFC PATCH v2 0/3] meminfo_extra: introduce meminfo extra
+Date: Mon, 23 Mar 2020 17:05:00 +0900
+Message-Id: <20200323080503.6224-1-jaewon31.kim@samsung.com>
+X-Mailer: git-send-email 2.13.7
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrBJsWRmVeSWpSXmKPExsWy7bCmnu6W3Io4gy3tqhbTG70s5qxfw2Zx
+ /sEvNovmxevZLLo3z2S06H3/isli+bvTjBa7T39lsli55weTxZRfS5ktNn/vYLO4vGsOm8W9
+ Nf9ZLZZ9fc9usaFlFrvFowmTmCxO3f3MbjG7sY/RQchj56y77B6bVnWyeWz6NInd4861PWwe
+ J2b8ZvHYP3cNu8fmJfUe7/ddZfPo27KK0ePMgiPsHjs/bWb1+LxJLoAnKscmIzUxJbVIITUv
+ OT8lMy/dVsk7ON453tTMwFDX0NLCXEkhLzE31VbJxSdA1y0zB+g9JYWyxJxSoFBAYnGxkr6d
+ TVF+aUmqQkZ+cYmtUmpBSk6BoUGBXnFibnFpXrpecn6ulaGBgZEpUGVCTsbDTR1MBf/EKmad
+ /cXYwHhZsIuRk0NCwERi2ultrF2MXBxCAjsYJV6//cAI4XxilLh8dQOU841R4vn2HpYuRg6w
+ lqWTkyHiexklvhzawg7hfGeUeHvnERvIXDYBbYn3CyaBzRUR6GeSWHR3EQuIwyywllFiVddd
+ JpAqYQEnic/7zrGC2CwCqhKz5vWwg9i8AjYSV37eYYRYJy+x8D8zSK+EQDe7xOQT3UwQl7tI
+ vH93lAXCFpZ4dXwLO4QtJfH53V42iIZmoJNmbmaEcFoYJe5u6mWEqDKW6O25wAyygVlAU2L9
+ Ln2IsKLEzt9zwUqYBfgk3n3tYYU4gleio00IokRNouXZV1YIW0bi779nULaHxN7HO8HuERKI
+ ldi64hT7BEbZWQgLFjAyrmIUSy0ozk1PLTYsMEKOp02M4FSrZbaDcdE5n0OMAhyMSjy8Dd3l
+ cUKsiWXFlbmHGCU4mJVEeDenVsQJ8aYkVlalFuXHF5XmpBYfYjQFht5EZinR5HxgHsgriTc0
+ NTI2NrYwMTM3MzVWEuedej0nTkggPbEkNTs1tSC1CKaPiYNTqoGRudpAU+TkTP+i7lUsHjtD
+ q8ps52x4t21WJD9fCKfImdiyxnVlmztPScm2WTXmZFrMW/V+6j+fRQwvtr2IcfT0WFdRLMz8
+ oLZoccMV7dUTg+JWPmD4vVC/40PXx6ePRXIqJjfUXC68elhBks+6YFlnVFHa7XWP2JL0vvPs
+ 6paLnMoVFdE5zUyJpTgj0VCLuag4EQAOMLjYywMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrILMWRmVeSWpSXmKPExsWy7bCSnO7m3Io4g1VzjSymN3pZzFm/hs3i
+ /INfbBbNi9ezWXRvnslo0fv+FZPF8nenGS12n/7KZLFyzw8miym/ljJbbP7ewWZxedccNot7
+ a/6zWiz7+p7dYkPLLHaLRxMmMVmcuvuZ3WJ2Yx+jg5DHzll32T02repk89j0aRK7x51re9g8
+ Tsz4zeKxf+4ado/NS+o93u+7yubRt2UVo8eZBUfYPXZ+2szq8XmTXABPFJdNSmpOZllqkb5d
+ AlfGw00dTAX/xCpmnf3F2MB4WbCLkYNDQsBEYunk5C5GLg4hgd2MEvdvXWPrYuQEistIvDn/
+ lAWiRlji8OFikLCQwFdGie5r1iA2m4C2xPsFk1hBbBGB+UwS/e38IHOYBTYzSkxc2swCkhAW
+ cJL4vO8cWBGLgKrErHk97CA2r4CNxJWfdxgh5stLLPzPPIGRZwEjwypGydSC4tz03GLDAqO8
+ 1HK94sTc4tK8dL3k/NxNjOCA19LawXjiRPwhRgEORiUe3hu95XFCrIllxZW5hxglOJiVRHg3
+ p1bECfGmJFZWpRblxxeV5qQWH2KU5mBREueVzz8WKSSQnliSmp2aWpBaBJNl4uCUamAsDvzz
+ 8UTvZqeMrZ4zBdeZmb3Zuof/w5S3ExfcdNTlNuzs+L+N00Kcyfjw9uO+zG88me3E9jrPmRr0
+ XNh4ykFLoT3lttMk1j+ovmdmH6b65fgHiRtnDjDf8v/aud3koEl0lZJ7yfqdk/hCNnP+/pCz
+ pdUtLEBtVpHi1JwdcWuFhe49PHXpB7OVEktxRqKhFnNRcSIAV4zkQHQCAAA=
+X-CMS-MailID: 20200323080507epcas1p44cdb9ecb70a7a7395b3acddeda3cfd89
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20200323080507epcas1p44cdb9ecb70a7a7395b3acddeda3cfd89
+References: <CGME20200323080507epcas1p44cdb9ecb70a7a7395b3acddeda3cfd89@epcas1p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200322_141705_945802_E4396763 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_010514_689215_42F18895 
+X-CRM114-Status: GOOD (  15.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -107,82 +142,82 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Guowen Shan <gshan@redhat.com>, Baoquan He <bhe@redhat.com>,
- Dave Young <dyoung@redhat.com>, kexec mailing list <kexec@lists.infradead.org>,
- Gavin Guo <gavin.guo@canonical.com>, pedro.principeza@canonical.com,
- David Woodhouse <dwmw2@infradead.org>, Vivek Goyal <vgoyal@redhat.com>
+Cc: Jaewon Kim <jaewon31.kim@samsung.com>, linux-api@vger.kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ jaewon31.kim@gmail.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello Guilherme,
+/proc/meminfo or show_free_areas does not show full system wide memory
+usage status because memory stats do not track all memory allocations.
+There seems to be huge hidden memory especially on embedded system. It
+is because some HW IPs in the system use common DRAM memory instead of
+internal memory. Device drivers directly request huge pages from the
+page allocator with alloc_pages.
 
-On Fri, Mar 20, 2020 at 9:10 PM Guilherme G. Piccoli
-<gpiccoli@canonical.com> wrote:
+In Android system, most of those hidden memory seems to be vmalloc
+pages, ion system heap memory, graphics memory, and memory for DRAM
+based compressed swap storage. They may be shown in other node but it
+seems to be useful if /proc/meminfo_extra shows all those extra memory
+information. And show_mem also need to print the info in oom situation.
 
-Thanks for writing again. I was caught up in trying several other
-suggestions/code-snippets to further debug this.
-I tried several combinations - turning iommu off, turning off swiotlb
-in the kexec kernel and testing various combinations with
-retain_initrd added to the kexec kernel's bootargs.
+Fortunately vmalloc pages is already shown by commit 97105f0ab7b8
+("mm: vmalloc: show number of vmalloc pages in /proc/meminfo"). Swap
+memory using zsmalloc can be seen through vmstat by commit 91537fee0013
+("mm: add NR_ZSMALLOC to vmstat") but not on /proc/meminfo.
 
-But nothing seems to fix the nested repetitive kexec reboot attempts
-on the aws t3 machines I have. It just becomes better on few instances
-(i.e. the kexec reboots would survive around 10 nested repetitive
-attempts), while on the other(s) the failure can be seen quite
-frequently (approx ~3 kexec reboot attempts).
+Memory usage of specific driver can be various so that showing the usage
+through upstream meminfo.c is not easy. To print the extra memory usage
+of a driver, introduce following APIs. Each driver needs to count as
+atomic_long_t.
 
-> Well, it seems we have some good results with this patch [0] - the idea
-> behind the issue is that ena network driver has no PCI shutdown()
-> handler, which would be called to gently quiesce the device before the
-> kexec. The PCI stack in this case clears the master bit of the device
-> configuration space, effectively stopping all the DMA transactions. But
-> then, when the system boots the kexec'ed kernel, the network device
-> firmware may send a memory write regarding that stopped DMA transaction
-> (that is now invalid), corrupting some random kernel memory area.
->
-> I've ran 1000 kexecs tests with mainline (5.6-rc5) + this patch and no
-> failures were observed. Also, I'm running a test with Ubuntu 5.3 kernel
-> + this patch and achieved > 450 runs now, with no failures (test is
-> ongoing).
->
-> I've tried to dump the initrd content (could be useful now to identify
-> the corruption signature, maybe matching some ena admin queue periodic
-> task) but I had trouble collecting the dmesg in case of failure. It gets
-> huge and requires a big ramoops allocation, which unfortunately prevents
-> the issue from happening (I guess the corruption ends-up happening in
-> the ramoops reserved area, not initrd area anymore).
+int register_meminfo_extra(atomic_long_t *val, int shift,
+			   const char *name);
+int unregister_meminfo_extra(atomic_long_t *val);
 
-This is a really good debug and resulting patch.
-I ran almost ~60 kexec repetitive attempts last night and also
-repeated the same today morning and
-the issue seems to get fixed for me with upstream kernel 5.6.0-rc6+
-with this patch.
+Currently register ION system heap allocator and zsmalloc pages.
+Additionally tested on local graphics driver.
 
-I am leaving a test running with RHEL kernel + this patch overnight
-and will have more updates to share by tomorrow morning.
+i.e) cat /proc/meminfo_extra | tail -3
+IonSystemHeap:    242620 kB
+ZsPages:          203860 kB
+GraphicDriver:    196576 kB
 
-> Bhupesh, I've noticed that suddenly the Red Hat bugzilla got private -
+i.e.) show_mem on oom
+<6>[  420.856428]  Mem-Info:
+<6>[  420.856433]  IonSystemHeap:32813kB ZsPages:44114kB GraphicDriver::13091kB
+<6>[  420.856450]  active_anon:957205 inactive_anon:159383 isolated_anon:0
 
-Oops. I will check.
+---
+v2: move to /proc/meminfo_extra, and use rcu
+v1: print info at /proc/meminfo
+On v1 patch, there was not resolved discussion about the logic. There
+seems to be agreement on showing memory usage, but there was a lack of
+consensus on way of showing the information. Other opinion is using
+/sys/ as separate file for each driver.
+---
 
-> is it okay to add me in CC list so I can see it?
+Jaewon Kim (3):
+  meminfo_extra: introduce meminfo extra
+  mm: zsmalloc: include zs page size in meminfo extra
+  android: ion: include system heap size in meminfo extra
 
-Sure. I tried doing it, but seems Bugzilla is not happy as it keeps
-complaining that you are not registered on BZ,
-I will try to find out internally how to get around the issue.
+ drivers/staging/android/ion/ion.c             |   2 +
+ drivers/staging/android/ion/ion.h             |   1 +
+ drivers/staging/android/ion/ion_system_heap.c |   2 +
+ fs/proc/Makefile                              |   1 +
+ fs/proc/meminfo_extra.c                       | 123 ++++++++++++++++++++++++++
+ include/linux/mm.h                            |   4 +
+ mm/page_alloc.c                               |   1 +
+ mm/zsmalloc.c                                 |   2 +
+ 8 files changed, 136 insertions(+)
+ create mode 100644 fs/proc/meminfo_extra.c
 
-> Thanks for all the collaboration, I hope the issue was figured and solved!
-
-Sure. Thanks a lot for your inputs and trying the suggestions I posted
-on the Bugzilla ticket.
-I will soon share an update with RHEL/Fedora kernel kexec tests with
-this patch applied and also reply with a Tested-by for the upstream
-patch in the relevant thread.
-
-Thanks,
-Bhupesh
+-- 
+2.13.7
 
 
 _______________________________________________
