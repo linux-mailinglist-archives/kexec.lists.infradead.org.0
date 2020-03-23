@@ -2,84 +2,119 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2152F18F3FE
-	for <lists+kexec@lfdr.de>; Mon, 23 Mar 2020 13:01:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6A7E18F72A
+	for <lists+kexec@lfdr.de>; Mon, 23 Mar 2020 15:47:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DbmN0/TjnSlahpZlKfyZB7TI5brkbF3APO4dBlasjC0=; b=HF2KHPSkvL7vEg
-	68Ckg0zWcCUcluoJklFNF3+JgByq0rW9bpjqw98KFlVyOoTHdUG9+9959NwUMlWh4pAbVLSKzLvCs
-	I2Td5oNzYZLIjdOXh+VxljTdpj2lsyay3oDEzmIaPsHnc/DiC5rhqNKkAQw9O5JnNh8wY1pT9Apk3
-	CRA+iuG8xepEPnFTLK7fnYMrI1MdKLM3/szdc9MoRaAbLNdNAgLPfUZ+rlHO7c7c2WDCExiiTnSVy
-	wGLtSKIiYmDGNhdHa4jZwSsDGKc3zj0yo2oI2buTUYlb9MpH9c01Nm+JOX8FEY9LpuDC6VoAjrydo
-	EWI2qup8PhLSln3kt4iQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=H+4vfpw9P1xk5iADh0eqzj1SM3YME2mXcADNea1p86s=; b=rd+XlgDYydSyaV
+	y1Tao1SsWSorfMGlqPEfpZhZQoX5sX4w9wZ8ruXqIr9SSBnF4htTEwXZzlR/uAxRhC/M29gJZ+TlI
+	EeToop5wrKI0+ijbHriOdLfmcOQQvainfrnTlP5u6A68B3hr3472S0INTy9fNmiUEXc9YNvgR/ac6
+	MdMseVMYaAer8lYNfAJi9KEHKluHoLuse9s+wac7YgrM9dmXblRtDMhD73GsInpiqmW1D2wScdTgz
+	QH90fx0BTKQbnqf1qlMepmo6AvvqZmRGPL+bwvsnfKw+BCAHQBnQwxArabYtLQOk04CWi/e0PDC+O
+	V/nqU6h632xaoDosFbgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGLle-0000oG-Cd; Mon, 23 Mar 2020 12:01:18 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+	id 1jGOM2-00012b-4e; Mon, 23 Mar 2020 14:47:02 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGLla-0000ni-Qc
- for kexec@lists.infradead.org; Mon, 23 Mar 2020 12:01:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1584964871;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=P+3Ok5a+3t9Z9rUpZF1j8rUoWy/hS/ROQXyPscaiMOE=;
- b=R3u9zGhlKZK88CdtVZHr1LC7ieY6ekbeThwpWGGbSQoo6EoD1XhlwQoZoOTbOcfuIznb36
- C33zEudbPWUlh8TzxigaFDYhid2gBdQ4DM93ddiw55vLbD3pSECuFUXK7TK6iStw3nDKdT
- MBtZs7xRRlWyz6RCPnsySqw21shIkKg=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-26-vHvO5dqPPBC-nWeANp4hUg-1; Mon, 23 Mar 2020 08:00:59 -0400
-X-MC-Unique: vHvO5dqPPBC-nWeANp4hUg-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 7813E101FC60;
- Mon, 23 Mar 2020 12:00:56 +0000 (UTC)
-Received: from dhcp-128-65.nay.redhat.com (ovpn-12-36.pek2.redhat.com
- [10.72.12.36])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 9C00C194BB;
- Mon, 23 Mar 2020 12:00:49 +0000 (UTC)
-Date: Mon, 23 Mar 2020 20:00:44 +0800
-From: Dave Young <dyoung@redhat.com>
-To: Jaewon Kim <jaewon31.kim@samsung.com>
-Subject: Re: [RFC PATCH v2 1/3] meminfo_extra: introduce meminfo extra
-Message-ID: <20200323120044.GA29433@dhcp-128-65.nay.redhat.com>
-References: <20200323080503.6224-1-jaewon31.kim@samsung.com>
- <CGME20200323080508epcas1p387c9c19b480da53be40fe5d51e76a477@epcas1p3.samsung.com>
- <20200323080503.6224-2-jaewon31.kim@samsung.com>
+ id 1jGOLy-00011C-Cc
+ for kexec@lists.infradead.org; Mon, 23 Mar 2020 14:46:59 +0000
+Received: from mail-qt1-f200.google.com ([209.85.160.200])
+ by youngberry.canonical.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
+ (envelope-from <gpiccoli@canonical.com>) id 1jGOLs-0000V8-6k
+ for kexec@lists.infradead.org; Mon, 23 Mar 2020 14:46:52 +0000
+Received: by mail-qt1-f200.google.com with SMTP id o10so13185249qtk.22
+ for <kexec@lists.infradead.org>; Mon, 23 Mar 2020 07:46:52 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=tcTwGXTpFSN4zLwSK/NM+QcF5XlvwKUs5msMyO3rUsY=;
+ b=OF8yr+UQaMZ/PJHV1bOKFoJxZi/bHcrHaOa2SyHy164lPy38sTK8QPH8m8vYDtVK4m
+ slQG0T79M9eQoWrBBxDPq7/xdUg1ajtaFswyFwQ8XuGHz8UY7PC29cobnSq/lre5X5Rh
+ obyxmVT8wyuNYbpQe2SACG/l2rCy7+VnHLJA9xxu8HqDyByHJNQhMjiwdjrJNUQf35mH
+ s4/D8klx7kTOnqhBfL/KLgdoykfgiJba8Fws8i0E2/ImMbVgF0phXA0areL7a7Iz1mdf
+ jPSNM3jFPpMOFrcYVZ/FpeLHDSMOs1xd09ZidDqZO9AjT6w5TMLuP1OLJuag9LDQ93/2
+ 9BrA==
+X-Gm-Message-State: ANhLgQ1eY+SarcKU//7BJTLp9Z/hAOqh+elomUXEPulUjOPGd2gj33w8
+ 7dYBKf+yLm/3tdjnmLg2cua/htDHQ3XFKWtlsBjzSmmyz7vyaScaXFUdO/5p4gX4jpRNIrUBBia
+ BGBnwgg6qxnSotGZiQQFafV9vY5kA5GdwZi3QYA==
+X-Received: by 2002:aed:2822:: with SMTP id r31mr11984380qtd.87.1584974811252; 
+ Mon, 23 Mar 2020 07:46:51 -0700 (PDT)
+X-Google-Smtp-Source: ADFU+vsI3+CVfbfwFlQtVjVmWVlQCYAW5EuHSKRtqclPjvq7g4IyV/60+BPvbtJ65ZHd7whgut05DQ==
+X-Received: by 2002:aed:2822:: with SMTP id r31mr11984352qtd.87.1584974810946; 
+ Mon, 23 Mar 2020 07:46:50 -0700 (PDT)
+Received: from [192.168.1.75] (189-47-87-73.dsl.telesp.net.br. [189.47.87.73])
+ by smtp.gmail.com with ESMTPSA id
+ m1sm12585171qtm.22.2020.03.23.07.46.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 23 Mar 2020 07:46:50 -0700 (PDT)
+Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
+To: Bhupesh Sharma <bhsharma@redhat.com>
+References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
+ <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
+ <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
+ <CACi5LpNJVw_POqvmUD2fHWJkS=3bK4PzWCD_9Hs_K90aQ4gczw@mail.gmail.com>
+ <7d76b7cf-8606-5fa6-e166-5de785bd3012@canonical.com>
+ <5f338241-8842-18d0-21df-cfeb0826d725@canonical.com>
+ <bec06a39472b31e0bb343dfb762ae827fb305f66.camel@infradead.org>
+ <e21d3f34-afc3-8f3b-9f40-574aa5c00495@canonical.com>
+ <2080da6e-770b-a69e-59b2-0f23813188db@canonical.com>
+ <CACi5LpMkEnerJcL6r+-0__6OM8Dq_uFhtobFYJTEif6NX_guFg@mail.gmail.com>
+From: "Guilherme G. Piccoli" <gpiccoli@canonical.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=gpiccoli@canonical.com; prefer-encrypt=mutual; keydata=
+ mQENBFpVBxcBCADPNKmu2iNKLepiv8+Ssx7+fVR8lrL7cvakMNFPXsXk+f0Bgq9NazNKWJIn
+ Qxpa1iEWTZcLS8ikjatHMECJJqWlt2YcjU5MGbH1mZh+bT3RxrJRhxONz5e5YILyNp7jX+Vh
+ 30rhj3J0vdrlIhPS8/bAt5tvTb3ceWEic9mWZMsosPavsKVcLIO6iZFlzXVu2WJ9cov8eQM/
+ irIgzvmFEcRyiQ4K+XUhuA0ccGwgvoJv4/GWVPJFHfMX9+dat0Ev8HQEbN/mko/bUS4Wprdv
+ 7HR5tP9efSLucnsVzay0O6niZ61e5c97oUa9bdqHyApkCnGgKCpg7OZqLMM9Y3EcdMIJABEB
+ AAG0LUd1aWxoZXJtZSBHLiBQaWNjb2xpIDxncGljY29saUBjYW5vbmljYWwuY29tPokBNwQT
+ AQgAIQUCWmClvQIbAwULCQgHAgYVCAkKCwIEFgIDAQIeAQIXgAAKCRDOR5EF9K/7Gza3B/9d
+ 5yczvEwvlh6ksYq+juyuElLvNwMFuyMPsvMfP38UslU8S3lf+ETukN1S8XVdeq9yscwtsRW/
+ 4YoUwHinJGRovqy8gFlm3SAtjfdqysgJqUJwBmOtcsHkmvFXJmPPGVoH9rMCUr9s6VDPox8f
+ q2W5M7XE9YpsfchS/0fMn+DenhQpV3W6pbLtuDvH/81GKrhxO8whSEkByZbbc+mqRhUSTdN3
+ iMpRL0sULKPVYbVMbQEAnfJJ1LDkPqlTikAgt3peP7AaSpGs1e3pFzSEEW1VD2jIUmmDku0D
+ LmTHRl4t9KpbU/H2/OPZkrm7809QovJGRAxjLLPcYOAP7DUeltveuQENBFpVBxcBCADbxD6J
+ aNw/KgiSsbx5Sv8nNqO1ObTjhDR1wJw+02Bar9DGuFvx5/qs3ArSZkl8qX0X9Vhptk8rYnkn
+ pfcrtPBYLoux8zmrGPA5vRgK2ItvSc0WN31YR/6nqnMfeC4CumFa/yLl26uzHJa5RYYQ47jg
+ kZPehpc7IqEQ5IKy6cCKjgAkuvM1rDP1kWQ9noVhTUFr2SYVTT/WBHqUWorjhu57/OREo+Tl
+ nxI1KrnmW0DbF52tYoHLt85dK10HQrV35OEFXuz0QPSNrYJT0CZHpUprkUxrupDgkM+2F5LI
+ bIcaIQ4uDMWRyHpDbczQtmTke0x41AeIND3GUc+PQ4hWGp9XABEBAAGJAR8EGAEIAAkFAlpV
+ BxcCGwwACgkQzkeRBfSv+xv1wwgAj39/45O3eHN5pK0XMyiRF4ihH9p1+8JVfBoSQw7AJ6oU
+ 1Hoa+sZnlag/l2GTjC8dfEGNoZd3aRxqfkTrpu2TcfT6jIAsxGjnu+fUCoRNZzmjvRziw3T8
+ egSPz+GbNXrTXB8g/nc9mqHPPprOiVHDSK8aGoBqkQAPZDjUtRwVx112wtaQwArT2+bDbb/Y
+ Yh6gTrYoRYHo6FuQl5YsHop/fmTahpTx11IMjuh6IJQ+lvdpdfYJ6hmAZ9kiVszDF6pGFVkY
+ kHWtnE2Aa5qkxnA2HoFpqFifNWn5TyvJFpyqwVhVI8XYtXyVHub/WbXLWQwSJA4OHmqU8gDl
+ X18zwLgdiQ==
+Message-ID: <2e1ed40e-7aaa-239f-8b1a-23dd7fa100f5@canonical.com>
+Date: Mon, 23 Mar 2020 11:46:46 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323080503.6224-2-jaewon31.kim@samsung.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+In-Reply-To: <CACi5LpMkEnerJcL6r+-0__6OM8Dq_uFhtobFYJTEif6NX_guFg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_050114_941091_B56F455D 
-X-CRM114-Status: GOOD (  20.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200323_074658_567382_F02A2452 
+X-CRM114-Status: GOOD (  22.56  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.128.21.74 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [91.189.89.112 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,229 +126,87 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: sergey.senozhatsky.work@gmail.com, leon@kernel.org, linux-mm@kvack.org,
- gregkh@linuxfoundation.org, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, sumit.semwal@linaro.org, minchan@kernel.org,
- bhe@redhat.com, ngupta@vflare.org, linux-api@vger.kernel.org,
- jaewon31.kim@gmail.com, akpm@linux-foundation.org, labbott@redhat.com,
- adobriyan@gmail.com, vbabka@suse.cz, kasong@redhat.com
+Cc: Guowen Shan <gshan@redhat.com>, Baoquan He <bhe@redhat.com>,
+ Dave Young <dyoung@redhat.com>, kexec mailing list <kexec@lists.infradead.org>,
+ Gavin Guo <gavin.guo@canonical.com>, pedro.principeza@canonical.com,
+ David Woodhouse <dwmw2@infradead.org>, Vivek Goyal <vgoyal@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Jaewon,
-
-On 03/23/20 at 05:05pm, Jaewon Kim wrote:
-> Provide APIs to drivers so that they can show its memory usage on
-> /proc/meminfo_extra.
+On 22/03/2020 18:16, Bhupesh Sharma wrote:
+> Hello Guilherme,
 > 
-> int register_meminfo_extra(atomic_long_t *val, int shift,
-> 			   const char *name);
-> int unregister_meminfo_extra(atomic_long_t *val);
+> On Fri, Mar 20, 2020 at 9:10 PM Guilherme G. Piccoli
+> <gpiccoli@canonical.com> wrote:
 > 
-> Signed-off-by: Jaewon Kim <jaewon31.kim@samsung.com>
-> ---
-> v2: move to /proc/meminfo_extra as a new file, meminfo_extra.c
->     use rcu to reduce lock overhead
-> v1: print info at /proc/meminfo
-> ---
->  fs/proc/Makefile        |   1 +
->  fs/proc/meminfo_extra.c | 123 ++++++++++++++++++++++++++++++++++++++++++++++++
->  include/linux/mm.h      |   4 ++
->  mm/page_alloc.c         |   1 +
->  4 files changed, 129 insertions(+)
->  create mode 100644 fs/proc/meminfo_extra.c
+> Thanks for writing again. I was caught up in trying several other
+> suggestions/code-snippets to further debug this.
+> I tried several combinations - turning iommu off, turning off swiotlb
+> in the kexec kernel and testing various combinations with
+> retain_initrd added to the kexec kernel's bootargs.
 > 
-> diff --git a/fs/proc/Makefile b/fs/proc/Makefile
-> index bd08616ed8ba..83d2f55591c6 100644
-> --- a/fs/proc/Makefile
-> +++ b/fs/proc/Makefile
-> @@ -19,6 +19,7 @@ proc-y	+= devices.o
->  proc-y	+= interrupts.o
->  proc-y	+= loadavg.o
->  proc-y	+= meminfo.o
-> +proc-y	+= meminfo_extra.o
->  proc-y	+= stat.o
->  proc-y	+= uptime.o
->  proc-y	+= util.o
-> diff --git a/fs/proc/meminfo_extra.c b/fs/proc/meminfo_extra.c
-> new file mode 100644
-> index 000000000000..bd3f0d2b7fb7
-> --- /dev/null
-> +++ b/fs/proc/meminfo_extra.c
-> @@ -0,0 +1,123 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +#include <linux/mm.h>
-> +#include <linux/proc_fs.h>
-> +#include <linux/seq_file.h>
-> +#include <linux/slab.h>
-> +
-> +static void show_val_kb(struct seq_file *m, const char *s, unsigned long num)
-> +{
-> +	seq_put_decimal_ull_width(m, s, num << (PAGE_SHIFT - 10), 8);
-> +	seq_write(m, " kB\n", 4);
-> +}
-> +
-> +static LIST_HEAD(meminfo_head);
-> +static DEFINE_SPINLOCK(meminfo_lock);
-> +
-> +#define NAME_SIZE      15
-> +#define NAME_BUF_SIZE  (NAME_SIZE + 2) /* ':' and '\0' */
-> +
-> +struct meminfo_extra {
-> +	struct list_head list;
-> +	atomic_long_t *val;
-> +	int shift_for_page;
+> But nothing seems to fix the nested repetitive kexec reboot attempts
+> on the aws t3 machines I have. It just becomes better on few instances
+> (i.e. the kexec reboots would survive around 10 nested repetitive
+> attempts), while on the other(s) the failure can be seen quite
+> frequently (approx ~3 kexec reboot attempts).
 
-Can this be simplified to use a bytes value without an extra shift?
+Hi Bhupesh, thanks for the tests! Indeed, this problem is difficult to
+prevent with those parameters, and it's quite interesting to see how it
+may vary among instances.
 
-> +	char name[NAME_BUF_SIZE];
-> +	char name_pad[NAME_BUF_SIZE];
-> +};
-> +
-There should be document about below function here.
 
-> +int register_meminfo_extra(atomic_long_t *val, int shift, const char *name)
-> +{
-> +	struct meminfo_extra *meminfo, *memtemp;
-> +	int len;
-> +	int error = 0;
-> +
-> +	meminfo = kzalloc(sizeof(*meminfo), GFP_KERNEL);
-> +	if (!meminfo) {
-> +		error = -ENOMEM;
-> +		goto out;
-> +	}
-> +
-> +	meminfo->val = val;
-> +	meminfo->shift_for_page = shift;
-> +	strncpy(meminfo->name, name, NAME_SIZE);
-> +	len = strlen(meminfo->name);
-> +	meminfo->name[len] = ':';
-> +	strncpy(meminfo->name_pad, meminfo->name, NAME_BUF_SIZE);
-> +	while (++len < NAME_BUF_SIZE - 1)
-> +		meminfo->name_pad[len] = ' ';
-> +
-> +	spin_lock(&meminfo_lock);
-> +	list_for_each_entry_rcu(memtemp, &meminfo_head, list) {
-> +		if (memtemp->val == val) {
-> +			error = -EINVAL;
-> +			break;
-> +		}
-> +	}
-> +	if (!error)
-> +		list_add_tail_rcu(&meminfo->list, &meminfo_head);
-> +	spin_unlock(&meminfo_lock);
-> +	if (error)
-> +		kfree(meminfo);
-> +out:
-> +
-> +	return error;
-> +}
-> +EXPORT_SYMBOL(register_meminfo_extra);
-> +
-> +int unregister_meminfo_extra(atomic_long_t *val)
-> +{
-> +	struct meminfo_extra *memtemp;
-> +	int error = -EINVAL;
-> +
-> +	spin_lock(&meminfo_lock);
-> +	list_for_each_entry_rcu(memtemp, &meminfo_head, list) {
-> +		if (memtemp->val == val) {
-> +			list_del_rcu(&memtemp->list);
-> +			error = 0;
-> +			break;
-> +		}
-> +	}
-> +	spin_unlock(&meminfo_lock);
-> +	if (!error) {
-> +		synchronize_rcu();
-> +		kfree(memtemp);
-> +	}
-> +
-> +	return error;
-> +}
-> +EXPORT_SYMBOL(unregister_meminfo_extra);
-> +
-> +static void __meminfo_extra(struct seq_file *m)
-> +{
-> +	struct meminfo_extra *memtemp;
-> +	unsigned long nr_page;
-> +
-> +	rcu_read_lock();
-> +	list_for_each_entry_rcu(memtemp, &meminfo_head, list) {
-> +		nr_page = (unsigned long)atomic_long_read(memtemp->val);
-> +		nr_page = nr_page >> memtemp->shift_for_page;
-> +		if (m)
-> +			show_val_kb(m, memtemp->name_pad, nr_page);
-> +		else
-> +			pr_cont("%s%lukB ", memtemp->name, nr_page);
-
-nr_page != nr_kb?
-
-> +	}
-> +	rcu_read_unlock();
-> +}
-> +
-> +void show_meminfo_extra(void)
-> +{
-> +	__meminfo_extra(NULL);
-> +}
-> +
-> +static int meminfo_extra_proc_show(struct seq_file *m, void *v)
-> +{
-> +	__meminfo_extra(m);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __init proc_meminfo_extra_init(void)
-> +{
-> +	proc_create_single("meminfo_extra", 0, NULL, meminfo_extra_proc_show);
-> +	return 0;
-> +}
-> +fs_initcall(proc_meminfo_extra_init);
-> diff --git a/include/linux/mm.h b/include/linux/mm.h
-> index 52269e56c514..55317161ab57 100644
-> --- a/include/linux/mm.h
-> +++ b/include/linux/mm.h
-> @@ -2898,6 +2898,10 @@ void __init setup_nr_node_ids(void);
->  static inline void setup_nr_node_ids(void) {}
->  #endif
->  
-> +void show_meminfo_extra(void);
-> +int register_meminfo_extra(atomic_long_t *val, int shift, const char *name);
-> +int unregister_meminfo_extra(atomic_long_t *val);
-> +
->  extern int memcmp_pages(struct page *page1, struct page *page2);
->  
->  static inline int pages_identical(struct page *page1, struct page *page2)
-> diff --git a/mm/page_alloc.c b/mm/page_alloc.c
-> index 3c4eb750a199..db1be9a39783 100644
-> --- a/mm/page_alloc.c
-> +++ b/mm/page_alloc.c
-> @@ -5229,6 +5229,7 @@ void show_free_areas(unsigned int filter, nodemask_t *nodemask)
->  	struct zone *zone;
->  	pg_data_t *pgdat;
->  
-> +	show_meminfo_extra();
->  	for_each_populated_zone(zone) {
->  		if (show_mem_node_skip(filter, zone_to_nid(zone), nodemask))
->  			continue;
-> -- 
-> 2.13.7
+> [...] 
+> This is a really good debug and resulting patch.
+> I ran almost ~60 kexec repetitive attempts last night and also
+> repeated the same today morning and
+> the issue seems to get fixed for me with upstream kernel 5.6.0-rc6+
+> with this patch.
 > 
+> I am leaving a test running with RHEL kernel + this patch overnight
+> and will have more updates to share by tomorrow morning.
+
+Thanks a lot =)
+I couldn't fail to give due credit to my friend Gavin Shan for the great
+suggestion that resulted in the patch! Let me know your results with the
+patch Bhupesh, and your Tested-by on it is much appreciated.
+
+
 > 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
+>> Bhupesh, I've noticed that suddenly the Red Hat bugzilla got private -
+> 
+> Oops. I will check.
+> 
+>> is it okay to add me in CC list so I can see it?
+> 
+> Sure. I tried doing it, but seems Bugzilla is not happy as it keeps
+> complaining that you are not registered on BZ,
+> I will try to find out internally how to get around the issue.
+>
+
+Great! If you need me to sign-up in Bugzilla, I can do it. Just let me
+know the steps and I'd be glad in doing that.
+
+
+>> Thanks for all the collaboration, I hope the issue was figured and solved!
+> 
+> Sure. Thanks a lot for your inputs and trying the suggestions I posted
+> on the Bugzilla ticket.
+> I will soon share an update with RHEL/Fedora kernel kexec tests with
+> this patch applied and also reply with a Tested-by for the upstream
+> patch in the relevant thread.
+> 
+> Thanks,
+> Bhupesh
 > 
 
-Thanks
-Dave
+Thank you, I appreciate the tests and collaboration =)
+Cheers,
 
+
+Guilherme
 
 _______________________________________________
 kexec mailing list
