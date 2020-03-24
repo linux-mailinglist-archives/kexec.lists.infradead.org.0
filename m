@@ -2,58 +2,102 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 775F418FAA0
-	for <lists+kexec@lfdr.de>; Mon, 23 Mar 2020 17:58:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00C5219051E
+	for <lists+kexec@lfdr.de>; Tue, 24 Mar 2020 06:25:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uLYx+Eq8floYYsH5J5pBK0wmZKl+HC4W24aBYAfOjhE=; b=SbSUviUmaCySLsLx4ntgOAQ12
-	K21JxUuDKJT8DcdGbkaYXamoiVWnpc0eooD55R1EpkKm3I77FAF0h4WD9Ep7uwdvlk8KOKVzIjQvO
-	U90Q1BGBxLYqqMlndQbiQKtOAMGTjAmhFuBzwfsc+7Cw/DK0EUOTqRQJD+Feo2z/N/Mx/WtPt2k1y
-	CWZqh18OGVgJ6OJGwb6v9HDhBhOsMtcTCOXROfmaswHldhPcIGH+8uGfxXsUiedskx6XC/9m/xsAt
-	N3g/UVv3ZEpZMSv3aSK9DFykTNY0hQHeDl6zdPWpesAUFMWxbVFh9x9jNr0qhO9SkFrfFXfzf4NkT
-	nFfa1ZdLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kSKJ6gzyCcrjthRMFALP5TuPMJYm+88ZD5xXDSua21k=; b=eSfubioTXUIyqk
+	e5MYJR2R7NcLO/aVIAQYX9MHqqwuH9JVd7h+Bxrq7EaWTELn9gSSw1km/nX8/A5GjRtZt2KNvwVFH
+	fBqvKy2Yc8uqmIIsXcz3aingqpwIv6jZtsOfzlOYFsQhcnFsFU7XR6De45o09nbfZEJTxhGmh8/p5
+	H5T3tuGbP7612B5lnmO+AjaeKjXwdPUXYh03DGGp+/YDXavjjzlGdj060OGvGKkhNFW36wBlRgOHP
+	iqxxBcCFhl9YWLPrjqSAvuiDrQtk3F1TDu/1z8ysSMRmKX+/ejNlqHwC7/Y8Mw0pVLEKx+cAThM4p
+	JQzg8lSOLLp9AXWOx5YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jGQPI-0003DW-9a; Mon, 23 Mar 2020 16:58:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jGQPE-0003CV-IB; Mon, 23 Mar 2020 16:58:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 731061FB;
- Mon, 23 Mar 2020 09:58:24 -0700 (PDT)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3EADD3F7C3;
- Mon, 23 Mar 2020 09:58:23 -0700 (PDT)
-Subject: Re: arm64: Getting continuous PCIe "CmpltTO" AER from network card in
- kdump kernel
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- kexec mailing list <kexec@lists.infradead.org>
-References: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e8a58616-aeae-ad78-d496-6dfcef4ddcaa@arm.com>
-Date: Mon, 23 Mar 2020 16:58:17 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+	id 1jGc4R-0002SU-Al; Tue, 24 Mar 2020 05:25:47 +0000
+Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jGc4J-0002Rh-2Z
+ for kexec@lists.infradead.org; Tue, 24 Mar 2020 05:25:40 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1585027536;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=cTesaozoOrI+1EHAPeYeml3192G9TxzmBg6Vdzt7eXk=;
+ b=MJwAaeBTOAgD1VDmis9U3lS7UOwp/UYrK89HO6zS3OVWNygwxrEDOinK21TFuMktKKpavj
+ xxDghfnDNPjDxZTMWEqQSsfa+v/mOr1pAe+qPC6YAan/DJm71vJXVtaNDbHZEy75sBELyw
+ 4V/x2pM7YnrpH0SyjOuaP0D1qOypw0Y=
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
+ [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-266-SAsYHF-sPnOCgWyn5Uvo1A-1; Tue, 24 Mar 2020 01:25:32 -0400
+X-MC-Unique: SAsYHF-sPnOCgWyn5Uvo1A-1
+Received: by mail-qk1-f199.google.com with SMTP id b21so13630094qkl.14
+ for <kexec@lists.infradead.org>; Mon, 23 Mar 2020 22:25:31 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6E6ghv96qxmeHlxhRr7uVa1kmvV4mqSsKvBwIPsDLY4=;
+ b=rLBo+l04eRg/0oHlX5HtvXWFjGqL52VfMx2kTpHu1tGFmz/vJn5DybOraCopZXEf2L
+ 01VD3hKMYtj1BrWIxq72kGurbl0/KVk85d6a2F/aaJn7GRzGwJGj5X6I7TnNbgl29+jH
+ eeXKnDcF7l6ucK/ZcopLDV4vlgSEt+bQL4+oldebtlso2c2LUGPIkRmnn+fazvfFL9Gm
+ rTCI5hftNO3+dOGaiqSmW5CJgYAfsORIv37PMC4M7IzOZiHXEtAnBmWaZetaDRUQF+F4
+ 00EWT+qbbFJFEiqc6VsbN6XPXZAsJGDhUk0RNaiwIJoG01It6Vu7s+1tk14oczV4o+JY
+ 6F7g==
+X-Gm-Message-State: ANhLgQ0w7e70HLoWlaz47WmZ1y9vryV5e+wosUsxgcszQqH0PZ0o9aQW
+ j4pGXRf/N26SJFcYtCHp2HnWW4UQCoIx0LZdtSNQYSzmvv6oCseIiDGe8xUTorLfcLxfAbYt0zy
+ xNifZxiaTlTamMiyxVqyaiYSpioQYoRQywmxx
+X-Received: by 2002:ad4:4e21:: with SMTP id dm1mr6472979qvb.198.1585027531460; 
+ Mon, 23 Mar 2020 22:25:31 -0700 (PDT)
+X-Google-Smtp-Source: ADFU+vvRlowzHEkVQ5FMm7GNyAI4PIllzIK/Of4r1nt0BemATyY+HLBFpwkbxyjD9MkZv4B0v+zWn7KwZFSm2a8Javo=
+X-Received: by 2002:ad4:4e21:: with SMTP id dm1mr6472964qvb.198.1585027531153; 
+ Mon, 23 Mar 2020 22:25:31 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
-Content-Language: en-GB
+References: <cb237c2f-94ea-dbd8-8d6f-54911baefc45@canonical.com>
+ <CACi5LpMtVHOLDojyMwz+3GrL49TRiSTAkm+D_xeD8QR1+msR=A@mail.gmail.com>
+ <20200302080935.GA8969@dhcp-128-65.nay.redhat.com>
+ <CACi5LpNJVw_POqvmUD2fHWJkS=3bK4PzWCD_9Hs_K90aQ4gczw@mail.gmail.com>
+ <7d76b7cf-8606-5fa6-e166-5de785bd3012@canonical.com>
+ <5f338241-8842-18d0-21df-cfeb0826d725@canonical.com>
+ <bec06a39472b31e0bb343dfb762ae827fb305f66.camel@infradead.org>
+ <e21d3f34-afc3-8f3b-9f40-574aa5c00495@canonical.com>
+ <2080da6e-770b-a69e-59b2-0f23813188db@canonical.com>
+ <CACi5LpMkEnerJcL6r+-0__6OM8Dq_uFhtobFYJTEif6NX_guFg@mail.gmail.com>
+ <2e1ed40e-7aaa-239f-8b1a-23dd7fa100f5@canonical.com>
+In-Reply-To: <2e1ed40e-7aaa-239f-8b1a-23dd7fa100f5@canonical.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Tue, 24 Mar 2020 10:55:19 +0530
+Message-ID: <CACi5LpPM6JNsTRN-GMusPe6Dht2yRoXV6X8ptVjmU2t98LXYHA@mail.gmail.com>
+Subject: Re: About kexec issues in AWS nitro instances (RH bz 1758323)
+To: "Guilherme G. Piccoli" <gpiccoli@canonical.com>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200323_095828_646098_A4766E84 
-X-CRM114-Status: GOOD (  18.22  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200323_222539_211543_0591C451 
+X-CRM114-Status: GOOD (  25.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [63.128.21.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,69 +109,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: will.deacon@arm.com, Bhupesh Sharma <bhsharma@redhat.com>,
- Bjorn Helgaas <helgaas@kernel.org>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Will Deacon <will@kernel.org>
+Cc: Guowen Shan <gshan@redhat.com>, Baoquan He <bhe@redhat.com>,
+ Dave Young <dyoung@redhat.com>, kexec mailing list <kexec@lists.infradead.org>,
+ Gavin Guo <gavin.guo@canonical.com>, pedro.principeza@canonical.com,
+ David Woodhouse <dwmw2@infradead.org>, Vivek Goyal <vgoyal@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 2020-03-23 3:21 pm, Prabhakar Kushwaha wrote:
-> Hi All,
-> 
-> I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
-> Here network card is continuously giving following AER error
-> [  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-> aer_mask: 0x00000000
-> [  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> [  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> aer_agent=Requester ID
-> [  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> 
-> This error is not 100% reproducible. It happens 1 out of 4 try.
-> 
-> This error goes away in following two scenarios
-> A) Set iommu in bypass mode via bootargs iommu.passthrough=1
-> B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
->          if (reg & CR0_SMMUEN) {
->                  dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
->                  WARN_ON(is_kdump_kernel() && !disable_bypass);
->                  mdelay(100);  <-- Added delay
->                  arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
->          }
-> 
->  From A), it is clear that it is related to IOMMU
->  From B), looks like during boot of kdump kernel, network card is still
-> active and it has sent some request over PCIe.
-> as GPBA_ABORT bit is set, no response/completion coming to PCIe
-> controller hence "CmpltTO" error.
-> 
-> Ideally before setting GPBA_ABORT bit, there should be some check for
-> active transaction. if it is not possible, a wait should be done to
-> assure that no more pending transaction left.
+Hi Guilherme,
 
-In general there is no way to check for active transactions, and even if 
-there were, waiting for them to finish could mean waiting forever (if, 
-say, a device is continuously streaming to/from a ring buffer).
+On Mon, Mar 23, 2020 at 8:16 PM Guilherme G. Piccoli
+<gpiccoli@canonical.com> wrote:
+>
+> On 22/03/2020 18:16, Bhupesh Sharma wrote:
+> > Hello Guilherme,
+> >
+> > On Fri, Mar 20, 2020 at 9:10 PM Guilherme G. Piccoli
+> > <gpiccoli@canonical.com> wrote:
+> >
+> > Thanks for writing again. I was caught up in trying several other
+> > suggestions/code-snippets to further debug this.
+> > I tried several combinations - turning iommu off, turning off swiotlb
+> > in the kexec kernel and testing various combinations with
+> > retain_initrd added to the kexec kernel's bootargs.
+> >
+> > But nothing seems to fix the nested repetitive kexec reboot attempts
+> > on the aws t3 machines I have. It just becomes better on few instances
+> > (i.e. the kexec reboots would survive around 10 nested repetitive
+> > attempts), while on the other(s) the failure can be seen quite
+> > frequently (approx ~3 kexec reboot attempts).
+>
+> Hi Bhupesh, thanks for the tests! Indeed, this problem is difficult to
+> prevent with those parameters, and it's quite interesting to see how it
+> may vary among instances.
 
-> why any such delay has not been considered?
+Indeed.
 
-The main aim here is to block any DMA left over from the crashed kernel 
-as quickly as possible, to minimise any further potential corruption of 
-memory (consider if a device was left writing to an IOMMU virtual 
-address that happened to have the same value as some physical address in 
-the crash kernel's reserved memory). The fact that an arbitrary delay 
-happens to give a 'nicer' result in one particular situation on one 
-particular platform is neither here nor there in general.
+> > [...]
+> > This is a really good debug and resulting patch.
+> > I ran almost ~60 kexec repetitive attempts last night and also
+> > repeated the same today morning and
+> > the issue seems to get fixed for me with upstream kernel 5.6.0-rc6+
+> > with this patch.
+> >
+> > I am leaving a test running with RHEL kernel + this patch overnight
+> > and will have more updates to share by tomorrow morning.
+>
+> Thanks a lot =)
+> I couldn't fail to give due credit to my friend Gavin Shan for the great
+> suggestion that resulted in the patch! Let me know your results with the
+> patch Bhupesh, and your Tested-by on it is much appreciated.
+>
+>
+> >
+> >> Bhupesh, I've noticed that suddenly the Red Hat bugzilla got private -
+> >
+> > Oops. I will check.
+> >
+> >> is it okay to add me in CC list so I can see it?
+> >
+> > Sure. I tried doing it, but seems Bugzilla is not happy as it keeps
+> > complaining that you are not registered on BZ,
+> > I will try to find out internally how to get around the issue.
+> >
+>
+> Great! If you need me to sign-up in Bugzilla, I can do it. Just let me
+> know the steps and I'd be glad in doing that.
 
-Besides, this is *crash* kernel, so yeah, expect errors - something's 
-already gone badly wrong to get us here, and everything from then on is 
-merely a best-effort attempt to salvage what we can. Does it even make 
-sense to have AER enabled at this point?
+Yes, please. I checked internally. If you can sign-up for Bugzilla, I
+can directly add you to the Cc field of the Bugzilla work-item.
 
-Robin.
+> >> Thanks for all the collaboration, I hope the issue was figured and solved!
+> >
+> > Sure. Thanks a lot for your inputs and trying the suggestions I posted
+> > on the Bugzilla ticket.
+> > I will soon share an update with RHEL/Fedora kernel kexec tests with
+> > this patch applied and also reply with a Tested-by for the upstream
+> > patch in the relevant thread.
+> >
+> > Thanks,
+> > Bhupesh
+> >
+>
+> Thank you, I appreciate the tests and collaboration =)
+> Cheers,
+
+No problem. The good news is that two runs of approx. ~200 runs of
+nested kexec reboots worked even with RHEL/Fedora + your patch on the
+aws t3 instance for me.
+
+So, this looks like a real good patch to have upstream. Thanks a lot
+for sharing and working on it.
+
+I will go ahead and add my Tested-by for the upstream patch as well.
+
+Thanks for all your help,
+Bhupesh
+
 
 _______________________________________________
 kexec mailing list
