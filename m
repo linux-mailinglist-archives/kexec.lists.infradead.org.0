@@ -2,59 +2,91 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21E0419368D
-	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 04:10:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 512E71936B7
+	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 04:24:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GkhH+qSpJPySgYaknwwYUZO+seZXBzU7AG0w4hAsbW8=; b=YgpsAYVLY3Np2f
-	R4Mu7fqj0Y6FWgNowMVD1Otup7w3cdre9IWSaj+phawcjQl6sGNxrLnyiZrgjzuzLo8H6stCB1RJk
-	uuJNRgTQtgiFZKfuB1jud2GkzlTm//0q15D3/PHEagaSd6x+rAf6a5R7RMtvRYD66A80iQwTPPRgK
-	FnjhjWdwFABeXwxh08OsoCJp000D1vlT46v9pNGapA2yqhmsaoX8YRvRVkzkyAorPF4oWNzgvrjZp
-	Kh1cT1rZFBucRa293u/2Z0MdxYou9nM5Thady3D4mpwf4FJEEbPpswzBLMAQ87Kx/oGt9Rt0oB1pJ
-	Jf5CEKeWHMes9qjqf3ug==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HGyFe37zx/AnCdTKBgNmZqUdH8ET9/InHNZON7e3abY=; b=lBchLjzcEvhb70
+	rARgkeo55pqW17j0ZVqDl0OhSSp7EdZWREFp2KQqF7imhENnXij/JRSvWN0rL9NhHIzBPerBQQg1j
+	mZ8SbPHhXYX46Nu5f1fXgx0YY3QK1zK34E1wGku6OEZCaAuwW0Pxu1ctexhdUAyYlxNknrOkXJceK
+	1wzZaFgYsCYpxAreWN1j2AVYWjoquf2+Z8WzzhcrNVij2ztzysmj/B8PNdBCqrPm1tsINTrMNwdPc
+	Rs6xjuPoXy6bXUNmOM1yOv/Egq8AD3z46e0in87DCPtiqTr8w9BMgzLmacSzAlSd00miK/wY6gz3j
+	ZS4JNgfrTOwG8vZpcoPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHIu1-0006vp-5t; Thu, 26 Mar 2020 03:09:53 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jHJ88-0004Tp-E4; Thu, 26 Mar 2020 03:24:28 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHItx-0006uu-2u; Thu, 26 Mar 2020 03:09:51 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 112EDC7C64946249E08A;
- Thu, 26 Mar 2020 11:09:40 +0800 (CST)
-Received: from [127.0.0.1] (10.177.131.64) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0; Thu, 26 Mar 2020
- 11:09:39 +0800
-Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
- kdump
-To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
- <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
- <bhsharma@redhat.com>, <john.p.donnelly@oracle.com>, <pkushwaha@marvell.com>
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
-From: Chen Zhou <chenzhou10@huawei.com>
-Message-ID: <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
-Date: Thu, 26 Mar 2020 11:09:37 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
-MIME-Version: 1.0
-In-Reply-To: <20191223152349.180172-1-chenzhou10@huawei.com>
-X-Originating-IP: [10.177.131.64]
-X-CFilter-Loop: Reflected
+ id 1jHJ84-0004SI-3B
+ for kexec@lists.infradead.org; Thu, 26 Mar 2020 03:24:25 +0000
+Received: by mail-qk1-x742.google.com with SMTP id u4so5056911qkj.13
+ for <kexec@lists.infradead.org>; Wed, 25 Mar 2020 20:24:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id;
+ bh=AKpcaV6bzzbFLn3o3db1WuJ15bS+tekZ+L4LWGp0jsE=;
+ b=BwEQFmFSKMUCHgxyFldizxD3zxZVWOK/3JQO/ezmuc8SIDs5SyUMqcWXVaFpBy0aKa
+ SYJOBWNAyddKLuqtt8+81fqCgDv8OJ72a/we20FEjBMyRG0j3rAf3gxzYMFMKB6KkMAk
+ RBSBrJAizqPCgWFlLdZnWJMxiKfoz9b9XXySFAPWG7HmD/GLerASpnkHTzJ9yvssv2jt
+ wFDrhI2kN3ConrizrvyGrxvjsgiw0jDLK/0T6EBTHHho/FIMjgNesp0mRi7B2elx/v6K
+ D0ynMVlLKj49Z/2MrX0i+zhXfKqUWGJC+xEVB22Z/jYygAtioAFuR+J8YYovGpp8BHnH
+ v/5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id;
+ bh=AKpcaV6bzzbFLn3o3db1WuJ15bS+tekZ+L4LWGp0jsE=;
+ b=bbCw0w2uo+KYMsGCrFH7Tut60WQJLzkBzLKpLs+byhDfsI0xFjHTDRLjWeqOOV0KpT
+ 6LjFjtNBBgyRrd0Z58DZIdDcy/yfaJhFcN53rg/CPIuv7SBY6IX9W4h9dr9oTBO3Can0
+ hfUPjuUB+3gYIMzEb4E6AkBbAMX/LwVK9RjGZ9qgfEsMZy+ojU9+3HKVrqO/5NF3YWpi
+ sh/sHbn1QM+bAPieKtRFWBD9jeMe5NL5eb6P7GDwOXlWZgsfxeEb0unWhEa05FCrUsu6
+ ENpVe219EiRKLevMnfsio4B++zx0zprf4nZJZFg7Vn7jULxlSsXqvFarz/BCZOE8O3vD
+ RdIg==
+X-Gm-Message-State: ANhLgQ1e/I8MacVImAFFa8Ee1eyVWxesL2FBPG3poyIooowPjLkOzxyR
+ 6Nzfb6AzrhvJ8okLhw07gxo/ng==
+X-Google-Smtp-Source: ADFU+vudusdw7QLjXAaZtqJhk7QqLwkBnNSm7OAXsjHPq3UftbB1cdyBjp8cvXK3yzgA7LCNQ45h9g==
+X-Received: by 2002:a37:678b:: with SMTP id b133mr6188744qkc.327.1585193062796; 
+ Wed, 25 Mar 2020 20:24:22 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 25 Mar 2020 20:24:22 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org, maz@kernel.org,
+ james.morse@arm.com, vladimir.murzin@arm.com, matthias.bgg@gmail.com,
+ bhsharma@redhat.com, linux-mm@kvack.org, mark.rutland@arm.com,
+ steve.capper@arm.com, rfontana@redhat.com, tglx@linutronix.de,
+ selindag@gmail.com
+Subject: [PATCH v9 00/18] arm64: MMU enabled kexec relocation
+Date: Wed, 25 Mar 2020 23:24:02 -0400
+Message-Id: <20200326032420.27220-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_200949_299967_164F431E 
-X-CRM114-Status: GOOD (  17.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200325_202424_211062_9EF1B27E 
+X-CRM114-Status: GOOD (  14.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,105 +98,215 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-doc@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi all,
 
-Friendly ping...
+Changelog:
+v9:	- 9 patches from previous series landed in upstream, so now series
+	  is smaller
+	- Added two patches from James Morse to address idmap issues for machines
+	  with high physical addresses.
+	- Addressed comments from Selin Dag about compiling issues. He also tested
+	  my series and got similar performance results: ~60 ms instead of ~580 ms
+	  with an initramfs size of ~120MB.
+v8:
+	- Synced with mainline to keep series up-to-date
+v7:
+	-- Addressed comments from James Morse
+	- arm64: hibernate: pass the allocated pgdp to ttbr0
+	  Removed "Fixes" tag, and added Added Reviewed-by: James Morse
+	- arm64: hibernate: check pgd table allocation
+	  Sent out as a standalone patch so it can be sent to stable
+	  Series applies on mainline + this patch
+	- arm64: hibernate: add trans_pgd public functions
+	  Remove second allocation of tmp_pg_dir in swsusp_arch_resume
+	  Added Reviewed-by: James Morse <james.morse@arm.com>
+	- arm64: kexec: move relocation function setup and clean up
+	  Fixed typo in commit log
+	  Changed kern_reloc to phys_addr_t types.
+	  Added explanation why kern_reloc is needed.
+	  Split into four patches:
+	  arm64: kexec: make dtb_mem always enabled
+	  arm64: kexec: remove unnecessary debug prints
+	  arm64: kexec: call kexec_image_info only once
+	  arm64: kexec: move relocation function setup
+	- arm64: kexec: add expandable argument to relocation function
+	  Changed types of new arguments from unsigned long to phys_addr_t.
+	  Changed offset prefix to KEXEC_*
+	  Split into four patches:
+	  arm64: kexec: cpu_soft_restart change argument types
+	  arm64: kexec: arm64_relocate_new_kernel clean-ups
+	  arm64: kexec: arm64_relocate_new_kernel don't use x0 as temp
+	  arm64: kexec: add expandable argument to relocation function
+	- arm64: kexec: configure trans_pgd page table for kexec
+	  Added invalid entries into EL2 vector table
+	  Removed KEXEC_EL2_VECTOR_TABLE_SIZE and KEXEC_EL2_VECTOR_TABLE_OFFSET
+	  Copy relocation functions and table into separate pages
+	  Changed types in kern_reloc_arg.
+	  Split into three patches:
+	  arm64: kexec: offset for relocation function
+	  arm64: kexec: kexec EL2 vectors
+	  arm64: kexec: configure trans_pgd page table for kexec
+	- arm64: kexec: enable MMU during kexec relocation
+	  Split into two patches:
+	  arm64: kexec: enable MMU during kexec relocation
+	  arm64: kexec: remove head from relocation argument
+v6:
+	- Sync with mainline tip
+	- Added Acked's from Dave Young
+v5:
+	- Addressed comments from Matthias Brugger: added review-by's, improved
+	  comments, and made cleanups to swsusp_arch_resume() in addition to
+	  create_safe_exec_page().
+	- Synced with mainline tip.
+v4:
+	- Addressed comments from James Morse.
+	- Split "check pgd table allocation" into two patches, and moved to
+	  the beginning of series  for simpler backport of the fixes.
+	  Added "Fixes:" tags to commit logs.
+	- Changed "arm64, hibernate:" to "arm64: hibernate:"
+	- Added Reviewed-by's
+	- Moved "add PUD_SECT_RDONLY" earlier in series to be with other
+	  clean-ups
+	- Added "Derived from:" to arch/arm64/mm/trans_pgd.c
+	- Removed "flags" from trans_info
+	- Changed .trans_alloc_page assumption to return zeroed page.
+	- Simplify changes to trans_pgd_map_page(), by keeping the old
+	  code.
+	- Simplify changes to trans_pgd_create_copy, by keeping the old
+	  code.
+	- Removed: "add trans_pgd_create_empty"
+	- replace init_mm with NULL, and keep using non "__" version of
+	  populate functions.
+v3:
+	- Split changes to create_safe_exec_page() into several patches for
+	  easier review as request by Mark Rutland. This is why this series
+	  has 3 more patches.
+	- Renamed trans_table to tans_pgd as agreed with Mark. The header
+	  comment in trans_pgd.c explains that trans stands for
+	  transitional page tables. Meaning they are used in transition
+	  between two kernels.
+v2:
+	- Fixed hibernate bug reported by James Morse
+	- Addressed comments from James Morse:
+	  * More incremental changes to trans_table
+	  * Removed TRANS_FORCEMAP
+	  * Added kexec reboot data for image with 380M in size.
 
-On 2019/12/23 23:23, Chen Zhou wrote:
-> This patch series enable reserving crashkernel above 4G in arm64.
-> 
-> There are following issues in arm64 kdump:
-> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
-> when there is no enough low memory.
-> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
-> in this case, if swiotlb or DMA buffers are required, crash dump kernel
-> will boot failure because there is no low memory available for allocation.
-> 
-> To solve these issues, introduce crashkernel=X,low to reserve specified
-> size low memory.
-> Crashkernel=X tries to reserve memory for the crash dump kernel under
-> 4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
-> size low memory for crash kdump kernel devices firstly and then reserve
-> memory above 4G.
-> 
-> When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
-> is specified simultaneously, kernel should reserve specified size low memory
-> for crash dump kernel devices. So there may be two crash kernel regions, one
-> is below 4G, the other is above 4G.
-> In order to distinct from the high region and make no effect to the use of
-> kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
-> "linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
-> 
-> Besides, we need to modify kexec-tools:
-> arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
-> 
-> The previous changes and discussions can be retrieved from:
-> 
-> Changes since [v6]
-> - Fix build errors reported by kbuild test robot.
-> 
-> Changes since [v5]
-> - Move reserve_crashkernel_low() into kernel/crash_core.c.
-> - Delete crashkernel=X,high.
-> - Modify crashkernel=X,low.
-> If crashkernel=X,low is specified simultaneously, reserve spcified size low
-> memory for crash kdump kernel devices firstly and then reserve memory above 4G.
-> In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
-> pass to crash dump kernel by DT property "linux,low-memory-range".
-> - Update Documentation/admin-guide/kdump/kdump.rst.
-> 
-> Changes since [v4]
-> - Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
-> 
-> Changes since [v3]
-> - Add memblock_cap_memory_ranges back for multiple ranges.
-> - Fix some compiling warnings.
-> 
-> Changes since [v2]
-> - Split patch "arm64: kdump: support reserving crashkernel above 4G" as
-> two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
-> patch.
-> 
-> Changes since [v1]:
-> - Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
-> - Remove memblock_cap_memory_ranges() i added in v1 and implement that
-> in fdt_enforce_memory_region().
-> There are at most two crash kernel regions, for two crash kernel regions
-> case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
-> and then remove the memory range in the middle.
-> 
-> [1]: http://lists.infradead.org/pipermail/kexec/2019-August/023569.html
-> [v1]: https://lkml.org/lkml/2019/4/2/1174
-> [v2]: https://lkml.org/lkml/2019/4/9/86
-> [v3]: https://lkml.org/lkml/2019/4/9/306
-> [v4]: https://lkml.org/lkml/2019/4/15/273
-> [v5]: https://lkml.org/lkml/2019/5/6/1360
-> [v6]: https://lkml.org/lkml/2019/8/30/142
-> 
-> Chen Zhou (4):
->   x86: kdump: move reserve_crashkernel_low() into crash_core.c
->   arm64: kdump: reserve crashkenel above 4G for crash dump kernel
->   arm64: kdump: add memory for devices by DT property, low-memory-range
->   kdump: update Documentation about crashkernel on arm64
-> 
->  Documentation/admin-guide/kdump/kdump.rst       | 13 +++-
->  Documentation/admin-guide/kernel-parameters.txt | 12 +++-
->  arch/arm64/kernel/setup.c                       |  8 ++-
->  arch/arm64/mm/init.c                            | 61 ++++++++++++++++-
->  arch/x86/kernel/setup.c                         | 62 ++----------------
->  include/linux/crash_core.h                      |  3 +
->  include/linux/kexec.h                           |  2 -
->  kernel/crash_core.c                             | 87 +++++++++++++++++++++++++
->  kernel/kexec_core.c                             | 17 -----
->  9 files changed, 183 insertions(+), 82 deletions(-)
-> 
+Enable MMU during kexec relocation in order to improve reboot performance.
+
+If kexec functionality is used for a fast system update, with a minimal
+downtime, the relocation of kernel + initramfs takes a significant portion
+of reboot.
+
+The reason for slow relocation is because it is done without MMU, and thus
+not benefiting from D-Cache.
+
+Performance data
+----------------
+For this experiment, the size of kernel plus initramfs is small, only 25M.
+If initramfs was larger, than the improvements would be greater, as time
+spent in relocation is proportional to the size of relocation.
+
+Previously:
+kernel shutdown	0.022131328s
+relocation	0.440510736s
+kernel startup	0.294706768s
+
+Relocation was taking: 58.2% of reboot time
+
+Now:
+kernel shutdown	0.032066576s
+relocation	0.022158152s
+kernel startup	0.296055880s
+
+Now: Relocation takes 6.3% of reboot time
+
+Total reboot is x2.16 times faster.
+
+With bigger userland (fitImage 380M), the reboot time is improved by 3.57s,
+and is reduced from 3.9s down to 0.33s
+
+Previous approaches and discussions
+-----------------------------------
+https://lore.kernel.org/lkml/20191016200034.1342308-1-pasha.tatashin@soleen.com
+version 7 of this series
+
+https://lore.kernel.org/lkml/20191004185234.31471-1-pasha.tatashin@soleen.com
+version 6 of this series
+
+https://lore.kernel.org/lkml/20190923203427.294286-1-pasha.tatashin@soleen.com
+version 5 of this series
+
+https://lore.kernel.org/lkml/20190909181221.309510-1-pasha.tatashin@soleen.com
+version 4 of this series
+
+https://lore.kernel.org/lkml/20190821183204.23576-1-pasha.tatashin@soleen.com
+version 3 of this series
+
+https://lore.kernel.org/lkml/20190817024629.26611-1-pasha.tatashin@soleen.com
+version 2 of this series
+
+https://lore.kernel.org/lkml/20190801152439.11363-1-pasha.tatashin@soleen.com
+version 1 of this series
+
+https://lore.kernel.org/lkml/20190709182014.16052-1-pasha.tatashin@soleen.com
+reserve space for kexec to avoid relocation, involves changes to generic code
+to optimize a problem that exists on arm64 only:
+
+https://lore.kernel.org/lkml/20190716165641.6990-1-pasha.tatashin@soleen.com
+The first attempt to enable MMU, some bugs that prevented performance
+improvement. The page tables unnecessary configured idmap for the whole
+physical space.
+
+https://lore.kernel.org/lkml/20190731153857.4045-1-pasha.tatashin@soleen.com
+No linear copy, bug with EL2 reboots.
+
+James Morse (2):
+  arm64: mm: Always update TCR_EL1 from __cpu_set_tcr_t0sz()
+  arm64: trans_pgd: hibernate: idmap the single page that holds the copy
+    page routines
+
+Pavel Tatashin (16):
+  arm64: kexec: make dtb_mem always enabled
+  arm64: hibernate: move page handling function to new trans_pgd.c
+  arm64: trans_pgd: make trans_pgd_map_page generic
+  arm64: trans_pgd: pass allocator trans_pgd_create_copy
+  arm64: trans_pgd: pass NULL instead of init_mm to *_populate functions
+  arm64: kexec: move relocation function setup
+  arm64: kexec: call kexec_image_info only once
+  arm64: kexec: cpu_soft_restart change argument types
+  arm64: kexec: arm64_relocate_new_kernel clean-ups
+  arm64: kexec: arm64_relocate_new_kernel don't use x0 as temp
+  arm64: kexec: add expandable argument to relocation function
+  arm64: kexec: offset for relocation function
+  arm64: kexec: kexec EL2 vectors
+  arm64: kexec: configure trans_pgd page table for kexec
+  arm64: kexec: enable MMU during kexec relocation
+  arm64: kexec: remove head from relocation argument
+
+ arch/arm64/Kconfig                   |   4 +
+ arch/arm64/include/asm/kexec.h       |  45 +++-
+ arch/arm64/include/asm/mmu_context.h |   7 +-
+ arch/arm64/include/asm/trans_pgd.h   |  38 ++++
+ arch/arm64/kernel/asm-offsets.c      |  15 ++
+ arch/arm64/kernel/cpu-reset.S        |  11 +-
+ arch/arm64/kernel/cpu-reset.h        |  14 +-
+ arch/arm64/kernel/hibernate.c        | 242 +++-------------------
+ arch/arm64/kernel/machine_kexec.c    | 161 ++++++++++++---
+ arch/arm64/kernel/relocate_kernel.S  | 246 +++++++++++++---------
+ arch/arm64/mm/Makefile               |   1 +
+ arch/arm64/mm/trans_pgd.c            | 293 +++++++++++++++++++++++++++
+ 12 files changed, 712 insertions(+), 365 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_pgd.h
+ create mode 100644 arch/arm64/mm/trans_pgd.c
+
+-- 
+2.17.1
 
 
 _______________________________________________
