@@ -2,81 +2,80 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14EA41944BF
-	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 17:56:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAFCC194549
+	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 18:19:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4BB0D2zt/oG9Osc8knwZpIoiIDewxOykjH22GJTSeYI=; b=TLYXVWrd9iW6Zq
-	YR8FFs6LUGFeBga8gRCOuL8qedJ1zH0zHZQDq5yZu9t6QvbKNGXE6HX1DRafsj63DPIjMYYF8E4UH
-	MucgoWxCZPYxj1NFCzj9SU6Rd7HpCkcPbG3EBdoB0rj6w6z3bXmuxw0T6d7Obkn0tBohxqf8YrNTH
-	Zn/cGTOZn0sRVtRqXeg8M7sNlNQ4qAizmINShxc0/iv4FJLCEgAqA+sqv+k0TfTLS2LKFV++dE00c
-	ehamFgSeMrEtG4xwm7xbmOa4YlwbmxiruDNPZxj9Nko/lFIp1Q0E+7VGOL6VITT8kZtjXGQFOzAWj
-	1j+xNOoJWmVhsNTYo42A==;
+	List-Owner; bh=9NlvHjN5IvNAXEP7+j76cVoKD5n9NsOyytnLbq9zWL0=; b=lohwKNXffOXe7l
+	wWNWNbo7B8rM/fPRr5SAg5lPcHkRBc/S8VXyKTvxj7p+UbhPKHzxD7KcV7Pk3H6fSEgMjlwwSIKB9
+	DEz676RZ+XsQCyFVkuKVYWlS6GWle02ghyxROoadBbpcjyiSNKf50K4jwa91kTmVjqmHBwxszrEnX
+	AUPLP62aKZp1MP5lOnkNhDWcdruWJAIyyE54lUmLprwpxS8D8IO6LsOG+QKMH0vpJu1NgIx45Q2pe
+	Qdb/PRooEaQ4U+ExLq0XeufVyi2byGIfO3VS2udRAqoR2HrrTPZOKDjaA+TBJHgu+eku+EsZWfeAQ
+	aGKjyHFFOj869J22hYCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHVno-0003UD-Ru; Thu, 26 Mar 2020 16:56:20 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jHWAS-0005dL-Dv; Thu, 26 Mar 2020 17:19:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHVnk-0003Tf-FI; Thu, 26 Mar 2020 16:56:18 +0000
-Received: by mail-wr1-x442.google.com with SMTP id j17so8635671wru.13;
- Thu, 26 Mar 2020 09:56:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bzeBfZ5klSMlxF5iXEpxPN7XWuFNFvvLAZXSFaXzGKw=;
- b=Q5oetd0QUbnFMg7empygMrmtY9gsaGl65aDb3eagyhpSLwNlbDQM4ciZ97XqqsFTu4
- 4jtrVFSkCIFwmT7NNZv4Y0gHziHFLCchMtPYfrUXR6+k/4OMViNvf3xC9w5Jr8qN+umL
- QaHofQDqLQyFFMfXonln1Q1DECod3MVgMRjwawLKSvo5wJs5wbcJ1eC0zbkeDaQUSLrK
- QgcBkvmKt6bI89+ZWekPFIY4DuMo1gApvFblWw79EWuWZQJVW1lfED0okuuDqGRpGN83
- vTTB3lp5CI3gv4bTRITEQg/G9XpupZFOUeKLUQMIz/adwFrrVWjTZDy6UstvnyTyEQQR
- CUaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bzeBfZ5klSMlxF5iXEpxPN7XWuFNFvvLAZXSFaXzGKw=;
- b=gcxSWTx/g3hxkIVQzuJc1NqDPcZMzuEfItiMpFAkAJneh8ukoP1ijK5q+VADOpIutM
- d95GpCy2dAN6OTWZlj1XL3mk455VPIxbOonB9InTEL/W2NNxLHyt4VfSdLLBemtYnOmi
- 5/EobdrPr4aOGA1uS29akCD8BEwBmdWnofOa3YN1Sf2HmbElftv7jkwmCUng+D3AxwRt
- /gYbIpjuQ36mNa2OvHfNG0aFNpnSAlW3BTIRkzlRRcPMWsaKt3gLYBZl3XHqb7tOzo2I
- G5yYEWzU/uNtBFk08/4JzqZhN9VBOJYW8a2zf5LsyTZk9o5hy3dQ+aw3yK/zNwwBA6No
- S/sw==
-X-Gm-Message-State: ANhLgQ2vL3ESEiW5hphXsCM4VarqXct+IOhiF9Fu+zioQGrUFZzhCrTQ
- OEgijsmbpGEtQmpZuyyQahRPxooIEhn8O6fEl5k=
-X-Google-Smtp-Source: ADFU+vtw8hFBMWvq1A3x69AOCF+0vt/ovRNDDE0ExvLz35XuBqZq78taPJW3ZzeHbPDDxXjswZP8g94oo6H/w4CW18I=
-X-Received: by 2002:a5d:6044:: with SMTP id j4mr9790056wrt.232.1585241774995; 
- Thu, 26 Mar 2020 09:56:14 -0700 (PDT)
-MIME-Version: 1.0
+ id 1jHWAP-0005cv-D2; Thu, 26 Mar 2020 17:19:43 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ED2CB20409;
+ Thu, 26 Mar 2020 17:19:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1585243181;
+ bh=aJ9NJXpnt5Fa0hziaCIgDuAv2+spkXdDWZZ1jcChYeY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=STd8p92iP2OVVbQzAZzHuf6YS/EgtR0aO+v49Y2/uobX1U2pzF8g59iH/C+kFF93t
+ XtzFco5+BvmWI88oWwKCXXaj0SC9q2TVTjjSvC8DGC/gTBaX4kQ2bgeqS4/LPNkM5N
+ b5QgVVGxl+W1Q/Gw4fhZP5MTHhDUYuMSVs40jP5g=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jHWAN-00FwXL-9S; Thu, 26 Mar 2020 17:19:39 +0000
+Date: Thu, 26 Mar 2020 17:19:37 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: arm64: Getting continuous PCIe "CmpltTO" AER from network card
+ in kdump kernel
+Message-ID: <20200326171937.44dba105@why>
+In-Reply-To: <CAJ2QiJJ8nB=2df2++1KahTD8Cqe7f5JY1tp=tZ07QomvgFwjnA@mail.gmail.com>
 References: <CAJ2QiJLbFGbmrFP9EEyAWJWf4=SQxEe_J4bqwYw0EXqBkL5xZA@mail.gmail.com>
  <e8a58616-aeae-ad78-d496-6dfcef4ddcaa@arm.com>
  <CAJ2QiJJ=NK2Piq_7i1kfeP1yB7vDNcTtKnXWOQ5Us2EE7ipXBA@mail.gmail.com>
  <150e513c-a017-ba7b-5a42-0243e632e62c@arm.com>
  <CAJ2QiJ+L+U_COiXO4uzCVQ-b5Ty=U3eDKh9Qmc1xbAsNdaavQg@mail.gmail.com>
  <81616336e3b8c5f083b26125bf47575c@kernel.org>
-In-Reply-To: <81616336e3b8c5f083b26125bf47575c@kernel.org>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Thu, 26 Mar 2020 22:25:38 +0530
-Message-ID: <CAJ2QiJJ8nB=2df2++1KahTD8Cqe7f5JY1tp=tZ07QomvgFwjnA@mail.gmail.com>
-Subject: Re: arm64: Getting continuous PCIe "CmpltTO" AER from network card in
- kdump kernel
-To: Marc Zyngier <maz@kernel.org>
+ <CAJ2QiJJ8nB=2df2++1KahTD8Cqe7f5JY1tp=tZ07QomvgFwjnA@mail.gmail.com>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: prabhakar.pkin@gmail.com, robin.murphy@arm.com,
+ gkulkarni@marvell.com, kexec@lists.infradead.org, bhsharma@redhat.com,
+ will.deacon@arm.com, helgaas@kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200326_095616_520411_190499E4 
-X-CRM114-Status: GOOD (  35.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200326_101941_484360_F39C1E81 
+X-CRM114-Status: GOOD (  43.17  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,157 +107,190 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 9:43 PM Marc Zyngier <maz@kernel.org> wrote:
->
-> On 2020-03-26 15:35, Prabhakar Kushwaha wrote:
-> > On Thu, Mar 26, 2020 at 7:49 PM Robin Murphy <robin.murphy@arm.com>
-> > wrote:
-> >>
-> >> On 2020-03-26 1:36 pm, Prabhakar Kushwaha wrote:
-> >> > On Mon, Mar 23, 2020 at 10:28 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> >> >>
-> >> >> On 2020-03-23 3:21 pm, Prabhakar Kushwaha wrote:
-> >> >>> Hi All,
-> >> >>>
-> >> >>> I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
-> >> >>> Here network card is continuously giving following AER error
-> >> >>> [  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-> >> >>> aer_mask: 0x00000000
-> >> >>> [  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> >> >>> [  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> >> >>> aer_agent=Requester ID
-> >> >>> [  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> >> >>>
-> >> >>> This error is not 100% reproducible. It happens 1 out of 4 try.
-> >> >>>
-> >> >>> This error goes away in following two scenarios
-> >> >>> A) Set iommu in bypass mode via bootargs iommu.passthrough=1
-> >> >>> B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
-> >> >>>           if (reg & CR0_SMMUEN) {
-> >> >>>                   dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
-> >> >>>                   WARN_ON(is_kdump_kernel() && !disable_bypass);
-> >> >>>                   mdelay(100);  <-- Added delay
-> >> >>>                   arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
-> >> >>>           }
-> >> >>>
-> >> >>>   From A), it is clear that it is related to IOMMU
-> >> >>>   From B), looks like during boot of kdump kernel, network card is still
-> >> >>> active and it has sent some request over PCIe.
-> >> >>> as GPBA_ABORT bit is set, no response/completion coming to PCIe
-> >> >>> controller hence "CmpltTO" error.
-> >> >>>
-> >> >>> Ideally before setting GPBA_ABORT bit, there should be some check for
-> >> >>> active transaction. if it is not possible, a wait should be done to
-> >> >>> assure that no more pending transaction left.
-> >> >>
-> >> >> In general there is no way to check for active transactions, and even if
-> >> >> there were, waiting for them to finish could mean waiting forever (if,
-> >> >> say, a device is continuously streaming to/from a ring buffer).
-> >> >>
-> >> >>> why any such delay has not been considered?
-> >> >>
-> >> >> The main aim here is to block any DMA left over from the crashed kernel
-> >> >> as quickly as possible, to minimise any further potential corruption of
-> >> >> memory (consider if a device was left writing to an IOMMU virtual
-> >> >> address that happened to have the same value as some physical address in
-> >> >> the crash kernel's reserved memory). The fact that an arbitrary delay
-> >> >> happens to give a 'nicer' result in one particular situation on one
-> >> >> particular platform is neither here nor there in general.
-> >> >>
-> >> >
-> >> > I agree.
-> >> > But we are depending upon kdump boot time and expecting devices to
-> >> > reach to idle state before setting GBPA_ABORT bit.
-> >>
-> >> So (ideally) stop depending on that, because like I said it's fragile
-> >> and doesn't generalise.
-> >>
-> >> > adding a delay will be fair and make it independent of kdump boot time.
-> >>
-> >> And what delay value is "fair" and appropriate for any device on any
-> >> system in any circumstance?
-> >>
-> >
-> >  it is tough question.  1sec can be thought of.
-> >
-> >> >> Besides, this is *crash* kernel, so yeah, expect errors - something's
-> >> >> already gone badly wrong to get us here, and everything from then on is
-> >> >> merely a best-effort attempt to salvage what we can. Does it even make
-> >> >> sense to have AER enabled at this point?
-> >> >>
-> >> >
-> >> > i tried by disabling AER in kdump kernel. but it did not helped as
-> >> > network device become out of sync with respect to tx unit causing it
-> >> > to be hanged and it never recovered from there.  Same can happen with
-> >> > other devices like SATA etc
-> >>
-> >> Any devices that the kdump kernel wants to use need to be fully reset
-> >> to
-> >> get them into a sane state anyway, don't they? I mean, what if the
-> >> crash
-> >> was *caused* by once of those devices going wrong in the first place?
-> >> Any devices that kdump *doesn't* care about shouldn't matter, since
-> >> nothing should be unmasking their interrupts regardless of what state
-> >> they're in.
-> >>
-> >> Assume some descriptor or pagetable entry got corrupted that caused
-> >> your
-> >> network device to access an invalid physical address downstream of the
-> >> SMMU and get an abort from that *before* the kdump kernel starts - is
-> >> waiting an extra 100ms at any point after that going to help?
-> >>
-> > I agree with you. in above scenaro, where device if faulty or done
-> > something wrong, waiting even hours is waste.
-> >
-> > I was just going through other iommu drivers as this problem is
-> > generic one and i found following patch
-> >
-> > commit 091d42e43d21b6ca7ec39bf5f9e17bc0bd8d4312
-> > Author: Joerg Roedel <jroedel@suse.de>
-> > Date:   Fri Jun 12 11:56:10 2015 +0200
-> >     iommu/vt-d: Copy translation tables from old kernel
-> >
-> >     If we are in a kdump kernel and find translation enabled in
-> >     the iommu, try to copy the translation tables from the old
-> >     kernel to preserve the mappings until the device driver
-> >     takes over.
-> >
-> >     This supports old and the extended root-entry and
-> >     context-table formats.
-> >
-> >     Tested-by: ZhenHua Li <zhen-hual@hp.com>
-> >     Tested-by: Baoquan He <bhe@redhat.com>
-> >     Signed-off-by: Joerg Roedel <jroedel@suse.de>
-> >
-> > I believe, similar kind of solution is required for SMMU also.
->
-> There's a much more general problem: how to preserve pre-boot DMA
-> configurations because they are important to the new kernel (for
-> whatever reason).
->
-> And in a number of cases, it makes perfect sense: framebuffer
-> scanning out boot animations, ongoing DMA for other *cough* agents
-> *cough* in the system...
->
-> But I really don't like the idea of preserving the page tables across
-> a kdump kernel because for all we know, these page tables could be
-> horribly corrupted and mostly only make sense in the context of
-> the driver that created them.
+On Thu, 26 Mar 2020 22:25:38 +0530
+Prabhakar Kushwaha <prabhakar.pkin@gmail.com> wrote:
 
-If I am correct, similar approach is used in GIC-ITS for LPI tables.
-Probability of corruption is still there.
+> On Thu, Mar 26, 2020 at 9:43 PM Marc Zyngier <maz@kernel.org> wrote:
+> >
+> > On 2020-03-26 15:35, Prabhakar Kushwaha wrote:  
+> > > On Thu, Mar 26, 2020 at 7:49 PM Robin Murphy <robin.murphy@arm.com>
+> > > wrote:  
+> > >>
+> > >> On 2020-03-26 1:36 pm, Prabhakar Kushwaha wrote:  
+> > >> > On Mon, Mar 23, 2020 at 10:28 PM Robin Murphy <robin.murphy@arm.com> wrote:  
+> > >> >>
+> > >> >> On 2020-03-23 3:21 pm, Prabhakar Kushwaha wrote:  
+> > >> >>> Hi All,
+> > >> >>>
+> > >> >>> I am facing issue on Marvell's ARM64 Thunder X2 with kdump kernel.
+> > >> >>> Here network card is continuously giving following AER error
+> > >> >>> [  100.839168] igb 0000:09:00.1: AER: aer_status: 0x00004000,
+> > >> >>> aer_mask: 0x00000000
+> > >> >>> [  100.846463] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
+> > >> >>> [  100.861491] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
+> > >> >>> aer_agent=Requester ID
+> > >> >>> [  100.869400] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
+> > >> >>>
+> > >> >>> This error is not 100% reproducible. It happens 1 out of 4 try.
+> > >> >>>
+> > >> >>> This error goes away in following two scenarios
+> > >> >>> A) Set iommu in bypass mode via bootargs iommu.passthrough=1
+> > >> >>> B) Wait for ~100ms in arm_smmu_device_reset of  drivers/iommu/arm-smmu-v3.c
+> > >> >>>           if (reg & CR0_SMMUEN) {
+> > >> >>>                   dev_warn(smmu->dev, "SMMU currently enabled! Resetting...\n");
+> > >> >>>                   WARN_ON(is_kdump_kernel() && !disable_bypass);
+> > >> >>>                   mdelay(100);  <-- Added delay
+> > >> >>>                   arm_smmu_update_gbpa(smmu, GBPA_ABORT, 0);
+> > >> >>>           }
+> > >> >>>
+> > >> >>>   From A), it is clear that it is related to IOMMU
+> > >> >>>   From B), looks like during boot of kdump kernel, network card is still
+> > >> >>> active and it has sent some request over PCIe.
+> > >> >>> as GPBA_ABORT bit is set, no response/completion coming to PCIe
+> > >> >>> controller hence "CmpltTO" error.
+> > >> >>>
+> > >> >>> Ideally before setting GPBA_ABORT bit, there should be some check for
+> > >> >>> active transaction. if it is not possible, a wait should be done to
+> > >> >>> assure that no more pending transaction left.  
+> > >> >>
+> > >> >> In general there is no way to check for active transactions, and even if
+> > >> >> there were, waiting for them to finish could mean waiting forever (if,
+> > >> >> say, a device is continuously streaming to/from a ring buffer).
+> > >> >>  
+> > >> >>> why any such delay has not been considered?  
+> > >> >>
+> > >> >> The main aim here is to block any DMA left over from the crashed kernel
+> > >> >> as quickly as possible, to minimise any further potential corruption of
+> > >> >> memory (consider if a device was left writing to an IOMMU virtual
+> > >> >> address that happened to have the same value as some physical address in
+> > >> >> the crash kernel's reserved memory). The fact that an arbitrary delay
+> > >> >> happens to give a 'nicer' result in one particular situation on one
+> > >> >> particular platform is neither here nor there in general.
+> > >> >>  
+> > >> >
+> > >> > I agree.
+> > >> > But we are depending upon kdump boot time and expecting devices to
+> > >> > reach to idle state before setting GBPA_ABORT bit.  
+> > >>
+> > >> So (ideally) stop depending on that, because like I said it's fragile
+> > >> and doesn't generalise.
+> > >>  
+> > >> > adding a delay will be fair and make it independent of kdump boot time.  
+> > >>
+> > >> And what delay value is "fair" and appropriate for any device on any
+> > >> system in any circumstance?
+> > >>  
+> > >
+> > >  it is tough question.  1sec can be thought of.
+> > >  
+> > >> >> Besides, this is *crash* kernel, so yeah, expect errors - something's
+> > >> >> already gone badly wrong to get us here, and everything from then on is
+> > >> >> merely a best-effort attempt to salvage what we can. Does it even make
+> > >> >> sense to have AER enabled at this point?
+> > >> >>  
+> > >> >
+> > >> > i tried by disabling AER in kdump kernel. but it did not helped as
+> > >> > network device become out of sync with respect to tx unit causing it
+> > >> > to be hanged and it never recovered from there.  Same can happen with
+> > >> > other devices like SATA etc  
+> > >>
+> > >> Any devices that the kdump kernel wants to use need to be fully reset
+> > >> to
+> > >> get them into a sane state anyway, don't they? I mean, what if the
+> > >> crash
+> > >> was *caused* by once of those devices going wrong in the first place?
+> > >> Any devices that kdump *doesn't* care about shouldn't matter, since
+> > >> nothing should be unmasking their interrupts regardless of what state
+> > >> they're in.
+> > >>
+> > >> Assume some descriptor or pagetable entry got corrupted that caused
+> > >> your
+> > >> network device to access an invalid physical address downstream of the
+> > >> SMMU and get an abort from that *before* the kdump kernel starts - is
+> > >> waiting an extra 100ms at any point after that going to help?
+> > >>  
+> > > I agree with you. in above scenaro, where device if faulty or done
+> > > something wrong, waiting even hours is waste.
+> > >
+> > > I was just going through other iommu drivers as this problem is
+> > > generic one and i found following patch
+> > >
+> > > commit 091d42e43d21b6ca7ec39bf5f9e17bc0bd8d4312
+> > > Author: Joerg Roedel <jroedel@suse.de>
+> > > Date:   Fri Jun 12 11:56:10 2015 +0200
+> > >     iommu/vt-d: Copy translation tables from old kernel
+> > >
+> > >     If we are in a kdump kernel and find translation enabled in
+> > >     the iommu, try to copy the translation tables from the old
+> > >     kernel to preserve the mappings until the device driver
+> > >     takes over.
+> > >
+> > >     This supports old and the extended root-entry and
+> > >     context-table formats.
+> > >
+> > >     Tested-by: ZhenHua Li <zhen-hual@hp.com>
+> > >     Tested-by: Baoquan He <bhe@redhat.com>
+> > >     Signed-off-by: Joerg Roedel <jroedel@suse.de>
+> > >
+> > > I believe, similar kind of solution is required for SMMU also.  
+> >
+> > There's a much more general problem: how to preserve pre-boot DMA
+> > configurations because they are important to the new kernel (for
+> > whatever reason).
+> >
+> > And in a number of cases, it makes perfect sense: framebuffer
+> > scanning out boot animations, ongoing DMA for other *cough* agents
+> > *cough* in the system...
+> >
+> > But I really don't like the idea of preserving the page tables across
+> > a kdump kernel because for all we know, these page tables could be
+> > horribly corrupted and mostly only make sense in the context of
+> > the driver that created them.  
+> 
+> If I am correct, similar approach is used in GIC-ITS for LPI tables.
+> Probability of corruption is still there.
 
-> Oh wait, this driver has long died,
-> along with the rest of the original kernel.
->
+You are incorrect.
 
-:(
-if this is the case than chance of foolproof and generic solution is very less.
+The memory is reused, in the sense that we cannot use another set of
+redistributor tables (which are *not* ITS tables) once LPIs are
+enabled. But none of the *data* is reused at all, and we happily
+reprogram everything. So we know for sure that nothing will be written
+outside of the pending tables, and nothing will be read outside of the
+property table. Also, this memory is *physical*, as the GIC is not
+translated by the SMMU.
 
-At least a delay should be considered before setting SMMU_ABORT bit
-for giving a chance of DMA getting completed.
+So no, there is no corruption in this case. Well tried though! ;-)
 
---pk
+> 
+> > Oh wait, this driver has long died,
+> > along with the rest of the original kernel.
+> >  
+> 
+> :(
+> if this is the case than chance of foolproof and generic solution is very less.
+
+You're missing the very point of kdump: We use it when everything else
+has failed. The system is in an unrecoverable situation, and we have no
+idea of what is going on. All we're trying to do is to snapshot whatever
+is left of it.
+
+How could it be foolproof?
+
+> At least a delay should be considered before setting SMMU_ABORT bit
+> for giving a chance of DMA getting completed.
+
+As Robin pointed out, there is no such delay. How long are you going to
+wait? Until the whole of the memory is corrupted? Also, how do you know
+when the DMA stops?  A framebuffer scans out the whole screen every
+60Hz (and that's a pretty bad display...). You could wait forever!
+
+The best thing to do for a screaming device is to shut it up as quickly
+as possible, and the SMMU is a good tool for that.
+
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 kexec mailing list
