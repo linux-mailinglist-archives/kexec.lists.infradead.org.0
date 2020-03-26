@@ -2,59 +2,59 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AAA01936BC
-	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 04:25:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D66911936D3
+	for <lists+kexec@lfdr.de>; Thu, 26 Mar 2020 04:26:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ugNVXTtcNmAjuWGo1YOwJkDCltlYiMyNVrSbFPJcaK4=; b=VQZ4eZnsTmOuw4
-	6ZDcAUj0ugfb2PwRd7awuov0lWGa0v3fujeXz1qT0m03t6EBpuw/E08RcIzrBvJ41XyXI9pBgwRSL
-	w0UVoxfVfX2I6HsHW1+y8XWiWmbYbtwZgCZwkDXEntctZ7qxcVfsoWjph/FhNEzMJjxsus0neiMIU
-	gGsJAwMEx2ckRXhGERfqiKytnLRlMHu/k7znGZ45UEh1y3JtUXqk8Jw+IzGrffObn3wvmcmO3vsoQ
-	XB8UClL7vg53XRVV3lxEp71+BHior8sYnnW0E5RKKWByf5SAUYIteofIk/l5z+6zXiZtI4BjtMcg5
-	bGTB8IFIp2Sxtdpts67Q==;
+	List-Owner; bh=8FrXb1OrZQIlq7D0LpyPsQvlStFuYgcGUj/pncYBRbc=; b=RJt9eCGbhNClG3
+	qQ9u4yNAz8U51sgRioWB/jjD10poVtDCDBtPs9vvR/wbrHf/66N0l0M68oYAVJAmd/owWPnGKroiM
+	eBuo7M7AKEgP5rzW5bS9HIphB0zEUW+qcs3szMpvqO9wQ93o/LPK3wlw0opdNF7wBeRxMBFuIJEZk
+	4cjEHw0GGmitUuT7KMazTmUtzS8GsDoLDXmzy1S16Dj3+r7UoV0pVLO/UJTKmEjs/fiM714qDZ+Bt
+	TZPxcgSRO/WKP+2k2l69Xv2d/6esgdU3g2jWkDiILoBDZ0hpBtkUYd59UF9NtRdPHSSuvk4oDTj4S
+	TZyx9O3cl6Yf/Jb/PsRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHJ8o-0004ye-Ti; Thu, 26 Mar 2020 03:25:11 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1jHJ9a-0006l8-RW; Thu, 26 Mar 2020 03:25:59 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHJ85-0004Sl-Dx
- for kexec@lists.infradead.org; Thu, 26 Mar 2020 03:24:27 +0000
-Received: by mail-qt1-x843.google.com with SMTP id f20so4197752qtq.6
- for <kexec@lists.infradead.org>; Wed, 25 Mar 2020 20:24:25 -0700 (PDT)
+ id 1jHJ87-0004TO-6X
+ for kexec@lists.infradead.org; Thu, 26 Mar 2020 03:24:30 +0000
+Received: by mail-qt1-x842.google.com with SMTP id t9so4175398qto.9
+ for <kexec@lists.infradead.org>; Wed, 25 Mar 2020 20:24:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=from:to:subject:date:message-id:in-reply-to:references;
- bh=thpe0Z5kEvTnM2eeAPZkTi6F3w4Pb+HUczSr2KuT1UY=;
- b=Nt3Xinqq4GDXUh4q1gt240eSwVB4FlleAi4yheETVwWyB9pE4ZB9fhvoPxAwkhLLpP
- Hel+tkJ2MOJLYJF6Ft+ia7fYJNDVTK0/BQEdJGWtrFp/KqJf+jbtO1QKVz1d4/aVr7E/
- odepPYYW/C2vMcwYOzeuK7gefOa2hthxOoxybyCgMgvMvSdaIgKnF2VBz1guVAylP8wj
- gcmFQcPycw8EOZJFcOXFSSph4/YpQFH5NYwCOlC6tBBxmCoZi3jeb5xpSXXAV3abItoU
- Am7UWAXBZHc8yP9UBGR9FlYtvqfxFO/+pzq6qBUb0dxaMy7wgRE0cMJ/Kt4mHT9uxfON
- EOrw==
+ bh=r4qyJ598s8ReeWjPdkKhrtlQmLJMhhLnGRdSKLq7dec=;
+ b=Yi5QmqKcG8HCpCRUaQq35UuIB8Flvz9/GmkR4fbhwtpv4xxhQp1A82Gn3j/VOUfZKl
+ 5K1OBcDcxKjc7RGgywqTpPt66Cv0XLX7sUxEyCw/FG9YOXuCPDRPbJh8EIvEDgtoR0cz
+ qoUt6ge6i64xkjRIzg54WQGw0jbQhq1nRzTTxFp3Chlk2GiaKefJdh6Qlqci/PGgNI4k
+ cjMjHKBHG1naBlh6VkxPRAjCfFmxNBZLZ0qI3+YuAspuWKANLrSYhYs3Z66ElF49bahS
+ WTIKrGc4RWBhVhknhZfurA+ANAyasVTSNkzrZgdJNp9K8dL0ykliG+8dwXzP9ZInEM4B
+ 1xzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
  :references;
- bh=thpe0Z5kEvTnM2eeAPZkTi6F3w4Pb+HUczSr2KuT1UY=;
- b=DEPP9R8VIR+UFrIN+EnSUsXqWm1xvfZ7rYZXdCMer2EmRcaSCCPahIZ0GQRxl7b+2w
- 28tFLnRX2GVORyOVRHu35PjPGUJdmZbK047pis61jUzluzp3upHgsyJ4QkBYs5IZAH07
- c8LN6VM14c/hSsX/CAyNL8PZ9Zas/E5LoepJ8X2RwEKwZfzbFy2dSFX591OyPOvtqklM
- oXII0ZGTqDvEfCtfTa/3osj0S/timbm2BQl8GN+uY4dZhmqzQNQ5GnUhKmzsuGuEU6SD
- 0yMcDhGb8O+zl3Xy26COyAnW5Rc7PGiv6SPFYczAVncUS9ygAvJpIqTB4Nr51dG0qh6R
- FXOQ==
-X-Gm-Message-State: ANhLgQ0VGkfxl2ynkP3HRjU70qIaq45mdIF5m+VCnSjyXQKgxdkzlMeH
- 7VhycFKOT+bFlFxaSlUicwEoSpp//C0=
-X-Google-Smtp-Source: ADFU+vs8AB+ycYsqo1ntrv2C2y3Y5wNtM59sTWQw+jvfb/SJvWSGTmarQ+JsRphJYNn9X4qaL+i0xg==
-X-Received: by 2002:ac8:4982:: with SMTP id f2mr6355374qtq.38.1585193064365;
- Wed, 25 Mar 2020 20:24:24 -0700 (PDT)
+ bh=r4qyJ598s8ReeWjPdkKhrtlQmLJMhhLnGRdSKLq7dec=;
+ b=GrIlf24N7Ejv2W17zLZyYgUPUxsV4StvaRldRKUxuXZKRhlQiFdeoimdz3Th/D5xWz
+ 5KOhN3Bav16PtPpUxL7cavfmRezg0WPY8tb4zBNa8lk1H/jXdVHRym7qJDgqmXIkQVtp
+ Izv0Hh1/IN4wWYkpZkEQj+PT0QlZ18aQ53Ui2w24Jcm541uV0rl9fOfT7lsvR1K4QFoO
+ IZF4LfmQvMlmXdD//RA/BXRhhagjFrqvS6MVV0wVTsukCjpLjJQD2M1BQSTHJpO8xn3W
+ WPQ7HwjY3jPrqmnNfI/aVQeuJZMCiGD8vMXLW0Sz5edHjWwrXuER0XkwwbaoY+enivVY
+ rs9Q==
+X-Gm-Message-State: ANhLgQ3ySbY4cBN4b4FEOiX0mliQd2+5A/m3g9Gcx5X/EeiwkwLK1Y9c
+ K6XgvalYNWFWA19/k7o3+iVWPQ==
+X-Google-Smtp-Source: ADFU+vu7Q1l/wckqgb6c2jLBm7NTBsdqcTI9aWNtfEa2Bgk2n1XqVSuqBEfaq6Nvi6F6zBYuy6iYWg==
+X-Received: by 2002:ac8:224c:: with SMTP id p12mr5964245qtp.32.1585193065951; 
+ Wed, 25 Mar 2020 20:24:25 -0700 (PDT)
 Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
  [73.69.118.222])
- by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.22
+ by smtp.gmail.com with ESMTPSA id u4sm620034qka.35.2020.03.25.20.24.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 25 Mar 2020 20:24:23 -0700 (PDT)
+ Wed, 25 Mar 2020 20:24:25 -0700 (PDT)
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
 To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  ebiederm@xmission.com, kexec@lists.infradead.org,
@@ -64,23 +64,23 @@ To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
  bhsharma@redhat.com, linux-mm@kvack.org, mark.rutland@arm.com,
  steve.capper@arm.com, rfontana@redhat.com, tglx@linutronix.de,
  selindag@gmail.com
-Subject: [PATCH v9 01/18] arm64: kexec: make dtb_mem always enabled
-Date: Wed, 25 Mar 2020 23:24:03 -0400
-Message-Id: <20200326032420.27220-2-pasha.tatashin@soleen.com>
+Subject: [PATCH v9 02/18] arm64: hibernate: move page handling function to new
+ trans_pgd.c
+Date: Wed, 25 Mar 2020 23:24:04 -0400
+Message-Id: <20200326032420.27220-3-pasha.tatashin@soleen.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200325_202425_468241_914CF486 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200325_202427_241061_69F474DB 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,60 +108,536 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Currently, dtb_mem is enabled only when CONFIG_KEXEC_FILE is
-enabled. This adds ugly ifdefs to c files.
-
-Always enabled dtb_mem, when it is not used, it is NULL.
-Change the dtb_mem to phys_addr_t, as it is a physical address.
+Now, that we abstracted the required functions move them to a new home.
+Later, we will generalize these function in order to be useful outside
+of hibernation.
 
 Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 ---
- arch/arm64/include/asm/kexec.h    | 4 ++--
- arch/arm64/kernel/machine_kexec.c | 6 +-----
- 2 files changed, 3 insertions(+), 7 deletions(-)
+ arch/arm64/Kconfig                 |   4 +
+ arch/arm64/include/asm/trans_pgd.h |  21 +++
+ arch/arm64/kernel/hibernate.c      | 199 +-------------------------
+ arch/arm64/mm/Makefile             |   1 +
+ arch/arm64/mm/trans_pgd.c          | 219 +++++++++++++++++++++++++++++
+ 5 files changed, 246 insertions(+), 198 deletions(-)
+ create mode 100644 arch/arm64/include/asm/trans_pgd.h
+ create mode 100644 arch/arm64/mm/trans_pgd.c
 
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index d24b527e8c00..61530ec3a9b1 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -90,18 +90,18 @@ static inline void crash_prepare_suspend(void) {}
- static inline void crash_post_resume(void) {}
- #endif
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 0b30e884e088..63e0e1db6b2e 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1107,6 +1107,10 @@ config CRASH_DUMP
  
--#ifdef CONFIG_KEXEC_FILE
- #define ARCH_HAS_KIMAGE_ARCH
+ 	  For more details see Documentation/admin-guide/kdump/kdump.rst
  
- struct kimage_arch {
- 	void *dtb;
--	unsigned long dtb_mem;
-+	phys_addr_t dtb_mem;
- 	/* Core ELF header buffer */
- 	void *elf_headers;
- 	unsigned long elf_headers_mem;
- 	unsigned long elf_headers_sz;
- };
++config TRANS_TABLE
++	def_bool y
++	depends on HIBERNATION
++
+ config XEN_DOM0
+ 	def_bool y
+ 	depends on XEN
+diff --git a/arch/arm64/include/asm/trans_pgd.h b/arch/arm64/include/asm/trans_pgd.h
+new file mode 100644
+index 000000000000..23153c13d1ce
+--- /dev/null
++++ b/arch/arm64/include/asm/trans_pgd.h
+@@ -0,0 +1,21 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++
++/*
++ * Copyright (c) 2020, Microsoft Corporation.
++ * Pavel Tatashin <pasha.tatashin@soleen.com>
++ */
++
++#ifndef _ASM_TRANS_TABLE_H
++#define _ASM_TRANS_TABLE_H
++
++#include <linux/bits.h>
++#include <linux/types.h>
++#include <asm/pgtable-types.h>
++
++int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
++			  unsigned long end);
++
++int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
++		       pgprot_t pgprot);
++
++#endif /* _ASM_TRANS_TABLE_H */
+diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+index 590963c9c609..3d6f0fd73591 100644
+--- a/arch/arm64/kernel/hibernate.c
++++ b/arch/arm64/kernel/hibernate.c
+@@ -16,7 +16,6 @@
+ #define pr_fmt(x) "hibernate: " x
+ #include <linux/cpu.h>
+ #include <linux/kvm_host.h>
+-#include <linux/mm.h>
+ #include <linux/pm.h>
+ #include <linux/sched.h>
+ #include <linux/suspend.h>
+@@ -31,14 +30,12 @@
+ #include <asm/kexec.h>
+ #include <asm/memory.h>
+ #include <asm/mmu_context.h>
+-#include <asm/pgalloc.h>
+-#include <asm/pgtable.h>
+-#include <asm/pgtable-hwdef.h>
+ #include <asm/sections.h>
+ #include <asm/smp.h>
+ #include <asm/smp_plat.h>
+ #include <asm/suspend.h>
+ #include <asm/sysreg.h>
++#include <asm/trans_pgd.h>
+ #include <asm/virt.h>
  
-+#ifdef CONFIG_KEXEC_FILE
- extern const struct kexec_file_ops kexec_image_ops;
- 
- struct kimage;
-diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-index 8e9c924423b4..ae1bad0156cd 100644
---- a/arch/arm64/kernel/machine_kexec.c
-+++ b/arch/arm64/kernel/machine_kexec.c
-@@ -203,11 +203,7 @@ void machine_kexec(struct kimage *kimage)
- 	 * In kexec_file case, the kernel starts directly without purgatory.
- 	 */
- 	cpu_soft_restart(reboot_code_buffer_phys, kimage->head, kimage->start,
--#ifdef CONFIG_KEXEC_FILE
--						kimage->arch.dtb_mem);
--#else
--						0);
--#endif
-+			 kimage->arch.dtb_mem);
- 
- 	BUG(); /* Should never get here. */
+ /*
+@@ -182,45 +179,6 @@ int arch_hibernation_header_restore(void *addr)
  }
+ EXPORT_SYMBOL(arch_hibernation_header_restore);
+ 
+-static int trans_pgd_map_page(pgd_t *trans_pgd, void *page,
+-		       unsigned long dst_addr,
+-		       pgprot_t pgprot)
+-{
+-	pgd_t *pgdp;
+-	pud_t *pudp;
+-	pmd_t *pmdp;
+-	pte_t *ptep;
+-
+-	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+-	if (pgd_none(READ_ONCE(*pgdp))) {
+-		pudp = (void *)get_safe_page(GFP_ATOMIC);
+-		if (!pudp)
+-			return -ENOMEM;
+-		pgd_populate(&init_mm, pgdp, pudp);
+-	}
+-
+-	pudp = pud_offset(pgdp, dst_addr);
+-	if (pud_none(READ_ONCE(*pudp))) {
+-		pmdp = (void *)get_safe_page(GFP_ATOMIC);
+-		if (!pmdp)
+-			return -ENOMEM;
+-		pud_populate(&init_mm, pudp, pmdp);
+-	}
+-
+-	pmdp = pmd_offset(pudp, dst_addr);
+-	if (pmd_none(READ_ONCE(*pmdp))) {
+-		ptep = (void *)get_safe_page(GFP_ATOMIC);
+-		if (!ptep)
+-			return -ENOMEM;
+-		pmd_populate_kernel(&init_mm, pmdp, ptep);
+-	}
+-
+-	ptep = pte_offset_kernel(pmdp, dst_addr);
+-	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
+-
+-	return 0;
+-}
+-
+ /*
+  * Copies length bytes, starting at src_start into an new page,
+  * perform cache maintenance, then maps it at the specified address low
+@@ -339,161 +297,6 @@ int swsusp_arch_suspend(void)
+ 	return ret;
+ }
+ 
+-static void _copy_pte(pte_t *dst_ptep, pte_t *src_ptep, unsigned long addr)
+-{
+-	pte_t pte = READ_ONCE(*src_ptep);
+-
+-	if (pte_valid(pte)) {
+-		/*
+-		 * Resume will overwrite areas that may be marked
+-		 * read only (code, rodata). Clear the RDONLY bit from
+-		 * the temporary mappings we use during restore.
+-		 */
+-		set_pte(dst_ptep, pte_mkwrite(pte));
+-	} else if (debug_pagealloc_enabled() && !pte_none(pte)) {
+-		/*
+-		 * debug_pagealloc will removed the PTE_VALID bit if
+-		 * the page isn't in use by the resume kernel. It may have
+-		 * been in use by the original kernel, in which case we need
+-		 * to put it back in our copy to do the restore.
+-		 *
+-		 * Before marking this entry valid, check the pfn should
+-		 * be mapped.
+-		 */
+-		BUG_ON(!pfn_valid(pte_pfn(pte)));
+-
+-		set_pte(dst_ptep, pte_mkpresent(pte_mkwrite(pte)));
+-	}
+-}
+-
+-static int copy_pte(pmd_t *dst_pmdp, pmd_t *src_pmdp, unsigned long start,
+-		    unsigned long end)
+-{
+-	pte_t *src_ptep;
+-	pte_t *dst_ptep;
+-	unsigned long addr = start;
+-
+-	dst_ptep = (pte_t *)get_safe_page(GFP_ATOMIC);
+-	if (!dst_ptep)
+-		return -ENOMEM;
+-	pmd_populate_kernel(&init_mm, dst_pmdp, dst_ptep);
+-	dst_ptep = pte_offset_kernel(dst_pmdp, start);
+-
+-	src_ptep = pte_offset_kernel(src_pmdp, start);
+-	do {
+-		_copy_pte(dst_ptep, src_ptep, addr);
+-	} while (dst_ptep++, src_ptep++, addr += PAGE_SIZE, addr != end);
+-
+-	return 0;
+-}
+-
+-static int copy_pmd(pud_t *dst_pudp, pud_t *src_pudp, unsigned long start,
+-		    unsigned long end)
+-{
+-	pmd_t *src_pmdp;
+-	pmd_t *dst_pmdp;
+-	unsigned long next;
+-	unsigned long addr = start;
+-
+-	if (pud_none(READ_ONCE(*dst_pudp))) {
+-		dst_pmdp = (pmd_t *)get_safe_page(GFP_ATOMIC);
+-		if (!dst_pmdp)
+-			return -ENOMEM;
+-		pud_populate(&init_mm, dst_pudp, dst_pmdp);
+-	}
+-	dst_pmdp = pmd_offset(dst_pudp, start);
+-
+-	src_pmdp = pmd_offset(src_pudp, start);
+-	do {
+-		pmd_t pmd = READ_ONCE(*src_pmdp);
+-
+-		next = pmd_addr_end(addr, end);
+-		if (pmd_none(pmd))
+-			continue;
+-		if (pmd_table(pmd)) {
+-			if (copy_pte(dst_pmdp, src_pmdp, addr, next))
+-				return -ENOMEM;
+-		} else {
+-			set_pmd(dst_pmdp,
+-				__pmd(pmd_val(pmd) & ~PMD_SECT_RDONLY));
+-		}
+-	} while (dst_pmdp++, src_pmdp++, addr = next, addr != end);
+-
+-	return 0;
+-}
+-
+-static int copy_pud(pgd_t *dst_pgdp, pgd_t *src_pgdp, unsigned long start,
+-		    unsigned long end)
+-{
+-	pud_t *dst_pudp;
+-	pud_t *src_pudp;
+-	unsigned long next;
+-	unsigned long addr = start;
+-
+-	if (pgd_none(READ_ONCE(*dst_pgdp))) {
+-		dst_pudp = (pud_t *)get_safe_page(GFP_ATOMIC);
+-		if (!dst_pudp)
+-			return -ENOMEM;
+-		pgd_populate(&init_mm, dst_pgdp, dst_pudp);
+-	}
+-	dst_pudp = pud_offset(dst_pgdp, start);
+-
+-	src_pudp = pud_offset(src_pgdp, start);
+-	do {
+-		pud_t pud = READ_ONCE(*src_pudp);
+-
+-		next = pud_addr_end(addr, end);
+-		if (pud_none(pud))
+-			continue;
+-		if (pud_table(pud)) {
+-			if (copy_pmd(dst_pudp, src_pudp, addr, next))
+-				return -ENOMEM;
+-		} else {
+-			set_pud(dst_pudp,
+-				__pud(pud_val(pud) & ~PUD_SECT_RDONLY));
+-		}
+-	} while (dst_pudp++, src_pudp++, addr = next, addr != end);
+-
+-	return 0;
+-}
+-
+-static int copy_page_tables(pgd_t *dst_pgdp, unsigned long start,
+-			    unsigned long end)
+-{
+-	unsigned long next;
+-	unsigned long addr = start;
+-	pgd_t *src_pgdp = pgd_offset_k(start);
+-
+-	dst_pgdp = pgd_offset_raw(dst_pgdp, start);
+-	do {
+-		next = pgd_addr_end(addr, end);
+-		if (pgd_none(READ_ONCE(*src_pgdp)))
+-			continue;
+-		if (copy_pud(dst_pgdp, src_pgdp, addr, next))
+-			return -ENOMEM;
+-	} while (dst_pgdp++, src_pgdp++, addr = next, addr != end);
+-
+-	return 0;
+-}
+-
+-static int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
+-			  unsigned long end)
+-{
+-	int rc;
+-	pgd_t *trans_pgd = (pgd_t *)get_safe_page(GFP_ATOMIC);
+-
+-	if (!trans_pgd) {
+-		pr_err("Failed to allocate memory for temporary page tables.\n");
+-		return -ENOMEM;
+-	}
+-
+-	rc = copy_page_tables(trans_pgd, start, end);
+-	if (!rc)
+-		*dst_pgdp = trans_pgd;
+-
+-	return rc;
+-}
+-
+ /*
+  * Setup then Resume from the hibernate image using swsusp_arch_suspend_exit().
+  *
+diff --git a/arch/arm64/mm/Makefile b/arch/arm64/mm/Makefile
+index d91030f0ffee..bdad6ff0d72c 100644
+--- a/arch/arm64/mm/Makefile
++++ b/arch/arm64/mm/Makefile
+@@ -6,6 +6,7 @@ obj-y				:= dma-mapping.o extable.o fault.o init.o \
+ obj-$(CONFIG_HUGETLB_PAGE)	+= hugetlbpage.o
+ obj-$(CONFIG_PTDUMP_CORE)	+= dump.o
+ obj-$(CONFIG_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
++obj-$(CONFIG_TRANS_TABLE)	+= trans_pgd.o
+ obj-$(CONFIG_NUMA)		+= numa.o
+ obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
+ KASAN_SANITIZE_physaddr.o	+= n
+diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
+new file mode 100644
+index 000000000000..d20e48520cef
+--- /dev/null
++++ b/arch/arm64/mm/trans_pgd.c
+@@ -0,0 +1,219 @@
++// SPDX-License-Identifier: GPL-2.0
++
++/*
++ * Transitional page tables for kexec and hibernate
++ *
++ * This file derived from: arch/arm64/kernel/hibernate.c
++ *
++ * Copyright (c) 2020, Microsoft Corporation.
++ * Pavel Tatashin <pasha.tatashin@soleen.com>
++ *
++ */
++
++/*
++ * Transitional tables are used during system transferring from one world to
++ * another: such as during hibernate restore, and kexec reboots. During these
++ * phases one cannot rely on page table not being overwritten. This is because
++ * hibernate and kexec can overwrite the current page tables during transition.
++ */
++
++#include <asm/trans_pgd.h>
++#include <asm/pgalloc.h>
++#include <asm/pgtable.h>
++#include <linux/suspend.h>
++#include <linux/bug.h>
++#include <linux/mm.h>
++#include <linux/mmzone.h>
++
++static void _copy_pte(pte_t *dst_ptep, pte_t *src_ptep, unsigned long addr)
++{
++	pte_t pte = READ_ONCE(*src_ptep);
++
++	if (pte_valid(pte)) {
++		/*
++		 * Resume will overwrite areas that may be marked
++		 * read only (code, rodata). Clear the RDONLY bit from
++		 * the temporary mappings we use during restore.
++		 */
++		set_pte(dst_ptep, pte_mkwrite(pte));
++	} else if (debug_pagealloc_enabled() && !pte_none(pte)) {
++		/*
++		 * debug_pagealloc will removed the PTE_VALID bit if
++		 * the page isn't in use by the resume kernel. It may have
++		 * been in use by the original kernel, in which case we need
++		 * to put it back in our copy to do the restore.
++		 *
++		 * Before marking this entry valid, check the pfn should
++		 * be mapped.
++		 */
++		BUG_ON(!pfn_valid(pte_pfn(pte)));
++
++		set_pte(dst_ptep, pte_mkpresent(pte_mkwrite(pte)));
++	}
++}
++
++static int copy_pte(pmd_t *dst_pmdp, pmd_t *src_pmdp, unsigned long start,
++		    unsigned long end)
++{
++	pte_t *src_ptep;
++	pte_t *dst_ptep;
++	unsigned long addr = start;
++
++	dst_ptep = (pte_t *)get_safe_page(GFP_ATOMIC);
++	if (!dst_ptep)
++		return -ENOMEM;
++	pmd_populate_kernel(&init_mm, dst_pmdp, dst_ptep);
++	dst_ptep = pte_offset_kernel(dst_pmdp, start);
++
++	src_ptep = pte_offset_kernel(src_pmdp, start);
++	do {
++		_copy_pte(dst_ptep, src_ptep, addr);
++	} while (dst_ptep++, src_ptep++, addr += PAGE_SIZE, addr != end);
++
++	return 0;
++}
++
++static int copy_pmd(pud_t *dst_pudp, pud_t *src_pudp, unsigned long start,
++		    unsigned long end)
++{
++	pmd_t *src_pmdp;
++	pmd_t *dst_pmdp;
++	unsigned long next;
++	unsigned long addr = start;
++
++	if (pud_none(READ_ONCE(*dst_pudp))) {
++		dst_pmdp = (pmd_t *)get_safe_page(GFP_ATOMIC);
++		if (!dst_pmdp)
++			return -ENOMEM;
++		pud_populate(&init_mm, dst_pudp, dst_pmdp);
++	}
++	dst_pmdp = pmd_offset(dst_pudp, start);
++
++	src_pmdp = pmd_offset(src_pudp, start);
++	do {
++		pmd_t pmd = READ_ONCE(*src_pmdp);
++
++		next = pmd_addr_end(addr, end);
++		if (pmd_none(pmd))
++			continue;
++		if (pmd_table(pmd)) {
++			if (copy_pte(dst_pmdp, src_pmdp, addr, next))
++				return -ENOMEM;
++		} else {
++			set_pmd(dst_pmdp,
++				__pmd(pmd_val(pmd) & ~PMD_SECT_RDONLY));
++		}
++	} while (dst_pmdp++, src_pmdp++, addr = next, addr != end);
++
++	return 0;
++}
++
++static int copy_pud(pgd_t *dst_pgdp, pgd_t *src_pgdp, unsigned long start,
++		    unsigned long end)
++{
++	pud_t *dst_pudp;
++	pud_t *src_pudp;
++	unsigned long next;
++	unsigned long addr = start;
++
++	if (pgd_none(READ_ONCE(*dst_pgdp))) {
++		dst_pudp = (pud_t *)get_safe_page(GFP_ATOMIC);
++		if (!dst_pudp)
++			return -ENOMEM;
++		pgd_populate(&init_mm, dst_pgdp, dst_pudp);
++	}
++	dst_pudp = pud_offset(dst_pgdp, start);
++
++	src_pudp = pud_offset(src_pgdp, start);
++	do {
++		pud_t pud = READ_ONCE(*src_pudp);
++
++		next = pud_addr_end(addr, end);
++		if (pud_none(pud))
++			continue;
++		if (pud_table(pud)) {
++			if (copy_pmd(dst_pudp, src_pudp, addr, next))
++				return -ENOMEM;
++		} else {
++			set_pud(dst_pudp,
++				__pud(pud_val(pud) & ~PUD_SECT_RDONLY));
++		}
++	} while (dst_pudp++, src_pudp++, addr = next, addr != end);
++
++	return 0;
++}
++
++static int copy_page_tables(pgd_t *dst_pgdp, unsigned long start,
++			    unsigned long end)
++{
++	unsigned long next;
++	unsigned long addr = start;
++	pgd_t *src_pgdp = pgd_offset_k(start);
++
++	dst_pgdp = pgd_offset_raw(dst_pgdp, start);
++	do {
++		next = pgd_addr_end(addr, end);
++		if (pgd_none(READ_ONCE(*src_pgdp)))
++			continue;
++		if (copy_pud(dst_pgdp, src_pgdp, addr, next))
++			return -ENOMEM;
++	} while (dst_pgdp++, src_pgdp++, addr = next, addr != end);
++
++	return 0;
++}
++
++int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
++			  unsigned long end)
++{
++	int rc;
++	pgd_t *trans_pgd = (pgd_t *)get_safe_page(GFP_ATOMIC);
++
++	if (!trans_pgd) {
++		pr_err("Failed to allocate memory for temporary page tables.\n");
++		return -ENOMEM;
++	}
++
++	rc = copy_page_tables(trans_pgd, start, end);
++	if (!rc)
++		*dst_pgdp = trans_pgd;
++
++	return rc;
++}
++
++int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
++		       pgprot_t pgprot)
++{
++	pgd_t *pgdp;
++	pud_t *pudp;
++	pmd_t *pmdp;
++	pte_t *ptep;
++
++	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
++	if (pgd_none(READ_ONCE(*pgdp))) {
++		pudp = (void *)get_safe_page(GFP_ATOMIC);
++		if (!pudp)
++			return -ENOMEM;
++		pgd_populate(&init_mm, pgdp, pudp);
++	}
++
++	pudp = pud_offset(pgdp, dst_addr);
++	if (pud_none(READ_ONCE(*pudp))) {
++		pmdp = (void *)get_safe_page(GFP_ATOMIC);
++		if (!pmdp)
++			return -ENOMEM;
++		pud_populate(&init_mm, pudp, pmdp);
++	}
++
++	pmdp = pmd_offset(pudp, dst_addr);
++	if (pmd_none(READ_ONCE(*pmdp))) {
++		ptep = (void *)get_safe_page(GFP_ATOMIC);
++		if (!ptep)
++			return -ENOMEM;
++		pmd_populate_kernel(&init_mm, pmdp, ptep);
++	}
++
++	ptep = pte_offset_kernel(pmdp, dst_addr);
++	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
++
++	return 0;
++}
 -- 
 2.17.1
 
