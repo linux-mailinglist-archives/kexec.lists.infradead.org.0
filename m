@@ -2,131 +2,59 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53F471954B0
-	for <lists+kexec@lfdr.de>; Fri, 27 Mar 2020 11:00:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1D11195A0C
+	for <lists+kexec@lfdr.de>; Fri, 27 Mar 2020 16:40:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rEkxrY7P9htpviTnNDNI2kE0aXvFLf6gRT4dOnOJCDo=; b=cGCdV4nKEcxWwI
-	5TDDfBZJOKmjItQRg0Dz+tmLyMNI6Zjf9OmxmWVFD2z+jCizMymToXkcZDT5Q6gKXbM9s7TJYh3cE
-	ktuWvjGeq02yzm6vbuyZ1r/SZvlp712DLfeYzeOBIDq99IYES70eRnsm1ZsdOv2Ldi3QIvPWixe3T
-	6OKL+bmLjV0HVt3NwH5uoSUiUjnJP+4qANbHqbcyWx0IVT0W8hxDOh+OmTOEI746Z7quzfKx/2FSM
-	m/6u68i+3kVOGFyw5Sgi+LD01X//EEm7/quGbygfLFS4rVVphdXOW3mQEfG9lF48O6tSIpk4KCBY2
-	t6y/+r/jrZjzM86TH91g==;
+	List-Owner; bh=j2PxCFiU3RbMlDww72WtDjxnGyF1q4KkFoj+RCSJGuY=; b=WARb4M7e1rHdmR
+	x6qmD3lLDJ8LdEbUVAaSeoISppFTskddeq3S2AWeCW2CR6L3HnrbFRzE0f3XF51ngOd2eGb+DXPtj
+	TP0n1KKJSYLeF3UwJIMfybi388KEoDB37nzY65QQRqUiPNHvTVO+mMzZG5Isez1lbWTdnqWPrQRKI
+	08KaV8W7UxClJFj11pQvikgthbHtXVglFSCl6p9FAbSTeuydXkHBXP2sIsPhSuNwFAZ3Trg6B+wM0
+	WMrb2XMw2dc4+O07hDT5HjY4SZVK8ZfgIopbAEEFcvJwlGaGGcLlx6bCKfMcD0pAil3TVJpXXhb1K
+	xEqsRSBUfMz0LInQEWxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHln3-0000cH-A8; Fri, 27 Mar 2020 10:00:37 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHlmQ-0007Q2-Qh
- for kexec@lists.infradead.org; Fri, 27 Mar 2020 10:00:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585303197;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=tR0m5pt/9LdkZVd0mN8jpeVppniBCoFyX2JiGsnpZ64=;
- b=P+zlaMd5C8xqIxrmfe3hAwIG1Ycr5HJ1zyJjGZiPb+e3afdAYzTIOlyg8ROUaczj/a7GPu
- c3pqicimyPhEb/XJCe14IGxQhinM5jiLKpyunfi2ODxG1tcXf7kPu7uw123FJQQSBOm8Ga
- Gjzkuquc3qvJJa1vIgOgYzn6xvtrrXw=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-367-g6pVU62JOb-IHLp6t8KIEw-1; Fri, 27 Mar 2020 05:59:53 -0400
-X-MC-Unique: g6pVU62JOb-IHLp6t8KIEw-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3A214189F766;
- Fri, 27 Mar 2020 09:59:52 +0000 (UTC)
-Received: from [10.36.112.108] (ovpn-112-108.ams2.redhat.com [10.36.112.108])
- by smtp.corp.redhat.com (Postfix) with ESMTP id DE86C5C1D8;
- Fri, 27 Mar 2020 09:59:48 +0000 (UTC)
+	id 1jHr5Q-0006aI-1k; Fri, 27 Mar 2020 15:39:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jHr5M-0006Za-Gp; Fri, 27 Mar 2020 15:39:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2332C1FB;
+ Fri, 27 Mar 2020 08:39:46 -0700 (PDT)
+Received: from [172.16.1.108] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C5293F71F;
+ Fri, 27 Mar 2020 08:39:44 -0700 (PDT)
 Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
  memory resource names
-To: James Morse <james.morse@arm.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org
+To: David Hildenbrand <david@redhat.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
  <20200326180730.4754-3-james.morse@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
- dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
- QZLQMzNE74ap+GDK0wnacPQFpcG1AE9RMq3aeErY5tujekBS32jfC/7AnH7I0v1v1TbbK3Gp
- XNeiN4QroO+5qaSr0ID2sz5jtBLRb15RMre27E1ImpaIv2Jw8NJgW0k/D1RyKCwaTsgRdwuK
- Kx/Y91XuSBdz0uOyU/S8kM1+ag0wvsGlpBVxRR/xw/E8M7TEwuCZQArqqTCmkG6HGcXFT0V9
- PXFNNgV5jXMQRwU0O/ztJIQqsE5LsUomE//bLwzj9IVsaQpKDqW6TAPjcdBDPLHvriq7kGjt
- WhVhdl0qEYB8lkBEU7V2Yb+SYhmhpDrti9Fq1EsmhiHSkxJcGREoMK/63r9WLZYI3+4W2rAc
- UucZa4OT27U5ZISjNg3Ev0rxU5UH2/pT4wJCfxwocmqaRr6UYmrtZmND89X0KigoFD/XSeVv
- jwBRNjPAubK9/k5NoRrYqztM9W6sJqrH8+UWZ1Idd/DdmogJh0gNC0+N42Za9yBRURfIdKSb
- B3JfpUqcWwE7vUaYrHG1nw54pLUoPG6sAA7Mehl3nd4pZUALHwARAQABtCREYXZpZCBIaWxk
- ZW5icmFuZCA8ZGF2aWRAcmVkaGF0LmNvbT6JAlgEEwEIAEICGwMFCQlmAYAGCwkIBwMCBhUI
- AgkKCwQWAgMBAh4BAheAFiEEG9nKrXNcTDpGDfzKTd4Q9wD/g1oFAl3pImkCGQEACgkQTd4Q
- 9wD/g1o+VA//SFvIHUAvul05u6wKv/pIR6aICPdpF9EIgEU448g+7FfDgQwcEny1pbEzAmiw
- zAXIQ9H0NZh96lcq+yDLtONnXk/bEYWHHUA014A1wqcYNRY8RvY1+eVHb0uu0KYQoXkzvu+s
- Dncuguk470XPnscL27hs8PgOP6QjG4jt75K2LfZ0eAqTOUCZTJxA8A7E9+XTYuU0hs7QVrWJ
- jQdFxQbRMrYz7uP8KmTK9/Cnvqehgl4EzyRaZppshruKMeyheBgvgJd5On1wWq4ZUV5PFM4x
- II3QbD3EJfWbaJMR55jI9dMFa+vK7MFz3rhWOkEx/QR959lfdRSTXdxs8V3zDvChcmRVGN8U
- Vo93d1YNtWnA9w6oCW1dnDZ4kgQZZSBIjp6iHcA08apzh7DPi08jL7M9UQByeYGr8KuR4i6e
- RZI6xhlZerUScVzn35ONwOC91VdYiQgjemiVLq1WDDZ3B7DIzUZ4RQTOaIWdtXBWb8zWakt/
- ztGhsx0e39Gvt3391O1PgcA7ilhvqrBPemJrlb9xSPPRbaNAW39P8ws/UJnzSJqnHMVxbRZC
- Am4add/SM+OCP0w3xYss1jy9T+XdZa0lhUvJfLy7tNcjVG/sxkBXOaSC24MFPuwnoC9WvCVQ
- ZBxouph3kqc4Dt5X1EeXVLeba+466P1fe1rC8MbcwDkoUo65Ag0EVcufkQEQAOfX3n0g0fZz
- Bgm/S2zF/kxQKCEKP8ID+Vz8sy2GpDvveBq4H2Y34XWsT1zLJdvqPI4af4ZSMxuerWjXbVWb
- T6d4odQIG0fKx4F8NccDqbgHeZRNajXeeJ3R7gAzvWvQNLz4piHrO/B4tf8svmRBL0ZB5P5A
- 2uhdwLU3NZuK22zpNn4is87BPWF8HhY0L5fafgDMOqnf4guJVJPYNPhUFzXUbPqOKOkL8ojk
- CXxkOFHAbjstSK5Ca3fKquY3rdX3DNo+EL7FvAiw1mUtS+5GeYE+RMnDCsVFm/C7kY8c2d0G
- NWkB9pJM5+mnIoFNxy7YBcldYATVeOHoY4LyaUWNnAvFYWp08dHWfZo9WCiJMuTfgtH9tc75
- 7QanMVdPt6fDK8UUXIBLQ2TWr/sQKE9xtFuEmoQGlE1l6bGaDnnMLcYu+Asp3kDT0w4zYGsx
- 5r6XQVRH4+5N6eHZiaeYtFOujp5n+pjBaQK7wUUjDilPQ5QMzIuCL4YjVoylWiBNknvQWBXS
- lQCWmavOT9sttGQXdPCC5ynI+1ymZC1ORZKANLnRAb0NH/UCzcsstw2TAkFnMEbo9Zu9w7Kv
- AxBQXWeXhJI9XQssfrf4Gusdqx8nPEpfOqCtbbwJMATbHyqLt7/oz/5deGuwxgb65pWIzufa
- N7eop7uh+6bezi+rugUI+w6DABEBAAGJAiUEGAECAA8FAlXLn5ECGwwFCQlmAYAACgkQTd4Q
- 9wD/g1qA6w/+M+ggFv+JdVsz5+ZIc6MSyGUozASX+bmIuPeIecc9UsFRatc91LuJCKMkD9Uv
- GOcWSeFpLrSGRQ1Z7EMzFVU//qVs6uzhsNk0RYMyS0B6oloW3FpyQ+zOVylFWQCzoyyf227y
- GW8HnXunJSC+4PtlL2AY4yZjAVAPLK2l6mhgClVXTQ/S7cBoTQKP+jvVJOoYkpnFxWE9pn4t
- H5QIFk7Ip8TKr5k3fXVWk4lnUi9MTF/5L/mWqdyIO1s7cjharQCstfWCzWrVeVctpVoDfJWp
- 4LwTuQ5yEM2KcPeElLg5fR7WB2zH97oI6/Ko2DlovmfQqXh9xWozQt0iGy5tWzh6I0JrlcxJ
- ileZWLccC4XKD1037Hy2FLAjzfoWgwBLA6ULu0exOOdIa58H4PsXtkFPrUF980EEibUp0zFz
- GotRVekFAceUaRvAj7dh76cToeZkfsjAvBVb4COXuhgX6N4pofgNkW2AtgYu1nUsPAo+NftU
- CxrhjHtLn4QEBpkbErnXQyMjHpIatlYGutVMS91XTQXYydCh5crMPs7hYVsvnmGHIaB9ZMfB
- njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
- FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
-Organization: Red Hat GmbH
-Message-ID: <52d6fd33-c15d-b842-84ed-b4a74265199f@redhat.com>
-Date: Fri, 27 Mar 2020 10:59:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ <52d6fd33-c15d-b842-84ed-b4a74265199f@redhat.com>
+From: James Morse <james.morse@arm.com>
+Openpgp: preference=signencrypt
+Message-ID: <25aa3f43-5aa9-653f-0910-dd7b75527e08@arm.com>
+Date: Fri, 27 Mar 2020 15:39:46 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200326180730.4754-3-james.morse@arm.com>
+In-Reply-To: <52d6fd33-c15d-b842-84ed-b4a74265199f@redhat.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_025958_958408_24BDFF2B 
-X-CRM114-Status: GOOD (  21.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200327_083952_649141_FFF2C11E 
+X-CRM114-Status: GOOD (  19.08  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.205.24.74 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,73 +68,121 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
 Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 26.03.20 19:07, James Morse wrote:
-> Memory added to the system by hotplug has a 'System RAM' resource created
-> for it. This is exposed to user-space via /proc/iomem.
-> 
-> This poses problems for kexec on arm64. If kexec decides to place the
-> kernel in one of these newly onlined regions, the new kernel will find
-> itself booting from a region not described as memory in the firmware
-> tables.
-> 
-> Arm64 doesn't have a structure like the e820 memory map that can be
-> re-written when memory is brought online. Instead arm64 uses the UEFI
-> memory map, or the memory node from the DT, sometimes both. We never
-> rewrite these.
-> 
-> Allow an architecture to specify a different name for these hotplug
-> regions.
-> 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> ---
->  mm/memory_hotplug.c | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
-> 
-> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-> index 0a54ffac8c68..69b03dd7fc74 100644
-> --- a/mm/memory_hotplug.c
-> +++ b/mm/memory_hotplug.c
-> @@ -42,6 +42,10 @@
->  #include "internal.h"
->  #include "shuffle.h"
->  
-> +#ifndef MEMORY_HOTPLUG_RES_NAME
-> +#define MEMORY_HOTPLUG_RES_NAME "System RAM"
-> +#endif
+Hi David,
 
-So I assume changing this for all architectures would result in some
-user space tool breaking? Are we aware of any?
-
-I do wonder if we should simply change it for all architectures if possible.
+On 3/27/20 9:59 AM, David Hildenbrand wrote:
+> On 26.03.20 19:07, James Morse wrote:
+>> Memory added to the system by hotplug has a 'System RAM' resource created
+>> for it. This is exposed to user-space via /proc/iomem.
+>>
+>> This poses problems for kexec on arm64. If kexec decides to place the
+>> kernel in one of these newly onlined regions, the new kernel will find
+>> itself booting from a region not described as memory in the firmware
+>> tables.
+>>
+>> Arm64 doesn't have a structure like the e820 memory map that can be
+>> re-written when memory is brought online. Instead arm64 uses the UEFI
+>> memory map, or the memory node from the DT, sometimes both. We never
+>> rewrite these.
+>>
+>> Allow an architecture to specify a different name for these hotplug
+>> regions.
 
 
-> +
->  /*
->   * online_page_callback contains pointer to current page onlining function.
->   * Initially it is generic_online_page(). If it is required it could be
-> @@ -103,7 +107,7 @@ static struct resource *register_memory_resource(u64 start, u64 size)
->  {
->  	struct resource *res;
->  	unsigned long flags =  IORESOURCE_SYSTEM_RAM | IORESOURCE_BUSY;
-> -	char *resource_name = "System RAM";
-> +	char *resource_name = MEMORY_HOTPLUG_RES_NAME;
->  
->  	if (start + size > max_mem_size)
->  		return ERR_PTR(-E2BIG);
+>> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+>> index 0a54ffac8c68..69b03dd7fc74 100644
+>> --- a/mm/memory_hotplug.c
+>> +++ b/mm/memory_hotplug.c
+>> @@ -42,6 +42,10 @@
+>>  #include "internal.h"
+>>  #include "shuffle.h"
+>>  
+>> +#ifndef MEMORY_HOTPLUG_RES_NAME
+>> +#define MEMORY_HOTPLUG_RES_NAME "System RAM"
+>> +#endif
 > 
+> So I assume changing this for all architectures would result in some
+> user space tool breaking? Are we aware of any?
+
+Last time we had to touch arm64's /proc/iomem strings I went through debian's
+codesearch for stuff that reads it, kexec-tools was the only thing that parsed
+it in anger. (From memory, the other tools were looking for PCIe windows to do
+firmware flashing..)
+
+Looking again, having qualifiers on the end of 'System RAM' looks like it could
+confuse 's390-tools's detect_mem_chunks parser.
+
+It looks like the strings that come out of 'FIRMWARE_MEMMAP' are a duplicate set.
 
 
--- 
+> I do wonder if we should simply change it for all architectures if possible.
+
+If its possible that would be great. But I suspect that ship has sailed,
+changing it on other architectures could break some fragile parsing code.
+
+I'm wary of changing it on arm64, the only thing that makes it tolerable is that
+memory hot-add was relatively recently merged, and we don't anticipate it being
+widely used until you can remove memory as well.
+
+Changing it on arm64 is to prevent today's versions of kexec-tools from
+accidentally placing the new kernel in memory that wasn't described at boot.
+This leads to an unhandled exception during boot[0] because the kernel can't
+access itself via the mapping of all memory. (hotpluggable regions are only
+discovered by suitably configured ACPI systems much later)
+
+
 Thanks,
 
-David / dhildenb
+James
+
+[0]
+| NUMA: NODE_DATA [mem 0x7fdf1780-0x7fdf3fff]
+| Unable to handle kernel paging request at virtual address ffff00004230aff8
+| Mem abort info:
+|   ESR = 0x96000006
+|   EC = 0x25: DABT (current EL), IL = 32 bits
+|   SET = 0, FnV = 0
+|   EA = 0, S1PTW = 0
+| Data abort info:
+|   ISV = 0, ISS = 0x00000006
+|   CM = 0, WnR = 0
+| swapper pgtable: 4k pages, 48-bit VAs, pgdp=000000008181d000
+| [ffff00004230aff8] pgd=000000007fff9003, pud=000000007fdf7003,
+pmd=0000000000000000
+| Internal error: Oops: 96000006 [#1] PREEMPT SMP
+| Modules linked in:
+| CPU: 0 PID: 0 Comm: swapper Not tainted 5.6.0-rc3-00098-g3f6c690f5dfe
+#11618
+| Hardware name: linux,dummy-virt (DT)
+| pstate: 80400085 (Nzcv daIf +PAN -UAO BTYPE=--)
+| pc : vmemmap_pud_populate+0x2c/0xa0
+| lr : vmemmap_populate+0x78/0x154
+
+| Call trace:
+|  vmemmap_pud_populate+0x2c/0xa0
+|  vmemmap_populate+0x78/0x154
+|  __populate_section_memmap+0x3c/0x60
+|  sparse_init_nid+0x29c/0x414
+|  sparse_init+0x154/0x170
+|  bootmem_init+0x78/0xdc
+|  setup_arch+0x280/0x5d0
+|  start_kernel+0x98/0x4f8
+| Code: f9469a84 92748e73 8b010e61 cb040033 (f9400261)
+| random: get_random_bytes called from print_oops_end_marker+0x34/0x60
+with crng_init=0
+| ---[ end trace 0000000000000000 ]---
+| Kernel panic - not syncing: Attempted to kill the idle task!
+| ---[ end Kernel panic - not syncing: Attempted to kill the idle task!
+
 
 
 _______________________________________________
