@@ -2,117 +2,63 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624D7195DEE
-	for <lists+kexec@lfdr.de>; Fri, 27 Mar 2020 19:53:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C7961965E8
+	for <lists+kexec@lfdr.de>; Sat, 28 Mar 2020 12:58:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qwstVxRS/7j5cZFLJtYhLlBppaFSMypzKVGKi+froMU=; b=hzwyI6IOk3xM0s
-	H5UfCXBUNszwCkIqBnUwk1VFNKZaBqq800Zwmf2gQOUo90E6Ex3QPrjUZ+MkDZasoS1TrDWvO7OFH
-	Yejob6/bRBd1Wc84tADDMD3MCYIi9EnDdJBJRGEd2qqJE8T3m+YTu+BHDyhSYigJ2rzEVFL2txaQa
-	lttIXqp77c1clSXZvDjsgYV6TDT9FruYHmJm9Fl9a0wFLWPkeanOMjdZZtm4scArF12UwXIbXpF73
-	7uCAAalsKXcpcH5OOaFDeqFXfC5zK20xaraSquD8IcnD7+6xghCWSI+4vgSYtb2/h5dhpF31JfLaD
-	/MZhubKG6n6t89kggnpQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GdRQPTlplHzkL6IWnM6jX8OdBT4V7xZfMhDJyP1wbus=; b=RvsTz193k3L0Rr
+	fDxSxM8r5f/yXriqcohJgX01hFDBLWE3GYu636vq9ajk6H7fkUKE5IXep9ilDCPG8IgHuapgECNMC
+	aTDUOCTZToJVf/auqqHzkK/gfm8vzT/rxAgiEuTOYOsTdGQ2JmW6n3myOiSblyWCmWTXMZ0Sa/vxS
+	u0iw8nNJ1Xx7GIwKb+AnSqQhR4CH7PeJqRy8W7nOLP2BdwNLk+4ZuKYRGWDxOsEy9nfdVNWCx4SHS
+	uBRd3lNuUBdP+bTM+OkMBcjo2cGfAtvRbXkaHE6k3I/esP90EZI046Q5ZRHiiJ11XFkGrOJ5MLw5M
+	3M11VVGlpFd6uwfipxeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jHu6b-0005lv-OC; Fri, 27 Mar 2020 18:53:21 +0000
+	id 1jIA6N-0007Vv-0w; Sat, 28 Mar 2020 11:58:11 +0000
 Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jHu6L-0005e3-PK
- for kexec@lists.infradead.org; Fri, 27 Mar 2020 18:53:07 +0000
+ id 1jIA6J-0007VG-53
+ for kexec@lists.infradead.org; Sat, 28 Mar 2020 11:58:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585335181;
+ s=mimecast20190719; t=1585396681;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=txEf0iGAg57n1CQT9WASaoM403Qz9AV6Q5JbNyrOaE8=;
- b=CeSquZWaqmCk2fY5wka67NDAbqL6YF+kvE0LpK05amEz+8MiOA7T/FcyJvSyYuzdL6TQz2
- VWXEjOZjdIMKFQv8jwQYEHiJs/3RO8YIBHXADWCG3RWfSZu5iEsknnN23rcPbQ7eT7em1f
- aUi+Be/XO6mAcE9/daM4slugqW5sBvI=
+ in-reply-to:in-reply-to:references:references;
+ bh=MlgUgoCS6ugUoJeRRLBbalZpTjLxsTZKRshOClHAQAs=;
+ b=hwgozu9A/UgVvL2A0RapTmbKpUFh8vG3e82jir2X3fd9uMVhQWaP1/XmvqcsS3pbsEuj+9
+ xkoUlnyLYOtDRGzpfE4A/sXLhzA6LoclZQQFboSDTfRr3u/RNsjeXcz4SzGlt1F0x5thn7
+ ElgrXJDAwxhehXYgm3vKtMIqB/3Ytr8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-358-tF7bgkoVMviVZsRQ8b07nQ-1; Fri, 27 Mar 2020 14:52:59 -0400
-X-MC-Unique: tF7bgkoVMviVZsRQ8b07nQ-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
+ us-mta-434-ikfo-PwRMFC4t_MRjKb6Kg-1; Sat, 28 Mar 2020 07:57:49 -0400
+X-MC-Unique: ikfo-PwRMFC4t_MRjKb6Kg-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 39AD1800D5C;
- Fri, 27 Mar 2020 18:52:58 +0000 (UTC)
-Received: from [10.36.112.108] (ovpn-112-108.ams2.redhat.com [10.36.112.108])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 937C05DA84;
- Fri, 27 Mar 2020 18:52:55 +0000 (UTC)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: James Morse <james.morse@arm.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
- <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
- <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
- <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
-Date: Fri, 27 Mar 2020 19:52:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9AB0B8017CC;
+ Sat, 28 Mar 2020 11:57:46 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-137.pek2.redhat.com
+ [10.72.12.137])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 8661D90800;
+ Sat, 28 Mar 2020 11:57:37 +0000 (UTC)
+Date: Sat, 28 Mar 2020 19:57:33 +0800
+From: Dave Young <dyoung@redhat.com>
+To: Alexander Graf <graf@amazon.com>
+Subject: Re: [PATCH] swiotlb: Allow swiotlb to live at pre-defined address
+Message-ID: <20200328115733.GA67084@dhcp-128-65.nay.redhat.com>
+References: <20200326162922.27085-1-graf@amazon.com>
 MIME-Version: 1.0
-In-Reply-To: <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <20200326162922.27085-1-graf@amazon.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200327_115305_905622_C5C6B0F5 
-X-CRM114-Status: GOOD (  29.63  )
+X-CRM114-CacheID: sfid-20200328_045807_271301_81CC6AE6 
+X-CRM114-Status: GOOD (  30.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -122,13 +68,13 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  no trust [63.128.21.74 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -141,221 +87,203 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, brijesh.singh@amd.com,
+ lijiang@redhat.com, linux-doc@vger.kernel.org,
+ Jan Kiszka <jan.kiszka@siemens.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, bhe@redhat.com, x86@kernel.org,
+ Laszlo Ersek <lersek@redhat.com>, aggh@amazon.com, thomas.lendacky@amd.com,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, alcioa@amazon.com,
+ dhr@amazon.com, benh@amazon.com, kasong@redhat.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ aagch@amazon.com, Robin Murphy <robin.murphy@arm.com>, dwmw@amazon.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
->> 2. You do the kexec. The kexec kernel will only operate on a reserved
->> memory region (reserved via e.g., kernel cmdline crashkernel=128M).
+On 03/26/20 at 05:29pm, Alexander Graf wrote:
+> The swiotlb is a very convenient fallback mechanism for bounce buffering of
+> DMAable data. It is usually used for the compatibility case where devices
+> can only DMA to a "low region".
 > 
-> I think you are merging the kexec and kdump behaviours.
-> (Wrong terminology? The things behind 'kexec -l Image' and 'kexec -p Image')
+> However, in some scenarios this "low region" may be bound even more
+> heavily. For example, there are embedded system where only an SRAM region
+> is shared between device and CPU. There are also heterogeneous computing
+> scenarios where only a subset of RAM is cache coherent between the
+> components of the system. There are partitioning hypervisors, where
+> a "control VM" that implements device emulation has limited view into a
+> partition's memory for DMA capabilities due to safety concerns.
+> 
+> This patch adds a command line driven mechanism to move all DMA memory into
+> a predefined shared memory region which may or may not be part of the
+> physical address layout of the Operating System.
+> 
+> Ideally, the typical path to set this configuration would be through Device
+> Tree or ACPI, but neither of the two mechanisms is standardized yet. Also,
+> in the x86 MicroVM use case, we have neither ACPI nor Device Tree, but
+> instead configure the system purely through kernel command line options.
+> 
+> I'm sure other people will find the functionality useful going forward
+> though and extend it to be triggered by DT/ACPI in the future.
 
-Oh, I see - I think your example below clarifies things. Something like
-that should go in the cover letter if we end up in this patch being
-required :)
-
-(I missed that the problematic part is "random" addresses passed by user
-space to the kernel, where it wants data to be loaded to on kexec -e)
-
-> 
-> For kdump, yes, the new kernel is loaded into the crashkernel reservation, and
-> confined to it.
-> 
-> 
-> For regular kexec, the new kernel can be loaded any where in memory. There might
-> be a difference with how this works on arm64....
-> 
-> The regular kexec kernel isn't stored in its final location when its loaded, its
-> relocated there when the image is executed. The target/destination memory may
-> have been removed in the meantime.
-> 
-> (an example recipe below should clarify this)
-> 
-> 
->> Is it that in 2., the reserved memory region (for the crashkernel) could
->> have been offlined in the meantime?
-> 
-> No, for kdump: the crashkernel reservation is PG_reserved, and its not something
-> mm knows how to move, so that region can't be taken offline.
-> 
-> (On arm64 we additionally prevent the boot-memory from being removed as it is
-> all described as present by UEFI. The crashkernel reservation would always be
-> from this type of memory)
-
-Right.
+Hmm, we have a use case for kdump, this maybe useful.  For example
+swiotlb is enabled by default if AMD SME/SEV is active, and in kdump
+kernel we have to increase the crashkernel reserved size for the extra
+swiotlb requirement.  I wonder if we can just reuse the old kernel's
+swiotlb region and pass the addr to kdump kernel.
 
 > 
+> Signed-off-by: Alexander Graf <graf@amazon.com>
+> ---
+>  Documentation/admin-guide/kernel-parameters.txt |  3 +-
+>  Documentation/x86/x86_64/boot-options.rst       |  4 ++-
+>  kernel/dma/swiotlb.c                            | 46 +++++++++++++++++++++++--
+>  3 files changed, 49 insertions(+), 4 deletions(-)
 > 
-> This is about a regular kexec, any crashdump reservation is irrelevant.
-> This kexec kernel is temporarily stored out of line, then relocated when executed.
+> diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> index c07815d230bc..d085d55c3cbe 100644
+> --- a/Documentation/admin-guide/kernel-parameters.txt
+> +++ b/Documentation/admin-guide/kernel-parameters.txt
+> @@ -4785,11 +4785,12 @@
+>  			it if 0 is given (See Documentation/admin-guide/cgroup-v1/memory.rst)
+>  
+>  	swiotlb=	[ARM,IA-64,PPC,MIPS,X86]
+> -			Format: { <int> | force | noforce }
+> +			Format: { <int> | force | noforce | addr=<phys addr> }
+>  			<int> -- Number of I/O TLB slabs
+>  			force -- force using of bounce buffers even if they
+>  			         wouldn't be automatically used by the kernel
+>  			noforce -- Never use bounce buffers (for debugging)
+> +			addr=<phys addr> -- Try to allocate SWIOTLB at defined address
+>  
+>  	switches=	[HW,M68k]
+>  
+> diff --git a/Documentation/x86/x86_64/boot-options.rst b/Documentation/x86/x86_64/boot-options.rst
+> index 2b98efb5ba7f..ca46c57b68c9 100644
+> --- a/Documentation/x86/x86_64/boot-options.rst
+> +++ b/Documentation/x86/x86_64/boot-options.rst
+> @@ -297,11 +297,13 @@ iommu options only relevant to the AMD GART hardware IOMMU:
+>  iommu options only relevant to the software bounce buffering (SWIOTLB) IOMMU
+>  implementation:
+>  
+> -    swiotlb=<pages>[,force]
+> +    swiotlb=<pages>[,force][,addr=<phys addr>]
+>        <pages>
+>          Prereserve that many 128K pages for the software IO bounce buffering.
+>        force
+>          Force all IO through the software TLB.
+> +      addr=<phys addr>
+> +        Try to allocate SWIOTLB at defined address
+>  
+>  Settings for the IBM Calgary hardware IOMMU currently found in IBM
+>  pSeries and xSeries machines
+> diff --git a/kernel/dma/swiotlb.c b/kernel/dma/swiotlb.c
+> index c19379fabd20..83da0caa2f93 100644
+> --- a/kernel/dma/swiotlb.c
+> +++ b/kernel/dma/swiotlb.c
+> @@ -46,6 +46,7 @@
+>  #include <linux/init.h>
+>  #include <linux/memblock.h>
+>  #include <linux/iommu-helper.h>
+> +#include <linux/io.h>
+>  
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/swiotlb.h>
+> @@ -102,6 +103,12 @@ unsigned int max_segment;
+>  #define INVALID_PHYS_ADDR (~(phys_addr_t)0)
+>  static phys_addr_t *io_tlb_orig_addr;
+>  
+> +/*
+> + * The TLB phys addr may be defined on the command line. Store it here if it is.
+> + */
+> +static phys_addr_t io_tlb_addr = INVALID_PHYS_ADDR;
+> +
+> +
+>  /*
+>   * Protect the above data structures in the map and unmap calls
+>   */
+> @@ -119,11 +126,23 @@ setup_io_tlb_npages(char *str)
+>  	}
+>  	if (*str == ',')
+>  		++str;
+> -	if (!strcmp(str, "force")) {
+> +	if (!strncmp(str, "force", 5)) {
+>  		swiotlb_force = SWIOTLB_FORCE;
+> -	} else if (!strcmp(str, "noforce")) {
+> +		str += 5;
+> +	} else if (!strncmp(str, "noforce", 7)) {
+>  		swiotlb_force = SWIOTLB_NO_FORCE;
+>  		io_tlb_nslabs = 1;
+> +		str += 7;
+> +	}
+> +
+> +	if (*str == ',')
+> +		++str;
+> +	if (!strncmp(str, "addr=", 5)) {
+> +		char *addrstr = str + 5;
+> +
+> +		io_tlb_addr = kstrtoul(addrstr, 0, &str);
+> +		if (addrstr == str)
+> +			io_tlb_addr = INVALID_PHYS_ADDR;
+>  	}
+>  
+>  	return 0;
+> @@ -239,6 +258,25 @@ int __init swiotlb_init_with_tbl(char *tlb, unsigned long nslabs, int verbose)
+>  	return 0;
+>  }
+>  
+> +static int __init swiotlb_init_io(int verbose, unsigned long bytes)
+> +{
+> +	unsigned __iomem char *vstart;
+> +
+> +	if (io_tlb_addr == INVALID_PHYS_ADDR)
+> +		return -EINVAL;
+> +
+> +	vstart = memremap(io_tlb_addr, bytes, MEMREMAP_WB);
+> +	if (!vstart)
+> +		return -EINVAL;
+> +
+> +	if (swiotlb_init_with_tbl(vstart, io_tlb_nslabs, verbose)) {
+> +		memunmap(vstart);
+> +		return -EINVAL;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  /*
+>   * Statically reserve bounce buffer space and initialize bounce buffer data
+>   * structures for the software IO TLB used to implement the DMA API.
+> @@ -257,6 +295,10 @@ swiotlb_init(int verbose)
+>  
+>  	bytes = io_tlb_nslabs << IO_TLB_SHIFT;
+>  
+> +	/* Map IO TLB from device memory */
+> +	if (!swiotlb_init_io(verbose, bytes))
+> +		return;
+> +
+>  	/* Get IO TLB memory from the low pages */
+>  	vstart = memblock_alloc_low(PAGE_ALIGN(bytes), PAGE_SIZE);
+>  	if (vstart && !swiotlb_init_with_tbl(vstart, io_tlb_nslabs, verbose))
+> -- 
+> 2.16.4
 > 
-> A recipe so that we're at least on the same terminal! This is on a TX2 running
-> arm64's for-next/core using Qemu-TCG to emulate x86. (Sorry for the bizarre
-> config, its because Qemu supports hotremove on x86, but not yet on arm64).
 > 
 > 
-> Insert the memory:
-> (qemu) object_add memory-backend-ram,id=mem1,size=1G
-> (qemu) device_add pc-dimm,id=dimm1,memdev=mem1
 > 
-> | root@vm:~# free -m
-> |               total        used        free      shared  ...
-> | Mem:            918          52         814           0  ...
-> | Swap:             0           0           0
-> 
-> 
-> Bring it online:
-> | root@vm:~# cd /sys/devices/system/memory/
-> | root@vm:/sys/devices/system/memory# for F in memory3*; do echo \
-> | online_movable > $F/state; done
-> 
-> | Built 1 zonelists, mobility grouping on.  Total pages: 251049
-> | Policy zone: DMA32
-> 
-> | -bash: echo: write error: Invalid argument
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:           1942          53        1836           0  ...
-> | Swap:             0           0           0
+> Amazon Development Center Germany GmbH
+> Krausenstr. 38
+> 10117 Berlin
+> Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
+> Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+> Sitz: Berlin
+> Ust-ID: DE 289 237 879
 > 
 > 
-> Load kexec:
-> | root@vm:/sys/devices/system/memory# kexec -l /root/bzImage --reuse-cmdline
 > 
 
-I assume this will trigger
-
-kexec_load -> do_kexec_load -> kimage_load_segment ->
-kimage_load_normal_segment -> kimage_alloc_page -> kimage_alloc_pages
-
-Which will just allocate a bunch of pages and mark them reserved.
-
-Now, AFAIKs, all allocations will be unmovable. So none of the kexec
-segment allocations will actually end up on your DIMM (as it is onlined
-online_movable).
-
-So, the loaded image (with its segments) from user won't be problematic
-and not get placed on your DIMM.
-
-
-Now, the problematic part is (via man kexec_load) "mem and memsz specify
-a physical address range that is the target of the copy."
-
-So the place where the image will be "assembled" at when doing the
-reboot. Understood :)
-
-> Press the Attention button to request removal:
-> 
-> (qemu) device_del dimm1
-> 
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Built 1 zonelists, mobility grouping on.  Total pages: 233728
-> | Policy zone: DMA32
-> 
-> The memory is gone:
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:            918          89         769           0  ...
-> | Swap:             0           0           0
-> 
-> Trigger kexec:
-> | root@vm:/sys/devices/system/memory# kexec -e
-> 
-> [...]
-> 
-> | sd 0:0:0:0: [sda] Synchronizing SCSI cache
-> | kexec_core: Starting new kernel
-> 
-> ... and Qemu restarts the platform firmware instead of proceeding with kexec.
-> (I assume this is a triple fault)
-> 
-> You can use mem-min and mem-max to control where kexec's user space will place
-> the memory.
-> 
-> 
-> If you apply this patch, the above sequence will fail at the device remove step,
-> as the physical addresses match the loaded kexec image:
-> 
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | Offlined Pages 32768
-> | kexec_core: Memory region in use
-> | kexec_core: Memory region in use
-
-Okay, so I assume the kexec userspace tool provided target kernel
-addresses for segments that reside on the DIMM.
-
-
-> | memory memory39: Offline failed.
-> | Built 1 zonelists, mobility grouping on.  Total pages: 299212
-> | Policy zone: Normal
-> 
-> | root@vm:/sys/devices/system/memory# free -m
-> |               total        used        free      shared  ...
-> | Mem:           1942          90        1793           0    ...
-> | Swap:             0           0           0
-> 
-> I can't remove the DIMM, because we failed to offline it:
-
-I wonder if we should instead make the "kexec -e" fail. It tries to
-touch random system memory.
-
-Denying to offline MOVABLE memory should be avoided - and what kexec
-does here sounds dangerous to me (allowing it to write random system
-memory).
-
-Roughly what I am thinking is this:
-
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index ba1d91e868ca..70c39a5307e5 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -1135,6 +1135,10 @@ int kernel_kexec(void)
-                error = -EINVAL;
-                goto Unlock;
-        }
-+       if (!kexec_image_validate()) {
-+               error = -EINVAL;
-+               goto Unlock;
-+       }
-
- #ifdef CONFIG_KEXEC_JUMP
-        if (kexec_image->preserve_context) {
-
-
-kexec_image_validate() would go over all segments and validate that the
-involved pages are actual valid memory (pfn_to_online_page()).
-
-All we have to do is protect from memory hotplug until we switch to the
-new kernel.
-
-Will probably need some thought. But it will actually also bail out when
-user space passes wrong physical memory addresses, instead of
-triple-faulting silently.
-
--- 
-Thanks,
-
-David / dhildenb
+Thanks
+Dave
 
 
 _______________________________________________
