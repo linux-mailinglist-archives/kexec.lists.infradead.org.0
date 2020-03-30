@@ -2,123 +2,98 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B8AA197CC5
-	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 15:23:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F231D197D25
+	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 15:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C38Jg6ZikKRpn/4KLIiYNtXV9OuAnkiH/q1UeGTSGFY=; b=HenR0UyHev7x8O
-	JVxgAgVFDIL9u2gaDdY3wp/J8VnO5zY1igmEb5+u1vFclkeauuy/pOB0pgwoNkXEaSSUbf1lyaxQV
-	YXJ7RNKtxPEsBPRnM/U+dzX9H9dHzWuO4urpL06I7rNx5H1uudMRzUTd3MPcoKhodUv+t0538iJWO
-	r28tJUoQ7lgbZ8fA7EZGfCq/gjVpUCdTZSqwnpEgWR8C+QGIsmulW+FM97ouREXnHUw0MwcfUle4d
-	5G8P5MPzlNn6MNucapwdvuB2LiKYnNPz2naHa5XtZL53+aLF3Whm6oF5l3dBSSYjGA3uqpYffknpg
-	CnjKa5AieWAFUthU2wug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u9uYBqIi859OtNEydy6r9ypWaK29U/rqcFBka3SjlTk=; b=IZLnM+tP390AXh
+	FqHuqpH9l8Njjxd2I7FvxXMogWyhV9LAONJ3VaoqrfPaFWAEKsoELyfQoPIAMJT0R/ei60XQJkrZY
+	Dveta58QyS4E0hco8XszH1SaNg65uRs2Hji98BUs3CeK+Hcy4KqjdS99t/KBtVOqRcoEyuVd5UMCu
+	R8nCYQYEjiD74t6ELMpoaCc9IHBg7+5jFkd49e8shemNlWYE78s5rrIc1KOBOGzqOX/yL556+NOXU
+	W/FydcXtM4IfRehtJCttyvl5HdrX/f3cUeCbLrSwR6ldimjSvcAinadfSiBLPapy/9joCMh519Ezj
+	VHn3iOZmRVBofjXteYdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIuNw-0007Uj-Ty; Mon, 30 Mar 2020 13:23:24 +0000
-Received: from us-smtp-delivery-74.mimecast.com ([216.205.24.74])
+	id 1jIueO-0007bw-Sn; Mon, 30 Mar 2020 13:40:24 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIuNj-0007LF-JO
- for kexec@lists.infradead.org; Mon, 30 Mar 2020 13:23:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585574588;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=Eid6OBsQUr6r79q1JxaE3tCuJ1rMkgtkgbFto8J/T0k=;
- b=Vn1FIaFWKstj4tH4hykx9F4k9TBYMTIK9+RvgvH8JeZ45izTKa/oJ3wl6jOqNSoK6LmdvS
- yChOQb78puzcEGve1vGRVFlaDVIgIfeqK/1ZaSr22LIBoD/c6BSSoLnU7r41GSyVznWDpl
- LUpNotJfn/nqfubOyV1P6kuU3atxdtk=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-445-rr6hxadNNJKHonAYS-CmIA-1; Mon, 30 Mar 2020 09:23:06 -0400
-X-MC-Unique: rr6hxadNNJKHonAYS-CmIA-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0BD9B13F7;
- Mon, 30 Mar 2020 13:23:05 +0000 (UTC)
-Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id A10835C1B5;
- Mon, 30 Mar 2020 13:23:02 +0000 (UTC)
-Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
- memory resource names
-To: James Morse <james.morse@arm.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-3-james.morse@arm.com>
- <52d6fd33-c15d-b842-84ed-b4a74265199f@redhat.com>
- <25aa3f43-5aa9-653f-0910-dd7b75527e08@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <1090cc16-fa6b-8dd2-8c41-22136f733f00@redhat.com>
-Date: Mon, 30 Mar 2020 15:23:01 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jIueJ-0007bM-Lk
+ for kexec@lists.infradead.org; Mon, 30 Mar 2020 13:40:23 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02UDdY7V026505;
+ Mon, 30 Mar 2020 13:40:06 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=ydgsqhArEdAPBPPymxIJ1axqtgIEVoHgn8s/XOMQLYI=;
+ b=JIk0r7M5s9Uq99WtXRS46PnzFnilicuzjGFxo7Wa0XZSJ0x/c3rHtO/pjGsOBUC1vNZp
+ 8ZPhECpjPZUXulqaWvnZOBVdq8pVEMFcnenOL9fhdG4SbDVnJeztACxMvWLCUm/cdJBx
+ LIbcDxNuv4yQquxZKwwqkFaBbLqciRdz1DAt1rIWtDbO8ZwpSfRQRaGD6YkiTWno6Bph
+ Nme82sUXLu7/vqJ22se8dHScQzAf/e1UYNUwcR0/odqg2wNMUFKy0x7g+oNtc3O4C67v
+ ftXBmYr4dBya+d5fGBTzwXh07pcY7xK6WZc2fYTh3Z6BRzsHJnkXp6nOL+kVF+jvK22S wg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 303ceusq76-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 30 Mar 2020 13:40:06 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 02UDauMf050806;
+ Mon, 30 Mar 2020 13:40:05 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3020.oracle.com with ESMTP id 302gc9bhcm-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 30 Mar 2020 13:40:05 +0000
+Received: from abhmp0017.oracle.com (abhmp0017.oracle.com [141.146.116.23])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 02UDe0El004741;
+ Mon, 30 Mar 2020 13:40:00 GMT
+Received: from char.us.oracle.com (/10.152.32.25)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 30 Mar 2020 06:39:59 -0700
+Received: by char.us.oracle.com (Postfix, from userid 1000)
+ id D84776A00D7; Mon, 30 Mar 2020 09:40:04 -0400 (EDT)
+Date: Mon, 30 Mar 2020 09:40:04 -0400
+From: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
+To: Kairui Song <kasong@redhat.com>, anthony.yznaga@oracle.com,
+ Jan Setje-Eilers <jan.setjeeilers@oracle.com>
+Subject: Re: [PATCH] swiotlb: Allow swiotlb to live at pre-defined address
+Message-ID: <20200330134004.GA31026@char.us.oracle.com>
+References: <20200326162922.27085-1-graf@amazon.com>
+ <20200328115733.GA67084@dhcp-128-65.nay.redhat.com>
+ <CACPcB9d_Pz9SRhSsRzqygRR6waV7r8MnGcCP952svnZtpFaxnQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <25aa3f43-5aa9-653f-0910-dd7b75527e08@arm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <CACPcB9d_Pz9SRhSsRzqygRR6waV7r8MnGcCP952svnZtpFaxnQ@mail.gmail.com>
+User-Agent: Mutt/1.9.1 (2017-09-22)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9575
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
+ spamscore=0 malwarescore=0
+ mlxlogscore=999 adultscore=0 suspectscore=0 phishscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003300130
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9575
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 adultscore=0
+ clxscore=1011 phishscore=0 lowpriorityscore=0 spamscore=0 malwarescore=0
+ suspectscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 bulkscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2003300130
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_062311_728708_3AA4CA7C 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200330_064020_357525_52BE2E5E 
+X-CRM114-Status: GOOD (  42.54  )
+X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.205.24.74 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -127,6 +102,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -139,83 +116,236 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Vitaly Kuznetsov <vkuznets@redhat.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, brijesh.singh@amd.com,
+ Lianbo Jiang <lijiang@redhat.com>, linux-doc@vger.kernel.org,
+ Jan Kiszka <jan.kiszka@siemens.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Baoquan He <bhe@redhat.com>,
+ the arch/x86 maintainers <x86@kernel.org>, Laszlo Ersek <lersek@redhat.com>,
+ aggh@amazon.com, "Lendacky, Thomas" <thomas.lendacky@amd.com>,
+ alcioa@amazon.com, Alexander Graf <graf@amazon.com>, dhr@amazon.com,
+ benh@amazon.com, Dave Young <dyoung@redhat.com>, kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ iommu@lists.linux-foundation.org, aagch@amazon.com,
+ Robin Murphy <robin.murphy@arm.com>, dwmw@amazon.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
->>> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
->>> index 0a54ffac8c68..69b03dd7fc74 100644
->>> --- a/mm/memory_hotplug.c
->>> +++ b/mm/memory_hotplug.c
->>> @@ -42,6 +42,10 @@
->>>  #include "internal.h"
->>>  #include "shuffle.h"
->>>  
->>> +#ifndef MEMORY_HOTPLUG_RES_NAME
->>> +#define MEMORY_HOTPLUG_RES_NAME "System RAM"
->>> +#endif
->>
->> So I assume changing this for all architectures would result in some
->> user space tool breaking? Are we aware of any?
+On Mon, Mar 30, 2020 at 02:06:01PM +0800, Kairui Song wrote:
+> On Sat, Mar 28, 2020 at 7:57 PM Dave Young <dyoung@redhat.com> wrote:
+> >
+> > On 03/26/20 at 05:29pm, Alexander Graf wrote:
+> > > The swiotlb is a very convenient fallback mechanism for bounce buffering of
+> > > DMAable data. It is usually used for the compatibility case where devices
+> > > can only DMA to a "low region".
+> > >
+> > > However, in some scenarios this "low region" may be bound even more
+> > > heavily. For example, there are embedded system where only an SRAM region
+> > > is shared between device and CPU. There are also heterogeneous computing
+> > > scenarios where only a subset of RAM is cache coherent between the
+> > > components of the system. There are partitioning hypervisors, where
+> > > a "control VM" that implements device emulation has limited view into a
+> > > partition's memory for DMA capabilities due to safety concerns.
+> > >
+> > > This patch adds a command line driven mechanism to move all DMA memory into
+> > > a predefined shared memory region which may or may not be part of the
+> > > physical address layout of the Operating System.
+> > >
+> > > Ideally, the typical path to set this configuration would be through Device
+> > > Tree or ACPI, but neither of the two mechanisms is standardized yet. Also,
+> > > in the x86 MicroVM use case, we have neither ACPI nor Device Tree, but
+> > > instead configure the system purely through kernel command line options.
+> > >
+> > > I'm sure other people will find the functionality useful going forward
+> > > though and extend it to be triggered by DT/ACPI in the future.
+> >
+> > Hmm, we have a use case for kdump, this maybe useful.  For example
+> > swiotlb is enabled by default if AMD SME/SEV is active, and in kdump
+> > kernel we have to increase the crashkernel reserved size for the extra
+> > swiotlb requirement.  I wonder if we can just reuse the old kernel's
+> > swiotlb region and pass the addr to kdump kernel.
+> >
 > 
-> Last time we had to touch arm64's /proc/iomem strings I went through debian's
-> codesearch for stuff that reads it, kexec-tools was the only thing that parsed
-> it in anger. (From memory, the other tools were looking for PCIe windows to do
-> firmware flashing..)
+> Yes, definitely helpful for kdump kernel. This can help reduce the
+> crashkernel value.
 > 
-> Looking again, having qualifiers on the end of 'System RAM' looks like it could
-> confuse 's390-tools's detect_mem_chunks parser.
-
-Good to know, we should find out if this could work.
-
+> Previously I was thinking about something similar, play around the
+> e820 entry passed to kdump and let it place swiotlb in wanted region.
+> Simply remap it like in this patch looks much cleaner.
 > 
-> It looks like the strings that come out of 'FIRMWARE_MEMMAP' are a duplicate set.
+> If this patch is acceptable, one more patch is needed to expose the
+> swiotlb in iomem, so kexec-tools can pass the right kernel cmdline to
+> second kernel.
+
+We seem to be passsing a lot of data to kexec.. Perhaps something
+of a unified way since we seem to have a lot of things to pass - disabling
+IOMMU, ACPI RSDT address, and then this.
+
+CC-ing Anthony who is working on something - would you by any chance
+have a doc on this?
+
+Thanks!
+> 
+> > >
+> > > Signed-off-by: Alexander Graf <graf@amazon.com>
+> > > ---
+> > >  Documentation/admin-guide/kernel-parameters.txt |  3 +-
+> > >  Documentation/x86/x86_64/boot-options.rst       |  4 ++-
+> > >  kernel/dma/swiotlb.c                            | 46 +++++++++++++++++++++++--
+> > >  3 files changed, 49 insertions(+), 4 deletions(-)
+> > >
+> > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > > index c07815d230bc..d085d55c3cbe 100644
+> > > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > > @@ -4785,11 +4785,12 @@
+> > >                       it if 0 is given (See Documentation/admin-guide/cgroup-v1/memory.rst)
+> > >
+> > >       swiotlb=        [ARM,IA-64,PPC,MIPS,X86]
+> > > -                     Format: { <int> | force | noforce }
+> > > +                     Format: { <int> | force | noforce | addr=<phys addr> }
+> > >                       <int> -- Number of I/O TLB slabs
+> > >                       force -- force using of bounce buffers even if they
+> > >                                wouldn't be automatically used by the kernel
+> > >                       noforce -- Never use bounce buffers (for debugging)
+> > > +                     addr=<phys addr> -- Try to allocate SWIOTLB at defined address
+> > >
+> > >       switches=       [HW,M68k]
+> > >
+> > > diff --git a/Documentation/x86/x86_64/boot-options.rst b/Documentation/x86/x86_64/boot-options.rst
+> > > index 2b98efb5ba7f..ca46c57b68c9 100644
+> > > --- a/Documentation/x86/x86_64/boot-options.rst
+> > > +++ b/Documentation/x86/x86_64/boot-options.rst
+> > > @@ -297,11 +297,13 @@ iommu options only relevant to the AMD GART hardware IOMMU:
+> > >  iommu options only relevant to the software bounce buffering (SWIOTLB) IOMMU
+> > >  implementation:
+> > >
+> > > -    swiotlb=<pages>[,force]
+> > > +    swiotlb=<pages>[,force][,addr=<phys addr>]
+> > >        <pages>
+> > >          Prereserve that many 128K pages for the software IO bounce buffering.
+> > >        force
+> > >          Force all IO through the software TLB.
+> > > +      addr=<phys addr>
+> > > +        Try to allocate SWIOTLB at defined address
+> > >
+> > >  Settings for the IBM Calgary hardware IOMMU currently found in IBM
+> > >  pSeries and xSeries machines
+> > > diff --git a/kernel/dma/swiotlb.c b/kernel/dma/swiotlb.c
+> > > index c19379fabd20..83da0caa2f93 100644
+> > > --- a/kernel/dma/swiotlb.c
+> > > +++ b/kernel/dma/swiotlb.c
+> > > @@ -46,6 +46,7 @@
+> > >  #include <linux/init.h>
+> > >  #include <linux/memblock.h>
+> > >  #include <linux/iommu-helper.h>
+> > > +#include <linux/io.h>
+> > >
+> > >  #define CREATE_TRACE_POINTS
+> > >  #include <trace/events/swiotlb.h>
+> > > @@ -102,6 +103,12 @@ unsigned int max_segment;
+> > >  #define INVALID_PHYS_ADDR (~(phys_addr_t)0)
+> > >  static phys_addr_t *io_tlb_orig_addr;
+> > >
+> > > +/*
+> > > + * The TLB phys addr may be defined on the command line. Store it here if it is.
+> > > + */
+> > > +static phys_addr_t io_tlb_addr = INVALID_PHYS_ADDR;
+> > > +
+> > > +
+> > >  /*
+> > >   * Protect the above data structures in the map and unmap calls
+> > >   */
+> > > @@ -119,11 +126,23 @@ setup_io_tlb_npages(char *str)
+> > >       }
+> > >       if (*str == ',')
+> > >               ++str;
+> > > -     if (!strcmp(str, "force")) {
+> > > +     if (!strncmp(str, "force", 5)) {
+> > >               swiotlb_force = SWIOTLB_FORCE;
+> > > -     } else if (!strcmp(str, "noforce")) {
+> > > +             str += 5;
+> > > +     } else if (!strncmp(str, "noforce", 7)) {
+> > >               swiotlb_force = SWIOTLB_NO_FORCE;
+> > >               io_tlb_nslabs = 1;
+> > > +             str += 7;
+> > > +     }
+> > > +
+> > > +     if (*str == ',')
+> > > +             ++str;
+> > > +     if (!strncmp(str, "addr=", 5)) {
+> > > +             char *addrstr = str + 5;
+> > > +
+> > > +             io_tlb_addr = kstrtoul(addrstr, 0, &str);
+> > > +             if (addrstr == str)
+> > > +                     io_tlb_addr = INVALID_PHYS_ADDR;
+> > >       }
+> > >
+> > >       return 0;
+> > > @@ -239,6 +258,25 @@ int __init swiotlb_init_with_tbl(char *tlb, unsigned long nslabs, int verbose)
+> > >       return 0;
+> > >  }
+> > >
+> > > +static int __init swiotlb_init_io(int verbose, unsigned long bytes)
+> > > +{
+> > > +     unsigned __iomem char *vstart;
+> > > +
+> > > +     if (io_tlb_addr == INVALID_PHYS_ADDR)
+> > > +             return -EINVAL;
+> > > +
+> > > +     vstart = memremap(io_tlb_addr, bytes, MEMREMAP_WB);
+> > > +     if (!vstart)
+> > > +             return -EINVAL;
+> > > +
+> > > +     if (swiotlb_init_with_tbl(vstart, io_tlb_nslabs, verbose)) {
+> > > +             memunmap(vstart);
+> > > +             return -EINVAL;
+> > > +     }
+> > > +
+> > > +     return 0;
+> > > +}
+> > > +
+> > >  /*
+> > >   * Statically reserve bounce buffer space and initialize bounce buffer data
+> > >   * structures for the software IO TLB used to implement the DMA API.
+> > > @@ -257,6 +295,10 @@ swiotlb_init(int verbose)
+> > >
+> > >       bytes = io_tlb_nslabs << IO_TLB_SHIFT;
+> > >
+> > > +     /* Map IO TLB from device memory */
+> > > +     if (!swiotlb_init_io(verbose, bytes))
+> > > +             return;
+> > > +
+> > >       /* Get IO TLB memory from the low pages */
+> > >       vstart = memblock_alloc_low(PAGE_ALIGN(bytes), PAGE_SIZE);
+> > >       if (vstart && !swiotlb_init_with_tbl(vstart, io_tlb_nslabs, verbose))
+> > > --
+> > > 2.16.4
+> > >
+> > >
+> > >
+> > >
+> > > Amazon Development Center Germany GmbH
+> > > Krausenstr. 38
+> > > 10117 Berlin
+> > > Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
+> > > Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+> > > Sitz: Berlin
+> > > Ust-ID: DE 289 237 879
+> > >
+> > >
+> > >
+> >
+> > Thanks
+> > Dave
+> >
 > 
 > 
->> I do wonder if we should simply change it for all architectures if possible.
+> -- 
+> Best Regards,
+> Kairui Song
 > 
-> If its possible that would be great. But I suspect that ship has sailed,
-> changing it on other architectures could break some fragile parsing code.
-
-I assume any parser has to be prepared for new types showing up.
-Otherwise these would not be future proof. The question is if a common
-prefix is problematic.
-
-E.g., Use "Hotplugged System RAM" instead of "System RAM (hotplug)"
-
-> 
-> I'm wary of changing it on arm64, the only thing that makes it tolerable is that
-> memory hot-add was relatively recently merged, and we don't anticipate it being
-> widely used until you can remove memory as well.
-> 
-> Changing it on arm64 is to prevent today's versions of kexec-tools from
-> accidentally placing the new kernel in memory that wasn't described at boot.
-> This leads to an unhandled exception during boot[0] because the kernel can't
-> access itself via the mapping of all memory. (hotpluggable regions are only
-> discovered by suitably configured ACPI systems much later)
-
-I want the very same for virtio-mem (initially x86-only, but later open
-for all archs). Can also be interesting for Hyper-V. kexec should not
-try to use hotplugged memory as kexec target, as memory blocks can be
-partially inaccessible.
-
-Of course, I can provide an interface to override the name via
-add_memory(), but having it on all architectures handled in a similar
-way right from the start would be nicer.
-
-
--- 
-Thanks,
-
-David / dhildenb
-
 
 _______________________________________________
 kexec mailing list
