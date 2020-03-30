@@ -2,92 +2,63 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F313C1979A2
-	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 12:51:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F5EA197C5E
+	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 15:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
-	From:MIME-Version:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mPw+Myna2FzOuX39bwNt3VO8xDMyn2hv1ZVKG1XsG4A=; b=DQpj0xedPl0EAD
-	TsUZckb546gbgcZf60tzFLujwMhxo0WOH1EKXa2UfQERbgQPOfaruzD894mlEg3k4cqJBPW1XXU8Z
-	FsohQK9nUlw5ar6IMiEw1mGywVinqTgzlHY4fAZU2jatgzZo3GAc+sv22uGnK/+EQKCAfnDknyefH
-	5e+IG85kqZ/MpZJFUoMREoGw0mYrVwPx2TXLR8KtNTr8VGfScb6ThG7z48hLSU+tymhDlJg7QKIdX
-	DftIgC11c8Bcnwtm+Yz9HriBNrpBWP7O76EZw9ZPJ8mW2LL/X4zT+N2d/Qk6lPMjcIXAMeg8eETT7
-	AwKFyRFqhKeXm6+IpENQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xnEWtHVv06lYu/szg+514kyFWVc4ML9erCx+2UnHLP4=; b=IhaptHpf1ymKCj
+	TyCAodjoK6JfYrruG84lqToSafQZQ4ZCYiTY53o3ZiBZXDlk3lzja5TLJjmjySHY4C56lDQZiCljN
+	3ncUWfuoVFdmgzWoXqQTBI1c1micF3kG6QBv8WepJozwPNp9ibf/cma9jCNwEfvcALGe9klGLaJcP
+	C0gqnUhal1UBj3swxbEpBX4gQUfiYvSZsqbwz2DXYAeeZV5ZGCkP4vV3W7i9VtCJ3gHviiikxhZ1b
+	1a7+rVaCNCS5JofOZECkMGGfL2XHByvugI0bf4f2KLDAS2k0wjO6R7gHCM3UTVblFAkl/LwPXFx2T
+	DUqL9RO6Dl8UlK84sN1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIs17-0003pT-0B; Mon, 30 Mar 2020 10:51:41 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIs13-0003p7-PI
- for kexec@lists.infradead.org; Mon, 30 Mar 2020 10:51:38 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id s10so10657169vsi.9
- for <kexec@lists.infradead.org>; Mon, 30 Mar 2020 03:51:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:reply-to:from:date:message-id:subject:to;
- bh=82B0OONv9gwbZlPp43NzThDz2fRV+KRFwafOQ16joDw=;
- b=pmfufcukdjtwJGNtxCWB6abIy5GQkydOhglTt3lU2SNSHQkXjHvYVAYU30qpH0ROcn
- 6AR81pKR9LU8L5YeZnaBH9MvN/REWH5yRTWPgLFGTHBrQIMlYTgg1KzSS2HURZNZm8OD
- SUHydw70bw0Q0cdHd4uf2iXTPiDhTTTwYAdjzmZQ2jSivGRsQ2XoJx9BB/FYlSUeb5oy
- 5awE4LGroq+bJGyUftKKYOLINHvkpei9FuchjXvbX7X9WnD9VXRR0fk+ICDWYXcZidms
- B2Tcxn0d5gO0STEGqpugUjsy6/FY3i0rb+Q9Aubo2nnGcM5Z3hnCHy9hm0pGt54tKkMk
- 0diQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:reply-to:from:date:message-id
- :subject:to;
- bh=82B0OONv9gwbZlPp43NzThDz2fRV+KRFwafOQ16joDw=;
- b=TnhGzQfbXb/okEzBzIIz+1sI7rrnWDHtRaEPhihpXPuE97D1MyWDF1PlAPXddIwiPn
- 1rU+9KJlVx9fJyUdJ2Ee12QZDeVpO83jnPg+Mio4b8t9ifMyKOUa+3xjKnHvkJ+bHJQv
- 72YkPnjl3S7jpym7O7obrfRZOH1nYrlZsOIrxes6yCV6aKOXeaIHXrvZ88XTCqn5B1Of
- toaUdj+yufBLgRgL2ym8j34PPZtWSDVWVYaE31HIWTchgJwYslznu3aUkbzbSatJNCk4
- PaRAjMR8ZFqPxlwvwGHFI63/ainCJCJo/2GsVvcOvTexycCZE7CMBgAR1qLiPDU5Hrii
- S2OQ==
-X-Gm-Message-State: AGi0PuYqopROi3w9NKtBLz7ttCAbI8z87wcN94bTrETKJnTBp36cd6vn
- +usKCz1g/OKcXm+HO0DjF0Z8HN5rAXEvFWnuUS0=
-X-Google-Smtp-Source: APiQypJa1PceJQJ4Uifc/OqOMsrqmrQouzmU8Q8RDUvIDEAu0nQ7VLXoyo7OeaG8ZGcz9++WgUurorK4eBNnHWQDQ14=
-X-Received: by 2002:a67:e24c:: with SMTP id w12mr8440041vse.153.1585565496489; 
- Mon, 30 Mar 2020 03:51:36 -0700 (PDT)
+	id 1jIu2N-0007Dc-U3; Mon, 30 Mar 2020 13:01:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jIu2K-0007Cz-V3; Mon, 30 Mar 2020 13:01:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 660BC30E;
+ Mon, 30 Mar 2020 06:01:03 -0700 (PDT)
+Received: from [172.16.1.108] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A4CA33F71E;
+ Mon, 30 Mar 2020 06:01:01 -0700 (PDT)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: David Hildenbrand <david@redhat.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-2-james.morse@arm.com>
+ <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
+ <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
+ <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
+ <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
+ <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
+From: James Morse <james.morse@arm.com>
+Openpgp: preference=signencrypt
+Message-ID: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
+Date: Mon, 30 Mar 2020 14:00:47 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Received: by 2002:a67:c005:0:0:0:0:0 with HTTP; Mon, 30 Mar 2020 03:51:35
- -0700 (PDT)
-From: Maryalice Williams <maryalicewilliams730@gmail.com>
-Date: Mon, 30 Mar 2020 08:51:35 -0200
-Message-ID: <CAKwdjspC3teZc3g9Bg3_Wsc-61AL3_=GrmVKBnDw_HTZuBNk5w@mail.gmail.com>
-Subject: Reply For More Details.
-To: undisclosed-recipients:;
+In-Reply-To: <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_035137_821053_55FC927D 
-X-CRM114-Status: UNSURE (  -2.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200330_060105_087664_4EADC632 
+X-CRM114-Status: GOOD (  29.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [maryalicewilliams730[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [maryalicewilliams730[at]gmail.com]
- 0.0 MILLION_HUNDRED        BODY: Million "One to Nine" Hundred
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain 0.0 LOTS_OF_MONEY          Huge... sums of money
- 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
- information
- 0.0 MONEY_FORM_SHORT       Lots of money if you fill out a short form
- 0.9 ADVANCE_FEE_2_NEW_MONEY Advance Fee fraud and lots of money
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,24 +70,149 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Reply-To: maryalice00.12@postribe.com
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
--- 
-My dear,
+Hi David,
 
-I am Mrs Maryalice Williams, I want to send you donation of two
-million seven hundred thousand Dollars ($2.7M) for volunteer projects
-in your country due to my ill health that could not permit me. Kindly
-reply for more details, and also send me the following details, as per
-below, your full Name ..........,  Address...........,
-Age...............,  Occupation ...............
+On 3/27/20 6:52 PM, David Hildenbrand wrote:
+>>> 2. You do the kexec. The kexec kernel will only operate on a reserved
+>>> memory region (reserved via e.g., kernel cmdline crashkernel=128M).
+>>
+>> I think you are merging the kexec and kdump behaviours.
+>> (Wrong terminology? The things behind 'kexec -l Image' and 'kexec -p Image')
+> 
+> Oh, I see - I think your example below clarifies things. Something like
+> that should go in the cover letter if we end up in this patch being
+> required :)
 
-Remain blessed,
-Mrs. Maryalice Williams.
+Do you mean the commit message? I think its far too long...
+
+Adding a sentence about the way kexec load works may help, the first paragraph
+would read:
+
+| Kexec allows user-space to specify the address that the kexec image should be
+| loaded to. Because this memory may be in use, an image loaded for kexec is not
+| stored in place, instead its segments are scattered through memory, and are
+| re-assembled when needed. In the meantime, the target memory may have been
+| removed.
+
+Do you think thats clearer?
+
+
+> (I missed that the problematic part is "random" addresses passed by user
+> space to the kernel, where it wants data to be loaded to on kexec -e)
+
+[...]
+
+>> Load kexec:
+>> | root@vm:/sys/devices/system/memory# kexec -l /root/bzImage --reuse-cmdline
+>>
+> 
+> I assume this will trigger
+> 
+> kexec_load -> do_kexec_load -> kimage_load_segment ->
+> kimage_load_normal_segment -> kimage_alloc_page -> kimage_alloc_pages
+> 
+> Which will just allocate a bunch of pages and mark them reserved.
+> 
+> Now, AFAIKs, all allocations will be unmovable. So none of the kexec
+> segment allocations will actually end up on your DIMM (as it is onlined
+> online_movable).
+> 
+> So, the loaded image (with its segments) from user won't be problematic
+> and not get placed on your DIMM.
+> 
+> 
+> Now, the problematic part is (via man kexec_load) "mem and memsz specify
+> a physical address range that is the target of the copy."
+> 
+> So the place where the image will be "assembled" at when doing the
+> reboot. Understood :)
+
+Yup.
+
+[...]
+
+> I wonder if we should instead make the "kexec -e" fail. It tries to
+> touch random system memory.
+
+Heh, isn't touching random system memory what kexec does?!
+
+Its all described to user-space as 'System RAM'. Teaching it to probe
+/sys/devices/memory/... would require a user-space change.
+
+
+> Denying to offline MOVABLE memory should be avoided - and what kexec
+> does here sounds dangerous to me (allowing it to write random system
+> memory).
+
+> Roughly what I am thinking is this:
+> 
+> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+> index ba1d91e868ca..70c39a5307e5 100644
+> --- a/kernel/kexec_core.c
+> +++ b/kernel/kexec_core.c
+> @@ -1135,6 +1135,10 @@ int kernel_kexec(void)
+>                 error = -EINVAL;
+>                 goto Unlock;
+>         }
+> +       if (!kexec_image_validate()) {
+> +               error = -EINVAL;
+> +               goto Unlock;
+> +       }
+> 
+>  #ifdef CONFIG_KEXEC_JUMP
+>         if (kexec_image->preserve_context) {
+> 
+> 
+> kexec_image_validate() would go over all segments and validate that the
+> involved pages are actual valid memory (pfn_to_online_page()).
+> 
+> All we have to do is protect from memory hotplug until we switch to the
+> new kernel.
+
+(migrate_to_reboot_cpu() can sleep), I think you'd end up with something like
+this patch, but only while kexec_in_progress. I don't think letting kexec fail
+if the events occur in a different order is good for user-space.
+
+
+> Will probably need some thought. But it will actually also bail out when
+> user space passes wrong physical memory addresses, instead of
+> triple-faulting silently.
+
+With this change, the reboot(LINUX_REBOOT_CMD_KEXEC), call would fail. This
+thing doesn't usually return, so we're likely to trigger error-handling that has
+never run before.
+
+(Last time I debugged one of these, it turned out kexec had taken the network
+interfaces down, meaning the nfsroot was no longer accessible)
+
+How can user-space know whether kexec is going to succeed, or fail like this?
+Any loaded kexec kernel could secretly be in this broken state.
+
+Can user-space know what caused this to become unreliable? (without reading the
+kernel source)
+
+
+Given kexec can be unloaded by user-space, I think its better to prevent us
+getting into the broken state, preferably giving the hint that kexec us using
+that memory. The user can 'kexec -u', then retry removing the memory.
+
+I think forbidding the memory-offline is simpler for user-space to deal with.
+
+
+Thanks,
+
+James
 
 _______________________________________________
 kexec mailing list
