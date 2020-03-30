@@ -2,96 +2,92 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81745198542
-	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 22:17:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6461C1985A5
+	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 22:42:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V3LTfrC3vd1hqVq4Q3/T4MZxQYkfhCfOMonhhFNL6Rc=; b=RWFokPGoMa2tob
-	6pjCPO/IAWrY2tgBsjewga8yP+8DNvwjMp7HpgxSayUCuCrAblWapwYeV0RephwNeFib2TH9hJPF/
-	s7biYMWh32qDfxrJbPNWZZpVjm02PGiSy8F9aGsvSuLe9ujMsDsYnGiB/S3Qhgf/NxYTv/yND4lYO
-	/pK0zWcQwbLnPw/H5XejwoOrsZRKnhDVDehXLCWAUC4W6l4MKhXpithKVZ/R4P10/6NIAyNpTTQgj
-	VPSIxyydIX3LW5CKTFZARbq6tBnUUjRDJbY2/gq6EnEI+jX5t6mczo9WoqT53dOnG5p1gWk+7HniM
-	XvLf11uGcCrjaJWJCw+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1tq4JlGXNdLo1DgGK9s3J+9FnMWb2FxagUQDIVJIc+8=; b=siKQm+Rbporgc6sSwSFTbp0LG
+	3ifv3IwI9IdgxWgFTHpzzF6M2ahi+t4V021ZmgM6hahrlLr3yBgFmjNH14ciJe56j32xkMW8/HS0H
+	C6/MkfkJ9Wwb8xD+/oFSNHNyk9tTfWcE3C9dRCPUd5+V1lp0azWsrNGB6vXwQ2pljphE4Hxi8WjEL
+	gGiqVngZyEnIXE98zUOi5ZBJCGkQSgZK9SVMTBCQZpuwr8p7keMgYC/B+I0B5DI0SvOIyTn2gUFOU
+	XF3xu3fJYV3nSIanAxdx39IVajeZHKCPO2EOGLRIo+CMNUez4K3B67UUosHNSqjZAvtfzAlzc7U7T
+	33mC7dTig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJ0qS-00089s-Bf; Mon, 30 Mar 2020 20:17:16 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jJ1Ep-00085L-87; Mon, 30 Mar 2020 20:42:27 +0000
+Received: from smtp-fw-9101.amazon.com ([207.171.184.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJ0qP-00088l-CA
- for kexec@lists.infradead.org; Mon, 30 Mar 2020 20:17:14 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jJ0pz-0001xk-8G; Mon, 30 Mar 2020 14:16:47 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jJ0py-0005pf-Ai; Mon, 30 Mar 2020 14:16:47 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Kairui Song <kasong@redhat.com>
-References: <20200330181544.1595733-1-kasong@redhat.com>
-Date: Mon, 30 Mar 2020 15:14:06 -0500
-In-Reply-To: <20200330181544.1595733-1-kasong@redhat.com> (Kairui Song's
- message of "Tue, 31 Mar 2020 02:15:44 +0800")
-Message-ID: <87369py50x.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jJ1El-00084N-NQ
+ for kexec@lists.infradead.org; Mon, 30 Mar 2020 20:42:25 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1585600944; x=1617136944;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=pzei7EPNdSl0vQstWZdYvFBARJOekVDWFMh3y2n4Zzg=;
+ b=TcezRqDkDfcKnTouSE4+B9IzLVVkc1r/nFnMyeY4Kp5QyY7RHG5SqlkI
+ AfcgvcPREfGhwZeZtLmkiBx0TYR2vNyfxZMEXb/Ol3Lmpk9CkRSHgY2Fb
+ fdF6oFiX4ldSAcLgX5RvDIsyK+HvwBQP1GOaw5cONNu1XW/4RPrjObuVh 8=;
+IronPort-SDR: ZQ+rhy1V3tG9tO8gx4zMdwYV99PRd2MSqkQa6tUb6O30D5v+rRPtyfdHoJg1n+6rvekwp2wRW2
+ RRTQjGuwOMAQ==
+X-IronPort-AV: E=Sophos;i="5.72,325,1580774400"; d="scan'208";a="25953907"
+Received: from sea32-co-svc-lb4-vlan3.sea.corp.amazon.com (HELO
+ email-inbound-relay-1a-16acd5e0.us-east-1.amazon.com) ([10.47.23.38])
+ by smtp-border-fw-out-9101.sea19.amazon.com with ESMTP;
+ 30 Mar 2020 20:42:17 +0000
+Received: from EX13MTAUWC001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1a-16acd5e0.us-east-1.amazon.com (Postfix) with ESMTPS
+ id C9F3AA2992; Mon, 30 Mar 2020 20:42:09 +0000 (UTC)
+Received: from EX13D20UWC001.ant.amazon.com (10.43.162.244) by
+ EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Mon, 30 Mar 2020 20:42:09 +0000
+Received: from 38f9d3867b82.ant.amazon.com (10.43.162.134) by
+ EX13D20UWC001.ant.amazon.com (10.43.162.244) with Microsoft SMTP Server (TLS)
+ id 15.0.1497.2; Mon, 30 Mar 2020 20:42:02 +0000
+Subject: Re: [PATCH] swiotlb: Allow swiotlb to live at pre-defined address
+To: Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, Kairui Song
+ <kasong@redhat.com>, <anthony.yznaga@oracle.com>, Jan Setje-Eilers
+ <jan.setjeeilers@oracle.com>
+References: <20200326162922.27085-1-graf@amazon.com>
+ <20200328115733.GA67084@dhcp-128-65.nay.redhat.com>
+ <CACPcB9d_Pz9SRhSsRzqygRR6waV7r8MnGcCP952svnZtpFaxnQ@mail.gmail.com>
+ <20200330134004.GA31026@char.us.oracle.com>
+From: Alexander Graf <graf@amazon.com>
+Message-ID: <51432837-8804-0600-c7a3-8849506f999e@amazon.com>
+Date: Mon, 30 Mar 2020 22:42:00 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
+ Gecko/20100101 Thunderbird/68.6.0
 MIME-Version: 1.0
-X-XM-SPF: eid=1jJ0py-0005pf-Ai; ; ; mid=<87369py50x.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX18POivBtpLy4qX5Ci7Y3ZVo2RKkhoDPLpY=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
-X-Spam-Level: *
-X-Spam-Status: No, score=1.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,LotsOfNums_01,T_TM2_M_HEADER_IN_MSG
- autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.5000]
- *  1.2 LotsOfNums_01 BODY: Lots of long strings of numbers
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa06 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa06 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: *;Kairui Song <kasong@redhat.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 497 ms - load_scoreonly_sql: 0.07 (0.0%),
- signal_user_changed: 11 (2.2%), b_tie_ro: 10 (1.9%), parse: 1.10
- (0.2%), extract_message_metadata: 13 (2.6%), get_uri_detail_list: 2.5
- (0.5%), tests_pri_-1000: 13 (2.7%), tests_pri_-950: 1.29 (0.3%),
- tests_pri_-900: 1.02 (0.2%), tests_pri_-90: 90 (18.2%), check_bayes:
- 89 (17.9%), b_tokenize: 8 (1.6%), b_tok_get_all: 25 (5.1%),
- b_comp_prob: 2.3 (0.5%), b_tok_touch_all: 50 (10.0%), b_finish: 0.95
- (0.2%), tests_pri_0: 324 (65.3%), check_dkim_signature: 0.51 (0.1%),
- check_dkim_adsp: 2.5 (0.5%), poll_dns_idle: 0.79 (0.2%), tests_pri_10:
- 4.1 (0.8%), tests_pri_500: 34 (6.9%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH] crash_dump: remove saved_max_pfn
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+In-Reply-To: <20200330134004.GA31026@char.us.oracle.com>
+Content-Language: en-US
+X-Originating-IP: [10.43.162.134]
+X-ClientProxiedBy: EX13D10UWB002.ant.amazon.com (10.43.161.130) To
+ EX13D20UWC001.ant.amazon.com (10.43.162.244)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_131713_416786_03700647 
-X-CRM114-Status: GOOD (  16.57  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200330_134223_814291_C08AC648 
+X-CRM114-Status: GOOD (  23.84  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.25 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,94 +99,137 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>, Dave Young <dyoung@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, brijesh.singh@amd.com,
+ Lianbo Jiang <lijiang@redhat.com>, linux-doc@vger.kernel.org,
+ Jan Kiszka <jan.kiszka@siemens.com>, "Schoenherr, Jan H." <jschoenh@amazon.de>,
+ Christoph Hellwig <hch@lst.de>, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Baoquan He <bhe@redhat.com>, the
+ arch/x86 maintainers <x86@kernel.org>, Laszlo Ersek <lersek@redhat.com>,
+ aggh@amazon.com, "Lendacky, Thomas" <thomas.lendacky@amd.com>,
+ alcioa@amazon.com, dhr@amazon.com, benh@amazon.com,
+ Dave Young <dyoung@redhat.com>, kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ iommu@lists.linux-foundation.org, aagch@amazon.com,
+ Robin Murphy <robin.murphy@arm.com>, dwmw@amazon.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Kairui Song <kasong@redhat.com> writes:
-
-> This variable is no longer used.
->
-> saved_max_pfn was originally introduce in commit 92aa63a5a1bf ("[PATCH]
-> kdump: Retrieve saved max pfn"), used to make sure that user does not
-> try to read the physical memory beyond saved_max_pfn. But since
-> commit 921d58c0e699 ("vmcore: remove saved_max_pfn check")
-> it's no longer used for the check.
->
-> Only user left is Calary IOMMU, which start using it from
-> commit 95b68dec0d52 ("calgary iommu: use the first kernels TCE tables
-> in kdump"). But again, recently in commit 90dc392fc445 ("x86: Remove
-> the calgary IOMMU driver"), Calary IOMMU is removed and this variable
-> no longer have any user.
->
-> So just remove it.
->
-> Signed-off-by: Kairui Song <kasong@redhat.com>
-
-Acked-by: "Eric W. Biederman" <ebiederm@xmission.com>
-
-Can we merge this through the tip tree?
 
 
-> ---
->  arch/x86/kernel/e820.c     | 8 --------
->  include/linux/crash_dump.h | 2 --
->  kernel/crash_dump.c        | 6 ------
->  3 files changed, 16 deletions(-)
->
-> diff --git a/arch/x86/kernel/e820.c b/arch/x86/kernel/e820.c
-> index c5399e80c59c..4d13c57f370a 100644
-> --- a/arch/x86/kernel/e820.c
-> +++ b/arch/x86/kernel/e820.c
-> @@ -910,14 +910,6 @@ static int __init parse_memmap_one(char *p)
->  		return -EINVAL;
->  
->  	if (!strncmp(p, "exactmap", 8)) {
-> -#ifdef CONFIG_CRASH_DUMP
-> -		/*
-> -		 * If we are doing a crash dump, we still need to know
-> -		 * the real memory size before the original memory map is
-> -		 * reset.
-> -		 */
-> -		saved_max_pfn = e820__end_of_ram_pfn();
-> -#endif
->  		e820_table->nr_entries = 0;
->  		userdef = 1;
->  		return 0;
-> diff --git a/include/linux/crash_dump.h b/include/linux/crash_dump.h
-> index 4664fc1871de..bc156285d097 100644
-> --- a/include/linux/crash_dump.h
-> +++ b/include/linux/crash_dump.h
-> @@ -97,8 +97,6 @@ extern void unregister_oldmem_pfn_is_ram(void);
->  static inline bool is_kdump_kernel(void) { return 0; }
->  #endif /* CONFIG_CRASH_DUMP */
->  
-> -extern unsigned long saved_max_pfn;
-> -
->  /* Device Dump information to be filled by drivers */
->  struct vmcoredd_data {
->  	char dump_name[VMCOREDD_MAX_NAME_BYTES]; /* Unique name of the dump */
-> diff --git a/kernel/crash_dump.c b/kernel/crash_dump.c
-> index 9c23ae074b40..92da32275af5 100644
-> --- a/kernel/crash_dump.c
-> +++ b/kernel/crash_dump.c
-> @@ -5,12 +5,6 @@
->  #include <linux/errno.h>
->  #include <linux/export.h>
->  
-> -/*
-> - * If we have booted due to a crash, max_pfn will be a very low value. We need
-> - * to know the amount of memory that the previous kernel used.
-> - */
-> -unsigned long saved_max_pfn;
-> -
->  /*
->   * stores the physical address of elf header of crash image
->   *
+On 30.03.20 15:40, Konrad Rzeszutek Wilk wrote:
+> 
+> 
+> 
+> On Mon, Mar 30, 2020 at 02:06:01PM +0800, Kairui Song wrote:
+>> On Sat, Mar 28, 2020 at 7:57 PM Dave Young <dyoung@redhat.com> wrote:
+>>>
+>>> On 03/26/20 at 05:29pm, Alexander Graf wrote:
+>>>> The swiotlb is a very convenient fallback mechanism for bounce buffering of
+>>>> DMAable data. It is usually used for the compatibility case where devices
+>>>> can only DMA to a "low region".
+>>>>
+>>>> However, in some scenarios this "low region" may be bound even more
+>>>> heavily. For example, there are embedded system where only an SRAM region
+>>>> is shared between device and CPU. There are also heterogeneous computing
+>>>> scenarios where only a subset of RAM is cache coherent between the
+>>>> components of the system. There are partitioning hypervisors, where
+>>>> a "control VM" that implements device emulation has limited view into a
+>>>> partition's memory for DMA capabilities due to safety concerns.
+>>>>
+>>>> This patch adds a command line driven mechanism to move all DMA memory into
+>>>> a predefined shared memory region which may or may not be part of the
+>>>> physical address layout of the Operating System.
+>>>>
+>>>> Ideally, the typical path to set this configuration would be through Device
+>>>> Tree or ACPI, but neither of the two mechanisms is standardized yet. Also,
+>>>> in the x86 MicroVM use case, we have neither ACPI nor Device Tree, but
+>>>> instead configure the system purely through kernel command line options.
+>>>>
+>>>> I'm sure other people will find the functionality useful going forward
+>>>> though and extend it to be triggered by DT/ACPI in the future.
+>>>
+>>> Hmm, we have a use case for kdump, this maybe useful.  For example
+>>> swiotlb is enabled by default if AMD SME/SEV is active, and in kdump
+>>> kernel we have to increase the crashkernel reserved size for the extra
+>>> swiotlb requirement.  I wonder if we can just reuse the old kernel's
+>>> swiotlb region and pass the addr to kdump kernel.
+>>>
+>>
+>> Yes, definitely helpful for kdump kernel. This can help reduce the
+>> crashkernel value.
+>>
+>> Previously I was thinking about something similar, play around the
+>> e820 entry passed to kdump and let it place swiotlb in wanted region.
+>> Simply remap it like in this patch looks much cleaner.
+>>
+>> If this patch is acceptable, one more patch is needed to expose the
+>> swiotlb in iomem, so kexec-tools can pass the right kernel cmdline to
+>> second kernel.
+> 
+> We seem to be passsing a lot of data to kexec.. Perhaps something
+> of a unified way since we seem to have a lot of things to pass - disabling
+> IOMMU, ACPI RSDT address, and then this.
+> 
+> CC-ing Anthony who is working on something - would you by any chance
+> have a doc on this?
+
+
+I see in general 2 use cases here:
+
+
+1) Allow for a generic mechanism to have the fully system, individual 
+buses, devices or functions of a device go through a particular, 
+self-contained bounce buffer.
+
+This sounds like the holy grail to a lot of problems. It would solve 
+typical embedded scenarios where you only have a shared SRAM. It solves 
+the safety case (to some extent) where you need to ensure that one 
+device interaction doesn't conflict with another device interaction. It 
+also solves the problem I've tried to solve with the patch here.
+
+It's unfortunately a lot harder than the patch I sent, so it will take 
+me some time to come up with a working patch set.. I suppose starting 
+with a DT binding only is sensible. Worst case, x86 does also support DT ...
+
+(And yes, I'm always happy to review patches if someone else beats me to it)
+
+
+2) Reuse the SWIOTLB from the previous boot on kexec/kdump
+
+I see little direct relation to SEV here. The only reason SEV makes it 
+more relevant, is that you need to have an SWIOTLB region available with 
+SEV while without you could live with a disabled IOMMU.
+
+However, I can definitely understand how you would want to have a way to 
+tell the new kexec'ed kernel where the old SWIOTLB was, so it can reuse 
+its memory for its own SWIOTLB. That way, you don't have to reserve 
+another 64MB of RAM for kdump.
+
+What I'm curious on is whether we need to be as elaborate. Can't we just 
+pass the old SWIOTLB as free memory to the new kexec'ed kernel and 
+everything else will fall into place? All that would take is a bit of 
+shuffling on the e820 table pass-through to the kexec'ed kernel, no?
+
+
+Thanks,
+
+Alex
+
+
+
+
+Amazon Development Center Germany GmbH
+Krausenstr. 38
+10117 Berlin
+Geschaeftsfuehrung: Christian Schlaeger, Jonathan Weiss
+Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
+Sitz: Berlin
+Ust-ID: DE 289 237 879
+
+
+
 
 _______________________________________________
 kexec mailing list
