@@ -2,121 +2,60 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCEED19831C
-	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 20:14:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEB05198331
+	for <lists+kexec@lfdr.de>; Mon, 30 Mar 2020 20:16:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DcY8Kz95vB27LRCU3Mx9AiIE/6iiXq7/3BS8cILZVSg=; b=lcFaMRVyVCDBGk
-	LLVRqiu2Dr1wxGurpnxjEz4ebPFbvyBXmZWsCO7pk600s7LtXUqVIqsOu0qy6EKP59IPHNU5P1SJh
-	bW6vj9KvM6rqUZIes/6QlYtl5Qdf9eEsFCFuDwbkX/nSp77c5Dy7agDmI1C/A8aBTsSjmcUgb7y7T
-	by8R0omMwizEo31mShKQLqIpWWJFRS1cwKtnHXMxqseIAN6CCL7p6FAZGAGbNcfDJCBIJN26rcDxR
-	zuuTMakjd+CndfmF0ny3BnX39G9RDKjnkYDXha0gMZRzHPnEB2fx9I8Cgm6PLofSUjOpJ0UZmDvYT
-	ESKvtJnNarvvSWDIvnfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zPbCsOqZcNfRYXPwRlWChiOmFdik3AWnZSOgmnedXdY=; b=BuhyBbZ6Of7Vq9
+	e6UJH2riUAPQ7nxYghabb28GEHB2qCJTpWnn6dEjV1sINLRzPcEw2DScSfvtCGThtqIRb2x8fwWCQ
+	hv1tcZfDVRwOHebgCSmQ3E1RcaSjJnjRpN0E4nTDKqsnQSINIZHZdjVDzB3w+vatc3ikUov0bxxkD
+	jJCqxfd7kEjVYIjXg8NCZADW7v9RLMxu5vRqv4H8LSB3LMFVrxzBtoqVPMYqD3H1QDkKCVILSAYSD
+	DOJ4Ca4ck3AfeeqGCyQopufFEuigfNy+G53QUUVj7fFaK2ZSD2vyNgMzPObb847AgzeKhskL4aouA
+	tIEzQLSxOP8mjuQYkDTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jIyvP-0008DS-6G; Mon, 30 Mar 2020 18:14:15 +0000
+	id 1jIyxm-00022D-Tv; Mon, 30 Mar 2020 18:16:42 +0000
 Received: from us-smtp-delivery-74.mimecast.com ([63.128.21.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jIyvK-0008Ci-NL
- for kexec@lists.infradead.org; Mon, 30 Mar 2020 18:14:12 +0000
+ id 1jIyxY-0001s3-UU
+ for kexec@lists.infradead.org; Mon, 30 Mar 2020 18:16:30 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1585592049;
+ s=mimecast20190719; t=1585592187;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=WSSOiFHOZwW6Akj9RYyMY2jtCBIFW/zVvB8W9MGVsm8=;
- b=UfZJBE68H0h4gH3syKop9sCO95IzLK9xe0tCE1UZonhgEU4tvs8SGnX69opb3P7Vr2VREX
- 9pbMQ2La8ypouvcIX2mav+iOGYE8kzpOuxYBu8VThoiGOB4Z8dEscaBAoxclDApWmc/kEm
- r6qfCikbpRxnv8GBJxliXt6psBbdqPk=
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=7DjDFsYHR6g0Apa3zR6vDBd2N+92jMQpUXuk9YaC+4o=;
+ b=Nmkk0VrX4CtywxIav8/i1C5k9XkMwGAX34WWaPJ4wZer0rVOBoeNFXVQGkV5WOZ7k0xDk7
+ bpRodFhqzwDevWYDTpbsksM5xvAeePhG/bq9NFUhBmT7WfJ6n9Z8xw6CpPUXZHndXsVBF4
+ u9BdpYlTv5qAvCh0PsBmGZVslJbHKRQ=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-144-SvP_wE0yN56mWXsOdFH-og-1; Mon, 30 Mar 2020 14:14:08 -0400
-X-MC-Unique: SvP_wE0yN56mWXsOdFH-og-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-474-MQB-bG8gPSmah6nbFvMhxw-1; Mon, 30 Mar 2020 14:16:26 -0400
+X-MC-Unique: MQB-bG8gPSmah6nbFvMhxw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 6B7C6149C3;
- Mon, 30 Mar 2020 18:14:06 +0000 (UTC)
-Received: from [10.36.113.227] (ovpn-113-227.ams2.redhat.com [10.36.113.227])
- by smtp.corp.redhat.com (Postfix) with ESMTP id EA6BA10016EB;
- Mon, 30 Mar 2020 18:14:03 +0000 (UTC)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: James Morse <james.morse@arm.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
- <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
- <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
- <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
- <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
- <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
-Date: Mon, 30 Mar 2020 20:14:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0694ADB60;
+ Mon, 30 Mar 2020 18:16:25 +0000 (UTC)
+Received: from kasong-rh-laptop.redhat.com (ovpn-12-175.pek2.redhat.com
+ [10.72.12.175])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9806797B01;
+ Mon, 30 Mar 2020 18:16:19 +0000 (UTC)
+From: Kairui Song <kasong@redhat.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] crash_dump: remove saved_max_pfn
+Date: Tue, 31 Mar 2020 02:15:44 +0800
+Message-Id: <20200330181544.1595733-1-kasong@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200330_111410_840794_B369CA53 
-X-CRM114-Status: GOOD (  29.98  )
+X-CRM114-CacheID: sfid-20200330_111629_175774_0ED9AD97 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
@@ -145,156 +84,89 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Kairui Song <kasong@redhat.com>, kexec@lists.infradead.org,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ Eric Biederman <ebiederm@xmission.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 30.03.20 19:17, James Morse wrote:
-> Hi David,
-> 
-> On 3/30/20 2:13 PM, David Hildenbrand wrote:
->>> Adding a sentence about the way kexec load works may help, the first paragraph
->>> would read:
->>>
->>> | Kexec allows user-space to specify the address that the kexec image should be
->>> | loaded to. Because this memory may be in use, an image loaded for kexec is not
->>> | stored in place, instead its segments are scattered through memory, and are
->>> | re-assembled when needed. In the meantime, the target memory may have been
->>> | removed.
->>>
->>> Do you think thats clearer?
->>
->> Yes, very much. Maybe add, that the target is described by user space
->> during kexec_load() and that user space - right now - parses /proc/iomem
->> to find applicable system memory.
-> 
-> (I don't think x86 parses /proc/iomem anymore). I'll repost this patch with that
-> expanded commit message, once we've agreed this is the right thing to do!
+This variable is no longer used.
 
-Right, I can see kexec-tools parsing /sys/firmware/memmap first.
-Unfortunately, all hotplugged memory (via add_memory()) is indicated
-there as System RAM ... including memory added by virtio-mem.
+saved_max_pfn was originally introduce in commit 92aa63a5a1bf ("[PATCH]
+kdump: Retrieve saved max pfn"), used to make sure that user does not
+try to read the physical memory beyond saved_max_pfn. But since
+commit 921d58c0e699 ("vmcore: remove saved_max_pfn check")
+it's no longer used for the check.
 
-I think we should adapt the type there as well. (in your patch #2)
+Only user left is Calary IOMMU, which start using it from
+commit 95b68dec0d52 ("calgary iommu: use the first kernels TCE tables
+in kdump"). But again, recently in commit 90dc392fc445 ("x86: Remove
+the calgary IOMMU driver"), Calary IOMMU is removed and this variable
+no longer have any user.
 
-	firmware_map_add_hotplug(start, start + size, "System RAM");
+So just remove it.
 
-> 
-> 
->>>> I wonder if we should instead make the "kexec -e" fail. It tries to
->>>> touch random system memory.
->>>
->>> Heh, isn't touching random system memory what kexec does?!
->>
->> Having a racy user interface that can trigger kernel crashes feels very
->> wrong. We should limit the impact.
-> 
-> 
->>> Its all described to user-space as 'System RAM'. Teaching it to probe
->>> /sys/devices/memory/... would require a user-space change.
->>
->> I think we should really rename hotplugged memory on all architectures.
->>
->> Especially also relevant for virtio-mem/hyper-v balloon, where some
->> pieces of (hotplugged )memory blocks are partially unavailable and
->> should not be touched - accessing them results in unpredictable behavior
->> (e.g., crashes or discarded writes).
-> 
-> I'll need to look into these. I'd assume for KVM that virtio-mem can be brought
-> back when its accessed ... its just going to be slow.
+Signed-off-by: Kairui Song <kasong@redhat.com>
+---
+ arch/x86/kernel/e820.c     | 8 --------
+ include/linux/crash_dump.h | 2 --
+ kernel/crash_dump.c        | 6 ------
+ 3 files changed, 16 deletions(-)
 
-Touching unplugged virtio-mem memory can result in unpredictable
-behavior. Touching (some) unplugged Hyper-V memory will be handled
-similarly AFAIK.
-
-[...]
-
->> 1. It's racy. If memory is getting offlined/unplugged just while user
->> space is about to trigger the kexec_load(), you end up with the very
->> same triple-fault.
-> 
-> load? How is this different to user-space providing a bogus address?
-
-I guess it's not different. It's just racy because user space with good
-intend could crash the system :)
-
-> 
-> Sure, user-space may take a nap between parsing /proc/iomem and calling
-> kexec_load(), but the kernel should reject these as they would never work.
-> 
-> (I can't see where sanity_check_segment_list() considers the platform's memory.
-> If it doesn't, we should fix it)
-
-Right, that's what I meant. I was not able to find any sanity checks.
-Maybe they are in place but I was not able to spot them.
-
-> 
-> Once the image is loaded, and clashes with a request to remove the memory there
-> are two choices: secretly unload the image, or prevent the memory being taken
-> offline.
-
-Exactly. Or make "kexec -e" fail.
-
-> 
-> 
->> 2. It's semantically wrong. kexec does not need online memory ("managed
->> by the buddy"), but still you disallow offlining memory.
-> 
-> It does need the memory if you want 'kexec -e' to succeed.
-> If there were any sanity tests, they should have happened at load time.
-
-Offlining != removing. That's the point I was trying to make. (and we
-don't want to block removing of memory in the kernel any other way)
-
-> 
-> The memory is effectively in use by the loaded kexec image. User-space told the
-> kernel to use this memory, you should not be able to then remove it, without
-> unloading the kexec image first.
-
-It's not in use before you do the "kexec -e" IMHO.
-
-> Are you saying feeding bogus addresses to kexec_load() is _expected_ to blow up
-> like this?
-
-No, not at all. I think this should be fixed if this is possible.
-
-> 
->> I would really much rather want to see user-space choosing boot memory
->> (e.g., renaming hotplugged memory on all architectures), and checking
->> during "kexec -e" if the selected memory is actually "there", before
->> trying to write to it.
-> 
-> How does 'kexec -e' know where the kexec kernel was loaded? You'd need to pass
-> something between 'load' and 'exec'. How do you keep existing user-space working
-> as much as possible?
-
-If we use new types (e.g., "System RAM (hotplugged)"), looks like most
-of kexec will continue working (memory will be treated like
-RANGE_RESERVED or ignored).
-
-I guess we would still have to teach kexec-tools the new types,
-primarily to keep the crash memory ranges from getting detected
-properly. (no idea how they are used, will have to take a closer look)
-
-> 
-> What do you do if the memory isn't there? User-space just called reboot(), it
-> would be better to avoid getting into the situation where we have to fail that call.
-
-In kernel_kexec() we already fail if there is no kernel image loaded, so
-we can similarly simply fail if the kernel image cannot be moved to the
-target memory IMHO.
-
+diff --git a/arch/x86/kernel/e820.c b/arch/x86/kernel/e820.c
+index c5399e80c59c..4d13c57f370a 100644
+--- a/arch/x86/kernel/e820.c
++++ b/arch/x86/kernel/e820.c
+@@ -910,14 +910,6 @@ static int __init parse_memmap_one(char *p)
+ 		return -EINVAL;
+ 
+ 	if (!strncmp(p, "exactmap", 8)) {
+-#ifdef CONFIG_CRASH_DUMP
+-		/*
+-		 * If we are doing a crash dump, we still need to know
+-		 * the real memory size before the original memory map is
+-		 * reset.
+-		 */
+-		saved_max_pfn = e820__end_of_ram_pfn();
+-#endif
+ 		e820_table->nr_entries = 0;
+ 		userdef = 1;
+ 		return 0;
+diff --git a/include/linux/crash_dump.h b/include/linux/crash_dump.h
+index 4664fc1871de..bc156285d097 100644
+--- a/include/linux/crash_dump.h
++++ b/include/linux/crash_dump.h
+@@ -97,8 +97,6 @@ extern void unregister_oldmem_pfn_is_ram(void);
+ static inline bool is_kdump_kernel(void) { return 0; }
+ #endif /* CONFIG_CRASH_DUMP */
+ 
+-extern unsigned long saved_max_pfn;
+-
+ /* Device Dump information to be filled by drivers */
+ struct vmcoredd_data {
+ 	char dump_name[VMCOREDD_MAX_NAME_BYTES]; /* Unique name of the dump */
+diff --git a/kernel/crash_dump.c b/kernel/crash_dump.c
+index 9c23ae074b40..92da32275af5 100644
+--- a/kernel/crash_dump.c
++++ b/kernel/crash_dump.c
+@@ -5,12 +5,6 @@
+ #include <linux/errno.h>
+ #include <linux/export.h>
+ 
+-/*
+- * If we have booted due to a crash, max_pfn will be a very low value. We need
+- * to know the amount of memory that the previous kernel used.
+- */
+-unsigned long saved_max_pfn;
+-
+ /*
+  * stores the physical address of elf header of crash image
+  *
 -- 
-Thanks,
-
-David / dhildenb
+2.25.1
 
 
 _______________________________________________
