@@ -2,47 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C825019ABD9
-	for <lists+kexec@lfdr.de>; Wed,  1 Apr 2020 14:40:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7439B19ABEF
+	for <lists+kexec@lfdr.de>; Wed,  1 Apr 2020 14:44:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LlEp3HR9XdyPu2ol/J7l96QE8CH/dVw7a9edlQG6Hu4=; b=dZz0PyxylWNiaO
-	InRjV2WT5lvGUdZyViFvkXiZBxXcC4MxmRIw8Q2fxM+SyV+qTZX7A6sMZzJ8OPFIRY9ozRtpd9FIw
-	vf1jJAZs7N9he9P2y6N2l1MOh9nkJRNIa4qqWuGtMfua7QbP3zgOixMI2jBcx9oylm7bpFpPCGqlW
-	Rk46rGw1fneLEd49G5IS+J3dCtggnE6pzLHgVi1F0kkx6pXkDdhq0lxorkwNyx8DNPHLiYWBvtRlq
-	CD8HDe8S3vXJqvkN6CPBOes91hQrvLTKzPSjWBDyfiPwJLdXO+hqTCuNnP0MTnqX9KYjdz83KmeKa
-	DWu1754UuO55O4rMKvXQ==;
+	List-Owner; bh=jRoSgR//StZUeSuqoxqf/nUc3n7GGX7edNpS5bfleo4=; b=sa98WZrOoSn5no
+	0EZhYvZvPJDzfkiDCydiqrjFbPotZpTXqLeNvOo9jZtDamKd1d6Cvfm/eOismK/Fl74vG5Uon2YX8
+	ChByPZddNX5LIvOblhT5tpbStwwFLZwEkigtaIkuM3EQN0uqNfWDtU5Bun1lOnBMRZrOER+/xONm9
+	ASNeAxjMcUFNx4OjEsTYpJzMoQHP7dRMhrshfTPeMaERSdtDlPVM+koTWDn7MRQORm262rSkq+L02
+	DMVz5+PvULclu4Vm9ObTgurVl89M1H1aaZ+DiIVOLawviAhWQr/xl7yFTfhwZp6DgQlMD39buOk71
+	9VAuWIZqjIegqqJ57/Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jJcfI-000335-Ba; Wed, 01 Apr 2020 12:40:16 +0000
+	id 1jJciy-0003ew-GM; Wed, 01 Apr 2020 12:44:04 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jJcfF-00032R-Am
- for kexec@lists.infradead.org; Wed, 01 Apr 2020 12:40:14 +0000
+ id 1jJciv-0003eY-Kv
+ for kexec@lists.infradead.org; Wed, 01 Apr 2020 12:44:03 +0000
 Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id 351E125B779;
- Wed,  1 Apr 2020 23:40:12 +1100 (AEDT)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id 2C2F625B779;
+ Wed,  1 Apr 2020 23:44:00 +1100 (AEDT)
 Received: by penelope.horms.nl (Postfix, from userid 7100)
- id D26CF1B62; Wed,  1 Apr 2020 14:40:09 +0200 (CEST)
-Date: Wed, 1 Apr 2020 14:40:09 +0200
+ id AC8731B62; Wed,  1 Apr 2020 14:43:57 +0200 (CEST)
+Date: Wed, 1 Apr 2020 14:43:57 +0200
 From: Simon Horman <horms@verge.net.au>
-To: Petr Tesarik <ptesarik@suse.cz>
-Subject: Re: [v2 0/2] Fix --kexec-syscall-auto on s390x
-Message-ID: <20200401124009.GB29376@vergenet.net>
-References: <20200313140929.29551-1-ptesarik@suse.cz>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH v2] kexec: support parsing the string "Reserved" to get
+ the correct e820 reserved region
+Message-ID: <20200401124357.GC29376@vergenet.net>
+References: <20200224063655.9890-1-lijiang@redhat.com>
+ <CACi5LpMDGg9JzB7pWY7KdUoV3aFa26Mp8qHR9M6uuEbfhvPcVg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200313140929.29551-1-ptesarik@suse.cz>
+In-Reply-To: <CACi5LpMDGg9JzB7pWY7KdUoV3aFa26Mp8qHR9M6uuEbfhvPcVg@mail.gmail.com>
 Organisation: Horms Solutions BV
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200401_054013_544538_479F80E9 
-X-CRM114-Status: UNSURE (   7.71  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200401_054401_835717_26F2735E 
+X-CRM114-Status: GOOD (  18.16  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,24 +67,70 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec mailing list <kexec@lists.infradead.org>
+Cc: kexec mailing list <kexec@lists.infradead.org>,
+ Dave Young <dyoung@redhat.com>, Lianbo Jiang <lijiang@redhat.com>,
+ Baoquan He <bhe@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 03:09:27PM +0100, Petr Tesarik wrote:
-> From: Petr Tesarik <ptesarik@suse.com>
+On Mon, Feb 24, 2020 at 12:17:50PM +0530, Bhupesh Sharma wrote:
+> Hi Lianbo,
 > 
-> As noticed by Raymund Will, kexec -la does not work on kernels without
-> the kexec_file_load(2) syscall, revealing some shortcomings in the
-> automatic syscall selection.
+> On Mon, Feb 24, 2020 at 12:07 PM Lianbo Jiang <lijiang@redhat.com> wrote:
+> >
+> > When loading kernel and initramfs for kexec, kexec-tools could get the
+> > e820 reserved region from "/proc/iomem" in order to rebuild the e820
+> > ranges for kexec kernel, but there may be the string "Reserved" in the
+> > "/proc/iomem", which caused the failure of parsing. For example:
+> >
+> >  #cat /proc/iomem|grep -i reserved
+> > 00000000-00000fff : Reserved
+> > 7f338000-7f34dfff : Reserved
+> > 7f3cd000-8fffffff : Reserved
+> > f17f0000-f17f1fff : Reserved
+> > fe000000-ffffffff : Reserved
+> >
+> > Currently, kexec-tools can not handle the above case because the memcmp()
+> > is case sensitive when comparing the string.
+> >
+> > So, let's fix this corner and make sure that the string "reserved" and
+> > "Reserved" in the "/proc/iomem" are both parsed appropriately.
+> >
+> > Signed-off-by: Lianbo Jiang <lijiang@redhat.com>
+> > ---
+> > Note:
+> > Please follow up this commit below about kdump fix.
+> > 1ac3e4a57000 ("kdump: fix an error that can not parse the e820 reserved region")
+> >
+> > Changes since v1:
+> > [1] use strncasecmp() instead of introducing another 'else-if'(
+> > suggested by Bhupesh)
+> >
+> >  kexec/arch/i386/kexec-x86-common.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/kexec/arch/i386/kexec-x86-common.c b/kexec/arch/i386/kexec-x86-common.c
+> > index 61ea19380ab2..9303704a0714 100644
+> > --- a/kexec/arch/i386/kexec-x86-common.c
+> > +++ b/kexec/arch/i386/kexec-x86-common.c
+> > @@ -90,7 +90,7 @@ static int get_memory_ranges_proc_iomem(struct memory_range **range, int *ranges
+> >                 if (memcmp(str, "System RAM\n", 11) == 0) {
+> >                         type = RANGE_RAM;
+> >                 }
+> > -               else if (memcmp(str, "reserved\n", 9) == 0) {
+> > +               else if (strncasecmp(str, "reserved\n", 9) == 0) {
+> >                         type = RANGE_RESERVED;
+> >                 }
+> >                 else if (memcmp(str, "ACPI Tables\n", 12) == 0) {
+> > --
+> > 2.17.1
+> >
 > 
-> Petr Tesarik (2):
->   kexec-tools: Fix kexec_file_load(2) error handling
->   kexec-tools: Reset getopt before falling back to legacy syscall
+> Thanks for the changes. V2 seems fine to me, so:
 > 
->  kexec/kexec.c | 120 ++++++++++++++++++++++++++++++++--------------------------
+> Acked-by: Bhupesh Sharma <bhsharma@redhat.com>
 
 Thanks, applied.
 
