@@ -2,68 +2,61 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9EAF19F191
-	for <lists+kexec@lfdr.de>; Mon,  6 Apr 2020 10:27:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6833F19F245
+	for <lists+kexec@lfdr.de>; Mon,  6 Apr 2020 11:16:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wGjcLNeFbw1ZhoZGWFWfFfbghvy28ZKLBh0RmupOIO8=; b=EorCpxtpmXU1qk
-	VzN+zjsI8Yo2plQnknL89bcVTJlZ7YYpnedu1cJjVOZd1cTgq+4l8SvXpR2eALeIFhpwD5acdK1zD
-	mt/1tQ/OA2gvXyfu4i3IhFa10qsQBmB8T0hRkbZsjF17VjElnZgZITKKpTW3nOknXhnPsBMBxAh1k
-	xzois4fJRfKFaztdlfkt+gu1Elj1xRtsEj8LZIqnbkuGAC/d8oM5R5yWLiq+5EdpIdkSLr2q/98T3
-	FB2frWqxmBR98ZhNlHu1e6r6rwPPT8reeOQ4c59EatS0XK8rFJfwgKRoqsulN6GurweGM8GR8HEeD
-	1RW/uUYKFhK+BGaU6trg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PAudlPEE9ArPRoW/1juVTJMFBsdC2L97FjCCpLPErcI=; b=AvnBkz8u4f18bc
+	vjzQrNM1xpNERBYWySAvjawMuQBdWpy9yZ058QNPBhiggsx6b+RbRm9sTtjcNbTfD1OpR/S3Ag8Ne
+	UspwchclX5XbN9rAKhq1muGOkIAtieoAk+8i6XdMzDgFMuOHyawLvzp0ozZNaYLaRMd8pVh+VVRKF
+	oe49RUGLBSytlxUGnqCQysaSG6gdyAkR6QhV8CzAdI/52Ha9W4Oy8iwb/dLqwp0ifk72LmNHPEu2U
+	4UuQjxMcYbIBJw8KILSv+XnXks2eVOJxd+GSk1xA5sFvqj27WWYPCjXdzoyL3bhCIPJiULI7MB+w6
+	eNHbvI4ePLOanE94Vx1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLN6Q-0003Fx-Jq; Mon, 06 Apr 2020 08:27:30 +0000
-Received: from mail-wr1-x431.google.com ([2a00:1450:4864:20::431])
+	id 1jLNrh-0002Ml-34; Mon, 06 Apr 2020 09:16:21 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLN6K-0003FD-TC; Mon, 06 Apr 2020 08:27:26 +0000
-Received: by mail-wr1-x431.google.com with SMTP id g3so14020059wrx.2;
- Mon, 06 Apr 2020 01:27:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
- bh=55a3ErFUzwi21OsaY2azC2jkNniTZaL9xFoaJMyXUts=;
- b=vZnUnwZQ1qXHKPZWX9+n3t/3eu+4bLYPi6ploQCBGr2mO6XDyM+5moogDuVDP5C2E0
- 0fWMGbfcau+ZSAOFIMEtSHXueEnHV++vJN+YCDqRJyiF2EuYCIWyOpzLYn1U4aFLSuzM
- rOR75n4gmmGORVuj3EQgVQFfBJmtjls9BN4lixj3Pf7rzDSoQzhLh3MCdS+lQct3KzGX
- 4dCXSxEt0ATG1uiz1vQcMavWBrh9LtDK8/VPJefOXf1COF7IuGnhHz1hy/OQ5tfbvreU
- yQdz6C1+IeKUnmNLrxF3RwVQKZPsVW+3foLqVTM4EMnDrlzlNcOMbFlT0EFxMuhk/M/K
- GHJQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition;
- bh=55a3ErFUzwi21OsaY2azC2jkNniTZaL9xFoaJMyXUts=;
- b=a9idL34UCQyXZI5m7wsq/k68rHx1hTTeCBsL30Kop757bk1X+uhnv1q6uMRP/rG37x
- IQE+PISOWwJMwxZ/HLXCftxmsK+epKwSj6nRicJ+ycPnAhWvp+ROqg6EomOtwTrIu+xS
- FaQCS0Ybd8I+hDmq/vQQ7J1RpHYwRddLD4kiR5LCXzR/Tn/3ljEOhnHxTKLSSYR2I8/+
- 7C5JMnh6bhyPOsRNvsvRThBykxCNms6LW7D3xBpaGDQXzXkce0WgGW3qw/ejA41k2+3Z
- x875eMVwK0/VjlnjFd6SHGWOj0a9S1vxOtjAllMzh2+4Z9cGt5opZy9hzwqqDvgGdeoG
- ZgXg==
-X-Gm-Message-State: AGi0PuZw2HiacYaKSZ6jQn5uB/Ach3JkIFl8IVYe+8aD2g9bSyW5cQLD
- lYOgge+6L7/skN4VvozafhY=
-X-Google-Smtp-Source: APiQypJLN67xNTSrQ/sLaRRm40PviBXbgVl5KjikszA4PoZlueozEyPgWcG4LCvJHjec39ZOyIFK2Q==
-X-Received: by 2002:a05:6000:1205:: with SMTP id
- e5mr24179604wrx.73.1586161642322; 
- Mon, 06 Apr 2020 01:27:22 -0700 (PDT)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id f3sm24957862wmj.24.2020.04.06.01.27.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 06 Apr 2020 01:27:21 -0700 (PDT)
-Date: Mon, 6 Apr 2020 10:27:20 +0200
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: ebiederm@xmission.com, kexec@lists.infradead.org
-Subject: Trying to kexec on Allwinner A80
-Message-ID: <20200406082720.GA31279@Red>
+ id 1jLNrb-0002GO-TR; Mon, 06 Apr 2020 09:16:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=qxYNJ7LCMvpTUzf0Ee+5RLGYAIShFJ7XrqkBYcoJs0s=; b=lNFJs5P4ofOPA5mxIwg7fRuEt
+ 0EQm6naG95vkJkT7SDO5wDMVVCbrKFjuVBTGTIKejMMRX/KLGzRrFJYUao3S9YOAVTYtHhuePzlzG
+ j7QqnhGBQ3ytPAMWyzblIFCZeHOluhiqlAIIeNjfPgeULXLJ9djdXf+/RORwSowPAcl0xAG4aar5x
+ SGrip2fl8CkOsLM1pdZpSjJRCnJ/DeIpfD9xWjuBLS96NYXzo2xLIMlshqZxqaam7HYcjnBJfJ/13
+ 0EROtBjZ7pLVM7bJfU/mt1KReGCbharCmWZFWrhhUg25TJg7TdV1vd6GHEblV4ArnRfdnbdqX7Bir
+ 58ESznODw==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:42204)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jLNrP-0000cL-Q8; Mon, 06 Apr 2020 10:16:04 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jLNrM-0005X5-LI; Mon, 06 Apr 2020 10:16:00 +0100
+Date: Mon, 6 Apr 2020 10:16:00 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200406091600.GF25745@shell.armlinux.org.uk>
+References: <20200406082720.GA31279@Red>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20200406082720.GA31279@Red>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200406_012724_945511_DD91D3D8 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20200406_021616_098866_5ED36A7E 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -71,11 +64,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:431 listed in]
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -95,66 +86,28 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: wens@csie.org, linux-arm-kernel@lists.infradead.org, mripard@kernel.org,
- linux-kernel@vger.kernel.org
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello
+On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> Hello
+> 
+> I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> 
+> But kexec 2.0.18 fail to work:
+> kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
 
-I am trying to add the last missing Allwinner Soc in kernelci: the A80.
-But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
-So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+What happens if you omit the dtb argument?
 
-But kexec 2.0.18 fail to work:
-kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
-syscall kexec_file_load not available.
-Try gzip decompression.
-kernel: 0xb6535008 kernel_size: 0x853200
-MEMORY RANGES
-0000000020000000-000000009fffffff (0)
-zImage header: 0x016f2818 0x00000000 0x00853200
-zImage size 0x853200, file size 0x853200
-zImage requires 0x00864200 bytes
-  offset 0x0000bae4 tag 0x5a534c4b size 8
-Decompressed kernel sizes:
- text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
-Resulting kernel space: 0x01def5a0
-Kernel: address=0x20008000 size=0x01def5a0
-Initrd: address=0x21df8000 size=0x0090b6fa
-DT    : address=0x22704000 size=0x00005c09
-kexec_load: entry = 0x20008000 flags = 0x280000
-nr_segments = 3
-segment[0].buf   = 0xb6535008
-segment[0].bufsz = 0x853204
-segment[0].mem   = 0x20008000
-segment[0].memsz = 0x854000
-segment[1].buf   = 0xb5c29008
-segment[1].bufsz = 0x90b6fa
-segment[1].mem   = 0x21df8000
-segment[1].memsz = 0x90c000
-segment[2].buf   = 0x4db50
-segment[2].bufsz = 0x5c09
-segm[   71.039126] kexec_core: Starting new kernel
-ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
-x22704000
-segment[2].memsz = 0x6000
-[   71.489070] Bye!
-
-
-I have tried also kexec-2.0.20
-Try gzip decompression.
-zImage header: 0x00000000 0x000019b4 0x00001000
-zImage requires 0x008641c0 bytes
-Could not find a free area of memory of 0x86c1c0 bytes...
-Cannot load /tmp/kernel
-
-What can I do for made it working ? I probably need to give it some memory address, but I am a bit loss.
-
-Thanks
-Regards
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 kexec mailing list
