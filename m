@@ -2,72 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42601A0C67
-	for <lists+kexec@lfdr.de>; Tue,  7 Apr 2020 13:01:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D8731A0CF2
+	for <lists+kexec@lfdr.de>; Tue,  7 Apr 2020 13:35:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ug12WHTN007/yyTcasHgZ0Z0Q4clOUghteyy7NjCHTA=; b=jGSULE/D8cTIZU
-	XVuShaLBeByE1O0//6Q0bzRJMdWxCeS+/KUkN2D2sLdZwMWO+R0qFE1TfTDkLFJYXfBoAS7QHyhtG
-	VQ5cPkW+pqEtWSQdB0joJNUBzQ+SiMzjxDv8NiBLVMkD7w21R06Drqk4Oae1RXiacNM4bOuby92zQ
-	EQh+JUhVqUqPdfnYMI2fyz4tgEZwem49OIji50o48qNiPM5GWsBeSqPwZ+pFbHED8VlJ00XBQeFe4
-	4eivNd0fc31BZ1y0VEzs367/w0IDd7VCtr6n47ixD4J0J6KCQITmiWs32p68hUHcZL7W/GeAYbyxe
-	NrH9E3b9oW/q4FBeUn5w==;
+	List-Owner; bh=7f7Iwr70+s0tuTWUDVSgxONA6QtK/KLhZj7hTS1rjTI=; b=EHVxKI+YLbieew
+	0uLo3BR7mh4swCX0nyYv3Uxm7WX6TA4pkBlkBCE3QqdBUuWRmS5zBBeked1fFp38femTuetYP7Ezp
+	KYaGkqpKV6eYYGieqiwhChtZao9qmbGAvgBcX/t+86F+aHM0RCY8YhpOgE8X6MphptbztwVuBWepY
+	gZS7flSqSeyfrtfq7CagWQpoYHOJIfMlJ5vPrCFjrY70dcCi2PpxGpKrGhflQR81SJcjvQ1tKdUwl
+	gLwWpSnHyaYlBya+Mvx2hU9AT06+yry+vldn50EC+AIONKsLnmNTwio5T7YbhohWW4ml6bxEUdrK9
+	x5/xer/GKiJHzEvNLkeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jLlz5-0004lm-Ek; Tue, 07 Apr 2020 11:01:35 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jLmVX-0000Xu-DM; Tue, 07 Apr 2020 11:35:07 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jLlz1-0004l2-Ng
- for kexec@lists.infradead.org; Tue, 07 Apr 2020 11:01:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586257288;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=8h7WOmhqWbqsj2xXniOI5xjfIW2oGUv8L9dkNvwcCDM=;
- b=CN0nUyjctr3dwHZ1NLyOO2uA1sMspQyqDq1Sd2DlnYMd/YjpH300QFwDM71cmrwrJ1ItZ5
- DXNCKr9oi6MTnHK6y9WreMFKeSUc4/gABA/ZkI4r44rlXdEDCfhN88ik2EzO3SRFJ5JP2j
- EYmSzLa5u8AFN7xtcVnHhAOtED3ONtQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-168-9ThSrBYlPeGPa8K6lERIRg-1; Tue, 07 Apr 2020 07:01:23 -0400
-X-MC-Unique: 9ThSrBYlPeGPa8K6lERIRg-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1900B8017F3;
- Tue,  7 Apr 2020 11:01:22 +0000 (UTC)
-Received: from localhost (ovpn-12-129.pek2.redhat.com [10.72.12.129])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 33E0092F83;
- Tue,  7 Apr 2020 11:01:17 +0000 (UTC)
-Date: Tue, 7 Apr 2020 19:01:15 +0800
-From: Baoquan He <bhe@redhat.com>
-To: Paolo Bonzini <pbonzini@redhat.com>,
- Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v2 0/3] KVM: VMX: Fix for kexec VMCLEAR and VMXON cleanup
-Message-ID: <20200407110115.GA14381@MiWiFi-R3L-srv>
-References: <20200321193751.24985-1-sean.j.christopherson@intel.com>
+ id 1jLmVS-0007oO-2d; Tue, 07 Apr 2020 11:35:04 +0000
+Received: by mail-wr1-x443.google.com with SMTP id v5so3419111wrp.12;
+ Tue, 07 Apr 2020 04:34:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=il8xBtLW16WXNK+wuzc/LJBVTLop6QSkf7DLUFmwyOc=;
+ b=gbix+h57+voX+m2naQYsbc2VTqDGxqJIJtfDRAdMEjQWNj+6xdbub1evgEdBKIjy4l
+ NJDlhMZNBF7Dq22ylAC8bUOHhU1R7IBosudCpqYfuHKuSzfxyTGQFtvLMTMB8aKFMv+l
+ fvFuUzu1W9uTUfHTlOKXUr/HpouS1PpVWD5oj99zc5YAcFeMk7ygHNrBrB7+VewFRrFn
+ mspajw5z2zycifmDOhwYgJ8cRqd6xiUclH0M1S4z4pTrVnLFxPlRPZ0vGsK49Jo0gqb5
+ xt9tt+gzswAEtNUi5Me4TtZtHEGCfjOCfCvW/T+gXLKHDHpSI9rUZ7JA8/TKpdMBMKSQ
+ TTww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=il8xBtLW16WXNK+wuzc/LJBVTLop6QSkf7DLUFmwyOc=;
+ b=LjFLm48orsaghbHjEUZmjcyYraFO79u1oECDaz/SmZGv0pYLHH3nDsWsWeIPIQxIrv
+ jS2ksJkW2m7kHcnM7xW+WkoNjErPjia5vc3QFMvMg1xoxSx6IWmZov4liTdyAaK6xsJU
+ dblXobw+TFwqCIEMjFPac4TPhfOLCQwOPxFBlYGAv4f1TuhfZBJ0qF0dnumjsITxC/9B
+ M8gFHhy16LLvB55DIgQX7EZkKys7LTouSot5mbiRI0HJyiROZTgdzwAyL5j85SMrLGoP
+ /Al5/i9pggkmJ8ppocE0ccrEtd5UXvTZfy5QBFLV7zHYoZOFdOIIehTxK8QQ1Kt/S+fs
+ CKDg==
+X-Gm-Message-State: AGi0Pua8z2X37/yvwz2xpYek8uskpRkUBG4vV46AuceWd/R3c5Caco5e
+ 6Mjsz8eQs4wc4SJLkLyp6iM=
+X-Google-Smtp-Source: APiQypKQcY0oEFBY3G0p5BZU3XbBHc15vggSpsP6EgED1KHiHq8d+uNyKaSQtS/3IAs9ZBpYW6dJ6g==
+X-Received: by 2002:a05:6000:120a:: with SMTP id
+ e10mr2438433wrx.188.1586259297309; 
+ Tue, 07 Apr 2020 04:34:57 -0700 (PDT)
+Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id u17sm2035588wmu.31.2020.04.07.04.34.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 07 Apr 2020 04:34:56 -0700 (PDT)
+Date: Tue, 7 Apr 2020 13:34:54 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: Trying to kexec on Allwinner A80
+Message-ID: <20200407113454.GA457@Red>
+References: <20200406082720.GA31279@Red>
+ <20200407100203.GK25745@shell.armlinux.org.uk>
+ <20200407101912.GL25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200321193751.24985-1-sean.j.christopherson@intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+In-Reply-To: <20200407101912.GL25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200407_040131_848900_01F8F276 
-X-CRM114-Status: GOOD (  19.85  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200407_043502_167818_2349B489 
+X-CRM114-Status: GOOD (  29.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [clabbe.montjoie[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,190 +99,310 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: dzickus@redhat.com, Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Vitaly Kuznetsov <vkuznets@redhat.com>,
- dyoung@redhat.com, Jim Mattson <jmattson@google.com>
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 03/21/20 at 12:37pm, Sean Christopherson wrote:
-> Patch 1 fixes a a theoretical bug where a crashdump NMI that arrives
-> while KVM is messing with the percpu VMCS list would result in one or more
-> VMCSes not being cleared, potentially causing memory corruption in the new
-> kexec'd kernel.
+On Tue, Apr 07, 2020 at 11:19:12AM +0100, Russell King - ARM Linux admin wrote:
+> On Tue, Apr 07, 2020 at 11:02:03AM +0100, Russell King - ARM Linux admin wrote:
+> > On Mon, Apr 06, 2020 at 10:27:20AM +0200, Corentin Labbe wrote:
+> > > Hello
+> > > 
+> > > I am trying to add the last missing Allwinner Soc in kernelci: the A80.
+> > > But this SoC does not have any way to be used in kernelci, no USB nor network in uboot.
+> > > So I have tried to fake uboot since the kernel has network support and run the new kernel via kexec.
+> > > 
+> > > But kexec 2.0.18 fail to work:
+> > > kexec --force /tmp/kernel --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+> > 
+> > As I mentioned in my other reply, this apparent "kexec" command line
+> > does not seem to reflect the arguments you actually used to invoke
+> > the kexec output below.
+> > 
+> > > syscall kexec_file_load not available.
+> > 
+> > This message is produced by do_kexec_file_load().  This function is only
+> > invoked if the do_kexec_file_syscall flag in main() is set.  This flag
+> > is only set if one of:
+> > 
+> > 	--kexec-file-syscall
+> > 	--kexec-syscall
+> > 	--kexec-syscall-auto
+> > 	-s
+> > 	-c
+> > 	-a
+> > 
+> > are provided on the kexec command line.  Your command line above does
+> > not contain any of those arguments, so either the command line is not
+> > what you used, or you are using a patched kexec, or your compiler is
+> > grossly miscompiling kexec.
+> > 
+> > > Try gzip decompression.
+> > > kernel: 0xb6535008 kernel_size: 0x853200
+> > > MEMORY RANGES
+> > > 0000000020000000-000000009fffffff (0)
+> > 
+> > Then there's the debug output, which is only produced if the
+> > kexec_debug global is set, which in turn is only set if --debug or -d
+> > is supplied on the kexec command line - which again, your kexec
+> > command line does not contain this.
+> > 
+> > > zImage header: 0x016f2818 0x00000000 0x00853200
+> > > zImage size 0x853200, file size 0x853200
+> > > zImage requires 0x00864200 bytes
+> > >   offset 0x0000bae4 tag 0x5a534c4b size 8
+> > > Decompressed kernel sizes:
+> > >  text+data 0x0158b3a0 bss 0x000632f0 total 0x015ee690
+> > > Resulting kernel space: 0x01def5a0
+> > > Kernel: address=0x20008000 size=0x01def5a0
+> > > Initrd: address=0x21df8000 size=0x0090b6fa
+> > > DT    : address=0x22704000 size=0x00005c09
+> > > kexec_load: entry = 0x20008000 flags = 0x280000
+> > > nr_segments = 3
+> > > segment[0].buf   = 0xb6535008
+> > > segment[0].bufsz = 0x853204
+> > > segment[0].mem   = 0x20008000
+> > > segment[0].memsz = 0x854000
+> > > segment[1].buf   = 0xb5c29008
+> > > segment[1].bufsz = 0x90b6fa
+> > > segment[1].mem   = 0x21df8000
+> > > segment[1].memsz = 0x90c000
+> > > segment[2].buf   = 0x4db50
+> > > segment[2].bufsz = 0x5c09
+> > > segm[   71.039126] kexec_core: Starting new kernel
+> > > ent[2].mem   = 0[   71.044712] Disabling non-boot CPUs ...
+> > > x22704000
+> > > segment[2].memsz = 0x6000
+> > > [   71.489070] Bye!
+> > > 
+> > > 
+> > > I have tried also kexec-2.0.20
+> > > Try gzip decompression.
+> > > zImage header: 0x00000000 0x000019b4 0x00001000
+> > > zImage requires 0x008641c0 bytes
+> > > Could not find a free area of memory of 0x86c1c0 bytes...
+> > > Cannot load /tmp/kernel
+> > 
+> > kexec 2.0.20 doesn't appear to have changed anything to do with how
+> > allocations are done.  The above output looks even more strange and
+> > confusing.  "zImage header" is produced by debugging prints, which
+> > imply that kexec_debug was set.
+> > 
+> > However, the "MEMORY RANGES" output is missing - this has not gone
+> > away with kexec 2.0.20, it's still there, and works for me (I've
+> > just built and tested kexec 2.0.20).
+> > 
+> > Also, the values on the "zImage header" line are completely messed
+> > up; the first should be the zImage magic value and it is not - that
+> > suggests that the file being loaded is not a zImage file, or is
+> > corrupted.
+> 
+> Under a VM (the kernel doesn't have kexec support - but that's not a
+> problem, because the initial loading stages are the relevant parts
+> which all happen in userspace):
+> 
+> # build/sbin/kexec --version
+> kexec-tools 2.0.20
+> # build/sbin/kexec --debug --load virt-vmlinuz-5.4.0+
+> Try gzip decompression.
+> kernel: 0xb6a6c008 kernel_size: 0x407358
+> MEMORY RANGES
+> 0000000040000000-000000007fffffff (0)
+> zImage header: 0x016f2818 0x00000000 0x00407358
+> zImage size 0x407358, file size 0x407358
+> zImage requires 0x00418358 bytes
+>   offset 0x00007178 tag 0x5a534c4b size 12
+> Decompressed kernel sizes:
+>  text+data 0x00c2ed24 bss 0x000319ec total 0x00c60710
+> Resulting kernel space: 0x0104707c
+> Kernel: address=0x40008000 size=0x0104707c
+> DT    : address=0x41051000 size=0x00100000
+> kexec_load: entry = 0x40008000 flags = 0x280000
+> nr_segments = 2
+> segment[0].buf   = 0xb6a6c008
+> segment[0].bufsz = 0x40735c
+> segment[0].mem   = 0x40008000
+> segment[0].memsz = 0x408000
+> segment[1].buf   = 0xb696b008
+> segment[1].bufsz = 0x100000
+> segment[1].mem   = 0x41051000
+> segment[1].memsz = 0x100000
+> kexec_load failed: Function not implemented
+> entry       = 0x40008000 flags = 0x280000
+> nr_segments = 2
+> segment[0].buf   = 0xb6aa0008
+> segment[0].bufsz = 0x40735c
+> segment[0].mem   = 0x40008000
+> segment[0].memsz = 0x408000
+> segment[1].buf   = 0xb699f008
+> segment[1].bufsz = 0x100000
+> segment[1].mem   = 0x41051000
+> segment[1].memsz = 0x100000
+> #
+> 
+> On a SolidRun Hummingboard2 (iMX6 based, which has kexec support, same
+> kexec binary, first without an initrd, and then with):
+> 
+> # build/sbin/kexec --version
+> kexec-tools 2.0.20
+> # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
+> Try gzip decompression.
+> kernel: 0xb6763008 kernel_size: 0x7273a8
+> MEMORY RANGES
+> 0000000010000000-000000004fffffff (0)
+> zImage header: 0x016f2818 0x00000000 0x007273a8
+> zImage size 0x7273a8, file size 0x7273a8
+> zImage requires 0x007383a8 bytes
+>   offset 0x00004da8 tag 0x5a534c4b size 12
+> Decompressed kernel sizes:
+>  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> Resulting kernel space: 0x015077b0
+> Kernel: address=0x10008000 size=0x015077b0
+> DT    : address=0x11511000 size=0x0000b000
+> kexec_load: entry = 0x10008000 flags = 0x280000
+> nr_segments = 2
+> segment[0].buf   = 0xb6763008
+> segment[0].bufsz = 0x7273ac
+> segment[0].mem   = 0x10008000
+> segment[0].memsz = 0x728000
+> segment[1].buf   = 0x1207cb0
+> segment[1].bufsz = 0xb000
+> segment[1].mem   = 0x11511000
+> segment[1].memsz = 0xb000
+> # build/sbin/kexec --unload
+> # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+ --initrd /boot/initrd.img-5.4.0+
+> Try gzip decompression.
+> kernel: 0xb65d8008 kernel_size: 0x7273a8
+> MEMORY RANGES
+> 0000000010000000-000000004fffffff (0)
+> zImage header: 0x016f2818 0x00000000 0x007273a8
+> zImage size 0x7273a8, file size 0x7273a8
+> zImage requires 0x007383a8 bytes
+>   offset 0x00004da8 tag 0x5a534c4b size 12
+> Decompressed kernel sizes:
+>  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> Resulting kernel space: 0x015077b0
+> Kernel: address=0x10008000 size=0x015077b0
+> Initrd: address=0x11510000 size=0x0053f46a
+> DT    : address=0x11a50000 size=0x0000b044
+> kexec_load: entry = 0x10008000 flags = 0x280000
+> nr_segments = 3
+> segment[0].buf   = 0xb65d8008
+> segment[0].bufsz = 0x7273ac
+> segment[0].mem   = 0x10008000
+> segment[0].memsz = 0x728000
+> segment[1].buf   = 0xb6098008
+> segment[1].bufsz = 0x53f46a
+> segment[1].mem   = 0x11510000
+> segment[1].memsz = 0x540000
+> segment[2].buf   = 0x993cf0
+> segment[2].bufsz = 0xb044
+> segment[2].mem   = 0x11a50000
+> segment[2].memsz = 0xc000
+> 
+> On clearfog (Armada 388):
+> 
+> # build/sbin/kexec --debug --load multi-vmlinuz-5.6.0+
+> Try gzip decompression.
+> kernel: 0xb6745008 kernel_size: 0x7273a8
+> MEMORY RANGES
+> 0000000000000000-000000003fffffff (0)
+> zImage header: 0x016f2818 0x00000000 0x007273a8
+> zImage size 0x7273a8, file size 0x7273a8
+> zImage requires 0x007383a8 bytes
+>   offset 0x00004da8 tag 0x5a534c4b size 12
+> Decompressed kernel sizes:
+>  text+data 0x00dbedb8 bss 0x007489f8 total 0x015077b0
+> Resulting kernel space: 0x015077b0
+> Kernel: address=0x00008000 size=0x015077b0
+> DT    : address=0x01511000 size=0x00007be3
+> kexec_load: entry = 0x8000 flags = 0x280000
+> nr_segments = 2
+> segment[0].buf   = 0xb6745008
+> segment[0].bufsz = 0x7273ac
+> segment[0].mem   = 0x8000
+> segment[0].memsz = 0x728000
+> segment[1].buf   = 0x1be7f68
+> segment[1].bufsz = 0x7be3
+> segment[1].mem   = 0x1511000
+> segment[1].memsz = 0x8000
+> 
+> All appears to work fine.
+> 
 
-I am wondering if this theoretical bug really exists. Now CKI of Redhat
-reported crash dumping failed on below commit. I reserved a
-intel machine and can reproduce it always. 
+I have found a part of my problem, kexec-tool seems to always use the OPT_KEXEC_FILE_SYSCALL.
+Even if I set --kexec-syscall.
 
-Commit: 5364abc57993 - Merge tag 'arc-5.7-rc1' of
+On my early tries I got "syscall kexec_file_load not available."
+When I did a full rebuild of my buildroot to go back to kexec-tool 2.0.18, this syscall become availlable.
+The get_memory_ranges seems to be called only from my_load() which is executed when !do_kexec_file_syscall.
 
-From failure trace, it's the kvm vmx which caused this. I have reverted
-them and the failure disappeared.
+Since kexec-tool always set do_kexec_file_syscall, it is never called.
+I have added a print for each syscal option, and it seems that OPT_KEXEC_SYSCALL_AUTO is called after the handling of OPT_KEXEC_SYSCALL.
 
-4f6ea0a87608 KVM: VMX: Gracefully handle faults on VMXON
-d260f9ef50c7 KVM: VMX: Fold loaded_vmcs_init() into alloc_loaded_vmcs()
-31603d4fc2bb KVM: VMX: Always VMCLEAR in-use VMCSes during crash with kexec support
+So I have hack to always set do_kexec_file_syscall=0
 
-The trace is here. 
-
-[  132.476387] sysrq: Trigger a crash 
-[  132.479829] Kernel panic - not syncing: sysrq triggered crash 
-[  132.480817] CPU: 4 PID: 1975 Comm: runtest.sh Kdump: loaded Not tainted 5.6.0-5364abc.cki #1 
-[  132.480817] Hardware name: Dell Inc. Precision R7610/, BIOS A08 11/21/2014 
-[  132.480817] Call Trace: 
-[  132.480817]  dump_stack+0x66/0x90 
-[  132.480817]  panic+0x101/0x2e3 
-[  132.480817]  ? printk+0x58/0x6f 
-[  132.480817]  sysrq_handle_crash+0x11/0x20 
-[  132.480817]  __handle_sysrq.cold+0x48/0x104 
-[  132.480817]  write_sysrq_trigger+0x24/0x40 
-[  132.480817]  proc_reg_write+0x3c/0x60 
-[  132.480817]  vfs_write+0xb6/0x1a0 
-[  132.480817]  ksys_write+0x5f/0xe0 
-[  132.480817]  do_syscall_64+0x5b/0x1c0 
-[  132.480817]  entry_SYSCALL_64_after_hwframe+0x44/0xa9 
-[  132.480817] RIP: 0033:0x7f205575d4b7 
-[  132.480817] Code: 64 89 02 48 c7 c0 ff ff ff ff eb bb 0f 1f 80 00 00 00 00 f3 0f 1e fa 64 8b 04 25 18 00 00 00 85 c0 75 10 b8 01 00 00 00 0f 05 <48> 3d 00 f0 ff ff 77 51 c3 48 83 ec 28 48 89 54 24 18 48 89 74 24 
-[  132.480817] RSP: 002b:00007ffe6ab44a38 EFLAGS: 00000246 ORIG_RAX: 0000000000000001 
-[  132.480817] RAX: ffffffffffffffda RBX: 0000000000000002 RCX: 00007f205575d4b7 
-[  132.480817] RDX: 0000000000000002 RSI: 000055e2876e1da0 RDI: 0000000000000001 
-[  132.480817] RBP: 000055e2876e1da0 R08: 000000000000000a R09: 0000000000000001 
-[  132.480817] R10: 000055e2879bf930 R11: 0000000000000246 R12: 0000000000000002 
-[  132.480817] R13: 00007f205582e500 R14: 0000000000000002 R15: 00007f205582e700 
-[  132.480817] BUG: unable to handle page fault for address: ffffffffffffffc8 
-[  132.480817] #PF: supervisor read access in kernel mode 
-[  132.480817] #PF: error_code(0x0000) - not-present page 
-[  132.480817] PGD 14460f067 P4D 14460f067 PUD 144611067 PMD 0  
-[  132.480817] Oops: 0000 [#12] SMP PTI 
-[  132.480817] CPU: 4 PID: 1975 Comm: runtest.sh Kdump: loaded Tainted: G      D           5.6.0-5364abc.cki #1 
-[  132.480817] Hardware name: Dell Inc. Precision R7610/, BIOS A08 11/21/2014 
-[  132.480817] RIP: 0010:crash_vmclear_local_loaded_vmcss+0x57/0xd0 [kvm_intel] 
-[  132.480817] Code: c7 c5 40 e0 02 00 4a 8b 04 f5 80 69 42 85 48 8b 14 28 48 01 e8 48 39 c2 74 4d 4c 8d 6a c8 bb 00 00 00 80 49 c7 c4 00 00 00 80 <49> 8b 7d 00 48 89 fe 48 01 de 72 5c 4c 89 e0 48 2b 05 13 a8 88 c4 
-[  132.480817] RSP: 0018:ffffa85d435dfcb0 EFLAGS: 00010007 
-[  132.480817] RAX: ffff9c82ebb2e040 RBX: 0000000080000000 RCX: 000000000000080f 
-[  132.480817] RDX: 0000000000000000 RSI: 00000000000000ff RDI: 000000000000080f 
-[  132.480817] RBP: 000000000002e040 R08: 000000717702c90c R09: 0000000000000004 
-[  132.480817] R10: 0000000000000009 R11: 0000000000000000 R12: ffffffff80000000 
-[  132.480817] R13: ffffffffffffffc8 R14: 0000000000000004 R15: 0000000000000000 
-[  132.480817] FS:  00007f2055668740(0000) GS:ffff9c82ebb00000(0000) knlGS:0000000000000000 
-[  132.480817] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033 
-[  132.480817] CR2: ffffffffffffffc8 CR3: 0000000151904003 CR4: 00000000000606e0 
-[  132.480817] Call Trace: 
-[  132.480817]  native_machine_crash_shutdown+0x45/0x190 
-[  132.480817]  __crash_kexec+0x61/0x130 
-[  132.480817]  ? __crash_kexec+0x9a/0x130 
-[  132.480817]  ? panic+0x11d/0x2e3 
-[  132.480817]  ? printk+0x58/0x6f 
-[  132.480817]  ? sysrq_handle_crash+0x11/0x20 
-[  132.480817]  ? __handle_sysrq.cold+0x48/0x104 
-[  132.480817]  ? write_sysrq_trigger+0x24/0x40 
-[  132.480817]  ? proc_reg_write+0x3c/0x60 
-[  132.480817]  ? vfs_write+0xb6/0x1a0 
-[  132.480817]  ? ksys_write+0x5f/0xe0 
-[  132.480817]  ? do_syscall_64+0x5b/0x1c0 
-[  132.480817]  ? entry_SYSCALL_64_after_hwframe+0x44/0xa9 
-
-> 
-> Patch 2 is cleanup that's made possible by patch 1.
-> 
-> Patch 3 isn't directly related, but it conflicts with the crash cleanup
-> changes, both from a code and a semantics perspective.  Without the crash
-> cleanup, IMO hardware_enable() should do crash_disable_local_vmclear()
-> if VMXON fails, i.e. clean up after itself.  But hardware_disable()
-> doesn't even do crash_disable_local_vmclear() (which is what got me
-> looking at that code in the first place).  Basing the VMXON change on top
-> of the crash cleanup avoids the debate entirely.
-> 
-> v2:
->   - Inverted the code flow, i.e. move code from loaded_vmcs_init() to
->     __loaded_vmcs_clear().  Trying to share loaded_vmcs_init() with
->     alloc_loaded_vmcs() was taking more code than it saved. [Paolo]
-> 
-> 
-> Gory details on the crashdump bug:
-> 
-> I verified my analysis of the NMI bug by simulating what would happen if
-> an NMI arrived in the middle of list_add() and list_del().  The below
-> output matches expectations, e.g. nothing hangs, the entry being added
-> doesn't show up, and the entry being deleted _does_ show up.
-> 
-> [    8.205898] KVM: testing NMI in list_add()
-> [    8.205898] KVM: testing NMI in list_del()
-> [    8.205899] KVM: found e3
-> [    8.205899] KVM: found e2
-> [    8.205899] KVM: found e1
-> [    8.205900] KVM: found e3
-> [    8.205900] KVM: found e1
-> 
-> static void vmx_test_list(struct list_head *list, struct list_head *e1,
->                           struct list_head *e2, struct list_head *e3)
-> {
->         struct list_head *tmp;
-> 
->         list_for_each(tmp, list) {
->                 if (tmp == e1)
->                         pr_warn("KVM: found e1\n");
->                 else if (tmp == e2)
->                         pr_warn("KVM: found e2\n");
->                 else if (tmp == e3)
->                         pr_warn("KVM: found e3\n");
->                 else
->                         pr_warn("KVM: kaboom\n");
->         }
-> }
-> 
-> static int __init vmx_init(void)
-> {
->         LIST_HEAD(list);
->         LIST_HEAD(e1);
->         LIST_HEAD(e2);
->         LIST_HEAD(e3);
-> 
->         pr_warn("KVM: testing NMI in list_add()\n");
-> 
->         list.next->prev = &e1;
->         vmx_test_list(&list, &e1, &e2, &e3);
-> 
->         e1.next = list.next;
->         vmx_test_list(&list, &e1, &e2, &e3);
-> 
->         e1.prev = &list;
->         vmx_test_list(&list, &e1, &e2, &e3);
-> 
->         INIT_LIST_HEAD(&list);
->         INIT_LIST_HEAD(&e1);
-> 
->         list_add(&e1, &list);
->         list_add(&e2, &list);
->         list_add(&e3, &list);
-> 
->         pr_warn("KVM: testing NMI in list_del()\n");
-> 
->         e3.prev = &e1;
->         vmx_test_list(&list, &e1, &e2, &e3);
-> 
->         list_del(&e2);
->         list.prev = &e1;
->         vmx_test_list(&list, &e1, &e2, &e3);
-> }
-> 
-> Sean Christopherson (3):
->   KVM: VMX: Always VMCLEAR in-use VMCSes during crash with kexec support
->   KVM: VMX: Fold loaded_vmcs_init() into alloc_loaded_vmcs()
->   KVM: VMX: Gracefully handle faults on VMXON
-> 
->  arch/x86/kvm/vmx/vmx.c | 103 ++++++++++++++++-------------------------
->  arch/x86/kvm/vmx/vmx.h |   1 -
->  2 files changed, 40 insertions(+), 64 deletions(-)
-> 
-> -- 
-> 2.24.1
-> 
-
+So now my test go further, but the final kernel crash.
+DEBUG: bootz: run kexec with /tmp/kernel --debug --kexec-syscall --force --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 ip=dhcp'
+Set DEBUG!
+main:1417 OPT_KEXEC_SYSCALL
+main:1422 OPT_KEXEC_SYSCALL_AUTO
+arch_process_options:119
+main:1500
+main:1517 res=0 do_load=1
+main:1519 res=0 do_kexec_file_syscall=0
+my_load:713
+Try gzip decompression.
+kernel: 0xb693b008 kernel_size: 0x443ac0
+get_memory_ranges:36
+MEMORY RANGES
+0000000020000000-000000009fffffff (0)
+DEBUG: my_load:737 memory_ranges=1
+zImage_arm_load:423
+zImage header: 0x016f2818 0x00000000 0x00443ac0
+zImage size 0x443ac0, file size 0x443ac0
+zImage requires 0x00454ac0 bytes
+  offset 0x00006678 tag 0x5a534c4b size 8
+Decompressed kernel sizes:
+ text+data 0x00b78080 bss 0x0003d3c0 total 0x00bb5440
+Resulting kernel space: 0x00fccb40
+DEBUG: locate_hole:237 memory_ranges=1
+Check 0/1 536870912 0 type=-1610612737
+Check 0/1 536870912 0
+Kernel: address=0x20008000 size=0x00fccb40
+DEBUG: locate_hole:237 memory_ranges=1
+Check 0/1 536870912 0 type=-1610612737
+Check 0/1 536870912 0
+Initrd: address=0x20fd5000 size=0x0167213d
+DEBUG: locate_hole:237 memory_ranges=1
+Check 0/1 536870912 0 type=-1610612737
+Check 0/2 536870912 0
+Check 1/2 577011712 0
+DT    : address=0x22648000 size=0x00006043
+kexec_load: entry = 0x20008000 flags = 0x280000
+nr_segments = 3
+segment[0].buf   = 0xb693b008
+segment[0].bufsz = 0x443ac4
+segment[0].mem   = 0x20008000
+segment[0].memsz = 0x444000
+segment[1].buf   = 0xb52c8008
+segment[1].bufsz = 0x167213d
+segment[1].mem   = 0x20fd5000
+segment[1].memsz = 0x1673000
+segment[2].buf   = 0x4ef88
+segment[2].bufsz = 0x6043
+segment[2].mem   = 0x2[   31.265096] sun7i-dwmac 830000.ethernet eth0: Link is Down
+2648000
+segment[2].memsz = 0x7000
+main:1568 res=0
+main:1582 res=0 do_exec=1
+[   31.277297] kexec_core: Starting new kernel
+[   31.282700] Disabling non-boot CPUs ...
+[   31.692085] Bye!
+C:0x200080C0-0x2044BAC0->0x20B80B00-0x20FC4500
 
 _______________________________________________
 kexec mailing list
