@@ -2,87 +2,53 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFAD21A1E12
-	for <lists+kexec@lfdr.de>; Wed,  8 Apr 2020 11:34:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2622B1A1F1C
+	for <lists+kexec@lfdr.de>; Wed,  8 Apr 2020 12:47:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EOv7d6jCe47zUbOmp7X4b8+aOMyyZhqRuSuF8nelGz4=; b=f2fymrLlWVboUG
-	kC5DE4h4kkdQ666ePY6GbmI9621g74FL7OAF34qge3vHJpr+aA3i/JPvbWbtTAH/9mXtqFZEMzs82
-	prcEfYB6ZBu5x9huL4riCXn4QjzSGizJTWqGx+4bBr5IRlCORP3Z3qbbcBVnbh1F8Qf38ciJyLamK
-	Gq9vH5eP3MseOD7/OZgMwSEiZ1O6tPzUP7gTG69kaaJxrbPcK2LNgx7EaHZpjVHOD1aEaHGcOEOek
-	KnzzojOZo/bEOmAWVD7LkcE5CtpVChTsJZ76wSjS+64gIRY17tQMIRmYUfGYk6As71mR0tNQEg0Me
-	D5cAiZ2WW+otRfbgZ2Sg==;
+	List-Owner; bh=5U+bwP8IuUI/WpacjPrWeVFz70NX0jjHwKiq4sBl6aM=; b=nsOYJATv6Z8C5j
+	sXugnunhdXG4I9CgFmPCx88OBJdUqlPbfKH8E1lps/ni9nc3AsPjL2VbqDCmv9lFFNtnRByhCMmNl
+	9caxeTFRXt1h4bWrpV1uaVLjm6eLFziPJmnbHPZfzZ76r5ApbrqnsTYThJK30JybSVz37apmzayf+
+	OM/jK55yInOcymriUzJa97ZhnQ9o78611cE4J5voAMxMJUk/zWsTcNK2u+NZ+4jk6u4LiTxghhg6B
+	2z5maYXk8108OvYtOm23uf/Ghdi9/inZZvAAMoYO0MIDPbQt08fdJ63EBiI9mV+oijKUyUUsRu422
+	M5OijvrWBOdn4CHZeBuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jM75q-0002I9-4E; Wed, 08 Apr 2020 09:33:58 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jM75g-0002HY-EJ; Wed, 08 Apr 2020 09:33:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=OzKOw5tqu/qdAWbnxRQAo6XuWQMK869GaiC39ndeWQg=; b=XpuYlTu+C3cJnD8BsUPD2NyKI
- 4Ek+6sWOLeEcrASs6OYMPRSHOUkY9VPsIFrgM6kRB9zV6qA3asxWTFaX2cFU7fwQac+ehHg6OeHcU
- T++yXKOQnQxyZeBaq3+69oVC65q12Zf+mxxmVMJXMtsD31gUydhGlt/T4uQRiR7wzv8rMUWCBdJe1
- 26svZtTJFgNjIP3JWfyh8x/IF0ixRINlWIWqPosRkmHjISJi7aKop6h0rBoeB0ULfxX/7nloYUBTa
- dKZMjzjHUZXYCotDpxNWfSQ3cTpDLnuKHIG49G25kVMm6LdLMoJM5cJObMJBoI2ZRIDepW8jIPp2s
- gryUieyow==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:43106)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jM75T-00052p-Dd; Wed, 08 Apr 2020 10:33:35 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jM75E-0001il-5Z; Wed, 08 Apr 2020 10:33:20 +0100
-Date: Wed, 8 Apr 2020 10:33:20 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: Trying to kexec on Allwinner A80
-Message-ID: <20200408093320.GQ25745@shell.armlinux.org.uk>
-References: <20200406082720.GA31279@Red>
- <20200407100203.GK25745@shell.armlinux.org.uk>
- <20200407101912.GL25745@shell.armlinux.org.uk>
- <20200407113454.GA457@Red>
- <20200407122243.GN25745@shell.armlinux.org.uk>
- <20200407130559.GB457@Red>
- <20200407132602.GO25745@shell.armlinux.org.uk>
- <20200407134849.GC457@Red>
- <20200407181740.GP25745@shell.armlinux.org.uk>
- <20200408084029.GA1859@Red>
+	id 1jM8Ey-0006De-L5; Wed, 08 Apr 2020 10:47:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jM8Ev-0006Cw-49; Wed, 08 Apr 2020 10:47:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67CE531B;
+ Wed,  8 Apr 2020 03:47:22 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.21.40])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8B2CB3F73D;
+ Wed,  8 Apr 2020 03:47:20 -0700 (PDT)
+Date: Wed, 8 Apr 2020 11:46:55 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
+Message-ID: <20200408104655.GA92698@C02TD0UTHF1T.local>
+References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200408084029.GA1859@Red>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_023349_591900_1FBC1C04 
-X-CRM114-Status: GOOD (  11.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200408_034725_208437_262B8BD9 
+X-CRM114-Status: GOOD (  15.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,100 +60,60 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, kexec@lists.infradead.org,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ James Morse <james.morse@arm.com>, bhupesh.linux@gmail.com,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 10:40:29AM +0200, Corentin Labbe wrote:
-> This is the last boot:
-> ## Loading init Ramdisk from Legacy Image at 2a000000 ...
->    Image Name:   
->    Image Type:   ARM Linux RAMDisk Image (uncompressed)
->    Data Size:    8031928 Bytes = 7.7 MiB
->    Load Address: 00000000
->    Entry Point:  00000000
->    Verifying Checksum ... OK
-> ## Flattened Device Tree blob at 23000000
->    Booting using the fdt blob at 0x23000000
->    Loading Ramdisk to 29857000, end 29fffeb8 ... OK
->    Loading Device Tree to 2984e000, end 29856fd1 ... OK
-> Starting kernel ...
-> ID:0x00000000 DT:0x2984E000
-> Uncompressing Linux... done, booting the kernel.
-> [...]
-> fake uboot stuff
-> [...]
-> DEBUG: bootz: run kexec with --debug --kexec-syscall --force --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 earlyprintk ip=dhcp'
-> Set DEBUG!
-> main:1417 OPT_KEXEC_SYSCALL
-> main:1422 OPT_KEXEC_SYSCALL_AUTO
-> arch_process_options:119
-> main:1500
-> main:1517 res=0 do_load=1
-> main:1519 res=0 do_kexec_file_syscall=0
-> my_load:713
-> Try gzip decompression.
-> kernel: 0xb6931008 kernel_size: 0x444fc8
-> get_memory_ranges:36
-> MEMORY RANGES
-> 0000000020000000-000000009fffffff (0)
-> zImage_arm_load:423
-> zImage header: 0x016f2818 0x00000000 0x00444fc8
-> zImage size 0x444fc8, file size 0x444fc8
-> zImage requires 0x00455fc8 bytes
->   offset 0x00006738 tag 0x5a534c4b size 8
-> Decompressed kernel sizes:
->  text+data 0x00b77958 bss 0x0003d428 total 0x00bb4d80
-> Resulting kernel space: 0x00fcd920
-> Kernel: address=0x20008000 size=0x00fcd920
-> Initrd: address=0x20fd6000 size=0x016a6b97
-> DT    : address=0x2267d000 size=0x00006043
-> kexec_load: entry = 0x20008000 flags = 0x280000
-> nr_segments = 3
-> segment[0].buf   = 0xb6931008
-> segment[0].bufsz = 0x444fcc
-> segment[0].mem   = 0x20008000
-> segment[0].memsz = 0x445000
-> segment[1].buf   = 0xb528a008
-> segment[1].bufsz = 0x16a6b97
-> segment[1].mem   = 0x20fd6000
-> segment[1].memsz = 0x16a7000
-> segment[2].buf   = 0x4ef88
-> segment[2].bufsz = 0x6043
-> segment[2].mem   = 0x2267d000
-> segment[2].memsz = 0x7000
-> main:1568 res=0[   32.098439] sun7i-dwmac 830000.ethernet eth0: Link is Down
-> main:1582 res=0 do_exec=1
-> [   32.113191] kexec_core: Starting new kernel
-> [   32.460412] Bye!
-> ID:0xFFFFFFFF DT:0x2267D000
-> C:0x200080C0-0x2044CFE0->0x20B80500-0x20FC5420
-> ID:0xFFFFFFFF DT:0x2267D000
-> Uncompressing Linux... done, booting the kernel.
+On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
+> kexec_file_load() syscall interface is now supported for
+> arm64 architecture as well via commits:
+> 3751e728cef2 ("arm64: kexec_file: add crash dump support") and
+> 3ddd9992a590 ("arm64: enable KEXEC_FILE config")].
+> 
+> This patch enables config KEXEC_FILE by default in the
+> arm64 defconfig, so that user-space tools like kexec-tools
+> can use the same as the default interface for kexec/kdump
+> on arm64.
+> 
+> Cc: AKASHI Takahiro <takahiro.akashi@linaro.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: kexec@lists.infradead.org
+> 
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 
-Okay, that looks fine:
-- the DT is out of the way, so shouldn't be corrupted by the
-  decompression process.
-- the decompressor writes the kernel image to 0x20008000 to 0x20b7f958
-  which is clear of the decompressor itself (which relocated itself
-  to 0x20b80500).
-- the ID doesn't matter for DT booting purposes.
+FWIW:
 
-I see you've gone back to using your own dtb rather than one derived
-from the booting kernel. I strongly recommend against giving your own
-dtb to kexec as if the boot loader modifies the DTB when calling the
-first kernel (such as adding memory region information, adding MAC
-addresses, enabling or disabling various devices) those modifications
-will be lost if you supply your own DTB to kexec.
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-Please drop "--dtb /tmp/dtb".
+Mark.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+> ---
+>  arch/arm64/configs/defconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 24e534d85045..fa122f4341a2 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
+>  CONFIG_NUMA=y
+>  CONFIG_SECCOMP=y
+>  CONFIG_KEXEC=y
+> +CONFIG_KEXEC_FILE=y
+>  CONFIG_CRASH_DUMP=y
+>  CONFIG_XEN=y
+>  CONFIG_COMPAT=y
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 kexec mailing list
