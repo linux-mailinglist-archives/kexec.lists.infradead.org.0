@@ -2,80 +2,91 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8520E1A2700
-	for <lists+kexec@lfdr.de>; Wed,  8 Apr 2020 18:17:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD4EF1A298D
+	for <lists+kexec@lfdr.de>; Wed,  8 Apr 2020 21:44:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NvveB/KkqtZ6UKqTqY64izQtnct033JXXruM7uXamxQ=; b=Plhh3CVZjZZD9a
-	GIDDSIQ03Ln2xj8zgeXtJRU1WZkmcvx2/ygPMT416JTqxqDIIb0bJJIfaOPiuI620vSNr7KXO9ERM
-	pj3RohzmVTxU2kgQnwjPB+6kHVKpvMrasS93vL9551vUhDsbdbq9utcDlLnfMgOAa9bzgECuaJc1q
-	nidwzJSLPo7oV0uYPTv2qy4m8NzvdanOujPiILIG6i7v+mCpoO0SAgdGoFAQbIGSEFyTuQgeXCr/b
-	OTTJAcm3bWpNlFd6CHJosk32pOG7idx2D5+P9Et7HpiREqgzzgYxZhtQq1NpmPkRcB0Angzkpp2KH
-	LZ0mBYdok0wiJV+JVPTQ==;
+	List-Owner; bh=CuRWzIAlb/CoD6pXzG3BTs/LDLuFEzM0Oy76dAsdfRg=; b=GfydmOAMUA1TQV
+	vg0GKWpg9gyzLWkx1PRUS9+Ohg4avGhV1YLrEWoBUaaCTxhCc5rrC/yV6b08FNoVeMdDCaR4gBxai
+	PNuO4G0+2rffTH3y1Ty8yr89Ybi3ca8BPcOYkBw8vpMTayQPrvOPMDSmbyr+n0PRv/VzZjQoiyJA+
+	EMimaeo8RpsVV+GqHFjCifZ7kU2vs6zQWKp67evqwWN8TcmFxjp3uV/Y3Ds6gRqZeZ9YTRSUROzcI
+	xAWFY14Fc+Je/iPsW5GJm0CYZo3JKIoe4wm0LyEY07xB57PMxRH9DAmZmGDkuQ5rW/zOLF9JDcR+L
+	6olWYbdnNPS3ZfiO1TpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMDO3-0003Qy-Tq; Wed, 08 Apr 2020 16:17:11 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jMGd2-0004J3-VP; Wed, 08 Apr 2020 19:44:52 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMDO0-0003Q1-1r; Wed, 08 Apr 2020 16:17:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PZi97pQa4y0yt53/rdrgUQ/GmiJF1/ROleWVi/yIQ98=; b=AIIWMkRBgQvSadhGLzjUFbkaT
- QkafK5gsuXUgzCcFY4doqcnrGjLv794yS+8TlFK95Bib6M3klz0o3HLBZJOgAJTvIgz8oJRbmX02L
- Ve3p8HUaglgq1lvClD2xfC3rb0/fx/iKUS8e6Yo7Q3PGnc9qTHMxhqzunFiDcO2E/5k79jV5Ossgd
- QszQo1WbmK/DtrwcWg6+bWOY06w5dMmQfS4mcxuUHtAJLYvx41WZ7RtNO/ULNZmkfzS6Bm8QRP214
- xmNMt7THfj3k3Ltcc505BPpyal0x6nG86c+loIxllbsP/OfZHVtEBqDUDXNnMJL4PjUiHlGRzq5M2
- 03NMkdrFQ==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:47364)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jMDNq-0007BX-Ua; Wed, 08 Apr 2020 17:16:59 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jMDNp-0001xp-Af; Wed, 08 Apr 2020 17:16:57 +0100
-Date: Wed, 8 Apr 2020 17:16:57 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: Trying to kexec on Allwinner A80
-Message-ID: <20200408161657.GT25745@shell.armlinux.org.uk>
-References: <20200407101912.GL25745@shell.armlinux.org.uk>
- <20200407113454.GA457@Red>
- <20200407122243.GN25745@shell.armlinux.org.uk>
- <20200407130559.GB457@Red>
- <20200407132602.GO25745@shell.armlinux.org.uk>
- <20200407134849.GC457@Red>
- <20200407181740.GP25745@shell.armlinux.org.uk>
- <20200408084029.GA1859@Red>
- <20200408093320.GQ25745@shell.armlinux.org.uk>
- <20200408152412.GA3621@Red>
+ id 1jMGd0-0004H9-A1
+ for kexec@lists.infradead.org; Wed, 08 Apr 2020 19:44:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586375085;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=BJTubTK2sAcaWEenl3EU+q6ObJic6Awuvbc9Pw6wkWE=;
+ b=ehlFDI+4y6BqpfCka3VQiiKGOzNhId1rZcS+j7+pdK5pJAfA9eeEuRQGniofemFMV42I1/
+ RwR8omYk2rBPPv10qmeb9oFK387cqzrzRwDNWCshgkkiJiU4LYbD2iEkGQw7S+LhQrrBor
+ STKrUPOPf+IWOfk8oslMFClMw1NI11w=
+Received: from mail-wm1-f70.google.com (mail-wm1-f70.google.com
+ [209.85.128.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-55-9FgSy3GcNpW5XarjkfZo8w-1; Wed, 08 Apr 2020 15:44:41 -0400
+X-MC-Unique: 9FgSy3GcNpW5XarjkfZo8w-1
+Received: by mail-wm1-f70.google.com with SMTP id u6so798266wmm.6
+ for <kexec@lists.infradead.org>; Wed, 08 Apr 2020 12:44:41 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=mYYuwLAboUvtz1WhP7yhVmIyNIoHfRUcQsmccBnO09E=;
+ b=gI9+44t09i7EciaEjQTW9ghlF6zhNsOCg/dQ7ZsRCCBPhQWq4vYTcVoFgMJPdQIeR2
+ c7N9sLuhl/VLG6CInDRo81ttUIl4dGkwX7SFbTEqYUeLBpPFCmn1SYjp9sTN5fRldyPj
+ fWP0hP5DJXrEuJUkFdIRqdRPIdaBDn9VN09QTbmres+6VqMJbgE1vJKq8TyGmMSdFM/l
+ BBd9eTJsj7iFTqUUVNHXeIuzTDO/E5N3SRyeXt51LXw4ofT0N129d9Z3x1v/OVuUgAaE
+ bvpyYDRbPyoo5yY8mo/ZYvdidPDQYNsTFAEkg6dZu7j6Xr/vXjvV+L22eJf6WW6YgbyN
+ dE9g==
+X-Gm-Message-State: AGi0PuYZ66R6z/SXdCxn1mJXW2wNfS7GaXdYF+QGULEGMiRgcSIuDoNG
+ 8vTIf25GCKm1r75KjPYiaeGCcE/PY2LqJIh5COHOLYDZ3sV0FYcUKvrUmgohLm8ccYmSICqDbVH
+ 2KQCBmA3i07mKTxDeL81d
+X-Received: by 2002:a5d:66c4:: with SMTP id k4mr10871380wrw.53.1586375080350; 
+ Wed, 08 Apr 2020 12:44:40 -0700 (PDT)
+X-Google-Smtp-Source: APiQypIlH1aPoYyskSLdulU2tyWq3L8x3JFlR6vFlGhIt4V5eB9TSlTUoLEINUgOmGMdu27vvjmcVQ==
+X-Received: by 2002:a5d:66c4:: with SMTP id k4mr10871361wrw.53.1586375080112; 
+ Wed, 08 Apr 2020 12:44:40 -0700 (PDT)
+Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
+ by smtp.gmail.com with ESMTPSA id u7sm724203wmg.41.2020.04.08.12.44.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 08 Apr 2020 12:44:39 -0700 (PDT)
+From: Vitaly Kuznetsov <vkuznets@redhat.com>
+To: Baoquan He <bhe@redhat.com>
+Subject: Re: [PATCH v2 0/3] KVM: VMX: Fix for kexec VMCLEAR and VMXON cleanup
+In-Reply-To: <20200408151808.GS2402@MiWiFi-R3L-srv>
+References: <20200321193751.24985-1-sean.j.christopherson@intel.com>
+ <20200407110115.GA14381@MiWiFi-R3L-srv> <87r1wzlcwn.fsf@vitty.brq.redhat.com>
+ <20200408151808.GS2402@MiWiFi-R3L-srv>
+Date: Wed, 08 Apr 2020 21:44:37 +0200
+Message-ID: <87mu7l2256.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200408152412.GA3621@Red>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_091708_096271_A16563D8 
-X-CRM114-Status: GOOD (  22.29  )
+X-CRM114-CacheID: sfid-20200408_124450_424192_475EBE00 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,6 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,132 +106,59 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mripard@kernel.org,
- wens@csie.org, ebiederm@xmission.com, linux-arm-kernel@lists.infradead.org
+Cc: dzickus@redhat.com, Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, dyoung@redhat.com,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Apr 08, 2020 at 05:24:12PM +0200, Corentin Labbe wrote:
-> On Wed, Apr 08, 2020 at 10:33:20AM +0100, Russell King - ARM Linux admin wrote:
-> > On Wed, Apr 08, 2020 at 10:40:29AM +0200, Corentin Labbe wrote:
-> > > This is the last boot:
-> > > ## Loading init Ramdisk from Legacy Image at 2a000000 ...
-> > >    Image Name:   
-> > >    Image Type:   ARM Linux RAMDisk Image (uncompressed)
-> > >    Data Size:    8031928 Bytes = 7.7 MiB
-> > >    Load Address: 00000000
-> > >    Entry Point:  00000000
-> > >    Verifying Checksum ... OK
-> > > ## Flattened Device Tree blob at 23000000
-> > >    Booting using the fdt blob at 0x23000000
-> > >    Loading Ramdisk to 29857000, end 29fffeb8 ... OK
-> > >    Loading Device Tree to 2984e000, end 29856fd1 ... OK
-> > > Starting kernel ...
-> > > ID:0x00000000 DT:0x2984E000
-> > > Uncompressing Linux... done, booting the kernel.
-> > > [...]
-> > > fake uboot stuff
-> > > [...]
-> > > DEBUG: bootz: run kexec with --debug --kexec-syscall --force --initrd /tmp/ramdisk --dtb /tmp/dtb --command-line='console=ttyS0,115200n8 root=/dev/ram0 earlycon=uart,mmio32,0x7000000 earlyprintk ip=dhcp'
-> > > Set DEBUG!
-> > > main:1417 OPT_KEXEC_SYSCALL
-> > > main:1422 OPT_KEXEC_SYSCALL_AUTO
-> > > arch_process_options:119
-> > > main:1500
-> > > main:1517 res=0 do_load=1
-> > > main:1519 res=0 do_kexec_file_syscall=0
-> > > my_load:713
-> > > Try gzip decompression.
-> > > kernel: 0xb6931008 kernel_size: 0x444fc8
-> > > get_memory_ranges:36
-> > > MEMORY RANGES
-> > > 0000000020000000-000000009fffffff (0)
-> > > zImage_arm_load:423
-> > > zImage header: 0x016f2818 0x00000000 0x00444fc8
-> > > zImage size 0x444fc8, file size 0x444fc8
-> > > zImage requires 0x00455fc8 bytes
-> > >   offset 0x00006738 tag 0x5a534c4b size 8
-> > > Decompressed kernel sizes:
-> > >  text+data 0x00b77958 bss 0x0003d428 total 0x00bb4d80
-> > > Resulting kernel space: 0x00fcd920
-> > > Kernel: address=0x20008000 size=0x00fcd920
-> > > Initrd: address=0x20fd6000 size=0x016a6b97
-> > > DT    : address=0x2267d000 size=0x00006043
-> > > kexec_load: entry = 0x20008000 flags = 0x280000
-> > > nr_segments = 3
-> > > segment[0].buf   = 0xb6931008
-> > > segment[0].bufsz = 0x444fcc
-> > > segment[0].mem   = 0x20008000
-> > > segment[0].memsz = 0x445000
-> > > segment[1].buf   = 0xb528a008
-> > > segment[1].bufsz = 0x16a6b97
-> > > segment[1].mem   = 0x20fd6000
-> > > segment[1].memsz = 0x16a7000
-> > > segment[2].buf   = 0x4ef88
-> > > segment[2].bufsz = 0x6043
-> > > segment[2].mem   = 0x2267d000
-> > > segment[2].memsz = 0x7000
-> > > main:1568 res=0[   32.098439] sun7i-dwmac 830000.ethernet eth0: Link is Down
-> > > main:1582 res=0 do_exec=1
-> > > [   32.113191] kexec_core: Starting new kernel
-> > > [   32.460412] Bye!
-> > > ID:0xFFFFFFFF DT:0x2267D000
-> > > C:0x200080C0-0x2044CFE0->0x20B80500-0x20FC5420
-> > > ID:0xFFFFFFFF DT:0x2267D000
-> > > Uncompressing Linux... done, booting the kernel.
-> > 
-> > Okay, that looks fine:
-> > - the DT is out of the way, so shouldn't be corrupted by the
-> >   decompression process.
-> > - the decompressor writes the kernel image to 0x20008000 to 0x20b7f958
-> >   which is clear of the decompressor itself (which relocated itself
-> >   to 0x20b80500).
-> > - the ID doesn't matter for DT booting purposes.
-> > 
-> > I see you've gone back to using your own dtb rather than one derived
-> > from the booting kernel. I strongly recommend against giving your own
-> > dtb to kexec as if the boot loader modifies the DTB when calling the
-> > first kernel (such as adding memory region information, adding MAC
-> > addresses, enabling or disabling various devices) those modifications
-> > will be lost if you supply your own DTB to kexec.
-> > 
-> > Please drop "--dtb /tmp/dtb".
-> > 
-> 
-> Thanks it works now.
-> 
-> With a working setup I diffed dtb and the one given by uboot and it seems the missing node for booting was /memory.
+Baoquan He <bhe@redhat.com> writes:
 
-That is more or less expected - it seems kexec never adds the /memory
-nodes to the dtb.  I've no idea whether it should or should not be doing
-so, and is for others to thrash out the arguments for and against what
-should be modified and how.
+> On 04/07/20 at 02:04pm, Vitaly Kuznetsov wrote:
+>> Baoquan He <bhe@redhat.com> writes:
+>> 
+>> >
+>> > The trace is here. 
+>> >
+>> > [  132.480817] RIP: 0010:crash_vmclear_local_loaded_vmcss+0x57/0xd0 [kvm_intel] 
+>> 
+>> This is a known bug,
+>> 
+>> https://lore.kernel.org/kvm/20200401081348.1345307-1-vkuznets@redhat.com/
+>
+> Thanks for telling, Vitaly.
+>
+> I tested your patch, it works.
+>
+> One thing is I noticed a warning message when your patch is applied. When
+> I changed back to revert this patchset, didn't found this message. I didn't
+> look into the detail of network core code and the kvm vmx code, maybe it's
+> not relevant.
+>
+>
+> [ 3708.629234] Type was not set for devlink port.
+> [ 3708.629258] WARNING: CPU: 3 PID: 60 at net/core/devlink.c:7164 devlink_port_type_warn+0x11/0x20
+> [ 3708.632328] Modules linked in: rfkill sunrpc intel_powerclamp coretemp kvm_intel kvm irqbypass intel_cstate iTCO_wdt hpwdt intel_uncore gpio_ich iTCO_vendor_support pcspkr ipmi_ssif hpilo lpc_ich ipmi_si ipmi_devintf ipmi_msghandler acpi_power_meter pcc_cpufreq i7core_edac ip_tables xfs libcrc32c radeon i2c_algo_bit drm_kms_helper cec ttm crc32c_intel serio_raw drm ata_generic pata_acpi mlx4_core bnx2 hpsa scsi_transport_sas
+> [ 3708.640782] CPU: 3 PID: 60 Comm: kworker/3:1 Kdump: loaded Tainted: G          I       5.6.0+ #1
+> [ 3708.642715] Hardware name: HP ProLiant DL380 G6, BIOS P62 08/16/2015
+> [ 3708.644222] Workqueue: events devlink_port_type_warn
+> [ 3708.645349] RIP: 0010:devlink_port_type_warn+0x11/0x20
 
-The upshot of the existing kexec behaviour is you can't take a dtb from
-the kernel build and use it with kexec.
-
-> For booting a different kernel, I fdtput the dtb (for memory and bootargs), and it works until it try to mount the roofs which it find corrupt.
-
-rootfs or initrd supplied to kexec?
-
-> Since the rootfs I get by the fakeuboot is a "uboot legacy image" (rootfs.cpio.gz modified by mkimage), I drop the first 64bytes but it seems not sufficiant. (even if file say it is a good rootfs.cpio.gz)
-> Or perhaps the kernel get an invalid initrd address.
-
-Yep, the file given via --initrd or --ramdisk is loaded exactly as-is
-into memory, no parsing of the file is done.  Neither the kernel, nor
-kexec, does any u-boot parsing of the initrd/ramdisk file; they are
-not u-boot.
-
-If you want to try giving the kernel a bit more space, you can try
---image-size=$((0x01000000)) to see whether that affects the ramdisk
-image problem - if it does, it means we're still not properly
-calculating the space the kernel needs.
+What's in the patchset you're testing? Is it Sean's series + my patch,
+or just my patch? In case it's the later I'm having hard times trying to
+see how this can be related, but in case it's the former the fact that
+we do stuff a little bit differently on kexec may actually be triggering
+the issue above. I still think that it's not causing it, just
+triggering.
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Vitaly
+
 
 _______________________________________________
 kexec mailing list
