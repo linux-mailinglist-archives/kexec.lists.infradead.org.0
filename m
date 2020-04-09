@@ -2,84 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7433E1A32FD
-	for <lists+kexec@lfdr.de>; Thu,  9 Apr 2020 13:14:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71C111A3472
+	for <lists+kexec@lfdr.de>; Thu,  9 Apr 2020 14:57:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=89hn4gwd+YF2TUq1VTi1FYBm0c4epmktj6jgSUwhjnQ=; b=l386eaTKSIhW8s
-	mqE6pOGb3cyyO6JTfC+VctzDniOfTNtHD4V9fSoz6vSTPmDgyUfADeOy2E+1OMvt4hhiRLIoQXvJK
-	PmR1WzRQk5O5sRNR3Nf6zPidwwhg+71QKo+1g1x3aqT/p0il+0Wdq3GTsSo0OJgl9lEDMFeiaqwLu
-	9UI0y6LZWh/Vi/kTFq3Gn8kklWw91hr7BSWJ4sQ5YwhHiqs8wqimYHnWua8nAcTqJV7jZD2LABXh9
-	XXfHvu4Jwj9YSR0jFxJpI/FCjsYE2xscLcxAYreZlRw8oXWu0UkOTbWoLhn42AeQnXIYUxPK6jo/g
-	3NEquR/jZLVVYsMLD96A==;
+	List-Owner; bh=Idhxzxexft1w8SIdkWTxIhETh0+75hOm1J3wtm1YG0c=; b=GceIprsrrMXeQE
+	H3101fY3OpWSduPckSJ7D1F9wfJyJFvZYgqI4TY0lbkpXNOwLosnYdI0Z+EyoecWCjixvMNZNxWLk
+	PaL87IJd70k6lRRQ8+cko0dXpRey3BRWhtPGi+d/fKYOUbP8+mMCqrFsvH5UwjpGLV0ylf+sNytOd
+	6gZ+iTTTxgQb1mEwpG0hEigzqMRXsr6MnupV0hJlwiXNk3EgkMLUjkSkAYNJhV6lWjB0h1GAAA7BR
+	JyUQ811xsH0CaLOUn+8ChbsvOf0wucu8RtRe6B47NtSWRgAlYfR52Wslhs8JGeNjzEH69cpuqF3+g
+	bw+/iyIOPEMBN7pW2hPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMV8k-00089j-Jh; Thu, 09 Apr 2020 11:14:34 +0000
+	id 1jMWkS-0005mX-OI; Thu, 09 Apr 2020 12:57:36 +0000
 Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMV8d-00088g-J2
- for kexec@lists.infradead.org; Thu, 09 Apr 2020 11:14:29 +0000
+ id 1jMWkP-0005lb-0k
+ for kexec@lists.infradead.org; Thu, 09 Apr 2020 12:57:34 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586430866;
+ s=mimecast20190719; t=1586437051;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=6cpl+n8X+H/WZY5IkrBIFEMZQV57eBmdb4m2YX0izQY=;
- b=PSJ+bxPCI251D+eAmEfpS7/2xgcjUNxqmUKRpicEa2j5Uwyu2a/dWpMX5Tju0QdHhQBE+8
- jnR6T8KqlT86fMVEcBk1yyYiI0Rx7p33u01Kb4ri/81gXeTzHBxsw3H2U+wKa/DmuewFsU
- XRnPq0Q+AI+rw57d+5ZHQ2oBfdDp8FQ=
-Received: from mail-wr1-f70.google.com (mail-wr1-f70.google.com
- [209.85.221.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-5-9cgy0zU0O_mnQObafsGcQg-1; Thu, 09 Apr 2020 07:14:17 -0400
-X-MC-Unique: 9cgy0zU0O_mnQObafsGcQg-1
-Received: by mail-wr1-f70.google.com with SMTP id t8so260360wrq.22
- for <kexec@lists.infradead.org>; Thu, 09 Apr 2020 04:14:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=eVe7IfDc6Eg1zSotYzISNC1XY4K3ye5o8p4mKeTvCRU=;
- b=RNThIPMQxZUIS2QWyQQNkDWOCP5cF3ZlFtkshWo09JVpnx/cXtpEXgxWcEJFxgZTYJ
- yJ/h4uzuEkezmYMX1kTTFMMIUDRy+YOGJPooZpevOft2KvQW6eU/JfPUEfMpfn4tMkKk
- gZnqeYLdKhovlqg9EfeKTUIHWeiqelgcXQEIUNKAzYXme3l+n1tUya44evHdcnl18Frz
- x7yBYWZvzI32+Eu1SkgCcIKE4iTLKxhf1hG1mKfaBOV0Um42Hgkw7pCxpGVO32cKAIOw
- Hklr+5qr7G4BIqU4KtH20QqmwcHvM4ez0x/KxhgE4tmRsXmdEEWqIOUIm3lYaBCgsjcx
- qomg==
-X-Gm-Message-State: AGi0Puac6o/ZzJHJbkxZ8RFia+tD+Lbgc/kPthkvU7xUOwL/I80SiQG7
- CUpAGC7cDJtGhFUuCIcDQ5F8mb48Igkam5vSx0Gf9eB3lRKI7jkr4G1WsijDeVQqrwjuwQVrkHT
- yU3SXlLKjG3K2x5Zwr90t
-X-Received: by 2002:adf:aad7:: with SMTP id i23mr13446973wrc.184.1586430856639; 
- Thu, 09 Apr 2020 04:14:16 -0700 (PDT)
-X-Google-Smtp-Source: APiQypJrJJvOfBtCg0nF+bFCAwjKhMQCswXXApj7bVfJMGmrNUaRyCwySn1n7/vsqTWSUHcBZMCe9Q==
-X-Received: by 2002:adf:aad7:: with SMTP id i23mr13446952wrc.184.1586430856377; 
- Thu, 09 Apr 2020 04:14:16 -0700 (PDT)
-Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
- by smtp.gmail.com with ESMTPSA id c20sm3387575wmd.36.2020.04.09.04.14.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 09 Apr 2020 04:14:15 -0700 (PDT)
-From: Vitaly Kuznetsov <vkuznets@redhat.com>
-To: Baoquan He <bhe@redhat.com>
+ bh=O2CLuS3FEdpoO51mMdiV5dcccG5OKJkGsbzDxdCTFJc=;
+ b=S/Xi80WEpWmwWIAtuePSpP00yDxQZDtiEd8wZPUgE0yEn1Y8n/KwxygjtrE37gaP8yRi7Y
+ pscJqULCxQmsjIsfx9/5XjPtLwXxmqDMZ8VnvbLa9NxcDl8igjoG8x3toS4SV7+aeULF6D
+ FKOAvPPDl5cOtGCN48GMiV+xseW3Ejo=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-451-aCVDYKQlOD2fSBBkaINFYA-1; Thu, 09 Apr 2020 08:57:29 -0400
+X-MC-Unique: aCVDYKQlOD2fSBBkaINFYA-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 09FF0801E5E;
+ Thu,  9 Apr 2020 12:57:28 +0000 (UTC)
+Received: from localhost (ovpn-12-133.pek2.redhat.com [10.72.12.133])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id E19905C64E;
+ Thu,  9 Apr 2020 12:57:21 +0000 (UTC)
+Date: Thu, 9 Apr 2020 20:57:19 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Vitaly Kuznetsov <vkuznets@redhat.com>
 Subject: Re: [PATCH v2 0/3] KVM: VMX: Fix for kexec VMCLEAR and VMXON cleanup
-In-Reply-To: <20200409012002.GT2402@MiWiFi-R3L-srv>
+Message-ID: <20200409125719.GV2402@MiWiFi-R3L-srv>
 References: <20200321193751.24985-1-sean.j.christopherson@intel.com>
- <20200407110115.GA14381@MiWiFi-R3L-srv> <87r1wzlcwn.fsf@vitty.brq.redhat.com>
- <20200408151808.GS2402@MiWiFi-R3L-srv> <87mu7l2256.fsf@vitty.brq.redhat.com>
+ <20200407110115.GA14381@MiWiFi-R3L-srv>
+ <87r1wzlcwn.fsf@vitty.brq.redhat.com>
+ <20200408151808.GS2402@MiWiFi-R3L-srv>
+ <87mu7l2256.fsf@vitty.brq.redhat.com>
  <20200409012002.GT2402@MiWiFi-R3L-srv>
-Date: Thu, 09 Apr 2020 13:14:14 +0200
-Message-ID: <87imi829o9.fsf@vitty.brq.redhat.com>
+ <87imi829o9.fsf@vitty.brq.redhat.com>
 MIME-Version: 1.0
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <87imi829o9.fsf@vitty.brq.redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200409_041427_710714_C724DDBB 
-X-CRM114-Status: UNSURE (   6.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200409_055733_287252_5E1C52CF 
+X-CRM114-Status: GOOD (  10.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -119,22 +105,22 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Baoquan He <bhe@redhat.com> writes:
+On 04/09/20 at 01:14pm, Vitaly Kuznetsov wrote:
+> Baoquan He <bhe@redhat.com> writes:
+> 
+> >
+> > While I would suggest adding kexec@lists.infradead.org when code changes
+> > are related to kexec/kdump since we usually watch this mailing list.
+> > LKML contains too many mails, we may miss this kind of change, have to
+> > debug and test again.
+> >
+> 
+> Definitely makes sense and I'll try my best to remember doing this
+> myself next time but the problem is that scripts/checkpatch.pl is not
+> smart enough, kexec related bits are scattered all over kernel and
+> drivers so I'm afraid you're missing a lot in kexec@ :-(
 
->
-> While I would suggest adding kexec@lists.infradead.org when code changes
-> are related to kexec/kdump since we usually watch this mailing list.
-> LKML contains too many mails, we may miss this kind of change, have to
-> debug and test again.
->
-
-Definitely makes sense and I'll try my best to remember doing this
-myself next time but the problem is that scripts/checkpatch.pl is not
-smart enough, kexec related bits are scattered all over kernel and
-drivers so I'm afraid you're missing a lot in kexec@ :-(
-
--- 
-Vitaly
+Yeah, understand, thanks.
 
 
 _______________________________________________
