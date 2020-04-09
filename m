@@ -2,91 +2,101 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8692A1A2D78
-	for <lists+kexec@lfdr.de>; Thu,  9 Apr 2020 03:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7433E1A32FD
+	for <lists+kexec@lfdr.de>; Thu,  9 Apr 2020 13:14:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YJ3+kCdr9ZVpRhb2I/7YbvlmHbiASKvtzxTMbGECrLQ=; b=VxuRmscMl2KaS2xiBNC9H/nMBS
-	U6mBJXBEpAWXbEcCzz3ZrhxnXRGyXukeTkMFh3ponBQCXomEdC/PjIfbHZPnccZtKAXBvZlsBezvj
-	eSsAAInvj+pL7JUO6j++A01zF02jnjpUCCMBonPc43mt24B20nSgZjVL2+NmdsUwf9a1cTCvmR7/r
-	g9n74ZhX7tqP8HlK7TL1DVaqB0rpoE+2o8odteNamypGSAtCWaL5MENbw2T+nZ6JMn9e5mx5CirUz
-	6LRD6QwNqp2mmaUDdjCwLU9/4EKE5tmpFyXBJ7ydvPr4zt/wCSz/rEIh5RKZuzTaOv0kiEvee5UdU
-	r+9k3Jug==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=89hn4gwd+YF2TUq1VTi1FYBm0c4epmktj6jgSUwhjnQ=; b=l386eaTKSIhW8s
+	mqE6pOGb3cyyO6JTfC+VctzDniOfTNtHD4V9fSoz6vSTPmDgyUfADeOy2E+1OMvt4hhiRLIoQXvJK
+	PmR1WzRQk5O5sRNR3Nf6zPidwwhg+71QKo+1g1x3aqT/p0il+0Wdq3GTsSo0OJgl9lEDMFeiaqwLu
+	9UI0y6LZWh/Vi/kTFq3Gn8kklWw91hr7BSWJ4sQ5YwhHiqs8wqimYHnWua8nAcTqJV7jZD2LABXh9
+	XXfHvu4Jwj9YSR0jFxJpI/FCjsYE2xscLcxAYreZlRw8oXWu0UkOTbWoLhn42AeQnXIYUxPK6jo/g
+	3NEquR/jZLVVYsMLD96A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMMTU-00060T-Mk; Thu, 09 Apr 2020 01:59:24 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jMV8k-00089j-Jh; Thu, 09 Apr 2020 11:14:34 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMMTR-0005zL-Lw
- for kexec@lists.infradead.org; Thu, 09 Apr 2020 01:59:23 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id t40so626673pjb.3
- for <kexec@lists.infradead.org>; Wed, 08 Apr 2020 18:59:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=+nzNcvHE7znKtUbTH1h7qAqABqp+roGwnZR7QhEKjNg=;
- b=LMeOXr4DEpGU949d4FXAjBBrSehRR+SLJBEMB6pJvxTGHLcGmO+Aak6KwZrM75DwhL
- 3uV8PX0N+0OBLxq7yDwWJV3qeU11jjPqEQPIc0dWZqR0q8gbkd4wvmFl4AhPvLyb+UoZ
- Yz2bP4Xm2YX0oPe/B6VY0LWws/Kjo95nPD8lu1GyCh8f9GpmLSc75hF3X5Npn6sZnmqQ
- 0oag58vkruy45/qCUKUIsCYrBBv6HIeScBS6/VwUDouIO0ZWvDMuaFvkN1lNkSLtUoaK
- TJp6ptQZj+JfhFxC0t8gssnyy8A1LxkbAMNF1eNxy+WkUGFMzN3s9TcVzn2+tvWMzfmL
- jTbA==
+ id 1jMV8d-00088g-J2
+ for kexec@lists.infradead.org; Thu, 09 Apr 2020 11:14:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586430866;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=6cpl+n8X+H/WZY5IkrBIFEMZQV57eBmdb4m2YX0izQY=;
+ b=PSJ+bxPCI251D+eAmEfpS7/2xgcjUNxqmUKRpicEa2j5Uwyu2a/dWpMX5Tju0QdHhQBE+8
+ jnR6T8KqlT86fMVEcBk1yyYiI0Rx7p33u01Kb4ri/81gXeTzHBxsw3H2U+wKa/DmuewFsU
+ XRnPq0Q+AI+rw57d+5ZHQ2oBfdDp8FQ=
+Received: from mail-wr1-f70.google.com (mail-wr1-f70.google.com
+ [209.85.221.70]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-5-9cgy0zU0O_mnQObafsGcQg-1; Thu, 09 Apr 2020 07:14:17 -0400
+X-MC-Unique: 9cgy0zU0O_mnQObafsGcQg-1
+Received: by mail-wr1-f70.google.com with SMTP id t8so260360wrq.22
+ for <kexec@lists.infradead.org>; Thu, 09 Apr 2020 04:14:17 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=+nzNcvHE7znKtUbTH1h7qAqABqp+roGwnZR7QhEKjNg=;
- b=aTDcMp4aDfdV+s1xTkJwgU5NlKfgssaUOz8Svw+vf17qNv4hiGxVv+RFfpR761vid3
- kIXccL/WynbZHpqydnhbxZGAdEkIV8ZT+Dij399u+/ooyDEecHxZMB6jlKq7WEh6feHR
- dg7mYZyxsGkbVxrFkUxGkTOXOevSsgJC4r/Y47pJM6YR44rhMPpaVgo6QvSGsHIkVgn5
- 6mImbcPLm8WrF8RriOvmUk/vGz5Elrpf5IMxjFbVxfFMUUP+H47ZK95GYQVb4Nd2Gv7i
- YIS1ZPPT7qZkt0zr1tJuSOe9SZ9KlUHa8yi5sY5jvYrSjUGtz4fL/ZdLugw1+j9fU9t9
- 4jOQ==
-X-Gm-Message-State: AGi0PuannzvrvV3Fx+OzDifGHmh45zebiLsRt0FmI2sassEMHsglL4g7
- TFSErSFwZ90ppqSDftGmpYa9XVd5SQ==
-X-Google-Smtp-Source: APiQypIXcVvSFd4LPa6h3J2f9FhTYsaMvRnAl7LRvhih+g2bob+2p8SKKBLhG/A/NC2TKWcyi9NG4Q==
-X-Received: by 2002:a17:902:8bc7:: with SMTP id
- r7mr10035156plo.12.1586397560894; 
- Wed, 08 Apr 2020 18:59:20 -0700 (PDT)
-Received: from mylaptop.redhat.com ([209.132.188.80])
- by smtp.gmail.com with ESMTPSA id w27sm17822530pfq.211.2020.04.08.18.59.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 08 Apr 2020 18:59:20 -0700 (PDT)
-From: Pingfan Liu <kernelfans@gmail.com>
-To: linuxppc-dev@lists.ozlabs.org
-Subject: [PATCHv2 2/2] powerpc/pseries: update device tree before ejecting
- hotplug uevents
-Date: Thu,  9 Apr 2020 09:56:51 +0800
-Message-Id: <1586397411-24259-2-git-send-email-kernelfans@gmail.com>
-X-Mailer: git-send-email 2.7.5
-In-Reply-To: <1586397411-24259-1-git-send-email-kernelfans@gmail.com>
-References: <1586397411-24259-1-git-send-email-kernelfans@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=eVe7IfDc6Eg1zSotYzISNC1XY4K3ye5o8p4mKeTvCRU=;
+ b=RNThIPMQxZUIS2QWyQQNkDWOCP5cF3ZlFtkshWo09JVpnx/cXtpEXgxWcEJFxgZTYJ
+ yJ/h4uzuEkezmYMX1kTTFMMIUDRy+YOGJPooZpevOft2KvQW6eU/JfPUEfMpfn4tMkKk
+ gZnqeYLdKhovlqg9EfeKTUIHWeiqelgcXQEIUNKAzYXme3l+n1tUya44evHdcnl18Frz
+ x7yBYWZvzI32+Eu1SkgCcIKE4iTLKxhf1hG1mKfaBOV0Um42Hgkw7pCxpGVO32cKAIOw
+ Hklr+5qr7G4BIqU4KtH20QqmwcHvM4ez0x/KxhgE4tmRsXmdEEWqIOUIm3lYaBCgsjcx
+ qomg==
+X-Gm-Message-State: AGi0Puac6o/ZzJHJbkxZ8RFia+tD+Lbgc/kPthkvU7xUOwL/I80SiQG7
+ CUpAGC7cDJtGhFUuCIcDQ5F8mb48Igkam5vSx0Gf9eB3lRKI7jkr4G1WsijDeVQqrwjuwQVrkHT
+ yU3SXlLKjG3K2x5Zwr90t
+X-Received: by 2002:adf:aad7:: with SMTP id i23mr13446973wrc.184.1586430856639; 
+ Thu, 09 Apr 2020 04:14:16 -0700 (PDT)
+X-Google-Smtp-Source: APiQypJrJJvOfBtCg0nF+bFCAwjKhMQCswXXApj7bVfJMGmrNUaRyCwySn1n7/vsqTWSUHcBZMCe9Q==
+X-Received: by 2002:adf:aad7:: with SMTP id i23mr13446952wrc.184.1586430856377; 
+ Thu, 09 Apr 2020 04:14:16 -0700 (PDT)
+Received: from vitty.brq.redhat.com (g-server-2.ign.cz. [91.219.240.2])
+ by smtp.gmail.com with ESMTPSA id c20sm3387575wmd.36.2020.04.09.04.14.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 09 Apr 2020 04:14:15 -0700 (PDT)
+From: Vitaly Kuznetsov <vkuznets@redhat.com>
+To: Baoquan He <bhe@redhat.com>
+Subject: Re: [PATCH v2 0/3] KVM: VMX: Fix for kexec VMCLEAR and VMXON cleanup
+In-Reply-To: <20200409012002.GT2402@MiWiFi-R3L-srv>
+References: <20200321193751.24985-1-sean.j.christopherson@intel.com>
+ <20200407110115.GA14381@MiWiFi-R3L-srv> <87r1wzlcwn.fsf@vitty.brq.redhat.com>
+ <20200408151808.GS2402@MiWiFi-R3L-srv> <87mu7l2256.fsf@vitty.brq.redhat.com>
+ <20200409012002.GT2402@MiWiFi-R3L-srv>
+Date: Thu, 09 Apr 2020 13:14:14 +0200
+Message-ID: <87imi829o9.fsf@vitty.brq.redhat.com>
+MIME-Version: 1.0
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200408_185921_713870_C2687B76 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200409_041427_710714_C724DDBB 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [kernelfans[at]gmail.com]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,124 +108,33 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Ellerman <mpe@ellerman.id.au>, Libor Pechacek <lpechacek@suse.cz>,
- Pingfan Liu <kernelfans@gmail.com>, kexec@lists.infradead.org,
- Paul Mackerras <paulus@samba.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Leonardo Bras <leonardo@linux.ibm.com>,
- Nathan Fontenot <nfont@linux.vnet.ibm.com>,
- Hari Bathini <hbathini@linux.ibm.com>
-MIME-Version: 1.0
+Cc: dzickus@redhat.com, Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, dyoung@redhat.com,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-A bug is observed on pseries by taking the following steps on rhel:
--1. drmgr -c mem -r -q 5
--2. echo c > /proc/sysrq-trigger
+Baoquan He <bhe@redhat.com> writes:
 
-And then, the failure looks like:
-kdump: saving to /sysroot//var/crash/127.0.0.1-2020-01-16-02:06:14/
-kdump: saving vmcore-dmesg.txt
-kdump: saving vmcore-dmesg.txt complete
-kdump: saving vmcore
- Checking for memory holes                         : [  0.0 %] /                   Checking for memory holes                         : [100.0 %] |                   Excluding unnecessary pages                       : [100.0 %] \                   Copying data                                      : [  0.3 %] -          eta: 38s[   44.337636] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-[   44.337663] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-[   44.337677] hash-mmu: mm: Hashing failure ! EA=0x7fffba400000 access=0x8000000000000004 current=makedumpfile
-[   44.337692] hash-mmu:     trap=0x300 vsid=0x13a109c ssize=1 base psize=2 psize 2 pte=0xc000000050000504
-[   44.337708] makedumpfile[469]: unhandled signal 7 at 00007fffba400000 nip 00007fffbbc4d7fc lr 000000011356ca3c code 2
-[   44.338548] Core dump to |/bin/false pipe failed
-/lib/kdump-lib-initramfs.sh: line 98:   469 Bus error               $CORE_COLLECTOR /proc/vmcore $_mp/$KDUMP_PATH/$HOST_IP-$DATEDIR/vmcore-incomplete
-kdump: saving vmcore failed
+>
+> While I would suggest adding kexec@lists.infradead.org when code changes
+> are related to kexec/kdump since we usually watch this mailing list.
+> LKML contains too many mails, we may miss this kind of change, have to
+> debug and test again.
+>
 
-* Root cause *
-  After analyzing, it turns out that in the current implementation,
-when hot-removing lmb, the KOBJ_REMOVE event ejects before the dt updating as
-the code __remove_memory() comes before drmem_update_dt().
-So in kdump kernel, when read_from_oldmem() resorts to
-pSeries_lpar_hpte_insert() to install hpte, but fails with -2 due to
-non-exist pfn. And finally, low_hash_fault() raise SIGBUS to process, as it
-can be observed "Bus error"
+Definitely makes sense and I'll try my best to remember doing this
+myself next time but the problem is that scripts/checkpatch.pl is not
+smart enough, kexec related bits are scattered all over kernel and
+drivers so I'm afraid you're missing a lot in kexec@ :-(
 
-From a viewpoint of listener and publisher, the publisher notifies the
-listener before data is ready.  This introduces a problem where udev
-launches kexec-tools (due to KOBJ_REMOVE) and loads a stale dt before
-updating. And in capture kernel, makedumpfile will access the memory based
-on the stale dt info, and hit a SIGBUS error due to an un-existed lmb.
-
-* Fix *
-  In order to fix this issue, update dt before __remove_memory(), and
-accordingly the same rule in hot-add path.
-
-This will introduce extra dt updating payload for each involved lmb when hotplug.
-But it should be fine since drmem_update_dt() is memory based operation and
-hotplug is not a hot path.
-
-Signed-off-by: Pingfan Liu <kernelfans@gmail.com>
-Cc: Michael Ellerman <mpe@ellerman.id.au>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Cc: Paul Mackerras <paulus@samba.org>
-Cc: Hari Bathini <hbathini@linux.ibm.com>
-Cc: Leonardo Bras <leonardo@linux.ibm.com> 
-Cc: Libor Pechacek <lpechacek@suse.cz> 
-Cc: Nathan Fontenot <nfont@linux.vnet.ibm.com> 
-To: linuxppc-dev@lists.ozlabs.org
-Cc: kexec@lists.infradead.org
----
-v1 -> v2: improve commit, and more detail about the SIGBUG failure path
- arch/powerpc/platforms/pseries/hotplug-memory.c | 15 +++++++++------
- 1 file changed, 9 insertions(+), 6 deletions(-)
-
-diff --git a/arch/powerpc/platforms/pseries/hotplug-memory.c b/arch/powerpc/platforms/pseries/hotplug-memory.c
-index 4bd9004..72cd4a5 100644
---- a/arch/powerpc/platforms/pseries/hotplug-memory.c
-+++ b/arch/powerpc/platforms/pseries/hotplug-memory.c
-@@ -394,6 +394,9 @@ static int dlpar_remove_lmb(struct drmem_lmb *lmb)
- 	invalidate_lmb_associativity_index(lmb);
- 	lmb_clear_nid(lmb);
- 	lmb->flags &= ~DRCONF_MEM_ASSIGNED;
-+	rtas_hp_event = true;
-+	drmem_update_dt();
-+	rtas_hp_event = false;
- 
- 	__remove_memory(nid, base_addr, block_sz);
- 
-@@ -667,6 +670,9 @@ static int dlpar_add_lmb(struct drmem_lmb *lmb)
- 
- 	lmb_set_nid(lmb);
- 	lmb->flags |= DRCONF_MEM_ASSIGNED;
-+	rtas_hp_event = true;
-+	drmem_update_dt();
-+	rtas_hp_event = false;
- 
- 	block_sz = memory_block_size_bytes();
- 
-@@ -685,6 +691,9 @@ static int dlpar_add_lmb(struct drmem_lmb *lmb)
- 		invalidate_lmb_associativity_index(lmb);
- 		lmb_clear_nid(lmb);
- 		lmb->flags &= ~DRCONF_MEM_ASSIGNED;
-+		rtas_hp_event = true;
-+		drmem_update_dt();
-+		rtas_hp_event = false;
- 
- 		__remove_memory(nid, base_addr, block_sz);
- 	}
-@@ -941,12 +950,6 @@ int dlpar_memory(struct pseries_hp_errorlog *hp_elog)
- 		break;
- 	}
- 
--	if (!rc) {
--		rtas_hp_event = true;
--		rc = drmem_update_dt();
--		rtas_hp_event = false;
--	}
--
- 	unlock_device_hotplug();
- 	return rc;
- }
 -- 
-2.7.5
+Vitaly
 
 
 _______________________________________________
