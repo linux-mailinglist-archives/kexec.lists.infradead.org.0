@@ -2,49 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F3D71A4A2A
-	for <lists+kexec@lfdr.de>; Fri, 10 Apr 2020 21:10:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33C931A4DA4
+	for <lists+kexec@lfdr.de>; Sat, 11 Apr 2020 05:44:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0OoRdpRUgprbh5ZH48UhNMfoIc/1ka+gDRqxKLNdVYw=; b=hhMVSWm4z5TQ42
-	wNWQU0NdL6l/3OrGGA0GchN1eliDqYFUY4RCap4//9BRZ4rBpmtd0f6dhKa4DbPeL3Qm2M+/DcX/J
-	WFUnI2cQebCrRLw8kTYdgIXvqQw8JpPp9nJQ4KW0alIuBSadhUu8aYoMmvkOZFJUr5o90dXuglVny
-	hXvINrfxNkddhbTQEvypj71uanfxNMfN/+rt6A/uwvyOHvkxQCCskL5HKHLs/CNkt8pmyK8zE4sST
-	RCIfhrxjqKI2329j5OHWp3lWF7IRmn7857letEdQ2CdPg45OClIxdVWdNjMhvtZ6mXPiUtld95wTZ
-	bPXDQnJm3BS9wnl3/jug==;
+	List-Owner; bh=IYTfOm2q7NEnywO6/JYOkdi/VYDbVbiEfCc6PPkr7wA=; b=Jv7SFBnTyqpU1u
+	YhiWwrKAzrjX/Z8hiTgAcgIV7hPfLTF/P2ziQoXZyMGPplIoIHqYUC8/iwIex8DNzYxIs4ZCjreaz
+	VzYWTM31RuqP1fxdrquV1XpmW7QlAegVwAs6ir6mex96K9U+PD1vpoVG0Yxy++WZxWPIue+YxYO/k
+	uVKO7IiEhiG+MiGYMJD721zt8HuVM/UKeY3XeXZJwwFE4nLJIzX9tCDNn4svSewqC+wnXO6T3iJCn
+	vJ6YUc3pS7PG8wo+1t9JoHQajTJExK7IsEZdLe1QVTjPT3NPEQZ2A5z7rhmbBlgoutyh2iLVW6E1e
+	ZTFrbs9weIBqNIRJd8iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jMz2h-0006ss-Al; Fri, 10 Apr 2020 19:10:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jN74K-0004Mx-MB; Sat, 11 Apr 2020 03:44:32 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jMz2e-0006rt-3Y; Fri, 10 Apr 2020 19:10:17 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jN74G-0004JP-JU
+ for kexec@lists.infradead.org; Sat, 11 Apr 2020 03:44:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586576664;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=tSX3QudJ2iHkyu7Zntp3JHz55Dv2K9nr9Vw4rINki0g=;
+ b=do6GC9pknGDlJETDHu10GICBfpQFSHPCiTdkVg3Bf0IKYMqzxOZx0uESctVK59rr9vRjK/
+ HTQ6FDCBcPdEbqxPCaN3iOxSWf9HNY+35Uv6rYA4XuuAFvwDD4D8W7MXsnU9okAbC1ExmK
+ ORmxF/OhLXlThny43hkmhLAWV4bf8XQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-223-uXpjzOt_P8C_VBef4dtHRQ-1; Fri, 10 Apr 2020 23:44:22 -0400
+X-MC-Unique: uXpjzOt_P8C_VBef4dtHRQ-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B06C420732;
- Fri, 10 Apr 2020 19:10:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586545814;
- bh=mD35s/N+82OBIdiWyGnKftZe4Qn6CDYfmI+gmXknHSs=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=KwCbb1tQG+dc0H017PFZOqmesLd//Cf3hJx4zd8UJqbeQ4OoqotzXhmoGjI2kybQq
- PUAVHN9Ld2WD4yG0j7txOZuFVDE4Z0XjyFYtmD2JshV9YnanC9jDdLtxkEZf102vqU
- djc29kBpv9OAa3ADI+1nan0am+AaVbh+5OREZTuE=
-Date: Fri, 10 Apr 2020 12:10:13 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: David Hildenbrand <david@redhat.com>
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B93F5107ACC7;
+ Sat, 11 Apr 2020 03:44:20 +0000 (UTC)
+Received: from localhost (ovpn-12-67.pek2.redhat.com [10.72.12.67])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 29FC160C05;
+ Sat, 11 Apr 2020 03:44:16 +0000 (UTC)
+Date: Sat, 11 Apr 2020 11:44:14 +0800
+From: Baoquan He <bhe@redhat.com>
+To: Andrew Morton <akpm@linux-foundation.org>
 Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
  kexec image
-Message-Id: <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
-In-Reply-To: <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
+Message-ID: <20200411034414.GH2129@MiWiFi-R3L-srv>
+References: <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
  <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
  <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
  <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
@@ -53,23 +62,33 @@ References: <20200326180730.4754-1-james.morse@arm.com>
  <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
  <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
  <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
+MIME-Version: 1.0
+In-Reply-To: <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200410_121016_171920_8B38DB9C 
-X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-CacheID: sfid-20200410_204428_737622_1695374C 
+X-CRM114-Status: UNSURE (   9.70  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
@@ -83,9 +102,10 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+Cc: David Hildenbrand <david@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
  linux-mm@kvack.org, James Morse <james.morse@arm.com>,
  Eric Biederman <ebiederm@xmission.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
@@ -94,8 +114,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-It's unclear (to me) what is the status of this patchset.  But it does appear that
-an new version can be expected?
+On 04/10/20 at 12:10pm, Andrew Morton wrote:
+> It's unclear (to me) what is the status of this patchset.  But it does appear that
+> an new version can be expected?
+
+As we discussed in the thread of replying to the cover letter, the
+idea of this patchset is not good. 
+
+Because We tend to use kexec_file_load more and improve/enhance it in the
+future, and gradually obsolete the old kexec_load interface which this
+patchset is trying to fix on. 
+
+And the issue James spot is a very corner case, we have suggested
+another easier way to avoid it by adding systemd service to load kexec
+and monitor memory adding/removing uevent, juas as we have done for
+kdump loading. Bhupesh is working on this to add a service in Fedora
+and test, and will put it to RHEL too if nobody is unsatisfied.
+
+Thanks
+Baoquan
+
 
 _______________________________________________
 kexec mailing list
