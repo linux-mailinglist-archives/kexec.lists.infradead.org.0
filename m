@@ -2,54 +2,38 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6308B1A5D67
-	for <lists+kexec@lfdr.de>; Sun, 12 Apr 2020 10:11:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D11E1A605B
+	for <lists+kexec@lfdr.de>; Sun, 12 Apr 2020 21:56:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gr2gubb9fPR/fMnW6ZSJ6ulQGiQeGWk82HW+jvcLuio=; b=ET5jRlQQp9O4mY
-	8bDgLWC9y+BjJ/VwLv/+7qMA96zg+VKyIr51XsPJaXhqel1DP8Fr69UD7fXJCQW9ITPUSEamLxJkr
-	+i+jOj19Uj8MD10F8ywNy0/FU4/difHPli3OM43z+2IEk8B5YzXTyEAvy7SezVAubrjev3UiT1GmY
-	o76SYcymydUWAkOofCCx23ulgh3Y3o8JeGksfPh9pNTbg+eyWLEmX2DAEV1ulGa8f6L87gkcdwvJr
-	pnsLMC/O36aW0vzsf9uhHYxwI0UN5G03/Mb+JgTjCn/DYOtQCAjLifOQuQbusgeaUHXfPfayztawd
-	j1CbgYGqave1IbdfLOmw==;
+	List-Owner; bh=Q8E1/8J/VV4H/Kl/6RvEbmDhjmP9r/s5gqIxAZnzwY8=; b=H8ErEqDRl5neg3
+	lQIWA/otcUMLTwWClgHTx1YudoJ9E6Z07p1hXN8EFM/DIxnMerNoqnG8pDtODP9Hzh0LX1mxhLFFD
+	sTg4cO4O4SIxjEjRH7IuNiAfEdCbVhS3b832HEs49o5fAhOmXszuw1vv66dNgEoZdZrKMMGbLW86j
+	5hV0h9MR+IiK1oBmI75ea1j7hAcQzV+LQZ3plZwxd9OgauGsDA5SM4d9ZUwZRk9WjKoxRMDO0nsYN
+	L6SY8a5iHmDqaVCLhlWvDHTvjvXuu/REIeLiyq/z6AuNlof57Ws8dk/HzHzzkHP2sinvQeeYHEOHU
+	6x4KTUJN3VGhIHLx0QAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNXhk-0004RJ-H0; Sun, 12 Apr 2020 08:11:00 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jNiiM-00088n-CK; Sun, 12 Apr 2020 19:56:22 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNXhh-0001hC-3j; Sun, 12 Apr 2020 08:10:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jF8bSQKCDgzBwhiZE8kr8lc4iXqq6kefQZ2hVV8fUQo=; b=d9XlYLm6IV5pG/uOhqfLUpelX
- gK48+348cNPaSuYZjFtVJct/VFIZFw9fGd1wtijSNJoxYRHB/At7Yd+ueq1OQ4aDWzWE3grPCqaqF
- dQYCqPJEleDHQ1DVMHuze8or4jIRC2hoSsTS2rAdP26rF1I8acZRLsa8imo5dUCuWNS9LUe8zTwdR
- pNOyBL2LfoXSfgOk76H0zxAlvkw01qz51QeWQ3WILpnS84GhosdCc/1FOZ4EdqMm+9L/eVs4/kF+l
- kdIEPlfxYLWVK5UVC6nxOor5ykBbUgdQIJgr4SmDSjOPdJg2xRuB2ZoIC1I2hQdHoaSNWAbHonmLW
- WDQydZJSA==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:37346)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jNXfT-0003Wk-TI; Sun, 12 Apr 2020 09:08:40 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jNXfQ-0005rT-N6; Sun, 12 Apr 2020 09:08:36 +0100
-Date: Sun, 12 Apr 2020 09:08:36 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Baoquan He <bhe@redhat.com>
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-Message-ID: <20200412080836.GM25745@shell.armlinux.org.uk>
+ id 1jNiiA-000805-32; Sun, 12 Apr 2020 19:56:11 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jNihj-00006w-MB; Sun, 12 Apr 2020 13:55:43 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jNihi-0007wm-Sv; Sun, 12 Apr 2020 13:55:43 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 References: <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
  <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
  <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
@@ -60,30 +44,65 @@ References: <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
  <20200411034414.GH2129@MiWiFi-R3L-srv>
  <20200411093009.GH25745@shell.armlinux.org.uk>
  <20200412053507.GA4247@MiWiFi-R3L-srv>
+ <20200412080836.GM25745@shell.armlinux.org.uk>
+Date: Sun, 12 Apr 2020 14:52:47 -0500
+In-Reply-To: <20200412080836.GM25745@shell.armlinux.org.uk> (Russell King's
+ message of "Sun, 12 Apr 2020 09:08:36 +0100")
+Message-ID: <87wo6klbw0.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200412053507.GA4247@MiWiFi-R3L-srv>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-XM-SPF: eid=1jNihi-0007wm-Sv; ; ; mid=<87wo6klbw0.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/Onci8wlOnfpzEznU3/1Zx87QbWlJfDRA=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa02.xmission.com
+X-Spam-Level: **
+X-Spam-Status: No, score=2.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels,XMSubLong
+ autolearn=disabled version=3.4.2
+X-Spam-Virus: No
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4599] *  0.7 XMSubLong Long Subject
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa02 1397; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: XMission; sa02 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: **;Russell King - ARM Linux admin <linux@armlinux.org.uk>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 250 ms - load_scoreonly_sql: 0.04 (0.0%),
+ signal_user_changed: 4.7 (1.9%), b_tie_ro: 3.2 (1.3%), parse: 1.07
+ (0.4%), extract_message_metadata: 2.9 (1.2%), get_uri_detail_list:
+ 0.84 (0.3%), tests_pri_-1000: 3.3 (1.3%), tests_pri_-950: 1.14 (0.5%),
+ tests_pri_-900: 0.85 (0.3%), tests_pri_-90: 54 (21.7%), check_bayes:
+ 53 (21.3%), b_tokenize: 4.2 (1.7%), b_tok_get_all: 5 (2.1%),
+ b_comp_prob: 1.20 (0.5%), b_tok_touch_all: 40 (15.9%), b_finish: 0.69
+ (0.3%), tests_pri_0: 164 (65.7%), check_dkim_signature: 0.36 (0.1%),
+ check_dkim_adsp: 2.7 (1.1%), poll_dns_idle: 1.35 (0.5%), tests_pri_10:
+ 2.8 (1.1%), tests_pri_500: 7 (2.8%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_011057_156210_40AFAE0A 
-X-CRM114-Status: GOOD (  30.57  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200412_125610_130335_539EBF4A 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [166.70.13.232 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,12 +114,11 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: David Hildenbrand <david@redhat.com>,
+Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>,
  Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
  linux-mm@kvack.org, James Morse <james.morse@arm.com>,
- Eric Biederman <ebiederm@xmission.com>,
  Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -108,88 +126,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Sun, Apr 12, 2020 at 01:35:07PM +0800, Baoquan He wrote:
-> On 04/11/20 at 10:30am, Russell King - ARM Linux admin wrote:
-> > On Sat, Apr 11, 2020 at 11:44:14AM +0800, Baoquan He wrote:
-> > > Because We tend to use kexec_file_load more and improve/enhance it in the
-> > > future, and gradually obsolete the old kexec_load interface which this
-> > > patchset is trying to fix on. 
-> > 
-> > That's not going to happen; 32-bit ARM kexec uses the kexec_load
-> > interface rather than the kexec_file_load version, and I see no one
-> > with any interest in changing that - and there's users of the former.
-> > 
-> > I don't see how it's possible to convert 32-bit ARM kexec to the
-> > kexec_file_load interface - this assumes that all you have are the
-> > kernel, initrd, and commandline, but on 32-bit ARM kexec, we have
-> > kernel, initrd and the dtb blob which the user can specify.
-> 
-> Well, I understand what you said about 32-bit ARM support with only
-> kexec_old support thing. That's why I said we tend to obsolete it
-> 'GRADUALLY'. It's the existing users who are using kexec_load, and the
-> ARCHes which only has kexec_load, make us have to transfer to
-> kexec_file_load gradually.
-> 
-> Comparing with kexec_load, kexec_file_load has only one disadvantage,
-> that is some ARCHes only have kexec_load. Otherwise, kexec_file_load
-> benefits kexec/kdump developping/maintaining very much. The loading job
-> of kexec_file_load is mostly done in kernel, we can get whatever we
-> want about kernel information very conveniently to do anything needed.
-> For the kexec_load interface, the loading job is mostly done in
-> userspace, we have to export kernel information to procfs, sysfs, etc,
-> then parse them in kexec_tools, finally passed it to kernel part of
-> kexec loading.
-> 
-> The gradual obsoleting means we may only add
-> feature/improvement/enhancement to kexec_file_load. And if a bug fix is
-> needed for both kexec_load and kexec_file_load, and the fix is very
-> complicated, we may only fix it in kexec_file_load too. Kexec_file_load
-> interface is suggested to add if does't have, just port user space part
-> to kernel as x86/s390/arm64 have done.
-> 
-> Surely, it doesn't mean we don't fix the critical/blocker bug with
-> kexec_load loading. We still try to do, just are not so eager. In the
-> existing product environment, the kexec_load is used, just keep using
-> it. Do we bother to change it to kexec_file_load, e.g in our RHEL7
-> distros? Certainly not. But in our new product, we will change to use
-> kexec_file_load interface. I guess this is similar with arm64. The
-> advantage and benefit have been told in the 2nd paragraph.
-> 
-> 
-> As for 32-bit ARM, is it like the old product, we have many in-use systems
-> deployed in customers' laboratory? Wondering if ARM continues designing
-> new 32-bit ARM cpu, and some companies continue producing tons of 32-bit ARM
-> cpus. If yes, I think we need continue taking care of kexec_load if
-> 32-bit ARM can't convert to kexec_file_load. If not, it may be not a
-> barrier when we consider converting kexec_load to kexec_file_load in
-> other ARCHes. We just need keep using it, try to fix those critical/blocker
-> bug in kexec_load interface if encountered.
-> 
-> Finally, comning back to this patchset itself, the issue James spotted
-> is not so ciritical, I would say. When I do kexec jumping, I will do
-> loading firstly, then trigge jumping. I can think of the case that
-> people may load kexec-ed kernel, then do something else, later she/he
-> triggers the kexec jumping. These are not necessary steps. As Dave and I
-> replied to James in the cover-letter thread, adding a systemd service of
-> kexec loading, monitor hotplug uevent, reload it if any hot remove
-> happened. This is quite easy to do, I don't see any problem with it, and
-> why we don't do like this. 
-> 
-> My personal opinion, please tell if I miss anything.
 
-All that opinion and hand waving about the benefits of the new
-interface is totally irrelevent for 32-bit ARM for the reasons
-I stated in my email to which you replied.
+The only benefit of kexec_file_load is that it is simple enough from a
+kernel perspective that signatures can be checked.
 
-Gradual obsolecence or not, the file interface can't be supported
-on 32-bit ARM as-is - it is totally inadequate and inferior as an
-API compared to the functionality we have with plain kexec_load.
-Without that point addressed, kexec_file_load is meaningless for
-32-bit ARM.
+kexec_load in every other respect is the more capable and functional
+interface.  It makes no sense to get rid of it.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+It does make sense to reload with a loaded kernel on memory hotplug.
+That is simple and easy.  If we are going to handle something in the
+kernel it should simple an automated unloading of the kernel on memory
+hotplug.
+
+
+I think it would be irresponsible to deprecate kexec_load on any
+platform.
+
+I also suspect that kexec_file_load could be taught to copy the dtb
+on arm32 if someone wants to deal with signatures.
+
+We definitely can not even think of deprecating kexec_load until
+architecture that supports it also supports kexec_file_load and everyone
+is happy with that interface.  That is Linus's no regression rule.
+
+
+Eric
 
 _______________________________________________
 kexec mailing list
