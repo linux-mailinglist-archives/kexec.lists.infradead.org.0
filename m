@@ -2,84 +2,69 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6CEF1A618D
-	for <lists+kexec@lfdr.de>; Mon, 13 Apr 2020 04:37:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EA651A61CD
+	for <lists+kexec@lfdr.de>; Mon, 13 Apr 2020 05:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1s36TywY34uFwN1U1rbOfj3dVHbMCmVm/CuXSLXt0j8=; b=AiqFkbih1mxbyX
-	oG9CtLl/4XC/xGtaamR99ETWTpt8QpP3eybNqnWC7WyjCKypWcymVcwy/XyGBVIDlml0yknbO7COj
-	ZZHuOjbwhq2LgmngZ5GxT4AaXAUIla8n7X+V3dZb2/G0wvsxrjHBYwwFkrLcMvWqyhMTn0hU9GpBU
-	E4+OmUXBGCDKS3OXs6SS6S1KJJuqLi8YjEkIeHeDXfRydHEwIFbxCaifzzoBs90fnCp4skokNWNO2
-	8idvDXD4AQs1xmjM0RECBEpt+FaD77+Zex33Z/frjOMiHTtnv6mD4Z7uhDhTU5t6QqjKitpWeO8XH
-	5dEAqze3XgykrGo34NGA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XnPeu8iQ347iOns1H1CV3U0+qOrQVp/owjKCiOKEoLQ=; b=bmh
+	Zf7mmwxKyT81d2WV219I0oNjmfdRMMNYqQI5sym5Di4+IBwZAIEtr6nK0bbz9MKFyd/pSassPqEyG
+	KsSmBwRUZKYr3izhz2Z2GSqErV9nUUQ6EVkh7XQnZe+o6Nwz4TtWBH3XKVSHHzKUXn77ZJR87MTpX
+	N4IwOT9EzV7hy6Bb4ypRDhyuiz3O5Naanc+qVlBNJhpXhwto+GGHnqequ/ax1tbcfF/9AAty6fyF5
+	rS1WNlhqXliHqs6PNAulm5OEcy95dRhVX+bjSOGFrbiNclM77iDNVOGvhEy5cQfm/seOR5W22rJZC
+	gTbW/28ScOhgiyxiZdQU5scJyfNKPXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jNoyV-0003bC-Fk; Mon, 13 Apr 2020 02:37:27 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jNq3d-0002Cx-WC; Mon, 13 Apr 2020 03:46:50 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jNoyO-0003Wj-77
- for kexec@lists.infradead.org; Mon, 13 Apr 2020 02:37:22 +0000
+ id 1jNq3b-0002CV-4d
+ for kexec@lists.infradead.org; Mon, 13 Apr 2020 03:46:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1586745437;
+ s=mimecast20190719; t=1586749604;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=cNWdc1cSaVS1ulqLAzfjy25i8fkF6PupRqxs9vt81WU=;
- b=EaGh1Bm2dnSEOXuB1lhHZO72xZvzPqCYWVlBH+gW2gfP+eff9xNngqPxpMMMzn0YCTmKRO
- j1zdZvereGryokEzIZY+jwa2VPtY+efzp+5ICvplk0Z5q0lTs0gRyw+HdQxjaty2Ytgb5p
- Zntx286Ehi4zpuTl85ycp9miIQLgD04=
+ to:to:cc:cc:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=DCkKWQeLz51yGLbAlBZz4z2Yr9jR7cyyDtAhfw18Vmw=;
+ b=hN/P/Ds77j4QPkzFymifgJ4zfIscPIQJxhbuxMsDNF23BXXjpXnLd7zlSNvOH79NercHNt
+ zOx11IYcpZ5sJM0Ln3zgF1GBPIZ3ns1x2bRwY8Vn1fqVVT3f4qKkL7byz5E1e9eJLfn85S
+ XjG0I8RsgXlhYGJ//Hr/bTubc9Tav9U=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-279-AC8HmX-qO2OON4JV2G2ccA-1; Sun, 12 Apr 2020 22:37:09 -0400
-X-MC-Unique: AC8HmX-qO2OON4JV2G2ccA-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
+ us-mta-122-575j66PTOXayVgElsrzZgg-1; Sun, 12 Apr 2020 23:46:43 -0400
+X-MC-Unique: 575j66PTOXayVgElsrzZgg-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0887D18B5FA1;
- Mon, 13 Apr 2020 02:37:08 +0000 (UTC)
-Received: from localhost (ovpn-12-79.pek2.redhat.com [10.72.12.79])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id EF2B911D2C4;
- Mon, 13 Apr 2020 02:37:03 +0000 (UTC)
-Date: Mon, 13 Apr 2020 10:37:01 +0800
-From: Baoquan He <bhe@redhat.com>
-To: "Eric W. Biederman" <ebiederm@xmission.com>
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-Message-ID: <20200413023701.GA20265@MiWiFi-R3L-srv>
-References: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
- <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
- <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
- <20200411034414.GH2129@MiWiFi-R3L-srv>
- <20200411093009.GH25745@shell.armlinux.org.uk>
- <20200412053507.GA4247@MiWiFi-R3L-srv>
- <20200412080836.GM25745@shell.armlinux.org.uk>
- <87wo6klbw0.fsf@x220.int.ebiederm.org>
-MIME-Version: 1.0
-In-Reply-To: <87wo6klbw0.fsf@x220.int.ebiederm.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2DB7DDB22;
+ Mon, 13 Apr 2020 03:46:42 +0000 (UTC)
+Received: from mylaptop.redhat.com (ovpn-8-19.pek2.redhat.com [10.72.8.19])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 8DBC75D9C5;
+ Mon, 13 Apr 2020 03:46:40 +0000 (UTC)
+From: Pingfan Liu <piliu@redhat.com>
+To: kexec@lists.infradead.org
+Subject: [PATCH] makedumpfile: clear mem_map if not in pt_loads
+Date: Mon, 13 Apr 2020 11:46:38 +0800
+Message-Id: <1586749598-1671-1-git-send-email-piliu@redhat.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200412_193720_335904_3EA9AFD4 
-X-CRM114-Status: GOOD (  21.11  )
+X-CRM114-CacheID: sfid-20200412_204647_269595_58BBF932 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,88 +86,80 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 04/12/20 at 02:52pm, Eric W. Biederman wrote:
-> 
-> The only benefit of kexec_file_load is that it is simple enough from a
-> kernel perspective that signatures can be checked.
+The crashed kernel passes usable RAM info through pt_loads[], but the
+current code ignore this, and parse all sections below info->max_mapnr.
+Refer to code in get_mm_sparsemem()
+  num_section = divideup(info->max_mapnr, PAGES_PER_SECTION());
 
-We don't have this restriction any more with below commit:
+These ranges can include unwanted memory e.g. reserved-memory for crash
+kernel, PMEM for fs-dax. Excluding them by setting mem_maps[section_nr]=NULL.
 
-commit 99d5cadfde2b ("kexec_file: split KEXEC_VERIFY_SIG into KEXEC_SIG
-and KEXEC_SIG_FORCE")
+Signed-off-by: Pingfan Liu <piliu@redhat.com>
+---
+ elf_info.c     | 12 ++++++++++++
+ elf_info.h     |  1 +
+ makedumpfile.c |  5 +++++
+ 3 files changed, 18 insertions(+)
 
-With KEXEC_SIG_FORCE not set, we can use kexec_load_file to cover both
-secure boot or legacy system for kexec/kdump. Being simple enough is
-enough to astract and convince us to use it instead. And kexec_file_load
-has been in use for several years on systems with secure boot, since
-added in 2014, on x86_64.
-
-> 
-> kexec_load in every other respect is the more capable and functional
-> interface.  It makes no sense to get rid of it.
-> 
-> It does make sense to reload with a loaded kernel on memory hotplug.
-> That is simple and easy.  If we are going to handle something in the
-> kernel it should simple an automated unloading of the kernel on memory
-> hotplug.
-> 
-> 
-> I think it would be irresponsible to deprecate kexec_load on any
-> platform.
-> 
-> I also suspect that kexec_file_load could be taught to copy the dtb
-> on arm32 if someone wants to deal with signatures.
-> 
-> We definitely can not even think of deprecating kexec_load until
-> architecture that supports it also supports kexec_file_load and everyone
-> is happy with that interface.  That is Linus's no regression rule.
-
-I should pick a milder word to express our tendency and tell our plan
-then 'obsolete'. Even though I added 'gradually', seems it doesn't help
-much. I didn't mean to say 'deprecate' at all when replied.
-
-The situation and trend I understand about kexec_load and kexec_file_load
-are:
-
-1) Supporting kexec_file_load is suggested to add in ARCHes which don't
-have yet, just as x86_64, arm64 and s390 have done;
+diff --git a/elf_info.c b/elf_info.c
+index 7d72742..297c3e4 100644
+--- a/elf_info.c
++++ b/elf_info.c
+@@ -1302,3 +1302,15 @@ get_max_file_offset(void)
+ {
+ 	return max_file_offset;
+ }
++
++int phyaddr_in_pt_loads(unsigned long long phys_start)
++{
++	 struct pt_load_segment *pls;
++
++	for (int i = 0; i < num_pt_loads; i++) {
++		pls = &pt_loads[i];
++		if (phys_start >= pls->phys_start && phys_start < pls->phys_end)
++			return TRUE;
++	}
++	return FALSE;
++}
+diff --git a/elf_info.h b/elf_info.h
+index 934b608..f5bb07c 100644
+--- a/elf_info.h
++++ b/elf_info.h
+@@ -90,6 +90,7 @@ void get_eraseinfo(off_t *offset, unsigned long *size);
+ void set_eraseinfo(off_t offset, unsigned long size);
  
-2) kexec_file_load is suggested to use, and take precedence over
-kexec_load in the future, if both are supported in one ARCH.
-
-3) Kexec_load is kept being used by ARCHes w/o kexc_file_load support,
-and by ARCHes for back compatibility w/ kexec_file_load support.
-
-For 1) and 2), I think the reason is obvious as Eric said,
-kexec_file_load is simple enough. And currently, whenever we got a bug
-report, we may need fix them twice, for kexec_load and kexec_file_load.
-If kexec_file_load is made by default, e.g on x86_64, we will change it
-in kernel space only, for kexec_file_load. This is what I meant about
-'obsolete gradually'. I think for arm64, s390, they will do these too.
-Unless there's some critical/blocker bug in kexec_load, to corrupt the
-old kexec_load interface in old product.
-
-For 3), people can still use kexec_load and develop/fix for it, if no
-kexec_file_load supported. But 32-bit arm should be a different one,
-more like i386, we will leave it as is, and fix anything which could
-break it. But people really expects to improve or add feature to it? E.g
-in this patchset, the mem hotplug issue James raised, I assume James is
-focusing on arm64, x86_64, but not 32-bit arm. As DavidH commented in
-another reply, people even don't agree to continue supporting memory
-hotplug on 32-bit system. We ever took effort to fix a memory hotplug
-bug on i386 with a patch, but people would rather set it as BROKEN.
+ off_t get_max_file_offset(void);
++int phyaddr_in_pt_loads(unsigned long long phys_start);
+ 
+ #endif  /* ELF_INFO_H */
+ 
+diff --git a/makedumpfile.c b/makedumpfile.c
+index f5860a1..c0fa075 100644
+--- a/makedumpfile.c
++++ b/makedumpfile.c
+@@ -3556,8 +3556,13 @@ get_mm_sparsemem(void)
+ 		goto out;
+ 	}
+ 	for (section_nr = 0; section_nr < num_section; section_nr++) {
++		unsigned long phys_start;
++
+ 		pfn_start = section_nr * PAGES_PER_SECTION();
+ 		pfn_end   = pfn_start + PAGES_PER_SECTION();
++		phys_start = pfn_start << PAGESHIFT();
++		if (!phyaddr_in_pt_loads(phys_start))
++			mem_maps[section_nr] = (unsigned long)NULL;
+ 		if (info->max_mapnr < pfn_end)
+ 			pfn_end = info->max_mapnr;
+ 		dump_mem_map(pfn_start, pfn_end, mem_maps[section_nr], section_nr);
+-- 
+2.7.5
 
 
 _______________________________________________
