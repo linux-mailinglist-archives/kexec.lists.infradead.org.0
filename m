@@ -2,116 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F25871A76AC
-	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 10:54:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F7F71A772C
+	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 11:16:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=SmfYyaB6TTaBIWQbgWjJBL9bTZyFsS7Zup4PE0BMWsI=; b=aKNcnPs7EILokz
-	okbXsll+dv/hqf/U4a4FkYb7zzOhyYP3OdtVMqP2JilyQqO/O4GfBIE7AYqc4d8Zbhka1U5f3sSNd
-	a8ifM7MoSB2LMGVxTWh0aT+gDaEo2J9UW6r4iz3x7tNqLw2Oi/zt24q87Td4VRDbPYYNz6d2aqpQj
-	3zZAHAER2QlbF95dY6TK4vtkpGWmrIEF0ObTY3KvgDw8D7ovplvcagOI0+nn2vN7dA1AwguIu2jm6
-	HBC/8l0CA2tdXn+BrXnb5jHTlrKoZ++St/Dp+Iof3d4b/TWKzNEwabKV2uE4cbv7L8X24Nrjgp5wb
-	RWSrr9gDXv4kGLU7bkvw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yEm88LuKu7vkRewouFc4QbxipBoSzfqdpB3xeZNuHv0=; b=Vee/JGkDYbtyBi
+	NXjMPgTwpLRxd43fGbYnW8yMjhaPaInIFP3WQOvR9ghef8yYSUVmOcUr9ytenb8IMZhXrOT7n9QvF
+	RXgTeBBY/CzzW4Sp4tWxBuvpVBGazcmH21aPBsB6mHQB3tccOrxU85n4cMB6Pqrz7E1Ego58YzQb+
+	CrqrAf6cw6iC5hCTYlqnbQ4zDKmpAne8asQka35UbKMQG+O3nQ3LkXi6wT3xVwESOzxS+J1uLt96s
+	sznkXI90En/M3wZKas3Wo+pxmU8tBue3bg8Dbpk6XwGi63I13TESw6RWU27ZyM42PIJgAINzhZOVE
+	SA5ZDzpifsrWwb5IsnMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOHKj-0006N1-RC; Tue, 14 Apr 2020 08:54:17 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jOHgW-0005fv-6D; Tue, 14 Apr 2020 09:16:48 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOHKg-0006MU-IO
- for kexec@lists.infradead.org; Tue, 14 Apr 2020 08:54:16 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200414085411euoutp024fb16012e86ecb6608e60235f126d346~Fo7doy5nB0931509315euoutp02O
- for <kexec@lists.infradead.org>; Tue, 14 Apr 2020 08:54:11 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200414085411euoutp024fb16012e86ecb6608e60235f126d346~Fo7doy5nB0931509315euoutp02O
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1586854451;
- bh=AuioLS0KsnPK36blX+W921C2bbUKndvkaBfotrmbi4s=;
- h=From:To:Cc:Subject:Date:References:From;
- b=gSPv10EWiuTRT7HXiEtvvICYztFPW81fnaLNNAYPlO/1msqweq/FbEyL823/I11hD
- fi+M7LSFlO2Y76+GMruNEzh7u8ra97wzv5DOaCa1V6IVEY3wHgN6NhTwHZ9zVPjxYo
- m80MWx88CUghvdFyEl6SdfGVbgOJY/aVBoskLo5c=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200414085411eucas1p2581bff919e2c21acbcc24aebb66344e3~Fo7dbP13A2994629946eucas1p2U;
- Tue, 14 Apr 2020 08:54:11 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 20.9A.60698.33A759E5; Tue, 14
- Apr 2020 09:54:11 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200414085411eucas1p240d872905d55681ab4a3d9bb9f584563~Fo7dEDtj72556525565eucas1p2D;
- Tue, 14 Apr 2020 08:54:11 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200414085411eusmtrp2436412124ca0a156ed75cc1d5eca2666~Fo7dDXnnd3107131071eusmtrp2g;
- Tue, 14 Apr 2020 08:54:11 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-d6-5e957a333e97
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 89.BD.07950.33A759E5; Tue, 14
- Apr 2020 09:54:11 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200414085411eusmtip1794984586e5ee356a9f4872a3d6e3a5b~Fo7c3SZiA3133131331eusmtip1C;
- Tue, 14 Apr 2020 08:54:10 +0000 (GMT)
-From: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-To: horms@verge.net.au, kexec@lists.infradead.org
-Subject: [PATCH] arm: redefine OPT_APPEND and OPT_RAMDISK
-Date: Tue, 14 Apr 2020 10:52:24 +0200
-Message-Id: <20200414085224.7069-1-l.stelmach@samsung.com>
-X-Mailer: git-send-email 2.25.0
+ id 1jOHgT-0005fN-4T
+ for kexec@lists.infradead.org; Tue, 14 Apr 2020 09:16:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586855803;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=m87sG7ldnCtMtGF7GpBTNkXwGQ0DdlqvytJhzpKn2To=;
+ b=ZrEOPrcSIt5H+s5OpnRI+G7baONiwX7AR2GlM6qrGIMMBvlFaytZXTDCei2PnAGYqv0ZTD
+ 1niWFPmedGso8Wo5epUpbsKylEFgOGkBxi2BezDQLlvz57RFWA35nIYubiNhvDI7jUbHq3
+ zjj22WkM5doYxLgzvgA4le0yOMdmS2o=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-471-jHtuHLK2MGW3grQcmLcBeQ-1; Tue, 14 Apr 2020 05:16:39 -0400
+X-MC-Unique: jHtuHLK2MGW3grQcmLcBeQ-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 64BC918B9FDA;
+ Tue, 14 Apr 2020 09:16:32 +0000 (UTC)
+Received: from dhcp-128-65.nay.redhat.com (ovpn-12-221.pek2.redhat.com
+ [10.72.12.221])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 79956A1880;
+ Tue, 14 Apr 2020 09:16:22 +0000 (UTC)
+Date: Tue, 14 Apr 2020 17:16:17 +0800
+From: Dave Young <dyoung@redhat.com>
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+Message-ID: <20200414091617.GA43656@dhcp-128-65.nay.redhat.com>
+References: <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
+ <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
+ <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
+ <20200411034414.GH2129@MiWiFi-R3L-srv>
+ <20200411093009.GH25745@shell.armlinux.org.uk>
+ <20200412053507.GA4247@MiWiFi-R3L-srv>
+ <20200412080836.GM25745@shell.armlinux.org.uk>
+ <87wo6klbw0.fsf@x220.int.ebiederm.org>
+ <20200413023701.GA20265@MiWiFi-R3L-srv>
+ <871rorjzmc.fsf@x220.int.ebiederm.org>
 MIME-Version: 1.0
-Organization: Samsung R&D Institute Poland
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpgleLIzCtJLcpLzFFi42LZduznOV3jqqlxBlMXK1o0b/3KaLH79Fcm
- i5uHVjA6MHtsXlLv0bdlFaPHnJ/fWAKYo7hsUlJzMstSi/TtErgyLl5exFTwjr3iy6YjrA2M
- 99i6GDk5JARMJI42rACyuTiEBFYwSvQuamaBcL4wSkz+tRvK+cwosb/rBSNMy+d1Z5ghEssZ
- JV7fWMsO4TxnlPjd8xisik3AUaJ/6QlWEFtEwFBi+5GrYDazgL3ExFn/wZYLC1hKfFoOUc8i
- oCqx8/sRJhCbV8BK4sLjNlaIbfISsxtPs0HEBSVOznzCAmLzC2hJrGm6zgIxU16ieetssIsk
- BN6zSRzs3sIC0ewicbD3O5QtLPHq+BZ2CFtG4v/O+UDLOIDseonJk8wgensYJbbN+QFVby1x
- 59wvNpAaZgFNifW79CHCjhLHzyxnhmjlk7jxVhDiBD6JSdumQ4V5JTrahCCqVSTW9e+BGigl
- 0ftqBTQMPSTmXPzHMoFRcRaSx2YheWYWwt4FjMyrGMVTS4tz01OLjfNSy/WKE3OLS/PS9ZLz
- czcxAtPF6X/Hv+5g3Pcn6RCjAAejEg/vBP8pcUKsiWXFlbmHGCU4mJVEeNfnTo0T4k1JrKxK
- LcqPLyrNSS0+xCjNwaIkzmu86GWskEB6YklqdmpqQWoRTJaJg1OqgdFHy6D3eq99SOPkLuMw
- zg0bonsTbswIKqmZ2st0qXjWxmDJr2uu58nxq4kkPpTYZZD78pvipnLhoFZPf+1TR9+fVk/8
- ZiU4f8b1437fL09ceNTTJSgjc501f2Oa2pSoXY4P+RItrn5bE5NtVsM68UjR/AXneh7WTzV4
- U3Zha8aSSP5HZXzSnkosxRmJhlrMRcWJAMuOX+ETAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrBLMWRmVeSWpSXmKPExsVy+t/xu7rGVVPjDJb/4rBo3vqV0WL36a9M
- FjcPrWB0YPbYvKTeo2/LKkaPOT+/sQQwR+nZFOWXlqQqZOQXl9gqRRtaGOkZWlroGZlY6hka
- m8daGZkq6dvZpKTmZJalFunbJehlXLy8iKngHXvFl01HWBsY77F1MXJySAiYSHxed4a5i5GL
- Q0hgKaNE760JjF2MHEAJKYmVc9MhaoQl/lzrYoOoecoocfDJA2aQBJuAo0T/0hOsILaIgLHE
- 5rYFYDazgL3ExFn/wRYIC1hKfFr+mBHEZhFQldj5/QgTiM0rYCVx4XEbK8QCeYnZjafZIOKC
- EidnPmEBuYFZQF1i/TwhkDC/gJbEmqbrLBDj5SWat85mnsAoMAtJxyyEjllIqhYwMq9iFEkt
- Lc5Nzy020itOzC0uzUvXS87P3cQIDPVtx35u2cHY9S74EKMAB6MSD+8E/ylxQqyJZcWVuYcY
- JTiYlUR41+dOjRPiTUmsrEotyo8vKs1JLT7EaAr0zkRmKdHkfGAc5pXEG5oamltYGpobmxub
- WSiJ83YIHIwREkhPLEnNTk0tSC2C6WPi4JRqYGTZlZeQ8ruM4WP990VHylz/1uuV77zTtdJn
- ouCHD3xOj4/uOaj6S+3RudUvGJyu+Vm4v2j3Y2htt1lYWDDH/pzmsQIjxX23XWaH/rSaPfXM
- 3TKHE/vixDvV3y3TCSu9ddT9NOPF99uW2TsuZQ9OXrhd8VXMXoUTWeq3K73ys3+uUVlvw/p8
- hYoSS3FGoqEWc1FxIgAdjkwEiwIAAA==
-X-CMS-MailID: 20200414085411eucas1p240d872905d55681ab4a3d9bb9f584563
-X-Msg-Generator: CA
-X-RootMTR: 20200414085411eucas1p240d872905d55681ab4a3d9bb9f584563
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200414085411eucas1p240d872905d55681ab4a3d9bb9f584563
-References: <CGME20200414085411eucas1p240d872905d55681ab4a3d9bb9f584563@eucas1p2.samsung.com>
+In-Reply-To: <871rorjzmc.fsf@x220.int.ebiederm.org>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_015414_810642_EA525A37 
-X-CRM114-Status: GOOD (  10.06  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200414_021645_248631_6A8AACF3 
+X-CRM114-Status: GOOD (  38.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -120,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -133,29 +101,145 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Baoquan He <bhe@redhat.com>, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, David Hildenbrand <david@redhat.com>,
+ kexec@lists.infradead.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-UmVkZWZpbmUgT1BUX0FQUEVORCB0byBhdm9pZCBjbGFzaCB3aXRoIE9QVF9LRVhFQ19TWVNDQUxM
-X0FVVE8uClJlZGVmaW5lIE9QVF9SQU1ESVNLIHRvIGF2b2lkIHN1Y2ggcHJvYmxlbXMgaW4gdGhl
-IGZ1dHVyZQoKU2lnbmVkLW9mZi1ieTogxYF1a2FzeiBTdGVsbWFjaCA8bC5zdGVsbWFjaEBzYW1z
-dW5nLmNvbT4KLS0tCiBrZXhlYy9hcmNoL2FybS9pbmNsdWRlL2FyY2gvb3B0aW9ucy5oIHwgNCAr
-Ky0tCiAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25zKCspLCAyIGRlbGV0aW9ucygtKQoKZGlm
-ZiAtLWdpdCBhL2tleGVjL2FyY2gvYXJtL2luY2x1ZGUvYXJjaC9vcHRpb25zLmggYi9rZXhlYy9h
-cmNoL2FybS9pbmNsdWRlL2FyY2gvb3B0aW9ucy5oCmluZGV4IGFiYmYzNDkuLjkyNzIzNzggMTAw
-NjQ0Ci0tLSBhL2tleGVjL2FyY2gvYXJtL2luY2x1ZGUvYXJjaC9vcHRpb25zLmgKKysrIGIva2V4
-ZWMvYXJjaC9hcm0vaW5jbHVkZS9hcmNoL29wdGlvbnMuaApAQCAtNCwxMiArNCwxMiBAQAogI2Rl
-ZmluZSBPUFRfRFRfTk9fT0xEX1JPT1QJKE9QVF9NQVgrMCkKICNkZWZpbmUgT1BUX0FSQ0hfTUFY
-CQkoT1BUX01BWCsxKQogCi0jZGVmaW5lIE9QVF9BUFBFTkQJJ2EnCi0jZGVmaW5lIE9QVF9SQU1E
-SVNLCSdyJwogI2RlZmluZSBPUFRfRFRCCQkoT1BUX0FSQ0hfTUFYKzApCiAjZGVmaW5lIE9QVF9B
-VEFHUwkoT1BUX0FSQ0hfTUFYKzEpCiAjZGVmaW5lIE9QVF9JTUFHRV9TSVpFCShPUFRfQVJDSF9N
-QVgrMikKICNkZWZpbmUgT1BUX1BBR0VfT0ZGU0VUCShPUFRfQVJDSF9NQVgrMykKKyNkZWZpbmUg
-T1BUX0FQUEVORAkoT1BUX0FSQ0hfTUFYKzQpCisjZGVmaW5lIE9QVF9SQU1ESVNLCShPUFRfQVJD
-SF9NQVgrNSkKIAogLyogT3B0aW9ucyByZWxldmFudCB0byB0aGUgYXJjaGl0ZWN0dXJlIChleGNs
-dWRpbmcgbG9hZGVyLXNwZWNpZmljIG9uZXMpLAogICogaW4gdGhpcyBjYXNlIG5vbmU6Ci0tIAoy
-LjI1LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpr
-ZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
+On 04/13/20 at 08:15am, Eric W. Biederman wrote:
+> Baoquan He <bhe@redhat.com> writes:
+> 
+> > On 04/12/20 at 02:52pm, Eric W. Biederman wrote:
+> >> 
+> >> The only benefit of kexec_file_load is that it is simple enough from a
+> >> kernel perspective that signatures can be checked.
+> >
+> > We don't have this restriction any more with below commit:
+> >
+> > commit 99d5cadfde2b ("kexec_file: split KEXEC_VERIFY_SIG into KEXEC_SIG
+> > and KEXEC_SIG_FORCE")
+> >
+> > With KEXEC_SIG_FORCE not set, we can use kexec_load_file to cover both
+> > secure boot or legacy system for kexec/kdump. Being simple enough is
+> > enough to astract and convince us to use it instead. And kexec_file_load
+> > has been in use for several years on systems with secure boot, since
+> > added in 2014, on x86_64.
+> 
+> No.  Actaully kexec_file_load is the less capable interface, and less
+> flexible interface.  Which is why it is appropriate for signature
+> verification.
+
+I agreed that the user space design is more flexible,  but as for the
+common use case of loading bzImage (say x86 as an example) the
+kexec_file_load is good enough.   We could have other potential improvement based
+on kexec_file_load.  For example we could use it to do some early kdump
+loading,  eg. try to load an attached kdump kernel immediately once
+the crashkernel memory get reserved.
+
+> 
+> >> kexec_load in every other respect is the more capable and functional
+> >> interface.  It makes no sense to get rid of it.
+
+We do not remove kexec_load at all, it is indeed helpful in many cases
+as all agreed.  But if we have a bug reported for both we may fix
+kexec_file_load first because it is usually easier, also do not need to
+worry about too much about old kernel and new kernel compatibility.
+
+For example the recent breakage we found in efi path, kexec_file_load
+just work after the efi cleanup, but kexec_load depends on the ABI we
+added, so we must fix it as below:
+https://lore.kernel.org/linux-efi/20200410135644.GB6772@dhcp-128-65.nay.redhat.com/ 
+
+> >> 
+> >> It does make sense to reload with a loaded kernel on memory hotplug.
+> >> That is simple and easy.  If we are going to handle something in the
+> >> kernel it should simple an automated unloading of the kernel on memory
+> >> hotplug.
+> >> 
+> >> 
+> >> I think it would be irresponsible to deprecate kexec_load on any
+> >> platform.
+> >> 
+> >> I also suspect that kexec_file_load could be taught to copy the dtb
+> >> on arm32 if someone wants to deal with signatures.
+> >> 
+> >> We definitely can not even think of deprecating kexec_load until
+> >> architecture that supports it also supports kexec_file_load and everyone
+> >> is happy with that interface.  That is Linus's no regression rule.
+> >
+> > I should pick a milder word to express our tendency and tell our plan
+> > then 'obsolete'. Even though I added 'gradually', seems it doesn't help
+> > much. I didn't mean to say 'deprecate' at all when replied.
+> >
+> > The situation and trend I understand about kexec_load and kexec_file_load
+> > are:
+> >
+> > 1) Supporting kexec_file_load is suggested to add in ARCHes which don't
+> > have yet, just as x86_64, arm64 and s390 have done;
+> >  
+> > 2) kexec_file_load is suggested to use, and take precedence over
+> > kexec_load in the future, if both are supported in one ARCH.
+> 
+> The deep problem is that kexec_file_load is distinctly less expressive
+> than kexec_load.
+> 
+> > 3) Kexec_load is kept being used by ARCHes w/o kexc_file_load support,
+> > and by ARCHes for back compatibility w/ kexec_file_load support.
+> >
+> > For 1) and 2), I think the reason is obvious as Eric said,
+> > kexec_file_load is simple enough. And currently, whenever we got a bug
+> > report, we may need fix them twice, for kexec_load and kexec_file_load.
+> > If kexec_file_load is made by default, e.g on x86_64, we will change it
+> > in kernel space only, for kexec_file_load. This is what I meant about
+> > 'obsolete gradually'. I think for arm64, s390, they will do these too.
+> > Unless there's some critical/blocker bug in kexec_load, to corrupt the
+> > old kexec_load interface in old product.
+> 
+> Maybe.  The code that kexec_file_load sucked into the kernel is quite
+> stable and rarely needs changes except during a port of kexec to
+> another architecture.
+> 
+> Last I looked the real maintenance effor of kexec and kexec on panic was
+> in the drivers.  So I don't think we can use maintenance to do anything.
+> 
+> > For 3), people can still use kexec_load and develop/fix for it, if no
+> > kexec_file_load supported. But 32-bit arm should be a different one,
+> > more like i386, we will leave it as is, and fix anything which could
+> > break it. But people really expects to improve or add feature to it? E.g
+> > in this patchset, the mem hotplug issue James raised, I assume James is
+> > focusing on arm64, x86_64, but not 32-bit arm. As DavidH commented in
+> > another reply, people even don't agree to continue supporting memory
+> > hotplug on 32-bit system. We ever took effort to fix a memory hotplug
+> > bug on i386 with a patch, but people would rather set it as BROKEN.
+> 
+> For memory hotplug just reload.  Userspace already gets good events.
+> 
+> We should not expect anything except a panic kernel to be loaded over a
+> memory hotplug event. The kexec on panic code should actually be loaded
+> in a location that we don't reliquish if asked for it.
+> 
+> Quite frankly at this point I would love to see the signature fad die,
+> which would allow us to remove kexec_file_load.  I still have not seen
+> the signature code used anywhere except by people anticipating trouble.
+
+Same to me, I also hate the Secure Boot, and I also do not like the
+trouble added by signature verification.   But still we found that
+beyond of Secure Boot use cases it is also useful in other usual cases.
+
+And since kernel has the lockdown supported we have to leave with it.
+
+Thanks
+Dave
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
