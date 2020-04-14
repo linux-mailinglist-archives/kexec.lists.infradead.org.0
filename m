@@ -2,73 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39E0E1A6FA2
-	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 01:01:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6D9C1A7164
+	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 05:01:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=96fGnNbpNYCEE5Lb1f7OB+X6LxmMQogN8nDKaMDiB4Q=; b=h5RLDUEafuUWFh
-	CckaxP8nzvzKjbr9924VdoY2ka+RO0v1LR4i8j5W+9H8jkJmL3h0/pyb4ua4xVCnrNlfg2ilpYzKy
-	AGcb5/B+ccsL3vajT25Z0U/GGsAslqSXY6yep6f5Lmfttr6OVC9Qk90gmnJSfffAczoCKXykpkr1W
-	2XZHzQHBKXIJBERfbbnY7/LFI6ebKgoS7JdxfGXCQR68R/0MxXc74dEwf2YB6mejp6Hhs7qza0BSC
-	9YNE0yOENNpZnNAShNaoH/rRpPKc4ujzvXx6OBxcVbPbx5Qj0mfKg7L5uMwbplpghsS0f1rJWMGle
-	plFHfGfOg6Nh0XLwPIYg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y117Q2FleOL34LnawaurkuA/TdlIrEMZyml/h2wkot4=; b=tt/qV3vAAn7JPg
+	6huT5MjrekX2GKNTo7nr9E7yruRWQEAz2MhQsygELpnG60KXNyUPyHqM4FUT8QBWxTwa8qirlwkQv
+	1M7fIocJ9pmubj8K7IoBAO4Vn1E1UZeQJ3+Ch/jXcZpcV6T404GwVl9RUj1xh4g6V/tma6yJaEvFg
+	XKAk5eHfTmb3Q0QZfwgfxCVNKZEkP1FsSCvC7VOrCwj759dxAM9iHaJHVAj53s2QK0Wb580TVw/OD
+	KLvpVgEeP/w0bN1zYyyVzNTX459KYDS+t/hv7+iINHilrGbNCgS/DxXoPfFfqw7HdVCTSDCdUb/wC
+	rQl3zTAwvgz/BmhYQ1VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jO85Q-0001qM-V4; Mon, 13 Apr 2020 23:01:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jOBpe-0004Bn-T7; Tue, 14 Apr 2020 03:01:50 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jO85K-0001kO-N2; Mon, 13 Apr 2020 23:01:47 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jOBpb-0004BS-Gr
+ for kexec@lists.infradead.org; Tue, 14 Apr 2020 03:01:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1586833305;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=bDKU3chWdvhZpwOy1Iy3XGhjGJQC6PY+qiHkka2AEiU=;
+ b=DbYv+hpVoO6FV1i+NDE2ymdMvsoQRMZxg9RCZ+0eFSyuT8ctOiU2RrALIi2buGNzhR3pAX
+ DdkMlzrf2ZGdZ48XtyMpIOdsnfuCtfS1h4bThE9Rb5HXSUGZVH/JZNmDuKXuKyiLnjRExC
+ 1iSNZEIhP48uC/L32Uz/3UZMhZHrWOQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-307-ZA8SA2CJPo-Wbc2FRyNAdw-1; Mon, 13 Apr 2020 23:01:38 -0400
+X-MC-Unique: ZA8SA2CJPo-Wbc2FRyNAdw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E244120692;
- Mon, 13 Apr 2020 23:01:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1586818905;
- bh=44iRGhgUpBL1Umz4gkXVcOLAAkGViVM44DVhmCAg1b8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=I0LpRmLnaOiiltRxGIgIxsNvEkuVdm/mKjb0fOTnxyOLaNUQPkg/LtmkBSdG9c4SE
- HvlRLCZwWRMWyE+iMrF80ws+63QIFcl0/QuUFud0EsPndT38WASM8ZTAYusEJiZFmh
- /xJct3V2WVyjF+spChzQdmWe2kjjLoXqk+iCmu5Q=
-Date: Mon, 13 Apr 2020 16:01:44 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: ebiederm@xmission.com (Eric W. Biederman)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-Message-Id: <20200413160144.0e07c0033afc474228bc9218@linux-foundation.org>
-In-Reply-To: <871rorjzmc.fsf@x220.int.ebiederm.org>
-References: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
- <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
- <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
- <20200411034414.GH2129@MiWiFi-R3L-srv>
- <20200411093009.GH25745@shell.armlinux.org.uk>
- <20200412053507.GA4247@MiWiFi-R3L-srv>
- <20200412080836.GM25745@shell.armlinux.org.uk>
- <87wo6klbw0.fsf@x220.int.ebiederm.org>
- <20200413023701.GA20265@MiWiFi-R3L-srv>
- <871rorjzmc.fsf@x220.int.ebiederm.org>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 95A7E8010F1;
+ Tue, 14 Apr 2020 03:01:37 +0000 (UTC)
+Received: from [10.72.8.16] (ovpn-8-16.pek2.redhat.com [10.72.8.16])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 30EFA9A24F;
+ Tue, 14 Apr 2020 03:01:35 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile: clear mem_map if not in pt_loads
+To: =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+References: <1586749598-1671-1-git-send-email-piliu@redhat.com>
+ <OSBPR01MB1991F32564DE2C60C233EC76DDDD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
+From: piliu <piliu@redhat.com>
+Message-ID: <8a43526d-aea8-d4de-743e-703e01609396@redhat.com>
+Date: Tue, 14 Apr 2020 11:01:30 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
+MIME-Version: 1.0
+In-Reply-To: <OSBPR01MB1991F32564DE2C60C233EC76DDDD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_160146_772498_E3762B77 
-X-CRM114-Status: GOOD (  13.93  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200413_200147_637803_C49A9768 
+X-CRM114-Status: GOOD (  16.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -83,37 +93,99 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Content-Type: text/plain; charset="iso-2022-jp"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, 13 Apr 2020 08:15:23 -0500 ebiederm@xmission.com (Eric W. Biederman) wrote:
 
-> > For 3), people can still use kexec_load and develop/fix for it, if no
-> > kexec_file_load supported. But 32-bit arm should be a different one,
-> > more like i386, we will leave it as is, and fix anything which could
-> > break it. But people really expects to improve or add feature to it? E.g
-> > in this patchset, the mem hotplug issue James raised, I assume James is
-> > focusing on arm64, x86_64, but not 32-bit arm. As DavidH commented in
-> > another reply, people even don't agree to continue supporting memory
-> > hotplug on 32-bit system. We ever took effort to fix a memory hotplug
-> > bug on i386 with a patch, but people would rather set it as BROKEN.
-> 
-> For memory hotplug just reload.  Userspace already gets good events.
-> 
-> We should not expect anything except a panic kernel to be loaded over a
-> memory hotplug event. The kexec on panic code should actually be loaded
-> in a location that we don't reliquish if asked for it.
 
-Is that a nack for James's patchset?
+On 04/14/2020 03:09 AM, HAGIO KAZUHITO(萩尾　一仁) wrote:
+> Hi Pingfan,
+> 
+>> -----Original Message-----
+>> The crashed kernel passes usable RAM info through pt_loads[], but the
+>> current code ignore this, and parse all sections below info->max_mapnr.
+>> Refer to code in get_mm_sparsemem()
+>>   num_section = divideup(info->max_mapnr, PAGES_PER_SECTION());
+>>
+>> These ranges can include unwanted memory e.g. reserved-memory for crash
+>> kernel, PMEM for fs-dax. Excluding them by setting mem_maps[section_nr]=NULL.
+> 
+> hmm, I think that bitmap1 corresponds to pt_loads ranges, so even without
+> the patch, only the ranges in pt_loads can be included in a dumpfile.
+> Am I missing anything?
+> 
+Check the code, and I think you are right.
+
+Thanks,
+Pingfan
+> Thanks,
+> Kazu
+> 
+>>
+>> Signed-off-by: Pingfan Liu <piliu@redhat.com>
+>> ---
+>>  elf_info.c     | 12 ++++++++++++
+>>  elf_info.h     |  1 +
+>>  makedumpfile.c |  5 +++++
+>>  3 files changed, 18 insertions(+)
+>>
+>> diff --git a/elf_info.c b/elf_info.c
+>> index 7d72742..297c3e4 100644
+>> --- a/elf_info.c
+>> +++ b/elf_info.c
+>> @@ -1302,3 +1302,15 @@ get_max_file_offset(void)
+>>  {
+>>  	return max_file_offset;
+>>  }
+>> +
+>> +int phyaddr_in_pt_loads(unsigned long long phys_start)
+>> +{
+>> +	 struct pt_load_segment *pls;
+>> +
+>> +	for (int i = 0; i < num_pt_loads; i++) {
+>> +		pls = &pt_loads[i];
+>> +		if (phys_start >= pls->phys_start && phys_start < pls->phys_end)
+>> +			return TRUE;
+>> +	}
+>> +	return FALSE;
+>> +}
+>> diff --git a/elf_info.h b/elf_info.h
+>> index 934b608..f5bb07c 100644
+>> --- a/elf_info.h
+>> +++ b/elf_info.h
+>> @@ -90,6 +90,7 @@ void get_eraseinfo(off_t *offset, unsigned long *size);
+>>  void set_eraseinfo(off_t offset, unsigned long size);
+>>
+>>  off_t get_max_file_offset(void);
+>> +int phyaddr_in_pt_loads(unsigned long long phys_start);
+>>
+>>  #endif  /* ELF_INFO_H */
+>>
+>> diff --git a/makedumpfile.c b/makedumpfile.c
+>> index f5860a1..c0fa075 100644
+>> --- a/makedumpfile.c
+>> +++ b/makedumpfile.c
+>> @@ -3556,8 +3556,13 @@ get_mm_sparsemem(void)
+>>  		goto out;
+>>  	}
+>>  	for (section_nr = 0; section_nr < num_section; section_nr++) {
+>> +		unsigned long phys_start;
+>> +
+>>  		pfn_start = section_nr * PAGES_PER_SECTION();
+>>  		pfn_end   = pfn_start + PAGES_PER_SECTION();
+>> +		phys_start = pfn_start << PAGESHIFT();
+>> +		if (!phyaddr_in_pt_loads(phys_start))
+>> +			mem_maps[section_nr] = (unsigned long)NULL;
+>>  		if (info->max_mapnr < pfn_end)
+>>  			pfn_end = info->max_mapnr;
+>>  		dump_mem_map(pfn_start, pfn_end, mem_maps[section_nr], section_nr);
+>> --
+>> 2.7.5
+> 
+
 
 _______________________________________________
 kexec mailing list
