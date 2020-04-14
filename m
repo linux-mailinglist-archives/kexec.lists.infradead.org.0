@@ -2,108 +2,99 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A89991A7375
-	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 08:17:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ED1C1A739F
+	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 08:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GkHfdqXs+zjzkNVHSX73VEVvfVpeimfQ3BglcUrRNaY=; b=nl++uoCKmtrfvi
-	TCX48yY75FMYJnIGJs4wXXhPQ8hPe9auvtYfi3JG/E31jnJkq+/+KLsrlTFIHcQn2fotTRJpvidrB
-	Sk2ibFW0xnNw/qxSh9Jrlv//8mmHD2Pg6jRmOdtUsJUE2eTYo12hbQfm29oQbqMP9tM976NyBy9Iz
-	Yat7vBRjWCL9IR8YZUWW/C5noVDFYY8YL0tEzkHkwiMXIdrBjfXmi/GznJLpvrf0qCjaB3M7MEav6
-	AB6CNkRtDsIQm+Ix6KEM6TPMd9dtr39lPIUNAhlu8CK8SG31ihz/RkWqsMk5s67Uqi8Ffw/UWwvqR
-	F+5uu01426uFc531Z4Jg==;
+	List-Owner; bh=66AVzzRFFECaPab7cXCXVyUw6zHyx+s61MFIJSJTSB8=; b=SNby07kt1P85o4
+	+LxIwlIWIq5b0/1/mx+88MVZDmBJa3s1wj9RG2f/16uoF6B39sLRALooUBHVtdiDFfVQmrb6uqOyh
+	byPkAUMHt59Yc1fEBliZ/XXtLwfcZyV2DKONTNoa+cRp3tdzZtPDc0l2dNrZGiHXT5dpjSJu44osT
+	OaD6J7U6/LdEng9e6UoerdVMyK+5Nxty5SjpY9sdW85tZV8x38q3vxc5gKz+c73LWe8StipANjf3h
+	fhKxbWHEQJQhtv4TvhY+1izMNkCBRdMp0a+pjmeGXFl0UdO2teZGyUiCYfJAFiOk58RBhJVi/vuEF
+	VGU1RhLcj4YTc6zbsSBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOEsa-0003Gk-MX; Tue, 14 Apr 2020 06:17:04 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jOF2Z-0001rJ-Cn; Tue, 14 Apr 2020 06:27:23 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOEsM-00037q-JA; Tue, 14 Apr 2020 06:16:51 +0000
-Received: from in01.mta.xmission.com ([166.70.13.51])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOErv-0006zd-Cp; Tue, 14 Apr 2020 00:16:23 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jOEru-0001V9-HH; Tue, 14 Apr 2020 00:16:23 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Andrew Morton <akpm@linux-foundation.org>
-References: <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
- <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
- <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
- <20200411034414.GH2129@MiWiFi-R3L-srv>
- <20200411093009.GH25745@shell.armlinux.org.uk>
- <20200412053507.GA4247@MiWiFi-R3L-srv>
- <20200412080836.GM25745@shell.armlinux.org.uk>
- <87wo6klbw0.fsf@x220.int.ebiederm.org>
- <20200413023701.GA20265@MiWiFi-R3L-srv>
- <871rorjzmc.fsf@x220.int.ebiederm.org>
- <20200413160144.0e07c0033afc474228bc9218@linux-foundation.org>
-Date: Tue, 14 Apr 2020 01:13:25 -0500
-In-Reply-To: <20200413160144.0e07c0033afc474228bc9218@linux-foundation.org>
- (Andrew Morton's message of "Mon, 13 Apr 2020 16:01:44 -0700")
-Message-ID: <87tv1miohm.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jOF2X-0001qx-2Z
+ for kexec@lists.infradead.org; Tue, 14 Apr 2020 06:27:22 +0000
+Received: by mail-wr1-x443.google.com with SMTP id f13so12914680wrm.13
+ for <kexec@lists.infradead.org>; Mon, 13 Apr 2020 23:27:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Pp3TbajE6USya1p1kPwUAIS7aCYW8lYss1z9XY1NLSU=;
+ b=k+k79ZaMkCSE5EVgFSHlRI8rVTLKrsQZXC6dAZUCs8lP7k/E4TemgfyRl9Uhu0lEI/
+ WMBkxfk8NIhBPtZCwEvc310Pp0eO59AMi0ubXDs3Dq83gK0B46kLNBrjetd4d7+wfGZa
+ nzh9CFpYA8pG95u6IhCEOw37EZcOQE/E7wN+UYFzMP36mFhmkzHtY/ky0SJW+QgIFmtS
+ 5McQHisGlJxjyQpP+cfjDiyQqnUppeluFEKaTzPxlCU+QrAu6sSC94ZATnWnCRkLM/zX
+ LWuOL3o5+Tm/5pNp6YKUDVxREs2Tsx/Cx+I68hP7QYPLGQiVIHlEFzeQROBvrEgVqzAz
+ hVyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Pp3TbajE6USya1p1kPwUAIS7aCYW8lYss1z9XY1NLSU=;
+ b=BNzrYqQLCcGqwnnsP2lZfVVLY17dqV5u9Z+RLVZCJVn9V3AmUggviZ34/AeVJwRys/
+ 7YdPUsL4Ob+iMgf9dp1RXYxqo8wu5kT4n4cxwcS4LDHEC56XxbIF2QDt3PW1CpL0S2nb
+ 9fpZceJVmnzm5qBmPDlYjoL+P+DhaRK64iGSjctAoO0PTdOPc5Y+qc7B4EMSku4wtZAq
+ lJONbuJRYluYXBHUfYfhMfzUXi2/UzHKzmj1cMSjqpf44cyOD3BnFbggEJvkauJFHgSh
+ JECzjpEniFTg8S35lOf5JZkfMeIJ1CmjsMR54XXc6hCiMoml2270KZMebMjRI789LRbI
+ W8LA==
+X-Gm-Message-State: AGi0Pua1ecxh4DKBGkvY9Tso/GXY/UdT3WSchHpDBcQpoXGRQMUWoDFh
+ JUgAerKt1/PsLL1YUil9YAY=
+X-Google-Smtp-Source: APiQypLspMLRNRywgfLvdyn9tUzStiaUbcdWfbTU1t1J5ecrnnJPqSAi40+a/VRrvcDU4/aPihV9zg==
+X-Received: by 2002:a5d:4752:: with SMTP id o18mr8283149wrs.283.1586845639044; 
+ Mon, 13 Apr 2020 23:27:19 -0700 (PDT)
+Received: from gmail.com (54033286.catv.pool.telekom.hu. [84.3.50.134])
+ by smtp.gmail.com with ESMTPSA id a7sm1028199wrs.61.2020.04.13.23.27.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 13 Apr 2020 23:27:18 -0700 (PDT)
+Date: Tue, 14 Apr 2020 08:27:16 +0200
+From: Ingo Molnar <mingo@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] efi/x86: Revert struct layout change to fix kexec boot
+ regression
+Message-ID: <20200414062716.GB84326@gmail.com>
+References: <20200410074320.16589-1-ardb@kernel.org>
+ <20200410135644.GB6772@dhcp-128-65.nay.redhat.com>
+ <20200410140151.GC6772@dhcp-128-65.nay.redhat.com>
+ <CAMj1kXEM13Y5FCh8GvJGTueen3fa0u_JX66j0X10KPf4Z0c4Jg@mail.gmail.com>
+ <20200410143313.GB8205@zn.tnic>
+ <CAMj1kXGn+RuJx2PJ+X5KJ3rtMyRRX2eOK2Zu5GuK1NHxum1M4w@mail.gmail.com>
 MIME-Version: 1.0
-X-XM-SPF: eid=1jOEru-0001V9-HH; ; ; mid=<87tv1miohm.fsf@x220.int.ebiederm.org>;
- ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX18EIUyySboFEvwkJvY092/gKs+mtMsheRQ=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=0.7 required=8.0 tests=ALL_TRUSTED,BAYES_05,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XMNoVowels,XMSubLong
- autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- * -0.5 BAYES_05 BODY: Bayes spam probability is 1 to 5%
- *      [score: 0.0432] *  0.7 XMSubLong Long Subject
- *  1.5 XMNoVowels Alpha-numberic number with no vowels
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa07 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa07 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Andrew Morton <akpm@linux-foundation.org>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 351 ms - load_scoreonly_sql: 0.04 (0.0%),
- signal_user_changed: 11 (3.1%), b_tie_ro: 9 (2.7%), parse: 0.85 (0.2%),
- extract_message_metadata: 14 (4.0%), get_uri_detail_list: 1.25 (0.4%),
- tests_pri_-1000: 15 (4.2%), tests_pri_-950: 1.22 (0.3%),
- tests_pri_-900: 1.01 (0.3%), tests_pri_-90: 62 (17.7%), check_bayes:
- 61 (17.3%), b_tokenize: 7 (1.9%), b_tok_get_all: 7 (2.1%),
- b_comp_prob: 2.2 (0.6%), b_tok_touch_all: 41 (11.5%), b_finish: 0.96
- (0.3%), tests_pri_0: 228 (65.0%), check_dkim_signature: 0.73 (0.2%),
- check_dkim_adsp: 2.2 (0.6%), poll_dns_idle: 0.63 (0.2%), tests_pri_10:
- 3.1 (0.9%), tests_pri_500: 12 (3.5%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
+Content-Disposition: inline
+In-Reply-To: <CAMj1kXGn+RuJx2PJ+X5KJ3rtMyRRX2eOK2Zu5GuK1NHxum1M4w@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200413_231650_630554_D8F23CFF 
-X-CRM114-Status: GOOD (  13.59  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200413_232721_116399_9F8AD9AB 
+X-CRM114-Status: GOOD (  11.97  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mingo.kernel.org[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,50 +106,42 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, kexec@lists.infradead.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-efi <linux-efi@vger.kernel.org>, "Theodore Y. Ts'o" <tytso@mit.edu>,
+ X86 ML <x86@kernel.org>, kexec@lists.infradead.org,
+ Borislav Petkov <bp@alien8.de>, Dave Young <dyoung@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Andrew Morton <akpm@linux-foundation.org> writes:
 
-> On Mon, 13 Apr 2020 08:15:23 -0500 ebiederm@xmission.com (Eric W. Biederman) wrote:
->
->> > For 3), people can still use kexec_load and develop/fix for it, if no
->> > kexec_file_load supported. But 32-bit arm should be a different one,
->> > more like i386, we will leave it as is, and fix anything which could
->> > break it. But people really expects to improve or add feature to it? E.g
->> > in this patchset, the mem hotplug issue James raised, I assume James is
->> > focusing on arm64, x86_64, but not 32-bit arm. As DavidH commented in
->> > another reply, people even don't agree to continue supporting memory
->> > hotplug on 32-bit system. We ever took effort to fix a memory hotplug
->> > bug on i386 with a patch, but people would rather set it as BROKEN.
->> 
->> For memory hotplug just reload.  Userspace already gets good events.
->> 
->> We should not expect anything except a panic kernel to be loaded over a
->> memory hotplug event. The kexec on panic code should actually be loaded
->> in a location that we don't reliquish if asked for it.
->
-> Is that a nack for James's patchset?
+* Ard Biesheuvel <ardb@kernel.org> wrote:
 
-I have just read the end of the thread and I have the sense that the
-patchset had already been rejected.  I will see if I can go back and
-read the beginning.
+> On Fri, 10 Apr 2020 at 16:34, Borislav Petkov <bp@alien8.de> wrote:
+> >
+> > On Fri, Apr 10, 2020 at 04:22:49PM +0200, Ard Biesheuvel wrote:
+> > > > BTW, a fixes tag is good to have..
+> > >
+> > > I usually omit those for patches that fix bugs that were introduced in
+> > > the current cycle.
+> >
+> > A valid use case for having the Fixes: tag anyway are the backporting
+> > kernels gangs which might pick up the first patch for whatever reason
+> > and would probably be thankful if they find the second one, i.e., the
+> > fix for the first one, through grepping or other, automated means.
+> >
+> 
+> Fair point.
 
-I was mostly reacting to the idea that you could stop maintaining an
-interface that people are actively using because there is a newer
-interface.
+I've added:
 
-Eric
+  Fixes: 0a67361dcdaa29 ("efi/x86: Remove runtime table address from kexec EFI setup data")
 
+Out of abundance of caution. :-)
+
+Thanks,
+
+	Ingo
 
 _______________________________________________
 kexec mailing list
