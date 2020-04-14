@@ -2,60 +2,50 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CDF81A860D
-	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 18:55:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BBC31A8752
+	for <lists+kexec@lfdr.de>; Tue, 14 Apr 2020 19:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PX9sesGeq41fxAZl8jFJPNpgeFtu3C+JLOLbfqPKkcE=; b=GCvi9+jvK8k1zB
-	wND1qEGXnSfItvczLMzOs/QecBhacQ6/EPQj6N93739b6nww19hwtqk5VpsoGOzHZMy3QT+QxngbC
-	AL6lnyiRwNislIWIfKKPokzXqBbXtiQ2sY3fhV0KvEPqpPed26HNbQIxMlACGYkO4KQWo8b2oKwwJ
-	Q77BhmBhtgxcoHb+Rs6ijyD13r2M7KZDmGkqyfGNXrLod5aQmUhoTfUKBZsS8pJp+wPSdRj9W+tkR
-	Rqie67WakI1RbZP5fks1zRejNlqhiqElrE/Zf31GGnM31rfxYzlmIE6eBauqt8uUguQRZpjpHUb+j
-	8gWxjN8xk8qCs2AsKh1w==;
+	List-Owner; bh=4tPv80CXPKvXSw8scXaPgP531NaVvpS3RPRTNOLVgzc=; b=eFeFUsAarvveoy
+	XXDy19fk08kaj+h54gpHOBRWvgG2d3e1jDuayKGEbJM4QwaBEouJrbJqmrL3WFStDOuirQ4THcsN/
+	9WkzPaXcIhe6NqTwhA3Z3JA7rT3OveRvHiYxdfcnQD+c9KB1sx4SfExd1eMRccS5PGJUoMmY0rHy1
+	eDr3OYuLpsbDmjOoRlJByUX8vGb8eaMdEk7iNvr7QpzBVPNWDvI3qrTlDOn42XoO0iTchivk4jmFD
+	hbcExPPpB4IkGGBI09GcuTPbikno0IiTCkqJ2OKlZOGJEcGS/bewdh/HO0pOMm13tqWQldmE+6ha0
+	y3ara6CB/DFxPtNUcpHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jOOqQ-0005xj-RV; Tue, 14 Apr 2020 16:55:30 +0000
+	id 1jOPFU-0005cA-Jv; Tue, 14 Apr 2020 17:21:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jOOqK-0005vM-Tk; Tue, 14 Apr 2020 16:55:28 +0000
+ id 1jOPFR-0005bF-6U; Tue, 14 Apr 2020 17:21:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B60630E;
- Tue, 14 Apr 2020 09:55:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA7A730E;
+ Tue, 14 Apr 2020 10:21:19 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9B4863F6C4;
- Tue, 14 Apr 2020 09:55:18 -0700 (PDT)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: David Hildenbrand <david@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B9183F6C4;
+ Tue, 14 Apr 2020 10:21:18 -0700 (PDT)
+Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
+ memory resource names
+To: piliu <piliu@redhat.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <321e6bf7-e898-7701-dd60-6c25237ff9cd@redhat.com>
- <a21d90ea-2566-a2bc-ad2f-6464a416c97f@arm.com>
- <9cb4ea0d-34c3-de42-4b3f-ee25a59c4835@redhat.com>
- <b0443908-e36f-9bc4-4a8a-4206cb782d4b@arm.com>
- <72672e2c-a57a-8df9-0cff-8035cbce7740@redhat.com>
- <34274b02-60ba-eb78-eacd-6dc1146ed3cd@arm.com>
- <80e4d1d7-f493-3f66-f700-86f18002d692@redhat.com>
- <dfacf85f-d79d-8742-7a13-1ac0a67bad04@arm.com>
- <ba481c82-c69e-043c-4b66-2d2c7732cf07@redhat.com>
- <20200410121013.03b609fd572504c03a666f4a@linux-foundation.org>
- <4ed2fa36-fcd8-7150-03d1-35f15e595ebb@redhat.com>
+ <20200326180730.4754-3-james.morse@arm.com>
+ <20200402054946.GA97238@dhcp-128-65.nay.redhat.com>
+ <9725d779-e0de-2d8d-8716-22df3e791820@redhat.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <2e3419b2-d00c-51c3-9b45-9de114608cdf@arm.com>
-Date: Tue, 14 Apr 2020 17:55:14 +0100
+Message-ID: <66b0cb1a-d63a-2720-19cf-3d8efcd02fde@arm.com>
+Date: Tue, 14 Apr 2020 18:21:16 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <4ed2fa36-fcd8-7150-03d1-35f15e595ebb@redhat.com>
+In-Reply-To: <9725d779-e0de-2d8d-8716-22df3e791820@redhat.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200414_095525_055453_03AAAF8A 
-X-CRM114-Status: GOOD (  22.87  )
+X-CRM114-CacheID: sfid-20200414_102121_277651_7C7663F6 
+X-CRM114-Status: GOOD (  16.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,97 +66,61 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+Cc: Will Deacon <will@kernel.org>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
  linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+ Hari Bathini <hbathini@linux.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dave Young <dyoung@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi guys,
+Hi Dave, Pingfan,
 
-On 14/04/2020 08:05, David Hildenbrand wrote:
-> On 10.04.20 21:10, Andrew Morton wrote:
->> It's unclear (to me) what is the status of this patchset.  But it does appear that
->> an new version can be expected?
+On 02/04/2020 07:12, piliu wrote:
+> On 04/02/2020 01:49 PM, Dave Young wrote:
+>> On 03/26/20 at 06:07pm, James Morse wrote:
+>>> Memory added to the system by hotplug has a 'System RAM' resource created
+>>> for it. This is exposed to user-space via /proc/iomem.
+>>>
+>>> This poses problems for kexec on arm64. If kexec decides to place the
+>>> kernel in one of these newly onlined regions, the new kernel will find
+>>> itself booting from a region not described as memory in the firmware
+>>> tables.
+>>>
+>>> Arm64 doesn't have a structure like the e820 memory map that can be
+>>> re-written when memory is brought online. Instead arm64 uses the UEFI
+>>> memory map, or the memory node from the DT, sometimes both. We never
+>>> rewrite these.
+>>
+>> Could arm64 use similar way to update DT, or a cooked UEFI maps?
 
-> I'd suggest to unqueue the patches until we have a consensus.
+>> Add pingfan in cc, he said ppc64 update the DT after a memremove thus it
+>> would be good to just redo a kexec load.
 
-Certainly!
-
-
-> While there are a couple of ideas floating around here, my current
-> suggestion would be either
+> Yes, the memory changes will be observed through device-node under
+> /proc/device-tree/ (which is for powerpc).
 > 
-> 1. Indicate all hotplugged memory as "System RAM (hotplugged)" in
-> /proc/iomem and the firmware memmap (on all architectures). This will
-> require kexec changes,
+> Later if running kexec -l/-p , it can build new dtb with the latest info
+> from /proc/device-tree
+For arm64, the device-tree is set in stone. We don't have the runtime parts of
+open-firmware that powerpc does. (my knowledge in this area is extremely sparse)
+arm64 platforms where stuff like this changes tend to use ACPI instead, and these all have
+to boot with UEFI, which means its the UEFI memory map that has authority.
 
-> but I would have assume that kexec has to be
-> updated in lock-step with the kernel
+We don't cook a fake UEFI memory map when things change because we treat it like the
+set-in-stone DT. This means we only have discrepancies in firmware to workaround, instead
+of any we introduce ourselves.
 
-News to me: I was using the version I first built when arm64's support was new. I've only
-had to update it once when we had to change user-space.
-
-I don't think debian updates kexec-tools when it updates the kernel.
-
-
-Making changes to /proc/iomem means updating user-space again, (for kdump). I'd like to
-avoid that if its at all possible.
-
-
-> just like e.g., makedumpfile.
-> Modify kexec() to not place the kexec kernel on these areas (easy) but
-> still consider them as crash regions to dump. When loading a kexec
-> kernel, validate in the kernel that the memory is appropriate.
-
-
-> 2. Make kexec() reload the the kernel whenever we e.g., get a udev event
-> for removal of memory in /sys/devices/system/memory/.
-
-I don't think we can rely on user-space to do something,
-
-
-> On every remove_memory(), invalidate the loaded kernel in the kernel.
-
-This is an option, ... but its a change of behaviour. If user-space asks for two
-impossible things, the second request should fail. Having the first-one disappear is a bit
-spooky...
-
-Fortunately user-space checks the 'kexec -l' bit happened before it calls reboot() behind
-'kexec -e'. So this works, but is not intuitive.
-
-("Did I load it? What changed and when? oh, half a mile up in dmesg is a message saying
-the kernel discarded the kexec kernel last wednesday.")
-
-
-> As I mentioned somewhere, 1. will be interesting for virtio-mem, where
-> we don't want any kexec kernel to be placed on virtio-mem-added memory.
-
-Do these virtio-mem-added regions need to be accessible by kdump?
-(do we already need a user-space change for that?)
-
-
-A third option, along the line of what I posted:
-
-Split the 'offline' and 'removed' ideas, which David mentioned somewhere. We'd end up with
-(yet) another notifier chain, that prevents the memory being removed, but you can still
-mark it as offline in /sys/. (...I'm not quite sure why you would do that...)
-
-This would need hooking up for ACPI (which covers x86 and arm64), and other architectures
-mechanisms for doing this...
-arm64 can then switch is arch hook that prevents 'bootmem' being removed to this new
-notifier chain, as the kernel can only boot from that was present at boot.
-
-
-My preference is 3, then 2.
-
-I think 1 is slightly less desirable than a message at kexec time that the memory layout
-has changed since load, and this might not work...
-
+One of the UEFI configuration tables describes addresses Linux programmed into hardware
+that can't be reset. Newer versions of Linux know how to pick these up on kexec... but
+older versions don't know how to parse/rewrite/move that table. Cooking up new versions of
+these tables would prevent us doing stuff like this, which we need to workaround hardware
+that didn't get the 'kexec exists' memo.
 
 
 Thanks,
