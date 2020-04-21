@@ -2,51 +2,51 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7CFC1B27E2
-	for <lists+kexec@lfdr.de>; Tue, 21 Apr 2020 15:30:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6311B289C
+	for <lists+kexec@lfdr.de>; Tue, 21 Apr 2020 15:57:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QPcSOJQmOlFH8aHb/kiUdGAC/jrA/v0edaUnWtz0BSc=; b=FHCNjU5WH4KtTF
-	eNxsI9xCfEGVWR1O12eZOzXstKNdqRsyU+MieLUluFTEhEN2NDb0qcdSlDMOna957mnH+G48H0ash
-	SdmvGmmEOUflBP0Ixj9E4Iwwsn3F23wJk+T55zMcRjXx8WD0q8uXB19NPvxusRjpXTbnp5xTP/9I0
-	Bsq8/JN9yHyq8emxlwHqn23zYNryDTUCKFq5XTw1YnwkhA14jdME5bnolLsG1D3sb3JcWbPZDf31U
-	efkC0bzHhWB5rCz6b07yXA888KYDJq6nxgcWjP+or8N4g5pt3qz/bozIeUHOwxVDHI8vJ+rXNlsQJ
-	u5+dFVhopgqyez/1S+fA==;
+	List-Owner; bh=l4yJR6Xy7tyoW5P0jmaCc7MzBXrr9GNvyFz55TuhM3M=; b=twBrGrlKya4Jw5
+	2ZO4XzyP58scB/tNeLFmiL1zTuSXbllOgis44r9nrNMIboLynIqB1NnEguCjnYHG+p1zB8rXt5FBD
+	83nyCo4xmRToKevbWYdJzSUDMtSLP9YTQwmynurkHdkJDJlJuHpF75FiOk0OERZpNmdGwtgSxriaU
+	dUTSFlvgruLpq4YiavG6fxVIcw3t1qE0Q9KRrQCd215dh0ygXPvh1u0Bxz+cXoUj+ttgS5KBY2IQ+
+	W2QGYkIbA9I7ZelZgl2y5ZcFIYpq5c3w/cV7J7T8mOVoL1HG/C4+PainvFJL8x3yduZUbfPDNrwx9
+	l+9/IDbtQ3VVjelpriyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jQsyf-00044w-Rd; Tue, 21 Apr 2020 13:30:17 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jQtPA-0000sv-0z; Tue, 21 Apr 2020 13:57:40 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jQsyE-0003vw-Me
- for kexec@lists.infradead.org; Tue, 21 Apr 2020 13:29:53 +0000
+ id 1jQtP6-0000r6-4l
+ for kexec@lists.infradead.org; Tue, 21 Apr 2020 13:57:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1587475789;
+ s=mimecast20190719; t=1587477454;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=J6Inc4q0jTZpUSGLnmZJBIzhMXRKguWsJpOViJNG2+8=;
- b=DXXJAgc0uGLbMGQ58w+jJ+utW6mJYWtELteJ8CUbctRsmE4lp0S+MoJBw9/pURgweZOwWz
- nu2gwneWiNEXrptUeaATBzrKTn1e9pedzIlVjGvuPdppqqly+qnNCpr8XiTupmjNnyecXc
- oKiNuhbcgYNkUEPQ5eMn848XCKVnwFs=
+ bh=Or1DT0xL0r7UOQuiW8jTF8Y1PMHA/8FSiDkvKluh1mQ=;
+ b=UlXWU87Uxw6fbu2yPi9gONPJTnnOFMC4Dwx+GA+M+QCe37DIuHkqMiw01fxNCO8BhEkyh3
+ NcQ+5yYzTya73XTaWBb4CWeQgz6D1hTI3ubqZI75sFygoWk/9TFfyuP9//ppUSfyE8V9+C
+ YU5scOGAfFFZpYRFSnaZru+fpSaqjV8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-98-OThd0_ElPwOBFSpFpv7rGA-1; Tue, 21 Apr 2020 09:29:45 -0400
-X-MC-Unique: OThd0_ElPwOBFSpFpv7rGA-1
+ us-mta-443-mXhARXEtMsSZDKqDT-iPuA-1; Tue, 21 Apr 2020 09:57:30 -0400
+X-MC-Unique: mXhARXEtMsSZDKqDT-iPuA-1
 Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
  [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D575C107BA97;
- Tue, 21 Apr 2020 13:29:43 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A02AA8017F3;
+ Tue, 21 Apr 2020 13:57:28 +0000 (UTC)
 Received: from [10.36.113.245] (ovpn-113-245.ams2.redhat.com [10.36.113.245])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 51D6E76E68;
- Tue, 21 Apr 2020 13:29:38 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 98CF876E68;
+ Tue, 21 Apr 2020 13:57:25 +0000 (UTC)
 Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
  kexec image
 From: David Hildenbrand <david@redhat.com>
@@ -63,6 +63,7 @@ References: <20200414064031.GB4247@MiWiFi-R3L-srv>
  <4e1546eb-4416-dc6d-d549-62d1cecccbc8@redhat.com>
  <20200416143634.GH4247@MiWiFi-R3L-srv>
  <2525cc9c-3566-6275-105b-7f4af8f980bc@redhat.com>
+ <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
  dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
@@ -107,28 +108,30 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
-Date: Tue, 21 Apr 2020 15:29:37 +0200
+Message-ID: <cff3ce7d-df33-83a3-4c6d-4978a981d2ad@redhat.com>
+Date: Tue, 21 Apr 2020 15:57:24 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <2525cc9c-3566-6275-105b-7f4af8f980bc@redhat.com>
+In-Reply-To: <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
 Content-Language: en-US
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200421_062950_809698_21C129C5 
-X-CRM114-Status: GOOD (  18.64  )
+X-CRM114-CacheID: sfid-20200421_065736_285517_37BB4148 
+X-CRM114-Status: GOOD (  22.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -160,55 +163,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
->> ACPI SRAT is embeded into efi, need read out the rsdp pointer. If we don't
->> pass the efi, it won't get the SRAT table correctly, if I remember
->> correctly. Yeah, I remeber kvm guest can get memory hotplugged with
->> ACPI only, this won't happen on bare metal though. Need check carefully. 
->> I have been using kvm guest with uefi firmwire recently.
+On 21.04.20 15:29, David Hildenbrand wrote:
+>>> ACPI SRAT is embeded into efi, need read out the rsdp pointer. If we don't
+>>> pass the efi, it won't get the SRAT table correctly, if I remember
+>>> correctly. Yeah, I remeber kvm guest can get memory hotplugged with
+>>> ACPI only, this won't happen on bare metal though. Need check carefully. 
+>>> I have been using kvm guest with uefi firmwire recently.
+>>
+>> Yeah, I can imagine that bare metal is different. kvm only uses ACPI.
+>>
+>> I'm also asking because of virtio-mem. Memory added via virtio-mem is
+>> not part of any efi tables or whatsoever. So I assume the kexec kernel
+>> will not detect it automatically (good!), instead load the virtio-mem
+>> driver and let it add memory back to the system.
+>>
+>> I should probably play with kexec and virtio-mem once I have some spare
+>> cycles ... to find out what's broken and needs to be addressed :)
 > 
-> Yeah, I can imagine that bare metal is different. kvm only uses ACPI.
+> FWIW, I just gave virtio-mem and kexec/kdump a try.
 > 
-> I'm also asking because of virtio-mem. Memory added via virtio-mem is
-> not part of any efi tables or whatsoever. So I assume the kexec kernel
-> will not detect it automatically (good!), instead load the virtio-mem
-> driver and let it add memory back to the system.
+> a) kdump seems to work. Memory added by virtio-mem is getting dumped.
+> The kexec kernel only uses memory in the crash region. The virtio-mem
+> driver properly bails out due to is_kdump_kernel().
 > 
-> I should probably play with kexec and virtio-mem once I have some spare
-> cycles ... to find out what's broken and needs to be addressed :)
+> b) "kexec -s -l" seems to work fine. For now, the kernel does not seem
+> to get placed on virtio-mem memory (pure luck due to the left-to-right
+> search). Memory added by virtio-mem is not getting added to the e820
+> map. Once the virtio-mem driver comes back up in the kexec kernel, the
+> right memory is readded.
+> 
+> c) "kexec -c -l" does not work properly. All memory added by virtio-mem
+> is added to the e820 map, which is wrong. Memory that should not be
+> touched will be touched by the kexec kernel. I assume kexec-tools just
+> goes ahead and adds anything it can find in /proc/iomem (or
+> /sys/firmware/memmap/) to the e820 map of the new kernel.
+> 
+> Due to c), I assume all hotplugged memory (e.g., ACPI DIMMs) is
+> similarly added to the e820 map and, therefore, won't be able to be
+> onlined MOVABLE easily.
+> 
+> 
+> At least for virtio-mem, I would either have to
+> a) Not support "kexec -c -l". A viable option if we would be planning on
+> not supporting it either way in the long term. I could block this
+> in-kernel somehow eventually.
+> 
+> b) Teach kexec-tools to leave virtio-mem added memory alone. E.g., by
+> indicating it in /proc/iomem in a special way ("System RAM
+> (hotplugged)"/"System RAM (virtio-mem)").
 
-FWIW, I just gave virtio-mem and kexec/kdump a try.
+I just realized, that *not* creating /sys/firmware/memmap/ entries for
+virtio-mem memory seems to be the right thing to do.
 
-a) kdump seems to work. Memory added by virtio-mem is getting dumped.
-The kexec kernel only uses memory in the crash region. The virtio-mem
-driver properly bails out due to is_kdump_kernel().
-
-b) "kexec -s -l" seems to work fine. For now, the kernel does not seem
-to get placed on virtio-mem memory (pure luck due to the left-to-right
-search). Memory added by virtio-mem is not getting added to the e820
-map. Once the virtio-mem driver comes back up in the kexec kernel, the
-right memory is readded.
-
-c) "kexec -c -l" does not work properly. All memory added by virtio-mem
-is added to the e820 map, which is wrong. Memory that should not be
-touched will be touched by the kexec kernel. I assume kexec-tools just
-goes ahead and adds anything it can find in /proc/iomem (or
-/sys/firmware/memmap/) to the e820 map of the new kernel.
-
-Due to c), I assume all hotplugged memory (e.g., ACPI DIMMs) is
-similarly added to the e820 map and, therefore, won't be able to be
-onlined MOVABLE easily.
-
-
-At least for virtio-mem, I would either have to
-a) Not support "kexec -c -l". A viable option if we would be planning on
-not supporting it either way in the long term. I could block this
-in-kernel somehow eventually.
-
-b) Teach kexec-tools to leave virtio-mem added memory alone. E.g., by
-indicating it in /proc/iomem in a special way ("System RAM
-(hotplugged)"/"System RAM (virtio-mem)").
-
-Baoquan, any opinion on that?
 
 -- 
 Thanks,
