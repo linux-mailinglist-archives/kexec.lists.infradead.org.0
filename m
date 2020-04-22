@@ -2,62 +2,94 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B2851B398C
-	for <lists+kexec@lfdr.de>; Wed, 22 Apr 2020 10:02:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E318F1B3B00
+	for <lists+kexec@lfdr.de>; Wed, 22 Apr 2020 11:17:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CNlvqT8vTvnJ90gi2Ys1gTkRPrWDWvyz6SU5qyEBnuY=; b=DyC/xboaE0z1hY
-	/BnOTNshQ7vlpiS5IL6eKwf+dpTbisd0shEI7NnI1hlDIv0x5sKwwxXeR1gDD4lBY9cdKVQjEp/ZP
-	44iHX9wKX4OMa66R7ZyQIG8oczxtlZVCksCslG0SVHiWAdcgb9CNYOg4C1+f6aCSRQ52usrzNr1mh
-	ckE6GEY3APawHHaxfXiJNvkXGzadUBoqDwKlvC+q3D9kjO8nxMFmk0ZfYdkWEC4W1D6W+QHCEJprA
-	DDZGz9aXzHfcsCu5bZWI8+GDjWzknf2yO9osMSH3bmXDP2+/0f2S6+aTVhl1AEVVQj8Maa+IBrdck
-	PWe/h61fs2Vdbs5q4Acw==;
+	List-Owner; bh=VNffLLHR+NYy/JhkZEerDNEb7fyqQWK845khdG/Tozw=; b=cEOvq6mGmTYHQw
+	BYPU3NOGnexfX8JGbgs05//yTYhw2wmcwtcYjdzSe5/F1Qx+UtkmUry/37u9a/c4/xbSGl8G6iPjE
+	DPRvsunR6pPbZ1y13HYTAGuVQSv6IiAyOIwNBJTt0LWTtIbebjw3xBDMYsORHkJXTz9FVe4bybSlb
+	KL6R+dkK/MU/eo3Z8KqstDZzH7kUUGPJBU06s873aAAG9fqnyisUuFnXuC1jPSy1O9qOjeunw+pin
+	HRAIG6cSavT69x8ufhaV9bcCoK8s+L/SSHDZYb7UZXQOKKU4LjyiMgkRNk9IGkT6tcEYo/szRSAv3
+	LBDlDDI6Yi4El560jhoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRAKc-0002Qq-Ms; Wed, 22 Apr 2020 08:02:06 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRAKY-0002Oo-Ut
- for kexec@lists.infradead.org; Wed, 22 Apr 2020 08:02:04 +0000
-Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id F3E3D25B80B;
- Wed, 22 Apr 2020 18:01:58 +1000 (AEST)
-Received: by penelope.horms.nl (Postfix, from userid 7100)
- id 082A6DF4; Wed, 22 Apr 2020 10:01:57 +0200 (CEST)
-Date: Wed, 22 Apr 2020 10:01:57 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Lukasz Stelmach <l.stelmach@samsung.com>
-Subject: Re: [PATCH v2] arm: redefine OPT_APPEND and OPT_RAMDISK
-Message-ID: <20200422080151.GA32200@vergenet.net>
-References: <20200416084441.GA16024@vergenet.net>
- <20200414085224.7069-1-l.stelmach@samsung.com>
- <CGME20200415105859eucas1p2db849d89aa9a338077a01784f73dad52@eucas1p2.samsung.com>
- <20200415105845.22067-1-l.stelmach@samsung.com>
- <dleftjmu76ns60.fsf%l.stelmach@samsung.com>
+	id 1jRBVj-00025P-Pk; Wed, 22 Apr 2020 09:17:39 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRBVd-0001x0-Me
+ for kexec@lists.infradead.org; Wed, 22 Apr 2020 09:17:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587547051;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=3UXOekQh1gufcT9h9w5ibKg9wQnXHwD6nWUd1hZugik=;
+ b=cbN713+bJ0lpqusO455Fs81CIzqzAsYZyNhb52hVB5LBVsGX1fUyW+TbGP+z36pll/njg+
+ 64DKpIhi6PViBFz+86rVHVTNTd7orlSNIkpehGVizvDX5g3cZu/IfOWUFQYMxLZSQnVHHY
+ QOQHxk5eWzlYfKFlUaR20XXh0RJIghQ=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-294-fgr5oz9PMCeI437KpNxurw-1; Wed, 22 Apr 2020 05:17:28 -0400
+X-MC-Unique: fgr5oz9PMCeI437KpNxurw-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0852613FE;
+ Wed, 22 Apr 2020 09:17:26 +0000 (UTC)
+Received: from localhost (ovpn-12-47.pek2.redhat.com [10.72.12.47])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 8D5E076E68;
+ Wed, 22 Apr 2020 09:17:21 +0000 (UTC)
+Date: Wed, 22 Apr 2020 17:17:18 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+Message-ID: <20200422091718.GT4247@MiWiFi-R3L-srv>
+References: <ad060c8a-8afe-3858-0a4f-27ff54ef4c68@redhat.com>
+ <20200414143912.GE4247@MiWiFi-R3L-srv>
+ <0085f460-b0c7-b25f-36a7-fa3bafaab6fe@redhat.com>
+ <20200415023524.GG4247@MiWiFi-R3L-srv>
+ <18cf6afd-c651-25c7-aca3-3ca3c0e07547@redhat.com>
+ <20200416140247.GA12723@MiWiFi-R3L-srv>
+ <4e1546eb-4416-dc6d-d549-62d1cecccbc8@redhat.com>
+ <20200416143634.GH4247@MiWiFi-R3L-srv>
+ <2525cc9c-3566-6275-105b-7f4af8f980bc@redhat.com>
+ <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dleftjmu76ns60.fsf%l.stelmach@samsung.com>
-Organisation: Horms Solutions BV
+In-Reply-To: <9a4eb1d7-33bf-8707-9c0c-1ca657c3e502@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_010203_150531_6D6AC1F0 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_021733_830997_901372FA 
+X-CRM114-Status: GOOD (  23.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [202.4.237.240 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,35 +101,104 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: piliu@redhat.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, linuxppc-dev@lists.ozlabs.org,
+ kexec@lists.infradead.org,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBBcHIgMjAsIDIwMjAgYXQgMDQ6MzM6MTFQTSArMDIwMCwgTHVrYXN6IFN0ZWxtYWNo
-IHdyb3RlOgo+ID4gT24gV2VkLCBBcHIgMTUsIDIwMjAgYXQgMTI6NTg6NDVQTSArMDIwMCwgxYF1
-a2FzeiBTdGVsbWFjaCB3cm90ZToKPiA+PiBSZWRlZmluZSBPUFRfQVBQRU5EIHRvIGF2b2lkIGNs
-YXNoIHdpdGggT1BUX0tFWEVDX1NZU0NBTExfQVVUTy4KPiA+PiBSZWRlZmluZSBPUFRfUkFNRElT
-SyB0byBhdm9pZCBzdWNoIHByb2JsZW1zIGluIHRoZSBmdXR1cmUKPiA+Pgo+ID4+IFNpZ25lZC1v
-ZmYtYnk6IMWBdWthc3ogU3RlbG1hY2ggPGwuc3RlbG1hY2ggYXQgc2Ftc3VuZy5jb20+Cj4gPgo+
-ID4gSSBhbSBzbGlnaHRseSBjb25jZXJuZWQgdGhhdCB0aGlzIHdpbGwgYnJlYWsgdGhpbmdzIGZv
-ciB1c2Vycy4KPiA+IEJ1dCBPVE9IIHBlcmhhcHMgd2UgYWxyZWFkeSBicm9rZSB0aGluZ3Mgd2hl
-biBhZGRpbmcKPiA+IE9QVF9LRVhFQ19TWVNDQUxMX0FVVE8uCj4gPiBEbyB5b3UgaGF2ZSBhbnkg
-dGhvdWdodHMgb24gdGhpcz8KPiAKPiBJIGFtIGF3YXJlIG9mIHRoaXMsIGJ1dCB0aGUgY3VycmVu
-dCBhcHBlYXJzIHRvIGJlIGJyb2tlbiBtb3JlLiBXaGVuIEkKPiB3YXMgdXNpbmcgJy1hJyBpdCBk
-aWRuJ3Qgd29yayBhcyBhZHZlcnRpc2VkIGluIHRoZSB1c2FnZSBtZXNzYWdlLiBTaG9ydAo+ICph
-cmNoKiBvcHRpb25zIGFyZW4ndCBkb2N1bWVudGVkIHRoZXJlLCBzbyBJIHN1cHBvc2UgbW9zdCBw
-ZW9wbGUgZGlkbid0Cj4gdXNlIHRoZW0uIEFSTSBpcyB0aGUgb25seSBhcmNoaXRlY3R1cmUgdGhh
-dCBzdXBwb3J0cyBzaG9ydCBvcHRpb25zIGJ5Cj4gZGVmaW5pbmcgT1BUXyogYXMgY2hhcmFjdGVy
-cy4gSFBQQSBhcHBlYXJzIHRvIGJlIHVzaW5nIHRoZW0gaW4gdGhlCj4gb3B0c3RyaW5nIChjb3Bp
-ZWQgZnJvbSBBUk0/KSBidXQgbm90IGluIE9QVF8qLiBXb3VsZCB5b3UgbGlrZSBtZSB0bwo+IGNs
-ZWFuIHRoaXMgdXAgdG9vIGluIHYzPwo+IAo+IEluIHN1bW1hcnk6IHVuZG9jdW1lbnRlZCwgb24g
-b25lIHBsYXRmb3JtLgo+IAo+IFAuUy4gUGxlYXNlLCBjYyBtZS4gSSBhbSBub3Qgc3Vic2NyaWJl
-ZCB0byB0aGUgbGlzdC4KClRoYW5rcyDFgXVrYXN6LAoKSSB0YWtlIHlvdXIgcG9pbnQgd2l0aCBy
-ZWdhcmRzIHRvIHRoZXNlIGZlYXR1cmVzIGJlaW5nIHVuZG9jdW1lbnRlZC4KQW5kIEkgdGhpbmsg
-dGhlIGV4dHJhIGNsZWFuLXVwIHlvdSBzdWdnZXN0IHNvdW5kcyBnb29kLgpDb3VsZCB5b3UgcG9z
-dCBhIHYzIHdpdGggdGhhdCBpbmNsdWRlZD8KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVj
-Cg==
+On 04/21/20 at 03:29pm, David Hildenbrand wrote:
+> >> ACPI SRAT is embeded into efi, need read out the rsdp pointer. If we don't
+> >> pass the efi, it won't get the SRAT table correctly, if I remember
+> >> correctly. Yeah, I remeber kvm guest can get memory hotplugged with
+> >> ACPI only, this won't happen on bare metal though. Need check carefully. 
+> >> I have been using kvm guest with uefi firmwire recently.
+> > 
+> > Yeah, I can imagine that bare metal is different. kvm only uses ACPI.
+> > 
+> > I'm also asking because of virtio-mem. Memory added via virtio-mem is
+> > not part of any efi tables or whatsoever. So I assume the kexec kernel
+> > will not detect it automatically (good!), instead load the virtio-mem
+> > driver and let it add memory back to the system.
+> > 
+> > I should probably play with kexec and virtio-mem once I have some spare
+> > cycles ... to find out what's broken and needs to be addressed :)
+> 
+> FWIW, I just gave virtio-mem and kexec/kdump a try.
+> 
+> a) kdump seems to work. Memory added by virtio-mem is getting dumped.
+> The kexec kernel only uses memory in the crash region. The virtio-mem
+> driver properly bails out due to is_kdump_kernel().
+
+Right, kdump is not impacted later added memory.
+
+> 
+> b) "kexec -s -l" seems to work fine. For now, the kernel does not seem
+> to get placed on virtio-mem memory (pure luck due to the left-to-right
+> search). Memory added by virtio-mem is not getting added to the e820
+> map. Once the virtio-mem driver comes back up in the kexec kernel, the
+> right memory is readded.
+
+kexec_file_load just behaves as you tested. It doesn't collect later
+added memory to e820 because it uses e820_table_kexec directly to pass
+e820 to kexec-ed kernel. However, this e820_table_kexec is only updated
+during boot stage. I tried hot adding DIMM after boot, kexec-ed kernel
+doesn't have it in e820 during bootup, but it's recoginized and added
+when ACPI scanning. I think we should update e820_table_kexec when hot
+add/remove memory, at least for DIMM. Not sure if DLPAR, virtio-mem,
+balloon will need be added into e820_table_kexec too, and if this is
+expected behaviour.
+
+But whatever we do, it won't impact the kexec file_loading, because of
+the searching strategy bottom up. Just adding them into e820_table_kexec
+will make it consistent with cold reboot which get recognizes and get
+them into e820 during bootup.
+> 
+> c) "kexec -c -l" does not work properly. All memory added by virtio-mem
+> is added to the e820 map, which is wrong. Memory that should not be
+> touched will be touched by the kexec kernel. I assume kexec-tools just
+> goes ahead and adds anything it can find in /proc/iomem (or
+> /sys/firmware/memmap/) to the e820 map of the new kernel.
+> 
+> Due to c), I assume all hotplugged memory (e.g., ACPI DIMMs) is
+> similarly added to the e820 map and, therefore, won't be able to be
+> onlined MOVABLE easily.
+
+Yes, kexec_load will read memory regions from /sys/firmware/memmap/ or
+/proc/iomem. Making it right seems a little harder, we can export them
+to /proc/iomem or /sys/firmware/memmap/ with mark them with 'hotplug',
+but the attribute that which zone they belongs to is not easy to tell.
+
+We are proactive on widely testing kexec_file_load on x86_64, s390,
+arm64 by adding test cases into CKI.
+
+> 
+> 
+> At least for virtio-mem, I would either have to
+> a) Not support "kexec -c -l". A viable option if we would be planning on
+> not supporting it either way in the long term. I could block this
+> in-kernel somehow eventually.
+> 
+> b) Teach kexec-tools to leave virtio-mem added memory alone. E.g., by
+> indicating it in /proc/iomem in a special way ("System RAM
+> (hotplugged)"/"System RAM (virtio-mem)").
+> 
+> Baoquan, any opinion on that?
+> 
+> -- 
+> Thanks,
+> 
+> David / dhildenb
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
