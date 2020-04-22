@@ -2,58 +2,100 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111D71B451B
-	for <lists+kexec@lfdr.de>; Wed, 22 Apr 2020 14:29:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B220C1B45DB
+	for <lists+kexec@lfdr.de>; Wed, 22 Apr 2020 15:07:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BlXqam1KnDkCA4YHgvZi0ra/U+8va9NsX2Egu8qedQ8=; b=lASDHnNc0mPjnI
-	0GXh/6huHdVRE4VXbFoPclkI8bTGH+JIetz+Zz1O/XL0IdS2PhcyKhFKVgsRAjMeDolFXCEB5VYA/
-	iJyYodgGo4nbCxUJBo20imCw9cW00HJB70jDE8uSzErSsJ+S8uUB2NODVoj7u2N/eyOYG5PRxY2z+
-	r/q7fpkEyleZ+MuG1H6ZyGER6C4+LOtZx2Yk8kDjhXCBcmLvPULs+dQPhjb+BSSiOY3l4pmoXU1oj
-	NcaIH7zNEz2zjUGKgLoP3MuAv953/CHHMjm+G9HFUAiR+MLmmuaLvORm78UiVD6a1DWjyrRLI61t7
-	3vI8fgVobWaCZ3fptQYw==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JLqZ18ImmFiHz/g4zy9DUKHkfUaAneWPWUNhegP9pcs=; b=ppGSebcNUkI1g3
+	NvNHYtoFrrfr8OfaeF8/aJS+q9K0uUO6a2/7x7aa2GpwpgKdwwFVlf0rbSNfecdnNgS4RaaTWsZUx
+	RY8bmLPoT9aJ7UxCVZDRFsuhxFbXghJsHLGQ60bhijIPbZyqYG7aoWcWzJX6ePf1rEhve5dxCGjco
+	jMyNU/QqL79bSdCefgK1cpAAN4BKbqWAJVqZlVxQwtEyz3aOWI3CHbxXLYFom+fSV/zb3/fJ7QtqS
+	pvHPcthqpmwwc9FFu6fHqz9OniJAUTXQtM7yc1avnS657e9/KO9I6wqbcoHgicO/EQ9XkE5daLqiL
+	AdtNYClZldbyQ3Fkz69g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jREV0-0004V5-Fo; Wed, 22 Apr 2020 12:29:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jREUv-0004Td-TO; Wed, 22 Apr 2020 12:29:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CBF731B;
- Wed, 22 Apr 2020 05:29:01 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3BFE33F6CF;
- Wed, 22 Apr 2020 05:29:00 -0700 (PDT)
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: "Eric W. Biederman" <ebiederm@xmission.com>
+	id 1jRF6R-0001gk-Bc; Wed, 22 Apr 2020 13:07:47 +0000
+Received: from out01.mta.xmission.com ([166.70.13.231])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jRF6D-0001Wg-AR; Wed, 22 Apr 2020 13:07:36 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out01.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jRF6A-0003p3-Ji; Wed, 22 Apr 2020 07:07:30 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jRF68-0008QH-QG; Wed, 22 Apr 2020 07:07:30 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: James Morse <james.morse@arm.com>
 References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <87d088h4k8.fsf@x220.int.ebiederm.org>
-From: James Morse <james.morse@arm.com>
-Message-ID: <a694cea6-4449-c77a-98f7-bd7a49cf47fc@arm.com>
-Date: Wed, 22 Apr 2020 13:28:59 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ <87sgh4h4r7.fsf@x220.int.ebiederm.org>
+ <59b74cc5-89aa-83fa-5532-8e64d6382fdd@arm.com>
+Date: Wed, 22 Apr 2020 08:04:21 -0500
+In-Reply-To: <59b74cc5-89aa-83fa-5532-8e64d6382fdd@arm.com> (James Morse's
+ message of "Wed, 22 Apr 2020 13:14:10 +0100")
+Message-ID: <87a7333c4q.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-In-Reply-To: <87d088h4k8.fsf@x220.int.ebiederm.org>
-Content-Language: en-GB
+X-XM-SPF: eid=1jRF68-0008QH-QG; ; ; mid=<87a7333c4q.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/ra3iwlduIF4VL59HMBxh40IUHL7vSMrU=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa05.xmission.com
+X-Spam-Level: **
+X-Spam-Status: No, score=2.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,T_TooManySym_01,XMNoVowels,
+ XMSubLong autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4995]
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.7 XMSubLong Long Subject
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa05 1397; Body=1 Fuz1=1 Fuz2=1]
+ *  0.0 T_TooManySym_01 4+ unique symbols in subject
+X-Spam-DCC: XMission; sa05 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: **;James Morse <james.morse@arm.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 863 ms - load_scoreonly_sql: 0.06 (0.0%),
+ signal_user_changed: 11 (1.3%), b_tie_ro: 10 (1.2%), parse: 1.28
+ (0.1%), extract_message_metadata: 15 (1.7%), get_uri_detail_list: 3.5
+ (0.4%), tests_pri_-1000: 5 (0.6%), tests_pri_-950: 1.34 (0.2%),
+ tests_pri_-900: 1.03 (0.1%), tests_pri_-90: 89 (10.4%), check_bayes:
+ 88 (10.2%), b_tokenize: 10 (1.2%), b_tok_get_all: 11 (1.2%),
+ b_comp_prob: 3.2 (0.4%), b_tok_touch_all: 61 (7.0%), b_finish: 0.86
+ (0.1%), tests_pri_0: 719 (83.3%), check_dkim_signature: 0.62 (0.1%),
+ check_dkim_adsp: 6 (0.7%), poll_dns_idle: 0.28 (0.0%), tests_pri_10:
+ 3.0 (0.3%), tests_pri_500: 13 (1.5%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 0/3] kexec/memory_hotplug: Prevent removal and accidental
+ use
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_052902_012312_CD3D6CE0 
-X-CRM114-Status: GOOD (  17.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200422_060733_387540_493130E5 
+X-CRM114-Status: GOOD (  22.14  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [166.70.13.231 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,63 +117,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Eric,
+James Morse <james.morse@arm.com> writes:
 
-On 15/04/2020 21:33, Eric W. Biederman wrote:
-> James Morse <james.morse@arm.com> writes:
-> 
->> An image loaded for kexec is not stored in place, instead its segments
->> are scattered through memory, and are re-assembled when needed. In the
->> meantime, the target memory may have been removed.
->>
->> Because mm is not aware that this memory is still in use, it allows it
->> to be removed.
->>
->> Add a memory notifier to prevent the removal of memory regions that
->> overlap with a loaded kexec image segment. e.g., when triggered from the
->> Qemu console:
->> | kexec_core: memory region in use
->> | memory memory32: Offline failed.
->>
->> Signed-off-by: James Morse <james.morse@arm.com>
-> 
-> Given that we are talking about the destination pages for kexec
-> not where the loaded kernel is currently stored the description is
-> confusing.
+> Hi Eric,
+>
+> On 15/04/2020 21:29, Eric W. Biederman wrote:
+>> James Morse <james.morse@arm.com> writes:
+>> 
+>>> Hello!
+>>>
+>>> arm64 recently queued support for memory hotremove, which led to some
+>>> new corner cases for kexec.
+>>>
+>>> If the kexec segments are loaded for a removable region, that region may
+>>> be removed before kexec actually occurs. This causes the first kernel to
+>>> lockup when applying the relocations. (I've triggered this on x86 too).
+>>>
+>>> The first patch adds a memory notifier for kexec so that it can refuse
+>>> to allow in-use regions to be taken offline.
+>>>
+>>>
+>>> This doesn't solve the problem for arm64, where the new kernel must
+>>> initially rely on the data structures from the first boot to describe
+>>> memory. These don't describe hotpluggable memory.
+>>> If kexec places the kernel in one of these regions, it must also provide
+>>> a DT that describes the region in which the kernel was mapped as memory.
+>>> (and somehow ensure its always present in the future...)
+>>>
+>>> To prevent this from happening accidentally with unaware user-space,
+>>> patches two and three allow arm64 to give these regions a different
+>>> name.
+>>>
+>>> This is a change in behaviour for arm64 as memory hotadd and hotremove
+>>> were added separately.
+>>>
+>>>
+>>> I haven't tried kdump.
+>>> Unaware kdump from user-space probably won't describe the hotplug
+>>> regions if the name is different, which saves us from problems if
+>>> the memory is no longer present at kdump time, but means the vmcore
+>>> is incomplete.
+>>>
+>>>
+>>> These patches are based on arm64's for-next/core branch, but can all
+>>> be merged independently.
+>> 
+>> So I just looked through these quickly and I think there are real
+>> problems here we can fix, and that are worth fixing.
+>> 
+>> However I am not thrilled with the fixes you propose.
+>
+> Sure. Unfortunately /proc/iomem is the only trick arm64 has to keep the existing
+> kexec-tools working.
+> (We've had 'unthrilling' patches like this before to prevent user-space from loading the
+> kernel over the top of the in-memory firmware tables.)
+>
+> arm64 expects the description of memory to come from firmware, be that UEFI for memory
+> present at boot, or the ACPI AML methods for memory that was added
+> later.
+>
+> On arm64 there is no standard location for memory. The kernel has to be handed a pointer
+> to the firmware tables that describe it. The kernel expects to boot from memory that was
+> present at boot.
 
-I think David has some better wording to cover this. I thought I had it with 'scattered
-and re-assembled'.
+What do you do when the firmware is wrong?  Does arm64 support the
+mem=xxx@yyy kernel command line options?
+
+If you want to handle the general case of memory hotplug having a
+limitation that you have to boot from memory that was present at boot is
+a bug, because the memory might not be there.
+
+> Modifying the firmware tables at runtime doesn't solve the problem as we may need to move
+> the firmware-reserved memory region that describes memory. User-space may still load and
+> kexec either side of that update.
+>
+> Even if we could modify the structures at runtime, we can't update a loaded kexec image.
+> We have no idea which blob from userspace is the DT. It may not even be linux that has
+> been loaded.
+
+What can be done and very reasonably so is on memory hotplug:
+- Unloaded any loaded kexec image.
+- Block loading any new image until the hotplug operation completes.
+
+That is simple and generic, and can be done for all architectures.
+
+This doesn't apply to kexec on panic kernel because it fundamentally
+needs to figure out how to limp along (or reliably stop) when it has the
+wrong memory map.
+
+> We can't emulate parts of UEFI's handover because kexec's purgatory
+> isn't an EFI program.
+
+Plus much of EFI is unusable after ExitBootServices is called.
+
+> I can't see a path through all this. If we have to modify existing user-space, I'd rather
+> leave it broken. We can detect the problem in the arch code and print a warning at load time.
+
+The weirdest thing to me in all of this is that you have been wanting to
+handle memory hotplug.  But you don't want to change or deal with the
+memory map changing when hotplug occurs.  The memory map changing is
+fundamentally memory hotplug does.
+
+So I think it is fundamental to figure out how to pass the updated
+memory map.  Either through command line mem=xxx@yyy command line
+options or through another option.
+
+If you really want to keep the limitation that you have to have the
+kernel in the initial memory map you can compare that map to the
+efi tables when selecting the load address.
+
+Expecting userspace to reload the loaded kernel after memory hotplug is
+completely reasonable.
+
+Unless I am mistaken memory hotplug is expected to be a rare event not
+something that happens every day, certainly not something that happens
+every minute.
+
+Eric
 
 
-> Beyond that I think it would be better to simply unload the loaded
-> kernel at memory hotunplug time.
-
-Unconditionally, or if it aliases the removed region?
-
-I don't particular like it. User-space has asked for two impossible things, we are
-changing the answer to the first when we see the second. Its a bit spooky. (maybe no one
-will notice)
-
-
-> Usually somewhere in the loaded image
-> is a copy of the memory map at the time the kexec kernel was loaded.
-> That will invalidate the memory map as well.
-
-Ah, unconditionally. Sure, x86 needs this.
-(arm64 re-discovers the memory map from firmware tables after kexec)
-
-If that's an acceptable change in behaviour, sure, lets do that.
-
-
-> All of this should be for a very brief window of a few seconds, as
-> the loaded kexec image is quite short.
-
-It seems I'm the outlier anticipating anything could happen between those syscalls.
-
-
-Thanks,
-
-James
 
 _______________________________________________
 kexec mailing list
