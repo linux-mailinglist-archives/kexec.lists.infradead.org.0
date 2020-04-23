@@ -2,129 +2,110 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAEF61B4D96
-	for <lists+kexec@lfdr.de>; Wed, 22 Apr 2020 21:45:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976B31B5DAD
+	for <lists+kexec@lfdr.de>; Thu, 23 Apr 2020 16:24:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAwc2pOVvECS80ePTJTio0f0z7WExMEum+5R0KtReOA=; b=hDQxiJ029VRIRP
-	lugceuKqr3Ny/WaIL0vUHC7wrpFUU+wv5Rad51Ocge6BE31Zsu7Y0H+K7pqUbrQVzu3RpBMgj4XSO
-	ggUl2gUzjIREvJxUxEQVAcbnQlsTqJUnOyMs06Du1iNArz0uzNopWadauyQoCRJboZYP/SB7bIyEZ
-	evLAf3b8dTd0kJCHqzYDqhmJIkhUquleqV/zxxrPWaqNUhc0Fwfu+0NybWJV6AP7Kbrsjcml+gZlq
-	6LMuDxaOkmkWsE4/eIRp3BvTr0dg3Hy0g6tmOEViy9rOt4ezs2Gk0Qsal/T7uaICiuiv/WMwCPfie
-	aJDGVDITHrDpUpCHAbjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lGMLGWjGeUcQWwTECT5dGb9bkLhl6vjXIo0x+g1ZZxs=; b=TpZxBzxTVGwlFO
+	rhxNncshfvphtzDTvPGo2lcqZ93pHC1h3E40qKj7L8AxI48QFn6pa7cHpLq5mMvi/uXjxVP+B6vRl
+	CoyXVmsnRuT9+cQt7T6B5vikVfSn9bvDbDNx2CKjNz7YqGRqHmcLrxMFIrkVBdRgJLkGWX2H/rOLn
+	+Cv1k73utbuG/oVW0enEv5s8OJERdSpnfuucOIEYxLnKY0CyTWFj/ETTi4NRQ9wMSAcguvrK0gCqh
+	MEy0hV9vjkcX2qJSXRqqdkvpxyqlJfHBIAnPi2Weiqwta7Usx3HawL46kMFYRMvaneZyuFOvWiHP/
+	5FDJWblPnPIXMnoe1Vjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRLJD-000446-IP; Wed, 22 Apr 2020 19:45:23 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jRcm0-00033o-Cg; Thu, 23 Apr 2020 14:24:16 +0000
+Received: from mail-eopbgr1410079.outbound.protection.outlook.com
+ ([40.107.141.79] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRLJB-00042n-2B
- for kexec@lists.infradead.org; Wed, 22 Apr 2020 19:45:22 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200422194518euoutp012cdbabfb094c42320ab7bcfd27a9b9d4~IO_PO-hGQ3095730957euoutp01X
- for <kexec@lists.infradead.org>; Wed, 22 Apr 2020 19:45:18 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200422194518euoutp012cdbabfb094c42320ab7bcfd27a9b9d4~IO_PO-hGQ3095730957euoutp01X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1587584718;
- bh=P+wqsk3UqmGahUgrO96GaoQPhHPbBYhBGBSnT17ZHzg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GJ7Sc3lIIR1xs1JfW5MffHH0HzB9NdAO342L7yrDnCaZy0wQg3NlquWM0vmR1FOa3
- XrHfF7bgFXXt7eegSaA5h5ZuVYwDJenHm6wJCdaJFSMwNhdueAZEBrZi7uT2nkZ6YE
- QxEXekfHh12dgx44pOAOwTmjTGzFx9njgNxDgKV8=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200422194518eucas1p14efc66bd483e0a30c262a15cba870f02~IO_PFYwPA1211912119eucas1p15;
- Wed, 22 Apr 2020 19:45:18 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 70.70.60698.DCE90AE5; Wed, 22
- Apr 2020 20:45:18 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200422194517eucas1p11d2ab9f4f68b891ea963633045f31ce9~IO_OOmEo80152701527eucas1p1M;
- Wed, 22 Apr 2020 19:45:17 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200422194517eusmtrp13c7234955d36b03293c6757de29c96e8~IO_OODHRZ1959319593eusmtrp1y;
- Wed, 22 Apr 2020 19:45:17 +0000 (GMT)
-X-AuditID: cbfec7f5-a29ff7000001ed1a-26-5ea09ecd6936
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id B1.29.08375.DCE90AE5; Wed, 22
- Apr 2020 20:45:17 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200422194517eusmtip2317e70491843f3c8c402258ccc5f059b~IO_OE_-1N2806628066eusmtip2j;
- Wed, 22 Apr 2020 19:45:16 +0000 (GMT)
-From: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-To: horms@verge.net.au, svens@stackframe.org, kexec@lists.infradead.org
-Subject: [PATCH v3] arm: redefine OPT_APPEND and OPT_RAMDISK
-Date: Wed, 22 Apr 2020 21:45:04 +0200
-Message-Id: <20200422194504.14775-1-l.stelmach@samsung.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200422080151.GA32200@vergenet.net>
+ id 1jRcls-0002rF-8y
+ for kexec@lists.infradead.org; Thu, 23 Apr 2020 14:24:09 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=JovJSrpcGKYSAmRlLNcKkW+i6vzmHPEzGwSeP/jJAq1cyZ6MI+Cr2aDQVwzvhNM01hWwLuyW1auX8mfOWZqrXSyL9jan/zyVuPcZiggyCz7Pc9nK92f+6XkMsi6MVZ/fF4Nt9Ca0qug/6PLPF6+K713nTC/JkTlIIS+9jw0OSAKNQL2mJJhkxCFUmfY4ZHMBVuaW4tAxqMfaX1FkwVFD9Bs/wjYYhz9rB5Qs5+JodML1wErl/pvkJy1CYVPim7gR2W3Ju6IqFf1+0+jdV4++BmqsSSt/j2DVdVpG5kv6HiEmkgLXI1J0CghXSkgjXb72LQo7EVNRQ211W6SBaUQFpA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GuU+8xDag5rg/CMxhYHqXflofaVD1aow+qzo60ISN18=;
+ b=OZSPSXVBdfHdJAP6QOYcHyN4eRYGfBc7TsroFyIdzzJ+tGQ4OaRN7tWMFTu5uZ6gCo0gX1XDChz8kBd7mtDoMD7J4AYCak3OiuPULNCz47G4ILA3gA1oWG425qwHuyqP/WX++Od+bhipz4Nrfn5uI/Ia8bwCTFr0tAOabEe1AIVTooq4ZVIkUN+PVZvhlKpw2PSYbEaKQfcP3w7C5TsKAEMBuVSNfTCkMxEdAQIOVhOR0WwttpRUrq13+zDC7GVfS2TSlg0OvsfXx9rS0DEHhtd8bt7xe7eYduhS3Ey3vNmS87oRTtK0zkIpeBQAy5KUUNYOcoT5cRQKFBMG69OR3Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=GuU+8xDag5rg/CMxhYHqXflofaVD1aow+qzo60ISN18=;
+ b=w5ej5+h88TDmpFf6ozs94KATiNecc3aBEEJNLcGM0QPR20De6eq2BtmE+Pc2oTqho4X/ZfCAilQiZMb92sQ1OeEorNqvFY+t1UmWVuT1B2rgWPyWt90jNYikCHiwW94TeyP4+xqsFhf52awvQi2ieHJGf8VdNN2Y5DQ5poIOAes=
+Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com (52.134.241.23) by
+ OSBPR01MB4904.jpnprd01.prod.outlook.com (20.179.182.79) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2937.13; Thu, 23 Apr 2020 14:23:59 +0000
+Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com
+ ([fe80::4ce5:bdba:f97c:bfa3]) by OSBPR01MB1991.jpnprd01.prod.outlook.com
+ ([fe80::4ce5:bdba:f97c:bfa3%7]) with mapi id 15.20.2937.012; Thu, 23 Apr 2020
+ 14:23:59 +0000
+From: =?utf-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+To: Dave Anderson <anderson@redhat.com>, "Discussion list for crash utility
+ usage, maintenance and development" <crash-utility@redhat.com>
+Subject: RE: [Crash-utility] new printk ringbuffer interface
+Thread-Topic: [Crash-utility] new printk ringbuffer interface
+Thread-Index: AdYZequwvAGFPWjgQQyF0VtkXo6MXQ==
+Date: Thu, 23 Apr 2020 14:23:59 +0000
+Message-ID: <OSBPR01MB19916965DAEB1238FEB962F6DDD30@OSBPR01MB1991.jpnprd01.prod.outlook.com>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=k-hagio-ab@nec.com; 
+x-originating-ip: [173.48.69.82]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ae57a8f4-f4eb-4f8a-a530-08d7e791f6fc
+x-ms-traffictypediagnostic: OSBPR01MB4904:
+x-microsoft-antispam-prvs: <OSBPR01MB4904AE5404B10A4B9871440CDDD30@OSBPR01MB4904.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 03827AF76E
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:OSBPR01MB1991.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(39860400002)(136003)(366004)(346002)(376002)(81156014)(86362001)(8676002)(76116006)(66946007)(4326008)(55016002)(71200400001)(66556008)(66476007)(26005)(7696005)(52536014)(6506007)(8936002)(2906002)(5660300002)(186003)(64756008)(66446008)(9686003)(33656002)(316002)(110136005)(85182001)(478600001)(21314003);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nec.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: n146X19Uj0aySbPMz53nNKjzd5H9IDrXyYggagByXYQJN1Xh+AXY0bmNZivr33AwLGyrHUMFocpK9nQAMP8+zuYfG+XOe5SJb3ofMIOiawqn9cWcDMv4hZKm2cs3fBVu+SIhP/6HnUSVeR/bNLTkwRVKoN7SA0ydX4kBlIytQxkFgo+U3H2p8Rrtp0TOiIIMvG++4nFHsVYu9LFPlPGZ/D57w6h3D+nxbuG7iYDNibaKMTgjhhsy1UAddYXU7TViJfY4Hgk7ECYrfKo38IpB7HjwCgVfiKxLdTc9AQNwF/cDvY5e9OpCVlr5QyP7R6XLq3DXiBZBB92nEYmH7WFZ+SNO4x4/ylP7Ius770pCNAJ1fPScAgsykG/HVqHakSq6LNw2i3+HmLSW8jQYxp4/JYMl5o3HY2f9fI3+rqIQwIl3Ql+gcqqvAB7bK9w6a04grHNRaOARWRrYnZ47IWn/vvl4wl0pBFb8HGzje/CTSsYlSgEj2J3jPzGqN+rvGVyx
+x-ms-exchange-antispam-messagedata: v+wduuoEUUOpsSaTE4wUHZy6GRHrZiq4otC3Wz6tYx0Nr1qBFUH9vYHAgxGla05cjFe3PI9z0R/i/KsMZLcbDaMkNMz+JgWEX97YoBUauvoneqStPhB7qgET3waTTHW/QAoDVmAPpTSzRB0ZyKYzSw==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Organization: Samsung R&D Institute Poland
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupgleLIzCtJLcpLzFFi42LZduznOd1z8xbEGbQqWTRv/cposfv0VyaL
- m4dWMFrMOP2R1YHFY/OSeo++LasYPT7e+8PiMefnN5YAligum5TUnMyy1CJ9uwSujKUbmtgK
- ZklW9Mx/ztjA+Eeki5GTQ0LAROL0i7nMXYxcHEICKxglVnSsYodwvjBK3Pl5FirzmVHiy61u
- li5GDrCW/r3iEPHljBLr+qeyQTjPGSUa7h1mB5nLJuAo0b/0BCuILSLgLvHs4zMWEJtZwF5i
- 4qz/bCC2sICNxLQvaxhBbBYBVYm9u56B1fMKWEu0bnnKBnGfvMTsxtNgNqeAkcSzFVfZIWoE
- JU7OfAI2k19AS2JN03Wo+fISzVtng10tITCdXWJz33RGiEEuEjOv/mGCsIUlXh3fwg5hy0ic
- ntwD9Vm9xORJZhC9PYwS2+b8YIGosZa4c+4XG0gNs4CmxPpd+hBhR4l/86ewQ7TySdx4Kwhx
- Ap/EpG3TmSHCvBIdbUIQ1SrAoNoDNVBKovfVCsYJjEqzkDwzC8kDsxB2LWBkXsUonlpanJue
- Wmycl1quV5yYW1yal66XnJ+7iRGYPk7/O/51B+O+P0mHGAU4GJV4eCMUF8QJsSaWFVfmHmKU
- 4GBWEuHd8HBenBBvSmJlVWpRfnxRaU5q8SFGaQ4WJXFe40UvY4UE0hNLUrNTUwtSi2CyTByc
- Ug2MPZ8mXv77rGCZpriZkfj3bMGLNftizU7YSKvpPzZt+pGyYluzX9Tcs0ynpv13fGJXcvV/
- wqNvu1Jn87a2r2Oeq6caUSAe029/Z9LG7NKd9wovV+plun7piGDoClp5/8UhDRl/M0Gl7WYe
- 91JutLMfmigizZ/sulz+wIdvL9cWPYmfqO7tfG6iEktxRqKhFnNRcSIAd4JjFxsDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprBIsWRmVeSWpSXmKPExsVy+t/xe7pn5y2IM5i9gNOieetXRovdp78y
- Wdw8tILRYsbpj6wOLB6bl9R79G1Zxejx8d4fFo85P7+xBLBE6dkU5ZeWpCpk5BeX2CpFG1oY
- 6RlaWugZmVjqGRqbx1oZmSrp29mkpOZklqUW6dsl6GUs3dDEVjBLsqJn/nPGBsY/Il2MHBwS
- AiYS/XvFuxi5OIQEljJKPJg+mREiLiWxcm56FyMnkCks8edaFxtEzVNGiemPb7CDJNgEHCX6
- l55gBakXEfCWeH88HiTMLGAvMXHWfzYQW1jARmLalzWMIDaLgKrE3l3PWEFsXgFridYtT9kg
- 5stLzG48DWZzChhJPFtxFWy8kIChxNoj15kg6gUlTs58wgKyillAXWL9PCGQML+AlsSapuss
- EGvlJZq3zmaewCg0C0nHLISOWUiqFjAyr2IUSS0tzk3PLTbUK07MLS7NS9dLzs/dxAiMlW3H
- fm7ewXhpY/AhRgEORiUe3gjFBXFCrIllxZW5hxglOJiVRHg3PJwXJ8SbklhZlVqUH19UmpNa
- fIjRFOjNicxSosn5wDjOK4k3NDU0t7A0NDc2NzazUBLn7RA4GCMkkJ5YkpqdmlqQWgTTx8TB
- KdXAaBxw6nn4t1mPnAufTSl7Yzv18KKDGnl5D/bWtt5LC/nupPG6+yN37RLrgDz+HxwJv86k
- 6L6P+np7jftsxUPXPj5uss5PXbs/+OLyafk32mad1Hn4reLgBcsiG5bnN97eE/V6dWID69YT
- umwHny3w28hbHuUgfH3x/JSewyk7spkKOXYVz+Cvm6fEUpyRaKjFXFScCAAyQ7XAqwIAAA==
-X-CMS-MailID: 20200422194517eucas1p11d2ab9f4f68b891ea963633045f31ce9
-X-Msg-Generator: CA
-X-RootMTR: 20200422194517eucas1p11d2ab9f4f68b891ea963633045f31ce9
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200422194517eucas1p11d2ab9f4f68b891ea963633045f31ce9
-References: <20200422080151.GA32200@vergenet.net>
- <CGME20200422194517eucas1p11d2ab9f4f68b891ea963633045f31ce9@eucas1p1.samsung.com>
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ae57a8f4-f4eb-4f8a-a530-08d7e791f6fc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 14:23:59.5741 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: fRPsKO/jVKY+dhuEldkJKOh81wtdqUzTc7/d/88eICbzD7aUaqIqSH/VJAmfhdb6Hn6pfG3+nRlKe9IKBkDTrA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB4904
+X-Bad-Reply: 'Re:' in Subject but no References or In-Reply-To headers
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200422_124521_307608_CA4598FF 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200423_072408_378912_5C31E8E6 
+X-CRM114-Status: GOOD (  20.84  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.141.79 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,67 +117,125 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-UmVkZWZpbmUgT1BUX0FQUEVORCB0byBhdm9pZCBjbGFzaCB3aXRoIE9QVF9LRVhFQ19TWVNDQUxM
-X0FVVE8uClJlZGVmaW5lIE9QVF9SQU1ESVNLIHRvIGF2b2lkIHN1Y2ggcHJvYmxlbXMgaW4gdGhl
-IGZ1dHVyZQoKTWlub3IgY2xlYW51cCBpbiBIUFBBIHRvby4KClNpZ25lZC1vZmYtYnk6IMWBdWth
-c3ogU3RlbG1hY2ggPGwuc3RlbG1hY2hAc2Ftc3VuZy5jb20+Ci0tLQpTdmVuLAoKSSByZW1vdmVk
-IHNvbWUgYXJjaCBzcGVjaWZpYyBzaG9ydCBvcHRpb25zIHdoaWNoIHRvIG1lIGRvbid0IHNlZW0K
-YmUgaGFuZGxlZCBpbiB0aGUgZ2V0b3B0X2xvbmcoKSBsb29wIGluIGtleGVjLWVsZi1ocHBhLmMu
-IFBsZWFzZSB0ZWxsIHVzLAppZiBpdCBkb2Vzbid0IGJyZWFrIGFueXRoaW5nLgoKS2luZCByZWdh
-cmRzLArFgVMKCiBrZXhlYy9hcmNoL2FybS9pbmNsdWRlL2FyY2gvb3B0aW9ucy5oICB8IDYgKysr
-LS0tCiBrZXhlYy9hcmNoL2FybS9rZXhlYy16SW1hZ2UtYXJtLmMgICAgICB8IDIgKy0KIGtleGVj
-L2FyY2gvaHBwYS9pbmNsdWRlL2FyY2gvb3B0aW9ucy5oIHwgMiArLQoga2V4ZWMvYXJjaC9ocHBh
-L2tleGVjLWVsZi1ocHBhLmMgICAgICAgfCAyICstCiA0IGZpbGVzIGNoYW5nZWQsIDYgaW5zZXJ0
-aW9ucygrKSwgNiBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9rZXhlYy9hcmNoL2FybS9pbmNs
-dWRlL2FyY2gvb3B0aW9ucy5oIGIva2V4ZWMvYXJjaC9hcm0vaW5jbHVkZS9hcmNoL29wdGlvbnMu
-aAppbmRleCBhYmJmMzQ5Li42ZmFiZmI3IDEwMDY0NAotLS0gYS9rZXhlYy9hcmNoL2FybS9pbmNs
-dWRlL2FyY2gvb3B0aW9ucy5oCisrKyBiL2tleGVjL2FyY2gvYXJtL2luY2x1ZGUvYXJjaC9vcHRp
-b25zLmgKQEAgLTQsMTIgKzQsMTIgQEAKICNkZWZpbmUgT1BUX0RUX05PX09MRF9ST09UCShPUFRf
-TUFYKzApCiAjZGVmaW5lIE9QVF9BUkNIX01BWAkJKE9QVF9NQVgrMSkKIAotI2RlZmluZSBPUFRf
-QVBQRU5ECSdhJwotI2RlZmluZSBPUFRfUkFNRElTSwkncicKICNkZWZpbmUgT1BUX0RUQgkJKE9Q
-VF9BUkNIX01BWCswKQogI2RlZmluZSBPUFRfQVRBR1MJKE9QVF9BUkNIX01BWCsxKQogI2RlZmlu
-ZSBPUFRfSU1BR0VfU0laRQkoT1BUX0FSQ0hfTUFYKzIpCiAjZGVmaW5lIE9QVF9QQUdFX09GRlNF
-VAkoT1BUX0FSQ0hfTUFYKzMpCisjZGVmaW5lIE9QVF9BUFBFTkQJKE9QVF9BUkNIX01BWCs0KQor
-I2RlZmluZSBPUFRfUkFNRElTSwkoT1BUX0FSQ0hfTUFYKzUpCiAKIC8qIE9wdGlvbnMgcmVsZXZh
-bnQgdG8gdGhlIGFyY2hpdGVjdHVyZSAoZXhjbHVkaW5nIGxvYWRlci1zcGVjaWZpYyBvbmVzKSwK
-ICAqIGluIHRoaXMgY2FzZSBub25lOgpAQCAtNDUsNyArNDUsNyBAQAogCXsgImltYWdlLXNpemUi
-LAkJMSwgMCwgT1BUX0lNQUdFX1NJWkUgfSwgXAogCXsgInBhZ2Utb2Zmc2V0IiwJMSwgMCwgT1BU
-X1BBR0VfT0ZGU0VUIH0sCiAKLSNkZWZpbmUgS0VYRUNfQUxMX09QVF9TVFIgS0VYRUNfQVJDSF9P
-UFRfU1RSICJhOnI6czoiCisjZGVmaW5lIEtFWEVDX0FMTF9PUFRfU1RSIEtFWEVDX0FSQ0hfT1BU
-X1NUUiAiIgogCiBleHRlcm4gdW5zaWduZWQgaW50IGtleGVjX2FybV9pbWFnZV9zaXplOwogCmRp
-ZmYgLS1naXQgYS9rZXhlYy9hcmNoL2FybS9rZXhlYy16SW1hZ2UtYXJtLmMgYi9rZXhlYy9hcmNo
-L2FybS9rZXhlYy16SW1hZ2UtYXJtLmMKaW5kZXggOTg0NTkyNS4uZmY2MDllMiAxMDA2NDQKLS0t
-IGEva2V4ZWMvYXJjaC9hcm0va2V4ZWMtekltYWdlLWFybS5jCisrKyBiL2tleGVjL2FyY2gvYXJt
-L2tleGVjLXpJbWFnZS1hcm0uYwpAQCAtNDA5LDcgKzQwOSw3IEBAIGludCB6SW1hZ2VfYXJtX2xv
-YWQoaW50IGFyZ2MsIGNoYXIgKiphcmd2LCBjb25zdCBjaGFyICpidWYsIG9mZl90IGxlbiwKIAkJ
-eyAicGFnZS1vZmZzZXQiLAkxLCAwLCBPUFRfUEFHRV9PRkZTRVQgfSwKIAkJeyAwLCAJCQkwLCAw
-LCAwIH0sCiAJfTsKLQlzdGF0aWMgY29uc3QgY2hhciBzaG9ydF9vcHRpb25zW10gPSBLRVhFQ19B
-UkNIX09QVF9TVFIgImE6cjoiOworCXN0YXRpYyBjb25zdCBjaGFyIHNob3J0X29wdGlvbnNbXSA9
-IEtFWEVDX0FSQ0hfT1BUX1NUUiAiIjsKIAogCS8qCiAJICogUGFyc2UgdGhlIGNvbW1hbmQgbGlu
-ZSBhcmd1bWVudHMKZGlmZiAtLWdpdCBhL2tleGVjL2FyY2gvaHBwYS9pbmNsdWRlL2FyY2gvb3B0
-aW9ucy5oIGIva2V4ZWMvYXJjaC9ocHBhL2luY2x1ZGUvYXJjaC9vcHRpb25zLmgKaW5kZXggYTkz
-NjE0MC4uZTlkZWI1MSAxMDA2NDQKLS0tIGEva2V4ZWMvYXJjaC9ocHBhL2luY2x1ZGUvYXJjaC9v
-cHRpb25zLmgKKysrIGIva2V4ZWMvYXJjaC9ocHBhL2luY2x1ZGUvYXJjaC9vcHRpb25zLmgKQEAg
-LTE3LDcgKzE3LDcgQEAKIAl7ICJyYW1kaXNrIiwJCTEsIDAsIE9QVF9SQU1ESVNLIH0sCiAKIAot
-I2RlZmluZSBLRVhFQ19BTExfT1BUX1NUUiBLRVhFQ19BUkNIX09QVF9TVFIgImE6cjpzOiIKKyNk
-ZWZpbmUgS0VYRUNfQUxMX09QVF9TVFIgS0VYRUNfQVJDSF9PUFRfU1RSICIiCiAKIC8qIFNlZSB0
-aGUgb3RoZXIgYXJjaGl0ZWN0dXJlcyBmb3IgZGV0YWlscyBvZiB0aGVzZTsgSFBQQSBoYXMgbm8K
-ICAqIGxvYWRlci1zcGVjaWZpYyBvcHRpb25zIHlldC4KZGlmZiAtLWdpdCBhL2tleGVjL2FyY2gv
-aHBwYS9rZXhlYy1lbGYtaHBwYS5jIGIva2V4ZWMvYXJjaC9ocHBhL2tleGVjLWVsZi1ocHBhLmMK
-aW5kZXggZDNlZjBlOS4uNDc0YTkxOSAxMDA2NDQKLS0tIGEva2V4ZWMvYXJjaC9ocHBhL2tleGVj
-LWVsZi1ocHBhLmMKKysrIGIva2V4ZWMvYXJjaC9ocHBhL2tleGVjLWVsZi1ocHBhLmMKQEAgLTc2
-LDcgKzc2LDcgQEAgaW50IGVsZl9ocHBhX2xvYWQoaW50IGFyZ2MsIGNoYXIgKiphcmd2LCBjb25z
-dCBjaGFyICpidWYsIG9mZl90IGxlbiwKIAkJeyAwLCAgICAgICAgICAgICAgICAgICAgMCwgTlVM
-TCwgMCB9LAogCX07CiAKLQlzdGF0aWMgY29uc3QgY2hhciBzaG9ydF9vcHRpb25zW10gPSBLRVhF
-Q19BTExfT1BUX1NUUiAiZCI7CisJc3RhdGljIGNvbnN0IGNoYXIgc2hvcnRfb3B0aW9uc1tdID0g
-S0VYRUNfQUxMX09QVF9TVFI7CiAKIAl3aGlsZSAoKG9wdCA9IGdldG9wdF9sb25nKGFyZ2MsIGFy
-Z3YsIHNob3J0X29wdGlvbnMsIG9wdGlvbnMsIDApKSAhPQogCQktMSkgewotLSAKMi4yNS4wCgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFp
-bGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhlYwo=
+ccing kexec list, vmcore-dmesg also uses vmcoreinfo related to printk..
+
+> -----Original Message-----
+> 
+> ----- Original Message -----
+> > Hello Dave,
+> >
+> > You may or may not be aware that we are working on replacing [0] the
+> > Linux printk ringbuffer. Rather than a single buffer containing a single
+> > struct type, the new ringbuffer makes use of several different structs.
+> 
+> Yes, I am most definitely aware...
+> 
+> >
+> > I am writing to ask your advice about how this should be exported for
+> > the crash utility. Should all struct sizes and field offsets be
+> > exported? It would look something like this:
+> >
+> >         VMCOREINFO_SYMBOL(prb);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(printk_ringbuffer);
+> >         VMCOREINFO_OFFSET(printk_ringbuffer, desc_ring);
+> >         VMCOREINFO_OFFSET(printk_ringbuffer, text_data_ring);
+> >         VMCOREINFO_OFFSET(printk_ringbuffer, dict_data_ring);
+> >         VMCOREINFO_OFFSET(printk_ringbuffer, fail);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(prb_desc_ring);
+> >         VMCOREINFO_OFFSET(prb_desc_ring, count_bits);
+> >         VMCOREINFO_OFFSET(prb_desc_ring, descs);
+> >         VMCOREINFO_OFFSET(prb_desc_ring, head_id);
+> >         VMCOREINFO_OFFSET(prb_desc_ring, tail_id);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(prb_desc);
+> >         VMCOREINFO_OFFSET(prb_desc, info);
+> >         VMCOREINFO_OFFSET(prb_desc, state_var);
+> >         VMCOREINFO_OFFSET(prb_desc, text_blk_lpos);
+> >         VMCOREINFO_OFFSET(prb_desc, dict_blk_lpos);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(prb_data_blk_lpos);
+> >         VMCOREINFO_OFFSET(prb_data_blk_lpos, begin);
+> >         VMCOREINFO_OFFSET(prb_data_blk_lpos, next);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(printk_info);
+> >         VMCOREINFO_OFFSET(printk_info, seq);
+> >         VMCOREINFO_OFFSET(printk_info, ts_nsec);
+> >         VMCOREINFO_OFFSET(printk_info, text_len);
+> >         VMCOREINFO_OFFSET(printk_info, dict_len);
+> >         VMCOREINFO_OFFSET(printk_info, caller_id);
+> >
+> >         VMCOREINFO_STRUCT_SIZE(prb_data_ring);
+> >         VMCOREINFO_OFFSET(prb_data_ring, size_bits);
+> >         VMCOREINFO_OFFSET(prb_data_ring, data);
+> >         VMCOREINFO_OFFSET(prb_data_ring, head_id);
+> >         VMCOREINFO_OFFSET(prb_data_ring, tail_id);
+> >
+> > Or would it be enough to just recognize the new "prb" symbol and have
+> > all the structures defined in the crash utility? If the latter is
+> > preferred, should some sort of version number be exported? Or is the
+> > kernel version number enough?
+
+first I don't think we can depend on the kernel version because distribution
+kernels backport upstream patches.  So we will need a version number of the
+ringbuffer if we choose that way.
+
+I think that "exporting all things" can sometimes reflect changes in kernel
+automatically and can reduce tool side effort more than "exporting a version
+number".  But the former requires a lot of entries and it might be hard for
+us to track the changes.  So having an explicit version might be better and
+I'm ok with the latter.
+
+But I hope no missing update of the version number..
+Any thoughts from vmcore-dmesg side?
+
+Thanks,
+Kazu
+
+> >
+> > I appreciate your feedback.
+> >
+> > John Ogness
+> 
+> With respect to the crash utility, there are two answers.
+> 
+> When running crash session normally, i.e. running "crash vmlinux vmcore", the runtime
+> "log" command does not use any VMCOREINFO entries that happen to be attached to a dumpfile.
+> Since crash has the vmlinux debuginfo data available, it uses its own interfaces to get
+> all kernel symbol and structure related information.
+> 
+> But there is a little-used capability where the the vmlinux file is not required,
+> but rather just the vmcore, in its "crash --log vmcore" feature.  That functionality
+> does require the VMCOREINFO entries to extract/dump the log, and exit.  Honestly I wish
+> I had never even introduced that feature.  And I wonder if it were deprecated,
+> would anybody care?
+> 
+> However, your question is highly relevant to the makedumpfile(8) facility
+> for its "makedumpfile --dump-dmesg" option.  Since it doesn't have the
+> luxury of a vmlinux file, it needs all of the VMCOREINF_xxx items.  Kazuhito
+> Hagio is the makedumpfile maintainer, and since he is the primary customer
+> of the VMCOREINFO entries, he would be a better person to answer your
+> question.
+> 
+> That being said, due the sheer number VMCOREINFO entries required, I like
+> your idea of providing a single version number.  But I defer to Kazu for
+> his preference.
+> 
+> Thanks,
+>   Dave
+> 
+> 
+> 
+> 
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
