@@ -2,112 +2,136 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CBF21B6469
-	for <lists+kexec@lfdr.de>; Thu, 23 Apr 2020 21:21:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC4141B6F1D
+	for <lists+kexec@lfdr.de>; Fri, 24 Apr 2020 09:40:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V7PPQGaHKRUPnbhXNtI2PazM0fdZqsTnIjQC+ngppC8=; b=adw2T2wo5aubOC
-	Pui3dXazjriXmM1oWrrJTx0/qR5l2DVjWyrNeQhyxFqQ/w2O3vq6QsgklUv2QfQ58/WKL4cXtIMQe
-	ENzHx6fcAInCT3zHdglDdfdt/6NfXpB/KoK7hq/aRPVoH3udmNp7j9pFGgwtaMzazHtry6MbMOD/3
-	FOjEFnRu0+c/zO/0zhwwY/8jI+K4efGJvUcWidF0wEdfIOGk79CBzremy8rBX8Vj0u4VTO7faKLm9
-	Kg8pl6jOTwfC/IUXekIMM3YPwvvy2RwAn3cYsa6+C7R4eZjoQvyZsmMBGWE9l4POkJE1Qb954UlHT
-	Ppk3wma3VWZ06006+SjQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4UsfHUeQv4JREWgNfLxyI/CTgyOk8DsMfiM9CGFxndE=; b=MNR5mpTur3UsEG
+	UcLrzFZ1ssyhqzsl+pKzmOby/I8OepnJb+u6gkPsnwKyKFlGsJgHKKynKXkyOHyH12VZv08lLQPB7
+	RsWOdiJtXYO94HfF5KsPluSJkbmFnkgwVzUarn4w64G7RLQcFYaNN1DgyhNqnjgw6iHrlIUevKZ7A
+	fnSRqMj+GWdHuTbKH93rM3d6shvBXhDjidTmgdxapLpFYQeZcTT1U9//gg5cvqX+pLbfxDviYdMSZ
+	cwWV/4tGaWWdEBdAHr59wAfzJJVXgIKcagw5s322iQ1SKskx/PxLqPc5AStthsJ2N70RWNJdw/B7g
+	nPb+3wOp3+KJpMBU7XxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jRhPY-0002KP-R9; Thu, 23 Apr 2020 19:21:24 +0000
-Received: from mail-eopbgr1410051.outbound.protection.outlook.com
- ([40.107.141.51] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
+	id 1jRswE-0000jg-5f; Fri, 24 Apr 2020 07:39:54 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jRhPV-0002EQ-PH
- for kexec@lists.infradead.org; Thu, 23 Apr 2020 19:21:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=S0bnt4fMS9GzA6Ii1m+dfpRj/bZYe4VeOCBjtdf9Ktth1QQkmX8LqDP8sEEHqLL9cCTDMCL6LyXm/QbquirbQ0ou1TaEDPUm5mM+ysxzr3t9Tc4JCmGvhxri9xG0T+aetvKCE+NL1nNa9Fam/DUGStF9+4B+2q9Qi+9pDyqS8Ez3hTWmUVrQv4e5pKV4TX34IVMCdVvpwBDv6qajx1ibd01kBCchhe+jwKF1wK2CWJVrjAiNQFDAtRwRqKGMZM9lTwF1KQzFKb7dxRtdSfQ++ggmm6cn2iJbLGjPwGifZGpPWK+CmxGWA3VWv8g38vTywfM62JhqhwsHTVg0yExMOA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s56Wdc76VhTc9DGz8/jCYO2ZNcJdazVNKoQgay35XEw=;
- b=CFCAAbLzUHHw4LE6eJtbb5wxQfrQJV0dWS6DMbwhUmMngd+g5NZh8ASVe7I9tjNZZ3E9r8xUhTMaL+9txwThju5etuv+3KBYvXXXDxy5eyaH6xXqFRhCYlJTLJaoNQgjYnxR87txN74HV8xiF8FbqPhXzfJq2wxj0crhbYk8daBtX63LRFJpA8r4uOTc2U93jWn8UgrJieOur8IDb5oAiAYY+z3cnX2T1syJn4L18eHlrx1JLN5/ymgef6o8PrPEYE2vi52tk8PP8yeNZRFn6maf/wvlCA5yz1ISyqrRaalPdd2SdnGOowaBUfrmYc6KjY6fCW/ZBoFbwTkW0RfZVg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
- header.d=nec.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s56Wdc76VhTc9DGz8/jCYO2ZNcJdazVNKoQgay35XEw=;
- b=eQxh2l29h1cbKxaZPrPJRvUEOB0bEe+xtnbn8loH9RleXDBNCi3paq4iCaCPBxpsdUDzcd5otpktzJu9zvNPIirf7KJEjcXirV75gU53h8lQQZhraoeVnTx2PEKpWk7KE7rSCFfZYfDtrKR2JOflzQmMuqOdRhAToOus3j/zTRw=
-Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com (52.134.241.23) by
- OSBPR01MB2391.jpnprd01.prod.outlook.com (52.134.254.206) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.13; Thu, 23 Apr 2020 19:21:14 +0000
-Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com
- ([fe80::4ce5:bdba:f97c:bfa3]) by OSBPR01MB1991.jpnprd01.prod.outlook.com
- ([fe80::4ce5:bdba:f97c:bfa3%7]) with mapi id 15.20.2937.012; Thu, 23 Apr 2020
- 19:21:14 +0000
-From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
- <k-hagio-ab@nec.com>
-To: Dave Anderson <anderson@redhat.com>
-Subject: RE: [Crash-utility] new printk ringbuffer interface
-Thread-Topic: [Crash-utility] new printk ringbuffer interface
-Thread-Index: AdYZequwvAGFPWjgQQyF0VtkXo6MXUxNWuXETEtEHDCExK3C4A==
-Date: Thu, 23 Apr 2020 19:21:14 +0000
-Message-ID: <OSBPR01MB1991F08228D7E9BDBEF07105DDD30@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-References: <OSBPR01MB19916965DAEB1238FEB962F6DDD30@OSBPR01MB1991.jpnprd01.prod.outlook.com>
- <421536467.24687472.1587652980905.JavaMail.zimbra@redhat.com>
- <OSBPR01MB1991CB3EC9C98B2387C61A1EDDD30@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-In-Reply-To: <OSBPR01MB1991CB3EC9C98B2387C61A1EDDD30@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=k-hagio-ab@nec.com; 
-x-originating-ip: [173.48.69.82]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 4fd878b5-38e1-454f-972c-08d7e7bb7d39
-x-ms-traffictypediagnostic: OSBPR01MB2391:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSBPR01MB239149F4B3BC28763F12331FDDD30@OSBPR01MB2391.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 03827AF76E
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OSBPR01MB1991.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(39860400002)(366004)(136003)(66556008)(2940100002)(64756008)(66476007)(66446008)(66946007)(81156014)(85182001)(4326008)(86362001)(71200400001)(7696005)(26005)(76116006)(478600001)(2906002)(54906003)(8676002)(316002)(6506007)(5660300002)(52536014)(186003)(33656002)(6916009)(9686003)(55016002)(8936002);
- DIR:OUT; SFP:1101; 
-received-spf: None (protection.outlook.com: nec.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: AtMoC7PFX0GTdljFgP4xfJwABbJp1FsIdwXXeBb+LEwDWxTgCrgmFnF9ltm6O2G6lt6Mbd5gE78uxk8YnWkAvKz22KBhdfhMYBESERQC6yBj5d/feLKXHUGVvqqOYbrfn2MZ2SSrqZRO82AWr/huLcuAk2TEc9akbZ4WCJm9WtRHD1A7CXJ8AlaoDl2Lj5PGueLFEQYZzGm7EhVdJ+pJN8i2exTSxg953ov5THnlzuJ1M6ZBXWBK0i409eETN+Nn4sADAqq0Duh7kmy9Z0vHixzqwdPUyR+kn9VEWDhHNDIu9A727TbSP5yiTuHDKqoDEIK9CgzmvSJKuzGWTZqi3/Tbui2wtK/HWxBKKqxIqW9MZ96EMzWFZAfzFGrhSBjIqTq3j41nKLxMUESzwxufAJry3gL9jyda3RXY3/F4ir3KeTSHAxN5jSRCcZJOgOey
-x-ms-exchange-antispam-messagedata: hqe5pMwRUUw2AlVC/ECuT1wp7iVW1g6ZqXI+f9M0lRu8zt6W6jCdHxZFreeaqWYWECGir8LwF6vi0qcF3N2bi3scaU9hwJl/lv1Z7smmC0YEh/GEBuHnx4YYJ2tXUKEcZ3UQNQx+UJLNlMIJQ5QSfg==
+ id 1jRsvt-0000Fw-7Y
+ for kexec@lists.infradead.org; Fri, 24 Apr 2020 07:39:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1587713972;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=aNxlKYwgJG4hi61htBIsmsJO7dK9IBMS50zV2gyXdls=;
+ b=i/Pu0FR/dlRxEQhwYq+orrU6ImZb5YGc2VyxCfhr/1ZTiw5rcBYWutHFeizPr5oGNBiCXh
+ Qm832flTsB1eAgxP6WcMsL6YkwpGih0mBV6WDeRaLPO6N0+vkQWqAQLXCTQbWOXbaRVcqp
+ rXjK5VTDjskfcLTPgyYASqNIsDMZPnA=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-470-RfVNamZaMp2cTOrg0kCeAA-1; Fri, 24 Apr 2020 03:39:30 -0400
+X-MC-Unique: RfVNamZaMp2cTOrg0kCeAA-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E926D461;
+ Fri, 24 Apr 2020 07:39:28 +0000 (UTC)
+Received: from [10.36.113.138] (ovpn-113-138.ams2.redhat.com [10.36.113.138])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A049D600E8;
+ Fri, 24 Apr 2020 07:39:26 +0000 (UTC)
+Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
+ kexec image
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-2-james.morse@arm.com>
+ <87d088h4k8.fsf@x220.int.ebiederm.org>
+ <a694cea6-4449-c77a-98f7-bd7a49cf47fc@arm.com>
+ <87y2qn1r18.fsf@x220.int.ebiederm.org>
+ <a29beedb-750b-b838-6c2a-6e47ade2186a@redhat.com>
+ <87ftcuxj1a.fsf@x220.int.ebiederm.org>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
+ dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
+ QZLQMzNE74ap+GDK0wnacPQFpcG1AE9RMq3aeErY5tujekBS32jfC/7AnH7I0v1v1TbbK3Gp
+ XNeiN4QroO+5qaSr0ID2sz5jtBLRb15RMre27E1ImpaIv2Jw8NJgW0k/D1RyKCwaTsgRdwuK
+ Kx/Y91XuSBdz0uOyU/S8kM1+ag0wvsGlpBVxRR/xw/E8M7TEwuCZQArqqTCmkG6HGcXFT0V9
+ PXFNNgV5jXMQRwU0O/ztJIQqsE5LsUomE//bLwzj9IVsaQpKDqW6TAPjcdBDPLHvriq7kGjt
+ WhVhdl0qEYB8lkBEU7V2Yb+SYhmhpDrti9Fq1EsmhiHSkxJcGREoMK/63r9WLZYI3+4W2rAc
+ UucZa4OT27U5ZISjNg3Ev0rxU5UH2/pT4wJCfxwocmqaRr6UYmrtZmND89X0KigoFD/XSeVv
+ jwBRNjPAubK9/k5NoRrYqztM9W6sJqrH8+UWZ1Idd/DdmogJh0gNC0+N42Za9yBRURfIdKSb
+ B3JfpUqcWwE7vUaYrHG1nw54pLUoPG6sAA7Mehl3nd4pZUALHwARAQABtCREYXZpZCBIaWxk
+ ZW5icmFuZCA8ZGF2aWRAcmVkaGF0LmNvbT6JAlgEEwEIAEICGwMFCQlmAYAGCwkIBwMCBhUI
+ AgkKCwQWAgMBAh4BAheAFiEEG9nKrXNcTDpGDfzKTd4Q9wD/g1oFAl3pImkCGQEACgkQTd4Q
+ 9wD/g1o+VA//SFvIHUAvul05u6wKv/pIR6aICPdpF9EIgEU448g+7FfDgQwcEny1pbEzAmiw
+ zAXIQ9H0NZh96lcq+yDLtONnXk/bEYWHHUA014A1wqcYNRY8RvY1+eVHb0uu0KYQoXkzvu+s
+ Dncuguk470XPnscL27hs8PgOP6QjG4jt75K2LfZ0eAqTOUCZTJxA8A7E9+XTYuU0hs7QVrWJ
+ jQdFxQbRMrYz7uP8KmTK9/Cnvqehgl4EzyRaZppshruKMeyheBgvgJd5On1wWq4ZUV5PFM4x
+ II3QbD3EJfWbaJMR55jI9dMFa+vK7MFz3rhWOkEx/QR959lfdRSTXdxs8V3zDvChcmRVGN8U
+ Vo93d1YNtWnA9w6oCW1dnDZ4kgQZZSBIjp6iHcA08apzh7DPi08jL7M9UQByeYGr8KuR4i6e
+ RZI6xhlZerUScVzn35ONwOC91VdYiQgjemiVLq1WDDZ3B7DIzUZ4RQTOaIWdtXBWb8zWakt/
+ ztGhsx0e39Gvt3391O1PgcA7ilhvqrBPemJrlb9xSPPRbaNAW39P8ws/UJnzSJqnHMVxbRZC
+ Am4add/SM+OCP0w3xYss1jy9T+XdZa0lhUvJfLy7tNcjVG/sxkBXOaSC24MFPuwnoC9WvCVQ
+ ZBxouph3kqc4Dt5X1EeXVLeba+466P1fe1rC8MbcwDkoUo65Ag0EVcufkQEQAOfX3n0g0fZz
+ Bgm/S2zF/kxQKCEKP8ID+Vz8sy2GpDvveBq4H2Y34XWsT1zLJdvqPI4af4ZSMxuerWjXbVWb
+ T6d4odQIG0fKx4F8NccDqbgHeZRNajXeeJ3R7gAzvWvQNLz4piHrO/B4tf8svmRBL0ZB5P5A
+ 2uhdwLU3NZuK22zpNn4is87BPWF8HhY0L5fafgDMOqnf4guJVJPYNPhUFzXUbPqOKOkL8ojk
+ CXxkOFHAbjstSK5Ca3fKquY3rdX3DNo+EL7FvAiw1mUtS+5GeYE+RMnDCsVFm/C7kY8c2d0G
+ NWkB9pJM5+mnIoFNxy7YBcldYATVeOHoY4LyaUWNnAvFYWp08dHWfZo9WCiJMuTfgtH9tc75
+ 7QanMVdPt6fDK8UUXIBLQ2TWr/sQKE9xtFuEmoQGlE1l6bGaDnnMLcYu+Asp3kDT0w4zYGsx
+ 5r6XQVRH4+5N6eHZiaeYtFOujp5n+pjBaQK7wUUjDilPQ5QMzIuCL4YjVoylWiBNknvQWBXS
+ lQCWmavOT9sttGQXdPCC5ynI+1ymZC1ORZKANLnRAb0NH/UCzcsstw2TAkFnMEbo9Zu9w7Kv
+ AxBQXWeXhJI9XQssfrf4Gusdqx8nPEpfOqCtbbwJMATbHyqLt7/oz/5deGuwxgb65pWIzufa
+ N7eop7uh+6bezi+rugUI+w6DABEBAAGJAiUEGAECAA8FAlXLn5ECGwwFCQlmAYAACgkQTd4Q
+ 9wD/g1qA6w/+M+ggFv+JdVsz5+ZIc6MSyGUozASX+bmIuPeIecc9UsFRatc91LuJCKMkD9Uv
+ GOcWSeFpLrSGRQ1Z7EMzFVU//qVs6uzhsNk0RYMyS0B6oloW3FpyQ+zOVylFWQCzoyyf227y
+ GW8HnXunJSC+4PtlL2AY4yZjAVAPLK2l6mhgClVXTQ/S7cBoTQKP+jvVJOoYkpnFxWE9pn4t
+ H5QIFk7Ip8TKr5k3fXVWk4lnUi9MTF/5L/mWqdyIO1s7cjharQCstfWCzWrVeVctpVoDfJWp
+ 4LwTuQ5yEM2KcPeElLg5fR7WB2zH97oI6/Ko2DlovmfQqXh9xWozQt0iGy5tWzh6I0JrlcxJ
+ ileZWLccC4XKD1037Hy2FLAjzfoWgwBLA6ULu0exOOdIa58H4PsXtkFPrUF980EEibUp0zFz
+ GotRVekFAceUaRvAj7dh76cToeZkfsjAvBVb4COXuhgX6N4pofgNkW2AtgYu1nUsPAo+NftU
+ CxrhjHtLn4QEBpkbErnXQyMjHpIatlYGutVMS91XTQXYydCh5crMPs7hYVsvnmGHIaB9ZMfB
+ njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
+ FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
+Organization: Red Hat GmbH
+Message-ID: <4ca41c5f-4cbf-342c-528a-d274c4e2ca10@redhat.com>
+Date: Fri, 24 Apr 2020 09:39:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-OriginatorOrg: nec.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4fd878b5-38e1-454f-972c-08d7e7bb7d39
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Apr 2020 19:21:14.1341 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: euMkwM6snZjthTD15wRIIuqFCTwgvxZr7tdWxLOhMoQ6qyZv8iZec93jKK6wv/ak6RwhQmPUZYZFCn3TZPqypg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB2391
+In-Reply-To: <87ftcuxj1a.fsf@x220.int.ebiederm.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200423_122121_874754_DB10AB09 
-X-CRM114-Status: GOOD (  22.59  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200424_003933_350943_87FEE664 
+X-CRM114-Status: GOOD (  24.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.141.51 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [205.139.110.120 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,115 +143,112 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "kexec@lists.infradead.org" <kexec@lists.infradead.org>, "Discussion list
- for crash utility usage,
- maintenance and development" <crash-utility@redhat.com>
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, James Morse <james.morse@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> > -----Original Message-----
-> > ----- Original Message -----
-> > > ccing kexec list, vmcore-dmesg also uses vmcoreinfo related to printk..
-> > >
-> > > > -----Original Message-----
-> > > >
-> > > > ----- Original Message -----
-> > > > > Hello Dave,
-> > > > >
-> > > > > You may or may not be aware that we are working on replacing [0] the
-> > > > > Linux printk ringbuffer. Rather than a single buffer containing a single
-> > > > > struct type, the new ringbuffer makes use of several different structs.
-> > > >
-> > > > Yes, I am most definitely aware...
-> > > >
-> > > > >
-> > > > > I am writing to ask your advice about how this should be exported for
-> > > > > the crash utility. Should all struct sizes and field offsets be
-> > > > > exported? It would look something like this:
-> > > > >
-> > > > >         VMCOREINFO_SYMBOL(prb);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(printk_ringbuffer);
-> > > > >         VMCOREINFO_OFFSET(printk_ringbuffer, desc_ring);
-> > > > >         VMCOREINFO_OFFSET(printk_ringbuffer, text_data_ring);
-> > > > >         VMCOREINFO_OFFSET(printk_ringbuffer, dict_data_ring);
-> > > > >         VMCOREINFO_OFFSET(printk_ringbuffer, fail);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(prb_desc_ring);
-> > > > >         VMCOREINFO_OFFSET(prb_desc_ring, count_bits);
-> > > > >         VMCOREINFO_OFFSET(prb_desc_ring, descs);
-> > > > >         VMCOREINFO_OFFSET(prb_desc_ring, head_id);
-> > > > >         VMCOREINFO_OFFSET(prb_desc_ring, tail_id);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(prb_desc);
-> > > > >         VMCOREINFO_OFFSET(prb_desc, info);
-> > > > >         VMCOREINFO_OFFSET(prb_desc, state_var);
-> > > > >         VMCOREINFO_OFFSET(prb_desc, text_blk_lpos);
-> > > > >         VMCOREINFO_OFFSET(prb_desc, dict_blk_lpos);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(prb_data_blk_lpos);
-> > > > >         VMCOREINFO_OFFSET(prb_data_blk_lpos, begin);
-> > > > >         VMCOREINFO_OFFSET(prb_data_blk_lpos, next);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(printk_info);
-> > > > >         VMCOREINFO_OFFSET(printk_info, seq);
-> > > > >         VMCOREINFO_OFFSET(printk_info, ts_nsec);
-> > > > >         VMCOREINFO_OFFSET(printk_info, text_len);
-> > > > >         VMCOREINFO_OFFSET(printk_info, dict_len);
-> > > > >         VMCOREINFO_OFFSET(printk_info, caller_id);
-> > > > >
-> > > > >         VMCOREINFO_STRUCT_SIZE(prb_data_ring);
-> > > > >         VMCOREINFO_OFFSET(prb_data_ring, size_bits);
-> > > > >         VMCOREINFO_OFFSET(prb_data_ring, data);
-> > > > >         VMCOREINFO_OFFSET(prb_data_ring, head_id);
-> > > > >         VMCOREINFO_OFFSET(prb_data_ring, tail_id);
-> > > > >
-> > > > > Or would it be enough to just recognize the new "prb" symbol and have
-> > > > > all the structures defined in the crash utility? If the latter is
-> > > > > preferred, should some sort of version number be exported? Or is the
-> > > > > kernel version number enough?
-> > >
-> > > first I don't think we can depend on the kernel version because distribution
-> > > kernels backport upstream patches.  So we will need a version number of the
-> > > ringbuffer if we choose that way.
-> >
-> > With respect to the kernel version, you are absolutely correct, as we've been
-> > burnt by that before with backports to distribution and the upstream longterm
-> > kernels.  But I think John was talking about exporting a printk-structure-set
-> > version number, so I think we're on the same page.
-> >
-> > Also, if we go the version-number route, there would still not be a requirement
-> > for the crash utility to duplicate the kernel data structures in its sources.
-> > As John's proof-of-concept patch showed, it can still use the traditional
-> > manner of getting structure sizes and member offsets.  With the version number
-> > exported, there may have to be a few small adjustments in the MEMBER_OFFSET_INIT()
-> > calls, but it would be fairly straight-forward to maintain.
-> >
-> > But of course makedumpfile would have to replicate the kernel data structures.
+On 23.04.20 18:29, Eric W. Biederman wrote:
+> David Hildenbrand <david@redhat.com> writes:
 > 
-> Ah, indeed.  I vaguely thought makedumpfile also might be able to do like crash
-> by setting sizes and offsets for each version..  But it will be hard to set them
-> manually for every architectures.  I'll think about it more.
+>>> The confusing part was talking about memory being still in use,
+>>> that is actually scheduled for use in the future.
+>>
+>> +1
+>>
+>>>
+>>>>> Usually somewhere in the loaded image
+>>>>> is a copy of the memory map at the time the kexec kernel was loaded.
+>>>>> That will invalidate the memory map as well.
+>>>>
+>>>> Ah, unconditionally. Sure, x86 needs this.
+>>>> (arm64 re-discovers the memory map from firmware tables after kexec)
+>>
+>> Does this include hotplugged DIMMs e.g., under KVM?
+>> [...]
+> 
+> As far as I know.  If the memory map changes we need to drop the loaded
+> image.
+> 
+> 
+> Having thought about it a little more I suspect it would be the
+> other way and just block all hotplug actions after a kexec_load.
+> As all we expect to happen is running shutdown scripts.
+> 
+> If blocking the hotplug action uses printk to print a nice message
+> saying something like: "Hotplug blocked because of a loaded kexec image",
+> then people will be able to figure out what is going on and
+> call kexec -u if they haven't started the shutdown scripts yet.
+> 
+> 
+> Either way it is something simple and unconditional that will make
+> things work.
+> 
 
-makedumpfile has some architecture or kernel version specific values in it and
-switches them by conditions, but the reason why we can do this is that they are
-mostly constants that rarely change and can be got from the kernel source easily.
-With respect to structure sizes and memger offsets, I don't think of a way to do
-this easily.
+Personally, I consider memory hotplug more important than keeping loaded
+kexec data alive (just because somebody once decided to do a "kexec -l"
+and never did a "kexec -e" we should not block any memory hot(un)plug -
+especially in virtualized environments - for all eternity).
 
-And then if we define all the structures in makedumpfile with the version number,
-how can we implement them and switch for each version?  The new ringbuffer is
-structured very much, I cannot imagine that it can be handled efficiently.
+So IMHO we would invalidate loaded kexec data (not the crashkernel, of
+course) on memory hot(un)plug and print a warning. In addition, we can
+let kexec-tools try to reload whatever they loaded after getting
+notified that something changed.
 
-Any ideas?
+The "something changed" is visible to user space e.g., via udev events
+for /sys/devices/memory/memoryX/
 
-If there is no efficient way, we will need all of the entries in VMCOREINFO.
+>>>>> All of this should be for a very brief window of a few seconds, as
+>>>>> the loaded kexec image is quite short.
+>>>>
+>>>> It seems I'm the outlier anticipating anything could happen between
+>>>> those syscalls.
+>>>
+>>> The design is:
+>>> 	sys_kexec_load()
+>>> 	shutdown scripts
+>>>         sys_reboot(LINUX_REBOOT_CMD_KEXEC);
+>>>
+>>> There are two system call simply so that the shutdown scripts can run.
+>>> Now maybe someone somewhere does something different but that is not
+>>> expected.
+>>>
+>>> Only the kexec on panic kernel is expected to persist somewhat
+>>> indefinitely.  But that should be in memory that is reserved from boot
+>>> time, and so the memory hotplug should have enough visibility to not
+>>> allow that memory to be given up.
+>>
+>> Yes, and AFAIK, memory blocks which hold the reserved crashkernel area
+>> can usually not get offlined and, therefore, the memory cannot get removed.
+>>
+>> Interestingly, s390x even has a hotplug notifier for that
+>>
+>> arch/s390/kernel/setup.c:kdump_mem_notifier()
+>>
+>> (offlining of memory on s390x can result in memory getting depopulated
+>> in the hypervisor, so after it would have been offlined, it would no
+>> longer be accessible. I somewhat doubt that this notifier is really
+>> needed - all pages in the crashkernel area should look like ordinary
+>> allocated pages when the area is reserved early during boot via the
+>> memblock allocator, and therefore offlining cannot succeed. But that's a
+>> different story - and I suspect this is a leftover from pre-memblock times.)
+> 
+> It might be worth seeing if that is true, or if we need to generalize the
+> s390x code.
 
+I'll try to find some time to test if the s390x handler is still relevant.
+
+
+-- 
 Thanks,
-Kazu
+
+David / dhildenb
 
 
 _______________________________________________
