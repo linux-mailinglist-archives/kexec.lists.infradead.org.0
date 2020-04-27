@@ -2,41 +2,46 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 391AE1B9763
-	for <lists+kexec@lfdr.de>; Mon, 27 Apr 2020 08:25:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25E211B975F
+	for <lists+kexec@lfdr.de>; Mon, 27 Apr 2020 08:25:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mvRnqP0lZmIa1/fcBjp8AJ4HBPwpItngxsQw/y+Aev0=; b=TFV
-	xVzS/tE5+2DVFMfK1vbt9+HK21dP3ymhHnOakSIy0i4DmrZCmMMYNaIRO196Nv7XNPmzhUrycC3x6
-	SGzj1I/1o1DRmrhRK7q148SHXZ5Gl7NQHRX7Bp9LMPnWGYisWFWIXR8+cAVGyEsoOmDrTv/E581PF
-	n5HJWekyGIrZmHt3Lr8AInTixwZm4NCYUkeZSqgb9mUQSurMsfdpa1tc3UrBW70GYmtvKLqIWPrMt
-	NOfu0OgWgT3ECLHESyJwI1XLVC6cDOw10Ekls3k+jseZKvZ2rcJOD3Ni8MTWzpYcXRNe35eYeDOuS
-	HLRJRbYIzw3mQX8PFQ5A1eM90BuQ+4A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=l603D58RTf6EqHbg5+tpaLKDFRyHVkWYtWVJTniREHs=; b=Zo40kpH2jI431HDitamAYDYNAA
+	YLDgEyFKvATptTUI0M5Tta5GITJPi/SAKwHCb7KQ8w4Mybd74mo1QuJW9WF52WdyxAaHu/6+oDr9C
+	+ruEOj8NbQhfcON3i2GKcje4gG+DXcS1k+cHAx+7+dLyCUQGcjoCY1igP0kHrMSzQEYt+s01DLEJY
+	AmC28i8hS0bEUOP+3z1rEX/xgpV9PxqDzpWSQXpguZoNrpfMJevM7wubyGp9LZ8UQNGx19X19WPuF
+	iiNdjQC8njcmSdXLCyUc5LYgxxbpdf2zDljNzPDdnSXeTPKELDZW838lBl9J6tKVygTUyeJ0Bczy3
+	ReUIcFow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jSxDA-0003KZ-1y; Mon, 27 Apr 2020 06:25:48 +0000
+	id 1jSxCr-00032Z-Oi; Mon, 27 Apr 2020 06:25:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jSxCi-0002t3-5O; Mon, 27 Apr 2020 06:25:23 +0000
+ id 1jSxCi-0002wn-5R; Mon, 27 Apr 2020 06:25:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6999931B;
- Sun, 26 Apr 2020 23:25:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 231001063;
+ Sun, 26 Apr 2020 23:25:19 -0700 (PDT)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A1AF13F73D;
- Sun, 26 Apr 2020 23:25:12 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D85A13F73D;
+ Sun, 26 Apr 2020 23:25:15 -0700 (PDT)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in vmcoreinfo
-Date: Mon, 27 Apr 2020 11:55:01 +0530
-Message-Id: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v2 2/2] Documentation/vmcoreinfo: Add documentation for
+ 'KERNELPACMASK'
+Date: Mon, 27 Apr 2020 11:55:02 +0530
+Message-Id: <1587968702-19996-2-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
+References: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200426_232521_743639_494B663B 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20200426_232521_700378_94AFB276 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -57,11 +62,11 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Baoquan He <bhe@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Dave Young <dyoung@redhat.com>,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
  Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -69,74 +74,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Recently arm64 linux kernel added support for Armv8.3-A Pointer
-Authentication feature. If this feature is enabled in the kernel and the
-hardware supports address authentication then the return addresses are
-signed and stored in the stack to prevent ROP kind of attack. Kdump tool
-will now dump the kernel with signed lr values in the stack.
+Add documentation for KERNELPACMASK variable being added to the vmcoreinfo.
 
-Any user analysis tool for this kernel dump may need the kernel pac mask
-information in vmcoreinfo to generate the correct return address for
-stacktrace purpose as well as to resolve the symbol name.
-
-This patch is similar to commit ec6e822d1a22d0eef ("arm64: expose user PAC
-bit positions via ptrace") which exposes pac mask information via ptrace
-interfaces.
+It indicates the PAC bits mask information of signed kernel pointers if
+Armv8.3-A Pointer Authentication feature is present.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Dave Young <dyoung@redhat.com>
+Cc: Baoquan He <bhe@redhat.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
-Changes since v1:
-* Rebased to kernel 5.7-rc3.
-* commit log change.
+ Documentation/admin-guide/kdump/vmcoreinfo.rst | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-An implementation of this new KERNELPACMASK vmcoreinfo field used by crash
-tool can be found here[1]. This change is accepted by crash utility
-maintainer [2].
-
-[1]: https://www.redhat.com/archives/crash-utility/2020-April/msg00095.html
-[2]: https://www.redhat.com/archives/crash-utility/2020-April/msg00099.html
-
- arch/arm64/include/asm/compiler.h | 3 +++
- arch/arm64/kernel/crash_core.c    | 4 ++++
- 2 files changed, 7 insertions(+)
-
-diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-index eece20d..32d5900 100644
---- a/arch/arm64/include/asm/compiler.h
-+++ b/arch/arm64/include/asm/compiler.h
-@@ -19,6 +19,9 @@
- #define __builtin_return_address(val)					\
- 	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+index 007a6b8..5cc3ee6 100644
+--- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
++++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+@@ -393,6 +393,12 @@ KERNELOFFSET
+ The kernel randomization offset. Used to compute the page offset. If
+ KASLR is disabled, this value is zero.
  
-+#else  /* !CONFIG_ARM64_PTR_AUTH */
-+#define	ptrauth_user_pac_mask()		0ULL
-+#define	ptrauth_kernel_pac_mask()	0ULL
- #endif /* CONFIG_ARM64_PTR_AUTH */
++KERNELPACMASK
++-------------
++
++Indicates the PAC bits mask information if Pointer Authentication is
++enabled and address authentication feature is present.
++
+ arm
+ ===
  
- #endif /* __ASM_COMPILER_H */
-diff --git a/arch/arm64/kernel/crash_core.c b/arch/arm64/kernel/crash_core.c
-index ca4c3e1..25cf2ce 100644
---- a/arch/arm64/kernel/crash_core.c
-+++ b/arch/arm64/kernel/crash_core.c
-@@ -6,6 +6,7 @@
- 
- #include <linux/crash_core.h>
- #include <asm/memory.h>
-+#include <asm/pointer_auth.h>
- 
- void arch_crash_save_vmcoreinfo(void)
- {
-@@ -16,4 +17,7 @@ void arch_crash_save_vmcoreinfo(void)
- 	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
- 						PHYS_OFFSET);
- 	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
-+	vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
-+						system_supports_address_auth() ?
-+						ptrauth_kernel_pac_mask() : 0);
- }
 -- 
 2.7.4
 
