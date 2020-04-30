@@ -2,95 +2,116 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5C821BF30C
-	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 10:38:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06CB01BF364
+	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 10:48:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Nqc17h4WOHiejB7OX7ga29KiOHW96YrIyrOfQ1Qfsjk=; b=kdafbnSG/Z3SG2
-	m5mD5um1ih6qgeqgoJ5f15pFMOoR/e1oZzwZhaeH0xHuEYDfURQ++hHyP+Vb+zkYbG575THdP6mmH
-	0IMmJ00mu70+QOWimHPIzA6At8Zd36+fxQzL98GvPVMlcptPl2BvF+V7X3Gi53GrDJV6fdY09wADg
-	ufPGyzzIE55CXqrGn7P+sfUEGhb+JoHbs2eKSGE9ftJ8y47kSdKL/SJb/OHUbVbY6sqEVFNNySVnV
-	AOvDti75TWp1aRTg5r8E7wFoHq2t/bQJqxsSO5PeLT+vZ140k4XyZCbhHFBH8TPbJ+1QLum3DTj6q
-	FDRfoRzF0dygfSdxPCww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z8fqGdaU67Z8wBbCwOGH+nZyaS17kgGMiY6sNyVzIRE=; b=feT5tCeK7MiqOs
+	b78d+Ec+GSnI+PsePwGQrh5k2HZuPK3+lO2rCAB+T30rxsAObsZHJr5rWApIEXFC/XusAW9VfKZbH
+	yUEuCMWiyaLpxZRQv32M4voqonqRxFJYmFZS775IIoN4M4wqN7csEVM7suULPSPi5zP4MY4p9uPOw
+	tqrP6qmxJ9jzaYz9J9HzHiCMxmMUZ4snxsgd/9u0oUBSAeoo8E00X24O61bV0rWD1gC9R1iQ7UxAG
+	Z3UaI8WWjB6WaJkQvywzsQ6rt+CvJMcDxl4TfVfEziQAXM99sn7JFKAFg5NUZ/3HSrChZfwEz5gvS
+	ilRgpnKn2Bu0LihWUaMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU4hy-0007mY-Iu; Thu, 30 Apr 2020 08:38:14 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jU4s9-0006le-A2; Thu, 30 Apr 2020 08:48:45 +0000
+Received: from mail-mw2nam10on2071.outbound.protection.outlook.com
+ ([40.107.94.71] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU4hu-0007lg-Gr
- for kexec@lists.infradead.org; Thu, 30 Apr 2020 08:38:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588235889;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=WXxdL/83RMr5KCH4Jh3CcM0ZF0s0FDz0qYUz0U7ru1A=;
- b=K9ziqLjgIU1r9uKocJV5XSkz2MzCIvgFsnsh3AVs6/pTmwXDUDA3tohYicANiDcbnrkf6p
- LXuWEjxAUNgaNpD4hMy/yM6BO+/s54g1g+GjFPuBZ9zwCgSWRilKwHjZK+C1+AjL92G6Iv
- vUbreQ1rqVleakiienr+rGAYLdo6rIU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-140-RX1hM5ELNfOFt0Hfm7OgmA-1; Thu, 30 Apr 2020 04:37:59 -0400
-X-MC-Unique: RX1hM5ELNfOFt0Hfm7OgmA-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4D00019057A2;
- Thu, 30 Apr 2020 08:37:57 +0000 (UTC)
-Received: from [10.72.8.18] (ovpn-8-18.pek2.redhat.com [10.72.8.18])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B3F3A1C94D;
- Thu, 30 Apr 2020 08:37:53 +0000 (UTC)
-Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
-To: =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
- <k-hagio-ab@nec.com>
-References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
- <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
- <20200120085919.GB16539@MiWiFi-R3L-srv>
- <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
- <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
- <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
- <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
- <20200128193302.GC4080@calabresa>
- <769ddb8a-c845-04a6-0064-d674bbd04ae3@redhat.com>
- <OSBPR01MB1991FEF11882F89353E6B342DDAD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-From: piliu <piliu@redhat.com>
-X-Enigmail-Draft-Status: N1110
-Message-ID: <e487a969-7660-bea8-405f-59f1aab426f5@redhat.com>
-Date: Thu, 30 Apr 2020 16:37:50 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
- Thunderbird/45.8.0
+ id 1jU4s5-0006l1-St
+ for kexec@lists.infradead.org; Thu, 30 Apr 2020 08:48:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=lqz8ct5ikjwWKAYzQ1Gi6ukBN2WpuugrQ1gL8sP+hXhKJ5enSELQVoVVgnUXnqG8ikUR509HWM7B1mdTDiOCpGoWH2itUjTjRkoD54YEEEs6PJti9FeNNmikUJCYDkcaj1Thw4q+xQNsWIrU4YEPaxaaLOSBbZn4cstZA3PIwB2VyomfNfg77YvBHOKK14BUunXVgcKvRs+ZMLrBT/9m9u1HHqmhu1urpilxFJ4rQf5fqutm8GXPpqajw92Vp22MGjZ8BZlUUQ9RyzVvz90adE/SGbOyTjJKsKCHlk18m2rw7jSak2e1vo+QG6BkUPPs+5+y1XJayP89Ss/uwn4RXw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KMnmWSXOVuAuctdePqPIk4ECMJVF0D55bCj+XKGA+uU=;
+ b=EwbxZEqUXHV3Lr5czEyWvDtebDwyplWnWTSp1JqrSu7m57eH+qF+NFhym4tHsYT5ziM1E+F06Lk7oJN0yAyWVtZRZYZ55B4VaG+eootnbFsavHgd9vU3Ls5s8lyrfR5qv82owUHoQMysCm2hAdO42jZXRLT/9/TsxIHMwfSGJUIrxjM4YGYVEpRn7qFHBrAB9IzWb3ifuxFj4i99l8o59hpMzHmQUpfuFxnNrZyUyJGodwFYHeeuepEWCUswdf7j6HzVqIYGO2Qv9POuwfmB+gPzbdaeyTWRBx3HMoF/XPSpZviB8vYS9WCXiOYgrreyvYPxx0uT5BJQwYwgRV+/wA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=amd.com; dmarc=pass action=none header.from=amd.com; dkim=pass
+ header.d=amd.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amdcloud.onmicrosoft.com; s=selector2-amdcloud-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KMnmWSXOVuAuctdePqPIk4ECMJVF0D55bCj+XKGA+uU=;
+ b=UoP5cDTk9XQMdnsbWT1sP9ZJZKAz6SJ+9WTKbLWzM4gAYDCeH14WHkymIGfPONH07u5/Z6eDZKZVQcHx/BStB46lZFZ3eck+ugcuvwSRcln2YMaBd2Bwbo8FbgGUt858/fxV7rOPmMyyxLUFc7u6y4/gnhAqXCBr6Rp+TwUYYGA=
+Authentication-Results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=amd.com;
+Received: from DM5PR12MB1386.namprd12.prod.outlook.com (2603:10b6:3:77::9) by
+ DM5PR12MB1883.namprd12.prod.outlook.com (2603:10b6:3:113::16) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2937.13; Thu, 30 Apr 2020 08:48:39 +0000
+Received: from DM5PR12MB1386.namprd12.prod.outlook.com
+ ([fe80::969:3d4e:6f37:c33c]) by DM5PR12MB1386.namprd12.prod.outlook.com
+ ([fe80::969:3d4e:6f37:c33c%12]) with mapi id 15.20.2937.028; Thu, 30 Apr 2020
+ 08:48:39 +0000
+From: Ashish Kalra <Ashish.Kalra@amd.com>
+To: pbonzini@redhat.com
+Subject: [PATCH v7 18/18] KVM: x86: Add kexec support for SEV Live Migration.
+Date: Thu, 30 Apr 2020 08:48:29 +0000
+Message-Id: <0adf76ea0f88e137bef5e045ebf96ebb004ee8df.1588234824.git.ashish.kalra@amd.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <cover.1588234824.git.ashish.kalra@amd.com>
+References: <cover.1588234824.git.ashish.kalra@amd.com>
+X-ClientProxiedBy: SN6PR05CA0016.namprd05.prod.outlook.com
+ (2603:10b6:805:de::29) To DM5PR12MB1386.namprd12.prod.outlook.com
+ (2603:10b6:3:77::9)
 MIME-Version: 1.0
-In-Reply-To: <OSBPR01MB1991FEF11882F89353E6B342DDAD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from ashkalra_ubuntu_server.amd.com (165.204.77.1) by
+ SN6PR05CA0016.namprd05.prod.outlook.com (2603:10b6:805:de::29) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2958.12 via Frontend Transport; Thu, 30 Apr 2020 08:48:37 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [165.204.77.1]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 4ed7b96d-b898-453e-235f-08d7ece346e8
+X-MS-TrafficTypeDiagnostic: DM5PR12MB1883:|DM5PR12MB1883:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DM5PR12MB18834D26B280D7CF6A4FFAAC8EAA0@DM5PR12MB1883.namprd12.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2512;
+X-Forefront-PRVS: 0389EDA07F
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM5PR12MB1386.namprd12.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(396003)(366004)(136003)(376002)(39860400002)(478600001)(86362001)(956004)(8936002)(26005)(2906002)(2616005)(6916009)(8676002)(36756003)(6486002)(7416002)(4326008)(16526019)(186003)(7696005)(66476007)(5660300002)(66946007)(6666004)(52116002)(66556008)(316002)(136400200001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: C+HsTCYEW6FdZIthQxJbm6pL1Nl+FxJQVp09/rh0kiem0AxDlZyCxAE/9dPTmdModyfIoYgzshaPnjTVurKsCs6pjTCVwhp1fnSAaqimJMkPyne5Or5cxkWQarJWVlM4Ae+bHt+1Ez79zXDRNIPdXSIljLGKFCcoabk0KHaa3OcycxT0TKCdrmBmnHLc2bagphc9cvWvQ6FgfsQi5HI5Vq1Rf0Ix0oPmE4fjHRPSB0ADMeXWbHPJGd7j3yd7c7GRwUYxXU9/Y9/wSfYHSWGE1gNDohpcZn9+HCd0szuhF6qtpyIBPIcFa6HS93k9KXIJCgxUXCjiAgNVxhrbjdSnvaUw5xVzvQm1JTh4d36avowcHrZOYxbPqfBcJMiAbzFBFeFHnxy+ekaVpO1G+iRXSXpGvtelWyHV9IrbT/GvLELv1SRAz7Fwa6Ui83fEqt1GWVp6+WNWQo7TQQKI4rtYBvDRQbwapKKDLLf9LH6PSBUSRhN9c8ggzWdRiXE5buB8
+X-MS-Exchange-AntiSpam-MessageData: hklji63G1mQx/Km/dj7Y0UVbSP4x4/xnziRt4TLpNiAAY4ffPSPly5bAmN8bGg2//bTT6TjKTsw46YC49yeagMarSLN1WWKEjY3moYE8PqyOhnDRLt8uyOKrFh5trNfPpcvDZ9C/ROFUA8ZFM5WW4F/Uc0vn9Px4AgYjsGxSVl/FDsiZlZmbwcQKMB1co+pvS0EiLc0yurGhjdBy2fOVE3+V+Bki62GJx0oRRdVeP+Bs0knXeh/kf/348zCZYleZSmTHrhzvyVZIxbRjKldmJ7hiIGlG2E12Vl5oeidNNJRxIZiCO8TJ4e9MJYZ0rI0PBCqr4tiPEfuW1YgwTzq3eBDGkPkoPMtshwPAAwBIlTUxf+5Qs9YBkudOZyo7nEt3xYtY7BdXO7xd0MrE48bWmL3U5OncG7MwXztpJF+shu/rwPUeLhI4jGeVkGNqYI2geNs1NAe+U1nysVYythTpHyFLXwpX5ddV8p9SxQtpcR3hCnZJ4yhpq0/CmBn2/f2XUhB2w+VtCo1l0NzMzhHKs6ML0ESEH3ZPpNX6pXJ/ES5aMnBxogmIrY8/iXCz2xcP4mlCaeeChccA1tXCkqpzzS2Zboa7r4e8+b+Ws3YyUGluGxz/GxRfT8DxbWgliTXmwu72K3KgO4MCSN3iBtfWHj0g3ugl1O/61b39uANQlv2x9Ns/DszjJMGyQa+2lJXWJhwCzaAr2e4tlLAHrur4HpHML6fJx3C06DKC/KIdooTistD8uEDOQsKNny1Ld4XnNsYeejJn/iJybOF7piyYOlyjglG5MPZ5GHoNgxSe854=
+X-OriginatorOrg: amd.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4ed7b96d-b898-453e-235f-08d7ece346e8
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Apr 2020 08:48:38.9523 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: hYA9XJorzJVZIF1Q+62mPXLTQSFaAYzgTFj9zroL1yg4CWBzUZmanD51TqFSi10gCv9c/Y/FOzMU2lS7DMxfDQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR12MB1883
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_013810_638481_84190ABD 
-X-CRM114-Status: GOOD (  18.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_014841_933251_9AAB6537 
+X-CRM114-Status: GOOD (  11.94  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.94.71 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.94.71 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,77 +123,80 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
- Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
- Andrew Morton <akpm@linux-foundation.org>,
- Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: thomas.lendacky@amd.com, brijesh.singh@amd.com, kvm@vger.kernel.org,
+ srutherford@google.com, joro@8bytes.org, x86@kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ hpa@zytor.com, rientjes@google.com, tglx@linutronix.de, bp@suse.de,
+ venu.busireddy@oracle.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-CgpPbiAwNC8yOS8yMDIwIDEwOjI3IFBNLCBIQUdJTyBLQVpVSElUTyjokKnlsL7jgIDkuIDku4Ep
-IHdyb3RlOgo+IEhpIFBpbmdmYW4sCj4gCj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+
-IEhpIEthenUgYW5kIENhc2NhcmRvLAo+Pgo+PiBJIGVuY291bnRlciBhIHdlaXJkIHByb2JsZW0g
-d2hlbiBydW5uaW5nIG1ha2VkdW1wZmlsZSBvbiBhIHMzOTAgbWFjaGluZS4KPj4KPj4gT3VyIHBy
-b2R1Y3Rpb24ga2VybmVsIHVzZXMgZXh0cmVtZSBzcGFyc2UgbWVtb3J5IG1vZGVsLCBhbmQgaGFz
-IHRoZQo+PiBmb2xsb3dpbmc6Cj4+Cj4+IGluIG1tL3NwYXJzZS5jCj4+Cj4+ICNpZmRlZiBDT05G
-SUdfU1BBUlNFTUVNX0VYVFJFTUUKPj4gc3RydWN0IG1lbV9zZWN0aW9uICoqbWVtX3NlY3Rpb247
-Cj4+ICNlbHNlCj4+IHN0cnVjdCBtZW1fc2VjdGlvbiBtZW1fc2VjdGlvbltOUl9TRUNUSU9OX1JP
-T1RTXVtTRUNUSU9OU19QRVJfUk9PVF0KPj4gICAgICAgICBfX19fY2FjaGVsaW5lX2ludGVybm9k
-ZWFsaWduZWRfaW5fc21wOwo+PiAjZW5kaWYKPj4KPj4gU28gaW4gbWFrZWR1bXBmaWxlLmMsIGdl
-dF9tZW1fc2VjdGlvbigpLCBpdCBnb3QgYSBmYWlsZWQgcmVzdWx0IHdoZW4gdGhlCj4+IGZpcnN0
-IGNhbGwgc2l0ZSB0byB2YWxpZGF0ZV9tZW1fc2VjdGlvbigpLCB0aGVuIGl0IHNob3VsZCBzdWNj
-ZXNzIGF0IHRoZQo+PiBzZWNvbmQgY2FsbCBzaXRlIHRvIHZhbGlkYXRlX21lbV9zZWN0aW9uKCks
-IHdoaWNoIGlzIGluc2lkZSBpZgo+PiAoaXNfc3BhcnNlbWVtX2V4dHJlbWUoKSkgY29uZGl0aW9u
-Lgo+IAo+IEkgdGhpbmsgeW91ciBwcm9kdWN0aW9uIGtlcm5lbCBzaG91bGQgaGF2ZSBrZXJuZWwg
-Y29tbWl0IGEwYjEyODAzNjhkMQo+ICgia2R1bXA6IHdyaXRlIGNvcnJlY3QgYWRkcmVzcyBvZiBt
-ZW1fc2VjdGlvbiBpbnRvIHZtY29yZWluZm8iKSwgc28gdGhlCj4gZmlyc3QgY2FsbCBzaG91bGQg
-cmV0dXJuIFRSVUUgYW5kIHRoZSBzZWNvbmQgb25lIHNob3VsZCByZXR1cm4gRkFMU0UuClllcywg
-aXQgaXMuCj4gCj4+Cj4+IEJ1dCB0aGUgYWN0dWFsIHJlc3VsdCBpcyBub3QgbGlrZSBleHBlY3Rl
-ZC4KPj4KPj4gQWZ0ZXIgaW50cm9kdWNpbmcKPj4gY29tbWl0IGUxMTNmMWM5NzRjODIwZjk2MzNk
-YzAwNzNlZGE1MjVkNzU3NWYzNjUgICAgW1BBVENIXSBjb3BlIHdpdGgKPj4gbm90LXByZXNlbnQg
-bWVtIHNlY3Rpb24KPj4KPj4gSSBnb3QgdHdvIHN1Y2Nlc3NmdWwgY2FsbHMgdG8gdmFsaWRhdGVf
-bWVtX3NlY3Rpb24oKSwgYW5kIGZpbmFsbHkgZmFpbGVkCj4+IGF0IHRoZSBjb25kaXRpb24KPj4g
-CQlyZXQgPSBzeW1ib2xfdmFsaWQgXiBwb2ludGVyX3ZhbGlkOwo+PiAJCWlmICghcmV0KSB7Cj4+
-IAkJCUVSUk1TRygiQ291bGQgbm90IHZhbGlkYXRlIG1lbV9zZWN0aW9uLlxuIik7Cj4+IAkJfQo+
-Pgo+Pgo+PiBEbyB5b3UgaGF2ZSBhbnkgaWRlYT8KPiAKPiBQcmVzdW1hYmx5IHRoaXMgd2lsbCBi
-ZSB3aGF0IEkgZXhwZWN0ZWQgdGhhdCBpdCBtaWdodCBiZSBwb3NzaWJsZS4KPiBJIGNhbiBhcHBs
-eSB0aGUgcGF0Y2ggYmVsb3cgdGhpcyB0aW1lLCB3aGF0IGFib3V0IHRoaXM/Cj4gaHR0cHM6Ly9n
-aXRodWIuY29tL2staGFnaW8vbWFrZWR1bXBmaWxlLW9sZC9jb21taXQvY2U4ODNkZjM4NjRhNTc0
-NGFjMGYxZWZmNDdkZTA2YjUwNzRlZGI1Zi5wYXRjaApsb29rcyBnb29kLgo+IAo+IG9yLCB3ZSBj
-YW4gYWxzbyBpbnZlc3RpZ2F0ZSB3aHkgdGhlIHNlY29uZCBjYWxsIHJldHVybnMgVFJVRSwgYW5k
-Cj4gZml4IHRoZSBjb25kaXRpb25zIGluIHRoZSB2YWxpZGF0ZV9tZW1fc2VjdGlvbigpLi4KVGhp
-cyBpcyBkdWUgdG8gdGhlIHJlbGF4ZWQgY29uZGl0aW9uIGNoZWNrIGFmdGVyIGFwcGx5aW5nIG15
-IGNvbW1pdApjb21taXQgZTExM2YxYzk3NCgiW1BBVENIXSBjb3BlIHdpdGggbm90LXByZXNlbnQg
-bWVtIHNlY3Rpb24iKQoKZGlmZiAtLWdpdCBhL21ha2VkdW1wZmlsZS5jIGIvbWFrZWR1bXBmaWxl
-LmMKaW5kZXggYWU3MzM2YS4uNjA3ZTA3ZiAxMDA2NDQKLS0tIGEvbWFrZWR1bXBmaWxlLmMKKysr
-IGIvbWFrZWR1bXBmaWxlLmMKQEAgLTM0MDYsOCArMzQwNiw2IEBAIHNlY3Rpb25fbWVtX21hcF9h
-ZGRyKHVuc2lnbmVkIGxvbmcgYWRkciwgdW5zaWduZWQKbG9uZyAqbWFwX21hc2spCiAgICAgICAg
-bWFwID0gVUxPTkcobWVtX3NlY3Rpb24gKyBPRkZTRVQobWVtX3NlY3Rpb24uc2VjdGlvbl9tZW1f
-bWFwKSk7CiAgICAgICAgbWFzayA9IFNFQ1RJT05fTUFQX01BU0s7CiAgICAgICAgKm1hcF9tYXNr
-ID0gbWFwICYgfm1hc2s7Ci0gICAgICAgaWYgKG1hcCA9PSAweDApCi0gICAgICAgICAgICAgICAq
-bWFwX21hc2sgfD0gU0VDVElPTl9NQVJLRURfUFJFU0VOVDsKICAgICAgICBtYXAgJj0gbWFzazsK
-ICAgICAgICBmcmVlKG1lbV9zZWN0aW9uKTsKCkBAIC0zNDUzLDEwICszNDUxLDggQEAgdmFsaWRh
-dGVfbWVtX3NlY3Rpb24odW5zaWduZWQgbG9uZyAqbWVtX3NlYywKICAgICAgICAgICAgICAgICAg
-ICAgICAgbWVtX21hcCA9IE5PVF9NRU1NQVBfQUREUjsKICAgICAgICAgICAgICAgIH0gZWxzZSB7
-CiAgICAgICAgICAgICAgICAgICAgICAgIG1lbV9tYXAgPSBzZWN0aW9uX21lbV9tYXBfYWRkcihz
-ZWN0aW9uLCAmbWFwX21hc2spOworICAgICAgICAgICAgICAgICAgICAgICAvKiBmb3IgZWl0aGVy
-IG5vIG1lbV9tYXAgb3IgaG90LXJlbW92ZWQgKi8KICAgICAgICAgICAgICAgICAgICAgICAgaWYg
-KCEobWFwX21hc2sgJiBTRUNUSU9OX01BUktFRF9QUkVTRU5UKSkgewotICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIHJldHVybiBGQUxTRTsgLS0tLS0tPiBhIHN0cmljdCBjaGVjawotICAg
-ICAgICAgICAgICAgICAgICAgICB9Ci0gICAgICAgICAgICAgICAgICAgICAgIGlmIChtZW1fbWFw
-ID09IDApIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZW1fbWFwID0gTk9UX01F
-TU1BUF9BRERSOwogICAgICAgICAgICAgICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgIG1lbV9tYXAgPSBzcGFyc2VfZGVjb2RlX21lbV9tYXAobWVtX21h
-cCwKCgpCZWZvcmUgbXkgcGF0Y2gsIGl0IHJldHVybiBGQUxTRSBmb3IgYW55IG5vbiBOVUxMIHZh
-bHVlIHdpdGhvdXQKU0VDVElPTl9NQVJLRURfUFJFU0VOVC4gQnV0IG15IHBhdGNoIHJlbGF4ZXMg
-dGhlIHJlc3RyaWN0aW9uIGFuZApjb25zaWRlciBpdCBhcyBob3QtcmVtb3ZlZCBtZW1fc2VjdGlv
-biBhbmQga2VlcHMgdGhlIHBhcnNpbmcgb24uCgpUaGFua3MsClBpbmdmYW4KPiAKPiBUaGFua3Ms
-Cj4gS2F6dQo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Cj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4ga2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMKPiAKCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxp
-c3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
+From: Ashish Kalra <ashish.kalra@amd.com>
+
+Reset the host's page encryption bitmap related to kernel
+specific page encryption status settings before we load a
+new kernel by kexec. We cannot reset the complete
+page encryption bitmap here as we need to retain the
+UEFI/OVMF firmware specific settings.
+
+Signed-off-by: Ashish Kalra <ashish.kalra@amd.com>
+---
+ arch/x86/kernel/kvm.c | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
+
+diff --git a/arch/x86/kernel/kvm.c b/arch/x86/kernel/kvm.c
+index 8b8cc87a3461..68f2de4c1e74 100644
+--- a/arch/x86/kernel/kvm.c
++++ b/arch/x86/kernel/kvm.c
+@@ -35,6 +35,7 @@
+ #include <asm/hypervisor.h>
+ #include <asm/tlb.h>
+ #include <asm/cpuidle_haltpoll.h>
++#include <asm/e820/api.h>
+ 
+ static int kvmapf = 1;
+ 
+@@ -358,6 +359,33 @@ static void kvm_pv_guest_cpu_reboot(void *unused)
+ 	 */
+ 	if (kvm_para_has_feature(KVM_FEATURE_PV_EOI))
+ 		wrmsrl(MSR_KVM_PV_EOI_EN, 0);
++	/*
++	 * Reset the host's page encryption bitmap related to kernel
++	 * specific page encryption status settings before we load a
++	 * new kernel by kexec. NOTE: We cannot reset the complete
++	 * page encryption bitmap here as we need to retain the
++	 * UEFI/OVMF firmware specific settings.
++	 */
++	if (sev_live_migration_enabled() & (smp_processor_id() == 0)) {
++		int i;
++		unsigned long nr_pages;
++
++		for (i = 0; i < e820_table->nr_entries; i++) {
++			struct e820_entry *entry = &e820_table->entries[i];
++			unsigned long start_pfn;
++			unsigned long end_pfn;
++
++			if (entry->type != E820_TYPE_RAM)
++				continue;
++
++			start_pfn = entry->addr >> PAGE_SHIFT;
++			end_pfn = (entry->addr + entry->size) >> PAGE_SHIFT;
++			nr_pages = DIV_ROUND_UP(entry->size, PAGE_SIZE);
++
++			kvm_sev_hypercall3(KVM_HC_PAGE_ENC_STATUS,
++					   entry->addr, nr_pages, 1);
++		}
++	}
+ 	kvm_pv_disable_apf();
+ 	kvm_disable_steal_time();
+ }
+-- 
+2.17.1
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
