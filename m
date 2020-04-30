@@ -2,81 +2,78 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75B6E1BEF42
-	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 06:35:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5C821BF30C
+	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 10:38:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=87EbSwd00LQJ0YLYyheYIcka9vuJgIC6Y3VfJVo59Rg=; b=UpWGAOeiKOYzT1
-	8TpPtIa/LiIxCDCqRgQiqHV3l9HJ4vzTMGc1dMnh0W/FLAm1jn6ZR2HYQBaaLPvDTuPzE8vAOa8kH
-	/OBs4sRQyqc0ni9EvBiOMsXE8iQYsn6mGvBd7CmBSagpgvyqw7Jx8QMO5O4pJcg9xDOB2nenet7aL
-	tC3eC8hud5H+EYRyseR4B0smKuGKqJ4R1hPVhsrz9T643A8QeH7YjUQ3w73hbwfUrQDob/UhXpurU
-	my7JbewdL3mtcXHMrIawDN1pEQEy8CR+IXk/VsJhHh6cyURdHyU49MRekwbRQYxbd3uigwrKR1zI7
-	FzNRjok0oZAte20rp5mg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Nqc17h4WOHiejB7OX7ga29KiOHW96YrIyrOfQ1Qfsjk=; b=kdafbnSG/Z3SG2
+	m5mD5um1ih6qgeqgoJ5f15pFMOoR/e1oZzwZhaeH0xHuEYDfURQ++hHyP+Vb+zkYbG575THdP6mmH
+	0IMmJ00mu70+QOWimHPIzA6At8Zd36+fxQzL98GvPVMlcptPl2BvF+V7X3Gi53GrDJV6fdY09wADg
+	ufPGyzzIE55CXqrGn7P+sfUEGhb+JoHbs2eKSGE9ftJ8y47kSdKL/SJb/OHUbVbY6sqEVFNNySVnV
+	AOvDti75TWp1aRTg5r8E7wFoHq2t/bQJqxsSO5PeLT+vZ140k4XyZCbhHFBH8TPbJ+1QLum3DTj6q
+	FDRfoRzF0dygfSdxPCww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU0v8-0004Ci-IR; Thu, 30 Apr 2020 04:35:34 +0000
+	id 1jU4hy-0007mY-Iu; Thu, 30 Apr 2020 08:38:14 +0000
 Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
  helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU0v1-0004Ak-Pb
- for kexec@lists.infradead.org; Thu, 30 Apr 2020 04:35:32 +0000
+ id 1jU4hu-0007lg-Gr
+ for kexec@lists.infradead.org; Thu, 30 Apr 2020 08:38:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588221326;
+ s=mimecast20190719; t=1588235889;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=n5jM63qDWJeyDGYCjjTCU+R9Ek+uHrEl9ULmh5ibqDw=;
- b=hlX4p0HqjFW1cNF1NF2kF5vYM9MdDwq03vyv6lRp9J6/fJMC4JU0i6Gw2GMbwkUIyf3+5v
- Bh2mlO8QUhk1HzBcuLV67Bt1DPMkOnu8rLT7l5Ii6z33Eytv9H3pBokyjWijhYoZdYMKgE
- qiwShHyNbywCxWb6Qe3iP7D27tB0wHY=
-Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
- [209.85.222.200]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-50-QUUuXF0UPMKDdxgSamL7bw-1; Thu, 30 Apr 2020 00:35:22 -0400
-X-MC-Unique: QUUuXF0UPMKDdxgSamL7bw-1
-Received: by mail-qk1-f200.google.com with SMTP id d15so5209999qkl.10
- for <kexec@lists.infradead.org>; Wed, 29 Apr 2020 21:35:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zKtrMfHGu+y4vYE02s1puHzZQ5/jhATWRhrNjWq5a+4=;
- b=l0HHl26Yy+PKXvNMthkARS3/g1nnzZLKRZglT1ppvqWeOqwtI2Dl8riauI+hyMzgEA
- QpxUt9g0BoTyvLfgk7d2L392wg4Yi73y2PSCIapFLkkXOsB/rkBns+1c3GS8yH74mvQz
- f2VIcL3i6El61OP+gYVyOZf4VO1xJIAUoRJfIMARk1mnp+oc6e4+Nxg0A0zGnkUs4Fq5
- kByfcU+XKG4FHLYNg6aOS+H38BCDuUvJF0a3H2tt8tYpTCoRfHK42dChaE7esDJdYFfU
- wwvUcWj6oOyleGyitdwv0mjSgXxJHkhlJ0NtASn7vhxOQGTXMeFe1fPTMIbUu/4D+ZDu
- 7koA==
-X-Gm-Message-State: AGi0PuY4Pkj1SZNdtoT3Gyo3JvkWMZdrD9RP/riUfaDfnFojx0DPHH4F
- pWMBIw6RAPsYFXTpvxNrM3mM8Z5C6AEF/GyuMfE/kr4QDo5VnHPUGfkJwE5t8V8BTEPJDwnb6CU
- 2reYeAl2Tb7toRQMT6ySb4ZH8T2pefpUcdzZ0
-X-Received: by 2002:a05:6214:a14:: with SMTP id
- dw20mr1157828qvb.179.1588221321688; 
- Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
-X-Google-Smtp-Source: APiQypJwv05UoqY7fgJ1iBedETm9PSq8uwxu8tgslkEj0MSEDpFQVgedzwdDm+IHqADZkUseufdbjkQYsL2aKni/Lpc=
-X-Received: by 2002:a05:6214:a14:: with SMTP id
- dw20mr1157809qvb.179.1588221321477; 
- Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
+ bh=WXxdL/83RMr5KCH4Jh3CcM0ZF0s0FDz0qYUz0U7ru1A=;
+ b=K9ziqLjgIU1r9uKocJV5XSkz2MzCIvgFsnsh3AVs6/pTmwXDUDA3tohYicANiDcbnrkf6p
+ LXuWEjxAUNgaNpD4hMy/yM6BO+/s54g1g+GjFPuBZ9zwCgSWRilKwHjZK+C1+AjL92G6Iv
+ vUbreQ1rqVleakiienr+rGAYLdo6rIU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-140-RX1hM5ELNfOFt0Hfm7OgmA-1; Thu, 30 Apr 2020 04:37:59 -0400
+X-MC-Unique: RX1hM5ELNfOFt0Hfm7OgmA-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4D00019057A2;
+ Thu, 30 Apr 2020 08:37:57 +0000 (UTC)
+Received: from [10.72.8.18] (ovpn-8-18.pek2.redhat.com [10.72.8.18])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id B3F3A1C94D;
+ Thu, 30 Apr 2020 08:37:53 +0000 (UTC)
+Subject: Re: [PATCH] makedumpfile: cope with not-present mem section
+To: =?UTF-8?B?SEFHSU8gS0FaVUhJVE8o6JCp5bC+44CA5LiA5LuBKQ==?=
+ <k-hagio-ab@nec.com>
+References: <1579487124-28426-1-git-send-email-piliu@redhat.com>
+ <2AA47CAB-ED13-4A0A-9288-063832158203@redhat.com>
+ <20200120085919.GB16539@MiWiFi-R3L-srv>
+ <44958c3d-c861-8eb0-5713-50c36c7cfc6e@redhat.com>
+ <TY2PR01MB5210FAB04501E6C59AAB2B06DD0F0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200127170447.GA4080@calabresa> <20200127180627.GB4080@calabresa>
+ <TY2PR01MB521005B2E72D78C4561C0562DD0A0@TY2PR01MB5210.jpnprd01.prod.outlook.com>
+ <20200128193302.GC4080@calabresa>
+ <769ddb8a-c845-04a6-0064-d674bbd04ae3@redhat.com>
+ <OSBPR01MB1991FEF11882F89353E6B342DDAD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
+From: piliu <piliu@redhat.com>
+X-Enigmail-Draft-Status: N1110
+Message-ID: <e487a969-7660-bea8-405f-59f1aab426f5@redhat.com>
+Date: Thu, 30 Apr 2020 16:37:50 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.8.0
 MIME-Version: 1.0
-References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
- <20200408104655.GA92698@C02TD0UTHF1T.local>
- <CACi5LpP0WqYGxrJL6BJia-ceSR5XbjytsSY+P74xaDJZTJA8jA@mail.gmail.com>
- <20200428100710.GD3868@gaia>
-In-Reply-To: <20200428100710.GD3868@gaia>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Thu, 30 Apr 2020 10:05:09 +0530
-Message-ID: <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
-Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
-To: Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>
+In-Reply-To: <OSBPR01MB1991FEF11882F89353E6B342DDAD0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_213530_894886_EF4BE10F 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20200430_013810_638481_84190ABD 
+X-CRM114-Status: GOOD (  18.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -86,13 +83,13 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -105,65 +102,77 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, arm@kernel.org,
- James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Thadeu Lima de Souza Cascardo <cascardo@canonical.com>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ Michal Hocko <mhocko@kernel.org>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>, Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 3:37 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> On Tue, Apr 28, 2020 at 01:55:58PM +0530, Bhupesh Sharma wrote:
-> > On Wed, Apr 8, 2020 at 4:17 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> > > On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
-> > > >  arch/arm64/configs/defconfig | 1 +
-> > > >  1 file changed, 1 insertion(+)
-> > > >
-> > > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > > > index 24e534d85045..fa122f4341a2 100644
-> > > > --- a/arch/arm64/configs/defconfig
-> > > > +++ b/arch/arm64/configs/defconfig
-> > > > @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
-> > > >  CONFIG_NUMA=y
-> > > >  CONFIG_SECCOMP=y
-> > > >  CONFIG_KEXEC=y
-> > > > +CONFIG_KEXEC_FILE=y
-> > > >  CONFIG_CRASH_DUMP=y
-> > > >  CONFIG_XEN=y
-> > > >  CONFIG_COMPAT=y
-> > > > --
-> > > > 2.7.4
-> >
-> > Thanks a lot  Mark.
-> >
-> > Hi Catalin, Will,
-> >
-> > Can you please help pick this patch in the arm tree. We have an
-> > increasing number of user-cases from distro users
-> > who want to use kexec_file_load() as the default interface for
-> > kexec/kdump on arm64.
->
-> We could pick it up if it doesn't conflict with the arm-soc tree. They
-> tend to pick most of the defconfig changes these days (and could as well
-> pick this one).
-
-Thanks Catalin.
-(+Cc Arnd)
-
-Hi Arnd,
-
-Can you please help pick this change via the arm-soc tree?
-
-Thanks,
-Bhupesh
-
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+CgpPbiAwNC8yOS8yMDIwIDEwOjI3IFBNLCBIQUdJTyBLQVpVSElUTyjokKnlsL7jgIDkuIDku4Ep
+IHdyb3RlOgo+IEhpIFBpbmdmYW4sCj4gCj4+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4+
+IEhpIEthenUgYW5kIENhc2NhcmRvLAo+Pgo+PiBJIGVuY291bnRlciBhIHdlaXJkIHByb2JsZW0g
+d2hlbiBydW5uaW5nIG1ha2VkdW1wZmlsZSBvbiBhIHMzOTAgbWFjaGluZS4KPj4KPj4gT3VyIHBy
+b2R1Y3Rpb24ga2VybmVsIHVzZXMgZXh0cmVtZSBzcGFyc2UgbWVtb3J5IG1vZGVsLCBhbmQgaGFz
+IHRoZQo+PiBmb2xsb3dpbmc6Cj4+Cj4+IGluIG1tL3NwYXJzZS5jCj4+Cj4+ICNpZmRlZiBDT05G
+SUdfU1BBUlNFTUVNX0VYVFJFTUUKPj4gc3RydWN0IG1lbV9zZWN0aW9uICoqbWVtX3NlY3Rpb247
+Cj4+ICNlbHNlCj4+IHN0cnVjdCBtZW1fc2VjdGlvbiBtZW1fc2VjdGlvbltOUl9TRUNUSU9OX1JP
+T1RTXVtTRUNUSU9OU19QRVJfUk9PVF0KPj4gICAgICAgICBfX19fY2FjaGVsaW5lX2ludGVybm9k
+ZWFsaWduZWRfaW5fc21wOwo+PiAjZW5kaWYKPj4KPj4gU28gaW4gbWFrZWR1bXBmaWxlLmMsIGdl
+dF9tZW1fc2VjdGlvbigpLCBpdCBnb3QgYSBmYWlsZWQgcmVzdWx0IHdoZW4gdGhlCj4+IGZpcnN0
+IGNhbGwgc2l0ZSB0byB2YWxpZGF0ZV9tZW1fc2VjdGlvbigpLCB0aGVuIGl0IHNob3VsZCBzdWNj
+ZXNzIGF0IHRoZQo+PiBzZWNvbmQgY2FsbCBzaXRlIHRvIHZhbGlkYXRlX21lbV9zZWN0aW9uKCks
+IHdoaWNoIGlzIGluc2lkZSBpZgo+PiAoaXNfc3BhcnNlbWVtX2V4dHJlbWUoKSkgY29uZGl0aW9u
+Lgo+IAo+IEkgdGhpbmsgeW91ciBwcm9kdWN0aW9uIGtlcm5lbCBzaG91bGQgaGF2ZSBrZXJuZWwg
+Y29tbWl0IGEwYjEyODAzNjhkMQo+ICgia2R1bXA6IHdyaXRlIGNvcnJlY3QgYWRkcmVzcyBvZiBt
+ZW1fc2VjdGlvbiBpbnRvIHZtY29yZWluZm8iKSwgc28gdGhlCj4gZmlyc3QgY2FsbCBzaG91bGQg
+cmV0dXJuIFRSVUUgYW5kIHRoZSBzZWNvbmQgb25lIHNob3VsZCByZXR1cm4gRkFMU0UuClllcywg
+aXQgaXMuCj4gCj4+Cj4+IEJ1dCB0aGUgYWN0dWFsIHJlc3VsdCBpcyBub3QgbGlrZSBleHBlY3Rl
+ZC4KPj4KPj4gQWZ0ZXIgaW50cm9kdWNpbmcKPj4gY29tbWl0IGUxMTNmMWM5NzRjODIwZjk2MzNk
+YzAwNzNlZGE1MjVkNzU3NWYzNjUgICAgW1BBVENIXSBjb3BlIHdpdGgKPj4gbm90LXByZXNlbnQg
+bWVtIHNlY3Rpb24KPj4KPj4gSSBnb3QgdHdvIHN1Y2Nlc3NmdWwgY2FsbHMgdG8gdmFsaWRhdGVf
+bWVtX3NlY3Rpb24oKSwgYW5kIGZpbmFsbHkgZmFpbGVkCj4+IGF0IHRoZSBjb25kaXRpb24KPj4g
+CQlyZXQgPSBzeW1ib2xfdmFsaWQgXiBwb2ludGVyX3ZhbGlkOwo+PiAJCWlmICghcmV0KSB7Cj4+
+IAkJCUVSUk1TRygiQ291bGQgbm90IHZhbGlkYXRlIG1lbV9zZWN0aW9uLlxuIik7Cj4+IAkJfQo+
+Pgo+Pgo+PiBEbyB5b3UgaGF2ZSBhbnkgaWRlYT8KPiAKPiBQcmVzdW1hYmx5IHRoaXMgd2lsbCBi
+ZSB3aGF0IEkgZXhwZWN0ZWQgdGhhdCBpdCBtaWdodCBiZSBwb3NzaWJsZS4KPiBJIGNhbiBhcHBs
+eSB0aGUgcGF0Y2ggYmVsb3cgdGhpcyB0aW1lLCB3aGF0IGFib3V0IHRoaXM/Cj4gaHR0cHM6Ly9n
+aXRodWIuY29tL2staGFnaW8vbWFrZWR1bXBmaWxlLW9sZC9jb21taXQvY2U4ODNkZjM4NjRhNTc0
+NGFjMGYxZWZmNDdkZTA2YjUwNzRlZGI1Zi5wYXRjaApsb29rcyBnb29kLgo+IAo+IG9yLCB3ZSBj
+YW4gYWxzbyBpbnZlc3RpZ2F0ZSB3aHkgdGhlIHNlY29uZCBjYWxsIHJldHVybnMgVFJVRSwgYW5k
+Cj4gZml4IHRoZSBjb25kaXRpb25zIGluIHRoZSB2YWxpZGF0ZV9tZW1fc2VjdGlvbigpLi4KVGhp
+cyBpcyBkdWUgdG8gdGhlIHJlbGF4ZWQgY29uZGl0aW9uIGNoZWNrIGFmdGVyIGFwcGx5aW5nIG15
+IGNvbW1pdApjb21taXQgZTExM2YxYzk3NCgiW1BBVENIXSBjb3BlIHdpdGggbm90LXByZXNlbnQg
+bWVtIHNlY3Rpb24iKQoKZGlmZiAtLWdpdCBhL21ha2VkdW1wZmlsZS5jIGIvbWFrZWR1bXBmaWxl
+LmMKaW5kZXggYWU3MzM2YS4uNjA3ZTA3ZiAxMDA2NDQKLS0tIGEvbWFrZWR1bXBmaWxlLmMKKysr
+IGIvbWFrZWR1bXBmaWxlLmMKQEAgLTM0MDYsOCArMzQwNiw2IEBAIHNlY3Rpb25fbWVtX21hcF9h
+ZGRyKHVuc2lnbmVkIGxvbmcgYWRkciwgdW5zaWduZWQKbG9uZyAqbWFwX21hc2spCiAgICAgICAg
+bWFwID0gVUxPTkcobWVtX3NlY3Rpb24gKyBPRkZTRVQobWVtX3NlY3Rpb24uc2VjdGlvbl9tZW1f
+bWFwKSk7CiAgICAgICAgbWFzayA9IFNFQ1RJT05fTUFQX01BU0s7CiAgICAgICAgKm1hcF9tYXNr
+ID0gbWFwICYgfm1hc2s7Ci0gICAgICAgaWYgKG1hcCA9PSAweDApCi0gICAgICAgICAgICAgICAq
+bWFwX21hc2sgfD0gU0VDVElPTl9NQVJLRURfUFJFU0VOVDsKICAgICAgICBtYXAgJj0gbWFzazsK
+ICAgICAgICBmcmVlKG1lbV9zZWN0aW9uKTsKCkBAIC0zNDUzLDEwICszNDUxLDggQEAgdmFsaWRh
+dGVfbWVtX3NlY3Rpb24odW5zaWduZWQgbG9uZyAqbWVtX3NlYywKICAgICAgICAgICAgICAgICAg
+ICAgICAgbWVtX21hcCA9IE5PVF9NRU1NQVBfQUREUjsKICAgICAgICAgICAgICAgIH0gZWxzZSB7
+CiAgICAgICAgICAgICAgICAgICAgICAgIG1lbV9tYXAgPSBzZWN0aW9uX21lbV9tYXBfYWRkcihz
+ZWN0aW9uLCAmbWFwX21hc2spOworICAgICAgICAgICAgICAgICAgICAgICAvKiBmb3IgZWl0aGVy
+IG5vIG1lbV9tYXAgb3IgaG90LXJlbW92ZWQgKi8KICAgICAgICAgICAgICAgICAgICAgICAgaWYg
+KCEobWFwX21hc2sgJiBTRUNUSU9OX01BUktFRF9QUkVTRU5UKSkgewotICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIHJldHVybiBGQUxTRTsgLS0tLS0tPiBhIHN0cmljdCBjaGVjawotICAg
+ICAgICAgICAgICAgICAgICAgICB9Ci0gICAgICAgICAgICAgICAgICAgICAgIGlmIChtZW1fbWFw
+ID09IDApIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZW1fbWFwID0gTk9UX01F
+TU1BUF9BRERSOwogICAgICAgICAgICAgICAgICAgICAgICB9IGVsc2UgewogICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIG1lbV9tYXAgPSBzcGFyc2VfZGVjb2RlX21lbV9tYXAobWVtX21h
+cCwKCgpCZWZvcmUgbXkgcGF0Y2gsIGl0IHJldHVybiBGQUxTRSBmb3IgYW55IG5vbiBOVUxMIHZh
+bHVlIHdpdGhvdXQKU0VDVElPTl9NQVJLRURfUFJFU0VOVC4gQnV0IG15IHBhdGNoIHJlbGF4ZXMg
+dGhlIHJlc3RyaWN0aW9uIGFuZApjb25zaWRlciBpdCBhcyBob3QtcmVtb3ZlZCBtZW1fc2VjdGlv
+biBhbmQga2VlcHMgdGhlIHBhcnNpbmcgb24uCgpUaGFua3MsClBpbmdmYW4KPiAKPiBUaGFua3Ms
+Cj4gS2F6dQo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Cj4ga2V4ZWMgbWFpbGluZyBsaXN0Cj4ga2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMKPiAKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwprZXhlYyBtYWlsaW5nIGxp
+c3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
