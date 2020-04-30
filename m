@@ -2,88 +2,88 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28DA21BEC66
-	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 01:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75B6E1BEF42
+	for <lists+kexec@lfdr.de>; Thu, 30 Apr 2020 06:35:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0c3fr/Q6Oi529mCZM4ZtM9pJI3pXG/EU0LPtBqJQQnU=; b=NePjJBzpvBrXfQCTF2Rs+wPb0
-	S/SVH2qOnb0CyjWz/cfPUtUUdx/J6BbpuBTagLnQjMJq+a/69fhxkEnzZ1BbWuh106iRkjY5ftB2P
-	xaZmgUz6kJGnzQtpZS71AJvVFbTlhuHlAtUFjQK9inS0UlsHI7jebp4KMcvCu36GKtqHpUVhXFCmN
-	gZMRYJxMbb3jtDEXiVuASKMtVkFIG6ag9kv+gUFbryOIBCc+k/dYctHI5sLt4qNIVJanffS4S1cfV
-	Gval1D0JtJokf4b7k3x/CGYMABZVMSRNLC7O2zOf46Lv8suC2gczy/DxuJ2wBfneTnpEJk3d7+FT7
-	DpojU6Wfw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=87EbSwd00LQJ0YLYyheYIcka9vuJgIC6Y3VfJVo59Rg=; b=UpWGAOeiKOYzT1
+	8TpPtIa/LiIxCDCqRgQiqHV3l9HJ4vzTMGc1dMnh0W/FLAm1jn6ZR2HYQBaaLPvDTuPzE8vAOa8kH
+	/OBs4sRQyqc0ni9EvBiOMsXE8iQYsn6mGvBd7CmBSagpgvyqw7Jx8QMO5O4pJcg9xDOB2nenet7aL
+	tC3eC8hud5H+EYRyseR4B0smKuGKqJ4R1hPVhsrz9T643A8QeH7YjUQ3w73hbwfUrQDob/UhXpurU
+	my7JbewdL3mtcXHMrIawDN1pEQEy8CR+IXk/VsJhHh6cyURdHyU49MRekwbRQYxbd3uigwrKR1zI7
+	FzNRjok0oZAte20rp5mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTvkW-0001uz-98; Wed, 29 Apr 2020 23:04:16 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jU0v8-0004Ci-IR; Thu, 30 Apr 2020 04:35:34 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTvkO-0001pf-47
- for kexec@lists.infradead.org; Wed, 29 Apr 2020 23:04:11 +0000
-Received: by mail-pg1-x541.google.com with SMTP id q124so1754174pgq.13
- for <kexec@lists.infradead.org>; Wed, 29 Apr 2020 16:04:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=pTsAs2CDlbVr46p0BUoXzORZ7PJqz3PIVNdyQM5hvA4=;
- b=CdmBNX7N3jvCxhnclyKjAisrCfjyJw95MD3shTrp1r6CmwGIN7H1/Pe2hnfly4p4PO
- 0fzH1jsEO3VwWjfzTAlMTeXo1sP8SzpQEvZpEEAk7t/sUBLMMCH1yx3D/tl4Xy4G5z72
- AC7iaQy3XJAbuU0T+mYFO3vRkqx4GL0oQiEQw=
+ id 1jU0v1-0004Ak-Pb
+ for kexec@lists.infradead.org; Thu, 30 Apr 2020 04:35:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588221326;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=n5jM63qDWJeyDGYCjjTCU+R9Ek+uHrEl9ULmh5ibqDw=;
+ b=hlX4p0HqjFW1cNF1NF2kF5vYM9MdDwq03vyv6lRp9J6/fJMC4JU0i6Gw2GMbwkUIyf3+5v
+ Bh2mlO8QUhk1HzBcuLV67Bt1DPMkOnu8rLT7l5Ii6z33Eytv9H3pBokyjWijhYoZdYMKgE
+ qiwShHyNbywCxWb6Qe3iP7D27tB0wHY=
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-50-QUUuXF0UPMKDdxgSamL7bw-1; Thu, 30 Apr 2020 00:35:22 -0400
+X-MC-Unique: QUUuXF0UPMKDdxgSamL7bw-1
+Received: by mail-qk1-f200.google.com with SMTP id d15so5209999qkl.10
+ for <kexec@lists.infradead.org>; Wed, 29 Apr 2020 21:35:22 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=pTsAs2CDlbVr46p0BUoXzORZ7PJqz3PIVNdyQM5hvA4=;
- b=DqmodN5WLr4qrKTKwPlWOnZeOoImo62KLQ8m0px0LeWRsOxoAqORtau36GqEmB0DUo
- Quxw4LtJCdhJDsXCJ7AtUKLF/3a1pnsETJrSoT9G6NBDih3w06Qk21sc92EahPReDPD7
- A/BXCFihXvOyHBNElbfo6Hb4t0TfQWWmPTMHHho0HXLOQRFvIKkfMkXiLSU8Mw7bMkgw
- r+0sCCTX9U+V5E/5DVhN1/NsOEQgVHUVe5di4nvHT2lrEg4aHdHLOXBa6bnwQiGOsGZB
- ldt9FDharKTt4BKDtvRV9O2ed4CQPiI/9ESm4qx2VvqFfOF15vifSrLHoJ58eh2pmqv9
- mI+A==
-X-Gm-Message-State: AGi0PuaXj00PSPmRwAa2Pu/Vtsmbzarn3Q5d+zWUSAycQOlCIIWCvxqc
- e/OjqiLYVhrEVtffk3hujNHN3A==
-X-Google-Smtp-Source: APiQypKUxErsH+JxyFE5+lXNYp86SmB717RFqVubaZnyDLfFMUyyoUO8X3/GyvAYk7iDD2eJBJY2tQ==
-X-Received: by 2002:aa7:8042:: with SMTP id y2mr504718pfm.94.1588201446938;
- Wed, 29 Apr 2020 16:04:06 -0700 (PDT)
-Received: from [10.136.13.65] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id l37sm255572pje.12.2020.04.29.16.04.04
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 29 Apr 2020 16:04:06 -0700 (PDT)
-Subject: Re: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
- in vmcoreinfo
-To: Bhupesh Sharma <bhsharma@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>
-References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
- <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
- <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
- <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
- <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
- <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
- <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
- <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
-From: Scott Branden <scott.branden@broadcom.com>
-Message-ID: <d401b003-af3e-c525-ba00-0de48486b7a0@broadcom.com>
-Date: Wed, 29 Apr 2020 16:04:03 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zKtrMfHGu+y4vYE02s1puHzZQ5/jhATWRhrNjWq5a+4=;
+ b=l0HHl26Yy+PKXvNMthkARS3/g1nnzZLKRZglT1ppvqWeOqwtI2Dl8riauI+hyMzgEA
+ QpxUt9g0BoTyvLfgk7d2L392wg4Yi73y2PSCIapFLkkXOsB/rkBns+1c3GS8yH74mvQz
+ f2VIcL3i6El61OP+gYVyOZf4VO1xJIAUoRJfIMARk1mnp+oc6e4+Nxg0A0zGnkUs4Fq5
+ kByfcU+XKG4FHLYNg6aOS+H38BCDuUvJF0a3H2tt8tYpTCoRfHK42dChaE7esDJdYFfU
+ wwvUcWj6oOyleGyitdwv0mjSgXxJHkhlJ0NtASn7vhxOQGTXMeFe1fPTMIbUu/4D+ZDu
+ 7koA==
+X-Gm-Message-State: AGi0PuY4Pkj1SZNdtoT3Gyo3JvkWMZdrD9RP/riUfaDfnFojx0DPHH4F
+ pWMBIw6RAPsYFXTpvxNrM3mM8Z5C6AEF/GyuMfE/kr4QDo5VnHPUGfkJwE5t8V8BTEPJDwnb6CU
+ 2reYeAl2Tb7toRQMT6ySb4ZH8T2pefpUcdzZ0
+X-Received: by 2002:a05:6214:a14:: with SMTP id
+ dw20mr1157828qvb.179.1588221321688; 
+ Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
+X-Google-Smtp-Source: APiQypJwv05UoqY7fgJ1iBedETm9PSq8uwxu8tgslkEj0MSEDpFQVgedzwdDm+IHqADZkUseufdbjkQYsL2aKni/Lpc=
+X-Received: by 2002:a05:6214:a14:: with SMTP id
+ dw20mr1157809qvb.179.1588221321477; 
+ Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
-Content-Language: en-US
+References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
+ <20200408104655.GA92698@C02TD0UTHF1T.local>
+ <CACi5LpP0WqYGxrJL6BJia-ceSR5XbjytsSY+P74xaDJZTJA8jA@mail.gmail.com>
+ <20200428100710.GD3868@gaia>
+In-Reply-To: <20200428100710.GD3868@gaia>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Thu, 30 Apr 2020 10:05:09 +0530
+Message-ID: <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
+Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
+To: Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_160408_186659_F2DABD21 
-X-CRM114-Status: GOOD (  27.45  )
+X-CRM114-CacheID: sfid-20200429_213530_894886_EF4BE10F 
+X-CRM114-Status: GOOD (  17.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,147 +105,63 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Bharat Gooty <bharat.gooty@broadcom.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ray Jui <ray.jui@broadcom.com>, linuxppc-dev@lists.ozlabs.org,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
  kexec mailing list <kexec@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+ AKASHI Takahiro <takahiro.akashi@linaro.org>, arm@kernel.org,
+ James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Bhupesh,
+On Tue, Apr 28, 2020 at 3:37 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> On Tue, Apr 28, 2020 at 01:55:58PM +0530, Bhupesh Sharma wrote:
+> > On Wed, Apr 8, 2020 at 4:17 PM Mark Rutland <mark.rutland@arm.com> wrote:
+> > > On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
+> > > >  arch/arm64/configs/defconfig | 1 +
+> > > >  1 file changed, 1 insertion(+)
+> > > >
+> > > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > > > index 24e534d85045..fa122f4341a2 100644
+> > > > --- a/arch/arm64/configs/defconfig
+> > > > +++ b/arch/arm64/configs/defconfig
+> > > > @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
+> > > >  CONFIG_NUMA=y
+> > > >  CONFIG_SECCOMP=y
+> > > >  CONFIG_KEXEC=y
+> > > > +CONFIG_KEXEC_FILE=y
+> > > >  CONFIG_CRASH_DUMP=y
+> > > >  CONFIG_XEN=y
+> > > >  CONFIG_COMPAT=y
+> > > > --
+> > > > 2.7.4
+> >
+> > Thanks a lot  Mark.
+> >
+> > Hi Catalin, Will,
+> >
+> > Can you please help pick this patch in the arm tree. We have an
+> > increasing number of user-cases from distro users
+> > who want to use kexec_file_load() as the default interface for
+> > kexec/kdump on arm64.
+>
+> We could pick it up if it doesn't conflict with the arm-soc tree. They
+> tend to pick most of the defconfig changes these days (and could as well
+> pick this one).
 
-On 2020-02-23 10:25 p.m., Bhupesh Sharma wrote:
-> Hi Amit,
->
-> On Fri, Feb 21, 2020 at 2:36 PM Amit Kachhap <amit.kachhap@arm.com> wrote:
->> Hi Bhupesh,
->>
->> On 1/13/20 5:44 PM, Bhupesh Sharma wrote:
->>> Hi James,
->>>
->>> On 01/11/2020 12:30 AM, Dave Anderson wrote:
->>>> ----- Original Message -----
->>>>> Hi Bhupesh,
->>>>>
->>>>> On 25/12/2019 19:01, Bhupesh Sharma wrote:
->>>>>> On 12/12/2019 04:02 PM, James Morse wrote:
->>>>>>> On 29/11/2019 19:59, Bhupesh Sharma wrote:
->>>>>>>> vabits_actual variable on arm64 indicates the actual VA space size,
->>>>>>>> and allows a single binary to support both 48-bit and 52-bit VA
->>>>>>>> spaces.
->>>>>>>>
->>>>>>>> If the ARMv8.2-LVA optional feature is present, and we are running
->>>>>>>> with a 64KB page size; then it is possible to use 52-bits of address
->>>>>>>> space for both userspace and kernel addresses. However, any kernel
->>>>>>>> binary that supports 52-bit must also be able to fall back to 48-bit
->>>>>>>> at early boot time if the hardware feature is not present.
->>>>>>>>
->>>>>>>> Since TCR_EL1.T1SZ indicates the size offset of the memory region
->>>>>>>> addressed by TTBR1_EL1 (and hence can be used for determining the
->>>>>>>> vabits_actual value) it makes more sense to export the same in
->>>>>>>> vmcoreinfo rather than vabits_actual variable, as the name of the
->>>>>>>> variable can change in future kernel versions, but the architectural
->>>>>>>> constructs like TCR_EL1.T1SZ can be used better to indicate intended
->>>>>>>> specific fields to user-space.
->>>>>>>>
->>>>>>>> User-space utilities like makedumpfile and crash-utility, need to
->>>>>>>> read/write this value from/to vmcoreinfo
->>>>>>> (write?)
->>>>>> Yes, also write so that the vmcoreinfo from an (crashing) arm64
->>>>>> system can
->>>>>> be used for
->>>>>> analysis of the root-cause of panic/crash on say an x86_64 host using
->>>>>> utilities like
->>>>>> crash-utility/gdb.
->>>>> I read this as as "User-space [...] needs to write to vmcoreinfo".
->>> That's correct. But for writing to vmcore dump in the kdump kernel, we
->>> need to read the symbols from the vmcoreinfo in the primary kernel.
->>>
->>>>>>>> for determining if a virtual address lies in the linear map range.
->>>>>>> I think this is a fragile example. The debugger shouldn't need to know
->>>>>>> this.
->>>>>> Well that the current user-space utility design, so I am not sure we
->>>>>> can
->>>>>> tweak that too much.
->>>>>>
->>>>>>>> The user-space computation for determining whether an address lies in
->>>>>>>> the linear map range is the same as we have in kernel-space:
->>>>>>>>
->>>>>>>>      #define __is_lm_address(addr)    (!(((u64)addr) &
->>>>>>>> BIT(vabits_actual -
->>>>>>>>      1)))
->>>>>>> This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA
->>>>>>> space"). If
->>>>>>> user-space
->>>>>>> tools rely on 'knowing' the kernel memory layout, they must have to
->>>>>>> constantly be fixed
->>>>>>> and updated. This is a poor argument for adding this to something that
->>>>>>> ends up as ABI.
->>>>>> See above. The user-space has to rely on some ABI/guaranteed
->>>>>> hardware-symbols which can be
->>>>>> used for 'determining' the kernel memory layout.
->>>>> I disagree. Everything and anything in the kernel will change. The
->>>>> ABI rules apply to
->>>>> stuff exposed via syscalls and kernel filesystems. It does not apply
->>>>> to kernel internals,
->>>>> like the memory layout we used yesterday. 14c127c957c1 is a case in
->>>>> point.
->>>>>
->>>>> A debugger trying to rely on this sort of thing would have to play
->>>>> catchup whenever it
->>>>> changes.
->>>> Exactly.  That's the whole point.
->>>>
->>>> The crash utility and makedumpfile are not in the same league as other
->>>> user-space tools.
->>>> They have always had to "play catchup" precisely because they depend
->>>> upon kernel internals,
->>>> which constantly change.
->>> I agree with you and DaveA here. Software user-space debuggers are
->>> dependent on kernel internals (which can change from time-to-time) and
->>> will have to play catch-up (which has been the case since the very start).
->>>
->>> Unfortunately we don't have any clear ABI for software debugging tools -
->>> may be something to look for in future.
->>>
->>> A case in point is gdb/kgdb, which still needs to run with KASLR
->>> turned-off (nokaslr) for debugging, as it confuses gdb which resolve
->>> kernel symbol address from symbol table of vmlinux. But we can
->>> work-around the same in makedumpfile/crash by reading the 'kaslr_offset'
->>> value. And I have several users telling me now they cannot use gdb on
->>> KASLR enabled kernel to debug panics, but can makedumpfile + crash
->>> combination to achieve the same.
->>>
->>> So, we should be looking to fix these utilities which are broken since
->>> the 52-bit changes for arm64. Accordingly, I will try to send the v6
->>> soon while incorporating the comments posted on the v5.
->> Any update on the next v6 version. Since this patch series is fixing the
->> current broken kdump so need this series to add some more fields in
->> vmcoreinfo for Pointer Authentication work.
-> Sorry for the delay. I was caught up in some other urgent arm64
-> user-space issues.
-> I am preparing the v6 now and hopefully will be able to post it out
-> for review later today.
+Thanks Catalin.
+(+Cc Arnd)
 
-Did v6 get sent out?
+Hi Arnd,
 
->
-> Thanks,
-> Bhupesh
->
->
-Regards,
-Scott
+Can you please help pick this change via the arm-soc tree?
+
+Thanks,
+Bhupesh
+
 
 _______________________________________________
 kexec mailing list
