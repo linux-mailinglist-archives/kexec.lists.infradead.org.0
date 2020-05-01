@@ -2,53 +2,44 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B5DA1C1AE7
-	for <lists+kexec@lfdr.de>; Fri,  1 May 2020 18:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 429C61C1AF5
+	for <lists+kexec@lfdr.de>; Fri,  1 May 2020 18:58:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gxMDiN8OBISHEGJNds1WpKBQrsiSb8EtwFdMjUuvleI=; b=LMg0AC6I906RlY
-	x+sDNmxA1ZKKTs8Pe29CfKsgnNfIiLdsr6vzKkBVi9FDG9Ai/jm8ZijwrxnsBtSo0GGnDFckgVFlD
-	etvlRcimsq569+1bZKGBE+pRGBKfMBqDoQpAxyWCiSHmXQqy7qqCHx0FFhjPLnJqfkXuu4VjVLqR0
-	C74nfXD/VYMqsrd2VaUcFkpXAw1xiWy6mHM5etYCSguSVT3156XEqhjRs0AcDiH7KwDAO2PfEgrey
-	QUwpGpe1Ll/bLfZIii8jr3NEotJ44p3aRmJrGG6M5i+rHmkMFmhPioDaivRqW51BJmzn15z5Gnc24
-	L9L+nk20QBxeZTUEmkvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JsS+47lDeL21u8VANiqFvrOj/dbzTSJ2iipbv/9l2RQ=; b=HLmq8jI8NelaUo
+	C4hrOoQjgxrGPmKNKZVlDaRJNzjymbJ4cTyz+J2CR2kqVTo7fZQyDI9cGDCbDN8rB3l7vTP7HYeAX
+	2p29Sy9W7BtcTFKfsWGfNNgODLljYgAJTu5aLWmty441DWMHDqAKqrXABMfclSzpuDMlzyU8UER5/
+	auwJWTV3mM8mjw+TwmIyHt4rZGXFUU3zoap9ZZJLAPyoXA3XGbbZMI65R0L2KiwrSuNLCAetzBf/E
+	vwK9tMJY5tTSV6NDKkBfHeL13+5k/3mcbff5F7Mhs+PH0Kqlg7XCyk3+TGN/MRP2SdnlpySAGvQHB
+	A9tofaaMFoAtvhKnvbeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYwy-0002NZ-1W; Fri, 01 May 2020 16:55:44 +0000
+	id 1jUYz7-0003IC-1n; Fri, 01 May 2020 16:57:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYwo-0002G4-5b; Fri, 01 May 2020 16:55:35 +0000
+ id 1jUYz4-0003Hn-Hs; Fri, 01 May 2020 16:57:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CEF7E30E;
- Fri,  1 May 2020 09:55:33 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8E9F33F305;
- Fri,  1 May 2020 09:55:32 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DA28F30E;
+ Fri,  1 May 2020 09:57:53 -0700 (PDT)
+Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
+ [10.1.196.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C0BAE3F305;
+ Fri,  1 May 2020 09:57:52 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 1/3] kexec: Prevent removal of memory in use by a loaded
- kexec image
-To: David Hildenbrand <david@redhat.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>
-References: <20200326180730.4754-1-james.morse@arm.com>
- <20200326180730.4754-2-james.morse@arm.com>
- <87d088h4k8.fsf@x220.int.ebiederm.org>
- <a694cea6-4449-c77a-98f7-bd7a49cf47fc@arm.com>
- <87y2qn1r18.fsf@x220.int.ebiederm.org>
- <a29beedb-750b-b838-6c2a-6e47ade2186a@redhat.com>
-Message-ID: <b5642228-c95b-7aca-b454-a07dde3d1866@arm.com>
-Date: Fri, 1 May 2020 17:55:19 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+To: kexec@lists.infradead.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] kexec: Discard loaded image on memory hotplug
+Date: Fri,  1 May 2020 17:57:01 +0100
+Message-Id: <20200501165701.24587-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
-In-Reply-To: <a29beedb-750b-b838-6c2a-6e47ade2186a@redhat.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_095534_260658_5C308F04 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20200501_095754_634917_BC5A776D 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,61 +60,106 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, Baoquan He <bhe@redhat.com>,
+ David Hildenbrand <david@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi guys,
+On x86, the kexec payload contains a copy of the current memory map.
+If memory is added or removed, this copy of the memory map becomes
+stale. Getting this wrong may prevent the next kernel from booting.
+The first kernel may die if it tries to re-assemble the next kernel
+in memory that has been removed.
 
-On 22/04/2020 17:40, David Hildenbrand wrote:
->>>> Usually somewhere in the loaded image
->>>> is a copy of the memory map at the time the kexec kernel was loaded.
->>>> That will invalidate the memory map as well.
->>>
->>> Ah, unconditionally. Sure, x86 needs this.
->>> (arm64 re-discovers the memory map from firmware tables after kexec)
+Discard the loaded kexec image when the memory map changes, user-space
+should reload it.
 
-> Does this include hotplugged DIMMs e.g., under KVM?
+Kdump is unaffected, as it is placed within the crashkernel reserved
+memory area and only uses this memory. The stale memory map may affect
+generation of the vmcore, but the kdump kernel should be in a position
+to validate it.
 
-If you advertise hotplugged memory to the guest using ACPI, yes.
+Signed-off-by: James Morse <james.morse@arm.com>
+---
+This patch obsoletes:
+ * kexec/memory_hotplug: Prevent removal and accidental use
+https://lore.kernel.org/linux-arm-kernel/20200326180730.4754-1-james.morse@arm.com/
 
-We don't have a practical mechanism to pass 'fact's about the platform between kernels,
-instead we rely on those facts being discoverable, or described by firmware.
+ kernel/kexec_core.c | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
+diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+index c19c0dad1ebe..e1901e5bd4b5 100644
+--- a/kernel/kexec_core.c
++++ b/kernel/kexec_core.c
+@@ -12,6 +12,7 @@
+ #include <linux/slab.h>
+ #include <linux/fs.h>
+ #include <linux/kexec.h>
++#include <linux/memory.h>
+ #include <linux/mutex.h>
+ #include <linux/list.h>
+ #include <linux/highmem.h>
+@@ -22,10 +23,12 @@
+ #include <linux/elf.h>
+ #include <linux/elfcore.h>
+ #include <linux/utsname.h>
++#include <linux/notifier.h>
+ #include <linux/numa.h>
+ #include <linux/suspend.h>
+ #include <linux/device.h>
+ #include <linux/freezer.h>
++#include <linux/pfn.h>
+ #include <linux/pm.h>
+ #include <linux/cpu.h>
+ #include <linux/uaccess.h>
+@@ -1219,3 +1222,40 @@ void __weak arch_kexec_protect_crashkres(void)
+ 
+ void __weak arch_kexec_unprotect_crashkres(void)
+ {}
++
++/*
++ * If the memory layout changes, any loaded kexec image should be evicted
++ * as it may contain a copy of the (now stale) memory map. This also means
++ * we don't need to check the memory is still present when re-assembling the
++ * new kernel at machine_kexec() time.
++ */
++static int mem_change_cb(struct notifier_block *nb, unsigned long action,
++			 void *data)
++{
++	/*
++	 * Actions are either a change, or a change being cancelled.
++	 * A second discard for 'cancel's is harmless.
++	 */
++
++	mutex_lock(&kexec_mutex);
++	if (kexec_image) {
++		kimage_free(xchg(&kexec_image, NULL));
++		pr_warn("loaded image discarded due to memory hotplug");
++	}
++	mutex_unlock(&kexec_mutex);
++
++	return NOTIFY_DONE;
++}
++
++static struct notifier_block mem_change_nb = {
++	.notifier_call = mem_change_cb,
++};
++
++static int __init register_mem_change_cb(void)
++{
++	if (IS_ENABLED(CONFIG_MEMORY_HOTPLUG))
++		return register_memory_notifier(&mem_change_nb);
++
++	return 0;
++}
++device_initcall(register_mem_change_cb);
+-- 
+2.26.1
 
->>>> All of this should be for a very brief window of a few seconds, as
->>>> the loaded kexec image is quite short.
->>>
->>> It seems I'm the outlier anticipating anything could happen between
->>> those syscalls.
->>
->> The design is:
->> 	sys_kexec_load()
->> 	shutdown scripts
->>         sys_reboot(LINUX_REBOOT_CMD_KEXEC);
->>
->> There are two system call simply so that the shutdown scripts can run.
->> Now maybe someone somewhere does something different but that is not
->> expected.
-
-[...]
-
-> Yes, and AFAIK, memory blocks which hold the reserved crashkernel area
-> can usually not get offlined and, therefore, the memory cannot get removed.
-
-The crashkernel area on arm64 will always land in un-removable memory. We set PG_Reserved
-on it too.
-
-
-Thanks,
-
-James
 
 _______________________________________________
 kexec mailing list
