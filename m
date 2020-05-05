@@ -2,98 +2,81 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19C5F1C4956
-	for <lists+kexec@lfdr.de>; Tue,  5 May 2020 00:03:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6ADB1C5CC8
+	for <lists+kexec@lfdr.de>; Tue,  5 May 2020 18:00:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QOw6r/ERthqLyGMEt7+aivNOrXcOySfmmESRUKp0kiI=; b=Op13wvg9bVC6Nj
-	uLXkeZwt8fbxC4FMgmHqzTmSXO5TOvEc6QRNWba8Fhhh2MVH8A+fbveUxLYtwsT2DwJSzB/I5Uea6
-	AY54BRl+UctIN4bZNhHZykM/Ufk1+QAgxr6p+jhNpPRhIVHnPqbqLSPCjR5z54063Jpkj0CdsM5l8
-	9GZNpLN4iCc2KL5dBT5/u6Wc4jZO8d6y/lkYWJ13HrHV/y0vhyfXkf2fTgD49+VOvv8/ZftB6wGnS
-	uzdgVyiDo7pEQl/ypi6bp4Lmp5tQ/aO+ClWq8rOKYsurd9n8fJNi0jxG68m5YLfOO+K+AQ7Wx3vQh
-	4+0Fwr4y7YaIHsnUun9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xqCQ8unsG9CgMgFJbyQHKIFMxtnPChP5cja7KDfPckc=; b=s8mXR0sK8N2p/h
+	7jLFil6qVjMHV/AQKSGRANseOrwfm9Jm/hZWJKJJsIhdDN9U7tL2aDWVvtdp1l6ZgqaEb/nsA063p
+	kDgLlca7EfUoyRFrW/LmHaBKWW9wnYuo7iN4nbXq2bTF4xhakacbUO0XnfFbAjLVTrXnJ+tdXck6B
+	qrLJMZs/dFX3QkGV/a6pABkZqvAo4eyxipq+9qaW3/ao86xwO9IM+8a9nBlC8n6qdLmJQqJqDLD6y
+	86eeBqWqBlFAHtHQd4WmXNKKMeZlF6rLeivW9cS+QsDmq0aBaUIAixlIfwmz9UQinKsJlbJLlmLvT
+	/WCMa9zIzKejvTJK5XVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVjB2-0002O9-3K; Mon, 04 May 2020 22:03:04 +0000
-Received: from out03.mta.xmission.com ([166.70.13.233])
+	id 1jVzzA-0000gA-4I; Tue, 05 May 2020 15:59:56 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVjAy-0002LA-Bj
- for kexec@lists.infradead.org; Mon, 04 May 2020 22:03:02 +0000
-Received: from in01.mta.xmission.com ([166.70.13.51])
- by out03.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jVjAp-0000jK-I2; Mon, 04 May 2020 16:02:51 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jVjAb-0001O9-V1; Mon, 04 May 2020 16:02:51 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Joonsoo Kim <js1304@gmail.com>
-References: <1588130803-20527-1-git-send-email-iamjoonsoo.kim@lge.com>
- <1588130803-20527-4-git-send-email-iamjoonsoo.kim@lge.com>
- <87h7wzvjko.fsf@x220.int.ebiederm.org>
- <CAAmzW4MrD75+Prw=fQ=d5uXKgGy3urBwmxnNtoNsw5M1m9xjYQ@mail.gmail.com>
- <87ftcfpzjn.fsf@x220.int.ebiederm.org>
-Date: Mon, 04 May 2020 16:59:14 -0500
-In-Reply-To: <87ftcfpzjn.fsf@x220.int.ebiederm.org> (Eric W. Biederman's
- message of "Mon, 04 May 2020 09:03:56 -0500")
-Message-ID: <87368fmkel.fsf_-_@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jVzym-0000Ir-H3; Tue, 05 May 2020 15:59:34 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 045FsjSY017971; Tue, 5 May 2020 08:59:26 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-type; s=pfpt0818;
+ bh=Ywyq3VHirJCwJgNWe8ZAywSyXIQThiMgYDfg3TjDlkU=;
+ b=sDi8SAoNNCwE7vJUzySvXcyKX6zyHkyBFbu/GS5A7BYQm6pSBxlPaN+xfPdmDohqTfjl
+ 9qfNL0lUnDRYXVUqZbQw7n6NjK9vEH5bDRna6Nm9E2M4X8S7JTcyi+CrRHp74K4cdLg1
+ QYhLbG54eDg0vxqb1uT5HFMYccAuxReDO/AKx8xQRAxsQjsF66zaAFw2w7t7CSPaY3Bi
+ dJnOxVicUiW4Weg5K5VYxagd513zrgmVjj8re3y7ImZ+XS7srF8wfdq4WOVlGS9eyAi0
+ n3ArcFkfi3jrE9/oN1E9Dy3Z8Pzkn+ThoQQDBMxIs0XvHYQRvdpZBWxNqsb10s0JV9Jk NQ== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 30uaugg476-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Tue, 05 May 2020 08:59:26 -0700
+Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 5 May 2020 08:59:24 -0700
+Received: from DC5-EXCH02.marvell.com (10.69.176.39) by DC5-EXCH02.marvell.com
+ (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 5 May 2020 08:59:23 -0700
+Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH02.marvell.com
+ (10.69.176.39) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 5 May 2020 08:59:23 -0700
+Received: from dc5-eodlnx05.marvell.com (dc5-eodlnx05.marvell.com
+ [10.69.113.147])
+ by maili.marvell.com (Postfix) with ESMTP id 226773F703F;
+ Tue,  5 May 2020 08:59:23 -0700 (PDT)
+From: Prabhakar Kushwaha <pkushwaha@marvell.com>
+To: <linux-arm-kernel@lists.infradead.org>, <kexec@lists.infradead.org>,
+ <robin.murphy@arm.com>, <maz@kernel.org>, <will.deacon@arm.com>
+Subject: [PATCH] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Date: Tue, 5 May 2020 08:59:20 -0700
+Message-ID: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
+X-Mailer: git-send-email 1.8.3.1
 MIME-Version: 1.0
-X-XM-SPF: eid=1jVjAb-0001O9-V1; ; ;
- mid=<87368fmkel.fsf_-_@x220.int.ebiederm.org>; ; ; hst=in01.mta.xmission.com; ;
- ; ip=68.227.160.95; ; ; frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1/u48Pr0HiQim87969boyxx6YAssOJg8Ms=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa02.xmission.com
-X-Spam-Level: ***
-X-Spam-Status: No, score=3.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,TR_Symld_Words,XMSubLong,XM_Sft_Co_L33T
- autolearn=disabled version=3.4.2
-X-Spam-Virus: No
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.5000] *  0.7 XMSubLong Long Subject
- *  1.5 TR_Symld_Words too many words that have symbols inside
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa02 0; Body=1 Fuz1=1 Fuz2=1]
- *  1.0 XM_Sft_Co_L33T No description available.
-X-Spam-DCC: ; sa02 0; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ***;Joonsoo Kim <js1304@gmail.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 1083 ms - load_scoreonly_sql: 0.03 (0.0%),
- signal_user_changed: 3.9 (0.4%), b_tie_ro: 2.6 (0.2%), parse: 1.03
- (0.1%), extract_message_metadata: 12 (1.1%), get_uri_detail_list: 3.6
- (0.3%), tests_pri_-1000: 11 (1.0%), tests_pri_-950: 1.04 (0.1%),
- tests_pri_-900: 0.85 (0.1%), tests_pri_-90: 484 (44.7%), check_bayes:
- 483 (44.6%), b_tokenize: 15 (1.4%), b_tok_get_all: 173 (15.9%),
- b_comp_prob: 2.5 (0.2%), b_tok_touch_all: 289 (26.7%), b_finish: 0.66
- (0.1%), tests_pri_0: 560 (51.6%), check_dkim_signature: 0.53 (0.0%),
- check_dkim_adsp: 2.6 (0.2%), poll_dns_idle: 1.29 (0.1%), tests_pri_10:
- 1.80 (0.2%), tests_pri_500: 6 (0.5%), rewrite_mail: 0.00 (0.0%)
-Subject: [RFC][PATCH] kexec: Teach indirect pages how to live in high memory
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-05-05_09:2020-05-04,
+ 2020-05-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_150300_431446_3817D4EB 
-X-CRM114-Status: GOOD (  23.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200505_085932_692499_FB451C76 
+X-CRM114-Status: GOOD (  18.48  )
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.233 listed in list.dnswl.org]
+ low trust [67.231.156.173 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,331 +88,159 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@lge.com, Michal Hocko <mhocko@suse.com>,
- Minchan Kim <minchan@kernel.org>,
- "Aneesh Kumar K . V" <aneesh.kumar@linux.ibm.com>,
- Rik van Riel <riel@surriel.com>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- LKML <linux-kernel@vger.kernel.org>,
- Christian Koenig <christian.koenig@amd.com>,
- Christoph Hellwig <hch@infradead.org>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Huang Rui <ray.huang@amd.com>, Kexec Mailing List <kexec@lists.infradead.org>,
- Pavel Machek <pavel@ucw.cz>, Johannes Weiner <hannes@cmpxchg.org>,
- Joonsoo Kim <iamjoonsoo.kim@lge.com>,
- Andrew Morton <akpm@linux-foundation.org>, Laura Abbott <labbott@redhat.com>,
- Mel Gorman <mgorman@techsingularity.net>, Roman Gushchin <guro@fb.com>,
- Vlastimil Babka <vbabka@suse.cz>
+Cc: bhsharma@redhat.com, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ helgaas@kernel.org, gkulkarni@marvell.com, prabhakar.pkin@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+An SMMU Stream table is created by the primary kernel. This table is
+used by the SMMU to perform address translations for device-originated
+transactions. Any crash (if happened) launches the kdump kernel which
+re-creates the SMMU Stream table. New transactions will be translated
+via this new table.
 
-Recently a patch was proposed to kimage_alloc_page to slightly alter
-the logic of how pages allocated with incompatible flags were
-detected.  The logic was being altered because the semantics of the
-page alloctor were changing yet again.
+There are scenarios, where devices are still having old pending
+transactions (configured in the primary kernel). These transactions
+come in-between Stream table creation and device-driver probe.
+As new stream table does not have entry for older transactions,
+it will be aborted by SMMU.
 
-Looking at that case I realized that there is no reason for it to even
-exist.  Either the indirect page allocations and the source page
-allocations could be separated out, or I could do as I am doing now
-and simply teach the indirect pages to live in high memory.
+Similar observations were found with PCIe-Intel 82576 Gigabit
+Network card. It sends old Memory Read transaction in kdump kernel.
+Transactions configured for older Stream table entries, that do not
+exist any longer in the new table, will cause a PCIe Completion Abort.
+Returned PCIe completion abort further leads to AER Errors from APEI
+Generic Hardware Error Source (GHES) with completion timeout.
+A network device hang is observed even after continuous
+reset/recovery from driver, Hence device is no more usable.
 
-This patch replaced pointers of type kimage_entry_t * with a new type
-kimage_entry_pos_t.  This new type holds the physical address of the
-indirect page and the offset within that page of the next indirect
-entry to write.  A special constant KIMAGE_ENTRY_POS_INVALID is added
-that kimage_image_pos_t variables that don't currently have a valid
-may be set to.
+So, If we are in a kdump kernel try to copy SMMU Stream table from
+primary/old kernel to preserve the mappings until the device driver
+takes over.
 
-Two new functions kimage_read_entry and kimage_write_entry have been
-provided to write entries in way that works if they live in high
-memory.
-
-The now unnecessary checks to see if a destination entry is non-zero
-and to increment it if so have been removed.  For safety new indrect
-pages are now cleared so we have a guarantee everything that has not
-been used yet is zero.  Along with this writing an extra trailing 0
-entry has been removed, as it is known all trailing entries are now 0.
-
-With highmem support implemented for indirect pages
-kimage_image_alloc_page has been updated to always allocate
-GFP_HIGHUSER pages, and handling of pages with different
-gfp flags has been removed.
-
-Signed-off-by: "Eric W. Biederman" <ebiederm@xmission.com>
+Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
 ---
+This patch has been tested with
+A) PCIe-Intel 82576 Gigabit Network card in following
+configurations with "no AER error". Each iteration has
+been tested on both Suse kdump rfs And default Centos distro rfs.
 
-I have not done more than compile test this but I think this will remove
-that tricky case in the kexec highmem support.
+ 1)  with 2 level stream table 
+       ----------------------------------------------------
+       SMMU               |  Normal Ping   | Flood Ping
+       -----------------------------------------------------
+       Default Operation  |  100 times     | 10 times
+       -----------------------------------------------------
+       IOMMU bypass       |  41 times      | 10 times
+       -----------------------------------------------------
 
-Any comments?  Does anyone have a 32bit highmem system where they can
-test this code?  I can probably do something with a 32bit x86 kernel
-but it has been a few days.
+ 2)  with Linear stream table. 
+       -----------------------------------------------------
+       SMMU               |  Normal Ping   | Flood Ping
+       ------------------------------------------------------
+       Default Operation  |  100 times     | 10 times
+       ------------------------------------------------------
+       IOMMU bypass       |  55 times      | 10 times
+       -------------------------------------------------------
 
-Does anyone know how we can more effectively allocate memory below
-whatever the maximum limit that kexec supports? Typically below
-4G on 32bit and below 2^64 on 64bits.
+B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+SSD card with 2 level stream table using "fio" in mixed read/write and
+only read configurations. It is tested for both Default Operation and
+IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+default Centos ditstro rfs.
 
-Eric
+This patch is not full proof solution. Issue can still come
+from the point device is discovered and driver probe called. 
+This patch has reduced window of scenario from "SMMU Stream table 
+creation - device-driver" to "device discovery - device-driver".
+Usually, device discovery to device-driver is very small time. So
+the probability is very low. 
 
- include/linux/kexec.h |   5 +-
- kernel/kexec_core.c   | 119 +++++++++++++++++++++++++-----------------
- 2 files changed, 73 insertions(+), 51 deletions(-)
+Note: device-discovery will overwrite existing stream table entries 
+with both SMMU stage as by-pass.
 
-diff --git a/include/linux/kexec.h b/include/linux/kexec.h
-index 1776eb2e43a4..6d3f6f4cb926 100644
---- a/include/linux/kexec.h
-+++ b/include/linux/kexec.h
-@@ -69,6 +69,8 @@
-  */
- 
- typedef unsigned long kimage_entry_t;
-+typedef unsigned long kimage_entry_pos_t;
-+#define KIMAGE_ENTRY_POS_INVALID ((kimage_entry_pos_t)-2)
- 
- struct kexec_segment {
- 	/*
-@@ -243,8 +245,7 @@ int kexec_elf_probe(const char *buf, unsigned long len);
- #endif
- struct kimage {
- 	kimage_entry_t head;
--	kimage_entry_t *entry;
--	kimage_entry_t *last_entry;
-+	kimage_entry_pos_t entry_pos;
- 
- 	unsigned long start;
- 	struct page *control_code_page;
-diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-index c19c0dad1ebe..45862fda9e60 100644
---- a/kernel/kexec_core.c
-+++ b/kernel/kexec_core.c
-@@ -142,7 +142,6 @@ EXPORT_SYMBOL_GPL(kexec_crash_loaded);
- #define PAGE_COUNT(x) (((x) + PAGE_SIZE - 1) >> PAGE_SHIFT)
- 
- static struct page *kimage_alloc_page(struct kimage *image,
--				       gfp_t gfp_mask,
- 				       unsigned long dest);
- 
- int sanity_check_segment_list(struct kimage *image)
-@@ -261,8 +260,7 @@ struct kimage *do_kimage_alloc_init(void)
- 		return NULL;
- 
- 	image->head = 0;
--	image->entry = &image->head;
--	image->last_entry = &image->head;
-+	image->entry_pos = KIMAGE_ENTRY_POS_INVALID;
- 	image->control_page = ~0; /* By default this does not apply */
- 	image->type = KEXEC_TYPE_DEFAULT;
- 
-@@ -531,28 +529,56 @@ int kimage_crash_copy_vmcoreinfo(struct kimage *image)
- 	return 0;
- }
- 
--static int kimage_add_entry(struct kimage *image, kimage_entry_t entry)
-+static kimage_entry_t kimage_read_entry(kimage_entry_pos_t pos)
- {
--	if (*image->entry != 0)
--		image->entry++;
-+	kimage_entry_t *arr, entry;
-+	struct page *page;
-+	unsigned long off;
-+
-+	page = boot_pfn_to_page(pos >> PAGE_SHIFT);
-+	off = pos & ~PAGE_MASK;
-+	arr = kmap_atomic(page);
-+	entry = arr[off];
-+	kunmap_atomic(arr);
-+
-+	return entry;
-+}
- 
--	if (image->entry == image->last_entry) {
--		kimage_entry_t *ind_page;
-+static void kimage_write_entry(kimage_entry_pos_t pos, kimage_entry_t entry)
-+{
-+	kimage_entry_t *arr;
-+	struct page *page;
-+	unsigned long off;
-+
-+	page = boot_pfn_to_page(pos >> PAGE_SHIFT);
-+	off = pos & ~PAGE_MASK;
-+	arr = kmap_atomic(page);
-+	arr[off] = entry;
-+	kunmap_atomic(arr);
-+}
-+
-+#define LAST_KIMAGE_ENTRY ((PAGE_SIZE/sizeof(kimage_entry_t)) - 1)
-+static int kimage_add_entry(struct kimage *image, kimage_entry_t entry)
-+{
-+	if ((image->entry_pos == KIMAGE_ENTRY_POS_INVALID) ||
-+	    ((image->entry_pos & ~PAGE_MASK) == LAST_KIMAGE_ENTRY)) {
-+		unsigned long ind_addr;
- 		struct page *page;
- 
--		page = kimage_alloc_page(image, GFP_KERNEL, KIMAGE_NO_DEST);
-+		page = kimage_alloc_page(image, KIMAGE_NO_DEST);
- 		if (!page)
- 			return -ENOMEM;
- 
--		ind_page = page_address(page);
--		*image->entry = virt_to_boot_phys(ind_page) | IND_INDIRECTION;
--		image->entry = ind_page;
--		image->last_entry = ind_page +
--				      ((PAGE_SIZE/sizeof(kimage_entry_t)) - 1);
-+		ind_addr = page_to_boot_pfn(page) << PAGE_SHIFT;
-+		kimage_write_entry(image->entry_pos, ind_addr | IND_INDIRECTION);
-+
-+		clear_highpage(page);
-+
-+		image->entry_pos = ind_addr;
- 	}
--	*image->entry = entry;
--	image->entry++;
--	*image->entry = 0;
-+
-+	kimage_write_entry(image->entry_pos, entry);
-+	image->entry_pos++;
- 
- 	return 0;
- }
-@@ -597,16 +623,14 @@ int __weak machine_kexec_post_load(struct kimage *image)
- 
- void kimage_terminate(struct kimage *image)
- {
--	if (*image->entry != 0)
--		image->entry++;
--
--	*image->entry = IND_DONE;
-+	kimage_write_entry(image->entry_pos, IND_DONE);
- }
- 
--#define for_each_kimage_entry(image, ptr, entry) \
--	for (ptr = &image->head; (entry = *ptr) && !(entry & IND_DONE); \
--		ptr = (entry & IND_INDIRECTION) ? \
--			boot_phys_to_virt((entry & PAGE_MASK)) : ptr + 1)
-+#define for_each_kimage_entry(image, pos, entry) 				\
-+	for (entry = image->head, pos = KIMAGE_ENTRY_POS_INVALID;		\
-+	     entry && !(entry & IND_DONE);					\
-+	     pos = ((entry & IND_INDIRECTION) ? (entry & PAGE_MASK) : pos + 1), \
-+	     entry = kimage_read_entry(pos))
- 
- static void kimage_free_entry(kimage_entry_t entry)
- {
-@@ -618,8 +642,8 @@ static void kimage_free_entry(kimage_entry_t entry)
- 
- void kimage_free(struct kimage *image)
- {
--	kimage_entry_t *ptr, entry;
--	kimage_entry_t ind = 0;
-+	kimage_entry_t entry, ind = 0;
-+	kimage_entry_pos_t pos;
- 
- 	if (!image)
- 		return;
-@@ -630,7 +654,7 @@ void kimage_free(struct kimage *image)
- 	}
- 
- 	kimage_free_extra_pages(image);
--	for_each_kimage_entry(image, ptr, entry) {
-+	for_each_kimage_entry(image, pos, entry) {
- 		if (entry & IND_INDIRECTION) {
- 			/* Free the previous indirection page */
- 			if (ind & IND_INDIRECTION)
-@@ -662,27 +686,27 @@ void kimage_free(struct kimage *image)
- 	kfree(image);
- }
- 
--static kimage_entry_t *kimage_dst_used(struct kimage *image,
--					unsigned long page)
-+static kimage_entry_pos_t kimage_dst_used(struct kimage *image,
-+					  unsigned long page)
- {
--	kimage_entry_t *ptr, entry;
- 	unsigned long destination = 0;
-+	kimage_entry_pos_t pos;
-+	kimage_entry_t entry;
- 
--	for_each_kimage_entry(image, ptr, entry) {
-+	for_each_kimage_entry(image, pos, entry) {
- 		if (entry & IND_DESTINATION)
- 			destination = entry & PAGE_MASK;
- 		else if (entry & IND_SOURCE) {
- 			if (page == destination)
--				return ptr;
-+				return pos;
- 			destination += PAGE_SIZE;
- 		}
- 	}
- 
--	return NULL;
-+	return KIMAGE_ENTRY_POS_INVALID;
- }
- 
- static struct page *kimage_alloc_page(struct kimage *image,
--					gfp_t gfp_mask,
- 					unsigned long destination)
- {
- 	/*
-@@ -719,10 +743,10 @@ static struct page *kimage_alloc_page(struct kimage *image,
- 	}
- 	page = NULL;
- 	while (1) {
--		kimage_entry_t *old;
-+		kimage_entry_pos_t pos;
- 
- 		/* Allocate a page, if we run out of memory give up */
--		page = kimage_alloc_pages(gfp_mask, 0);
-+		page = kimage_alloc_pages(GFP_HIGHUSER, 0);
- 		if (!page)
- 			return NULL;
- 		/* If the page cannot be used file it away */
-@@ -747,26 +771,23 @@ static struct page *kimage_alloc_page(struct kimage *image,
- 		 * See if there is already a source page for this
- 		 * destination page.  And if so swap the source pages.
- 		 */
--		old = kimage_dst_used(image, addr);
--		if (old) {
-+		pos = kimage_dst_used(image, addr);
-+		if (pos != KIMAGE_ENTRY_POS_INVALID) {
- 			/* If so move it */
-+			kimage_entry_t old, replacement;
- 			unsigned long old_addr;
- 			struct page *old_page;
- 
--			old_addr = *old & PAGE_MASK;
-+			old = kimage_read_entry(pos);
-+			old_addr = old & PAGE_MASK;
- 			old_page = boot_pfn_to_page(old_addr >> PAGE_SHIFT);
- 			copy_highpage(page, old_page);
--			*old = addr | (*old & ~PAGE_MASK);
-+			replacement = addr | (old & ~PAGE_MASK);
-+			kimage_write_entry(pos, replacement);
- 
- 			/* The old page I have found cannot be a
--			 * destination page, so return it if it's
--			 * gfp_flags honor the ones passed in.
-+			 * destination page, so return it.
- 			 */
--			if (!(gfp_mask & __GFP_HIGHMEM) &&
--			    PageHighMem(old_page)) {
--				kimage_free_pages(old_page);
--				continue;
--			}
- 			addr = old_addr;
- 			page = old_page;
+ drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 35 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 82508730feb7..64d1b925932d 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
  			break;
-@@ -805,7 +826,7 @@ static int kimage_load_normal_segment(struct kimage *image,
- 		char *ptr;
- 		size_t uchunk, mchunk;
+ 		case STRTAB_STE_0_CFG_S1_TRANS:
+ 		case STRTAB_STE_0_CFG_S2_TRANS:
+-			ste_live = true;
++			/*
++			 * As kdump kernel copy STE table from previous
++			 * kernel. It still may have valid stream table entries.
++			 * Forcing entry as false to allow overwrite.
++			 */
++			if (!is_kdump_kernel())
++				ste_live = true;
+ 			break;
+ 		case STRTAB_STE_0_CFG_ABORT:
+ 			BUG_ON(!disable_bypass);
+@@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+ 		return -ENOMEM;
+ 	}
  
--		page = kimage_alloc_page(image, GFP_HIGHUSER, maddr);
-+		page = kimage_alloc_page(image, maddr);
- 		if (!page) {
- 			result  = -ENOMEM;
- 			goto out;
++	if (is_kdump_kernel())
++		return 0;
++
+ 	for (i = 0; i < cfg->num_l1_ents; ++i) {
+ 		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+ 		strtab += STRTAB_L1_DESC_DWORDS << 3;
+@@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+ 	return 0;
+ }
+ 
++static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
++			       struct arm_smmu_strtab_cfg *cfg, u32 size)
++{
++	struct arm_smmu_strtab_cfg rdcfg;
++
++	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
++	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
++					      + ARM_SMMU_STRTAB_BASE_CFG);
++
++	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
++	rdcfg.strtab = ioremap(rdcfg.strtab_dma, size);
++
++	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
++
++	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
++}
++
+ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+ {
+ 	void *strtab;
+@@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+ 	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
+ 	cfg->strtab_base_cfg = reg;
+ 
++	if (is_kdump_kernel())
++		arm_smmu_copy_table(smmu, cfg, l1size);
++
+ 	return arm_smmu_init_l1_strtab(smmu);
+ }
+ 
+@@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
+ 	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
+ 	cfg->strtab_base_cfg = reg;
+ 
++	if (is_kdump_kernel()) {
++		arm_smmu_copy_table(smmu, cfg, size);
++		return 0;
++	}
++
+ 	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
+ 	return 0;
+ }
 -- 
-2.25.0
+2.18.2
 
 
 _______________________________________________
