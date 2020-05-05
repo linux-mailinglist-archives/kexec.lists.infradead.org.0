@@ -2,81 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6ADB1C5CC8
-	for <lists+kexec@lfdr.de>; Tue,  5 May 2020 18:00:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDAB81C5DB4
+	for <lists+kexec@lfdr.de>; Tue,  5 May 2020 18:37:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xqCQ8unsG9CgMgFJbyQHKIFMxtnPChP5cja7KDfPckc=; b=s8mXR0sK8N2p/h
-	7jLFil6qVjMHV/AQKSGRANseOrwfm9Jm/hZWJKJJsIhdDN9U7tL2aDWVvtdp1l6ZgqaEb/nsA063p
-	kDgLlca7EfUoyRFrW/LmHaBKWW9wnYuo7iN4nbXq2bTF4xhakacbUO0XnfFbAjLVTrXnJ+tdXck6B
-	qrLJMZs/dFX3QkGV/a6pABkZqvAo4eyxipq+9qaW3/ao86xwO9IM+8a9nBlC8n6qdLmJQqJqDLD6y
-	86eeBqWqBlFAHtHQd4WmXNKKMeZlF6rLeivW9cS+QsDmq0aBaUIAixlIfwmz9UQinKsJlbJLlmLvT
-	/WCMa9zIzKejvTJK5XVw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4EIxvVUiiN726KFpoOJq9AvH/j6oEiCCAySzULAQTyM=; b=eBtyR259oHaHLBpeoZq02F36X
+	tKe4kmW/+kO5uVzxdoBRxMOmw7n2e6DKXp3D7Vh3iwDSYfhfkTUVjBmmgY4NwD5LnFIXFgvV1YXOv
+	cCZ8Jelcs5VQUgd+3pkx+wszbevmL+hdwC7cNZJgdFrwkHAS0qFCvzzGadOee7ElmOzv2KvHdERSm
+	Wh9TG2nnNQ5JsnHzzOLSpMCSqj/WAGeDIWXZI9LzbRiBgAJEplxw5uPXi6y97Ect0NHs+ZqBP4NAa
+	AZtBVKIs3lyiSeNnYqtAZKJmJoDf1CKUx/3qGwtaTxIiZ170jth2MwvJduCFvPQFMnmKGJQ+5ysrG
+	Xp8PU3MiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzzA-0000gA-4I; Tue, 05 May 2020 15:59:56 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzym-0000Ir-H3; Tue, 05 May 2020 15:59:34 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 045FsjSY017971; Tue, 5 May 2020 08:59:26 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=pfpt0818;
- bh=Ywyq3VHirJCwJgNWe8ZAywSyXIQThiMgYDfg3TjDlkU=;
- b=sDi8SAoNNCwE7vJUzySvXcyKX6zyHkyBFbu/GS5A7BYQm6pSBxlPaN+xfPdmDohqTfjl
- 9qfNL0lUnDRYXVUqZbQw7n6NjK9vEH5bDRna6Nm9E2M4X8S7JTcyi+CrRHp74K4cdLg1
- QYhLbG54eDg0vxqb1uT5HFMYccAuxReDO/AKx8xQRAxsQjsF66zaAFw2w7t7CSPaY3Bi
- dJnOxVicUiW4Weg5K5VYxagd513zrgmVjj8re3y7ImZ+XS7srF8wfdq4WOVlGS9eyAi0
- n3ArcFkfi3jrE9/oN1E9Dy3Z8Pzkn+ThoQQDBMxIs0XvHYQRvdpZBWxNqsb10s0JV9Jk NQ== 
-Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0b-0016f401.pphosted.com with ESMTP id 30uaugg476-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Tue, 05 May 2020 08:59:26 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 5 May 2020 08:59:24 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 5 May 2020 08:59:23 -0700
-Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 5 May 2020 08:59:23 -0700
-Received: from dc5-eodlnx05.marvell.com (dc5-eodlnx05.marvell.com
- [10.69.113.147])
- by maili.marvell.com (Postfix) with ESMTP id 226773F703F;
- Tue,  5 May 2020 08:59:23 -0700 (PDT)
-From: Prabhakar Kushwaha <pkushwaha@marvell.com>
-To: <linux-arm-kernel@lists.infradead.org>, <kexec@lists.infradead.org>,
- <robin.murphy@arm.com>, <maz@kernel.org>, <will.deacon@arm.com>
-Subject: [PATCH] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Date: Tue, 5 May 2020 08:59:20 -0700
-Message-ID: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
-X-Mailer: git-send-email 1.8.3.1
+	id 1jW0Zn-0006eL-BO; Tue, 05 May 2020 16:37:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW0Zj-0006Zl-17; Tue, 05 May 2020 16:37:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 498B931B;
+ Tue,  5 May 2020 09:37:38 -0700 (PDT)
+Received: from [10.57.39.240] (unknown [10.57.39.240])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 795263F71F;
+ Tue,  5 May 2020 09:37:36 -0700 (PDT)
+Subject: Re: [PATCH] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+To: Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ linux-arm-kernel@lists.infradead.org, kexec@lists.infradead.org,
+ maz@kernel.org, will@kernel.org
+References: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <a8b2da83-eb6f-b928-718d-921a2d0abef3@arm.com>
+Date: Tue, 5 May 2020 17:37:35 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-05-05_09:2020-05-04,
- 2020-05-05 signatures=0
+In-Reply-To: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_085932_692499_FB451C76 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200505_093743_601904_000C16D8 
+X-CRM114-Status: GOOD (  29.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,160 +64,181 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: bhsharma@redhat.com, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- helgaas@kernel.org, gkulkarni@marvell.com, prabhakar.pkin@gmail.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: bhsharma@redhat.com, helgaas@kernel.org, gkulkarni@marvell.com,
+ prabhakar.pkin@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-An SMMU Stream table is created by the primary kernel. This table is
-used by the SMMU to perform address translations for device-originated
-transactions. Any crash (if happened) launches the kdump kernel which
-re-creates the SMMU Stream table. New transactions will be translated
-via this new table.
+[ fixed Will's address... ]
 
-There are scenarios, where devices are still having old pending
-transactions (configured in the primary kernel). These transactions
-come in-between Stream table creation and device-driver probe.
-As new stream table does not have entry for older transactions,
-it will be aborted by SMMU.
+On 2020-05-05 4:59 pm, Prabhakar Kushwaha wrote:
+> An SMMU Stream table is created by the primary kernel. This table is
+> used by the SMMU to perform address translations for device-originated
+> transactions. Any crash (if happened) launches the kdump kernel which
+> re-creates the SMMU Stream table. New transactions will be translated
+> via this new table.
+> 
+> There are scenarios, where devices are still having old pending
+> transactions (configured in the primary kernel). These transactions
+> come in-between Stream table creation and device-driver probe.
+> As new stream table does not have entry for older transactions,
+> it will be aborted by SMMU.
+> 
+> Similar observations were found with PCIe-Intel 82576 Gigabit
+> Network card. It sends old Memory Read transaction in kdump kernel.
+> Transactions configured for older Stream table entries, that do not
+> exist any longer in the new table, will cause a PCIe Completion Abort.
+> Returned PCIe completion abort further leads to AER Errors from APEI
+> Generic Hardware Error Source (GHES) with completion timeout.
+> A network device hang is observed even after continuous
+> reset/recovery from driver, Hence device is no more usable.
+> 
+> So, If we are in a kdump kernel try to copy SMMU Stream table from
+> primary/old kernel to preserve the mappings until the device driver
+> takes over.
 
-Similar observations were found with PCIe-Intel 82576 Gigabit
-Network card. It sends old Memory Read transaction in kdump kernel.
-Transactions configured for older Stream table entries, that do not
-exist any longer in the new table, will cause a PCIe Completion Abort.
-Returned PCIe completion abort further leads to AER Errors from APEI
-Generic Hardware Error Source (GHES) with completion timeout.
-A network device hang is observed even after continuous
-reset/recovery from driver, Hence device is no more usable.
+What about the context descriptors and pagetables that the old stream 
+table points to - can you trust that those are still present and correct 
+and not going to kill your device?
 
-So, If we are in a kdump kernel try to copy SMMU Stream table from
-primary/old kernel to preserve the mappings until the device driver
-takes over.
+> Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+> ---
+> This patch has been tested with
+> A) PCIe-Intel 82576 Gigabit Network card in following
+> configurations with "no AER error". Each iteration has
+> been tested on both Suse kdump rfs And default Centos distro rfs.
+> 
+>   1)  with 2 level stream table
+>         ----------------------------------------------------
+>         SMMU               |  Normal Ping   | Flood Ping
+>         -----------------------------------------------------
+>         Default Operation  |  100 times     | 10 times
+>         -----------------------------------------------------
+>         IOMMU bypass       |  41 times      | 10 times
+>         -----------------------------------------------------
+> 
+>   2)  with Linear stream table.
+>         -----------------------------------------------------
+>         SMMU               |  Normal Ping   | Flood Ping
+>         ------------------------------------------------------
+>         Default Operation  |  100 times     | 10 times
+>         ------------------------------------------------------
+>         IOMMU bypass       |  55 times      | 10 times
+>         -------------------------------------------------------
+> 
+> B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+> SSD card with 2 level stream table using "fio" in mixed read/write and
+> only read configurations. It is tested for both Default Operation and
+> IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+> default Centos ditstro rfs.
+> 
+> This patch is not full proof solution. Issue can still come
+> from the point device is discovered and driver probe called.
+> This patch has reduced window of scenario from "SMMU Stream table
+> creation - device-driver" to "device discovery - device-driver".
+> Usually, device discovery to device-driver is very small time. So
+> the probability is very low.
+> 
+> Note: device-discovery will overwrite existing stream table entries
+> with both SMMU stage as by-pass.
 
-Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
----
-This patch has been tested with
-A) PCIe-Intel 82576 Gigabit Network card in following
-configurations with "no AER error". Each iteration has
-been tested on both Suse kdump rfs And default Centos distro rfs.
+...which if there *is* ongoing DMA to addresses from previous virtual 
+mappings, stands just as much chance of killing the device and/or 
+corrupting the kdump kernel when it starts hitting random bits of the 
+physical address map.
 
- 1)  with 2 level stream table 
-       ----------------------------------------------------
-       SMMU               |  Normal Ping   | Flood Ping
-       -----------------------------------------------------
-       Default Operation  |  100 times     | 10 times
-       -----------------------------------------------------
-       IOMMU bypass       |  41 times      | 10 times
-       -----------------------------------------------------
+>   drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+>   1 file changed, 35 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 82508730feb7..64d1b925932d 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>   			break;
+>   		case STRTAB_STE_0_CFG_S1_TRANS:
+>   		case STRTAB_STE_0_CFG_S2_TRANS:
+> -			ste_live = true;
+> +			/*
+> +			 * As kdump kernel copy STE table from previous
+> +			 * kernel. It still may have valid stream table entries.
+> +			 * Forcing entry as false to allow overwrite.
+> +			 */
+> +			if (!is_kdump_kernel())
+> +				ste_live = true;
+>   			break;
+>   		case STRTAB_STE_0_CFG_ABORT:
+>   			BUG_ON(!disable_bypass);
+> @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>   		return -ENOMEM;
+>   	}
+>   
+> +	if (is_kdump_kernel())
+> +		return 0;
+> +
+>   	for (i = 0; i < cfg->num_l1_ents; ++i) {
+>   		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+>   		strtab += STRTAB_L1_DESC_DWORDS << 3;
+> @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>   	return 0;
+>   }
+>   
+> +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> +			       struct arm_smmu_strtab_cfg *cfg, u32 size)
+> +{
+> +	struct arm_smmu_strtab_cfg rdcfg;
+> +
+> +	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> +	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> +					      + ARM_SMMU_STRTAB_BASE_CFG);
+> +
+> +	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> +	rdcfg.strtab = ioremap(rdcfg.strtab_dma, size);
 
- 2)  with Linear stream table. 
-       -----------------------------------------------------
-       SMMU               |  Normal Ping   | Flood Ping
-       ------------------------------------------------------
-       Default Operation  |  100 times     | 10 times
-       ------------------------------------------------------
-       IOMMU bypass       |  55 times      | 10 times
-       -------------------------------------------------------
+ioremap? The old table is probably in RAM and previously mapped with 
+some Normal memory attribute, and may well be cached. This pretty much 
+guarantees mismatched attributes, at which point who knows what you'll 
+actually read?
 
-B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-SSD card with 2 level stream table using "fio" in mixed read/write and
-only read configurations. It is tested for both Default Operation and
-IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-default Centos ditstro rfs.
+Frankly, I'm going to say we already support a way to completely 
+preserve the previous SMMU configuration in a kdump kernel if users 
+really want to. Can you guess what that is?
 
-This patch is not full proof solution. Issue can still come
-from the point device is discovered and driver probe called. 
-This patch has reduced window of scenario from "SMMU Stream table 
-creation - device-driver" to "device discovery - device-driver".
-Usually, device discovery to device-driver is very small time. So
-the probability is very low. 
+Robin.
 
-Note: device-discovery will overwrite existing stream table entries 
-with both SMMU stage as by-pass.
-
- drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 35 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82508730feb7..64d1b925932d 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
- 			break;
- 		case STRTAB_STE_0_CFG_S1_TRANS:
- 		case STRTAB_STE_0_CFG_S2_TRANS:
--			ste_live = true;
-+			/*
-+			 * As kdump kernel copy STE table from previous
-+			 * kernel. It still may have valid stream table entries.
-+			 * Forcing entry as false to allow overwrite.
-+			 */
-+			if (!is_kdump_kernel())
-+				ste_live = true;
- 			break;
- 		case STRTAB_STE_0_CFG_ABORT:
- 			BUG_ON(!disable_bypass);
-@@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
- 		return -ENOMEM;
- 	}
- 
-+	if (is_kdump_kernel())
-+		return 0;
-+
- 	for (i = 0; i < cfg->num_l1_ents; ++i) {
- 		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
- 		strtab += STRTAB_L1_DESC_DWORDS << 3;
-@@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
- 	return 0;
- }
- 
-+static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-+			       struct arm_smmu_strtab_cfg *cfg, u32 size)
-+{
-+	struct arm_smmu_strtab_cfg rdcfg;
-+
-+	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-+	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-+					      + ARM_SMMU_STRTAB_BASE_CFG);
-+
-+	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-+	rdcfg.strtab = ioremap(rdcfg.strtab_dma, size);
-+
-+	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-+
-+	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-+}
-+
- static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
- {
- 	void *strtab;
-@@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
- 	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
- 	cfg->strtab_base_cfg = reg;
- 
-+	if (is_kdump_kernel())
-+		arm_smmu_copy_table(smmu, cfg, l1size);
-+
- 	return arm_smmu_init_l1_strtab(smmu);
- }
- 
-@@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
- 	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
- 	cfg->strtab_base_cfg = reg;
- 
-+	if (is_kdump_kernel()) {
-+		arm_smmu_copy_table(smmu, cfg, size);
-+		return 0;
-+	}
-+
- 	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
- 	return 0;
- }
--- 
-2.18.2
-
+> +	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> +
+> +	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+> +}
+> +
+>   static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>   {
+>   	void *strtab;
+> @@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>   	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
+>   	cfg->strtab_base_cfg = reg;
+>   
+> +	if (is_kdump_kernel())
+> +		arm_smmu_copy_table(smmu, cfg, l1size);
+> +
+>   	return arm_smmu_init_l1_strtab(smmu);
+>   }
+>   
+> @@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
+>   	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
+>   	cfg->strtab_base_cfg = reg;
+>   
+> +	if (is_kdump_kernel()) {
+> +		arm_smmu_copy_table(smmu, cfg, size);
+> +		return 0;
+> +	}
+> +
+>   	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
+>   	return 0;
+>   }
+> 
 
 _______________________________________________
 kexec mailing list
