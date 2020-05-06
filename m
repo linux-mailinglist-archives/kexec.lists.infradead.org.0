@@ -2,100 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97D061C69DA
-	for <lists+kexec@lfdr.de>; Wed,  6 May 2020 09:13:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2245A1C6FE0
+	for <lists+kexec@lfdr.de>; Wed,  6 May 2020 14:03:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HrrcHIsCg7zCvZluKq34MQ4LEjRN7Pcf2pR5xjR9n5M=; b=QysBl2nFsF/bgr
-	Mezny7ouLQ64rN77xPf4MbaTgktBd/jdMiQ5HXPbwGK5jlnPV/4im3LSnGEwWQ6Uj0gZRCEWeMBHs
-	p1eSb5AeApU/5+KBp7HHxzJuj4zSUAMosnLWjb0B/27OHhUPZjFzROau71eQ1Lwgn+xKe6OhDFqBx
-	k6HD5lgKPE1eaReSxtT7VbKt0M6bJ0DOua9s2eRVSZwcZI0e9kPPKC392LqH7fzJblPR7+z1pmhwM
-	f2V0fbkkqa2S6M4qXPqD5fR8yXhgWfqaxCeGHBMwhtK89mmYZETSHo3Q3b/dJ78LRwu0XxqOu8vVk
-	h7a9Sjqy0UzVrolnoR9w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nx2VVSmLqC7ax4qfNgIprkHLY+E1PjN4kvqB3yVg3Yk=; b=EgsSg5MsFcx7/JXuTrxbvWsd0
+	qLjNI29XAF1EyVdLi4s3QLgpaDafuCPRc+f4zxtqEl36Fdi2WgoKO5zSVty3UP4A8mbLnqnhX6BML
+	EFl+NlFJLgNAM7GJh50uk3dnnGLbgjcIB6vAY0nqSW09JMGJpaoQcPLMR8qWVW04SX1ftug4VyfCr
+	Oqmcp/jIxBq6Oj51D4jYcFz6BWqZc8JYNKPt53e28rsigR+9mjpWxBAkJHTXDWPfFXvlGMPsC53ZY
+	bXh76SCMBj9Dcf4dWyRRPfi4PeHZfxbkiXsPEDLbhCLmvCRKpqxcFjIvyoNvcta+/FuQwwOsyFEPV
+	ipMgs6iHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWEFB-0003i1-Jv; Wed, 06 May 2020 07:13:25 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWEF8-0003gG-4W
- for kexec@lists.infradead.org; Wed, 06 May 2020 07:13:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588749200;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Q7rWtpU2NjnGfs9fyxCQ6Bx0DcM0ZNqmfsxZMDb7x6Q=;
- b=FtgzNszIPlVAdjzlqWRsxSqhsjeA0RFiU5RVmMSVKX33qm2lep7wkiTcY+UsKT1a2nUEWn
- a4xY3rO9T3oqhK4+MwcTXhAb2ywo0oBCF1qEa/HEE6kojlrAdfW6KBTQSr082255vHGIg1
- RwO+ilWEEt/cIi0CTNipxw2osAsxRj4=
-Received: from mail-qt1-f197.google.com (mail-qt1-f197.google.com
- [209.85.160.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-411-2pxtbF04PMyn8_raxLuFPQ-1; Wed, 06 May 2020 03:13:17 -0400
-X-MC-Unique: 2pxtbF04PMyn8_raxLuFPQ-1
-Received: by mail-qt1-f197.google.com with SMTP id g23so1734185qto.0
- for <kexec@lists.infradead.org>; Wed, 06 May 2020 00:13:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DoCIDqCuiWoGHXnE50qM2xoXLIrmM3bQHiMLGkhcZ2o=;
- b=kPT3CWOV+DyRqI/Mq+3ZWxWUAhiNsbvqpIcMyPP94HLbeoOQeSXehJrbHii35IPBhZ
- nDAEJKLUGkLADyUCGnLgllyfrMMQhzbi8ZhjqnyAp/fY3QI9T6+UZl1BimmMZnybGEG5
- oVHsEjhU1D3cunxqkhD4e/n3w+z6CO6iqDgxJnn0KW/VAEaeW+K+E05MitDZG46VQqv/
- zw4ijpu9dyFTUyAM53U69lpdOTf+iaAz6G8DEAdKrUasza+zKR7D6z5kUNCDtrR4CyeQ
- ewHFGM0y3r2f9dTmtTUd7BTLCYUM6AHS2Kw1u4uMkN5KOkp2PDlFPoeKM+0Bg+A7wxnT
- jfLg==
-X-Gm-Message-State: AGi0PuY8M6kRzQuaNVKDOl2FRfeoD6O8gRGGoEAwuvPzLLFJD2BqurTD
- /tDWU9dWjwmdCRY/EG1AfGegCvyVURvQ2yXwyIOD69OWb8VIwn74QL2HNrrIVhMQ9MOZieVvHbk
- EbPoeB29z0a4sSI5kMrh6NBJ+qMmpDD/O9Js6
-X-Received: by 2002:a05:6214:1242:: with SMTP id
- q2mr6503366qvv.198.1588749196490; 
- Wed, 06 May 2020 00:13:16 -0700 (PDT)
-X-Google-Smtp-Source: APiQypKEbWxJJMg9xFDO1XjXY3rIXhjPS6TWqbI6djgDFo8c2hH5M4mqWN3Uc5hKHaslYKwpo74PZ0fFlIxHP58AJlA=
-X-Received: by 2002:a05:6214:1242:: with SMTP id
- q2mr6503348qvv.198.1588749196212; 
- Wed, 06 May 2020 00:13:16 -0700 (PDT)
+	id 1jWIlw-0004fg-Co; Wed, 06 May 2020 12:03:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWIlt-0004eJ-4Z; Wed, 06 May 2020 12:03:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAC661FB;
+ Wed,  6 May 2020 05:03:21 -0700 (PDT)
+Received: from [10.57.31.214] (unknown [10.57.31.214])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 446353F71F;
+ Wed,  6 May 2020 05:03:19 -0700 (PDT)
+From: Amit Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in
+ vmcoreinfo
+To: Will Deacon <will@kernel.org>
+References: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
+ <20200504171741.GD1833@willie-the-truck>
+Message-ID: <bc5e6fc5-15f4-40bb-4466-816de5912893@arm.com>
+Date: Wed, 6 May 2020 17:32:56 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-References: <1588705481-18385-1-git-send-email-bhsharma@redhat.com>
- <1588705481-18385-2-git-send-email-bhsharma@redhat.com>
- <5ddc169b-f837-e478-43d9-4d6cf587aa05@marvell.com>
-In-Reply-To: <5ddc169b-f837-e478-43d9-4d6cf587aa05@marvell.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Wed, 6 May 2020 12:43:03 +0530
-Message-ID: <CACi5LpNCHipB-bU52JcWBj6bPhW5ZqfG+J7QPq-m5-xf2mqdSQ@mail.gmail.com>
-Subject: Re: [EXT] [PATCH 1/2] net: qed*: Reduce RX and TX default ring count
- when running inside kdump kernel
-To: Igor Russkikh <irusskikh@marvell.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+In-Reply-To: <20200504171741.GD1833@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_001322_264070_E5D3F4B5 
-X-CRM114-Status: GOOD (  11.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_050329_262426_FA50027A 
+X-CRM114-Status: GOOD (  21.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.120 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,73 +64,126 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Ariel Elior <aelior@marvell.com>, Alok Prasad <palok@marvell.com>,
- Manish Chopra <manishc@marvell.com>, netdev@vger.kernel.org,
- kexec mailing list <kexec@lists.infradead.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- GR-everest-linux-l2 <GR-everest-linux-l2@marvell.com>,
- Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- "David S . Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hello Igor,
+Hi Will,
 
-On Wed, May 6, 2020 at 12:21 PM Igor Russkikh <irusskikh@marvell.com> wrote:
->
->
->
-> >  #include <linux/compiler.h>
-> > +#include <linux/crash_dump.h>
-> >  #include <linux/version.h>
-> >  #include <linux/workqueue.h>
-> >  #include <linux/netdevice.h>
-> > @@ -574,13 +575,13 @@ int qede_add_tc_flower_fltr(struct qede_dev *edev,
-> > __be16 proto,
-> >  #define RX_RING_SIZE         ((u16)BIT(RX_RING_SIZE_POW))
-> >  #define NUM_RX_BDS_MAX               (RX_RING_SIZE - 1)
-> >  #define NUM_RX_BDS_MIN               128
-> > -#define NUM_RX_BDS_DEF               ((u16)BIT(10) - 1)
-> > +#define NUM_RX_BDS_DEF               ((is_kdump_kernel()) ? ((u16)BIT(6) - 1) :
-> > ((u16)BIT(10) - 1))
-> >
-> >  #define TX_RING_SIZE_POW     13
-> >  #define TX_RING_SIZE         ((u16)BIT(TX_RING_SIZE_POW))
-> >  #define NUM_TX_BDS_MAX               (TX_RING_SIZE - 1)
-> >  #define NUM_TX_BDS_MIN               128
-> > -#define NUM_TX_BDS_DEF               NUM_TX_BDS_MAX
-> > +#define NUM_TX_BDS_DEF               ((is_kdump_kernel()) ? ((u16)BIT(6) - 1) :
-> > NUM_TX_BDS_MAX)
-> >
->
-> Hi Bhupesh,
->
-> Thanks for looking into this. We are also analyzing how to reduce qed* memory
-> usage even more.
->
-> Patch is good, but may I suggest not to introduce conditional logic into the
-> defines but instead just add two new defines like NUM_[RT]X_BDS_MIN and check
-> for is_kdump_kernel() in the code explicitly?
->
-> if (is_kdump_kernel()) {
->         edev->q_num_rx_buffers = NUM_RX_BDS_MIN;
->         edev->q_num_tx_buffers = NUM_TX_BDS_MIN;
-> } else {
->         edev->q_num_rx_buffers = NUM_RX_BDS_DEF;
->         edev->q_num_tx_buffers = NUM_TX_BDS_DEF;
-> }
->
-> This may make configuration logic more explicit. If future we may want adding
-> more specific configs under this `if`.
+On 5/4/20 10:47 PM, Will Deacon wrote:
+> On Mon, Apr 27, 2020 at 11:55:01AM +0530, Amit Daniel Kachhap wrote:
+>> Recently arm64 linux kernel added support for Armv8.3-A Pointer
+>> Authentication feature. If this feature is enabled in the kernel and the
+>> hardware supports address authentication then the return addresses are
+>> signed and stored in the stack to prevent ROP kind of attack. Kdump tool
+>> will now dump the kernel with signed lr values in the stack.
+>>
+>> Any user analysis tool for this kernel dump may need the kernel pac mask
+>> information in vmcoreinfo to generate the correct return address for
+>> stacktrace purpose as well as to resolve the symbol name.
+>>
+>> This patch is similar to commit ec6e822d1a22d0eef ("arm64: expose user PAC
+>> bit positions via ptrace") which exposes pac mask information via ptrace
+>> interfaces.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>> ---
+>> Changes since v1:
+>> * Rebased to kernel 5.7-rc3.
+>> * commit log change.
+>>
+>> An implementation of this new KERNELPACMASK vmcoreinfo field used by crash
+>> tool can be found here[1]. This change is accepted by crash utility
+>> maintainer [2].
+>>
+>> [1]: https://www.redhat.com/archives/crash-utility/2020-April/msg00095.html
+>> [2]: https://www.redhat.com/archives/crash-utility/2020-April/msg00099.html
+>>
+>>   arch/arm64/include/asm/compiler.h | 3 +++
+>>   arch/arm64/kernel/crash_core.c    | 4 ++++
+>>   2 files changed, 7 insertions(+)
+>>
+>> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+>> index eece20d..32d5900 100644
+>> --- a/arch/arm64/include/asm/compiler.h
+>> +++ b/arch/arm64/include/asm/compiler.h
+>> @@ -19,6 +19,9 @@
+>>   #define __builtin_return_address(val)					\
+>>   	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+>>   
+>> +#else  /* !CONFIG_ARM64_PTR_AUTH */
+>> +#define	ptrauth_user_pac_mask()		0ULL
+>> +#define	ptrauth_kernel_pac_mask()	0ULL
+> 
+> This doesn't look quite right to me, since you still have to take into
+> account the case where CONFIG_ARM64_PTR_AUTH=y but the feature is not
+> available at runtime:
 
-Thanks for the review comments.
-The suggestions seem fine to me. I will incorporate them in v2.
+Yes agree with you here. However the config gaurd is saving some extra
+computation for __builtin_return_address. There are some compiler
+support being added in __builtin_extract_return_address to mask the PAC.
+Hopefully that will improve this code. In the meantime let it be like this.
 
-Regards,
-Bhupesh
+I can remove this else case and as other users of
+ptrauth_{kernel,user}_pac_mask(ptrace.c) protect it with a config gaurd
+there.
 
+> 
+>> @@ -16,4 +17,7 @@ void arch_crash_save_vmcoreinfo(void)
+>>   	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+>>   						PHYS_OFFSET);
+>>   	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
+>> +	vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
+>> +						system_supports_address_auth() ?
+>> +						ptrauth_kernel_pac_mask() : 0);
+> 
+> In which case, would it make more sense to define
+> ptrauth_{kernel,user}_pac_mask() unconditionally? In fact, I'd probably
+> just remove the guards completely from asm/compiler.h because I think
+> they're misleading.
+
+As answered above. Let me know your opinion. Although I don't have 
+strong reservation in keeping the config gaurd.
+
+Thanks,
+Amit Daniel
+
+> 
+> Will
+> 
+> --->8
+> 
+> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+> index eece20d2c55f..51a7ce87cdfe 100644
+> --- a/arch/arm64/include/asm/compiler.h
+> +++ b/arch/arm64/include/asm/compiler.h
+> @@ -2,8 +2,6 @@
+>   #ifndef __ASM_COMPILER_H
+>   #define __ASM_COMPILER_H
+>   
+> -#if defined(CONFIG_ARM64_PTR_AUTH)
+> -
+>   /*
+>    * The EL0/EL1 pointer bits used by a pointer authentication code.
+>    * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
+> @@ -19,6 +17,4 @@
+>   #define __builtin_return_address(val)					\
+>   	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+>   
+> -#endif /* CONFIG_ARM64_PTR_AUTH */
+> -
+>   #endif /* __ASM_COMPILER_H */
+> 
 
 _______________________________________________
 kexec mailing list
