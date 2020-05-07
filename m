@@ -2,71 +2,57 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D77EB1C99F0
-	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 20:53:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E65A1C99E4
+	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 20:52:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hJN1DMr76oyGNd74ItK2r1Si8n9tbQlMNCvn8vFcbfk=; b=YSxcOOE41i2A8Y
-	LjP6F/ZnZwSNiCg83ozl7kYp4G4Rai0+1FvDvxd4Cv/m8G5JrhiA3Gd3g4XaUE2QiYSu/OUK3CclI
-	RAQj/DRqHjQQZE1sbxuQsurLmhIKm0eUu+FNGZaCZWAPbN1oiJOVPCOktFzuOr8xEzoTF/c514mdU
-	tls+nQTRa/V/45LbmC6UX0L6eVVc2tGO8dHsAvJeIKjXJ0VTLbztLa2bJeKQ7PeMSmVr5X2rd6TBq
-	W1ty34Fzoh0W5W49BaC0ApUvjkgZgLxuRjpRQo75FnCqWTYHNtnk4upfDL6Aex5d7slnjgVVxsMcO
-	9rXWxFsTxdy9v+sfIa6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MQ+Ecdu3zviFGgtghQoXEWgJFFfvDcgVH4ZDlqsLYQQ=; b=o4TchytybcoR2K
+	dESKOdfrzch3X/qNXcawVOiulnYC1QT1D8uqLa7oa/o6ftCGHPhrL7FTxP5YEDwH1XeZnVLxvYbZH
+	Gs7zaDwOqbHkr+Ewl3aCobU/Slr63uu0s/ZJCtPTMXmtNc7clP5/t8YrL2U+K1D8l69NjL+LWTI/Y
+	7OcsstBfbGLI7BGNklE4vwMdZfj1l0YSa2/XfJMgWS+pxOMSv9OKmAFfjyH0uRJaWjDYNeSARVN52
+	Wppr4nEYNwcvvawB2o9zF+sPsvhByuq7S70nGDnIrnKRsMQQmutbjQis5thrWrCtfzH23tbnYiach
+	E7DUcs0bpkPvfaHRPTGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWleI-0007uG-Eh; Thu, 07 May 2020 18:53:34 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-1.mimecast.com)
+	id 1jWlco-0007ji-Ko; Thu, 07 May 2020 18:52:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWleF-0007su-Uk
- for kexec@lists.infradead.org; Thu, 07 May 2020 18:53:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588877610;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=3EhH1A9gQMpfXypIl8DH4medFGIIF5ti8TqIyHhZSE0=;
- b=QDKy9YaZbgJBAs07KOxXaJKW8PS2hP2HEOS9oBRpYujtfrda8VxsU4Fdzr2STiH7rSFITc
- 7t4fAxYWK1HPSYxSqze1AX/SSXhu2OJbzTy6BkQmKlG/0jMpH2BLn8Mndkg5aqRlVU8D9o
- 48uovEFB0POmDQcGNV2rpp+ZUCEK5Qg=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-17-Y-p7Je82PyWfiDY1P6m7tw-1; Thu, 07 May 2020 14:53:26 -0400
-X-MC-Unique: Y-p7Je82PyWfiDY1P6m7tw-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1jWlck-0007in-8R
+ for kexec@lists.infradead.org; Thu, 07 May 2020 18:51:59 +0000
+Received: from embeddedor (unknown [189.207.59.248])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5E09E107ACCD;
- Thu,  7 May 2020 18:53:24 +0000 (UTC)
-Received: from optiplex-lnx (unknown [10.3.128.26])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id E7A721001B07;
- Thu,  7 May 2020 18:53:18 +0000 (UTC)
-Date: Thu, 7 May 2020 14:53:15 -0400
-From: Rafael Aquini <aquini@redhat.com>
-To: Luis Chamberlain <mcgrof@kernel.org>
-Subject: Re: [PATCH v2] kernel: add panic_on_taint
-Message-ID: <20200507185315.GH205881@optiplex-lnx>
-References: <20200507180631.308441-1-aquini@redhat.com>
- <20200507185046.GY11244@42.do-not-panic.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id 949AC2495D;
+ Thu,  7 May 2020 18:51:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588877517;
+ bh=tb88XbEj5l3Q8hlLvjSFDYyXEsoljocVtv2zF60ic9c=;
+ h=Date:From:To:Cc:Subject:From;
+ b=YvnTNunoqaWZ81+jr/hN3xIN+LHMIOK4+Xrhzqz8vPKpFsOmeWNNFR2e7b4b5V1CC
+ RrlPTzEhNB9Uh4JhFQbbgyZSKY+m2+0wZOLcr46kneZ8yRBb5ZYb1Za5qhdDA6jXwX
+ MnVUTwGjzv3fAC5vKtvIYuiZ9v9gbEd363lYw1co=
+Date: Thu, 7 May 2020 13:56:24 -0500
+From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+To: Eric Biederman <ebiederm@xmission.com>
+Subject: [PATCH] kexec: Replace zero-length array with flexible-array
+Message-ID: <20200507185624.GA14851@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200507185046.GY11244@42.do-not-panic.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_115332_069573_D56ACB88 
-X-CRM114-Status: GOOD (  11.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_115158_330052_264E3363 
+X-CRM114-Status: GOOD (  13.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -76,9 +62,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.81 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,35 +74,65 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: rdunlap@infradead.org, keescook@chromium.org, bhe@redhat.com,
- linux-doc@vger.kernel.org, corbet@lwn.net, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, cai@lca.pw, linux-fsdevel@vger.kernel.org,
- akpm@linux-foundation.org, dyoung@redhat.com
+Cc: kexec@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 06:50:46PM +0000, Luis Chamberlain wrote:
-> On Thu, May 07, 2020 at 02:06:31PM -0400, Rafael Aquini wrote:
-> > Another, perhaps less frequent, use for this option would be
-> > as a mean for assuring a security policy (in paranoid mode)
-> > case where no single taint is allowed for the running system.
-> 
-> If used for this purpose then we must add a new TAINT flag for
-> proc_taint() was used, otherwise we can cheat to show a taint
-> *did* happen, where in fact it never happened, some punk just
-> echo'd a value into the kernel's /proc/sys/kernel/tainted.
->
+The current codebase makes use of the zero-length array language
+extension to the C90 standard, but the preferred mechanism to declare
+variable-length types such as these ones is a flexible array member[1][2],
+introduced in C99:
 
-To accomplish that, the punk would need to be root, though, in which 
-case everything else is doomed, already.
+struct foo {
+        int stuff;
+        struct boo array[];
+};
+
+By making use of the mechanism above, we will get a compiler warning
+in case the flexible array does not occur last in the structure, which
+will help us prevent some kind of undefined behavior bugs from being
+inadvertently introduced[3] to the codebase from now on.
+
+Also, notice that, dynamic memory allocations won't be affected by
+this change:
+
+"Flexible array members have incomplete type, and so the sizeof operator
+may not be applied. As a quirk of the original implementation of
+zero-length arrays, sizeof evaluates to zero."[1]
+
+sizeof(flexible-array-member) triggers a warning because flexible array
+members have incomplete type[1]. There are some instances of code in
+which the sizeof operator is being incorrectly/erroneously applied to
+zero-length arrays and the result is zero. Such instances may be hiding
+some bugs. So, this work (flexible-array member conversions) will also
+help to get completely rid of those sorts of issues.
+
+This issue was found with the help of Coccinelle.
+
+[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
+[2] https://github.com/KSPP/linux/issues/21
+[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
+
+Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
+---
+ include/linux/kexec.h |    2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/linux/kexec.h b/include/linux/kexec.h
+index 1776eb2e43a4..ea67910ae6b7 100644
+--- a/include/linux/kexec.h
++++ b/include/linux/kexec.h
+@@ -208,7 +208,7 @@ struct crash_mem_range {
+ struct crash_mem {
+ 	unsigned int max_nr_ranges;
+ 	unsigned int nr_ranges;
+-	struct crash_mem_range ranges[0];
++	struct crash_mem_range ranges[];
+ };
  
-> Forunately proc_taint() only allows to *increment* the taint, not
-> reduce.
-> 
->   Luis
-> 
+ extern int crash_exclude_mem_range(struct crash_mem *mem,
 
 
 _______________________________________________
