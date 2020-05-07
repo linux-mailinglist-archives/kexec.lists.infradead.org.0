@@ -2,85 +2,88 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54A1B1C9E4A
-	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 00:15:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD70C1C9E70
+	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 00:26:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UsHE/G3choIWmKwEvYhnXLRMwgeBg5WRaluuQk6fDY=; b=OL183dH2YJ5L0L
-	57ZjzHSmiFlAo4JdWSfPaR/Mhx90q2EfyEQ3pN3qiSNsTqfTGqYt66o+sghMLErIJ//GKikeaMhiO
-	YJZV2t1TWY2ftZ44lF/pvSkwB7p5A/GMTnDMbqjnjHmAK8Fa74EZIWeQ2+6Ehrbnhg4TMgcIzh7jI
-	OQlUW1LCla3dq7nC4kjgASu/j85M6dzcRoeKATgmpB081OUjPi6zxrypMITRfA8vUB5XSPCObTqhF
-	dAtcbiwVQlLL0dxLBAv/stn3rHNNlJav7rLZf6XGaGEf3p0+Gl01AqPoiJZ2c05aiEQquQa32qMCq
-	XPOzxXiTtW53PbN+FCAw==;
+	List-Owner; bh=bBHVo4p9h5SeTRUsW+hFoZM/xV3vRBWpf/vWcL32E1k=; b=crmCoW7nAxB+hP
+	Lx3/1H/vkfW9LTCkQ5QOpVLMhwwGgkp6jWBWhKZF99WjH/4tNwnyzjaUqMI7jqLYu0co68pm+PM9K
+	8uPZBEuubI6vAK5x3EdYs+toz5pWOqYgBFQRMLuvNtggtK2gVkXRfB4OSEuUJNe8sdfvbqtYD2Mzm
+	zkMRNM4qgqWJQjhKUBxpeHaMMyj2wWJ8Q+OVBmGPAZE/W1mukzwQycsQsmhFdYX45FCvTLzzejbDb
+	BcWF00/11pgebYXDIp9uaimhZ1yyDPF/HqD+W+MnXzwD04Tpeh6wyipS4yYYxbvT6rZG1+HtGXdy/
+	BVmxLXZs7JXOJHAFIw0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWonY-0007Cv-U4; Thu, 07 May 2020 22:15:20 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jWoxw-0006wc-Hr; Thu, 07 May 2020 22:26:04 +0000
+Received: from mail-pj1-f65.google.com ([209.85.216.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWonW-0007Bi-AD
- for kexec@lists.infradead.org; Thu, 07 May 2020 22:15:19 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588889715;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=H1fE5P6+fvPAXaUqAeYEo8nNr2ZmJz9U6Sff/jvrkLc=;
- b=fuR8TXhkWlU7BV272oV81nRJ1yWnJTLXfUm1YglgG4UzLV/KNIHnPDAXrcQzJIqY+JX24/
- iTnD+gLTpgngFX3YfBgTLejjRt4yLcb7xNNh4w7Sow9Qy55asNyCKwCiPZcaD0Gamk740f
- HU6Ly6Q/MkeQOZxukUPfcV5+7JFgtFQ=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-196-hlU1JeMCM2mh6kooH-rKBg-1; Thu, 07 May 2020 18:15:13 -0400
-X-MC-Unique: hlU1JeMCM2mh6kooH-rKBg-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D6808107ACCA;
- Thu,  7 May 2020 22:15:11 +0000 (UTC)
-Received: from optiplex-lnx (unknown [10.3.128.26])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 70153649B1;
- Thu,  7 May 2020 22:15:06 +0000 (UTC)
-Date: Thu, 7 May 2020 18:15:03 -0400
-From: Rafael Aquini <aquini@redhat.com>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH] kernel: add panic_on_taint
-Message-ID: <20200507221503.GL205881@optiplex-lnx>
-References: <20200506222815.274570-1-aquini@redhat.com>
- <C5E11731-5503-45CC-9F72-41E8863ACD27@lca.pw>
- <20200507204219.GJ205881@optiplex-lnx>
- <27AA744E-930A-492A-BE87-05A119FE1549@lca.pw>
+ id 1jWoxu-0006w7-2i
+ for kexec@lists.infradead.org; Thu, 07 May 2020 22:26:03 +0000
+Received: by mail-pj1-f65.google.com with SMTP id y6so3289644pjc.4
+ for <kexec@lists.infradead.org>; Thu, 07 May 2020 15:26:01 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=DZd2V6aZzC95wLlSgPEBXlyeRSaAQc/BSqmBsSSCJnY=;
+ b=OaMS4ZFSQCSJRrVW3M9NrYeFwqeHGBRa3h1KKtSrmiAZYuXrTldGPhWjqatW3LxFMY
+ l5OxqfchAk9GLJDsswUgqAWN3dLGEdPT898QDKq0MI1lJDaG1LWchIpw0T33L+oJoGbB
+ s7HPmwsXEIHIv6dfkAz7RMjgFKx36PJyboY9GSrGPRBsv5vQtDUuAVUU9XwPbzPrSlPj
+ 3x2XpFy6tyERrRC6P3ub27A81tao7KMOv0WIiBzFKn+OFee2UyKDf49swyMy2yaGLN7A
+ ixXsru7hluN7JqY7WqJDJJDRinNQupIIvEzczpsttcNdg9bAOAF7gUFvHyLRxySbxEFl
+ i4bg==
+X-Gm-Message-State: AGi0PuaTmra3IexH1NdfLPztGtl815RXEh3W7qpA9rrRIiPq9a5SzcoO
+ q33OYWphuoFDGf9qVV/iiyM=
+X-Google-Smtp-Source: APiQypIPwdzfOMX951uSbn33ONVVuG6n8WfUdh7gFNW66WEA5AQCyAZiEcEcEVoNy/HcIubnSplBmw==
+X-Received: by 2002:a17:90a:d3cc:: with SMTP id
+ d12mr2582928pjw.158.1588890360942; 
+ Thu, 07 May 2020 15:26:00 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id h5sm769234pjv.4.2020.05.07.15.25.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 May 2020 15:25:59 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id 04A1C403EA; Thu,  7 May 2020 22:25:58 +0000 (UTC)
+Date: Thu, 7 May 2020 22:25:58 +0000
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: Rafael Aquini <aquini@redhat.com>
+Subject: Re: [PATCH v2] kernel: add panic_on_taint
+Message-ID: <20200507222558.GA11244@42.do-not-panic.com>
+References: <20200507180631.308441-1-aquini@redhat.com>
+ <20200507182257.GX11244@42.do-not-panic.com>
+ <20200507184307.GF205881@optiplex-lnx>
+ <20200507184705.GG205881@optiplex-lnx>
+ <20200507203340.GZ11244@42.do-not-panic.com>
+ <20200507220606.GK205881@optiplex-lnx>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <27AA744E-930A-492A-BE87-05A119FE1549@lca.pw>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+In-Reply-To: <20200507220606.GK205881@optiplex-lnx>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_151518_430015_83F07B0E 
-X-CRM114-Status: GOOD (  18.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_152602_119503_C5019AE8 
+X-CRM114-Status: GOOD (  15.96  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mcgrof[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.65 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.216.65 listed in list.dnswl.org]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,52 +95,44 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Baoquan He <bhe@redhat.com>,
- linux-doc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- kexec@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, dyoung@redhat.com
+Cc: linux-doc@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
+ Jeff Mahoney <jeffm@suse.com>, bhe@redhat.com, corbet@lwn.net,
+ Laura Abbott <labbott@redhat.com>, dyoung@redhat.com,
+ Ann Davis <AnDavis@suse.com>, Richard Palethorpe <rpalethorpe@suse.de>,
+ keescook@chromium.org, Jiri Kosina <jikos@kernel.org>, cai@lca.pw,
+ Adrian Bunk <bunk@kernel.org>, Tso Ted <tytso@mit.edu>,
+ Jessica Yu <jeyu@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ rdunlap@infradead.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
+ Linus Torvalds <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 06:05:27PM -0400, Qian Cai wrote:
+On Thu, May 07, 2020 at 06:06:06PM -0400, Rafael Aquini wrote:
+> On Thu, May 07, 2020 at 08:33:40PM +0000, Luis Chamberlain wrote:
+> > I *think* that a cmdline route to enable this would likely remove the
+> > need for the kernel config for this. But even with Vlastimil's work
+> > merged, I think we'd want yet-another value to enable / disable this
+> > feature. Do we need yet-another-taint flag to tell us that this feature
+> > was enabled?
+> >
 > 
-> 
-> > On May 7, 2020, at 4:42 PM, Rafael Aquini <aquini@redhat.com> wrote:
-> > 
-> > On Wed, May 06, 2020 at 10:50:19PM -0400, Qian Cai wrote:
-> >> 
-> >> 
-> >>> On May 6, 2020, at 6:28 PM, Rafael Aquini <aquini@redhat.com> wrote:
-> >>> 
-> >>> Analogously to the introduction of panic_on_warn, this patch
-> >>> introduces a kernel option named panic_on_taint in order to
-> >>> provide a simple and generic way to stop execution and catch
-> >>> a coredump when the kernel gets tainted by any given taint flag.
-> >>> 
-> >>> This is useful for debugging sessions as it avoids rebuilding
-> >>> the kernel to explicitly add calls to panic() or BUG() into
-> >>> code sites that introduce the taint flags of interest.
-> >>> Another, perhaps less frequent, use for this option would be
-> >>> as a mean for assuring a security policy (in paranoid mode)
-> >>> case where no single taint is allowed for the running system.
-> >> 
-> >> Andrew, you can drop the patch below from -mm now because that one is now obsolete,
-> >> 
-> >> mm-slub-add-panic_on_error-to-the-debug-facilities.patch
-> >> 
-> > Please, don't drop it yet. I'll send a patch to get rid of the bits,
-> > once this one gets accepted, if it gets accepted.
-> 
-> Why do you ever want that obsolete patch even show up in linux-next to potentailly waste other people/bots time to test it and develop things on top of it?
->
+> I guess it makes sense to get rid of the sysctl interface for
+> proc_on_taint, and only keep it as a cmdline option. 
 
-It's a reasonable and self-contained feature that we have a valid use for. 
-I honestly fail to see it causing that amount of annoyance as you are 
-suggesting here.
+That would be easier to support and k3eps this simple.
 
+> But the real issue seems to be, regardless we go with a cmdline-only option
+> or not, the ability of proc_taint() to set any arbitrary taint flag 
+> other than just marking the kernel with TAINT_USER. 
+
+I think we would have no other option but to add a new TAINT flag so
+that we know that the taint flag was modified by a user. Perhaps just
+re-using TAINT_USER when proc_taint() would suffice.
+
+  Luis
 
 _______________________________________________
 kexec mailing list
