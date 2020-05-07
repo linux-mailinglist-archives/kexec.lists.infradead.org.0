@@ -2,81 +2,84 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5729A1C8028
-	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 04:50:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A931C81FA
+	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 08:04:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2zprzRRztDz+Cq4RHOeAhnjnAtoAgxdOVSNRy5gvBD8=; b=AFuAqy3jijOYHn
-	0qGA72F/2LhA9PS1xUiqwrv90wzTvMrfSbatoaNAsEz4ysq+0bdpAA1r2WfpCJsxq8lMTSibae1bd
-	WmZCrDrmFgZ77WXmCjIayDDHNJpILzmgl4aZ/JqXotEHvoBsJZOml8BkLAaGwA0iZN3QAzzkfhLpw
-	QSdFfIiYWyRrUYLBpeThiVoaGrlWPpNWPb6Y8sqZSJ4hjG9xZzT1MmGUu8q4MN6AUU2eDxNqaVOWD
-	ccoC6/cyxOUIGqjlB1XahwXB6D527Jzsa8PmIkIWiRTBHBehIC6EmGrcsslKYUdQ2n9qiNtxpOAeW
-	pMTEyZlq22daBcMKiWRg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dsQHkCTgwXmaFbxix+3h9B+62oy7ZGQ8o3fFcdU8N08=; b=uaZMP8yTLbZcd1U23O10+0rsXH
+	hBrk6POtPAsq/NyDH8xRwFc9rZOt9gPFtTwFG3LJUDYFVDrrAWuDjBbBTPi8vWjUSJInjgItYUDRb
+	5KL+hQLAjTMSBj/6Mn1mPgm7SOSG7ZLUbBuM4vG6CboXZbaZtyUygCz8cuefsE+fOZQs7vednnqAR
+	KORHXoqPIZLF6EDVqbBK4bBefC3DpUSei4nfZiUdkZSTassI40w2O+Infc5lZDd1dX2JaYpZHVx+D
+	tiTNQB+Gvl22Y0Oz0YLy3TEVe8XaF0m7fqHmnrX2fUG5UCxWJZG1pV+gFJ90wNAmXtBw3yTIoiKli
+	URiq8E9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWWcD-0000vR-TQ; Thu, 07 May 2020 02:50:25 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1jWZeE-0001eG-E8; Thu, 07 May 2020 06:04:42 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWWcA-0000uj-OT
- for kexec@lists.infradead.org; Thu, 07 May 2020 02:50:24 +0000
-Received: by mail-qt1-x841.google.com with SMTP id x12so3514763qts.9
- for <kexec@lists.infradead.org>; Wed, 06 May 2020 19:50:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=v5p4G137YuitFnxAdjJGDeWrlR5PjlajIuvgc0Izz2k=;
- b=p750SKit8Chs8O2JezORAPJP4t47zmSpkpleyDhzPywZlEJsAjOgD1QOW2EMlvn+BU
- uUhq4taDMrPJ9oMxWXeeGRQmFme0e56qiaJtXl1HeHxNKv5VSarf8JeQy8150L7SOMcQ
- N6ggNiN+Ch3wUcnHtpQhOBQc6Dao+VF13YpZDf5joeWA7yujT6zP4AUdBvGwTkL5O2W/
- WNuDFPqSWKDMBboXLDy5YrC08br3dkGkUDFV8/wuR5nQ/jVvlGBukgFucJT7oiWO9twE
- f8BaYKqyQI547ysjYYYd0UldV8tUpnUIi0NDYTZWPxM/bAYwmkPA8f+jUiufYRfJkjXk
- HKCg==
+ id 1jWZe5-0001XX-H8; Thu, 07 May 2020 06:04:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id y24so5291799wma.4;
+ Wed, 06 May 2020 23:04:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=kFfrkxMciwTSg6iJosm2SDVDlMbmwRyNuvJzx369uGM=;
+ b=KpG8YQlGQbxZdjCIhVpHmQVqCTb5SHSlqXxoXZNa3IC57CFULAtDOUTXjr7KR2Rbty
+ CbjHLpcTNV1mUYwqVpJ1cjfc/KCU8+YgmnJVtTHwzhDWMuMDEORpgVevWg6z1/4/gSj3
+ D8Jaw4kSpDMXmWxYXDvypaOOGnyZHDN3SxAFVoYA35Oj813jOwvxqI1WyNaTYk3u/yoN
+ f6iSONZZpi+QcCsqWn18wZH1SMTmES7XC5BNOFabtdQyw0lGUham13SnwdSOBLQnQoGu
+ BoID0tvMJW1QebwvVGcBrszXD/MTRme+3pikpCwna9QTAB2o29b5TfN0ActFLT2gao1N
+ neow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=v5p4G137YuitFnxAdjJGDeWrlR5PjlajIuvgc0Izz2k=;
- b=BZPB13ChOyBPTIdAT2yXONx8w8OlBL0UlxVVUhCpsAtyQiRftumWW29vVauktw+Eex
- XCiIx1YPoQuVtac4YwKef9d3IZSMRG2S+eKA0kFdCSsQKRAX2Dbsiar0fe5sa80m7Zdw
- tTd8aPPFiIBLgRnaSFtFoT3YAn73xsiF94d1bQq3SUP1I5//VMxXJOL5enm5tpClusvv
- 6lDLi7AS1YFR6qDT3Mh5Cd/XjFEU5i5V95bddP4CQoLhefLrYt/feSN1/y6F8Egk1eBQ
- Uhj9VKAzChjqofkEZAXv+NWDjPzQvomRhIRaIuaTYVp7xnhTr5S0uHsBPGfH+O05r9vP
- 99XQ==
-X-Gm-Message-State: AGi0PuZpwYbyCaMVe8QN8Q+HOyvVMlaARxwwzLXLPd2Dvk9vdfaz/qze
- S1/aq15VqSAri4ISqh+pHPZzjw==
-X-Google-Smtp-Source: APiQypKxWi4AkhGDT+GZggTnrZrPgUKz0gOo0rLAfbuL7zwLe73GZWVPmGUFdEpd/zUZxCk8YGaGHw==
-X-Received: by 2002:aed:3ffd:: with SMTP id w58mr11966424qth.21.1588819821027; 
- Wed, 06 May 2020 19:50:21 -0700 (PDT)
-Received: from [192.168.1.153] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id y18sm3363851qty.41.2020.05.06.19.50.19
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 May 2020 19:50:20 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-Subject: Re: [PATCH] kernel: add panic_on_taint
-From: Qian Cai <cai@lca.pw>
-In-Reply-To: <20200506222815.274570-1-aquini@redhat.com>
-Date: Wed, 6 May 2020 22:50:19 -0400
-Message-Id: <C5E11731-5503-45CC-9F72-41E8863ACD27@lca.pw>
-References: <20200506222815.274570-1-aquini@redhat.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to;
+ bh=kFfrkxMciwTSg6iJosm2SDVDlMbmwRyNuvJzx369uGM=;
+ b=npCIG8fLae2sP0vhZEnhJ1hKInQLPmjNMMj77v7B5Drce5kP9fLA0KORn95FuQqnL3
+ i+ko56UTNZF0qpoi/mcZ7/P/Wqs2zERa7hsKbcuXHldIs2reOTwiUykoPL1o/mk01jid
+ bTNkHPDTwyL+7zNELx550L4XXQvGlnWj7wN0d+VB8N/3nUajzzZr5fbDPFs8tOU3svtU
+ +xRYjj6lCstxITY2G4syqkoMeL4ukok7ZgrheKnKBsyUti6iJtkV3LXR13sUftG1gN0x
+ aJIZssbzRRJRL8XCRdb5/N2YTacKDN/NHI5tIeA0AlhbiZnBFZnVbGO2Km6aDKCkc6Sf
+ w1aw==
+X-Gm-Message-State: AGi0PuYexljpRERZESgeOBMO/OubFA8pDJHlLq8Tyb9mejDvzJ4Ujdvp
+ 4B1wVmkhF45A09TMGH1k5BC2YCDp9cK6r0DHzgcYtYSdtJA=
+X-Google-Smtp-Source: APiQypJhnRQeMKOUGP5VSYgaTZUjo+i9f8N20hIr68eYWTVo7Yv62Y11BJbrkhc5hf174B55C/CAdcZGKpfYrVEtf2U=
+X-Received: by 2002:a05:600c:224a:: with SMTP id
+ a10mr8879068wmm.174.1588831470286; 
+ Wed, 06 May 2020 23:04:30 -0700 (PDT)
+MIME-Version: 1.0
+References: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
+ <a8b2da83-eb6f-b928-718d-921a2d0abef3@arm.com>
+In-Reply-To: <a8b2da83-eb6f-b928-718d-921a2d0abef3@arm.com>
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Date: Thu, 7 May 2020 11:33:53 +0530
+Message-ID: <CAJ2QiJ+i5nfFUoCyzq7zmYu+85m=D7G-Y6bU0Hm272BuqKC-rg@mail.gmail.com>
+Subject: Re: [PATCH] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
+ kexec mailing list <kexec@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, 
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>, 
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Bjorn Helgaas <helgaas@kernel.org>, 
+ Will Deacon <will@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_195022_848867_4FED9D3F 
-X-CRM114-Status: GOOD (  12.65  )
+X-CRM114-CacheID: sfid-20200506_230433_592104_C9E46648 
+X-CRM114-Status: GOOD (  34.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.pkin[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -96,35 +99,189 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Baoquan He <bhe@redhat.com>,
- linux-doc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- kexec@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, linux-fsdevel@vger.kernel.org,
- dyoung@redhat.com, Rafael Aquini <aquini@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
+Thanks Robin for Review.
+
+Please find reply in-lined.
+
+On Tue, May 5, 2020 at 10:07 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> [ fixed Will's address... ]
+>
+> On 2020-05-05 4:59 pm, Prabhakar Kushwaha wrote:
+> > An SMMU Stream table is created by the primary kernel. This table is
+> > used by the SMMU to perform address translations for device-originated
+> > transactions. Any crash (if happened) launches the kdump kernel which
+> > re-creates the SMMU Stream table. New transactions will be translated
+> > via this new table.
+> >
+> > There are scenarios, where devices are still having old pending
+> > transactions (configured in the primary kernel). These transactions
+> > come in-between Stream table creation and device-driver probe.
+> > As new stream table does not have entry for older transactions,
+> > it will be aborted by SMMU.
+> >
+> > Similar observations were found with PCIe-Intel 82576 Gigabit
+> > Network card. It sends old Memory Read transaction in kdump kernel.
+> > Transactions configured for older Stream table entries, that do not
+> > exist any longer in the new table, will cause a PCIe Completion Abort.
+> > Returned PCIe completion abort further leads to AER Errors from APEI
+> > Generic Hardware Error Source (GHES) with completion timeout.
+> > A network device hang is observed even after continuous
+> > reset/recovery from driver, Hence device is no more usable.
+> >
+> > So, If we are in a kdump kernel try to copy SMMU Stream table from
+> > primary/old kernel to preserve the mappings until the device driver
+> > takes over.
+>
+> What about the context descriptors and pagetables that the old stream
+> table points to - can you trust that those are still present and correct
+> and not going to kill your device?
+>
+
+This is based on base assumption of kdump that "if any DMA is
+in-progress at the time of crash,  Let it be continue as it will be
+writing to the memory given by Previous kernel. This memory is always
+different than kdump kernel reserved space".  So whatever is the
+scenario, keep on doing DMA.
+
+To consider the scenario mentioned by you than all devices must be
+stopped gracefully before starting kdump kernel.  Unfortunately this
+is not supported for kdump kernel.
 
 
-> On May 6, 2020, at 6:28 PM, Rafael Aquini <aquini@redhat.com> wrote:
-> 
-> Analogously to the introduction of panic_on_warn, this patch
-> introduces a kernel option named panic_on_taint in order to
-> provide a simple and generic way to stop execution and catch
-> a coredump when the kernel gets tainted by any given taint flag.
-> 
-> This is useful for debugging sessions as it avoids rebuilding
-> the kernel to explicitly add calls to panic() or BUG() into
-> code sites that introduce the taint flags of interest.
-> Another, perhaps less frequent, use for this option would be
-> as a mean for assuring a security policy (in paranoid mode)
-> case where no single taint is allowed for the running system.
+> > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+> > ---
+> > This patch has been tested with
+> > A) PCIe-Intel 82576 Gigabit Network card in following
+> > configurations with "no AER error". Each iteration has
+> > been tested on both Suse kdump rfs And default Centos distro rfs.
+> >
+> >   1)  with 2 level stream table
+> >         ----------------------------------------------------
+> >         SMMU               |  Normal Ping   | Flood Ping
+> >         -----------------------------------------------------
+> >         Default Operation  |  100 times     | 10 times
+> >         -----------------------------------------------------
+> >         IOMMU bypass       |  41 times      | 10 times
+> >         -----------------------------------------------------
+> >
+> >   2)  with Linear stream table.
+> >         -----------------------------------------------------
+> >         SMMU               |  Normal Ping   | Flood Ping
+> >         ------------------------------------------------------
+> >         Default Operation  |  100 times     | 10 times
+> >         ------------------------------------------------------
+> >         IOMMU bypass       |  55 times      | 10 times
+> >         -------------------------------------------------------
+> >
+> > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+> > SSD card with 2 level stream table using "fio" in mixed read/write and
+> > only read configurations. It is tested for both Default Operation and
+> > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+> > default Centos ditstro rfs.
+> >
+> > This patch is not full proof solution. Issue can still come
+> > from the point device is discovered and driver probe called.
+> > This patch has reduced window of scenario from "SMMU Stream table
+> > creation - device-driver" to "device discovery - device-driver".
+> > Usually, device discovery to device-driver is very small time. So
+> > the probability is very low.
+> >
+> > Note: device-discovery will overwrite existing stream table entries
+> > with both SMMU stage as by-pass.
+>
+> ...which if there *is* ongoing DMA to addresses from previous virtual
+> mappings, stands just as much chance of killing the device and/or
+> corrupting the kdump kernel when it starts hitting random bits of the
+> physical address map.
+>
 
-Andrew, you can drop the patch below from -mm now because that one is now obsolete,
+Yes, this is possible. Even this is possible with today's code without
+this patch.
+Currently,
+a) Linear stream table: STE are set in by-pass during smmu probe.
+b) 2lvl stream table:  Descriptors are changed during smmu probe. STE
+are set in by-pass during device discovery.
 
-mm-slub-add-panic_on_error-to-the-debug-facilities.patch
+This patch defer both a and b to "device discovery" phase.  As time
+between "device discovery" and driver probe is small.  Probability of
+hitting this case less.
+
+> >   drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+> >   1 file changed, 35 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> > index 82508730feb7..64d1b925932d 100644
+> > --- a/drivers/iommu/arm-smmu-v3.c
+> > +++ b/drivers/iommu/arm-smmu-v3.c
+> > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+> >                       break;
+> >               case STRTAB_STE_0_CFG_S1_TRANS:
+> >               case STRTAB_STE_0_CFG_S2_TRANS:
+> > -                     ste_live = true;
+> > +                     /*
+> > +                      * As kdump kernel copy STE table from previous
+> > +                      * kernel. It still may have valid stream table entries.
+> > +                      * Forcing entry as false to allow overwrite.
+> > +                      */
+> > +                     if (!is_kdump_kernel())
+> > +                             ste_live = true;
+> >                       break;
+> >               case STRTAB_STE_0_CFG_ABORT:
+> >                       BUG_ON(!disable_bypass);
+> > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> >               return -ENOMEM;
+> >       }
+> >
+> > +     if (is_kdump_kernel())
+> > +             return 0;
+> > +
+> >       for (i = 0; i < cfg->num_l1_ents; ++i) {
+> >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+> >               strtab += STRTAB_L1_DESC_DWORDS << 3;
+> > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> >       return 0;
+> >   }
+> >
+> > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
+> > +{
+> > +     struct arm_smmu_strtab_cfg rdcfg;
+> > +
+> > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
+> > +
+> > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> > +     rdcfg.strtab = ioremap(rdcfg.strtab_dma, size);
+>
+> ioremap? The old table is probably in RAM and previously mapped with
+> some Normal memory attribute, and may well be cached. This pretty much
+> guarantees mismatched attributes, at which point who knows what you'll
+> actually read?
+
+We can use mmap system call to map physical address. It should take care.
+
+>
+> Frankly, I'm going to say we already support a way to completely
+> preserve the previous SMMU configuration in a kdump kernel if users
+> really want to. Can you guess what that is?
+>
+
+I believe, you are referring to not program  "smmu->base +
+ARM_SMMU_STRTAB_BASE"  in arm_smmu_device_reset ().
+So instead of copying, directly use older table.  Yes, it can be done.
+
+This patch is copying to not corrupt previous Kernel's table, as it
+may require for debugging.
+
+--pk
+
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
