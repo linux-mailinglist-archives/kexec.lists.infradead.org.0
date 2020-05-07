@@ -2,88 +2,90 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD70C1C9E70
-	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 00:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5DC41C9EF0
+	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 01:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bBHVo4p9h5SeTRUsW+hFoZM/xV3vRBWpf/vWcL32E1k=; b=crmCoW7nAxB+hP
-	Lx3/1H/vkfW9LTCkQ5QOpVLMhwwGgkp6jWBWhKZF99WjH/4tNwnyzjaUqMI7jqLYu0co68pm+PM9K
-	8uPZBEuubI6vAK5x3EdYs+toz5pWOqYgBFQRMLuvNtggtK2gVkXRfB4OSEuUJNe8sdfvbqtYD2Mzm
-	zkMRNM4qgqWJQjhKUBxpeHaMMyj2wWJ8Q+OVBmGPAZE/W1mukzwQycsQsmhFdYX45FCvTLzzejbDb
-	BcWF00/11pgebYXDIp9uaimhZ1yyDPF/HqD+W+MnXzwD04Tpeh6wyipS4yYYxbvT6rZG1+HtGXdy/
-	BVmxLXZs7JXOJHAFIw0A==;
+	List-Owner; bh=Oo/OJzrnS+XwXX2SOO61u1QEt7CCIxvYrdXk4QV2Zt4=; b=gF2O14gsYKXZY+
+	/9SwgN2peNHs7PaT3VQTGhJMpoNFz+SsO9wcG7Qz7/HICjS9EKb6R224p3H86qHWtGM/KWFFSmUrS
+	S1cqUyrWgy9gPmQEKZ96F168nE2J34zVGv6mhq5A+ezNXHCrpaRHRqMG3VPwAIMCLxJo8LjprZ5M+
+	1tCMJpIb+TJzAjaB5A6MTf4Juye3e2zg1iVIL0SlxjdnP04Eke7P0MgKBuLE/S4IaM1Ykdr1gsstr
+	/18u9DYNEZczOqJdJNSoi30r2tUfprTUCwW+fQbXDi7y178TAyCI/DPO1Er0V7E9CHt7hAKRRKL3m
+	wedMxKsah7sJpzbQxk1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWoxw-0006wc-Hr; Thu, 07 May 2020 22:26:04 +0000
-Received: from mail-pj1-f65.google.com ([209.85.216.65])
+	id 1jWpc2-00012o-6m; Thu, 07 May 2020 23:07:30 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWoxu-0006w7-2i
- for kexec@lists.infradead.org; Thu, 07 May 2020 22:26:03 +0000
-Received: by mail-pj1-f65.google.com with SMTP id y6so3289644pjc.4
- for <kexec@lists.infradead.org>; Thu, 07 May 2020 15:26:01 -0700 (PDT)
+ id 1jWpbv-000123-2t
+ for kexec@lists.infradead.org; Thu, 07 May 2020 23:07:24 +0000
+Received: by mail-qt1-x844.google.com with SMTP id h26so1069057qtu.8
+ for <kexec@lists.infradead.org>; Thu, 07 May 2020 16:07:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=content-transfer-encoding:from:mime-version:subject:date:message-id
+ :references:cc:in-reply-to:to;
+ bh=cDgv5RBBNmmZoeVkSdRHbb+p5n1j6gbGkVNuskYknK8=;
+ b=irn2+fcrxp6NonlZzAmEkP+IcmaZPlVzbzxmfCG6lVabw4/G0dFt3sq6PNTCVMGxGG
+ mHrxFYOqL919h6uaxEl0JW7dIaw8NB10ABm7DPmqf/EhfuWGsilf0Zdh4cihFDxim+Mo
+ 2oiV63mSEiHMYHoenvD/gjwZA2LAweN8EWw+tYVdcFwe7a8XKwwE9AkeASQmt+OrM6Ud
+ 66rqMK51DOb0gUzTcrOl8r0cDm0oT8FMB5ERjpMlkKlVh00sAuv1oGi7o++rQCXNEyy3
+ NK/+1D+NyYl6NPUHDAAe/3i2dWdBxPkf5biMBOG9YHzAaT3acw0lJR7KTsOkpXlpkwHt
+ Jr4Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DZd2V6aZzC95wLlSgPEBXlyeRSaAQc/BSqmBsSSCJnY=;
- b=OaMS4ZFSQCSJRrVW3M9NrYeFwqeHGBRa3h1KKtSrmiAZYuXrTldGPhWjqatW3LxFMY
- l5OxqfchAk9GLJDsswUgqAWN3dLGEdPT898QDKq0MI1lJDaG1LWchIpw0T33L+oJoGbB
- s7HPmwsXEIHIv6dfkAz7RMjgFKx36PJyboY9GSrGPRBsv5vQtDUuAVUU9XwPbzPrSlPj
- 3x2XpFy6tyERrRC6P3ub27A81tao7KMOv0WIiBzFKn+OFee2UyKDf49swyMy2yaGLN7A
- ixXsru7hluN7JqY7WqJDJJDRinNQupIIvEzczpsttcNdg9bAOAF7gUFvHyLRxySbxEFl
- i4bg==
-X-Gm-Message-State: AGi0PuaTmra3IexH1NdfLPztGtl815RXEh3W7qpA9rrRIiPq9a5SzcoO
- q33OYWphuoFDGf9qVV/iiyM=
-X-Google-Smtp-Source: APiQypIPwdzfOMX951uSbn33ONVVuG6n8WfUdh7gFNW66WEA5AQCyAZiEcEcEVoNy/HcIubnSplBmw==
-X-Received: by 2002:a17:90a:d3cc:: with SMTP id
- d12mr2582928pjw.158.1588890360942; 
- Thu, 07 May 2020 15:26:00 -0700 (PDT)
-Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
- by smtp.gmail.com with ESMTPSA id h5sm769234pjv.4.2020.05.07.15.25.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 May 2020 15:25:59 -0700 (PDT)
-Received: by 42.do-not-panic.com (Postfix, from userid 1000)
- id 04A1C403EA; Thu,  7 May 2020 22:25:58 +0000 (UTC)
-Date: Thu, 7 May 2020 22:25:58 +0000
-From: Luis Chamberlain <mcgrof@kernel.org>
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=cDgv5RBBNmmZoeVkSdRHbb+p5n1j6gbGkVNuskYknK8=;
+ b=qO/IYYosXpAgfYbrKpk4x37zyM5bAR+hkVKoB7eUSWIBGoBPU+gwP5/uU8v83AM1XJ
+ tRbCpZwHtA8lDuNzQY7axSSeF5MnUyD3p8sPcoMPUIRRREovyZQxJpKv36gzQTKMnmLD
+ QxlC1j00+eTFiZYLyXzdxQKtGX48HXCf6xp6XkcdNs7y7cqersaiHmQ8PoiRnH1ThI+b
+ Z+ruH2ChtxP2GNip8egBu6UW8o1McPhu8zK7CuAxBRFGahTFH47vqQWY0ARyJlc/wjPG
+ e1GvyA7EXYx+9c8l+2KYEW0WyamA96AQ55iH+8ewZHNmb9kxR+kPBXYw5XSmktOWu9Yc
+ ZzHQ==
+X-Gm-Message-State: AGi0PubmXv3E31oOdFiGvzkzjQU65uIYRuAsDBQhRtIrLiiZ0lxkrlbZ
+ qHknP6F/kiW6KvmsjprYaNeGiw==
+X-Google-Smtp-Source: APiQypJ8nv0rS/6ipD0+tlnjwjtkoEW9gBSgFlE4m3C077d6wO4jOE6P+FabQVeufE8QHwU+D1XMog==
+X-Received: by 2002:ac8:46c9:: with SMTP id h9mr16757891qto.128.1588892841789; 
+ Thu, 07 May 2020 16:07:21 -0700 (PDT)
+Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
+ [71.184.117.43])
+ by smtp.gmail.com with ESMTPSA id b126sm5170080qkc.119.2020.05.07.16.07.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 07 May 2020 16:07:21 -0700 (PDT)
+From: Qian Cai <cai@lca.pw>
+Mime-Version: 1.0 (1.0)
+Subject: Re: [PATCH] kernel: add panic_on_taint
+Date: Thu, 7 May 2020 19:07:20 -0400
+Message-Id: <6B423101-ACF4-49A3-AD53-ACBF87F1ABE0@lca.pw>
+References: <20200507221503.GL205881@optiplex-lnx>
+In-Reply-To: <20200507221503.GL205881@optiplex-lnx>
 To: Rafael Aquini <aquini@redhat.com>
-Subject: Re: [PATCH v2] kernel: add panic_on_taint
-Message-ID: <20200507222558.GA11244@42.do-not-panic.com>
-References: <20200507180631.308441-1-aquini@redhat.com>
- <20200507182257.GX11244@42.do-not-panic.com>
- <20200507184307.GF205881@optiplex-lnx>
- <20200507184705.GG205881@optiplex-lnx>
- <20200507203340.GZ11244@42.do-not-panic.com>
- <20200507220606.GK205881@optiplex-lnx>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507220606.GK205881@optiplex-lnx>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Mailer: iPhone Mail (17D50)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_152602_119503_C5019AE8 
-X-CRM114-Status: GOOD (  15.96  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200507_160723_127007_75CC0D38 
+X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mcgrof[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.216.65 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.216.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,46 +97,30 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
- Jeff Mahoney <jeffm@suse.com>, bhe@redhat.com, corbet@lwn.net,
- Laura Abbott <labbott@redhat.com>, dyoung@redhat.com,
- Ann Davis <AnDavis@suse.com>, Richard Palethorpe <rpalethorpe@suse.de>,
- keescook@chromium.org, Jiri Kosina <jikos@kernel.org>, cai@lca.pw,
- Adrian Bunk <bunk@kernel.org>, Tso Ted <tytso@mit.edu>,
- Jessica Yu <jeyu@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- rdunlap@infradead.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
- Linus Torvalds <torvalds@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>, Baoquan He <bhe@redhat.com>,
+ linux-doc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ kexec@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>, dyoung@redhat.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 06:06:06PM -0400, Rafael Aquini wrote:
-> On Thu, May 07, 2020 at 08:33:40PM +0000, Luis Chamberlain wrote:
-> > I *think* that a cmdline route to enable this would likely remove the
-> > need for the kernel config for this. But even with Vlastimil's work
-> > merged, I think we'd want yet-another value to enable / disable this
-> > feature. Do we need yet-another-taint flag to tell us that this feature
-> > was enabled?
-> >
-> 
-> I guess it makes sense to get rid of the sysctl interface for
-> proc_on_taint, and only keep it as a cmdline option. 
-
-That would be easier to support and k3eps this simple.
-
-> But the real issue seems to be, regardless we go with a cmdline-only option
-> or not, the ability of proc_taint() to set any arbitrary taint flag 
-> other than just marking the kernel with TAINT_USER. 
-
-I think we would have no other option but to add a new TAINT flag so
-that we know that the taint flag was modified by a user. Perhaps just
-re-using TAINT_USER when proc_taint() would suffice.
-
-  Luis
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+Cgo+IE9uIE1heSA3LCAyMDIwLCBhdCA2OjE1IFBNLCBSYWZhZWwgQXF1aW5pIDxhcXVpbmlAcmVk
+aGF0LmNvbT4gd3JvdGU6Cj4gCj4gSXQncyBhIHJlYXNvbmFibGUgYW5kIHNlbGYtY29udGFpbmVk
+IGZlYXR1cmUgdGhhdCB3ZSBoYXZlIGEgdmFsaWQgdXNlIGZvci4gCj4gSSBob25lc3RseSBmYWls
+IHRvIHNlZSBpdCBjYXVzaW5nIHRoYXQgYW1vdW50IG9mIGFubm95YW5jZSBhcyB5b3UgYXJlIAo+
+IHN1Z2dlc3RpbmcgaGVyZS4KCkl0IGlzIG5vdCBhIGJpZyB0cm91YmxlIHlldCwgYnV0IGtlZXBp
+bmcgYW4gb2Jzb2xldGUgcGF0Y2ggdGhhdCBub3QgdmVyeSBzdHJhaWdodGZvcndhcmQgdG8gZmln
+dXJlIG91dCB0aGF0IGl0IHdpbGwgYmUgc3VwZXJzZWRlZCBieSB0aGUgcGFuaWNfb25fdGFpbnQg
+cGF0Y2ggd2lsbCBvbmx5IGNhdXNlIG1vcmUgY29uZnVzaW9uIHRoZSBsb25nZXIgaXQgaGFzIHN0
+YXllZCBpbiBsaW51eC1uZXh0LgoKVGhlIHRoaW5nIGlzIHRoYXQgZXZlbiBpZiB5b3UgY2Fu4oCZ
+dCBnZXQgdGhpcyBwYW5pY19vbl90YWludCAodGhlIHN1cGVyaW9yIHNvbHV0aW9uKSBwYXRjaCBh
+Y2NlcHRlZCBmb3Igc29tZSByZWFzb25zLCBzb21lb25lIGVsc2UgY291bGQgc3RpbGwgd29yayBv
+biBpdCB1bnRpbCBpdCBnZXQgbWVyZ2VkLgoKVGh1cywgSSBmYWlsZWQgdG8gc2VlIGFueSBwb3Nz
+aWJpbGl0eSB3ZSB3aWxsIGdvIGJhY2sgdG8gdGhlIGluZmVyaW9yIHNvbHV0aW9uIChtbS1zbHVi
+LWFkZC1wYW5pY19vbl9lcnJvci10by10aGUtZGVidWctZmFjaWxpdGllcy5wYXRjaCkgYnkgYWxs
+IG1lYW5zLgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpr
+ZXhlYyBtYWlsaW5nIGxpc3QKa2V4ZWNAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2tleGVjCg==
