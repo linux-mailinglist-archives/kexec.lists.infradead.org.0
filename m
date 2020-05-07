@@ -2,8 +2,8 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BC8D1C7EE0
-	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 02:46:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E55071C7EDD
+	for <lists+kexec@lfdr.de>; Thu,  7 May 2020 02:46:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QeHdD+9gt4ZqsL+A7BBL7c4PS0SmQ6HfixLMI6T5b2Y=; b=gQ05d9hxVM/Qm8V06BoMa7qnvy
-	LbCCAOupeDHI6xUXSbZNw8HFgkiaZgfQB+EQkFR5idwEklIgyCLaSQav6339FnqZhpCCB5LFNmINY
-	mKViJsYRxL88I/w3xT2FiBaibVPAR5xxqmbacNzQE1KP0jx3k6MKARyn9KYenoxrAnQe+I42QUrys
-	/hGXNRFv4Xw8xI/nzJJ946Bg9liZQIsR1gqrx5EMxEnRice+GNR4S0ZGUr32vCfjfo+Psuj5eE4DC
-	7J1f7fDdVfDLM8tfOKbmyIk6n0uOIY+oo/dpTMakH4mJd6MllIyBvZcK0KeCqta1PP3PwUs7rtFQx
-	zjjltcBg==;
+	bh=P4Ox4Ik+LjCVzfKDhp3JnV32l/rVCFBb0dxDRe8Uqa0=; b=A3aKHZy8msoh/dKS1vcvOoOYin
+	xPW1KTKcHtFmtfZgkknUdhsr+HEVGWKY+UlF5Oosp9NVK0dZOkKcycMjP3QEn4U84lkMBRvsU+kgN
+	QtZCHjkW4Bp+JyqEn6veC3yLLRcjyN50sgoYpEDA98NZcCvvXsgFwRmI1z3FcYSRiZF4w8ZQ3DX2a
+	avf5wpeuhy0+BZ/M006pjBGpA79I7WBPTyPk0M/qD4Ge1Hv7YGJT/mEtNBRLuDFDUjNmCfnl0QwC3
+	NeLS+R4TkD8aBohODos/tQrfGFveJXTulO3y3NWP1oHSgehsVluq1ceKJb5hrT/VmmpOzEJTusIHL
+	NCqDgWQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWUgF-0004MT-Tj; Thu, 07 May 2020 00:46:27 +0000
+	id 1jWUg7-0004Fa-G1; Thu, 07 May 2020 00:46:19 +0000
 Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWUfd-0003ut-4N
- for kexec@lists.infradead.org; Thu, 07 May 2020 00:46:00 +0000
+ id 1jWUfZ-0003r9-0i
+ for kexec@lists.infradead.org; Thu, 07 May 2020 00:45:54 +0000
 Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0470dOG7097631;
- Thu, 7 May 2020 00:44:56 GMT
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0470dDks097472;
+ Thu, 7 May 2020 00:45:00 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references; s=corp-2020-01-29;
- bh=U5kSpS0/Dc5fgEe6X16U4eAHbnbPBtC/T/domT4TH8s=;
- b=vm1xGfzfTCm7LXxnLDJHzBg+kv+2Q3Gu1b70Z2+C7lDFsCCkSq2aF5KU4TaJWKovUTbm
- 4ZCOEQ05F0FY1NqHr63zFBE+93CAKFygbJaDM38ipDP0MjM3ZnKCMwqPxeYsyU2jqMgs
- EBDvlOYXbwTwEFkmLSqhwG/YD/Rh/FaeX3jxgpBiaR2ZyrHOjnpcWNgOcb0XCceJeF1f
- BdYiGLFJmlbWo697vNbyzh7SOZaBzfqwlhp4wsjkyOoz34sQb6Ti3HK26oJnEH9zCczv
- olmk4xH+Sda92kPCQl7VvYBJq/Bv8KAwazzL+LEYXb1xcT74Gb7QSPUdgly1DKhBX9I6 XQ== 
+ bh=7K77j/6mtxQ9j5vDJ+M7D2bl3GjRuKy3se3PRu5nsHg=;
+ b=fknRxePLvSCA2rgFxv17tFilEvUcB8Sm1qixpcq8htEL5+jMu9HgoK4AmSWmU5S+ZkSA
+ nDAhgsc9si0wjbVnFvNv/8X2KeIYxyingZ+wv8jvbeRn+nVmTFly4CU0yNcKBvY2+jVu
+ c2D85RuZlAHnVFY0HdVTQEdHGa7aiJPbG99wIg4XJyPEW+jT33EouxaTBIY1nMaIv0lV
+ CbQYJXCcHIp4hPBwSJR28UisseHnsGqGQwpfd6W5LjvXz7KtxddPjhifE9TJ6cNYG2Ae
+ zzaUH0VA/so04hfFmVi7z0tTREp0xKaYemyw2Yl7K60g3PKDQvkRdYChSgUY6vCl9+rG 4Q== 
 Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 30usgq4h2u-1
+ by aserp2120.oracle.com with ESMTP id 30usgq4h3c-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 07 May 2020 00:44:56 +0000
+ Thu, 07 May 2020 00:45:00 +0000
 Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0470alL4170703;
- Thu, 7 May 2020 00:44:55 GMT
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 0470alm0170700;
+ Thu, 7 May 2020 00:44:59 GMT
 Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by userp3020.oracle.com with ESMTP id 30us7p2pnn-1
+ by userp3020.oracle.com with ESMTP id 30us7p2prs-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 07 May 2020 00:44:55 +0000
+ Thu, 07 May 2020 00:44:59 +0000
 Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 0470irBD020628;
- Thu, 7 May 2020 00:44:53 GMT
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 0470iv2E020654;
+ Thu, 7 May 2020 00:44:57 GMT
 Received: from ayz-linux.localdomain (/68.7.158.207)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 06 May 2020 17:44:53 -0700
+ with ESMTP ; Wed, 06 May 2020 17:44:57 -0700
 From: Anthony Yznaga <anthony.yznaga@oracle.com>
 To: linux-mm@kvack.org, linux-kernel@vger.kernel.org
-Subject: [RFC 39/43] shmem: optimize adding pages to the LRU in
- shmem_insert_pages()
-Date: Wed,  6 May 2020 17:42:05 -0700
-Message-Id: <1588812129-8596-40-git-send-email-anthony.yznaga@oracle.com>
+Subject: [RFC 40/43] shmem: initial support for adding multiple pages to
+ pagecache
+Date: Wed,  6 May 2020 17:42:06 -0700
+Message-Id: <1588812129-8596-41-git-send-email-anthony.yznaga@oracle.com>
 X-Mailer: git-send-email 1.8.3.1
 In-Reply-To: <1588812129-8596-1-git-send-email-anthony.yznaga@oracle.com>
 References: <1588812129-8596-1-git-send-email-anthony.yznaga@oracle.com>
@@ -78,8 +78,8 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 impostorscore=0
  suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
  engine=8.12.0-2003020000 definitions=main-2005070001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_174549_304094_5BC7B3AB 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20200506_174545_254479_8971C497 
+X-CRM114-Status: GOOD (  18.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -133,50 +133,140 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Reduce LRU lock contention when inserting shmem pages by staging pages
-to be added to the same LRU and adding them en masse.
+shmem_insert_pages() currently loops over the array of pages passed
+to it and calls shmem_add_to_page_cache() for each one. Prepare
+for adding pages to the pagecache in bulk by adding and using a
+shmem_add_pages_to_cache() call.  For now it just iterates over
+an array and adds pages individually, but improvements in performance
+when multiple threads are adding to the same pagecache are achieved
+by calling a new shmem_add_to_page_cache_fast() function that does
+not check for conflicts and drops the xarray lock before updating stats.
 
 Signed-off-by: Anthony Yznaga <anthony.yznaga@oracle.com>
 ---
- mm/shmem.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ mm/shmem.c | 95 ++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ 1 file changed, 84 insertions(+), 11 deletions(-)
 
 diff --git a/mm/shmem.c b/mm/shmem.c
-index ca5edf580f24..678a396ba8d3 100644
+index 678a396ba8d3..f621d863e362 100644
 --- a/mm/shmem.c
 +++ b/mm/shmem.c
-@@ -789,9 +789,12 @@ int shmem_insert_pages(struct mm_struct *mm, struct inode *inode, pgoff_t index,
- 	struct shmem_sb_info *sbinfo = SHMEM_SB(inode->i_sb);
- 	gfp_t gfp = mapping_gfp_mask(mapping);
- 	struct mem_cgroup *memcg;
-+	struct lru_splice splice;
- 	int i, err;
- 	int nr = 0;
+@@ -660,6 +660,57 @@ static int shmem_add_to_page_cache(struct page *page,
+ 	return 0;
+ }
  
-+	memset(&splice, 0, sizeof(splice));
++static int shmem_add_to_page_cache_fast(struct page *page,
++				   struct address_space *mapping,
++				   pgoff_t index, gfp_t gfp)
++{
++	XA_STATE_ORDER(xas, &mapping->i_pages, index, compound_order(page));
++	unsigned long nr = compound_nr(page);
++	unsigned long i = 0;
 +
- 	for (i = 0; i < npages; i++)
- 		nr += compound_nr(pages[i]);
++	VM_BUG_ON_PAGE(PageTail(page), page);
++	VM_BUG_ON_PAGE(index != round_down(index, nr), page);
++	VM_BUG_ON_PAGE(!PageLocked(page), page);
++	VM_BUG_ON_PAGE(!PageSwapBacked(page), page);
++
++	page_ref_add(page, nr);
++	page->mapping = mapping;
++	page->index = index;
++
++	do {
++		xas_lock_irq(&xas);
++		xas_create_range(&xas);
++		if (xas_error(&xas))
++			goto unlock;
++next:
++		xas_store(&xas, page);
++		if (++i < nr) {
++			xas_next(&xas);
++			goto next;
++		}
++		mapping->nrpages += nr;
++		xas_unlock(&xas);
++		if (PageTransHuge(page)) {
++			count_vm_event(THP_FILE_ALLOC);
++			__inc_node_page_state(page, NR_SHMEM_THPS);
++		}
++		__mod_node_page_state(page_pgdat(page), NR_FILE_PAGES, nr);
++		__mod_node_page_state(page_pgdat(page), NR_SHMEM, nr);
++		local_irq_enable();
++		break;
++unlock:
++		xas_unlock_irq(&xas);
++	} while (xas_nomem(&xas, gfp));
++
++	if (xas_error(&xas)) {
++		page->mapping = NULL;
++		page_ref_sub(page, nr);
++		return xas_error(&xas);
++	}
++
++	return 0;
++}
++
+ /*
+  * Like delete_from_page_cache, but substitutes swap for page.
+  */
+@@ -681,6 +732,35 @@ static void shmem_delete_from_page_cache(struct page *page, void *radswap)
+ 	BUG_ON(error);
+ }
  
-@@ -866,7 +869,7 @@ int shmem_insert_pages(struct mm_struct *mm, struct inode *inode, pgoff_t index,
- 		}
++static int shmem_add_pages_to_cache(struct page *pages[], int npages,
++				struct address_space *mapping,
++				pgoff_t start, gfp_t gfp)
++{
++	pgoff_t index = start;
++	int err = 0;
++	int i;
++
++	i = 0;
++	while (i < npages) {
++		if (PageTransHuge(pages[i])) {
++			err = shmem_add_to_page_cache_fast(pages[i], mapping, index, gfp);
++			if (err)
++				break;
++			index += HPAGE_PMD_NR;
++			i++;
++			continue;
++		}
++
++		err = shmem_add_to_page_cache_fast(pages[i], mapping, index, gfp);
++		if (err)
++			break;
++		index++;
++		i++;
++	}
++
++	return err;
++}
++
+ int shmem_insert_page(struct mm_struct *mm, struct inode *inode, pgoff_t index,
+ 		      struct page *page)
+ {
+@@ -844,17 +924,10 @@ int shmem_insert_pages(struct mm_struct *mm, struct inode *inode, pgoff_t index,
  
- 		if (!PageLRU(pages[i]))
--			lru_cache_add_anon(pages[i]);
-+			lru_splice_add_anon(pages[i], &splice);
- 
- 		flush_dcache_page(pages[i]);
- 		SetPageUptodate(pages[i]);
-@@ -875,6 +878,9 @@ int shmem_insert_pages(struct mm_struct *mm, struct inode *inode, pgoff_t index,
- 		unlock_page(pages[i]);
  	}
  
-+	if (splice.pgdat)
-+		add_splice_to_lru_list(&splice);
-+
- 	return 0;
+-	for (i = 0; i < npages; i++) {
+-		err = shmem_add_to_page_cache(pages[i], mapping, index,
+-					NULL, gfp & GFP_RECLAIM_MASK);
+-		if (err)
+-			goto out_truncate;
+-
+-		if (PageTransHuge(pages[i]))
+-			index += HPAGE_PMD_NR;
+-		else
+-			index++;
+-	}
++	err = shmem_add_pages_to_cache(pages, npages, mapping, index,
++					gfp & GFP_RECLAIM_MASK);
++	if (err)
++		goto out_truncate;
  
- out_truncate:
+ 	spin_lock(&info->lock);
+ 	info->alloced += nr;
 -- 
 2.13.3
 
