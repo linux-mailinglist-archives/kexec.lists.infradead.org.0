@@ -2,91 +2,80 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC82A1C9FA3
-	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 02:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3BA21CA76D
+	for <lists+kexec@lfdr.de>; Fri,  8 May 2020 11:45:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SAPQfspi/ikfRlppkSCV9dMv3/aYG+qbNNSHtCjMEj4=; b=YeeU/3mLW1Kr4S
-	RIor2ZibYzUjE6SZqwarBmJOgGPbbLpa9s0/DEdwTp+4CbmYkV9WJa1zQ9HR/Rs8GXtRYXoDxy7hL
-	uPZywl40qxyrDKAMbpJLKiTIQRR65u1icyrnOG+DOa0J0CFmMvsqFX7Ji/4h2Mq5VJEPvwShsLJri
-	6KJhTjjnd32ZX2WkPiQVvgJfsRKdt2y6Dgvwc1rjhUEy+53R2uzsxpEgbgYti7KyulbLc0VHaZU40
-	berM4U4qcSeEna+7nfq1gz4e66RKJfyQAFoNPhMxx7QpLq35ePwd+rCEbHG3wuOY95N8ZGZe7PwCb
-	IjhAg9CpKsbZC+/p9LCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NGbmPWHu1qrbph/vwn/ViHxY97p+ZfAWXZTYtXeK6DQ=; b=Ib9QJ1QNtjA086
+	9iOi50FwOdy4SvZSjCyaDCOn/cm+OZ25K+HmQ9PUwTh1Cw+CIH3nE2q9WMsHxzUYyPFGjy+cpFuFR
+	EeqxUubq9P6uzz8zoE6iheBBydxlChcuyGGwoqa3vEip6fbzTo1OOyu2Q+SdokE5G8o6jf6mOjfRu
+	S1vKyGwKPnq/G/54loCGd4jDD3YGfXqT/P4101/2/ywKZbBeRH1Zvaz80Zl9lwIC5TpvtTfFWCxwI
+	VTCdBLLxnVCkg7aficRKAq/Ns9g1aEHbk8jjW14Lr2R4M2iEQBkSFowQfOzrSTyLN+8ACkHGkYOk9
+	DmQKwIwXzkTjAXnRzr0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWqsj-0000XV-0J; Fri, 08 May 2020 00:28:49 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1jWzZs-0006hs-Nv; Fri, 08 May 2020 09:45:56 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWqsg-0000WH-6T
- for kexec@lists.infradead.org; Fri, 08 May 2020 00:28:47 +0000
-Received: by mail-qk1-x742.google.com with SMTP id c64so8253298qkf.12
- for <kexec@lists.infradead.org>; Thu, 07 May 2020 17:28:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=On99XfF55m8LFqRcIrWhYWPWVDnoOhQd+qVw8VWh93k=;
- b=Bm0Ppbjf22QhOZtzauYqSHzmXAQRBARh868f/Yxl/bO4oft1SEVgTov77GepKoI9Q0
- hI5LUBZCfC4hSVvSKpZWsxqC7kVl4MJ1ESI8nQwWfy0CuKRi/zkSIiGMJf0edNdbDa9G
- G2cYo88LBODiFBzpIGq2Q+4Yf4Hi4EwbGhF0y86zj5cIr7j/VuT2F2cqU0pOzrXSNxUP
- pqYp7PQnKC/4kXXPSoSz3m3xIACA3nfruXTtgCMFGGefAvOUuLGHNJDGnbWpMie0BJ2s
- v2vKU2Ej20Bixshu6ciOiVNaMA0QiCBTCPMrP6NyF6wbxCHVRcs2jMfo8ERIMODr4R3w
- DTLQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=On99XfF55m8LFqRcIrWhYWPWVDnoOhQd+qVw8VWh93k=;
- b=cA+w4LhZzkodV3lK/vuguVgU4cso5SxUdQrCohzTxjXAVtNKLJg86b7esWn4gSfpzm
- 7Ngf2z4tQch1QMp9CuiAXIhlr1X2TcLP0YRMKMbiUfA3pYppIyKTgk2k/c+byRHYvKtf
- tdZA36uTTt6q0DuIcUx+dUbwhZTAjlNDq+IOXEYs6HGFnRVhClOjx4grR4H+mTh6FXXQ
- ln/Teen1jb2+Dii81u0BfgICxWrQUQHy26PxSGZ3f4MwUPgK1Nx7eb2tyMypgs57XaOH
- L3oVfv9aHV3QpjGo4DOdLdE8FCjv+qEf4Dbvo8HP2WukqsAJABeFzIU2qm9DDd2/xxow
- MD0A==
-X-Gm-Message-State: AGi0PubgDCbUrNBwGf1GXXtdPDTWeqIrZ1pYhOlIQHu9kUQQJ9u0Bv/Z
- fbEwjCShJ5WxhfeyNtiGIltxVORtJTpGbg==
-X-Google-Smtp-Source: APiQypKARSVBhYuC49c7dbY6Cziu6XEVjzZa76KBnegyK8EGy1U5ojsUPtOggQDBfm9nDFuhGB1SPw==
-X-Received: by 2002:a37:a603:: with SMTP id p3mr124023qke.133.1588897722617;
- Thu, 07 May 2020 17:28:42 -0700 (PDT)
-Received: from [192.168.1.153] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id p10sm123350qtu.14.2020.05.07.17.28.41
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 May 2020 17:28:41 -0700 (PDT)
-Mime-Version: 1.0 (Mac OS X Mail 13.4 \(3608.80.23.2.2\))
-Subject: Re: [PATCH] kernel: add panic_on_taint
-From: Qian Cai <cai@lca.pw>
-In-Reply-To: <20200507233634.GA367616@optiplex-lnx>
-Date: Thu, 7 May 2020 20:28:40 -0400
-Message-Id: <438575BA-00CA-44BF-8C4C-693DCC00FDD1@lca.pw>
-References: <20200507221503.GL205881@optiplex-lnx>
- <6B423101-ACF4-49A3-AD53-ACBF87F1ABE0@lca.pw>
- <20200507233634.GA367616@optiplex-lnx>
-To: Rafael Aquini <aquini@redhat.com>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
+ id 1jWyab-0004TP-V6
+ for kexec@lists.infradead.org; Fri, 08 May 2020 08:42:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588927355;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=ouBt4BfusFaa/lv0LTRbmOSgoxSr9cZTrvcQPivP5Jg=;
+ b=bsLQ8XoU6hAlYkq6b0N7px89I506ktSjNfE8FrHAKBluPhdv7hZGdzTm2dub7Xiy6EKxjz
+ 5mdmqoU98rLOM1g4pvCB3Nij3CQZrcmlamVVE+eYpSvkSWs0+odxd7IFPvbUP/DE5MkXBg
+ +2EzdwNlomaJeJvlFXvsl0KUshnuWOc=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-340-l6nWo52fN4uNSj25Te985g-1; Fri, 08 May 2020 04:42:30 -0400
+X-MC-Unique: l6nWo52fN4uNSj25Te985g-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B3D84461;
+ Fri,  8 May 2020 08:42:28 +0000 (UTC)
+Received: from t480s.redhat.com (ovpn-113-181.ams2.redhat.com [10.36.113.181])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id C8F425C1B0;
+ Fri,  8 May 2020 08:42:22 +0000 (UTC)
+From: David Hildenbrand <david@redhat.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v4 0/4] mm/memory_hotplug: Interface to add driver-managed
+ system ram
+Date: Fri,  8 May 2020 10:42:13 +0200
+Message-Id: <20200508084217.9160-1-david@redhat.com>
+MIME-Version: 1.0
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_172846_305315_2AE4A464 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200508_014238_089693_6F87BB13 
+X-CRM114-Status: GOOD (  13.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,45 +87,93 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Baoquan He <bhe@redhat.com>,
- linux-doc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- kexec@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
- Luis Chamberlain <mcgrof@kernel.org>, linux-fsdevel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>, dyoung@redhat.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Pankaj Gupta <pankaj.gupta.linux@gmail.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Dave Jiang <dave.jiang@intel.com>,
+ Pavel Tatashin <pasha.tatashin@soleen.com>, Baoquan He <bhe@redhat.com>,
+ linux-nvdimm@lists.01.org, Vishal Verma <vishal.l.verma@intel.com>,
+ David Hildenbrand <david@redhat.com>, kexec@lists.infradead.org,
+ Wei Yang <richard.weiyang@gmail.com>, linux-mm@kvack.org,
+ Michal Hocko <mhocko@suse.com>, Eric Biederman <ebiederm@xmission.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Dan Williams <dan.j.williams@intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIE1heSA3LCAyMDIwLCBhdCA3OjM2IFBNLCBSYWZhZWwgQXF1aW5pIDxhcXVpbmlAcmVk
-aGF0LmNvbT4gd3JvdGU6Cj4gCj4gT24gVGh1LCBNYXkgMDcsIDIwMjAgYXQgMDc6MDc6MjBQTSAt
-MDQwMCwgUWlhbiBDYWkgd3JvdGU6Cj4+IAo+PiAKPj4+IE9uIE1heSA3LCAyMDIwLCBhdCA2OjE1
-IFBNLCBSYWZhZWwgQXF1aW5pIDxhcXVpbmlAcmVkaGF0LmNvbT4gd3JvdGU6Cj4+PiAKPj4+IEl0
-J3MgYSByZWFzb25hYmxlIGFuZCBzZWxmLWNvbnRhaW5lZCBmZWF0dXJlIHRoYXQgd2UgaGF2ZSBh
-IHZhbGlkIHVzZSBmb3IuIAo+Pj4gSSBob25lc3RseSBmYWlsIHRvIHNlZSBpdCBjYXVzaW5nIHRo
-YXQgYW1vdW50IG9mIGFubm95YW5jZSBhcyB5b3UgYXJlIAo+Pj4gc3VnZ2VzdGluZyBoZXJlLgo+
-PiAKPj4gSXQgaXMgbm90IGEgYmlnIHRyb3VibGUgeWV0LCBidXQga2VlcGluZyBhbiBvYnNvbGV0
-ZSBwYXRjaCB0aGF0IG5vdCB2ZXJ5IHN0cmFpZ2h0Zm9yd2FyZCB0byBmaWd1cmUgb3V0IHRoYXQg
-aXQgd2lsbCBiZSBzdXBlcnNlZGVkIGJ5IHRoZSBwYW5pY19vbl90YWludCBwYXRjaCB3aWxsIG9u
-bHkgY2F1c2UgbW9yZSBjb25mdXNpb24gdGhlIGxvbmdlciBpdCBoYXMgc3RheWVkIGluIGxpbnV4
-LW5leHQuCj4+IAo+PiBUaGUgdGhpbmcgaXMgdGhhdCBldmVuIGlmIHlvdSBjYW7igJl0IGdldCB0
-aGlzIHBhbmljX29uX3RhaW50ICh0aGUgc3VwZXJpb3Igc29sdXRpb24pIHBhdGNoIGFjY2VwdGVk
-IGZvciBzb21lIHJlYXNvbnMsIHNvbWVvbmUgZWxzZSBjb3VsZCBzdGlsbCB3b3JrIG9uIGl0IHVu
-dGlsIGl0IGdldCBtZXJnZWQuCj4+IAo+PiBUaHVzLCBJIGZhaWxlZCB0byBzZWUgYW55IHBvc3Np
-YmlsaXR5IHdlIHdpbGwgZ28gYmFjayB0byB0aGUgaW5mZXJpb3Igc29sdXRpb24gKG1tLXNsdWIt
-YWRkLXBhbmljX29uX2Vycm9yLXRvLXRoZS1kZWJ1Zy1mYWNpbGl0aWVzLnBhdGNoKSBieSBhbGwg
-bWVhbnMuCj4+IAo+IAo+IFRoZXJlIGFyZSBwbGVudHkgb2YgZXhhbXBsZXMgb2YgdGhpbmdzIGJl
-aW5nIGFkZGVkLCBjaGFuZ2VkLCBhbmQKPiByZW1vdmVkIGluIC1uZXh0LiBJT1csIGxpdmluZyBp
-biBhIHRyYW5zaWVudCBzdGF0ZS4gSSB0aGluayBpdCdzIAo+IGEgcmVhc29uYWJsZSBjb21wcm9t
-aXNlIHRvIGtlZXAgaXQgd2hpbGUgdGhlIG90aGVyIG9uZSBpcyBiZWluZCAKPiBpcm9uZWQgb3V0
-Lgo+IAo+IFRoZSBmYWN0IHRoYXQgeW91IHByZWZlciBvbmUgc29sdXRpb24gdG8gYW5vdGhlciBk
-b2Vzbid0Cj4gaW52YWxpZGF0ZSB0aGUgb25lIHlvdSBkaXNsaWtlLiAKCkFzIGZhciBJIGNhbiB0
-ZWxsLCB0aGUgYmFyIG9mIHRoZSBvdGhlciBjb3JlIHN1YnN5c3RlbXMgYXJlIHF1aXRlIGhpZ2gg
-ZXZlbiBmb3IgbGludXgtbmV4dC4gUGVvcGxlIGhhdmUgYmVlbiB2b2ljZWQgb3ZlciBhbmQgb3Zl
-ciBhZ2FpbiB0byB1cmdlIEFuZHJldyBub3QgcGlja2luZyB1cCBwYXRjaGVzIHNvIGVhZ2VybHks
-IGJ1dCBJIHdpbGwgc2F2ZSB0aGF0IGRpc2N1c3Npb24gZm9yIHRoZSBuZXh0IHRpbWUuCgpBbnl3
-YXksIHRoYW5rcyBmb3Igd29ya2luZyBmb3IgdGhlIHBhbmljX29uX3RhaW50IHBhdGNoLiBJIGJl
-bGlldmUgaXQgY291bGQgYmUgdXNlZnVsIGZvciBhbGwgdGVzdGluZyBhZ2VudHMgdG8gY2F0Y2gg
-dGhvc2UgYmFkIHBhZ2VzIGVhcmxpZXIuCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+I did some more testing to v3 and found issues with unloading the kmem
+module, followed by reconfiguring the namespace.
+
+kexec (via kexec_load()) can currently not properly handle memory added via
+dax/kmem, and will have similar issues with virtio-mem. kexec-tools will
+currently add all memory to the fixed-up initial firmware memmap. In case
+of dax/kmem, this means that - in contrast to a proper reboot - how that
+persistent memory will be used can no longer be configured by the kexec'd
+kernel. In case of virtio-mem it will be harmful, because that memory
+might contain inaccessible pieces that require coordination with hypervisor
+first.
+
+In both cases, we want to let the driver in the kexec'd kernel handle
+detecting and adding the memory, like during an ordinary reboot.
+Introduce add_memory_driver_managed(). More on the samentics are in patch
+#1.
+
+In the future, we might want to make this behavior configurable for
+dax/kmem- either by configuring it in the kernel (which would then also
+allow to configure kexec_file_load()) or in kexec-tools by also adding
+"System RAM (kmem)" memory from /proc/iomem to the fixed-up initial
+firmware memmap.
+
+More on the motivation can be found in [1] and [2].
+
+v3 -> v4:
+- "device-dax: Don't leak kernel memory to user space after unloading kmem"
+-- Added
+- "device-dax: Add memory via add_memory_driver_managed()"
+-- kstrdup_const() the resource name to be used for added memory
+-- Remember if any hotremove failed / we still have memory added to the
+   system and conditionally kfree_const().
+
+v2 -> v3:
+- Don't use flags for add_memory() and friends, provide
+  add_memory_driver_managed() instead.
+- Flag memory resources via IORESOURCE_MEM_DRIVER_MANAGED and handle them
+  in kexec.
+- Name memory resources "System RAM ($DRIVER)", visible via /proc/iomem
+- Added more details to the patch descriptions, especially regarding the
+  history of /sys/firmware/memmap
+- Add a comment to the device-dax change. Dropped Dave's Ack as the
+
+v1 -> v2:
+- Don't change the resource name
+- Rename the flag to MHP_NO_FIRMWARE_MEMMAP to reflect what it is doing
+- Rephrase subjects/descriptions
+- Use the flag for dax/kmem
+
+[1] https://lkml.kernel.org/r/20200429160803.109056-1-david@redhat.com
+[2] https://lkml.kernel.org/r/20200430102908.10107-1-david@redhat.com
+
+
+David Hildenbrand (4):
+  device-dax: Don't leak kernel memory to user space after unloading
+    kmem
+  mm/memory_hotplug: Introduce add_memory_driver_managed()
+  kexec_file: Don't place kexec images on IORESOURCE_MEM_DRIVER_MANAGED
+  device-dax: Add memory via add_memory_driver_managed()
+
+ drivers/dax/dax-private.h      |  1 +
+ drivers/dax/kmem.c             | 42 ++++++++++++++++++++---
+ include/linux/ioport.h         |  1 +
+ include/linux/memory_hotplug.h |  2 ++
+ kernel/kexec_file.c            |  5 +++
+ mm/memory_hotplug.c            | 62 +++++++++++++++++++++++++++++++---
+ 6 files changed, 104 insertions(+), 9 deletions(-)
+
+-- 
+2.25.4
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
