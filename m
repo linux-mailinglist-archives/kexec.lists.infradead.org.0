@@ -2,91 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B83E1CC247
-	for <lists+kexec@lfdr.de>; Sat,  9 May 2020 16:56:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6547D1CC259
+	for <lists+kexec@lfdr.de>; Sat,  9 May 2020 17:18:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6f077FEeLxJqBqSLj2N4H++IhmwFqNWOXTyIfuqKovY=; b=cSC7p2N8Uk5T0E
-	UV3TOds4t4tHzXmgwwQToXISycfvn9fYNguag7DRA/Mz/HCNRNcr1jzB3yHZZbb//MBoDFNe5tpfU
-	Zpcu4R2yaUhdxSzzxSAHLZegvhTEHuh3vhbyri09jv8lWznIFTxeMHrSUxNYBtPkIv/qFkiSBU0oV
-	BkLDvBlKN7TPOcVvGCMNYVEh/TSBpFlbo/YtpVgH5elmjsrPuOu+DJmJrVpwQRwIVSO9DLP0f0KW5
-	86QGURk88F/9LY4Yg5jc/jk4REXDu+vaH7mxEYJAEZgnxLk0hkXWVMaGtWV+25FmLVc7G5phcEpu1
-	ZVSfxyuPzLD5pVUnHpJw==;
+	List-Owner; bh=pBu9vSmlUJBbOmlQA+wiQyBZpv8puCHccuLsGvsQbWQ=; b=jCq5oLjk9KtxMJ
+	h+Mz5LKWQIiP/JM9ymk0MgU0DjQszndT2cXHWcKxBMbucYUMUX4a4TcuxHkIjR/b2K3+yddQ/Zxt7
+	X16HFHgannWBNsFl7BtPDwOaWjT29pTXPNXtiwfioQUiER9JbystA/Ib851RbPve7A9qUuofNzGqQ
+	ZYiHM/DUVTeFgEXUTFvVCoZXoa8YRIbaZGqRqM7vkTfrB4gJxlEfbmzbkpi+baoeuKQmts5IA3LdB
+	j0kcPnmmSaQmOcG3x+vzVufzeomnhCkCxw1n0hTx1PZKxiOOe2AvH0n0V/OQ7jcdD9SMPn46JbXCV
+	7Squ5p+Rn34FRR3vezJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXQu9-0007pI-CC; Sat, 09 May 2020 14:56:41 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jXRFX-0003ch-5O; Sat, 09 May 2020 15:18:47 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXQu6-0007ol-0D
- for kexec@lists.infradead.org; Sat, 09 May 2020 14:56:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589036194;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=biBEh2xyG7QOz0vWY4fM+UdTv5nwnU3LRB3gcCSBxrI=;
- b=Zsv0H2YqN1sZAYBa/UCloHZg6FB4iTagjI9+IUM3XnkAXeI0XMUhNwUPVbbUO5Lbz3BuXI
- 3gHN59fdERf4Tekqgr07Cp8nLI9FOgcC52+IvKIIHc9L1QF2WyRSiRlBCiXsC7tlYcv6eV
- hg9c/c4aJN2pII1g5KXJ/iERIpE34ME=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-221-MPQ1STaMOfSNwr8bvkqY-A-1; Sat, 09 May 2020 10:56:32 -0400
-X-MC-Unique: MPQ1STaMOfSNwr8bvkqY-A-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 08901800D24;
- Sat,  9 May 2020 14:56:30 +0000 (UTC)
-Received: from x1-fbsd (unknown [10.3.128.4])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 3CA879323;
- Sat,  9 May 2020 14:56:16 +0000 (UTC)
-Date: Sat, 9 May 2020 10:56:14 -0400
-From: Rafael Aquini <aquini@redhat.com>
-To: Luis Chamberlain <mcgrof@kernel.org>
-Subject: Re: [PATCH v2] kernel: add panic_on_taint
-Message-ID: <20200509145614.GA6704@x1-fbsd>
-References: <20200507180631.308441-1-aquini@redhat.com>
- <20200507182257.GX11244@42.do-not-panic.com>
- <20200507184307.GF205881@optiplex-lnx>
- <20200507184705.GG205881@optiplex-lnx>
- <20200507203340.GZ11244@42.do-not-panic.com>
- <20200507220606.GK205881@optiplex-lnx>
- <20200507222558.GA11244@42.do-not-panic.com>
- <20200508124719.GB367616@optiplex-lnx>
- <20200509034854.GI11244@42.do-not-panic.com>
+ id 1jXRFN-0003TB-8A; Sat, 09 May 2020 15:18:39 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jXRF4-0002RL-57; Sat, 09 May 2020 09:18:18 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jXRF3-00073s-70; Sat, 09 May 2020 09:18:18 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: David Hildenbrand <david@redhat.com>
+References: <20200501165701.24587-1-james.morse@arm.com>
+ <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
+Date: Sat, 09 May 2020 10:14:49 -0500
+In-Reply-To: <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com> (David
+ Hildenbrand's message of "Fri, 1 May 2020 19:26:39 +0200")
+Message-ID: <8736892l92.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200509034854.GI11244@42.do-not-panic.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-XM-SPF: eid=1jXRF3-00073s-70; ; ; mid=<8736892l92.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/78Q2ZzN+DiVqOLa3MERJ4/bRoZCWRbLY=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XM_Multi_Part_URI
+ autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.5000]
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ *  1.2 XM_Multi_Part_URI URI: Long-Multi-Part URIs
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa06 0; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: ; sa06 0; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: *;David Hildenbrand <david@redhat.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 596 ms - load_scoreonly_sql: 0.08 (0.0%),
+ signal_user_changed: 12 (2.0%), b_tie_ro: 10 (1.7%), parse: 1.34
+ (0.2%), extract_message_metadata: 14 (2.4%), get_uri_detail_list: 2.6
+ (0.4%), tests_pri_-1000: 4.8 (0.8%), tests_pri_-950: 1.30 (0.2%),
+ tests_pri_-900: 1.06 (0.2%), tests_pri_-90: 163 (27.4%), check_bayes:
+ 161 (27.0%), b_tokenize: 9 (1.5%), b_tok_get_all: 9 (1.4%),
+ b_comp_prob: 3.1 (0.5%), b_tok_touch_all: 136 (22.9%), b_finish: 0.93
+ (0.2%), tests_pri_0: 278 (46.7%), check_dkim_signature: 0.64 (0.1%),
+ check_dkim_adsp: 2.1 (0.4%), poll_dns_idle: 106 (17.8%), tests_pri_10:
+ 2.2 (0.4%), tests_pri_500: 114 (19.1%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_075638_134549_701D2323 
-X-CRM114-Status: GOOD (  26.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200509_081837_289183_AA1829A0 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.81 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ [166.70.13.232 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,107 +103,94 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
- Jeff Mahoney <jeffm@suse.com>, bhe@redhat.com, corbet@lwn.net,
- Laura Abbott <labbott@redhat.com>, dyoung@redhat.com,
- Ann Davis <AnDavis@suse.com>, Richard Palethorpe <rpalethorpe@suse.de>,
- keescook@chromium.org, Jiri Kosina <jikos@kernel.org>, cai@lca.pw,
- Adrian Bunk <bunk@kernel.org>, Tso Ted <tytso@mit.edu>,
- Jessica Yu <jeyu@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- rdunlap@infradead.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Sat, May 09, 2020 at 03:48:54AM +0000, Luis Chamberlain wrote:
-> On Fri, May 08, 2020 at 08:47:19AM -0400, Rafael Aquini wrote:
-> > On Thu, May 07, 2020 at 10:25:58PM +0000, Luis Chamberlain wrote:
-> > > On Thu, May 07, 2020 at 06:06:06PM -0400, Rafael Aquini wrote:
-> > > > On Thu, May 07, 2020 at 08:33:40PM +0000, Luis Chamberlain wrote:
-> > > > > I *think* that a cmdline route to enable this would likely remove the
-> > > > > need for the kernel config for this. But even with Vlastimil's work
-> > > > > merged, I think we'd want yet-another value to enable / disable this
-> > > > > feature. Do we need yet-another-taint flag to tell us that this feature
-> > > > > was enabled?
-> > > > >
-> > > > 
-> > > > I guess it makes sense to get rid of the sysctl interface for
-> > > > proc_on_taint, and only keep it as a cmdline option. 
-> > > 
-> > > That would be easier to support and k3eps this simple.
-> > > 
-> > > > But the real issue seems to be, regardless we go with a cmdline-only option
-> > > > or not, the ability of proc_taint() to set any arbitrary taint flag 
-> > > > other than just marking the kernel with TAINT_USER. 
-> > > 
-> > > I think we would have no other option but to add a new TAINT flag so
-> > > that we know that the taint flag was modified by a user. Perhaps just
-> > > re-using TAINT_USER when proc_taint() would suffice.
-> > >
-> > 
-> > We might not need an extra taint flag if, perhaps, we could make these
-> > two features mutually exclusive. The idea here is that bitmasks added 
-> > via panic_on_taint get filtered out in proc_taint(), so a malicious 
-> > user couldn't exploit the latter interface to easily panic the system,
-> > when the first one is also in use. 
-> 
-> I get it, however I I can still see the person who enables enabling
-> panic-on-tain wanting to know if proc_taint() was used. So even if
-> it was not on their mask, if it was modified that seems like important
-> information for a bug report analysis.
+David Hildenbrand <david@redhat.com> writes:
+
+> On 01.05.20 18:57, James Morse wrote:
+>> On x86, the kexec payload contains a copy of the current memory map.
+>> If memory is added or removed, this copy of the memory map becomes
+>> stale. Getting this wrong may prevent the next kernel from booting.
+>> The first kernel may die if it tries to re-assemble the next kernel
+>> in memory that has been removed.
+>> 
+>> Discard the loaded kexec image when the memory map changes, user-space
+>> should reload it.
+>> 
+>> Kdump is unaffected, as it is placed within the crashkernel reserved
+>> memory area and only uses this memory. The stale memory map may affect
+>> generation of the vmcore, but the kdump kernel should be in a position
+>> to validate it.
+>> 
+>> Signed-off-by: James Morse <james.morse@arm.com>
+>> ---
+>> This patch obsoletes:
+>>  * kexec/memory_hotplug: Prevent removal and accidental use
+>> https://lore.kernel.org/linux-arm-kernel/20200326180730.4754-1-james.morse@arm.com/
+>> 
+>>  kernel/kexec_core.c | 40 ++++++++++++++++++++++++++++++++++++++++
+>>  1 file changed, 40 insertions(+)
+>> 
+>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+>> index c19c0dad1ebe..e1901e5bd4b5 100644
+>> --- a/kernel/kexec_core.c
+>> +++ b/kernel/kexec_core.c
+>> @@ -12,6 +12,7 @@
+>>  #include <linux/slab.h>
+>>  #include <linux/fs.h>
+>>  #include <linux/kexec.h>
+>> +#include <linux/memory.h>
+>>  #include <linux/mutex.h>
+>>  #include <linux/list.h>
+>>  #include <linux/highmem.h>
+>> @@ -22,10 +23,12 @@
+>>  #include <linux/elf.h>
+>>  #include <linux/elfcore.h>
+>>  #include <linux/utsname.h>
+>> +#include <linux/notifier.h>
+>>  #include <linux/numa.h>
+>>  #include <linux/suspend.h>
+>>  #include <linux/device.h>
+>>  #include <linux/freezer.h>
+>> +#include <linux/pfn.h>
+>>  #include <linux/pm.h>
+>>  #include <linux/cpu.h>
+>>  #include <linux/uaccess.h>
+>> @@ -1219,3 +1222,40 @@ void __weak arch_kexec_protect_crashkres(void)
+>>  
+>>  void __weak arch_kexec_unprotect_crashkres(void)
+>>  {}
+>> +
+>> +/*
+>> + * If the memory layout changes, any loaded kexec image should be evicted
+>> + * as it may contain a copy of the (now stale) memory map. This also means
+>> + * we don't need to check the memory is still present when re-assembling the
+>> + * new kernel at machine_kexec() time.
+>> + */
 >
+> Onlining/offlining is not a change of the memory map.
 
-For that purpose (tracking user taints) I think sth between these lines
-would work:
+Phrasing it that way is non-sense.  What is important is memory
+available in the system.  A memory map is just a reflection upon that,
+a memory map is not the definition of truth.
 
-diff --git a/kernel/sysctl.c b/kernel/sysctl.c
-index 8a176d8727a3..651a82c13621 100644
---- a/kernel/sysctl.c
-+++ b/kernel/sysctl.c
-@@ -2602,6 +2602,9 @@ int proc_douintvec(struct ctl_table *table, int write,
-                                 do_proc_douintvec_conv, NULL);
- }
+So if this notifier reflects when memory is coming and going on the
+system this is a reasonable approach.  
 
-+/* track which taint bits were set by the user */
-+static unsigned long user_tainted;
-+
- /*
-  * Taint values can only be increased
-  * This means we can safely use a temporary.
-@@ -2629,11 +2632,20 @@ static int proc_taint(struct ctl_table *table, int write,
-                 */
-                int i;
-                for (i = 0; i < BITS_PER_LONG && tmptaint >> i; i++) {
--                       if ((tmptaint >> i) & 1)
-+                       if ((tmptaint >> i) & 1) {
-+                               set_bit(i, &user_tainted);
-                                add_taint(i, LOCKDEP_STILL_OK);
-+                       }
-                }
-        }
+Do these notifiers might fire for special kinds of memory that should
+only be used for very special purposes?
 
-+       /*
-+        * Users with SYS_ADMIN capability can fiddle with any arbitrary
-+        * taint flag through this interface.
-+        * If that's the case, we also need to mark the kernel "tainted by user"
-+        */
-+       add_taint(TAINT_USER, LOCKDEP_STILL_OK);
-+
-        return err;
- }
+This change with the addition of some filters say to limit taking action
+to MEM_ONLINE and MEM_OFFLINE looks reasonable to me.  Probably also
+filtering out special kinds of memory that is not gernally useful.
 
-
-I don't think, though, it's panic_on_taint work to track that. I posted a v3 for
-this feature with a way to select if one wants to avoid user forced taints
-triggering panic() for flags also set for panic_on_taint.
-
-Cheers,
-
--- Rafael
-
+Eric
 
 _______________________________________________
 kexec mailing list
