@@ -2,89 +2,102 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F26F91CBD0D
-	for <lists+kexec@lfdr.de>; Sat,  9 May 2020 05:49:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48FEE1CBDD1
+	for <lists+kexec@lfdr.de>; Sat,  9 May 2020 07:40:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
+	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXE/hYGyqPKMYNiGz8MMO2e3Dzg5xuAQhferkPtoATs=; b=cOBiLEgo4MWRAs
-	NEpMNSPaIwaWaxzYNRp8VCcNbmXFGryI7G/hK1idQ46cuFWPNVT4F+ukFv2/tjioSHYzT3dw03Mp3
-	zWj+YPJ42BlT6CBuvKy+HI8AHMy+Uq3Pb5Lvgs8tONjN/qqrA3v7iywwdVOBZu7aMNPVjXsGCRbGg
-	KFE9PT/gmQSnRnJrtrnHO3upKUZ1Snqq9d58/Q6ycOzi1XxsSNFVqX4pbnGiYfDXBetlPcQJZ0nTp
-	QKLzl7YwMdejSrBCplk/9uQVuVeoRU0QiKsYA/V9hVe6qja+8zwJz8agvrvvjKr0rJ0mvlrQHKUfV
-	R2J83kJ9hYdFfukvDcSA==;
+	List-Owner; bh=igcYGdnOuGIafBLqT013gxSJliQQa4p5hknHgo9Fo1I=; b=dBvxY20t44zEqm
+	R2eBlWSdpuqCEQENOjR0j6IlSPibe4aAbirFpFjsnNBic9Rcngn5jW1JbSt/MsRlNVQNdTrPGyvXg
+	s9+VoU861pM4Ra1UswENSUe4VYPRc3R5/0b89oLNniZPCQrhqQrQLesuMPCCo09/0vk2HGkY9dwtJ
+	WUqm7odJ1NMW3T2YQFg+bq6oqjgrQi3jdhJRVL9gtHV8lzi0V+REeQTdqOEe+bV87FLa0XB51UNf1
+	bdyDRjWJz788ME8nTZcCGI/Z6gDEPHzSeDZp6O0N7V+WZfE74E2oFytEmbb77sjzOk1yQBetwrnMi
+	i1mETO5gM//GXuETtbyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXGU4-0002BM-O5; Sat, 09 May 2020 03:49:04 +0000
-Received: from mail-pg1-f195.google.com ([209.85.215.195])
+	id 1jXIEA-0008Ip-Ft; Sat, 09 May 2020 05:40:46 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXGU1-00027P-0X
- for kexec@lists.infradead.org; Sat, 09 May 2020 03:49:02 +0000
-Received: by mail-pg1-f195.google.com with SMTP id 207so1825149pgc.6
- for <kexec@lists.infradead.org>; Fri, 08 May 2020 20:48:57 -0700 (PDT)
+ id 1jXIE6-0008IJ-HA
+ for kexec@lists.infradead.org; Sat, 09 May 2020 05:40:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589002839;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=wLITgYcnji+lI1/U32+qXSFD10JDWBM8uaMukB/H0iE=;
+ b=BMBuKorf8KO7G9tVP1lytZJ3ohSLmi5zruYPf1wElrCDfRNZ6+CeiN7mSdcMG+t7AW/QXy
+ G9Zi022TWqN+i8cZTdN+TJdhQWeVfeeMeH0oEn7LFM2qA3ihqyW3Zv+3ZLC47Yl7EfhHmz
+ qnJKylNisDOWoCyxXqZ9tCacAuLPJ9s=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-425-Q4fFabeVPmmnGn9KFcT-MA-1; Sat, 09 May 2020 01:40:37 -0400
+X-MC-Unique: Q4fFabeVPmmnGn9KFcT-MA-1
+Received: by mail-wr1-f71.google.com with SMTP id d16so1913507wrv.18
+ for <kexec@lists.infradead.org>; Fri, 08 May 2020 22:40:36 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hD0R4FU5llXtJjcH0Qaw/mWo7Wc3hOPuTzuuFmKSMr4=;
- b=mBBY65sSmjSuL1tSc4GS+jt4I0hDt4jYmL5x+neWgcAS9DG5PP+Qd2gMlUZ3R8bIf5
- a28rUYFfu/RYTbvHlrFTAVykc/f1bySk+SgnAu0O3dANRHVGD5/mTFnfZzTwgzMmvUDQ
- vlBq2cYl4978c/1QWI7SsEPH2YBzr2+Cqnxc9kbgICog53dN5688k/sOmyNc4kOwQstC
- 7Yylm8Wni20gG7BV1nBEFPApf/SveGK8vxWMLRCdzClKptLh25FP/8VHuGb6Wa08FSb7
- /Ut41kCcZHviNb78gORnYswr8sZiE+yJiaUTrBrBkkBJ/UR+fxJjaoUb7kVW7WZzcXHv
- 2nvA==
-X-Gm-Message-State: AGi0PuZqEub3J0ckDUJf+ZclvUn4g29hnU8mb+WebZ9uK+2juPgErZJX
- Hrklt0ozo5BVcDKRq44WehM=
-X-Google-Smtp-Source: APiQypJgqquftLfojmRDQ311OD9XhSFj0W23UlCHJWHNlOTbAGa4+b+T6f+86Ay6aZJLvCi5D/41TA==
-X-Received: by 2002:a63:dc56:: with SMTP id f22mr4823828pgj.284.1588996137062; 
- Fri, 08 May 2020 20:48:57 -0700 (PDT)
-Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
- by smtp.gmail.com with ESMTPSA id 6sm3199157pfj.123.2020.05.08.20.48.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 May 2020 20:48:55 -0700 (PDT)
-Received: by 42.do-not-panic.com (Postfix, from userid 1000)
- id 642134035F; Sat,  9 May 2020 03:48:54 +0000 (UTC)
-Date: Sat, 9 May 2020 03:48:54 +0000
-From: Luis Chamberlain <mcgrof@kernel.org>
-To: Rafael Aquini <aquini@redhat.com>
-Subject: Re: [PATCH v2] kernel: add panic_on_taint
-Message-ID: <20200509034854.GI11244@42.do-not-panic.com>
-References: <20200507180631.308441-1-aquini@redhat.com>
- <20200507182257.GX11244@42.do-not-panic.com>
- <20200507184307.GF205881@optiplex-lnx>
- <20200507184705.GG205881@optiplex-lnx>
- <20200507203340.GZ11244@42.do-not-panic.com>
- <20200507220606.GK205881@optiplex-lnx>
- <20200507222558.GA11244@42.do-not-panic.com>
- <20200508124719.GB367616@optiplex-lnx>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200508124719.GB367616@optiplex-lnx>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ h=x-gm-message-state:content-transfer-encoding:from:mime-version
+ :subject:date:message-id:references:cc:in-reply-to:to;
+ bh=mTjszWW/EefMrw7aIGeEPuK1Cqsav+nLkGOW2S21ZN0=;
+ b=q0qE2IrjxBv4rrbJ1hTqJsvpMOJO4p+bsMgyPBm1PJEG9jpgJUDKY0l549X1xQP2eQ
+ DAPit+5fVb4/EvKBaWhW5OY8hvBf7RlcU0+Iuz3CclTfrPcxyhPxK0KOucQSCkXFgW9K
+ 0lxbQXhvIgtPnabmA52CIAOIEWUMe/x8UQEzr9i4wosOg4wvqwx7R3zYSNLPzNqS5CiC
+ BAZ58fGsAvyomRx+O5VbopNKmwfyNXcSL50AYi9RbsjWyC04+e3WZ/j0gGPl2PJYj2EU
+ FWi/TTwElvtQ4U1FXpBp9f4V6H7zbyh8fY/HL+JwIjbDL7+ELMWwSkqjnafLeb68rVJp
+ 1uUw==
+X-Gm-Message-State: AGi0PuYj8kLKFYuraQ+RtddW140DcSNRurRWd+WBoaq0uz6yUIKxa6Bn
+ 60q97/rWj7Oyyw7Rtj/l8Eqh9x3O03wHy1FQTqphmZVgTjwf3Q2NfBEXfuXjnWweWh2JLdKEEuR
+ yL8MapG0Npe98ehuB+MIc
+X-Received: by 2002:a5d:52ce:: with SMTP id r14mr7021350wrv.334.1589002835889; 
+ Fri, 08 May 2020 22:40:35 -0700 (PDT)
+X-Google-Smtp-Source: APiQypLh46b+OJHiK+BmOVxHBKBIBg126/s6UEDmzeKxMWF5zY7CcNlENVRlnP1JVfzUUAXHjN/rxA==
+X-Received: by 2002:a5d:52ce:: with SMTP id r14mr7021307wrv.334.1589002835393; 
+ Fri, 08 May 2020 22:40:35 -0700 (PDT)
+Received: from ?IPv6:2a01:598:b901:53f:9037:7517:2497:29c?
+ ([2a01:598:b901:53f:9037:7517:2497:29c])
+ by smtp.gmail.com with ESMTPSA id z6sm437028wrq.1.2020.05.08.22.40.34
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 08 May 2020 22:40:34 -0700 (PDT)
+From: David Hildenbrand <david@redhat.com>
+Mime-Version: 1.0 (1.0)
+Subject: Re: [PATCH v4 1/4] device-dax: Don't leak kernel memory to user space
+ after unloading kmem
+Date: Sat, 9 May 2020 07:40:33 +0200
+Message-Id: <B72EB609-44DC-4133-820C-9BEA95CA012D@redhat.com>
+References: <20200508165306.7cd806f7e451c5c9bc2a40ac@linux-foundation.org>
+In-Reply-To: <20200508165306.7cd806f7e451c5c9bc2a40ac@linux-foundation.org>
+To: Andrew Morton <akpm@linux-foundation.org>
+X-Mailer: iPhone Mail (17D50)
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_204901_067790_0EA66274 
-X-CRM114-Status: GOOD (  20.34  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200508_224042_693862_6F423551 
+X-CRM114-Status: GOOD (  11.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.215.195 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mcgrof[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.215.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,60 +109,61 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
- Jeff Mahoney <jeffm@suse.com>, bhe@redhat.com, corbet@lwn.net,
- Laura Abbott <labbott@redhat.com>, dyoung@redhat.com,
- Ann Davis <AnDavis@suse.com>, Richard Palethorpe <rpalethorpe@suse.de>,
- keescook@chromium.org, Jiri Kosina <jikos@kernel.org>, cai@lca.pw,
- Adrian Bunk <bunk@kernel.org>, Tso Ted <tytso@mit.edu>,
- Jessica Yu <jeyu@suse.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- rdunlap@infradead.org, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
- Linus Torvalds <torvalds@linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Dave Jiang <dave.jiang@intel.com>,
+ Pavel Tatashin <pasha.tatashin@soleen.com>, linux-nvdimm@lists.01.org,
+ Vishal Verma <vishal.l.verma@intel.com>, David Hildenbrand <david@redhat.com>,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, linux-mm@kvack.org,
+ Dan Williams <dan.j.williams@intel.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Fri, May 08, 2020 at 08:47:19AM -0400, Rafael Aquini wrote:
-> On Thu, May 07, 2020 at 10:25:58PM +0000, Luis Chamberlain wrote:
-> > On Thu, May 07, 2020 at 06:06:06PM -0400, Rafael Aquini wrote:
-> > > On Thu, May 07, 2020 at 08:33:40PM +0000, Luis Chamberlain wrote:
-> > > > I *think* that a cmdline route to enable this would likely remove the
-> > > > need for the kernel config for this. But even with Vlastimil's work
-> > > > merged, I think we'd want yet-another value to enable / disable this
-> > > > feature. Do we need yet-another-taint flag to tell us that this feature
-> > > > was enabled?
-> > > >
-> > > 
-> > > I guess it makes sense to get rid of the sysctl interface for
-> > > proc_on_taint, and only keep it as a cmdline option. 
-> > 
-> > That would be easier to support and k3eps this simple.
-> > 
-> > > But the real issue seems to be, regardless we go with a cmdline-only option
-> > > or not, the ability of proc_taint() to set any arbitrary taint flag 
-> > > other than just marking the kernel with TAINT_USER. 
-> > 
-> > I think we would have no other option but to add a new TAINT flag so
-> > that we know that the taint flag was modified by a user. Perhaps just
-> > re-using TAINT_USER when proc_taint() would suffice.
-> >
-> 
-> We might not need an extra taint flag if, perhaps, we could make these
-> two features mutually exclusive. The idea here is that bitmasks added 
-> via panic_on_taint get filtered out in proc_taint(), so a malicious 
-> user couldn't exploit the latter interface to easily panic the system,
-> when the first one is also in use. 
-
-I get it, however I I can still see the person who enables enabling
-panic-on-tain wanting to know if proc_taint() was used. So even if
-it was not on their mask, if it was modified that seems like important
-information for a bug report analysis.
-
-  Luis
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+Cgo+IEFtIDA5LjA1LjIwMjAgdW0gMDE6NTMgc2NocmllYiBBbmRyZXcgTW9ydG9uIDxha3BtQGxp
+bnV4LWZvdW5kYXRpb24ub3JnPjoKPiAKPiDvu79PbiBGcmksICA4IE1heSAyMDIwIDEwOjQyOjE0
+ICswMjAwIERhdmlkIEhpbGRlbmJyYW5kIDxkYXZpZEByZWRoYXQuY29tPiB3cm90ZToKPiAKPj4g
+QXNzdW1lIHdlIGhhdmUga21lbSBjb25maWd1cmVkIGFuZCBsb2FkZWQ6Cj4+ICBbcm9vdEBsb2Nh
+bGhvc3Qgfl0jIGNhdCAvcHJvYy9pb21lbQo+PiAgLi4uCj4+ICAxNDAwMDAwMDAtMzNmZmZmZmZm
+IDogUGVyc2lzdGVudCBNZW1vcnkkCj4+ICAgIDE0MDAwMDAwMC0xNDgxZmZmZmYgOiBuYW1lc3Bh
+Y2UwLjAKPj4gICAgMTUwMDAwMDAwLTMzZmZmZmZmZiA6IGRheDAuMAo+PiAgICAgIDE1MDAwMDAw
+MC0zM2ZmZmZmZmYgOiBTeXN0ZW0gUkFNCj4+IAo+PiBBc3N1bWUgd2UgdHJ5IHRvIHVubG9hZCBr
+bWVtLiBUaGlzIGZvcmNlLXVubG9hZGluZyB3aWxsIHdvcmssIGV2ZW4gaWYKPj4gbWVtb3J5IGNh
+bm5vdCBnZXQgcmVtb3ZlZCBmcm9tIHRoZSBzeXN0ZW0uCj4+ICBbcm9vdEBsb2NhbGhvc3Qgfl0j
+IHJtbW9kIGttZW0KPj4gIFsgICA4Ni4zODAyMjhdIHJlbW92aW5nIG1lbW9yeSBmYWlscywgYmVj
+YXVzZSBtZW1vcnkgWzB4MDAwMDAwMDE1MDAwMDAwMC0weDAwMDAwMDAxNTdmZmZmZmZdIGlzIG9u
+bGluZWQKPj4gIC4uLgo+PiAgWyAgIDg2LjQzMTIyNV0ga21lbSBkYXgwLjA6IERBWCByZWdpb24g
+W21lbSAweDE1MDAwMDAwMC0weDMzZmZmZmZmZl0gY2Fubm90IGJlIGhvdHJlbW92ZWQgdW50aWwg
+dGhlIG5leHQgcmVib290Cj4+IAo+PiBOb3csIHdlIGNhbiByZWNvbmZpZ3VyZSB0aGUgbmFtZXNw
+YWNlOgo+PiAgW3Jvb3RAbG9jYWxob3N0IH5dIyBuZGN0bCBjcmVhdGUtbmFtZXNwYWNlIC0tZm9y
+Y2UgLS1yZWNvbmZpZz1uYW1lc3BhY2UwLjAgLS1tb2RlPWRldmRheAo+PiAgWyAgMTMxLjQwOTM1
+MV0gbmRfcG1lbSBuYW1lc3BhY2UwLjA6IGNvdWxkIG5vdCByZXNlcnZlIHJlZ2lvbiBbbWVtIDB4
+MTQwMDAwMDAwLTB4MzNmZmZmZmZmXWRheAo+PiAgWyAgMTMxLjQxMDE0N10gbmRfcG1lbTogcHJv
+YmUgb2YgbmFtZXNwYWNlMC4wIGZhaWxlZCB3aXRoIGVycm9yIC0xNm5hbWVzcGFjZTAuMCAtLW1v
+ZGU9ZGV2ZGF4Cj4+ICAuLi4KPj4gCj4+IFRoaXMgZmFpbHMgYXMgZXhwZWN0ZWQgZHVlIHRvIHRo
+ZSBidXN5IG1lbW9yeSByZXNvdXJjZSwgYW5kIHRoZSBtZW1vcnkKPj4gY2Fubm90IGJlIHVzZWQu
+IEhvd2V2ZXIsIHRoZSBkYXgwLjAgZGV2aWNlIGlzIHJlbW92ZWQsIGFuZCBhbG9uZyBpdHMgbmFt
+ZS4KPj4gCj4+IFRoZSBuYW1lIG9mIHRoZSBtZW1vcnkgcmVzb3VyY2Ugbm93IHBvaW50cyBhdCBm
+cmVlZCBtZW1vcnkgKG5hbWUgb2YgdGhlCj4+IGRldmljZSkuCj4+ICBbcm9vdEBsb2NhbGhvc3Qg
+fl0jIGNhdCAvcHJvYy9pb21lbQo+PiAgLi4uCj4+ICAxNDAwMDAwMDAtMzNmZmZmZmZmIDogUGVy
+c2lzdGVudCBNZW1vcnkKPj4gICAgMTQwMDAwMDAwLTE0ODFmZmZmZiA6IG5hbWVzcGFjZTAuMAo+
+PiAgICAxNTAwMDAwMDAtMzNmZmZmZmZmIDog77+9X++/vV43X++/ve+/vS9f77+977+9d1Lvv73v
+v71XUe+/ve+/ve+/vV7vv73vv73vv70gLi4uCj4+ICAgIDE1MDAwMDAwMC0zM2ZmZmZmZmYgOiBT
+eXN0ZW0gUkFNCj4+IAo+PiBXZSBoYXZlIHRvIG1ha2Ugc3VyZSB0byBkdXBsaWNhdGUgdGhlIHN0
+cmluZy4gV2hpbGUgYXQgaXQsIHJlbW92ZSB0aGUKPj4gc3VwZXJmbHVvdXMgc2V0dGluZyBvZiB0
+aGUgbmFtZSBhbmQgZml4dXAgYSBzdGFsZSBjb21tZW50Lgo+PiAKPj4gRml4ZXM6IDlmOTYwZGE3
+MmIyNSAoImRldmljZS1kYXg6ICJIb3RyZW1vdmUiIHBlcnNpc3RlbnQgbWVtb3J5IHRoYXQgaXMg
+dXNlZCBsaWtlIG5vcm1hbCBSQU0iKQo+PiBDYzogc3RhYmxlQHZnZXIua2VybmVsLm9yZyAjIHY1
+LjMKPiAKPiBobS4KPiAKPiBJcyB0aGlzIHJlYWxseSAtc3RhYmxlIG1hdGVyaWFsPyAgVGhlc2Ug
+YXJlIGFsbCBwcml2aWxlZ2VkIG9wZXJhdGlvbnMsCj4gSSBleHBlY3Q/CgpZZXMsIG15IHRob3Vn
+aHQgd2FzIHJhdGhlciB0aGF0IGFuIGFkbWluIGNvdWxkIGJyaW5nIHRoZSBzeXN0ZW0gaW50byBz
+dWNoIGEgc3RhdGUgKGJ5IG1pc3Rha2U/KS4gTGV04oCYcyBzZWUgaWYgc29tZWJvZHkgaGFzIGEg
+c3VnZ2VzdGlvbi4KCkkgZ3Vlc3MgaWYgd2Ugd2VyZSByZWFsbHkgdW5sdWNreSwgd2UgY291bGQg
+YWNjZXNzIGludmFsaWQgbWVtb3J5IGFuZCB0cmlnZ2VyIGEgQlVHIChlLmcuLCBwYWdlIGF0IHRo
+ZSBlbmQgb2YgbWVtb3J5IGFuZCBkb2VzIG5vdCBjb250YWluIGEgMCBieXRlKS4KCj4gCj4gQXNz
+dW1pbmcgInllcyIsIEkndmUgcXVldWVkIHRoaXMgc2VwYXJhdGVseSwgc3RhZ2VkIGZvciA1Ljct
+cmNYLiAgSSdsbAo+IHJlZG8gcGF0Y2hlcyAyLTQgYXMgYSB0aHJlZS1wYXRjaCBzZXJpZXMgZm9y
+IDUuOC1yYzEuCgpNYWtlIHNlbnNlLCBsZXTigJhzIHdhaXQgZm9yIHJldmlldyBmZWVkYmFjaywg
+dGhhbmtzIQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
