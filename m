@@ -2,56 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19E641CD3AB
-	for <lists+kexec@lfdr.de>; Mon, 11 May 2020 10:20:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C48E1CD40E
+	for <lists+kexec@lfdr.de>; Mon, 11 May 2020 10:36:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yPVP57wZ6ngFhbfthV0LjMuOH+Z6k9s6P2RBbJYqmqk=; b=HAFmNEPjnU40Pj
-	zsmxxV6tIBKFF9wEm5PcTZToJglERebu6t4DvVgZoMeO6mQ3+GlU+p/pqy5QPk5N6pjGvOSzT/LYW
-	/Z0T0gN1w795lYBkA9xX+V1co3wuUxDB5FkBPlpg6XHEAJLujkLj/vrTuH+Kd3kt/vYmtHBP7r16b
-	0vqnqfB7TZ9Hezotbthp81JoXXA3gLwELlejQMv79impVNkt98VBagfQxUQb5piy9DC410CwJl1oS
-	199xzf6QZlqAPjAxXVEhl6UuoLbgvZ6qgEOgc8lKgqm7SzwEX3g1NhPzM9uwleUfMeOaGPbgJrpcL
-	2t89xlPFIbveb1FsdAZQ==;
+	List-Owner; bh=A2iU/gA6zCXg/8ToWQh1O1UnU0G3AzxL9QgSDMWnTlg=; b=ataNkZBaRHz07M
+	hkAqvaZovQzQSKNnz2ctGx4fuH1cRg4Cyw+mKuZ5bA/HACK6/dwuJlpyGByrrIGFzgyubhkahGTZQ
+	2iXbcB7xj8tsKoFHQ/QB+nwqgvekKqvlzIgCLHX2mgvBDYens7s8w4nIORsz7EDE/bps7iSk+NpzL
+	xZvhmuBY5e063VCzUs8yNfgk0a7FcZLmkzT26ue1Yc771a4UxTvmHW1sQKMh8/MfaFgh518s01oya
+	NYI1NmPsim0IOPVY0rJR8NyaOZ4tYG9jY3EA5w89OwDI9wRNm5b0zPsq0q9rIASSQ4K1VdXc6soam
+	YEI9EQUyOP0D/cZb1gMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY3fl-0000a7-W3; Mon, 11 May 2020 08:20:26 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jY3uj-0004T4-3F; Mon, 11 May 2020 08:35:53 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY3fN-0006Q6-9O
- for kexec@lists.infradead.org; Mon, 11 May 2020 08:20:04 +0000
+ id 1jY3ug-0004PD-1S
+ for kexec@lists.infradead.org; Mon, 11 May 2020 08:35:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589185196;
+ s=mimecast20190719; t=1589186147;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=ED/KtwWNX8kZtzKBB+JiqfmDOUSoCgGCG/AbtIBSQP8=;
- b=R/qIbykAaL33haYFlSMlfWB/DDZ8+UJCUwVz047lN2zQ08Z+FwxL6yMVaQY/dYMiqzN9Iv
- zmNMdZFDl2gmklC85JtafoSg8RgrCIdjHOhodwpcaYQPGRdLwwtRws4ZQx1e9hPk7fLlRQ
- WsWza9D7yxjfEyoqKVmwjCQqIhIU+7Y=
+ bh=ixssasnFd6I2dYaRsKGGfcB/4hfNRY4umJ4jZYCpbkE=;
+ b=Bt0QA0AM+LaVzPaZ38IdX8pQCvXjk81B3gaNTWeUw54oyuyVIk3PnSvRB679CUlW4j0fsd
+ doKbpkiXr0/Y+0uYEKnl9VWqlpjel29saiO/qO69e7hr9hX1chzif/MGsJHl1HZxU0Psds
+ qtMr9/tOWBSmNk8AG156pTWswMvnJ/Y=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-198-4--R5nExO7KgkjxykuuPfg-1; Mon, 11 May 2020 04:19:52 -0400
-X-MC-Unique: 4--R5nExO7KgkjxykuuPfg-1
+ us-mta-121-PvPmE4LlMyOdaaKIur9gDw-1; Mon, 11 May 2020 04:35:06 -0400
+X-MC-Unique: PvPmE4LlMyOdaaKIur9gDw-1
 Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
  [10.5.11.22])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5636E8015CF;
- Mon, 11 May 2020 08:19:51 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 992EC107ACF4;
+ Mon, 11 May 2020 08:35:04 +0000 (UTC)
 Received: from [10.36.114.224] (ovpn-114-224.ams2.redhat.com [10.36.114.224])
- by smtp.corp.redhat.com (Postfix) with ESMTP id EE92510016DA;
- Mon, 11 May 2020 08:19:46 +0000 (UTC)
-Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
-To: "Eric W. Biederman" <ebiederm@xmission.com>
-References: <20200501165701.24587-1-james.morse@arm.com>
- <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
- <8736892l92.fsf@x220.int.ebiederm.org>
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 3DA7D100164D;
+ Mon, 11 May 2020 08:35:02 +0000 (UTC)
+Subject: Re: [PATCH 2/3] mm/memory_hotplug: Allow arch override of non boot
+ memory resource names
+To: Andrew Morton <akpm@linux-foundation.org>,
+ James Morse <james.morse@arm.com>
+References: <20200326180730.4754-1-james.morse@arm.com>
+ <20200326180730.4754-3-james.morse@arm.com>
+ <20200508174536.77c7aa3d5d0220cedd07f2e9@linux-foundation.org>
 From: David Hildenbrand <david@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
@@ -97,28 +99,26 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
-Date: Mon, 11 May 2020 10:19:46 +0200
+Message-ID: <f4aa1ac4-5878-0f9d-d94c-cdecc5d4ce18@redhat.com>
+Date: Mon, 11 May 2020 10:35:01 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <8736892l92.fsf@x220.int.ebiederm.org>
+In-Reply-To: <20200508174536.77c7aa3d5d0220cedd07f2e9@linux-foundation.org>
 Content-Language: en-US
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_012001_401937_19F4C503 
-X-CRM114-Status: GOOD (  20.63  )
+X-CRM114-CacheID: sfid-20200511_013550_166221_53512668 
+X-CRM114-Status: GOOD (  17.31  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.120 listed in wl.mailspike.net]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -128,6 +128,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
  -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -140,118 +142,82 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-mm@kvack.org, Eric Biederman <ebiederm@xmission.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 09.05.20 17:14, Eric W. Biederman wrote:
-> David Hildenbrand <david@redhat.com> writes:
+On 09.05.20 02:45, Andrew Morton wrote:
+> On Thu, 26 Mar 2020 18:07:29 +0000 James Morse <james.morse@arm.com> wrote:
 > 
->> On 01.05.20 18:57, James Morse wrote:
->>> On x86, the kexec payload contains a copy of the current memory map.
->>> If memory is added or removed, this copy of the memory map becomes
->>> stale. Getting this wrong may prevent the next kernel from booting.
->>> The first kernel may die if it tries to re-assemble the next kernel
->>> in memory that has been removed.
->>>
->>> Discard the loaded kexec image when the memory map changes, user-space
->>> should reload it.
->>>
->>> Kdump is unaffected, as it is placed within the crashkernel reserved
->>> memory area and only uses this memory. The stale memory map may affect
->>> generation of the vmcore, but the kdump kernel should be in a position
->>> to validate it.
->>>
->>> Signed-off-by: James Morse <james.morse@arm.com>
->>> ---
->>> This patch obsoletes:
->>>  * kexec/memory_hotplug: Prevent removal and accidental use
->>> https://lore.kernel.org/linux-arm-kernel/20200326180730.4754-1-james.morse@arm.com/
->>>
->>>  kernel/kexec_core.c | 40 ++++++++++++++++++++++++++++++++++++++++
->>>  1 file changed, 40 insertions(+)
->>>
->>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
->>> index c19c0dad1ebe..e1901e5bd4b5 100644
->>> --- a/kernel/kexec_core.c
->>> +++ b/kernel/kexec_core.c
->>> @@ -12,6 +12,7 @@
->>>  #include <linux/slab.h>
->>>  #include <linux/fs.h>
->>>  #include <linux/kexec.h>
->>> +#include <linux/memory.h>
->>>  #include <linux/mutex.h>
->>>  #include <linux/list.h>
->>>  #include <linux/highmem.h>
->>> @@ -22,10 +23,12 @@
->>>  #include <linux/elf.h>
->>>  #include <linux/elfcore.h>
->>>  #include <linux/utsname.h>
->>> +#include <linux/notifier.h>
->>>  #include <linux/numa.h>
->>>  #include <linux/suspend.h>
->>>  #include <linux/device.h>
->>>  #include <linux/freezer.h>
->>> +#include <linux/pfn.h>
->>>  #include <linux/pm.h>
->>>  #include <linux/cpu.h>
->>>  #include <linux/uaccess.h>
->>> @@ -1219,3 +1222,40 @@ void __weak arch_kexec_protect_crashkres(void)
->>>  
->>>  void __weak arch_kexec_unprotect_crashkres(void)
->>>  {}
->>> +
->>> +/*
->>> + * If the memory layout changes, any loaded kexec image should be evicted
->>> + * as it may contain a copy of the (now stale) memory map. This also means
->>> + * we don't need to check the memory is still present when re-assembling the
->>> + * new kernel at machine_kexec() time.
->>> + */
+>> Memory added to the system by hotplug has a 'System RAM' resource created
+>> for it. This is exposed to user-space via /proc/iomem.
 >>
->> Onlining/offlining is not a change of the memory map.
+>> This poses problems for kexec on arm64. If kexec decides to place the
+>> kernel in one of these newly onlined regions, the new kernel will find
+>> itself booting from a region not described as memory in the firmware
+>> tables.
+>>
+>> Arm64 doesn't have a structure like the e820 memory map that can be
+>> re-written when memory is brought online. Instead arm64 uses the UEFI
+>> memory map, or the memory node from the DT, sometimes both. We never
+>> rewrite these.
+>>
+>> Allow an architecture to specify a different name for these hotplug
+>> regions.
+>>
+>> ...
+>>
+>> --- a/mm/memory_hotplug.c
+>> +++ b/mm/memory_hotplug.c
+>> @@ -42,6 +42,10 @@
+>>  #include "internal.h"
+>>  #include "shuffle.h"
+>>  
+>> +#ifndef MEMORY_HOTPLUG_RES_NAME
+>> +#define MEMORY_HOTPLUG_RES_NAME "System RAM"
+>> +#endif
+>> +
+>>  /*
+>>   * online_page_callback contains pointer to current page onlining function.
+>>   * Initially it is generic_online_page(). If it is required it could be
+>> @@ -103,7 +107,7 @@ static struct resource *register_memory_resource(u64 start, u64 size)
+>>  {
+>>  	struct resource *res;
+>>  	unsigned long flags =  IORESOURCE_SYSTEM_RAM | IORESOURCE_BUSY;
+>> -	char *resource_name = "System RAM";
+>> +	char *resource_name = MEMORY_HOTPLUG_RES_NAME;
+>>  
+>>  	if (start + size > max_mem_size)
+>>  		return ERR_PTR(-E2BIG);
 > 
-> Phrasing it that way is non-sense.  What is important is memory
-> available in the system.  A memory map is just a reflection upon that,
-> a memory map is not the definition of truth.
+> I suppose we should do this as well:
 > 
-> So if this notifier reflects when memory is coming and going on the
-> system this is a reasonable approach.  
+> --- a/mm/memory_hotplug.c~mm-memory_hotplug-allow-arch-override-of-non-boot-memory-resource-names-fix
+> +++ a/mm/memory_hotplug.c
+> @@ -129,7 +129,8 @@ static struct resource *register_memory_
+>  			       resource_name, flags);
+>  
+>  	if (!res) {
+> -		pr_debug("Unable to reserve System RAM region: %016llx->%016llx\n",
+> +		pr_debug("Unable to reserve " MEMORY_HOTPLUG_RES_NAME
+> +				" region: %016llx->%016llx\n",
+>  				start, start + size);
+>  		return ERR_PTR(-EEXIST);
+>  	}
 > 
-> Do these notifiers might fire for special kinds of memory that should
-> only be used for very special purposes?
-> 
-> This change with the addition of some filters say to limit taking action
-> to MEM_ONLINE and MEM_OFFLINE looks reasonable to me.  Probably also
-> filtering out special kinds of memory that is not gernally useful.
+> It assumes that MEMORY_HOTPLUG_RES_NAME will be a literal string, which
+> is the case in [3/3].
 
-There are cases, where this notifier will not get called (e.g., hotplug
-a DIMM and don't online it) or will get called, although nothing changed
-(offline+re-online to a different zone triggered by user space). AFAIK,
-nothing in kexec (*besides kdump) cares about online vs. offline memory.
-This is why this feels wrong.
+@Andrew, as discussed in this thread already [1], I suggest to drop this
+series from -mm tree for now.
 
-add_memory()/try_remove_memory() is the place where:
-- Memblocks are created/deleted (if the memblock allocator is still
-  alive)
-- Memory resources are created/deleted (e.g., reflected in /proc/iomem)
-- Firmware memmap entries are created/deleted (/sys/firmware/memmap)
-
-My idea would be to add something like
-kexec_map_add()/kexec_map_remove() where we have
-firmware_map_add_hotplug()/firmware_map_remove(). From there, we can
-unload the kexec image like done in this patch.
-
-And these callbacks might come in handy for fixing up the kexec initial
-memmap in case of kexec_file_load(). AFAIKS on x86_64:
-- Hotplugging a DIMM will not add that memory to
-  e820_table_kexec
-- Hotunplugging a DIMM will not remove that memory from e820_table_kexec
-
-Maybe we have similar things to handle on other architectures.
+[1] https://lkml.kernel.org/r/2e3419b2-d00c-51c3-9b45-9de114608cdf@arm.com
 
 -- 
 Thanks,
