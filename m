@@ -2,100 +2,92 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADB2D1CF3F0
-	for <lists+kexec@lfdr.de>; Tue, 12 May 2020 14:03:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 771A31CF690
+	for <lists+kexec@lfdr.de>; Tue, 12 May 2020 16:12:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cEhFJnW2d9+eVS0JQT2zBPT3Zuqz9JAVgKMH0t1x3Ds=; b=ujYoWVrJKok3K+
-	KTgpu6vzDlxEszuVwmqOQ++/C1Eveo5due+0BjN+OxbOOYebmrtaUqPoPN9r+96OCpKHEXZ6oIPcg
-	gloCuM/C5UIkcmEDWD6WBmTWVSnQCmln/j1u+KMzlhnAQ8rZh8S+Z/WmapdzoLjqR3nIWUrBrane4
-	xKCz9Lc7pPmdQo+yJ4UOvJfzO5aoHmxW5GbLUojmqtDePSufNcNkvgbpOjwsZs2fFzf/zNIH/uBmU
-	ISq31R1rgW8AOPO0jM3lem/DYCMIq4RHOysYReTx8g9XhQF7eN39hY1nItW8au+GB4h2okLzhe+AC
-	eFY1yb5CHMTOHfWher0A==;
+	List-Owner; bh=EAFwtpMq3dZszxrWbr6RWkzS2gVrlnbRWyfUadrF8tI=; b=CRl5uY6PfmTlQf
+	+cdG5m60Hkb7nMbHrRdY7CWWKxDh2+XhkrLTZR+Rn4MsD72ZShNUXtfYMBMVLdh9ovqy8bjGUh9da
+	r2lmsInfwQJBAO9l49UY04rmcSz412XS/LNt8DO2zVA6/R5s3gs8KXhlmPyCH9FIMs5fprQdRnrBV
+	6OAzIgOE8OctZSmn1WBPYea3F6DrFrCytpkiPh5x7NTRSzBYRVxzTR6b3rvfDwi+cm4TJ5qET6Jyb
+	xcrCp8rWo3uyPO7Lb7hAA5OT6biwUep8yjuh34g9u4LFJ9WPlptXe3J9J3uIIZ9icocQWUrw2N1Kf
+	5ICaakCtUy1HobcBqDmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYTdD-0001Mi-Uf; Tue, 12 May 2020 12:03:31 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jYVdf-0007BJ-Mr; Tue, 12 May 2020 14:12:07 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYTd1-0001DZ-52; Tue, 12 May 2020 12:03:20 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jYTcs-0000tl-L0; Tue, 12 May 2020 06:03:10 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jYTcr-0007id-TX; Tue, 12 May 2020 06:03:10 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
+ id 1jYVdb-0007AC-RH
+ for kexec@lists.infradead.org; Tue, 12 May 2020 14:12:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589292720;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=n70UbOUvJa9P4RPgTvmULexgnX+jCFgCJ+13wy5Dy+Q=;
+ b=eD7nxb7MGgIoxUfpyCOopR9w9XZyy8VIYQCBbWwGMBVp2fUTf4IzNdf6FEpL7TUqDghP6z
+ 7rFguGjUSVmF55v/bk8nTDMlASvGvGl44iFmzTDSj4kqFwMeY3BxtBulchTbjX1FE5x0cB
+ HjtfJNWBtdnvDyAW2ASWu6isLBC5ti0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-239-zpf1rqexMOe-syUUIUv8rw-1; Tue, 12 May 2020 10:11:58 -0400
+X-MC-Unique: zpf1rqexMOe-syUUIUv8rw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 46D2B8005B7;
+ Tue, 12 May 2020 14:11:57 +0000 (UTC)
+Received: from localhost (ovpn-12-40.pek2.redhat.com [10.72.12.40])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id CE5977840A;
+ Tue, 12 May 2020 14:11:50 +0000 (UTC)
+Date: Tue, 12 May 2020 22:11:48 +0800
+From: Baoquan He <bhe@redhat.com>
 To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
+Message-ID: <20200512141148.GL5029@MiWiFi-R3L-srv>
 References: <20200501165701.24587-1-james.morse@arm.com>
  <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
  <8736892l92.fsf@x220.int.ebiederm.org>
  <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
- <87h7wmtna1.fsf@x220.int.ebiederm.org>
- <4d5f69b6-fdfd-a461-0ac9-6d05636508f1@redhat.com>
-Date: Tue, 12 May 2020 06:59:38 -0500
-In-Reply-To: <4d5f69b6-fdfd-a461-0ac9-6d05636508f1@redhat.com> (David
- Hildenbrand's message of "Tue, 12 May 2020 09:45:16 +0200")
-Message-ID: <87sgg5s6s5.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ <20200511112755.GB4922@MiWiFi-R3L-srv>
+ <04c8edd0-5c67-3ba7-5f87-c16a47b2af5c@redhat.com>
+ <20200512103402.GK5029@MiWiFi-R3L-srv>
+ <265d463c-1b2f-ca97-391d-8d1f9d60f16a@redhat.com>
 MIME-Version: 1.0
-X-XM-SPF: eid=1jYTcr-0007id-TX; ; ; mid=<87sgg5s6s5.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1/rnctvPahPVR1lDa2sHTDjDmoQMCyCAbM=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG autolearn=disabled
- version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.4981]
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa07 0; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: ; sa07 0; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;David Hildenbrand <david@redhat.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 286 ms - load_scoreonly_sql: 0.06 (0.0%),
- signal_user_changed: 11 (3.7%), b_tie_ro: 9 (3.3%), parse: 1.37 (0.5%),
- extract_message_metadata: 3.1 (1.1%), get_uri_detail_list: 0.78
- (0.3%), tests_pri_-1000: 3.5 (1.2%), tests_pri_-950: 1.24 (0.4%),
- tests_pri_-900: 1.00 (0.3%), tests_pri_-90: 81 (28.1%), check_bayes:
- 79 (27.4%), b_tokenize: 8 (2.8%), b_tok_get_all: 6 (2.1%),
- b_comp_prob: 3.0 (1.0%), b_tok_touch_all: 57 (20.0%), b_finish: 1.04
- (0.4%), tests_pri_0: 166 (58.0%), check_dkim_signature: 0.51 (0.2%),
- check_dkim_adsp: 3.1 (1.1%), poll_dns_idle: 0.62 (0.2%), tests_pri_10:
- 2.2 (0.8%), tests_pri_500: 8 (2.9%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+In-Reply-To: <265d463c-1b2f-ca97-391d-8d1f9d60f16a@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_050319_192332_393FA3D2 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200512_071203_956062_FBB97D2E 
+X-CRM114-Status: GOOD (  27.42  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,37 +99,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: kexec@lists.infradead.org, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Dave Young <dyoung@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-David Hildenbrand <david@redhat.com> writes:
->> 
->> Maybe we have enough information to fixup the loaded kexec image
->> in the kexec_file_load case, we certainly don't in the ordinary
->> kexec_load case.
->
-> Yes, that's also what I mentioned in my reply to Baoquan.
->
->> 
->> For now I want to stick to the simplest thing we can do which is either
->> blocking the memory hotplug operation (if that is possible) or
->> dropping the loaded kexec image.
->
-> Yes, the latter is the best for now. It's simple.
->
-> I am suggesting to add explicit callbacks to
-> add_memory()/remove_memory(), and calling the invalidation from there -
-> because I see various issues with the memory notifier approach (racy,
-> false positives, never called if memory is not onlined).
+On 05/12/20 at 12:54pm, David Hildenbrand wrote:
+> >> kexec_load():
+> >>
+> >> 1. kexec-tools could have placed kexec images on memory that will be
+> >> removed.
+> >>
+> >> 2. the memory map of the guest is stale (esp., might still contain
+> >> hotunplugged memory). /sys/firmware/memmap and /proc/iomem will be
+> >> updated, so kexec-tools can fix this up.
+> > 
+> > With my understanding, this is a corner case. Before James's last
+> > patchset, I even hadn't realized this is a problem. Because we usually
+> > load kexec image, next trigger a kexec rebooting. Wondering if James
+> > just found out a potential issue, or he really met this problem. Surely,
+> 
+> Should be as easy as hotplugging a dimm, loading "kexec -c", unplugging
+> the dimm, triggering "kexec -e" if I am not wrong.
 
-Ok so we are in agreement.  Correct patch.  Wrong trigger condition.
+Hmm, kexec rebooting is also one kind of rebooting, we may not want to
+hot plug memory during that time. But, yes, just in case.
 
-Eric
+> 
+> > we should fix it when have identified it, even though it's a corner
+> > case.
+> > 
+> > And we suggested adding service of loading kexec to fix this. We
+> > suggest this because kdump also need to recollect the memory regions
+> > so that it can pass them into 2nd kernel and dump the newly added
+> > memory region, or not dump the already removed memory region. 
+> > Kdump kernel won't get problem during boot or running caused by the
+> > hot added/removed memory as kexec kernel does, however, on failing to
+> > achieve expected result, kdump and kexec have the same problem. I don't
+> > see why kdump can be reloaded by memory adding/removing uevent triggering,
+> > but kexec can't. If have to unload kexec image, does kdump image need
+> > be unloaded?
+> 
+> I think that approach is racy and might easily trigger a crash when
+> "kexec -e" is called at the wrong time during memory unplug. See below
+> why kdump is different. Triggering unloading in the kernel does not
+> conflict with that approach and even seems to fit into the picture, no?
+> 
+> 1. Memory gets hot(un)plugged
+> 2. The kernel unloads the kexec image while processing the hot(un)plug
+>    to make sure nothing will go wrong.
+> 3. User space gets notified and triggers reloading of kexec.
+> 
+> That sounds like a sane approach to me, no? If there is no 3., nothing
+> will break. If there is a "kexec -e" before 3 finished, nothing will
+> break. As we discussed, we might be able to special-case
+> kexec_file_load() and not unload, but simply fixup.
+> 
+> Note that kdump is slightly different. In case memory gets hotplugged
+> and kdump is not reloaded, that memory will simply not get dumped. In
+> case memory gets hotunplugged and kdump is not reloaded, that memory
+> will be skipped by makedumpfile (realizes memory is gone when parsing
+> the sparse sections, trying to find the memmap). In contrast to kexec,
+> there is no kernel crash.
+> 
+> > 
+> > Here my main concern is if it will complicate kexec code. While
+> > reloading it via systemd service won't. No matther if it's making kexec
+> > disable memory hotplug, or making memory hotplug disabling kexec, it
+> > seems to couple kexec with other feature/subcomponent. Anyway, we have
+> > added a kexec loading service, any memory adding/removing uevent will
+> > trigger the reloading. This patch won't impact anything, even though
+> > it doesn't make sense to us, so have no objection to this.
+> 
+> I don't consider unloading in the kernel a lot of complexity. And it
+> seems to be the right thing to do to avoid crashes, especially if user
+> space will not reload itself.
+> 
+> > 
+> > Another thing is below patch. Another case of complicating kexec because
+> > of specific use case, please feel free to help review and add comment.
+> > I am wondering if we can make it in user space too. E.g for oracle DB,
+> > we limit the memory allocation within the movable nodes for memory
+> > hotplugging, we can also add memmap= or mem= to kexec-ed kernel to protect
+> > those memory regions inside the nodes, then restore the data from the nodes.
+> > Not sure if VM data can be put in MOVABLE zone only.
+> > 
+> > [RFC 00/43] PKRAM: Preserved-over-Kexec RAM
+> 
+> I've seen that patch set and it is on my todo list, not sure when I'll
+> have time to look into it. From a quick glimpse, I had the feeling that
+> it was not dealing with memory hot(un)plug, most probably because
+> concurrent memory hot(un)plug is not the target use case.
+
+Not, it's not about hot plug. Hope you can help check if restoring VM data in
+kexec-ed kernel have to be done like that from virt dev's point of view.
+Please feel free to add other virt expert you know who is familiar with that
+to the list to help review.
 
 
 _______________________________________________
