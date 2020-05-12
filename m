@@ -2,95 +2,156 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36EAA1CFC59
-	for <lists+kexec@lfdr.de>; Tue, 12 May 2020 19:39:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8084B1CFC81
+	for <lists+kexec@lfdr.de>; Tue, 12 May 2020 19:45:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+yr/Nkq5rvtyo1jUQmwGC3wpwe3AJlLfyv2X78z9ttg=; b=WAvoBr2XC1r8x7
-	rrSX50qHGw8uzwUzvI6kTVzAMHmWrJOoWTYxmwPqAzXeWHIqvvHcbHry5b4b8gHBFzVgZXjVnDBkH
-	3fOkGjt+g7iXCrWMZCNq1XcJX1FXOTNUql6t1pATr1GTTw8GM3XATlze09rUTPj/Dvi3ytQYJCjKm
-	xMuA95I2szUIdvxq4SFiYi3tVDhCzLFV8KH0WJlUh8BlNmrpWF61pLDRab888Vk7QmF+1qwxKp4b6
-	cXISJCXlEh86IrSD2SkdU2ZgcyBy5ZS3au64zH0DN9ceFucxPNGvzhzkRsqXiGC60pBxYC+QU5YzF
-	X50ttSL3J4eXWNwA/zWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BEBy/WkKTJGev4IJ1lBa+Orrj16j2f027v7NQH1lrZY=; b=bLy7IC8Hyoce0u
+	uJAAWZCzTBjDSIfwjYvIBnfIfv+z7SfgQYX99EDHh6U+keocNkLozbOWzRBpEups1Q0ChlsCc3ojh
+	3w8lX9S7c2sxDRt7ileFhDxoBkDtkS/P/U0IOHP+ZsoXd3eb0R5VDOFj+8t2/KzIBZD5FjrsfK0Dx
+	7ypVx/SCFXO0hUifVb57E51hGpDf/OHyv+WLcTaWGPOGOrfjU1Qmfs175WjbxNdBmaWN3CQjlhb1p
+	t7CTBtzLkMMYEmDnJfJkDwIdikmG01NMaj9CojlNeCrobr2wYHQiEnV8oCIYJo1gAV7TaCf2YqM5p
+	IhofBIam7xnyOWWRv3fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYYrq-0007Zm-0K; Tue, 12 May 2020 17:38:58 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1jYYyB-0005SO-1u; Tue, 12 May 2020 17:45:31 +0000
+Received: from alln-iport-7.cisco.com ([173.37.142.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYYrl-0007Z7-R9
- for kexec@lists.infradead.org; Tue, 12 May 2020 17:38:55 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04CHWLJi155612;
- Tue, 12 May 2020 17:38:48 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2020-01-29; bh=xIJ+2o2wf0UXh/YXnfvPBNfzeSwVZFeGW9VMygXq2BY=;
- b=bE1BB8Dom44S+7182+CPd4UehPUfIno1qNLZuvO2UoUEpfHcfv8RY1fedfsaaW24Iii7
- QS54Cf1XtLJs4dndhzVsq5rU/WZBd8eDD/JLZ10t9lymEYtAy7UqOpoBiiwRmaOi64Py
- BETeyxE0+U80gLH56RPcHAKIzOU807siecVcS+m1n1dpaHlFq3GgmiogX5z6u+DGR70o
- R3A6xkgPRiCkbQugoIvpyIWUOslh4rv2nv6qSZDlvwCzD6Ti7ocJk2IBB9h9Z/5RehiT
- GWznF9Ke6axo5g4n05zObox5ra/gNmqr9YaU/Wnc+QvAb/PObrb5u8GqszNJeLEZgWVu kg== 
-Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
- by userp2130.oracle.com with ESMTP id 30x3gmmg7q-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 12 May 2020 17:38:48 +0000
-Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
- by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04CHY2t8064354;
- Tue, 12 May 2020 17:38:47 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3030.oracle.com with ESMTP id 30ydsqx6dw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 12 May 2020 17:38:47 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04CHclrS011047;
- Tue, 12 May 2020 17:38:47 GMT
-Received: from dhcp-10-154-142-28.vpn.oracle.com (/10.154.142.28)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 12 May 2020 10:38:46 -0700
-Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
+ id 1jYYy8-0005QV-4G
+ for kexec@lists.infradead.org; Tue, 12 May 2020 17:45:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=cisco.com; i=@cisco.com; l=286; q=dns/txt; s=iport;
+ t=1589305528; x=1590515128;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=JMzl27H9QcD8m5neOAPCQnk8Lokr4ZIud+EsUakMBjQ=;
+ b=YmxeaVmiDMZA0KgeI5Ff8YVXN4uPkS0TqEzlpA9T7+9cxS4HuoduO2JX
+ mdxBTtv37aYTaG1lEj4jJa9mBpMaFn0P+KxXMd5IwOVNVFSNn51kbd2sO
+ N5bUOb1iiuLeNEeJ/CTxE2PALGRq2MbmFZiiLE6jO6RMyr7rNi782E7Wo Y=;
+IronPort-PHdr: =?us-ascii?q?9a23=3AIf1KwhNERCtf3uWROv4l6mtXPHoupqn0MwgJ65?=
+ =?us-ascii?q?Eul7NJdOG58o//OFDEvKwz3ljTVI7f5rRPjO+F+6zjWGlV55GHvThCdZFXTB?=
+ =?us-ascii?q?YKhI0QmBBoG8+KD0D3bZuIJyw3FchPThlpqne8N0UGH9z3bFnf5Ha16G1aFh?=
+ =?us-ascii?q?D2LwEgIOPzF8bbhNi20Obn/ZrVbk1IiTOxbKk0Ig+xqFDat9Idhs1pLaNixw?=
+ =?us-ascii?q?=3D=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A0AUAACY37pe/5tdJa1mGgEBAQEBAQE?=
+ =?us-ascii?q?BAQEDAQEBARIBAQEBAgIBAQEBQIE1AwEBAQELAYFTUQWBRy8sCodgA41FjzO?=
+ =?us-ascii?q?JBIEugSQDVAsBAQEMAQEtAgQBAYREAoIFJDYHDgIDAQELAQEFAQEBAgEFBG2?=
+ =?us-ascii?q?FVgyFcgEBAQIBEigGAQE3AQ8CAQg2EBQeJwQOJ4VQAw4gAaU1AoE5iGF0gTS?=
+ =?us-ascii?q?DAQEBBYU1GIIOCRSBJAGCYolhGoFBP4QhPmsZAYNJhVIism8KgkqYHCkOgj0?=
+ =?us-ascii?q?Bmm6tRwIEAgQFAg4BAQV4YQcrgVZwFYMkUBgNkEAYg1qKVnQ3AgYIAQEDCXy?=
+ =?us-ascii?q?MdwGBDwEB?=
+X-IronPort-AV: E=Sophos;i="5.73,384,1583193600"; d="scan'208";a="477438676"
+Received: from rcdn-core-4.cisco.com ([173.37.93.155])
+ by alln-iport-7.cisco.com with ESMTP/TLS/DHE-RSA-SEED-SHA;
+ 12 May 2020 17:45:27 +0000
+Received: from XCH-ALN-004.cisco.com (xch-aln-004.cisco.com [173.36.7.14])
+ by rcdn-core-4.cisco.com (8.15.2/8.15.2) with ESMTPS id 04CHjQYJ009361
+ (version=TLSv1.2 cipher=AES256-SHA bits=256 verify=FAIL);
+ Tue, 12 May 2020 17:45:26 GMT
+Received: from xhs-aln-002.cisco.com (173.37.135.119) by XCH-ALN-004.cisco.com
+ (173.36.7.14) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 12 May 2020 12:45:26 -0500
+Received: from xhs-rtp-001.cisco.com (64.101.210.228) by xhs-aln-002.cisco.com
+ (173.37.135.119) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 12 May 2020 12:45:26 -0500
+Received: from NAM10-MW2-obe.outbound.protection.outlook.com (64.101.32.56) by
+ xhs-rtp-001.cisco.com (64.101.210.228) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1497.2 via Frontend Transport; Tue, 12 May 2020 13:45:26 -0400
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Etl5AzWV1pFHDuFRyK27i0qJk1kmoP+sLegVdzmGG/kjuzU5NwhlBOgbQKs33kmBClIfCaLwFXRsyLNh7q1nbogHyLuslrm5lrwgL9DFRPdKg2eOg0oY2Hx9Anpw03Ek5qlTSa6lRy4T4Gjus7fKrEyFdU9JusEmaArMcrR9eggyRsoMDWeU49GAU8QwJFoB6N0qKPZXBc0pAgyxEp/MCieAzJ9sCFiEdZymZxJIIvSx11Ml+Czm9HiwU/D0n2zmqvtyDYWiPG2cB+86nxkrc8TxX7FHYcl3hR8Ahfc6L6OF6ygwsk4tGIhb+y8nZzfD9oNhC4HvV6QgMmBq3rIreA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6yEXEw5HlHk86RPZgr+ZviDtPVXlKW2a0RXM0XRQ7j0=;
+ b=n+mzE4ZnLD0Qjr00IhaqIQy1eJHR+D6MMqkm/I2e6umxayTEPQW0OkCJZiEeJtos6me4E35nobXLzF3ycPO/yZ8nL7ii/5hY6rFY4OVHAOl2qSU/sOPOiXnhUsy1ZsKYNNcbBUP0zKK+a3cv33WpapPSlbj5cAU+tW9NF0m9XJdLGaBF5IigW2YeTJvDMR5ypp3GjCiepeKn5yHVNxaxswbZacyROOuXC5B+Glzx2m++NMoIMIFpm6ASWBt73OQTmMtayISC/Md8w/MBMVlJerHyoG0tZiSy/+JOBJ/WGl9s+Hyi3urb6JtJP79xKLYgqB61wEtEiNweJqyOF0+3Fw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=cisco.com; dmarc=pass action=none header.from=cisco.com;
+ dkim=pass header.d=cisco.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cisco.onmicrosoft.com; 
+ s=selector2-cisco-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6yEXEw5HlHk86RPZgr+ZviDtPVXlKW2a0RXM0XRQ7j0=;
+ b=wIClwEFjHDEYhO8E57pq0dRmDJ2gAjUgqSPJv2k84jn9dS/OJ3OmfzlN0EVXf15+WEz9HrYG4m9O7AIoLKRzwBxPAr4tNeNcJBHKXl4s55nwqT8fSeLUj3FvFaJb7FMn1dBwKcjV3z7NKY+xX8QLWu4b9Uym8qoebkUOvGjW7Dg=
+Received: from BL0PR11MB3201.namprd11.prod.outlook.com (2603:10b6:208:6b::21)
+ by BL0PR11MB2882.namprd11.prod.outlook.com (2603:10b6:208:7f::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.29; Tue, 12 May
+ 2020 17:45:24 +0000
+Received: from BL0PR11MB3201.namprd11.prod.outlook.com
+ ([fe80::c57:7e06:31a4:fb3f]) by BL0PR11MB3201.namprd11.prod.outlook.com
+ ([fe80::c57:7e06:31a4:fb3f%5]) with mapi id 15.20.2979.033; Tue, 12 May 2020
+ 17:45:24 +0000
+From: "Daniel Walker (danielwa)" <danielwa@cisco.com>
+To: John Donnelly <john.p.donnelly@oracle.com>
 Subject: Re: [REQUEST] makedumpfile: stream compress flat ELF format with libz
-From: John Donnelly <john.p.donnelly@oracle.com>
-In-Reply-To: <20200512172546.GL31850@zorba>
-Date: Tue, 12 May 2020 12:38:42 -0500
-Message-Id: <69649640-B477-4969-AA2B-2E03587944F1@oracle.com>
+Thread-Topic: [REQUEST] makedumpfile: stream compress flat ELF format with libz
+Thread-Index: AQHWKIUdKwvgAJkCKEyzDBP1zPA8uA==
+Date: Tue, 12 May 2020 17:45:24 +0000
+Message-ID: <20200512174523.GM31850@zorba>
 References: <20200512172546.GL31850@zorba>
-To: "Daniel Walker (danielwa)" <danielwa@cisco.com>
-X-Mailer: Apple Mail (2.3445.9.1)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9619
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
- suspectscore=0 mlxscore=0
- adultscore=0 mlxlogscore=999 malwarescore=0 bulkscore=0 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2005120133
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9619
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- mlxlogscore=999
- clxscore=1011 spamscore=0 lowpriorityscore=0 phishscore=0 bulkscore=0
- malwarescore=0 priorityscore=1501 mlxscore=0 suspectscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2005120133
+ <69649640-B477-4969-AA2B-2E03587944F1@oracle.com>
+In-Reply-To: <69649640-B477-4969-AA2B-2E03587944F1@oracle.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+user-agent: Mutt/1.9.4 (2018-02-28)
+authentication-results: oracle.com; dkim=none (message not signed)
+ header.d=none;oracle.com; dmarc=none action=none header.from=cisco.com;
+x-originating-ip: [128.107.241.173]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6b6d85dc-8de9-41b6-9f8a-08d7f69c4021
+x-ms-traffictypediagnostic: BL0PR11MB2882:
+x-ld-processed: 5ae1af62-9505-4097-a69a-c1553ef7840e,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BL0PR11MB2882EDC6C07CB44766CC5A47DDBE0@BL0PR11MB2882.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 0401647B7F
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: N4ucbHAz7zKCnPXUAUMpHW0K4ParsTCswPqzEQzDdN6xhL3H9HvrIh2TtYGwl+SgnKhtUz3TtOAI3hcNTxHR4+fK11zJGCYoG58BKeilqNiDZyqEuaLo7soHfOxFtU932Zs8ZUVvRv+s04VhkbUQXI1wS1MN0P8aaQoEtKQX2lvYrVlgaTP1JPhVfl/b0XSVNuEMT/eVO4UWUgWJ3ERwjlahn0hroau+ePOA6VC9ix4um2v/zOcD10V86b50o3C5GjTS9GeHzl4PLTcPL1Gcy1RHU197tHVf//Q683/D0LgCjcJTutiIbPhhPlTyyi2ih9m+7awhWTc6o1+WFtmKG4ZflFbREts3ZQUUSQt1oVgEJrMK4u0mdLVzXtM1a/dgGEXrfaK5FK5YqjgYizN7F+kCjUSgwmFQL9SiKTiU2tsswzQuxloY9fo/gpaQwwnmDZRz4sOmPCTpc+T9ComrXasPjA1dhAtwx2bGji9YiullNW0hbGVQI09go0ZEiCKMpL536gnEyrgUyK41jsIKrA==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BL0PR11MB3201.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(7916004)(4636009)(366004)(376002)(136003)(396003)(39860400002)(346002)(33430700001)(33440700001)(9686003)(26005)(66446008)(186003)(66476007)(64756008)(6512007)(91956017)(4326008)(71200400001)(33656002)(66946007)(76116006)(86362001)(6916009)(2906002)(6506007)(107886003)(558084003)(54906003)(8676002)(66556008)(6486002)(1076003)(5660300002)(478600001)(33716001)(316002)(8936002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: PpGfficCuIGm0CZlFeQ7+QnoELByodN1KdUFvR5cERjs3aDk0MoEke77rEzHHfMt62l5NdA8aClfiNZ2FPKTJErVKSYqyoksv4FBgvZsodk0zYWS9EYD+QZc++I2e6xCWwzVWbHV4MyA305Rrb4O+EIJtwJPG9QU9Mz2wtlNRqpkFm71HbuTpyUso79A8f/vmqDEGgMK7MzGc5jRKifY0urq3LogjfD+VsMb+Hd0ApV3wbhOaGDx6v3bLA1762v8XtNX6XHvZfMPjL+3vqtCjYEyYMFsMgQogcFHxfxtIW/vIwxZQXqwl64bxPMRa9Uei3g01iD/eZXUNDWmoEVa72uR2auelldLfBvTmVGk99B9j3R3wV1wJLzKvfsumm7J68p3bgcv3rGStRjYJLN4J06ovD66RiAtTza2RYEsFqK9dQuFQ0+AN0+G4pcMRJAwjHc7itA38MpBjtjs3e3TTRXq2ol0Fn1OTgJO0UEXZ46QHlG2gvwUmEbVeEFGNhD8
+Content-ID: <3CBDD08183FDA64EABCFDBCB08C59582@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6b6d85dc-8de9-41b6-9f8a-08d7f69c4021
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2020 17:45:24.6421 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 5ae1af62-9505-4097-a69a-c1553ef7840e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: LBF3IgkBJgCiHsdpLlGGyzk8XdFv+d7N3uDJdEi14aUBjPTkUf3lND3+vBk6pdDj1dluFLn5hwYtJkCk+Bl31A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL0PR11MB2882
+X-OriginatorOrg: cisco.com
+X-Outbound-SMTP-Client: 173.36.7.14, xch-aln-004.cisco.com
+X-Outbound-Node: rcdn-core-4.cisco.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_103854_012891_0D609DE0 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200512_104528_278771_2FCE7F40 
+X-CRM114-Status: UNSURE (   7.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [173.37.142.94 listed in list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.86 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [173.37.142.94 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -98,9 +159,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,56 +178,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-
-
-> On May 12, 2020, at 12:25 PM, Daniel Walker (danielwa) <danielwa@cisco.com> wrote:
+On Tue, May 12, 2020 at 12:38:42PM -0500, John Donnelly wrote:
+ 
+> 
+>   Hi Daniel. 
+> 
+>    -z happens to be used by tar and rsync to indicate compression ;-) . 
 > 
 > 
-> Hi,
-> 
-> I created an enhancement request for makedumpfile here,
-> 
-> https://urldefense.com/v3/__https://github.com/makedumpfile/makedumpfile/issues/1__;!!GqivPVa7Brio!LJIWfQ8ged-9RjjV00zqmBGbL2-UU0baDJmxqVXo5AxYcofHzP8oxfWHZZ4ijk6O9N9I$ 
-> 
-> I found that compressing a flat core with gzip significantly reduces the size of
-> the core. Here were my findings,
-> 
-> 32G flat elf core -E -F -d 0
-> 33G kdump core -d 0
-> 16G kdump compressed -c -d 0
-> 1.9G flat elf core stream compressed with gzip -E -F -d 0
-> 
-> My feature request was to implement an option inside makedumpfile to gzip
-> compress the core output. This can already be accomplished by piping the core
-> thru the gzip tool, however, because makedumpfile already links against libz
-> having the option for makedumpfile to do it allows the gzip tools to be removed
-> from the crash kernels initramfs there by reducing the size.
-> 
-> Kazuhito Hagio had suggest adding the -C option instead of repurposing -c to do
-> this.
-> 
+
+This would be fine with me,
+
+makedumpfile -z -F -E -d 31 /proc/vmcore core.gz
 
 
-  Hi Daniel. 
-
-   -z happens to be used by tar and rsync to indicate compression ;-) . 
-
-
-
-
-
-> So a resulting command line might looks like this,
-> 
-> makedumpfile -C -F -E -d 31 /proc/vmcore core.gz
-> 
-> Thanks,
-> Daniel
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> https://urldefense.com/v3/__http://lists.infradead.org/mailman/listinfo/kexec__;!!GqivPVa7Brio!LJIWfQ8ged-9RjjV00zqmBGbL2-UU0baDJmxqVXo5AxYcofHzP8oxfWHZZ4ijsPXKz5A$ 
-
-
+Daniel
 _______________________________________________
 kexec mailing list
 kexec@lists.infradead.org
