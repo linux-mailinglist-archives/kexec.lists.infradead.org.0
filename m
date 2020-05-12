@@ -2,111 +2,67 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E7541CFE2A
-	for <lists+kexec@lfdr.de>; Tue, 12 May 2020 21:21:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E7CD1D0185
+	for <lists+kexec@lfdr.de>; Wed, 13 May 2020 00:03:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cNOfmOpP2r4cly4TTAFrR09JOVL5e1c6hiIKeNcSWlY=; b=Xw/a13Hy6Vdhzp
-	b1PVSEL4vQ9Kkttf1bkU3Eg5d/jOSLUlMeW1K05h7nyhQeDeYtI+hXz6J1jnPDGVbVb+rkAd58Cju
-	NT5McF0GJS15RL6N0elRky6p9xA2Nkqdk+ng8o+Tdp9zE/5q0XAdAjKOcQcBFtKaHIU8zlYvv8lxV
-	YVVyE7BOn89othRyofiOmSa8q127qVoNgB2R/o1l6TdaiJ59GT++UEYx8FBe9c9l89IaM57UQXNJY
-	3eWVf9YOMpvsfCG8g8dzPjtt3CkkmAon2Z/n0YNOpy42IMiMmtEpu7Pa48fgigoK01YPcn+5jxJQL
-	SIV5VXLuRHzJMe/HLlZQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=CLVjaFt2gXo31wJOcGq0FJosnCf0IfHbKQ2JyvN00j0=; b=MnrvLLOMuW2por
+	e8ylYSZL+VOmMUz8poYXQWzGS1OS5PaJSHFU+AUih6HyVhe/Jm2d/sTMSxjPkedz9MQWn7bxKynMT
+	/nW1GJoNT4smLn6xwiuDgfYS1JR/EEQf8j1KcNpliUL8T4nYVUjpBin9wKGlQp18rE5K8YurKM1k9
+	Hqzj7lAylLcS3VNbq0xJex1SiCBmzi34F2k0oaZ+I+mVG9qrjPL1Pn+RciuIzriPsbMZlowQLeO2/
+	qfeBta/Mpsza5VKdjLksY1lTPi/ESqRgy4u80lSDaumr0XJdbGgLtVGBHv5Bgq4yg5hbqbSXte+BG
+	TmnRTJQm6xizrj0Aku1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYaSU-0001LI-Np; Tue, 12 May 2020 19:20:54 +0000
-Received: from mail-eopbgr1400040.outbound.protection.outlook.com
- ([40.107.140.40] helo=JPN01-TY1-obe.outbound.protection.outlook.com)
+	id 1jYczs-0006hq-Mz; Tue, 12 May 2020 22:03:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYaSR-0001Jz-0e
- for kexec@lists.infradead.org; Tue, 12 May 2020 19:20:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FZQjHfFLCl2HUAbKfdPVX2pYtBRAJC5LdojU8XobM/Nu4g0buh60uhiWGrfbMFwc6GIIs23ykHNdPwsBJGI3mextgNOlEhgfIyyHrJrraFdSAoanH0yI10RZylyscry2C/EvA4TZtUVrn7c1swZY4gU5qb2XPiFBjnMa7djUZ3j1AhNrB07TXjoT/DRaBuKKi6X+OPgsR6TVtihLKUm5cxnIj6syjOMD8yOBwlN0nbdhXSgFFXv2jYKctP+A3NTQhzKIE4q2F1MJ8fj/aTcfWM1Uv+zc6Dwe44wgfXhEv2azICjWF/Yl381eLgf60MuLeMO09O8RW2Vc+9hheYABvQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qy9/INGht7v8OBlEDvzf1fXBBsDeJ43MW8AW6s4epng=;
- b=V3scch28+gCgmPEg5bI5ShE2UPneINktgHTRJkRLOyIv4vYnmz2dIzZejxGCs0TDfffX3xiPk7/2aiJYe0uIgII+mMHz1w+iwRZ2geIcT2iFw9GAx8r8BvwiwL4bE5gS3RzJmkgPp5U3aVAuvuiJhJz5Aic4ZyaGvk4s34gv9lhjMIVO55zre8cF8hwjGgjBJjjYTDSoaNKIXwSoGU54t/lE0aS6RGhWsU3ouk7toDesduR0Jjj+PmvLTpPmQvo+4k7vz77gTxTD55mmeDfMvJ68fssk56TvlDd2CHcTV4QSxuvnW3xbEnnnlrpcd8o30i+cQvAoGdP2Fd8OAulyIw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
- header.d=nec.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=qy9/INGht7v8OBlEDvzf1fXBBsDeJ43MW8AW6s4epng=;
- b=jnAgwiosaq0aLQDBLmDiZhDxuRvDi1DNVdRTbalMFzhlbymJVB9m9zOW/QJFW0tqkJDWXefj4cF9wrm6MtZWLWfZz2kHwwZSo4zQe70lBcZgwHVAFLOLCT9FlcvkVDiG5YgcM/w4B1LRmBn8igXdHR6/pQ0fpnhkeMphJlQy20g=
-Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com (52.134.241.23) by
- OSBPR01MB3127.jpnprd01.prod.outlook.com (52.134.253.81) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2979.33; Tue, 12 May 2020 19:20:45 +0000
-Received: from OSBPR01MB1991.jpnprd01.prod.outlook.com
- ([fe80::4ce5:bdba:f97c:bfa3]) by OSBPR01MB1991.jpnprd01.prod.outlook.com
- ([fe80::4ce5:bdba:f97c:bfa3%7]) with mapi id 15.20.2979.033; Tue, 12 May 2020
- 19:20:44 +0000
-From: =?iso-2022-jp?B?SEFHSU8gS0FaVUhJVE8oGyRCR2tIeCEhMGw/ThsoQik=?=
- <k-hagio-ab@nec.com>
-To: "Daniel Walker (danielwa)" <danielwa@cisco.com>,
- "kexec@lists.infradead.org" <kexec@lists.infradead.org>
-Subject: RE: [REQUEST] makedumpfile: stream compress flat ELF format with libz
-Thread-Topic: [REQUEST] makedumpfile: stream compress flat ELF format with libz
-Thread-Index: AQHWKIJfsgIq+CayDUSimqmu86c/pKikveXw
-Date: Tue, 12 May 2020 19:20:44 +0000
-Message-ID: <OSBPR01MB199106310D313355302BDE9ADDBE0@OSBPR01MB1991.jpnprd01.prod.outlook.com>
-References: <20200512172546.GL31850@zorba>
-In-Reply-To: <20200512172546.GL31850@zorba>
-Accept-Language: ja-JP, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: cisco.com; dkim=none (message not signed)
- header.d=none;cisco.com; dmarc=none action=none header.from=nec.com;
-x-originating-ip: [173.48.69.82]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 587a03f6-7895-4592-c4f4-08d7f6a991b0
-x-ms-traffictypediagnostic: OSBPR01MB3127:
-x-microsoft-antispam-prvs: <OSBPR01MB31271256FA8A996B80E7A852DDBE0@OSBPR01MB3127.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0401647B7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: tmCkU5K+p+h/Rw/seIuy6vk++daROhjUkS6kCKNaNJKuZREogQeAK1JtAtb6y+un3KY1A7oymRCSwVK036dQfOi24ypOCddnNco2lonrh8j0s4MkEUR2455MuTt/hplUjII63rgboEuXuP8ytyDgy8gEurnumT4wgQY6N1vS/W9NSpgOlYdO1THdVZByl4lNqxC8xtggFagZesb23NyFjaB+jJds9DUgHZ6zZjqyUhzEfnoFEIv+Yrjo1/YK9Zg7xxmW87ljWbu88VhnA8+smiTynbm1MKLgtFRgP/ydSSAD0sil5CGQuAyHZJRNqwTALfj4n4mxfvPCUKQTU3T4+DxlStwKticlIMd4iTmHoo22hP8RncdgwKUOnqY3hr4xcUQ//xYmlTpniHidxb9Qy7AXXCYyb/Q3DDCyNlBGfAzqRj9jelBiqZFAdadgDg1n/cLIou2qWyug29QVU34jIOH4qRJh94BvpruohTPHQ/8lc4rUio+oGfqJpw8L22KEEyKMDv1OvkzE/DaNzGwCk7Nxgmz+B7N+XOfvIcq50lGHgLNZhkwrn2VQxyLzdVG5QOOOht/AyV+6M1+y1mzWqHu4ZwzW2x9vmJdGH6UgM1s=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OSBPR01MB1991.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(39860400002)(396003)(376002)(346002)(366004)(33430700001)(76116006)(71200400001)(2906002)(52536014)(8936002)(478600001)(66446008)(33440700001)(316002)(66476007)(5660300002)(33656002)(55016002)(110136005)(86362001)(64756008)(8676002)(6506007)(9686003)(4326008)(186003)(7696005)(26005)(966005)(85182001)(66556008)(66946007);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: TEE0I5q/3t2PMKJSVIgwRZ4HJ2ptA1uQecA7dbDxfVFBsFpSWabqJj9pv6DMeHK63vqC+MFe7PdXxRPcrLEOq5ONmY0COJ/2PWYSiAv1PEg7gHmiySSKSVCiJsWJKaAVY6C6pAuyxkDeU8J2rHEkgwxMEU8xfKYyt6MennKPKfyp8iwECFEmNo+xodStfECD6TQq8H012IzWu0O31Mh5ns2tHL0j8ZHB9G9B01yGISey33SwbcmxnEDKk0d4QUzovHT57EcAf5uVK8GffiHujQVh9jqqoFV34QUiwpW09dIPwqgYTJS90CzJUmz4icfB4Us+cxdRx1DL4kzxiWXSS6id0yvDmcbMegBuCuseO/I5smvbc6ePoyTCt6YebqPJxebRFr7Q8LVuXc9h6ZvlPcLFljuCgyJxiIirUZPd0h7D25UyngNbwyoSSvNCzYA98JT2MNyH+lnTQcNwvbp9tGseeE9isOtKGeXjuHCQfW4=
-x-ms-exchange-transport-forked: True
+ id 1jYczf-0006Vs-Nl; Tue, 12 May 2020 22:03:21 +0000
+Received: from localhost (mobile-166-175-190-200.mycingular.net
+ [166.175.190.200])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BF5D920769;
+ Tue, 12 May 2020 22:03:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589320999;
+ bh=H/9k3jaaNnH8bx+1JIjRAmzzB0ogi2gQcBEM2wvsSRo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=ms1sJuNUMOhtJ39GvZjwVsRtlwNWtV1F8dP12i7NgmMzB3UiibL9NCFNGnlcqaGQO
+ wZLbuuVmt/mhhvtgYMwn9N+PNqB6mzmWriUU/neyZ4z1uu8uHCtrGz4tsdDVlYOlzp
+ OLmSx3oZ+zQVvDMDd0bfkRKwF2qlkz5YIRWp5VRQ=
+Date: Tue, 12 May 2020 17:03:17 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Prabhakar Kushwaha <pkushwaha@marvell.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200512220317.GA285526@bjorn-Precision-5520>
 MIME-Version: 1.0
-X-OriginatorOrg: nec.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 587a03f6-7895-4592-c4f4-08d7f6a991b0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2020 19:20:44.8652 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: sa6yFRPgnOrO4cVyTbweSgrj5dpxdI6O/CRP8/9X1bRKEIpqhv0ThQUT91glaAMfB2Yii1W+JzM1fx88/DwsLA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB3127
+Content-Disposition: inline
+In-Reply-To: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_122051_111515_FD13A8A9 
-X-CRM114-Status: GOOD (  10.78  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200512_150319_811362_51602C1E 
+X-CRM114-Status: GOOD (  26.50  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.140.40 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.140.40 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -118,62 +74,186 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: "xe-linux-external\(mailer list\)" <xe-linux-external@cisco.com>
+Cc: gkulkarni@marvell.com, linux-pci@vger.kernel.org, will@kernel.org,
+ bhsharma@redhat.com, prabhakar.pkin@gmail.com, kexec@lists.infradead.org,
+ maz@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
->
-> Hi,
->
-> I created an enhancement request for makedumpfile here,
->
-> https://github.com/makedumpfile/makedumpfile/issues/1
->
-> I found that compressing a flat core with gzip significantly reduces the size of
-> the core. Here were my findings,
->
-> 32G flat elf core -E -F -d 0
-> 33G kdump core -d 0
-> 16G kdump compressed -c -d 0
-> 1.9G flat elf core stream compressed with gzip -E -F -d 0
+[+cc linux-pci]
 
-The kdump-compressed format does per-page compression with compression level 1,
-so depending on data in vmcore, gzip (with -6 by default) can compress one much
-smaller like this.  Although I don't have a vmcore that shows such a drop in size
-with gzip as far as I tested.
+On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> An SMMU Stream table is created by the primary kernel. This table is
+> used by the SMMU to perform address translations for device-originated
+> transactions. Any crash (if happened) launches the kdump kernel which
+> re-creates the SMMU Stream table. New transactions will be translated
+> via this new table.
+> 
+> There are scenarios, where devices are still having old pending
+> transactions (configured in the primary kernel). These transactions
+> come in-between Stream table creation and device-driver probe.
+> As new stream table does not have entry for older transactions,
+> it will be aborted by SMMU.
+> 
+> Similar observations were found with PCIe-Intel 82576 Gigabit
+> Network card. It sends old Memory Read transaction in kdump kernel.
+> Transactions configured for older Stream table entries, that do not
+> exist any longer in the new table, will cause a PCIe Completion Abort.
 
->
-> My feature request was to implement an option inside makedumpfile to gzip
-> compress the core output. This can already be accomplished by piping the core
-> thru the gzip tool, however, because makedumpfile already links against libz
-> having the option for makedumpfile to do it allows the gzip tools to be removed
-> from the crash kernels initramfs there by reducing the size.
+That sounds like exactly what we want, doesn't it?
 
-(personally I prefer piping it through gzip, but apparently there are cases where
-the initramfs size needs to be minimized..)
+Or do you *want* DMA from the previous kernel to complete?  That will
+read or scribble on something, but maybe that's not terrible as long
+as it's not memory used by the kdump kernel.
 
->
-> Kazuhito Hagio had suggest adding the -C option instead of repurposing -c to do
-> this.
->
-> So a resulting command line might looks like this,
->
-> makedumpfile -C -F -E -d 31 /proc/vmcore core.gz
+> Returned PCIe completion abort further leads to AER Errors from APEI
+> Generic Hardware Error Source (GHES) with completion timeout.
+> A network device hang is observed even after continuous
+> reset/recovery from driver, Hence device is no more usable.
 
-Yes, the existing -c option is for per-page compression and creates a dumpfile that
-can be opened directly with crash utility, but stream compression is different.
-So I'd like to separate it from the -c.
+The fact that the device is no longer usable is definitely a problem.
+But in principle we *should* be able to recover from these errors.  If
+we could recover and reliably use the device after the error, that
+seems like it would be a more robust solution that having to add
+special cases in every IOMMU driver.
 
-(as John commented, -z also might be good, but I wonder if someone might start to
-want the same function with lzo or snappy..)
+If you have details about this sort of error, I'd like to try to fix
+it because we want to recover from that sort of error in normal
+(non-crash) situations as well.
 
-Anyway, I'll wait for patches for this enhancement.
-
-Thanks,
-Kazu
+> So, If we are in a kdump kernel try to copy SMMU Stream table from
+> primary/old kernel to preserve the mappings until the device driver
+> takes over.
+> 
+> Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+> ---
+> Changes for v2: Used memremap in-place of ioremap
+> 
+> V2 patch has been sanity tested. 
+> 
+> V1 patch has been tested with
+> A) PCIe-Intel 82576 Gigabit Network card in following
+> configurations with "no AER error". Each iteration has
+> been tested on both Suse kdump rfs And default Centos distro rfs.
+> 
+>  1)  with 2 level stream table 
+>        ----------------------------------------------------
+>        SMMU               |  Normal Ping   | Flood Ping
+>        -----------------------------------------------------
+>        Default Operation  |  100 times     | 10 times
+>        -----------------------------------------------------
+>        IOMMU bypass       |  41 times      | 10 times
+>        -----------------------------------------------------
+> 
+>  2)  with Linear stream table. 
+>        -----------------------------------------------------
+>        SMMU               |  Normal Ping   | Flood Ping
+>        ------------------------------------------------------
+>        Default Operation  |  100 times     | 10 times
+>        ------------------------------------------------------
+>        IOMMU bypass       |  55 times      | 10 times
+>        -------------------------------------------------------
+> 
+> B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+> SSD card with 2 level stream table using "fio" in mixed read/write and
+> only read configurations. It is tested for both Default Operation and
+> IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+> default Centos ditstro rfs.
+> 
+> This patch is not full proof solution. Issue can still come
+> from the point device is discovered and driver probe called. 
+> This patch has reduced window of scenario from "SMMU Stream table 
+> creation - device-driver" to "device discovery - device-driver".
+> Usually, device discovery to device-driver is very small time. So
+> the probability is very low. 
+> 
+> Note: device-discovery will overwrite existing stream table entries 
+> with both SMMU stage as by-pass.
+> 
+> 
+>  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+>  1 file changed, 35 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 82508730feb7..d492d92c2dd7 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>  			break;
+>  		case STRTAB_STE_0_CFG_S1_TRANS:
+>  		case STRTAB_STE_0_CFG_S2_TRANS:
+> -			ste_live = true;
+> +			/*
+> +			 * As kdump kernel copy STE table from previous
+> +			 * kernel. It still may have valid stream table entries.
+> +			 * Forcing entry as false to allow overwrite.
+> +			 */
+> +			if (!is_kdump_kernel())
+> +				ste_live = true;
+>  			break;
+>  		case STRTAB_STE_0_CFG_ABORT:
+>  			BUG_ON(!disable_bypass);
+> @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>  		return -ENOMEM;
+>  	}
+>  
+> +	if (is_kdump_kernel())
+> +		return 0;
+> +
+>  	for (i = 0; i < cfg->num_l1_ents; ++i) {
+>  		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+>  		strtab += STRTAB_L1_DESC_DWORDS << 3;
+> @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>  	return 0;
+>  }
+>  
+> +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> +			       struct arm_smmu_strtab_cfg *cfg, u32 size)
+> +{
+> +	struct arm_smmu_strtab_cfg rdcfg;
+> +
+> +	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> +	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> +					      + ARM_SMMU_STRTAB_BASE_CFG);
+> +
+> +	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> +	rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> +
+> +	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> +
+> +	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+> +}
+> +
+>  static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>  {
+>  	void *strtab;
+> @@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>  	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
+>  	cfg->strtab_base_cfg = reg;
+>  
+> +	if (is_kdump_kernel())
+> +		arm_smmu_copy_table(smmu, cfg, l1size);
+> +
+>  	return arm_smmu_init_l1_strtab(smmu);
+>  }
+>  
+> @@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
+>  	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
+>  	cfg->strtab_base_cfg = reg;
+>  
+> +	if (is_kdump_kernel()) {
+> +		arm_smmu_copy_table(smmu, cfg, size);
+> +		return 0;
+> +	}
+> +
+>  	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
+>  	return 0;
+>  }
+> -- 
+> 2.18.2
+> 
 
 _______________________________________________
 kexec mailing list
