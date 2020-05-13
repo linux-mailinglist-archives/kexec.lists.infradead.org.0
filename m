@@ -2,84 +2,96 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C4731D1914
-	for <lists+kexec@lfdr.de>; Wed, 13 May 2020 17:21:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A50B11D19BA
+	for <lists+kexec@lfdr.de>; Wed, 13 May 2020 17:45:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LWt7Qupotw96AOUYEmVe57mAIGkKRdi4ZJ/P8BP2pR4=; b=Nny2hJPahtS6d2
-	CJTRbMPbQRKxMw8WI0Npx3nRPkScemDxl/a1eFrZjeya1XI3MQip9aUJFnIQNarROwGvuxqTEHLJ2
-	Ckd9je9xRW2nW3GFKwlrDEnMpG2X2gvFj94Ts1snVMTA3YhvUb9P5fJvRXJ5OvAXsqqaYge1d7I3e
-	GO8rSFNwfbb1PDCZ9EfuS9aQecfOmIAv2STB5is15M0L/m5Zxf7HN1NwDT88g/epHO8tDQgDXnxwv
-	VQxmE54/ho+UHpahx4zfPBQeqkPIladPSI9kYAJYreRan0kLqwriLnrSWH4WMyQFyURCxnljlPQuB
-	ISLlsOfjeGHuTqLw+x6w==;
+	List-Owner; bh=LNa6LUwiivKJdSvLAaZHbgkY/ybOGYVwLn1n0y7X9FI=; b=OelaK1KXJIgKID
+	Vy/mN1WX+8bvRgfCAKSKQwKEXktc3xOalKbrerV6HqRBS3IuNNXv2dvedQPZec9JRU8y2f++U8no+
+	6cfs64Ah7VoW+FBMFZtaCiG04xM75AH7xU2OKUbkrE2lzUjr7NqGkrq2n5NZRwtYMgb/J6oxkMKkF
+	c7K7sqg1vdKniLSt0soEitX8xFZCF2dvQuMCX3G6CwqpJa8Zukw9leTDrDM0MLBwsA7T5T9Za/Phj
+	IQsSdQoa7PG5jzngZhmP799189BfDTRx67iKW60XaaQ0URdYqhDc1lrOFVRFxFeCOtQeOUlzuddJi
+	pFTJFFDjszeZ6rOUKG9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtCK-00014S-6b; Wed, 13 May 2020 15:21:28 +0000
-Received: from mail-pf1-f193.google.com ([209.85.210.193])
+	id 1jYtZD-0008Lr-3l; Wed, 13 May 2020 15:45:07 +0000
+Received: from out03.mta.xmission.com ([166.70.13.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtC9-0000xp-E9
- for kexec@lists.infradead.org; Wed, 13 May 2020 15:21:22 +0000
-Received: by mail-pf1-f193.google.com with SMTP id y25so8140897pfn.5
- for <kexec@lists.infradead.org>; Wed, 13 May 2020 08:21:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=sVPbNXCCooK7xs5q4tPUuYOkgiYvbFLYSsM11573Kow=;
- b=c275IVJ1+7zpNiKISgz5EYEMgWutjZXzUU9oahSptJh5AMVUWxaJO/do/uso095lTR
- WLNJcipWNU+njszKDiYbUQ8lj6P+1tvt/diLxlhT8yef9F+MCumyzm1Y4pCHhz9AFNfm
- iPvdYVyOy6AzSzbsGH4xd6SO6adDs7E33s90HsDDurm8y+4Ofp1aRcPSgQXxrK9ztmIY
- HYetI2It9MUfMEimFSztVXW5TMPTBsERxvTzE3N1dBHYetQfMuaOZpP4O1ZWiBaTpc1g
- GMkTkO44TXOUXlb41gZS/GJx9v6XUDkSOYBLJ+iENgtzb7Ztj1kFoX1AMYd88t8aqyjU
- qcBw==
-X-Gm-Message-State: AGi0PuaMYAPLj3z87rEhe00rX5PUV1r5SXjibT8pIHUmg5IDInweaVXm
- lsn84QOMmlvoYk6ACsmYySM=
-X-Google-Smtp-Source: APiQypKJxNQFZPpCeObFfzlvgoO/y5iJXbbt0fp6k+Bh0324QO2zLbObQGGHUWDJ+UruNtob9Uv7wQ==
-X-Received: by 2002:aa7:80cf:: with SMTP id a15mr28046474pfn.124.1589383276926; 
- Wed, 13 May 2020 08:21:16 -0700 (PDT)
-Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
- by smtp.gmail.com with ESMTPSA id n23sm15605462pjq.18.2020.05.13.08.21.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 08:21:13 -0700 (PDT)
-Received: by 42.do-not-panic.com (Postfix, from userid 1000)
- id 7045741D95; Wed, 13 May 2020 15:21:12 +0000 (UTC)
-From: Luis Chamberlain <mcgrof@kernel.org>
-To: viro@zeniv.linux.org.uk, gregkh@linuxfoundation.org, rafael@kernel.org,
- ebiederm@xmission.com, jeyu@kernel.org, jmorris@namei.org,
- keescook@chromium.org, paul@paul-moore.com, stephen.smalley.work@gmail.com,
- eparis@parisplace.org, nayna@linux.ibm.com, zohar@linux.ibm.com
-Subject: [PATCH 3/3] fs: move kernel_read*() calls to its own symbol namespace
-Date: Wed, 13 May 2020 15:21:08 +0000
-Message-Id: <20200513152108.25669-4-mcgrof@kernel.org>
-X-Mailer: git-send-email 2.23.0.rc1
-In-Reply-To: <20200513152108.25669-1-mcgrof@kernel.org>
+ id 1jYtZ8-0007fw-DA
+ for kexec@lists.infradead.org; Wed, 13 May 2020 15:45:04 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out03.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jYtYF-0002PP-RZ; Wed, 13 May 2020 09:44:07 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jYtYE-0000QY-AN; Wed, 13 May 2020 09:44:07 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Luis Chamberlain <mcgrof@kernel.org>
 References: <20200513152108.25669-1-mcgrof@kernel.org>
+ <20200513152108.25669-3-mcgrof@kernel.org>
+Date: Wed, 13 May 2020 10:40:31 -0500
+In-Reply-To: <20200513152108.25669-3-mcgrof@kernel.org> (Luis Chamberlain's
+ message of "Wed, 13 May 2020 15:21:07 +0000")
+Message-ID: <87k11fonbk.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
+X-XM-SPF: eid=1jYtYE-0000QY-AN; ; ; mid=<87k11fonbk.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX18UC1Rfu06BcwNif7UO1o/2p3AxKZc4ZvA=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
+X-Spam-Level: ***
+X-Spam-Status: No, score=3.2 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,LotsOfNums_01,T_TM2_M_HEADER_IN_MSG,XMNoVowels,
+ XMSubLong autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4965]
+ *  1.5 XMNoVowels Alpha-numberic number with no vowels
+ *  0.7 XMSubLong Long Subject
+ *  1.2 LotsOfNums_01 BODY: Lots of long strings of numbers
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa06 0; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: ; sa06 0; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ***;Luis Chamberlain <mcgrof@kernel.org>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 964 ms - load_scoreonly_sql: 0.05 (0.0%),
+ signal_user_changed: 12 (1.2%), b_tie_ro: 10 (1.1%), parse: 1.04
+ (0.1%), extract_message_metadata: 4.3 (0.4%), get_uri_detail_list: 2.2
+ (0.2%), tests_pri_-1000: 4.2 (0.4%), tests_pri_-950: 1.34 (0.1%),
+ tests_pri_-900: 1.09 (0.1%), tests_pri_-90: 281 (29.2%), check_bayes:
+ 277 (28.8%), b_tokenize: 31 (3.2%), b_tok_get_all: 13 (1.3%),
+ b_comp_prob: 5.0 (0.5%), b_tok_touch_all: 222 (23.0%), b_finish: 2.6
+ (0.3%), tests_pri_0: 637 (66.1%), check_dkim_signature: 0.86 (0.1%),
+ check_dkim_adsp: 3.0 (0.3%), poll_dns_idle: 0.44 (0.0%), tests_pri_10:
+ 2.2 (0.2%), tests_pri_500: 11 (1.2%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH 2/3] security: add symbol namespace for reading file data
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_082119_640703_BD17659D 
-X-CRM114-Status: GOOD (  12.73  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200513_084502_465554_63906F17 
+X-CRM114-Status: GOOD (  13.20  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.193 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.193 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mcgrof[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,188 +103,134 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: scott.branden@broadcom.com, selinux@vger.kernel.org,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, geert@linux-m68k.org,
- dan.carpenter@oracle.com, skhan@linuxfoundation.org,
- linux-fsdevel@vger.kernel.org, tglx@linutronix.de,
- linux-integrity@vger.kernel.org, bauerman@linux.ibm.com,
- Luis Chamberlain <mcgrof@kernel.org>
+Cc: rafael@kernel.org, zohar@linux.ibm.com, dhowells@redhat.com,
+ paul@paul-moore.com, nayna@linux.ibm.com, jmorris@namei.org,
+ geert@linux-m68k.org, dan.carpenter@oracle.com, keescook@chromium.org,
+ scott.branden@broadcom.com, selinux@vger.kernel.org, viro@zeniv.linux.org.uk,
+ skhan@linuxfoundation.org, eparis@parisplace.org, tglx@linutronix.de,
+ gregkh@linuxfoundation.org, stephen.smalley.work@gmail.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-security-module@vger.kernel.org, jeyu@kernel.org,
+ linux-fsdevel@vger.kernel.org, linux-integrity@vger.kernel.org,
+ bauerman@linux.ibm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Signed-off-by: Luis Chamberlain <mcgrof@kernel.org>
----
- drivers/base/firmware_loader/main.c | 1 +
- fs/exec.c                           | 6 +++---
- kernel/kexec_file.c                 | 2 ++
- kernel/module.c                     | 1 +
- security/integrity/digsig.c         | 3 +++
- security/integrity/ima/ima_fs.c     | 3 +++
- security/integrity/ima/ima_main.c   | 2 ++
- security/loadpin/loadpin.c          | 2 ++
- security/security.c                 | 2 ++
- security/selinux/hooks.c            | 2 ++
- 10 files changed, 21 insertions(+), 3 deletions(-)
+Luis Chamberlain <mcgrof@kernel.org> writes:
 
-diff --git a/drivers/base/firmware_loader/main.c b/drivers/base/firmware_loader/main.c
-index 5296aaca35cf..a5ed796a9166 100644
---- a/drivers/base/firmware_loader/main.c
-+++ b/drivers/base/firmware_loader/main.c
-@@ -44,6 +44,7 @@
- MODULE_AUTHOR("Manuel Estrada Sainz");
- MODULE_DESCRIPTION("Multi purpose firmware loading support");
- MODULE_LICENSE("GPL");
-+MODULE_IMPORT_NS(CORE_FS_READ);
- 
- struct firmware_cache {
- 	/* firmware_buf instance will be added into the below list */
-diff --git a/fs/exec.c b/fs/exec.c
-index 30bd800ab1d6..bbe2a35ea2e0 100644
---- a/fs/exec.c
-+++ b/fs/exec.c
-@@ -1008,7 +1008,7 @@ int kernel_read_file_from_path(const char *path, void **buf, loff_t *size,
- 	fput(file);
- 	return ret;
- }
--EXPORT_SYMBOL_GPL(kernel_read_file_from_path);
-+EXPORT_SYMBOL_NS_GPL(kernel_read_file_from_path, CORE_FS_READ);
- 
- int kernel_read_file_from_path_initns(const char *path, void **buf,
- 				      loff_t *size, loff_t max_size,
-@@ -1034,7 +1034,7 @@ int kernel_read_file_from_path_initns(const char *path, void **buf,
- 	fput(file);
- 	return ret;
- }
--EXPORT_SYMBOL_GPL(kernel_read_file_from_path_initns);
-+EXPORT_SYMBOL_NS_GPL(kernel_read_file_from_path_initns, CORE_FS_READ);
- 
- int kernel_read_file_from_fd(int fd, void **buf, loff_t *size, loff_t max_size,
- 			     enum kernel_read_file_id id)
-@@ -1050,7 +1050,7 @@ int kernel_read_file_from_fd(int fd, void **buf, loff_t *size, loff_t max_size,
- 	fdput(f);
- 	return ret;
- }
--EXPORT_SYMBOL_GPL(kernel_read_file_from_fd);
-+EXPORT_SYMBOL_NS_GPL(kernel_read_file_from_fd, CORE_FS_READ);
- 
- ssize_t read_code(struct file *file, unsigned long addr, loff_t pos, size_t len)
- {
-diff --git a/kernel/kexec_file.c b/kernel/kexec_file.c
-index bb05fd52de85..d96b7c05b0a5 100644
---- a/kernel/kexec_file.c
-+++ b/kernel/kexec_file.c
-@@ -28,6 +28,8 @@
- #include <linux/vmalloc.h>
- #include "kexec_internal.h"
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- static int kexec_calculate_store_digests(struct kimage *image);
- 
- /*
-diff --git a/kernel/module.c b/kernel/module.c
-index 8973a463712e..f14868980080 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -60,6 +60,7 @@
- #include "module-internal.h"
- 
- MODULE_IMPORT_NS(SECURITY_READ);
-+MODULE_IMPORT_NS(CORE_FS_READ);
- 
- #define CREATE_TRACE_POINTS
- #include <trace/events/module.h>
-diff --git a/security/integrity/digsig.c b/security/integrity/digsig.c
-index e9cbadade74b..d68ef41a3987 100644
---- a/security/integrity/digsig.c
-+++ b/security/integrity/digsig.c
-@@ -13,11 +13,14 @@
- #include <linux/key-type.h>
- #include <linux/digsig.h>
- #include <linux/vmalloc.h>
-+#include <linux/module.h>
- #include <crypto/public_key.h>
- #include <keys/system_keyring.h>
- 
- #include "integrity.h"
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- static struct key *keyring[INTEGRITY_KEYRING_MAX];
- 
- static const char * const keyring_name[INTEGRITY_KEYRING_MAX] = {
-diff --git a/security/integrity/ima/ima_fs.c b/security/integrity/ima/ima_fs.c
-index e3fcad871861..41fd03281ae1 100644
---- a/security/integrity/ima/ima_fs.c
-+++ b/security/integrity/ima/ima_fs.c
-@@ -20,6 +20,9 @@
- #include <linux/rcupdate.h>
- #include <linux/parser.h>
- #include <linux/vmalloc.h>
-+#include <linux/module.h>
-+
-+MODULE_IMPORT_NS(CORE_FS_READ);
- 
- #include "ima.h"
- 
-diff --git a/security/integrity/ima/ima_main.c b/security/integrity/ima/ima_main.c
-index f96f151294e6..ffa7a14deef1 100644
---- a/security/integrity/ima/ima_main.c
-+++ b/security/integrity/ima/ima_main.c
-@@ -28,6 +28,8 @@
- 
- #include "ima.h"
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- #ifdef CONFIG_IMA_APPRAISE
- int ima_appraise = IMA_APPRAISE_ENFORCE;
- #else
-diff --git a/security/loadpin/loadpin.c b/security/loadpin/loadpin.c
-index ee5cb944f4ad..ca2022ad5f88 100644
---- a/security/loadpin/loadpin.c
-+++ b/security/loadpin/loadpin.c
-@@ -17,6 +17,8 @@
- #include <linux/sched.h>	/* current */
- #include <linux/string_helpers.h>
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- static void report_load(const char *origin, struct file *file, char *operation)
- {
- 	char *cmdline, *pathname;
-diff --git a/security/security.c b/security/security.c
-index bdbd1fc5105a..c865f1de4b03 100644
---- a/security/security.c
-+++ b/security/security.c
-@@ -29,6 +29,8 @@
- #include <linux/msg.h>
- #include <net/flow.h>
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- #define MAX_LSM_EVM_XATTR	2
- 
- /* How many LSMs were built into the kernel? */
-diff --git a/security/selinux/hooks.c b/security/selinux/hooks.c
-index 9979b45e0a34..6dc4abfbfb78 100644
---- a/security/selinux/hooks.c
-+++ b/security/selinux/hooks.c
-@@ -103,6 +103,8 @@
- #include "audit.h"
- #include "avc_ss.h"
- 
-+MODULE_IMPORT_NS(CORE_FS_READ);
-+
- struct selinux_state selinux_state;
- 
- /* SECMARK reference count */
--- 
-2.26.2
+> Certain symbols are not meant to be used by everybody, the security
+> helpers for reading files directly is one such case. Use a symbol
+> namespace for them.
+>
+> This will prevent abuse of use of these symbols in places they were
+> not inteded to be used, and provides an easy way to audit where these
+> types of operations happen as a whole.
 
+Why not just remove the ability for the firmware loader to be a module?
+
+Is there some important use case that requires the firmware loader
+to be a module?
+
+We already compile the code in by default.  So it is probably just
+easier to remove the modular support all together.  Which would allow
+the export of the security hooks to be removed as well.
+
+Eric
+
+
+> Signed-off-by: Luis Chamberlain <mcgrof@kernel.org>
+> ---
+>  drivers/base/firmware_loader/fallback.c | 1 +
+>  fs/exec.c                               | 2 ++
+>  kernel/kexec.c                          | 2 ++
+>  kernel/module.c                         | 2 ++
+>  security/security.c                     | 6 +++---
+>  5 files changed, 10 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/base/firmware_loader/fallback.c b/drivers/base/firmware_loader/fallback.c
+> index d9ac7296205e..b088886dafda 100644
+> --- a/drivers/base/firmware_loader/fallback.c
+> +++ b/drivers/base/firmware_loader/fallback.c
+> @@ -19,6 +19,7 @@
+>   */
+>  
+>  MODULE_IMPORT_NS(FIRMWARE_LOADER_PRIVATE);
+> +MODULE_IMPORT_NS(SECURITY_READ);
+>  
+>  extern struct firmware_fallback_config fw_fallback_config;
+>  
+> diff --git a/fs/exec.c b/fs/exec.c
+> index 9791b9eef9ce..30bd800ab1d6 100644
+> --- a/fs/exec.c
+> +++ b/fs/exec.c
+> @@ -72,6 +72,8 @@
+>  
+>  #include <trace/events/sched.h>
+>  
+> +MODULE_IMPORT_NS(SECURITY_READ);
+> +
+>  int suid_dumpable = 0;
+>  
+>  static LIST_HEAD(formats);
+> diff --git a/kernel/kexec.c b/kernel/kexec.c
+> index f977786fe498..8d572b41a157 100644
+> --- a/kernel/kexec.c
+> +++ b/kernel/kexec.c
+> @@ -19,6 +19,8 @@
+>  
+>  #include "kexec_internal.h"
+>  
+> +MODULE_IMPORT_NS(SECURITY_READ);
+> +
+>  static int copy_user_segment_list(struct kimage *image,
+>  				  unsigned long nr_segments,
+>  				  struct kexec_segment __user *segments)
+> diff --git a/kernel/module.c b/kernel/module.c
+> index 80faaf2116dd..8973a463712e 100644
+> --- a/kernel/module.c
+> +++ b/kernel/module.c
+> @@ -59,6 +59,8 @@
+>  #include <uapi/linux/module.h>
+>  #include "module-internal.h"
+>  
+> +MODULE_IMPORT_NS(SECURITY_READ);
+> +
+>  #define CREATE_TRACE_POINTS
+>  #include <trace/events/module.h>
+>  
+> diff --git a/security/security.c b/security/security.c
+> index 8ae66e4c370f..bdbd1fc5105a 100644
+> --- a/security/security.c
+> +++ b/security/security.c
+> @@ -1654,7 +1654,7 @@ int security_kernel_read_file(struct file *file, enum kernel_read_file_id id)
+>  		return ret;
+>  	return ima_read_file(file, id);
+>  }
+> -EXPORT_SYMBOL_GPL(security_kernel_read_file);
+> +EXPORT_SYMBOL_NS_GPL(security_kernel_read_file, SECURITY_READ);
+>  
+>  int security_kernel_post_read_file(struct file *file, char *buf, loff_t size,
+>  				   enum kernel_read_file_id id)
+> @@ -1666,7 +1666,7 @@ int security_kernel_post_read_file(struct file *file, char *buf, loff_t size,
+>  		return ret;
+>  	return ima_post_read_file(file, buf, size, id);
+>  }
+> -EXPORT_SYMBOL_GPL(security_kernel_post_read_file);
+> +EXPORT_SYMBOL_NS_GPL(security_kernel_post_read_file, SECURITY_READ);
+>  
+>  int security_kernel_load_data(enum kernel_load_data_id id)
+>  {
+> @@ -1677,7 +1677,7 @@ int security_kernel_load_data(enum kernel_load_data_id id)
+>  		return ret;
+>  	return ima_load_data(id);
+>  }
+> -EXPORT_SYMBOL_GPL(security_kernel_load_data);
+> +EXPORT_SYMBOL_NS_GPL(security_kernel_load_data, SECURITY_READ);
+>  
+>  int security_task_fix_setuid(struct cred *new, const struct cred *old,
+>  			     int flags)
 
 _______________________________________________
 kexec mailing list
