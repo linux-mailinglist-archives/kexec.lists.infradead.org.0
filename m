@@ -2,79 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 670D71D18A5
-	for <lists+kexec@lfdr.de>; Wed, 13 May 2020 17:05:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE0441D1913
+	for <lists+kexec@lfdr.de>; Wed, 13 May 2020 17:21:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GtblZhvDUFrHZ1FSaPrkkCkEIF1TjTNWaHWqjhIe6Lc=; b=soYu2JXvr18FnS
-	Zv/Yt+I04vdss+ZMsR2c2yyZNjyzNmXgqggu+3wMcsp0w/SrFdzH6SEFR5kbRAT2RPhNn13v038Hn
-	ZD6vCK4PN3AJ/4Evf3phh+2hzlIQFL6Hf2f7xx1BI1lfG4UpyquNb6W8SHI9zeqEOj+H7/RzocYkY
-	QD91RbXcpNyZQPet2Jcq1EaIipaw9kGxBFctqRWmZRgDBWNyJG51DI/MOvfDRvKXDDQ7DtRm8Qv35
-	tTx6yiCbkexPg74S/mYP6/3f5nU/yE5ia39iT9xLL0PF6tRXwSwL2m9ldHy2yosteyuJIKJarciIX
-	BLXbInyRrPvuDmyuJVDg==;
+	List-Owner; bh=cNhCzogQkm/6YaiMX3EEAqs+4YOGg6IrW+78K2HgdS0=; b=JIsAgJ+XI9gvX2
+	cxOOuM6c+TQwuQT0gROdaNX3l6Dzz5YWtvvNiqjDZAvozJ5Ev6zAP1lR9SExchyGrshihMWMIHD87
+	dWWEBl5qBFNYztQzRK3W3zmg3uYc/kkvXtwJ9YhRtAPZ5NGr7bWT9UyYJt1mxREd9ugoA+BoC+SBT
+	CuIJeWjus3hXOcp4nQyQSZeKEvVNQNjLdZpHuyJL66y7SOexgkpeil57JLXpqzdfM0PPb9zamXITT
+	+aYrRBPdPDXBJuCzMxI8nnWZOwCOnsHBQSPFwfwgtVWfW3JTgHLXQl8QvVypQx4d7lw+N66MI7dg+
+	sukqhstr309e5FaK5A0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYswK-0002he-L0; Wed, 13 May 2020 15:04:56 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jYtCI-00012w-Ia; Wed, 13 May 2020 15:21:26 +0000
+Received: from mail-pf1-f196.google.com ([209.85.210.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYssW-0006yR-JN
- for kexec@lists.infradead.org; Wed, 13 May 2020 15:01:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589382056;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=88pSHN33sppXtXEbTxXU7CggUoXb2hES/xW1jKJdfIQ=;
- b=VfhHYaO+LdPdcczFY/eH9PrCpn8Xbw8aXmCOgWFEb/GsaOEzYnrMOI+Ud0kJDS2V8J/+8p
- e0NQSF3yamExxxwUigwzT7BcLc0+EXpwXX0VCchLPOXOfE//sZqfwWrhUjmfciwDCrA3OP
- LWBQWj6o8XUy2VQ4kZ65zFRsyiJkLQg=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-71-A8OxrijmPzWm-UCvp3rvdw-1; Wed, 13 May 2020 11:00:52 -0400
-X-MC-Unique: A8OxrijmPzWm-UCvp3rvdw-1
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4469A102C849;
- Wed, 13 May 2020 15:00:40 +0000 (UTC)
-Received: from optiplex-lnx.redhat.com (unknown [10.3.128.26])
- by smtp.corp.redhat.com (Postfix) with ESMTP id CE15584648;
- Wed, 13 May 2020 15:00:33 +0000 (UTC)
-From: Rafael Aquini <aquini@redhat.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v4] kernel: add panic_on_taint
-Date: Wed, 13 May 2020 11:00:26 -0400
-Message-Id: <20200513150026.1039987-1-aquini@redhat.com>
+ id 1jYtC7-0000xf-Jk
+ for kexec@lists.infradead.org; Wed, 13 May 2020 15:21:22 +0000
+Received: by mail-pf1-f196.google.com with SMTP id x77so8144844pfc.0
+ for <kexec@lists.infradead.org>; Wed, 13 May 2020 08:21:14 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=vd8mN5eu82jR3IAsdSL8KCAElLuY0QvMKLQ4DV4/fDM=;
+ b=gM3YgfFPYdlrVCO0D7U8YwdT1bNCc/HYd7M/ckpxyrPsrrJ1uol6ypw1iawhLrpteH
+ ZIbYySZjtOWFpM7i5XvMqBtNC0Y5NWVxza+pUqojjbjBJrxTNJjQfyuMZJ/p/X935afl
+ 8SCeSp3hGbQ/taCGbvEHz9rcmqQV0gH3spYD42TqSPRQCYiqOPqGD8WPP6GRckbN8OmL
+ QITKeywSjlfcVFmiB0Ruh/oY7rGDFtPeNlyOHuSCayGjE+2ZM37Zl9dN8M0BWx24W0c6
+ JyfhK5pfp4a7nhhVJ9hcETNaA7L8hV9njO1vE47ss6LW5YyHUKJ/So/+DL4KwdmA0wy6
+ Xc5g==
+X-Gm-Message-State: AOAM53031Y5/1aIRObnTihN+X1yTwW+gpuwRxDOhrlxxXUULWmIfnRu+
+ u3Qas/7rkP3Djw8MqcKdjok=
+X-Google-Smtp-Source: ABdhPJz8JCGMh8sRdwYyCHudRzQBKdwiDqQQhE20Xn802xN18geL+qldVFqyq1i08EE9ulujdjpfQg==
+X-Received: by 2002:a63:a01:: with SMTP id 1mr16798874pgk.428.1589383273914;
+ Wed, 13 May 2020 08:21:13 -0700 (PDT)
+Received: from 42.do-not-panic.com (42.do-not-panic.com. [157.230.128.187])
+ by smtp.gmail.com with ESMTPSA id a2sm45859pgh.57.2020.05.13.08.21.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 08:21:12 -0700 (PDT)
+Received: by 42.do-not-panic.com (Postfix, from userid 1000)
+ id 3FC514063E; Wed, 13 May 2020 15:21:12 +0000 (UTC)
+From: Luis Chamberlain <mcgrof@kernel.org>
+To: viro@zeniv.linux.org.uk, gregkh@linuxfoundation.org, rafael@kernel.org,
+ ebiederm@xmission.com, jeyu@kernel.org, jmorris@namei.org,
+ keescook@chromium.org, paul@paul-moore.com, stephen.smalley.work@gmail.com,
+ eparis@parisplace.org, nayna@linux.ibm.com, zohar@linux.ibm.com
+Subject: [PATCH 0/3] fs: reduce export usage of kerne_read*() calls
+Date: Wed, 13 May 2020 15:21:05 +0000
+Message-Id: <20200513152108.25669-1-mcgrof@kernel.org>
+X-Mailer: git-send-email 2.23.0.rc1
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_080100_757124_48E468D3 
-X-CRM114-Status: GOOD (  18.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_082119_656097_FD1DA5F2 
+X-CRM114-Status: UNSURE (   9.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
+ no trust [209.85.210.196 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.196 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mcgrof[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,206 +90,57 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, tiwai@suse.de, jeffm@suse.com, bhe@redhat.com,
- corbet@lwn.net, labbott@redhat.com, dyoung@redhat.com, AnDavis@suse.com,
- rpalethorpe@suse.de, keescook@chromium.org, jikos@kernel.org, cai@lca.pw,
- bunk@kernel.org, tytso@mit.edu, jeyu@suse.de, gregkh@linuxfoundation.org,
- rdunlap@infradead.org, kexec@lists.infradead.org, mcgrof@kernel.org,
- linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
- torvalds@linux-foundation.org
+Cc: scott.branden@broadcom.com, selinux@vger.kernel.org,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org, geert@linux-m68k.org,
+ dan.carpenter@oracle.com, skhan@linuxfoundation.org,
+ linux-fsdevel@vger.kernel.org, tglx@linutronix.de,
+ linux-integrity@vger.kernel.org, bauerman@linux.ibm.com,
+ Luis Chamberlain <mcgrof@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Analogously to the introduction of panic_on_warn, this patch
-introduces a kernel option named panic_on_taint in order to
-provide a simple and generic way to stop execution and catch
-a coredump when the kernel gets tainted by any given taint flag.
+While reviewing Scott Branden's submission of the new Broadcom VK driver
+driver upstream [0], part of which included 4 new pread varaints of the
+existing kernel_read*(), calls I grew shivers of the possibility of drivers
+using these exported symbols loosely. If we're going to grow these, it
+seems best to restrict the symbols to a namespace so drivers and
+subsystem maintainers don't use these carelessly.
 
-This is useful for debugging sessions as it avoids rebuilding
-the kernel to explicitly add calls to panic() or BUG() into
-code sites that introduce the taint flags of interest.
-For instance, if one is interested in following up with
-a post mortem analysis at the point a code path is hitting
-a bad page (i.e. unaccount_page_cache_page(), or slab_bug()),
-a crashdump could be collected by rebooting the kernel with
-'panic_on_taint=0x20' amended to the command line string.
+This should also help with making it easier to audit future locations in
+the kernel such read calls happen by just looking at the imports of the
+namespace.
 
-Another, perhaps less frequent, use for this option would be
-as a mean for assuring a security policy case where only a
-subset of taints, or no single taint (in paranoid mode),
-is allowed for the running system.
-The optional switch 'nousertaint' is handy in this particular
-scenario as it will avoid userspace induced crashes by writes
-to /proc/sys/kernel/tainted causing false positive hits for
-such policies.
+This goes compile tested with allyesconfig and allmodconfig on x86_64.
+0-day should have a report on build status with other configs later of
+my branch [1].
 
-Suggested-by: Qian Cai <cai@lca.pw>
-Signed-off-by: Rafael Aquini <aquini@redhat.com>
----
-Changelog:
-* v2: get rid of unnecessary/misguided compiler hints		(Luis)
-      enhance documentation text for the new kernel parameter	(Randy)
-* v3: drop sysctl interface, keep it only as a kernel parameter (Luis)
-* v4: change panic_on_taint input from alphabetical taint flags
-      to hexadecimal bitmasks, for clarity and extendability	(Luis)
+[0] https://lkml.kernel.org/r/20200508002739.19360-1-scott.branden@broadcom.com
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/linux-next.git/log/?h=20200513-kernel-read-sym
 
- Documentation/admin-guide/kdump/kdump.rst     |  7 ++++
- .../admin-guide/kernel-parameters.txt         | 13 +++++++
- include/linux/kernel.h                        |  4 +++
- kernel/panic.c                                | 34 +++++++++++++++++++
- kernel/sysctl.c                               | 11 +++++-
- 5 files changed, 68 insertions(+), 1 deletion(-)
+Luis Chamberlain (3):
+  fs: unexport kernel_read_file()
+  security: add symbol namespace for reading file data
+  fs: move kernel_read*() calls to its own symbol namespace
 
-diff --git a/Documentation/admin-guide/kdump/kdump.rst b/Documentation/admin-guide/kdump/kdump.rst
-index ac7e131d2935..2707de840fd3 100644
---- a/Documentation/admin-guide/kdump/kdump.rst
-+++ b/Documentation/admin-guide/kdump/kdump.rst
-@@ -521,6 +521,13 @@ will cause a kdump to occur at the panic() call.  In cases where a user wants
- to specify this during runtime, /proc/sys/kernel/panic_on_warn can be set to 1
- to achieve the same behaviour.
- 
-+Trigger Kdump on add_taint()
-+============================
-+
-+The kernel parameter panic_on_taint facilitates calling panic() from within
-+add_taint() whenever the value set in this bitmask matches with the bit flag
-+being set by add_taint(). This will cause a kdump to occur at the panic() call.
-+
- Contact
- =======
- 
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 7bc83f3d9bdf..ce17fdbec7d1 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -3401,6 +3401,19 @@
- 			bit 4: print ftrace buffer
- 			bit 5: print all printk messages in buffer
- 
-+	panic_on_taint=	Bitmask for conditionally call panic() in add_taint()
-+			Format: <hex>[,nousertaint]
-+			Hexadecimal bitmask representing the set of TAINT flags
-+			that will cause the kernel to panic when add_taint() is
-+			called with any of the flags in this set.
-+			The optional switch "nousertaint" can be utilized to
-+			prevent userland forced crashes by writing to sysctl
-+			/proc/sys/kernel/tainted any flagset matching with the
-+			bitmask set on panic_on_taint.
-+			See Documentation/admin-guide/tainted-kernels.rst for
-+			extra details on the taint flags that users can pick
-+			to compose the bitmask to assign to panic_on_taint.
-+
- 	panic_on_warn	panic() instead of WARN().  Useful to cause kdump
- 			on a WARN().
- 
-diff --git a/include/linux/kernel.h b/include/linux/kernel.h
-index 9b7a8d74a9d6..70712944dffc 100644
---- a/include/linux/kernel.h
-+++ b/include/linux/kernel.h
-@@ -528,6 +528,8 @@ extern int panic_on_oops;
- extern int panic_on_unrecovered_nmi;
- extern int panic_on_io_nmi;
- extern int panic_on_warn;
-+extern unsigned long panic_on_taint;
-+extern bool panic_on_taint_nousertaint;
- extern int sysctl_panic_on_rcu_stall;
- extern int sysctl_panic_on_stackoverflow;
- 
-@@ -597,6 +599,8 @@ extern enum system_states {
- #define TAINT_RANDSTRUCT		17
- #define TAINT_FLAGS_COUNT		18
- 
-+#define TAINT_FLAGS_MAX			((1UL << TAINT_FLAGS_COUNT) - 1)
-+
- struct taint_flag {
- 	char c_true;	/* character printed when tainted */
- 	char c_false;	/* character printed when not tainted */
-diff --git a/kernel/panic.c b/kernel/panic.c
-index b69ee9e76cb2..94b5c973770c 100644
---- a/kernel/panic.c
-+++ b/kernel/panic.c
-@@ -44,6 +44,8 @@ static int pause_on_oops_flag;
- static DEFINE_SPINLOCK(pause_on_oops_lock);
- bool crash_kexec_post_notifiers;
- int panic_on_warn __read_mostly;
-+unsigned long panic_on_taint;
-+bool panic_on_taint_nousertaint = false;
- 
- int panic_timeout = CONFIG_PANIC_TIMEOUT;
- EXPORT_SYMBOL_GPL(panic_timeout);
-@@ -434,6 +436,11 @@ void add_taint(unsigned flag, enum lockdep_ok lockdep_ok)
- 		pr_warn("Disabling lock debugging due to kernel taint\n");
- 
- 	set_bit(flag, &tainted_mask);
-+
-+	if (tainted_mask & panic_on_taint) {
-+		panic_on_taint = 0;
-+		panic("panic_on_taint set ...");
-+	}
- }
- EXPORT_SYMBOL(add_taint);
- 
-@@ -686,3 +693,30 @@ static int __init oops_setup(char *s)
- 	return 0;
- }
- early_param("oops", oops_setup);
-+
-+static int __init panic_on_taint_setup(char *s)
-+{
-+	char *taint_str;
-+
-+	if (!s)
-+		return -EINVAL;
-+
-+	taint_str = strsep(&s, ",");
-+	if (kstrtoul(taint_str, 16, &panic_on_taint))
-+		return -EINVAL;
-+
-+	/* make sure panic_on_taint doesn't hold out-of-range TAINT flags */
-+	panic_on_taint &= TAINT_FLAGS_MAX;
-+
-+	if (!panic_on_taint)
-+		return -EINVAL;
-+
-+	if (s && !strcmp(s, "nousertaint"))
-+		panic_on_taint_nousertaint = true;
-+
-+	pr_info("panic_on_taint: bitmask=0x%lx nousertaint_mode=%sabled\n",
-+		panic_on_taint, panic_on_taint_nousertaint ? "en" : "dis");
-+
-+	return 0;
-+}
-+early_param("panic_on_taint", panic_on_taint_setup);
-diff --git a/kernel/sysctl.c b/kernel/sysctl.c
-index 8a176d8727a3..e257c965683a 100644
---- a/kernel/sysctl.c
-+++ b/kernel/sysctl.c
-@@ -2623,11 +2623,20 @@ static int proc_taint(struct ctl_table *table, int write,
- 		return err;
- 
- 	if (write) {
-+		int i;
-+
-+		/*
-+		 * If we are relying on panic_on_taint not producing
-+		 * false positives due to userland input, bail out
-+		 * before setting the requested taint flags.
-+		 */
-+		if (panic_on_taint_nousertaint && (tmptaint & panic_on_taint))
-+			return -EINVAL;
-+
- 		/*
- 		 * Poor man's atomic or. Not worth adding a primitive
- 		 * to everyone's atomic.h for this
- 		 */
--		int i;
- 		for (i = 0; i < BITS_PER_LONG && tmptaint >> i; i++) {
- 			if ((tmptaint >> i) & 1)
- 				add_taint(i, LOCKDEP_STILL_OK);
+ drivers/base/firmware_loader/fallback.c | 1 +
+ drivers/base/firmware_loader/main.c     | 1 +
+ fs/exec.c                               | 9 +++++----
+ kernel/kexec.c                          | 2 ++
+ kernel/kexec_file.c                     | 2 ++
+ kernel/module.c                         | 3 +++
+ security/integrity/digsig.c             | 3 +++
+ security/integrity/ima/ima_fs.c         | 3 +++
+ security/integrity/ima/ima_main.c       | 2 ++
+ security/loadpin/loadpin.c              | 2 ++
+ security/security.c                     | 8 +++++---
+ security/selinux/hooks.c                | 2 ++
+ 12 files changed, 31 insertions(+), 7 deletions(-)
+
 -- 
-2.25.4
+2.26.2
 
 
 _______________________________________________
