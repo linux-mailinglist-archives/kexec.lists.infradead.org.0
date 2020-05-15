@@ -2,90 +2,85 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA0C71D492C
-	for <lists+kexec@lfdr.de>; Fri, 15 May 2020 11:14:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8831A1D4AD2
+	for <lists+kexec@lfdr.de>; Fri, 15 May 2020 12:24:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R7b4FTB4f0jmQtnKSSAgK0bfvxpzVyXPjQXmSVZYr18=; b=WOK1+HuDiYtu3F
-	QPBcpVb2S6l1ErH1TFs+VK5UgI7/abrG7tEv+a0D5rqi5PW4W7+yaL+wKQWy557X99INEvUz8WrNX
-	vwePshCrWw9RKgEnjttrviDoUW4r5v6f2MojED/e/SUvj23K4/b+Ldo2v1XabLeR6rWT4wobYEd21
-	tWi4vgu4WLkXHan7pL227EuSjuYAk1AFUidat3CUUSI7seSWfstAtrUwQUgDRkdexTGE3qOnj6bUZ
-	Tu1NvwoCl+20ULW3Hp7YEAppgxmV6c/eWhoK9Qt7gvzx77qOPXjmbDwR4QoPDnPkmnt6X3lxKuU0w
-	Fsspfza/deqI/IEn/lxg==;
+	List-Owner; bh=KgBDahGm+qh8lFreK/hGfPNnN6YvetMOKLhL8NUm3UY=; b=d/lG3G2SlpDwvd
+	8xEidDjvqsSL6FzErsyLBtBDFL6NPJI1cWkgTr5NS1XWh5Wo/T8YiJFpbk3SJK1dmeckWw741/zmN
+	20vFVoUvHNcZOd0RCnLqytAe/EZWw8H3JDnUuE4hFFkSnSRta/Se9KOLbWbJAXrrm/OS5zlR05DT6
+	nYioYpE6fR+ML3ROM0BYID3Zfjr1N45fN/fq3fo/DT4hfGe7j81F6A4iSO54f/uBW+0Mv9lkW6/8O
+	uVwlqmYbOVQrVjSKISZ35tahSPB1YOykQiZC8WhDMxSNS22F9mad8XODDJt0h9RHOgY6fOZghuc6K
+	VK1avuUi0C+fRgpmMvvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWQV-0004Sf-9d; Fri, 15 May 2020 09:14:43 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jZXW5-00085C-QS; Fri, 15 May 2020 10:24:33 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWQF-0004Kn-EZ
- for kexec@lists.infradead.org; Fri, 15 May 2020 09:14:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589534066;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=sAyNKqy0PvpNZ7XM4XJFqPAgjGRTcvpeLX/hBzxhqBM=;
- b=b/ML8OY4BzcxdGNtYsOnGOZzmxe5UqOQwnA1M3rFmZ/e8BEndZpOGRwrQIjIP8bS1Fgi9H
- 6Y9MHTpOIgbv8JyqJRF0fE4e8C8gfjEUSih04B1C73K9Y1s+k2Mls5ivajftasxifazyVQ
- +kYu8GIOGtd4STJnZsH2kPGbLKzDyio=
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-425-7HMEfe_TN4aHh4BR4hoTCA-1; Fri, 15 May 2020 05:14:22 -0400
-X-MC-Unique: 7HMEfe_TN4aHh4BR4hoTCA-1
-Received: by mail-qk1-f197.google.com with SMTP id f200so1536495qke.14
- for <kexec@lists.infradead.org>; Fri, 15 May 2020 02:14:22 -0700 (PDT)
+ id 1jZXW3-00080h-BD
+ for kexec@lists.infradead.org; Fri, 15 May 2020 10:24:32 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id s69so720375pjb.4
+ for <kexec@lists.infradead.org>; Fri, 15 May 2020 03:24:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=PGybp4d555g//9H3GiWo4hvFh60jsI+s9m8Oige6iHM=;
+ b=mU7NZ5lTbT5eBu8L5irKydmLWQdyjrqCs7Ncjj9uLohQKJ+Sh7nq+Cqcks/IQjyMdv
+ UY4CkOMjWuf/EhUm8Nrme9nle0BqJSr4o/wrW5VM61L8fiQb6STCQ6g9aMEZvrOYO5r1
+ hr7orQ8oqmedWZ9EuLxi0lBJDoPtlhJ0CvoRL65sUXi3tgyd7Y8O9/dc4DZF4FSmsB3Z
+ a4icTgldsj7/BpPxyMOQbVqmglv6HatFAXiryJA0Y2q05fOSETGzE6Mi0zafN585zwGp
+ NQQRqo2xZtOkjOPmHaqHwwt/krpwfxFW2+yh1lWvBNr6GIDjXhbVmyFVfXxUz5raBCSe
+ IXjA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sAyNKqy0PvpNZ7XM4XJFqPAgjGRTcvpeLX/hBzxhqBM=;
- b=R/PVjkoVFqO8PweK+SRLkMaJjhiLE8QVAjeRMeyNqNZNnkGAbVANGnQFTyjTv9Tv5l
- T5JsiFyRwLeRs5PXRNQpDVRoqf4rV7eOwkU6NCqZAfd/8HhcVXGXw4pMZDh/sbDbn56f
- HYjmtuWKO7CXpkzMLtdKShdlV1ByQ+K/CNxc4o014z+fUTMwFezJDyf6sYTGY+/NyY3g
- W//Oib2h1r6TE1R9lFhg7SFbdm1sAPEwnkOfyEwDW0aELPGVjqLv5zHh1iJ/lP4Nb+/b
- xwMdY4QukKw4wrTQiTnbsw24hlfkQ/6Q2yqQUGrE/7AZIrJtVMsuo4ra4HZS6crLN0MU
- Opdw==
-X-Gm-Message-State: AOAM532D5saxTU6Fyl/c8TP5nvPCDgK+qL26DHwS+97DDsdATPA33Xno
- QhH5JmBNRrSidBqa39v4vxlWc+oaofx1RMOPlFsqP0vu+rbvlm7T28UMyAmWhEF2Ir+XpI6Dwjc
- 72Y0OlXVnBU7AZjaNK12tGI52Qc2IRVTNdTZm
-X-Received: by 2002:ac8:380d:: with SMTP id q13mr2367460qtb.200.1589534062295; 
- Fri, 15 May 2020 02:14:22 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJzwyLTxFyixDvnPyg3oeL1fkkw3utZ2sn7m3Aff/TLZ0tuJ5vQAmsiR8I5ZPVoH3XSv1K0qQ5EhHgkWu/AeBT0=
-X-Received: by 2002:ac8:380d:: with SMTP id q13mr2367418qtb.200.1589534061588; 
- Fri, 15 May 2020 02:14:21 -0700 (PDT)
+ h=x-gm-message-state:from:date:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=PGybp4d555g//9H3GiWo4hvFh60jsI+s9m8Oige6iHM=;
+ b=I7ovoVH6cIG6C3o4hlO7YOOWE+zbtdaJhshmNG8v3YAZROp6Bdq/DvBB+uRILaIVcQ
+ j3MKrSJjpXxj05t65YAK4bsA1zzbQ7mEVSD778Rz5aQ7fCwYj9mgwLvDvYn6vikzmFgY
+ j7NPu2fnpJXmHCpm7hOCqRjb8Vtxb5R4p8mfEVlAMI9GZm9yD7ozldOx1zXy2KUgb9wV
+ s7drE5vMcEocyFm6LoWZWRGW7hMsff+LZJrvWRXF/15CfOTbVZbQI2qfkkmd427FHQET
+ UyKGxyoIg/Tp1w6YLDQoo47WG5IpG+YaMXbnAmBwo4qx1F4knRKUNJbWWz8aPsfhMySE
+ o/iQ==
+X-Gm-Message-State: AOAM530X6GYpryx2tmJlthdlWgBfZ9bLQxUrJkRC4+X5zuVr/ElJJB3O
+ HFuR1rxUhp9BMKx7HQd0Ki0=
+X-Google-Smtp-Source: ABdhPJyNmjuyT3RDx6u+RHl1lI/BSy3F2aEZvDw9NwTz8Dsv0aIVB/7o/9VsJm7v+zskOFPCOOoCGA==
+X-Received: by 2002:a17:90a:e147:: with SMTP id
+ ez7mr2724356pjb.128.1589538270185; 
+ Fri, 15 May 2020 03:24:30 -0700 (PDT)
+Received: from localhost ([2409:10:2e40:5100:6e29:95ff:fe2d:8f34])
+ by smtp.gmail.com with ESMTPSA id gn20sm1301945pjb.24.2020.05.15.03.24.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 May 2020 03:24:29 -0700 (PDT)
+From: Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
+X-Google-Original-From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+Date: Fri, 15 May 2020 19:24:27 +0900
+To: John Ogness <john.ogness@linutronix.de>
+Subject: Re: [PATCH v2 0/3] printk: replace ringbuffer
+Message-ID: <20200515102427.GB42471@jagdpanzerIV.localdomain>
+References: <20200501094010.17694-1-john.ogness@linutronix.de>
 MIME-Version: 1.0
-References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
- <20200408104655.GA92698@C02TD0UTHF1T.local>
- <CACi5LpP0WqYGxrJL6BJia-ceSR5XbjytsSY+P74xaDJZTJA8jA@mail.gmail.com>
- <20200428100710.GD3868@gaia>
- <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
-In-Reply-To: <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Fri, 15 May 2020 14:44:08 +0530
-Message-ID: <CACi5LpMnbFbmqWOn0GfPD2H50UcZ0XHQ7X+Cd0E-cS-zfL7tQQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
-To: Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <20200501094010.17694-1-john.ogness@linutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_021427_560882_C63E120E 
-X-CRM114-Status: GOOD (  19.12  )
+X-CRM114-CacheID: sfid-20200515_032431_407859_25C4CA3B 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sergey.senozhatsky[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,69 +99,41 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, arm@kernel.org,
- James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+On (20/05/01 11:46), John Ogness wrote:
+> Hello,
+> 
+> Here is a v2 for the first series to rework the printk subsystem. The
+> v1 and history are here [0]. This first series only replaces the
+> existing ringbuffer implementation. No locking is removed. No
+> semantics/behavior of printk are changed.
+> 
+> The VMCOREINFO is updated. RFC patches for the external tools
+> crash(8) [1] and makedumpfile(8) [2] have been submitted that allow
+> the new ringbuffer to be correctly read.
+> 
+> This series is in line with the agreements [3] made at the meeting
+> during LPC2019 in Lisbon, with 1 exception: support for dictionaries
+> will not be discontinued [4]. Dictionaries are stored in a separate
+> buffer so that they cannot interfere with the human-readable buffer.
 
-On Thu, Apr 30, 2020 at 10:05 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
->
-> On Tue, Apr 28, 2020 at 3:37 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
-> >
-> > On Tue, Apr 28, 2020 at 01:55:58PM +0530, Bhupesh Sharma wrote:
-> > > On Wed, Apr 8, 2020 at 4:17 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> > > > On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
-> > > > >  arch/arm64/configs/defconfig | 1 +
-> > > > >  1 file changed, 1 insertion(+)
-> > > > >
-> > > > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > > > > index 24e534d85045..fa122f4341a2 100644
-> > > > > --- a/arch/arm64/configs/defconfig
-> > > > > +++ b/arch/arm64/configs/defconfig
-> > > > > @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
-> > > > >  CONFIG_NUMA=y
-> > > > >  CONFIG_SECCOMP=y
-> > > > >  CONFIG_KEXEC=y
-> > > > > +CONFIG_KEXEC_FILE=y
-> > > > >  CONFIG_CRASH_DUMP=y
-> > > > >  CONFIG_XEN=y
-> > > > >  CONFIG_COMPAT=y
-> > > > > --
-> > > > > 2.7.4
-> > >
-> > > Thanks a lot  Mark.
-> > >
-> > > Hi Catalin, Will,
-> > >
-> > > Can you please help pick this patch in the arm tree. We have an
-> > > increasing number of user-cases from distro users
-> > > who want to use kexec_file_load() as the default interface for
-> > > kexec/kdump on arm64.
-> >
-> > We could pick it up if it doesn't conflict with the arm-soc tree. They
-> > tend to pick most of the defconfig changes these days (and could as well
-> > pick this one).
->
-> Thanks Catalin.
-> (+Cc Arnd)
->
-> Hi Arnd,
->
-> Can you please help pick this change via the arm-soc tree?
+I'm willing to bless this. The code looks good to me, nice job guys.
 
-Ping. Any updates on this defconfig patch.
+Acked-by: Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
 
-Thanks,
-Bhupesh
-
+	-ss
 
 _______________________________________________
 kexec mailing list
