@@ -2,93 +2,83 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 220881D7FFF
-	for <lists+kexec@lfdr.de>; Mon, 18 May 2020 19:23:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D3311D8DD7
+	for <lists+kexec@lfdr.de>; Tue, 19 May 2020 04:55:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Wd9KyEYVQg8xNOz3vF/N5+NWH9RrISTChAvAanlBdo=; b=fgKXjFdcwuz+CP
-	si+9C5CDm6VCvqNuhLalV/rbKMNaL4nQyhBAhXBjDs9QR7nwO+skBVIdIKT1nniimbcaltcA1RTT+
-	Bn/YMHYFO0QPnTxeV1sJa26e9RGqoLTP4XZrMv6+5jvEgm7OMQC5srGE4H2AFmiIVfY4l+EzU1cLq
-	8WBApdV8YIouVSIHessfBHjFxGg4lUEY71uMwUssof2pZFJZ6hLgKtRJJceZ3xUaP2z3PhcPN8W1y
-	UGbdDMZb3VqaLVy/ARCe4I1xNR0GqyFRy/W/wknz85SFJ9rGEdT0sUc9pIKjhJZ9xxAL1/ZGvUols
-	yPKoZ/lKp+uRHi0T0+Jw==;
+	List-Owner; bh=n/pW8v2j6nVeH5dLupPrO+AhN2SUgtyIWodNQp2D7vY=; b=Y5C8xG0ZgRDFQ2
+	kV/iXExHPnj6K3IVmuGc1qiklQwO5MujvHFgjT/d0DD8kZm0puPrESg8KOuJasIdXUExeuAsjx6PM
+	5uW3LS/k9gG/NjYMC1SnHqA+q6PgSaDe8qqvKwhHY/vbkSVCn0akqBwn+qbdlwZtEH6CBBW/XAO6l
+	uGM4EIfKnjVWmJ6c0QsNLazNaKH65N1JUK73S5s9O9NT/sNRIaqR8mt0j/JvR9zpPPX3shVUAbyxk
+	tl+shQX579SH3MM69/5hEij1eRGNVytoIbPhkCQ87IGvNKp6xKuCjFxPbCP+ugwFFE4ddVmUln/Zq
+	VMhmCf02UxG1b8MIy6zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jajTc-0007Mr-FR; Mon, 18 May 2020 17:22:56 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1jasPe-00006o-3J; Tue, 19 May 2020 02:55:26 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jajTZ-0007Lt-Kd
- for kexec@lists.infradead.org; Mon, 18 May 2020 17:22:54 +0000
-Received: by mail-lf1-x142.google.com with SMTP id 202so8754095lfe.5
- for <kexec@lists.infradead.org>; Mon, 18 May 2020 10:22:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
+ id 1jasPD-00060a-SD; Tue, 19 May 2020 02:55:01 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n5so1700610wmd.0;
+ Mon, 18 May 2020 19:54:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qu8M66lDUKLK1WzpQWJe9igp01pFB46NWxsyvCKG6oY=;
- b=WAxyrolK30XZ/8MijRphoQ1WbKWVbqxz0H4gA/Jy0pDcY9RRDe21Oan+4qDj9RDWUv
- LcWGp75Zyqhpcfrh+DYhLDfC9L9hFBI3p+iU/zxywhL1G6tidYQ6GLIuGqXlUMc5RKDx
- 2NX8Xzg6Xu2UUpMC93lzFHkjXofk5Qof537hs=
+ :cc; bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
+ b=hy7ZKx389ddhD3rN4QRSm1V9149iDHGX0kLP4MJ1xrIti9RLHUzZ0+kO4bSx5mheix
+ CnZz1XOiLKOR8BSGOlLRdJmDOw998FtDrcI8ps4Y8c4WJjNPwNwPz4U+RI9WXSDZZ/+A
+ w0woiRktQL5CWOmG1JKhD0MYoxvjcBBBgTH/fPYszJX0CWu4QaBPShyeaLMjRwQI0fN2
+ ReTAV9X2lqq8VBGUe9IZglpnx8Keoe5wQcMoSAbnIQ+1LU/0GpfmvnllNg3KnCc1qn9f
+ Y6y8UAobo1x4Wgid5+ijGPqIhapIYbPb55vOJN+QRxOq7jf9fgV2Np8u255TTxMNdkuV
+ fGFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=qu8M66lDUKLK1WzpQWJe9igp01pFB46NWxsyvCKG6oY=;
- b=TKDWzEMaWhPj0n7Zt34QOHcSKqj/YyE3Fkv9H0QMLAL8SFQ0xJ1xCHQyeDBgplg3LI
- yMtbSUIjXMyQtyfRbMYQzyf/DGgPESlZEh9q2V5b7IUHt0/Fehl3DJ8q43HjL9PTb/dL
- ld56KXxRFPLB3bGIlCQWVLSyIHHjnoGS1iOPQebZTpSxyt+/wBbkJMlrXxwoHRNP3JQi
- tR8bv52ks8Ku0XOS2gD3B/zclCWpMJDupBWbXEgaiAd39rk/2eIum+ltB66UH/ks3T8l
- lPt+mnkwCKQq2yi8H/b2dVx1ii38B8UyRh8fFrIydZX0hVz7BotDQ+ho0bNuSEJTjQUz
- dq1A==
-X-Gm-Message-State: AOAM530MLkjikoMB/duyhIszU0Nfp0SW1s0vZ35U5l6qPjpLBlXReWQ1
- UYLOPoqLS5rP0vVzI2i6N0Wx66medsw=
-X-Google-Smtp-Source: ABdhPJzogxLtthQb1TlXVhojdUIxtV5aOOhRUPSaYN9eA+r9uqZdMcLYgmJ7ksQIgSJcqpua5C0t5A==
-X-Received: by 2002:a19:4b12:: with SMTP id y18mr12274724lfa.169.1589822568277; 
- Mon, 18 May 2020 10:22:48 -0700 (PDT)
-Received: from mail-lf1-f44.google.com (mail-lf1-f44.google.com.
- [209.85.167.44])
- by smtp.gmail.com with ESMTPSA id a8sm5962964ljp.102.2020.05.18.10.22.46
- for <kexec@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 18 May 2020 10:22:47 -0700 (PDT)
-Received: by mail-lf1-f44.google.com with SMTP id x27so8649388lfg.9
- for <kexec@lists.infradead.org>; Mon, 18 May 2020 10:22:46 -0700 (PDT)
-X-Received: by 2002:a05:6512:62:: with SMTP id
- i2mr3417039lfo.152.1589822566461; 
- Mon, 18 May 2020 10:22:46 -0700 (PDT)
+ bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
+ b=XRauHbUtQTd8A1KZSx66ZtVDw0c1eYBqiIFcyeKovBFRW1XuKZRHoVj1+sBpAsABo+
+ G3VGMYeAAWbASZAzoWmbYYCcBF0yuVYhXYwgc9bAoDWK0Z9lagUhhCguIhHXQeND0qGv
+ TrjbbVDhu7udIY4uN/rqV+6naJj0RzjPIgqyCOmbHdjxyGLPB2hea24FA9ATSy+xbeoC
+ RI4m6yJ6lofcWYP0vmlZ5dRq4kZyvgb/lR1UkrO0IBYCVTHqDkH3v9WvNfQQoPFi+NjO
+ O1BqADxAbYmwx7IZuRkDnIkTetm2GCAEFjuCn29Vb8o2tpC7DS/1BHgYl0KZihbay8ZQ
+ +sVA==
+X-Gm-Message-State: AOAM531oJrPrgNaV31q26KYhLhMgKRswVIh/XzE2Nzv4RBzjlK4leIFQ
+ i+ViIGaT3zJViUfWyx2xlUXGKNFT9HxGxVWSjx4=
+X-Google-Smtp-Source: ABdhPJyoRD5CX/NqFOffBiyLl8cmECh5DgKueK4GdLlY6WBns7lCeG/ekAcV79EYdzaRf1hsNJLEkY0fIncU4Jrpy6k=
+X-Received: by 2002:a7b:cc92:: with SMTP id p18mr2719332wma.174.1589856897659; 
+ Mon, 18 May 2020 19:54:57 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200501094010.17694-1-john.ogness@linutronix.de>
- <20200501094010.17694-3-john.ogness@linutronix.de>
- <87v9ktcs3q.fsf@vostro.fn.ogness.net>
-In-Reply-To: <87v9ktcs3q.fsf@vostro.fn.ogness.net>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Mon, 18 May 2020 10:22:30 -0700
-X-Gmail-Original-Message-ID: <CAHk-=whSLRiNxehLiuX+ZfHsu8Kpj7R1Sdr3zA7==SMW0zh3ug@mail.gmail.com>
-Message-ID: <CAHk-=whSLRiNxehLiuX+ZfHsu8Kpj7R1Sdr3zA7==SMW0zh3ug@mail.gmail.com>
-Subject: Re: [PATCH v2 2/3] printk: add lockless buffer
-To: John Ogness <john.ogness@linutronix.de>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+In-Reply-To: <20200518155545.GO32394@willie-the-truck>
+From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Date: Tue, 19 May 2020 08:24:21 +0530
+Message-ID: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_102253_677129_35AD258F 
-X-CRM114-Status: GOOD (  12.31  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200518_195459_950242_404D9B18 
+X-CRM114-Status: GOOD (  29.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prabhakar.pkin[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -101,48 +91,170 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>, Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- "Paul E. McKenney" <paulmck@kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 6:04 AM John Ogness <john.ogness@linutronix.de> wrote:
+Hi Will,
+
+Sorry, I replied 1:1. Now replying with mailing list
+
+On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
 >
-> The cmpxchg() needs to be moved out of the while condition so that a
-> continue can be used as intended. Patch below.
-
-This seems pointless and wrong (patch edited to remove the '-' lines
-so that you see the end result):
-
->                 smp_mb(); /* LMM(data_push_tail:C) */
+> On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> > An SMMU Stream table is created by the primary kernel. This table is
+> > used by the SMMU to perform address translations for device-originated
+> > transactions. Any crash (if happened) launches the kdump kernel which
+> > re-creates the SMMU Stream table. New transactions will be translated
+> > via this new table.
+> >
+> > There are scenarios, where devices are still having old pending
+> > transactions (configured in the primary kernel). These transactions
+> > come in-between Stream table creation and device-driver probe.
+> > As new stream table does not have entry for older transactions,
+> > it will be aborted by SMMU.
+> >
+> > Similar observations were found with PCIe-Intel 82576 Gigabit
+> > Network card. It sends old Memory Read transaction in kdump kernel.
+> > Transactions configured for older Stream table entries, that do not
+> > exist any longer in the new table, will cause a PCIe Completion Abort.
+> > Returned PCIe completion abort further leads to AER Errors from APEI
+> > Generic Hardware Error Source (GHES) with completion timeout.
+> > A network device hang is observed even after continuous
+> > reset/recovery from driver, Hence device is no more usable.
+> >
+> > So, If we are in a kdump kernel try to copy SMMU Stream table from
+> > primary/old kernel to preserve the mappings until the device driver
+> > takes over.
+> >
+> > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
+> > ---
+> > Changes for v2: Used memremap in-place of ioremap
+> >
+> > V2 patch has been sanity tested.
 >
-> +               if (atomic_long_try_cmpxchg_relaxed(&data_ring->tail_lpos,
-> +                               &tail_lpos,
-> +                               next_lpos)) { /* LMM(data_push_tail:D) */
-> +                       break;
-> +               }
+> Are you sure?
+>
 
-Doing an "smp_mb()" followed by a "cmpxchg_relaxed" seems all kinds of
-odd and pointless, and is very much non-optimal on x86 for example.,
+I tested v1 patch thoroughly.
 
-Just remove the smp_mb(), and use the non-relaxed form of cmpxchg.
-It's defined to be fully ordered if it succeeds (and if the cmpxchg
-doesn't succeed, it's a no-op and the memory barrier shouldn't make
-any difference).
+After replacing ioremap with memremap, I tested 1-2 cycle per type.
+I can test this patch thoroughly to check any kind of possible error.
 
-Otherwise you'll do two memory ordering operations on x86 (and
-probably some other architectures), since the cmpxchg is always
-ordered on x86 and there exists no "relaxed" form of it.
+> > V1 patch has been tested with
+> > A) PCIe-Intel 82576 Gigabit Network card in following
+> > configurations with "no AER error". Each iteration has
+> > been tested on both Suse kdump rfs And default Centos distro rfs.
+> >
+> >  1)  with 2 level stream table
+> >        ----------------------------------------------------
+> >        SMMU               |  Normal Ping   | Flood Ping
+> >        -----------------------------------------------------
+> >        Default Operation  |  100 times     | 10 times
+> >        -----------------------------------------------------
+> >        IOMMU bypass       |  41 times      | 10 times
+> >        -----------------------------------------------------
+> >
+> >  2)  with Linear stream table.
+> >        -----------------------------------------------------
+> >        SMMU               |  Normal Ping   | Flood Ping
+> >        ------------------------------------------------------
+> >        Default Operation  |  100 times     | 10 times
+> >        ------------------------------------------------------
+> >        IOMMU bypass       |  55 times      | 10 times
+> >        -------------------------------------------------------
+> >
+> > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+> > SSD card with 2 level stream table using "fio" in mixed read/write and
+> > only read configurations. It is tested for both Default Operation and
+> > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+> > default Centos ditstro rfs.
+> >
+> > This patch is not full proof solution. Issue can still come
+> > from the point device is discovered and driver probe called.
+> > This patch has reduced window of scenario from "SMMU Stream table
+> > creation - device-driver" to "device discovery - device-driver".
+> > Usually, device discovery to device-driver is very small time. So
+> > the probability is very low.
+> >
+> > Note: device-discovery will overwrite existing stream table entries
+> > with both SMMU stage as by-pass.
+> >
+> >
+> >  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+> >  1 file changed, 35 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> > index 82508730feb7..d492d92c2dd7 100644
+> > --- a/drivers/iommu/arm-smmu-v3.c
+> > +++ b/drivers/iommu/arm-smmu-v3.c
+> > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+> >                       break;
+> >               case STRTAB_STE_0_CFG_S1_TRANS:
+> >               case STRTAB_STE_0_CFG_S2_TRANS:
+> > -                     ste_live = true;
+> > +                     /*
+> > +                      * As kdump kernel copy STE table from previous
+> > +                      * kernel. It still may have valid stream table entries.
+> > +                      * Forcing entry as false to allow overwrite.
+> > +                      */
+> > +                     if (!is_kdump_kernel())
+> > +                             ste_live = true;
+> >                       break;
+> >               case STRTAB_STE_0_CFG_ABORT:
+> >                       BUG_ON(!disable_bypass);
+> > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> >               return -ENOMEM;
+> >       }
+> >
+> > +     if (is_kdump_kernel())
+> > +             return 0;
+> > +
+> >       for (i = 0; i < cfg->num_l1_ents; ++i) {
+> >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+> >               strtab += STRTAB_L1_DESC_DWORDS << 3;
+> > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> >       return 0;
+> >  }
+> >
+> > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
+> > +{
+> > +     struct arm_smmu_strtab_cfg rdcfg;
+> > +
+> > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
+> > +
+> > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> > +
+> > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> > +
 
-                  Linus
+this need a fix. It should be memcpy.
+
+> > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+>
+> Sorry, but this is unacceptable. These things were allocated by the DMA API
+> so you can't just memcpy them around and hope for the best.
+>
+
+I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
+here i see usage of memremap and memcpy to copy older iommu table.
+did I take wrong reference?
+
+What kind of issue you are foreseeing in using memcpy(). May be we can
+try to find a solution.
+
+-pk
 
 _______________________________________________
 kexec mailing list
