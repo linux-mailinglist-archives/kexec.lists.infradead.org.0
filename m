@@ -2,84 +2,79 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D3311D8DD7
-	for <lists+kexec@lfdr.de>; Tue, 19 May 2020 04:55:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2B601D9442
+	for <lists+kexec@lfdr.de>; Tue, 19 May 2020 12:22:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/pW8v2j6nVeH5dLupPrO+AhN2SUgtyIWodNQp2D7vY=; b=Y5C8xG0ZgRDFQ2
-	kV/iXExHPnj6K3IVmuGc1qiklQwO5MujvHFgjT/d0DD8kZm0puPrESg8KOuJasIdXUExeuAsjx6PM
-	5uW3LS/k9gG/NjYMC1SnHqA+q6PgSaDe8qqvKwhHY/vbkSVCn0akqBwn+qbdlwZtEH6CBBW/XAO6l
-	uGM4EIfKnjVWmJ6c0QsNLazNaKH65N1JUK73S5s9O9NT/sNRIaqR8mt0j/JvR9zpPPX3shVUAbyxk
-	tl+shQX579SH3MM69/5hEij1eRGNVytoIbPhkCQ87IGvNKp6xKuCjFxPbCP+ugwFFE4ddVmUln/Zq
-	VMhmCf02UxG1b8MIy6zg==;
+	List-Owner; bh=4KTowB9Kx5I6QsEVJ7bRsiXBCB7WSP5bw3/7qWvWXyE=; b=e+PIT72vwvExFz
+	Oc0t62LusVxE2i9NpYRY8ayO39oWV+oY76vJ0FQ6B0UG587Dwy4kNDOZGty/j5J8kDsg+Fbxbe9mo
+	P3FuH6PHCqF+TtpeAfDSndIGQT9beK5ystdgFl0S2VC0NTcua2TpcXBSsHMRH+VfKG3x/UdwB8uLP
+	8GloiNOV3ashnxn84bEZZ18etHduMIl0a+W1JR32e0hIJ6sIjgkabSEc+LfGgPvBeJzhTvlQP0e/0
+	xAaio0/CM+e0fn5WiPF4T1iWtwALEaSPHA8CbhlPhhI2k4jMcfUQ81h8ZvYKT/XhgRUOxu3/O0ocm
+	mvNQBPKD7YkUJmEIXKCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jasPe-00006o-3J; Tue, 19 May 2020 02:55:26 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jazOU-0005DD-E5; Tue, 19 May 2020 10:22:42 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jasPD-00060a-SD; Tue, 19 May 2020 02:55:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so1700610wmd.0;
- Mon, 18 May 2020 19:54:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
- b=hy7ZKx389ddhD3rN4QRSm1V9149iDHGX0kLP4MJ1xrIti9RLHUzZ0+kO4bSx5mheix
- CnZz1XOiLKOR8BSGOlLRdJmDOw998FtDrcI8ps4Y8c4WJjNPwNwPz4U+RI9WXSDZZ/+A
- w0woiRktQL5CWOmG1JKhD0MYoxvjcBBBgTH/fPYszJX0CWu4QaBPShyeaLMjRwQI0fN2
- ReTAV9X2lqq8VBGUe9IZglpnx8Keoe5wQcMoSAbnIQ+1LU/0GpfmvnllNg3KnCc1qn9f
- Y6y8UAobo1x4Wgid5+ijGPqIhapIYbPb55vOJN+QRxOq7jf9fgV2Np8u255TTxMNdkuV
- fGFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
- b=XRauHbUtQTd8A1KZSx66ZtVDw0c1eYBqiIFcyeKovBFRW1XuKZRHoVj1+sBpAsABo+
- G3VGMYeAAWbASZAzoWmbYYCcBF0yuVYhXYwgc9bAoDWK0Z9lagUhhCguIhHXQeND0qGv
- TrjbbVDhu7udIY4uN/rqV+6naJj0RzjPIgqyCOmbHdjxyGLPB2hea24FA9ATSy+xbeoC
- RI4m6yJ6lofcWYP0vmlZ5dRq4kZyvgb/lR1UkrO0IBYCVTHqDkH3v9WvNfQQoPFi+NjO
- O1BqADxAbYmwx7IZuRkDnIkTetm2GCAEFjuCn29Vb8o2tpC7DS/1BHgYl0KZihbay8ZQ
- +sVA==
-X-Gm-Message-State: AOAM531oJrPrgNaV31q26KYhLhMgKRswVIh/XzE2Nzv4RBzjlK4leIFQ
- i+ViIGaT3zJViUfWyx2xlUXGKNFT9HxGxVWSjx4=
-X-Google-Smtp-Source: ABdhPJyoRD5CX/NqFOffBiyLl8cmECh5DgKueK4GdLlY6WBns7lCeG/ekAcV79EYdzaRf1hsNJLEkY0fIncU4Jrpy6k=
-X-Received: by 2002:a7b:cc92:: with SMTP id p18mr2719332wma.174.1589856897659; 
- Mon, 18 May 2020 19:54:57 -0700 (PDT)
+ id 1jazO5-0005Az-Su; Tue, 19 May 2020 10:22:19 +0000
+Received: from mail-qk1-f179.google.com ([209.85.222.179]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MfYc4-1j8FH30O0u-00g3VY; Tue, 19 May 2020 12:22:13 +0200
+Received: by mail-qk1-f179.google.com with SMTP id f189so14205382qkd.5;
+ Tue, 19 May 2020 03:22:12 -0700 (PDT)
+X-Gm-Message-State: AOAM530/X0d1BfpLkR/tnPT6BZADXeDgcIAt+qDjQeqDP1i2NTp2xzf2
+ BMTdN3639+R/LCwqdgQAmK5XCKglxCWW8QOzaUM=
+X-Google-Smtp-Source: ABdhPJxOu+nLjvg7CMqkLaOXbJg4GTm6uL1Kx08HssunT+gb6Fi/yoTUZBq2l9jxT8nUph2PPk6WMqUkT4Yu1iuBXRQ=
+X-Received: by 2002:a37:434b:: with SMTP id q72mr21154808qka.352.1589883731571; 
+ Tue, 19 May 2020 03:22:11 -0700 (PDT)
 MIME-Version: 1.0
-References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
- <20200518155545.GO32394@willie-the-truck>
-In-Reply-To: <20200518155545.GO32394@willie-the-truck>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Tue, 19 May 2020 08:24:21 +0530
-Message-ID: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-To: Will Deacon <will@kernel.org>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
+In-Reply-To: <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 19 May 2020 12:21:55 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
+Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
+Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
+ kdump
+To: Chen Zhou <chenzhou10@huawei.com>
+X-Provags-ID: V03:K1:jz2Hvot0KeuothuFOZLaTRrDwLl9eNTy3LIoscacfSdUjY34BwK
+ uVcaV+7rZ8A+UdNcYCoeXIh7dO3AHuHJ6/uAWgIDHLWJDcgrH8I8a/Ama0i4W/MUlxq0ABN
+ ME42CJS64fxgh6LwVGR2DxOaBJWh65KLOwqDJYIdndBatVa7AHugWAH7aaRgAPnNsEf0AVR
+ wCGeEyO585BzQ7c7k74Hg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3yn6moQ3WXo=:eB46Ww3LlEucP4usDqDJQ4
+ 5Au6YzXQBtTP9ZC1OHvARFmO7LAyMLwMaGCNtby7quUWPXfRw0vZC4K2NRXNUW++pC+0z5d/s
+ pJ3f3EOgOCtMqtm1Hj0pNMU4Hp0u0q9wcKnJf8IfrOjIvLbPI07Lf8VxuoQne0c2BJFdLrzaN
+ UnEdZxWjhjTD0VSBo2d6YkjJGmAsw0smKy805gsX87VzS5fiCOGZdJ00TJJ4Cn5QFNziTTC0Z
+ ecYejSsp4Iwd8Ec6N2DogYG3KZcq9og0Yr4sliG/fTD5eaH31D6kL89wuTj2CLeDCO/fJ87O6
+ 9QcGFTIQX3Dc96G4BfP0Ob82eNH3ZoiuYL71aAN+AyfjHQbVHXWwZFV8E6q7edbR1dA8MNjti
+ emkHUpd2cpxCVuSoAH3UbGUQnHKHAfvWrpLKu2+mj5j66Y5ti31pSs4urI90ihPcDsJBH1X1n
+ mHgcgk2LSaxtfY0Qxxw63oNbMd48YHhHQRKAThpIDjvBq2uNDZTH2IspR8Po7uteJkpO6alX/
+ vxfg31vko/sDM8n35cDKH8iP4+mj1fQ4IoYUj5+5iScgNLC72YLgWaps/6aQHr1dZfSLKygHh
+ g9xlgQ2lVTBHVwskFTdcyjRDbhcUi09OUGHvIo1G9W2eMbYyAbuLSIvjhcc9Z20zTTsZGCr3L
+ LKQHQM9tqFmijPbR+pWHK1UpdWq0ppDsT0M+ldPwFbX2iWOeL5hNMxCnDRjAt16UsttZBokru
+ yrPqEAkAqpSkiVUKlrehP4Z2fdyKFDuqZgIkh/gbjxHFZww21Daznume3zaYX7QQMud4xMWnw
+ 1Jv8uBSnFX8V4hqJwZcA8haFi3GbvUA1FEj8FtXXeTNV+59s9E=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_195459_950242_404D9B18 
-X-CRM114-Status: GOOD (  29.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200519_032218_233284_E1748010 
+X-CRM114-Status: GOOD (  14.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,170 +86,57 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Simon Horman <horms@verge.net.au>, john.p.donnelly@oracle.com,
+ Will Deacon <will@kernel.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, James Morse <james.morse@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, pkushwaha@marvell.com,
+ Dave Young <dyoung@redhat.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-Sorry, I replied 1:1. Now replying with mailing list
-
-On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
+On Thu, Mar 26, 2020 at 4:10 AM Chen Zhou <chenzhou10@huawei.com> wrote:
 >
-> On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > An SMMU Stream table is created by the primary kernel. This table is
-> > used by the SMMU to perform address translations for device-originated
-> > transactions. Any crash (if happened) launches the kdump kernel which
-> > re-creates the SMMU Stream table. New transactions will be translated
-> > via this new table.
-> >
-> > There are scenarios, where devices are still having old pending
-> > transactions (configured in the primary kernel). These transactions
-> > come in-between Stream table creation and device-driver probe.
-> > As new stream table does not have entry for older transactions,
-> > it will be aborted by SMMU.
-> >
-> > Similar observations were found with PCIe-Intel 82576 Gigabit
-> > Network card. It sends old Memory Read transaction in kdump kernel.
-> > Transactions configured for older Stream table entries, that do not
-> > exist any longer in the new table, will cause a PCIe Completion Abort.
-> > Returned PCIe completion abort further leads to AER Errors from APEI
-> > Generic Hardware Error Source (GHES) with completion timeout.
-> > A network device hang is observed even after continuous
-> > reset/recovery from driver, Hence device is no more usable.
-> >
-> > So, If we are in a kdump kernel try to copy SMMU Stream table from
-> > primary/old kernel to preserve the mappings until the device driver
-> > takes over.
-> >
-> > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
-> > ---
-> > Changes for v2: Used memremap in-place of ioremap
-> >
-> > V2 patch has been sanity tested.
+> Hi all,
 >
-> Are you sure?
->
+> Friendly ping...
 
-I tested v1 patch thoroughly.
+I was asked about this patch series, and see that you last posted it in
+December. I think you should rebase it to linux-5.7-rc6 and post the
+entire series again to make progress, as it's unlikely that any maintainer
+would pick up the patches from last year.
 
-After replacing ioremap with memremap, I tested 1-2 cycle per type.
-I can test this patch thoroughly to check any kind of possible error.
+For the contents, everything seems reasonable to me, but I noticed that
+you are adding a property to the /chosen node without adding the
+corresponding documentation to
+Documentation/devicetree/bindings/chosen.txt
 
-> > V1 patch has been tested with
-> > A) PCIe-Intel 82576 Gigabit Network card in following
-> > configurations with "no AER error". Each iteration has
-> > been tested on both Suse kdump rfs And default Centos distro rfs.
-> >
-> >  1)  with 2 level stream table
-> >        ----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        -----------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        -----------------------------------------------------
-> >        IOMMU bypass       |  41 times      | 10 times
-> >        -----------------------------------------------------
-> >
-> >  2)  with Linear stream table.
-> >        -----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        ------------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        ------------------------------------------------------
-> >        IOMMU bypass       |  55 times      | 10 times
-> >        -------------------------------------------------------
-> >
-> > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-> > SSD card with 2 level stream table using "fio" in mixed read/write and
-> > only read configurations. It is tested for both Default Operation and
-> > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-> > default Centos ditstro rfs.
-> >
-> > This patch is not full proof solution. Issue can still come
-> > from the point device is discovered and driver probe called.
-> > This patch has reduced window of scenario from "SMMU Stream table
-> > creation - device-driver" to "device discovery - device-driver".
-> > Usually, device discovery to device-driver is very small time. So
-> > the probability is very low.
-> >
-> > Note: device-discovery will overwrite existing stream table entries
-> > with both SMMU stage as by-pass.
-> >
-> >
-> >  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 35 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index 82508730feb7..d492d92c2dd7 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
-> >                       break;
-> >               case STRTAB_STE_0_CFG_S1_TRANS:
-> >               case STRTAB_STE_0_CFG_S2_TRANS:
-> > -                     ste_live = true;
-> > +                     /*
-> > +                      * As kdump kernel copy STE table from previous
-> > +                      * kernel. It still may have valid stream table entries.
-> > +                      * Forcing entry as false to allow overwrite.
-> > +                      */
-> > +                     if (!is_kdump_kernel())
-> > +                             ste_live = true;
-> >                       break;
-> >               case STRTAB_STE_0_CFG_ABORT:
-> >                       BUG_ON(!disable_bypass);
-> > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >               return -ENOMEM;
-> >       }
-> >
-> > +     if (is_kdump_kernel())
-> > +             return 0;
-> > +
-> >       for (i = 0; i < cfg->num_l1_ents; ++i) {
-> >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
-> >               strtab += STRTAB_L1_DESC_DWORDS << 3;
-> > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >       return 0;
-> >  }
-> >
-> > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > +{
-> > +     struct arm_smmu_strtab_cfg rdcfg;
-> > +
-> > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > +
-> > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > +
-> > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > +
+Please add that, and Cc the devicetree maintainers on the updated
+patch.
 
-this need a fix. It should be memcpy.
+         Arnd
 
-> > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
->
-> Sorry, but this is unacceptable. These things were allocated by the DMA API
-> so you can't just memcpy them around and hope for the best.
->
-
-I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
-here i see usage of memremap and memcpy to copy older iommu table.
-did I take wrong reference?
-
-What kind of issue you are foreseeing in using memcpy(). May be we can
-try to find a solution.
-
--pk
+> On 2019/12/23 23:23, Chen Zhou wrote:
+> > This patch series enable reserving crashkernel above 4G in arm64.
+> >
+> > There are following issues in arm64 kdump:
+> > 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+> > when there is no enough low memory.
+> > 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+> > in this case, if swiotlb or DMA buffers are required, crash dump kernel
+> > will boot failure because there is no low memory available for allocation.
+> >
+> > The previous changes and discussions can be retrieved from:
+> >
+> > Changes since [v6]
+> > - Fix build errors reported by kbuild test robot.
+...
 
 _______________________________________________
 kexec mailing list
