@@ -2,79 +2,107 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2B601D9442
-	for <lists+kexec@lfdr.de>; Tue, 19 May 2020 12:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF8A81DA27B
+	for <lists+kexec@lfdr.de>; Tue, 19 May 2020 22:23:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4KTowB9Kx5I6QsEVJ7bRsiXBCB7WSP5bw3/7qWvWXyE=; b=e+PIT72vwvExFz
-	Oc0t62LusVxE2i9NpYRY8ayO39oWV+oY76vJ0FQ6B0UG587Dwy4kNDOZGty/j5J8kDsg+Fbxbe9mo
-	P3FuH6PHCqF+TtpeAfDSndIGQT9beK5ystdgFl0S2VC0NTcua2TpcXBSsHMRH+VfKG3x/UdwB8uLP
-	8GloiNOV3ashnxn84bEZZ18etHduMIl0a+W1JR32e0hIJ6sIjgkabSEc+LfGgPvBeJzhTvlQP0e/0
-	xAaio0/CM+e0fn5WiPF4T1iWtwALEaSPHA8CbhlPhhI2k4jMcfUQ81h8ZvYKT/XhgRUOxu3/O0ocm
-	mvNQBPKD7YkUJmEIXKCg==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1sJzF/072kGNcFpGpB4sK3/80iUKoNXVJ8Aw4fqdsVU=; b=Qgm7a+mkwgOKnS
+	5EuDqL7xgOFzYw3w81U1DSj/Sc62q3AWHkfo31B//VXEBmt7VvpvSDMhfZoCxgAW26PBw6WwkUa71
+	Wm/0G7NqqscAOBjNupd/rBQ0lGr9t7tbuvb2TIZ81yt7Gt/0paKDHEmQW3XIE49MY6JmoC96dyuO4
+	ofJHnTJIzAVK0M+cRj7gp187/9OAFX5J1AOP74+cQUlVARlTyVcmveLv/2jirCXZgLTisheOASIvh
+	PIXR1tGn08zYzbxpc/458wBhGD8Q8mwSfTHn3nsNjvDtJ21WqqJe/tFtmBHytWSInVh/SPKgR39Hg
+	P6ZwhZ1hx5SDZqC9THVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jazOU-0005DD-E5; Tue, 19 May 2020 10:22:42 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jb8lN-0000Gg-3e; Tue, 19 May 2020 20:22:57 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jazO5-0005Az-Su; Tue, 19 May 2020 10:22:19 +0000
-Received: from mail-qk1-f179.google.com ([209.85.222.179]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MfYc4-1j8FH30O0u-00g3VY; Tue, 19 May 2020 12:22:13 +0200
-Received: by mail-qk1-f179.google.com with SMTP id f189so14205382qkd.5;
- Tue, 19 May 2020 03:22:12 -0700 (PDT)
-X-Gm-Message-State: AOAM530/X0d1BfpLkR/tnPT6BZADXeDgcIAt+qDjQeqDP1i2NTp2xzf2
- BMTdN3639+R/LCwqdgQAmK5XCKglxCWW8QOzaUM=
-X-Google-Smtp-Source: ABdhPJxOu+nLjvg7CMqkLaOXbJg4GTm6uL1Kx08HssunT+gb6Fi/yoTUZBq2l9jxT8nUph2PPk6WMqUkT4Yu1iuBXRQ=
-X-Received: by 2002:a37:434b:: with SMTP id q72mr21154808qka.352.1589883731571; 
- Tue, 19 May 2020 03:22:11 -0700 (PDT)
-MIME-Version: 1.0
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
-In-Reply-To: <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 19 May 2020 12:21:55 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
-Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
+ id 1jb8lK-0000DU-IT; Tue, 19 May 2020 20:22:56 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04JKLjxR100506;
+ Tue, 19 May 2020 20:22:04 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2020-01-29; bh=qNNW5s1xeGm+K2As9XYYCmIIR1n/LTaTzzpAHOOw+OM=;
+ b=elyQXPFD4nsB/VJn38aBWCqpaCIB6MQMHkKVGP1fLmJIRaO7WfkNspqYzxRIdKj1mo1W
+ exW58AJu6Yz96MStBgD10iAvRwhmFECHXd+mHYU2ItwbCK3DLhTT/xFCPIE2ESWWyFoa
+ CdkF17eIyWppQ4MS080TTxM7CbAX565LUgzOyfTTHHSpH9m7LCv6sZ8cU5632wyyFSuW
+ 2O0xftqaO0MnPzdhQkLmLhvD1D2elbcGZ8Kvv2QgP9RhPo8JqRnEgWWxXptpMi4zWa+t
+ giKpNCyYEoe8QjuC7cd/w2aYFFdAgk4MLabOmivtaxxU/FnbCz8MlZf75ZLHIACv39LS sA== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by aserp2120.oracle.com with ESMTP id 31284kyngg-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 19 May 2020 20:22:04 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04JKIOor097543;
+ Tue, 19 May 2020 20:22:03 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 314gm5qmhr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 19 May 2020 20:22:02 +0000
+Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04JKM0LT031192;
+ Tue, 19 May 2020 20:22:00 GMT
+Received: from dhcp-10-154-188-23.vpn.oracle.com (/10.154.188.23)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 19 May 2020 13:21:59 -0700
+Mime-Version: 1.0 (Mac OS X Mail 11.5 \(3445.9.1\))
 Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
  kdump
-To: Chen Zhou <chenzhou10@huawei.com>
-X-Provags-ID: V03:K1:jz2Hvot0KeuothuFOZLaTRrDwLl9eNTy3LIoscacfSdUjY34BwK
- uVcaV+7rZ8A+UdNcYCoeXIh7dO3AHuHJ6/uAWgIDHLWJDcgrH8I8a/Ama0i4W/MUlxq0ABN
- ME42CJS64fxgh6LwVGR2DxOaBJWh65KLOwqDJYIdndBatVa7AHugWAH7aaRgAPnNsEf0AVR
- wCGeEyO585BzQ7c7k74Hg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3yn6moQ3WXo=:eB46Ww3LlEucP4usDqDJQ4
- 5Au6YzXQBtTP9ZC1OHvARFmO7LAyMLwMaGCNtby7quUWPXfRw0vZC4K2NRXNUW++pC+0z5d/s
- pJ3f3EOgOCtMqtm1Hj0pNMU4Hp0u0q9wcKnJf8IfrOjIvLbPI07Lf8VxuoQne0c2BJFdLrzaN
- UnEdZxWjhjTD0VSBo2d6YkjJGmAsw0smKy805gsX87VzS5fiCOGZdJ00TJJ4Cn5QFNziTTC0Z
- ecYejSsp4Iwd8Ec6N2DogYG3KZcq9og0Yr4sliG/fTD5eaH31D6kL89wuTj2CLeDCO/fJ87O6
- 9QcGFTIQX3Dc96G4BfP0Ob82eNH3ZoiuYL71aAN+AyfjHQbVHXWwZFV8E6q7edbR1dA8MNjti
- emkHUpd2cpxCVuSoAH3UbGUQnHKHAfvWrpLKu2+mj5j66Y5ti31pSs4urI90ihPcDsJBH1X1n
- mHgcgk2LSaxtfY0Qxxw63oNbMd48YHhHQRKAThpIDjvBq2uNDZTH2IspR8Po7uteJkpO6alX/
- vxfg31vko/sDM8n35cDKH8iP4+mj1fQ4IoYUj5+5iScgNLC72YLgWaps/6aQHr1dZfSLKygHh
- g9xlgQ2lVTBHVwskFTdcyjRDbhcUi09OUGHvIo1G9W2eMbYyAbuLSIvjhcc9Z20zTTsZGCr3L
- LKQHQM9tqFmijPbR+pWHK1UpdWq0ppDsT0M+ldPwFbX2iWOeL5hNMxCnDRjAt16UsttZBokru
- yrPqEAkAqpSkiVUKlrehP4Z2fdyKFDuqZgIkh/gbjxHFZww21Daznume3zaYX7QQMud4xMWnw
- 1Jv8uBSnFX8V4hqJwZcA8haFi3GbvUA1FEj8FtXXeTNV+59s9E=
+From: John Donnelly <john.p.donnelly@oracle.com>
+In-Reply-To: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
+Date: Tue, 19 May 2020 15:21:58 -0500
+Message-Id: <3D37F6BE-ECFC-4EC0-A7C4-341F85FC056E@oracle.com>
+References: <20191223152349.180172-1-chenzhou10@huawei.com>
+ <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
+ <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+X-Mailer: Apple Mail (2.3445.9.1)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ mlxlogscore=999
+ adultscore=0 phishscore=0 mlxscore=0 spamscore=0 suspectscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2005190173
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ mlxscore=0
+ cotscore=-2147483648 impostorscore=0 malwarescore=0 mlxlogscore=999
+ lowpriorityscore=0 phishscore=0 spamscore=0 bulkscore=0 adultscore=0
+ priorityscore=1501 clxscore=1011 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2004280000 definitions=main-2005190174
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_032218_233284_E1748010 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_132254_700563_74B42E28 
+X-CRM114-Status: GOOD (  17.88  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ [141.146.126.78 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,57 +114,84 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Simon Horman <horms@verge.net.au>, john.p.donnelly@oracle.com,
- Will Deacon <will@kernel.org>,
+Cc: John Donnelly <john.p.donnelly@oracle.com>,
  "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ Chen Zhou <chenzhou10@huawei.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Dave Young <dyoung@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, pkushwaha@marvell.com,
- Dave Young <dyoung@redhat.com>,
+ Simon Horman <horms@verge.net.au>, James Morse <james.morse@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
+ Ingo Molnar <mingo@redhat.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 4:10 AM Chen Zhou <chenzhou10@huawei.com> wrote:
->
-> Hi all,
->
-> Friendly ping...
 
-I was asked about this patch series, and see that you last posted it in
-December. I think you should rebase it to linux-5.7-rc6 and post the
-entire series again to make progress, as it's unlikely that any maintainer
-would pick up the patches from last year.
 
-For the contents, everything seems reasonable to me, but I noticed that
-you are adding a property to the /chosen node without adding the
-corresponding documentation to
-Documentation/devicetree/bindings/chosen.txt
+> On May 19, 2020, at 5:21 AM, Arnd Bergmann <arnd@arndb.de> wrote:
+> 
+> On Thu, Mar 26, 2020 at 4:10 AM Chen Zhou <chenzhou10@huawei.com> wrote:
+>> 
+>> Hi all,
+>> 
+>> Friendly ping...
+> 
+> I was asked about this patch series, and see that you last posted it in
+> December. I think you should rebase it to linux-5.7-rc6 and post the
+> entire series again to make progress, as it's unlikely that any maintainer
+> would pick up the patches from last year.
+> 
+> For the contents, everything seems reasonable to me, but I noticed that
+> you are adding a property to the /chosen node without adding the
+> corresponding documentation to
+> Documentation/devicetree/bindings/chosen.txt
+> 
+> Please add that, and Cc the devicetree maintainers on the updated
+> patch.
+> 
+>         Arnd
+> 
+>> On 2019/12/23 23:23, Chen Zhou wrote:
+>>> This patch series enable reserving crashkernel above 4G in arm64.
+>>> 
+>>> There are following issues in arm64 kdump:
+>>> 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+>>> when there is no enough low memory.
+>>> 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+>>> in this case, if swiotlb or DMA buffers are required, crash dump kernel
+>>> will boot failure because there is no low memory available for allocation.
+>>> 
+>>> The previous changes and discussions can be retrieved from:
+>>> 
+>>> Changes since [v6]
+>>> - Fix build errors reported by kbuild test robot.
+> ...
 
-Please add that, and Cc the devicetree maintainers on the updated
-patch.
 
-         Arnd
+ Hi 
 
-> On 2019/12/23 23:23, Chen Zhou wrote:
-> > This patch series enable reserving crashkernel above 4G in arm64.
-> >
-> > There are following issues in arm64 kdump:
-> > 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
-> > when there is no enough low memory.
-> > 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
-> > in this case, if swiotlb or DMA buffers are required, crash dump kernel
-> > will boot failure because there is no low memory available for allocation.
-> >
-> > The previous changes and discussions can be retrieved from:
-> >
-> > Changes since [v6]
-> > - Fix build errors reported by kbuild test robot.
-...
+We found 
+
+https://lkml.org/lkml/2020/4/30/1583
+
+Has cured our Out-Of-Memory kdump failures. 
+
+From	Henry Willard 
+Subject	[PATCH] mm: Limit boost_watermark on small zones.
+
+I am currently not on linux-kernel@vger.kernel.org. dlist for all to see  this message so you may want to rebase and see if this cures your OoM issue and share the results. 
+
+
+
+
+
+
+
+
 
 _______________________________________________
 kexec mailing list
