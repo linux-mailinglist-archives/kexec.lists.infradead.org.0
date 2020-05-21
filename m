@@ -2,58 +2,70 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 260C51DC892
-	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 10:30:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74F4C1DC9EA
+	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 11:23:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=8CUedqzkya608yFOfhxe/Ll8lutkv9UOA9pj1JXWtQo=; b=okVx/zwKGkANP5
-	4/l+tzaJzAq8a5xKG2cfijeoAiQj5jarGfF+MTvtQgFgD0iM5DCpeg4vzeo5dBrLmoHk+2t+MfKPg
-	Hqfa2HErF1IT4KAu4t1znX1nTW5PH1G00kQ8d2jdimG3uawqrJxatgCRmoZoRddYgbpMI47Yfvq0Q
-	JVvBJSaGBlDisFwGubdHLn/FXvtBd2QPKIksG+kcj/6Id0BYBX1XA6FGxrGCj2d4onKbos0p3YbUw
-	SGb8wooO3sJL9JJ3ZGPahrJyGILSSmlFuhPNAZ4/td5sxJtzSKa4PrEsEw+GMNbi8/BIlvtME8Z6J
-	E1aFuimN4dHlK+cTEW4g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W7x9crhzsnGJhxq0bjMtF6cYsN7njNMwvuAqbmXknx8=; b=FHMyypYoLN/gA3
+	df+CxbGUuY7y3QGnpWfaJHAPzxSF11qFSvvZVfKgoGxx5+C9Oe+FLKazs1H+XRlHl1hq67R+ALv0Q
+	YpfqKNFq0p0HUO4NOiU7TQRAnyNQQMAK0NIq8TZVE/P6wovw0M/DVZWGHCApsv/qCQDdcuWfTjuwG
+	9FvulvZTUQO3NuntcuD/refyNgXt4Zpa9CfHZ1MuNxTqzYqSQq2QV3z9L1jtFc9aiMAfVLuaMKdxo
+	ZwfB9EtXSfEl1tXOGUjPbiLbk2XV3fU/lazSrFNeTEtJZdvjeff0zgDAQ51rS0z8hAt5hXMDvfNjy
+	ZGGOgSAYJWnJZhRF+5Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbgau-0005Qk-A8; Thu, 21 May 2020 08:30:24 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jbhQ8-0000Pu-R1; Thu, 21 May 2020 09:23:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbgap-00032j-QI
- for kexec@lists.infradead.org; Thu, 21 May 2020 08:30:22 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 51C9F3B415EA5F6BA1A8
- for <kexec@lists.infradead.org>; Thu, 21 May 2020 16:30:01 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 21 May 2020 16:29:50 +0800
-From: Chen Zhou <chenzhou10@huawei.com>
-To: <horms@verge.net.au>
-Subject: [PATCH v3] arm64: kdump: add another DT property to crash dump
- kernel's dtb
-Date: Thu, 21 May 2020 16:32:57 +0800
-Message-ID: <20200521083257.53415-1-chenzhou10@huawei.com>
-X-Mailer: git-send-email 2.20.1
+ id 1jbhQ5-0000PQ-G1; Thu, 21 May 2020 09:23:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9997A2072C;
+ Thu, 21 May 2020 09:23:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590052997;
+ bh=37Qx3oxaJAYRWohGHUkEGO6YOTHJz1lmfbAnHjSkp5I=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ioeYo7XFA87XTNXeQJEAty+eG2jS18ifXdr8sw2BZATw6FFGqv7auONLr2w6jCf8p
+ WJrLNS43HJQh32kBnAxJ0ASpl1SCv7WL1k4Y6KY6xZj5Bw503cpJ/R8E/l6MPbJPYq
+ Lq0gYjh6jUQ5U1HhwjgeljGUM8l/uEoQIlNgfOCE=
+Date: Thu, 21 May 2020 10:23:12 +0100
+From: Will Deacon <will@kernel.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200521092311.GB5091@willie-the-truck>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+ <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_013020_027252_9F562BBF 
-X-CRM114-Status: GOOD (  14.76  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_022317_555813_68309CBF 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.191 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,186 +77,57 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: chenzhou10@huawei.com, kexec@lists.infradead.org
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Currently, there is only one crash kernel region on arm64, we add
-another region "crash kernel low" used for crash dump kernel devices.
+On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
+> On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
+> > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> > >       return 0;
+> > >  }
+> > >
+> > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
+> > > +{
+> > > +     struct arm_smmu_strtab_cfg rdcfg;
+> > > +
+> > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
+> > > +
+> > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> > > +
+> > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> > > +
+> 
+> this need a fix. It should be memcpy.
+> 
+> > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+> >
+> > Sorry, but this is unacceptable. These things were allocated by the DMA API
+> > so you can't just memcpy them around and hope for the best.
+> >
+> 
+> I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
+> here i see usage of memremap and memcpy to copy older iommu table.
+> did I take wrong reference?
+> 
+> What kind of issue you are foreseeing in using memcpy(). May be we can
+> try to find a solution.
 
-To do this, we add DT property "linux,low-memory-range" to crash
-dump kernel's dtb to pass the low region.
+Well the thing might not be cache-coherent to start with...
 
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
----
-For "support reserving crashkernel above 4G on arm64 kdump", we need
-to modify the kexec-tools.
-
-Changes since [v2]:
-- Rebase to latest kexec-tools code.
-
-Changes since [v1]:
-- Add another DT property "linux,low-memory-range" to crash dump kernel's
-dtb to pass the low region instead of reusing "linux,usable-memory-range".
-
-[1]: http://lists.infradead.org/pipermail/kexec/2019-April/022792.html
-[2]: http://lists.infradead.org/pipermail/kexec/2019-August/023569.html
----
- kexec/arch/arm64/crashdump-arm64.c | 29 +++++++++++++++++++++++++++--
- kexec/arch/arm64/crashdump-arm64.h |  2 ++
- kexec/arch/arm64/iomem.h           |  1 +
- kexec/arch/arm64/kexec-arm64.c     | 27 +++++++++++++++++++++++++++
- 4 files changed, 57 insertions(+), 2 deletions(-)
-
-diff --git a/kexec/arch/arm64/crashdump-arm64.c b/kexec/arch/arm64/crashdump-arm64.c
-index 38d1a0f..32b7e9f 100644
---- a/kexec/arch/arm64/crashdump-arm64.c
-+++ b/kexec/arch/arm64/crashdump-arm64.c
-@@ -34,6 +34,14 @@ struct memory_ranges usablemem_rgns = {
- 	.ranges = &crash_reserved_mem,
- };
- 
-+/* memory range reserved for crashkernel low, optional */
-+struct memory_range crash_reserved_low_mem;
-+struct memory_ranges lowmem_rgns = {
-+	.size = 0,
-+	.max_size = 1,
-+	.ranges = &crash_reserved_low_mem,
-+};
-+
- struct memory_range elfcorehdr_mem;
- 
- static struct crash_elf_info elf_info = {
-@@ -84,7 +92,10 @@ static int iomem_range_callback(void *UNUSED(data), int UNUSED(nr),
- 				char *str, unsigned long long base,
- 				unsigned long long length)
- {
--	if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
-+	if (strncmp(str, CRASH_KERNEL_LOW, strlen(CRASH_KERNEL_LOW)) == 0)
-+		return mem_regions_alloc_and_add(&lowmem_rgns,
-+				base, length, RANGE_RAM);
-+	else if (strncmp(str, CRASH_KERNEL, strlen(CRASH_KERNEL)) == 0)
- 		return mem_regions_alloc_and_add(&usablemem_rgns,
- 						base, length, RANGE_RAM);
- 	else if (strncmp(str, SYSTEM_RAM, strlen(SYSTEM_RAM)) == 0)
-@@ -124,7 +135,7 @@ static int crash_get_memory_ranges(void)
- 	if (!usablemem_rgns.size)
- 		kexec_iomem_for_each_line(NULL, iomem_range_callback, NULL);
- 
--	/* allow only a single region for crash dump kernel */
-+	/* allow only a single usablemem region for crash dump kernel */
- 	if (usablemem_rgns.size != 1)
- 		return -EINVAL;
- 
-@@ -136,6 +147,20 @@ static int crash_get_memory_ranges(void)
- 		return -ENOMEM;
- 	}
- 
-+	/* lowmem region for crash dump kernel is optional, at most one region */
-+	if (lowmem_rgns.size > 1)
-+		return -EINVAL;
-+
-+	if (lowmem_rgns.size) {
-+		dbgprint_mem_range("Reserved low memory range", &crash_reserved_low_mem,
-+				1);
-+
-+		if (mem_regions_exclude(&system_memory_rgns, &crash_reserved_low_mem)) {
-+			fprintf(stderr,
-+					"Error: Number of crash memory ranges excedeed the max limit\n");
-+			return -ENOMEM;
-+		}
-+	}
- 	/*
- 	 * Make sure that the memory regions are sorted.
- 	 */
-diff --git a/kexec/arch/arm64/crashdump-arm64.h b/kexec/arch/arm64/crashdump-arm64.h
-index 880b83a..f185534 100644
---- a/kexec/arch/arm64/crashdump-arm64.h
-+++ b/kexec/arch/arm64/crashdump-arm64.h
-@@ -18,6 +18,8 @@
- 
- extern struct memory_ranges usablemem_rgns;
- extern struct memory_range crash_reserved_mem;
-+extern struct memory_ranges lowmem_rgns;
-+extern struct memory_range crash_reserved_low_mem;
- extern struct memory_range elfcorehdr_mem;
- 
- extern int load_crashdump_segments(struct kexec_info *info);
-diff --git a/kexec/arch/arm64/iomem.h b/kexec/arch/arm64/iomem.h
-index d4864bb..45d7953 100644
---- a/kexec/arch/arm64/iomem.h
-+++ b/kexec/arch/arm64/iomem.h
-@@ -4,6 +4,7 @@
- #define SYSTEM_RAM		"System RAM\n"
- #define KERNEL_CODE		"Kernel code\n"
- #define KERNEL_DATA		"Kernel data\n"
-+#define CRASH_KERNEL_LOW	"Crash kernel (low)\n"
- #define CRASH_KERNEL		"Crash kernel\n"
- #define IOMEM_RESERVED		"reserved\n"
- 
-diff --git a/kexec/arch/arm64/kexec-arm64.c b/kexec/arch/arm64/kexec-arm64.c
-index 45ebc54..afa4fda 100644
---- a/kexec/arch/arm64/kexec-arm64.c
-+++ b/kexec/arch/arm64/kexec-arm64.c
-@@ -41,6 +41,7 @@
- #define PROP_SIZE_CELLS "#size-cells"
- #define PROP_ELFCOREHDR "linux,elfcorehdr"
- #define PROP_USABLE_MEM_RANGE "linux,usable-memory-range"
-+#define PROP_LOW_MEM_RANGE "linux,low-memory-range"
- 
- #define PAGE_OFFSET_36 ((0xffffffffffffffffUL) << 36)
- #define PAGE_OFFSET_39 ((0xffffffffffffffffUL) << 39)
-@@ -469,12 +470,24 @@ static int setup_2nd_dtb(struct dtb *dtb, char *command_line, int on_crash)
- 		goto on_error;
- 	}
- 
-+	if (lowmem_rgns.size) {
-+		if (!cells_size_fitted(address_cells, size_cells,
-+					&crash_reserved_low_mem)) {
-+			fprintf(stderr, "kexec: low memory range doesn't fit cells-size.\n");
-+			result = -EINVAL;
-+			goto on_error;
-+		}
-+	}
-+
- 	/* duplicate dt blob */
- 	range_len = sizeof(uint32_t) * (address_cells + size_cells);
- 	new_size = fdt_totalsize(dtb->buf)
- 		+ fdt_prop_len(PROP_ELFCOREHDR, range_len)
- 		+ fdt_prop_len(PROP_USABLE_MEM_RANGE, range_len);
- 
-+	if (lowmem_rgns.size)
-+		new_size += fdt_prop_len(PROP_LOW_MEM_RANGE, range_len);
-+
- 	new_buf = xmalloc(new_size);
- 	result = fdt_open_into(dtb->buf, new_buf, new_size);
- 	if (result) {
-@@ -578,6 +591,20 @@ static int setup_2nd_dtb(struct dtb *dtb, char *command_line, int on_crash)
- 			result = -EINVAL;
- 			goto on_error;
- 		}
-+
-+		/* add linux,low-memory-range */
-+		if (lowmem_rgns.size) {
-+			nodeoffset = fdt_path_offset(new_buf, "/chosen");
-+			result = fdt_setprop_range(new_buf, nodeoffset,
-+					PROP_LOW_MEM_RANGE, &crash_reserved_low_mem,
-+					address_cells, size_cells);
-+			if (result) {
-+				dbgprintf("%s: fdt_setprop failed: %s\n", __func__,
-+						fdt_strerror(result));
-+				result = -EINVAL;
-+				goto on_error;
-+			}
-+		}
- 	}
- 
- 	fdt_pack(new_buf);
--- 
-2.19.1
-
+Will
 
 _______________________________________________
 kexec mailing list
