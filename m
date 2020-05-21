@@ -2,70 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74F4C1DC9EA
-	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 11:23:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 368111DCA1E
+	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 11:35:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W7x9crhzsnGJhxq0bjMtF6cYsN7njNMwvuAqbmXknx8=; b=FHMyypYoLN/gA3
-	df+CxbGUuY7y3QGnpWfaJHAPzxSF11qFSvvZVfKgoGxx5+C9Oe+FLKazs1H+XRlHl1hq67R+ALv0Q
-	YpfqKNFq0p0HUO4NOiU7TQRAnyNQQMAK0NIq8TZVE/P6wovw0M/DVZWGHCApsv/qCQDdcuWfTjuwG
-	9FvulvZTUQO3NuntcuD/refyNgXt4Zpa9CfHZ1MuNxTqzYqSQq2QV3z9L1jtFc9aiMAfVLuaMKdxo
-	ZwfB9EtXSfEl1tXOGUjPbiLbk2XV3fU/lazSrFNeTEtJZdvjeff0zgDAQ51rS0z8hAt5hXMDvfNjy
-	ZGGOgSAYJWnJZhRF+5Yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=23M0F5HQatj4Nz5EF/Zv0byMmd3YZq+Muc/wLqCDDpk=; b=BmDU3QB+N7b1nd
+	DA5KjJOEEL81eLjg48yBsZsDtgK+Uq6MZbBhuBcmAsssbP7W/MOkgYWsPHupLLcg3ZxaNmJZ6J9zd
+	PTQ65pNqY5J2LHo+vCN0UTUBYTGkaqL/QJslUHgsnygZgEfyY9+wOZl79k9puhBF/BzTH+AOeq4+I
+	ZsTTJqsZKBOie9jtM+pot6TvlTmiK97nP+xZN/9AaFH156yMf7P1bga1iJC5Y7mI0d25Qj02Q+7IT
+	kZtEQ+10jx2GLO5izWW0YU8cr55p+rT3cbk9lVVWrZjpw018+AwOACHtAV8XOiVKpPKNm+cFKu5kN
+	ndF5sdeAbLgw+KVabuCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbhQ8-0000Pu-R1; Thu, 21 May 2020 09:23:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbhbi-0001bF-C4; Thu, 21 May 2020 09:35:18 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbhQ5-0000PQ-G1; Thu, 21 May 2020 09:23:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9997A2072C;
- Thu, 21 May 2020 09:23:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590052997;
- bh=37Qx3oxaJAYRWohGHUkEGO6YOTHJz1lmfbAnHjSkp5I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ioeYo7XFA87XTNXeQJEAty+eG2jS18ifXdr8sw2BZATw6FFGqv7auONLr2w6jCf8p
- WJrLNS43HJQh32kBnAxJ0ASpl1SCv7WL1k4Y6KY6xZj5Bw503cpJ/R8E/l6MPbJPYq
- Lq0gYjh6jUQ5U1HhwjgeljGUM8l/uEoQIlNgfOCE=
-Date: Thu, 21 May 2020 10:23:12 +0100
-From: Will Deacon <will@kernel.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Message-ID: <20200521092311.GB5091@willie-the-truck>
-References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
- <20200518155545.GO32394@willie-the-truck>
- <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+ id 1jbhbW-0007zr-3O; Thu, 21 May 2020 09:35:14 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 7F2FEE3A1CFA707ED67B;
+ Thu, 21 May 2020 17:35:02 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS406-HUB.china.huawei.com (10.3.19.206) with Microsoft SMTP Server id
+ 14.3.487.0; Thu, 21 May 2020 17:34:56 +0800
+From: Chen Zhou <chenzhou10@huawei.com>
+To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
+ <will@kernel.org>, <dyoung@redhat.com>, <bhe@redhat.com>,
+ <robh+dt@kernel.org>
+Subject: [PATCH v8 0/5] support reserving crashkernel above 4G on arm64 kdump
+Date: Thu, 21 May 2020 17:38:00 +0800
+Message-ID: <20200521093805.64398-1-chenzhou10@huawei.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.175.113.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_022317_555813_68309CBF 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200521_023506_341405_510AEA26 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.32 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,57 +65,115 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: John.p.donnelly@oracle.com, arnd@arndb.de, devicetree@vger.kernel.org,
+ chenzhou10@huawei.com, linux-doc@vger.kernel.org, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, horms@verge.net.au, guohanjun@huawei.com,
+ pkushwaha@marvell.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
-> On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
-> > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> > >       return 0;
-> > >  }
-> > >
-> > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > > +{
-> > > +     struct arm_smmu_strtab_cfg rdcfg;
-> > > +
-> > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > > +
-> > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > > +
-> > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > > +
-> 
-> this need a fix. It should be memcpy.
-> 
-> > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-> >
-> > Sorry, but this is unacceptable. These things were allocated by the DMA API
-> > so you can't just memcpy them around and hope for the best.
-> >
-> 
-> I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
-> here i see usage of memremap and memcpy to copy older iommu table.
-> did I take wrong reference?
-> 
-> What kind of issue you are foreseeing in using memcpy(). May be we can
-> try to find a solution.
+This patch series enable reserving crashkernel above 4G in arm64.
 
-Well the thing might not be cache-coherent to start with...
+There are following issues in arm64 kdump:
+1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+when there is no enough low memory.
+2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+in this case, if swiotlb or DMA buffers are required, crash dump kernel
+will boot failure because there is no low memory available for allocation.
 
-Will
+To solve these issues, introduce crashkernel=X,low to reserve specified
+size low memory.
+Crashkernel=X tries to reserve memory for the crash dump kernel under
+4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
+size low memory for crash kdump kernel devices firstly and then reserve
+memory above 4G.
+
+When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
+is specified simultaneously, kernel should reserve specified size low memory
+for crash dump kernel devices. So there may be two crash kernel regions, one
+is below 4G, the other is above 4G.
+In order to distinct from the high region and make no effect to the use of
+kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
+"linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
+
+Besides, we need to modify kexec-tools:
+arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
+
+The previous changes and discussions can be retrieved from:
+
+Changes since [v7]
+- Move x86 CRASH_ALIGN to 2M
+Suggested by Dave and do some test, move x86 CRASH_ALIGN to 2M.
+- Update Documentation/devicetree/bindings/chosen.txt 
+Add corresponding documentation to Documentation/devicetree/bindings/chosen.txt suggested by Arnd.
+- Add Tested-by from Jhon and pk
+
+Changes since [v6]
+- Fix build errors reported by kbuild test robot.
+
+Changes since [v5]
+- Move reserve_crashkernel_low() into kernel/crash_core.c.
+- Delete crashkernel=X,high.
+- Modify crashkernel=X,low.
+If crashkernel=X,low is specified simultaneously, reserve spcified size low
+memory for crash kdump kernel devices firstly and then reserve memory above 4G.
+In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
+pass to crash dump kernel by DT property "linux,low-memory-range".
+- Update Documentation/admin-guide/kdump/kdump.rst.
+
+Changes since [v4]
+- Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
+
+Changes since [v3]
+- Add memblock_cap_memory_ranges back for multiple ranges.
+- Fix some compiling warnings.
+
+Changes since [v2]
+- Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+patch.
+
+Changes since [v1]:
+- Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+- Remove memblock_cap_memory_ranges() i added in v1 and implement that
+in fdt_enforce_memory_region().
+There are at most two crash kernel regions, for two crash kernel regions
+case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+and then remove the memory range in the middle.
+
+[1]: http://lists.infradead.org/pipermail/kexec/2020-May/025128.html
+[v1]: https://lkml.org/lkml/2019/4/2/1174
+[v2]: https://lkml.org/lkml/2019/4/9/86
+[v3]: https://lkml.org/lkml/2019/4/9/306
+[v4]: https://lkml.org/lkml/2019/4/15/273
+[v5]: https://lkml.org/lkml/2019/5/6/1360
+[v6]: https://lkml.org/lkml/2019/8/30/142
+[v7]: https://lkml.org/lkml/2019/12/23/411
+
+Chen Zhou (5):
+  x86: kdump: move reserve_crashkernel_low() into crash_core.c
+  arm64: kdump: reserve crashkenel above 4G for crash dump kernel
+  arm64: kdump: add memory for devices by DT property, low-memory-range
+  kdump: update Documentation about crashkernel on arm64
+  dt-bindings: chosen: Document linux,low-memory-range for arm64 kdump
+
+ Documentation/admin-guide/kdump/kdump.rst     | 13 ++-
+ .../admin-guide/kernel-parameters.txt         | 12 ++-
+ Documentation/devicetree/bindings/chosen.txt  | 25 ++++++
+ arch/arm64/kernel/setup.c                     |  8 +-
+ arch/arm64/mm/init.c                          | 61 ++++++++++++-
+ arch/x86/kernel/setup.c                       | 66 ++------------
+ include/linux/crash_core.h                    |  3 +
+ include/linux/kexec.h                         |  2 -
+ kernel/crash_core.c                           | 85 +++++++++++++++++++
+ kernel/kexec_core.c                           | 17 ----
+ 10 files changed, 208 insertions(+), 84 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 kexec mailing list
