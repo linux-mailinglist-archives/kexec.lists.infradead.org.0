@@ -2,83 +2,119 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 053E71DC600
-	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 05:59:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78D021DC76C
+	for <lists+kexec@lfdr.de>; Thu, 21 May 2020 09:15:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vE+8aQSzb7Y/Ykfq1fhER5iP43MSMclvTffM+eNb5Y8=; b=crag854b2VZerz
-	OufwX7MVk+X1i82Cuogt+lSbD2WBbWqUPwNqdb90EE+ahduphEq5CXlNhoWc37wuHJ5W/mI5id33o
-	6lyXJwkCu6BjMdXDwCHN3yvqsQrJkR4k/je2XDyGrVBmC/fQEsixSNKThk9vf/D34HtvFNaMqj1tY
-	CtPEZkNqtIGxJgt+PaizAS52iI2jH47skyV3ywofnEnRpdKduc1QjFFlUZ86W2grlZudz7TJ+PRJ4
-	HdVXvfFjOmCk7tFatbhlOH/Bftf+PszLeJYXDKFv5lE2wC0rU261e7u0K+UTTAVPHKCw4xbw5aiPY
-	uNZhdUnS/HCaj+RP75Hg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7wOKPAqCZMghzKMC8XKN2QCQhjAIGA0VGSkOakr4J4I=; b=Z+UFQ2v+ElMW2D
+	1eblFMS61ySsU/ovMJoZK6Fdd/Lxkcpmaj8xkA3XPWP/xtElZjOKd2DHa3AAvmcDIKouuFfJA2iyM
+	wLZULvGlGwqKQNFYB1rnZq+GYMdQmGZB8EmauONyubN5Qr1ahqhPNlc5becfiF2eBTxRqyKZiYB4R
+	4Vl6mkqd3cLv9Yun51ncTcnQaVA6I4/iivjtcYyo+gp8H+7+s+O+tRoEcUIcedLssXwoxQNiRPZSX
+	cPNjaqiWLoQ4jA6KmoKlduXjTn1jRPw3x7G+KsG7D5H0CVd1x7pw0HRZ+dftrOpaF9GMrxtQJRBXw
+	rIohm57ALfdQzua3W+AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbcMb-0007Iu-H6; Thu, 21 May 2020 03:59:21 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jbfQR-0008QI-N1; Thu, 21 May 2020 07:15:31 +0000
+Received: from esa16.fujitsucc.c3s2.iphmx.com ([216.71.158.33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbcME-00077u-SS; Thu, 21 May 2020 03:59:01 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k13so5289460wrx.3;
- Wed, 20 May 2020 20:58:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vpcxT1wn3g9CxpT1UI/FTtmPIMOJ5+2I0SEymZ9r83w=;
- b=YFYF0gpMbl/YMiB90M4IO8QUUnaoXEUVHBZG2TjqndtrLZemJJ5Bg2/6UqFMDhTVh4
- Cp5a0Vj5wHQzFGNG/UngBUc4WC1ads66jtIBkmNiQF/lZ+LP1tyNy1VOHwdHxtCDHyH6
- 7MkKY+nlQmu574HTlPTaePAnyg+U16ys9OXH53Ydx4bI82khr/3Aoo+NavxUhwNmEd5M
- Ts6ANEJFKpCwv3b/HdCEWORoBXka+qUWo0VjsDri7HV20qleXhCS8xJWbna8PNyo8/kz
- YI0pO5PRzyvIy9zwkBg5CCVYGapEOTSPJ/NeqlIDGl/Qyv38LxZ/y5uz0SSYWQR+VF6I
- fJSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vpcxT1wn3g9CxpT1UI/FTtmPIMOJ5+2I0SEymZ9r83w=;
- b=gjutR41Rj+nvTCfMmiYgPjZ54PYMpDjCta0D1j7B9bZwMMypyiNkwaJuufdZzwd+yq
- IGE3f8lo/RZCCqHfwmpROMAYyaFYYnpKM4hXXtTkyWk/LZCp78MgL3NmDe/5Yv/eKevg
- BzJ7PznzZiCwvOsyMPYgohy+4XLSrHM8os1t7DUGhWXETG0caDlgzSlC9aHjXT+sp1PN
- YOpy32jP2RqQpjkbAdl4HuwA27L2ksqp3TjucOv30DvTxSTYFHsvuF6tqSHpsiI+vUow
- mop9MZ/BKDNqmZMfTDvEh4tUzzED8ll8CeEHVyspnJsN0MgAdwTq05JmBlQNieb0M61R
- aSfA==
-X-Gm-Message-State: AOAM531uVgT6almFP4kRZTAeZDVUa18M2X3ox1Z8jptvpeFUl+suoYNq
- x9ptep7TpL+70gaU2Zvn/hDFueg7uM5/Hsx20V0=
-X-Google-Smtp-Source: ABdhPJzg3VtZS99fA0smvUplr63kW1rcCX/0dIf/mqYIDhZ1q6echJCXvnvWnpBujTxTe+eMC2DzoFXiXDXfvqKWexI=
-X-Received: by 2002:adf:f0c3:: with SMTP id x3mr4390326wro.35.1590033536518;
- Wed, 20 May 2020 20:58:56 -0700 (PDT)
+ id 1jbfQN-0008PL-Lr
+ for kexec@lists.infradead.org; Thu, 21 May 2020 07:15:29 +0000
+IronPort-SDR: r3M1F7i7NkfkExGGmwK3N9ZG4wg9o93m7Wz77r5btkRVVTQdk89i1LeaX43ql0AgkQWBSBW7Il
+ 00RrzToM9CEo8sZKnyiOMaDDGEN2WznCPw4hR6KM6x6BIU55F6Ra+cXFXRLH+XtT60aNzwcglK
+ MYa1B8zkXYnKL0iOvyilihYfEg9lvW2CO9renyYE5KoS1BzcsTgqhMFPbAw0oUX2e/Vny7wuyz
+ 6pyXIIHOpez/eT8Yzpa8INk3dtGs96iBe4I0GYA7+AZie+72m5P5kf1qlW42/tAnKJ0CWU+cQl
+ NM4=
+X-IronPort-AV: E=McAfee;i="6000,8403,9627"; a="13570480"
+X-IronPort-AV: E=Sophos;i="5.73,417,1583161200"; d="scan'208";a="13570480"
+Received: from mail-os2jpn01lp2058.outbound.protection.outlook.com (HELO
+ JPN01-OS2-obe.outbound.protection.outlook.com) ([104.47.92.58])
+ by ob1.fujitsucc.c3s2.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 21 May 2020 16:15:23 +0900
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ez7a2YkYqYVXVgigK1RVV1SZbqgXkljqupE+7NOJi5p+QDHruVReOdD921zVocEqocwm8LQQvcT80IsjATdaxeCNHvAkQPjx139kN4Udg+ucAhkDZY2m4ZbNS528JJk83+g2nsMBlmylr+sTW5pfmt0Y0cvXvjgv6ROHFUpdUMWGIjzJvMKCyYFa14/U6KZgOe0tIq6RMF++NBPxsLucaJFaVs5P2Q8CRsxSAXR+WaZhhtGMt8wXBjuqe5pAsLxhj+wEYvXBMLf2o0RQ8ZcXn5zMtmuEQzCRIZrtTKFUw+gaoTN//5wv7YstdQiwITbLPScPBiEsXrWv1t4xa2TM8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=R0UK0Wy+FDiulNaRPY0pRuAHLRJbKUijx4OnJlYOkHk=;
+ b=MfnLX37Cg2l9tQTXtIJrkI3j4u9zGqaEuMh073Qhses2WJZy4mPNs4bDA9Jwq+nnOupg7J3vHA+0UnjwjAfvJ3QxwcF51hW5PopkGrxfysUOY8xBI9VMOVFsCQ5nuVRm6nCQdrhvhtUar5Oe41oGawZXnWJrrPUeGOd5us6IwgwLfV5NFEr+ypriA2OprKAweBHfoPXTsWRkFwL6VuKGh4KPkq/d3Vv+R9FQZhKkLEGjcoEZePNiu1DJTm812YuC7PPUc3pOBmWsQkJLNkKFLeZ9NnHA4WVkS8zBQSvdpCN8xbnKZiP8/vIVlBJ4LO2+s2Esh6tgyc7Rr7Pv8cIDfA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=fujitsu.com; dmarc=pass action=none header.from=fujitsu.com;
+ dkim=pass header.d=fujitsu.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=fujitsu.onmicrosoft.com; s=selector2-fujitsu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=R0UK0Wy+FDiulNaRPY0pRuAHLRJbKUijx4OnJlYOkHk=;
+ b=pFISbdlI5dG6qrqJJQ2KyvhOWmomJUOYeMJV0Ez4b4XSrS2O6nlY+HhsGQVCjsRvXPudIDegKQz2W3uUfH1/1D3ilPAQw0tEY66sHOXEPAiZKTyuubaTfFJjAehyIj2+0hDhPEABfQc6MLg9ZqWp5iiZm1GPp75dc89IFTDLJLU=
+Received: from TYAPR01MB4127.jpnprd01.prod.outlook.com (2603:1096:404:c5::15)
+ by TYAPR01MB3293.jpnprd01.prod.outlook.com (2603:1096:404:87::22)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Thu, 21 May
+ 2020 07:15:19 +0000
+Received: from TYAPR01MB4127.jpnprd01.prod.outlook.com
+ ([fe80::2499:3f95:dc40:7e25]) by TYAPR01MB4127.jpnprd01.prod.outlook.com
+ ([fe80::2499:3f95:dc40:7e25%4]) with mapi id 15.20.3000.034; Thu, 21 May 2020
+ 07:15:19 +0000
+From: "saito.kazuya@fujitsu.com" <saito.kazuya@fujitsu.com>
+To: "'kexec@lists.infradead.org'" <kexec@lists.infradead.org>
+Subject: [PATCH] sadump: Fix failure of reading __per_cpu_load memory
+Thread-Topic: [PATCH] sadump: Fix failure of reading __per_cpu_load memory
+Thread-Index: AdYvPkyht67VsqqWQBO8rYgOfFEcaQ==
+Date: Thu, 21 May 2020 07:15:19 +0000
+Message-ID: <TYAPR01MB41279E6F5CDD8350F13BA38F84B70@TYAPR01MB4127.jpnprd01.prod.outlook.com>
+Accept-Language: ja-JP, en-US
+Content-Language: ja-JP
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-securitypolicycheck: OK by SHieldMailChecker v2.6.3
+x-shieldmailcheckermailid: e3fade19c1c44497b66ec8716c53799a
+authentication-results: lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=none action=none
+ header.from=fujitsu.com;
+x-originating-ip: [210.170.118.174]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4f7d008e-c09b-4c48-87e8-08d7fd56b869
+x-ms-traffictypediagnostic: TYAPR01MB3293:
+x-microsoft-antispam-prvs: <TYAPR01MB32938E7AEC3637F2EEECE63A84B70@TYAPR01MB3293.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:302;
+x-forefront-prvs: 041032FF37
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: iTjIk0RA7/BaZ1bWkooL3IfqRvgDtUwDBVLJMkDyOanI4Q6JbWu+JDmv3FvmE7quCr7IL5VHMoQ+uvbxhM+JV/EhKmUQGrA9POvwsXsem/ZucusI9NtxaplI5snIblNV1KYGFy+wUFvFOcFTuYVs5p/IOZlkOIiKRmae7E/QJrTmcsuG536AnicpCZX3DAjrJWwkufLlSN732M+7wxgFCb3FiKjhR7wi416fltQu007Oz6Dshj0/AGsEvaF3N6y3HYOz3DrHnEt1qR6GN+TpgYWf2gJjKtnq85vfE4KhUvgE2rh2aXGUduU4ubZ5/ovbxH/N93R2HqHPvaoXQQOPAHJde/4QOpA1UDlxBsrkkWLLRFBkDqfrjynpRcQsC2qDR0KV9BcR2lvs60B5kl3ymwtvMOgaXuJIj60Zy2iBz3xHzdRma7ssEg5+h8ZfsP1q2Ejhwn0GZ4vwRWvLe5O9btHvxK3KP22hABEAE686xDjqfE9ov0iaTBz4Qfk2iwNEUgdCgROvPBukmwf3DjwWbrxjgo4pu7uao+uceRhF94zNkC76rDPlI2qaAa+UPEYKmx/fZ4wckuGfLHGrVVsScg==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TYAPR01MB4127.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(376002)(396003)(136003)(346002)(39860400002)(86362001)(66556008)(6916009)(64756008)(66446008)(76116006)(33656002)(8676002)(8936002)(7696005)(66476007)(66946007)(2906002)(26005)(186003)(71200400001)(9686003)(52536014)(316002)(85182001)(966005)(6506007)(478600001)(55016002)(5660300002)(777600001)(491001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: YDTBti4wdJ0QnGZvBBhOtB9dQmkO/fuRkUCixtBIbdVhbIDmQPPkqA+3MImSRIYmG+548xx6KB/mAYhhYCSpOFyWjuSPIhqcYut0F2K/PFMVVUfLsAVaUNNImq1QKSd2oJA0qQdAAiJigp7Yqz42Ge7Frz7fzqTlu6zaa3K0fnGfn0VnTmy/ToQDsyRrUHMCcTkt+A6/8yQ67et5ltgjInI+ExraEQihsUWVECxAQ/O4mlwJ90w2Rni5lS8teAZ0PvSVRmaNYQkgBgmvxkdf/OVWbP8TcLXxjWiTKE0KOPF/48/+kIoy9L2YIor0yHvXd21RXZ+IcxS2kYVhXgzYAxE5NjrDTgchaajRIC5EWdS5QJmHehGhaoJABq1LsX12Kc/tfM4ejZ0F6imIcZu0+pngpSAB5zx/I4DJuD5dXd+ShWO5t1W5oQf4h8HqDNFds1WQWyEhvyHXRbtbfWwfdyDGQKae6ZBxFuum5KZFydk27xvQfHTt4rTKr2XUkfQX
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <CAJ2QiJLV3pudhWPSERAz1s+kUj0VyU7c2N3XqXg--_kObK3D=g@mail.gmail.com>
- <20200519232229.GA395123@bjorn-Precision-5520>
-In-Reply-To: <20200519232229.GA395123@bjorn-Precision-5520>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Thu, 21 May 2020 09:28:20 +0530
-Message-ID: <CAJ2QiJLqaJ+uftEkRZ_n1FGUMigpk6_0wkvUfUDgcyfYNOpx8w@mail.gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-To: Bjorn Helgaas <helgaas@kernel.org>
+X-OriginatorOrg: fujitsu.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f7d008e-c09b-4c48-87e8-08d7fd56b869
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2020 07:15:19.8103 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: a19f121d-81e1-4858-a9d8-736e267fd4c7
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: WISOvP1gjN1fOM1zRY7jJ2hh2AJqD6UI02hlN+MlxLjDS6dPzJWc2+avOASv5PB10tySXk1wkOtgyyTXmHuguMoBaBOIRAdLrrepzXOEFcA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3293
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_205858_931069_33C0A37A 
-X-CRM114-Status: GOOD (  36.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_001528_114945_D84E1752 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.158.33 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,588 +127,58 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Myron Stowe <myron.stowe@redhat.com>,
- Vijay Mohan Pandarathil <vijaymohan.pandarathil@hp.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-pci@vger.kernel.org,
- Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
+Creating vmcore from sadump by makedumpfile fails with the following
+error messages since kernel-4.19 with PTI (Page Table Isolation)
+enabled:
 
-On Wed, May 20, 2020 at 4:52 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
->
-> [+cc Sathy, Vijay, Myron]
->
-> On Thu, May 14, 2020 at 12:47:02PM +0530, Prabhakar Kushwaha wrote:
-> > On Wed, May 13, 2020 at 3:33 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > > > An SMMU Stream table is created by the primary kernel. This table is
-> > > > used by the SMMU to perform address translations for device-originated
-> > > > transactions. Any crash (if happened) launches the kdump kernel which
-> > > > re-creates the SMMU Stream table. New transactions will be translated
-> > > > via this new table..
-> > > >
-> > > > There are scenarios, where devices are still having old pending
-> > > > transactions (configured in the primary kernel). These transactions
-> > > > come in-between Stream table creation and device-driver probe.
-> > > > As new stream table does not have entry for older transactions,
-> > > > it will be aborted by SMMU.
-> > > >
-> > > > Similar observations were found with PCIe-Intel 82576 Gigabit
-> > > > Network card. It sends old Memory Read transaction in kdump kernel.
-> > > > Transactions configured for older Stream table entries, that do not
-> > > > exist any longer in the new table, will cause a PCIe Completion Abort.
-> > >
-> > > That sounds like exactly what we want, doesn't it?
-> > >
-> > > Or do you *want* DMA from the previous kernel to complete?  That will
-> > > read or scribble on something, but maybe that's not terrible as long
-> > > as it's not memory used by the kdump kernel.
-> >
-> > Yes, Abort should happen. But it should happen in context of driver.
-> > But current abort is happening because of SMMU and no driver/pcie
-> > setup present at this moment.
->
-> I don't understand what you mean by "in context of driver."  The whole
-> problem is that we can't control *when* the abort happens, so it may
-> happen in *any* context.  It may happen when a NIC receives a packet
-> or at some other unpredictable time.
->
-> > Solution of this issue should be at 2 place
-> > a) SMMU level: I still believe, this patch has potential to overcome
-> > issue till finally driver's probe takeover.
-> > b) Device level: Even if something goes wrong. Driver/device should
-> > able to recover.
-> >
-> > > > Returned PCIe completion abort further leads to AER Errors from APEI
-> > > > Generic Hardware Error Source (GHES) with completion timeout.
-> > > > A network device hang is observed even after continuous
-> > > > reset/recovery from driver, Hence device is no more usable.
-> > >
-> > > The fact that the device is no longer usable is definitely a problem.
-> > > But in principle we *should* be able to recover from these errors.  If
-> > > we could recover and reliably use the device after the error, that
-> > > seems like it would be a more robust solution that having to add
-> > > special cases in every IOMMU driver.
-> > >
-> > > If you have details about this sort of error, I'd like to try to fix
-> > > it because we want to recover from that sort of error in normal
-> > > (non-crash) situations as well.
-> > >
-> > Completion abort case should be gracefully handled.  And device should
-> > always remain usable.
-> >
-> > There are 2 scenario which I am testing with Ethernet card PCIe-Intel
-> > 82576 Gigabit Network card.
-> >
-> > I)  Crash testing using kdump root file system: De-facto scenario
-> >     -  kdump file system does not have Ethernet driver
-> >     -  A lot of AER prints [1], making it impossible to work on shell
-> > of kdump root file system.
->
-> In this case, I think report_error_detected() is deciding that because
-> the device has no driver, we can't do anything.  The flow is like
-> this:
->
->   aer_recover_work_func               # aer_recover_work
->     kfifo_get(aer_recover_ring, entry)
->     dev = pci_get_domain_bus_and_slot
->     cper_print_aer(dev, ...)
->       pci_err("AER: aer_status:")
->       pci_err("AER:   [14] CmpltTO")
->       pci_err("AER: aer_layer=")
->     if (AER_NONFATAL)
->       pcie_do_recovery(dev, pci_channel_io_normal)
->         status = CAN_RECOVER
->         pci_walk_bus(report_normal_detected)
->           report_error_detected
->             if (!dev->driver)
->               vote = NO_AER_DRIVER
->               pci_info("can't recover (no error_detected callback)")
->             *result = merge_result(*, NO_AER_DRIVER)
->             # always NO_AER_DRIVER
->         status is now NO_AER_DRIVER
->
-> So pcie_do_recovery() does not call .report_mmio_enabled() or .slot_reset(),
-> and status is not RECOVERED, so it skips .resume().
->
-> I don't remember the history there, but if a device has no driver and
-> the device generates errors, it seems like we ought to be able to
-> reset it.
->
+  __vtop4_x86_64: Can't get a valid pte.
+  readmem: Can't convert a virtual address(ffffffffb2986000) to physical address.
+  readmem: type_addr: 0, addr:ffffffffb2986000, size:8
+  per_cpu_init: Can't read __per_cpu_load memory.
 
-But how to reset the device considering there is no driver.
-Hypothetically, this case should be taken care by PCIe subsystem to
-perform reset at PCIe level.
+This is caused by the following patch:
+https://github.com/torvalds/linux/commit/c40a56a7818cfe735fc93a69e1875f8bba834483
 
-> We should be able to field one (or a few) AER errors, reset the
-> device, and you should be able to use the shell in the kdump kernel.
->
-here kdump shell is usable only problem is a "lot of AER Errors". One
-cannot see what they are typing.
+The above patch clears _PAGE_PRESENT bit of __per_cpu_load memory, so
+__vtop4_x86_64 fails to convert the virtual address of the
+__per_cpu_load.
 
-> >     -  Note kdump shell allows to use makedumpfile, vmcore-dmesg applications.
-> >
-> > II) Crash testing using default root file system: Specific case to
-> > test Ethernet driver in second kernel
-> >    -  Default root file system have Ethernet driver
-> >    -  AER error comes even before the driver probe starts.
-> >    -  Driver does reset Ethernet card as part of probe but no success.
-> >    -  AER also tries to recover. but no success.  [2]
-> >    -  I also tries to remove AER errors by using "pci=noaer" bootargs
-> > and commenting ghes_handle_aer() from GHES driver..
-> >           than different set of errors come which also never able to recover [3]
-> >
+To fix this issue, this patch changes sanity check of per_cpu_ptr()
+to use address of the __per_cpu_load instead of data of the memory.
 
-Please suggest your view on this case. Here driver is preset.
-(driver/net/ethernet/intel/igb/igb_main.c)
-In this case AER errors starts even before driver probe starts.
-After probe, driver does the device reset with no success and even AER
-recovery does not work.
+Signed-off-by: Kazuya Saito <saito.kazuya@fujitsu.com>
+Signed-off-by: Kiyotaka Nakamura <kiyo@fujitsu.com>
+---
+ sadump_info.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Problem mentioned in case I and II goes away if do pci_reset_function
-during enumeration phase of kdump kernel.
-can we thought of doing pci_reset_function for all devices in kdump
-kernel or device specific quirk.
+diff --git a/sadump_info.c b/sadump_info.c
+index 46867ce..72a077b 100644
+--- a/sadump_info.c
++++ b/sadump_info.c
+@@ -1732,11 +1732,11 @@ per_cpu_init(void)
+ 		return FALSE;
+ 	}
+ 
+-	if (!readmem(VADDR, SYMBOL(__per_cpu_load), &si->__per_cpu_load,
+-		     sizeof(unsigned long))) {
+-		ERRMSG("Can't read __per_cpu_load memory.\n");
++	if (SYMBOL(__per_cpu_load) == NOT_FOUND_SYMBOL) {
++		ERRMSG("Can't find __per_cpu_load symbol.\n");
+ 		return FALSE;
+ 	}
++	si->__per_cpu_load = SYMBOL(__per_cpu_load);
+ 
+ 	DEBUG_MSG("sadump: __per_cpu_load: %#lx\n", si->__per_cpu_load);
+ 	DEBUG_MSG("sadump: __per_cpu_offset: LENGTH: %ld\n",
+-- 
+2.12.3
 
---pk
-
-
-> > As per my understanding, possible solutions are
-> >  - Copy SMMU table i.e. this patch
-> > OR
-> >  - Doing pci_reset_function() during enumeration phase.
-> > I also tried clearing "M" bit using pci_clear_master during
-> > enumeration but it did not help. Because driver re-set M bit causing
-> > same AER error again.
-> >
-> >
-> > -pk
-> >
-> > ---------------------------------------------------------------------------------------------------------------------------
-> > [1] with bootargs having pci=noaer
-> >
-> > [   22.494648] {4}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 1
-> > [   22.512773] {4}[Hardware Error]: event severity: recoverable
-> > [   22.518419] {4}[Hardware Error]:  Error 0, type: recoverable
-> > [   22.544804] {4}[Hardware Error]:   section_type: PCIe error
-> > [   22.550363] {4}[Hardware Error]:   port_type: 0, PCIe end point
-> > [   22.556268] {4}[Hardware Error]:   version: 3.0
-> > [   22.560785] {4}[Hardware Error]:   command: 0x0507, status: 0x4010
-> > [   22.576852] {4}[Hardware Error]:   device_id: 0000:09:00.1
-> > [   22.582323] {4}[Hardware Error]:   slot: 0
-> > [   22.586406] {4}[Hardware Error]:   secondary_bus: 0x00
-> > [   22.591530] {4}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-> > [   22.608900] {4}[Hardware Error]:   class_code: 000002
-> > [   22.613938] {4}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-> > [   22.803534] pci 0000:09:00.1: AER: aer_status: 0x00004000,
-> > aer_mask: 0x00000000
-> > [   22.810838] pci 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> > [   22.817613] pci 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> > aer_agent=Requester ID
-> > [   22.847374] pci 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> > [   22.866161] mpt3sas_cm0: 63 BIT PCI BUS DMA ADDRESSING SUPPORTED,
-> > total mem (8153768 kB)
-> > [   22.946178] pci 0000:09:00.0: AER: can't recover (no error_detected callback)
-> > [   22.995142] pci 0000:09:00.1: AER: can't recover (no error_detected callback)
-> > [   23.002300] pcieport 0000:00:09.0: AER: device recovery failed
-> > [   23.027607] pci 0000:09:00.1: AER: aer_status: 0x00004000,
-> > aer_mask: 0x00000000
-> > [   23.044109] pci 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> > [   23.060713] pci 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> > aer_agent=Requester ID
-> > [   23.068616] pci 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> > [   23.122056] pci 0000:09:00.0: AER: can't recover (no error_detected callback)
-> >
-> >
-> > ----------------------------------------------------------------------------------------------------------------------------
-> > [2] Normal bootargs.
-> >
-> > [   54.252454] {6}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 1
-> > [   54.265827] {6}[Hardware Error]: event severity: recoverable
-> > [   54.271473] {6}[Hardware Error]:  Error 0, type: recoverable
-> > [   54.281605] {6}[Hardware Error]:   section_type: PCIe error
-> > [   54.287163] {6}[Hardware Error]:   port_type: 0, PCIe end point
-> > [   54.296955] {6}[Hardware Error]:   version: 3.0
-> > [   54.301471] {6}[Hardware Error]:   command: 0x0507, status: 0x4010
-> > [   54.312520] {6}[Hardware Error]:   device_id: 0000:09:00.1
-> > [   54.317991] {6}[Hardware Error]:   slot: 0
-> > [   54.322074] {6}[Hardware Error]:   secondary_bus: 0x00
-> > [   54.327197] {6}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-> > [   54.333797] {6}[Hardware Error]:   class_code: 000002
-> > [   54.351312] {6}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-> > [   54.358001] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [   54.376852] pcieport 0000:00:09.0: AER: device recovery successful
-> > [   54.383034] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-> > aer_mask: 0x00000000
-> > [   54.390348] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> > [   54.397144] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> > aer_agent=Requester ID
-> > [   54.409555] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> > [   54.551370] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [   54.705214] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [   54.758703] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [   54.865445] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [   54.888751] pcieport 0000:00:09.0: AER: device recovery successful
-> > [   54.894933] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-> > aer_mask: 0x00000000
-> > [   54.902228] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-> > [   54.916059] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-> > aer_agent=Requester ID
-> > [   54.923972] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-> > [   55.057272] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  274.571401] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  274.686138] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  274.786134] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  274.886141] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  397.792897] Workqueue: events aer_recover_work_func
-> > [  397.797760] Call trace:
-> > [  397.800199]  __switch_to+0xcc/0x108
-> > [  397.803675]  __schedule+0x2c0/0x700
-> > [  397.807150]  schedule+0x58/0xe8
-> > [  397.810283]  schedule_preempt_disabled+0x18/0x28
-> > [  397.810788] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  397.814887]  __mutex_lock.isra.9+0x288/0x5c8
-> > [  397.814890]  __mutex_lock_slowpath+0x1c/0x28
-> > [  397.830962]  mutex_lock+0x4c/0x68
-> > [  397.834264]  report_slot_reset+0x30/0xa0
-> > [  397.838178]  pci_walk_bus+0x68/0xc0
-> > [  397.841653]  pcie_do_recovery+0xe8/0x248
-> > [  397.845562]  aer_recover_work_func+0x100/0x138
-> > [  397.849995]  process_one_work+0x1bc/0x458
-> > [  397.853991]  worker_thread+0x150/0x500
-> > [  397.857727]  kthread+0x114/0x118
-> > [  397.860945]  ret_from_fork+0x10/0x18
-> > [  397.864525] INFO: task kworker/223:2:2939 blocked for more than 122 seconds.
-> > [  397.871564]       Not tainted 5.7.0-rc3+ #68
-> > [  397.875819] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs"
-> > disables this message.
-> > [  397.883638] kworker/223:2   D    0  2939      2 0x00000228
-> > [  397.889121] Workqueue: ipv6_addrconf addrconf_verify_work
-> > [  397.894505] Call trace:
-> > [  397.896940]  __switch_to+0xcc/0x108
-> > [  397.900419]  __schedule+0x2c0/0x700
-> > [  397.903894]  schedule+0x58/0xe8
-> > [  397.907023]  schedule_preempt_disabled+0x18/0x28
-> > [  397.910798] AER: AER recover: Buffer overflow when recovering AER
-> > for 0000:09:00:1
-> > [  397.911630]  __mutex_lock.isra.9+0x288/0x5c8
-> > [  397.923440]  __mutex_lock_slowpath+0x1c/0x28
-> > [  397.927696]  mutex_lock+0x4c/0x68
-> > [  397.931005]  rtnl_lock+0x24/0x30
-> > [  397.934220]  addrconf_verify_work+0x18/0x30
-> > [  397.938394]  process_one_work+0x1bc/0x458
-> > [  397.942390]  worker_thread+0x150/0x500
-> > [  397.946126]  kthread+0x114/0x118
-> > [  397.949345]  ret_from_fork+0x10/0x18
-> >
-> > ---------------------------------------------------------------------------------------------------------------------------------
-> > [3] with bootargs as pci=noaer and comment ghes_halder_aer() from AER driver
-> >
-> > [   69.037035] igb 0000:09:00.1 enp9s0f1: Reset adapter
-> > [   69.348446] {9}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 0
-> > [   69.356698] {9}[Hardware Error]: It has been corrected by h/w and
-> > requires no further action
-> > [   69.365121] {9}[Hardware Error]: event severity: corrected
-> > [   69.370593] {9}[Hardware Error]:  Error 0, type: corrected
-> > [   69.376064] {9}[Hardware Error]:   section_type: PCIe error
-> > [   69.381623] {9}[Hardware Error]:   port_type: 4, root port
-> > [   69.387094] {9}[Hardware Error]:   version: 3.0
-> > [   69.391611] {9}[Hardware Error]:   command: 0x0106, status: 0x4010
-> > [   69.397777] {9}[Hardware Error]:   device_id: 0000:00:09.0
-> > [   69.403248] {9}[Hardware Error]:   slot: 0
-> > [   69.407331] {9}[Hardware Error]:   secondary_bus: 0x09
-> > [   69.412455] {9}[Hardware Error]:   vendor_id: 0x177d, device_id: 0xaf84
-> > [   69.419055] {9}[Hardware Error]:   class_code: 000406
-> > [   69.424093] {9}[Hardware Error]:   bridge: secondary_status:
-> > 0x6000, control: 0x0002
-> > [   72.118132] igb 0000:09:00.1 enp9s0f1: igb: enp9s0f1 NIC Link is Up
-> > 1000 Mbps Full Duplex, Flow Control: RX
-> > [   73.995068] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   73.995068]   Tx Queue             <2>
-> > [   73.995068]   TDH                  <0>
-> > [   73.995068]   TDT                  <1>
-> > [   73.995068]   next_to_use          <1>
-> > [   73.995068]   next_to_clean        <0>
-> > [   73.995068] buffer_info[next_to_clean]
-> > [   73.995068]   time_stamp           <ffff9c1a>
-> > [   73.995068]   next_to_watch        <0000000097d42934>
-> > [   73.995068]   jiffies              <ffff9cd0>
-> > [   73.995068]   desc.status          <168000>
-> > [   75.987323] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   75.987323]   Tx Queue             <2>
-> > [   75.987323]   TDH                  <0>
-> > [   75.987323]   TDT                  <1>
-> > [   75.987323]   next_to_use          <1>
-> > [   75.987323]   next_to_clean        <0>
-> > [   75.987323] buffer_info[next_to_clean]
-> > [   75.987323]   time_stamp           <ffff9c1a>
-> > [   75.987323]   next_to_watch        <0000000097d42934>
-> > [   75.987323]   jiffies              <ffff9d98>
-> > [   75.987323]   desc.status          <168000>
-> > [   77.952661] {10}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 1
-> > [   77.971790] {10}[Hardware Error]: event severity: recoverable
-> > [   77.977522] {10}[Hardware Error]:  Error 0, type: recoverable
-> > [   77.983254] {10}[Hardware Error]:   section_type: PCIe error
-> > [   77.999930] {10}[Hardware Error]:   port_type: 0, PCIe end point
-> > [   78.005922] {10}[Hardware Error]:   version: 3.0
-> > [   78.010526] {10}[Hardware Error]:   command: 0x0507, status: 0x4010
-> > [   78.016779] {10}[Hardware Error]:   device_id: 0000:09:00.1
-> > [   78.033107] {10}[Hardware Error]:   slot: 0
-> > [   78.037276] {10}[Hardware Error]:   secondary_bus: 0x00
-> > [   78.066253] {10}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-> > [   78.072940] {10}[Hardware Error]:   class_code: 000002
-> > [   78.078064] {10}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-> > [   78.096202] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   78.096202]   Tx Queue             <2>
-> > [   78.096202]   TDH                  <0>
-> > [   78.096202]   TDT                  <1>
-> > [   78.096202]   next_to_use          <1>
-> > [   78.096202]   next_to_clean        <0>
-> > [   78.096202] buffer_info[next_to_clean]
-> > [   78.096202]   time_stamp           <ffff9c1a>
-> > [   78.096202]   next_to_watch        <0000000097d42934>
-> > [   78.096202]   jiffies              <ffff9e6a>
-> > [   78.096202]   desc.status          <168000>
-> > [   79.587406] {11}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 0
-> > [   79.595744] {11}[Hardware Error]: It has been corrected by h/w and
-> > requires no further action
-> > [   79.604254] {11}[Hardware Error]: event severity: corrected
-> > [   79.609813] {11}[Hardware Error]:  Error 0, type: corrected
-> > [   79.615371] {11}[Hardware Error]:   section_type: PCIe error
-> > [   79.621016] {11}[Hardware Error]:   port_type: 4, root port
-> > [   79.626574] {11}[Hardware Error]:   version: 3.0
-> > [   79.631177] {11}[Hardware Error]:   command: 0x0106, status: 0x4010
-> > [   79.637430] {11}[Hardware Error]:   device_id: 0000:00:09.0
-> > [   79.642988] {11}[Hardware Error]:   slot: 0
-> > [   79.647157] {11}[Hardware Error]:   secondary_bus: 0x09
-> > [   79.652368] {11}[Hardware Error]:   vendor_id: 0x177d, device_id: 0xaf84
-> > [   79.659055] {11}[Hardware Error]:   class_code: 000406
-> > [   79.664180] {11}[Hardware Error]:   bridge: secondary_status:
-> > 0x6000, control: 0x0002
-> > [   79.987052] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   79.987052]   Tx Queue             <2>
-> > [   79.987052]   TDH                  <0>
-> > [   79.987052]   TDT                  <1>
-> > [   79.987052]   next_to_use          <1>
-> > [   79.987052]   next_to_clean        <0>
-> > [   79.987052] buffer_info[next_to_clean]
-> > [   79.987052]   time_stamp           <ffff9c1a>
-> > [   79.987052]   next_to_watch        <0000000097d42934>
-> > [   79.987052]   jiffies              <ffff9f28>
-> > [   79.987052]   desc.status          <168000>
-> > [   79.987056] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   79.987056]   Tx Queue             <3>
-> > [   79.987056]   TDH                  <0>
-> > [   79.987056]   TDT                  <1>
-> > [   79.987056]   next_to_use          <1>
-> > [   79.987056]   next_to_clean        <0>
-> > [   79.987056] buffer_info[next_to_clean]
-> > [   79.987056]   time_stamp           <ffff9e43>
-> > [   79.987056]   next_to_watch        <000000008da33deb>
-> > [   79.987056]   jiffies              <ffff9f28>
-> > [   79.987056]   desc.status          <514000>
-> > [   81.986688] igb 0000:09:00.1 enp9s0f1: Reset adapter
-> > [   81.986842] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   81.986842]   Tx Queue             <2>
-> > [   81.986842]   TDH                  <0>
-> > [   81.986842]   TDT                  <1>
-> > [   81.986842]   next_to_use          <1>
-> > [   81.986842]   next_to_clean        <0>
-> > [   81.986842] buffer_info[next_to_clean]
-> > [   81.986842]   time_stamp           <ffff9c1a>
-> > [   81.986842]   next_to_watch        <0000000097d42934>
-> > [   81.986842]   jiffies              <ffff9ff0>
-> > [   81.986842]   desc.status          <168000>
-> > [   81.986844] igb 0000:09:00.1: Detected Tx Unit Hang
-> > [   81.986844]   Tx Queue             <3>
-> > [   81.986844]   TDH                  <0>
-> > [   81.986844]   TDT                  <1>
-> > [   81.986844]   next_to_use          <1>
-> > [   81.986844]   next_to_clean        <0>
-> > [   81.986844] buffer_info[next_to_clean]
-> > [   81.986844]   time_stamp           <ffff9e43>
-> > [   81.986844]   next_to_watch        <000000008da33deb>
-> > [   81.986844]   jiffies              <ffff9ff0>
-> > [   81.986844]   desc.status          <514000>
-> > [   85.346515] {12}[Hardware Error]: Hardware error from APEI Generic
-> > Hardware Error Source: 0
-> > [   85.354854] {12}[Hardware Error]: It has been corrected by h/w and
-> > requires no further action
-> > [   85.363365] {12}[Hardware Error]: event severity: corrected
-> > [   85.368924] {12}[Hardware Error]:  Error 0, type: corrected
-> > [   85.374483] {12}[Hardware Error]:   section_type: PCIe error
-> > [   85.380129] {12}[Hardware Error]:   port_type: 0, PCIe end point
-> > [   85.386121] {12}[Hardware Error]:   version: 3.0
-> > [   85.390725] {12}[Hardware Error]:   command: 0x0507, status: 0x0010
-> > [   85.396980] {12}[Hardware Error]:   device_id: 0000:09:00.0
-> > [   85.402540] {12}[Hardware Error]:   slot: 0
-> > [   85.406710] {12}[Hardware Error]:   secondary_bus: 0x00
-> > [   85.411921] {12}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-> > [   85.418609] {12}[Hardware Error]:   class_code: 000002
-> > [   85.423733] {12}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-> > [   85.826695] igb 0000:09:00.1 enp9s0f1: igb: enp9s0f1 NIC Link is Up
-> > 1000 Mbps Full Duplex, Flow Control: RX
-> >
-> >
-> >
-> >
-> >
-> > > > So, If we are in a kdump kernel try to copy SMMU Stream table from
-> > > > primary/old kernel to preserve the mappings until the device driver
-> > > > takes over.
-> > > >
-> > > > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
-> > > > ---
-> > > > Changes for v2: Used memremap in-place of ioremap
-> > > >
-> > > > V2 patch has been sanity tested.
-> > > >
-> > > > V1 patch has been tested with
-> > > > A) PCIe-Intel 82576 Gigabit Network card in following
-> > > > configurations with "no AER error". Each iteration has
-> > > > been tested on both Suse kdump rfs And default Centos distro rfs.
-> > > >
-> > > >  1)  with 2 level stream table
-> > > >        ----------------------------------------------------
-> > > >        SMMU               |  Normal Ping   | Flood Ping
-> > > >        -----------------------------------------------------
-> > > >        Default Operation  |  100 times     | 10 times
-> > > >        -----------------------------------------------------
-> > > >        IOMMU bypass       |  41 times      | 10 times
-> > > >        -----------------------------------------------------
-> > > >
-> > > >  2)  with Linear stream table.
-> > > >        -----------------------------------------------------
-> > > >        SMMU               |  Normal Ping   | Flood Ping
-> > > >        ------------------------------------------------------
-> > > >        Default Operation  |  100 times     | 10 times
-> > > >        ------------------------------------------------------
-> > > >        IOMMU bypass       |  55 times      | 10 times
-> > > >        -------------------------------------------------------
-> > > >
-> > > > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-> > > > SSD card with 2 level stream table using "fio" in mixed read/write and
-> > > > only read configurations. It is tested for both Default Operation and
-> > > > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-> > > > default Centos ditstro rfs.
-> > > >
-> > > > This patch is not full proof solution. Issue can still come
-> > > > from the point device is discovered and driver probe called.
-> > > > This patch has reduced window of scenario from "SMMU Stream table
-> > > > creation - device-driver" to "device discovery - device-driver".
-> > > > Usually, device discovery to device-driver is very small time. So
-> > > > the probability is very low.
-> > > >
-> > > > Note: device-discovery will overwrite existing stream table entries
-> > > > with both SMMU stage as by-pass.
-> > > >
-> > > >
-> > > >  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
-> > > >  1 file changed, 35 insertions(+), 1 deletion(-)
-> > > >
-> > > > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > > > index 82508730feb7..d492d92c2dd7 100644
-> > > > --- a/drivers/iommu/arm-smmu-v3.c
-> > > > +++ b/drivers/iommu/arm-smmu-v3.c
-> > > > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
-> > > >                       break;
-> > > >               case STRTAB_STE_0_CFG_S1_TRANS:
-> > > >               case STRTAB_STE_0_CFG_S2_TRANS:
-> > > > -                     ste_live = true;
-> > > > +                     /*
-> > > > +                      * As kdump kernel copy STE table from previous
-> > > > +                      * kernel. It still may have valid stream table entries.
-> > > > +                      * Forcing entry as false to allow overwrite.
-> > > > +                      */
-> > > > +                     if (!is_kdump_kernel())
-> > > > +                             ste_live = true;
-> > > >                       break;
-> > > >               case STRTAB_STE_0_CFG_ABORT:
-> > > >                       BUG_ON(!disable_bypass);
-> > > > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> > > >               return -ENOMEM;
-> > > >       }
-> > > >
-> > > > +     if (is_kdump_kernel())
-> > > > +             return 0;
-> > > > +
-> > > >       for (i = 0; i < cfg->num_l1_ents; ++i) {
-> > > >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
-> > > >               strtab += STRTAB_L1_DESC_DWORDS << 3;
-> > > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> > > >       return 0;
-> > > >  }
-> > > >
-> > > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > > > +{
-> > > > +     struct arm_smmu_strtab_cfg rdcfg;
-> > > > +
-> > > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > > > +
-> > > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > > > +
-> > > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > > > +
-> > > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-> > > > +}
-> > > > +
-> > > >  static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
-> > > >  {
-> > > >       void *strtab;
-> > > > @@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
-> > > >       reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
-> > > >       cfg->strtab_base_cfg = reg;
-> > > >
-> > > > +     if (is_kdump_kernel())
-> > > > +             arm_smmu_copy_table(smmu, cfg, l1size);
-> > > > +
-> > > >       return arm_smmu_init_l1_strtab(smmu);
-> > > >  }
-> > > >
-> > > > @@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
-> > > >       reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
-> > > >       cfg->strtab_base_cfg = reg;
-> > > >
-> > > > +     if (is_kdump_kernel()) {
-> > > > +             arm_smmu_copy_table(smmu, cfg, size);
-> > > > +             return 0;
-> > > > +     }
-> > > > +
-> > > >       arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
-> > > >       return 0;
-> > > >  }
-> > > > --
-> > > > 2.18.2
-> > > >
 
 _______________________________________________
 kexec mailing list
