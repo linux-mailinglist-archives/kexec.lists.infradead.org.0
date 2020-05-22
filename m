@@ -2,119 +2,62 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 778C01DDD0F
-	for <lists+kexec@lfdr.de>; Fri, 22 May 2020 04:22:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A63B81DDDD5
+	for <lists+kexec@lfdr.de>; Fri, 22 May 2020 05:24:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rl/N/eF+WWLxq/R7MT0mSrE3MgE/IvJjXsoEQBDNeKg=; b=OiDEpMNMr1Jhir
-	Oi4LLXy6sucNmFu5KMJfZqz1EBnP3bMBgSEjWr//MN4GcbohkoSygVm0882VYeJjvaU0D14YzpTPn
-	fessd+VTCwaWykHFXgkR4yo17i+HOeXQiBNbaA0+U/00lZtR+ZliiGKGREYI5xoDNnZ4LMZZK30Vv
-	To4cPG0dtBg9s/9e1CIAdB79JuDl3gtR6a2djlCVznp1krEn11JQm61HRB9TtLc8OnSEMC6k817kh
-	jjTUAECBSW2FbWIHDuydFBWcTFW/kW7fJzQB1FmY83SpprU5/1JH3zVmFVM00H27zbtSaSlHCLqEr
-	coJdHBENDRXXjBFf0k3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8GfyplqSrbCmDzKm2kO8vT8JG1o4CWYzePSqUxCUR/8=; b=E7pvLpC1mTkIvE
+	8axoIySaeD2KulOdObDXzzNIiBwqXsmerAPDK3BwdeaVOVlzUwOTV+3Cv+2h5BysQ7w+/KHzMd5Uz
+	4IR/yA2fbzw+L+LcfRZGtqUZ/uawRPbeJCO0W2o6fGLc4mpI9qAWljqHwUuwmReNSZuw1d2ZQOgS2
+	AVgMkKi9j9E8CE3xdQGICQOYUy/YDcEH2Z4CtUIE9D4DSdgAbJBBYZo68KKLqdIaPDe/8rUaXx9WP
+	vJWGdTu/66vv2SlozzjexjswtGmt+SIGBvoynxzM0CewUcBWMkYJuU8emWgyg/jL8HjlQgdGECmrV
+	HfZk2pee1CrivgitxxaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbxKj-0004eX-6W; Fri, 22 May 2020 02:22:49 +0000
-Received: from esa15.fujitsucc.c3s2.iphmx.com ([68.232.156.107])
+	id 1jbyIU-0007OR-MO; Fri, 22 May 2020 03:24:34 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbxKf-0004dw-4w
- for kexec@lists.infradead.org; Fri, 22 May 2020 02:22:47 +0000
-IronPort-SDR: PuqDQqevdHdRGfXcBWKXhm0wG5tKPBbkNN2Sgq5ZdoLjwzb7Tbg9p3k6efhY4vmJWZHip5GCcw
- 6rxpWO1CNi7sLYJBviOmtYZhiL1CdU0zC8ee97P9EP3egv390pYPT6aJFC7msD3ZnCDU69/1VO
- n1hjVECeE62jnaosXmrJL70Qmi/8D3pxJd2xKg9a2+cQDLDRMb39LkS8ug72oCFZWAe+3xV55n
- s4rMMcT0C0dB8+Durhrk9Jki3ZPwGz7nTyC883wfMVY+vYpzgupaZK+gD/x+JsHFSaHZD8Z6Q8
- DC0=
-X-IronPort-AV: E=McAfee;i="6000,8403,9628"; a="13434326"
-X-IronPort-AV: E=Sophos;i="5.73,420,1583161200"; d="scan'208";a="13434326"
-Received: from mail-ty1jpn01lp2054.outbound.protection.outlook.com (HELO
- JPN01-TY1-obe.outbound.protection.outlook.com) ([104.47.93.54])
- by ob1.fujitsucc.c3s2.iphmx.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 22 May 2020 11:22:37 +0900
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YL7YJUEkUESGgbEQDK2V7KTD459rEfnltJ4d2m655+B2YNg/0ONKu7xR6XwU3Lyet7So8oz2hIUO3pVwBDcVG+p3YzCz/kJFsSbhilFwngtsUNUmrHJttpC4niHB//ra24jBtVV5PvUPJwzf8PA6v1zaKIbg75hfYyDrU4xFg8De5qcE4WVsmcsd7uSq9R7n36+ZJMhtRrfp+KeQ9E0H+fkBpZcuLtViKpOCTH2V9dO8pRCdQmDRAt43L9X3ucvXly2oC4oMkX4siYac5weRRArGVip3UGD4QoFbbSAacDZas2I/lvm3tJLrBqIghZdcISDjrUi4yQpdhjDllTHRDg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9o5mWBBSpJdz6xU1vcd2DHu9jDvn/Eg+Fk5xYMX1TSI=;
- b=IqvDRL3U5b18K+xq//L3YQ2UZalEuvnEK68dsJZVrKirIbSJtOlFfiiAWAyrePIT4Kr15Mfbv38+nOOG3KETwu6fmc+IUKHhllIIYKKyRUIpTk1o8FQ30m/zp0ZYtFsFIRsFMOMhB3LwgXUDGQdAOwCuvKwCdHSXW27pQGD1VLp1c86Nu1VUtxpzMNCaCpHgKaIvxhqdXhux1pT3ZEL/vY9zh/nluGkO00kgPqT+2ipBk47QnGc9fSgsSHo/z++xNSlM7MfZvH5P/J9MS/ZcYdyKv9g7X0OmiqgB0aHRwUlcAaBq3mzs7C2r1VNPGiZLdFMmKkqSyDp9LX1Z44pW6Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=fujitsu.com; dmarc=pass action=none header.from=fujitsu.com;
- dkim=pass header.d=fujitsu.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=fujitsu.onmicrosoft.com; s=selector2-fujitsu-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=9o5mWBBSpJdz6xU1vcd2DHu9jDvn/Eg+Fk5xYMX1TSI=;
- b=Co5nBo245Il0W4Sg05tAiBOyuywLemZgDg/Yp8A91grij1r53/DRNwofRkolEPezEXGGlPJ2YtP9b7dz+/vuw1dAnK5pQxx8u5Ly4veYdvlD3CkdH/tfjHrqC/hvurh4okruYHJDAMAUE4IFP5q08qyBO+CjGtN/14cWAraB6fg=
-Received: from OSBPR01MB5048.jpnprd01.prod.outlook.com (2603:1096:604:38::10)
- by OSBPR01MB4920.jpnprd01.prod.outlook.com (2603:1096:604:7d::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Fri, 22 May
- 2020 02:22:34 +0000
-Received: from OSBPR01MB5048.jpnprd01.prod.outlook.com
- ([fe80::fd6a:da4:835a:8ae3]) by OSBPR01MB5048.jpnprd01.prod.outlook.com
- ([fe80::fd6a:da4:835a:8ae3%6]) with mapi id 15.20.3021.027; Fri, 22 May 2020
- 02:22:34 +0000
-From: "d.hatayama@fujitsu.com" <d.hatayama@fujitsu.com>
-To: "saito.kazuya@fujitsu.com" <saito.kazuya@fujitsu.com>,
- "'kexec@lists.infradead.org'" <kexec@lists.infradead.org>
-Subject: Re: [PATCH] sadump: Fix failure of reading __per_cpu_load memory
-Thread-Topic: [PATCH] sadump: Fix failure of reading __per_cpu_load memory
-Thread-Index: AdYvPkyht67VsqqWQBO8rYgOfFEcaQAoNJqK
-Date: Fri, 22 May 2020 02:22:34 +0000
-Message-ID: <OSBPR01MB5048B8A9DFBA861A3A9AE0E795B40@OSBPR01MB5048.jpnprd01.prod.outlook.com>
-References: <TYAPR01MB41279E6F5CDD8350F13BA38F84B70@TYAPR01MB4127.jpnprd01.prod.outlook.com>
-In-Reply-To: <TYAPR01MB41279E6F5CDD8350F13BA38F84B70@TYAPR01MB4127.jpnprd01.prod.outlook.com>
-Accept-Language: ja-JP, en-US
-Content-Language: ja-JP
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: fujitsu.com; dkim=none (message not signed)
- header.d=none;fujitsu.com; dmarc=none action=none header.from=fujitsu.com;
-x-originating-ip: [210.170.118.172]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c1a0ffac-780b-49b0-392e-08d7fdf6fd0d
-x-ms-traffictypediagnostic: OSBPR01MB4920:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <OSBPR01MB4920A73303A40F39307DAAD695B40@OSBPR01MB4920.jpnprd01.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1107;
-x-forefront-prvs: 04111BAC64
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: JLqMEyI26qQpOCuislcScTz8P/kDgG/uUPDLhXOMrAmnSr2cJGXAbQOdmN6HC4BiAm82FMZVRB4gAOApTPrqsWCtjhfeg9NkXHGeNn6IfgTD+KL7R5+xLo23tlj5QtXuPXgqJTBaqwdGpUgr5FCTokI4JNZ8UpYZW3SKUUpVmnShnxFhGlV8mrT3chTHYQAjBd6k67IW2VreiN+v42yh/+2+lzsBXUBTexsvBM0O2/JJO3ku+ij3EQGaQhcROrKIYbhpa+odD1oAesTHCc1KeWN26ULzn2js0Wl97fIlmC+0MeqvL1sgIVKinB0S0qE07miZ3fnbTDKGMuwdwcJHGF5bm9TzykYEGVvFqtGN86+AMlrwr7vw5SbG1t/XYzIBZOViO+kGLsQ7IVQwFJHrE3bnqqAmVNSgJHBGHdBTGvgavAOd9zeNCibavz5LA1H622ssRZsNLg8RJplZ1v8+XRd/GztWOpJsTGj2fMY4hjQ=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:OSBPR01MB5048.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(39860400002)(136003)(366004)(396003)(346002)(478600001)(52536014)(66476007)(7696005)(6506007)(66946007)(110136005)(26005)(316002)(186003)(33656002)(76116006)(66556008)(2906002)(66446008)(71200400001)(85182001)(9686003)(966005)(8936002)(5660300002)(64756008)(55016002)(8676002)(86362001)(777600001)(491001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: m0ck/xO4LfafaCPWjoJbW6sZw/3373LUw18MsiReLh+S1Y6BcdEEKAI0x0IqS0UdUg/Hc2Bh1dlYy1X6ryyPUlcmdWZ7CCfNkoVfU55/6+Hyswckd/ZmfdFgrnlUNtZKzRNP+Wf/JsjueW1dUlNENq8c3HHBtGLbbI5XauhkWTXfck4n1Z3//Y5eUzY6a5vj/mMrE6ntAIizrG7CPZhfozCqJK1rMRBohIxX9amICg9hKXS/q59wty+ShYQv/Kr6l0Ye/bx0b4KFU3k6+uMneU1tmk9K2TSBzxzw/4EFZZW7fsPZ0Ft8laASLn2rNSREIavINuc0SApINAGZIQpfnvVRPwqPd5W6kah6IDGkJGS+xkryFEKBzQdFPILn5Tsg1z1kXOUnzL+uspLt78BLzdAJiOVSCNXCv+rj3/yVbaXjVEFYCc9cc9F1K9rAQ1/xfqb278oZ9w21HVM7KvenejhaCyDOPlxTy5SICS0Nr4a3ewKWmNwrPqeIHt4eB+uX
+ id 1jbyIR-0007Nc-6p; Fri, 22 May 2020 03:24:33 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 51717A9057906BA0EFA3;
+ Fri, 22 May 2020 11:24:22 +0800 (CST)
+Received: from [127.0.0.1] (10.166.213.90) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.487.0; Fri, 22 May 2020
+ 11:24:12 +0800
+Subject: Re: [PATCH v8 5/5] dt-bindings: chosen: Document
+ linux,low-memory-range for arm64 kdump
+To: Rob Herring <robh+dt@kernel.org>
+References: <20200521093805.64398-1-chenzhou10@huawei.com>
+ <20200521093805.64398-6-chenzhou10@huawei.com>
+ <CAL_Jsq+EV02YBqEGoJrsJW8Y+g_GkB_LkTwWCxNCb3F+8MSdyw@mail.gmail.com>
+From: chenzhou <chenzhou10@huawei.com>
+Message-ID: <a419602e-6a85-ca35-39de-b3c26d433199@huawei.com>
+Date: Fri, 22 May 2020 11:24:11 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-OriginatorOrg: fujitsu.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c1a0ffac-780b-49b0-392e-08d7fdf6fd0d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2020 02:22:34.4199 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: a19f121d-81e1-4858-a9d8-736e267fd4c7
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ogU1agjwQYNJeVpD4I1VgklHwspk+zSwP2w5AqXCCi84i/KYhghOteK/NbXd4MrPOqZILS8AyF89u1pcWSMmJNWXpGu4BYs74ZY9yDtBG1A=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSBPR01MB4920
+In-Reply-To: <CAL_Jsq+EV02YBqEGoJrsJW8Y+g_GkB_LkTwWCxNCb3F+8MSdyw@mail.gmail.com>
+X-Originating-IP: [10.166.213.90]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_192245_578720_07062EBD 
-X-CRM114-Status: GOOD (  11.24  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200521_202431_414675_FEE819FB 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [68.232.156.107 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.191 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,75 +69,86 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-2022-jp"
+Cc: Simon Horman <horms@verge.net.au>, John.p.donnelly@oracle.com,
+ Baoquan He <bhe@redhat.com>, Will Deacon <will@kernel.org>,
+ devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>, Linux
+ Doc Mailing List <linux-doc@vger.kernel.org>, kexec@lists.infradead.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ingo Molnar <mingo@redhat.com>, Arnd Bergmann <arnd@arndb.de>,
+ Hanjun Guo <guohanjun@huawei.com>, Thomas Gleixner <tglx@linutronix.de>,
+ pkushwaha@marvell.com, dyoung@redhat.com,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Saito-san,
+Hi Rob,
 
-Thanks for your patch.
+On 2020/5/21 21:29, Rob Herring wrote:
+> On Thu, May 21, 2020 at 3:35 AM Chen Zhou <chenzhou10@huawei.com> wrote:
+>> Add documentation for DT property used by arm64 kdump:
+>> linux,low-memory-range.
+>> "linux,low-memory-range" is an another memory region used for crash
+>> dump kernel devices.
+>>
+>> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+>> ---
+>>  Documentation/devicetree/bindings/chosen.txt | 25 ++++++++++++++++++++
+>>  1 file changed, 25 insertions(+)
+> chosen is now a schema documented here[1].
+Ok, that is, i don't need to modify the doc in kernel, just create a pull request in github [1]?
 
-I think it better to remove __per_cpu_load code, which is unnecessary.
+>
+>> diff --git a/Documentation/devicetree/bindings/chosen.txt b/Documentation/devicetree/bindings/chosen.txt
+>> index 45e79172a646..bfe6fb6976e6 100644
+>> --- a/Documentation/devicetree/bindings/chosen.txt
+>> +++ b/Documentation/devicetree/bindings/chosen.txt
+>> @@ -103,6 +103,31 @@ While this property does not represent a real hardware, the address
+>>  and the size are expressed in #address-cells and #size-cells,
+>>  respectively, of the root node.
+>>
+>> +linux,low-memory-range
+>> +----------------------
+>> +This property (arm64 only) holds a base address and size, describing a
+>> +limited region below 4G. Similar to "linux,usable-memory-range", it is
+>> +an another memory range which may be considered available for use by the
+>> +kernel.
+> Why can't you just add a range to "linux,usable-memory-range"? It
+> shouldn't be hard to figure out which part is below 4G.
+I did like this in my previous version, such as v5. After discussed with James, i modified it to the current way.
 
-________________________________________
-差出人: kexec <kexec-bounces@lists.infradead.org> が saito.kazuya@fujitsu.com <saito.kazuya@fujitsu.com> の代理で送信
-送信日時: 2020年5月21日 16:15
-宛先: 'kexec@lists.infradead.org'
-件名: [PATCH] sadump: Fix failure of reading __per_cpu_load memory
+We think the existing behavior should be unchanged, which helps with keeping compatibility with existing
+user-space and older kdump kernels.
 
-Creating vmcore from sadump by makedumpfile fails with the following
-error messages since kernel-4.19 with PTI (Page Table Isolation)
-enabled:
+The comments from James:
+> linux,usable-memory-range = <BASE1 SIZE1 [BASE2 SIZE2]>.
+Won't this break if your kdump kernel doesn't know what the extra parameters are?
+Or if it expects two ranges, but only gets one? These DT properties should be treated as
+ABI between kernel versions, we can't really change it like this.
 
-  __vtop4_x86_64: Can't get a valid pte.
-  readmem: Can't convert a virtual address(ffffffffb2986000) to physical address.
-  readmem: type_addr: 0, addr:ffffffffb2986000, size:8
-  per_cpu_init: Can't read __per_cpu_load memory.
+I think the 'low' region is an optional-extra, that is never mapped by the first kernel. I
+think the simplest thing to do is to add an 'linux,low-memory-range' that we
+memblock_add() after memblock_cap_memory_range() has been called.
+If its missing, or the new kernel doesn't know what its for, everything keeps working.
 
-This is caused by the following patch:
-https://github.com/torvalds/linux/commit/c40a56a7818cfe735fc93a69e1875f8bba834483
+previous discusses:
+https://lkml.org/lkml/2019/6/5/674
+https://lkml.org/lkml/2019/6/13/229
 
-The above patch clears _PAGE_PRESENT bit of __per_cpu_load memory, so
-__vtop4_x86_64 fails to convert the virtual address of the
-__per_cpu_load.
+Thanks,
+Chen Zhou
 
-To fix this issue, this patch changes sanity check of per_cpu_ptr()
-to use address of the __per_cpu_load instead of data of the memory.
-
-Signed-off-by: Kazuya Saito <saito.kazuya@fujitsu.com>
-Signed-off-by: Kiyotaka Nakamura <kiyo@fujitsu.com>
----
- sadump_info.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/sadump_info.c b/sadump_info.c
-index 46867ce..72a077b 100644
---- a/sadump_info.c
-+++ b/sadump_info.c
-@@ -1732,11 +1732,11 @@ per_cpu_init(void)
-                return FALSE;
-        }
-
--       if (!readmem(VADDR, SYMBOL(__per_cpu_load), &si->__per_cpu_load,
--                    sizeof(unsigned long))) {
--               ERRMSG("Can't read __per_cpu_load memory.\n");
-+       if (SYMBOL(__per_cpu_load) == NOT_FOUND_SYMBOL) {
-+               ERRMSG("Can't find __per_cpu_load symbol.\n");
-                return FALSE;
-        }
-+       si->__per_cpu_load = SYMBOL(__per_cpu_load);
-
-        DEBUG_MSG("sadump: __per_cpu_load: %#lx\n", si->__per_cpu_load);
-        DEBUG_MSG("sadump: __per_cpu_offset: LENGTH: %ld\n",
---
-2.12.3
+>
+> Rob
+>
+> [1] https://github.com/devicetree-org/dt-schema/blob/master/schemas/chosen.yaml
+>
+> .
+>
 
 
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
 
 _______________________________________________
 kexec mailing list
