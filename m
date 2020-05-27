@@ -2,77 +2,79 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FAC71E3655
-	for <lists+kexec@lfdr.de>; Wed, 27 May 2020 05:15:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C4E81E3656
+	for <lists+kexec@lfdr.de>; Wed, 27 May 2020 05:16:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zv9YtDA8nmytusSRN5D29Xf4EL3awURKtlgUSssxZ0A=; b=UrZAlw6dKRWqA0
-	zHkYCJigaAXkEhy3BJz38lSyBAxVUhM7dPmWYdc2NESeqybHryB81UIyQ032d8M1tDEloEew/O/6J
-	X9elTVjf8oBVpb5FWM5NewDOpB9OcLfcecX8W8aejvWZWUdaDDQiMvn2oBDMSfVClKnUovBPt8GXi
-	5vYdQGkvfup5XGj47aC1dKuQitub1EWdJJLD79AFPa19ICUi57DzehbuQF9328DrpzpGlfAIcdKka
-	0MLaIyLEDOqf7VANAMky5VR1qoOsD4GTXSt8hrkF7ORxVSzEwf2Bdr5zUQKU/hu7BYr5e87HywCBK
-	tGDvUmyzTdAOL6eWnfmQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bQM8ofGBpUPAlxYxf9+9JsJGVGOEVQhDuvsQ51ob4ig=; b=lXW1tCp3N4+ruw
+	p3ZtTQPgsADkkRqyU6wCW/o9qfntMQcM6PvcBXl4H54gFNmWFlKlTi6PJrDp7MuJ08iQJuV6NT/1j
+	FsvG7dDMz5kHSZ7yMV3adxOunajIXxOqJ/spfYcJEGBzCWd5j4UTJQf0DRwT9pu0QDEi+1NOH+lI9
+	pWoWxX2o0RVLb2n+Tfg/OEzqU9SwOmD/tLodWeMJ0lG8jiM0Ps0+d3ZTGkHmkDy2RXBAWZdSec9Fr
+	jK1tUcamLypRSqECiI+1GqcLLxT8NU7zvf+gPys9XG+aBLCYv/tTzTMUxuXQycjF49WscNSDXX2Hk
+	JgQKlNGUBopFe0/XQA3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmXk-0001ls-W6; Wed, 27 May 2020 03:15:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jdmY6-0001xA-DD; Wed, 27 May 2020 03:16:10 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmXY-0001f2-7g; Wed, 27 May 2020 03:15:37 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v19so1660161wmj.0;
- Tue, 26 May 2020 20:15:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VB40ARaiS29BCuNKIs7lZTKGqm7H2XgR6B5F6MValZk=;
- b=MhYvxeamChB/YcB/8djufie2K5LLYHwo/Ggj80hU7372l0mS3PAEj2owaaKzJcEKti
- ynbZdxN4N052QvzcSsJpodC0IJ+rIs6NiiGmzcH6O4HgiS+afTiE4QrdfSkc6C1WfqVM
- Ou5OFmwqu9knRJ0JehDJrHMRXLcgO9SKDRA6vjpujD4inhdn9plxha/+/IYTHlgWRARH
- MO2sPP53ZdAOsyLyXdBDNKtruS/UQZbuL5xV4XdEDs18JXTACAHSbLKb3ZouL1jQ0ls0
- T4VwOGSdkClysZgMjLWzHtFS8Gwsqfs8gpIAxgqoRk34ejsnBYpj06ILoYv131y2qUf3
- dcYQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VB40ARaiS29BCuNKIs7lZTKGqm7H2XgR6B5F6MValZk=;
- b=ijIOzkO8ySh2WjP5gfEQZdZG6WU+x5IOZeS+nAJSBzZxpSwS5JKRg3P1K0a9q5eTQK
- JnuZs/A6wz5mpKQhdM0Rwcegx1h8VGNfib4R0Mqq2cIzXLv77gfKsGPpYBnB3xSrISQd
- Gy6OGTG4pwLS+totxMgsZpwLcA9SHy7jx6E3NAyTzAPjC48OgHpg2RzhmZw/KaHEyIup
- V7F24TgaK0nVW9OBwIyL7r8NmTmx1sESRdSVxadk9ZMdkZ+1wHJ6PZItaD979pXmoDN8
- PgMDD1sbo9GqHcyK/Bz7szLNlcYF9NjIxPsajPbHgTlXoZfecxZC96jY4xv3KptxUb1T
- IQ9w==
-X-Gm-Message-State: AOAM530Hb+Dv96ydsIuypAoruoHbGuOC0stQQTkYOIbOwzhV8apAn3wP
- LXgw7vWsYbRAdluzBW4zn1KgxB+BBGhp1Yg0Bv1wXIOkIQs=
-X-Google-Smtp-Source: ABdhPJzFwBaPgOsHEa1S8EcIiQ9EW+QdzrxYp9GJu/lz6pzrRsui+p3EQQ+ILZvNqbIYZpCpH7oOjMkE8HPnA7bD61k=
-X-Received: by 2002:a7b:cc92:: with SMTP id p18mr2111876wma.174.1590549332923; 
- Tue, 26 May 2020 20:15:32 -0700 (PDT)
+ id 1jdmY3-0001wL-9p
+ for kexec@lists.infradead.org; Wed, 27 May 2020 03:16:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1590549364;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=D/U30jq60+l+qSoKQaysERZKm3+QDoP2KNzgEBqE3b8=;
+ b=O05Q0HMdncPqAo5ZQD7XVR5LYJr8MYBVSPLZ/JMexyBNpYUqwBbrAroywGyzA3aXeHzRBC
+ +JtWXIZ0/0c2jdSxWzYDAmVHU+XWif/bkE9YDhFe9VeQ/IkqTxmmZ5hAdpYx0c1s05s7dH
+ BYlDlKdJ821gqFNlt0nwUh+kqVry8Qk=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-370-kriTgT6fMYigScKrfzBEzQ-1; Tue, 26 May 2020 23:16:01 -0400
+X-MC-Unique: kriTgT6fMYigScKrfzBEzQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5331F835B42;
+ Wed, 27 May 2020 03:16:00 +0000 (UTC)
+Received: from [10.72.12.206] (ovpn-12-206.pek2.redhat.com [10.72.12.206])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C941F5C1B0;
+ Wed, 27 May 2020 03:15:53 +0000 (UTC)
+Subject: Re: [PATCH] kexec: Do not verify the signature without the lockdown
+ or mandatory signature
+To: Jiri Bohac <jbohac@suse.cz>
+References: <20200525052351.24134-1-lijiang@redhat.com>
+ <20200526135935.ffkfulsjf7xrep63@dwarf.suse.cz>
+From: lijiang <lijiang@redhat.com>
+Message-ID: <07a65a70-3764-f62f-705c-049b8d409316@redhat.com>
+Date: Wed, 27 May 2020 11:15:49 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <CAJ2QiJJgw0Cm=XBeVvOJ8WnWB0Xfv3JEYKTQUovnwrrDw17w9g@mail.gmail.com>
-In-Reply-To: <CAJ2QiJJgw0Cm=XBeVvOJ8WnWB0Xfv3JEYKTQUovnwrrDw17w9g@mail.gmail.com>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Wed, 27 May 2020 08:44:56 +0530
-Message-ID: <CAJ2QiJKbwwsYKjX4xnZ+K4QNXnRO5pKKKkFhqp4gPCuPBs-bSw@mail.gmail.com>
-Subject: Re: kdump: Getting "warn_alloc" warning during boot of kdump kernel
-To: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- kexec mailing list <kexec@lists.infradead.org>
+In-Reply-To: <20200526135935.ffkfulsjf7xrep63@dwarf.suse.cz>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_201536_301949_4BE5D3E6 
-X-CRM114-Status: GOOD (  15.75  )
+X-CRM114-CacheID: sfid-20200526_201607_413286_68CD55AF 
+X-CRM114-Status: GOOD (  17.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -80,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,141 +94,38 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: John Donnelly <john.p.donnelly@oracle.com>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, Kamlakant Patel <kamlakantp@marvell.com>,
- Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: bhe@redhat.com, kexec@lists.infradead.org, jmorris@namei.org,
+ mjg59@google.com, linux-kernel@vger.kernel.org, ebiederm@xmission.com,
+ dyoung@redhat.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi All,
-
-On Fri, May 15, 2020 at 4:28 PM Prabhakar Kushwaha
-<prabhakar.pkin@gmail.com> wrote:
->
-> Hi All,
->
-> We are getting "warn_alloc" warning during boot of kdump kernel. This
-> warning is observed with latest upstream tag (v5.7-rc5).
->
-> Primary/1st Kernel
-> ----------------------------
-> # dmesg | grep crash
-> [    0.000000] crashkernel reserved: 0x00000000d6000000 -
-> 0x00000000f6000000 (512 MB)
-> [    0.000000] Kernel command line:
-> BOOT_IMAGE=(hd8,gpt2)/vmlinuz-5.7.0-rc5
-> root=UUID=c4050f17-526f-48a8-9804-c6b35cbb584c ro crashkernel=512M
-> earlycon console=ttyAMA0
->
-> # cat /proc/iomem | grep -i crash
->   d6000000 - f6000000 : Crash kernel
->
-> Logs from Kdump/crash kernel with warnings & dump_stack
-> ------------------------------------------------------------------------
->
-> [    0.239360] swapper/0: page allocation failure: order:2,
-> mode:0x1(GFP_DMA), nodemask=(null),cpuset=/,mems_allowed=0
-> [    0.249917] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.7.0-rc5 #44
-> [    0.256246] Hardware name: To be filled by O.E.M. Saber/Saber, BIOS
-> 0ACKL027 07/01/2019
-> [    0.264333] Call trace:
-> [    0.266797]  dump_backtrace+0x0/0x1f8
-> [    0.270490]  show_stack+0x20/0x30
-> [    0.273833]  dump_stack+0xc0/0x10c
-> [    0.277263]  warn_alloc+0x10c/0x178
-> [    0.280781]  __alloc_pages_slowpath.constprop.112+0xaec/0xb28
-> [    0.286584]  __alloc_pages_nodemask+0x2b4/0x300
-> [    0.291156]  alloc_page_interleave+0x24/0xa0
-> [    0.295464]  alloc_pages_current+0xe4/0x108
-> [    0.299686]  dma_atomic_pool_init+0x44/0x1a4
-> [    0.303995]  do_one_initcall+0x54/0x228
-> [    0.307864]  kernel_init_freeable+0x228/0x2cc
-> [    0.312263]  kernel_init+0x1c/0x110
-> [    0.315781]  ret_from_fork+0x10/0x18
->
-> We did some debugging.
-> As per commit 1a8e1cef7603 ("arm64: use both ZONE_DMA and ZONE_DMA32")
-> . DMA zone has been re-defined.
-> here, ZONE_DMA has a fixed range of 0x802f0000 - 0xbfffffff and
-> ZONE_DMA32 has range from 0xc0000000-0xfffffffff.
->
-> When bootargs is defined with "crashkernel= X" for 1st/primary kernel.
-> Than X amount of memory is reserved in First kernel. This reserved
-> memory is used to boot kdump/crash kernel and represented as "Crash
-> kernel" in cat /prom/iomem.
->
-> If some region of reserved memory(Crash kernel) **does not** fall in
-> ZONE_DMA region i.e. 0x802f0000 - 0xbfffffff, this warning is
-> observed.
-> Other drivers like scsi_register_driver [1] also fail. We also see
-> other kinds of error [2].
->
-> Considering DMA_ZONE has requirement of 0x802f0000 - 0xbfffffff.
-> Can we enforce "Crash kernel" to always reserved between 0x0000_0000
-> to 0xc000_0000 in reserve_crashkernel() -->memblock_find_in_range()
-> or
-> what could be best possible solution.
->
-
-I saw similar error https://lkml.org/lkml/2020/2/24/746 with no
-solution mentioned or Luckily next time reserve fell in address range
-of DMA_ZONE,
-This error  was mentioned in context of patch series "support
-reserving crashkernel above 4G on arm64 kdump. Link
-https://lkml.org/lkml/2019/12/23/411"
-But this error is observable without the mentioned patch series.
-
-As mentioned in previous mail, can we consider enforcing "Crash
-kernel" to be always reserved between 0x0000_0000 - 0xc000_0000.
-or any other best possible solution.
-
-Please suggest..
-
---pk
-
-
-
->
-> [1]
-> ------------------------------------------------------------
-> [   21.509239]  dump_backtrace+0x0/0x1f8
-> [   21.516592]  show_stack+0x20/0x30
-> [   21.523248]  dump_stack+0xc0/0x10c
-> [   21.530087]  warn_alloc+0x10c/0x178
-> [   21.537090]  __alloc_pages_slowpath.constprop.112+0xaec/0xb28
-> [   21.548644]  __alloc_pages_nodemask+0x2b4/0x300
-> [   21.557750]  alloc_pages_current+0x90/0x108
-> [   21.566155]  alloc_slab_page+0x184/0x340
-> [   21.574030]  new_slab+0x420/0x4c8
-> [   21.580681]  ___slab_alloc+0x354/0x4e8
-> [   21.588207]  __slab_alloc+0x28/0x58
-> [   21.595210]  kmem_cache_alloc_trace+0x230/0x250
-> [   21.604316]  sr_probe+0x250/0x618 [sr_mod]
-> [   21.612555]  really_probe+0xe4/0x448
-> [   21.619733]  driver_probe_device+0xe8/0x140
-> [   21.628136]  device_driver_attach+0x7c/0x88
-> [   21.636536]  __driver_attach+0xac/0x178
-> [   21.644239]  bus_for_each_dev+0x7c/0xd0
-> [   21.651943]  driver_attach+0x2c/0x38
-> [   21.659119]  bus_add_driver+0x1a8/0x240
-> [   21.666823]  driver_register+0x6c/0x128
-> [   21.674533]  scsi_register_driver+0x28/0x38
-> [   21.682939]  init_sr+0x40/0x10000 [sr_mod]
->
-> [2]
-> -------------------------------------------------------------------
-> [   21.450571] systemd-udevd: page allocation failure: order:0,
-> mode:0xcc1(GFP_KERNEL|GFP_DMA),
-> nodemask=(null),cpuset=/,mems_allowed=0^M
-> [   21.450571] systemd-udevd: page allocation failure: order:0,
-> mode:0xcc1(GFP_KERNEL|GFP_DMA),
-> nodemask=(null),cpuset=/,mems_allowed=0^M
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+5ZyoIDIwMjDlubQwNeaciDI25pelIDIxOjU5LCBKaXJpIEJvaGFjIOWGmemBkzoKPiBPbiBNb24s
+IE1heSAyNSwgMjAyMCBhdCAwMToyMzo1MVBNICswODAwLCBMaWFuYm8gSmlhbmcgd3JvdGU6Cj4+
+IFNvLCBoZXJlLCBsZXQncyBzaW1wbGlmeSB0aGUgbG9naWMgdG8gaW1wcm92ZSBjb2RlIHJlYWRh
+YmlsaXR5LiBJZiB0aGUKPj4gS0VYRUNfU0lHX0ZPUkNFIGVuYWJsZWQgb3Iga2V4ZWMgbG9ja2Rv
+d24gZW5hYmxlZCwgc2lnbmF0dXJlIHZlcmlmaWNhdGlvbgo+PiBpcyBtYW5kYXRlZC4gT3RoZXJ3
+aXNlLCB3ZSBsaWZ0IHRoZSBiYXIgZm9yIGFueSBrZXJuZWwgaW1hZ2UuCj4gCj4gSSBhZ3JlZSBj
+b21wbGV0ZWx5OyBpbiBmYWN0IHRoYXQgd2FzIG15IGludGVudGlvbiB3aGVuCj4gaW50cm9kdWNp
+bmcgdGhlIGNvZGUsIGJ1dCBJIGdvdCBvdmVycnVsZWQgYWJvdXQgdGhlIHJldHVybiBjb2RlczoK
+PiBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sLzIwMTgwMTE5MTI1NDI1Lmw3Mm1leXljMnF0
+cnJpd2VAZHdhcmYuc3VzZS5jei8KPiAKPiBJIGxpa2UgdGhpcyBzaW1wbGlmaWNhdGlvbiB2ZXJ5
+IG11Y2gsIGV4Y2VwdCB0aGlzIHBhcnQ6Cj4gCj4+ICsJaWYgKHJldCkgewo+PiArCQlwcl9kZWJ1
+Zygia2VybmVsIHNpZ25hdHVyZSB2ZXJpZmljYXRpb24gZmFpbGVkICglZCkuXG4iLCByZXQpOwo+
+IAo+IC4uLgo+IAo+PiAtCQlwcl9ub3RpY2UoImtlcm5lbCBzaWduYXR1cmUgdmVyaWZpY2F0aW9u
+IGZhaWxlZCAoJWQpLlxuIiwgcmV0KTsKPiAKPiBJIHRoaW5rIHRoZSBsb2cgbGV2ZWwgc2hvdWxk
+IHN0YXkgYXQgbW9zdCBQUl9OT1RJQ0Ugd2hlbiB0aGUKPiB2ZXJpZmljYXRpb24gZmFpbHVyZSBy
+ZXN1bHRzIGluIHJlamVjdGluZyB0aGUga2VybmVsLiBQZXJoYXBzCj4gZXZlbiBsb3dlci4KPiAK
+ClRoYW5rIHlvdSBmb3IgdGhlIGNvbW1lbnQsIEppcmkgQm9oYWMuCgpJIGxpa2UgdGhlIGlkZWEg
+b2Ygc3RheWluZyBhdCBtb3N0IFBSX05PVElDRSwgYnV0IHRoZSBwcl9ub3RpY2UoKSB3aWxsIG91
+dHB1dApzb21lIG1lc3NhZ2VzIHRoYXQga2VybmVsIGNvdWxkIHdhbnQgdG8gaWdub3JlLCBzdWNo
+IGFzIHRoZSBjYXNlIHlvdSBtZW50aW9uZWQKYmVsb3cuCgo+IEluIGNhc2UgdmVyaWZpY2F0aW9u
+IGlzIG5vdCBlbmZvcmNlZCBhbmQgdGhlIGZhaWx1cmUgaXMKPiBpZ25vcmVkLCBLRVJOX0RFQlVH
+IHNlZW1zIHJlYXNvbmFibGUuCj4gCgpZZXMsIGdvb2QgdW5kZXJzdGFuZGluZy4gSXQgc2VlbXMg
+dGhhdCB0aGUgcHJfZGVidWcoKSBpcyBzdGlsbCBhIGdvb2Qgb3B0aW9uIGhlcmU/CkFueSBvdGhl
+ciB0aG91Z2h0cz8KClRoYW5rcy4KTGlhbmJvCgoKPiBSZWdhcmRzLAo+IAoKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdApr
+ZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8va2V4ZWMK
