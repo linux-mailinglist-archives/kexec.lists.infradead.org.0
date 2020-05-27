@@ -2,41 +2,40 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 510421E42F0
-	for <lists+kexec@lfdr.de>; Wed, 27 May 2020 15:09:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB80F1E44FB
+	for <lists+kexec@lfdr.de>; Wed, 27 May 2020 15:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:
 	Message-ID:From:Date:To:Cc:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=t0j+qYuw0eExXZbH3MdoLliXwIOWvbncWDlPML7MRV8=; b=ebR
-	joDpOMr0pBiFJQg7HewRnp4OMYPmWeugN5EaqTmxs0urGPD91SotsLsxisw7vjJIpoUkvHEQFEeJe
-	W0xTIvR73O2lsRMqdaUqcOlnDefs7DS0ItgbyW0kGnYHs90zoGHeSYcDF5AnidBxBKcDewRokvuyY
-	i5/arkAz/914wlJf2/dMv9yakHfVFZLHLToO8wYsmLxK1OU0ikAzyRsFVR/jWkW6FxCqMBTmWCDZv
-	qjAvhyTZ8GXSideKgrj+FuiwTnQM7lHwowSJjfeM/3CLdu6ds4XTFy1xgE8bPv2TC9j8j7t2x+4vu
-	0C6r87mKTVIlhe0VhxJguR0fMIRib3w==;
+	References:List-Owner; bh=t0j+qYuw0eExXZbH3MdoLliXwIOWvbncWDlPML7MRV8=; b=O2i
+	CML/hUJI/2ac9by+dGEGYIUL5roQ6B/hvaBoErGilfGz4zI9QRsRM4PpEs1tum+utg8VfebauHvhd
+	a4gRNudld8y+xvdoLPV0y9zEPsF59WeF2YOmfav7z1ly2wHLOW0C/TduH/RVp9autJT1++NVBHNJD
+	+zOXFWEynKFNj8Q5bVc1U9bXNSw6RNrTXQ4MihJhUQlBU63BJvIA7AE6eBOSAJsiEWfwuQGXdMOAu
+	dAU8F3xF6q0CTY0w8wpXssi4RPJQq8qy18eMPmClBkfqx61LMCdFJ5ocNK+pUvFXwthD2lx3vO0XT
+	x7AyQ8yJSaPqaWuwWm7N+Ox64ZfZNDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdvoW-0004bL-GE; Wed, 27 May 2020 13:09:44 +0000
-Received: from msa11.plala.or.jp ([60.36.166.11])
+	id 1jdwaL-0002Vc-Dz; Wed, 27 May 2020 13:59:09 +0000
+Received: from msa14.plala.or.jp ([60.36.166.14])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdvoS-0004ao-QI
- for kexec@lists.infradead.org; Wed, 27 May 2020 13:09:42 +0000
-Received: from mwebp13 ([172.23.13.133]) by msa11.plala.or.jp with ESMTP
- id <20200527130940.KSFD32305.msa11.plala.or.jp@mwebp13>;
- Wed, 27 May 2020 22:09:40 +0900
-Date: Wed, 27 May 2020 22:09:40 +0900
+ id 1jdwZn-00025j-7g; Wed, 27 May 2020 13:58:39 +0000
+Received: from mwebp13 ([172.23.13.133]) by msa14.plala.or.jp with ESMTP
+ id <20200527135834.WHTB3566.msa14.plala.or.jp@mwebp13>;
+ Wed, 27 May 2020 22:58:34 +0900
+Date: Wed, 27 May 2020 22:58:33 +0900
 From: "Mrs.Judith Rice" <hamurafujimi@tmail.plala.or.jp>
-Message-ID: <20200527220940.C5BT6.807.root@mwebp13>
+Message-ID: <20200527225834.AOWGS.1026.root@mwebp13>
 Subject: Spende
 MIME-Version: 1.0
 X-Priority: 3 (Normal)
 Sensitivity: Normal
-X-VirusScan: Outbound; mvir-ac11; Wed, 27 May 2020 22:09:40 +0900
+X-VirusScan: Outbound; mvir-ac14; Wed, 27 May 2020 22:58:34 +0900
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_060941_070064_C733158A 
-X-CRM114-Status: UNSURE (  -1.46  )
+X-CRM114-CacheID: sfid-20200527_065835_521297_A982CDF2 
+X-CRM114-Status: UNSURE (  -1.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 4.9 (++++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -44,7 +43,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [60.36.166.11 listed in list.dnswl.org]
+ low trust [60.36.166.14 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  1.2 MISSING_HEADERS        Missing To: header
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
