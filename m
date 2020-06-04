@@ -2,67 +2,138 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290751ED9C9
-	for <lists+kexec@lfdr.de>; Thu,  4 Jun 2020 02:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A6B81EDC91
+	for <lists+kexec@lfdr.de>; Thu,  4 Jun 2020 06:49:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=JE5IySMfiE4PSOPjEQoO3+pzhKLDqjgMzLQRqfIDzfQ=; b=HoJDo+eeNMs8iA
-	RNrK+fcC1T62wXSsrK1MRoMwW3w3G75u+B/4XPeH/CPbTQ+uEYn8mty62jIMlicW6+aqZ7/P/3nBs
-	C7+8SNL8Q2OX10VPwWCicLdhfJF9eaBjZWW8rck8M90g22+efLzFKz3jSry/08uC9hNbdv5NxBzPe
-	X1v4CS80Ytp+nASKBECycTgG6kqJq1QjWzPvoEWbOR+dSviKN7JBs8PlZtWq8hZ9LjIiQqE8A11CK
-	WxUBD+Tw/vx9/DPazu6qDwuyoVwICMHjv7OHdMDxqXwnPyzZ9YpWoOLIUx5/q9zdG6h3tjHn5Vz6o
-	HSmZuIvkmZi6Qbai9Xrg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ODQhAtSAYE0c98v+68uRC4QTSzwRoug6Oza++ALhyGE=; b=G3iwjvljWg6ljU
+	eYAPKxf10pcd/Z4I9UyWQeV3RUfGRtQKSEN1L2he2mE3d7HmGSz6yDD0/mElGTdD+jhE5GyJBor5a
+	AhZp8GE9Qz6ELUjSf70ahe+Y7DGJkBvHMguL9avrlvkWazaj7Y5/bQcNfa6arbWWZy1bRwRss3J9L
+	l0L1wwh0jrTN++N5VipsVqQQ92jJWkzS67Fd5PG31jzrA/WJy3NwSSLan48UbUPh4WAJCho02C32R
+	UnOMglmQYt3ujxAXnOtepzjzPfG8oSEC4i2qC02uT+4brrEVzpkZOLKw+CEXpgLHP+NEgPcJ0xcdw
+	o/HrpZnDQQZkwkZeX6Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgdLD-0007To-Ra; Thu, 04 Jun 2020 00:02:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jghp0-00010l-WB; Thu, 04 Jun 2020 04:49:43 +0000
+Received: from [67.231.148.174] (helo=mx0b-0016f401.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgdLA-0007SW-Ih; Thu, 04 Jun 2020 00:02:38 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4D72820738;
- Thu,  4 Jun 2020 00:02:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591228954;
- bh=/3H6umELn//UfWpUAQsiZ4/+8lq8t30K7gi9GfxxpIE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=DgSwDscNLVlL95jD6Zn4mCuyZ6nLq/uJ7GBbD2qdgojmmJqjPICtfrt2e7Wq1p7gk
- DPGfYWpDbqKUpvqcOUQL6rdsF/IWpUBJm2U6IsjO2RgKsgICd4UjulvBRpd0PPjdAJ
- Av+BugLocMDQ9n/85QFQ12cx3wIdMY90+O6ROm0Q=
-Date: Wed, 3 Jun 2020 19:02:32 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Message-ID: <20200604000232.GA956503@bjorn-Precision-5520>
+ id 1jghoo-0000t4-MD; Thu, 04 Jun 2020 04:49:32 +0000
+Received: from pps.filterd (m0045849.ppops.net [127.0.0.1])
+ by mx0a-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0544e5Vl023383; Wed, 3 Jun 2020 21:49:11 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=sQJQE/wqPRwvZycQcX5kzWGnHQPAj5uf35xFfvXcBkw=;
+ b=ra9B3spOPDctuYcE94G+K9Ec7UpllKDyTERZdd1qlXSNu+0kzsyX2U/QoOZ3DYv0Ck91
+ 0VpQKW5Qh9UI0n4NLc+jKoLRGQ/IvVspis9Ju1k6i7exAoKfYv1iXF30Xg3RciBH44G7
+ mrtp1cOFVXnskPg8gtXsMsIkjDXxOLyYp/OiO8Ai9IBTKs+91snU8gK9iWc+iLEvB/hU
+ 3YOc0bNnY88TQZ9b/VT5gadDwmcTYuUSJfGoiK03QvgXwcTH9Q8Q+c5N9QKY6L7SO0Wh
+ VANTNnqPovFne8po2tVoTJH9VbLRa7uQNEFxoiSA7cb3HmDQHvRPiIOWZBCxLwfIOCmM Yg== 
+Received: from sc-exch03.marvell.com ([199.233.58.183])
+ by mx0a-0016f401.pphosted.com with ESMTP id 31bmuq305x-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Wed, 03 Jun 2020 21:49:11 -0700
+Received: from SC-EXCH02.marvell.com (10.93.176.82) by SC-EXCH03.marvell.com
+ (10.93.176.83) with Microsoft SMTP Server (TLS) id 15.0.1497.2; Wed, 3 Jun
+ 2020 21:49:09 -0700
+Received: from NAM12-DM6-obe.outbound.protection.outlook.com (104.47.59.169)
+ by SC-EXCH02.marvell.com (10.93.176.82) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2 via Frontend Transport; Wed, 3 Jun 2020 21:49:09 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HYxmb03+M+3BAwF2i35mY6ORwH2wOCW+WbqXh8FYlWEmUSP0hp9H7YuGd41N2eHM2MZdOE4OhtuU4KPuw8018/0VQSnvcZQ51r3mOp6BcjuYrdYW3/LdcNZU6IDbSKJHuIq2g5QJBIX/4S7ObcNuwxvtO/GR0TSqE+0/Tbe9ZAGkBIvFVhTjhv5EiHmPdft+0wpc2+zDQkZe2bISTH6GT2AFHT+Bt8VRwpf44P8aJ47zqaXteu8WZCqCs8PvjUtSAJjPwQ67N89NKicTIEe0TNv0TYqgr8oXtIIiFoSgAAoILawpSsY1ohoqIx4md/qX8VjVoinWEaSBtJ8UIkXoMQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sQJQE/wqPRwvZycQcX5kzWGnHQPAj5uf35xFfvXcBkw=;
+ b=Z/yBMIT1XedCiFoN1RFXNXezwb7yR5ouG6cpglq3NjeS1XUTKLe3Ne/Wgv8qQ42/C9jE+k//kNuHLRwgJ8qOBLSo0IbrRUl+Mm+SrI43aBS6NN0n5TqOLP9djb0RCxFFSMjfu7Xg7CXeZ9A1hqJC9X96DC5Q3r3bcaqp2EdflErBHrC/f4Ffa1QzTmgtCp/Hjd7RzUmucjcnEf9YSjElHh87jxp4y7yZsYavViOineYJp9EDYnAV1ROcS3Ek2e/zO6160zUIWpf5fWKfYB8WjuvwZHrWwgTgKjVZ/q7Iiv/gSaz0xjISayD+NS93sRPvoFdcc+hmksT7qXnhEFJY8Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=sQJQE/wqPRwvZycQcX5kzWGnHQPAj5uf35xFfvXcBkw=;
+ b=phcI1iZdm+iXBI8GsKLH0YHcgtytikAucCrOEYIjjJHoTbvriBGNXtQSMSufjTGuh0CdretKfSHNCQxzSxi2iMlDpZ6r+SxrHwlcCpeF9G2aCIcssOQlEWhxFbyGGpiI4wJciB7mCsajZhXXZD/28549W9Ll2UQRCy/yu5uwsis=
+Received: from DM6PR18MB2425.namprd18.prod.outlook.com (2603:10b6:5:180::19)
+ by DM6PR18MB2508.namprd18.prod.outlook.com (2603:10b6:5:15c::32) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.25; Thu, 4 Jun
+ 2020 04:49:07 +0000
+Received: from DM6PR18MB2425.namprd18.prod.outlook.com
+ ([fe80::9da1:54e3:fdf6:e746]) by DM6PR18MB2425.namprd18.prod.outlook.com
+ ([fe80::9da1:54e3:fdf6:e746%6]) with mapi id 15.20.3045.024; Thu, 4 Jun 2020
+ 04:49:07 +0000
+From: Kamlakant Patel <kamlakantp@marvell.com>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: RE: [EXT] Re: [PATCH v6 2/2] arm64/crash_core: Export TCR_EL1.T1SZ in
+ vmcoreinfo
+Thread-Topic: [EXT] Re: [PATCH v6 2/2] arm64/crash_core: Export TCR_EL1.T1SZ
+ in vmcoreinfo
+Thread-Index: AQHWK50dN2j16dwzSEeEnQAXi/17t6jG1pOAgACfFwCAAIgT8A==
+Date: Thu, 4 Jun 2020 04:49:07 +0000
+Message-ID: <DM6PR18MB24256DBD136BB053245AF8CED2890@DM6PR18MB2425.namprd18.prod.outlook.com>
+References: <1589395957-24628-1-git-send-email-bhsharma@redhat.com>
+ <1589395957-24628-3-git-send-email-bhsharma@redhat.com>
+ <DM6PR18MB24258C2F2B91E4BF407421CDD2880@DM6PR18MB2425.namprd18.prod.outlook.com>
+ <CACi5LpOyQ+MAg9rh=cgLprBGTZ3kvtVP1ShNKG-2AV1Tu14EgQ@mail.gmail.com>
+In-Reply-To: <CACi5LpOyQ+MAg9rh=cgLprBGTZ3kvtVP1ShNKG-2AV1Tu14EgQ@mail.gmail.com>
+Accept-Language: en-IN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: redhat.com; dkim=none (message not signed)
+ header.d=none;redhat.com; dmarc=none action=none header.from=marvell.com;
+x-originating-ip: [157.45.168.83]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3ab61019-6e84-477c-087b-08d808429da5
+x-ms-traffictypediagnostic: DM6PR18MB2508:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR18MB2508101195171B448E269C4ED2890@DM6PR18MB2508.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1060;
+x-forefront-prvs: 04244E0DC5
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: N16gN1eNLUR2BV7cse5V7ce5eiVVeZHIG9ThzbWtjnBZEFIGucWZGKM4FBHOJz9hzkLxBBQ36lLNYNZRFsoBNCQ0rI4gg0BAnXUn9zL1GuRT7aj4t6pq8EaQ2UrqhBWVcccm/FKReLK4zg6S/F51TOQAd8ovMD0M3gKLhnqNiTJNqoO5RWI5Xy1ACTLC/zkyOXCHLefpcrXUXpOMPCEpmgxiAPQoqRf3GIvISvJovBXW1kH1H/icLLnQoBBmhZEufct9kNtprtY5tdU+yvRucRO7nT4S4BVU/q0DhNhjfEYXUbdbE4G6kPxETo7qvsOFazmGpVAnR3poC9Zx3Rij8lE1cSkQIBkhs0e1iLNVzMuqM7IHY/SBAda7Bd3W6ems5O2F5wUr6kKpVPwb6ueovw==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR18MB2425.namprd18.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39860400002)(376002)(396003)(346002)(136003)(366004)(52536014)(107886003)(54906003)(76116006)(478600001)(6506007)(33656002)(316002)(26005)(966005)(7416002)(7696005)(186003)(53546011)(6916009)(2906002)(19627235002)(66476007)(8936002)(83380400001)(66946007)(4326008)(64756008)(66556008)(8676002)(71200400001)(66446008)(9686003)(55016002)(86362001)(5660300002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: nJnW2j698Um0dZ2WJYVYcykgdwixO5zpy7k/A8RbgaG5RlOxxSE4Wis3A+jxDCuEjaAAojWX5Nr77S4D5rBQLILFgyO8hLD3O+mnTiAfMFmJb8+AP6i5ktmuxBfDN8pDmCntkb6RcsBY4mwAL7buSIotONP0mfGbdsM89KPH+I3RDhh91c2nFKfGWefaeE3hhIDesdUnOmg1dlESm1TZ1j5o+33363bVFUuy1w0A3dYnUts68B2xMkqxkG6TvWw0jGn0K7+n0cQXXGXK59Euqr3+3gzjDknWnr/jZpr+2M9mF6wPEGaLqdcjI2vkC/4jcwcXkvEQLkZi5X7J+EqTO280VcCJrMPIFKWKoWDnu4EJbw5xUWKYwH9pSLbxL/qkszgnDuaWB0nBJO6T45LwQFi5jtfugBo3y8MnB9TzfPJ2e6Kq2hxC03WHhydhQ/nq5caz/7j+GkxreLO5le1Ph1J5sjuNWdOzd0tKMtMwH3Y=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ2QiJ+fhPWAxZXzHhNFLkHr47e+wTqqz+s5r+utgCP=C6qsjw@mail.gmail.com>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3ab61019-6e84-477c-087b-08d808429da5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Jun 2020 04:49:07.7218 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 64P8euEc37cas4q+JIShN52hIC3cJ6NUMpFlTSDxZDA56EaS20govTpv5c0wAuL+gprGLbruWcma1ruUILX4+A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR18MB2508
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-04_01:2020-06-02,
+ 2020-06-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_170236_659991_137FECE9 
-X-CRM114-Status: GOOD (  52.13  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200603_214930_809393_F56CABEA 
+X-CRM114-Status: GOOD (  30.95  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.148.174 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,255 +145,235 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Myron Stowe <myron.stowe@redhat.com>,
- Vijay Mohan Pandarathil <vijaymohan.pandarathil@hp.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-pci@vger.kernel.org,
- Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ Steve Capper <steve.capper@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ "x86@kernel.org" <x86@kernel.org>,
+ "kexec@lists.infradead.org" <kexec@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, James Morse <james.morse@arm.com>,
+ Dave Anderson <anderson@redhat.com>,
+ "bhupesh.linux@gmail.com" <bhupesh.linux@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 11:12:48PM +0530, Prabhakar Kushwaha wrote:
-> On Sat, May 30, 2020 at 1:03 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > On Fri, May 29, 2020 at 07:48:10PM +0530, Prabhakar Kushwaha wrote:
-> > > On Thu, May 28, 2020 at 1:48 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > >
-> > > > On Wed, May 27, 2020 at 05:14:39PM +0530, Prabhakar Kushwaha wrote:
-> > > > > On Fri, May 22, 2020 at 4:19 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > > > > On Thu, May 21, 2020 at 09:28:20AM +0530, Prabhakar Kushwaha wrote:
-> > > > > > > On Wed, May 20, 2020 at 4:52 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > > > > > > On Thu, May 14, 2020 at 12:47:02PM +0530, Prabhakar Kushwaha wrote:
-> > > > > > > > > On Wed, May 13, 2020 at 3:33 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > > > > > > > > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > > > > > > > > > > An SMMU Stream table is created by the primary kernel. This table is
-> > > > > > > > > > > used by the SMMU to perform address translations for device-originated
-> > > > > > > > > > > transactions. Any crash (if happened) launches the kdump kernel which
-> > > > > > > > > > > re-creates the SMMU Stream table. New transactions will be translated
-> > > > > > > > > > > via this new table..
-> > > > > > > > > > >
-> > > > > > > > > > > There are scenarios, where devices are still having old pending
-> > > > > > > > > > > transactions (configured in the primary kernel). These transactions
-> > > > > > > > > > > come in-between Stream table creation and device-driver probe.
-> > > > > > > > > > > As new stream table does not have entry for older transactions,
-> > > > > > > > > > > it will be aborted by SMMU.
-> > > > > > > > > > >
-> > > > > > > > > > > Similar observations were found with PCIe-Intel 82576 Gigabit
-> > > > > > > > > > > Network card. It sends old Memory Read transaction in kdump kernel.
-> > > > > > > > > > > Transactions configured for older Stream table entries, that do not
-> > > > > > > > > > > exist any longer in the new table, will cause a PCIe Completion Abort.
-> > > > > > > > > >
-> > > > > > > > > > That sounds like exactly what we want, doesn't it?
-> > > > > > > > > >
-> > > > > > > > > > Or do you *want* DMA from the previous kernel to complete?  That will
-> > > > > > > > > > read or scribble on something, but maybe that's not terrible as long
-> > > > > > > > > > as it's not memory used by the kdump kernel.
-> > > > > > > > >
-> > > > > > > > > Yes, Abort should happen. But it should happen in context of driver.
-> > > > > > > > > But current abort is happening because of SMMU and no driver/pcie
-> > > > > > > > > setup present at this moment.
-> > > > > > > >
-> > > > > > > > I don't understand what you mean by "in context of driver."  The whole
-> > > > > > > > problem is that we can't control *when* the abort happens, so it may
-> > > > > > > > happen in *any* context.  It may happen when a NIC receives a packet
-> > > > > > > > or at some other unpredictable time.
-> > > > > > > >
-> > > > > > > > > Solution of this issue should be at 2 place
-> > > > > > > > > a) SMMU level: I still believe, this patch has potential to overcome
-> > > > > > > > > issue till finally driver's probe takeover.
-> > > > > > > > > b) Device level: Even if something goes wrong. Driver/device should
-> > > > > > > > > able to recover.
-> > > > > > > > >
-> > > > > > > > > > > Returned PCIe completion abort further leads to AER Errors from APEI
-> > > > > > > > > > > Generic Hardware Error Source (GHES) with completion timeout.
-> > > > > > > > > > > A network device hang is observed even after continuous
-> > > > > > > > > > > reset/recovery from driver, Hence device is no more usable.
-> > > > > > > > > >
-> > > > > > > > > > The fact that the device is no longer usable is definitely a problem.
-> > > > > > > > > > But in principle we *should* be able to recover from these errors.  If
-> > > > > > > > > > we could recover and reliably use the device after the error, that
-> > > > > > > > > > seems like it would be a more robust solution that having to add
-> > > > > > > > > > special cases in every IOMMU driver.
-> > > > > > > > > >
-> > > > > > > > > > If you have details about this sort of error, I'd like to try to fix
-> > > > > > > > > > it because we want to recover from that sort of error in normal
-> > > > > > > > > > (non-crash) situations as well.
-> > > > > > > > > >
-> > > > > > > > > Completion abort case should be gracefully handled.  And device should
-> > > > > > > > > always remain usable.
-> > > > > > > > >
-> > > > > > > > > There are 2 scenario which I am testing with Ethernet card PCIe-Intel
-> > > > > > > > > 82576 Gigabit Network card.
-> > > > > > > > >
-> > > > > > > > > I)  Crash testing using kdump root file system: De-facto scenario
-> > > > > > > > >     -  kdump file system does not have Ethernet driver
-> > > > > > > > >     -  A lot of AER prints [1], making it impossible to work on shell
-> > > > > > > > > of kdump root file system.
-> > > > > > > >
-> > > > > > > > In this case, I think report_error_detected() is deciding that because
-> > > > > > > > the device has no driver, we can't do anything.  The flow is like
-> > > > > > > > this:
-> > > > > > > >
-> > > > > > > >   aer_recover_work_func               # aer_recover_work
-> > > > > > > >     kfifo_get(aer_recover_ring, entry)
-> > > > > > > >     dev = pci_get_domain_bus_and_slot
-> > > > > > > >     cper_print_aer(dev, ...)
-> > > > > > > >       pci_err("AER: aer_status:")
-> > > > > > > >       pci_err("AER:   [14] CmpltTO")
-> > > > > > > >       pci_err("AER: aer_layer=")
-> > > > > > > >     if (AER_NONFATAL)
-> > > > > > > >       pcie_do_recovery(dev, pci_channel_io_normal)
-> > > > > > > >         status = CAN_RECOVER
-> > > > > > > >         pci_walk_bus(report_normal_detected)
-> > > > > > > >           report_error_detected
-> > > > > > > >             if (!dev->driver)
-> > > > > > > >               vote = NO_AER_DRIVER
-> > > > > > > >               pci_info("can't recover (no error_detected callback)")
-> > > > > > > >             *result = merge_result(*, NO_AER_DRIVER)
-> > > > > > > >             # always NO_AER_DRIVER
-> > > > > > > >         status is now NO_AER_DRIVER
-> > > > > > > >
-> > > > > > > > So pcie_do_recovery() does not call .report_mmio_enabled() or .slot_reset(),
-> > > > > > > > and status is not RECOVERED, so it skips .resume().
-> > > > > > > >
-> > > > > > > > I don't remember the history there, but if a device has no driver and
-> > > > > > > > the device generates errors, it seems like we ought to be able to
-> > > > > > > > reset it.
-> > > > > > >
-> > > > > > > But how to reset the device considering there is no driver.
-> > > > > > > Hypothetically, this case should be taken care by PCIe subsystem to
-> > > > > > > perform reset at PCIe level.
-> > > > > >
-> > > > > > I don't understand your question.  The PCI core (not the device
-> > > > > > driver) already does the reset.  When pcie_do_recovery() calls
-> > > > > > reset_link(), all devices on the other side of the link are reset.
-> > > > > >
-> > > > > > > > We should be able to field one (or a few) AER errors, reset the
-> > > > > > > > device, and you should be able to use the shell in the kdump kernel.
-> > > > > > > >
-> > > > > > > here kdump shell is usable only problem is a "lot of AER Errors". One
-> > > > > > > cannot see what they are typing.
-> > > > > >
-> > > > > > Right, that's what I expect.  If the PCI core resets the device, you
-> > > > > > should get just a few AER errors, and they should stop after the
-> > > > > > device is reset.
-> > > > > >
-> > > > > > > > >     -  Note kdump shell allows to use makedumpfile, vmcore-dmesg applications.
-> > > > > > > > >
-> > > > > > > > > II) Crash testing using default root file system: Specific case to
-> > > > > > > > > test Ethernet driver in second kernel
-> > > > > > > > >    -  Default root file system have Ethernet driver
-> > > > > > > > >    -  AER error comes even before the driver probe starts.
-> > > > > > > > >    -  Driver does reset Ethernet card as part of probe but no success.
-> > > > > > > > >    -  AER also tries to recover. but no success.  [2]
-> > > > > > > > >    -  I also tries to remove AER errors by using "pci=noaer" bootargs
-> > > > > > > > > and commenting ghes_handle_aer() from GHES driver..
-> > > > > > > > >           than different set of errors come which also never able to recover [3]
-> > > > > > > > >
-> > > > > > >
-> > > > > > > Please suggest your view on this case. Here driver is preset.
-> > > > > > > (driver/net/ethernet/intel/igb/igb_main.c)
-> > > > > > > In this case AER errors starts even before driver probe starts.
-> > > > > > > After probe, driver does the device reset with no success and even AER
-> > > > > > > recovery does not work.
-> > > > > >
-> > > > > > This case should be the same as the one above.  If we can change the
-> > > > > > PCI core so it can reset the device when there's no driver,  that would
-> > > > > > apply to case I (where there will never be a driver) and to case II
-> > > > > > (where there is no driver now, but a driver will probe the device
-> > > > > > later).
-> > > > >
-> > > > > Does this means change are required in PCI core.
-> > > >
-> > > > Yes, I am suggesting that the PCI core does not do the right thing
-> > > > here.
-> > > >
-> > > > > I tried following changes in pcie_do_recovery() but it did not help.
-> > > > > Same error as before.
-> > > > >
-> > > > > -- a/drivers/pci/pcie/err.c
-> > > > > +++ b/drivers/pci/pcie/err.c
-> > > > >         pci_info(dev, "broadcast resume message\n");
-> > > > >         pci_walk_bus(bus, report_resume, &status);
-> > > > > @@ -203,7 +207,12 @@ pci_ers_result_t pcie_do_recovery(struct pci_dev *dev,
-> > > > >         return status;
-> > > > >
-> > > > >  failed:
-> > > > >         pci_uevent_ers(dev, PCI_ERS_RESULT_DISCONNECT);
-> > > > > +       pci_reset_function(dev);
-> > > > > +       pci_aer_clear_device_status(dev);
-> > > > > +       pci_aer_clear_nonfatal_status(dev);
-> > > >
-> > > > Did you confirm that this resets the devices in question (0000:09:00.0
-> > > > and 0000:09:00.1, I think), and what reset mechanism this uses (FLR,
-> > > > PM, etc)?
-> > >
-> > > Earlier reset  was happening with P2P bridge(0000:00:09.0) this the
-> > > reason no effect. After making following changes,  both devices are
-> > > now getting reset.
-> > > Both devices are using FLR.
-> > >
-> > > diff --git a/drivers/pci/pcie/err.c b/drivers/pci/pcie/err.c
-> > > index 117c0a2b2ba4..26b908f55aef 100644
-> > > --- a/drivers/pci/pcie/err.c
-> > > +++ b/drivers/pci/pcie/err.c
-> > > @@ -66,6 +66,20 @@ static int report_error_detected(struct pci_dev *dev,
-> > >                 if (dev->hdr_type != PCI_HEADER_TYPE_BRIDGE) {
-> > >                         vote = PCI_ERS_RESULT_NO_AER_DRIVER;
-> > >                         pci_info(dev, "can't recover (no
-> > > error_detected callback)\n");
-> > > +
-> > > +                       pci_save_state(dev);
-> > > +                       pci_cfg_access_lock(dev);
-> > > +
-> > > +                       /* Quiesce the device completely */
-> > > +                       pci_write_config_word(dev, PCI_COMMAND,
-> > > +                             PCI_COMMAND_INTX_DISABLE);
-> > > +                       if (!__pci_reset_function_locked(dev)) {
-> > > +                               vote = PCI_ERS_RESULT_RECOVERED;
-> > > +                               pci_info(dev, "recovered via pci level
-> > > reset\n");
-> > > +                       }
-> >
-> > Why do we need to save the state and quiesce the device?  The reset
-> > should disable interrupts anyway.  In this particular case where
-> > there's no driver, I don't think we should have to restore the state.
-> > We maybe should *remove* the device and re-enumerate it after the
-> > reset, but the state from before the reset should be irrelevant.
+Hi Bhupesh,
+
+> -----Original Message-----
+> From: Bhupesh Sharma <bhsharma@redhat.com>
+> Sent: Thursday, June 4, 2020 2:05 AM
+> To: Kamlakant Patel <kamlakantp@marvell.com>
+> Cc: linux-arm-kernel@lists.infradead.org; x86@kernel.org; Mark Rutland
+> <mark.rutland@arm.com>; Kazuhito Hagio <k-hagio@ab.jp.nec.com>; Steve
+> Capper <steve.capper@arm.com>; Catalin Marinas
+> <catalin.marinas@arm.com>; Ard Biesheuvel <ard.biesheuvel@linaro.org>;
+> kexec@lists.infradead.org; linux-kernel@vger.kernel.org; James Morse
+> <james.morse@arm.com>; Dave Anderson <anderson@redhat.com>;
+> bhupesh.linux@gmail.com; Will Deacon <will@kernel.org>; Ganapatrao Kulkarni
+> <gkulkarni@marvell.com>
+> Subject: [EXT] Re: [PATCH v6 2/2] arm64/crash_core: Export TCR_EL1.T1SZ in
+> vmcoreinfo
 > 
-> I tried pci_reset_function_locked without save/restore then I got the
-> synchronous abort during igb_probe (case 2 i.e. with driver). This is
-> 100% reproducible.
-> looks like pci_reset_function_locked is causing PCI configuration
-> space random. Same is mentioned here
-> https://www.kernel.org/doc/html/latest/driver-api/pci/pci.html
+> External Email
+> 
+> ----------------------------------------------------------------------
+> Hi Kamlakant,
+> 
+> Many thanks for having a look at the patchset.
+> 
+> On Wed, Jun 3, 2020 at 4:50 PM Kamlakant Patel <kamlakantp@marvell.com>
+> wrote:
+> >
+> > Hi Bhupesh,
+> >
+> > > -----Original Message-----
+> > > From: kexec <kexec-bounces@lists.infradead.org> On Behalf Of Bhupesh
+> > > Sharma
+> > > Sent: Thursday, May 14, 2020 12:23 AM
+> > > To: linux-arm-kernel@lists.infradead.org; x86@kernel.org
+> > > Cc: Mark Rutland <mark.rutland@arm.com>; Kazuhito Hagio <k-
+> > > hagio@ab.jp.nec.com>; Steve Capper <steve.capper@arm.com>; Catalin
+> > > Marinas <catalin.marinas@arm.com>; bhsharma@redhat.com; Ard
+> > > Biesheuvel <ard.biesheuvel@linaro.org>; kexec@lists.infradead.org;
+> > > linux- kernel@vger.kernel.org; James Morse <james.morse@arm.com>;
+> > > Dave Anderson <anderson@redhat.com>; bhupesh.linux@gmail.com; Will
+> > > Deacon <will@kernel.org>
+> > > Subject: [PATCH v6 2/2] arm64/crash_core: Export TCR_EL1.T1SZ in
+> > > vmcoreinfo
+> > >
+> > > vabits_actual variable on arm64 indicates the actual VA space size,
+> > > and allows a single binary to support both 48-bit and 52-bit VA spaces.
+> > >
+> > > If the ARMv8.2-LVA optional feature is present, and we are running
+> > > with a 64KB page size; then it is possible to use 52-bits of address
+> > > space for both userspace and kernel addresses. However, any kernel
+> > > binary that supports 52-bit must also be able to fall back to 48-bit
+> > > at early boot time if the hardware feature is not present.
+> > >
+> > > Since TCR_EL1.T1SZ indicates the size offset of the memory region
+> > > addressed by
+> > > TTBR1_EL1 (and hence can be used for determining the vabits_actual
+> > > value) it makes more sense to export the same in vmcoreinfo rather
+> > > than vabits_actual variable, as the name of the variable can change
+> > > in future kernel versions, but the architectural constructs like
+> > > TCR_EL1.T1SZ can be used better to indicate intended specific fields to user-
+> space.
+> > >
+> > > User-space utilities like makedumpfile and crash-utility, need to
+> > > read this value from vmcoreinfo for determining if a virtual address lies in the
+> linear map range.
+> > >
+> > > While at it also add documentation for TCR_EL1.T1SZ variable being
+> > > added to vmcoreinfo.
+> > >
+> > > It indicates the size offset of the memory region addressed by
+> > > TTBR1_EL1
+> > >
+> > > Cc: James Morse <james.morse@arm.com>
+> > > Cc: Mark Rutland <mark.rutland@arm.com>
+> > > Cc: Will Deacon <will@kernel.org>
+> > > Cc: Steve Capper <steve.capper@arm.com>
+> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > > Cc: Dave Anderson <anderson@redhat.com>
+> > > Cc: Kazuhito Hagio <k-hagio@ab.jp.nec.com>
+> > > Cc: linux-arm-kernel@lists.infradead.org
+> > > Cc: linux-kernel@vger.kernel.org
+> > > Cc: kexec@lists.infradead.org
+> > > Tested-by: John Donnelly <john.p.donnelly@oracle.com>
+> > > Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+> > > ---
+> > >  Documentation/admin-guide/kdump/vmcoreinfo.rst | 11 +++++++++++
+> > >  arch/arm64/include/asm/pgtable-hwdef.h         |  1 +
+> > >  arch/arm64/kernel/crash_core.c                 | 10 ++++++++++
+> > >  3 files changed, 22 insertions(+)
+> > >
+> > > diff --git a/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> > > b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> > > index 2a632020f809..2baad0bfb09d 100644
+> > > --- a/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> > > +++ b/Documentation/admin-guide/kdump/vmcoreinfo.rst
+> > > @@ -404,6 +404,17 @@ KERNELPACMASK
+> > >  The mask to extract the Pointer Authentication Code from a kernel
+> > > virtual address.
+> > >
+> > > +TCR_EL1.T1SZ
+> > > +------------
+> > > +
+> > > +Indicates the size offset of the memory region addressed by TTBR1_EL1.
+> > > +The region size is 2^(64-T1SZ) bytes.
+> > > +
+> > > +TTBR1_EL1 is the table base address register specified by ARMv8-A
+> > > +architecture which is used to lookup the page-tables for the
+> > > +Virtual addresses in the higher VA range (refer to ARMv8 ARM
+> > > +document for more details).
+> > > +
+> > >  arm
+> > >  ===
+> > >
+> > > diff --git a/arch/arm64/include/asm/pgtable-hwdef.h
+> > > b/arch/arm64/include/asm/pgtable-hwdef.h
+> > > index 6bf5e650da78..a1861af97ac9 100644
+> > > --- a/arch/arm64/include/asm/pgtable-hwdef.h
+> > > +++ b/arch/arm64/include/asm/pgtable-hwdef.h
+> > > @@ -216,6 +216,7 @@
+> > >  #define TCR_TxSZ(x)          (TCR_T0SZ(x) | TCR_T1SZ(x))
+> > >  #define TCR_TxSZ_WIDTH               6
+> > >  #define TCR_T0SZ_MASK                (((UL(1) << TCR_TxSZ_WIDTH) - 1) <<
+> > > TCR_T0SZ_OFFSET)
+> > > +#define TCR_T1SZ_MASK                (((UL(1) << TCR_TxSZ_WIDTH) - 1) <<
+> > > TCR_T1SZ_OFFSET)
+> > >
+> > >  #define TCR_EPD0_SHIFT               7
+> > >  #define TCR_EPD0_MASK                (UL(1) << TCR_EPD0_SHIFT)
+> > > diff --git a/arch/arm64/kernel/crash_core.c
+> > > b/arch/arm64/kernel/crash_core.c index 1f646b07e3e9..314391a156ee
+> > > 100644
+> > > --- a/arch/arm64/kernel/crash_core.c
+> > > +++ b/arch/arm64/kernel/crash_core.c
+> > > @@ -7,6 +7,14 @@
+> > >  #include <linux/crash_core.h>
+> > >  #include <asm/cpufeature.h>
+> > >  #include <asm/memory.h>
+> > > +#include <asm/pgtable-hwdef.h>
+> > > +
+> > > +static inline u64 get_tcr_el1_t1sz(void);
+> > > +
+> > > +static inline u64 get_tcr_el1_t1sz(void) {
+> > > +     return (read_sysreg(tcr_el1) & TCR_T1SZ_MASK) >>
+> > > +TCR_T1SZ_OFFSET; }
+> > >
+> > >  void arch_crash_save_vmcoreinfo(void)  { @@ -16,6 +24,8 @@ void
+> > > arch_crash_save_vmcoreinfo(void)
+> > >                                               kimage_voffset);
+> > >       vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+> > >                                               PHYS_OFFSET);
+> > > +     vmcoreinfo_append_str("NUMBER(TCR_EL1_T1SZ)=0x%llx\n",
+> > > +                                             get_tcr_el1_t1sz());
+> > I tested this patch on top of upstream kernel v5.7 and I am getting "crash:
+> cannot determine VA_BITS_ACTUAL" error with crash tool.
+> > I looked into crash-utility source and it is expecting tcr_el1_t1sz not
+> TCR_EL1_T1SZ.
+> > Could you please check.
+> 
+> Indeed. As per James comments on the v5 (see [1]) where he suggested
+> converting ttcr_el1_t1sz into TCR_EL1_T1SZ, I made the change in v6
+> accordingly.
+> 
+> This time I haven't sent out the v6 userspace changes
+> (makedumpfile/crash-utility) upstream first, since we are waiting for kernel
+> changes to be accepted first, as we have seen in the past that while the
+> userspace patches have been accepted, the kernel patches required a respin
+> cycle, thus leading to inconsistencies, as you also pointed out with crash-utility.
+> 
+> If you want, for your local testing, I can share my github branch where I have
+> kept the crash-utility v6 patchset ready. Please let me know.
+> 
+> [1]. https://urldefense.proofpoint.com/v2/url?u=https-
+> 3A__lore.kernel.org_linuxppc-2Ddev_63d6e63c-2D7218-2Dd2dd-2D8767-
+> 2D4464be83603f-
+> 40arm.com_&d=DwIBaQ&c=nKjWec2b6R0mOyPaz7xtfQ&r=XecQZQJWhG6-
+> mN8sWxffFOgUXg4irGP3Sjuy6RxdacQ&m=ijR8vEafG_QGTKYX2oI-
+> SvfFsY4pPou6tvtrnxRoloo&s=zJmo3qbm2XfnKbrUqJPNN5o6PJqER9OzltwgS4aTa
+> -k&e=
+Thanks for clarifying.
+I made userspace changes accordingly and tested and it works fine. We will be wait for your userspace patch.
 
-That documentation is poorly worded.  A reset doesn't make the
-contents of config space "random," but of course it sets config space
-registers to their initialization values, including things like the
-device BARs.  After a reset, the device BARs are zero, so it won't
-respond at the address we expect, and I'm sure that's what's causing
-the external abort.
+Tested-by: Kamlakant Patel <kamlakantp@marvell.com>
 
-So I guess we *do* need to save the state before the reset and restore
-it (either that or enumerate the device from scratch just like we
-would if it had been hot-added).  I'm not really thrilled with trying
-to save the state after the device has already reported an error.  I'd
-rather do it earlier, maybe during enumeration, like in
-pci_init_capabilities().  But I don't understand all the subtleties of
-dev->state_saved, so that requires some legwork.
-
-I don't think we should set INTX_DISABLE; the reset will make whatever
-we do with it irrelevant anyway.
-
-Remind me why the pci_cfg_access_lock()?
-
-Bjorn
+Thanks,
+Kamlakant Patel
+> 
+> Thanks,
+> Bhupesh
+> 
+> 
+> >
+> > Thanks,
+> > Kamlakant Patel
+> > >       vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
+> > >       vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
+> > >
+> > >       system_supports_address_auth() ?
+> > > --
+> > > 2.7.4
+> > >
+> > >
+> > > _______________________________________________
+> > > kexec mailing list
+> > > kexec@lists.infradead.org
+> > > https://urldefense.proofpoint.com/v2/url?u=http-
+> > > 3A__lists.infradead.org_mailman_listinfo_kexec&d=DwICAg&c=nKjWec2b6R
+> > > 0m
+> > > OyPaz7xtfQ&r=XecQZQJWhG6-
+> > >
+> mN8sWxffFOgUXg4irGP3Sjuy6RxdacQ&m=oeLdIVaWScimdfEc4dNhRI0tT24IgzG
+> > > 7LkpAE5P11JQ&s=LLjHpz349DuDtORX4xywCxzbGUOagoq4JXosStycqI4&e=
+> >
 
 _______________________________________________
 kexec mailing list
