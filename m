@@ -2,109 +2,92 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B86C41EFFEA
-	for <lists+kexec@lfdr.de>; Fri,  5 Jun 2020 20:37:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 272851F0081
+	for <lists+kexec@lfdr.de>; Fri,  5 Jun 2020 21:46:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s/gPgbxokYIPRjzlOIDqPqB1reZeD7R6uXLrLXSrSJQ=; b=OvR9LjxiJb+gq0
-	Kcdmu980Z1msx7uYDei5AU/tvbpDUTJ2cTouGO1t5TufxQFtq+wq1xWI8xCg4TCcGLwLNFA+a2U9a
-	N/erOhNjoIN515V5mAijwL7SPQ81FRnne5BEfry/D6D/vyx1pLP214riVCLbhf7Iv4t51y2ymqlGH
-	Z737d5v9A3a2RjnMU/6j2Kw5dCYX1UhtYOoONZhTTtZWzX7xe2u31PsgX9HSLmXT9NbvowgOvEUvX
-	RcBQH7sa5kaSwpEQ8nZseU3Ze/US0V2Y3BuIEzelCZc7Bq6YVAtOgW9hZ++GU1fz2hr2D2ASJwcSB
-	eQFlfv4dbJUULBU/JQYA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=G9n+jzMw7F11Xf9eUDv4NBLU3A3ehrWA6rpsBSBy/Oo=; b=q6h5OO3PMF75BT
+	oETQ0XD0dsUgvdUGH5Qfa/VJCVSiHIxkC+hEABA37J1ULnylW2Kwpj8+zM/pqBRhoq+UXg9FL+wET
+	Ao4bMfgTSdfBe91GkCivYURQVgc5ubIr6m1GguRdsyB6OZP0GfZBgTxoNvvEvjo9k+4qCSgZIhmWz
+	OBjP0ALGi2GTAjOXMIre4VWmONG9UjQCmt4M+E2NsQHi7QSFiIrLTIr6Du9qsDxz00nfiGAd+z7fN
+	o+P+LdDUTS9SsW6w0hdtmu26yKNSijkOE89348zUQIs+c8aq0DX18ag0L0PeGUYHT8rchs3warbw3
+	FvM0bWGFUqsR7IPc78Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhHDv-0001mJ-UU; Fri, 05 Jun 2020 18:37:47 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jhIIj-0001IO-WA; Fri, 05 Jun 2020 19:46:50 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhHDs-0001le-Pj
- for kexec@lists.infradead.org; Fri, 05 Jun 2020 18:37:46 +0000
-Received: from pps.filterd (m0098416.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 055IW5Gv123119; Fri, 5 Jun 2020 14:37:27 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0b-001b2d01.pphosted.com with ESMTP id 31f9dfg0s5-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 05 Jun 2020 14:37:27 -0400
-Received: from m0098416.ppops.net (m0098416.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 055IZdZb142400;
- Fri, 5 Jun 2020 14:37:26 -0400
-Received: from ppma03fra.de.ibm.com (6b.4a.5195.ip4.static.sl-reverse.com
- [149.81.74.107])
- by mx0b-001b2d01.pphosted.com with ESMTP id 31f9dfg0rc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 05 Jun 2020 14:37:26 -0400
-Received: from pps.filterd (ppma03fra.de.ibm.com [127.0.0.1])
- by ppma03fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 055IZoGE002136;
- Fri, 5 Jun 2020 18:37:24 GMT
-Received: from b06cxnps4074.portsmouth.uk.ibm.com
- (d06relay11.portsmouth.uk.ibm.com [9.149.109.196])
- by ppma03fra.de.ibm.com with ESMTP id 31bf47d60d-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 05 Jun 2020 18:37:24 +0000
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 055IbLk263242476
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 5 Jun 2020 18:37:21 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id D0E074C044;
- Fri,  5 Jun 2020 18:37:21 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id CDBF64C04A;
- Fri,  5 Jun 2020 18:37:18 +0000 (GMT)
-Received: from localhost.localdomain (unknown [9.85.181.45])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Fri,  5 Jun 2020 18:37:18 +0000 (GMT)
-Message-ID: <1591382238.5816.27.camel@linux.ibm.com>
-Subject: Re: [PATCH 0/3] fs: reduce export usage of kerne_read*() calls
-From: Mimi Zohar <zohar@linux.ibm.com>
-To: Scott Branden <scott.branden@broadcom.com>, Kees Cook
- <keescook@chromium.org>
-Date: Fri, 05 Jun 2020 14:37:18 -0400
-In-Reply-To: <1c68c0c7-1b0a-dfec-0e50-1b65eedc3dc7@broadcom.com>
-References: <20200513152108.25669-1-mcgrof@kernel.org>
- <20200513181736.GA24342@infradead.org>
- <20200515212933.GD11244@42.do-not-panic.com>
- <20200518062255.GB15641@infradead.org>
- <1589805462.5111.107.camel@linux.ibm.com>
- <7525ca03-def7-dfe2-80a9-25270cb0ae05@broadcom.com>
- <202005221551.5CA1372@keescook>
- <c48a80f5-a09c-6747-3db8-be23a260a0cb@broadcom.com>
- <1590288736.5111.431.camel@linux.ibm.com>
- <1c68c0c7-1b0a-dfec-0e50-1b65eedc3dc7@broadcom.com>
-X-Mailer: Evolution 3.20.5 (3.20.5-1.fc24) 
-Mime-Version: 1.0
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-05_05:2020-06-04,
- 2020-06-05 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 spamscore=0
- adultscore=0 impostorscore=0 phishscore=0 malwarescore=0 clxscore=1011
- suspectscore=0 cotscore=-2147483648 priorityscore=1501 mlxlogscore=984
- lowpriorityscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2006050134
+ id 1jhIIh-0001HC-II
+ for kexec@lists.infradead.org; Fri, 05 Jun 2020 19:46:49 +0000
+Received: by mail-qk1-x741.google.com with SMTP id v79so10928516qkb.10
+ for <kexec@lists.infradead.org>; Fri, 05 Jun 2020 12:46:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sV9RkPGuoOWTc48qekF0zZBZDrJUTh4v9fJ0jb/FVgM=;
+ b=aWCctjjWnZUSMcT6Ms5TdcGkcFOgab7dXxSb6fkSyYq6HoBdb9Tvqx/v7JVtmCHCeF
+ MA6WH5c97FrtUPsQzAeLJBrfPvcx6u4osY0pjoGT567icSJb6ngJWeDN7LzRNO/1k2v5
+ lVZA3DRiOXdRRXzpiDkF9e5jdo2c6L2V6bYNbWDqzA7lSv1EM2pdWSsyIvrSk9txVkpI
+ Dnj4hRMeKyJVF1EKUNckBjoZxlCyU0dOgDzdyuw8jviCmfSRh4nwwLiHWiznWHA/kj1W
+ hSI47S5fsCnJyQsaVJzumAZ8BvZMNwtsZYlNmjcFBUSrv5xdDdLlOHPRdj4yYKO0YqOL
+ R09w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sV9RkPGuoOWTc48qekF0zZBZDrJUTh4v9fJ0jb/FVgM=;
+ b=L2Hnv1IHv/FwEcWXKksV7QGMiPhHL2JdPN5xwvTYGafyhC6/PscWclZTDTPtItbuyn
+ wpSjfh2mJwdfMQ83IyOT6Rye+DywLfSl4Ta+D6tGFHJJoUSrEfXXPauQyvrdwgEecUDv
+ dH976Fgdd79xGbn2xTLJEbLfdKkULOwj+OIOmxWfyjQvxNVJo8qJ18zKUuk/61L5EOBR
+ Yyf4yzvpNrAJ17pj9uURmnB8dE8rLaZ3O+vbLy1dy1/nUWUFyPLalOcHIsOBgVIPIYZ4
+ IGdQEx50tn2Y2/7Ys5tCZYsdf6gSO9AvuRJvDjJsQOo+InuRlIZ+hojNUxTmrihAAPc6
+ B3jg==
+X-Gm-Message-State: AOAM532CWtI9AZBbo47Um2apJ2nxyhPD9pntpIKCS9tGj8si3gGvtKs5
+ 3HwDzf9fzwHP6WKbikZBbgP8HQ==
+X-Google-Smtp-Source: ABdhPJx5xQ9+E/4OYaerdSWSqvwAq/MS3nCOPS274OfID5oocZYxDY8TZg4tLHhGPLbg46ow1XkNcw==
+X-Received: by 2002:a05:620a:15e8:: with SMTP id
+ p8mr11797085qkm.333.1591386404392; 
+ Fri, 05 Jun 2020 12:46:44 -0700 (PDT)
+Received: from localhost.localdomain (c-73-69-118-222.hsd1.nh.comcast.net.
+ [73.69.118.222])
+ by smtp.gmail.com with ESMTPSA id p11sm716242qtb.4.2020.06.05.12.46.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 05 Jun 2020 12:46:43 -0700 (PDT)
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+To: pasha.tatashin@soleen.com, jmorris@namei.org, sashal@kernel.org,
+ pmladek@suse.com, ebiederm@xmission.com, keescook@chromium.org,
+ anton@enomsg.org, ccross@android.com, tony.luck@intel.com,
+ kexec@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] kexec: dump kmessage before machine_kexec
+Date: Fri,  5 Jun 2020 15:46:42 -0400
+Message-Id: <20200605194642.62278-1-pasha.tatashin@soleen.com>
+X-Mailer: git-send-email 2.25.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_113744_955704_554725C1 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200605_124647_676594_73DC3409 
+X-CRM114-Status: UNSURE (   7.34  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.158.5 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,47 +99,62 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: rafael@kernel.org, dhowells@redhat.com,
- linux-security-module@vger.kernel.org, paul@paul-moore.com,
- nayna@linux.ibm.com, jmorris@namei.org, Christoph Hellwig <hch@infradead.org>,
- geert@linux-m68k.org, dan.carpenter@oracle.com, selinux@vger.kernel.org,
- viro@zeniv.linux.org.uk, skhan@linuxfoundation.org, eparis@parisplace.org,
- tglx@linutronix.de, gregkh@linuxfoundation.org, stephen.smalley.work@gmail.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- Luis Chamberlain <mcgrof@kernel.org>, ebiederm@xmission.com, jeyu@kernel.org,
- linux-fsdevel@vger.kernel.org, linux-integrity@vger.kernel.org,
- bauerman@linux.ibm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMDIwLTA2LTA1IGF0IDExOjE1IC0wNzAwLCBTY290dCBCcmFuZGVuIHdyb3RlOgo+
-IEhpIE1pbWksCj4gCj4gT24gMjAyMC0wNS0yMyA3OjUyIHAubS4sIE1pbWkgWm9oYXIgd3JvdGU6
-Cj4gPiBTY290dCwgdGhlIGNoYW5nZSBzaG91bGQgYmUgc3RyYWlnaHQgZm9yd2FyZC4gwqBUaGUg
-YWRkaXRpb25hbCBwYXRjaAo+ID4gbmVlZHMgdG86Cj4gPiAtIGRlZmluZSBhIG5ldyBrZXJuZWxf
-cmVhZF9maWxlX2lkIGVudW1lcmF0aW9uLCBsaWtlCj4gPiBGSVJNV0FSRV9QQVJUSUFMX1JFQUQu
-Cj4gPiAtIEN1cnJlbnRseSBpbWFfcmVhZF9maWxlKCkgaGFzIGEgY29tbWVudCBhYm91dCBwcmUt
-YWxsb2NhdGVkIGZpcm13YXJlCj4gPiBidWZmZXJzLiDCoFVwZGF0ZSBpbWFfcmVhZF9maWxlKCkg
-dG8gY2FsbCBwcm9jZXNzX21lYXN1cmVtZW50KCkgZm9yIHRoZQo+ID4gbmV3IGVudW1lcmF0aW9u
-IEZJUk1XQVJFX1BBUlRJQUxfUkVBRCBhbmQgdXBkYXRlIGltYV9wb3N0X3JlYWRfZmlsZSgpCj4g
-PiB0byByZXR1cm4gaW1tZWRpYXRlbHkuCj4gU2hvdWxkIHRoaXMgYmUgd2hhdCBpcyBpbiBpbWFf
-cmVhZF9maWxlPwo+IHsKPiAgwqDCoMKgIGVudW0gaW1hX2hvb2tzIGZ1bmM7Cj4gIMKgwqDCoCB1
-MzIgc2VjaWQ7CgpQbGVhc2UgZG9uJ3QgcmVtb3ZlIHRoZSBleGlzdGluZyBjb21tZW50LgoKPiAg
-wqDCoMKgIGlmIChyZWFkX2lkICE9IFJFQURJTkdfRklSTVdBUkVfUEFSVElBTF9SRUFEKQo+ICDC
-oMKgwqAgwqDCoMKgIHJldHVybiAwOwo+IAo+ICDCoMKgwqAgaWYgKCFmaWxlKSB7IC8qIHNob3Vs
-ZCBuZXZlciBoYXBwZW4gKi8KPiAgwqDCoMKgIMKgwqDCoCBpZiAoaW1hX2FwcHJhaXNlICYgSU1B
-X0FQUFJBSVNFX0VORk9SQ0UpCj4gIMKgwqDCoCDCoMKgwqAgwqDCoMKgIHJldHVybiAtRUFDQ0VT
-Owo+ICDCoMKgwqAgwqDCoMKgIHJldHVybiAwOwo+ICDCoMKgwqAgfQoKVGhpcyBjaGVja3MgZm9y
-IGFueSBJTUEgYXBwcmFpc2UgcnVsZS4gwqBZb3Ugd2FudCB0byBlbmZvcmNlIGZpcm13YXJlCnNp
-Z25hdHVyZSBjaGVja2luZyBvbmx5IGlmIHRoZXJlIGlzIGEgZmlybXdhcmUgYXBwcmFpc2UgcnVs
-ZS4gwqBSZWZlcgp0byBpbWFfcG9zdF9yZWFkX2ZpbGUoKS4KCj4gIMKgwqDCoCBzZWN1cml0eV90
-YXNrX2dldHNlY2lkKGN1cnJlbnQsICZzZWNpZCk7Cj4gIMKgwqDCoCByZXR1cm4gcHJvY2Vzc19t
-ZWFzdXJlbWVudChmaWxlLCBjdXJyZW50X2NyZWQoKSwgc2VjaWQsIE5VTEwsCj4gIMKgwqDCoCDC
-oMKgwqAgwqDCoMKgIMKgwqDCoCDCoMKgIDAsIE1BWV9SRUFELCBGSUxFX0NIRUNLKTsKClRoZSBy
-ZWFkX2lkbWFwIGVudW1lcmF0aW9uIHNob3VsZCBiZSB1cGRhdGVkIHNpbWlsYXIgdG8gdGhlIG90
-aGVyCmZpcm13YXJlLiDCoEtlZXAgdGhlIGNvZGUgZ2VuZXJpYy4gwqBSZWZlciB0byBpbWFfcG9z
-dF9yZWFkX2ZpbGUoKS4KwqBmdW5jIHdpbGwgYmUgZGVmaW5lZCBhcyBGSVJNV0FSRV9DSEVDSy4K
-CnRoYW5rcywKCk1pbWkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
+kmsg_dump(KMSG_DUMP_SHUTDOWN) is called before
+machine_restart(), machine_halt(), machine_power_off(), the only one that
+is missing is  machine_kexec().
+
+The dmesg output that it contains can be used to study the shutdown
+performance of both kernel and systemd during kexec reboot.
+
+Here is example of dmesg data collected after kexec:
+
+root@dplat-cp22:~# cat /sys/fs/pstore/dmesg-ramoops-0 | tail
+...
+<6>[   70.914592] psci: CPU3 killed (polled 0 ms)
+<5>[   70.915705] CPU4: shutdown
+<6>[   70.916643] psci: CPU4 killed (polled 4 ms)
+<5>[   70.917715] CPU5: shutdown
+<6>[   70.918725] psci: CPU5 killed (polled 0 ms)
+<5>[   70.919704] CPU6: shutdown
+<6>[   70.920726] psci: CPU6 killed (polled 4 ms)
+<5>[   70.921642] CPU7: shutdown
+<6>[   70.922650] psci: CPU7 killed (polled 0 ms)
+
+Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+---
+ kernel/kexec_core.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+index c19c0dad1ebe..50027f759a97 100644
+--- a/kernel/kexec_core.c
++++ b/kernel/kexec_core.c
+@@ -37,6 +37,7 @@
+ #include <linux/compiler.h>
+ #include <linux/hugetlb.h>
+ #include <linux/frame.h>
++#include <linux/kmsg_dump.h>
+ 
+ #include <asm/page.h>
+ #include <asm/sections.h>
+@@ -1181,6 +1182,7 @@ int kernel_kexec(void)
+ 		machine_shutdown();
+ 	}
+ 
++	kmsg_dump(KMSG_DUMP_SHUTDOWN);
+ 	machine_kexec(kexec_image);
+ 
+ #ifdef CONFIG_KEXEC_JUMP
+-- 
+2.25.1
+
+
+_______________________________________________
+kexec mailing list
+kexec@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/kexec
