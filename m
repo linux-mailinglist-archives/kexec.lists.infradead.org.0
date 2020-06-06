@@ -2,64 +2,65 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2530B1F0711
-	for <lists+kexec@lfdr.de>; Sat,  6 Jun 2020 16:40:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D27B1F0721
+	for <lists+kexec@lfdr.de>; Sat,  6 Jun 2020 16:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QRkrWAOI0mnAJeL8csBUQF7ZjCPMvdiIhquq0C9cdaw=; b=ihAeRmECSsoKcD
-	MYx+L52th/biXeyiWTmuOyOF58eCA4mwD3OsuKFuOyI3Si9g08d2biv1hkkKDUPch3QRiANIFPkwx
-	I/9ODFt21HTWh2MMkifOMvJF3JZ+1jCt86Z/DpKcOXYY6VSgZdJPYm1t5idYvP1ICMgefvwvMUPHm
-	jm68Eezy+p4IcZ5bU9XXX1ALcryyIjwc07SJ0sDgTex7kua6AL5aJ/0aC9wsgI/ESOvx2TrrzdUeI
-	5ww3488t2DDe59ZFw/8ud9YZfxj0McA5Jng0Ku2M1aHo8yF8EajZQursylOHCscYALzbwVtQAPTy6
-	Wkoztph6Fn0hql9cUaAQ==;
+	List-Owner; bh=0/GyqCamrHdnf59dUg91GnK48VXLYPO71XWt53LMO2E=; b=S46mnPtYvCR9vh
+	e5PlhUa/Hd7j5ck4wpH0ebSs5+QZNguF9rlB1MwSYX/Aa7VNxRjsc3NH1PenW2TBlj3Fj2IyQ5pOb
+	JTZ28H6BjqOwm1NlAnJ1XDYByQyrN+KE78G5y/dx2VXu69gl/BbhpIfv+L6fCN5oZOVRlc0u73Som
+	yhHy7SKmtT6kUAKbeEXiQ46aW9cc1Gwxw/w4SwCZkQCwNmxj/mjnldm+iu/hLO1VBnw8UnRL/Slo0
+	CivIyFMTLwtEjf5EOCuG3bTJefbp7iPbrZaZtpfr03Wum0uxnY90SNimoMa0WvT7gpD0+qHlXpgql
+	QwlRWEDKG/nGuCRS7COw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jha0D-0003fs-Bp; Sat, 06 Jun 2020 14:40:53 +0000
+	id 1jha7V-0007J0-L6; Sat, 06 Jun 2020 14:48:25 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jha08-0003dF-OW
- for kexec@lists.infradead.org; Sat, 06 Jun 2020 14:40:50 +0000
+ id 1jha7S-0007HQ-9e
+ for kexec@lists.infradead.org; Sat, 06 Jun 2020 14:48:23 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
  Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=dmS2v1N7fjnfKQVV2tOQT6aNqvDOJzQfL52H11J8cfg=; b=dM1lz0rQiolYOpXi+L2xxLey/
- nnr6in3n5KBW0500fD+PwwMOz4zXVp8MEgCSFxl4MTGTZuo9sBCns1xv/U1nyLlsYWu4tnnYV//c8
- 7Dw97sWL2s0nrC+Ajg2Wgyae1Tbo0f8AFgpGSJvN+cq3lRYUoZpkk5X/UeCicX8vAda6nJA0MnHb9
- af4N7fs3Oy5Hec3q6l3uNng7Lr3X/nELyHmtwqT/PsMv66ba5f9cBFQw3H1xGxUvugLEvGGGATEx6
- xKd70WvTNsJVHdk1ktk8CdjdJ9E3njeuWxwsWSpb6/ZyudlljHobs6to5DplNLHrPZFUMZWM5Uv2b
- Ow/t7MsXA==;
+ bh=/xs33c/qs8hj0hrkOprJxib4gZLfJpTK5zbyz+FH0As=; b=owHFB5ESLiEIfIU/5k0oPykzV
+ LnCnhm1DUSGf1SSf2A68gz3hox6e6KJ6pBn/Oh6VeSGpHpeajNXTTeGxJ+ep30HmmsfemV8cJehJq
+ /7LhMRYWDn5oLN71/LSErraqzMGYJXLDQc3aae3HGLWogVlnEDozN/oipVj0esSSt4kMvck4BPzk2
+ +cc6qr3yRKeVb/SsH3PCKjKGpEqG1sUPUmLtozvaR3cTfLGj0eLOiV8k5zjEKfU24FB9/oGwSllcH
+ DI5AI2cD5XAvFTLcIiD4eVv7fIA1GRGOerBix/68JlhOakpzJBf6UoKqmKwqbTg19QMPm1s35NZAC
+ VB1jvXr/g==;
 Received: from flint.armlinux.org.uk
- ([2002:4e20:1eda:1:201:2ff:fe14:8fad]:50064)
+ ([fd8f:7570:feb6:1:201:2ff:fe14:8fad]:33336)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1jhZzy-0004ch-QG; Sat, 06 Jun 2020 15:40:38 +0100
+ id 1jha7M-0004ds-3A; Sat, 06 Jun 2020 15:48:16 +0100
 Received: from rmk by flint.armlinux.org.uk with local (Exim 4.90_1)
  (envelope-from <rmk@flint.armlinux.org.uk>)
- id 1jhZzt-00057G-Od; Sat, 06 Jun 2020 15:40:33 +0100
-Date: Sat, 6 Jun 2020 15:40:31 +0100
+ id 1jha7H-00059F-8q; Sat, 06 Jun 2020 15:48:11 +0100
+Date: Sat, 6 Jun 2020 15:48:08 +0100
 From: Russell King <rmk@armlinux.org.uk>
 To: Simon Horman <horms@verge.net.au>
 Subject: Re: [PATCH] arm: Increase zImage length after getting the tag
-Message-ID: <20200606144031.GL1538@flint.armlinux.org.uk>
+Message-ID: <20200606144807.GM1538@flint.armlinux.org.uk>
 References: <CGME20200602104036eucas1p1fac98e8f4c2ab7272b4fbf95aefef7cd@eucas1p1.samsung.com>
  <20200602104034.31256-1-l.stelmach@samsung.com>
  <20200606132319.GC24391@vergenet.net>
+ <20200606144031.GL1538@flint.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200606132319.GC24391@vergenet.net>
+In-Reply-To: <20200606144031.GL1538@flint.armlinux.org.uk>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_074048_801591_D18CE760 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20200606_074822_335247_2E26CCA2 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -96,17 +97,19 @@ Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-T24gU2F0LCBKdW4gMDYsIDIwMjAgYXQgMDM6MjM6MTlQTSArMDIwMCwgU2ltb24gSG9ybWFuIHdy
-b3RlOgo+IE9uIFR1ZSwgSnVuIDAyLCAyMDIwIGF0IDEyOjQwOjM0UE0gKzAyMDAsIMWBdWthc3og
-U3RlbG1hY2ggd3JvdGU6Cj4gPiBJbmNyZWFzZSB0aGUgc2l6ZSBvZiB0aGUgekltYWdlIGFmdGVy
-IHNlZWtpbmcgZm9yIHRoZSB0YWcgdG8gYXZvaWQKPiA+IHJlYWRpbmcgcGFzdCB0aGUgZW5kIG9m
-IHRoZSBzdXBwbGllZCBidWZmZXIgc2hvdWxkIHRoZXJlIGJlIG5vdCB0YWcKPiA+IGluIHRoZSB6
-SW1hZ2UuCj4gPiAKPiA+IEZpeGVzOiBmNTdmMGJmODk3NWQyNGZlMWU3YzQ5MzZmZGZiNWMzYjEy
-M2FiNzVmCj4gPiBTaWduZWQtb2ZmLWJ5OiDFgXVrYXN6IFN0ZWxtYWNoIDxsLnN0ZWxtYWNoQHNh
-bXN1bmcuY29tPgo+ID4gQ2M6IFJ1c3NlbGwgS2luZyA8cm1rQGFybWxpbnV4Lm9yZy51az4KPiAK
-PiBUaGFua3MgxYF1a2FzeiwKClNvcnJ5LCBJJ3ZlIG5vdCBzZWVuIHRoZSBwYXRjaCwgc28gaXQg
-aGFzbid0IGJlZW4gcmV2aWV3ZWQuICBUaGlzIGlzIHRoZQpmaXJzdCBJJ20gYXdhcmUgb2YgaXRz
-IGV4aXN0ZW5jZS4KCi0tIApSdXNzZWxsIEtpbmcKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmtleGVjIG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4
-ZWMK
+T24gU2F0LCBKdW4gMDYsIDIwMjAgYXQgMDM6NDA6MzFQTSArMDEwMCwgUnVzc2VsbCBLaW5nIHdy
+b3RlOgo+IE9uIFNhdCwgSnVuIDA2LCAyMDIwIGF0IDAzOjIzOjE5UE0gKzAyMDAsIFNpbW9uIEhv
+cm1hbiB3cm90ZToKPiA+IE9uIFR1ZSwgSnVuIDAyLCAyMDIwIGF0IDEyOjQwOjM0UE0gKzAyMDAs
+IMWBdWthc3ogU3RlbG1hY2ggd3JvdGU6Cj4gPiA+IEluY3JlYXNlIHRoZSBzaXplIG9mIHRoZSB6
+SW1hZ2UgYWZ0ZXIgc2Vla2luZyBmb3IgdGhlIHRhZyB0byBhdm9pZAo+ID4gPiByZWFkaW5nIHBh
+c3QgdGhlIGVuZCBvZiB0aGUgc3VwcGxpZWQgYnVmZmVyIHNob3VsZCB0aGVyZSBiZSBub3QgdGFn
+Cj4gPiA+IGluIHRoZSB6SW1hZ2UuCj4gPiA+IAo+ID4gPiBGaXhlczogZjU3ZjBiZjg5NzVkMjRm
+ZTFlN2M0OTM2ZmRmYjVjM2IxMjNhYjc1Zgo+ID4gPiBTaWduZWQtb2ZmLWJ5OiDFgXVrYXN6IFN0
+ZWxtYWNoIDxsLnN0ZWxtYWNoQHNhbXN1bmcuY29tPgo+ID4gPiBDYzogUnVzc2VsbCBLaW5nIDxy
+bWtAYXJtbGludXgub3JnLnVrPgo+ID4gCj4gPiBUaGFua3MgxYF1a2FzeiwKPiAKPiBTb3JyeSwg
+SSd2ZSBub3Qgc2VlbiB0aGUgcGF0Y2gsIHNvIGl0IGhhc24ndCBiZWVuIHJldmlld2VkLiAgVGhp
+cyBpcyB0aGUKPiBmaXJzdCBJJ20gYXdhcmUgb2YgaXRzIGV4aXN0ZW5jZS4KCkZvdW5kIGl0IC0g
+aXQncyBmaW5lLgoKLS0gClJ1c3NlbGwgS2luZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18Ka2V4ZWMgbWFpbGluZyBsaXN0CmtleGVjQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9rZXhl
+Ywo=
