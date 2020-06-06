@@ -2,47 +2,48 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E40DF1F06B3
-	for <lists+kexec@lfdr.de>; Sat,  6 Jun 2020 15:21:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80F181F06B7
+	for <lists+kexec@lfdr.de>; Sat,  6 Jun 2020 15:23:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=la80W4zjUrLNEWpRXkZXidnu2QgeCdlz5LiYbzfguWE=; b=QR5gO+EMsOqdBX
-	zTP8rQ67E9R/N+kl80hUC+7VDw6K4qwPKUeCr9YgXfB0y0nvu0OC/jStpaenQUzte08irkO17zX5P
-	P6dEhOCAqRXBaXwSlU8vNSc5Upo0+BdrKqjKLpaKUd3cksjwq4L0XuW1zG5hvpFxS3gmVbsCT/uAa
-	W33+HhohE1AkSn0S0D/ODX8DY7NWY6QRvJkygIjlqAoIfuyNU1OE5vrR336FP9vvkvUrDRolBRtQJ
-	XUp2C0ZXlUQjwcRG5SCH1/wVbne3/6ffQTpOg2FiOHDDC5dZb0rL6XdUymXqxQj4s/5SIPj1yzoJk
-	3PjH/SIr3W9DbjJQJjSw==;
+	List-Owner; bh=D0bmgI5K9LgpLCy4Tv/sxrFhrCmhvEYlm75TXaBjbHg=; b=Tbt85ipHva5ZEq
+	obZgkXGBbY4IANaTX+Is3Xn2Vn2yqPYBgrgW+bdBKj/tarhijh6uEdlyyO/Zkml2DGyAfgbeCJAlm
+	d1xn2AzBg+13AG5l6xxEo+bpzzh5iAd6vLb6p1x9muZJJbtIv9eSYbqzv4EpJRUVahNv6sxygxk4S
+	zRxZPR7NcTqyfK41dEwG0ZzWNeMvKQOLT21zSqWM1s2EmhSbF4kvfXuxYqZCysEpYL9vmcLB42PJT
+	LpTksNCRLEIU59EeSnG+ZHKMBhGOapSyGuXPOF/iryPTgm9M9qX5YPigDa1+c/mcWSJ9Xz/2uj0a7
+	AALCopq+FlFEAFnWMRLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhYld-0000M7-Ma; Sat, 06 Jun 2020 13:21:45 +0000
+	id 1jhYnF-0000dQ-8F; Sat, 06 Jun 2020 13:23:25 +0000
 Received: from kirsty.vergenet.net ([202.4.237.240])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhYla-0000LQ-P6
- for kexec@lists.infradead.org; Sat, 06 Jun 2020 13:21:44 +0000
+ id 1jhYnC-0000d8-J2
+ for kexec@lists.infradead.org; Sat, 06 Jun 2020 13:23:23 +0000
 Received: from madeliefje.horms.nl (unknown [83.161.246.101])
- by kirsty.vergenet.net (Postfix) with ESMTPA id D83D025B805;
- Sat,  6 Jun 2020 23:21:41 +1000 (AEST)
+ by kirsty.vergenet.net (Postfix) with ESMTPA id AF58825B805;
+ Sat,  6 Jun 2020 23:23:21 +1000 (AEST)
 Received: by madeliefje.horms.nl (Postfix, from userid 7100)
- id EC26736C7; Sat,  6 Jun 2020 15:21:39 +0200 (CEST)
-Date: Sat, 6 Jun 2020 15:21:39 +0200
+ id CDACE36C7; Sat,  6 Jun 2020 15:23:19 +0200 (CEST)
+Date: Sat, 6 Jun 2020 15:23:19 +0200
 From: Simon Horman <horms@verge.net.au>
-To: Hari Bathini <hbathini@linux.ibm.com>
-Subject: Re: [PATCH] kexec-tools: fix the unintended fallthrough when '-d'
- option is used
-Message-ID: <20200606132139.GB24391@vergenet.net>
-References: <159107231976.24822.8366905851318047662.stgit@hbathini.in.ibm.com>
+To: =?utf-8?Q?=C5=81ukasz?= Stelmach <l.stelmach@samsung.com>
+Subject: Re: [PATCH] arm: Increase zImage length after getting the tag
+Message-ID: <20200606132319.GC24391@vergenet.net>
+References: <CGME20200602104036eucas1p1fac98e8f4c2ab7272b4fbf95aefef7cd@eucas1p1.samsung.com>
+ <20200602104034.31256-1-l.stelmach@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <159107231976.24822.8366905851318047662.stgit@hbathini.in.ibm.com>
+In-Reply-To: <20200602104034.31256-1-l.stelmach@samsung.com>
 Organisation: Horms Solutions BV
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_062142_965221_3AE510DD 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20200606_062322_776643_272213FF 
+X-CRM114-Status: UNSURE (   6.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,44 +67,20 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Cong Wang <xiyou.wangcong@gmail.com>, Kexec-ml <kexec@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Russell King <rmk@armlinux.org.uk>, kexec@lists.infradead.org,
+ b.zolnierkie@samsung.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Tue, Jun 02, 2020 at 10:01:59AM +0530, Hari Bathini wrote:
-> Fixes: 28d4ab532808 ("Add generic debug option")
-> Cc: Cong Wang <xiyou.wangcong@gmail.com>
-> Signed-off-by: Hari Bathini <hbathini@linux.ibm.com>
-
-Thanks, applied.
-
-> ---
->  kexec/kexec.c |    1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/kexec/kexec.c b/kexec/kexec.c
-> index 7ef3d2a..a62b362 100644
-> --- a/kexec/kexec.c
-> +++ b/kexec/kexec.c
-> @@ -1374,6 +1374,7 @@ int main(int argc, char *argv[])
->  			return 0;
->  		case OPT_DEBUG:
->  			kexec_debug = 1;
-> +			break;
->  		case OPT_NOIFDOWN:
->  			skip_ifdown = 1;
->  			break;
-> 
-> 
-> _______________________________________________
-> kexec mailing list
-> kexec@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/kexec
-> 
-
-_______________________________________________
-kexec mailing list
-kexec@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/kexec
+T24gVHVlLCBKdW4gMDIsIDIwMjAgYXQgMTI6NDA6MzRQTSArMDIwMCwgxYF1a2FzeiBTdGVsbWFj
+aCB3cm90ZToKPiBJbmNyZWFzZSB0aGUgc2l6ZSBvZiB0aGUgekltYWdlIGFmdGVyIHNlZWtpbmcg
+Zm9yIHRoZSB0YWcgdG8gYXZvaWQKPiByZWFkaW5nIHBhc3QgdGhlIGVuZCBvZiB0aGUgc3VwcGxp
+ZWQgYnVmZmVyIHNob3VsZCB0aGVyZSBiZSBub3QgdGFnCj4gaW4gdGhlIHpJbWFnZS4KPiAKPiBG
+aXhlczogZjU3ZjBiZjg5NzVkMjRmZTFlN2M0OTM2ZmRmYjVjM2IxMjNhYjc1Zgo+IFNpZ25lZC1v
+ZmYtYnk6IMWBdWthc3ogU3RlbG1hY2ggPGwuc3RlbG1hY2hAc2Ftc3VuZy5jb20+Cj4gQ2M6IFJ1
+c3NlbGwgS2luZyA8cm1rQGFybWxpbnV4Lm9yZy51az4KClRoYW5rcyDFgXVrYXN6LAoKYXBwbGll
+ZC4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmtleGVj
+IG1haWxpbmcgbGlzdAprZXhlY0BsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8va2V4ZWMK
