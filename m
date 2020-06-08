@@ -2,88 +2,66 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C7DA1F1421
-	for <lists+kexec@lfdr.de>; Mon,  8 Jun 2020 10:08:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CBAA1F17FC
+	for <lists+kexec@lfdr.de>; Mon,  8 Jun 2020 13:41:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QHGr2ediXoj05QfO4wJev2d6/r+WC5G3PAt5gTXjLEg=; b=JQvEILPxyC/1H2
-	bxhm1tmIw1BeLVBNzM+KluSAlHBnMc8WPnclbsEf26w2TjvaA+4DLLqUlPEuTYZKFijliVYkQFH6b
-	1u7kzLkG3IY1/MZC9TsKbVD4+fB0jSdJOC53aYv2zednN1Api6xIj4TWiDgNUWdVpb7dyBajwj6fk
-	QUt7Q50S/PWNTAbwWUeKWyRufEOgi22BesZk02iv+71EYHx9DUy7V3QRuOFlA7bqCmDnpiK1VNiID
-	TPuVWW5ZXv+Qg3uAmaxlhxbJwg5kY+nx/8Ejlh1n8ho49fiDStTBj80TatlnjiGXhUbD2VGbxR3/u
-	MItW7Zm1oyLV1JPHiJ7Q==;
+	List-Owner; bh=tSAmAaApyBNrns5Zs+Naptys5K368xIhSS4ukNI4H6k=; b=EqMUk5q64aCo/t
+	EsAKyp1Ku6wPArZB60N2rRX/eQyEMFdEfS6ZzYIRWl5pFD543fpzrccCPOHDhr+tdneuMQDGxuQ1w
+	sjF0HU+lr36aRehz1fv67+PaMJtXHXYybc2VLCbUfIyahWw/5VjFekyT+UKB9e69L8bdnLoK0Bbtn
+	qWPd1BHLWjhOqbM2AT617Fa+YZ31zQmTfmdd3PZRSQDMqgj/cwp5DfDHbsdk3EBgHfnVbY+U1Tw4C
+	gnlsKQr9mZDQoGNME5zFX3qnBL+rhRGdq+NgkvfijFbTBsYPka6P9FszRURw6YrwNwaFuSm3FNEuU
+	57msDGXjh59GktSAIAuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiCpA-0005Ib-FZ; Mon, 08 Jun 2020 08:08:04 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jiG9i-0005au-LR; Mon, 08 Jun 2020 11:41:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiCp6-0005Hm-QE
- for kexec@lists.infradead.org; Mon, 08 Jun 2020 08:08:02 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1591603677;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=ZbN71+DLOQDLMNnWvQpaN1N2Hub7a1AniDuqT74J44I=;
- b=JRmAh+ycXt69Cfk7HyNItOR+waL1agt4DbX141wIvqhgFBgPW5r+7SsJlqqA8DVF87pxzo
- mZkULe6iH+GTKui1TPJfM1Vx6sqF4NY41zGwWPt3++7gWxiUQVgRN59wA/EJddRwW2LtAY
- 7f2cLtDcHxf8+jLa2v9runTSQpPbzzc=
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
- [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-175-L-0Yk4s-P1qYes1KhQwjDQ-1; Mon, 08 Jun 2020 04:07:56 -0400
-X-MC-Unique: L-0Yk4s-P1qYes1KhQwjDQ-1
-Received: by mail-qk1-f199.google.com with SMTP id w14so13706819qkb.0
- for <kexec@lists.infradead.org>; Mon, 08 Jun 2020 01:07:56 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZbN71+DLOQDLMNnWvQpaN1N2Hub7a1AniDuqT74J44I=;
- b=DlJI7UTVUshy9qiGV5oduhNGUVUiZX6YPukRdagNSkbVqqa4HYHWjSvFcrAmpmkTes
- TZpT2yIFIjQX5a8kzkarhWOwJFqpNklpf6T8HOido1pQnpM0/9IDwJ580M49bHNz2T+h
- 1qt4vSLaAriu6Cm+6rxDhGT7Sz6DkPaikx4gp39GGAEsWmfrsdXlVBHUKSpfWs0sc1ei
- VMf2v3Z42Xyo/96kgbEthkIu85zQuJdrZw741VtZtYJw2uS2/3nNxhVzidq4vWllizFA
- TOqwMBsuSmLe3u+ql+RvR3T/kQ0P1ZcTg0AuLf+ShP7ypI01xydPHtaayPlec2Ti3Jz2
- PJKA==
-X-Gm-Message-State: AOAM532UIT3nHCuXUbJ+lneFfLqCehAI2LSvqREser48WaH7/Y5qPjUm
- NOfVAwEB7fkzsb5MqfW5E6JYb7Z+YuMr1GT8k/jC3Q249GiMBiR0vgEBpAd4qDrGd3Xj9wAx8Ga
- aI7ZvVWIL6aa7O/aG8qJ1lDIUC/4oJyyn6ahE
-X-Received: by 2002:ad4:4d8f:: with SMTP id
- cv15mr21509532qvb.195.1591603675834; 
- Mon, 08 Jun 2020 01:07:55 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJzWj54BrhXlaXyGur0GgPLTutUYY8qIY0pbnzZPMB2tmAwlSKjBWtONJhERHg/zCg3vBVkCjREgic7BjZKcplA=
-X-Received: by 2002:ad4:4d8f:: with SMTP id
- cv15mr21509514qvb.195.1591603675583; 
- Mon, 08 Jun 2020 01:07:55 -0700 (PDT)
+ id 1jiG9g-0005aR-7U; Mon, 08 Jun 2020 11:41:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2BC7F2074B;
+ Mon,  8 Jun 2020 11:41:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591616487;
+ bh=DmTP+R00hgjrOLOeBDRKCkR3lbdywEqFNzNYJiJ/9g8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JbL6Wfi3XAZf4JBHA7zCHYqu52uXAkRpBGfM2e+jrUTCruNQin1wN5Tlo47AbVGlM
+ AjZyUbNTxOoeU/BBquz9f6/iQjUJHQdwQpmssTv0qgMnj8K612NWB8DJLksTlD3k5i
+ V38ykbx4EQ/PhxsPL7s7vI98Gje1t/MAV6wWiH6U=
+Date: Mon, 8 Jun 2020 12:41:23 +0100
+From: Will Deacon <will@kernel.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200608114122.GB3108@willie-the-truck>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+ <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+ <20200521092311.GB5091@willie-the-truck>
+ <CAJ2QiJK4h=5abVdODWTYg8Loy0Hhnhm1HrBzAM3bZXKtGXYK+Q@mail.gmail.com>
+ <20200601073957.GD8601@willie-the-truck>
+ <CAJ2QiJ+-VV9bXbdfqHxeZgUiGBg_iMqBQcSH5cD_sfb-UQpQ6w@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200605194642.62278-1-pasha.tatashin@soleen.com>
-In-Reply-To: <20200605194642.62278-1-pasha.tatashin@soleen.com>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Mon, 8 Jun 2020 13:37:42 +0530
-Message-ID: <CACi5LpNvBaAVibj_XpLm1=zk8oUDXpWGZyZJ=TLBkimoUoiD8A@mail.gmail.com>
-Subject: Re: [PATCH] kexec: dump kmessage before machine_kexec
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <CAJ2QiJ+-VV9bXbdfqHxeZgUiGBg_iMqBQcSH5cD_sfb-UQpQ6w@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_010800_926982_AEBD63DC 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_044128_310655_E96A5D1C 
+X-CRM114-Status: GOOD (  28.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,7 +69,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -104,76 +81,105 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, pmladek@suse.com, "Luck, Tony" <tony.luck@intel.com>,
- Kees Cook <keescook@chromium.org>, anton@enomsg.org,
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
  kexec mailing list <kexec@lists.infradead.org>,
- James Morris <jmorris@namei.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Eric Biederman <ebiederm@xmission.com>, ccross@android.com
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-Hi Pavel,
+On Tue, Jun 02, 2020 at 07:34:47PM +0530, Prabhakar Kushwaha wrote:
+> On Mon, Jun 1, 2020 at 1:10 PM Will Deacon <will@kernel.org> wrote:
+> > On Thu, May 21, 2020 at 04:52:02PM +0530, Prabhakar Kushwaha wrote:
+> > > On Thu, May 21, 2020 at 2:53 PM Will Deacon <will@kernel.org> wrote:
+> > > > On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
+> > > > > What kind of issue you are foreseeing in using memcpy(). May be we can
+> > > > > try to find a solution.
+> > > >
+> > > > Well the thing might not be cache-coherent to start with...
+> > > >
+> > >
+> > > Thanks for telling possible issue area.  Let me try to explain why
+> > > this should not be an issue.
+> > >
+> > > kdump kernel runs from reserved memory space defined during the boot
+> > > of first kernel. kdump does not touch memory of the previous kernel.
+> > > So no page has been created in kdump kernel  and  there should not be
+> > > any data/attribute/coherency issue from MMU point of view .
+> >
+> > Then how does this work?:
+> >
+> >         rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> >
+> > You're explicitly asking for a write-back mapping.
+> >
+> 
+> As i mentioned earlier, I will replace it with MEMREMAP_WT to make
+> sure data is written into the memory.
+> 
+> Please note, this memmap is temporary for copying older SMMU table to
+> cfg->strtab.
+> Here, cfg->strtab & cfg->strtab_dma allocated via dmam_alloc_coherent
+> during SMMU probe.
+> 
+> 
+> > > During SMMU probe functions,  dmem_alloc_coherent() will be used
+> > > allocate new memory (part of existing flow).
+> > > This patch copy STE or first level descriptor to *this* memory, after
+> > > mapping physical address using memremap().
+> > > It just copy everything  so there should not be any issue related to
+> > > attribute/content.
+> > >
+> > > Yes, copying  done after mapping it as MEMREMAP_WB. if you want I can
+> > > use it as MEMREMAP_WT
+> >
+> > You need to take into account whether or not the device is coherent, and the
+> > DMA API is designed to handle that for you. But even then, this is fragile
+> > as hell because you end up having to infer the hardware configuration
+> > from the device to understand the size and format of the data structures.
+> > If the crashkernel isn't identical to the host kernel (in terms of kconfig,
+> > driver version, firmware tables, cmdline etc) then this is very likely to
+> > go wrong.
+> 
+> There are two possible scenarios for mismatched kdump kernel
+> 1.  kdump kernel does not have the devices' driver
+> 2.  kdump kernel have the different variation/configuration of driver
+> 
+> This patch create temporary SMMU table entries which are overwritten
+> by driver-probe.
 
-On Sat, Jun 6, 2020 at 1:16 AM Pavel Tatashin <pasha.tatashin@soleen.com> wrote:
->
-> kmsg_dump(KMSG_DUMP_SHUTDOWN) is called before
-> machine_restart(), machine_halt(), machine_power_off(), the only one that
-> is missing is  machine_kexec().
->
-> The dmesg output that it contains can be used to study the shutdown
-> performance of both kernel and systemd during kexec reboot.
->
-> Here is example of dmesg data collected after kexec:
->
-> root@dplat-cp22:~# cat /sys/fs/pstore/dmesg-ramoops-0 | tail
-> ...
-> <6>[   70.914592] psci: CPU3 killed (polled 0 ms)
-> <5>[   70.915705] CPU4: shutdown
-> <6>[   70.916643] psci: CPU4 killed (polled 4 ms)
-> <5>[   70.917715] CPU5: shutdown
-> <6>[   70.918725] psci: CPU5 killed (polled 0 ms)
-> <5>[   70.919704] CPU6: shutdown
-> <6>[   70.920726] psci: CPU6 killed (polled 4 ms)
-> <5>[   70.921642] CPU7: shutdown
-> <6>[   70.922650] psci: CPU7 killed (polled 0 ms)
->
-> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-> ---
->  kernel/kexec_core.c | 2 ++
->  1 file changed, 2 insertions(+)
->
-> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
-> index c19c0dad1ebe..50027f759a97 100644
-> --- a/kernel/kexec_core.c
-> +++ b/kernel/kexec_core.c
-> @@ -37,6 +37,7 @@
->  #include <linux/compiler.h>
->  #include <linux/hugetlb.h>
->  #include <linux/frame.h>
-> +#include <linux/kmsg_dump.h>
->
->  #include <asm/page.h>
->  #include <asm/sections.h>
-> @@ -1181,6 +1182,7 @@ int kernel_kexec(void)
->                 machine_shutdown();
->         }
->
-> +       kmsg_dump(KMSG_DUMP_SHUTDOWN);
->         machine_kexec(kexec_image);
->
->  #ifdef CONFIG_KEXEC_JUMP
-> --
-> 2.25.1
+What exactly does this achieve, given that you don't copy the context
+descriptors or the page tables?
 
-LGTM, so:
+> Driver's probe will overwrite SMMU entries based on its new
+> requirement (size, format, data structures etc).
+> 
+> for "1",  As  no device driver,  SMMU entry will remain there.
+> Means no-one looking for the copied content (even if device continued
+> to perform DMA).
+> 
+> About coherency between Cores and Memory(DMA).
+> At the time of crash:  Only one CPU is allowed to remain continue,
+> rest are stopped.
+> __crash_kexec --> machine_crash_shutdown --> crash_smp_send_stop()
+> 
+> The active CPU is used to boot kdump kernel. hence none of the CPUs is
+> looking for data copied by DMA.
+> Coherency issue should not be there.
 
-Reviewed-by: Bhupesh Sharma <bhsharma@redhat.com>
+I'm talking about coherency between the SMMU and the CPU, so I don't think
+the number of CPUs is relevant.
 
-Thanks.
+> please let me know your view.
 
+It still seems extremely fragile to me, so I continue to think that this
+is the wrong approach.
+
+Will
 
 _______________________________________________
 kexec mailing list
