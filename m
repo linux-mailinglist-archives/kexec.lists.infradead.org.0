@@ -2,73 +2,51 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 282EE1F27CA
-	for <lists+kexec@lfdr.de>; Tue,  9 Jun 2020 01:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 454B01F336E
+	for <lists+kexec@lfdr.de>; Tue,  9 Jun 2020 07:29:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gwreBzDDCcMsVVtl/8NUAOmZj1SlMkrlkNDDcR2U3hA=; b=KN/We3HvDFku+9
-	Ry9xGc8qakkFD+7r0tD/xooMALq9edDK7czGyuMtIPR0pQgfephfQWbf1d9nhuugqtQJoTN8amRqQ
-	E+t5H0eZxGFX7+4ZiCFHEp+ntCrqtZuPjxb6LTf3QFjBCkvyzOUqiKayh0A6wJKlj0W+xdCbr2WFz
-	RrR8QpcEh/sKt2fYp1RAKI9T1UDaABEoZzaodrO0dExdkcBrBTltTpe9GiQQzj4OIV04Y3Je33RH+
-	uaS4CnvRHexD/BfF4vj2+F/a7oxoUuR3ILLOwk2/ntJaNs6MVc6fRzLbs3ziL0ycZ8clW6kmAle9M
-	fRi/7uG5fTjuGCLcUEww==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	Subject:References:In-Reply-To:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=BtoEqbeBblWKtZAYD+6DQkLqMWOrWo8YE8ejvfQJg+8=; b=Ad1lKfDFPoRtBvqM2dk7hH80u9
+	ncc+TtCIZv+IEohF7jnQRlVCW/Lsilo9PB8PYkSPFkWgp3ghDpU6VnFiAWbVDtmH+yvB9Pu9KzFIU
+	V700OEyI6FQIoKq1Z7Bf2kHPbAb8hftxQveddTNeHSxYr35OFdEvKgOebBhCnnYtfUuAW3aaIyKjM
+	CHWpsvPrID0AyEJX7C5sbYrXjd0+1U8Q310Br05puZh/k4sR6iGUezUnNnLOZmBQJ3/4DxPY/WpnY
+	gJPPJRGC8J2T4ofMlCCLdQvlMPXDM399l+H6n1em47fKwbJIwHeB2DF3RQMkoFz0fJW2EERbBm3Tg
+	4iRc7IBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRb0-00037G-43; Mon, 08 Jun 2020 23:54:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jiWp5-0000wO-3v; Tue, 09 Jun 2020 05:29:19 +0000
+Received: from ozlabs.org ([203.11.71.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR9d-0007E6-8V
- for kexec@lists.infradead.org; Mon, 08 Jun 2020 23:26:11 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DCC622076C;
- Mon,  8 Jun 2020 23:26:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658768;
- bh=KeY8v4RJ7yN+WDz+J0DVALBSxCJOqAb2txDykQhp+Vw=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qOoDeOO5Cr1gI3R1rv2KQanJbgzP6ypNA6qxwuzVv2Mi5triXYyHAeCOmPe9kQcc2
- Esc7geLnc+A1Wxq8QWuTW4eWyzwtq1sr04E8fiPWUzgm1ksJCA5WpQurnFG1iliEVC
- C55r53VBWLm4c6e0Ehu7CrmSCJ5RTAPhrAo0WvQY=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 50/72] net: qed*: Reduce RX and TX default ring
- count when running inside kdump kernel
-Date: Mon,  8 Jun 2020 19:24:38 -0400
-Message-Id: <20200608232500.3369581-50-sashal@kernel.org>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200608232500.3369581-1-sashal@kernel.org>
-References: <20200608232500.3369581-1-sashal@kernel.org>
-MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+ id 1jiWp1-0000ua-F2
+ for kexec@lists.infradead.org; Tue, 09 Jun 2020 05:29:16 +0000
+Received: by ozlabs.org (Postfix, from userid 1034)
+ id 49gzF51826z9sTV; Tue,  9 Jun 2020 15:28:56 +1000 (AEST)
+From: Michael Ellerman <patch-notifications@ellerman.id.au>
+To: linuxppc-dev@lists.ozlabs.org, Pingfan Liu <kernelfans@gmail.com>
+In-Reply-To: <1585749644-4148-1-git-send-email-kernelfans@gmail.com>
+References: <48c1b852-28e0-9c46-cafa-7c5992f966a7@linux.ibm.com>
+ <1585749644-4148-1-git-send-email-kernelfans@gmail.com>
+Subject: Re: [PATCHv4] powerpc/crashkernel: take "mem=" option into account
+Message-Id: <159168034259.1381411.9724380160125554368.b4-ty@ellerman.id.au>
+Date: Tue,  9 Jun 2020 15:28:56 +1000 (AEST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162609_356087_2C909E0F 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200608_222915_661780_4BAB3DD8 
+X-CRM114-Status: UNSURE (   4.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,154 +58,31 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Ariel Elior <aelior@marvell.com>,
- Manish Chopra <manishc@marvell.com>, netdev@vger.kernel.org,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- GR-everest-linux-l2@marvell.com, "David S . Miller" <davem@davemloft.net>
+Cc: kexec@lists.infradead.org, Hari Bathini <hbathini@linux.ibm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-From: Bhupesh Sharma <bhsharma@redhat.com>
+On Wed, 1 Apr 2020 22:00:44 +0800, Pingfan Liu wrote:
+> 'mem=" option is an easy way to put high pressure on memory during some
+> test. Hence after applying the memory limit, instead of total mem, the
+> actual usable memory should be considered when reserving mem for
+> crashkernel. Otherwise the boot up may experience OOM issue.
+> 
+> E.g. it would reserve 4G prior to the change and 512M afterward, if passing
+> crashkernel="2G-4G:384M,4G-16G:512M,16G-64G:1G,64G-128G:2G,128G-:4G", and
+> mem=5G on a 256G machine.
+> 
+> [...]
 
-[ Upstream commit 73e030977f7884dbe1be0018bab517e8d02760f8 ]
+Applied to powerpc/next.
 
-Normally kdump kernel(s) run under severe memory constraint with the
-basic idea being to save the crashdump vmcore reliably when the primary
-kernel panics/hangs.
+[1/1] powerpc/crashkernel: Take "mem=" option into account
+      https://git.kernel.org/powerpc/c/be5470e0c285a68dc3afdea965032f5ddc8269d7
 
-Currently the qed* ethernet driver ends up consuming a lot of memory in
-the kdump kernel, leading to kdump kernel panic when one tries to save
-the vmcore via ssh/nfs (thus utilizing the services of the underlying
-qed* network interfaces).
-
-An example OOM message log seen in the kdump kernel can be seen here
-[1], with crashkernel size reservation of 512M.
-
-Using tools like memstrack (see [2]), we can track the modules taking up
-the bulk of memory in the kdump kernel and organize the memory usage
-output as per 'highest allocator first'. An example log for the OOM case
-indicates that the qed* modules end up allocating approximately 216M
-memory, which is a large part of the total crashkernel size:
-
- dracut-pre-pivot[676]: ======== Report format module_summary: ========
- dracut-pre-pivot[676]: Module qed using 149.6MB (2394 pages), peak allocation 149.6MB (2394 pages)
- dracut-pre-pivot[676]: Module qede using 65.3MB (1045 pages), peak allocation 65.3MB (1045 pages)
-
-This patch reduces the default RX and TX ring count from 1024 to 64
-when running inside kdump kernel, which leads to a significant memory
-saving.
-
-An example log with the patch applied shows the reduced memory
-allocation in the kdump kernel:
- dracut-pre-pivot[674]: ======== Report format module_summary: ========
- dracut-pre-pivot[674]: Module qed using 141.8MB (2268 pages), peak allocation 141.8MB (2268 pages)
- <..snip..>
-[dracut-pre-pivot[674]: Module qede using 4.8MB (76 pages), peak allocation 4.9MB (78 pages)
-
-Tested crashdump vmcore save via ssh/nfs protocol using underlying qed*
-network interface after applying this patch.
-
-[1] OOM log:
-------------
-
- kworker/0:6: page allocation failure: order:6,
- mode:0x60c0c0(GFP_KERNEL|__GFP_COMP|__GFP_ZERO), nodemask=(null)
- kworker/0:6 cpuset=/ mems_allowed=0
- CPU: 0 PID: 145 Comm: kworker/0:6 Not tainted 4.18.0-109.el8.aarch64 #1
- Hardware name: To be filled by O.E.M. Saber/Saber, BIOS 0ACKL025
- 01/18/2019
- Workqueue: events work_for_cpu_fn
- Call trace:
-  dump_backtrace+0x0/0x188
-  show_stack+0x24/0x30
-  dump_stack+0x90/0xb4
-  warn_alloc+0xf4/0x178
-  __alloc_pages_nodemask+0xcac/0xd58
-  alloc_pages_current+0x8c/0xf8
-  kmalloc_order_trace+0x38/0x108
-  qed_iov_alloc+0x40/0x248 [qed]
-  qed_resc_alloc+0x224/0x518 [qed]
-  qed_slowpath_start+0x254/0x928 [qed]
-   __qede_probe+0xf8/0x5e0 [qede]
-  qede_probe+0x68/0xd8 [qede]
-  local_pci_probe+0x44/0xa8
-  work_for_cpu_fn+0x20/0x30
-  process_one_work+0x1ac/0x3e8
-  worker_thread+0x44/0x448
-  kthread+0x130/0x138
-  ret_from_fork+0x10/0x18
-  Cannot start slowpath
-  qede: probe of 0000:05:00.1 failed with error -12
-
-[2]. Memstrack tool: https://github.com/ryncsn/memstrack
-
-Cc: kexec@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: Ariel Elior <aelior@marvell.com>
-Cc: GR-everest-linux-l2@marvell.com
-Cc: Manish Chopra <manishc@marvell.com>
-Cc: David S. Miller <davem@davemloft.net>
-Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- drivers/net/ethernet/qlogic/qede/qede.h      |  2 ++
- drivers/net/ethernet/qlogic/qede/qede_main.c | 11 +++++++++--
- 2 files changed, 11 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/ethernet/qlogic/qede/qede.h b/drivers/net/ethernet/qlogic/qede/qede.h
-index a80531b5aecc..c132b08cefde 100644
---- a/drivers/net/ethernet/qlogic/qede/qede.h
-+++ b/drivers/net/ethernet/qlogic/qede/qede.h
-@@ -528,12 +528,14 @@ void qede_update_rx_prod(struct qede_dev *edev, struct qede_rx_queue *rxq);
- #define RX_RING_SIZE		((u16)BIT(RX_RING_SIZE_POW))
- #define NUM_RX_BDS_MAX		(RX_RING_SIZE - 1)
- #define NUM_RX_BDS_MIN		128
-+#define NUM_RX_BDS_KDUMP_MIN	63
- #define NUM_RX_BDS_DEF		((u16)BIT(10) - 1)
- 
- #define TX_RING_SIZE_POW	13
- #define TX_RING_SIZE		((u16)BIT(TX_RING_SIZE_POW))
- #define NUM_TX_BDS_MAX		(TX_RING_SIZE - 1)
- #define NUM_TX_BDS_MIN		128
-+#define NUM_TX_BDS_KDUMP_MIN	63
- #define NUM_TX_BDS_DEF		NUM_TX_BDS_MAX
- 
- #define QEDE_MIN_PKT_LEN		64
-diff --git a/drivers/net/ethernet/qlogic/qede/qede_main.c b/drivers/net/ethernet/qlogic/qede/qede_main.c
-index dab202f343c6..8bb734486bf3 100644
---- a/drivers/net/ethernet/qlogic/qede/qede_main.c
-+++ b/drivers/net/ethernet/qlogic/qede/qede_main.c
-@@ -29,6 +29,7 @@
-  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  * SOFTWARE.
-  */
-+#include <linux/crash_dump.h>
- #include <linux/module.h>
- #include <linux/pci.h>
- #include <linux/version.h>
-@@ -624,8 +625,14 @@ static struct qede_dev *qede_alloc_etherdev(struct qed_dev *cdev,
- 	edev->dp_module = dp_module;
- 	edev->dp_level = dp_level;
- 	edev->ops = qed_ops;
--	edev->q_num_rx_buffers = NUM_RX_BDS_DEF;
--	edev->q_num_tx_buffers = NUM_TX_BDS_DEF;
-+
-+	if (is_kdump_kernel()) {
-+		edev->q_num_rx_buffers = NUM_RX_BDS_KDUMP_MIN;
-+		edev->q_num_tx_buffers = NUM_TX_BDS_KDUMP_MIN;
-+	} else {
-+		edev->q_num_rx_buffers = NUM_RX_BDS_DEF;
-+		edev->q_num_tx_buffers = NUM_TX_BDS_DEF;
-+	}
- 
- 	DP_INFO(edev, "Allocated netdev with %d tx queues and %d rx queues\n",
- 		info->num_queues, info->num_queues);
--- 
-2.25.1
-
+cheers
 
 _______________________________________________
 kexec mailing list
