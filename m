@@ -2,59 +2,94 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 046751F5725
-	for <lists+kexec@lfdr.de>; Wed, 10 Jun 2020 16:57:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2130F1F595A
+	for <lists+kexec@lfdr.de>; Wed, 10 Jun 2020 18:48:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:MIME-Version
+	:In-Reply-To:References:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gaZ24UDgCc2fbLoif5gCoEnVTQg7WxJSp94Q9RS2DVU=; b=LY6yqLZbBiyZdB
-	f6+sEu5vfpYz0nQjEzJcIJI9/iD2MgobeN70gbqWJCFHtGvGYdL7Ef2Hv2FQc4q3b7XAlvHSo+ZEq
-	2Y2oaz4mMLuXOwhZe4+Svu6u5JrPcU+WQsLrciOlERfoWqEjKx+MThfAazToMqxKruzcHnQUQT9GB
-	BFcnJ91YSo+wAdy8kTRc36fqvkM9/RLJu+cWT6BCg3EHvGqhTsSNJqRRzerYFdBmUUFVq0MfnOHKb
-	4O5ge892J2+4SrUTyUsKW68ia197fL5zKcbqLCZHAUBhRmNPMg/8TiWXMSNVyLchrRTahr6ZBmuYe
-	3Q63aLpTYFshwxNmwDsw==;
+	List-Owner; bh=c7dEv/QqGWgyHdZn6D+P0ZtVnPAFm82uQUHkwImvPNU=; b=L/LdP6sqV6weHI
+	jfIUVcqUUL2r2iuyv8pkhWpA3rnM5NWcVVQz093nBPkYCKqsIVdX0dPixwUrgRkqnZWNaHbsyB5ls
+	kfQSxgsHT1A0357wZJ4z1Y5ebrI+5sX/DQKHhku5SCPTbYqyWPcS2GzIw40xdNInee/rRPLQLvrB5
+	URVDkweG7fF5745b60bgdTTxwcZUm3255QK87tfmCIfKgSsCm1cdkhdETgpoAqs+0n2+xLzcHcoo2
+	hqdkgFlvumxJr1ujgaH2WhsM/ZwcKxAcbITpDZft2sgjNpOF0Jr0kBuj1EWL6qS193khYyHPftNnR
+	ZVkboEQw1qrpfAorhctQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj2A7-0008Qi-BU; Wed, 10 Jun 2020 14:57:07 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1jj3tJ-0002rl-QR; Wed, 10 Jun 2020 16:47:53 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj2A3-0008P2-Gd
- for kexec@lists.infradead.org; Wed, 10 Jun 2020 14:57:05 +0000
-Received: from localhost ([127.0.0.1] helo=vostro)
- by Galois.linutronix.de with esmtps (TLS1.2:RSA_AES_256_CBC_SHA1:256)
- (Exim 4.80) (envelope-from <john.ogness@linutronix.de>)
- id 1jj29v-0006vJ-83; Wed, 10 Jun 2020 16:56:55 +0200
-From: John Ogness <john.ogness@linutronix.de>
-To: Petr Mladek <pmladek@suse.com>
-Subject: Re: redundant check in make_data_reusable(): was [PATCH v2 2/3]
- printk: add lockless buffer
-References: <20200501094010.17694-1-john.ogness@linutronix.de>
- <20200501094010.17694-3-john.ogness@linutronix.de>
- <20200609093103.GB23752@linux-b0ei>
- <87lfkwuwg1.fsf@vostro.fn.ogness.net>
- <20200610093835.GB4311@linux-b0ei>
- <87o8prp6bi.fsf@vostro.fn.ogness.net>
-Date: Wed, 10 Jun 2020 16:56:53 +0200
-In-Reply-To: <87o8prp6bi.fsf@vostro.fn.ogness.net> (John Ogness's message of
- "Wed, 10 Jun 2020 12:24:01 +0200")
-Message-ID: <87d067otoq.fsf@vostro.fn.ogness.net>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jj3t8-0002j4-O6
+ for kexec@lists.infradead.org; Wed, 10 Jun 2020 16:47:44 +0000
+Received: by mail-lj1-x241.google.com with SMTP id a9so3346725ljn.6
+ for <kexec@lists.infradead.org>; Wed, 10 Jun 2020 09:47:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:references:in-reply-to:mime-version:thread-index:date
+ :message-id:subject:to:cc;
+ bh=Wgk0yt3rGUu1tleKM7Yx4NUQ7kZrWEZxc/FMnYOlLyk=;
+ b=BwqJHs8EIKH+FmYvMd8uouQWRJvhpEnfnLHWpAn0Iz1/bQTTHDPZCESByHf++uunPl
+ edLJqCaNjO8Yp0e/gfZkzfxuk3ofNiWtrmlI0fmCcWYlyPMqg/NLHi2wddhEZbm4MT31
+ 84GXeYmz0UCudRg2UiHAnT5YTwTiW4+V5zwwA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:references:in-reply-to:mime-version
+ :thread-index:date:message-id:subject:to:cc;
+ bh=Wgk0yt3rGUu1tleKM7Yx4NUQ7kZrWEZxc/FMnYOlLyk=;
+ b=hY+7VU+uKcOJdfPN0E/yd32mN1aNn1HfL7ba2CtotoAMML7dh4Kn1BA4c/VDq+83m9
+ h4SRAqbaFwtMxfcEIIuVhKuOgaASk+IGRxmARWcEHYb+uCQLjMQfrsDsgKcB5HSIFooM
+ ZWbpugf9QTYskp3C7P6HtPQpJxVJiMpJQ4kzE3E69k8ziCFa6ILScYJHpqPrWV+RawCu
+ Q6TnNwjtKr/+wodpX/Lq9JiXus5e8RIeFtZ9n7bOY462arNbifwByePRiBl93udKzMvv
+ U7TzURYHX8ZlKIVUuu4L2sw913M9pz0rclrlBAqpBNFxHvLjF1H1FxtZplA4A4O2loQ2
+ OMYg==
+X-Gm-Message-State: AOAM5320bac74evW3phNT8nyTGZ/mCAFj8JRDhvsS5+rcr4nDHr80P73
+ JnEIYGfmueUuOs+jcyyDYloADhHKWbJ8w0KkL+jbMg==
+X-Google-Smtp-Source: ABdhPJybLU/2CjAJVJPuUuHLVTaNRALIxFaQ1jXqAK4DxjbYxXUiT3UDG0PB/ZazLSQM53Ej2g9cxEOKaYDqT/oj0/k=
+X-Received: by 2002:a2e:b889:: with SMTP id r9mr2301746ljp.92.1591807660018;
+ Wed, 10 Jun 2020 09:47:40 -0700 (PDT)
+From: Bharat Gooty <bharat.gooty@broadcom.com>
+References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
+ <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
+ <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
+ <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
+ <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
+ <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
+ <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
+ <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
+ <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
+ <d401b003-af3e-c525-ba00-0de48486b7a0@broadcom.com>
+In-Reply-To: <d401b003-af3e-c525-ba00-0de48486b7a0@broadcom.com>
 MIME-Version: 1.0
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AQGa98r5q5qEPCZDE5DL4GJrrz9qcAGNQyRgApgGah0B/ao0mwIUlx9FAsYr/NkBJYrXxQK1AqgNAhb3920BQkNqpai3DgCQ
+Date: Wed, 10 Jun 2020 22:17:37 +0530
+Message-ID: <f644ddb6fdb926606bb376a9f491ee79@mail.gmail.com>
+Subject: RE: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
+ in vmcoreinfo
+To: Scott Branden <scott.branden@broadcom.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_075703_688982_577AEB9B 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200610_094742_787678_8975CE9B 
+X-CRM114-Status: GOOD (  25.31  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,149 +101,182 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Paul McKenney <paulmck@kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ray Jui <ray.jui@broadcom.com>, linuxppc-dev@lists.ozlabs.org,
+ James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
+ bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Steve Capper <steve.capper@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 2020-06-10, Petr Mladek <pmladek@suse.com> wrote:
->> +static bool data_make_reusable(struct printk_ringbuffer *rb,
->> +			       struct prb_data_ring *data_ring,
->> +			       unsigned long lpos_begin,
->> +			       unsigned long lpos_end,
->> +			       unsigned long *lpos_out)
->> +{
->> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
->> +	struct prb_data_blk_lpos *blk_lpos;
->> +	struct prb_data_block *blk;
->> +	unsigned long tail_lpos;
->> +	enum desc_state d_state;
->> +	struct prb_desc desc;
->> +	unsigned long id;
->> +
->> +	/*
->> +	 * Using the provided @data_ring, point @blk_lpos to the correct
->> +	 * blk_lpos within the local copy of the descriptor.
->> +	 */
->> +	if (data_ring == &rb->text_data_ring)
->> +		blk_lpos = &desc.text_blk_lpos;
->> +	else
->> +		blk_lpos = &desc.dict_blk_lpos;
->> +
->> +	/* Loop until @lpos_begin has advanced to or beyond @lpos_end. */
->> +	while ((lpos_end - lpos_begin) - 1 < DATA_SIZE(data_ring)) {
->> +		blk = to_block(data_ring, lpos_begin);
->> +		id = READ_ONCE(blk->id); /* LMM(data_make_reusable:A) */
->> +
->> +		/*
->> +		 * Guarantee the block ID is loaded before checking the tail
->> +		 * lpos. The loaded block ID can only be considered valid if
->> +		 * the tail lpos has not overtaken @lpos_begin. This pairs
->> +		 * with data_alloc:A.
->> +		 *
->> +		 * Memory barrier involvement:
->> +		 *
->> +		 * If data_make_reusable:A reads from data_alloc:B, then
->> +		 * data_make_reusable:C reads from data_push_tail:D.
->> +		 *
->> +		 * Relies on:
->> +		 *
->> +		 * MB from data_push_tail:D to data_alloc:B
->> +		 *    matching
->> +		 * RMB from data_make_reusable:A to data_make_reusable:C
->> +		 *
->> +		 * Note: data_push_tail:D and data_alloc:B can be different
->> +		 *       CPUs. However, the data_alloc:B CPU (which performs
->> +		 *       the full memory barrier) must have previously seen
->> +		 *       data_push_tail:D.
->> +		 */
->> +		smp_rmb(); /* LMM(data_make_reusable:B) */
->> +
->> +		tail_lpos = atomic_long_read(&data_ring->tail_lpos
->> +					); /* LMM(data_make_reusable:C) */
->> +
->> +		/*
->> +		 * If @lpos_begin has fallen behind the tail lpos, the read
->> +		 * block ID cannot be trusted. Fast forward @lpos_begin to the
->> +		 * tail lpos and try again.
->> +		 */
->> +		if (lpos_begin - tail_lpos >= DATA_SIZE(data_ring)) {
->> +			lpos_begin = tail_lpos;
->> +			continue;
->> +		}
->> +
->> +		d_state = desc_read(desc_ring, id,
->> +				    &desc); /* LMM(data_make_reusable:D) */
->> +
->> +		switch (d_state) {
->> +		case desc_miss:
->> +			return false;
->> +		case desc_reserved:
->> +			return false;
->> +		case desc_committed:
->> +			/*
->> +			 * This data block is invalid if the descriptor
->> +			 * does not point back to it.
->> +			 */
+Hello Bhupesh,
+V6 patch set on Linux 5.7, did not help.
+I have applied makedump file
+http://lists.infradead.org/pipermail/kexec/2019-November/023963.html changes
+also (makedump-1.6.6). Tried to apply it on makedumpfile 1.6.7.  Patch set_2
+failed. Would like to know, if you have V5 patch set for makedump file
+changes. With makedump 1.6.6, able to collect the vmore file.
+I used latest crash utility
+(https://www.redhat.com/archives/crash-utility/2019-November/msg00014.html
+changes are present)
+When I used crash utility, following is the error:
+
+Thanks,
+-Bharat
+
+
+-----Original Message-----
+From: Scott Branden [mailto:scott.branden@broadcom.com]
+Sent: Thursday, April 30, 2020 4:34 AM
+To: Bhupesh Sharma; Amit Kachhap
+Cc: Mark Rutland; x86@kernel.org; Will Deacon; Linux Doc Mailing List;
+Catalin Marinas; Ard Biesheuvel; kexec mailing list; Linux Kernel Mailing
+List; Kazuhito Hagio; James Morse; Dave Anderson; bhupesh linux;
+linuxppc-dev@lists.ozlabs.org; linux-arm-kernel; Steve Capper; Ray Jui;
+Bharat Gooty
+Subject: Re: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
+in vmcoreinfo
+
+Hi Bhupesh,
+
+On 2020-02-23 10:25 p.m., Bhupesh Sharma wrote:
+> Hi Amit,
 >
-> Here again the comments describe what the check does but not why.
-> I would write something like:
+> On Fri, Feb 21, 2020 at 2:36 PM Amit Kachhap <amit.kachhap@arm.com> wrote:
+>> Hi Bhupesh,
+>>
+>> On 1/13/20 5:44 PM, Bhupesh Sharma wrote:
+>>> Hi James,
+>>>
+>>> On 01/11/2020 12:30 AM, Dave Anderson wrote:
+>>>> ----- Original Message -----
+>>>>> Hi Bhupesh,
+>>>>>
+>>>>> On 25/12/2019 19:01, Bhupesh Sharma wrote:
+>>>>>> On 12/12/2019 04:02 PM, James Morse wrote:
+>>>>>>> On 29/11/2019 19:59, Bhupesh Sharma wrote:
+>>>>>>>> vabits_actual variable on arm64 indicates the actual VA space size,
+>>>>>>>> and allows a single binary to support both 48-bit and 52-bit VA
+>>>>>>>> spaces.
+>>>>>>>>
+>>>>>>>> If the ARMv8.2-LVA optional feature is present, and we are running
+>>>>>>>> with a 64KB page size; then it is possible to use 52-bits of
+>>>>>>>> address
+>>>>>>>> space for both userspace and kernel addresses. However, any kernel
+>>>>>>>> binary that supports 52-bit must also be able to fall back to
+>>>>>>>> 48-bit
+>>>>>>>> at early boot time if the hardware feature is not present.
+>>>>>>>>
+>>>>>>>> Since TCR_EL1.T1SZ indicates the size offset of the memory region
+>>>>>>>> addressed by TTBR1_EL1 (and hence can be used for determining the
+>>>>>>>> vabits_actual value) it makes more sense to export the same in
+>>>>>>>> vmcoreinfo rather than vabits_actual variable, as the name of the
+>>>>>>>> variable can change in future kernel versions, but the
+>>>>>>>> architectural
+>>>>>>>> constructs like TCR_EL1.T1SZ can be used better to indicate
+>>>>>>>> intended
+>>>>>>>> specific fields to user-space.
+>>>>>>>>
+>>>>>>>> User-space utilities like makedumpfile and crash-utility, need to
+>>>>>>>> read/write this value from/to vmcoreinfo
+>>>>>>> (write?)
+>>>>>> Yes, also write so that the vmcoreinfo from an (crashing) arm64
+>>>>>> system can
+>>>>>> be used for
+>>>>>> analysis of the root-cause of panic/crash on say an x86_64 host using
+>>>>>> utilities like
+>>>>>> crash-utility/gdb.
+>>>>> I read this as as "User-space [...] needs to write to vmcoreinfo".
+>>> That's correct. But for writing to vmcore dump in the kdump kernel, we
+>>> need to read the symbols from the vmcoreinfo in the primary kernel.
+>>>
+>>>>>>>> for determining if a virtual address lies in the linear map range.
+>>>>>>> I think this is a fragile example. The debugger shouldn't need to
+>>>>>>> know
+>>>>>>> this.
+>>>>>> Well that the current user-space utility design, so I am not sure we
+>>>>>> can
+>>>>>> tweak that too much.
+>>>>>>
+>>>>>>>> The user-space computation for determining whether an address lies
+>>>>>>>> in
+>>>>>>>> the linear map range is the same as we have in kernel-space:
+>>>>>>>>
+>>>>>>>>      #define __is_lm_address(addr)    (!(((u64)addr) &
+>>>>>>>> BIT(vabits_actual -
+>>>>>>>>      1)))
+>>>>>>> This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA
+>>>>>>> space"). If
+>>>>>>> user-space
+>>>>>>> tools rely on 'knowing' the kernel memory layout, they must have to
+>>>>>>> constantly be fixed
+>>>>>>> and updated. This is a poor argument for adding this to something
+>>>>>>> that
+>>>>>>> ends up as ABI.
+>>>>>> See above. The user-space has to rely on some ABI/guaranteed
+>>>>>> hardware-symbols which can be
+>>>>>> used for 'determining' the kernel memory layout.
+>>>>> I disagree. Everything and anything in the kernel will change. The
+>>>>> ABI rules apply to
+>>>>> stuff exposed via syscalls and kernel filesystems. It does not apply
+>>>>> to kernel internals,
+>>>>> like the memory layout we used yesterday. 14c127c957c1 is a case in
+>>>>> point.
+>>>>>
+>>>>> A debugger trying to rely on this sort of thing would have to play
+>>>>> catchup whenever it
+>>>>> changes.
+>>>> Exactly.  That's the whole point.
+>>>>
+>>>> The crash utility and makedumpfile are not in the same league as other
+>>>> user-space tools.
+>>>> They have always had to "play catchup" precisely because they depend
+>>>> upon kernel internals,
+>>>> which constantly change.
+>>> I agree with you and DaveA here. Software user-space debuggers are
+>>> dependent on kernel internals (which can change from time-to-time) and
+>>> will have to play catch-up (which has been the case since the very
+>>> start).
+>>>
+>>> Unfortunately we don't have any clear ABI for software debugging tools -
+>>> may be something to look for in future.
+>>>
+>>> A case in point is gdb/kgdb, which still needs to run with KASLR
+>>> turned-off (nokaslr) for debugging, as it confuses gdb which resolve
+>>> kernel symbol address from symbol table of vmlinux. But we can
+>>> work-around the same in makedumpfile/crash by reading the 'kaslr_offset'
+>>> value. And I have several users telling me now they cannot use gdb on
+>>> KASLR enabled kernel to debug panics, but can makedumpfile + crash
+>>> combination to achieve the same.
+>>>
+>>> So, we should be looking to fix these utilities which are broken since
+>>> the 52-bit changes for arm64. Accordingly, I will try to send the v6
+>>> soon while incorporating the comments posted on the v5.
+>> Any update on the next v6 version. Since this patch series is fixing the
+>> current broken kdump so need this series to add some more fields in
+>> vmcoreinfo for Pointer Authentication work.
+> Sorry for the delay. I was caught up in some other urgent arm64
+> user-space issues.
+> I am preparing the v6 now and hopefully will be able to post it out
+> for review later today.
+
+Did v6 get sent out?
+
 >
-> 			/*
-> 			 * The block might have already been
-> 			 * reused. Make sure that the descriptor really
-> 			 * points back to the checked lpos. It covers
-> 			 * both situations. Random data might point to
-> 			 * a valid descriptor just by chance. Or the block
-> 			 * has been already reused by another descriptor.
-> 			 */
-
-Originally this check was needed because the descriptor would be read
-even if there was a data race reading the ID from the data
-block. Validating the lpos value was a kind of protection against
-reading random data that by chance yielded an ID of a committed/reusable
-descriptor.
-
-However, after you pointed out that this check was not enough, the code
-now re-checks the data tail to make sure that no data race happened. So
-actually it is not possible that a descriptor in the committed/reusable
-state will point anywhere else. We know the ID is not random garbage or
-recycled, so the state can be trusted.
-
-I recommend to either remove this sanity check (for committed and
-reusable) or at least change it to:
-
-			WARN_ON_ONCE(blk_lpos->begin != lpos_begin);
-
-Or can you see any possibility of this case?
-
->> +			if (blk_lpos->begin != lpos_begin)
->> +				return false;
->> +			desc_make_reusable(desc_ring, id);
->> +			break;
->> +		case desc_reusable:
->> +			/*
->> +			 * This data block is invalid if the descriptor
->> +			 * does not point back to it.
->> +			 */
->> +			if (blk_lpos->begin != lpos_begin)
->> +				return false;
->> +			break;
->> +		}
->> +
->> +		/* Advance @lpos_begin to the next data block. */
->> +		lpos_begin = blk_lpos->next;
->> +	}
-
-John Ogness
+> Thanks,
+> Bhupesh
+>
+>
+Regards,
+Scott
 
 _______________________________________________
 kexec mailing list
