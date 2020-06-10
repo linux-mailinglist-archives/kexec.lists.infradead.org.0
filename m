@@ -2,48 +2,50 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9801F5646
-	for <lists+kexec@lfdr.de>; Wed, 10 Jun 2020 15:55:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 046751F5725
+	for <lists+kexec@lfdr.de>; Wed, 10 Jun 2020 16:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3o4axhKLafIIih9Dt+s0DkNUGZOSgrj7zKK6T012/ks=; b=uyyydXhlFdZFim
-	Purr3LIDFuN8+9HVdWarKHxQnkNmddAlKyEZstzuxYaRVr1eXBwIGds3VAach9ialEi3vZqPQcN9R
-	aY4LiYF04Ay89woeKWFdtbXJan4VLF2r+pKpFVrSgoykQSkd90aTjOYPsYRkWZNeUAG7t+rORIBiE
-	aOInXItjVSrRTe0hKKHsRv/KjJ4bJCLSNHTWEkMBuIkEoCxbJIrHCHFUZIRizJsk9j+e6Nx8zCbA8
-	UBCHYiJ7aY0cBrFeq2wg8P8vaO9dfJxx+PgjE7xe71ozbjth8hK62OXxb8ez+oN2wPGQAj13LN0DP
-	qks/pCC8vq9J8xZRgKSw==;
+	List-Owner; bh=gaZ24UDgCc2fbLoif5gCoEnVTQg7WxJSp94Q9RS2DVU=; b=LY6yqLZbBiyZdB
+	f6+sEu5vfpYz0nQjEzJcIJI9/iD2MgobeN70gbqWJCFHtGvGYdL7Ef2Hv2FQc4q3b7XAlvHSo+ZEq
+	2Y2oaz4mMLuXOwhZe4+Svu6u5JrPcU+WQsLrciOlERfoWqEjKx+MThfAazToMqxKruzcHnQUQT9GB
+	BFcnJ91YSo+wAdy8kTRc36fqvkM9/RLJu+cWT6BCg3EHvGqhTsSNJqRRzerYFdBmUUFVq0MfnOHKb
+	4O5ge892J2+4SrUTyUsKW68ia197fL5zKcbqLCZHAUBhRmNPMg/8TiWXMSNVyLchrRTahr6ZBmuYe
+	3Q63aLpTYFshwxNmwDsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jj1CD-0003RY-QN; Wed, 10 Jun 2020 13:55:13 +0000
+	id 1jj2A7-0008Qi-BU; Wed, 10 Jun 2020 14:57:07 +0000
 Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jj1C9-0002KE-NB
- for kexec@lists.infradead.org; Wed, 10 Jun 2020 13:55:11 +0000
+ id 1jj2A3-0008P2-Gd
+ for kexec@lists.infradead.org; Wed, 10 Jun 2020 14:57:05 +0000
 Received: from localhost ([127.0.0.1] helo=vostro)
  by Galois.linutronix.de with esmtps (TLS1.2:RSA_AES_256_CBC_SHA1:256)
  (Exim 4.80) (envelope-from <john.ogness@linutronix.de>)
- id 1jj1C1-0005zZ-Ex; Wed, 10 Jun 2020 15:55:01 +0200
+ id 1jj29v-0006vJ-83; Wed, 10 Jun 2020 16:56:55 +0200
 From: John Ogness <john.ogness@linutronix.de>
 To: Petr Mladek <pmladek@suse.com>
-Subject: Re: blk->id read race: was: [PATCH v2 2/3] printk: add lockless buffer
+Subject: Re: redundant check in make_data_reusable(): was [PATCH v2 2/3]
+ printk: add lockless buffer
 References: <20200501094010.17694-1-john.ogness@linutronix.de>
  <20200501094010.17694-3-john.ogness@linutronix.de>
- <20200609071030.GA23752@linux-b0ei>
- <87tuzkuxtw.fsf@vostro.fn.ogness.net>
- <20200610084248.GA4311@linux-b0ei>
-Date: Wed, 10 Jun 2020 15:55:00 +0200
-In-Reply-To: <20200610084248.GA4311@linux-b0ei> (Petr Mladek's message of
- "Wed, 10 Jun 2020 10:42:48 +0200")
-Message-ID: <87k10fowjv.fsf@vostro.fn.ogness.net>
+ <20200609093103.GB23752@linux-b0ei>
+ <87lfkwuwg1.fsf@vostro.fn.ogness.net>
+ <20200610093835.GB4311@linux-b0ei>
+ <87o8prp6bi.fsf@vostro.fn.ogness.net>
+Date: Wed, 10 Jun 2020 16:56:53 +0200
+In-Reply-To: <87o8prp6bi.fsf@vostro.fn.ogness.net> (John Ogness's message of
+ "Wed, 10 Jun 2020 12:24:01 +0200")
+Message-ID: <87d067otoq.fsf@vostro.fn.ogness.net>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200610_065509_920297_3FA266AF 
-X-CRM114-Status: GOOD (  17.22  )
+X-CRM114-CacheID: sfid-20200610_075703_688982_577AEB9B 
+X-CRM114-Status: GOOD (  17.00  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,82 +80,133 @@ Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
 On 2020-06-10, Petr Mladek <pmladek@suse.com> wrote:
->>>> --- /dev/null
->>>> +++ b/kernel/printk/printk_ringbuffer.c
->>>> +/*
->>>> + * Given a data ring (text or dict), put the associated descriptor of each
->>>> + * data block from @lpos_begin until @lpos_end into the reusable state.
->>>> + *
->>>> + * If there is any problem making the associated descriptor reusable, either
->>>> + * the descriptor has not yet been committed or another writer task has
->>>> + * already pushed the tail lpos past the problematic data block. Regardless,
->>>> + * on error the caller can re-load the tail lpos to determine the situation.
->>>> + */
->>>> +static bool data_make_reusable(struct printk_ringbuffer *rb,
->>>> +			       struct prb_data_ring *data_ring,
->>>> +			       unsigned long lpos_begin,
->>>> +			       unsigned long lpos_end,
->>>> +			       unsigned long *lpos_out)
->>>> +{
->>>> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
->>>> +	struct prb_data_blk_lpos *blk_lpos;
->>>> +	struct prb_data_block *blk;
->>>> +	unsigned long tail_lpos;
->>>> +	enum desc_state d_state;
->>>> +	struct prb_desc desc;
->>>> +	unsigned long id;
->>>> +
->>>> +	/*
->>>> +	 * Using the provided @data_ring, point @blk_lpos to the correct
->>>> +	 * blk_lpos within the local copy of the descriptor.
->>>> +	 */
->>>> +	if (data_ring == &rb->text_data_ring)
->>>> +		blk_lpos = &desc.text_blk_lpos;
->>>> +	else
->>>> +		blk_lpos = &desc.dict_blk_lpos;
->>>> +
->>>> +	/* Loop until @lpos_begin has advanced to or beyond @lpos_end. */
->>>> +	while ((lpos_end - lpos_begin) - 1 < DATA_SIZE(data_ring)) {
->>>> +		blk = to_block(data_ring, lpos_begin);
->>>> +		id = READ_ONCE(blk->id); /* LMM(data_make_reusable:A) */
->>>
->>> This would deserve some comment:
+>> +static bool data_make_reusable(struct printk_ringbuffer *rb,
+>> +			       struct prb_data_ring *data_ring,
+>> +			       unsigned long lpos_begin,
+>> +			       unsigned long lpos_end,
+>> +			       unsigned long *lpos_out)
+>> +{
+>> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
+>> +	struct prb_data_blk_lpos *blk_lpos;
+>> +	struct prb_data_block *blk;
+>> +	unsigned long tail_lpos;
+>> +	enum desc_state d_state;
+>> +	struct prb_desc desc;
+>> +	unsigned long id;
+>> +
+>> +	/*
+>> +	 * Using the provided @data_ring, point @blk_lpos to the correct
+>> +	 * blk_lpos within the local copy of the descriptor.
+>> +	 */
+>> +	if (data_ring == &rb->text_data_ring)
+>> +		blk_lpos = &desc.text_blk_lpos;
+>> +	else
+>> +		blk_lpos = &desc.dict_blk_lpos;
+>> +
+>> +	/* Loop until @lpos_begin has advanced to or beyond @lpos_end. */
+>> +	while ((lpos_end - lpos_begin) - 1 < DATA_SIZE(data_ring)) {
+>> +		blk = to_block(data_ring, lpos_begin);
+>> +		id = READ_ONCE(blk->id); /* LMM(data_make_reusable:A) */
+>> +
+>> +		/*
+>> +		 * Guarantee the block ID is loaded before checking the tail
+>> +		 * lpos. The loaded block ID can only be considered valid if
+>> +		 * the tail lpos has not overtaken @lpos_begin. This pairs
+>> +		 * with data_alloc:A.
+>> +		 *
+>> +		 * Memory barrier involvement:
+>> +		 *
+>> +		 * If data_make_reusable:A reads from data_alloc:B, then
+>> +		 * data_make_reusable:C reads from data_push_tail:D.
+>> +		 *
+>> +		 * Relies on:
+>> +		 *
+>> +		 * MB from data_push_tail:D to data_alloc:B
+>> +		 *    matching
+>> +		 * RMB from data_make_reusable:A to data_make_reusable:C
+>> +		 *
+>> +		 * Note: data_push_tail:D and data_alloc:B can be different
+>> +		 *       CPUs. However, the data_alloc:B CPU (which performs
+>> +		 *       the full memory barrier) must have previously seen
+>> +		 *       data_push_tail:D.
+>> +		 */
+>> +		smp_rmb(); /* LMM(data_make_reusable:B) */
+>> +
+>> +		tail_lpos = atomic_long_read(&data_ring->tail_lpos
+>> +					); /* LMM(data_make_reusable:C) */
+>> +
+>> +		/*
+>> +		 * If @lpos_begin has fallen behind the tail lpos, the read
+>> +		 * block ID cannot be trusted. Fast forward @lpos_begin to the
+>> +		 * tail lpos and try again.
+>> +		 */
+>> +		if (lpos_begin - tail_lpos >= DATA_SIZE(data_ring)) {
+>> +			lpos_begin = tail_lpos;
+>> +			continue;
+>> +		}
+>> +
+>> +		d_state = desc_read(desc_ring, id,
+>> +				    &desc); /* LMM(data_make_reusable:D) */
+>> +
+>> +		switch (d_state) {
+>> +		case desc_miss:
+>> +			return false;
+>> +		case desc_reserved:
+>> +			return false;
+>> +		case desc_committed:
+>> +			/*
+>> +			 * This data block is invalid if the descriptor
+>> +			 * does not point back to it.
+>> +			 */
 >
-> I wonder if the comment might look like:
+> Here again the comments describe what the check does but not why.
+> I would write something like:
 >
-> /*
->  * No barrier is needed between reading tail_lpos and the related
->  * blk->id. Only CPU that modifies tail_lpos via cmpxchg is allowed
->  * to modify the related blk->id. CPUs that see the moved tail_lpos
->  * are looking at another block related to the new tail_lpos.
->  * It does not mater when the previous winner modifies the previous
->  * block.
->  */
+> 			/*
+> 			 * The block might have already been
+> 			 * reused. Make sure that the descriptor really
+> 			 * points back to the checked lpos. It covers
+> 			 * both situations. Random data might point to
+> 			 * a valid descriptor just by chance. Or the block
+> 			 * has been already reused by another descriptor.
+> 			 */
 
-Sorry, but this comment does not make sense for me. The tail is pushed
-_before_ the block ID is modified. So any kind of barrier here (where we
-read the tail, then the block ID, i.e. the same order) would be
-inappropriate anyway.
+Originally this check was needed because the descriptor would be read
+even if there was a data race reading the ID from the data
+block. Validating the lpos value was a kind of protection against
+reading random data that by chance yielded an ID of a committed/reusable
+descriptor.
 
-Also, this comment only talks about when a new value is seen, but not
-about when the old value is seen. IMO it is seeing the old value that is
-worthy of a comment since that is the only case with a data race.
+However, after you pointed out that this check was not enough, the code
+now re-checks the data tail to make sure that no data race happened. So
+actually it is not possible that a descriptor in the committed/reusable
+state will point anywhere else. We know the ID is not random garbage or
+recycled, so the state can be trusted.
 
-In preparation for my next version I have added the following comment:
+I recommend to either remove this sanity check (for committed and
+reusable) or at least change it to:
 
-        blk = to_block(data_ring, lpos_begin);
+			WARN_ON_ONCE(blk_lpos->begin != lpos_begin);
 
-        /*
-         * When going from lpos to block pointer, the wrap around
-         * feature of the lpos value is lost. Since another CPU could
-         * invalidate this data area at any time, the data tail must
-         * be re-checked after the block ID has been read.
-         */
+Or can you see any possibility of this case?
 
-        id = blk->id; /* LMM(data_make_reusable:A) */
-
-I think this comment also helps to further clarify "why" the following
-data tail check occurs.
+>> +			if (blk_lpos->begin != lpos_begin)
+>> +				return false;
+>> +			desc_make_reusable(desc_ring, id);
+>> +			break;
+>> +		case desc_reusable:
+>> +			/*
+>> +			 * This data block is invalid if the descriptor
+>> +			 * does not point back to it.
+>> +			 */
+>> +			if (blk_lpos->begin != lpos_begin)
+>> +				return false;
+>> +			break;
+>> +		}
+>> +
+>> +		/* Advance @lpos_begin to the next data block. */
+>> +		lpos_begin = blk_lpos->next;
+>> +	}
 
 John Ogness
 
