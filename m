@@ -2,60 +2,67 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA42A1F6EAE
-	for <lists+kexec@lfdr.de>; Thu, 11 Jun 2020 22:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8417E1F70AE
+	for <lists+kexec@lfdr.de>; Fri, 12 Jun 2020 01:03:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xeKcsAa3c3QZQuuVELpmoXttyGZ/8JRWLqG23sDdYFU=; b=Wo3+r6cC+hDHd0
-	xwG4QdjjKHPRqbhvmLxSYnaVdfY3SbnmoxjmxjFWwwFu3NTLCrXb8aZnDPICb/0g25w0WKR/HOZUB
-	nHLiiau2IJnUDvC8Cf1SHTqBLVfZKyYCwUG/+lC4muXvfAD4HXSnUunPY2CEXXkuPEEC3+n6KQkgJ
-	BirE4vaJaNCwa2Xjwl3L4qyoIO/3IGwv77ESeBVggnTy5bns6EW5RCxNCQB3iCH35SVX0WN3Epvc8
-	eMMTX4m6YQ8VqjZ/d6IQr0hlYjzH8WC8IeZNc6Fvbp6R5SM54AJI+lFHbEbgBesZeQpTstsvBF0Oi
-	9DkoIoO3JobqRj7WFXrg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=XZ1EvWkB9ANS1Z+9asaHiq4p1ovDQvM23SZD4bEmgRc=; b=tbjbwRxZgDPoqz
+	zb020RZxO98/1K7/MMuVAslAL00ShyrSOUpN57s44hkMyp9evK28p+yaEI7m4sJaPeAzW/8rM43b6
+	foRa058nI7dWUXaTFOje5recqxv9v8GUn+i1/e0Rprhb6LonfcZUphmOG8yoxgRQ9gQXzmhJGQ4Po
+	l/ZYQrTSkK8o6SLZ4c1x1ro97/P8wq7QEAVn2717jr5dCmyVkk/4QzL4dXWvvItb5OKV+XRe0/+eW
+	Q0YT5aJGHgB0g7uaDZvKU2+oFDzomcGgQBJk+GvwbmgC7fPnfyWwIhLm6bJoNyMqq51E52Oafne1j
+	Gq7g1p0T7UVzbdzj/4EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjTlE-0004Zd-J4; Thu, 11 Jun 2020 20:25:16 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1jjWEL-0000Fo-Gu; Thu, 11 Jun 2020 23:03:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjTlA-0004ZC-6o
- for kexec@lists.infradead.org; Thu, 11 Jun 2020 20:25:14 +0000
-Received: from localhost ([127.0.0.1] helo=vostro)
- by Galois.linutronix.de with esmtps (TLS1.2:RSA_AES_256_CBC_SHA1:256)
- (Exim 4.80) (envelope-from <john.ogness@linutronix.de>)
- id 1jjTl5-0005Yc-Ps; Thu, 11 Jun 2020 22:25:07 +0200
-From: John Ogness <john.ogness@linutronix.de>
-To: Petr Mladek <pmladek@suse.com>
-Subject: Re: redundant check in make_data_reusable(): was [PATCH v2 2/3]
- printk: add lockless buffer
-References: <20200501094010.17694-1-john.ogness@linutronix.de>
- <20200501094010.17694-3-john.ogness@linutronix.de>
- <20200609093103.GB23752@linux-b0ei>
- <87lfkwuwg1.fsf@vostro.fn.ogness.net>
- <20200610093835.GB4311@linux-b0ei>
- <87o8prp6bi.fsf@vostro.fn.ogness.net>
- <20200611135509.GE6581@linux-b0ei>
-Date: Thu, 11 Jun 2020 22:25:06 +0200
-In-Reply-To: <20200611135509.GE6581@linux-b0ei> (Petr Mladek's message of
- "Thu, 11 Jun 2020 15:55:09 +0200")
-Message-ID: <87pna5mjtp.fsf@vostro.fn.ogness.net>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jjWEI-0000F0-1X; Thu, 11 Jun 2020 23:03:27 +0000
+Received: from localhost (mobile-166-170-222-206.mycingular.net
+ [166.170.222.206])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E6CDF2075F;
+ Thu, 11 Jun 2020 23:03:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591916605;
+ bh=yM5pBJUy0BXOdjz4XMcr+tOSmSsPnlkkobonfqdzjSg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=D+qrXcCqbOyBxciiOWZgechHGVDuhy7PA3H6Zw/VkcKP/QvMh0ftEP2yKGml3S9kd
+ 09w1IeQULkDKinvROeRZPCVif1IFyJzDcFU8+jAJ4nKByZ1oX5ZQ1L9UVV+FlFvh4O
+ kHK8XgBPGMoyp63Owk4z/DP0E1b4PenykufRuFt8=
+Date: Thu, 11 Jun 2020 18:03:23 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200611230323.GA1616315@bjorn-Precision-5520>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAJ2QiJJ58nWe_vpjLWoFuM7s-7f7H-40q-4r-aGqorKPy9EPQw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_132512_393157_5E363846 
-X-CRM114-Status: GOOD (  26.57  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200611_160326_121183_ACC35A84 
+X-CRM114-Status: GOOD (  20.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,196 +74,79 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Andrea Parri <parri.andrea@gmail.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Paul McKenney <paulmck@kernel.org>, Peter Zijlstra <peterz@infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linus Torvalds <torvalds@linux-foundation.org>
+Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Myron Stowe <myron.stowe@redhat.com>,
+ Vijay Mohan Pandarathil <vijaymohan.pandarathil@hp.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-pci@vger.kernel.org,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On 2020-06-11, Petr Mladek <pmladek@suse.com> wrote:
->>>>>> --- /dev/null
->>>>>> +++ b/kernel/printk/printk_ringbuffer.c
->>>>>> +/*
->>>>>> + * Given a data ring (text or dict), put the associated descriptor of each
->>>>>> + * data block from @lpos_begin until @lpos_end into the reusable state.
->>>>>> + *
->>>>>> + * If there is any problem making the associated descriptor reusable, either
->>>>>> + * the descriptor has not yet been committed or another writer task has
->>>>>> + * already pushed the tail lpos past the problematic data block. Regardless,
->>>>>> + * on error the caller can re-load the tail lpos to determine the situation.
->>>>>> + */
->>>>>> +static bool data_make_reusable(struct printk_ringbuffer *rb,
->>>>>> +			       struct prb_data_ring *data_ring,
->>>>>> +			       unsigned long lpos_begin,
->>>>>> +			       unsigned long lpos_end,
->>>>>> +			       unsigned long *lpos_out)
->>>>>> +{
->>>>>> +	struct prb_desc_ring *desc_ring = &rb->desc_ring;
->>>>>> +	struct prb_data_blk_lpos *blk_lpos;
->>>>>> +	struct prb_data_block *blk;
->>>>>> +	unsigned long tail_lpos;
->>>>>> +	enum desc_state d_state;
->>>>>> +	struct prb_desc desc;
->>>>>> +	unsigned long id;
->>>>>> +
->>>>>> +	/*
->>>>>> +	 * Using the provided @data_ring, point @blk_lpos to the correct
->>>>>> +	 * blk_lpos within the local copy of the descriptor.
->>>>>> +	 */
->>>>>> +	if (data_ring == &rb->text_data_ring)
->>>>>> +		blk_lpos = &desc.text_blk_lpos;
->>>>>> +	else
->>>>>> +		blk_lpos = &desc.dict_blk_lpos;
->>>>>> +
->>>>>> +	/* Loop until @lpos_begin has advanced to or beyond @lpos_end. */
->>>>>> +	while ((lpos_end - lpos_begin) - 1 < DATA_SIZE(data_ring)) {
->>>>>> +		blk = to_block(data_ring, lpos_begin);
->>>>>> +		id = READ_ONCE(blk->id); /* LMM(data_make_reusable:A) */
->>>>>> +
->>>>>> +		/*
->>>>>> +		 * Guarantee the block ID is loaded before checking the tail
->>>>>> +		 * lpos. The loaded block ID can only be considered valid if
->>>>>> +		 * the tail lpos has not overtaken @lpos_begin. This pairs
->>>>>> +		 * with data_alloc:A.
->>>>>> +		 *
->>>>>> +		 * Memory barrier involvement:
->>>>>> +		 *
->>>>>> +		 * If data_make_reusable:A reads from data_alloc:B, then
->>>>>> +		 * data_make_reusable:C reads from data_push_tail:D.
->>>>>> +		 *
->>>>>> +		 * Relies on:
->>>>>> +		 *
->>>>>> +		 * MB from data_push_tail:D to data_alloc:B
->>>>>> +		 *    matching
->>>>>> +		 * RMB from data_make_reusable:A to data_make_reusable:C
->>>>>> +		 *
->>>>>> +		 * Note: data_push_tail:D and data_alloc:B can be different
->>>>>> +		 *       CPUs. However, the data_alloc:B CPU (which performs
->>>>>> +		 *       the full memory barrier) must have previously seen
->>>>>> +		 *       data_push_tail:D.
->>>>>> +		 */
->>>>>> +		smp_rmb(); /* LMM(data_make_reusable:B) */
->>>>>> +
->>>>>> +		tail_lpos = atomic_long_read(&data_ring->tail_lpos
->>>>>> +					); /* LMM(data_make_reusable:C) */
->>>>>> +
->>>>>> +		/*
->>>>>> +		 * If @lpos_begin has fallen behind the tail lpos, the read
->>>>>> +		 * block ID cannot be trusted. Fast forward @lpos_begin to the
->>>>>> +		 * tail lpos and try again.
->>>>>> +		 */
->>>>>> +		if (lpos_begin - tail_lpos >= DATA_SIZE(data_ring)) {
->>>>>> +			lpos_begin = tail_lpos;
->>>>>> +			continue;
->>>>>> +		}
->>>>>
->>>>> I am sorry if we have had this discussion already in past.
->>>> 
->>>> We have [0]. (Search for "Ouch.")
->>>
->>> I see. Thanks a lot for the pointer.
->>>
->>>>> Well, it would just prove that it really needs a comment why this
->>>>> check is necessary.
->>>> 
->>>> The comment says why it is necessary. The previous read of the block ID
->>>> cannot be trusted if the the tail has been pushed beyond it.
->>>
->>> Not really. The comment describes what the check does. But it does not
->>> explain why it is needed. The reason might be described be something like:
->>>
->>> 		* Make sure that the id read from tail_lpos is really
->>> 		* pointing to this lpos. The block might have been
->>> 		* reused in the meantime. Make sure to do not make
->>> 		* the new owner reusable.
->> 
->> That is _not_ what this check is doing. I recommend looking closely at
->> the example you posted. This is not about whether or not a descriptor is
->> pointing to this lpos. In your example you showed that ID, state, and
->> lpos values could all look good, but it is for the _new_ record and we
->> should _not_ invalidate that one.
->
-> OK, let's make sure that we are talking about the same example.
-> I was talking about this one from
-> https://lore.kernel.org/lkml/87ftecy343.fsf@linutronix.de/
->
-> % [*] Another problem would be when data_make_reusable() see the new
-> %     data already in the committed state. It would make fresh new
-> %     data reusable.
-> %
-> %     I mean the following:
-> %
-> % CPU0				CPU1
-> %
-> % data_alloc()
-> %   begin_lpos = dr->head_lpos
-> %   data_push_tail()
-> %     lpos = dr->tail_lpos
-> %				prb_reserve()
-> %				  # reserve the location of current
-> %				  # dr->tail_lpos
-> %				prb_commit()
-> %
-> %     id = blk->id
-> %     # read id for the freshly written data on CPU1
-> %     # and happily make them reusable
-> %     data_make_reusable()
->
-> Sigh, sigh, sigh, there is a hugely misleading comment in the example:
->
-> %				  # reserve the location of current
-> %				  # dr->tail_lpos
->
-> It is true that it reserves part of this location. But it will use
-> data_ring->head_lpos for the related desc->text_blk_lpos.begin !!!
+On Sun, Jun 07, 2020 at 02:00:35PM +0530, Prabhakar Kushwaha wrote:
+> On Thu, Jun 4, 2020 at 5:32 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > On Wed, Jun 03, 2020 at 11:12:48PM +0530, Prabhakar Kushwaha wrote:
+> > > On Sat, May 30, 2020 at 1:03 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > > > On Fri, May 29, 2020 at 07:48:10PM +0530, Prabhakar Kushwaha wrote:
+<snip>
 
-Aaargh! You are right!
+> > > > > diff --git a/drivers/pci/pcie/err.c b/drivers/pci/pcie/err.c
+> > > > > index 117c0a2b2ba4..26b908f55aef 100644
+> > > > > --- a/drivers/pci/pcie/err.c
+> > > > > +++ b/drivers/pci/pcie/err.c
+> > > > > @@ -66,6 +66,20 @@ static int report_error_detected(struct pci_dev *dev,
+> > > > >                 if (dev->hdr_type != PCI_HEADER_TYPE_BRIDGE) {
+> > > > >                         vote = PCI_ERS_RESULT_NO_AER_DRIVER;
+> > > > >                         pci_info(dev, "can't recover (no
+> > > > > error_detected callback)\n");
+> > > > > +
+> > > > > +                       pci_save_state(dev);
+> > > > > +                       pci_cfg_access_lock(dev);
+> > > > > +
+> > > > > +                       /* Quiesce the device completely */
+> > > > > +                       pci_write_config_word(dev, PCI_COMMAND,
+> > > > > +                             PCI_COMMAND_INTX_DISABLE);
+> > > > > +                       if (!__pci_reset_function_locked(dev)) {
+> > > > > +                               vote = PCI_ERS_RESULT_RECOVERED;
+> > > > > +                               pci_info(dev, "recovered via pci level
+> > > > > reset\n");
+> > > > > +                       }
+> >
+> > So I guess we *do* need to save the state before the reset and restore
+> > it (either that or enumerate the device from scratch just like we
+> > would if it had been hot-added).  I'm not really thrilled with trying
+> > to save the state after the device has already reported an error.  I'd
+> > rather do it earlier, maybe during enumeration, like in
+> > pci_init_capabilities().  But I don't understand all the subtleties of
+> > dev->state_saved, so that requires some legwork.
+> 
+> I tried moving pci_save_state earlier. All observations are the same
+> as mentioned in earlier discussions.
 
-> If blk->id comes from the new descriptor written by CPU1 then
-> blk_lpos->begin is based on the old data_ring->head_lpos.
-> Then it is different from lpos_begin.
->
-> Let's put it another way. The state of the descriptor defines validity
-> of the data. Descriptor in committed state _must not_ point to invalid
-> data block!!!
->
-> If a descriptor in committed state point to lpos that was in invalid
-> range before reading the descriptor then we have a huge hole in the
-> design.
->
-> This is why I believe that the check of the descriptor must be enough.
+By "legwork", I didn't mean just trying things to see whether they
+seem to work.  I meant researching the history to find out *why* it's
+designed the way it is so that when we change it, we don't break
+things.
 
-You are right. The smp_rmb (data_make_reusable:B) and its following tail
-check are not needed. Since data_make_reusable:A can read garbage even
-if we pass the tail check, we might as well always allow garbage and
-rely on the descriptor/lpos checks to catch it. (Actually, that was the
-design!)
+For example, these commits are obviously important to understand:
 
-However, the pairing smp_mb (data_alloc:A) is still needed, but it will
-then pair with data_push_tail:A. If data_make_reusable() reads garbage
-(maybe newly written garbage), it is important that a new data tail is
-visible.
+  aa8c6c93747f ("PCI PM: Restore standard config registers of all devices early")
+  c82f63e411f1 ("PCI: check saved state before restore")
+  4b77b0a2ba27 ("PCI: Clear saved_state after the state has been restored")
 
-The comment for data_alloc:A would change to something like:
+I think we need to step back and separate this AER issue from the
+whole SMMU table copying thing.  Then do the research and start a
+new thread with a patch to fix just the AER issue.
 
-	/*
-	 * Guarantee any updated tail lpos is stored before modifying
-	 * the newly allocated data area. Another context may be in
-	 * data_make_reusable() and is reading a block ID from this
-	 * area. data_make_reusable() can handle reading a garbage block
-	 * ID value, but then it must be able to load a new tail lpos.
-	 * This pairs with data_push_tail:A.
-	 */
-	smp_mb(); /* LMM(data_alloc:A) */
+The ARM guys would probably be grateful to be dropped from the AER
+thread because it really has nothing to do with ARM.
 
-John Ogness
+Bjorn
 
 _______________________________________________
 kexec mailing list
