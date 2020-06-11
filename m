@@ -2,67 +2,58 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8417E1F70AE
-	for <lists+kexec@lfdr.de>; Fri, 12 Jun 2020 01:03:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4422D1F70B9
+	for <lists+kexec@lfdr.de>; Fri, 12 Jun 2020 01:06:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=XZ1EvWkB9ANS1Z+9asaHiq4p1ovDQvM23SZD4bEmgRc=; b=tbjbwRxZgDPoqz
-	zb020RZxO98/1K7/MMuVAslAL00ShyrSOUpN57s44hkMyp9evK28p+yaEI7m4sJaPeAzW/8rM43b6
-	foRa058nI7dWUXaTFOje5recqxv9v8GUn+i1/e0Rprhb6LonfcZUphmOG8yoxgRQ9gQXzmhJGQ4Po
-	l/ZYQrTSkK8o6SLZ4c1x1ro97/P8wq7QEAVn2717jr5dCmyVkk/4QzL4dXWvvItb5OKV+XRe0/+eW
-	Q0YT5aJGHgB0g7uaDZvKU2+oFDzomcGgQBJk+GvwbmgC7fPnfyWwIhLm6bJoNyMqq51E52Oafne1j
-	Gq7g1p0T7UVzbdzj/4EQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qO4rn7iYkHxmwWjt6k8gJJdUJ6ZX3fKcCSWhmSWVKiA=; b=kbvNT5ezEMHQA4
+	AtZ+HYzUMh2uOHRW8Sxh8jwXpaTPHJaGUVVotyCr/eA5ubcrbnDYYf8jkjlcoFad3iI4GqwJDcpkj
+	rZyxZBWGlGcFowMgQklbuRTO8XyrG9IvHgzcNgaCJSfLd29KuvHJ2+q1Nnt5BXKij7YwVcT65Q+Ux
+	m8Hn9SY2y0AfyPP/klByK4WV+1kVJMw5JCdo2cTvjhns5mKbjoiPGe4pNczhwDR5jfeADkVqiHuCS
+	qK9RZF0sbuPWyTniZkdFDF2iQlvj9Vu1RCCAH5ue8xDZHbgx3+WT5EhmfKtWB1ZXHRhlMl6nWME3m
+	YpEc3xHYG1LqWoudlisQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jjWEL-0000Fo-Gu; Thu, 11 Jun 2020 23:03:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jjWHT-0003GE-1W; Thu, 11 Jun 2020 23:06:43 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jjWEI-0000F0-1X; Thu, 11 Jun 2020 23:03:27 +0000
-Received: from localhost (mobile-166-170-222-206.mycingular.net
- [166.170.222.206])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E6CDF2075F;
- Thu, 11 Jun 2020 23:03:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591916605;
- bh=yM5pBJUy0BXOdjz4XMcr+tOSmSsPnlkkobonfqdzjSg=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=D+qrXcCqbOyBxciiOWZgechHGVDuhy7PA3H6Zw/VkcKP/QvMh0ftEP2yKGml3S9kd
- 09w1IeQULkDKinvROeRZPCVif1IFyJzDcFU8+jAJ4nKByZ1oX5ZQ1L9UVV+FlFvh4O
- kHK8XgBPGMoyp63Owk4z/DP0E1b4PenykufRuFt8=
-Date: Thu, 11 Jun 2020 18:03:23 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Message-ID: <20200611230323.GA1616315@bjorn-Precision-5520>
+ id 1jjWHQ-0003FX-99
+ for kexec@lists.infradead.org; Thu, 11 Jun 2020 23:06:41 +0000
+Received: from localhost ([127.0.0.1] helo=vostro)
+ by Galois.linutronix.de with esmtps (TLS1.2:RSA_AES_256_CBC_SHA1:256)
+ (Exim 4.80) (envelope-from <john.ogness@linutronix.de>)
+ id 1jjWHH-0008Ah-R0; Fri, 12 Jun 2020 01:06:32 +0200
+From: John Ogness <john.ogness@linutronix.de>
+To: Petr Mladek <pmladek@suse.com>
+Subject: Re: Barrier before pushing desc_ring tail: was [PATCH v2 2/3] printk:
+ add lockless buffer
+References: <20200501094010.17694-1-john.ogness@linutronix.de>
+ <20200501094010.17694-3-john.ogness@linutronix.de>
+ <20200609113751.GD23752@linux-b0ei>
+ <87d068utbg.fsf@vostro.fn.ogness.net>
+ <20200611120107.GD6581@linux-b0ei>
+Date: Fri, 12 Jun 2020 01:06:28 +0200
+In-Reply-To: <20200611120107.GD6581@linux-b0ei> (Petr Mladek's message of
+ "Thu, 11 Jun 2020 14:01:08 +0200")
+Message-ID: <87bllpyzgr.fsf@vostro.fn.ogness.net>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ2QiJJ58nWe_vpjLWoFuM7s-7f7H-40q-4r-aGqorKPy9EPQw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200611_160326_121183_ACC35A84 
-X-CRM114-Status: GOOD (  20.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200611_160640_461901_0D9744CD 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,79 +65,88 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Myron Stowe <myron.stowe@redhat.com>,
- Vijay Mohan Pandarathil <vijaymohan.pandarathil@hp.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-pci@vger.kernel.org,
- Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Andrea Parri <parri.andrea@gmail.com>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Paul McKenney <paulmck@kernel.org>, Peter Zijlstra <peterz@infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-On Sun, Jun 07, 2020 at 02:00:35PM +0530, Prabhakar Kushwaha wrote:
-> On Thu, Jun 4, 2020 at 5:32 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > On Wed, Jun 03, 2020 at 11:12:48PM +0530, Prabhakar Kushwaha wrote:
-> > > On Sat, May 30, 2020 at 1:03 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
-> > > > On Fri, May 29, 2020 at 07:48:10PM +0530, Prabhakar Kushwaha wrote:
-<snip>
+On 2020-06-11, Petr Mladek <pmladek@suse.com> wrote:
+> All this relies on the fact the the full barrier is called in
+> data_push_tail() and data_push_tail() is called right above.
+> But there are two situations where the barrier is not called.
+> It is when:
+>
+>   1. desc.text_blk_lpos.next already is behind data_ring->tail_lpos.
+>
+>      This is safe.
 
-> > > > > diff --git a/drivers/pci/pcie/err.c b/drivers/pci/pcie/err.c
-> > > > > index 117c0a2b2ba4..26b908f55aef 100644
-> > > > > --- a/drivers/pci/pcie/err.c
-> > > > > +++ b/drivers/pci/pcie/err.c
-> > > > > @@ -66,6 +66,20 @@ static int report_error_detected(struct pci_dev *dev,
-> > > > >                 if (dev->hdr_type != PCI_HEADER_TYPE_BRIDGE) {
-> > > > >                         vote = PCI_ERS_RESULT_NO_AER_DRIVER;
-> > > > >                         pci_info(dev, "can't recover (no
-> > > > > error_detected callback)\n");
-> > > > > +
-> > > > > +                       pci_save_state(dev);
-> > > > > +                       pci_cfg_access_lock(dev);
-> > > > > +
-> > > > > +                       /* Quiesce the device completely */
-> > > > > +                       pci_write_config_word(dev, PCI_COMMAND,
-> > > > > +                             PCI_COMMAND_INTX_DISABLE);
-> > > > > +                       if (!__pci_reset_function_locked(dev)) {
-> > > > > +                               vote = PCI_ERS_RESULT_RECOVERED;
-> > > > > +                               pci_info(dev, "recovered via pci level
-> > > > > reset\n");
-> > > > > +                       }
-> >
-> > So I guess we *do* need to save the state before the reset and restore
-> > it (either that or enumerate the device from scratch just like we
-> > would if it had been hot-added).  I'm not really thrilled with trying
-> > to save the state after the device has already reported an error.  I'd
-> > rather do it earlier, maybe during enumeration, like in
-> > pci_init_capabilities().  But I don't understand all the subtleties of
-> > dev->state_saved, so that requires some legwork.
-> 
-> I tried moving pci_save_state earlier. All observations are the same
-> as mentioned in earlier discussions.
+Yes, and I have since expanded the comment above the data_push_tail()
+while loop to mention that:
 
-By "legwork", I didn't mean just trying things to see whether they
-seem to work.  I meant researching the history to find out *why* it's
-designed the way it is so that when we change it, we don't break
-things.
+	/*
+	 * Loop until the tail lpos is at or beyond @lpos. This condition
+	 * may already be satisfied, resulting in no full memory barrier
+	 * from data_push_tail:C being performed. However, since this CPU
+	 * sees the new tail lpos, any descriptor states that transitioned to
+	 * the reusable state must already be visible.
+	 */
 
-For example, these commits are obviously important to understand:
+>   2. desc.text_blk_lpos == INVALID_LPOS.
+>
+>      It seems that this is not synchronized and other CPUs might see
+>      the old state.
 
-  aa8c6c93747f ("PCI PM: Restore standard config registers of all devices early")
-  c82f63e411f1 ("PCI: check saved state before restore")
-  4b77b0a2ba27 ("PCI: Clear saved_state after the state has been restored")
+Great catch! This could trigger the WARN_ON at desc_reserve:F and lead
+to prb_reserve() unnecessarily failing.
 
-I think we need to step back and separate this AER issue from the
-whole SMMU table copying thing.  Then do the research and start a
-new thread with a patch to fix just the AER issue.
+> The question is what to do with the empty data case. I see three
+> possibilities:
+>
+>   1. Ignore the case with empty block because it (probably) does not
+>      cause real problems.
 
-The ARM guys would probably be grateful to be dropped from the AER
-thread because it really has nothing to do with ARM.
+It could cause dropped messages.
 
-Bjorn
+>   2. Call the full barrier in data_push_tail() even when the data
+>      block is empty.
+
+This is the common case, since most records will not have dictionary
+data.
+
+>   3. Call the full barrier also in desc_push_tail() as I suggested.
+>
+> My opinion:
+>
+> I prefer 3rd solution.
+
+Agreed. For my next version I am folding all smp_mb() and smp_wmb()
+calls into their neighboring cmpxchg_relaxed(). This would apply here as
+well, changing desc_push_tail:B to a full cmpxchg().
+
+We still need the full memory barrier at data_push_tail:C. Readers rely
+on it to be able to verify if their copied data is still valid:
+
+CPU0 (writer0)        CPU1 (writer1)       CPU2 (reader)
+                                           desc_read->committed
+desc_make_reusable
+smp_mb
+data_push_tail
+                      read new data tail
+                      data_push_head
+                      smp_mb
+                      write new data
+                                           read garbage new data
+                                           desc_read->reusable
+
+John Ogness
 
 _______________________________________________
 kexec mailing list
