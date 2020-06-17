@@ -2,81 +2,93 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69EE51FC185
-	for <lists+kexec@lfdr.de>; Wed, 17 Jun 2020 00:26:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98F961FC297
+	for <lists+kexec@lfdr.de>; Wed, 17 Jun 2020 02:07:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BVEgSxHFTpoXEua+8dyXH6n6IW5ciNoQV980DoaVN7E=; b=E8kt2GT4Gt9Q1w
-	Nq4RPBr3u/c89qbAQIZAqiyJHQPPmmSpsSmxt8sbe6a4+fLzB02iu4wFVhLJnNuxl/6Io646owNo1
-	/FfthVJfTf3AwAtPAJtY8NobkrFVE4BkomQ07P5Ujii7rqnew6ZrhoTL8k4ZZgHosDzSapzUSaUyj
-	+qNtI2CViobn5SMnWgVkc8mI4/CHz7k+hE4y/dGwD/1Posh1bBbvVsYayT9Gp+0pKn5gGl+M8MxOW
-	G28QWZ0UVIMNPTbvSYptIKNfUETiP8+OFmN1dqIfwXoFg9l21JhuVG3NaqdgoIb1rcG0qgdstSKIP
-	2pvcIxLxVW9OEPS15oqA==;
+	List-Owner; bh=nFn6RrnJrYvc8jiepq7hFyVp+WxbTR10vrMVYygwDvs=; b=aZIgkwj6+PuJcC
+	7pwCR64dyUR+EeI6+4fZR7X0uXnQsDi+bL9+mu+1sNo5Ie+2iTAldWTMLFqS2yy/ch2xfsbQZDm9J
+	kNmDqWqJKmAkczFkBsA2XVPOfkX1TpZX1ghKhCYRsSXfgEiuNC0iro6bL8+RbWyO6an3mcGat27bw
+	fxNsuh4LbxmE52csdXLqoOcYSsAkt9WhPRVTbxg+oINOYdK6nV8/LkdSAoitvYXUyo1aVEkPDL34I
+	/I/IXS0YrCy/WjarENKlZh4/gWGeQLonE+0I5AGh3nlUpxXXff2bQp2+P4WW4ce8pg1GJgeZ9WaMk
+	Z00H72bjq5rCQTJP4wxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jlK1i-0006hd-GY; Tue, 16 Jun 2020 22:25:54 +0000
-Received: from mail-qk1-f195.google.com ([209.85.222.195])
+	id 1jlLbu-0004ba-Vs; Wed, 17 Jun 2020 00:07:22 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jlK1f-0006gz-HU
- for kexec@lists.infradead.org; Tue, 16 Jun 2020 22:25:52 +0000
-Received: by mail-qk1-f195.google.com with SMTP id q2so258808qkb.2
- for <kexec@lists.infradead.org>; Tue, 16 Jun 2020 15:25:50 -0700 (PDT)
+ id 1jlLbr-0004am-Rd
+ for kexec@lists.infradead.org; Wed, 17 Jun 2020 00:07:21 +0000
+Received: by mail-lf1-x141.google.com with SMTP id d7so167266lfi.12
+ for <kexec@lists.infradead.org>; Tue, 16 Jun 2020 17:07:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HP1uFW4sLGpGIoEXTGEFuCHmhwb0G5+9yO9YHFU+ats=;
+ b=B9RvaNNfw2XkhWkqlRQ3PtpGYvSfdqW+PwRggujQQq4AZ2B7b5X7/BnqV3v4c/2PkZ
+ ENTqIwC62xfVi9KUmaVAVUpoXme71+DSirnDrOWf9H+TaASjGvOPKPcZe01K2pTusWK4
+ hfjPILq5L217zE2mGrEFMskNrCCGRfMLIg/v0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=VcKfZlE4WkUhVaivLHqicBLfv47GDp8cYmEaB3V/yXI=;
- b=tzpuDdCshpQeIvkj7NA8/0RBEFL6f8WIn9+vb1oQcvniNT6Zr3WF+nlzjRt2EMAuys
- io9hD2Fn48TXA/jbENTII6TFmEmIfIrPa0r3z0cmmHtCE9yWPAg5FrGtoNx1TGPfd49y
- C+WvyYlq1i5BTNzeZ1OoPexAIgW82ylfKepdF0mW8Y4CZRuTNzSaLy6Hxd50Yr+0wy70
- Ph7sT9hiPP1gxjCodfwwTz1cr2GjwEBORxe+HbJp2jtvbK5rLCdf4NXzCRwwjGkZGU5S
- I6Ob7CxtUiAJ4Ghf2dETPZkqNKYuc33qHfHPeFPJTzAjIcZZ724c7f44a2Q7Qtr+H/Wg
- +b2w==
-X-Gm-Message-State: AOAM530bXxt763oMkjhmfZK3llXq1csgMGWM8zfFlp2mT4PYc9rctG6K
- C1tgBi1R8yFTvuDcE5p0nbk=
-X-Google-Smtp-Source: ABdhPJzFBcXfx4S8pNUEkIHwipaB95eGAuUAwTxzAUh2H7g200UUY9Jq7+mPMqFlgP6VAR8d66371Q==
-X-Received: by 2002:a37:4753:: with SMTP id u80mr22286270qka.178.1592346350157; 
- Tue, 16 Jun 2020 15:25:50 -0700 (PDT)
-Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
- by smtp.gmail.com with ESMTPSA id p13sm15290473qke.135.2020.06.16.15.25.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 16 Jun 2020 15:25:49 -0700 (PDT)
-From: Arvind Sankar <nivedita@alum.mit.edu>
-To: x86@kernel.org,
-	kexec@lists.infradead.org
-Subject: [PATCH] x86/purgatory: Add -fno-stack-protector
-Date: Tue, 16 Jun 2020 18:25:47 -0400
-Message-Id: <20200616222547.1979233-1-nivedita@alum.mit.edu>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <CAEJqkggDJEC4W9V6ijmPoE0-soKE7zBUWUiDLdCZArEsDo9vrQ@mail.gmail.com>
-References: <CAEJqkggDJEC4W9V6ijmPoE0-soKE7zBUWUiDLdCZArEsDo9vrQ@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HP1uFW4sLGpGIoEXTGEFuCHmhwb0G5+9yO9YHFU+ats=;
+ b=UGUpxj9UlaJjYObqKQdu+Ajxak663fLx9gzXxNzZ8PLg3FYO13XNW3naILyPJgS+Xc
+ LuPxeJrtTgeTR1aECjPHJyFu/oXMbHn3Yiwp4jQwlQCeutkgXz+9pxrv86BzXnwaBp4u
+ JYeMUqEa/cRYCigfbG7jnZnCJPYL8u536dpyEZK4KQo62/9sUn1M7aMRwURwr3OudF2B
+ 6WYZLFUcGkXeNqeKvJbOmshHEqNR292wB1Efsf/J/iPvGM2Dqyq9JL3yxmNOmJjXuV/J
+ DKF6P5t2D67tx9ZBb6PlcU+yNNBawtSsR4x4+RkkkKbEsHM1IHurhGkKXEXo0RNUN1GZ
+ PKfg==
+X-Gm-Message-State: AOAM530lVcmuFPvpPkDvlilYFjeRTtc4xKJib+mzJrzAy4Rn5jPscAA9
+ irNQQHUXhlXhKpFIHaA+9LcUyJ9nJQU=
+X-Google-Smtp-Source: ABdhPJym9WVFOAgp46V3ZLB1XdVP+TIIVx0npQpHYG4vudAcytkk3lnAqpVk8l8M2Tv0FBe77kYdRw==
+X-Received: by 2002:a19:2209:: with SMTP id i9mr811440lfi.46.1592352436459;
+ Tue, 16 Jun 2020 17:07:16 -0700 (PDT)
+Received: from mail-lj1-f171.google.com (mail-lj1-f171.google.com.
+ [209.85.208.171])
+ by smtp.gmail.com with ESMTPSA id 144sm2980329lfm.87.2020.06.16.17.07.15
+ for <kexec@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 16 Jun 2020 17:07:15 -0700 (PDT)
+Received: by mail-lj1-f171.google.com with SMTP id y11so641370ljm.9
+ for <kexec@lists.infradead.org>; Tue, 16 Jun 2020 17:07:15 -0700 (PDT)
+X-Received: by 2002:a2e:97c3:: with SMTP id m3mr2751552ljj.312.1592352434877; 
+ Tue, 16 Jun 2020 17:07:14 -0700 (PDT)
 MIME-Version: 1.0
+References: <CAEJqkggDJEC4W9V6ijmPoE0-soKE7zBUWUiDLdCZArEsDo9vrQ@mail.gmail.com>
+ <20200616222547.1979233-1-nivedita@alum.mit.edu>
+In-Reply-To: <20200616222547.1979233-1-nivedita@alum.mit.edu>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Tue, 16 Jun 2020 17:06:59 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wj_1mQmG5H4ZVcNudjhQyxTNTtni6hV1nTkEY2QQJzgAg@mail.gmail.com>
+Message-ID: <CAHk-=wj_1mQmG5H4ZVcNudjhQyxTNTtni6hV1nTkEY2QQJzgAg@mail.gmail.com>
+Subject: Re: [PATCH] x86/purgatory: Add -fno-stack-protector
+To: Arvind Sankar <nivedita@alum.mit.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200616_152551_577964_ABA1504E 
-X-CRM114-Status: GOOD (  11.16  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200616_170719_898072_27B299E0 
+X-CRM114-Status: UNSURE (   6.63  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.195 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [niveditas98[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [niveditas98[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: kexec@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,53 +100,26 @@ List-Post: <mailto:kexec@lists.infradead.org>
 List-Help: <mailto:kexec-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/kexec>,
  <mailto:kexec-request@lists.infradead.org?subject=subscribe>
-Cc: Borislav Petkov <bp@alien8.de>, Hans de Goede <hdegoede@redhat.com>,
- Gabriel C <nix.or.die@googlemail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org
+Cc: Gabriel C <nix.or.die@googlemail.com>,
+ the arch/x86 maintainers <x86@kernel.org>, kexec@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans de Goede <hdegoede@redhat.com>, Borislav Petkov <bp@alien8.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "kexec" <kexec-bounces@lists.infradead.org>
 Errors-To: kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org
 
-The purgatory Makefile removes -fstack-protector options if they were
-configured in, but does not currently add -fno-stack-protector.
+On Tue, Jun 16, 2020 at 3:25 PM Arvind Sankar <nivedita@alum.mit.edu> wrote:
+>
+> The purgatory Makefile removes -fstack-protector options if they were
+> configured in, but does not currently add -fno-stack-protector.
 
-If gcc was configured with the --enable-default-ssp configure option,
-this results in the stack protector still being enabled for the
-purgatory (absent distro-specific specs files that might disable it
-again for freestanding compilations), if the main kernel is being
-compiled with stack protection enabled (if it's disabled for the main
-kernel, the top-level Makefile will add -fno-stack-protector).
+I took this directly, since the build failure seems so annoying if you
+happen to have an affected compiler and config.
 
-This will break the build since commit
-  e4160b2e4b02 ("x86/purgatory: Fail the build if purgatory.ro has missing symbols")
-and prior to that would have caused runtime failure when trying to use
-kexec.
+Maybe that's not very common, but ..
 
-Explicitly add -fno-stack-protector to avoid this, as done in other
-Makefiles that need to disable the stack protector.
-
-Reported-by: Gabriel C <nix.or.die@googlemail.com>
-Signed-off-by: Arvind Sankar <nivedita@alum.mit.edu>
----
- arch/x86/purgatory/Makefile | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/x86/purgatory/Makefile b/arch/x86/purgatory/Makefile
-index b04e6e72a592..088bd764e0b7 100644
---- a/arch/x86/purgatory/Makefile
-+++ b/arch/x86/purgatory/Makefile
-@@ -34,6 +34,7 @@ KCOV_INSTRUMENT := n
- PURGATORY_CFLAGS_REMOVE := -mcmodel=kernel
- PURGATORY_CFLAGS := -mcmodel=large -ffreestanding -fno-zero-initialized-in-bss
- PURGATORY_CFLAGS += $(DISABLE_STACKLEAK_PLUGIN) -DDISABLE_BRANCH_PROFILING
-+PURGATORY_CFLAGS += $(call cc-option,-fno-stack-protector)
- 
- # Default KBUILD_CFLAGS can have -pg option set when FTRACE is enabled. That
- # in turn leaves some undefined symbols like __fentry__ in purgatory and not
--- 
-2.26.2
-
+              Linus
 
 _______________________________________________
 kexec mailing list
