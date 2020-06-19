@@ -2,53 +2,53 @@ Return-Path: <kexec-bounces+lists+kexec=lfdr.de@lists.infradead.org>
 X-Original-To: lists+kexec@lfdr.de
 Delivered-To: lists+kexec@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4A0D200E4C
-	for <lists+kexec@lfdr.de>; Fri, 19 Jun 2020 17:09:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25683200DD4
+	for <lists+kexec@lfdr.de>; Fri, 19 Jun 2020 17:02:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LdXjGY+RS5TQ+57jv0mm3Yt8FTMkJQz5A2oJG/tp4Q0=; b=iEdzP46mIUqyDA
-	SxFdWdJvr/flCvlWm1LS50xv1RUKnotA4+8gEHf8ngUs3pgoHFQ9VRf4NoVczvS0XH9z75gJQGKG7
-	k57yB0v6xV1wja2XOE44Wj6kIU43149g7aFS7xaT3IE4Zzio45A0OcDcBtEZjMaJTi0/8p/ax0H1/
-	u8Cv3V0+8cjyAPJBMSPLCSLKtyCkrHfm0M2bhIv9emdUL8xu6fh3rIKNxasOVyxpUMLxKxRBKXd9y
-	2zd/wWarQEA+78EDmHx2nLKBXcSuxwjnizWbt/z0tCqTZfjEyj61NgHUofhmkk2XAjeGb+C2af/v9
-	HdyoX9L97rOTR0ameSmw==;
+	List-Owner; bh=Fov8BwxFSSjdaw8qR8APpYteJYv9a6sEM5IPqqrEqUQ=; b=p8LgzlgKz7KC8L
+	stL/hH+McKsEOB5+iJ+8B1kNjv9MTu62+TEGpQmfyVgZNo4TLkZhlmV3yxHoxnqzOY2E0+xXxHVaI
+	6H/rRr14jK9ZlL3Z+cjDajreLYOF2gnEoA0KwlGufyuwdSe+oEqliNW60kRh5JR5/49uiF3R1ZJvD
+	mYqn+6FEDLW/IUdF+Z6/y7L1KcJlJHVdXjn3pzFNIHIitP3lrxJl3jAV/3Q7PPBuxiWbGFYd3R6NW
+	bc3Tp1keNn6JCEUdUxu4PIjqQ5RHWUR+c8CB31dNNDru79XEWHQ9mu0ng5OPm9I2x9sGQz80M/SVa
+	qCsL4r9HZUTRru1Dw3/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmIe5-0006ah-3W; Fri, 19 Jun 2020 15:09:33 +0000
+	id 1jmIXY-0003C6-7m; Fri, 19 Jun 2020 15:02:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmIe1-0006Zz-PE
- for kexec@lists.infradead.org; Fri, 19 Jun 2020 15:09:31 +0000
+ id 1jmIVr-0002oY-VT
+ for kexec@lists.infradead.org; Fri, 19 Jun 2020 15:01:05 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B47D721D7A;
- Fri, 19 Jun 2020 15:09:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EFD4821582;
+ Fri, 19 Jun 2020 15:01:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1592579369;
- bh=Oav+pKg3sVyk/vo+i1y8vyLi6SdS5bEm10top6m1Nrg=;
+ s=default; t=1592578863;
+ bh=BISzJjIvKnzfsgwL6PTzk6UEF3GH4smxHW1STCjv4S0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LLi0hZvrXh0XIJ/MmCPmrY4DFSBJbwIwTqfP0I0u+y++KzF5kvgS+49wZn6ibL+Rf
- Zssw2PoeWfaHNr64XaqLmCh6cFdYn1lpWm0CIkgGF/7mDHNnIzFTbZq2xG3NL7BUBR
- /JainmCUI2jSz3yygOJ1jkIS7tHPe5Jw74C2APNY=
+ b=lvsE4zyY2oeFjeQ/cF9U6QkGtHguURBDbySt8C0hknZcz5mLPR+8zHlUzCzUBD1uw
+ H2zZr1BU5pRkZ4OdIOvewoUwXnhwv/66nVE0UpC2AZe1BecbLp2929E4vUG8eZNtLA
+ fbtnIyeotOEAHkJbojt38PvQ6fZoI3uZw4faAnBc=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.4 109/261] net: qed*: Reduce RX and TX default ring count
+Subject: [PATCH 4.19 156/267] net: qed*: Reduce RX and TX default ring count
  when running inside kdump kernel
-Date: Fri, 19 Jun 2020 16:32:00 +0200
-Message-Id: <20200619141655.092929003@linuxfoundation.org>
+Date: Fri, 19 Jun 2020 16:32:21 +0200
+Message-Id: <20200619141656.297146576@linuxfoundation.org>
 X-Mailer: git-send-email 2.27.0
-In-Reply-To: <20200619141649.878808811@linuxfoundation.org>
-References: <20200619141649.878808811@linuxfoundation.org>
+In-Reply-To: <20200619141648.840376470@linuxfoundation.org>
+References: <20200619141648.840376470@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_080929_857595_E7E9387B 
+X-CRM114-CacheID: sfid-20200619_080104_054836_B13DC5C8 
 X-CRM114-Status: GOOD (  15.62  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -174,10 +174,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  2 files changed, 11 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/ethernet/qlogic/qede/qede.h b/drivers/net/ethernet/qlogic/qede/qede.h
-index 1f27f9866b80..61b5aa3e5b98 100644
+index dc3be8a4acf4..2bdc410d1144 100644
 --- a/drivers/net/ethernet/qlogic/qede/qede.h
 +++ b/drivers/net/ethernet/qlogic/qede/qede.h
-@@ -574,12 +574,14 @@ int qede_add_tc_flower_fltr(struct qede_dev *edev, __be16 proto,
+@@ -550,12 +550,14 @@ int qede_add_tc_flower_fltr(struct qede_dev *edev, __be16 proto,
  #define RX_RING_SIZE		((u16)BIT(RX_RING_SIZE_POW))
  #define NUM_RX_BDS_MAX		(RX_RING_SIZE - 1)
  #define NUM_RX_BDS_MIN		128
@@ -193,7 +193,7 @@ index 1f27f9866b80..61b5aa3e5b98 100644
  
  #define QEDE_MIN_PKT_LEN		64
 diff --git a/drivers/net/ethernet/qlogic/qede/qede_main.c b/drivers/net/ethernet/qlogic/qede/qede_main.c
-index ba53612ae0df..1da6b5bda80a 100644
+index 0d8e39ffbcd1..1aabb2e7a38b 100644
 --- a/drivers/net/ethernet/qlogic/qede/qede_main.c
 +++ b/drivers/net/ethernet/qlogic/qede/qede_main.c
 @@ -29,6 +29,7 @@
@@ -204,7 +204,7 @@ index ba53612ae0df..1da6b5bda80a 100644
  #include <linux/module.h>
  #include <linux/pci.h>
  #include <linux/version.h>
-@@ -707,8 +708,14 @@ static struct qede_dev *qede_alloc_etherdev(struct qed_dev *cdev,
+@@ -730,8 +731,14 @@ static struct qede_dev *qede_alloc_etherdev(struct qed_dev *cdev,
  	edev->dp_module = dp_module;
  	edev->dp_level = dp_level;
  	edev->ops = qed_ops;
